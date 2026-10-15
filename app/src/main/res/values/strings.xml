@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tarix Ustoz</string>
+    <string name="home">Bosh sahifa</string>
+    <string name="textbooks">Darsliklar</string>
+    <string name="tests">Testlar</string>
+    <string name="mistakes">Bilmagan savollarim</string>
+    <string name="leaderboard">Reyting</string>
+    <string name="ai_tutor">AI Ustoz</string>
+    <string name="profile">Profil</string>
+    <string name="achievements">Yutuqlar</string>
+    <string name="analytics">Tahlil</string>
+    <string name="daily_question">Kunlik savol</string>
+    <string name="exams">Imtihonlar</string>
+</resources>
