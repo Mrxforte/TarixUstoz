@@ -1,0 +1,8 @@
+{
+  "name": "Tarix Ustoz",
+  "description": "Tarix fani bo'yicha testlar, darsliklar va AI repetitor ilovasi",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

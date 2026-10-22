@@ -39,6 +39,9 @@ interface TopicDao {
     @Query("SELECT * FROM topics WHERE textbookId = :textbookId ORDER BY number")
     fun getByTextbook(textbookId: String): Flow<List<TopicEntity>>
 
+    @Query("SELECT * FROM topics ORDER BY number")
+    fun getAll(): Flow<List<TopicEntity>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(items: List<TopicEntity>)
 }
@@ -48,6 +51,9 @@ interface QuestionDao {
     @Query("SELECT * FROM questions WHERE topicId = :topicId")
     suspend fun getByTopic(topicId: String): List<QuestionEntity>
 
+    @Query("SELECT * FROM questions WHERE topicId IN (:topicIds)")
+    suspend fun getByTopics(topicIds: List<String>): List<QuestionEntity>
+
     @Query("SELECT * FROM questions WHERE textbookId = :textbookId")
     suspend fun getByTextbook(textbookId: String): List<QuestionEntity>
 
@@ -56,6 +62,33 @@ interface QuestionDao {
 
     @Query("SELECT * FROM questions WHERE gradeId = :gradeId AND subjectId = :subjectId LIMIT :limit")
     suspend fun getRandom(gradeId: Int, subjectId: String, limit: Int): List<QuestionEntity>
+
+    @Query("SELECT * FROM questions WHERE personality IS NOT NULL")
+    suspend fun getByPersonality(): List<QuestionEntity>
+
+    @Query("SELECT * FROM questions WHERE historicalDate IS NOT NULL")
+    suspend fun getByHistoricalDate(): List<QuestionEntity>
+
+    @Query("SELECT * FROM questions WHERE text LIKE '%shahar%' OR text LIKE '%poytaxt%' OR text LIKE '%davlat%' OR optionsJson LIKE '%Samarqand%' OR optionsJson LIKE '%Buxoro%'")
+    suspend fun getByCities(): List<QuestionEntity>
+
+    @Query("SELECT * FROM questions WHERE text LIKE '%jang%' OR text LIKE '%urush%' OR text LIKE '%yurish%' OR text LIKE '%bosqin%' OR text LIKE '%Parvon%' OR text LIKE '%Anqara%'")
+    suspend fun getByWars(): List<QuestionEntity>
+
+    @Query("SELECT * FROM questions WHERE text LIKE '%obida%' OR text LIKE '%maqbara%' OR text LIKE '%madrasa%' OR text LIKE '%masjid%' OR text LIKE '%minor%' OR text LIKE '%Registon%' OR text LIKE '%Bibixonim%'")
+    suspend fun getByMonuments(): List<QuestionEntity>
+
+    @Query("SELECT * FROM questions WHERE text LIKE '%voqea%' OR text LIKE '%sulola%' OR text LIKE '%inqilob%' OR text LIKE '%mustaqillik%' OR text LIKE '%tashkil%' OR text LIKE '%shartnoma%'")
+    suspend fun getByEvents(): List<QuestionEntity>
+
+    @Query("SELECT * FROM questions WHERE gradeId = 6")
+    suspend fun getByGrade6(): List<QuestionEntity>
+
+    @Query("SELECT * FROM questions")
+    suspend fun getAllQuestions(): List<QuestionEntity>
+
+    @Query("SELECT * FROM questions LIMIT :limit")
+    suspend fun getAllLimit(limit: Int): List<QuestionEntity>
 
     @Query("SELECT COUNT(*) FROM questions")
     suspend fun count(): Int
