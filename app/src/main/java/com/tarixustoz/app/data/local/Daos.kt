@@ -20,6 +20,9 @@ interface TextbookDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(items: List<TextbookEntity>)
+
+    @Query("DELETE FROM textbooks")
+    suspend fun deleteAll()
 }
 
 @Dao
@@ -29,30 +32,33 @@ interface ChapterDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(items: List<ChapterEntity>)
+
+    @Query("DELETE FROM chapters")
+    suspend fun deleteAll()
 }
 
 @Dao
 interface TopicDao {
+    @Query("SELECT * FROM topics WHERE id = :id")
+    suspend fun getById(id: String): TopicEntity?
+
     @Query("SELECT * FROM topics WHERE chapterId = :chapterId ORDER BY number")
     fun getByChapter(chapterId: String): Flow<List<TopicEntity>>
 
     @Query("SELECT * FROM topics WHERE textbookId = :textbookId ORDER BY number")
     fun getByTextbook(textbookId: String): Flow<List<TopicEntity>>
 
-    @Query("SELECT * FROM topics ORDER BY number")
-    fun getAll(): Flow<List<TopicEntity>>
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(items: List<TopicEntity>)
+
+    @Query("DELETE FROM topics")
+    suspend fun deleteAll()
 }
 
 @Dao
 interface QuestionDao {
     @Query("SELECT * FROM questions WHERE topicId = :topicId")
     suspend fun getByTopic(topicId: String): List<QuestionEntity>
-
-    @Query("SELECT * FROM questions WHERE topicId IN (:topicIds)")
-    suspend fun getByTopics(topicIds: List<String>): List<QuestionEntity>
 
     @Query("SELECT * FROM questions WHERE textbookId = :textbookId")
     suspend fun getByTextbook(textbookId: String): List<QuestionEntity>
@@ -63,38 +69,29 @@ interface QuestionDao {
     @Query("SELECT * FROM questions WHERE gradeId = :gradeId AND subjectId = :subjectId LIMIT :limit")
     suspend fun getRandom(gradeId: Int, subjectId: String, limit: Int): List<QuestionEntity>
 
-    @Query("SELECT * FROM questions WHERE personality IS NOT NULL")
-    suspend fun getByPersonality(): List<QuestionEntity>
+    @Query("SELECT * FROM questions WHERE category = :category ORDER BY RANDOM() LIMIT :limit")
+    suspend fun getByCategory(category: String, limit: Int): List<QuestionEntity>
 
-    @Query("SELECT * FROM questions WHERE historicalDate IS NOT NULL")
-    suspend fun getByHistoricalDate(): List<QuestionEntity>
+    @Query("SELECT * FROM questions WHERE difficulty = :difficulty ORDER BY RANDOM() LIMIT :limit")
+    suspend fun getByDifficulty(difficulty: String, limit: Int): List<QuestionEntity>
 
-    @Query("SELECT * FROM questions WHERE text LIKE '%shahar%' OR text LIKE '%poytaxt%' OR text LIKE '%davlat%' OR optionsJson LIKE '%Samarqand%' OR optionsJson LIKE '%Buxoro%'")
-    suspend fun getByCities(): List<QuestionEntity>
+    @Query("SELECT * FROM questions WHERE (:gradeId = 0 OR gradeId = :gradeId) AND (:category = 'ALL' OR category = :category) AND (:difficulty = 'ALL' OR difficulty = :difficulty) AND (topicId IN (:topicIds) OR :selectAllTopics = 1) ORDER BY RANDOM() LIMIT :limit")
+    suspend fun getFilteredWithTopics(gradeId: Int, category: String, difficulty: String, topicIds: List<String>, selectAllTopics: Boolean, limit: Int): List<QuestionEntity>
 
-    @Query("SELECT * FROM questions WHERE text LIKE '%jang%' OR text LIKE '%urush%' OR text LIKE '%yurish%' OR text LIKE '%bosqin%' OR text LIKE '%Parvon%' OR text LIKE '%Anqara%'")
-    suspend fun getByWars(): List<QuestionEntity>
+    @Query("SELECT * FROM questions WHERE id IN (SELECT questionId FROM wrong_questions) ORDER BY RANDOM() LIMIT :limit")
+    suspend fun getWrongQuestions(limit: Int): List<QuestionEntity>
 
-    @Query("SELECT * FROM questions WHERE text LIKE '%obida%' OR text LIKE '%maqbara%' OR text LIKE '%madrasa%' OR text LIKE '%masjid%' OR text LIKE '%minor%' OR text LIKE '%Registon%' OR text LIKE '%Bibixonim%'")
-    suspend fun getByMonuments(): List<QuestionEntity>
-
-    @Query("SELECT * FROM questions WHERE text LIKE '%voqea%' OR text LIKE '%sulola%' OR text LIKE '%inqilob%' OR text LIKE '%mustaqillik%' OR text LIKE '%tashkil%' OR text LIKE '%shartnoma%'")
-    suspend fun getByEvents(): List<QuestionEntity>
-
-    @Query("SELECT * FROM questions WHERE gradeId = 6")
-    suspend fun getByGrade6(): List<QuestionEntity>
-
-    @Query("SELECT * FROM questions")
-    suspend fun getAllQuestions(): List<QuestionEntity>
-
-    @Query("SELECT * FROM questions LIMIT :limit")
-    suspend fun getAllLimit(limit: Int): List<QuestionEntity>
+    @Query("SELECT COUNT(*) FROM questions WHERE textbookId = :textbookId")
+    suspend fun countByTextbook(textbookId: String): Int
 
     @Query("SELECT COUNT(*) FROM questions")
     suspend fun count(): Int
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(items: List<QuestionEntity>)
+
+    @Query("DELETE FROM questions")
+    suspend fun deleteAll()
 }
 
 @Dao
@@ -116,6 +113,9 @@ interface WrongQuestionDao {
 
     @Query("DELETE FROM wrong_questions WHERE questionId = :id")
     suspend fun delete(id: String)
+
+    @Query("DELETE FROM wrong_questions")
+    suspend fun deleteAll()
 }
 
 @Dao
@@ -128,6 +128,9 @@ interface UserProgressDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(item: UserProgressEntity)
+
+    @Query("DELETE FROM user_progress")
+    suspend fun deleteAll()
 }
 
 @Dao
@@ -161,4 +164,50 @@ interface QuizAttemptDao {
 
     @Query("SELECT COUNT(*) FROM quiz_attempts")
     suspend fun getTotalCount(): Int
+
+    @Query("DELETE FROM quiz_attempts")
+    suspend fun deleteAll()
 }
+
+@Dao
+interface PdfBookmarkDao {
+    @Query("SELECT * FROM pdf_bookmarks WHERE pdfPath = :pdfPath ORDER BY pageNumber ASC")
+    fun getBookmarks(pdfPath: String): Flow<List<PdfBookmarkEntity>>
+
+    @Query("SELECT * FROM pdf_bookmarks WHERE pdfPath = :pdfPath AND pageNumber = :pageNumber")
+    suspend fun getBookmark(pdfPath: String, pageNumber: Int): PdfBookmarkEntity?
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(bookmark: PdfBookmarkEntity)
+
+    @Query("DELETE FROM pdf_bookmarks WHERE pdfPath = :pdfPath AND pageNumber = :pageNumber")
+    suspend fun delete(pdfPath: String, pageNumber: Int)
+}
+
+@Dao
+interface PdfProgressDao {
+    @Query("SELECT * FROM pdf_progress WHERE pdfPath = :pdfPath")
+    suspend fun getProgress(pdfPath: String): PdfProgressEntity?
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun saveProgress(progress: PdfProgressEntity)
+}
+
+@Dao
+interface PdfAnnotationDao {
+    @Query("SELECT * FROM pdf_annotations WHERE pdfPath = :pdfPath AND pageNumber = :pageNumber")
+    fun getAnnotations(pdfPath: String, pageNumber: Int): Flow<List<PdfAnnotationEntity>>
+
+    @Query("SELECT * FROM pdf_annotations WHERE pdfPath = :pdfPath")
+    suspend fun getAllAnnotations(pdfPath: String): List<PdfAnnotationEntity>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(annotation: PdfAnnotationEntity)
+
+    @Query("DELETE FROM pdf_annotations WHERE pdfPath = :pdfPath AND pageNumber = :pageNumber")
+    suspend fun clearPageAnnotations(pdfPath: String, pageNumber: Int)
+
+    @Query("DELETE FROM pdf_annotations WHERE id = :id")
+    suspend fun delete(id: Long)
+}
+

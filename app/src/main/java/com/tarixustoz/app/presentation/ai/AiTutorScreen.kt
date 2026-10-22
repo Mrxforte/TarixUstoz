@@ -11,21 +11,18 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
-fun AiTutorScreen() {
-    var message by remember { mutableStateOf("") }
-    val messages = remember {
-        mutableStateListOf(
-            "Salom! Men Tarix Ustoz AI. Sizga O‘zbekiston va Jahon tarixi bo‘yicha yordam beraman.",
-            "Masalan: “Amir Temur haqida gapir” yoki “Ushbu mavzudan 5 ta sana testi tuz.”"
-        )
-    }
+fun AiTutorScreen(viewModel: AiTutorViewModel = hiltViewModel()) {
+    var messageText by remember { mutableStateOf("") }
+    val messages by viewModel.messages.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
 
     Column(Modifier.fillMaxSize().padding(16.dp)) {
         Text("Tarix Ustoz AI", style = MaterialTheme.typography.headlineMedium)
         Text(
-            "Manbaga asoslangan tarixiy yordamchi (Gemini integratsiyasi uchun backend kerak)",
+            "Gemini AI yordamida tarixiy savollarga javob",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
@@ -33,36 +30,49 @@ fun AiTutorScreen() {
 
         LazyColumn(
             modifier = Modifier.weight(1f),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            contentPadding = PaddingValues(vertical = 8.dp)
         ) {
             items(messages) { msg ->
-                Card(
-                    shape = RoundedCornerShape(12.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.surfaceVariant
-                    )
-                ) {
-                    Text(msg, Modifier.padding(12.dp), style = MaterialTheme.typography.bodyMedium)
+                val alignment = if (msg.isFromUser) Alignment.End else Alignment.Start
+                val color = if (msg.isFromUser) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant
+                
+                Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = alignment) {
+                    Card(
+                        shape = RoundedCornerShape(12.dp),
+                        colors = CardDefaults.cardColors(containerColor = color),
+                        modifier = Modifier.widthIn(max = 300.dp)
+                    ) {
+                        Text(msg.text, Modifier.padding(12.dp), style = MaterialTheme.typography.bodyMedium)
+                    }
+                }
+            }
+            if (isLoading) {
+                item {
+                    Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+                        CircularProgressIndicator(modifier = Modifier.size(24.dp))
+                    }
                 }
             }
         }
 
         Row(verticalAlignment = Alignment.CenterVertically) {
             OutlinedTextField(
-                value = message,
-                onValueChange = { message = it },
+                value = messageText,
+                onValueChange = { messageText = it },
                 modifier = Modifier.weight(1f),
                 placeholder = { Text("Savolingizni yozing...") },
-                shape = RoundedCornerShape(12.dp)
+                shape = RoundedCornerShape(12.dp),
+                enabled = !isLoading
             )
             Spacer(Modifier.width(8.dp))
-            IconButton(onClick = {
-                if (message.isNotBlank()) {
-                    messages.add("Siz: $message")
-                    messages.add("AI: Bu savol uchun darslik manbalari va Gemini API ulangan bo‘lganda to‘liq javob beriladi. Hozircha demo rejim.")
-                    message = ""
-                }
-            }) {
+            IconButton(
+                onClick = {
+                    viewModel.sendMessage(messageText)
+                    messageText = ""
+                },
+                enabled = messageText.isNotBlank() && !isLoading
+            ) {
                 Icon(Icons.Default.Send, contentDescription = "Yuborish")
             }
         }

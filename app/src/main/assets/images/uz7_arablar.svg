@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg_arab" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#134e5e"/>
+      <stop offset="100%" stop-color="#71b280"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg_arab)" rx="16"/>
+  <circle cx="400" cy="200" r="100" fill="#ffffff" opacity="0.15"/>
+  <text x="400" y="225" font-family="sans-serif" font-size="80" fill="#ffffff" text-anchor="middle">🕌</text>
+  <text x="400" y="370" font-family="sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">Arab Xalifaligi va Movarounnahr</text>
+  <text x="400" y="405" font-family="sans-serif" font-size="18" fill="#d4fc79" text-anchor="middle">VIII asr · Qutayba ibn Muslim yurishlari</text>
+</svg>

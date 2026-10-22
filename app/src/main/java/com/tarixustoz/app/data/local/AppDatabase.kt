@@ -13,9 +13,12 @@ import androidx.room.RoomDatabase
         UserProgressEntity::class,
         AchievementEntity::class,
         DailyQuestionEntity::class,
-        QuizAttemptEntity::class
+        QuizAttemptEntity::class,
+        PdfBookmarkEntity::class,
+        PdfProgressEntity::class,
+        PdfAnnotationEntity::class
     ],
-    version = 1,
+    version = 6,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -28,4 +31,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun achievementDao(): AchievementDao
     abstract fun dailyQuestionDao(): DailyQuestionDao
     abstract fun quizAttemptDao(): QuizAttemptDao
+    abstract fun pdfBookmarkDao(): PdfBookmarkDao
+    abstract fun pdfProgressDao(): PdfProgressDao
+    abstract fun pdfAnnotationDao(): PdfAnnotationDao
 }

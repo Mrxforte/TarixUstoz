@@ -3,3 +3,7 @@
 /app/build/
 /app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/
 /build/
+local.properties
+.kotlin/
+.idea/caches/
+data_output.json

@@ -20,22 +20,37 @@ class TextbooksViewModel @Inject constructor(
     private val preferences: UserPreferencesRepository
 ) : ViewModel() {
 
-    private val _selectedGrade = MutableStateFlow(7)
+    private val _selectedGrade = MutableStateFlow(0) // 0 = All grades
     val selectedGrade: StateFlow<Int> = _selectedGrade
 
+    private val _isRefreshing = MutableStateFlow(false)
+    val isRefreshing: StateFlow<Boolean> = _isRefreshing
+
     val textbooks: StateFlow<List<Textbook>> = _selectedGrade
-        .flatMapLatest { grade -> contentRepository.getTextbooksByGrade(grade) }
+        .flatMapLatest { grade ->
+            if (grade == 0) contentRepository.getTextbooks()
+            else contentRepository.getTextbooksByGrade(grade)
+        }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     fun load() {
         viewModelScope.launch {
             contentRepository.seedIfNeeded()
-            preferences.selectedGrade.collect { _selectedGrade.value = it }
         }
     }
 
     fun setGrade(grade: Int) {
         _selectedGrade.value = grade
-        viewModelScope.launch { preferences.setSelectedGrade(grade) }
+    }
+
+    fun getTopicsForTextbook(textbookId: String) =
+        contentRepository.getTopicsByTextbook(textbookId)
+
+    fun resetAndReloadData(customJson: String? = null) {
+        viewModelScope.launch {
+            _isRefreshing.value = true
+            contentRepository.resetAndReimport(customJson)
+            _isRefreshing.value = false
+        }
     }
 }

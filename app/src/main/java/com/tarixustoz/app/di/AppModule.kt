@@ -29,8 +29,10 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideContentRepository(db: AppDatabase): ContentRepository =
-        ContentRepository(db)
+    fun provideContentRepository(
+        @ApplicationContext context: Context,
+        db: AppDatabase
+    ): ContentRepository = ContentRepository(context, db)
 
     @Provides
     @Singleton

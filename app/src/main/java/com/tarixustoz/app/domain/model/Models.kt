@@ -1,6 +1,7 @@
 package com.tarixustoz.app.domain.model
 
 import androidx.compose.runtime.Immutable
+import kotlinx.serialization.Serializable
 
 @Immutable
 data class Grade(
@@ -26,6 +27,7 @@ data class Textbook(
     val year: Int,
     val edition: String,
     val coverAsset: String? = null,
+    val pdfAsset: String? = null,
     val totalChapters: Int = 0,
     val totalTopics: Int = 0,
     val totalQuestions: Int = 0,
@@ -43,12 +45,32 @@ data class Chapter(
 )
 
 @Immutable
+@Serializable
+data class ImportantDate(
+    val date: String,
+    val event: String
+)
+
+@Immutable
+@Serializable
+data class HistoricalTerm(
+    val term: String,
+    val definition: String
+)
+
+@Immutable
 data class Topic(
     val id: String,
     val chapterId: String,
     val textbookId: String,
     val number: Int,
     val title: String,
+    val content: String = "",
+    val importantDates: List<ImportantDate> = emptyList(),
+    val terms: List<HistoricalTerm> = emptyList(),
+    val summary: String = "",
+    val imageAsset: String? = null,
+    val imageCaption: String? = null,
     val questionsCount: Int = 0,
     val masteryPercent: Float = 0f,
     val isCompleted: Boolean = false
@@ -65,6 +87,15 @@ enum class QuestionType {
     CAUSE_EFFECT,
     SOURCE_INTERPRETATION,
     ASSERTION_REASON
+}
+
+enum class QuestionCategory(val titleUz: String, val icon: String) {
+    ALL("Barcha testlar", "🌐"),
+    PERSON("Tarixiy Shaxslar", "👑"),
+    CITY("Shaharlar va Hududlar", "🏛"),
+    YEAR("Yillar va Sanalar", "📅"),
+    EVENT("Hodisalar va Janglar", "⚔️"),
+    LOGICAL("Mantiqiy va DTM", "🧩")
 }
 
 enum class Difficulty {
@@ -87,6 +118,7 @@ data class Question(
     val subjectId: String,
     val type: QuestionType,
     val difficulty: Difficulty,
+    val category: QuestionCategory = QuestionCategory.ALL,
     val text: String,
     val options: List<AnswerOption>,
     val explanation: String,
