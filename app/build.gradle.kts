@@ -123,9 +123,12 @@ dependencies {
     // Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
 
-    // Google AI Gemini SDK & OkHttp
+    // Google AI Gemini SDK, Retrofit, Gson & OkHttp
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation("com.google.code.gson:gson:2.11.0")
 
     // WorkManager
     implementation("androidx.work:work-runtime-ktx:2.9.1")

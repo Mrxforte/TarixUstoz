@@ -3,6 +3,7 @@ package com.tarixustoz.app.di
 import android.content.Context
 import androidx.room.Room
 import com.tarixustoz.app.data.local.AppDatabase
+import com.tarixustoz.app.data.remote.ApiService
 import com.tarixustoz.app.data.repository.ContentRepository
 import com.tarixustoz.app.data.repository.MistakesRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
@@ -31,8 +32,9 @@ object AppModule {
     @Singleton
     fun provideContentRepository(
         @ApplicationContext context: Context,
-        db: AppDatabase
-    ): ContentRepository = ContentRepository(context, db)
+        db: AppDatabase,
+        apiService: ApiService
+    ): ContentRepository = ContentRepository(context, db, apiService)
 
     @Provides
     @Singleton

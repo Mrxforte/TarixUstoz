@@ -2,10 +2,13 @@ package com.tarixustoz.app.data.repository
 
 import android.content.Context
 import com.tarixustoz.app.data.local.*
+import com.tarixustoz.app.data.remote.ApiService
 import com.tarixustoz.app.domain.model.*
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -15,7 +18,8 @@ import javax.inject.Singleton
 @Singleton
 class ContentRepository @Inject constructor(
     @ApplicationContext private val context: Context,
-    private val db: AppDatabase
+    private val db: AppDatabase,
+    private val apiService: ApiService
 ) {
     private val json = Json { 
         ignoreUnknownKeys = true 
@@ -85,6 +89,84 @@ class ContentRepository @Inject constructor(
             list.map { Topic(it.id, it.chapterId, it.textbookId, it.number, it.title) } 
         }
 
+    suspend fun syncWithDjangoBackend(): Boolean = withContext(Dispatchers.IO) {
+        try {
+            // Fetch PDF Books from Django REST API
+            val apiBooks = apiService.getPdfBooks()
+            if (apiBooks.isNotEmpty()) {
+                val entities = apiBooks.map { b ->
+                    TextbookEntity(
+                        id = "book_${b.id}",
+                        title = b.title,
+                        gradeId = b.gradeId,
+                        subjectId = b.subjectId,
+                        authors = b.authors ?: "Tarixchi olimlar",
+                        year = b.year,
+                        edition = b.edition ?: "1-nashr",
+                        totalChapters = b.totalChapters,
+                        totalTopics = b.totalTopics,
+                        totalQuestions = b.totalQuestions,
+                        coverAsset = b.coverUrl,
+                        pdfAsset = b.pdfUrl ?: if (b.gradeId == 6) "textbooks/6_sinf_tarix.pdf" else null
+                    )
+                }
+                db.textbookDao().insertAll(entities)
+            }
+
+            // Fetch Topics from Django REST API
+            val apiTopics = apiService.getTopics()
+            if (apiTopics.isNotEmpty()) {
+                val entities = apiTopics.map { t ->
+                    TopicEntity(
+                        id = "topic_${t.id}",
+                        chapterId = "ch_${t.categoryId}",
+                        textbookId = "book_${t.categoryId}",
+                        number = t.order,
+                        title = t.title,
+                        content = t.content ?: "",
+                        summary = t.chapterTitle ?: ""
+                    )
+                }
+                db.topicDao().insertAll(entities)
+            }
+
+            // Fetch Questions from Django REST API
+            val apiQuestions = apiService.getQuestions()
+            if (apiQuestions.isNotEmpty()) {
+                val entities = apiQuestions.map { q ->
+                    val optionsList = listOf(
+                        AnswerOption("a", q.optionA, q.correctOption.equals("A", ignoreCase = true)),
+                        AnswerOption("b", q.optionB, q.correctOption.equals("B", ignoreCase = true)),
+                        AnswerOption("c", q.optionC, q.correctOption.equals("C", ignoreCase = true)),
+                        AnswerOption("d", q.optionD, q.correctOption.equals("D", ignoreCase = true))
+                    )
+                    QuestionEntity(
+                        id = "q_${q.id}",
+                        topicId = if (q.topicId != null) "topic_${q.topicId}" else "general_topic",
+                        textbookId = "book_${q.gradeId}",
+                        gradeId = q.gradeId,
+                        subjectId = q.subjectId,
+                        type = QuestionType.SINGLE_CHOICE.name,
+                        difficulty = q.difficulty,
+                        category = q.categoryType,
+                        text = q.text,
+                        optionsJson = json.encodeToString(optionsList),
+                        explanation = q.explanation ?: "Darslik va manba asosida tayyorlangan.",
+                        historicalDate = null,
+                        personality = null,
+                        sourceReference = "Django Backend API",
+                        pageHint = null
+                    )
+                }
+                db.questionDao().insertAll(entities)
+            }
+            true
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        }
+    }
+
     suspend fun clearAllData() {
         db.textbookDao().deleteAll()
         db.chapterDao().deleteAll()
@@ -96,21 +178,25 @@ class ContentRepository @Inject constructor(
     }
 
     suspend fun resetAndReimport(jsonContent: String? = null) {
-        clearAllData()
-        if (!jsonContent.isNullOrBlank()) {
-            importFromJsonString(jsonContent)
-        } else {
-            val assetJson = loadAssetJson("content.json") ?: loadAssetJson("textbooks.json")
-            if (!assetJson.isNullOrBlank()) {
-                importFromJsonString(assetJson)
+        val synced = syncWithDjangoBackend()
+        if (!synced) {
+            clearAllData()
+            if (!jsonContent.isNullOrBlank()) {
+                importFromJsonString(jsonContent)
             } else {
-                seedContent()
+                val assetJson = loadAssetJson("content.json") ?: loadAssetJson("textbooks.json")
+                if (!assetJson.isNullOrBlank()) {
+                    importFromJsonString(assetJson)
+                } else {
+                    seedContent()
+                }
             }
         }
     }
 
     suspend fun seedIfNeeded() {
-        if (db.textbookDao().getById("uz_6") == null) {
+        val synced = syncWithDjangoBackend()
+        if (!synced && db.textbookDao().getById("uz_6") == null) {
             clearAllData()
             val assetJson = loadAssetJson("content.json") ?: loadAssetJson("textbooks.json")
             if (!assetJson.isNullOrBlank()) {
