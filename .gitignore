@@ -7,3 +7,4 @@ local.properties
 .kotlin/
 .idea/caches/
 data_output.json
+backend/

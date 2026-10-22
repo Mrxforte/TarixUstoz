@@ -1,9 +1,12 @@
 package com.tarixustoz.app.data.repository
 
+import android.content.Context
 import com.tarixustoz.app.data.local.*
 import com.tarixustoz.app.domain.model.*
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import javax.inject.Inject
@@ -11,9 +14,13 @@ import javax.inject.Singleton
 
 @Singleton
 class ContentRepository @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val db: AppDatabase
 ) {
-    private val json = Json { ignoreUnknownKeys = true }
+    private val json = Json { 
+        ignoreUnknownKeys = true 
+        coerceInputValues = true
+    }
 
     fun getTextbooks(): Flow<List<Textbook>> =
         db.textbookDao().getAll().map { list -> list.map { it.toDomain() } }
@@ -28,8 +35,16 @@ class ContentRepository @Inject constructor(
 
     fun getTopics(chapterId: String): Flow<List<Topic>> =
         db.topicDao().getByChapter(chapterId).map { list ->
-            list.map { Topic(it.id, it.chapterId, it.textbookId, it.number, it.title) }
+            list.map { it.toDomain(json) }
         }
+
+    fun getTopicsByTextbook(textbookId: String): Flow<List<Topic>> =
+        db.topicDao().getByTextbook(textbookId).map { list ->
+            list.map { it.toDomain(json) }
+        }
+
+    suspend fun getTopicById(topicId: String): Topic? =
+        db.topicDao().getById(topicId)?.toDomain(json)
 
     suspend fun getQuestionsForTopic(topicId: String): List<Question> =
         db.questionDao().getByTopic(topicId).map { it.toDomain(json) }
@@ -40,15 +55,105 @@ class ContentRepository @Inject constructor(
     suspend fun getRandomQuestions(gradeId: Int, subjectId: String, count: Int): List<Question> =
         db.questionDao().getRandom(gradeId, subjectId, count).map { it.toDomain(json) }
 
+    suspend fun getCustomQuestions(
+        limit: Int, 
+        category: String, 
+        difficulty: String, 
+        topicIds: List<String>,
+        gradeId: Int = 0
+    ): List<Question> =
+        db.questionDao().getFilteredWithTopics(
+            gradeId = gradeId,
+            category = category, 
+            difficulty = difficulty, 
+            topicIds = topicIds, 
+            selectAllTopics = topicIds.isEmpty(), 
+            limit = limit
+        ).map { it.toDomain(json) }
+
+    suspend fun getWrongQuestionsForReview(limit: Int): List<Question> =
+        db.questionDao().getWrongQuestions(limit).map { it.toDomain(json) }
+
+    suspend fun getRandomQuestionForNotification(): Question? =
+        db.questionDao().getRandom(7, "uzbekiston", 10).randomOrNull()?.toDomain(json)
+
+    suspend fun getDailyQuestion(): Question? =
+        getRandomQuestionForNotification()
+
+    fun getAllTopicsFlow(): Flow<List<Topic>> = 
+        db.topicDao().getByTextbook("uz_7").map { list -> 
+            list.map { Topic(it.id, it.chapterId, it.textbookId, it.number, it.title) } 
+        }
+
+    suspend fun clearAllData() {
+        db.textbookDao().deleteAll()
+        db.chapterDao().deleteAll()
+        db.topicDao().deleteAll()
+        db.questionDao().deleteAll()
+        db.wrongQuestionDao().deleteAll()
+        db.userProgressDao().deleteAll()
+        db.quizAttemptDao().deleteAll()
+    }
+
+    suspend fun resetAndReimport(jsonContent: String? = null) {
+        clearAllData()
+        if (!jsonContent.isNullOrBlank()) {
+            importFromJsonString(jsonContent)
+        } else {
+            val assetJson = loadAssetJson("content.json") ?: loadAssetJson("textbooks.json")
+            if (!assetJson.isNullOrBlank()) {
+                importFromJsonString(assetJson)
+            } else {
+                seedContent()
+            }
+        }
+    }
+
     suspend fun seedIfNeeded() {
-        if (db.questionDao().count() > 0) return
-        seedContent()
+        if (db.textbookDao().getById("uz_6") == null) {
+            clearAllData()
+            val assetJson = loadAssetJson("content.json") ?: loadAssetJson("textbooks.json")
+            if (!assetJson.isNullOrBlank()) {
+                importFromJsonString(assetJson)
+            } else {
+                seedContent()
+            }
+        }
+    }
+
+    private fun loadAssetJson(fileName: String): String? {
+        return try {
+            context.assets.open(fileName).bufferedReader().use { it.readText() }
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+    suspend fun importFromJsonString(rawJson: String): Boolean {
+        return try {
+            val data = json.decodeFromString<ContentDataDto>(rawJson)
+            if (data.textbooks.isNotEmpty()) {
+                db.textbookDao().insertAll(data.textbooks.map { it.toEntity() })
+            }
+            if (data.chapters.isNotEmpty()) {
+                db.chapterDao().insertAll(data.chapters.map { it.toEntity() })
+            }
+            if (data.topics.isNotEmpty()) {
+                db.topicDao().insertAll(data.topics.map { it.toEntity(json) })
+            }
+            if (data.questions.isNotEmpty()) {
+                db.questionDao().insertAll(data.questions.map { it.toEntity(json) })
+            }
+            true
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        }
     }
 
     private suspend fun seedContent() {
-        // Seed textbooks from provided PDFs
         val textbooks = listOf(
-            TextbookEntity("uz_6", "Tarix. Qadimgi dunyo", 6, "jahon", "A.S. Sagdullayev, V.A. Kostetskiy", 2017, "5-nashr", 12, 40, 80),
+            TextbookEntity("uz_6", "Tarix. Qadimgi dunyo", 6, "jahon", "A.S. Sagdullayev, V.A. Kostetskiy", 2017, "5-nashr", 12, 40, 80, "file:///android_asset/images/uz_6_cover.png", "textbooks/6_sinf_tarix.pdf"),
             TextbookEntity("uz_7", "O‘zbekiston tarixi (IV–XVI asr)", 7, "uzbekiston", "A. Muhammadjonov", 2017, "3-nashr", 10, 35, 70),
             TextbookEntity("jahon_7", "Jahon tarixi (V–XV asr)", 7, "jahon", "T.O‘. Salimov, F.E. Sultonov", 2017, "3-nashr", 12, 40, 75),
             TextbookEntity("uz_8", "O‘zbekiston tarixi", 8, "uzbekiston", "U. Jo‘rayev va b.", 2019, "4-nashr", 12, 45, 90),
@@ -61,181 +166,39 @@ class ContentRepository @Inject constructor(
             TextbookEntity("jahon_11", "Jahon tarixi (1991–2017)", 11, "jahon", "Sh. Ergashev, B. Xodjayev, J. Abdullayev", 2018, "1-nashr", 8, 25, 50)
         )
         db.textbookDao().insertAll(textbooks)
-
-        // Sample chapters & topics for grade 7 O‘zbekiston tarixi (from available intro)
-        val chapters = listOf(
-            ChapterEntity("uz7_ch1", "uz_7", 1, "Ilk o‘rta asrlar (IV–VIII asrlar)"),
-            ChapterEntity("uz7_ch2", "uz_7", 2, "Arab xalifaligi davri"),
-            ChapterEntity("uz7_ch3", "uz_7", 3, "Somoniylar davlati"),
-            ChapterEntity("uz7_ch4", "uz_7", 4, "Qoraxoniylar va Xorazmshohlar"),
-            ChapterEntity("uz7_ch5", "uz_7", 5, "Amir Temur va Temuriylar davri")
-        )
-        db.chapterDao().insertAll(chapters)
-
-        val topics = listOf(
-            TopicEntity("uz7_t1", "uz7_ch1", "uz_7", 1, "Xioniylar, Kidariylar va Eftallar"),
-            TopicEntity("uz7_t2", "uz7_ch1", "uz_7", 2, "Turk xoqonligi"),
-            TopicEntity("uz7_t3", "uz7_ch2", "uz_7", 1, "Arablarning Movarounnahrga kirib kelishi"),
-            TopicEntity("uz7_t4", "uz7_ch3", "uz_7", 1, "Somoniylar davlatining tashkil topishi"),
-            TopicEntity("uz7_t5", "uz7_ch5", "uz_7", 1, "Amir Temur saltanatining yuksalishi")
-        )
-        db.topicDao().insertAll(topics)
-
-        // Real sample questions grounded in textbook content (from provided pages)
-        val questions = listOf(
-            QuestionEntity(
-                id = "q1",
-                topicId = "uz7_t1",
-                textbookId = "uz_7",
-                gradeId = 7,
-                subjectId = "uzbekiston",
-                type = QuestionType.SINGLE_CHOICE.name,
-                difficulty = Difficulty.EASY.name,
-                text = "IV–XV asrlarda dastlab qaysi davlatlar faoliyat ko‘rsatgan?",
-                optionsJson = """[{"id":"a","text":"Xorazm, Xioniylar, Kidariylar, Eftallar","isCorrect":true},{"id":"b","text":"Rim imperiyasi","isCorrect":false},{"id":"c","text":"Xitoy imperiyasi","isCorrect":false},{"id":"d","text":"Vizantiya","isCorrect":false}]""",
-                explanation = "Darslik kirish qismida ko‘rsatilganidek, IV–XV asrlarda dastlab Xorazm, Xioniylar, Kidariylar, Eftallar, keyinchalik Turk xoqonligi va boshqa davlatlar faoliyat ko‘rsatgan.",
-                historicalDate = "IV–XV asrlar",
-                personality = null,
-                sourceReference = "O‘zbekiston tarixi 7-sinf, Kirish",
-                pageHint = "3"
-            ),
-            QuestionEntity(
-                id = "q2",
-                topicId = "uz7_t1",
-                textbookId = "uz_7",
-                gradeId = 7,
-                subjectId = "uzbekiston",
-                type = QuestionType.SINGLE_CHOICE.name,
-                difficulty = Difficulty.MEDIUM.name,
-                text = "“O‘zbek” atamasi dastlab nimani anglatgan?",
-                optionsJson = """[{"id":"a","text":"Qabila begi, hukmdor","isCorrect":true},{"id":"b","text":"Oddiy dehqon","isCorrect":false},{"id":"c","text":"Savdogar","isCorrect":false},{"id":"d","text":"Harbiy qul","isCorrect":false}]""",
-                explanation = "Darslikda “O‘zbek” – qabila begi, hukmdor deb izohlangan.",
-                historicalDate = null,
-                personality = null,
-                sourceReference = "O‘zbekiston tarixi 7-sinf, Kirish",
-                pageHint = "3"
-            ),
-            QuestionEntity(
-                id = "q3",
-                topicId = "uz7_t3",
-                textbookId = "uz_7",
-                gradeId = 7,
-                subjectId = "uzbekiston",
-                type = QuestionType.SINGLE_CHOICE.name,
-                difficulty = Difficulty.EASY.name,
-                text = "VIII asrning boshlarida mamlakatimizda qaysi davlat o‘rnatildi?",
-                optionsJson = """[{"id":"a","text":"Arab xalifaligi","isCorrect":true},{"id":"b","text":"Mongol imperiyasi","isCorrect":false},{"id":"c","text":"Rus knyazligi","isCorrect":false},{"id":"d","text":"Xitoy sulolasi","isCorrect":false}]""",
-                explanation = "VIII asrning boshlariga kelib mamlakatimizda Arab xalifaligi o‘rnatildi.",
-                historicalDate = "VIII asr boshi",
-                personality = null,
-                sourceReference = "O‘zbekiston tarixi 7-sinf, Kirish",
-                pageHint = "3"
-            ),
-            QuestionEntity(
-                id = "q4",
-                topicId = "uz7_t4",
-                textbookId = "uz_7",
-                gradeId = 7,
-                subjectId = "uzbekiston",
-                type = QuestionType.SINGLE_CHOICE.name,
-                difficulty = Difficulty.MEDIUM.name,
-                text = "Jahon ilm-fan rivojiga hissa qo‘shgan olimlardan biri kim?",
-                optionsJson = """[{"id":"a","text":"Muhammad ibn Muso al-Xorazmiy","isCorrect":true},{"id":"b","text":"Ibn Batuta","isCorrect":false},{"id":"c","text":"Marko Polo","isCorrect":false},{"id":"d","text":"Gerodot","isCorrect":false}]""",
-                explanation = "Yurtimizdan jahon ilm-fan rivojiga hissa qo‘shgan Muhammad ibn Muso al-Xorazmiy, Ahmad al-Farg‘oniy, Abu Rayhon Beruniy, Ibn Sino, Ulug‘bek va Alisher Navoiy kabi buyuk mutafakkirlar yetishib chiqdi.",
-                historicalDate = null,
-                personality = "Muhammad ibn Muso al-Xorazmiy",
-                sourceReference = "O‘zbekiston tarixi 7-sinf, Kirish",
-                pageHint = "3"
-            ),
-            QuestionEntity(
-                id = "q5",
-                topicId = "uz7_t5",
-                textbookId = "uz_7",
-                gradeId = 7,
-                subjectId = "uzbekiston",
-                type = QuestionType.TRUE_FALSE.name,
-                difficulty = Difficulty.EASY.name,
-                text = "Amir Temur IV–XV asrlarda hukmronlik qilgan yirik davlatlardan biri edi.",
-                optionsJson = """[{"id":"a","text":"To‘g‘ri","isCorrect":true},{"id":"b","text":"Noto‘g‘ri","isCorrect":false}]""",
-                explanation = "Darslikda Amir Temur hukmronlik qilgan yirik davlatlar qatorida keltirilgan.",
-                historicalDate = "XIV–XV asr",
-                personality = "Amir Temur",
-                sourceReference = "O‘zbekiston tarixi 7-sinf, Kirish",
-                pageHint = "3"
-            ),
-            QuestionEntity(
-                id = "q6",
-                topicId = "uz7_t1",
-                textbookId = "uz_7",
-                gradeId = 7,
-                subjectId = "uzbekiston",
-                type = QuestionType.SINGLE_CHOICE.name,
-                difficulty = Difficulty.HARD.name,
-                text = "Ilk o‘rta asrlarda “qishloq hokimi” deb atalgan katta yer egasi nima deb atalgan?",
-                optionsJson = """[{"id":"a","text":"Dehqon","isCorrect":true},{"id":"b","text":"Kadivar","isCorrect":false},{"id":"c","text":"Sulton","isCorrect":false},{"id":"d","text":"Emir","isCorrect":false}]""",
-                explanation = "Ilk o‘rta asrlarda “qishloq hokimi” deb atalgan katta yer egasi – “dehqon”lar va ularning ekinzorlarida ishlovchi yersiz “kadivar”lar shakllandi.",
-                historicalDate = "Ilk o‘rta asrlar",
-                personality = null,
-                sourceReference = "O‘zbekiston tarixi 7-sinf, Kirish",
-                pageHint = "3"
-            ),
-            // Additional questions for variety
-            QuestionEntity(
-                id = "q7",
-                topicId = "uz7_t2",
-                textbookId = "uz_7",
-                gradeId = 7,
-                subjectId = "uzbekiston",
-                type = QuestionType.SINGLE_CHOICE.name,
-                difficulty = Difficulty.MEDIUM.name,
-                text = "Turk xoqonligi qaysi asrlarda mavjud bo‘lgan?",
-                optionsJson = """[{"id":"a","text":"VI–VIII asrlar","isCorrect":true},{"id":"b","text":"X–XII asrlar","isCorrect":false},{"id":"c","text":"XIV–XV asrlar","isCorrect":false},{"id":"d","text":"II–IV asrlar","isCorrect":false}]""",
-                explanation = "Turk xoqonligi VI asrda tashkil topgan va VIII asrgacha mavjud bo‘lgan.",
-                historicalDate = "VI–VIII asr",
-                personality = null,
-                sourceReference = "O‘zbekiston tarixi 7-sinf",
-                pageHint = null
-            ),
-            QuestionEntity(
-                id = "q8",
-                topicId = "uz7_t4",
-                textbookId = "uz_7",
-                gradeId = 7,
-                subjectId = "uzbekiston",
-                type = QuestionType.SINGLE_CHOICE.name,
-                difficulty = Difficulty.EXPERT.name,
-                text = "Abu Rayhon Beruniy qaysi sohada mashhur?",
-                optionsJson = """[{"id":"a","text":"Astronomiya, matematika, geografiya","isCorrect":true},{"id":"b","text":"Faqat she’riyat","isCorrect":false},{"id":"c","text":"Harbiy san’at","isCorrect":false},{"id":"d","text":"Tibbiyot (faqat)","isCorrect":false}]""",
-                explanation = "Abu Rayhon Beruniy buyuk ensiklopedist olim bo‘lib, astronomiya, matematika, geografiya va boshqa sohalarda asarlar yozgan.",
-                historicalDate = "X–XI asr",
-                personality = "Abu Rayhon Beruniy",
-                sourceReference = "O‘zbekiston tarixi 7-sinf",
-                pageHint = null
-            )
-        )
-        db.questionDao().insertAll(questions)
-
-        // Seed basic achievements
-        val achievements = listOf(
-            AchievementEntity("first_steps", false, null, 0f),
-            AchievementEntity("daily_learner", false, null, 0f),
-            AchievementEntity("streak_3", false, null, 0f),
-            AchievementEntity("streak_7", false, null, 0f),
-            AchievementEntity("date_master", false, null, 0f),
-            AchievementEntity("personality_expert", false, null, 0f),
-            AchievementEntity("mistake_corrector", false, null, 0f),
-            AchievementEntity("perfect_score", false, null, 0f),
-            AchievementEntity("topic_specialist", false, null, 0f),
-            AchievementEntity("exam_champion", false, null, 0f)
-        )
-        db.achievementDao().insertAll(achievements)
     }
 
     private fun TextbookEntity.toDomain() = Textbook(
         id = id, title = title, gradeId = gradeId, subjectId = subjectId,
-        authors = authors, year = year, edition = edition,
+        authors = authors, year = year, edition = edition, coverAsset = coverAsset, pdfAsset = pdfAsset,
         totalChapters = totalChapters, totalTopics = totalTopics, totalQuestions = totalQuestions
     )
+
+    private fun TopicEntity.toDomain(json: Json): Topic {
+        val dates = try {
+            json.decodeFromString<List<ImportantDate>>(importantDatesJson)
+        } catch (e: Exception) {
+            emptyList()
+        }
+        val termsList = try {
+            json.decodeFromString<List<HistoricalTerm>>(termsJson)
+        } catch (e: Exception) {
+            emptyList()
+        }
+        return Topic(
+            id = id,
+            chapterId = chapterId,
+            textbookId = textbookId,
+            number = number,
+            title = title,
+            content = content,
+            importantDates = dates,
+            terms = termsList,
+            summary = summary,
+            imageAsset = imageAsset,
+            imageCaption = imageCaption
+        )
+    }
 
     private fun QuestionEntity.toDomain(json: Json): Question {
         val options = try {
@@ -245,11 +208,13 @@ class ContentRepository @Inject constructor(
         } catch (e: Exception) {
             emptyList()
         }
+        val cat = try { QuestionCategory.valueOf(category) } catch (e: Exception) { QuestionCategory.ALL }
         return Question(
             id = id, topicId = topicId, textbookId = textbookId, gradeId = gradeId,
             subjectId = subjectId,
             type = QuestionType.valueOf(type),
             difficulty = Difficulty.valueOf(difficulty),
+            category = cat,
             text = text, options = options, explanation = explanation,
             historicalDate = historicalDate, personality = personality,
             sourceReference = sourceReference, pageHint = pageHint
@@ -257,5 +222,98 @@ class ContentRepository @Inject constructor(
     }
 }
 
-@kotlinx.serialization.Serializable
-private data class AnswerOptionDto(val id: String, val text: String, val isCorrect: Boolean)
+@Serializable
+data class ContentDataDto(
+    val textbooks: List<TextbookDto> = emptyList(),
+    val chapters: List<ChapterDto> = emptyList(),
+    val topics: List<TopicDto> = emptyList(),
+    val questions: List<QuestionDto> = emptyList()
+)
+
+@Serializable
+data class TextbookDto(
+    val id: String,
+    val title: String,
+    val gradeId: Int,
+    val subjectId: String = "uzbekiston",
+    val authors: String = "",
+    val year: Int = 2024,
+    val edition: String = "1-nashr",
+    val coverAsset: String? = null,
+    val pdfAsset: String? = null,
+    val totalChapters: Int = 0,
+    val totalTopics: Int = 0,
+    val totalQuestions: Int = 0
+) {
+    fun toEntity() = TextbookEntity(
+        id = id, title = title, gradeId = gradeId, subjectId = subjectId,
+        authors = authors, year = year, edition = edition,
+        totalChapters = totalChapters, totalTopics = totalTopics, totalQuestions = totalQuestions,
+        coverAsset = coverAsset ?: if (id == "uz_6") "file:///android_asset/images/uz_6_cover.png" else null,
+        pdfAsset = pdfAsset ?: if (id == "uz_6") "textbooks/6_sinf_tarix.pdf" else null
+    )
+}
+
+@Serializable
+data class ChapterDto(
+    val id: String,
+    val textbookId: String,
+    val number: Int,
+    val title: String
+) {
+    fun toEntity() = ChapterEntity(id = id, textbookId = textbookId, number = number, title = title)
+}
+
+@Serializable
+data class TopicDto(
+    val id: String,
+    val chapterId: String,
+    val textbookId: String,
+    val number: Int,
+    val title: String,
+    val content: String = "",
+    val importantDates: List<ImportantDate> = emptyList(),
+    val terms: List<HistoricalTerm> = emptyList(),
+    val summary: String = "",
+    val imageAsset: String? = null,
+    val imageCaption: String? = null
+) {
+    fun toEntity(json: Json) = TopicEntity(
+        id = id, chapterId = chapterId, textbookId = textbookId, number = number, title = title,
+        content = content, importantDatesJson = json.encodeToString(importantDates),
+        termsJson = json.encodeToString(terms), summary = summary, imageAsset = imageAsset, imageCaption = imageCaption
+    )
+}
+
+@Serializable
+data class QuestionDto(
+    val id: String,
+    val topicId: String,
+    val textbookId: String,
+    val gradeId: Int,
+    val subjectId: String,
+    val type: String,
+    val difficulty: String,
+    val category: String = "ALL",
+    val text: String,
+    val options: List<AnswerOptionDto>,
+    val explanation: String,
+    val historicalDate: String? = null,
+    val personality: String? = null,
+    val sourceReference: String? = null,
+    val pageHint: String? = null
+) {
+    fun toEntity(json: Json) = QuestionEntity(
+        id = id, topicId = topicId, textbookId = textbookId, gradeId = gradeId, subjectId = subjectId,
+        type = type, difficulty = difficulty, category = category, text = text,
+        optionsJson = json.encodeToString(options), explanation = explanation,
+        historicalDate = historicalDate, personality = personality, sourceReference = sourceReference, pageHint = pageHint
+    )
+}
+
+@Serializable
+data class AnswerOptionDto(
+    val id: String,
+    val text: String,
+    val isCorrect: Boolean
+)

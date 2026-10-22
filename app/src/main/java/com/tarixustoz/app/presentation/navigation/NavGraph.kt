@@ -116,7 +116,10 @@ fun TarixNavHost() {
                     onNavigateToMistakes = { navController.navigate(Screen.Mistakes.route) },
                     onNavigateToTextbooks = { navController.navigate(Screen.Textbooks.route) },
                     onNavigateToAi = { navController.navigate(Screen.AiTutor.route) },
-                    onNavigateToLeaderboard = { navController.navigate(Screen.Leaderboard.route) }
+                    onNavigateToLeaderboard = { navController.navigate(Screen.Leaderboard.route) },
+                    onNavigateToTestsHub = { navController.navigate(Screen.QuizOptions.route) },
+                    onNavigateToNotifications = { },
+                    onNavigateToTopicSelection = { navController.navigate(Screen.Textbooks.route) }
                 )
             }
             composable(Screen.Textbooks.route) {
