@@ -147,10 +147,15 @@ fun TextbooksScreen(
                 modifier = Modifier.weight(1f)
             ) {
                 items(textbooks) { textbook ->
+                    val pdfPath = textbook.pdfAsset ?: if (textbook.gradeId == 6) "textbooks/6_sinf_tarix.pdf" else null
                     TextbookGridCard(
                         textbook = textbook,
                         onClick = {
-                            selectedTextbookForTopics = textbook
+                            if (pdfPath != null) {
+                                onOpenPdf(textbook.title, pdfPath)
+                            } else {
+                                selectedTextbookForTopics = textbook
+                            }
                         }
                     )
                 }
@@ -195,10 +200,38 @@ fun TextbooksScreen(
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .heightIn(max = 350.dp)
+                        .heightIn(max = 380.dp)
                 ) {
                     HorizontalDivider()
                     Spacer(Modifier.height(8.dp))
+
+                    val pdfPath = textbook.pdfAsset ?: if (textbook.gradeId == 6) "textbooks/6_sinf_tarix.pdf" else null
+                    if (pdfPath != null) {
+                        Button(
+                            onClick = {
+                                val path = pdfPath
+                                val title = textbook.title
+                                onOpenPdf(title, path)
+                                selectedTextbookForTopics = null
+                            },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(50.dp),
+                            shape = RoundedCornerShape(12.dp),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = MaterialTheme.colorScheme.primary
+                            )
+                        ) {
+                            Icon(Icons.Default.MenuBook, contentDescription = null)
+                            Spacer(Modifier.width(8.dp))
+                            Text(
+                                "PDF Darslikni o'qish (Full-screen)",
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                        Spacer(Modifier.height(12.dp))
+                    }
 
                     Text(
                         "Mavzular ro'yxati:",
@@ -273,34 +306,7 @@ fun TextbooksScreen(
                     }
                 }
             },
-            confirmButton = {
-                val pdfPath = textbook.pdfAsset ?: if (textbook.gradeId == 6) "textbooks/6_sinf_tarix.pdf" else null
-                if (pdfPath != null) {
-                    Button(
-                        onClick = {
-                            val path = pdfPath
-                            val title = textbook.title
-                            onOpenPdf(title, path)
-                            selectedTextbookForTopics = null
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(48.dp),
-                        shape = RoundedCornerShape(12.dp),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = MaterialTheme.colorScheme.primary
-                        )
-                    ) {
-                        Icon(Icons.Default.MenuBook, contentDescription = null)
-                        Spacer(Modifier.width(8.dp))
-                        Text(
-                            "PDF Darslikni o'qish (Full-screen)",
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold
-                        )
-                    }
-                }
-            }
+            confirmButton = {}
         )
     }
 
