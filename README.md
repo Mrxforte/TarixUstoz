@@ -119,14 +119,18 @@ tarixi) go through `ocr_pdf_book.py` + `clean_ocr.py` before segmentation.
 
 ## Test directions (Yo'nalishlar bo'yicha testlar)
 
-The six cards on the Tests screen are served from the database instead of fixed
-numbers:
+The direction cards on the Home and Tests screens are served from the database
+instead of fixed numbers:
 
 * `GET /api/questions/directions/?grade=7&subject=jahon` → question count per card.
+* `GET /api/questions/ticket/?category=MONUMENT&grade=7&ticket=2&size=30` → one exam
+  ticket. The response carries `total` and `tickets` (how many tickets exist), and the
+  last ticket is topped up with random questions of the same direction so every ticket
+  always holds exactly `size` questions.
 * `POST /api/quizzes/generate/` with `category_code` = `EVENT`, `PERSON`, `WAR`,
-  `YEAR`, `CITY` or `LOGICAL` returns only questions of that direction.
+  `YEAR`, `CITY`, `MONUMENT` or `LOGICAL` returns only questions of that direction.
 
-| Card | Combinations |
+| Card | Source |
 |---|---|
 | Tarixiy voqealar | CAUSE_TO_EFFECT, EFFECT_TO_CAUSE, SOURCE_BASED, MAIN_CAUSE, TERM_TO_DEFINITION, DEFINITION_TO_TERM |
 | Tarixiy shaxslar | PERSON_TO_ACTIVITY, ACTIVITY_TO_PERSON, WHO_WAS_FIRST |
@@ -134,9 +138,21 @@ numbers:
 | Shahar va hududlar | MAP_BASED, PLACE_TO_EVENT |
 | Mantiqiy va DTM | TRUE_FALSE, ODD_ONE_OUT, MATCHING, COMPARE_SIMILAR, COMPARE_DIFFERENT |
 | Urushlar va janglar | questions mentioning war vocabulary (`is_war` column) |
+| Tarixiy obidalar | questions mentioning buildings/monuments (`is_monument` column) |
 
-`Question.direction_code` and `Question.is_war` are filled by the import command and
-serve these filters; see `backend/api/directions.py`.
+`Question.direction_code`, `is_war` and `is_monument` are filled by the import
+command; see `backend/api/directions.py`.
+
+### Counting and caching
+
+* Counts are materialised in `api_directioncount` (one row per book and card), so
+  the endpoint answers in ~10 ms instead of scanning 1.1M rows. Refresh after any
+  bulk change: `python manage.py refresh_direction_counts`
+  (`restore_content` and `import_jahon7_bank` call it automatically).
+* `GET /api/questions/directions/` also sends `Cache-Control: public, max-age=300`.
+* The app caches the numbers in `SharedPreferences` (`direction_counts`), so the
+  cards render instantly on the next launch and refresh in the background.
+* Composition is listed in `admin` → "Yo'nalish bo'yicha savollar soni".
 
 ## License
 

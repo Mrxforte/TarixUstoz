@@ -99,6 +99,16 @@ data class DirectionsResponseDto(
 )
 
 @Serializable
+data class TicketQuestionsDto(
+    @SerializedName("category") @SerialName("category") val category: String = "ALL",
+    @SerializedName("ticket") @SerialName("ticket") val ticket: Int = 1,
+    @SerializedName("size") @SerialName("size") val size: Int = 30,
+    @SerializedName("total") @SerialName("total") val total: Int = 0,
+    @SerializedName("tickets") @SerialName("tickets") val tickets: Int = 0,
+    @SerializedName("questions") @SerialName("questions") val questions: List<ApiQuestionDto> = emptyList()
+)
+
+@Serializable
 data class QuizGenerateRequest(
     @SerializedName("count") @SerialName("count") val count: Int = 10,
     @SerializedName("category_code") @SerialName("category_code") val categoryCode: String = "PRACTICE",

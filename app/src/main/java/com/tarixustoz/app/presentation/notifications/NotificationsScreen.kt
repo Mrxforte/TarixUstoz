@@ -99,6 +99,7 @@ fun NotificationsScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
+        contentWindowInsets = WindowInsets(0.dp),
         topBar = {
             TopAppBar(
                 title = {
@@ -113,6 +114,7 @@ fun NotificationsScreen(
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Orqaga")
                     }
                 },
+                windowInsets = WindowInsets(0.dp),
                 actions = {
                     TextButton(
                         onClick = {

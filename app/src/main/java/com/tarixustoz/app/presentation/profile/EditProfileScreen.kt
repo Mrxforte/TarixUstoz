@@ -52,6 +52,7 @@ fun EditProfileScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
+        contentWindowInsets = WindowInsets(0.dp),
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
@@ -73,6 +74,7 @@ fun EditProfileScreen(
                         )
                     }
                 },
+                windowInsets = WindowInsets(0.dp),
                 actions = {
                     TextButton(
                         onClick = { viewModel.saveProfile() },

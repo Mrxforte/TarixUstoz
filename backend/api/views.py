@@ -1,5 +1,6 @@
 import os
 import json
+import random
 import hashlib
 from datetime import date
 from django.conf import settings
@@ -21,7 +22,7 @@ from api.serializers import (
 )
 from api.rag_engine import HistoricalRAGEngine
 from api.question_engine import QuestionGenerationEngine
-from api.directions import DIRECTION_TITLES, direction_counts
+from api.directions import DIRECTION_TITLES, apply_direction, direction_counts
 
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.all().prefetch_related('pdf_books')
@@ -193,13 +194,65 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
         return self._filtered_queryset()[offset: offset + limit]
 
     @action(detail=False, methods=['get'])
+    def ticket(self, request):
+        """One exam ticket: exactly `size` questions of one direction.
+
+        Query: ?category=EVENT&grade=7&subject=jahon&ticket=1&size=30
+        `category` may also be `book_7` (whole book) or `ALL`. The last ticket is
+        topped up with random questions of the same pool, so no ticket is short.
+        """
+        raw_category = request.query_params.get('category', 'ALL')
+        grade = self._int_param('grade', 0)
+        raw_subject = request.query_params.get('subject', '')
+        subject = QuestionGenerationEngine._canonical_subject(raw_subject) if raw_subject else ''
+        size = min(max(self._int_param('size', 30), 1), 100)
+        ticket = max(self._int_param('ticket', 1), 1)
+
+        qs = Question.objects.filter(verification_status='VERIFIED')
+        if raw_category.lower().startswith('book_'):
+            book_grade = raw_category.split('_', 1)[1]
+            if book_grade.isdigit():
+                grade = int(book_grade)
+        if grade:
+            qs = qs.filter(grade=grade)
+        if subject:
+            qs = qs.filter(subject=subject)
+        qs = apply_direction(qs, raw_category)
+        qs = qs.order_by('id')
+
+        total = qs.count()
+        ticket_count = max(1, -(-total // size)) if total else 0
+        offset = (ticket - 1) * size
+        rows = list(qs[offset: offset + size]) if total else []
+
+        # The final ticket can be shorter than `size`; fill it from the same pool so
+        # every ticket has the same number of questions.
+        if total and len(rows) < size:
+            taken = {q.id for q in rows}
+            pool_ids = [qid for qid in qs.values_list('id', flat=True) if qid not in taken]
+            random.shuffle(pool_ids)
+            for qid in pool_ids[: size - len(rows)]:
+                rows.append(Question.objects.get(id=qid))
+
+        return Response({
+            "category": raw_category,
+            "grade": grade,
+            "subject": subject,
+            "ticket": ticket,
+            "size": size,
+            "total": total,
+            "tickets": ticket_count,
+            "questions": QuestionSerializer(rows, many=True).data,
+        })
+
+    @action(detail=False, methods=['get'])
     def directions(self, request):
         """Question counts per direction card, e.g. ?grade=7&subject=jahon."""
         grade = self._int_param('grade', 0)
         raw_subject = request.query_params.get('subject', '')
         subject = QuestionGenerationEngine._canonical_subject(raw_subject) if raw_subject else ''
         counts = direction_counts(grade=grade, subject=subject)
-        return Response({
+        response = Response({
             "grade": grade,
             "subject": subject,
             "directions": [
@@ -207,6 +260,9 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
                 for code, title in DIRECTION_TITLES.items()
             ],
         })
+        # Counts only change when questions are imported, so clients may cache them.
+        response["Cache-Control"] = "public, max-age=300"
+        return response
 
     @action(detail=False, methods=['get'])
     def daily(self, request):

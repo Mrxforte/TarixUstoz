@@ -19,7 +19,9 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 
 from api.models import Category, PdfBook, Question, Topic
-from api.directions import is_war_question, direction_for_combination
+from api.directions import (
+    direction_for_combination, is_monument_question, is_war_question, refresh_counts,
+)
 
 CONTENT = Path(__file__).resolve().parents[3] / "content"
 DEFAULT_NDJSON = CONTENT / "banks" / "7-sinf_Jahon_tarixi.ndjson.xz"
@@ -122,6 +124,7 @@ class Command(BaseCommand):
             flush()
 
         total = Question.objects.filter(grade=GRADE, subject=SUBJECT).count()
+        refresh_counts(GRADE, SUBJECT)
         self.stdout.write(self.style.SUCCESS(
             f"inserted {inserted}, skipped {skipped}, grade-7 Jahon total {total}"
         ))
@@ -193,6 +196,9 @@ class Command(BaseCommand):
             verification_status="VERIFIED",
             quality_score=1.0,
             is_war=is_war_question(
+                row["text"], row["option_a"], row["option_b"], row["option_c"], row["option_d"]
+            ),
+            is_monument=is_monument_question(
                 row["text"], row["option_a"], row["option_b"], row["option_c"], row["option_d"]
             ),
             direction_code=direction_for_combination(combination),

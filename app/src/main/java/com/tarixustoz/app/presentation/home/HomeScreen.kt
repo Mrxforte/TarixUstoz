@@ -28,10 +28,44 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.presentation.theme.*
 
+private fun iconForCategory(iconType: String): ImageVector = when (iconType) {
+    "location" -> Icons.Default.LocationOn
+    "person" -> Icons.Default.Person
+    "calendar" -> Icons.Default.CalendarMonth
+    "event" -> Icons.Default.Event
+    "monument" -> Icons.Default.AccountBalance
+    "war" -> Icons.Default.Security
+    "logical" -> Icons.Default.Psychology
+    "topic" -> Icons.Default.MenuBook
+    else -> Icons.Default.Category
+}
+
+private fun tintForCategory(iconType: String): Color = when (iconType) {
+    "location" -> Color(0xFFF97316)
+    "person" -> Color(0xFF8B5CF6)
+    "calendar" -> Color(0xFF16A34A)
+    "event" -> Color(0xFF6366F1)
+    "monument" -> Color(0xFF8B5CF6)
+    "war" -> Color(0xFFDC2626)
+    "logical" -> Color(0xFF0284C7)
+    else -> Color(0xFF0284C7)
+}
+
+private fun backgroundForCategory(iconType: String): Color = when (iconType) {
+    "location" -> Color(0xFFFFF7ED)
+    "person", "monument" -> Color(0xFFF5F3FF)
+    "calendar" -> Color(0xFFF0FDF4)
+    "event" -> Color(0xFFEEF2FF)
+    "war" -> Color(0xFFFEF2F2)
+    "logical", "topic" -> Color(0xFFEFF6FF)
+    else -> Color(0xFFEFF6FF)
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     onNavigateToQuiz: (category: String?) -> Unit,
+    onStartDirectionQuiz: (directionCode: String) -> Unit,
     onNavigateToMistakes: () -> Unit,
     onNavigateToTextbooks: () -> Unit,
     onNavigateToAi: () -> Unit,
@@ -49,7 +83,8 @@ fun HomeScreen(
     }
 
     Scaffold(
-        containerColor = MaterialTheme.colorScheme.background
+        containerColor = MaterialTheme.colorScheme.background,
+        contentWindowInsets = WindowInsets(0.dp)
     ) { innerPadding ->
         LazyColumn(
             modifier = Modifier
@@ -598,77 +633,36 @@ fun HomeScreen(
                 }
             }
 
-            // 4 Categories Grid (2x2)
+            // 4 Categories Grid (dynamic, 2 per row)
             item {
                 Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)
-                    ) {
-                        CategoryGridCard(
-                            title = "Shahar nomlari",
-                            count = "120 test",
-                            icon = Icons.Default.LocationOn,
-                            iconTint = Color(0xFFF97316),
-                            iconBg = Color(0xFFFFF7ED),
-                            modifier = Modifier.weight(1f),
-                            onClick = { onNavigateToQuiz("shahar_nomlari") }
-                        )
-                        CategoryGridCard(
-                            title = "Tarixiy shaxslar",
-                            count = "184 test",
-                            icon = Icons.Default.Person,
-                            iconTint = Color(0xFF8B5CF6),
-                            iconBg = Color(0xFFF5F3FF),
-                            modifier = Modifier.weight(1f),
-                            onClick = { onNavigateToQuiz("tarixiy_shaxslar") }
-                        )
-                    }
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)
-                    ) {
-                        CategoryGridCard(
-                            title = "Mavzu bo‘yicha",
-                            count = "320 test",
-                            icon = Icons.Default.MenuBook,
-                            iconTint = Color(0xFF0284C7),
-                            iconBg = Color(0xFFEFF6FF),
-                            modifier = Modifier.weight(1f),
-                            onClick = { onNavigateToTopicSelection() }
-                        )
-                        CategoryGridCard(
-                            title = "Yillar bo‘yicha",
-                            count = "215 test",
-                            icon = Icons.Default.CalendarMonth,
-                            iconTint = Color(0xFF16A34A),
-                            iconBg = Color(0xFFF0FDF4),
-                            modifier = Modifier.weight(1f),
-                            onClick = { onNavigateToQuiz("yillar_boyicha") }
-                        )
-                    }
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)
-                    ) {
-                        CategoryGridCard(
-                            title = "Tarixiy voqealar",
-                            count = "165 test",
-                            icon = Icons.Default.Event,
-                            iconTint = Color(0xFF6366F1),
-                            iconBg = Color(0xFFEEF2FF),
-                            modifier = Modifier.weight(1f),
-                            onClick = { onNavigateToQuiz("tarixiy_voqealar") }
-                        )
-                        CategoryGridCard(
-                            title = "Tarixiy obidalar",
-                            count = "95 test",
-                            icon = Icons.Default.AccountBalance,
-                            iconTint = Color(0xFF8B5CF6),
-                            iconBg = Color(0xFFF5F3FF),
-                            modifier = Modifier.weight(1f),
-                            onClick = { onNavigateToQuiz("tarixiy_obidalar") }
-                        )
+                    uiState.categories.chunked(2).forEach { rowItems ->
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(10.dp)
+                        ) {
+                            rowItems.forEach { category ->
+                                CategoryGridCard(
+                                    title = category.title,
+                                    count = category.countLabel,
+                                    icon = iconForCategory(category.iconType),
+                                    iconTint = tintForCategory(category.iconType),
+                                    iconBg = backgroundForCategory(category.iconType),
+                                    modifier = Modifier.weight(1f),
+                                    onClick = {
+                                        val direction = category.direction
+                                        if (direction != null) {
+                                            onStartDirectionQuiz(direction)
+                                        } else {
+                                            onNavigateToTopicSelection()
+                                        }
+                                    }
+                                )
+                            }
+                            if (rowItems.size == 1) {
+                                Spacer(Modifier.weight(1f))
+                            }
+                        }
                     }
                 }
             }

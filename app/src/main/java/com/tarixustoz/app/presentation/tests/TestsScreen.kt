@@ -33,6 +33,14 @@ private fun directionCountLabel(counts: Map<String, Int>, code: String): String 
     return "${"%,d".format(count).replace(',', '\u00A0')} test"
 }
 
+private data class DirectionCard(
+    val code: String,
+    val title: String,
+    val icon: ImageVector,
+    val tint: Color,
+    val background: Color
+)
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TestsScreen(
@@ -42,6 +50,7 @@ fun TestsScreen(
     onNavigateToMistakes: () -> Unit,
     onNavigateToAi: () -> Unit,
     onNavigateToCustomOptions: () -> Unit,
+    onNavigateToTickets: (categoryKey: String, categoryTitle: String) -> Unit,
     textbooksViewModel: TextbooksViewModel = hiltViewModel(),
     testsViewModel: TestsViewModel = hiltViewModel()
 ) {
@@ -62,6 +71,7 @@ fun TestsScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
+        contentWindowInsets = WindowInsets(0.dp),
         topBar = {
             TopAppBar(
                 title = {
@@ -73,7 +83,8 @@ fun TestsScreen(
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background
-                )
+                ),
+                windowInsets = WindowInsets(0.dp)
             )
         }
     ) { innerPadding ->
@@ -233,77 +244,34 @@ fun TestsScreen(
 
             // Categories Grid
             item {
+                val directionCards = listOf(
+                    DirectionCard("EVENT", "Tarixiy voqealar", Icons.Default.Event, Color(0xFF6366F1), Color(0xFFEEF2FF)),
+                    DirectionCard("PERSON", "Tarixiy shaxslar", Icons.Default.Person, Color(0xFF7C3AED), Color(0xFFF5F3FF)),
+                    DirectionCard("WAR", "Urushlar va janglar", Icons.Default.Security, Color(0xFFDC2626), Color(0xFFFEF2F2)),
+                    DirectionCard("YEAR", "Yillar va sanalar", Icons.Default.CalendarMonth, Color(0xFF16A34A), Color(0xFFF0FDF4)),
+                    DirectionCard("CITY", "Shahar va hududlar", Icons.Default.LocationOn, Color(0xFFF97316), Color(0xFFFFF7ED)),
+                    DirectionCard("MONUMENT", "Tarixiy obidalar", Icons.Default.AccountBalance, Color(0xFF8B5CF6), Color(0xFFF5F3FF)),
+                    DirectionCard("LOGICAL", "Mantiqiy va DTM", Icons.Default.Psychology, Color(0xFF0284C7), Color(0xFFEFF6FF)),
+                )
                 Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)
-                    ) {
-                        CategoryItemCard(
-                            title = "Tarixiy voqealar",
-                            count = directionCountLabel(directionCounts, "EVENT"),
-                            icon = Icons.Default.Event,
-                            iconTint = Color(0xFF6366F1),
-                            iconBg = Color(0xFFEEF2FF),
-                            modifier = Modifier.weight(1f),
-                            onClick = { onStartQuizCategory(15, "EVENT", "ALL", 15) }
-                        )
-                        CategoryItemCard(
-                            title = "Tarixiy shaxslar",
-                            count = directionCountLabel(directionCounts, "PERSON"),
-                            icon = Icons.Default.Person,
-                            iconTint = Color(0xFF7C3AED),
-                            iconBg = Color(0xFFF5F3FF),
-                            modifier = Modifier.weight(1f),
-                            onClick = { onStartQuizCategory(15, "PERSON", "ALL", 15) }
-                        )
-                    }
-
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)
-                    ) {
-                        CategoryItemCard(
-                            title = "Urushlar va janglar",
-                            count = directionCountLabel(directionCounts, "WAR"),
-                            icon = Icons.Default.Security,
-                            iconTint = Color(0xFFDC2626),
-                            iconBg = Color(0xFFFEF2F2),
-                            modifier = Modifier.weight(1f),
-                            onClick = { onStartQuizCategory(15, "WAR", "ALL", 15) }
-                        )
-                        CategoryItemCard(
-                            title = "Yillar va sanalar",
-                            count = directionCountLabel(directionCounts, "YEAR"),
-                            icon = Icons.Default.CalendarMonth,
-                            iconTint = Color(0xFF16A34A),
-                            iconBg = Color(0xFFF0FDF4),
-                            modifier = Modifier.weight(1f),
-                            onClick = { onStartQuizCategory(15, "YEAR", "ALL", 15) }
-                        )
-                    }
-
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)
-                    ) {
-                        CategoryItemCard(
-                            title = "Shahar va hududlar",
-                            count = directionCountLabel(directionCounts, "CITY"),
-                            icon = Icons.Default.LocationOn,
-                            iconTint = Color(0xFFF97316),
-                            iconBg = Color(0xFFFFF7ED),
-                            modifier = Modifier.weight(1f),
-                            onClick = { onStartQuizCategory(15, "CITY", "ALL", 15) }
-                        )
-                        CategoryItemCard(
-                            title = "Mantiqiy va DTM",
-                            count = directionCountLabel(directionCounts, "LOGICAL"),
-                            icon = Icons.Default.Psychology,
-                            iconTint = Color(0xFF0284C7),
-                            iconBg = Color(0xFFEFF6FF),
-                            modifier = Modifier.weight(1f),
-                            onClick = { onStartQuizCategory(15, "LOGICAL", "ALL", 15) }
-                        )
+                    directionCards.chunked(2).forEach { rowCards ->
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(10.dp)
+                        ) {
+                            rowCards.forEach { card ->
+                                CategoryItemCard(
+                                    title = card.title,
+                                    count = directionCountLabel(directionCounts, card.code),
+                                    icon = card.icon,
+                                    iconTint = card.tint,
+                                    iconBg = card.background,
+                                    modifier = Modifier.weight(1f),
+                                    onClick = { onNavigateToTickets(card.code, card.title) }
+                                )
+                            }
+                            if (rowCards.size == 1) Spacer(Modifier.weight(1f))
+                        }
                     }
 
                     Row(
@@ -349,7 +317,7 @@ fun TestsScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clickable {
-                            selectedTextbookForMenu = textbook
+                            onNavigateToTickets("book_${textbook.id}", textbook.title)
                         }
                 ) {
                     Row(

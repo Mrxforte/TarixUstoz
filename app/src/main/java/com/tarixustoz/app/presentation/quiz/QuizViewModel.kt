@@ -39,6 +39,9 @@ class QuizViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(QuizUiState())
     val uiState: StateFlow<QuizUiState> = _uiState.asStateFlow()
 
+    private var currentTicketCategory: String? = null
+    private var currentTicketIndex: Int? = null
+
     fun startQuiz(
         topicId: String?,
         customCount: Int? = null,
@@ -62,7 +65,21 @@ class QuizViewModel @Inject constructor(
 
             var questions: List<Question> = emptyList()
 
-            if (topicId == "wrong_questions") {
+            if (!topicId.isNullOrBlank() && topicId.startsWith("ticket_")) {
+                val rest = topicId.removePrefix("ticket_")
+                val lastUnderscore = rest.lastIndexOf('_')
+                if (lastUnderscore > 0) {
+                    currentTicketCategory = rest.substring(0, lastUnderscore)
+                    currentTicketIndex = rest.substring(lastUnderscore + 1).toIntOrNull() ?: 1
+                } else {
+                    currentTicketCategory = rest
+                    currentTicketIndex = 1
+                }
+                questions = contentRepository.getTicketQuestions(
+                    currentTicketCategory!!, currentTicketIndex!!, 30, currentGrade
+                )
+                preferences.setActiveQuiz("quiz/$topicId", "$currentTicketIndex-Bilet")
+            } else if (topicId == "wrong_questions") {
                 questions = contentRepository.getWrongQuestionsForReview(limit = count)
             } else if (!topicId.isNullOrBlank() && topicId.startsWith("variant_")) {
                 val parts = topicId.split("_")
@@ -195,6 +212,16 @@ class QuizViewModel @Inject constructor(
         val state = _uiState.value
         if (state.currentIndex >= state.questions.lastIndex) {
             _uiState.update { it.copy(isFinished = true) }
+            val cat = currentTicketCategory
+            val idx = currentTicketIndex
+            viewModelScope.launch {
+                preferences.clearActiveQuiz()
+                if (cat != null && idx != null) {
+                    val score = state.correctCount
+                    val passed = score >= 10
+                    preferences.saveTicketResult(cat, idx, score, passed)
+                }
+            }
         } else {
             _uiState.update {
                 it.copy(

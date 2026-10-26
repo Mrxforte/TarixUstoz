@@ -43,6 +43,7 @@ fun MistakesScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
+        contentWindowInsets = WindowInsets(0.dp),
         topBar = {
             TopAppBar(
                 title = {
@@ -59,6 +60,7 @@ fun MistakesScreen(
                         )
                     }
                 },
+                windowInsets = WindowInsets(0.dp),
                 actions = {
                     IconButton(onClick = { viewModel.onToggleViewMode() }) {
                         Icon(

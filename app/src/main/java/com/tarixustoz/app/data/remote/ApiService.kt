@@ -40,6 +40,15 @@ interface ApiService {
         @Query("subject") subject: String? = null
     ): DirectionsResponseDto
 
+    @GET("questions/ticket/")
+    suspend fun getTicket(
+        @Query("category") category: String,
+        @Query("grade") grade: Int? = null,
+        @Query("subject") subject: String? = null,
+        @Query("ticket") ticket: Int = 1,
+        @Query("size") size: Int = 30
+    ): TicketQuestionsDto
+
     @GET("exams/")
     suspend fun getExamCategories(): List<ExamCategoryDto>
 

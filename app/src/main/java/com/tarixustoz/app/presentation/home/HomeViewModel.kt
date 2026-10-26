@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,8 +21,25 @@ data class HomeCategoryItem(
     val title: String,
     val countLabel: String,
     val iconType: String,
-    val count: Int
+    val count: Int,
+    /** Backend direction code (EVENT/PERSON/...); null means "open the topic list". */
+    val direction: String? = null
 )
+
+/** The backend direction cards shown on the home screen, in display order. */
+private val HOME_DIRECTIONS = listOf(
+    Triple("CITY", "Shahar nomlari", "location"),
+    Triple("PERSON", "Tarixiy shaxslar", "person"),
+    Triple("YEAR", "Yillar bo'yicha", "calendar"),
+    Triple("EVENT", "Tarixiy voqealar", "event"),
+    Triple("MONUMENT", "Tarixiy obidalar", "monument"),
+    Triple("WAR", "Urushlar va janglar", "war"),
+    Triple("LOGICAL", "Mantiqiy va DTM", "logical"),
+    Triple(null, "Mavzu bo'yicha", "topic")
+)
+
+private fun formatCount(count: Int): String =
+    if (count <= 0) "…" else "%,d".format(count).replace(',', '\u00A0') + " test"
 
 data class HomeUiState(
     val displayName: String = "Azizbek",
@@ -41,10 +59,14 @@ data class HomeUiState(
     val mistakesCount: Int = 11,
     val unreadNotifications: Int = 3,
     val categories: List<HomeCategoryItem> = listOf(
-        HomeCategoryItem("shahar_nomlari", "Shahar nomlari", "120 test", "location", 120),
-        HomeCategoryItem("tarixiy_shaxslar", "Tarixiy shaxslar", "184 test", "person", 184),
-        HomeCategoryItem("mavzu_boyicha", "Mavzu bo‘yicha", "320 test", "topic", 320),
-        HomeCategoryItem("yillar_boyicha", "Yillar bo‘yicha", "215 test", "calendar", 215)
+        HomeCategoryItem("shahar_nomlari", "Shahar nomlari", "…", "location", 0, "CITY"),
+        HomeCategoryItem("tarixiy_shaxslar", "Tarixiy shaxslar", "…", "person", 0, "PERSON"),
+        HomeCategoryItem("yillar_boyicha", "Yillar bo'yicha", "…", "calendar", 0, "YEAR"),
+        HomeCategoryItem("tarixiy_voqealar", "Tarixiy voqealar", "…", "event", 0, "EVENT"),
+        HomeCategoryItem("tarixiy_obidalar", "Tarixiy obidalar", "…", "monument", 0, "MONUMENT"),
+        HomeCategoryItem("urushlar", "Urushlar va janglar", "…", "war", 0, "WAR"),
+        HomeCategoryItem("mantiqiy_dtm", "Mantiqiy va DTM", "…", "logical", 0, "LOGICAL"),
+        HomeCategoryItem("mavzu_boyicha", "Mavzu bo'yicha", "Mavzular ro'yxati", "topic", 0, null)
     )
 )
 
@@ -60,6 +82,27 @@ class HomeViewModel @Inject constructor(
 
     private val seenQuestionIds = mutableSetOf<String>()
 
+    /** Shows the cached numbers instantly, then refreshes them from the backend. */
+    fun loadDirectionCounts(forceRefresh: Boolean = false) {
+        viewModelScope.launch {
+            // Same grade the quiz uses, so the shown count matches the real pool.
+            val grade = runCatching { preferences.selectedGrade.first() }.getOrDefault(0)
+            contentRepository.cachedDirectionCounts(grade)?.let { applyCounts(it) }
+            val counts = contentRepository.fetchDirectionCounts(grade = grade, forceRefresh = forceRefresh)
+            if (counts.isNotEmpty()) applyCounts(counts)
+        }
+    }
+
+    private fun applyCounts(counts: Map<String, Int>) {
+        _uiState.update { state ->
+            state.copy(categories = state.categories.map { item ->
+                val direction = item.direction
+                if (direction == null) item
+                else item.copy(count = counts[direction] ?: 0, countLabel = formatCount(counts[direction] ?: 0))
+            })
+        }
+    }
+
     fun load() {
         viewModelScope.launch {
             contentRepository.seedIfNeeded()
@@ -67,6 +110,8 @@ class HomeViewModel @Inject constructor(
                 loadNextDailyQuestion()
             }
         }
+
+        loadDirectionCounts()
 
         viewModelScope.launch {
             combine(
@@ -104,8 +149,7 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun loadNextDailyQuestion() {
-        viewModelScope.launch {
+    fun loadNextDailyQuestion() {        viewModelScope.launch {
             val nextQuestion = contentRepository.getDailyQuestion(seenQuestionIds)
             if (nextQuestion != null) {
                 seenQuestionIds.add(nextQuestion.id)

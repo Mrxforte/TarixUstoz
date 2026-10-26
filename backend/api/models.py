@@ -603,6 +603,8 @@ class Question(models.Model):
     quality_score = models.FloatField(default=1.0)
     # Precomputed so "Urushlar va janglar" can be filtered and counted by index.
     is_war = models.BooleanField(default=False, db_index=True)
+    # Precomputed so "Tarixiy obidalar" can be filtered and counted by index.
+    is_monument = models.BooleanField(default=False, db_index=True)
     # Precomputed direction card (EVENT/PERSON/YEAR/CITY/LOGICAL) for fast filtering.
     direction_code = models.CharField(max_length=16, default="", db_index=True)
     tags = models.JSONField(default=list, blank=True)
@@ -620,11 +622,16 @@ class Question(models.Model):
             ),
             # Per-topic quiz building inside one book.
             models.Index(fields=["topic", "difficulty"], name="q_topic_diff_idx"),
-            # Covers direction counts and direction-filtered quiz queries.
+            # Covers direction counts/filters and both keyword flags for one book.
             models.Index(
-                fields=["grade", "subject", "verification_status", "direction_code", "is_war"],
+                fields=[
+                    "grade", "subject", "verification_status",
+                    "direction_code", "is_war", "is_monument",
+                ],
                 name="q_book_direction_idx",
             ),
+            # Covers whole-database flag counts ("Tarixiy obidalar" across all books).
+            models.Index(fields=["verification_status", "is_monument"], name="q_monument_idx"),
         ]
 
     def __str__(self):
@@ -635,6 +642,25 @@ class QuestionEvidence(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='evidence_links')
     chunk = models.ForeignKey(HistoricalChunk, on_delete=models.CASCADE, related_name='question_links')
     relevance_score = models.FloatField(default=1.0)
+
+
+class DirectionCount(models.Model):
+    """Materialised question count per book and direction card (see api/directions.py)."""
+
+    grade = models.IntegerField()
+    subject = models.CharField(max_length=100)
+    code = models.CharField(max_length=16)
+    count = models.IntegerField(default=0)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = "Yo'nalish bo'yicha savollar soni"
+        verbose_name_plural = "Yo'nalish bo'yicha savollar soni"
+        unique_together = (("grade", "subject", "code"),)
+        ordering = ["grade", "subject", "code"]
+
+    def __str__(self):
+        return f"{self.grade}-sinf {self.subject} {self.code}: {self.count}"
 
 
 # =====================================================================

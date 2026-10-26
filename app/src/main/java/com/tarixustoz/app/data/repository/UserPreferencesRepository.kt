@@ -13,9 +13,17 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.tarixustoz.app.ThemeMode
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 import javax.inject.Singleton
+
+/** Best score and passed state of every ticket of one category. */
+data class TicketProgressSnapshot(
+    val scores: Map<Int, Int> = emptyMap(),
+    val passed: Set<Int> = emptySet()
+)
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "user_prefs")
 
@@ -43,6 +51,8 @@ class UserPreferencesRepository @Inject constructor(
         private val NOTIF_NEW_TESTS = booleanPreferencesKey("notif_new_tests")
         private val NOTIF_SOUND = booleanPreferencesKey("notif_sound")
         private val NOTIF_TIME = stringPreferencesKey("notif_time")
+        private val ACTIVE_QUIZ_ROUTE = stringPreferencesKey("active_quiz_route")
+        private val ACTIVE_QUIZ_TITLE = stringPreferencesKey("active_quiz_title")
     }
 
     val themeMode: Flow<ThemeMode> = dataStore.data.map { prefs ->
@@ -155,6 +165,55 @@ class UserPreferencesRepository @Inject constructor(
         return isNowFav
     }
 
+    suspend fun saveTicketResult(categoryKey: String, ticketIndex: Int, score: Int, passed: Boolean) {
+        dataStore.edit { prefs ->
+            val scoreKey = intPreferencesKey("ticket_score_${categoryKey}_$ticketIndex")
+            val passedKey = booleanPreferencesKey("ticket_passed_${categoryKey}_$ticketIndex")
+            val currentScore = prefs[scoreKey] ?: 0
+            if (score > currentScore) {
+                prefs[scoreKey] = score
+            }
+            if (passed) {
+                prefs[passedKey] = true
+            }
+        }
+    }
+
+    fun getTicketScore(categoryKey: String, ticketIndex: Int): Flow<Int> {
+        val scoreKey = intPreferencesKey("ticket_score_${categoryKey}_$ticketIndex")
+        return dataStore.data.map { it[scoreKey] ?: 0 }
+    }
+
+    fun isTicketPassed(categoryKey: String, ticketIndex: Int): Flow<Boolean> {
+        val passedKey = booleanPreferencesKey("ticket_passed_${categoryKey}_$ticketIndex")
+        return dataStore.data.map { it[passedKey] ?: false }
+    }
+
+    fun isTicketUnlocked(categoryKey: String, ticketIndex: Int): Flow<Boolean> {
+        if (ticketIndex <= 1) return flowOf(true)
+        val prevPassedKey = booleanPreferencesKey("ticket_passed_${categoryKey}_${ticketIndex - 1}")
+        return dataStore.data.map { it[prevPassedKey] ?: false }
+    }
+
+    /** One snapshot of every ticket of a category — thousands of per-key lookups are too slow. */
+    suspend fun getTicketProgress(categoryKey: String): TicketProgressSnapshot {
+        val prefs = dataStore.data.first()
+        val scorePrefix = "ticket_score_${categoryKey}_"
+        val passedPrefix = "ticket_passed_${categoryKey}_"
+        val scores = mutableMapOf<Int, Int>()
+        val passed = mutableSetOf<Int>()
+        prefs.asMap().forEach { (key, value) ->
+            val name = key.name
+            when {
+                name.startsWith(scorePrefix) ->
+                    name.removePrefix(scorePrefix).toIntOrNull()?.let { scores[it] = (value as? Int) ?: 0 }
+                name.startsWith(passedPrefix) && value == true ->
+                    name.removePrefix(passedPrefix).toIntOrNull()?.let { passed += it }
+            }
+        }
+        return TicketProgressSnapshot(scores, passed)
+    }
+
     suspend fun advanceCampaign() {
         dataStore.edit { prefs ->
             val curChapter = prefs[CAMPAIGN_CHAPTER] ?: 1
@@ -168,6 +227,23 @@ class UserPreferencesRepository @Inject constructor(
             } else {
                 prefs[CAMPAIGN_CHAPTER] = curChapter + 1
             }
+        }
+    }
+
+    val activeQuizRoute: Flow<String?> = dataStore.data.map { it[ACTIVE_QUIZ_ROUTE] }
+    val activeQuizTitle: Flow<String?> = dataStore.data.map { it[ACTIVE_QUIZ_TITLE] }
+
+    suspend fun setActiveQuiz(route: String, title: String) {
+        dataStore.edit {
+            it[ACTIVE_QUIZ_ROUTE] = route
+            it[ACTIVE_QUIZ_TITLE] = title
+        }
+    }
+
+    suspend fun clearActiveQuiz() {
+        dataStore.edit {
+            it.remove(ACTIVE_QUIZ_ROUTE)
+            it.remove(ACTIVE_QUIZ_TITLE)
         }
     }
 }

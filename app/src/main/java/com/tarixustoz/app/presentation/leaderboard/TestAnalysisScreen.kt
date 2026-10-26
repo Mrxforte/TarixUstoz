@@ -207,6 +207,7 @@ fun TestAnalysisScreen(
     var bitcoinTimeframe by remember { mutableStateOf("7K") }
 
     Scaffold(
+        contentWindowInsets = WindowInsets(0.dp),
         topBar = {
             TopAppBar(
                 title = {
@@ -237,6 +238,7 @@ fun TestAnalysisScreen(
                         )
                     }
                 },
+                windowInsets = WindowInsets(0.dp),
                 actions = {
                     Surface(
                         shape = RoundedCornerShape(20.dp),

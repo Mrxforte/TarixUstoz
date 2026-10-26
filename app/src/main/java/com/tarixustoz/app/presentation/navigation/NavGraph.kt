@@ -41,6 +41,7 @@ import com.tarixustoz.app.presentation.profile.ProfileScreen
 import com.tarixustoz.app.presentation.quiz.PeriodSelectionScreen
 import com.tarixustoz.app.presentation.quiz.QuizOptionsScreen
 import com.tarixustoz.app.presentation.quiz.QuizScreen
+import com.tarixustoz.app.presentation.quiz.TicketListScreen
 import com.tarixustoz.app.presentation.quiz.TopicSelectionScreen
 import com.tarixustoz.app.presentation.tests.TestsScreen
 import com.tarixustoz.app.presentation.textbooks.PdfViewerScreen
@@ -60,6 +61,18 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
     data object Achievements : Screen("achievements", "Yutuqlar", Icons.Default.EmojiEvents)
     data object Analytics : Screen("analytics", "Tahlil", Icons.Default.Analytics)
     data object QuizOptions : Screen("quiz_options", "Test Sozlamalari", Icons.Default.Quiz)
+}
+
+/** Uzbek title for a direction code, used as the ticket list heading. */
+private fun directionTitle(code: String): String = when (code) {
+    "EVENT" -> "Tarixiy voqealar"
+    "PERSON" -> "Tarixiy shaxslar"
+    "WAR" -> "Urushlar va janglar"
+    "YEAR" -> "Yillar va sanalar"
+    "CITY" -> "Shahar va hududlar"
+    "MONUMENT" -> "Tarixiy obidalar"
+    "LOGICAL" -> "Mantiqiy va DTM"
+    else -> "Test biletlari"
 }
 
 @Composable
@@ -121,13 +134,17 @@ fun TarixNavHost() {
             composable(Screen.Home.route) {
                 HomeScreen(
                     onNavigateToQuiz = { navController.navigate(Screen.Quiz.route) },
+                    onStartDirectionQuiz = { code ->
+                        val title = directionTitle(code)
+                        navController.navigate("ticket_list/$code?title=${URLEncoder.encode(title, "UTF-8")}")
+                    },
                     onNavigateToMistakes = { navController.navigate(Screen.Mistakes.route) },
                     onNavigateToTextbooks = { navController.navigate(Screen.Textbooks.route) },
                     onNavigateToAi = { },
                     onNavigateToLeaderboard = { navController.navigate(Screen.Leaderboard.route) },
                     onNavigateToTestsHub = { navController.navigate(Screen.Quiz.route) },
                     onNavigateToNotifications = { },
-                    onNavigateToTopicSelection = { navController.navigate(Screen.Textbooks.route) }
+                    onNavigateToTopicSelection = { navController.navigate("topic_selection") }
                 )
             }
             composable(Screen.Textbooks.route) {
@@ -183,7 +200,36 @@ fun TarixNavHost() {
                     onNavigateToTopicSelection = { navController.navigate("topic_selection") },
                     onNavigateToMistakes = { navController.navigate(Screen.Mistakes.route) },
                     onNavigateToAi = { },
-                    onNavigateToCustomOptions = { navController.navigate(Screen.QuizOptions.route) }
+                    onNavigateToCustomOptions = { navController.navigate(Screen.QuizOptions.route) },
+                    onNavigateToTickets = { catKey, title ->
+                        val encodedTitle = URLEncoder.encode(title, "UTF-8")
+                        navController.navigate("ticket_list/$catKey?title=$encodedTitle")
+                    }
+                )
+            }
+            composable(
+                route = "ticket_list/{categoryKey}?title={title}",
+                arguments = listOf(
+                    navArgument("categoryKey") { defaultValue = "EVENT" },
+                    navArgument("title") { defaultValue = "Test Biletlari" }
+                )
+            ) { backStackEntry ->
+                val categoryKey = backStackEntry.arguments?.getString("categoryKey") ?: "EVENT"
+                val encodedTitle = backStackEntry.arguments?.getString("title") ?: "Test Biletlari"
+                val title = try {
+                    URLDecoder.decode(encodedTitle, "UTF-8")
+                } catch (e: Exception) { encodedTitle }
+
+                TicketListScreen(
+                    categoryKey = categoryKey,
+                    categoryTitle = title,
+                    onBack = { navController.popBackStack() },
+                    onStartTicket = { catKey, ticketIndex ->
+                        navController.navigate("quiz/ticket_${catKey}_$ticketIndex")
+                    },
+                    onStartActiveQuiz = { route ->
+                        navController.navigate(route)
+                    }
                 )
             }
             composable("topic_selection") {

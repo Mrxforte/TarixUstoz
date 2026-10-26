@@ -35,6 +35,12 @@ class ContentRepository @Inject constructor(
         context.getSharedPreferences("book_banks", Context.MODE_PRIVATE)
     }
 
+    /** Yo'nalishlar bo'yicha savollar soni — tarmoqni kutmasdan ko'rsatish uchun keshlanadi. */
+    private val directionPrefs by lazy {
+        context.getSharedPreferences("direction_counts", Context.MODE_PRIVATE)
+    }
+    private val directionMemory = mutableMapOf<Int, Map<String, Int>>()
+
     init {
         CoroutineScope(Dispatchers.IO).launch {
             seedIfNeeded()
@@ -105,6 +111,79 @@ class ContentRepository @Inject constructor(
             limit = limit
         ).map { it.toDomain(json) }
 
+    /** One ticket straight from the backend (30 questions of one direction). */
+    suspend fun fetchTicketFromApi(
+        categoryKey: String,
+        ticketIndex: Int,
+        count: Int = 30,
+        grade: Int = 0
+    ): List<Question> = withContext(Dispatchers.IO) {
+        try {
+            val gradeFilter = when {
+                categoryKey.startsWith("book_") -> categoryKey.removePrefix("book_").toIntOrNull()
+                grade > 0 -> grade
+                else -> null
+            }
+            apiService.getTicket(
+                category = categoryKey,
+                grade = gradeFilter,
+                ticket = ticketIndex,
+                size = count
+            ).questions.map { it.toDomain() }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            emptyList()
+        }
+    }
+
+    suspend fun getTicketQuestions(
+        categoryKey: String,
+        ticketIndex: Int,
+        count: Int = 30,
+        grade: Int = 0
+    ): List<Question> {
+        // The backend owns the full 1.1M pool, so a ticket is a stable slice there;
+        // the local Room copy is only a fallback for offline use.
+        val remote = fetchTicketFromApi(categoryKey, ticketIndex, count, grade)
+        if (remote.isNotEmpty()) return remote
+
+        val offset = (ticketIndex - 1) * count
+        return if (categoryKey.startsWith("book_")) {
+            val gradeStr = categoryKey.removePrefix("book_")
+            val gradeId = gradeStr.toIntOrNull() ?: 0
+            db.questionDao().getFilteredWithTopicsOffset(
+                gradeId = gradeId,
+                category = "ALL",
+                difficulty = "ALL",
+                topicIds = emptyList(),
+                selectAllTopics = true,
+                limit = count,
+                offset = offset
+            ).map { it.toDomain(json) }
+        } else if (categoryKey.startsWith("topic_")) {
+            val topicId = categoryKey.removePrefix("topic_")
+            db.questionDao().getFilteredWithTopicsOffset(
+                gradeId = 0,
+                category = "ALL",
+                difficulty = "ALL",
+                topicIds = listOf(topicId),
+                selectAllTopics = false,
+                limit = count,
+                offset = offset
+            ).map { it.toDomain(json) }
+        } else {
+            db.questionDao().getFilteredWithTopicsOffset(
+                gradeId = 0,
+                category = categoryKey,
+                difficulty = "ALL",
+                topicIds = emptyList(),
+                selectAllTopics = true,
+                limit = count,
+                offset = offset
+            ).map { it.toDomain(json) }
+        }
+    }
+
     suspend fun getWrongQuestionsForReview(limit: Int): List<Question> =
         db.questionDao().getWrongQuestions(limit).map { it.toDomain(json) }
 
@@ -150,16 +229,39 @@ class ContentRepository @Inject constructor(
 
     suspend fun fetchDirectionCounts(
         grade: Int = 0,
-        subject: String = ""
+        forceRefresh: Boolean = false
     ): Map<String, Int> = withContext(Dispatchers.IO) {
+        if (!forceRefresh) {
+            directionMemory[grade]?.let { return@withContext it }
+            cachedDirectionCounts(grade)?.let {
+                directionMemory[grade] = it
+                return@withContext it
+            }
+        }
         try {
-            apiService.getDirections(
-                grade = grade.takeIf { it > 0 },
-                subject = subject.takeIf { it.isNotBlank() }
-            ).directions.associate { it.code to it.count }
+            val fresh = apiService.getDirections(grade = grade.takeIf { it > 0 })
+                .directions
+                .associate { it.code to it.count }
+            if (fresh.isEmpty()) {
+                cachedDirectionCounts(grade) ?: emptyMap()
+            } else {
+                directionMemory[grade] = fresh
+                directionPrefs.edit().putString("grade_$grade", json.encodeToString(fresh)).apply()
+                fresh
+            }
         } catch (e: Exception) {
             e.printStackTrace()
-            emptyMap()
+            cachedDirectionCounts(grade) ?: emptyMap()
+        }
+    }
+
+    /** Oxirgi saqlangan sonlar (tarmoqsiz, darhol). */
+    fun cachedDirectionCounts(grade: Int = 0): Map<String, Int>? {
+        val raw = directionPrefs.getString("grade_$grade", null) ?: return null
+        return try {
+            json.decodeFromString<Map<String, Int>>(raw).takeIf { it.isNotEmpty() }
+        } catch (e: Exception) {
+            null
         }
     }
 
@@ -185,35 +287,36 @@ class ContentRepository @Inject constructor(
                 topicIds = numericTopicIds
             )
             val response = apiService.generateQuiz(req)
-            val questions = response.questions.map { q ->
-                val optionsList = listOf(
-                    AnswerOption("a", q.optionA, q.correctOption.equals("A", ignoreCase = true)),
-                    AnswerOption("b", q.optionB, q.correctOption.equals("B", ignoreCase = true)),
-                    AnswerOption("c", q.optionC, q.correctOption.equals("C", ignoreCase = true)),
-                    AnswerOption("d", q.optionD, q.correctOption.equals("D", ignoreCase = true))
-                )
-                val cat = try { QuestionCategory.valueOf(q.categoryType) } catch (_: Exception) { QuestionCategory.ALL }
-                val diff = try { Difficulty.valueOf(q.difficulty) } catch (_: Exception) { Difficulty.MEDIUM }
-                Question(
-                    id = "q_${q.id}",
-                    topicId = if (q.topicId != null) "topic_${q.topicId}" else "general",
-                    textbookId = "book_${q.gradeId}",
-                    gradeId = q.gradeId,
-                    subjectId = q.subjectId ?: "uzbekiston",
-                    type = QuestionType.SINGLE_CHOICE,
-                    difficulty = diff,
-                    category = cat,
-                    text = q.text,
-                    options = optionsList,
-                    explanation = q.explanation ?: q.shortExplanation ?: "Darslik va manba asosida tayyorlangan.",
-                    sourceReference = q.sourceCitation ?: "Django Backend API"
-                )
-            }
-            questions
+            response.questions.map { it.toDomain() }
         } catch (e: Exception) {
             e.printStackTrace()
             emptyList()
         }
+    }
+
+    private fun com.tarixustoz.app.data.remote.ApiQuestionDto.toDomain(): Question {
+        val optionsList = listOf(
+            AnswerOption("a", optionA, correctOption.equals("A", ignoreCase = true)),
+            AnswerOption("b", optionB, correctOption.equals("B", ignoreCase = true)),
+            AnswerOption("c", optionC, correctOption.equals("C", ignoreCase = true)),
+            AnswerOption("d", optionD, correctOption.equals("D", ignoreCase = true))
+        )
+        val cat = try { QuestionCategory.valueOf(categoryType) } catch (_: Exception) { QuestionCategory.ALL }
+        val diff = try { Difficulty.valueOf(difficulty) } catch (_: Exception) { Difficulty.MEDIUM }
+        return Question(
+            id = "q_$id",
+            topicId = if (topicId != null) "topic_$topicId" else "general",
+            textbookId = "book_$gradeId",
+            gradeId = gradeId,
+            subjectId = subjectId ?: "uzbekiston",
+            type = QuestionType.SINGLE_CHOICE,
+            difficulty = diff,
+            category = cat,
+            text = text,
+            options = optionsList,
+            explanation = explanation ?: shortExplanation ?: "Darslik va manba asosida tayyorlangan.",
+            sourceReference = sourceCitation ?: "Django Backend API"
+        )
     }
 
     fun getFallbackQuestions(count: Int, categoryCode: String = "ALL", gradeId: Int = 0): List<Question> {

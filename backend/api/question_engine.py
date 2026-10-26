@@ -95,7 +95,11 @@ class QuestionGenerationEngine:
 
     @staticmethod
     def _sample(qs, count: int) -> list:
-        """Pick `count` random questions without loading the whole book into memory."""
+        """Pick `count` random questions from the filtered pool.
+
+        Fetching ids uses a covering index (fast, ~0.1 s per book) and the final
+        fetch is a single primary-key lookup, which beats random OFFSET paging.
+        """
         ids = list(qs.values_list("id", flat=True))
         if not ids:
             return []

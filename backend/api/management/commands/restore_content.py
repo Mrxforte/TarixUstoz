@@ -51,6 +51,8 @@ class Command(BaseCommand):
         total = Question.objects.count()
         self.stdout.write(self.style.SUCCESS(f"done. questions in database: {total}"))
 
+        call_command("refresh_direction_counts")
+
     def _restore_questions(self, entry: dict, force: bool) -> None:
         grade, subject = entry["grade"], entry["subject"]
         current = Question.objects.filter(grade=grade, subject=subject).count()

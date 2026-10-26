@@ -313,6 +313,7 @@ fun PdfViewerScreen(
     }
 
     Scaffold(
+        contentWindowInsets = WindowInsets(0.dp),
         topBar = {
             AnimatedVisibility(
                 visible = isControlsVisible,
@@ -329,7 +330,6 @@ fun PdfViewerScreen(
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .statusBarsPadding()
                                 .padding(horizontal = 8.dp, vertical = 6.dp),
                             verticalAlignment = Alignment.CenterVertically
                         ) {
@@ -437,6 +437,7 @@ fun PdfViewerScreen(
                                     Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Orqaga")
                                 }
                             },
+                            windowInsets = WindowInsets(0.dp),
                             actions = {
                                 // Search Icon
                                 IconButton(onClick = { isSearchActive = true }) {

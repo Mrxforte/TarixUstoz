@@ -114,6 +114,22 @@ interface QuestionDao {
     """)
     suspend fun getFilteredWithTopics(gradeId: Int, category: String, difficulty: String, topicIds: List<String>, selectAllTopics: Boolean, limit: Int): List<QuestionEntity>
 
+    @Query("""
+        SELECT * FROM questions 
+        WHERE (:gradeId = 0 OR gradeId = :gradeId) 
+          AND (
+              :category = 'ALL' 
+              OR category = :category 
+              OR (:category = 'YEAR' AND (historicalDate IS NOT NULL AND historicalDate != ''))
+              OR (:category = 'PERSON' AND (personality IS NOT NULL AND personality != ''))
+              OR (:category IN ('ATTESTATION', 'NATIONAL_CERTIFICATE', 'DTM_PRACTICE') AND (category = :category OR category = 'ALL'))
+          ) 
+          AND (:difficulty = 'ALL' OR difficulty = :difficulty) 
+          AND (topicId IN (:topicIds) OR :selectAllTopics = 1) 
+        LIMIT :limit OFFSET :offset
+    """)
+    suspend fun getFilteredWithTopicsOffset(gradeId: Int, category: String, difficulty: String, topicIds: List<String>, selectAllTopics: Boolean, limit: Int, offset: Int): List<QuestionEntity>
+
     @Query("SELECT * FROM questions WHERE id IN (SELECT questionId FROM wrong_questions) LIMIT :limit")
     suspend fun getWrongQuestions(limit: Int): List<QuestionEntity>
 
