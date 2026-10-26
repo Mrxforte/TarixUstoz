@@ -1,159 +1,96 @@
-# Tarix Ustoz — O‘zbekiston maktablari uchun tarix o‘rganish ilovasi
+# Tarix Ustoz — O‘zbekiston tarixi va Jahon tarixi ta'lim ilovasi / History Learning App / Приложение по истории
 
-Premium native Android (Kotlin + Jetpack Compose) history learning platform for grades 6–11.
+[🇺🇿 O'zbekcha](#-ozbekcha) | [🇬🇧 English](#-english) | [🇷🇺 Русский](#-русский)
 
-## Features implemented
+---
 
-- **Neo Dashboard** with XP, streak, progress, daily question, mistakes badge
-- **Textbooks** organized by grade (6–11) for O‘zbekiston tarixi and Jahon tarixi
-- **Interactive Quiz Engine** with feedback, explanations, source references
-- **Bilmagan savollarim** (My Mistakes) with spaced-repetition ready tracking
-- **XP & Level system**
-- **Light / Dark / System themes**
-- **Offline-first** Room database with seeded content from official textbooks
-- **AI Tutor screen** (ready for secure Gemini backend)
-- **Leaderboard UI** (ready for Firestore)
-- Clean Architecture + MVVM + Hilt + Navigation Compose
+## 🇺🇿 O'zbekcha
 
-## How to open in Android Studio
+**Tarix Ustoz** — 6–11-sinf o'quvchilari va DTM / abituriyentlar uchun mo'ljallangan zamonaviy, qulay va professional Android (Kotlin + Jetpack Compose) tarix o'rganish ilovasi.
 
-1. Unzip this archive.
-2. Open Android Studio → **Open** → select the `TarixUstozApp` folder.
-3. Let Gradle sync (internet required for dependencies).
-4. (Optional) Add `app/google-services.json` from your Firebase project to enable Auth & Firestore.
-5. Run on emulator or device (minSdk 26).
+### ✨ Asosiy imkoniyatlar:
+- **Neo Dashboard**: XP, streak (kunlik ketma-ketlik), umumiy progress, kun savoli va xatolar paneli.
+- **Darsliklar va PDF Viewer**: 6–11-sinflar uchun O'zbekiston tarixi va Jahon tarixi darsliklari, mavzular va o'rnatilgan PDF ko'rish vositasi.
+- **Interaktiv Test Dvigateli**: 
+  - Variantlar va savollarni har safar tasodifiy (random shuffle) taqsimlash.
+  - Xatolar tahlili, tushuntirishlar va manba havolalari.
+  - **MX Player uslubidagi "Davom etish" (Resume FAB)**: Tugallanmagan testlarni istalgan paytda to'xtatgan joyidan davom ettirish.
+  - **Dinamik bilet progressi**: Biletlar ro'yxatida ishlangan savollar va to'g'ri javoblar sonini real vaqtda ko'rsatish.
+  - **Activity Lifecycle xavfsizligi**: Orqaga tugmasi bosilganda yoki ilovadan chiqib ketilganda ham progress avtomatik ravishda DataStore'da saqlanadi.
+- **Xatolar ustida ishlash ("Bilmagan savollarim")**: Noto'g'ri javob berilgan savollarni qayta ishlash.
+- **XP va Daraja tizimi**: Foydalanuvchi faolligini rag'batlantirish.
+- **Offline-First**: Rasmiy darsliklar asosidagi boy lokal ma'lumotlar bazasi (Room DB).
+- **Clean Architecture + MVVM + Hilt + Compose**.
 
-## Seeded textbooks (from provided PDFs)
+---
 
-| Grade | Subject              | Title                                      | Authors                          | Year |
-|-------|----------------------|--------------------------------------------|----------------------------------|------|
-| 6     | Jahon                | Tarix. Qadimgi dunyo                       | Sagdullayev, Kostetskiy          | 2017 |
-| 7     | O‘zbekiston          | O‘zbekiston tarixi (IV–XVI)                | A. Muhammadjonov                 | 2017 |
-| 7     | Jahon                | Jahon tarixi (V–XV)                        | Salimov, Sultonov                | 2017 |
-| 8–11  | both                 | Corresponding official editions            | various                          | 2017–2019 |
+## 🇬🇧 English
 
-Sample verified questions are included for 7-sinf O‘zbekiston tarixi (Kirish section).
+**Tarix Ustoz** is a modern, premium native Android (Kotlin + Jetpack Compose) history learning platform designed for grades 6–11 and university entrance exam (DTM) preparation in Uzbekistan.
 
-## Next steps for full production
+### ✨ Key Features:
+- **Neo Dashboard**: XP, streak tracking, overall progress, daily question, and mistake alerts.
+- **Textbooks & PDF Viewer**: Official 6–11 grade textbooks for Uzbekistan and World History with built-in PDF reader.
+- **Interactive Quiz Engine**:
+  - Randomized shuffling of questions and A/B/C/D options on every attempt.
+  - Detailed explanations, feedback, and source references.
+  - **MX Player-style "Resume" FAB**: Easily continue unfinished quizzes right where you left off.
+  - **Dynamic Ticket Progress**: Real-time progress indicators showing answered and correct question counts on ticket cards.
+  - **Lifecycle Safe Persistence**: Progress is automatically and safely persisted to DataStore upon navigation back or app exit.
+- **My Mistakes Review**: Dedicated spaced-repetition ready tracking for incorrect answers.
+- **XP & Level System**: Gamified learning experience.
+- **Offline-First**: Robust Room database seeded with official curriculum data.
+- **Clean Architecture + MVVM + Hilt + Navigation Compose**.
 
-1. Extract remaining topics & questions from the PDF textbooks (use admin pipeline or OCR + review).
-2. Connect Firebase Authentication + Cloud Firestore for multi-device sync and leaderboard.
-3. Deploy Cloud Functions that call Gemini with RAG over textbook chunks (never put API key in APK).
-4. Expand question types (chronology, match, cause-effect).
-5. Add timed exam simulator and full analytics charts.
-6. Implement full spaced-repetition algorithm and mastery rules.
+---
 
-## Architecture
+## 🇷🇺 Русский
+
+**Tarix Ustoz** — современное премиальное нативное Android (Kotlin + Jetpack Compose) приложение для изучения истории для учащихся 6–11 классов и подготовки к экзаменам (ДТМ) в Узбекистане.
+
+### ✨ Основные возможности:
+- **Neo Dashboard**: XP, серия дней (streak), общий прогресс, вопрос дня и панель ошибок.
+- **Учебники и PDF Viewer**: Официальные учебники с 6 по 11 классы по истории Узбекистана и всемирной истории со встроенным просмотрщиком PDF.
+- **Интерактивный движок тестов**:
+  - Случайное перемешивание (shuffle) вопросов и вариантов ответа (A/B/C/D) при каждом запуске.
+  - Подробные объяснения, обратная связь и ссылки на источники.
+  - **Кнопка "Продолжить" (в стиле MX Player)**: Возможность в любой момент возобновить незавершенный тест с того же места.
+  - **Динамический прогресс билетов**: Отображение количества решенных вопросов и правильных ответов в реальном времени на карточках билетов.
+  - **Безопасное сохранение состояния**: При нажатии кнопки "Назад" или выходе из приложения прогресс автоматически и надежно сохраняется в DataStore.
+- **Работа над ошибками**: Специальный раздел для повторения и проработки неверных ответов.
+- **Система XP и уровней**: Геймификация процесса обучения.
+- **Offline-First**: Надежная локальная база данных Room на основе официальных учебников.
+- **Clean Architecture + MVVM + Hilt + Navigation Compose**.
+
+---
+
+## 📂 Project Structure / Структура проекта
 
 ```
 app/
-  data/          # Room, repositories, entities
-  domain/        # Models, use-cases
-  presentation/  # Compose screens, ViewModels
-  di/            # Hilt modules
+  src/main/java/com/tarixustoz/app/
+    data/          # Room DB, Repositories, DataStore preferences
+    domain/        # Domain models, use-cases
+    presentation/  # Jetpack Compose screens, ViewModels (Home, Quiz, Textbooks, Mistakes, etc.)
+    di/            # Hilt dependency injection modules
 
-backend/                     # Django REST API + content pipeline
-  api/                       # models, serializers, viewsets, import commands
-  core/                      # settings, urls
+backend/                     # Django REST API + content generation pipeline
+  api/                       # Models, serializers, viewsets, import commands
+  core/                      # Settings, URLs
   content/
-    banks/                   # per-book question archives (.ndjson.xz) + manifest
-    pdfs/                    # optimized textbook PDFs
-    tools/                   # textbook -> facts -> questions pipeline
-    books/<sinf>-sinf_<Fan>/ # per-textbook source text, topics, verified facts
+    banks/                   # Per-book question archives (.ndjson.xz)
+    pdfs/                    # Optimized textbook PDFs
+    tools/                   # Fact extraction & question generation pipeline
 ```
 
-## Content pipeline (100 000 tests per textbook)
+## 🚀 Getting Started / Как запустить
 
-Every textbook is processed in four steps; all of it is reproducible from the
-files committed under `backend/content/books/<book>/`.
+1. Clone or unzip the repository.
+2. Open **Android Studio** → **Open** → select the `TarixUstozApp` folder.
+3. Allow Gradle to sync.
+4. (Optional) Add `app/google-services.json` for Firebase Auth & Firestore features.
+5. Run the app on an emulator or physical Android device (`minSdk 26`).
 
-```bash
-cd backend
-python content/tools/extract_mavzu_book.py --in <source.txt> --out-dir <book>/source --name <Name>
-python content/tools/validate_facts.py <book>/facts/*.json --topics <book>/source/topics.json
-python content/tools/build_book_bank.py 9-sinf_Jahon_tarixi --grade 9 --subject jahon --prefix j9j
-python manage.py import_jahon7_bank --ndjson <book>/generated/questions.ndjson \
-    --topics <book>/source/topics.json --grade 9 --subject "Jahon tarixi" --prefix j9j --replace
-```
-
-* `facts/*.json` — every fact carries an `evidence` field that must be a verbatim
-  quote from the textbook paragraph; the validator enforces this, so no question
-  can be answered from anything except the book.
-* Each bank contains exactly 100 000 questions, spread over the 20 fixed
-  combinations (5 000 each) with near-miss distractors (neighbouring year/century,
-  same-topic person, similar event).
-* The raw `generated/questions.ndjson` (about 90 MB per book) is **not** committed.
-  Instead each bank is packed with `pack_banks.py` into
-  `backend/content/banks/<book>.ndjson.xz` (about 2 MB each, 22 MB for all 11
-  books) plus `manifest.json`. Rebuild a bank from facts with `build_book_bank.py`;
-  see `backend/content/books/README.md` for the full table of books and commands.
-
-## Restoring the database (1.1 million tests + PDFs)
-
-`db.sqlite3` (1.4–2.5 GB) and `backend/media/` are never committed. A fresh
-clone or server rebuilds them from the compact archives in about 7 minutes:
-
-```bash
-cd backend
-python manage.py migrate
-python manage.py restore_content            # all 11 books: questions + PDFs
-python manage.py restore_content --only 9-sinf_Jahon   # a single book
-```
-
-* `backend/content/banks/` — per-book question archives (`.ndjson.xz`) and manifest.
-* `backend/content/pdfs/` — textbook PDFs; the scanned ones were recompressed
-  (9-sinf Jahon 90 → 33 MB, 8-sinf O‘zbekiston 48 → 29 MB), every file is under 50 MB.
-* The command is idempotent: books whose question count already matches are skipped.
-* Verify at any time with `python manage.py audit_banks` (read-only; exits non-zero
-  if any book is below 100 000). Never run a bulk edit without it afterwards.
-* Questions are paged per book (`grade`, `subject`, `offset`, `limit`). Migration
-  `0004_question_book_indexes` adds the `(grade, subject, verification_status, id)`
-  index that serves this query (about 1 200 ms → 40 ms per 1 000-question page).
-* To test against a scratch database set `SQLITE_PATH=<file>`.
-
-After regenerating banks run `python content/tools/pack_banks.py --src-root content/books`
-and `python content/tools/pack_pdfs.py --src media/books/pdfs`, then commit the results.
-
-Textbooks that ship only as scanned PDFs (8-sinf and 9-sinf O‘zbekiston/Jahon
-tarixi) go through `ocr_pdf_book.py` + `clean_ocr.py` before segmentation.
-
-## Test directions (Yo'nalishlar bo'yicha testlar)
-
-The direction cards on the Home and Tests screens are served from the database
-instead of fixed numbers:
-
-* `GET /api/questions/directions/?grade=7&subject=jahon` → question count per card.
-* `GET /api/questions/ticket/?category=MONUMENT&grade=7&ticket=2&size=30` → one exam
-  ticket. The response carries `total` and `tickets` (how many tickets exist), and the
-  last ticket is topped up with random questions of the same direction so every ticket
-  always holds exactly `size` questions.
-* `POST /api/quizzes/generate/` with `category_code` = `EVENT`, `PERSON`, `WAR`,
-  `YEAR`, `CITY`, `MONUMENT` or `LOGICAL` returns only questions of that direction.
-
-| Card | Source |
-|---|---|
-| Tarixiy voqealar | CAUSE_TO_EFFECT, EFFECT_TO_CAUSE, SOURCE_BASED, MAIN_CAUSE, TERM_TO_DEFINITION, DEFINITION_TO_TERM |
-| Tarixiy shaxslar | PERSON_TO_ACTIVITY, ACTIVITY_TO_PERSON, WHO_WAS_FIRST |
-| Yillar va sanalar | DATE_TO_EVENT, EVENT_TO_DATE, NUMBER_TO_MEANING, CHRONOLOGY |
-| Shahar va hududlar | MAP_BASED, PLACE_TO_EVENT |
-| Mantiqiy va DTM | TRUE_FALSE, ODD_ONE_OUT, MATCHING, COMPARE_SIMILAR, COMPARE_DIFFERENT |
-| Urushlar va janglar | questions mentioning war vocabulary (`is_war` column) |
-| Tarixiy obidalar | questions mentioning buildings/monuments (`is_monument` column) |
-
-`Question.direction_code`, `is_war` and `is_monument` are filled by the import
-command; see `backend/api/directions.py`.
-
-### Counting and caching
-
-* Counts are materialised in `api_directioncount` (one row per book and card), so
-  the endpoint answers in ~10 ms instead of scanning 1.1M rows. Refresh after any
-  bulk change: `python manage.py refresh_direction_counts`
-  (`restore_content` and `import_jahon7_bank` call it automatically).
-* `GET /api/questions/directions/` also sends `Cache-Control: public, max-age=300`.
-* The app caches the numbers in `SharedPreferences` (`direction_counts`), so the
-  cards render instantly on the next launch and refresh in the background.
-* Composition is listed in `admin` → "Yo'nalish bo'yicha savollar soni".
-
-## License
+## 📄 License / Лицензия
 
 Educational use. Textbook content © respective publishers (Sharq, O‘qituvchi, etc.).
