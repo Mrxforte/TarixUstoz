@@ -603,8 +603,8 @@ class Question(models.Model):
     quality_score = models.FloatField(default=1.0)
     # Precomputed so "Urushlar va janglar" can be filtered and counted by index.
     is_war = models.BooleanField(default=False, db_index=True)
-    # Precomputed so "Tarixiy obidalar" can be filtered and counted by index.
-    is_monument = models.BooleanField(default=False, db_index=True)
+    # Precomputed so "Tarixiy faktlar" can be filtered and counted by index.
+    is_fact = models.BooleanField(default=False, db_index=True)
     # Precomputed direction card (EVENT/PERSON/YEAR/CITY/LOGICAL) for fast filtering.
     direction_code = models.CharField(max_length=16, default="", db_index=True)
     tags = models.JSONField(default=list, blank=True)
@@ -626,12 +626,12 @@ class Question(models.Model):
             models.Index(
                 fields=[
                     "grade", "subject", "verification_status",
-                    "direction_code", "is_war", "is_monument",
+                    "direction_code", "is_war", "is_fact",
                 ],
                 name="q_book_direction_idx",
             ),
-            # Covers whole-database flag counts ("Tarixiy obidalar" across all books).
-            models.Index(fields=["verification_status", "is_monument"], name="q_monument_idx"),
+            # Covers whole-database flag counts ("Tarixiy faktlar" across all books).
+            models.Index(fields=["verification_status", "is_fact"], name="q_fact_idx"),
         ]
 
     def __str__(self):

@@ -11,13 +11,28 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.tarixustoz.app.ThemeMode
+import com.tarixustoz.app.domain.model.Question
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 import javax.inject.Inject
 import javax.inject.Singleton
+
+@Serializable
+data class ActiveQuizState(
+    val quizRoute: String,
+    val quizTitle: String,
+    val questions: List<Question>,
+    val currentIndex: Int,
+    val answeredCorrectly: List<Boolean?>,
+    val correctCount: Int
+)
 
 /** Best score and passed state of every ticket of one category. */
 data class TicketProgressSnapshot(
@@ -53,6 +68,7 @@ class UserPreferencesRepository @Inject constructor(
         private val NOTIF_TIME = stringPreferencesKey("notif_time")
         private val ACTIVE_QUIZ_ROUTE = stringPreferencesKey("active_quiz_route")
         private val ACTIVE_QUIZ_TITLE = stringPreferencesKey("active_quiz_title")
+        private val ACTIVE_QUIZ_JSON = stringPreferencesKey("active_quiz_json")
     }
 
     val themeMode: Flow<ThemeMode> = dataStore.data.map { prefs ->
@@ -232,16 +248,30 @@ class UserPreferencesRepository @Inject constructor(
 
     val activeQuizRoute: Flow<String?> = dataStore.data.map { it[ACTIVE_QUIZ_ROUTE] }
     val activeQuizTitle: Flow<String?> = dataStore.data.map { it[ACTIVE_QUIZ_TITLE] }
+    val activeQuizState: Flow<ActiveQuizState?> = dataStore.data.map { prefs ->
+        val jsonStr = prefs[ACTIVE_QUIZ_JSON]
+        if (jsonStr.isNullOrBlank()) null
+        else {
+            try {
+                Json.decodeFromString<ActiveQuizState>(jsonStr)
+            } catch (e: Exception) {
+                null
+            }
+        }
+    }
 
-    suspend fun setActiveQuiz(route: String, title: String) {
+    suspend fun saveActiveQuizState(state: ActiveQuizState) {
+        val jsonStr = Json.encodeToString(state)
         dataStore.edit {
-            it[ACTIVE_QUIZ_ROUTE] = route
-            it[ACTIVE_QUIZ_TITLE] = title
+            it[ACTIVE_QUIZ_JSON] = jsonStr
+            it[ACTIVE_QUIZ_ROUTE] = state.quizRoute
+            it[ACTIVE_QUIZ_TITLE] = state.quizTitle
         }
     }
 
     suspend fun clearActiveQuiz() {
         dataStore.edit {
+            it.remove(ACTIVE_QUIZ_JSON)
             it.remove(ACTIVE_QUIZ_ROUTE)
             it.remove(ACTIVE_QUIZ_TITLE)
         }

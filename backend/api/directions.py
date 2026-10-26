@@ -23,7 +23,7 @@ DIRECTION_TITLES = {
     "WAR": "Urushlar va janglar",
     "YEAR": "Yillar va sanalar",
     "CITY": "Shahar va hududlar",
-    "MONUMENT": "Tarixiy obidalar",
+    "FACT": "Tarixiy faktlar",
     "LOGICAL": "Mantiqiy va DTM",
 }
 
@@ -43,9 +43,9 @@ WAR_KEYWORDS = (
     "sulh", "qo'shin", "lashkar", "jangchi", "mudofaa", "bosqin",
 )
 
-MONUMENT_KEYWORDS = (
+FACT_KEYWORDS = (
     "masjid", "madrasa", "maqbara", "minora", "saroy", "qal'a", "qo'rg'on",
-    "obida", "me'moriy", "majmua", "yodgorlik", "haykal", "regist", "ark",
+    "obida", "me'moriy", "majmua", "yodgorlik", "haykal",
 )
 
 COUNTS_TTL_SECONDS = 300
@@ -57,12 +57,13 @@ DIRECTION_ALIASES = {
     "TARIXIY_SHAXSLAR": "PERSON",
     "YILLAR_BOYICHA": "YEAR",
     "SHAHAR_NOMLARI": "CITY",
-    "TARIXIY_OBIDALAR": "MONUMENT",
+    "TARIXIY_OBIDALAR": "FACT",
+    "MONUMENT": "FACT",  # the card used to be called "Tarixiy obidalar"
 }
 
 
 def normalize_code(code: str) -> str:
-    """Map a card id to a direction code ("tarixiy_obidalar" -> "MONUMENT")."""
+    """Map a card id to a direction code ("tarixiy_faktlar" -> "FACT")."""
     upper = (code or "").strip().upper()
     return DIRECTION_ALIASES.get(upper, upper)
 
@@ -72,8 +73,8 @@ def apply_direction(qs, code: str):
     code = normalize_code(code)
     if code == "WAR":
         return qs.filter(is_war=True)
-    if code == "MONUMENT":
-        return qs.filter(is_monument=True)
+    if code == "FACT":
+        return qs.filter(is_fact=True)
     if code not in COMBINATION_DIRECTIONS:
         return qs
     return qs.filter(direction_code=code)
@@ -89,10 +90,10 @@ def is_war_question(text: str, *options: str) -> bool:
     return any(word in haystack for word in WAR_KEYWORDS)
 
 
-def is_monument_question(text: str, *options: str) -> bool:
-    """True when the question talks about a building or monument."""
+def is_fact_question(text: str, *options: str) -> bool:
+    """True when the question is about a building, monument or other landmark."""
     haystack = _haystack(text, *options)
-    return any(word in haystack for word in MONUMENT_KEYWORDS)
+    return any(word in haystack for word in FACT_KEYWORDS)
 
 
 def direction_for_combination(combination: str) -> str:
@@ -111,7 +112,7 @@ def book_counts(grade: int, subject: str) -> dict[str, int]:
     per_code = dict(base.values_list("direction_code").annotate(n=Count("id")))
     counts = {code: per_code.get(code, 0) for code in COMBINATION_DIRECTIONS}
     counts["WAR"] = base.filter(is_war=True).count()
-    counts["MONUMENT"] = base.filter(is_monument=True).count()
+    counts["FACT"] = base.filter(is_fact=True).count()
     return counts
 
 

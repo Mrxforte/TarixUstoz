@@ -350,8 +350,9 @@ private fun TicketCardItem(
 
                 if (ticket.isUnlocked) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
+                        val progressFraction = ((ticket.ongoingAnsweredCount ?: ticket.bestScore).toFloat() / 30f).coerceIn(0f, 1f)
                         LinearProgressIndicator(
-                            progress = { (ticket.bestScore.toFloat() / 30f).coerceIn(0f, 1f) },
+                            progress = { progressFraction },
                             modifier = Modifier
                                 .weight(1f)
                                 .height(6.dp)
@@ -361,7 +362,10 @@ private fun TicketCardItem(
                         )
                         Spacer(Modifier.width(8.dp))
                         Text(
-                            text = "${ticket.bestScore}/30",
+                            text = if (ticket.ongoingAnsweredCount != null && ticket.ongoingAnsweredCount > 0)
+                                "${ticket.ongoingScore ?: 0}/30 (${ticket.ongoingAnsweredCount} ta ishlangan)"
+                            else
+                                "${ticket.bestScore}/30",
                             fontSize = 11.sp,
                             fontWeight = FontWeight.Bold,
                             color = if (ticket.isPassed) Color(0xFF15803D) else BrandPurple

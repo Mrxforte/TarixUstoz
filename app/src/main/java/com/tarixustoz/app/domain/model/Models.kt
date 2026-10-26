@@ -84,6 +84,7 @@ val Topic.gradeId: Int
         else -> 7
     }
 
+@Serializable
 enum class QuestionType {
     SINGLE_CHOICE,
     MULTIPLE_SELECT,
@@ -97,6 +98,7 @@ enum class QuestionType {
     ASSERTION_REASON
 }
 
+@Serializable
 enum class QuestionCategory(val titleUz: String, val icon: String) {
     ALL("Barcha testlar", "🌐"),
     PERSON("Tarixiy Shaxslar", "👑"),
@@ -106,6 +108,7 @@ enum class QuestionCategory(val titleUz: String, val icon: String) {
     LOGICAL("Mantiqiy va DTM", "🧩")
 }
 
+@Serializable
 enum class Difficulty {
     EASY, MEDIUM, HARD, EXPERT
 }
@@ -136,6 +139,7 @@ fun String.cleanQuestionText(): String {
 }
 
 @Immutable
+@Serializable
 data class Question(
     val id: String,
     val topicId: String,

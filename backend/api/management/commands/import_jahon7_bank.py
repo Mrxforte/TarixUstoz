@@ -20,7 +20,7 @@ from django.db import transaction
 
 from api.models import Category, PdfBook, Question, Topic
 from api.directions import (
-    direction_for_combination, is_monument_question, is_war_question, refresh_counts,
+    direction_for_combination, is_fact_question, is_war_question, refresh_counts,
 )
 
 CONTENT = Path(__file__).resolve().parents[3] / "content"
@@ -198,7 +198,7 @@ class Command(BaseCommand):
             is_war=is_war_question(
                 row["text"], row["option_a"], row["option_b"], row["option_c"], row["option_d"]
             ),
-            is_monument=is_monument_question(
+            is_fact=is_fact_question(
                 row["text"], row["option_a"], row["option_b"], row["option_c"], row["option_d"]
             ),
             direction_code=direction_for_combination(combination),
