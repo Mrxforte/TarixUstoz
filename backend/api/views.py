@@ -167,10 +167,13 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
         subject = self.request.query_params.get('subject')
         if subject:
             s_lower = subject.lower()
+            # Exact matches can use the (grade, subject, ...) index; icontains cannot.
             if "jahon" in s_lower:
-                qs = qs.filter(subject__icontains="Jahon")
+                qs = qs.filter(subject="Jahon tarixi")
             elif "uz" in s_lower or "zbek" in s_lower:
-                qs = qs.filter(subject__icontains="zbekiston")
+                qs = qs.filter(subject="O'zbekiston tarixi")
+            elif "qadimgi" in s_lower:
+                qs = qs.filter(subject="Qadimgi dunyo tarixi")
             else:
                 qs = qs.filter(subject__icontains=subject)
 

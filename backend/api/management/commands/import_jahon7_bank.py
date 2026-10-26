@@ -1,15 +1,17 @@
-"""Import the 7-sinf Jahon tarixi question bank (100 000 items) into this backend.
+"""Import one textbook question bank (100 000 items) into this backend.
 
-Source: backend/content/generated/questions.ndjson produced by the content
-pipeline in the TarixUstoz workspace (facts validated against the textbook).
+Source: a bank archive (backend/content/banks/<book>.ndjson.xz) or a plain
+.ndjson produced by the content pipeline; facts are validated against the
+textbook. Use `manage.py restore_content` to import every book at once.
 
 Usage:
   python manage.py import_jahon7_bank --replace
-  python manage.py import_jahon7_bank --ndjson <path> --topics <path>
+  python manage.py import_jahon7_bank --ndjson <path> --topics <path> --grade N --subject S
 """
 from __future__ import annotations
 
 import json
+import lzma
 import re
 from pathlib import Path
 
@@ -18,12 +20,9 @@ from django.db import transaction
 
 from api.models import Category, PdfBook, Question, Topic
 
-DEFAULT_NDJSON = Path(
-    r"C:\Users\Azamat\AndroidStudioProjects\TarixUstoz\backend\content\books\7-sinf_Jahon_tarixi\generated\questions.ndjson"
-)
-DEFAULT_TOPICS = Path(
-    r"C:\Users\Azamat\AndroidStudioProjects\TarixUstoz\backend\content\books\7-sinf_Jahon_tarixi\source\topics.json"
-)
+CONTENT = Path(__file__).resolve().parents[3] / "content"
+DEFAULT_NDJSON = CONTENT / "banks" / "7-sinf_Jahon_tarixi.ndjson.xz"
+DEFAULT_TOPICS = CONTENT / "books" / "7-sinf_Jahon_tarixi" / "source" / "topics.json"
 
 GRADE = 7
 SUBJECT = "Jahon tarixi"
@@ -105,7 +104,8 @@ class Command(BaseCommand):
                 batch.clear()
 
         with transaction.atomic():
-            with ndjson.open(encoding="utf-8") as fh:
+            with (lzma.open(ndjson, "rt", encoding="utf-8") if ndjson.suffix == ".xz"
+                  else ndjson.open(encoding="utf-8")) as fh:
                 for line in fh:
                     if not line.strip():
                         continue

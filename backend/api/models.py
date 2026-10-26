@@ -608,6 +608,15 @@ class Question(models.Model):
     class Meta:
         verbose_name = "Test savoli"
         verbose_name_plural = "4. Test savollari"
+        indexes = [
+            # Per-book paging: WHERE grade/subject/status ORDER BY id LIMIT/OFFSET.
+            models.Index(
+                fields=["grade", "subject", "verification_status", "id"],
+                name="q_book_page_idx",
+            ),
+            # Per-topic quiz building inside one book.
+            models.Index(fields=["topic", "difficulty"], name="q_topic_diff_idx"),
+        ]
 
     def __str__(self):
         return f"[{self.difficulty}] {self.text[:50]}"

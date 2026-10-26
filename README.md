@@ -56,6 +56,8 @@ backend/                     # Django REST API + content pipeline
   api/                       # models, serializers, viewsets, import commands
   core/                      # settings, urls
   content/
+    banks/                   # per-book question archives (.ndjson.xz) + manifest
+    pdfs/                    # optimized textbook PDFs
     tools/                   # textbook -> facts -> questions pipeline
     books/<sinf>-sinf_<Fan>/ # per-textbook source text, topics, verified facts
 ```
@@ -80,9 +82,35 @@ python manage.py import_jahon7_bank --ndjson <book>/generated/questions.ndjson \
 * Each bank contains exactly 100 000 questions, spread over the 20 fixed
   combinations (5 000 each) with near-miss distractors (neighbouring year/century,
   same-topic person, similar event).
-* `generated/questions.ndjson` is **not** committed (about 90 MB per book, 1 GB in
-  total). Rebuild any bank with `build_book_bank.py`; see
-  `backend/content/books/README.md` for the full table of books and commands.
+* The raw `generated/questions.ndjson` (about 90 MB per book) is **not** committed.
+  Instead each bank is packed with `pack_banks.py` into
+  `backend/content/banks/<book>.ndjson.xz` (about 2 MB each, 22 MB for all 11
+  books) plus `manifest.json`. Rebuild a bank from facts with `build_book_bank.py`;
+  see `backend/content/books/README.md` for the full table of books and commands.
+
+## Restoring the database (1.1 million tests + PDFs)
+
+`db.sqlite3` (1.4–2.5 GB) and `backend/media/` are never committed. A fresh
+clone or server rebuilds them from the compact archives in about 7 minutes:
+
+```bash
+cd backend
+python manage.py migrate
+python manage.py restore_content            # all 11 books: questions + PDFs
+python manage.py restore_content --only 9-sinf_Jahon   # a single book
+```
+
+* `backend/content/banks/` — per-book question archives (`.ndjson.xz`) and manifest.
+* `backend/content/pdfs/` — textbook PDFs; the scanned ones were recompressed
+  (9-sinf Jahon 90 → 33 MB, 8-sinf O‘zbekiston 48 → 29 MB), every file is under 50 MB.
+* The command is idempotent: books whose question count already matches are skipped.
+* Questions are paged per book (`grade`, `subject`, `offset`, `limit`). Migration
+  `0004_question_book_indexes` adds the `(grade, subject, verification_status, id)`
+  index that serves this query (about 1 200 ms → 40 ms per 1 000-question page).
+* To test against a scratch database set `SQLITE_PATH=<file>`.
+
+After regenerating banks run `python content/tools/pack_banks.py --src-root content/books`
+and `python content/tools/pack_pdfs.py --src media/books/pdfs`, then commit the results.
 
 Textbooks that ship only as scanned PDFs (8-sinf and 9-sinf O‘zbekiston/Jahon
 tarixi) go through `ocr_pdf_book.py` + `clean_ocr.py` before segmentation.

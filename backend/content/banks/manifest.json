@@ -1,0 +1,125 @@
+{
+  "books": [
+    {
+      "folder": "6-sinf_Qadimgi_dunyo_tarixi",
+      "grade": 6,
+      "subject": "Qadimgi dunyo tarixi",
+      "prefix": "j6q",
+      "count": 100000,
+      "raw_bytes": 89495697,
+      "raw_sha256": "2811bc2337ab5490830860590f8df202a1420f9f7e4808d89c3a7dfa0aac9231",
+      "archive": "6-sinf_Qadimgi_dunyo_tarixi.ndjson.xz",
+      "archive_bytes": 2033500
+    },
+    {
+      "folder": "7-sinf_Jahon_tarixi",
+      "grade": 7,
+      "subject": "Jahon tarixi",
+      "prefix": "jh7",
+      "count": 100000,
+      "raw_bytes": 87739270,
+      "raw_sha256": "ceaeecddd1185e0a5c5eca56ce8850f20ec64badc14d0bba4ce206d72bca0a0a",
+      "archive": "7-sinf_Jahon_tarixi.ndjson.xz",
+      "archive_bytes": 1971996
+    },
+    {
+      "folder": "7-sinf_Ozbekiston_tarixi",
+      "grade": 7,
+      "subject": "O'zbekiston tarixi",
+      "prefix": "uz7",
+      "count": 100000,
+      "raw_bytes": 92675780,
+      "raw_sha256": "b1df3167078fee67f84f0a4068f2b3087aacf7daaf618e04ce2b1771939201a6",
+      "archive": "7-sinf_Ozbekiston_tarixi.ndjson.xz",
+      "archive_bytes": 1942460
+    },
+    {
+      "folder": "8-sinf_Jahon_tarixi",
+      "grade": 8,
+      "subject": "Jahon tarixi",
+      "prefix": "j8j",
+      "count": 100000,
+      "raw_bytes": 93235185,
+      "raw_sha256": "adb614ae693a63246798dc6b69fc31cbb3227c1ed9fe4afc5257004d1da5c1db",
+      "archive": "8-sinf_Jahon_tarixi.ndjson.xz",
+      "archive_bytes": 1943976
+    },
+    {
+      "folder": "8-sinf_Ozbekiston_tarixi",
+      "grade": 8,
+      "subject": "O'zbekiston tarixi",
+      "prefix": "j8u",
+      "count": 100000,
+      "raw_bytes": 94901184,
+      "raw_sha256": "6efa48d342a17de5206581501d0668fd864a8fa513a667b8338cd3edb1bbbc9d",
+      "archive": "8-sinf_Ozbekiston_tarixi.ndjson.xz",
+      "archive_bytes": 1977432
+    },
+    {
+      "folder": "9-sinf_Jahon_tarixi",
+      "grade": 9,
+      "subject": "Jahon tarixi",
+      "prefix": "j9j",
+      "count": 100000,
+      "raw_bytes": 95479383,
+      "raw_sha256": "b2ef8d4fe724bbf58731b5f61ed22535a3f2ee8e522fb07315301d58b8401dbb",
+      "archive": "9-sinf_Jahon_tarixi.ndjson.xz",
+      "archive_bytes": 2095464
+    },
+    {
+      "folder": "9-sinf_Ozbekiston_tarixi",
+      "grade": 9,
+      "subject": "O'zbekiston tarixi",
+      "prefix": "j9u",
+      "count": 100000,
+      "raw_bytes": 100020619,
+      "raw_sha256": "c065f4b747b498187cc276a0543d9451dbf09eb8ff75334dfd3d49ed300a59a5",
+      "archive": "9-sinf_Ozbekiston_tarixi.ndjson.xz",
+      "archive_bytes": 2056540
+    },
+    {
+      "folder": "10-sinf_Jahon_tarixi",
+      "grade": 10,
+      "subject": "Jahon tarixi",
+      "prefix": "j10j",
+      "count": 100000,
+      "raw_bytes": 98767438,
+      "raw_sha256": "3afcb572504ab3d2ef70449eb7bd7895a97d85b1bf4e653f12650db6f464d476",
+      "archive": "10-sinf_Jahon_tarixi.ndjson.xz",
+      "archive_bytes": 1896928
+    },
+    {
+      "folder": "10-sinf_Ozbekiston_tarixi",
+      "grade": 10,
+      "subject": "O'zbekiston tarixi",
+      "prefix": "j10u",
+      "count": 100000,
+      "raw_bytes": 103843966,
+      "raw_sha256": "1025dfe3c34ac432ef8fb3af79c31355a428ac2b338fbd9e6789dbf17b3a798d",
+      "archive": "10-sinf_Ozbekiston_tarixi.ndjson.xz",
+      "archive_bytes": 1978364
+    },
+    {
+      "folder": "11-sinf_Jahon_tarixi",
+      "grade": 11,
+      "subject": "Jahon tarixi",
+      "prefix": "j11j",
+      "count": 100000,
+      "raw_bytes": 97266261,
+      "raw_sha256": "ee2209e272b763358c862c738beff8fde2070b655699446645e2efa26c899e27",
+      "archive": "11-sinf_Jahon_tarixi.ndjson.xz",
+      "archive_bytes": 1945268
+    },
+    {
+      "folder": "11-sinf_Ozbekiston_tarixi",
+      "grade": 11,
+      "subject": "O'zbekiston tarixi",
+      "prefix": "j11u",
+      "count": 100000,
+      "raw_bytes": 103265346,
+      "raw_sha256": "2f5ef83e55d238c55c25372a5cb50fc16be577ace2e5f268c4edc13751f99362",
+      "archive": "11-sinf_Ozbekiston_tarixi.ndjson.xz",
+      "archive_bytes": 1747640
+    }
+  ]
+}
