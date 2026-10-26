@@ -55,12 +55,25 @@ class QuestionGenerationEngine:
             qs = qs.filter(topic_id__in=topic_ids)
 
         if difficulty and difficulty.upper() not in ["ANY", "ALL", "NONE", ""]:
-            qs = qs.filter(difficulty=difficulty)
+            diff_qs = qs.filter(difficulty=difficulty)
+            if diff_qs.exists():
+                qs = diff_qs
 
         existing_questions = list(qs)
-        if not existing_questions:
-            # Fallback to any verified question
-            existing_questions = list(Question.objects.filter(verification_status='VERIFIED'))
+        if not existing_questions and topic_ids:
+            # Fallback strictly to questions of these specific topics
+            existing_questions = list(Question.objects.filter(topic_id__in=topic_ids))
+
+        if not existing_questions and grade and grade > 0:
+            # Fallback strictly to questions for this specific grade and subject
+            grade_qs = Question.objects.filter(grade=grade)
+            if subject:
+                s_lower = subject.lower()
+                if "jahon" in s_lower:
+                    grade_qs = grade_qs.filter(subject__icontains="Jahon")
+                elif "uz" in s_lower or "zbek" in s_lower:
+                    grade_qs = grade_qs.filter(subject__icontains="zbekiston")
+            existing_questions = list(grade_qs)
 
         random.shuffle(existing_questions)
         selected_questions = existing_questions[:requested_count]

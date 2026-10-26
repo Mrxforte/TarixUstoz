@@ -42,10 +42,16 @@ class ContentRepository @Inject constructor(
     }
 
     fun getTextbooks(): Flow<List<Textbook>> =
-        db.textbookDao().getAll().map { list -> list.map { it.toDomain() } }
+        db.textbookDao().getAll().map { list ->
+            list.map { it.toDomain() }
+                .distinctBy { "${it.gradeId}_${if (it.subjectId.contains("jahon", ignoreCase = true)) "jahon" else "uzbekiston"}" }
+        }
 
     fun getTextbooksByGrade(gradeId: Int): Flow<List<Textbook>> =
-        db.textbookDao().getByGrade(gradeId).map { list -> list.map { it.toDomain() } }
+        db.textbookDao().getByGrade(gradeId).map { list ->
+            list.map { it.toDomain() }
+                .distinctBy { "${it.gradeId}_${if (it.subjectId.contains("jahon", ignoreCase = true)) "jahon" else "uzbekiston"}" }
+        }
 
     fun getChapters(textbookId: String): Flow<List<Chapter>> =
         db.chapterDao().getByTextbook(textbookId).map { list ->
@@ -124,6 +130,14 @@ class ContentRepository @Inject constructor(
         db.topicDao().getAll().map { list -> 
             list.map { it.toDomain(json) } 
         }
+
+    suspend fun getTopicCountsMap(): Map<String, Int> = withContext(Dispatchers.IO) {
+        try {
+            db.questionDao().getTopicCounts().associate { it.topicId to it.count }
+        } catch (e: Exception) {
+            emptyMap()
+        }
+    }
 
     suspend fun getExamCategoriesFromApi(): List<ExamCategoryDto> = withContext(Dispatchers.IO) {
         try {

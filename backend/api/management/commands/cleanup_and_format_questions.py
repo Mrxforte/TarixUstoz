@@ -5,8 +5,19 @@ from api.models import Question
 class Command(BaseCommand):
     help = "Barcha testlarni tozalash: bet raqamlari, OCR xatolar va tushunarsiz joylarni o'chirish va manba/izohlarni bir xil uslubga keltirish"
 
+    def add_arguments(self, parser):
+        parser.add_argument(
+            "--apply", action="store_true",
+            help="o'zgarishlarni bazaga yozadi; berilmasa faqat hisobot chiqadi",
+        )
+
     def handle(self, *args, **options):
+        apply_changes = options["apply"]
         self.stdout.write("Testlarni tozalash va bir xil professional uslubga keltirish boshlandi...")
+        if not apply_changes:
+            self.stdout.write(self.style.WARNING(
+                "DRY RUN — baza o'zgartirilmaydi. Yozish uchun --apply qo'shing."
+            ))
 
         questions = Question.objects.all()
         total = questions.count()
@@ -25,7 +36,8 @@ class Command(BaseCommand):
         for q in questions:
             # Delete completely irrelevant publisher/metadata questions
             if any(k in (q.text or "") for k in NOISE_KEYWORDS):
-                q.delete()
+                if apply_changes:
+                    q.delete()
                 deleted_count += 1
                 continue
 
@@ -91,7 +103,11 @@ class Command(BaseCommand):
 
             # Save if modified
             if changed:
-                q.save()
+                if apply_changes:
+                    q.save()
                 cleaned_count += 1
 
-        self.stdout.write(self.style.SUCCESS(f"\nMuvaffaqiyatli yakunlandi! {cleaned_count} ta test qayta ishlanib tozalandi."))
+        self.stdout.write(self.style.SUCCESS(
+            f"\nMuvaffaqiyatli yakunlandi! {cleaned_count} ta test qayta ishlanib tozalandi, "
+            f"{deleted_count} ta axlat savol {'o‘chirildi' if apply_changes else 'o‘chirilishi mumkin'}."
+        ))

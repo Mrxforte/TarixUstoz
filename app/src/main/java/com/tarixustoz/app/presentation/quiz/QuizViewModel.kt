@@ -141,9 +141,12 @@ class QuizViewModel @Inject constructor(
                 }
             }
 
-            // 3. Guarantee fallback questions if still empty
+            // 3. Guarantee fallback questions ONLY if no specific topic filter was selected
             if (questions.isEmpty()) {
-                questions = contentRepository.getFallbackQuestions(count, catCode, currentGrade)
+                val hasTopicFilters = !selectedTopicIds.isNullOrEmpty() || (!topicId.isNullOrBlank() && topicId != "custom")
+                if (!hasTopicFilters) {
+                    questions = contentRepository.getFallbackQuestions(count, catCode, currentGrade)
+                }
             }
             
             _uiState.value = QuizUiState(

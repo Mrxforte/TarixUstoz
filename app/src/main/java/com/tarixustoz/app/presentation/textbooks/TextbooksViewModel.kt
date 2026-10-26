@@ -37,10 +37,20 @@ class TextbooksViewModel @Inject constructor(
     val allTopicsFlow: StateFlow<List<Topic>> = contentRepository.getAllTopicsFlow()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
+    private val _topicCountsMap = MutableStateFlow<Map<String, Int>>(emptyMap())
+    val topicCountsMap: StateFlow<Map<String, Int>> = _topicCountsMap
+
+    init {
+        viewModelScope.launch {
+            _topicCountsMap.value = contentRepository.getTopicCountsMap()
+        }
+    }
+
     fun load() {
         viewModelScope.launch {
             _isRefreshing.value = true
             contentRepository.syncWithDjangoBackend()
+            _topicCountsMap.value = contentRepository.getTopicCountsMap()
             _isRefreshing.value = false
         }
     }

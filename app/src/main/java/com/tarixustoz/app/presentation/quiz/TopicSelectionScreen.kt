@@ -42,10 +42,11 @@ fun TopicSelectionScreen(
     val selectedTopicIds = remember { mutableStateListOf<String>() }
 
     val realTopics by viewModel.allTopicsFlow.collectAsState()
+    val topicCountsMap by viewModel.topicCountsMap.collectAsState()
     var selectedBookFilter by remember { mutableStateOf("all") }
     var isReversedSort by remember { mutableStateOf(false) }
 
-    val allTopics = remember(realTopics) {
+    val allTopics = remember(realTopics, topicCountsMap) {
         realTopics.map { t ->
             val textbookTitle = when {
                 t.textbookId == "uz_6" -> "6-sinf • Qadimgi dunyo tarixi"
@@ -62,13 +63,19 @@ fun TopicSelectionScreen(
                 t.textbookId.contains("jahon") -> "${t.gradeId}-sinf • Jahon tarixi"
                 else -> "${t.gradeId}-sinf • O‘zbekiston tarixi"
             }
+            val countFromMap = topicCountsMap[t.id]
+                ?: topicCountsMap["topic_${t.id}"]
+                ?: topicCountsMap[t.id.removePrefix("topic_")]
+                ?: 0
+            val realCount = if (countFromMap > 0) countFromMap else if (t.gradeId == 6 || (t.gradeId == 7 && t.textbookId.contains("jahon"))) 25 else 20
+
             TopicMeta(
                 id = t.id,
                 textbookId = t.textbookId,
                 gradeId = t.gradeId,
                 title = t.title,
                 textbookTitle = textbookTitle,
-                questionCount = 20,
+                questionCount = realCount,
                 number = t.number
             )
         }
@@ -86,18 +93,18 @@ fun TopicSelectionScreen(
     }
 
     val gradeFilters = listOf(
-        "all" to "Barchasi (6-11 sinf)",
-        "6_all" to "6-sinf (Qadimgi dunyo)",
-        "7_uz" to "7-sinf O‘zbekiston",
-        "7_jahon" to "7-sinf Jahon",
-        "8_uz" to "8-sinf O‘zbekiston",
-        "8_jahon" to "8-sinf Jahon",
-        "9_uz" to "9-sinf O‘zbekiston",
-        "9_jahon" to "9-sinf Jahon",
-        "10_uz" to "10-sinf O‘zbekiston",
-        "10_jahon" to "10-sinf Jahon",
-        "11_uz" to "11-sinf O‘zbekiston",
-        "11_jahon" to "11-sinf Jahon"
+        "all" to "Barchasi (381 ta mavzu)",
+        "6_all" to "6-sinf (44 ta mavzu)",
+        "7_uz" to "7-sinf O‘zbekiston (35 ta mavzu)",
+        "7_jahon" to "7-sinf Jahon (40 ta mavzu)",
+        "8_uz" to "8-sinf O‘zbekiston (45 ta mavzu)",
+        "8_jahon" to "8-sinf Jahon (35 ta mavzu)",
+        "9_uz" to "9-sinf O‘zbekiston (30 ta mavzu)",
+        "9_jahon" to "9-sinf Jahon (40 ta mavzu)",
+        "10_uz" to "10-sinf O‘zbekiston (30 ta mavzu)",
+        "10_jahon" to "10-sinf Jahon (30 ta mavzu)",
+        "11_uz" to "11-sinf O‘zbekiston (25 ta mavzu)",
+        "11_jahon" to "11-sinf Jahon (25 ta mavzu)"
     )
 
     val filteredTopics = remember(searchQuery, selectedBookFilter, sortedTopics) {

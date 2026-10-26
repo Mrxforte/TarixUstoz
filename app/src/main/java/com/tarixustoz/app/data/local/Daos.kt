@@ -61,8 +61,19 @@ interface TopicDao {
     suspend fun deleteAll()
 }
 
+data class TopicCountTuple(
+    val topicId: String,
+    val count: Int
+)
+
 @Dao
 interface QuestionDao {
+    @Query("SELECT topicId, COUNT(*) as count FROM questions GROUP BY topicId")
+    suspend fun getTopicCounts(): List<TopicCountTuple>
+
+    @Query("SELECT COUNT(*) FROM questions WHERE topicId = :topicId")
+    suspend fun countByTopic(topicId: String): Int
+
     @Query("SELECT * FROM questions WHERE topicId = :topicId")
     suspend fun getByTopic(topicId: String): List<QuestionEntity>
 

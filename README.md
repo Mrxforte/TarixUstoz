@@ -104,6 +104,8 @@ python manage.py restore_content --only 9-sinf_Jahon   # a single book
 * `backend/content/pdfs/` — textbook PDFs; the scanned ones were recompressed
   (9-sinf Jahon 90 → 33 MB, 8-sinf O‘zbekiston 48 → 29 MB), every file is under 50 MB.
 * The command is idempotent: books whose question count already matches are skipped.
+* Verify at any time with `python manage.py audit_banks` (read-only; exits non-zero
+  if any book is below 100 000). Never run a bulk edit without it afterwards.
 * Questions are paged per book (`grade`, `subject`, `offset`, `limit`). Migration
   `0004_question_book_indexes` adds the `(grade, subject, verification_status, id)`
   index that serves this query (about 1 200 ms → 40 ms per 1 000-question page).
