@@ -38,3 +38,4 @@ backend/content/books/*/generated/
 6-sinf_tarix_*_test.zip
 temp_page.png
 *.zip
+backend/temp_topics_seed.kt
