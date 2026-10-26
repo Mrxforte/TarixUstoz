@@ -74,7 +74,7 @@ fun LeaderboardScreen(
             totalCount = 120
         ),
         TestProgressStat(
-            title = "Tarixiy obidalar",
+            title = "Tarixiy faktlar",
             icon = Icons.Default.AccountBalance,
             iconColor = Color(0xFF8B5CF6),
             completionPercent = 48,

@@ -33,7 +33,7 @@ private fun iconForCategory(iconType: String): ImageVector = when (iconType) {
     "person" -> Icons.Default.Person
     "calendar" -> Icons.Default.CalendarMonth
     "event" -> Icons.Default.Event
-    "monument" -> Icons.Default.AccountBalance
+    "fact", "monument" -> Icons.Default.FactCheck
     "war" -> Icons.Default.Security
     "logical" -> Icons.Default.Psychology
     "topic" -> Icons.Default.MenuBook
@@ -45,6 +45,7 @@ private fun tintForCategory(iconType: String): Color = when (iconType) {
     "person" -> Color(0xFF8B5CF6)
     "calendar" -> Color(0xFF16A34A)
     "event" -> Color(0xFF6366F1)
+    "fact" -> Color(0xFF8B5CF6)
     "monument" -> Color(0xFF8B5CF6)
     "war" -> Color(0xFFDC2626)
     "logical" -> Color(0xFF0284C7)
@@ -53,7 +54,7 @@ private fun tintForCategory(iconType: String): Color = when (iconType) {
 
 private fun backgroundForCategory(iconType: String): Color = when (iconType) {
     "location" -> Color(0xFFFFF7ED)
-    "person", "monument" -> Color(0xFFF5F3FF)
+    "fact", "monument" -> Color(0xFFF5F3FF)
     "calendar" -> Color(0xFFF0FDF4)
     "event" -> Color(0xFFEEF2FF)
     "war" -> Color(0xFFFEF2F2)

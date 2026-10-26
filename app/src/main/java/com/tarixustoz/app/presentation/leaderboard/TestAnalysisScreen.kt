@@ -114,7 +114,7 @@ fun TestAnalysisScreen(
                 recommendedChapter = "6-sinf Qadimgi dunyo tarixi: 4-bob. Bobil va Mesopotamiya madaniyati"
             ),
             CategoryAnalysisItem(
-                title = "Tarixiy obidalar",
+                title = "Tarixiy faktlar",
                 icon = Icons.Default.AccountBalance,
                 iconColor = Color(0xFF8B5CF6),
                 correctPct = 52,

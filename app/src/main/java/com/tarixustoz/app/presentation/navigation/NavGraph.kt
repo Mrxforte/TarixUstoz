@@ -70,7 +70,7 @@ private fun directionTitle(code: String): String = when (code) {
     "WAR" -> "Urushlar va janglar"
     "YEAR" -> "Yillar va sanalar"
     "CITY" -> "Shahar va hududlar"
-    "MONUMENT" -> "Tarixiy obidalar"
+    "FACT" -> "Tarixiy faktlar"
     "LOGICAL" -> "Mantiqiy va DTM"
     else -> "Test biletlari"
 }

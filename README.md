@@ -17,7 +17,7 @@
    - **Streak (Kunlik ketma-ketlik)**: O‘quvchining har kuni o‘qish odatini shakllantirish uchun kunlik seriya hisoblagichi.
    - **Kun Savoli (Daily Question)**: Har kuni yangi tarixiy savol va tezkor test.
    - **Xatolar nishoni (Mistakes Badge)**: Noto‘g‘ri javob berilgan savollarga tezkor o‘tish va ularni qayta ishlash.
-   - **Yo‘nalishlar bo‘yicha testlar (Directions Grid)**: Tarixiy voqealar, shaxslar, urushlar va janglar, yillar va sanalar, shahar va hududlar, tarixiy obidalar hamda Mantiqiy/DTM savollari.
+   - **Yo‘nalishlar bo‘yicha testlar (Directions Grid)**: Tarixiy voqealar, shaxslar, urushlar va janglar, yillar va sanalar, shahar va hududlar, tarixiy faktlar hamda Mantiqiy/DTM savollari.
 
 2. **Darsliklar va PDF Viewer (Kutubxona)**:
    - 6–11-sinflar uchun **O‘zbekiston tarixi** va **Jahon tarixi** fanlarining rasmiy darsliklari.
@@ -61,7 +61,7 @@
    - **Streak Counter**: Daily study streak tracker to build consistent learning habits.
    - **Daily Question**: A fresh historical question every day with instant quiz.
    - **Mistakes Badge**: Quick shortcut to review incorrectly answered questions.
-   - **Direction Quizzes**: Topic-based categories (Historical Events, Figures, Wars & Battles, Dates & Years, Cities & Regions, Monuments, and DTM Logical tests).
+   - **Direction Quizzes**: Topic-based categories (Historical Events, Figures, Wars & Battles, Dates & Years, Cities & Regions, Historical facts, and DTM Logical tests).
 
 2. **Textbooks & PDF Viewer (Library)**:
    - Official Ministry of Education textbooks for **Uzbekistan History** and **World History** (Grades 6–11).

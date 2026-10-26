@@ -3,7 +3,7 @@
 Every generated question stores its combination in `generation_config["combination"]`
 (there are 20 of them). The cards group those combinations into readable directions.
 Two directions have no dedicated combination and are matched by vocabulary in the
-question/options; they are precomputed into the `is_war` / `is_monument` flags so the
+question/options; they are precomputed into the `is_war` / `is_fact` flags so the
 filter stays index-backed.
 
 Counts are materialised in `DirectionCount` (one row per book and card) so the API
