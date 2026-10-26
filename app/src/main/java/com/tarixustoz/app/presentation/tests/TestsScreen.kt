@@ -27,24 +27,35 @@ import com.tarixustoz.app.domain.model.Textbook
 import com.tarixustoz.app.presentation.textbooks.TextbooksViewModel
 import com.tarixustoz.app.presentation.theme.BrandPurple
 
+/** "12 345 test" — real count from the backend, "…" while it loads. */
+private fun directionCountLabel(counts: Map<String, Int>, code: String): String {
+    val count = counts[code] ?: return "…"
+    return "${"%,d".format(count).replace(',', '\u00A0')} test"
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TestsScreen(
     onStartQuizCategory: (count: Int, categoryCode: String, diff: String, time: Int) -> Unit,
     onStartQuizForBookOrTopic: (id: String) -> Unit,
     onNavigateToTopicSelection: () -> Unit,
-    onNavigateToPeriodSelection: () -> Unit,
     onNavigateToMistakes: () -> Unit,
     onNavigateToAi: () -> Unit,
     onNavigateToCustomOptions: () -> Unit,
-    textbooksViewModel: TextbooksViewModel = hiltViewModel()
+    textbooksViewModel: TextbooksViewModel = hiltViewModel(),
+    testsViewModel: TestsViewModel = hiltViewModel()
 ) {
     val textbooks by textbooksViewModel.textbooks.collectAsState()
+    val directionCounts by testsViewModel.directionCounts.collectAsState()
     var selectedGrade by remember { mutableIntStateOf(0) }
     var selectedTextbookForMenu by remember { mutableStateOf<Textbook?>(null) }
 
     LaunchedEffect(Unit) {
         textbooksViewModel.load()
+    }
+
+    LaunchedEffect(selectedGrade) {
+        testsViewModel.loadCounts(selectedGrade)
     }
 
     val grades = listOf(0 to "Barchasi", 6 to "6-sinf", 7 to "7-sinf", 8 to "8-sinf", 9 to "9-sinf", 10 to "10-sinf", 11 to "11-sinf")
@@ -229,21 +240,21 @@ fun TestsScreen(
                     ) {
                         CategoryItemCard(
                             title = "Tarixiy voqealar",
-                            count = "165 test",
+                            count = directionCountLabel(directionCounts, "EVENT"),
                             icon = Icons.Default.Event,
                             iconTint = Color(0xFF6366F1),
                             iconBg = Color(0xFFEEF2FF),
                             modifier = Modifier.weight(1f),
-                            onClick = { onStartQuizCategory(15, "EVENT", "MEDIUM", 15) }
+                            onClick = { onStartQuizCategory(15, "EVENT", "ALL", 15) }
                         )
                         CategoryItemCard(
                             title = "Tarixiy shaxslar",
-                            count = "184 test",
+                            count = directionCountLabel(directionCounts, "PERSON"),
                             icon = Icons.Default.Person,
                             iconTint = Color(0xFF7C3AED),
                             iconBg = Color(0xFFF5F3FF),
                             modifier = Modifier.weight(1f),
-                            onClick = { onStartQuizCategory(15, "PERSON", "MEDIUM", 15) }
+                            onClick = { onStartQuizCategory(15, "PERSON", "ALL", 15) }
                         )
                     }
 
@@ -253,21 +264,21 @@ fun TestsScreen(
                     ) {
                         CategoryItemCard(
                             title = "Urushlar va janglar",
-                            count = "110 test",
+                            count = directionCountLabel(directionCounts, "WAR"),
                             icon = Icons.Default.Security,
                             iconTint = Color(0xFFDC2626),
                             iconBg = Color(0xFFFEF2F2),
                             modifier = Modifier.weight(1f),
-                            onClick = { onStartQuizCategory(15, "EVENT", "HARD", 15) }
+                            onClick = { onStartQuizCategory(15, "WAR", "ALL", 15) }
                         )
                         CategoryItemCard(
                             title = "Yillar va sanalar",
-                            count = "Davr bo‘yicha tanlash",
+                            count = directionCountLabel(directionCounts, "YEAR"),
                             icon = Icons.Default.CalendarMonth,
                             iconTint = Color(0xFF16A34A),
                             iconBg = Color(0xFFF0FDF4),
                             modifier = Modifier.weight(1f),
-                            onClick = { onNavigateToPeriodSelection() }
+                            onClick = { onStartQuizCategory(15, "YEAR", "ALL", 15) }
                         )
                     }
 
@@ -277,21 +288,21 @@ fun TestsScreen(
                     ) {
                         CategoryItemCard(
                             title = "Shahar va hududlar",
-                            count = "120 test",
+                            count = directionCountLabel(directionCounts, "CITY"),
                             icon = Icons.Default.LocationOn,
                             iconTint = Color(0xFFF97316),
                             iconBg = Color(0xFFFFF7ED),
                             modifier = Modifier.weight(1f),
-                            onClick = { onStartQuizCategory(15, "CITY", "MEDIUM", 15) }
+                            onClick = { onStartQuizCategory(15, "CITY", "ALL", 15) }
                         )
                         CategoryItemCard(
                             title = "Mantiqiy va DTM",
-                            count = "95 test",
+                            count = directionCountLabel(directionCounts, "LOGICAL"),
                             icon = Icons.Default.Psychology,
                             iconTint = Color(0xFF0284C7),
                             iconBg = Color(0xFFEFF6FF),
                             modifier = Modifier.weight(1f),
-                            onClick = { onStartQuizCategory(15, "LOGICAL", "HARD", 15) }
+                            onClick = { onStartQuizCategory(15, "LOGICAL", "ALL", 15) }
                         )
                     }
 

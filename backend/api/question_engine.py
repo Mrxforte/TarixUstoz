@@ -8,6 +8,7 @@ from api.models import (
     QuizSession, QuizAnswerSubmission, HistoricalEntity
 )
 from api.rag_engine import HistoricalRAGEngine
+from api.directions import apply_direction
 
 try:
     import google.generativeai as genai
@@ -37,46 +38,38 @@ class QuestionGenerationEngine:
         """
         requested_count = max(1, min(requested_count, 100)) # Clamped between 1 and 100
 
-        # 1. Fetch available verified questions
-        qs = Question.objects.filter(verification_status='VERIFIED')
+        # 1. Base pool: verified questions of the requested book(s)
+        base = Question.objects.filter(verification_status='VERIFIED')
         if grade and grade > 0:
-            qs = qs.filter(grade=grade)
-        
+            base = base.filter(grade=grade)
         if subject:
-            s_lower = subject.lower()
-            if "jahon" in s_lower:
-                qs = qs.filter(subject__icontains="Jahon")
-            elif "uz" in s_lower or "zbek" in s_lower:
-                qs = qs.filter(subject__icontains="zbekiston")
-            else:
-                qs = qs.filter(subject__icontains=subject)
-
+            base = base.filter(subject=self._canonical_subject(subject))
         if topic_ids:
-            qs = qs.filter(topic_id__in=topic_ids)
+            base = base.filter(topic_id__in=topic_ids)
+
+        # 2. Narrow to the requested direction (Tarixiy voqealar, Yillar va sanalar, ...)
+        qs = apply_direction(base, category_code)
+        if not qs.exists():
+            qs = base
 
         if difficulty and difficulty.upper() not in ["ANY", "ALL", "NONE", ""]:
             diff_qs = qs.filter(difficulty=difficulty)
             if diff_qs.exists():
                 qs = diff_qs
 
-        existing_questions = list(qs)
-        if not existing_questions and topic_ids:
+        selected_questions = self._sample(qs, requested_count)
+        if not selected_questions and topic_ids:
             # Fallback strictly to questions of these specific topics
-            existing_questions = list(Question.objects.filter(topic_id__in=topic_ids))
+            selected_questions = self._sample(
+                Question.objects.filter(topic_id__in=topic_ids), requested_count
+            )
 
-        if not existing_questions and grade and grade > 0:
+        if not selected_questions and grade and grade > 0:
             # Fallback strictly to questions for this specific grade and subject
             grade_qs = Question.objects.filter(grade=grade)
             if subject:
-                s_lower = subject.lower()
-                if "jahon" in s_lower:
-                    grade_qs = grade_qs.filter(subject__icontains="Jahon")
-                elif "uz" in s_lower or "zbek" in s_lower:
-                    grade_qs = grade_qs.filter(subject__icontains="zbekiston")
-            existing_questions = list(grade_qs)
-
-        random.shuffle(existing_questions)
-        selected_questions = existing_questions[:requested_count]
+                grade_qs = grade_qs.filter(subject=self._canonical_subject(subject))
+            selected_questions = self._sample(grade_qs, requested_count)
 
         # 3. Create Quiz Session
         session = QuizSession.objects.create(
@@ -87,6 +80,27 @@ class QuestionGenerationEngine:
         )
         session.questions.set(selected_questions)
         return session
+
+    @staticmethod
+    def _canonical_subject(subject: str) -> str:
+        """Map app subject ids ("jahon", "uzbekiston") to the stored subject names."""
+        s = (subject or "").lower()
+        if "jahon" in s:
+            return "Jahon tarixi"
+        if "qadimgi" in s:
+            return "Qadimgi dunyo tarixi"
+        if "uz" in s or "zbek" in s:
+            return "O'zbekiston tarixi"
+        return subject
+
+    @staticmethod
+    def _sample(qs, count: int) -> list:
+        """Pick `count` random questions without loading the whole book into memory."""
+        ids = list(qs.values_list("id", flat=True))
+        if not ids:
+            return []
+        picked = random.sample(ids, min(count, len(ids)))
+        return list(Question.objects.filter(id__in=picked))
 
     def _generate_candidates_from_rag(self, count_needed: int, grade: int, subject: str, topic_ids: list, difficulty: str, category_code: str):
         # Retrieve chunks for evidence

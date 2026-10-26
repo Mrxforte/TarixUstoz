@@ -19,6 +19,7 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 
 from api.models import Category, PdfBook, Question, Topic
+from api.directions import is_war_question, direction_for_combination
 
 CONTENT = Path(__file__).resolve().parents[3] / "content"
 DEFAULT_NDJSON = CONTENT / "banks" / "7-sinf_Jahon_tarixi.ndjson.xz"
@@ -191,6 +192,10 @@ class Command(BaseCommand):
             generation_config={"combination": combination, "external_id": row["external_id"]},
             verification_status="VERIFIED",
             quality_score=1.0,
+            is_war=is_war_question(
+                row["text"], row["option_a"], row["option_b"], row["option_c"], row["option_d"]
+            ),
+            direction_code=direction_for_combination(combination),
             tags=[combination, "bank", f"g{GRADE}"],
             content_hash=row["external_id"],
         )

@@ -601,6 +601,10 @@ class Question(models.Model):
 
     verification_status = models.CharField(max_length=15, choices=VERIFICATION_STATUS, default='VERIFIED')
     quality_score = models.FloatField(default=1.0)
+    # Precomputed so "Urushlar va janglar" can be filtered and counted by index.
+    is_war = models.BooleanField(default=False, db_index=True)
+    # Precomputed direction card (EVENT/PERSON/YEAR/CITY/LOGICAL) for fast filtering.
+    direction_code = models.CharField(max_length=16, default="", db_index=True)
     tags = models.JSONField(default=list, blank=True)
     content_hash = models.CharField(max_length=64, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
@@ -616,6 +620,11 @@ class Question(models.Model):
             ),
             # Per-topic quiz building inside one book.
             models.Index(fields=["topic", "difficulty"], name="q_topic_diff_idx"),
+            # Covers direction counts and direction-filtered quiz queries.
+            models.Index(
+                fields=["grade", "subject", "verification_status", "direction_code", "is_war"],
+                name="q_book_direction_idx",
+            ),
         ]
 
     def __str__(self):

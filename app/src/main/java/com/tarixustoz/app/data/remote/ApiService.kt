@@ -34,6 +34,12 @@ interface ApiService {
     @GET("entities/")
     suspend fun getEntities(): List<ApiEntityDto>
 
+    @GET("questions/directions/")
+    suspend fun getDirections(
+        @Query("grade") grade: Int? = null,
+        @Query("subject") subject: String? = null
+    ): DirectionsResponseDto
+
     @GET("exams/")
     suspend fun getExamCategories(): List<ExamCategoryDto>
 

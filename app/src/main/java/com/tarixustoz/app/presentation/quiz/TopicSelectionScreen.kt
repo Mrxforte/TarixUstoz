@@ -63,11 +63,10 @@ fun TopicSelectionScreen(
                 t.textbookId.contains("jahon") -> "${t.gradeId}-sinf • Jahon tarixi"
                 else -> "${t.gradeId}-sinf • O‘zbekiston tarixi"
             }
-            val countFromMap = topicCountsMap[t.id]
+            val realCount = topicCountsMap[t.id]
                 ?: topicCountsMap["topic_${t.id}"]
                 ?: topicCountsMap[t.id.removePrefix("topic_")]
                 ?: 0
-            val realCount = if (countFromMap > 0) countFromMap else if (t.gradeId == 6 || (t.gradeId == 7 && t.textbookId.contains("jahon"))) 25 else 20
 
             TopicMeta(
                 id = t.id,

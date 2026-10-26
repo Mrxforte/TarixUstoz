@@ -181,7 +181,6 @@ fun TarixNavHost() {
                         navController.navigate("quiz/$id")
                     },
                     onNavigateToTopicSelection = { navController.navigate("topic_selection") },
-                    onNavigateToPeriodSelection = { navController.navigate("period_selection") },
                     onNavigateToMistakes = { navController.navigate(Screen.Mistakes.route) },
                     onNavigateToAi = { },
                     onNavigateToCustomOptions = { navController.navigate(Screen.QuizOptions.route) }

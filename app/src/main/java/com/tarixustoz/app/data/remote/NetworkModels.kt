@@ -85,6 +85,20 @@ data class ApiEntityDto(
 )
 
 @Serializable
+data class DirectionCountDto(
+    @SerializedName("code") @SerialName("code") val code: String,
+    @SerializedName("title") @SerialName("title") val title: String = "",
+    @SerializedName("count") @SerialName("count") val count: Int = 0
+)
+
+@Serializable
+data class DirectionsResponseDto(
+    @SerializedName("grade") @SerialName("grade") val grade: Int = 0,
+    @SerializedName("subject") @SerialName("subject") val subject: String = "",
+    @SerializedName("directions") @SerialName("directions") val directions: List<DirectionCountDto> = emptyList()
+)
+
+@Serializable
 data class QuizGenerateRequest(
     @SerializedName("count") @SerialName("count") val count: Int = 10,
     @SerializedName("category_code") @SerialName("category_code") val categoryCode: String = "PRACTICE",

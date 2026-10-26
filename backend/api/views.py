@@ -21,6 +21,7 @@ from api.serializers import (
 )
 from api.rag_engine import HistoricalRAGEngine
 from api.question_engine import QuestionGenerationEngine
+from api.directions import DIRECTION_TITLES, direction_counts
 
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.all().prefetch_related('pdf_books')
@@ -190,6 +191,22 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
         limit = self._int_param('limit', 200)
         offset = self._int_param('offset', 0)
         return self._filtered_queryset()[offset: offset + limit]
+
+    @action(detail=False, methods=['get'])
+    def directions(self, request):
+        """Question counts per direction card, e.g. ?grade=7&subject=jahon."""
+        grade = self._int_param('grade', 0)
+        raw_subject = request.query_params.get('subject', '')
+        subject = QuestionGenerationEngine._canonical_subject(raw_subject) if raw_subject else ''
+        counts = direction_counts(grade=grade, subject=subject)
+        return Response({
+            "grade": grade,
+            "subject": subject,
+            "directions": [
+                {"code": code, "title": title, "count": counts.get(code, 0)}
+                for code, title in DIRECTION_TITLES.items()
+            ],
+        })
 
     @action(detail=False, methods=['get'])
     def daily(self, request):

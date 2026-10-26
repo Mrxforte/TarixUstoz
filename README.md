@@ -117,6 +117,27 @@ and `python content/tools/pack_pdfs.py --src media/books/pdfs`, then commit the 
 Textbooks that ship only as scanned PDFs (8-sinf and 9-sinf O‘zbekiston/Jahon
 tarixi) go through `ocr_pdf_book.py` + `clean_ocr.py` before segmentation.
 
+## Test directions (Yo'nalishlar bo'yicha testlar)
+
+The six cards on the Tests screen are served from the database instead of fixed
+numbers:
+
+* `GET /api/questions/directions/?grade=7&subject=jahon` → question count per card.
+* `POST /api/quizzes/generate/` with `category_code` = `EVENT`, `PERSON`, `WAR`,
+  `YEAR`, `CITY` or `LOGICAL` returns only questions of that direction.
+
+| Card | Combinations |
+|---|---|
+| Tarixiy voqealar | CAUSE_TO_EFFECT, EFFECT_TO_CAUSE, SOURCE_BASED, MAIN_CAUSE, TERM_TO_DEFINITION, DEFINITION_TO_TERM |
+| Tarixiy shaxslar | PERSON_TO_ACTIVITY, ACTIVITY_TO_PERSON, WHO_WAS_FIRST |
+| Yillar va sanalar | DATE_TO_EVENT, EVENT_TO_DATE, NUMBER_TO_MEANING, CHRONOLOGY |
+| Shahar va hududlar | MAP_BASED, PLACE_TO_EVENT |
+| Mantiqiy va DTM | TRUE_FALSE, ODD_ONE_OUT, MATCHING, COMPARE_SIMILAR, COMPARE_DIFFERENT |
+| Urushlar va janglar | questions mentioning war vocabulary (`is_war` column) |
+
+`Question.direction_code` and `Question.is_war` are filled by the import command and
+serve these filters; see `backend/api/directions.py`.
+
 ## License
 
 Educational use. Textbook content © respective publishers (Sharq, O‘qituvchi, etc.).

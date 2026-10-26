@@ -148,6 +148,21 @@ class ContentRepository @Inject constructor(
         }
     }
 
+    suspend fun fetchDirectionCounts(
+        grade: Int = 0,
+        subject: String = ""
+    ): Map<String, Int> = withContext(Dispatchers.IO) {
+        try {
+            apiService.getDirections(
+                grade = grade.takeIf { it > 0 },
+                subject = subject.takeIf { it.isNotBlank() }
+            ).directions.associate { it.code to it.count }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            emptyMap()
+        }
+    }
+
     suspend fun fetchQuizFromApi(
         count: Int,
         categoryCode: String,
