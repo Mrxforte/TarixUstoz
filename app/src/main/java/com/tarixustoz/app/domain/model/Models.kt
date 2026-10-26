@@ -76,6 +76,14 @@ data class Topic(
     val isCompleted: Boolean = false
 )
 
+val Topic.gradeId: Int
+    get() = when {
+        textbookId == "uz_6" || textbookId.contains("6") -> 6
+        textbookId.startsWith("uz_") -> textbookId.removePrefix("uz_").toIntOrNull() ?: 7
+        textbookId.startsWith("jahon_") -> textbookId.removePrefix("jahon_").toIntOrNull() ?: 7
+        else -> 7
+    }
+
 enum class QuestionType {
     SINGLE_CHOICE,
     MULTIPLE_SELECT,
@@ -103,11 +111,29 @@ enum class Difficulty {
 }
 
 @Immutable
+@Serializable
 data class AnswerOption(
     val id: String,
     val text: String,
     val isCorrect: Boolean
 )
+
+fun String.cleanQuestionText(): String {
+    return this
+        .replace(Regex("Darslik\\s+ma'lumotlariga\\s+ko'ra\\s*\\(.*?\\),?\\s*", RegexOption.IGNORE_CASE), "")
+        .replace(Regex("Darslik\\s+ma'lumotlariga\\s+ko'ra.*?:\\s*", RegexOption.IGNORE_CASE), "")
+        .replace(Regex("\\(?\\d+-sinf.*?\\d+-bet\\)?,?\\s*", RegexOption.IGNORE_CASE), "")
+        .replace(Regex("\\b\\d+-bet\\b,?\\s*", RegexOption.IGNORE_CASE), "")
+        .replace(Regex("^\\d+\\s+[IVX]+\\s+BOB\\..*?\\s*", RegexOption.IGNORE_CASE), "")
+        .replace(Regex("^(6|7|8|9|10|11)-sinf.*?:\\s*", RegexOption.IGNORE_CASE), "")
+        .replace(Regex("^(DTM|BMBA).*?:\\s*", RegexOption.IGNORE_CASE), "")
+        .replace(Regex("^Milliy\\s+[Ss]ertifikat.*?:\\s*", RegexOption.IGNORE_CASE), "")
+        .replace(Regex("^Attestatsiya.*?:\\s*", RegexOption.IGNORE_CASE), "")
+        .replace(Regex("^[A-Za-z0-9_\\s—–-]+mavzusiga\\s+oid:\\s*", RegexOption.IGNORE_CASE), "")
+        .replace(Regex("^\\\""), "")
+        .replace(Regex("\\\"\\?$"), "?")
+        .trim()
+}
 
 @Immutable
 data class Question(
@@ -126,7 +152,10 @@ data class Question(
     val personality: String? = null,
     val sourceReference: String? = null,
     val pageHint: String? = null
-)
+) {
+    val cleanText: String
+        get() = text.cleanQuestionText()
+}
 
 @Immutable
 data class UserProfile(

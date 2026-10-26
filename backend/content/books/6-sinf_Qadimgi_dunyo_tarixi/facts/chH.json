@@ -1,0 +1,498 @@
+{
+  "chapter": "V-BO'LIM. QADIMGI ROM",
+  "topics": [
+    {
+      "number": 42,
+      "title": "Rim respublikasining qulashi",
+      "page": 164,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. I asr",
+          "date_label": "Miloddan avvalgi I asr",
+          "event": "Muntazam yollanma qo'shinlarga tayanuvchi harbiy boshliqlar Rimda real kuchga aylandi",
+          "evidence": "Mil. avv. I asrda muntazam yollanma qo'shinlarga tayanuvchi harbiy boshliqlar real kuchga aylandilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 49",
+          "date_label": "Miloddan avvalgi 49-yil",
+          "event": "Yuliy Sezar Galliyadagi zafarli urushdan qaytib, Rubikondan o'tib yakka hokimlik uchun kurash boshladi",
+          "evidence": "49-yilda Galliyadagi zafarli urushdan keyin Rimga qaytayotganida Rubikon daryosidan kechib o'tar ekan"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 44",
+          "date_label": "Miloddan avvalgi 44-yil",
+          "event": "Yuliy Sezar hukmronligi tugadi, ammo uning o'limi respublika qayta tiklanishiga olib kelmadi",
+          "evidence": "Mil. avv. 44-yilda Yuliy Sezar hukmronligi tugadi. Ammo uning o'limi respublika qayta tiklanishiga olib kelmadi."
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 31",
+          "date_label": "Miloddan avvalgi 31-yil",
+          "event": "Yunoniston qirg'oqlarida Antoniy va Oktavian flotlari o'rtasida jang bo'ldi",
+          "evidence": "Mil. avv. 31-yilda Yunoniston qirg'oqlarida Antoniy va Oktavian"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 29",
+          "date_label": "Miloddan avvalgi 29-yil",
+          "event": "Oktavian Senatdan imperator unvonini va Avgust laqabini oldi",
+          "evidence": "29-yilda Oktavian Senatdan im-\nperator unvonini va Avgust laqabini oladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy 98",
+          "date_label": "Milodiy 98-yil",
+          "event": "Trayan Rim imperatori taxtini egalladi va daklar bilan urushlar olib bordi",
+          "evidence": "Milodiy 98-yilda Trayan Rim impera-\ntori taxtini egalladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy II asr",
+          "date_label": "Milodiy II asr boshlari",
+          "event": "Rimning kuch-qudrati qayta tiklandi va bu asr «oltin asr» nomini oldi",
+          "evidence": "Faqat milodiy II asrning boshlarida Rimning kuch-qudrati qayta tiklandi"
+        },
+        {
+          "kind": "person",
+          "person": "Yuliy Sezar",
+          "role": "Rim sarkardasi va diktatori",
+          "activity": "Galliya urushlaridagi g'alabalar bilan nufuzini oshirib, yakka hokimlik uchun kurash boshladi",
+          "evidence": "Galliya urushlaridagi g'alabalar tufayli Sezarning nufuzi va obro'yi ancha ortgandi."
+        },
+        {
+          "kind": "person",
+          "person": "Krass",
+          "role": "Rim sarkardasi",
+          "activity": "Pompey bilan hokimiyat uchun ancha vaqt kurash olib borgan, urushlardan birida halok bo'lgan",
+          "evidence": "Ammo Rim davlati olib borayotgan urush-\nlardan birida Krass halok bo'ladi"
+        },
+        {
+          "kind": "person",
+          "person": "Brut",
+          "role": "Senator, Sezarning yaqin do'sti",
+          "activity": "Sezarga suiqasd uyushtirishga boshchilik qildi, keyin respublikani tiklashga urinib ko'rdi",
+          "evidence": "Fitnaga Sezarning yaqin do'stlaridan bo'lmish Brut boshchilik qildi."
+        },
+        {
+          "kind": "person",
+          "person": "Oktavian Avgust",
+          "role": "Sezarning jiyani, Rim imperiyasining asoschisi",
+          "activity": "Antoniy bilan ittifoq tuzib Brutni tor-mor etdi, so'ng butun imperiyaning yakka hukmdori bo'ldi",
+          "evidence": "Shu tariqa Oktavian butun Rim imperiyasining yakka hukmdori bo'lib oladi."
+        },
+        {
+          "kind": "person",
+          "person": "Trayan",
+          "role": "Rim imperatori",
+          "activity": "Daklar bilan urushlar olib bordi, Suriya va Mesopotamiya hududlarini imperiya tarkibiga qo'shdi",
+          "evidence": "Trayan zamonida Du-\nnay daryosi bo'ylarida yashovchi daklar bi-\nlan urushlar olib borildi"
+        },
+        {
+          "kind": "term",
+          "term": "diktator",
+          "definition": "Cheklanmagan hokimiyatga ega hukmdor; Rimda imperator va diktator deb atalgan shaxs",
+          "evidence": "U Rim imperatori va diktatori – cheklan-\nmagan hokimiyatga ega hukmdoriga aylandi"
+        },
+        {
+          "kind": "term",
+          "term": "yollanma qo'shin",
+          "definition": "Muntazam harbiy qism bo'lib, askarlarni davlat qudrati emas, faqat o'lja qiziqtirardi",
+          "evidence": "Yollanma askarlarni Rimning harbiy kuch-qudrati va davlatning kuchayishi emas, faqat o'lja qiziqtirardi."
+        },
+        {
+          "kind": "term",
+          "term": "provinsiya",
+          "definition": "Rim davlati tarkibiga qo'shib olingan viloyat; Misr ham shunday maqomga o'tgan",
+          "evidence": "Antoniy Kleopatraga Rimning sharqiy provinsiyalarini (viloyatlarini) beradi."
+        },
+        {
+          "kind": "term",
+          "term": "«oltin asr»",
+          "definition": "Milodiy II asrning boshlarida Rim kuch-qudrati qayta tiklangan davrning shartli nomi",
+          "evidence": "Bu asr Rim imperiya-\nsining «oltin asri» degan nom olgan"
+        },
+        {
+          "kind": "place",
+          "place": "Rubikon daryosi",
+          "event": "Yuliy Sezar uni kechib o'tib yakka hokimlik uchun oshkora kurashni boshlab yuborgan",
+          "evidence": "Rubikon daryosidan kechib o'tar ekan, yak-\nka hokimlik uchun oshkora kurashni boshlab\nyubordi"
+        },
+        {
+          "kind": "place",
+          "place": "Aleksandriya",
+          "event": "Jang qizigan pallada Kleopatra va Antoniy shu shaharga qochib ketgan",
+          "evidence": "Jang qizigan bir pallada Kleopatra va Antoniy Aleksandriya shahriga qochadilar."
+        },
+        {
+          "kind": "place",
+          "place": "Misr",
+          "event": "Antoniy va Kleopatra o'z-o'zini o'ldirgach, Rim davlatining provinsiyasiga aylangan",
+          "evidence": "Antoniy va Kleopatra o'z-o'zini o'ldiradi, Misr esa Rim davlati provinsiyasiga aylanadi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Qullar qo'zg'olonlari quldorlarni qattiq qo'rquvga soldi",
+          "effect": "Quldorlar qarshisida kuchli harbiy diktatura o'rnatilishi zarurligi masalasi ko'ndalang turdi",
+          "evidence": "Qullar qo'zg'olonlari quldor-\nlarni qattiq qo'rquvga solib\nqo'ydi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Senatorlar va kam sonli mansabdor shaxslar ulkan davlatni risoladagidek boshqara olmas edilar",
+          "effect": "Respublikaning eski boshqaruv tizimi ulkan davlat ehtiyojlariga javob bermay qo'ydi",
+          "evidence": "Se-\nnatorlar va kam sonli mansabdor shaxslar\nulkan davlatni risoladagidek boshqarishni\nta'minlay olmas edilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yollanma askarlarni faqat o'lja qiziqtirardi",
+          "effect": "Ular uchun kim bilan jang qilish yoki kimni talashning farqi bo'lmadi",
+          "evidence": "Yol-\nlanma askarlar uchun kimlar bilan jang qi lish\nyoki kimlarni talashning farqi bo'lmagan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sezarning cheklanmagan hokimiyatidan norozi senatorlar suiqasd uyushtirdilar",
+          "effect": "Sezar Senat majlisida o'ldirildi, biroq Senatning burungi mavqei qaytarilmadi",
+          "evidence": "Ular Sezarni o'ldirishga va Senatning burungi mavqeini qaytarishga ahd qildilar."
+        },
+        {
+          "kind": "number",
+          "number": "40",
+          "unit": "metr",
+          "meaning": "Trayan ustunining balandligi; ustun sirtidagi tasvirlar daklar bilan urush manzaralarini hikoya qiladi",
+          "evidence": "Balandligi 40 metrga\nteng Trayan ustuni sirtidagi tasvirlar dak-\nlar bilan urush manzaralari haqida hikoya qila-\ndi"
+        }
+      ]
+    },
+    {
+      "number": 43,
+      "title": "Rim imperiyasining qulashi va zavolga yuz tutishi",
+      "page": 168,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "milodiy III asr",
+          "date_label": "Milodiy III asr",
+          "event": "Imperatorni endilikda armiya saylay boshladi, armiya ichida turli guruhlar o'rtasida kurash bordi",
+          "evidence": "Im-\nperatorni endilikda armiya saylar, armiyaning\no'zida ham turli guruhlar o'rtasida kurash bo-\nrar edi"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy 330",
+          "date_label": "Milodiy 330-yil",
+          "event": "Konstantin zamonida Bosfor bo'g'ozidagi Vizantiy shahri imperiya poytaxti deb e'lon qilindi",
+          "evidence": "Imperator Konstantin zamo-\nnida, milodiy 330-yili Bosfor\nbo'g'ozidagi Vizantiy shahri"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy 395",
+          "date_label": "Milodiy 395-yil",
+          "event": "Feodosiy o'limidan so'ng imperiya ikki o'g'li o'rtasida G'arbiy va Sharqiy qismlarga ajraldi",
+          "evidence": "milodiy 395-yili Rim imperi-\nyasi uning ikki o'g'li o'rtasida G'arbiy va Shar-\nqiy qismlarga ajrab ketdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy 410",
+          "date_label": "Milodiy 410-yil",
+          "event": "Alarix boshchiligidagi gotlar Rimni qurshab oldi va shaharni talon-taroj qildi",
+          "evidence": "410-yilda Alarix boshchiligidagi gotlar Rimni qurshab oldilar."
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy 452",
+          "date_label": "Milodiy 452-yil",
+          "event": "Attila boshchiligidagi xunn qabilalari Italiyaga bostirib kirdi",
+          "evidence": "Milodiy 452-yilda xunnlar Italiyaga bostirib kirdilar."
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy 455",
+          "date_label": "Milodiy 455-yil",
+          "event": "Germanlarning vandal qabilalari Rimga hujum qildi va shaharni taladi",
+          "evidence": "Milodiy 455-yilda Rimga germanlarning vandal qabilalari hujum qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy 476",
+          "date_label": "Milodiy 476-yil",
+          "event": "Odoakr so'nggi imperator Romulni taxtdan ag'dardi; bu sana G'arbiy Rim qulashi sanasi bo'ldi",
+          "evidence": "476-yilda\ngerman\nqabilalari-\nning Rimdagi yollangan qo'shini sarkardasi\nOdoakr so'nggi imperator Romulni taxtdan\nag'darib tashladi"
+        },
+        {
+          "kind": "person",
+          "person": "Konstantin",
+          "role": "Rim imperatori",
+          "activity": "Vizantiy shahrini poytaxt qilib, uni buzib yangi shahar qurdirgan; shahar Konstantinopol deb atalgan",
+          "evidence": "Imperatorning buyrug'i bilan\nshahardagi barcha eski binolar buzib tashlan-\ndi va yangi shahar qurildi"
+        },
+        {
+          "kind": "person",
+          "person": "Feodosiy",
+          "role": "Rim imperatori",
+          "activity": "O'limidan so'ng imperiya uning ikki o'g'li o'rtasida G'arbiy va Sharqiy qismlarga bo'linib ketdi",
+          "evidence": "Imperator Feo-\ndosiy o'limidan\nso'ng milo-\ndiy 395-yili\nRim imperi-\nyasi u ning ikki\no'g'li o'rtasida\nG'arbiy va\nSharqiy qism-\nlarga ajralib\nyoki bo' linib\nketdi"
+        },
+        {
+          "kind": "person",
+          "person": "Alarix",
+          "role": "Gotlar qabilasining yetakchisi",
+          "activity": "410-yilda Rimni yakson qildi; gotlar shaharni uch kun talab, haykallar va kitoblarni yo'q qildi",
+          "evidence": "Rim 410- yilda\nAlarix bosh-\nchiligidagi got-\nlar tomonidan\nyakson qilindi"
+        },
+        {
+          "kind": "person",
+          "person": "Attila",
+          "role": "Xunn qabilalari boshlig'i",
+          "activity": "Sharqiy Rim imperiyasiga hujum uyushtirib, 452-yilda xunnlarni Italiyaga boshlab kirgan",
+          "evidence": "Attila Sharqiy Rim imperiyasiga hujum uyushtira boshladi."
+        },
+        {
+          "kind": "person",
+          "person": "Odoakr",
+          "role": "German qabilalarining Rimdagi yollangan qo'shini sarkardasi",
+          "activity": "476-yilda so'nggi imperator Romulni taxtdan ag'darib, imperator unvoni nishonini Konstantinopolga jo'natdi",
+          "evidence": "imperator unvoni nisho-\nnini Konstantinopolga jo'natdi"
+        },
+        {
+          "kind": "term",
+          "term": "«varvarlar»",
+          "definition": "Rimliklar madaniy rivojlanish jihatidan o'zlaridan quyi pog'onada turuvchi qabilalarga bergan laqab",
+          "evidence": "Rimliklar ularga «varvarlar» degan laqab berishgan"
+        },
+        {
+          "kind": "term",
+          "term": "«boqiy shahar»",
+          "definition": "Rimliklar o'z poytaxti Rimni shunday deb ta'riflagan, uni mangu deb hisoblashgan",
+          "evidence": "Rimni esa «boqiy shahar» deya"
+        },
+        {
+          "kind": "term",
+          "term": "o'rta asrlar",
+          "definition": "G'arbiy Rim imperiyasi qulagach boshlangan tarix davri, u 476-yildan hisoblanadi",
+          "evidence": "Mazkur\nsanadan boshlab o'rta asrlar tarixi boshla-\nnadi"
+        },
+        {
+          "kind": "place",
+          "place": "Konstantinopol",
+          "event": "Vizantiya o'rnida qurilgan yangi poytaxt; 476-yilda imperator unvoni nishoni shu yerga jo'natilgan",
+          "evidence": "Konstantinopol deb atala boshlandi."
+        },
+        {
+          "kind": "place",
+          "place": "Bolqon yarimoroli",
+          "event": "395-yilda Sharqiy Rim imperiyasi tarkibiga kirgan hududlardan biri",
+          "evidence": "Sharqiy qismga esa Bolqon yarimoroli, Kichik Osiyo va Misr yerlari kirgan."
+        },
+        {
+          "kind": "place",
+          "place": "Rim",
+          "event": "410-yilda gotlar tomonidan talangan, keyin huvillab qolgan «boqiy shahar»",
+          "evidence": "Talon-taroj qilin-\ngan Rim shahri huvillab qoldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Trayan davridan so'ng rimliklar yirik bosqinchilik urushlarini olib borolmaganlar",
+          "effect": "Milodiy III asrda Rim imperiyasining kuch-qudrati zaiflasha boshladi",
+          "evidence": "Imperator Trayan davridan\nso'ng rimliklar yirik bos-\nqinchilik\nurushlarini\nolib\nborolmaganlar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Gotlarning Rimni ishg'ol etishi imperiya aholisini larzaga soldi",
+          "effect": "Ko'pchilik Rim zavolga yuz tutsa butun jahon nes-nobud bo'ladi deb ishonar edi",
+          "evidence": "Gotlarning Rimni ishg'ol etishi imperiya aholisini larzaga soldi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Imperiya chegaralarining shimoli-g'arbiy tarafidan jangovar qabilalar paydo bo'ldi",
+          "effect": "Rimliklar chegarada katta armiya saqlab turishga majbur bo'lishdi",
+          "evidence": "Shu bois rimliklar che-\ngarada katta armiya saqlab turishga majbur\nbo'lishgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ulkan imperiyani Konstantinopoldan turib boshqarish mushkul edi",
+          "effect": "Imperiya G'arbiy va Sharqiy qismlarga ajralib ketdi",
+          "evidence": "Ulkan imperiyani Konstantinopoldan turib boshqarish mushkul edi."
+        },
+        {
+          "kind": "number",
+          "number": "3",
+          "unit": "kun",
+          "meaning": "Gotlar Rimni roppa-rosa uch kun talab, haykallarni yo'q qilib, bebaho kitoblarni yondirgan",
+          "evidence": "Gotlar haykallarni yo'q qilib, bebaho kitoblarni yondirib, Rimni roppa-rosa uch kun taladilar."
+        },
+        {
+          "kind": "number",
+          "number": "2",
+          "unit": "hafta",
+          "meaning": "Vandal qabilalari Rimni ikki hafta davomida talab, olib ketolmaydigan hamma narsani nobud qilgan",
+          "evidence": "ular ikki hafta davomida shaharni taladilar"
+        }
+      ]
+    },
+    {
+      "number": 44,
+      "title": "Qadimgi Rim madaniyati",
+      "page": 172,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "qadimgi zamonlar",
+          "date_label": "Qadimgi zamonlar",
+          "event": "Rimlik zodagon patritsiylar bir qavatli oddiy uylarda yashar, xo'jalikda qullar ko'p emasdi",
+          "evidence": "Qadimgi zamonlarda rim-\nlik zodagonlar bo'lmish\npatritsiylar bir qavatli od-\ndiy uylarda yashardilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy I asr",
+          "date_label": "Milodiy I asr",
+          "event": "Rim eng yirik va aholisi ko'p shaharga aylandi, «Barcha yo'llar Rimga boradi» maqoli to'qildi",
+          "evidence": "Milodiy I asrda Rim eng yirik va aholisi ko'p shaharga aylangan."
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy I asr boshlari",
+          "date_label": "Milodiy I asr boshlari",
+          "event": "Falastindagi Vifleem shahrida «Xudoning o'g'li» Iso tug'ilganligi haqidagi rivoyatlar tarqaldi",
+          "evidence": "«Xudoning o'g'li» nomini olgan Iso tug'ilganligi haqida rivoyatlar keng tarqala boshlagan"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy I asr",
+          "date_label": "Milodiy I asr",
+          "event": "Xristianlik vujudga kelgan sana sifatida hisoblanadi",
+          "evidence": "Milodiy I asr – xris-\ntianlik vujudga kelgan sana hisoblanadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy 313",
+          "date_label": "Milodiy 313-yil",
+          "event": "Imperator Konstantin xristianlik boshqa dinlarga teng dindir degan farmon chiqardi",
+          "evidence": "Milodiy 313-yilda imperator Konstantin xristianlik boshqa dinlarga teng dindir degan farmon chiqardi."
+        },
+        {
+          "kind": "date_event",
+          "date": "uchinchi kun",
+          "date_label": "Dafn etishning uchinchi kuni",
+          "event": "Iso Masih jasadi qo'yilgan joyda topilmadi, u qayta tirilganiga ishonishgan",
+          "evidence": "Uchinchi kuni dafn etish uchun kelishganlarida Iso Masih jasadi qo'yilgan joyida yo'qligini ko'rishadi."
+        },
+        {
+          "kind": "person",
+          "person": "Iso",
+          "role": "payg'ambar, rivoyatlarga ko'ra «Xudoning o'g'li»",
+          "activity": "Mahalliy ruhoniylar uni diniy haqiqatlarni buzib talqin etishda ayblab, o'limga mahkum etdilar",
+          "evidence": "Mahalliy ruhoniylar Iso payg'ambarni mav-\njud diniy haqiqatlarni buzib talqin etishda\nayblab, uni o'lim jazosiga mahkum etadilar"
+        },
+        {
+          "kind": "person",
+          "person": "Tit Liviy",
+          "role": "Rim tarixchisi",
+          "activity": "«Rim tarixi» nomli mashhur tarixiy asar yozib qoldirgan; asar bizgacha yetib kelgan",
+          "evidence": "Tarixchi Tit Liviy «Rim tarixi»ni yozgan."
+        },
+        {
+          "kind": "person",
+          "person": "Plutarx",
+          "role": "Yunon-rim tarixchisi",
+          "activity": "Yunon-rim sarkardalari hayoti haqida kitob yozib qoldirgan",
+          "evidence": "Plutarx yunon-rim sarkardalari hayo-\nti haqida kitob yozib qoldirgan"
+        },
+        {
+          "kind": "person",
+          "person": "Kvint Kursiy Ruf",
+          "role": "Rim tarixchisi",
+          "activity": "«Makedoniyalik Aleksandr tarixi» asarini yaratgan, asar bizgacha yetib kelgan",
+          "evidence": "Kvint Kursiy Ruf «Makedoniyalik Aleksandr tarixi» asarini yaratgan."
+        },
+        {
+          "kind": "person",
+          "person": "Konstantin",
+          "role": "Rim imperatori",
+          "activity": "313-yilgi farmon bilan xristianlarga ibodatxona qurish va oshkora ibodat qilish imkonini berdi",
+          "evidence": "Farmon xristianlarga ibo-\ndatxonalar qurish va oshkora ibodat qilish\nimkonini berdi"
+        },
+        {
+          "kind": "term",
+          "term": "termalar",
+          "definition": "Imperatorlar qurdirgan ko'rkam hammomlar; nomi yunoncha «termos» – «issiq» so'zidan olingan",
+          "evidence": "«termalar» deb atalgan ko'rkam hammomlar qurdirgan edilar"
+        },
+        {
+          "kind": "term",
+          "term": "stil",
+          "definition": "Mum bilan qoplangan taxtachaga yozish uchun mo'ljallangan metall tayoqcha",
+          "evidence": "Yozuvni o'rga-\nnayotgan bolalar stil degan metall tayoqcha\nbilan"
+        },
+        {
+          "kind": "term",
+          "term": "akveduk",
+          "definition": "Anhorlarning yuqori qismidan o'tkazilgan ko'prik; suv quvurlarini jarlar va vodiylardan o'tkazish uchun qurilgan",
+          "evidence": "akveduklar – anhor-\nlarning yuqori qismidan  o'tkazilgan ko'priklar\nqurilgan"
+        },
+        {
+          "kind": "term",
+          "term": "Yevangeliya",
+          "definition": "Iso Masih haqidagi rivoyatlar nomi; yunonchadan «Xushxabar» ma'nosini anglatadi",
+          "evidence": "Iso Masih haqidagi rivoyatlar Yevangeliya\n(Injil) nomini olgan, yunonchadan tarjima qil-\nganda bu so'z «Xushxabar» ma'nosini angla-\ntadi"
+        },
+        {
+          "kind": "place",
+          "place": "Golgofa tog'i",
+          "event": "Rivoyatlarga ko'ra Iso shu tog'da xochga tortilgan; unda ilk inson Odam ato dafn etilgan",
+          "evidence": "Isoni yer yuzidagi ilk inson – Odam ato dafn etilgan Golgofa tog'ida xochga tortganlar."
+        },
+        {
+          "kind": "place",
+          "place": "Falastin",
+          "event": "Rim hokimiyati ostidagi yerlar; Iso va havoriylari shu yerda faoliyat ko'rsatgan",
+          "evidence": "Rim hokimiyati ostida bo'lgan Falastin yerlaridagi"
+        },
+        {
+          "kind": "place",
+          "place": "Rim",
+          "event": "Milodiy I asrda imperiyaning eng yirik shahri; «Barcha yo'llar Rimga boradi» degan maqol shu haqda",
+          "evidence": "«Barcha yo'llar Rimga boradi»"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ulkan ko'priklarni butunlay toshdan qurish qimmatga tushar va uzoq davom etar edi",
+          "effect": "Rimliklar yangi qurilish materiali bo'lmish betonni ixtiro qilishdi",
+          "evidence": "Ulkan ko'priklarni butunlay toshdan qurish qimmatga tushar va uzoq davom etar edi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Beton ixtiro qilinib, qotganidan keyin toshdan ham mustahkam bo'lib qoldi",
+          "effect": "Shiftlar gumbaz shaklida ustunlarsiz quriladigan bo'ldi, Panteon shu taxlitda qurildi",
+          "evidence": "Beton ixtiro etilganidan keyin shiftlar gum-\nbaz shaklida ustunlarsiz quriladigan bo'ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kambag'al rimliklarning farzandlari xo'jalik ishlarida ota-onalariga yordam berishardi",
+          "effect": "Ular maktabda o'qimas edilar, ta'lim olish imkoniyati cheklangan edi",
+          "evidence": "farzandlari xo'jalik ishlarida ota-onalariga yor-\ndam berganliklari sababli maktab da o'qimas\nedilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Fanning turli tarmoqlariga oid kitoblarning aksariyati yunon tilida yozilgan edi",
+          "effect": "Ta'limda yunon tilini o'rganishga alohida e'tibor qaratilgan",
+          "evidence": "Yunon tilini o'rganishga alohida e'tibor qa-\nratilgan, chunki fanning turli tarmoqlariga oid\nkitoblarning aksariyati yunon tilida yozilgan\nedi"
+        },
+        {
+          "kind": "number",
+          "number": "12",
+          "unit": "nafar",
+          "meaning": "Isoning havoriylari (apostollari) soni; ular Iso bilan Falastin bo'ylab sayohat qilishgan",
+          "evidence": "o'n ikki nafar havoriylari (apostollar) bi-\nlan Falastin bo'ylab sayohat qilib"
+        },
+        {
+          "kind": "number",
+          "number": "6",
+          "unit": "yosh",
+          "meaning": "Badavlat xonadon farzandlari maktabga shu yoshdan qatnab, yozuvni o'rgana boshlagan",
+          "evidence": "Badavlat xonadon farzandlari esa 6 yosh-\ndan maktabga qatnagan"
+        }
+      ]
+    }
+  ]
+}

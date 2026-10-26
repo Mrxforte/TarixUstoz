@@ -71,8 +71,14 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import java.io.File
 import java.io.FileOutputStream
+import java.io.IOException
+import java.net.HttpURLConnection
+import java.net.URL
+import java.util.concurrent.TimeUnit
 
 enum class DisplayMode {
     CONTINUOUS_VERTICAL,
@@ -196,9 +202,31 @@ fun PdfViewerScreen(
             try {
                 val tempFile = File(context.cacheDir, "pdf_cache_${pdfAssetPath.hashCode()}.pdf")
                 if (!tempFile.exists() || tempFile.length() == 0L) {
-                    context.assets.open(pdfAssetPath).use { input ->
-                        FileOutputStream(tempFile).use { output ->
-                            input.copyTo(output)
+                    val formattedPath = pdfAssetPath.replace("127.0.0.1", "10.0.2.2").replace("localhost", "10.0.2.2").trim()
+                    if (formattedPath.startsWith("http://") || formattedPath.startsWith("https://") || formattedPath.startsWith("/")) {
+                        val targetUrl = if (formattedPath.startsWith("/")) "http://10.0.2.2:8000$formattedPath" else formattedPath
+                        val cleanUrl = targetUrl.replace(" ", "%20")
+                        val client = OkHttpClient.Builder()
+                            .connectTimeout(30, TimeUnit.SECONDS)
+                            .readTimeout(60, TimeUnit.SECONDS)
+                            .followRedirects(true)
+                            .build()
+                        val req = Request.Builder().url(cleanUrl).build()
+                        client.newCall(req).execute().use { resp ->
+                            if (!resp.isSuccessful) {
+                                throw IOException("HTTP ${resp.code}: ${resp.message}")
+                            }
+                            resp.body?.byteStream()?.use { input ->
+                                FileOutputStream(tempFile).use { output ->
+                                    input.copyTo(output)
+                                }
+                            } ?: throw IOException("Empty response body from server")
+                        }
+                    } else {
+                        context.assets.open(formattedPath).use { input ->
+                            FileOutputStream(tempFile).use { output ->
+                                input.copyTo(output)
+                            }
                         }
                     }
                 }

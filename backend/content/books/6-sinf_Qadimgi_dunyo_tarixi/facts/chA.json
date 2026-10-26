@@ -1,0 +1,939 @@
+{
+  "chapter": "KIRISH",
+  "topics": [
+    {
+      "number": 1,
+      "title": "Qadimgi tarix – taraqqiyotning boshlanishi",
+      "page": 8,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 1 mln. – 100 ming yil",
+          "date_label": "Ilk paleolit davri",
+          "event": "Ilk paleolit davri eng qadimgi bosqich bo‘lib, u shu ming yilliklarni qamrab olgan.",
+          "evidence": "ilk → mil.avv. 1 mln. – 100"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 100–40 ming yil",
+          "date_label": "O‘rta paleolit davri",
+          "event": "O‘rta paleolit davri miloddan avvalgi 100–40 ming yilliklarga to‘g‘ri keladi.",
+          "evidence": "o'rta → mil.avv. 100–40"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 40–12 ming yil",
+          "date_label": "So‘nggi paleolit davri",
+          "event": "So‘nggi paleolit davri miloddan avvalgi 40–12 ming yilliklarni o‘z ichiga oladi.",
+          "evidence": "so'nggi → mil.avv. 40 –12"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. V asr",
+          "date_label": "Miloddan avvalgi V asr",
+          "event": "Yunon tarixchisi Gerodot to‘qqiz kitobdan iborat «Tarix» asarini yozdi.",
+          "evidence": "Miloddan avvalgi V asrda qadimgi yunon"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. I asr oxirlari",
+          "date_label": "Miloddan avvalgi I asr oxirlari",
+          "event": "Strabon «Geografiya» asarida O‘rta Osiyo xalqlari madaniyati haqida ma’lumot berdi.",
+          "evidence": "Miloddan avvalgi I asr oxirlarida qadimgi"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy I asr",
+          "date_label": "Milodiy I asr",
+          "event": "Rim tarixchisi Kvint Kursiy Ruf «Makedoniyalik Aleksandr tarixi» asarini yozdi.",
+          "evidence": "Milodiy I asrda qadimgi Rim tarixchisi"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy II asr",
+          "date_label": "Milodiy II asr",
+          "event": "Yunon tarixchisi Arrian «Aleksandrning harbiy yurishlari» asarini yaratdi.",
+          "evidence": "Milodiy II asrda yunon tarixchisi Arrian ham"
+        },
+        {
+          "kind": "person",
+          "person": "Gerodot",
+          "role": "Qadimgi yunon tarixchisi, ko‘p mamlakatlarga sayohat qilgan olim",
+          "activity": "Turli mamlakatlarga sayohat qilib, to‘qqiz kitobdan iborat «Tarix» asarini yozgan.",
+          "evidence": "tarixchisi Gerodot turli mamlakatlarga sayohat"
+        },
+        {
+          "kind": "person",
+          "person": "Strabon",
+          "role": "Qadimgi yunon tarixchisi va geografi, ko‘p yurtlarni kezgan olim",
+          "activity": "«Geografiya» asarida O‘rta Osiyo xalqlari madaniyati haqida ma’lumotlar keltirgan.",
+          "evidence": "yunon tarixchisi va geograﬁ  Strabon"
+        },
+        {
+          "kind": "person",
+          "person": "Kvint Kursiy Ruf",
+          "role": "Qadimgi Rim tarixchisi, Aleksandr yurishlari tarixini yozgan muallif",
+          "activity": "«Makedoniyalik Aleksandr tarixi» asarida Aleksandrning O‘rta Osiyoga yurishlarini yoritgan.",
+          "evidence": "Kvint Kursiy Ruf «Makedoniyalik Alek"
+        },
+        {
+          "kind": "person",
+          "person": "Arrian",
+          "role": "Milodiy II asrda ijod qilgan yunon tarixchisi",
+          "activity": "«Aleksandrning harbiy yurishlari» nomli asarni yozgan.",
+          "evidence": "«Aleksandrning harbiy yurishlari» («Aleksandr"
+        },
+        {
+          "kind": "person",
+          "person": "Doro I",
+          "role": "Fors shohi, Behistun yozuvlarini o‘ydirgan hukmdor",
+          "activity": "Buyrug‘i bilan qoyaga o‘yilgan yozuvlarda Xorazm, So‘g‘d va Baqtriya sanab o‘tilgan.",
+          "evidence": "Fors shohi Doro I buyrug'i bilan qoyaga"
+        },
+        {
+          "kind": "term",
+          "term": "Ibtidoiy jamoa tuzumi",
+          "definition": "Insoniyat tarixining boshlang‘ich davri bo‘lib, unda barcha mehnat qurollari umumiy bo‘lgan.",
+          "evidence": "Ibtidoiy  jamoa tuzumi – insoniyat"
+        },
+        {
+          "kind": "term",
+          "term": "Ibtidoiy to‘da",
+          "definition": "Turmush va mehnat umumiyligi negizida birlashgan eng qadimgi odamlar jamoasi.",
+          "evidence": "Ibtidoiy to'da bu – turmush va"
+        },
+        {
+          "kind": "term",
+          "term": "Urug‘",
+          "definition": "Birgalikda yashab, mehnat qilgan, umumiy mehnat qurollari va qurol-yarog‘larga ega qarindoshlar jamoasi.",
+          "evidence": "Urug' bu – birgalikda yashagan va"
+        },
+        {
+          "kind": "term",
+          "term": "Matriarxat",
+          "definition": "Ona urug‘i davri bo‘lib, bu bosqichda urug‘ jamoalari ayol kishi atrofida jipslashgan.",
+          "evidence": "tarixidagi bu bosqich ona urug'i davri"
+        },
+        {
+          "kind": "term",
+          "term": "Patriarxat",
+          "definition": "Ota urug‘i davri bo‘lib, unda urug‘ga sardorlik asta-sekin erkak kishiga o‘tgan.",
+          "evidence": "davrni patriarxat – ota urug'i davri – deb ata-"
+        },
+        {
+          "kind": "place",
+          "place": "Behistun qoyalari",
+          "event": "Erondagi Kirmonshoh shahri yaqinida joylashgan, Doro I yozuvlari o‘yilgan qoya.",
+          "evidence": "histun qoyalari Erondagi Kirmonshoh shahri"
+        },
+        {
+          "kind": "place",
+          "place": "Kirmonshoh",
+          "event": "Erondagi shahar, uning yaqinida Behistun qoyalari joylashgan.",
+          "evidence": "manba Behistun qoyasidagi yozuvlardir"
+        },
+        {
+          "kind": "place",
+          "place": "Baqtriya",
+          "event": "«Avesto» va Behistun yozuvlarida Xorazm va So‘g‘d bilan birga tilga olinadi.",
+          "evidence": "Baqtriya sanab o'tiladi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Yozma manbalarning topilishi va o‘rganilishi",
+          "effect": "Olimlarga qadimgi ming yilliklar tarixini tiklash ancha osonlashdi.",
+          "evidence": "Yozma manbalar topilishi bilan olimlarga"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mehnat qurollari va xo‘jalik yuritish shakllarining takomillashishi",
+          "effect": "Jamoadagi yetakchilik mavqei asta-sekin erkak kishiga o‘ta boshladi.",
+          "evidence": "lik yuritish shakllari takomillashgani sayin"
+        },
+        {
+          "kind": "cause",
+          "cause": "Eng qadimgi odamlarning mehnat qurollarini toshdan yasagani",
+          "effect": "Arxeologlar insoniyat tarixining boshlanishini «tosh davri» deb atashadi.",
+          "evidence": "qurollarini toshdan yasagani tufayli arxeo"
+        },
+        {
+          "kind": "number",
+          "number": "9",
+          "unit": "kitob",
+          "meaning": "Gerodotning «Tarix» asari shuncha kitobdan iborat bo‘lgan.",
+          "evidence": "qilib to'qqiz kitobdan iborat"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Eng qadimgi odamlarning rivojlanish bosqichlari",
+      "page": 13,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "Ilk paleolit oxiri",
+          "date_label": "Ilk paleolit davrining oxiri",
+          "event": "Buyuk muzlik davri boshlandi va ibtidoiy odamlar o‘ta qattiq sinovga duch keldi.",
+          "evidence": "Ilk\npaleolitning oxirlariga kelib Buyuk muzlik davri"
+        },
+        {
+          "kind": "date_event",
+          "date": "Ilk paleolit",
+          "date_label": "Ilk paleolit davri",
+          "event": "Odamlarning makonlari kichik daryolar yoki buloqlar yaqinidagi tepaliklarda joylashgan.",
+          "evidence": "odam larning makonlari kichik daryolar yoki"
+        },
+        {
+          "kind": "date_event",
+          "date": "O‘rta paleolit",
+          "date_label": "O‘rta paleolit davri",
+          "event": "Boysun tog‘laridagi Teshiktosh g‘ori jahonga mashhur yodgorlik hisoblanadi.",
+          "evidence": "tosh g'ori o'rta paleolit davri madaniyati"
+        },
+        {
+          "kind": "date_event",
+          "date": "O‘rta paleolit",
+          "date_label": "O‘rta paleolit davri",
+          "event": "Teshiktosh g‘oridan tosh qurollari va ko‘plab hayvon suyaklari topilgan.",
+          "evidence": "ularning parchalari, tog' echkisi, kiyik, yov-"
+        },
+        {
+          "kind": "date_event",
+          "date": "O‘rta paleolit",
+          "date_label": "O‘rta paleolit davri",
+          "event": "Teshiktosh g‘orida 8–9 yashar neandertal bolaning suyak qoldiqlari topilgan.",
+          "evidence": "8 – 9 yashar neandertal bolaning"
+        },
+        {
+          "kind": "date_event",
+          "date": "So‘nggi paleolit",
+          "date_label": "So‘nggi paleolit davri",
+          "event": "G‘orlar devorlarida qadimgi odamlarning diniy tasavvurlarini aks ettiruvchi rasmlar paydo bo‘lgan.",
+          "evidence": "So'nggi paleolit davriga oid g'orlar de"
+        },
+        {
+          "kind": "person",
+          "person": "Avstralopitek",
+          "role": "Janubiy Afrikadan topilgan eng qadimgi odam suyagi qoldig‘i",
+          "activity": "O‘ta sodda tosh mehnat qurollari yasashni biladigan eng qadimgi odam sifatida o‘rganilgan.",
+          "evidence": "o'rganganlar, jumladan, Janubiy Afrikadan"
+        },
+        {
+          "kind": "person",
+          "person": "Pitekantrop",
+          "role": "Yava orolida (Indoneziya) topilgan eng qadimgi odam",
+          "activity": "Suyak qoldiqlari olimlar tomonidan topib o‘rganilgan eng qadimgi odamlar qatoriga kiradi.",
+          "evidence": "Yava orolidan (Indoneziya)"
+        },
+        {
+          "kind": "person",
+          "person": "Neandertal",
+          "role": "Germaniyadan topilgan qadimgi odam turi, o‘rta paleolit davri odami",
+          "activity": "Teshiktosh g‘orida 8–9 yashar neandertal bolaning suyak qoldiqlari topilgan.",
+          "evidence": "Germaniyadan – neandertal va"
+        },
+        {
+          "kind": "person",
+          "person": "Kromanyon",
+          "role": "Fransiyadagi Kromanyon g‘oridan topilgan hozirgi qiyofadagi odam",
+          "activity": "Qadimgi odamlar ichida hozirgi qiyofaga ega tur sifatida o‘rganilgan.",
+          "evidence": "Fransiyadagi Kromanyon g'oridan"
+        },
+        {
+          "kind": "term",
+          "term": "Chopperlar",
+          "definition": "Bir tomoni urib o‘tkirlangan qo‘pol tosh qurollar, ular O‘rta Osiyodan ham topilgan.",
+          "evidence": "Arxeologiya fanida bu tosh"
+        },
+        {
+          "kind": "term",
+          "term": "O‘zlashtiruvchi xo‘jalik",
+          "definition": "Kishilarning eng qadimiy mashg‘uloti bo‘lgan termachilik va ovchilik xo‘jaligi.",
+          "evidence": "qadimiy mashg'uloti bo'lgan termachilik va"
+        },
+        {
+          "kind": "term",
+          "term": "Totemizm",
+          "definition": "Odamlar guruhi jamoasining biror hayvon yoki o‘simlik turi bilan qarindoshligiga ishonish.",
+          "evidence": "ishonish totemizm deb ataladi."
+        },
+        {
+          "kind": "term",
+          "term": "Animizm",
+          "definition": "Odamni o‘rab turgan muhitda jonlar va ruhlarning mavjudligiga e’tiqod qilish.",
+          "evidence": "ruhlarning mavjudligiga e'tiqod fanda animizm"
+        },
+        {
+          "kind": "term",
+          "term": "Fetishizm",
+          "definition": "U yoki bu buyumlarning omad keltirishiga yoxud balo-qazoni bartaraf etishiga ishonish.",
+          "evidence": "Bu e'tiqod fetishizm"
+        },
+        {
+          "kind": "place",
+          "place": "Teshiktosh g‘ori",
+          "event": "Boysun tog‘larida joylashgan, o‘rta paleolit madaniyatining jahonga mashhur yodgorligi.",
+          "evidence": "Boysun\ntog'laridan\ntopilgan\nTeshik"
+        },
+        {
+          "kind": "place",
+          "place": "Selungur makoni",
+          "event": "Farg‘ona vodiysidagi makon, undan toshdan yasalgan qadimiy mehnat qurollari topilgan.",
+          "evidence": "lungur makonidan va Toshkent vohasidagi"
+        },
+        {
+          "kind": "place",
+          "place": "Ko‘lbuloq manzilgohi",
+          "event": "Toshkent vohasidagi manzilgoh, qo‘pol tosh qurollar topilgan joy.",
+          "evidence": "Ko'lbuloq manzilgohidan ham topilgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mehnat faoliyati va tevarak olam haqida to‘plangan bilimlarning ortishi",
+          "effect": "Insonning fikrlash qobiliyati va tafakkuri asta-sekin o‘zgarib bordi.",
+          "evidence": "bilimlar asta-sekin inson"
+        },
+        {
+          "kind": "cause",
+          "cause": "Tabiat hodisalarining sabablarini tushuna olmaslik",
+          "effect": "Inson momaqaldiroq, yashin, shamol va yomg‘ir kabi tabiat kuchlariga sig‘ina boshladi.",
+          "evidence": "Ana shu hodisalarning sabablarini tushu-"
+        },
+        {
+          "kind": "cause",
+          "cause": "Insonning o‘zini tabiiy muhitdan va o‘rab olgan olamdan ajratmagani",
+          "effect": "U tabiatni jonli deb hisoblab, g‘ayritabiiy kuchlarga e’tiqod qilgan.",
+          "evidence": "U tabiatni jonli deb hisoblagan."
+        },
+        {
+          "kind": "number",
+          "number": "8–9",
+          "unit": "yosh",
+          "meaning": "Teshiktosh g‘orida topilgan neandertal bolaning yoshi shuncha bo‘lgan.",
+          "evidence": "8 – 9 yashar neandertal bolaning"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Urug‘chilik jamiyati",
+      "page": 18,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 40–12 ming yilliklar",
+          "date_label": "So‘nggi paleolit davri",
+          "event": "Toshga ishlov berish texnikasi va mehnat qurollari yasash usullari o‘zgardi.",
+          "evidence": "So'nggi paleolit davrida (milod"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 40–12 ming yilliklar",
+          "date_label": "So‘nggi paleolit davri",
+          "event": "Olov sun’iy tarzda hosil qilina boshlandi, turar joylar qurilishi ixtiro qilindi.",
+          "evidence": "Inson bu davrda sun'iy tarzda"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 12–7 ming yilliklar",
+          "date_label": "Mezolit davri",
+          "event": "Mezolit – o‘rta tosh davri boshlanib, u shu ming yilliklarni o‘z ichiga oladi.",
+          "evidence": "Mezolit davri (o'rta tosh davri) mi"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 12–7 ming yilliklar",
+          "date_label": "Mezolit davri boshlanishi",
+          "event": "Muzlik davri poyoniga yetib, iqlim ancha ilishdi va turmush o‘zgardi.",
+          "evidence": "Mezolit davri boshlanishi bilan Muzlik davri"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 12–7 ming yilliklar",
+          "date_label": "Mezolit davri oxiri",
+          "event": "Old Osiyoda xo‘jalikning yangi tarmoqlari – ibtidoiy ziroatchilik va chorvachilik vujudga keldi.",
+          "evidence": "ning yangi tarmoqlari – ibtidoiy ziroatchilik"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 6–4 ming yilliklar",
+          "date_label": "Neolit davri (O‘rta Osiyoda)",
+          "event": "O‘rta Osiyoda neolit davri boshlanib, ishlab chiqaruvchi xo‘jalikka o‘tiladi.",
+          "evidence": "O'rta Osiyoda\nneolit davri miloddan avvalgi 6–4-ming"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 6–4 ming yilliklar",
+          "date_label": "Neolit davri",
+          "event": "Sopol idishlar yasashning kashf etilishi neolit davri boshlanishini belgilaydi.",
+          "evidence": "boshlanishini sopol idishlar yasashning kashf"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 6–4 ming yilliklar",
+          "date_label": "Neolit davri",
+          "event": "Qabilalar o‘troq turmush tarziga o‘tib, doimiy turar joylar qura boshladi.",
+          "evidence": "Neolit davrida qabilalar o'troq turmush"
+        },
+        {
+          "kind": "person",
+          "person": "Kromanyon odami",
+          "role": "So‘nggi paleolit davrida yashagan hozirgi qiyofadagi odam",
+          "activity": "Takomillashgan kesuvchi va arralovchi mehnat qurollari, taqinchoqlar yasagan.",
+          "evidence": "hozirgi qiyofadagi odam – kromanyon odami"
+        },
+        {
+          "kind": "person",
+          "person": "Mezolit davri ovchilari",
+          "role": "O‘q-yoy yasashni o‘zlashtirgan qadimgi ovchilar",
+          "activity": "Itni qo‘lga o‘rgatib, itlar bilan birga ov qilganda o‘lja mo‘l-ko‘l bo‘lgan.",
+          "evidence": "Itlar bilan birga ov qilinganda"
+        },
+        {
+          "kind": "person",
+          "person": "Neolit davri jamoalari",
+          "role": "O‘troq turmushga o‘tgan qadimgi jamoalar",
+          "activity": "Paxsadan uylar qurib, manzilgohlarni shakllantirgan va dehqonchilikka o‘tgan.",
+          "evidence": "Asta-sekin urug' jamoalarining"
+        },
+        {
+          "kind": "term",
+          "term": "Urug‘ jamoasi",
+          "definition": "Qarindoshlardan tarkib topgan ixcham guruh bo‘lib, a’zolari bitta manzilgohda yashagan.",
+          "evidence": "lar qarindoshlardan tarkib topgan ixcham gu"
+        },
+        {
+          "kind": "term",
+          "term": "Qabila",
+          "definition": "Bir joyda yashab turgan bir qancha urug‘lardan tashkil topgan birlashma.",
+          "evidence": "Bir joyda yashab turgan bir qancha urug'lar"
+        },
+        {
+          "kind": "term",
+          "term": "Ishlab chiqaruvchi xo‘jalik",
+          "definition": "Dehqonchilik va chorvachilik xo‘jaligi bo‘lib, zarur mahsulotlarni o‘zi ishlab chiqargan.",
+          "evidence": "ruvchi xo'jalik – deh"
+        },
+        {
+          "kind": "term",
+          "term": "Mikrolitlar",
+          "definition": "Mezolit davrida kashf qilingan mayda tosh qurollar, neolitda ulardan foydalanilgan.",
+          "evidence": "kashf qilingan mayda tosh qurollari – mikrolit"
+        },
+        {
+          "kind": "term",
+          "term": "Kulolchilik",
+          "definition": "Loydan yasalgan va olovda pishirilgan idishlarni yasash sohasi.",
+          "evidence": "idishlarni yasash sohasi – kulolchilik, tolalar"
+        },
+        {
+          "kind": "place",
+          "place": "Samarqand",
+          "event": "So‘nggi paleolit davri odamining manzilgohlari shahar hududidan topilgan.",
+          "evidence": "Samarqand shahri hududidan, Toshkent vilo"
+        },
+        {
+          "kind": "place",
+          "place": "Ko‘lbuloq makoni",
+          "event": "Toshkent viloyati Ohangaron daryosi vohasidagi so‘nggi paleolit davri manzilgohi.",
+          "evidence": "yati Ohangaron daryosi vohasidagi Ko'lbuloq"
+        },
+        {
+          "kind": "place",
+          "place": "Zarautsoy darasi",
+          "event": "Qoyatosh rasmlari ancha mufassal o‘rganilgan mezolit davri yodgorligi.",
+          "evidence": "Machay manzilgohlari, shuningdek, Zarautsoy"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mezolit davri boshlanishida muzlik davrining tugashi",
+          "effect": "Iqlim ancha ilishdi va bu odamlar turmushining o‘zgarishiga olib keldi.",
+          "evidence": "Bu voqea iqlim ancha ilishiga"
+        },
+        {
+          "kind": "cause",
+          "cause": "O‘q-yoyning kashf etilishi va undan ovda foydalanish",
+          "effect": "Odamlarda chopqir hayvonlar va qushlarni ovlash imkoniyati vujudga keldi.",
+          "evidence": "O'q-yoy kashf etilishi bilan odam"
+        },
+        {
+          "kind": "cause",
+          "cause": "O‘troq turmush tarzi va mehnat qurollarining takomillashishi",
+          "effect": "Jamoalarning dehqonchilikka o‘tib borishiga imkon yaratdi.",
+          "evidence": "O'troq turmush tarzi va mehnat qurol"
+        },
+        {
+          "kind": "number",
+          "number": "100",
+          "unit": "manzilgoh",
+          "meaning": "O‘rta Osiyoda mezolit davriga oid ochilgan manzilgohlar soni yuzdan ziyod.",
+          "evidence": "davriga oid yuzdan ziyod manzilgohlar ochil"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Eneolit va bronza davri",
+      "page": 22,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 4–3-ming yillik o‘rtalari",
+          "date_label": "Eneolit davri",
+          "event": "Mis-tosh asri deb atalgan eneolit davri shu yillarga to‘g‘ri keladi.",
+          "evidence": "4 – 3- ming yillikning o'rtalariga"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 4-ming yillik",
+          "date_label": "Mil. avv. 4-ming yillik",
+          "event": "Qadimgi Sharqda ilk shaharlar va davlatlar vujudga kela boshladi.",
+          "evidence": "Mil. avv. 4-ming yillikda Qadimgi Sharqda ilk"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 3-ming yillik o‘rtalari",
+          "date_label": "Bronza davri",
+          "event": "Bronza mehnat qurollari, qurol-yarog‘ va zeb-ziynat tayyorlashda asosiy ashyoga aylandi.",
+          "evidence": "avv. 3-ming yillik o'rtalaridan boshlab"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 3-ming yillik oxiri – 2-ming yillik",
+          "date_label": "Bronza davri manzilgohi",
+          "event": "Zarafshon daryosi havzasidagi Zamonbobo ko‘li yaqinidan manzilgoh topilgan.",
+          "evidence": "ri – 2 ming yillikka oid man"
+        },
+        {
+          "kind": "date_event",
+          "date": "neolit davri oxiri",
+          "date_label": "Neolit davrining oxiri",
+          "event": "Odamlar misdan foydalanishga va undan mehnat qurollari yasashga o‘tishdi.",
+          "evidence": "odam lar misdan foydala"
+        },
+        {
+          "kind": "date_event",
+          "date": "bronza davri",
+          "date_label": "Bronza davri",
+          "event": "Urug‘chilik oilasida erkaklar muhim o‘rin tuta boshladi, qarindoshchilik erkaklar tomonidan belgilandi.",
+          "evidence": "Endi urug'chilik oilasida erkaklar muhim"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 2-ming yillik",
+          "date_label": "Mil. avv. 2-ming yillik",
+          "event": "Ilonlar tasviri tushirilgan tosh tumor shu davrga oid topilma hisoblanadi.",
+          "evidence": "Ilonlar tasviri\ntushirilgan\ntosh tumor"
+        },
+        {
+          "kind": "person",
+          "person": "Sopollitepa ziroatchilari",
+          "role": "Surxondaryo vohasidagi Sopollitepa manzilgohida yashagan qadimgi ziroatchilar",
+          "activity": "Xom g‘ishtdan uy-joy qurib, bronza mehnat qurollari va zeb-ziynatlar yasagan.",
+          "evidence": "Arxeologlar Surxondaryo vohasidan qa"
+        },
+        {
+          "kind": "person",
+          "person": "Jarqo‘ton hunarmandlari",
+          "role": "Jarqo‘ton qal’asi atrofida yashagan jamoa a’zolari",
+          "activity": "Hunarmandchilik, to‘quvchilik va kulolchilikni rivoj toptirishda katta yutuqlarga erishgan.",
+          "evidence": "dehqonlarning uylari joylashgan"
+        },
+        {
+          "kind": "person",
+          "person": "Bronza davri ustalari",
+          "role": "Bronza davrida ishlagan hunarmandlar, kulol va metal ustalari",
+          "activity": "Kulolchilik charxini va g‘ildirakni kashf etib, dastlabki aravalarni yaratgan.",
+          "evidence": "Bronza davri manzilgohlari aholisi har"
+        },
+        {
+          "kind": "term",
+          "term": "Eneolit",
+          "definition": "Misdan yasalgan mehnat qurollari tosh qurollar bilan birgalikda ishlatilgan davr.",
+          "evidence": "birgalikda ishlatilish davri eneolit"
+        },
+        {
+          "kind": "term",
+          "term": "Bronza",
+          "definition": "Misni qalay, qo‘rg‘oshin yoki rux bilan qo‘shib olingan qattiq metall.",
+          "evidence": "rux bilan qo'shib, bronza olishni o'rganganlar"
+        },
+        {
+          "kind": "term",
+          "term": "Patriarxal oila",
+          "definition": "Ota tomonidan yaqin qarindoshlarning bir necha avlodlaridan tashkil topgan oila.",
+          "evidence": "Patriarxal\noila – ota to-\nmonidan yaqin"
+        },
+        {
+          "kind": "term",
+          "term": "Sug‘orma dehqonchilik",
+          "definition": "Sun’iy sug‘orishga asoslangan dehqonchilik, u O‘rta Osiyo janubida vujudga kelgan.",
+          "evidence": "asoslangan dehqonchilik vujudga keldi"
+        },
+        {
+          "kind": "term",
+          "term": "Kulolchilik xumdoni",
+          "definition": "Idishlarni pishirish uchun foydalanila boshlagan inshoot.",
+          "evidence": "idishlarni pishirish uchun kulolchilik xumdon"
+        },
+        {
+          "kind": "place",
+          "place": "Zamonbobo",
+          "event": "Zarafshon daryosi havzasida, Buxoro viloyati Qorako‘l tumanida joylashgan bronza davri manzilgohi.",
+          "evidence": "daryosi havzasidagi Zamon"
+        },
+        {
+          "kind": "place",
+          "place": "Sopollitepa",
+          "event": "Surxondaryo vohasidagi Muzrabod tumanida joylashgan qadimgi ziroatchilar manzilgohi.",
+          "evidence": "bo'l gan Sopollitepani topishdi"
+        },
+        {
+          "kind": "place",
+          "place": "Jarqo‘ton",
+          "event": "Sheroboddan uncha uzoq bo‘lmagan joyda vujudga kelgan, ilk shahar alomatlari ko‘zga tashlanadigan manzilgoh.",
+          "evidence": "uncha uzoq bo'lmagan joy) Jarqo'ton man"
+        },
+        {
+          "kind": "cause",
+          "cause": "Bronza mehnat qurollarining paydo bo‘lishi",
+          "effect": "Dalalarga durust ishlov berilib, ekin maydonlari kengaydi va ortiqcha mahsulot vujudga keldi.",
+          "evidence": "Bronza mehnat qurollariga ega bo'lgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Omoch bilan yer haydash va chorvachilikning rivojlanishi",
+          "effect": "Urug‘ni yetarli mahsulot bilan ta’minlash erkaklar qo‘liga o‘tdi.",
+          "evidence": "Omoch bilan yer haydab, ziroatchilik qilish"
+        },
+        {
+          "kind": "cause",
+          "cause": "Chorvachilikning dehqonchilikdan ajralib chiqishi",
+          "effect": "Chorvachilik asta-sekin alohida xo‘jalik tarmog‘iga aylanib bordi.",
+          "evidence": "Chorvachilik asta-sekin deh"
+        },
+        {
+          "kind": "number",
+          "number": "2",
+          "unit": "qism",
+          "meaning": "Jarqo‘ton qal’a va uning atrofidagi hunarmand hamda dehqon uylaridan iborat bo‘lgan.",
+          "evidence": "U ikki qismdan iborat bo'lgan"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Temir davriga o‘tishda O‘rta Osiyoning rivojlanishi",
+      "page": 25,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. XIV–XIII asrlar",
+          "date_label": "Mil. avv. XIV–XIII asrlar",
+          "event": "Kichik Osiyodagi xettlar temirdan birinchi bo‘lib foydalana boshladi.",
+          "evidence": "gi xettlar (mil. avv. XIV–XIII asrlar)"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. IX–VIII asrlar",
+          "date_label": "Mil. avv. IX–VIII asrlar",
+          "event": "O‘rta Osiyodan temirdan yasalgan ilk mehnat qurollari topilgan.",
+          "evidence": "mirdan yasalgan ilk mehnat qurollari O'rta"
+        },
+        {
+          "kind": "date_event",
+          "date": "temir asri boshlari",
+          "date_label": "Temir asri boshlari",
+          "event": "O‘rta Osiyoda aholi kohinlar, jangchilar, dehqonlar va hunarmandlarga bo‘lindi.",
+          "evidence": "Temir asri boshlarida O'rta Osiyoda aholi"
+        },
+        {
+          "kind": "date_event",
+          "date": "temir davri",
+          "date_label": "Temir davri",
+          "event": "Doimiy harbiy to‘qnashuvlar sharoitida qabilalar ittifoqlari paydo bo‘ldi.",
+          "evidence": "sharoitida qabilalar ittifoqlari paydo bo'ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "temir davri",
+          "date_label": "Temir davri",
+          "event": "Jamiyat harbiy demokratiya tamoyillari asosida yashay boshladi.",
+          "evidence": "demokratiya tamoyillari asosida yashay bosh"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VII–VI asrlar",
+          "date_label": "Mil. avv. VII–VI asrlar",
+          "event": "Temir pichoq shu davrga oid topilmalar qatoriga kiradi.",
+          "evidence": "Temir pichoq.\nMil. avv. VII –VI"
+        },
+        {
+          "kind": "person",
+          "person": "Xettlar",
+          "role": "Kichik Osiyoda yashagan, temirdan birinchi bo‘lib foydalangan xalq",
+          "activity": "Mil. avv. XIV–XIII asrlarda temirdan mehnat qurollari yasashni boshlagan.",
+          "evidence": "Temirdan birinchi bo'lib Kichik Osiyoda"
+        },
+        {
+          "kind": "person",
+          "person": "Tutanxamon",
+          "role": "Misr fir’avni, maqbarasi mashhur hukmdor",
+          "activity": "Maqbarasidan temirdan yasalgan zeb-ziynat buyumlari topilgan.",
+          "evidence": "Tutanxamon maqbarasidan va"
+        },
+        {
+          "kind": "person",
+          "person": "Harbiy sardorlar",
+          "role": "Qabilalar ittifoqlariga saylab qo‘yilgan rahbarlar",
+          "activity": "Harbiy demokratiya sharoitida qabilalar ittifoqlariga boshchilik qilgan.",
+          "evidence": "o'tish davrida\nqabilalar ittifoq"
+        },
+        {
+          "kind": "term",
+          "term": "Harbiy demokratiya",
+          "definition": "Ilk davlatchilikka o‘tish davrida saylab qo‘yilgan harbiy sardorlar boshchilik qilgan boshqaruv shakli.",
+          "evidence": "biy sardorlar\nboshchilik qil"
+        },
+        {
+          "kind": "term",
+          "term": "Nmana",
+          "definition": "«Avesto»da tilga olingan katta patriarxal oila.",
+          "evidence": "«nmana» – katta patriarxal oilasi ha"
+        },
+        {
+          "kind": "term",
+          "term": "Vis",
+          "definition": "«Avesto»da bir necha nmananing birlashuvidan tashkil topgan urug‘ jamoasi.",
+          "evidence": "na»lar urug' jamoasi – «vis»ni tashkil etgan"
+        },
+        {
+          "kind": "term",
+          "term": "Varzana",
+          "definition": "«Avesto»da hududiy qo‘shnichilik jamoasi deb nomlangan birlashma.",
+          "evidence": "Hududiy qo'shnichilik jamoasi esa «varzana»"
+        },
+        {
+          "kind": "term",
+          "term": "Zantu",
+          "definition": "«Avesto»da qabila deb nomlangan, bunday jamoalar birlashgan uyushma.",
+          "evidence": "«zantu»ga birlashgan. O'z hududini himoya"
+        },
+        {
+          "kind": "place",
+          "place": "Kichik Osiyo",
+          "event": "Temirdan birinchi bo‘lib xettlar foydalana boshlagan hudud.",
+          "evidence": "Temirdan birinchi bo'lib Kichik Osiyoda"
+        },
+        {
+          "kind": "place",
+          "place": "Maykop qo‘rg‘oni",
+          "event": "Kavkazdagi yodgorlik bo‘lib, undan temir buyumlar topilgan.",
+          "evidence": "Kavkazdagi Maykop qo'rg'oni yodgorligidan"
+        },
+        {
+          "kind": "place",
+          "place": "Kavkazorti",
+          "event": "Temir buyumlari tarqalgan mintaqalardan biri, Mesopotamiya va Eronga qo‘shni hudud.",
+          "evidence": "qo'shni mintaqalardagi (Mesopotamiya, Eron,"
+        },
+        {
+          "kind": "cause",
+          "cause": "Temir qurollarning xo‘jalikda keng tarqalishi",
+          "effect": "Mehnat unumdorligi oshib, ishlab chiqarishning yanada rivojlanishiga zamin yaratdi.",
+          "evidence": "qalishi mehnat unumdorligini"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qabilalar o‘rtasidagi doimiy harbiy to‘qnashuvlar",
+          "effect": "Qabila-urug‘ oqsoqollarining ta’siri kuchayib, qabilalar ittifoqlari paydo bo‘ldi.",
+          "evidence": "Qabila-urug' oqsoqollarining ta'siri tobora"
+        },
+        {
+          "kind": "cause",
+          "cause": "Temir omoch va boltalar paydo bo‘lishi va qo‘llanishi",
+          "effect": "Katta maydonlarda dehqonchilikning rivojlanishiga imkon yaratib berildi.",
+          "evidence": "mehnat qurollari katta maydonlarda dehqon"
+        },
+        {
+          "kind": "number",
+          "number": "1500",
+          "unit": "°C",
+          "meaning": "Temir misdan ko‘ra ancha yuqori haroratda eriydigan metall.",
+          "evidence": "(1500°C) eriydi"
+        },
+        {
+          "kind": "number",
+          "number": "4",
+          "unit": "guruh",
+          "meaning": "Temir asri boshlarida O‘rta Osiyoda aholi shuncha guruhga bo‘lingan.",
+          "evidence": "to'rtta guruhga bo'lindi: kohinlar, jangchilar"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Nil vodiysi va uning aholisi",
+      "page": 28,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 4-ming yillik boshlari",
+          "date_label": "Mil. avv. 4-ming yillik boshlari",
+          "event": "Odamlar Nil daryosi qirg‘oqlaridagi yerlarni o‘zlashtirishga kirishdi.",
+          "evidence": "Mil. avv. 4 ming yillik boshlarida"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 4-ming yillik",
+          "date_label": "Mil. avv. 4-ming yillik",
+          "event": "Ziroatchilik aholining asosiy mashg‘ulotiga aylandi.",
+          "evidence": "ziroatchilik aholining asosiy mashg'ulotiga"
+        },
+        {
+          "kind": "date_event",
+          "date": "iyul–sentabr",
+          "date_label": "Iyul–sentabr oylari",
+          "event": "Dalalarni suv bosgan bu oylarda dehqonlar dam olishib, urug‘likni ekishga hozirlashgan.",
+          "evidence": "Iyul-sentabr oylarida"
+        },
+        {
+          "kind": "date_event",
+          "date": "kuz",
+          "date_label": "Kuz oylari",
+          "event": "Kuzda dalalarga urug‘ ekilgan, qishda esa hosil yig‘im-terimi boshlangan.",
+          "evidence": "Kuzda dalalarga urug' ekilgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "qish",
+          "date_label": "Qish oylari",
+          "event": "Hosil yig‘im-terimi boshlanib, boshoqlar mis o‘roqlar bilan o‘rib olingan.",
+          "evidence": "mis o'roqlar bilan o'rib olib"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 3000-yil",
+          "date_label": "Mil. avv. 3000-yil",
+          "event": "Yuqori Misr hukmdori Menes g‘alaba qozonib, birlashgan mamlakatning birinchi fir’avni bo‘ldi.",
+          "evidence": "Mil. avv. 3000-yilda ikkala davlat o'rtasida"
+        },
+        {
+          "kind": "person",
+          "person": "Menes",
+          "role": "Yuqori Misr hukmdori, birlashgan Misrning birinchi fir’avni",
+          "activity": "Mil. avv. 3000-yilda ikkala davlat o‘rtasidagi urushda g‘alaba qozongan.",
+          "evidence": "Menes g'alaba qozondi"
+        },
+        {
+          "kind": "person",
+          "person": "Tutmos II",
+          "role": "Misr fir’avni, hukmronligi davrida Misr chegaralari xaritada aks etgan",
+          "activity": "Hukmronligi davrida Misr chegaralari xaritada aks ettirilgan hukmdor.",
+          "evidence": "Tutmos II va\nTutmos III\nhukmronligi"
+        },
+        {
+          "kind": "person",
+          "person": "Tutmos III",
+          "role": "Misr fir’avni, yurishlar yo‘nalishlari xaritada ko‘rsatilgan hukmdor",
+          "activity": "Tutmos II bilan birga Misr chegaralarini belgilagan davrda hukmronlik qilgan.",
+          "evidence": "Tutmos II va\nTutmos III\nhukmronligi"
+        },
+        {
+          "kind": "person",
+          "person": "Misr hunarmandlari",
+          "role": "30 dan ziyod kasb-korga ega bo‘lgan misrlik ustalar",
+          "activity": "Misgar, kulol, quruvchi, duradgor, kemasoz va to‘quvchi bo‘lib ishlagan.",
+          "evidence": "rining 30 dan ziyod kasb-kor"
+        },
+        {
+          "kind": "term",
+          "term": "Delta",
+          "definition": "Nil daryosining dengizga quyilish joyidagi uchburchaksimon shoxobchalar manzarasi.",
+          "evidence": "yunonlar delta deb atashgan"
+        },
+        {
+          "kind": "term",
+          "term": "Nom",
+          "definition": "Tarqoq manzilgohlarning birlashuvidan hosil bo‘lgan kichik davlat.",
+          "evidence": "atalgan kichik davlatlarga birlashdi. Har bir"
+        },
+        {
+          "kind": "term",
+          "term": "Nomarx",
+          "definition": "Har bir nom deb atalgan kichik davlatni boshqargan hukmdor.",
+          "evidence": "davlatni «nomarx» –  boshqargan"
+        },
+        {
+          "kind": "term",
+          "term": "Fir’avn",
+          "definition": "Misr hukmdorlari unvoni bo‘lib, uni birinchi bo‘lib birlashgan mamlakat hukmdori olgan.",
+          "evidence": "lakatning birinchi hukmdori"
+        },
+        {
+          "kind": "term",
+          "term": "Podsholik davrlari",
+          "definition": "Olimlar Misr tarixini ajratgan Ilk, Qadimgi, O‘rta, Yangi va So‘nggi davrlar.",
+          "evidence": "Olimlar Misr tarixini Ilk, Qadimgi, O'rta, Yangi"
+        },
+        {
+          "kind": "place",
+          "place": "Nil vodiysi",
+          "event": "Qadimda botqoqliklar bilan qoplangan, keyinchalik o‘zlashtirilgan vodiy.",
+          "evidence": "Qadim o'tgan zamonlarda Nil vodiysi"
+        },
+        {
+          "kind": "place",
+          "place": "Memfis",
+          "event": "Yagona va birlashgan davlat uchun yangi poytaxt sifatida barpo etilgan shahar.",
+          "evidence": "poytaxt bo'lmish Memﬁ s shahri barpo etildi"
+        },
+        {
+          "kind": "place",
+          "place": "Fiva",
+          "event": "Misr qayta birlashgandan keyin davlatning poytaxti bo‘lgan shahar.",
+          "evidence": "Bu davlatning poytaxti Fiva shahri bo'lgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Nil daryosining dalalarni suvga bostirib, keng-mo‘l oqishi",
+          "effect": "Misrlik dehqonlarning hosili barakali bo‘lgan.",
+          "evidence": "bostirib, keng-mo'l oqqan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Iqlimning o‘zgarishi va suvning kamayishi",
+          "effect": "Shimoliy Afrika cho‘lga aylanib, odamlar Nil vodiysi va deltasini o‘zlashtira boshladi.",
+          "evidence": "ham yildan-yilga kamayaverdi, Shimoliy Afrika"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xirmondan chiqqan donni sopol xumlarda saqlash",
+          "effect": "Hosil son-sanoqsiz kemiruvchilar – zararkunandalardan omon saqlangan.",
+          "evidence": "Xirmonjoydan chiqqan don sopol"
+        },
+        {
+          "kind": "cause",
+          "cause": "Nomlar hukmdorlarining o‘z mol-mulkini ko‘paytirishi",
+          "effect": "Misr mustaqil davlatlarga aylangan alohida nomlarga parchalanib ketdi.",
+          "evidence": "lari o'z mol-mulkini ko'paytirib oldi, natijada"
+        },
+        {
+          "kind": "number",
+          "number": "6 ming",
+          "unit": "kilometr",
+          "meaning": "Nil daryosining uzunligi shuncha, u to‘lib oqadigan katta daryodir.",
+          "evidence": "Nil 6 ming kilometr uzunlikdagi to'lib"
+        },
+        {
+          "kind": "number",
+          "number": "30 dan ziyod",
+          "unit": "kasb-kor",
+          "meaning": "Qadimgi Misr hunarmandlarining kasb-korlari soni shuncha bo‘lgan.",
+          "evidence": "rining 30 dan ziyod kasb-kor"
+        }
+      ]
+    }
+  ]
+}

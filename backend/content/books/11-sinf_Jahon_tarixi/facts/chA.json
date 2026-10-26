@@ -1,0 +1,989 @@
+{
+  "chapter": "I–II BOB. XX asr oxiri – XXI asr boshlarida jahon tarixi",
+  "topics": [
+    {
+      "number": 1,
+      "title": "XX asr oxiri – XXI asr boshlarida xalqaro munosabatlar",
+      "page": 4,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yildan",
+          "event": "Jahon tarixining eng yangi davri uchinchi bosqichi boshlandi va hozirgi kungacha bo‘lgan voqealarni qamrab oladi",
+          "evidence": "Jahon tarixi eng yangi davrining uchinchi bosqichi 1991-yildan\nbosh lanib, hozirgi kungacha bo‘lgan voqealarni o‘rganadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990",
+          "date_label": "1990-yillar",
+          "event": "Kapitalistik va sotsialistik harbiy-siyosiy bloklar o‘rtasidagi qarama-qarshilik barham topdi",
+          "evidence": "kapita listik va sotsialistik harbiy-siyosiy bloklar o‘rtasidagi qarama-\nqarshilik 1990-yillarda barham topdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990",
+          "date_label": "1990-yillar boshlari",
+          "event": "Xalqaro munosabatlar tizimida tub burilish yuz berdi",
+          "evidence": "1990-yillar boshlarida xalqaro munosabatlar tizimida tub buri-\nlish yuz berdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2017",
+          "date_label": "2017-yil 19-sentabr",
+          "event": "O‘zbekiston Prezidenti Sh. Mirziyoyev BMTning 72-sessiyasida nutq so‘zladi",
+          "evidence": "O‘zbekiston Respublikasi Prezidenti Sh.  Mirziyoyevning 2017-yil\n19-sentabrda BMTning 72-sessiyasida so‘zlagan nutqi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2008–2009",
+          "date_label": "2008–2009-yillar",
+          "event": "Jahon moliyaviy inqirozi yangi qudratli mamlakatlarga iqtisodiy kuchlar nisbatini o‘zgartirish imkonini berdi",
+          "evidence": "2008  –  2009-yillardagi jahon moliyaviy\ninqirozi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2014",
+          "date_label": "2014-yilgacha",
+          "event": "AQSH va Rossiya o‘rtasida vujudga kelgan hamkorlik holati davom etdi",
+          "evidence": "AQSH va Rossiya o‘rtasida vujudga kelgan hamkorlik holati\n2014-yilgacha davom etdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2014",
+          "date_label": "2014-yil",
+          "event": "Ukrainada boshlangan siyosiy inqiroz Rossiya va G‘arb davlatlari o‘rtasidagi qarama-qarshilikning yangi bosqichiga olib keldi",
+          "evidence": "Shu yili Ukrainada boshlangan siyosiy\ninqiroz Rossiya va G‘arb davlatlari o‘rtasidagi jiddiy qarama-qarshi-\nlikning yangi bosqichiga olib keldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990-lar oxiri",
+          "date_label": "1990-yillar oxiri",
+          "event": "Tropik va Janubiy Afrikaning bir qator mamlakatlari qonli urushlar va davlat to‘ntarishlari maydoniga aylandi",
+          "evidence": "1990-yillar oxirida Tropik va Janubiy\nAfrikaning bir qator mamlakatlari qonli urushlar, davlat to‘ntarishlari,\npartizanlik harakatlari maydoniga aylandi"
+        },
+        {
+          "kind": "person",
+          "person": "Sh. Mirziyoyev",
+          "role": "O‘zbekiston Respublikasi Prezidenti",
+          "activity": "2017-yil 19-sentabrda BMTning 72-sessiyasida nutq so‘zlab, ko‘pqutbli dunyoda O‘zbekiston o‘rnini belgilashga qaratilgan takliflarni ilgari surdi",
+          "evidence": "2017-yil\n19-sentabrda BMTning 72-sessiyasida so‘zlagan nutqi ko‘pqutbli dunyo\nshakllanishi va globallashuv jarayonida O‘zbekistonning o‘rnini bel-\ngilab berishga qaratildi"
+        },
+        {
+          "kind": "person",
+          "person": "Sh. Mirziyoyev",
+          "role": "O‘zbekiston Respublikasi Prezidenti",
+          "activity": "Markaziy Osiyoni tinch va gullab-yashnayotgan hududga aylantirish tashabbusini ilgari surdi",
+          "evidence": "Uning Markaziy Osiyoni tinch va gullab-\nyashnayotgan hududga aylantirish, Orol muammosini hal qilishda\numumjahon ishtiroki"
+        },
+        {
+          "kind": "person",
+          "person": "Sh. Mirziyoyev",
+          "role": "O‘zbekiston Respublikasi Prezidenti",
+          "activity": "Orol muammosini hal qilishda umumjahon ishtiroki va Afg‘onistonda tinchlik o‘rnatish zarurligini taklif qildi",
+          "evidence": "Orol muammosini hal qilishda\numumjahon ishtiroki, Afg‘onistonda tinchlik o‘rnatish va butun dunyo\nyoshlarini"
+        },
+        {
+          "kind": "term",
+          "term": "Globallashuv",
+          "definition": "Jahon mamlakatlarining iqtisodiy, siyosiy, madaniy va diniy jihatdan birlashishi yoki yaqinlashish jarayoni",
+          "evidence": "Globallashuv  –  bu jahon mamlakatlarining iqtisodiy,\nsiyosiy, madaniy va diniy jihatdan birlashishi yoki\nyaqin lashish jarayoni"
+        },
+        {
+          "kind": "term",
+          "term": "Modernizatsiya",
+          "definition": "Ijtimoiy tizimni jadal rivojlantirish maqsadida uni to‘liq yoki qisman yangilash, an’anaviy jamiyatdan yangilangan jamiyatga o‘tish jarayoni",
+          "evidence": "Modernizatsiya  –  bu ijtimoiy tizimni jadal rivojlan-\ntirish maqsadida uni to‘liq yoki qisman yangilash, an’anaviy\njamiyatdan yangilangan jamiyatga, agrar sivilizatsiyadan industrial\nsivilizatsiyaga o‘tish jarayoni"
+        },
+        {
+          "kind": "term",
+          "term": "Totalitar mafkura",
+          "definition": "Mafkuraviy rejim shakli bo‘lib, totalitar jamiyatda aholini keng miqyosda ommaviy mafkuraviy qayta tarbiyalash vositasidir",
+          "evidence": "Totalitar mafkura   –  mafkuraviy rejim shakli bo‘lib, totalitar\njamiyatda aholini keng miqyosda ommaviy ravishda mafkuraviy\nqayta tarbiyalash vositasidir"
+        },
+        {
+          "kind": "term",
+          "term": "Integratsiya",
+          "definition": "Suveren davlatlar o‘rtasida tovarlar, xizmatlar, moliya va ishchi kuchi erkin harakatlanadigan iqtisodiy kenglikni tashkil qilish maqsadida birlashish",
+          "evidence": "Integratsiya  –  bu suveren davlatlar o‘rtasida tovarlar, xizmatlar,\nmoliya, investitsiya, ishchi kuchi erkin harakatlanadigan iqtisodiy\nkenglikni tashkil qilish maqsadida birlashish jarayoni"
+        },
+        {
+          "kind": "term",
+          "term": "Uchinchi dunyo",
+          "definition": "XX asrning ikkinchi yarmiga xos bo‘lgan, «sovuq urush»da bevosita ishtirok etmayotgan davlatlarga nisbatan qo‘llanilgan siyosiy atama",
+          "evidence": "Uchinchi dunyo  –  XX asrning ikkinchi yarmiga xos bo‘lgan\nsiyosiy atama"
+        },
+        {
+          "kind": "place",
+          "place": "Yaqin Sharq",
+          "event": "Iroq, Falastin va Suriya bilan bog‘liq mojarolar jahon hamjamiyati oldidagi hal qilinishi lozim bo‘lgan muammolar qatorida turibdi",
+          "evidence": "Yaqin Sharq ( Iroq, Falastin,\nSuriya), Shimoliy Koreya, Ukraina va Afrikadagi mojarolar bilan"
+        },
+        {
+          "kind": "place",
+          "place": "Orol",
+          "event": "Orol muammosini hal qilishda umumjahon ishtiroki zarurligi BMT minbaridan taklif qilindi",
+          "evidence": "Orol muammosini hal qilishda\numumjahon ishtiroki"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sotsialistik tizimning barbod bo‘lishi va SSSRning tarqalib ketishi",
+          "effect": "Jahon miqyosida kuchlar nisbati va qudratli davlatlar o‘rtasidagi muvozanatga katta ta’sir ko‘rsatdi",
+          "evidence": "Bu davrda\nsotsialistik tizimning barbod bo‘lishi, SSSRning tarqalib ketishi jahon\nmiqyosida kuchlar nisba tiga, qudratli davlatlar o‘rtasida shakllangan\nmuvozanatga katta ta’sir ko‘rsatdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Iqtisodiy va madaniy hayotning globallashuvi hamda ekologiya muammolarining keskinlashuvi",
+          "effect": "Xalqaro barqarorlikka jiddiy xavf sola boshladi va ko‘plab mamlakatlardagi muammolar manbayiga aylandi",
+          "evidence": "Bu davrda iqtisodiy va madaniy hayotning globallashuvi, ekologiya\nmuam molari ning keskinlashuvi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Hindiston va Pokistonning yadro quroliga ega bo‘lish uchun qilgan intilishlari",
+          "effect": "Shu mintaqadagi ziddiyatlarni kuchaytirdi",
+          "evidence": "Shuningdek, Hindiston\nva Pokistonning yadro quroliga ega bo‘lish uchun qilgan intilishlari\nshu mintaqadagi ziddiyatlarni kuchaytirdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "AQSHning jahonda mutlaq gegemonligi va G‘arb davlatlarining hukmronligi",
+          "effect": "Xitoy, Rossiya va Hindiston kabi davlatlarning bunga rozi bo‘lishi qiyin bo‘lib qoldi",
+          "evidence": "bugun xalqaro munosabatlarda tobora katta rol o‘ynayot gan Xitoy,\nRossiya, Hindiston kabi davlatlarning bunga rozi bo‘lishi qiyin"
+        },
+        {
+          "kind": "number",
+          "number": "20",
+          "unit": "ta davlat",
+          "meaning": "Jahonning 20 ta iqtisodiy eng yirik mamlakatlarini birlashtirgan «Katta yigirmalik» – G-20 klubi tashkil qilindi",
+          "evidence": "jahonning 20 ta iqtisodiy eng yirik\nmamlakatlari vakillarini birlashtirgan « Katta yigirmalik»  –  G-20 klubi\ntashkil qilindi"
+        },
+        {
+          "kind": "number",
+          "number": "80",
+          "unit": "foiz",
+          "meaning": "Jahon yalpi ichki mahsulotining shu qismi G-20 mamlakatlari hissasiga to‘g‘ri keladi",
+          "evidence": "jahon YIMining 80%i shu mam-\nlakatlar hissasiga to‘g‘ri keladi"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Sharqiy Yevropa mamlakatlarida demokratik inqiloblar va sotsialistik lagerni parchalanishi",
+      "page": 9,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1988",
+          "date_label": "1988-yildan",
+          "event": "Polshada sotsialistik tuzumdan norozilik namoyishlari kuchayib, siyosiy islohotlar va «Birdamlik»ning erkin faoliyati talab qilindi",
+          "evidence": "Polshada aholining mamlakatdagi sotsialistik tuzumdan norozilik\nnamoyishlari 1988-yildan boshlab kuchayib bordi va ular  siyosiy islo-\nhotlarni, Lex Valensa boshchiligidagi « Birdam lik» kasaba uyushma-\nsining erkin faoliyat yuritish huquqini talab qildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1989",
+          "date_label": "1989-yil",
+          "event": "Bo‘lib o‘tgan saylovlar hukmron partiya obro‘yining tushganini va «Birdamlik» ommalashayotganini ko‘rsatdi",
+          "evidence": "1989-yili bo‘lib o‘tgan saylovlar hukm-\nron Polsha bir lashgan ishchi partiya si-\nning ( PBIP) obro‘yi tushib ketganligi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990",
+          "date_label": "1990-yil",
+          "event": "Navbatdan tashqari prezidentlik saylovlarida Lex Valensa g‘alaba qozondi",
+          "evidence": "1990-yili navbatdan tashqari prezidentlik saylovlarida Lex\nValensa g‘alaba qozondi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1989",
+          "date_label": "1989-yil dekabr",
+          "event": "Timishoaradagi tinch namoyish o‘qqa tutilishi mamlakat bo‘ylab qo‘zg‘olon boshlanishiga olib keldi",
+          "evidence": "1989-yil de-\nkabrda Timishoara shahrida aholi ning N.  Chaushesku\nrejimiga qarshi tinch namoyishi Ruminiya max ﬁ y xiz-\nmati xodimlari tomo nidan o‘qqa tutilishi mamlakat\nbo‘ylab qo‘zg‘olonning boshlanishiga olib keldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1989",
+          "date_label": "1989-yil noyabr",
+          "event": "Ikki nemis davlatini ajratib turgan Berlin devori qulab, chegara amalda ochildi",
+          "evidence": "1989-yil noyabrda ikki nemis davlatini ajratib turgan Berlin de-\nvorining qulashiga olib keldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990",
+          "date_label": "1990-yil sentabr",
+          "event": "Moskvada ikki nemis davlatini Germaniya Federativ Respublikasiga birlashtirish to‘g‘risida shartnoma imzolandi",
+          "evidence": "1990-yil sentabr oyida  Moskvada ikki ne-\nmis davlatini bitta  –  Germaniya Federativ Respublikasiga birlashtirish\nto‘g‘risida shartnoma imzolandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991–1992",
+          "date_label": "1991–1992-yillar",
+          "event": "Yugoslaviya davlati tarqalib ketdi, faqat Serbiya va Chernogoriya federatsiyada qoldi",
+          "evidence": "Oqibatda 1991  –  1992-yil lari Yugoslaviya davlati tarqalib ketdi.\nFa qat Serbiya va Cherno goriya federatsiyada qoldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1999",
+          "date_label": "1999-yil",
+          "event": "NATO qo‘shinlari Yugoslaviyani bombardimon qilib, mojaro Yevropa miqyosidagi inqirozga aylandi",
+          "evidence": "1999-yili NATO qo‘shinlari Yugos laviyani\nbom bar  dimon qildi. Mojaro Yevropa miqyosidagi inqirozga aylandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1993",
+          "date_label": "1993-yil 1-yanvar",
+          "event": "Jahon xaritasida ikki mustaqil davlat – Chexiya Respublikasi va Slovakiya Respublikasi paydo bo‘ldi",
+          "evidence": "1993-yil 1-yanvardan jahon xaritasida ik-\nkita mustaqil davlat  –  Chexiya Respublikasi va Slovakiya Respublikasi\npaydo bo‘ldi"
+        },
+        {
+          "kind": "person",
+          "person": "Lex Valensa",
+          "role": "Polshada «Birdamlik» kasaba uyushmasi rahbari, keyinchalik mamlakat prezidenti",
+          "activity": "Sotsialistik tuzumga qarshi norozilik harakatiga boshchilik qilib, 1990-yilda prezidentlik saylovlarida g‘alaba qozondi",
+          "evidence": "Lex Valensa boshchiligidagi « Birdam lik» kasaba uyushma-\nsining erkin faoliyat yuritish huquqini talab qildi"
+        },
+        {
+          "kind": "person",
+          "person": "Lex Valensa",
+          "role": "1990-yillarning eng mashhur polyak siyosatchilaridan biri, Polsha prezidenti",
+          "activity": "Ijtimoiy muhit o‘zgarishi natijasida navbatdagi prezidentlik saylovlarida mag‘lubiyatga uchradi",
+          "evidence": "dan biri Lex Valensa pre zi  dentlik saylovlarida mag‘lu biyatga uchradi"
+        },
+        {
+          "kind": "person",
+          "person": "Ion Iliyesku",
+          "role": "Ruminiyadagi Milliy qutqarish fronti qo‘mitasi raisi, mamlakat prezidenti",
+          "activity": "1990-yilgi saylovlarda Ruminiya prezidenti etib saylandi",
+          "evidence": "Qo‘mita raisi bo‘lgan Ion Iliyesku 1990-yil-\ngi saylovlarda mamlakat prezi denti etib saylandi"
+        },
+        {
+          "kind": "person",
+          "person": "N. Chaushesku",
+          "role": "Ruminiyada ag‘darilgan kommunistik rejim rahbari",
+          "activity": "Rejimiga qarshi qo‘zg‘olon natijasida rafiqasi bilan sud qilinib, hukm bo‘yicha otib tashlandi",
+          "evidence": "Qo‘zg‘olon N.  Chaushesku va uning\nraﬁ qasini sud qilish, sudning hukmiga ko‘ra otib tash-\nlash jarayoni bilan tugadi"
+        },
+        {
+          "kind": "term",
+          "term": "Ko‘ppartiyaviylik prinsipi",
+          "definition": "Zamonaviy demokratik mamlakatlarda siyosiy hayotni tashkil qilishning asosiy konstitutsiyaviy tamoyillaridan biri, mafkuraviy plyuralizmning yorqin ifodasi",
+          "evidence": "Ko‘ppartiyaviylik prinsipi   –  bu zamonaviy demokra-\ntik mamlakatlarda siyosiy hayotni tashkil qilish-\nning asosiy konstitutsiyaviy tamoyillaridan biri bo‘lib,\nmafkuraviy plyuralizm (ko‘pxillik)ning yorqin ifodalan-\ngan ko‘rinishidir"
+        },
+        {
+          "kind": "term",
+          "term": "Etnik mojaro",
+          "definition": "Odatda bir-biri bilan qo‘shni yashaydigan turli etnik guruhga mansub jamoalar o‘rtasidagi to‘qnashuv",
+          "evidence": "Etnik mojaro   –  odatda, bir-biri bilan qo‘shni yashaydigan turli\netnik guruhga mansub jamoalar o‘rtasidagi to‘qnashuv"
+        },
+        {
+          "kind": "term",
+          "term": "PBIP",
+          "definition": "Polshadagi hukmron Polsha birlashgan ishchi partiyasi; u 1989-yilgi saylovlardan so‘ng o‘z faoliyatini to‘xtatdi",
+          "evidence": "Yangi tar kibdagi\nparlament konstitutsiyaga o‘zgar ish kiri-\ntib, Polshani demokratik huquqiy dav-\nlat deb e’lon qildi. PBIP o‘z faoliyatini\nto‘xtatdi"
+        },
+        {
+          "kind": "term",
+          "term": "Milliy qutqarish fronti",
+          "definition": "Ruminiyada qo‘zg‘olon kunlari tashkil qilingan va hokimiyatni o‘z qo‘liga olgan tashkilot",
+          "evidence": "Hokimiyat qo‘zg‘olon kunlari tashkil qilingan Milliy\nqutqarish fronti qo‘liga o‘tdi"
+        },
+        {
+          "kind": "place",
+          "place": "Berlin",
+          "event": "1989-yil noyabrda Berlin devori qulab, ikki Germaniya o‘rtasidagi chegara amalda ochildi",
+          "evidence": "Berlin de-\nvorining qulashiga olib keldi. Bu amalda ikki Ger maniya o‘rtasidagi\nchegaraning ochilishi edi"
+        },
+        {
+          "kind": "place",
+          "place": "Timishoara",
+          "event": "1989-yil dekabrda N. Chaushesku rejimiga qarshi tinch namoyish bo‘lib o‘tdi",
+          "evidence": "1989-yil de-\nkabrda Timishoara shahrida aholi ning N.  Chaushesku\nrejimiga qarshi tinch namoyishi"
+        },
+        {
+          "kind": "place",
+          "place": "Kosovo",
+          "event": "1990-yildan keyin musulmon-albanlar «Kosovo Respublikasi»ni e’lon qilib, qurolli mojaroga olib keldi",
+          "evidence": "1990-yildan keyin Serbiyada musulmon-albanlar o‘zlarining « Kosovo\nRespublikasi» ni e’lon qildi. Bu Serbiya bilan qurolli mojaroga olib kel-\ndi"
+        },
+        {
+          "kind": "cause",
+          "cause": "1980-yillar oxirida Germaniya Demokratik Respublikasida ijtimoiy-iqtisodiy va siyosiy inqirozning avj olishi",
+          "effect": "1989-yil noyabrda Berlin devorining qulashiga olib keldi",
+          "evidence": "1980-yillar oxirida Germaniya De-\nmo kratik Respublikasida ijtimoy-iqtiso diy va siyosiy inqiroz avj olib,\n1989-yil noyabrda ikki nemis davlatini ajratib turgan Berlin de-\nvorining qulashiga olib keldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sotsialistik tuzumning qulashi va millatchi hamda ayirmachi kuchlarning faollashuvi",
+          "effect": "1991–1992-yillari Yugoslaviya davlati tarqalib ketdi",
+          "evidence": "sotsialistik tuzumning qu-\nlashi millatchi va ayirmachi kuchlar ning faollashuvi uchun imkoniyat\nyaratdi. Oqibatda 1991  –  1992-yil lari Yugoslaviya davlati tarqalib ketdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Bozor iqtisodiga jadal o‘tish",
+          "effect": "Inflyatsiya va ishsizlik oshib, turmush darajasi pasaydi, aholi islohotlar uchun javobgar hukumatlarni qo‘llamay qo‘ydi",
+          "evidence": "Bozor iqtisodiga jadal o‘tish bir qator jiddiy muammolarni keltirib\nchiqar di. Inﬂ atsiya darajasi va ishsizlikning oshishi"
+        },
+        {
+          "kind": "number",
+          "number": "6",
+          "unit": "respublika",
+          "meaning": "Yugoslaviya Federativ Respublikasi oltita respublikadan tashkil topgan edi",
+          "evidence": "Oltita respublikadan tashkil top-\ngan Yugos laviya Federativ Respublikasida"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Sovet davlatining parchalanishi va sobiq sovet respublikalarida mustaqillikning e’lon qilinishi",
+      "page": 15,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 8-dekabr",
+          "event": "Rossiya, Ukraina va Belarus rahbarlari SSSR tugatilganini va MDH tuzilganini tasdiqladilar",
+          "evidence": "1991-\nyil 8-dekabrda Rossiya, Ukraina va Belarus rahbarlari yig‘ilib,\nSSSR siyo siy birlik sifatida tugatilganligini va Mustaqil Dav latlar\nHamdo‘stligi ( MDH) tuzil ganligini tasdiqladilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 25-dekabr",
+          "event": "SSSR prezidenti M. Gorbachyov davlat boshlig‘i vakolatlarini soqit qilgani to‘g‘risida bayonot berdi",
+          "evidence": "1991-yil 25-dekabr kuni SSSR prezidenti M.  Gorbachyov davlat\nboshlig‘i vakolatlarini o‘zidan soqit qilganligi to‘g‘risida bayonot berdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil dekabr",
+          "event": "Ashxobodda beshta Markaziy Osiyo respublikasi rahbarlari uchrashuvi bo‘lib, MDH ta’sischiligi ma’lum qilindi",
+          "evidence": "1991-yil dekabrda Turkmaniston poy-\ntaxti Ashxobod shahrida beshta Marka-\nziy Osiyo respublikalari rahbarlarining\nuchrashuvi bo‘lib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil dekabr",
+          "event": "Olmaotada Deklaratsiya qabul qilinib, SSSR xalqaro huquq subyekti sifatida faoliyatini tugatgani ta’kidlandi",
+          "evidence": "Olmaota shahrida bo‘lib\no‘tgan uchra shuvda Deklaratsiya qabul\nqilinib, SSSR xalqaro huquq subyekti va geosiyosiy reallik sifatida\no‘z faoliyatini tugatganligi ta’kidlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1999",
+          "date_label": "1999-yil oxiri",
+          "event": "B. Yelsin prezidentlik vakolatlarini V. Putinga topshirdi",
+          "evidence": "1999-yil oxirida B.  Yelsin prezidentlik vakolatlarini V.  Putinga top-\nshirdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2000",
+          "date_label": "2000-yil mart",
+          "event": "Bo‘lib o‘tgan saylovlarda V. Putin Rossiya prezidenti etib saylandi",
+          "evidence": "2000-yil mart oyida bo‘lib o‘tgan saylovlarda V.  Putin Rossiya\nprezidenti etib saylandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2014",
+          "date_label": "2014-yil",
+          "event": "Ukrainada «rangli inqilob» tufayli hokimiyat almashdi, Qrim Rossiyaga qo‘shilib, Rossiya G-8 dan chiqarildi",
+          "evidence": "2014-yili Ukrainada yuz bergan nav-\nbatdagi «rang li inqilob» tufayli hokimiyat almashgandan so‘ng Qrim-\nning Rossiya ga qo‘shilishi ortidan G‘arb davlatlari Rossiyaga qarshi\niqtiso diy sank siyalar e’lon qildi, u « Katta sakkizlik»  –  G-8 dan chiqa-\nrildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2017",
+          "date_label": "2017-yil",
+          "event": "O‘zbekiston va Rossiya munosabatlari yangi bosqichga ko‘tarilib, yirik hamkorlik kelishuvlari imzolandi",
+          "evidence": "2017-yili  O‘ zbekiston va  R ossiya munosa-\nbatlari yangi bosqichga ko‘tarilib, ikki tomonlama yirik hamkorlik\nkelishuvlari imzolandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2008",
+          "date_label": "2008-yil",
+          "event": "Gruziya MDH faoliyatida qatnashmasligini ma’lum qildi",
+          "evidence": "Ammo Gruziya 2008-yili,\nUkraina esa 2014-yildan MDH faoliyatida qatnash masligini ma’lum\nqildi"
+        },
+        {
+          "kind": "person",
+          "person": "M. Gorbachyov",
+          "role": "SSSR prezidenti",
+          "activity": "1991-yil 25-dekabrda davlat boshlig‘i vakolatlarini o‘zidan soqit qilganligi to‘g‘risida bayonot berdi",
+          "evidence": "SSSR prezidenti M.  Gorbachyov davlat\nboshlig‘i vakolatlarini o‘zidan soqit qilganligi to‘g‘risida bayonot berdi"
+        },
+        {
+          "kind": "person",
+          "person": "B. Yelsin",
+          "role": "Rossiya prezidenti",
+          "activity": "1999-yil oxirida prezidentlik vakolatlarini V. Putinga topshirdi",
+          "evidence": "1999-yil oxirida B.  Yelsin prezidentlik vakolatlarini V.  Putinga top-\nshirdi"
+        },
+        {
+          "kind": "person",
+          "person": "V. Putin",
+          "role": "Rossiya prezidenti",
+          "activity": "2000-yil martda saylanib, markaziy hokimiyatni mustahkamlab, joylardagi o‘zboshimchalikka chek qo‘ydi",
+          "evidence": "Markaziy hokimiyatni mustahkamlab, joylardagi o‘zboshim cha likka chek\nqo‘ydi"
+        },
+        {
+          "kind": "term",
+          "term": "MDH",
+          "definition": "1991-yil 8-dekabrda Rossiya, Ukraina va Belarus rahbarlari tomonidan tuzilgan Mustaqil Davlatlar Hamdo‘stligi",
+          "evidence": "SSSR siyo siy birlik sifatida tugatilganligini va Mustaqil Dav latlar\nHamdo‘stligi ( MDH) tuzil ganligini tasdiqladilar"
+        },
+        {
+          "kind": "term",
+          "term": "Geostrategiya",
+          "definition": "Davlatning xalqaro maydonda olib boradigan tashqi siyosiy va iqtisodiy faoliyati yo‘nalishlari",
+          "evidence": "Geostrategiya  –  davlatning xalqaro maydonda olib bo-\nradigan tashqi siyosiy va iqtisodiy faoliyati yo‘nalishlari"
+        },
+        {
+          "kind": "term",
+          "term": "«Rangli inqilob»",
+          "definition": "XX asr oxiri – XXI asr boshlaridagi norozilik namoyishlari va ular natijasida yuz bergan hokimiyat almashinuvlarining umumiy nomi",
+          "evidence": "Rangli inqilob»  –  bu XX asr oxiri  –  XXI asr boshlaridagi\nnorozilik namoyishlari va ular nati jasida yuz bergan hokimiyat\nalmashinuvlarining umumiy nomi"
+        },
+        {
+          "kind": "term",
+          "term": "SHHT",
+          "definition": "Shanxay Hamkorlik Tashkiloti; MDHdan tashqari paydo bo‘lgan mintaqaviy xalqaro tashkilotlardan biri",
+          "evidence": "Shanxay Hamkorlik Tashkiloti ( SHHT), Boj-\nxona It tifoqi shular jumlasidan bo‘lib"
+        },
+        {
+          "kind": "place",
+          "place": "Ashxobod",
+          "event": "1991-yil dekabrda beshta Markaziy Osiyo respublikasi rahbarlarining uchrashuvi bo‘lib o‘tdi",
+          "evidence": "Turkmaniston poy-\ntaxti Ashxobod shahrida beshta Marka-\nziy Osiyo respublikalari rahbarlarining\nuchrashuvi bo‘lib"
+        },
+        {
+          "kind": "place",
+          "place": "Qrim",
+          "event": "2014-yilda Rossiyaga qo‘shib olinishi ortidan G‘arb davlatlari sanksiyalar e’lon qildi",
+          "evidence": "Qrim-\nning Rossiya ga qo‘shilishi ortidan G‘arb davlatlari Rossiyaga qarshi\niqtiso diy sank siyalar e’lon qildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "SSSRning tarqalib ketishi",
+          "effect": "Sobiq respublikalar o‘rtasidagi an’anaviy iqtisodiy aloqalarning buzilishiga olib keldi",
+          "evidence": "SSSR ning tarqalib keti shi sobiq respublikalar o‘rtasidagi an’ana viy\niqtisodiy aloqalarning buzilishiga olib keldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sovet davridan qolgan totalitar tafakkurning rahbarlik usullarida ustunlik qilishi",
+          "effect": "Muxolifat shafqatsiz bartaraf qilinib, sobiq sovet respublikalarida avtoritar rejimlar shakllandi",
+          "evidence": "Muxolifat shafqatsiz bartaraf qilindi va\noqibatda avtoritar rejimlar shakllandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "O‘ylab olib borilgan iqtisodiy, ijtimoiy va moliyaviy siyosat",
+          "effect": "2000-yillar boshlariga kelib Rossiya og‘ir ahvoldan chiqib oldi",
+          "evidence": "O‘ylab olib borilgan iqtisodiy, ijtimoiy, moliyaviy siyosat tufayli\n2000-yillar boshlariga kelib, Rossiya og‘ir ahvoldan chiqib oldi"
+        },
+        {
+          "kind": "number",
+          "number": "4",
+          "unit": "foiz",
+          "meaning": "2012-yil natijalari bo‘yicha MDH davlatlarida yalpi ichki mahsulot o‘sishi shuncha bo‘ldi",
+          "evidence": "2012-yil natijalari bo‘yicha MDH\ndavlatlarida YIMning o‘sishi 4  % ni tashkil qildi"
+        },
+        {
+          "kind": "number",
+          "number": "80",
+          "unit": "mln rus",
+          "meaning": "SSSR tarqalib ketgandan so‘ng Rossiya hududidan tashqarida qolib ketgan ruslar soni",
+          "evidence": "SSSR tarqalib ketgandan\nso‘ng 80 mln rus Rossiya hududidan tashqarida qolib ketdi"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "1991–2017-yillarda Rossiya Federatsiyasi",
+      "page": 19,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil avgust",
+          "event": "Avgust inqirozidan so‘ng Rossiyada asosiy lavozimlarga kommunistik partiya faollari keldi",
+          "evidence": "1991-yilgi avgust inqirozidan so‘ng Rossiyada\nasosiy lavozimlarga demokratik kuchlar vakillari emas, kommunistik\npartiya faollari keldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1992",
+          "date_label": "1992-yil 1-yanvar",
+          "event": "Erkin qo‘yib yuborilgan narxlar keskin ko‘tarildi, aholi soni kamayib boshladi",
+          "evidence": "1992-yil 1-yanvardan erkin qo‘yib yuborilgan\nnarxlar keskin ko‘tarildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1993",
+          "date_label": "1993-yil",
+          "event": "Prezident B. Yelsin Xalq deputatlari syezdi va Oliy Sovetni tarqatib yubordi",
+          "evidence": "1993-yili prezident B.  Yelsin Xalq deputatlari syezdi va Oliy Sovet-\nni tarqatib yubordi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1993",
+          "date_label": "1993-yil dekabr",
+          "event": "Federatsiya Kengashi va Davlat Dumasiga saylovlar birinchi marta partiyaviy ro‘yxat bo‘yicha o‘tkazildi",
+          "evidence": "1993-yil dekabrda Federatsiya Kengashi va Davlat Dumasiga say-\nlovlar bo‘lib o‘tdi. U birinchi marta partiyaviy ro‘yxat bo‘yicha\no‘tkazildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1992",
+          "date_label": "1992-yil mart",
+          "event": "Federativ Shartnoma Tatariston va Chechenistondan tashqari barcha subyektlar tomonidan imzolandi",
+          "evidence": "Fede rativ Shartnoma 1992-yil\nmart  oyida Tatariston va Chechenis ton dan tashqari barcha subyektlar\ntomonidan imzolandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1996",
+          "date_label": "1996-yil",
+          "event": "Checheniston bilan federal markaz o‘rtasidagi urush boshlandi va 2000-yilgacha davom etdi",
+          "evidence": "1996-yili Checheniston bilan federal markaz o‘rtasida boshlangan\nurush 2000-yilgacha davom etdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1999",
+          "date_label": "1999-yil dekabr",
+          "event": "B. Yelsin iste’foga chiqdi, vaqtincha prezident lavozimini V. Putin egalladi",
+          "evidence": "B.  Yelsin 1999-yil dekabr oyida iste’foga chiq-\ndi. Vaqtincha prezident lavozimini egallagan Vladimir Putin 2000-yil\nmart oyida bo‘lib o‘tgan saylovlarda Ro s s i y a   p r e z i d e n t i  e t i b  s a y l a n d i"
+        },
+        {
+          "kind": "date_event",
+          "date": "2008",
+          "date_label": "2008-yil avgust",
+          "event": "Gruziya Janubiy Osetiya va Abxaziyani bombardimon qildi, mojaroga Rossiya qo‘shinlari aralashdi",
+          "evidence": "2008-yil avgust oyida Gruziya o‘zining tarkibiy qismi hisoblan-\ngan Janu biy Osetiya va Abxaziyada konstitutsion tartibni tiklash\nmaqsadida bu hudud lar ni artilleriyadan bombardimon qilishni bosh-\nladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2014",
+          "date_label": "2014-yil 16-mart",
+          "event": "Qrimda referendum o‘tkazilib, Rossiya Federatsiyasi tarkibiga kirish to‘g‘risida shartnoma imzolandi",
+          "evidence": "2014-yil 16-martda ular referen dum o‘tkazib, uning nati jasiga bi-\nnoan Qrimning mustaqil ligini e’lon qil di va Rossiya Federatsiyasi\ntarkibiga kirish to‘g‘ri sida shartnoma imzoladi"
+        },
+        {
+          "kind": "person",
+          "person": "Y. Gaydar",
+          "role": "Bosh vazir lavozimiga taklif qilingan iqtisodchi, Rossiyadagi islohotlarning «arxitektori»",
+          "activity": "B. Yelsin tomonidan hukumat rahbari lavozimiga taklif qilinib, keskin bozor islohotlarini amalga oshirdi",
+          "evidence": "B.  Yel sin tomonidan Bosh\nvazir lavozimiga taklif qilingan Y.  Gaydar Rossiyadagi islohotlarning\n«arxitektori» bo‘ldi"
+        },
+        {
+          "kind": "person",
+          "person": "B. Yelsin",
+          "role": "Rossiya Federatsiyasi prezidenti",
+          "activity": "1993-yilda Oliy Sovetni tarqatib yuborib, yangi konstitutsiya loyihasini referendumga qo‘ydi",
+          "evidence": "1993-yili prezident B.  Yelsin Xalq deputatlari syezdi va Oliy Sovet-\nni tarqatib yubordi"
+        },
+        {
+          "kind": "person",
+          "person": "V. Putin",
+          "role": "Rossiya Federatsiyasi prezidenti",
+          "activity": "Dastlabki harakatlarini jamiyat hayotida davlat hokimiyati roli va obro‘yini mustahkamlashga qaratdi",
+          "evidence": "Yangi prezidentning dastlabki harakatlari jamiyat hayotida\ndavlat hokimiyatining roli va obro‘yini mustahkamlashga qaratildi"
+        },
+        {
+          "kind": "person",
+          "person": "M. Shaymiyev",
+          "role": "Tatariston prezidenti",
+          "activity": "Voqealar rivojini o‘z qo‘liga olib, 1994-yilda federal hokimiyat bilan vakolatlarni taqsimlash shartnomasini imzoladi",
+          "evidence": "Tatariston prezidenti etib saylangan M. Shaymiyev voqealar rivo jini\no‘z qo‘liga olishga erishdi. Tatariston 1994-yilda federal hokimiyat\nbilan vakolatlarni taqsimlash to‘g‘risida shart nomani imzoladi"
+        },
+        {
+          "kind": "term",
+          "term": "Shok terapiyasi",
+          "definition": "Iqtisodiy nazariya, shuningdek, shu nazariyaga asoslangan keskin iqtisodiy islohotlar",
+          "evidence": "Shok terapiyasi   –  bu iqtisodiy nazariya, shuningdek,\nshu nazariyaga asoslangan keskin iqtisodiy islohotlar"
+        },
+        {
+          "kind": "term",
+          "term": "Davlat Dumasi",
+          "definition": "1993-yil dekabrdan saylovlar o‘tkazilgan, Rossiyaning yangi davlat hokimiyati organlaridan biri",
+          "evidence": "Ken gashi va Davlat Dumasiga saylovlar hamda mamlakat ning yangi\nkons titutsiyasi haqida referendum o‘tkazish to‘g‘risida farmonni imzoladi"
+        },
+        {
+          "kind": "term",
+          "term": "KPRF",
+          "definition": "Rossiya Federatsiyasi kommunistik partiyasi; 1993-yilgi saylovlarda Davlat Dumasida eng ko‘p o‘rinlarni egallagan partiyalardan biri",
+          "evidence": "LDPR ( Rossiya liberal-demokratik partiyasi), KPRF ( Rossiya Fede-\nratsiyasi kommunistik partiyasi) partiyalari eng ko‘p o‘rinlarni egalladi"
+        },
+        {
+          "kind": "term",
+          "term": "ISHID",
+          "definition": "Iroq va Shom islom davlati – Suriyada Rossiya qarshi kurash olib borgan xalqaro terrorchi tashkilot",
+          "evidence": "Suriyada\nISHID (I roq va  Sh om islom davlati ) va boshqa xal qaro terrorchi"
+        },
+        {
+          "kind": "place",
+          "place": "Checheniston",
+          "event": "Markaz bilan har qanday shartnomalar tuzishni rad etib, munosabatlar fojiali xarakter kasb etdi",
+          "evidence": "Checheniston markaz bilan har qanday shartnomalar tuzishni rad\netish yo‘lidan bordi. U bilan munosabatlar fojiali xarakter kasb etdi"
+        },
+        {
+          "kind": "place",
+          "place": "Suriya",
+          "event": "2015-yil sentabrdan Rossiyaning harbiy-kosmik kuchlari janglarda ishtirok etmoqda",
+          "evidence": "Rossiyaning harbiy-kosmik kuchlari 2015-yil\nsen tabrdan boshlab Suriyadagi janglarda ishtirok etmoqda"
+        },
+        {
+          "kind": "cause",
+          "cause": "1992-yil 1-yanvardan erkin qo‘yib yuborilgan narxlarning keskin ko‘tarilishi",
+          "effect": "Oziq-ovqat xarajatlari oila daromadining asosiy qismini tashkil qildi va Rossiya aholisi kamaya boshladi",
+          "evidence": "Ko‘pchilik oilalarda oziq-ovqat xarajatlari\noila daro madi ning asosiy qismini tashkil qildi. Oqibatda urushdan\nkeyingi davrda birinchi marta Rossiya aholisi kamaya boshladi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Inflyatsiya va siyosiy beqarorlik",
+          "effect": "Investitsiyalarning kirib kelishiga to‘sqinlik qildi",
+          "evidence": "Inﬂ atsiya va siyosiy beqarorlik investitsiyalarning kirib kelishiga\nto‘sqinlik qildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Chechenistondagi urush",
+          "effect": "Rossiyaga bir necha mlrd dollar zarar yetkazdi, ikki tomondan 120 mingdan ortiq kishi qurbon bo‘ldi",
+          "evidence": "Urush Rossiyaga bir necha mlrd dollar zarar yetkazdi, ikki\ntomondan 120  mingdan ortiq kishi qurbon bo‘ldi"
+        },
+        {
+          "kind": "number",
+          "number": "130",
+          "unit": "mlrd dollar",
+          "meaning": "1999-yilga kelib Rossiyaning tashqi qarzi shuncha mlrd dollardan oshib ketdi",
+          "evidence": "1999-yilga kelib Rossiyaning tashqi qarzi 130 mlrd\ndollardan oshib ketdi"
+        },
+        {
+          "kind": "number",
+          "number": "120",
+          "unit": "ming kishi",
+          "meaning": "Chechenistondagi urushda ikki tomondan shuncha mingdan ortiq kishi qurbon bo‘ldi",
+          "evidence": "ikki\ntomondan 120  mingdan ortiq kishi qurbon bo‘ldi"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "1991–2017-yillarda Ukraina, Belarus va Moldova respublikalari",
+      "page": 23,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 24-avgust",
+          "event": "Ukraina o‘z mustaqilligini e’lon qildi va mustaqillik bo‘yicha referendum o‘tkazildi",
+          "evidence": "1991-yil 24-avgustda Ukra ina o‘z mus-\ntaqilligini e’lon qildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil dekabr",
+          "event": "Referendumda mutlaq ko‘pchilik aholi Ukraina mustaqilligi uchun ovoz berdi",
+          "evidence": "1991-yil dekabrda o‘tka zilgan\nreferen dumda mutlaq ko‘pchilik aholi Ukraina mus-\ntaqilligi uchun ovoz berdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1996",
+          "date_label": "1996-yil",
+          "event": "Qabul qilingan Ukraina konstitutsiyasi davlat qurilishining huquqiy asosi bo‘ldi",
+          "evidence": "1996-yili  qabul qilingan Ukraina\nkons titutsiyasi bu jarayonning huquqiy asosi bo‘ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2004",
+          "date_label": "2004-yil",
+          "event": "Viktor Yanukovichning g‘olib deb e’lon qilinishi ko‘pmingkishilik norozilik namoyishiga sabab bo‘ldi",
+          "evidence": "Vik-\ntor Yanukovichning g‘olib deb e’lon qilini-\nshi ko‘pmingkishilik norozilik namoyishiga\nsabab bo‘ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2014",
+          "date_label": "2014-yil sentabr",
+          "event": "Minskda Rossiya, Ukraina hamda Donetsk va Lugansk viloyatlari vakillari harbiy harakatlarni to‘xtatish kelishuvini imzoladi",
+          "evidence": "2014-yil sentabr oyida Belarus Respublikasi poytaxti Minsk\nshahrida Rossiya, Ukraina hamda Donetsk va Lugansk viloyatlari\nvakillari o‘rtasida harbiy harakatlarni to‘xtatish to‘g‘risida kelishuv\nimzolandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2015",
+          "date_label": "2015-yil fevral",
+          "event": "Minskda Germaniya, Fransiya, Rossiya va Ukraina rahbarlari yangi kelishuvni imzoladi",
+          "evidence": "Shu yil fevral oyida Germaniya, Fransiya, Ros-\nsiya va Ukraina davlat rahbarlari Minsk shahriga yig‘ilib, Ukraina\nsharqida harbiy mojaroni hal etish to‘g‘risida yangi kelishuv imzo-\nladi ( Minsk  –  2"
+        },
+        {
+          "kind": "date_event",
+          "date": "1994",
+          "date_label": "1994-yil",
+          "event": "Belarus konstitutsiyasi qabul qilinib, mamlakat unitar demokratik ijtimoiy-huquqiy davlat deb e’lon qilindi",
+          "evidence": "1994-yil qabul qilingan konstitutsiyaga bi-\nnoan Belarus Respublikasi unitar demokra-\ntik ijtimoiy-huqu qiy davlat deb e’lon qi lin-\ndi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1994",
+          "date_label": "1994-yil",
+          "event": "Bo‘lib o‘tgan saylovlarda Aleksandr Lukashenko mamlakat prezidenti etib saylandi",
+          "evidence": "1994-yil bo‘lib o‘tgan saylovlarda Alek-\nsandr Lukashenko mamlakat prezidenti etib\nsaylandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2017",
+          "date_label": "2017-yil may",
+          "event": "Prezident saylovlarida Igor Dodon g‘olib chiqdi",
+          "evidence": "2017-yil may\noyida bo‘lib o‘tgan prezident saylovlarida Rossiya bilan yaxshi mu-\nnosabatlar tarafdori bo‘lgan Igor Dodon g‘olib chiqdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 27-avgust",
+          "event": "Moldaviya o‘z mustaqilligini e’lon qildi",
+          "evidence": "Moldaviya 1991-yil 27-avgustda o‘z musta-\nqil ligini e’lon qildi"
+        },
+        {
+          "kind": "person",
+          "person": "Leonid Kravchuk",
+          "role": "Ukrainaning birinchi prezidenti",
+          "activity": "1991-yilda referendum bilan birga o‘tkazilgan saylovlarda Ukraina prezidenti etib saylandi",
+          "evidence": "Referendum bilan birga Ukraina prezi dent ligiga\no‘tkazilgan saylovlarda Leonid Kravchuk Ukrai na-\nning birinchi prezi denti etib saylandi"
+        },
+        {
+          "kind": "person",
+          "person": "Viktor Yanukovich",
+          "role": "Ukraina prezidenti",
+          "activity": "2013-yili Yevroittifoq bilan hamkorlik kelishuvini imzolashdan bosh tortib, siyosiy inqirozga sabab bo‘ldi",
+          "evidence": "Ammo uning 2013-yili Yevroittifoq bilan ham-\nkorlik to‘g‘risida kelishuvni imzolashdan bosh tortishi siyosiy inqiroz-\nga sabab bo‘ldi"
+        },
+        {
+          "kind": "person",
+          "person": "Aleksandr Lukashenko",
+          "role": "Belarus Respublikasi prezidenti",
+          "activity": "1994-yilgi saylovlarda saylanib, uning tashabbusi bilan referendum o‘tkazildi va rus tiliga davlat tili maqomi berildi",
+          "evidence": "1994-yil bo‘lib o‘tgan saylovlarda Alek-\nsandr Lukashenko mamlakat prezidenti etib\nsaylandi. Uning tashab busi bilan refe rendum"
+        },
+        {
+          "kind": "person",
+          "person": "Igor Dodon",
+          "role": "Moldova Respublikasi prezidenti",
+          "activity": "2017-yil may oyidagi saylovlarda Rossiya bilan yaxshi munosabatlar tarafdori sifatida g‘olib chiqdi",
+          "evidence": "2017-yil may\noyida bo‘lib o‘tgan prezident saylovlarida Rossiya bilan yaxshi mu-\nnosabatlar tarafdori bo‘lgan Igor Dodon g‘olib chiqdi"
+        },
+        {
+          "kind": "term",
+          "term": "Korrupsiya",
+          "definition": "Amaldor shaxs tomonidan o‘z vakolatlarini va ishonib topshirilgan huquqlarni shaxsiy manfaatlari yo‘lida suiiste’mol qilish",
+          "evidence": "Korrupsiya  –  bu amaldor shaxs tomonidan o‘z vako-\nlatlarini va unga ishonib topshirilgan huquqlarni, shu-\nningdek, rasmiy lavozim bilan bog‘liq obro‘yi va alo-\nqalarini qonunga va axloq me’yorlariga xilof ravishda\no‘z shaxsiy manfaatlari yo‘lida suiiste’mol qilish"
+        },
+        {
+          "kind": "term",
+          "term": "Antiterror operatsiya",
+          "definition": "Terroristik aktni bartaraf qilish va aholi xavfsizligini ta’minlash uchun o‘tkaziladigan maxsus jangovar tadbirlar kompleksi",
+          "evidence": "Antiterror operatsiya   –  bu terroristik aktni bartaraf qilish,\naholi, tashkilot va muassasalarning xavfsizligini ta’minlash, shu-\nningdek, terroristik aktning oqibatlarini bartaraf qilish uchun\no‘tkaziladigan maxsus tadbirlar (jangovar, harbiy) kompleksi"
+        },
+        {
+          "kind": "term",
+          "term": "«Yevromaydan»",
+          "definition": "Kiyev va boshqa shaharlarda bo‘lib o‘tgan, ijtimoiy tarmoqlarda shu nomni olgan ommaviy norozilik chiqishlari",
+          "evidence": "Kiyev va boshqa shaharlarda ommaviy norozilik\nchiqishlari bo‘lib, ular ijtimoiy tar moqlarda « Yevromaydan» nomini\noldi"
+        },
+        {
+          "kind": "term",
+          "term": "grivna",
+          "definition": "1996-yili Ukrainada muomalaga kiritilgan milliy valuta",
+          "evidence": "1996-yili milliy valuta  –  grivna\nmuomalaga kiritil di"
+        },
+        {
+          "kind": "place",
+          "place": "Minsk",
+          "event": "2014-yil sentabr va 2015-yil fevral oyidagi tinchlik kelishuvlari imzolangan shahar",
+          "evidence": "Belarus Respublikasi poytaxti Minsk\nshahrida Rossiya, Ukraina hamda Donetsk va Lugansk viloyatlari\nvakillari o‘rtasida harbiy harakatlarni to‘xtatish to‘g‘risida kelishuv\nimzolandi"
+        },
+        {
+          "kind": "place",
+          "place": "Dnestrbo‘yi",
+          "event": "1990-yilda mahalliy rusiyzabon aholi o‘z hududini Dnestrbo‘yi Moldaviya Respublikasi deb e’lon qildi",
+          "evidence": "Ular o‘zlari\nyashaydigan hu dudni Dnestrbo‘yi Moldaviya Respublikasi deb e’lon\nqildi"
+        },
+        {
+          "kind": "place",
+          "place": "Qrim",
+          "event": "2014-yilda Rossiyaga qo‘shib olinishi ortidan Ukraina bilan Rossiya munosabatlari o‘ta keskinlashdi",
+          "evidence": "Qrim Avtonom respublikasi va Sevastopol shahri Rossiyaga qo‘shib\nolingandan so‘ng esa Ukraina bilan Rossiya o‘rtasidagi munosabatlar\no‘ta kes kinlashdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "SSSRni qamrab olgan iqtisodiy inqiroz va umumittifoq iqtisodiy kompleksining barbod bo‘lishi",
+          "effect": "Ukraina iqtisodiyotiga ham jiddiy ta’sir ko‘rsatdi",
+          "evidence": "SSSRni qamrab olgan iqtisodiy inqiroz, umumittifoq iqtisodiy\nkompleksining barbod bo‘lishi boshqalar qatori Ukrainaga ham jiddiy\nta’sir ko‘rsatdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "V. Yanukovichning Yevroittifoq bilan kelishuvni imzolashdan bosh tortishi",
+          "effect": "Siyosiy inqirozga va «Yevromaydan» norozilik chiqishlariga sabab bo‘ldi",
+          "evidence": "uning 2013-yili Yevroittifoq bilan ham-\nkorlik to‘g‘risida kelishuvni imzolashdan bosh tortishi siyosiy inqiroz-\nga sabab bo‘ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "1996-yilda birinchi Umumbelarus xalq yig‘inining ijtimoiy-iqtisodiy rivojlanish yo‘nalishlarini tasdiqlashi",
+          "effect": "Belarusda asta-sekin iqtisodiy yuksalish kuzatildi",
+          "evidence": "1996-yili birinchi Umumbelarus xalq yig‘ini mamlakatning\n1996  –  2000-yillarga mo‘ljallangan ijtimoiy-iqtisodiy rivojlanishi aso-\nsiy yo‘ nalishlarini tasdiqlagandan so‘ng Belarusda asta-sekin iqtisodiy\nyuksalish kuzatil di"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "1991–2017-yillarda Boltiqbo‘yi davlatlari",
+      "page": 29,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "2004",
+          "date_label": "2004-yil",
+          "event": "Uchala Boltiqbo‘yi davlati ham NATOga, shu yili Yevropa Ittifoqiga a’zo bo‘ldi",
+          "evidence": "Uchala\ndavlat ham 2004-yilda NATOga, shu yili YIga a’zo bo‘ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1988",
+          "date_label": "1988-yil",
+          "event": "Latviya Xalq fronti tuzilib, mustaqillik uchun kurash boshladi",
+          "evidence": "1988-yili tuzilgan Latviya Xalq fronti mustaqillik uchun\nkurash boshladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990",
+          "date_label": "1990-yil 4-may",
+          "event": "Latviya Xalq fronti kurashi natijasida mamlakat o‘z mustaqilligini e’lon qildi",
+          "evidence": "1990-yil 4-mayda Latviya o‘z musta qilligini\ne’lon qildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1988",
+          "date_label": "1988-yil iyun",
+          "event": "Litvada «Sayudis» («Harakat») tashkiloti tuzildi",
+          "evidence": "1988-yil iyunda Litvada « Sayu dis» (« Harakat») tashkiloti\ntuzildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990",
+          "date_label": "1990-yil 11-mart",
+          "event": "Litva Oliy Soveti Litva Respublikasining mustaqilligini e’lon qildi",
+          "evidence": "1990-yil 11-martda Litva Oliy Soveti Litva Respub lika si ning\nmustaqil ligini e’lon qildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 13-yanvar",
+          "event": "Vilnyusda mustaqillikni qo‘llab-quvvatlovchi namoyishda 14 nafar namoyishchi halok bo‘ldi",
+          "evidence": "1991-yil 13-yanvar kuni  Vilnyusda mustaqillikni qo‘llab\no‘tkazilgan namoyishda tele minora va parlament binosini sovet\nqo‘shinlaridan himoya qilgan 14 nafar namo yishchi halok bo‘ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1988",
+          "date_label": "1988-yil 16-noyabr",
+          "event": "Estoniya Oliy Soveti «Estoniya SSRning davlat suvereniteti to‘g‘risida deklaratsiya»ni qabul qildi",
+          "evidence": "1988-yil 16-noyabrda Estoniya Oliy Soveti « Estoniya\nSSRning davlat suvereniteti to‘g‘risida deklaratsiya»ni qabul\nqildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2011",
+          "date_label": "2011-yil",
+          "event": "Rusiyzabon aholi vakillari bilan eston politsiyasi o‘rtasidagi to‘qnashuvda bir kishi halok bo‘ldi",
+          "evidence": "2011-yili rusiyzabon aholi vakillari\nbilan eston politsiyasi o‘rtasida bo‘lib o‘tgan to‘qnashuvda 1 kishi\nhalok bo‘ldi, ko‘plar yaralandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2016",
+          "date_label": "2016–2017-yillar",
+          "event": "Boltiqbo‘yi mamlakatlariga NATOning kichik sonli harbiy texnikasi va qo‘shinlari joylashtirildi",
+          "evidence": "2016  –  2017-yillari Boltiqbo‘yi mamlakatlariga NATOning kichik\nsonli harbiy texni kasi va qo‘shinlari joylashtirildi"
+        },
+        {
+          "kind": "person",
+          "person": "Raymonds Veyonis",
+          "role": "Latviya prezidenti",
+          "activity": "Latviya davlatining prezidenti sifatida mamlakat rahbariyati qatorida turgan davlat arbobi",
+          "evidence": "Latviya prezidenti\nRaymonds Veyonis"
+        },
+        {
+          "kind": "person",
+          "person": "Dalya Gribauskayte",
+          "role": "Litva prezidenti",
+          "activity": "Litva davlatining prezidenti sifatida mamlakat mustaqilligi yillarida davlat rahbari bo‘lgan arbob",
+          "evidence": "Litva prezidenti\nDalya Gribauskayte"
+        },
+        {
+          "kind": "person",
+          "person": "Kersti Kalyulayd",
+          "role": "Estoniya prezidenti",
+          "activity": "Estoniya davlatining prezidenti sifatida mamlakat rahbariyati qatorida turgan davlat arbobi",
+          "evidence": "Estoniya prezidenti\nKersti Kalyulayd"
+        },
+        {
+          "kind": "term",
+          "term": "Demografiya",
+          "definition": "Aholi va uning ko‘payish qonuniyatlari to‘g‘risidagi fan; aholi soni, tarkibi, o‘zgarishi va joylashishini o‘rganadi",
+          "evidence": "Demograﬁ ya  –  bu aholi va uning ko‘payish qonuni-\nyatlari to‘g‘risidagi fan. U aholining son jihatidan\ntarkibi, uning o‘zgarishi, joylashishi va shu kabilarni\no‘rganadi"
+        },
+        {
+          "kind": "term",
+          "term": "Logistika",
+          "definition": "Tovarlar, yuklar va shu kabilarni bir hududdan boshqasiga yetkazib berishning tizimini tashkil qilish",
+          "evidence": "Logistika  –  bu tovarlar, yuklar va shu kabilarni bir hududdan\nboshqasiga yetkazib berishning tizimini tashkil qilish"
+        },
+        {
+          "kind": "term",
+          "term": "«Boltiq yo‘lbarslari»",
+          "definition": "Jadal iqtisodiy rivojlanishi tufayli Latviya, Litva va Estoniyaga nisbatan ishlatilgan atama",
+          "evidence": "Shu jadal\nrivoj lanish tufayli ular « Boltiq yo‘lbarslari» deb ataldi"
+        },
+        {
+          "kind": "term",
+          "term": "Xalq fronti",
+          "definition": "1988-yili Estoniyada tashkil qilingan, qayta qurishni qo‘llab-quvvatlagan harakat",
+          "evidence": "Estoniyada « Xalq fronti»\n1988-yili tashkil qilindi. U qayta qu rishni\nqo‘llab-quvvatlashini e’lon qilib"
+        },
+        {
+          "kind": "place",
+          "place": "Latviya",
+          "event": "Mustaqillik yillarida VEF va RAF kabi yirik sanoat korxonalari yopilib, ishsizlar soni keskin oshdi",
+          "evidence": "Mustaqillik yillarida Latviya sovet davrida qurilgan yirik sanoat\nkor xonalarini, jumladan, elektrotexnika buyumlari ni ishlab chiqaruvchi\neng yirik VEF, mikro avtobuslar ishlab chiqaruvchi RAF zavodlarini\nyopdi"
+        },
+        {
+          "kind": "place",
+          "place": "Estoniya",
+          "event": "Ruslarning fuqarolik olishiga to‘siq bo‘luvchi qat’iy qonunlar qabul qilindi",
+          "evidence": "Musta qillik e’lon qilingandan so‘ng Estoniya\nruslarning fuqa rolik olishla riga to‘siq bo‘-\nluvchi qat’iy qonunlar qabul qildi"
+        },
+        {
+          "kind": "place",
+          "place": "Litva",
+          "event": "Aholining 90% ga yaqinini litvaliklar tashkil qilib, barcha aholiga Litva fuqaroligi berildi",
+          "evidence": "Aholining 90% ga yaqinini litvaliklar\ntashkil qiladi. Shu sababli mustaqillikdan so‘ng mamlakatda yashov-\nchi barcha aholiga millatidan qat’i nazar Litva fuqaroligi berildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "2008-yilgi inqiroz",
+          "effect": "Chet el investitsiyalariga to‘liq qaram bo‘lgan Latviya iqtisodining o‘ta beqarorligi ko‘rsatilib, katta zarar yetkazildi",
+          "evidence": "Ammo 2008-yilgi inqiroz chet\nel investitsiyalariga to‘liq qaram bo‘lgan mamlakat\niqtisodining o‘ta beqarorligini ko‘rsatdi va katta\nzarar yetkazdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ishsizlikning yuqori darajasi",
+          "effect": "Aholi ish izlab ommaviy ravishda G‘arb davlatlariga ketishga majbur bo‘ldi",
+          "evidence": "Ishsizlikning yuqori darajasi tufayli aholi ish\nizlab ommaviy ravishda G‘arb davlatlariga ketishga majbur bo‘lmoqda"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ukrainadagi inqirozdan keyin Rossiyaning tajovuzkor siyosatidan xavotir",
+          "effect": "Boltiqbo‘yi davlatlari va NATO rahbarlari bu mamlakatlardagi harbiy kuchlarni ko‘paytirishga kirishdi",
+          "evidence": "Ukrainadagi inqirozdan keyin Rossiyaning tajovuzkor siyosati-\ndan xa votirga tushgan Boltiqbo‘yi davlatlari va NATO rahbarlari\nbu mamla katlardagi NATO harbiy kuchlarini ko‘paytirishga kirish-\ndi"
+        },
+        {
+          "kind": "number",
+          "number": "400",
+          "unit": "ming kishi",
+          "meaning": "SSSR tarqalgandan so‘ng Latviya aholisi shuncha ming kishiga kamaydi",
+          "evidence": "SSSR tarqalgandan so‘ng Latviya aholisi 400 ming kishiga kamaydi"
+        },
+        {
+          "kind": "number",
+          "number": "14",
+          "unit": "nafar",
+          "meaning": "1991-yil 13-yanvarda Vilnyusdagi namoyishda mustaqillikni himoya qilgan namoyishchilar soni",
+          "evidence": "himoya qilgan 14 nafar namo yishchi halok bo‘ldi"
+        }
+      ]
+    }
+  ]
+}

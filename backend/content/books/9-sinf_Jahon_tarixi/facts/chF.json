@@ -1,0 +1,826 @@
+{
+ "chapter": "KIRISH",
+ "topics": [
+  {
+   "number": 34,
+   "title": "Tropik va Janubiy Afrika mamlakatlari",
+   "page": 120,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1892",
+     "date_label": "1892-yilda",
+     "event": "Fransiya G‘arbiy Sudan hududini bosib olib, uni o‘z mustamlakasi tarkibiga qo‘shib olgan",
+     "evidence": "1892-yilda Fransiya G'arbiy Sudanni bosib oldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1898",
+     "date_label": "1898-yilda",
+     "event": "Fransuzlar G‘arbiy Sudan ozodlik kurashi rahbarini ana shu yilda taslim eta olganlar",
+     "evidence": "Fransuzlar 1898- yildagina uni taslim eta oldilar."
+    },
+    {
+     "kind": "date_event",
+     "date": "1899",
+     "date_label": "1899-yilda",
+     "event": "Buyuk Britaniya bilan burlar respublikalari o‘rtasida yangi urush boshlangan",
+     "evidence": "1899-yilda ingliz-bur urushi boshlandi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1902",
+     "date_label": "1902-yilda",
+     "event": "Transvaal va Oranj respublikalari Buyuk Britaniya mulklari tarkibiga qo‘shib olingan",
+     "evidence": "1902-yili Bur Respublikalari (Transvaal va Oranj) Britaniya mulklari"
+    },
+    {
+     "kind": "date_event",
+     "date": "1910",
+     "date_label": "1910-yilda",
+     "event": "Transvaal, Oranj, Natal va Kap hududlari Janubiy Afrika Ittifoqi nomi ostida birlashtirilgan",
+     "evidence": "1910-yili Buyuk Britaniya mustamlaka hududlari bo'lgan Transvaal, Oranj, Natal, Kapni ,Janubiy Afrika Ittifoqi\" nomi ostida birlashtirdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1883",
+     "date_label": "1883-yilda",
+     "event": "Fransiya Madagaskarga urush e’lon qilib, orol ustidan protektorat o‘rnatgan",
+     "evidence": "1883-yili Fransiya Madagaskarga urush e'lon qildi va bu urush"
+    },
+    {
+     "kind": "date_event",
+     "date": "1896",
+     "date_label": "1896-yilda",
+     "event": "Fransiya Madagaskarni o‘z mustamlakasi deb e’lon qilgan va unga alohida nom bergan",
+     "evidence": "1896-yilda esa Fransiya Madagaskarni o'z mustamlakasi"
+    },
+    {
+     "kind": "person",
+     "person": "Samori Ture",
+     "role": "G‘arbiy Sudan ozodlik kurashining rahbari, atoqli lashkarboshi va siyosatchi",
+     "activity": "Fransuzlarga uzoq qarshilik ko‘rsatib, 1898-yilda asir olinib, Gabonga surgun qilingan va o‘sha yerda vafot etgan",
+     "evidence": "G'arbiy sudanliklarning ozodlik kurashida Samori Ture nomi yorqin iz qoldirdi."
+    },
+    {
+     "kind": "person",
+     "person": "Sesil Rods",
+     "role": "Buyuk Britaniyaning olg‘ir, uddaburon siyosatchisi va kompaniya asoschisi",
+     "activity": "«De Rods» kompaniyasini tuzib, Janubiy Afrikaning olmos konlarini o‘z qo‘liga kiritgan",
+     "evidence": "siyosatchisi Sesil Rods ,De Rods\" kompaniyasini tuzib, olmos konlarini o'z qo'liga kiritdi."
+    },
+    {
+     "kind": "person",
+     "person": "Ketchvayo",
+     "role": "Zuluslar hukmdori, ingliz bosqinchilariga qarshi kurashgan qabila sardori",
+     "activity": "1879-yilda uch to‘qnashuv davomida inglizlarning 20 ming kishilik qo‘shinini yakson qilib tashlagan",
+     "evidence": "Zuluslar hukmdori Ketchvayo 1879-yilda uch to'qnashuv davomida inglizlarning 20 ming"
+    },
+    {
+     "kind": "person",
+     "person": "Xendrik Vitboy",
+     "role": "Nama qabilalari qo‘zg‘olonining rahbari, 1905-yilgi jangda halok bo‘lgan sardor",
+     "activity": "Nama qabilalarini birlashtirishga muvaffaq bo‘lib, nemis mustamlakachilariga qarshi kurash olib borgan",
+     "evidence": "Namalarning qo'zg'oloniga Xendrik Vitboy boshchilik qildi."
+    },
+    {
+     "kind": "term",
+     "term": "Burlar Respublikasi",
+     "definition": "Transvaal va Oranj mustaqil respublikalari bo‘lib, ingliz-bur urushi markazida turgan mustamlaka o‘chog‘i",
+     "evidence": "Burlar Respublikasi (Transvaal va Oranj mustaqil respublikalari)"
+    },
+    {
+     "kind": "term",
+     "term": "Tropik Afrika",
+     "definition": "Kitobda Markaziy Afrika ma’nosini bildiruvchi geografik tushuncha sifatida izohlangan hudud",
+     "evidence": "Tropik Afrika deganda Markaziy Afrika tushuniladi."
+    },
+    {
+     "kind": "term",
+     "term": "Negus",
+     "definition": "Efiopiya podshosi unvoni; matnda Feodor II ana shu unvon bilan tilga olingan",
+     "evidence": "podsho (,negus\" deb atalgan) Feodor"
+    },
+    {
+     "kind": "term",
+     "term": "Rezervatsiya",
+     "definition": "Mahalliy gottentot va gerero qabilalari quvib joylashtirilgan, huquqlari cheklangan hududlar",
+     "evidence": "Mahalliy gottentot va gerero qabilalari rezervatsiyalarga quvildi."
+    },
+    {
+     "kind": "place",
+     "place": "Madagaskar",
+     "event": "Hind okeanining g‘arbida, Afrika janubi-sharqiy qirg‘og‘i yaqinidagi orol bo‘lib, Fransiya mustamlakasiga aylangan",
+     "evidence": "qiy qirg'ogi yaqinida joylashgan bu orol buyuk"
+    },
+    {
+     "kind": "place",
+     "place": "Zululend",
+     "event": "Zuluslar yashagan yerlar egallanib, mayda hokimliklarga bo‘lib tashlangan hudud",
+     "evidence": "Britaniya to'plar yordamida ustun keldi va Zululend yerlarini egallab,"
+    },
+    {
+     "kind": "place",
+     "place": "Kongo havzasi",
+     "event": "Belgiya mustamlakasi deb e’lon qilingan, bir qismi Fransiya va Portugaliyaga o‘tgan hudud",
+     "evidence": "Kongo havzasidagi yerlar Belgiya mustamlakasi deb e'lon qilindi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Janubdagi qazilma boyliklarga boy yerlarda olmos va oltin konlarining topilishi",
+     "effect": "Yevropaliklarning Afrika janubiga oqib kelishi yanada tezlashgan",
+     "evidence": "oltin konlarining topilishi yevropaliklarning ,oqib kelishlarini\" yanada"
+    },
+    {
+     "kind": "cause",
+     "cause": "Suvaysh kanalining ochilishi va uning savdo-harbiy ahamiyati",
+     "effect": "Somali va Efiopiya hududi mustamlakachilar uchun muhim strategik mintaqaga aylangan",
+     "evidence": "ochilishi tufayli alohida savdo-iqtisodiy"
+    },
+    {
+     "kind": "cause",
+     "cause": "Zanzibar arab sultonligini qul savdosiga qarshi kurashda ayblash",
+     "effect": "Sultonlik nemislar, fransuzlar va inglizlar tomonidan bo‘lib olinishiga yo‘l ochgan",
+     "evidence": "qul savdosiga qarshi kurash bahonasi bilan nemislar, fransuzlar va inglizlar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Buyuk Britaniyaning o‘z mustamlakalarini birlashtirish siyosati",
+     "effect": "Yetmishinchi yillardan boshlab Britaniya mustamlakalarni federatsiyaga birlashtirishga urinib ko‘rgan",
+     "evidence": "birlashtirib, federatsiya tuzishga urindi."
+    },
+    {
+     "kind": "number",
+     "number": "120",
+     "unit": "ming",
+     "meaning": "Nemis qo‘shinlari Tanganikadagi qo‘zg‘olonni bostirishda qirib tashlagan afrikaliklar soni",
+     "evidence": "Nemis qo'shinlari 120 ming afrikalikni qirib"
+    },
+    {
+     "kind": "number",
+     "number": "140",
+     "unit": "ming",
+     "meaning": "Germaniya bosqinchilari namalar orasidan qirib tashlagan kishilar soni",
+     "evidence": "Germaniya bosqinchilari namalardan l40 ming kishini qirib tashladilar."
+    }
+   ]
+  },
+  {
+   "number": 35,
+   "title": "Birinchi jahon urushining boshlanishi va borishi",
+   "page": 125,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1914",
+     "date_label": "1914-yil 28-iyulda",
+     "event": "Sarayevoda Avstriya-Vengriya taxti vorisi Frans Ferdinand o‘ldirilgan",
+     "evidence": "1914-yilning 28-iyulida serbiyalik millatchi G.Prinsip tomonidan"
+    },
+    {
+     "kind": "date_event",
+     "date": "1914",
+     "date_label": "1914-yil 1-avgustda",
+     "event": "Germaniya hukmron doiralari Rossiyaga urush e’lon qilish uchun bahona topgan",
+     "evidence": "Bundan Germaniya hukmron doiralari 1- avgustda Rossiyaga,"
+    },
+    {
+     "kind": "date_event",
+     "date": "1914",
+     "date_label": "1914-yil 4-avgustda",
+     "event": "Buyuk Britaniya Belgiyani himoya qilish bahonasi bilan Germaniyaga urush e’lon qilgan",
+     "evidence": "avgust kuni Germaniyaga urush e'lon qildi. Birinchi jahon urushi shu"
+    },
+    {
+     "kind": "date_event",
+     "date": "1914",
+     "date_label": "1914-yil 23-avgustda",
+     "event": "Yaponiya Germaniyadan Xitoydagi mustamlaka hududlarini talab qilib, urush e’lon qilgan",
+     "evidence": "23-avgustda Yaponiya Germaniyaga qarshi urush e'lon qildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1914",
+     "date_label": "1914-yil sentabrida",
+     "event": "Marna daryosi bo‘yida Fransiya va Buyuk Britaniya qo‘shini Germaniyaga qarshi hujumga o‘tgan",
+     "evidence": "qo'shini 1914-yilning sentabrida Germaniya qo'shiniga qarshi hujumga o'tdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1914",
+     "date_label": "1914-yil 9-sentabrda",
+     "event": "Nemis qo‘mondonligi butun G‘arbiy front bo‘ylab chekinishga majbur bo‘lgan",
+     "evidence": "9- sentabrda butun G'arbiy front bo'ylab chekinishga majbur bo'ldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1915",
+     "date_label": "1915-yil 15-sentabrda",
+     "event": "Bolgariya ittifoqqa qo‘shilishi natijasida To‘rtlar ittifoqi vujudga kelgan",
+     "evidence": "Bolgariya Germaniya, Avstriya-Vengriya va Usmonli davlati ittifoqiga"
+    },
+    {
+     "kind": "person",
+     "person": "fon Shliffen",
+     "role": "Germaniya qo‘shini generali, yashin tezligida g‘alaba rejasining muallifi",
+     "activity": "Belgiya hududi orqali Fransiyaga hujum qilib, fransuz armiyasini qurshab olishni rejalashtirgan",
+     "evidence": "Germaniya qo'shini generali fon Shliffen"
+    },
+    {
+     "kind": "person",
+     "person": "Anvar poshsho",
+     "role": "Usmonli davlatining harbiy vaziri va bosh qo‘mondoni, germanparast arbob",
+     "activity": "Usmonli flotiga Qora dengizga chiqib, Rossiya hududlarini o‘qqa tutishga buyruq bergan",
+     "evidence": "harbiy vazir va bosh qo'mondon Anvar poshsho Usmonli davlati flotiga nemis admirali"
+    },
+    {
+     "kind": "person",
+     "person": "Sushan",
+     "role": "Usmonli davlati flotiga qo‘mondonlik qilgan nemis admirali",
+     "activity": "Flotni Qora dengizga olib chiqib, Rossiya hududlarini o‘qqa tutish harakatlariga rahbarlik qilgan",
+     "evidence": "nemis admirali Sushan qo'mondonligida"
+    },
+    {
+     "kind": "person",
+     "person": "Lloyd Jorj",
+     "role": "Buyuk Britaniyaning urush davridagi davlat arbobi va yirik siyosatchisi",
+     "activity": "Rus qo‘shinlarining halokati uchun Fransiya va Britaniya harbiy qo‘mondonligidan javob talab qilgan",
+     "evidence": "Buyuk Britaniya davlat arbobi Lloyd Jorjning quyidagi so'zlariga sharh bering:"
+    },
+    {
+     "kind": "term",
+     "term": "Buyuk chekinish",
+     "definition": "Rus armiyasining 1915-yil bahor va yozida og‘ir talafotlar bilan chekinishi",
+     "evidence": "Buyuk chekinish - rus armiyasining 1915-yil bahor va yozida og'ir"
+    },
+    {
+     "kind": "term",
+     "term": "Xlor",
+     "definition": "1915-yil aprelida urushlar tarixida birinchi marta ishlatilgan zaharli gaz, ommaviy qirg‘in quroli",
+     "evidence": "tarixida ishlatilgan ommaviy qirg'in (kimyoviy) quroli."
+    },
+    {
+     "kind": "term",
+     "term": "Protivogaz",
+     "definition": "Gazga qarshi himoya vositasi bo‘lib, Antanta qo‘shini tez orada shu vosita bilan ta’minlangan",
+     "evidence": "qarshi himoya vositasi (protivogaz) bilan ta'minlandi."
+    },
+    {
+     "kind": "term",
+     "term": "To‘rtlar ittifoqi",
+     "definition": "1915-yil sentabrida Bolgariya qo‘shilishi bilan tuzilgan Germaniya, Avstriya-Vengriya va Usmonli davlati ittifoqi",
+     "evidence": "qo'shilishi natijasida ,,To'rtlar ittifoqi\" vujudga keldi."
+    },
+    {
+     "kind": "place",
+     "place": "Sarayevo",
+     "event": "1914-yil 28-iyulda Avstriya-Vengriya taxti vorisi o‘ldirilgan shahar",
+     "evidence": "Sarayevo shahrida Avstriya-Vengriya taxti vorisi Frans"
+    },
+    {
+     "kind": "place",
+     "place": "Dardanell bo‘g‘ozi",
+     "event": "Antanta harbiy dengiz kuchlari Usmonli davlatiga qarshi operatsiyalarni boshlagan hudud",
+     "evidence": "Antanta harbiy dengiz kuchlari Usmonli davlatiga qarshi Dardanell bo'g'ozida harbiy operatsiyalarni boshlab yubordi."
+    },
+    {
+     "kind": "place",
+     "place": "Galitsiya",
+     "event": "1915-yil bahorida ittifoqchilar hujum harakatlarini boshlagan G‘arbiy Ukraina hududi",
+     "evidence": "hujum harakatlarini Galitsiyadan (G'arbiy Ukraina) boshladilar."
+    },
+    {
+     "kind": "cause",
+     "cause": "Ikki harbiy-siyosiy guruh o‘rtasida dunyoni qayta bo‘lib olish uchun kurash",
+     "effect": "Ana shu kurash birinchi jahon urushining asosiy sababi bo‘lgan",
+     "evidence": "dunyoni qayta bo'lib olish uchun boshlangan kurash edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Rossiyaning Germaniya va Avstriya-Vengriyaga qarshi 17-avgust hujumi",
+     "effect": "Germaniyaning yashin tezligida g‘alaba qozonish rejasi barbod bo‘lgan",
+     "evidence": "17-avgust kuni Rossiyaning Germaniya"
+    },
+    {
+     "kind": "cause",
+     "cause": "Germaniya suvosti kemalarining barcha suvusti kemalarni cho‘ktirish niyati",
+     "effect": "Luzitaniya layneri cho‘ktirilib, bortidagi yo‘lovchilarning yarmidan ko‘pi halok bo‘lgan",
+     "evidence": "ning ,,Luzitaniya\" deb ataluvchi ulkan yo'lovchilar tashish kemasini"
+    },
+    {
+     "kind": "cause",
+     "cause": "Antantaning Italiyaga u so‘ragan barcha hududlarni berishga rozi bo‘lishi",
+     "effect": "Italiya Uchlar ittifoqidan chiqib, Antanta tomonida urushga kirgan",
+     "evidence": "Antanta Italiyaga u so'ragan hududlarning barchasini berishga rozi"
+    },
+    {
+     "kind": "number",
+     "number": "2",
+     "unit": "mln",
+     "meaning": "Marna jangida har ikki tomondan qatnashgan jangchilar soni",
+     "evidence": "Marna jangida har ikki tomondan 2 mln.ga yaqin jangchi"
+    },
+    {
+     "kind": "number",
+     "number": "5",
+     "unit": "ming",
+     "meaning": "Ipr jangida xlor gazidan vafot etgan kishilar soni",
+     "evidence": "kishi zaharlandi. Ulardan 5 mingi vafot etdi."
+    }
+   ]
+  },
+  {
+   "number": 36,
+   "title": "1916–1917-yillardagi urush harakatlari",
+   "page": 130,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 21-fevralda",
+     "event": "Germaniya qo‘shinining Fransiyaning Verden qal’asiga hujumi boshlangan",
+     "evidence": "Germaniya qo'shinining hujumi 1916-yilning 21-fevralida"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 21-dekabrda",
+     "event": "Verden jangi nihoyasiga yetib, nemis qo‘shini mudofaaga o‘tishga majbur bo‘lgan",
+     "evidence": "2l-dekabrda Verden jangi nihoyasiga yetdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1917",
+     "date_label": "1917-yil 6-aprelda",
+     "event": "AQSH hukumati Germaniyaga urush e’lon qilgan",
+     "evidence": "Qulay fursatdan foydalangan AQSH hukumati 6-aprel kuni Germaniyaga urush e'lon qildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil avgustda",
+     "event": "Ruminiya Antanta davlatlari bilan shartnoma imzolab, urushga kirish majburiyatini olgan",
+     "evidence": "1916-yilning avgustida Ruminiya bilan Antanta davlatlari o'rtasida"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 28-avgustda",
+     "event": "Ruminiya Avstriya-Vengriyaga qarshi urush e’lon qilgan",
+     "evidence": "Banatning katta qismi va'da qilindi. 28-avgust kuni Ruminiya"
+    },
+    {
+     "kind": "date_event",
+     "date": "1917",
+     "date_label": "1917-yil fevraldan boshlab",
+     "event": "Germaniya Buyuk Britaniyaga qarshi cheklanmagan suvosti urushini boshlagan",
+     "evidence": "1917-yilning fevralidan boshlab Germaniya Buyuk Britaniyaga"
+    },
+    {
+     "kind": "date_event",
+     "date": "1914",
+     "date_label": "1914-yil oktabrida",
+     "event": "Rossiya Ruminiyaning hududiy yaxlitligini kafolatlovchi shartnoma imzolagan",
+     "evidence": "1914-yilning oktabrida Rossiya-Ruminiya"
+    },
+    {
+     "kind": "person",
+     "person": "A. A. Brusilov",
+     "role": "Galitsiya yo‘nalishidagi hujumga rahbarlik qilgan rus generali",
+     "activity": "1916-yil may oyida Fransiya iltimosiga javoban hujumga o‘tib, Avstriya-Vengriya frontini yorib o‘tgan",
+     "evidence": "Bunga javoban general A. A. Brusilov"
+    },
+    {
+     "kind": "person",
+     "person": "A. A. Brusilov",
+     "role": "Rus qo‘shinining generali, Galitsiya frontidagi hujum qo‘mondoni",
+     "activity": "Hujum natijasida dushman 1 milliondan ortiq jangchi yo‘qotib, 400 mingdan ortig‘i asir tushgan",
+     "evidence": "oqibatida Avstriya-Vengriya qo'shinining 1 milliondan ortiq jangchisi"
+    },
+    {
+     "kind": "person",
+     "person": "fon Gindenburg",
+     "role": "Germaniya qo‘shinining general-feldmarshali va qo‘mondoni",
+     "activity": "1916-yil avgustida Germaniya qo‘shini qo‘mondoni etib tayinlangan",
+     "evidence": "1916-yilning avgustida general-feldmarshal fon Gindenburg"
+    },
+    {
+     "kind": "person",
+     "person": "fon Gindenburg",
+     "role": "Germaniya qo‘shinining 1917-yilgi harakat rejasini tuzgan qo‘mondon",
+     "activity": "Rejada front chizig‘i hajmini kamaytirish uchun armiyani tayyorlangan marralarga qaytarish nazarda tutilgan",
+     "evidence": "Germaniya qo'shinining 1917-yilgi harakat rejasini tuzib chiqdi."
+    },
+    {
+     "kind": "term",
+     "term": "Verden qirg‘ini",
+     "definition": "Verden va Somma janglarining misli ko‘rilmagan qirg‘inbarot janglar sifatida tarixga kirgan nomi",
+     "evidence": "Verden jangining tarixga ,,Verden qirg'ini\" nomi bilan"
+    },
+    {
+     "kind": "term",
+     "term": "Tank",
+     "definition": "Somma jangida inglizlar tomonidan urushlar tarixida birinchi bor qo‘llangan yangi jangovar qurol",
+     "evidence": "qurol - tankni ishga soldilar."
+    },
+    {
+     "kind": "term",
+     "term": "Betaraflik",
+     "definition": "Urushda hech bir tomonga qo‘shilmaslik maqomi; AQSH urush boshida shu maqomni e’lon qilgan",
+     "evidence": "Urush boshlangan vaqtda AQSH betaraf-"
+    },
+    {
+     "kind": "term",
+     "term": "Cheklanmagan suvosti urushi",
+     "definition": "Germaniyaning 1917-yil fevralidan Buyuk Britaniyaga qarshi boshlagan suvosti kemalari urushi",
+     "evidence": "qarshi cheklanmagan suvosti urushi e'lon qilganligi va bu urushning:"
+    },
+    {
+     "kind": "place",
+     "place": "Verden qal’asi",
+     "event": "Parij yo‘lini to‘sib turuvchi qal’a bo‘lib, 1916-yilda shiddatli janglar maydoniga aylangan",
+     "evidence": "qal'asiga hujum uyushtirdi. Chunki bu qal'a Parijning yo'lini to'sib"
+    },
+    {
+     "kind": "place",
+     "place": "Somma daryosi",
+     "event": "1916-yilda fransuz va ingliz qo‘shini hujumga o‘tgan, jang noyabrgacha davom etgan joy",
+     "evidence": "Fransuz va ingliz qo'shini Somma daryosi bo'yida hujumga"
+    },
+    {
+     "kind": "place",
+     "place": "Galitsiya",
+     "event": "1916-yilda Avstriya-Vengriya fronti yorib o‘tilgan va qattiq zarba berilgan hudud",
+     "evidence": "Vengriya qo'shinining Galitsiyadagi fronti yorib o'tildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Germaniya Verden qal’asiga hujum uyushtirib, Fransiya taqdirini uzilkesil hal etishni maqsad qilgani",
+     "effect": "Verden atrofida misli ko‘rilmagan shiddatli va qonli janglar boshlangan",
+     "evidence": "Bundan ko'zlangan maqsad - Fransiya taqdirini uzilkesil hal etish edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Germaniyaning cheklanmagan suvosti urushi AQSH manfaatlariga katta zarar yetkazgani",
+     "effect": "AQSH hukumati Germaniyaga qarshi urush e’lon qilishga majbur bo‘lgan",
+     "evidence": "ayni paytda, AQsH manfaatlariga ham katta zarar yetkazganligi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Antanta kuchlarining son jihatidan ustunligi va Rossiyaning qurol ishlab chiqarishdagi ko‘rsatkichi",
+     "effect": "Antanta hujumni yil boshidayoq boshlashni rejalashtirgan",
+     "evidence": "Antanta yilning boshlaridayoq hujumni boshlashni rejalashtirdi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Ruminiyaning harbiy jihatdan mustahkam tayyorgarlik ko‘rmaganligi",
+     "effect": "Ruminiyaning urushga kirishi bilan armiyasi tezda tor-mor etilgan",
+     "evidence": "Biroq harbiy jihatdan mustahkam tayyorgarlik ko'rmagan Ruminiya armiyasi tezda tor-mor etildi."
+    },
+    {
+     "kind": "number",
+     "number": "40",
+     "unit": "%",
+     "meaning": "1917-yilda Antanta qurolli kuchlarining son jihatidan ustunligi",
+     "evidence": "dan ustunligi 40% ni tashkil etardi."
+    },
+    {
+     "kind": "number",
+     "number": "2",
+     "unit": "million",
+     "meaning": "Verden va Somma janglarida har ikki tomondan halok bo‘lgan jangchilar soni",
+     "evidence": "Ularda har ikki tomondan 2 milliondan ortiq jangchi"
+    }
+   ]
+  },
+  {
+   "number": 37,
+   "title": "Birinchi jahon urushining yakunlari va oqibatlari",
+   "page": 132,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1917",
+     "date_label": "1917-yil fevralida",
+     "event": "Rossiyada inqilob yuz berib, imperator taxtdan voz kechishga majbur bo‘lgan",
+     "evidence": "1917-yilning fevral oyida Rossiyada inqilob"
+    },
+    {
+     "kind": "date_event",
+     "date": "1917",
+     "date_label": "1917-yil 7-noyabrda",
+     "event": "Muvaqqat hukumat ag‘darilib, hokimiyat bolsheviklar qo‘liga o‘tgan",
+     "evidence": "i917-yilning 7-noyabrida davlat to'ntarishi yuz berdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1917",
+     "date_label": "1917-yil 8-noyabrda",
+     "event": "Sovet davlati sulh to‘g‘risidagi dekretni qabul qilgan",
+     "evidence": "1917-yilning 8-noyabr kuni Sovet davlati ,Sulh to'g'risida\"gi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1918",
+     "date_label": "1918-yil 3-martda",
+     "event": "Sovet Rossiyasi bilan To‘rtlar ittifoqi o‘rtasida Brest tinchlik shartnomasi imzolangan",
+     "evidence": "Sovet Rossiyasi 1918-yilning 3-mart kuni"
+    },
+    {
+     "kind": "date_event",
+     "date": "1918",
+     "date_label": "1918-yil 11-noyabrda",
+     "event": "Germaniyaning taslim bo‘lganligi haqida Antanta bilan bitim imzolangan",
+     "evidence": "Antanta bilan Germaniyaning taslim bo'lganligi haqida bitim imzolandi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1919",
+     "date_label": "1919-yil 28-iyunda",
+     "event": "Versalda sulh shartnomasi imzolanib, To‘rtlar ittifoqi 132 mlrd marka reparatsiya to‘lashga majbur bo‘lgan",
+     "evidence": "1919-yil 28-iyunda Versalda sulh shartnomasi imzolandi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1918",
+     "date_label": "1918-yil 3-noyabrda",
+     "event": "Avstriya-Vengriya yarash bitimini imzolab, urushdan chiqqan",
+     "evidence": "shunday shartnoma imzolandi va Avstriya-Vengriya ham urushdan"
+    },
+    {
+     "kind": "person",
+     "person": "V. I. Lenin",
+     "role": "Bolsheviklar (kommunistlar) partiyasi rahbari, Sovet hukumatining boshchisi",
+     "activity": "1917-yil 7-noyabrdagi to‘ntarish natijasida hokimiyatni qo‘lga olib, Sovet hukumatini tuzgan",
+     "evidence": "Hokimiyatni V.I. Lenin boshchiligidagi bolsheviklar"
+    },
+    {
+     "kind": "person",
+     "person": "V. Vilson",
+     "role": "AQSH prezidenti, urushdan keyingi tinchlik dasturining muallifi",
+     "activity": "1918-yil yanvarida tinchlik shartnomasi va dunyo siyosiy xaritasi bo‘yicha AQSH nuqtayi nazarini dunyoga ma’lum qilgan",
+     "evidence": "AQSH prezidenti V.Vilson 1918- yilning yan-"
+    },
+    {
+     "kind": "person",
+     "person": "Fosh",
+     "role": "Fransiya marshali, Antanta birlashgan kuchlarining qo‘mondoni",
+     "activity": "1918-yilda birlashgan kuchlarga qo‘mondonlik qilib, Antanta qarshi hujumini boshqargan",
+     "evidence": "Fransiya marshali Fosh birlashgan kuchlarning qo'mondoni"
+    },
+    {
+     "kind": "person",
+     "person": "Vilgelm II",
+     "role": "Germaniya imperatori, 1918-yilda taxtdan voz kechgan hukmdor",
+     "activity": "9-noyabrda imperiya qulagach taxtdan voz kechib, mamlakatdan qochib ketgan",
+     "evidence": "Imperator Vilgelm II taxtdan voz"
+    },
+    {
+     "kind": "term",
+     "term": "Reparatsiya",
+     "definition": "Urushda ko‘rilgan zararni to‘la yoki qisman qoplash uchun yengilgan davlat tomonidan g‘olib davlatga to‘lanadigan tovon",
+     "evidence": "zararni to'la yoki qisman qoplash uchun yengilgan davlat"
+    },
+    {
+     "kind": "term",
+     "term": "Separatizm",
+     "definition": "Ajralib chiqishga intilish; ittifoqchilar ruxsatisiz dushman davlat bilan tuzilgan bitim",
+     "evidence": "Separatizm (lotincha - ajrataman) - ajralib chiqishga intilish."
+    },
+    {
+     "kind": "term",
+     "term": "Sulh",
+     "definition": "Urush harakatlarini to‘xtatish uchun tuzilgan bitim, xalqaro shartnomalarning bir turi",
+     "evidence": "Sulh - urush harakatlarini to'xtatish uchun tuzilgan bitim."
+    },
+    {
+     "kind": "term",
+     "term": "Shovinizm",
+     "definition": "Milliy adovat va urushni targ‘ib qiluvchi mafkura; urush yillarida aholi orasida kuchli targ‘ib etilgan",
+     "evidence": "Aholi o'rtasida shovinizm zo'r berib targ'ib etila boshlandi."
+    },
+    {
+     "kind": "place",
+     "place": "Brest",
+     "event": "1918-yil 3-martda Rossiya bilan To‘rtlar ittifoqi o‘rtasida tinchlik shartnomasi imzolangan joy",
+     "evidence": "asosida Brest tinchlik shartnomasini imzoladi."
+    },
+    {
+     "kind": "place",
+     "place": "Bag‘dod",
+     "event": "1917-yil martida ingliz qo‘shinlari tomonidan egallangan shahar",
+     "evidence": "1917-yilning mart oyida inglizlar Bag'dod shahrini"
+    },
+    {
+     "kind": "place",
+     "place": "Kompen o‘rmoni",
+     "event": "1918-yil 11-noyabrda Germaniyaning taslim bo‘lish bitimi imzolangan joy",
+     "evidence": "1l-noyabr kuni Kompen o'rmonida, marshal Foshning"
+    },
+    {
+     "kind": "cause",
+     "cause": "Urushning uzoqqa cho‘zilishi va misli ko‘rilmagan harbiy xarajatlar talab qilishi",
+     "effect": "Deyarli barcha davlatlarda oziq-ovqat tanqisligi vujudga kelgan",
+     "evidence": "Deyarli barcha davlatlarda oziq-ovqat tanqisligi vujudga keldi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Urushning Rossiya iqtisodiy va siyosiy ahvolini haddan tashqari keskinlashtirishi",
+     "effect": "1917-yil fevralida Rossiyada inqilob yuz bergan",
+     "evidence": "Urush Rossiyaning iqtisodiy va siyosiy ah-"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qo‘shinning jangovar ruhini yo‘qotishi va Sharqiy frontning so‘kilib ketishi",
+     "effect": "Sovet hukumati har qanday sharoitda ham separat sulh tuzishga intilgan",
+     "evidence": "Sovet hukumati har qanday sharoitda ham separat sulh tuzishga"
+    },
+    {
+     "kind": "cause",
+     "cause": "Brest shartnomasi shartlarining Rossiya uchun juda og‘ir bo‘lishi",
+     "effect": "Rossiya Boltiqbo‘yi, Polsha, Finlandiya va Ukrainadan voz kechib, katta reparatsiya to‘lashga majbur bo‘lgan",
+     "evidence": "Shartnomaning shartlari Rossiya uchun juda og'ir edi."
+    },
+    {
+     "kind": "number",
+     "number": "38",
+     "unit": "davlat",
+     "meaning": "Birinchi jahon urushida ishtirok etgan dunyo davlatlari soni",
+     "evidence": "Birinchi jahon urushida dunyoning 38 davlati ishtirok etdi."
+    },
+    {
+     "kind": "number",
+     "number": "74",
+     "unit": "mln",
+     "meaning": "Birinchi jahon urushiga safarbar etilgan kishilar soni",
+     "evidence": "Urushga 74 mln.ga yaqin kishi safarbar etildi."
+    }
+   ]
+  },
+  {
+   "number": 38,
+   "title": "Moddiy ishlab chiqarishda texnika va fan taraqqiyoti",
+   "page": 137,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1895",
+     "date_label": "1895-yildan",
+     "event": "Buyuk Britaniya va AQSHning yirik shaharlarida tramvay ishlatila boshlagan",
+     "evidence": "Britaniya va AQSHning yirik shaharlarida tramvay ishlatila boshlandi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1876",
+     "date_label": "1876-yilda",
+     "event": "Rus olimi P. N. Yablochkov elektr shami deb atalgan lampani ixtiro qilgan",
+     "evidence": "1876-yilda rus olimi P. N. Yablochkov"
+    },
+    {
+     "kind": "date_event",
+     "date": "1889",
+     "date_label": "1889-yilda",
+     "event": "Fransuz muhandisi Eyfel Parijdagi ko‘rgazma uchun 300 metrlik minorani qurgan",
+     "evidence": "1889-yilda Parijdagi Jahon ko'rgazmasi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1880",
+     "date_label": "1880-yilda",
+     "event": "Alp tog‘laridagi Sen-Gotard dovoni ostida 15 kilometrlik tunnel qurilgan",
+     "evidence": "1880-yilda Alp tog'laridagi mashhur"
+    },
+    {
+     "kind": "date_event",
+     "date": "1886",
+     "date_label": "1886-yilda",
+     "event": "Elektrolit yo‘li bilan aluminiy ajratib olingan",
+     "evidence": "1886-yilda elektrolit yo'li bilan aluminiy ajratib olindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1897",
+     "date_label": "1897-yilda",
+     "event": "R. Dizel yonilg‘i siqilganda o‘z-o‘zidan alangalanadigan yangi dvigatel yaratgan",
+     "evidence": "1897-yilda R. Dizel yonilg'i siqilganda"
+    },
+    {
+     "kind": "date_event",
+     "date": "1903",
+     "date_label": "1903-yilda",
+     "event": "Aka-uka Uilber va Orvill Raytlar samolyotda uchgan",
+     "evidence": "1903-yilda aka-uka Uilber va Orvill"
+    },
+    {
+     "kind": "date_event",
+     "date": "1884",
+     "date_label": "1884-yilda",
+     "event": "Fransuz olimi Vyelye piroksilinli tutunsiz porox tayyorlashga muvaffaq bo‘lgan",
+     "evidence": "1884-yilda fransuz olimi Vyelye piroksilinli tutunsiz porox tayyorlashga muvaffaq bo'ldi."
+    },
+    {
+     "kind": "person",
+     "person": "T. Edison",
+     "role": "Amerikalik ixtirochi, elektr lampa va fonograf muallifi",
+     "activity": "Havosi so‘rib olingan ko‘mir tolali cho‘g‘lanish lampasini yaratib, Nyu-Yorkda birinchi issiqlik elektr stansiyasini qurgan",
+     "evidence": "Amerikalik ixtirochi T Edison havosi so'rib olingan ko'mir tolali cho'g'lanish lampasini yaratdi."
+    },
+    {
+     "kind": "person",
+     "person": "A. Popov",
+     "role": "Rus olimi, simsiz aloqa va radioning asoschisi",
+     "activity": "Elektromagnit to‘lqinlarini chiqarish va qabul qilish usulini topib, uzatgich va qabul qilgichni yaratgan",
+     "evidence": "Rus olimi A. Popov simsiz"
+    },
+    {
+     "kind": "person",
+     "person": "A. Bell",
+     "role": "Shotlandiyada tug‘ilib, Amerikada yashagan texnik va ixtirochi",
+     "activity": "Telefon apparatiga birinchi bo‘lib imtiyoznoma olgan",
+     "evidence": "telefon apparatiga birinchi bo'lib imtiyoznoma oldi."
+    },
+    {
+     "kind": "person",
+     "person": "A. Nobel",
+     "role": "Shvetsiyalik muhandis, dinamit ixtirochisi va portlovchi moddalar sohasidagi kashfiyotchi",
+     "activity": "1888-yilda ko‘p yillik izlanishlari natijasida dinamitni yaratgan",
+     "evidence": "shvetsiyalik muhandis A. Nobel olamshumul kashfiyot qildi."
+    },
+    {
+     "kind": "term",
+     "term": "Temir-beton",
+     "definition": "Metall va sement birikmasidan yasalgan yangi qurilish materiali; fransuz bog‘boni Monye ixtirosi hisoblanadi",
+     "evidence": "teriali - temir-beton paydo bo'ldi."
+    },
+    {
+     "kind": "term",
+     "term": "Fonograf",
+     "definition": "Ovoz yozib olish va uni qayta eshittirish apparati; grammofon shu asosda paydo bo‘lgan",
+     "evidence": "T Edison ovoz yozib olish va uni takror"
+    },
+    {
+     "kind": "term",
+     "term": "Ichki yonuv dvigateli",
+     "definition": "Bug‘ mashinasi o‘rniga yaratilgan, yonilg‘i yonishi hisobiga ishlaydigan dvigatel",
+     "evidence": "o'rniga ichki yonuv dvigateli va elektr dvigatellari yaratildi."
+    },
+    {
+     "kind": "term",
+     "term": "Simsiz aloqa",
+     "definition": "Elektromagnit to‘lqinlari yordamida axborot uzatish usuli; A. Popov shu asosda radioga asos solgan",
+     "evidence": "aloqa uchun elektromagnit to'lqinlarini chiqarish va qabul qilish usulini topdi hamda kerakli asboblarni"
+    },
+    {
+     "kind": "place",
+     "place": "Nyu-York",
+     "event": "Edison qurgan birinchi issiqlik elektr stansiyasi iste’molchilarni energiya bilan ta’minlagan shahar",
+     "evidence": "Nyu-Yorkda Edison qurgan birinchi issiqlik elektr stansiyasi yuzlarcha iste'molchilarni energiya bilan ta'minlay boshlagan."
+    },
+    {
+     "kind": "place",
+     "place": "Panama kanali",
+     "event": "Atlantika okeani bilan Tinch okeanini bir-biriga tutashtiruvchi kanal qurib bitkazilgan",
+     "evidence": "Atlantika okeani bilan Tinch okeanini bir-biriga tutashtiruvchi Panama"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ishlab chiqaruvchi kuchlarning o‘sishi va jamiyat ehtiyojlarining ortishi",
+     "effect": "Transport, elektr, binokorlik, metallurgiya va mashinasozlikda yirik kashfiyotlar qilingan",
+     "evidence": "o'sganligi va jamiyatning ehtiyojlari ortganligi tufayli transport, elektr, binokorlik, metallurgiya, mashinasozlik"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dunyo mamlakatlarida temiryo‘llarning ko‘payishi",
+     "effect": "Parovozsozlikda yirik o‘zgarishlar yuz berib, bug‘ mashinalari o‘rniga yangi dvigatellar yaratilgan",
+     "evidence": "Dunyo mamlakatlarida temiryo'llarning ko'payishi natijasida parovozsozlikda yirik"
+    },
+    {
+     "kind": "cause",
+     "cause": "Sanoatning rivojlanishi va fabrika, zavod, savdo joylarining sun’iy yoritgichga ehtiyoji",
+     "effect": "Elektr sanoati yuksak darajada taraqqiy etgan",
+     "evidence": "Sanoatning rivojlanishi fabrika, zavod, savdo joylari va idoralarning sun'iy yoritgichlarga bo'lgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Tutunli poroxning magazinli miltiq jangovar sifatlarini kamaytirishi",
+     "effect": "Harbiy ish amaliyoti tutunsiz porox kashf etish vazifasini qo‘ygan",
+     "evidence": "Shunday qilib, harbiy ish amaliyoti tutunsiz porox kashf etish vazifasini qo'ydi."
+    },
+    {
+     "kind": "number",
+     "number": "300",
+     "unit": "metr",
+     "meaning": "1889-yilda qurilgan Eyfel minorasining balandligi",
+     "evidence": "balandligi 300 metr bo'lgan minora qurdi."
+    },
+    {
+     "kind": "number",
+     "number": "220",
+     "unit": "km/soat",
+     "meaning": "XX asr boshida qurilgan samolyotlarning eng yuqori tezligi",
+     "evidence": "XX asr boshlarida soatiga 220 km gacha tezlik bilan uchadigan,"
+    }
+   ]
+  }
+ ]
+}

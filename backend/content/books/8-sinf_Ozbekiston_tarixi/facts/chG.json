@@ -1,0 +1,170 @@
+{
+ "chapter": "II BOB. XIVA XONLIGI",
+ "topics": [
+  {
+   "number": 28,
+   "title": "Xiva xonligida madaniy hayot",
+   "page": 103,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1800",
+     "date_label": "1800-yilda",
+     "event": "Munis Xorazmiy otasi vafot etgach, Xiva saroyida kotib etib tayinlangan",
+     "evidence": "18o0-yilda otasi vafot etgach,\nsaroy kotibi etib layinlandi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1804",
+     "date_label": "1804-yilda",
+     "event": "Munis birinchi she’rlarini o‘z ichiga olgan «Devoni Munis» devonini yaratgan",
+     "evidence": "1804-yilda birinchi she'rlarini o'z. ichiga\nolgan devon - ..Devoni Munis\"ni yaratdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1809",
+     "date_label": "1809-yilda",
+     "event": "Ogahiy Qiyot qishlog‘idagi mirob oilasida dunyoga kelgan",
+     "evidence": "1809-yilda Qiyot qishlog'idagi mirob oilasida tug'ildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1829",
+     "date_label": "1829-yilda",
+     "event": "Ogahiyning amakisi, shoir Munis Xorazmiy vafot etgan",
+     "evidence": "1829-yilda amakisi Munis vafot etgach,"
+    },
+    {
+     "kind": "date_event",
+     "date": "1512–1663",
+     "date_label": "1512–1663-yillarda",
+     "event": "«Shajarayi turk va mo‘g‘ul» asarining birinchi bobi Xorazmning shu yillardagi tarixiga bag‘ishlangan",
+     "evidence": "1 bobi Xorazmning 1512-1663-yillardagi tarixiga bag'ishlangan."
+    },
+    {
+     "kind": "date_event",
+     "date": "1825",
+     "date_label": "1825-yilgacha",
+     "event": "«Firdavs ul-iqbol» asarida Xorazmning qadimgi davridan 1825-yilgacha bo‘lgan tarixi bayon etilgan",
+     "evidence": "unda Xorazmning qadimgi davridan 1825-yilgacha bo'lgan tarixi bayon ctilgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "1825–1842",
+     "date_label": "1825–1842-yillarda",
+     "event": "Ogahiy «Riyoz ud-davla» asarida Xorazm tarixini 1825-yildan 1842-yilgacha bayon etgan",
+     "evidence": "asariga 1825-yildan 1842-yilgacha"
+    },
+    {
+     "kind": "person",
+     "person": "Munis Xorazmiy",
+     "role": "Xiva xonligi shoiri, saroy kotibi va tarixchi olimi",
+     "activity": "«Devoni Munis» devonini yaratgan, «Firdavs ul-iqbol» asarini yozishni boshlagan, «Savodi ta’lim» qo‘llanmasini yozgan",
+     "evidence": "Munis Xorazmiy yoshlik chog'laridan\nadabiyot va tarix faniga mehr qo\"ydi."
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad Rizo Ogahiy",
+     "role": "Munisning jiyani, shoir, mohir tarjimon va tarixchi",
+     "activity": "«Riyoz ud-davla», «Tarixlar sarasi» va «Jomi ul-voqeati sultoniy» asarlarida Xorazm tarixini bayon etgan",
+     "evidence": "Ogahiy o'z davrining\nmohir 1arjimoni ham edi."
+    },
+    {
+     "kind": "person",
+     "person": "Abulg‘oziy Bahodirxon",
+     "role": "Xiva xonligi hukmdori va Xorazm tarixnavislik maktabiga asos solgan tarixchi olim",
+     "activity": "«Shajarayi turk va mo‘g‘ul» asarini o‘zbek tilida yozib, tarixda nom qoldirgan",
+     "evidence": "Abulg'oziy Bahodirxondir. U ham hukmdor, ham\ntarixchi olim sifatida tarixda nom qozondi."
+    },
+    {
+     "kind": "person",
+     "person": "Xattot Hamadoniy",
+     "role": "XVI asrdagi mashhur xattot, Xiva xonlari kutubxonasida ijod qilgan usta",
+     "activity": "1556-yilda Eshmuhammadxon uchun «Shohnoma»ni miniatyuralar uchun ochiq joy qoldirib ko‘chirgan",
+     "evidence": "xattot Hamadoniy 1556-yilda Eshmuhammadxonga ,Shohnoma\"ni minialuralar uchun ochig joy qoldirib ko'chirib\nberdi."
+    },
+    {
+     "kind": "person",
+     "person": "Bobojon Sanoiy",
+     "role": "XVII–XVIII asrlarda Xivada ijod qilgan xattot va kotib",
+     "activity": "She’riy asarlar, tarjimalar va tarixiy kitoblarni katta mahorat bilan ko‘chirgan",
+     "evidence": "XVII-XVIII asrlarda Xivada Muhaminad Yusuf Roziy, Bobojon\nSanoiy, Muhammad Rizo Oxund kabi usia xalloilar ijod qildilar."
+    },
+    {
+     "kind": "term",
+     "term": "husnixat",
+     "definition": "Chiroyli va bejirim yozuv san’ati; xattotlik mahorati, kitobning badiiy yozuv bilan bezatilishi",
+     "evidence": "chiqarishni yengillashtirishga, shuningdek, husnixalni rivojlantirishga\nmo'ljallangan edi."
+    },
+    {
+     "kind": "term",
+     "term": "muzahhib",
+     "definition": "Qo‘lyozma kitobni bezashda oltin suvi yurituvchi, ya’ni zarhal ishlov beruvchi usta",
+     "evidence": "muzahhib (oltin suvi yurituvchi), lavvoh (sarlavha biluvchi)"
+    },
+    {
+     "kind": "term",
+     "term": "mudarris",
+     "definition": "Madrasada dars beruvchi o‘qituvchi; madrasani bitirganlarning ayrimlari mudarrislik qilgan",
+     "evidence": "Ayrimlari mudarrislik ham qilishgan."
+    },
+    {
+     "kind": "term",
+     "term": "vaqf mulki",
+     "definition": "Ta’lim muassasalari ixtiyoridagi mol-mulk bo‘lib, uning daromadlari ta’lim xarajatlarini qoplagan",
+     "evidence": "Ta'limning barcha xarajatlari, mudarris va\ntalabalarning ta'minoti vaqf mulki daromadlari hisobidan amalga\noshirilgan."
+    },
+    {
+     "kind": "place",
+     "place": "Ko‘hna Xorazm",
+     "event": "O‘zbek davlatchiligiga tamal toshi qo‘yilgan va ilk ilm-fan markazi — Ma’mun akademiyasi tashkil etilgan diyor",
+     "evidence": "Ko\"hna Xorazm\nbu o'zbek davlatchiligining tamal toshi qo'yilgan diyor."
+    },
+    {
+     "kind": "place",
+     "place": "Xiva shahri",
+     "event": "Xonlikdagi 103 madrasaning 22 tasi shu shaharda joylashgan edi",
+     "evidence": "Shundan 22 tasi Xiva shahrida\njoylashgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Xiva xonlari Xorazmning avvalgi salobatini tiklab, uni O‘rta Osiyo markaziga aylantirishni maqsad qilgan",
+     "effect": "Shu sababli xonlikda iqtisodiyot va madaniyatni rivojlantirishga intilish Buxoro va Qo‘qonnikidan kuchliroq bo‘lgan",
+     "evidence": "Buning sababi Xiva xonlarining maqsadi bilan\nizohlanadi. Xonlarning maqsadi esa Xorazmning avvalgi salobatini\ntiklash va O'rta Osiyoning markazi bo'lish edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Xiva xonligining iqtisodiy imkoniyatlari yetarli bo‘lmagan",
+     "effect": "Shunga qaramay shahar qurilishi, kanallar qazilishi va boy kutubxona yaratilishi uchun juda katta mablag‘ sarflangan",
+     "evidence": "Biroq davlatning\niqtisodiy imkoniyatlari yetarli bo'lmasa-da, xonlikda shahar qurilishiga."
+    },
+    {
+     "kind": "cause",
+     "cause": "Bitta kitobni husnixat bilan yozib chiqish bir kishining qo‘lidan kelmagan",
+     "effect": "Shu sababli har bir kitobni bezashda qog‘oz qirquvchi, kotib-xattot, muzahhib, lavvoh, miniaturachi va sahhof ishtirok etgan",
+     "evidence": "bitta kitobni husnixat bilan\nyozish bir kishining mchnali cmas edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Madrasada diniy ilmlar bilan birgalikda arab tili grammatikasi, mantiq, matematika, geografiya va tarix o‘qitilgan",
+     "effect": "Madrasani bitirganlar qozi, uning yordamchisi, masjid imomi va mudarris lavozimlarida ishlagan",
+     "evidence": "Madrasa la'limning oliy bosqichi bo'lib, unda diniy ilm bilan birgalikda arab tili grammatikasi, mantiq. nutq madaniyati, matematika."
+    },
+    {
+     "kind": "number",
+     "number": "1,5",
+     "unit": "ming",
+     "meaning": "XIX asrda Xiva xonligida faoliyat ko‘rsatgan boshlang‘ich maktablar soni",
+     "evidence": "XiX asrda xonlikda 1,5 mingga yaqin boshlang\"ich maktab faoliyat ko'rsatgan."
+    },
+    {
+     "kind": "number",
+     "number": "103",
+     "unit": "ta",
+     "meaning": "Xiva xonligidagi madrasalar soni, shundan 22 tasi Xiva shahrida joylashgan",
+     "evidence": "Madrasalar soni esa 103 tani tashkil etgan."
+    }
+   ]
+  }
+ ]
+}

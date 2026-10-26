@@ -1,0 +1,728 @@
+{
+ "chapter": "VII–VIII BO‘LIM. TURKISTON VA BIRINCHI JAHON URUSHI; XIX ASR OXIRI – XX ASR BOSHLARIDA BUXORO AMIRLIGI",
+ "topics": [
+  {
+   "number": 29,
+   "title": "Birinchi jahon urushining boshlanishi va uning Turkistonga ta’siri",
+   "page": 101,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "XX asr boshi",
+     "date_label": "XX asr boshlari",
+     "event": "Jahondagi yirik davlatlarning mustamlakalarga ega bo‘lish masalasidagi munosabatlari keskin tus oldi",
+     "evidence": "XX asrning boshlarida jahondagi yirik davlatlar"
+    },
+    {
+     "kind": "date_event",
+     "date": "1914",
+     "date_label": "1914-yil",
+     "event": "Turkistonda «favqulodda muhofaza holati» e’lon qilinib, aholi ustidan nazorat va jazo choralari kuchaydi",
+     "evidence": "1914-yilda Turkistonda «favqulodda muhofaza holati» deb e’lon qili"
+    },
+    {
+     "kind": "date_event",
+     "date": "1915",
+     "date_label": "1915-yil",
+     "event": "Turkistonda paxtaga o‘zgarmas davlat narxlari joriy etilib, bu narx paxtakorlar xarajatini qoplamadi",
+     "evidence": "1915-yildan boshlab, Turkistonda paxtaga o‘zgarmas davlat narxlari"
+    },
+    {
+     "kind": "date_event",
+     "date": "1894–1917",
+     "date_label": "1894–1917-yillar",
+     "event": "Nikolay II Rossiya imperatori sifatida hukmronlik qilgan yillar davri",
+     "evidence": "Nikolay II (1894–1917) Oliy Bosh qo‘mondon"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 25-iyun",
+     "event": "Nikolay II harbiy vazir taklifi bilan front ortida ishlash uchun aholini safarbar qilish farmonini chiqardi",
+     "evidence": "1916-yil 25-iyunda Rossi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 25-iyun",
+     "event": "Turkiston, Sibir va Kavkazdan 19 yoshdan 43 yoshgacha bo‘lgan erkaklar safarbarligi boshlandi",
+     "evidence": "uchun Turkiston, Sibir va Kavkaz dan 19 yoshdan 43 yoshgacha bo‘lgan"
+    },
+    {
+     "kind": "person",
+     "person": "Nikolay II",
+     "role": "Rossiya imperatori",
+     "activity": "1916-yil 25-iyunda front ortidagi xizmatlar uchun aholini safarbar qilish to‘g‘risidagi farmonni chiqargan",
+     "evidence": "imperatori Nikolay II (1894–1917) Oliy Bosh qo‘mondon va harbiy"
+    },
+    {
+     "kind": "person",
+     "person": "harbiy vazir",
+     "role": "Rossiya harbiy vaziri lavozimi",
+     "activity": "front ortida ishlash uchun aholini safarbar qilish farmoni taklifini Oliy Bosh qo‘mondon bilan kiritgan",
+     "evidence": "vazir taklifi bilan chiqargan farmoni bo‘yicha «front ortidagi xizmatlar"
+    },
+    {
+     "kind": "person",
+     "person": "Oliy Bosh qo‘mondon",
+     "role": "oliy harbiy qo‘mondonlik lavozimi",
+     "activity": "harbiy vazir bilan birgalikda 1916-yilgi safarbarlik farmoni taklifini tayyorlagan harbiy rahbar",
+     "evidence": "Oliy Bosh qo‘mondon va harbiy"
+    },
+    {
+     "kind": "term",
+     "term": "Antanta",
+     "definition": "Birinchi jahon urushida Rossiya, Angliya va Fransiya davlatlaridan iborat ittifoq",
+     "evidence": "davlatlaridan iborat ittifoq – Antanta tomonida turib urushda qatnashdi"
+    },
+    {
+     "kind": "term",
+     "term": "safarbarlik",
+     "definition": "Aholini, jumladan yevropalik qism vakillarini urush uchun harbiy xizmatga majburiy chaqirish tartibi",
+     "evidence": "Bu urush tufayli Rossiyada ommaviy safarbarlik e’lon qilindi"
+    },
+    {
+     "kind": "term",
+     "term": "«favqulodda muhofaza holati»",
+     "definition": "1914-yilda Turkistonda joriy etilgan, mustamlaka hukumatning nazorat va jazo choralarini kuchaytirgan tartib",
+     "evidence": "«favqulodda muhofaza holati» deb e’lon qili"
+    },
+    {
+     "kind": "term",
+     "term": "front ortidagi xizmatlar",
+     "definition": "1916-yilgi farmonga ko‘ra aholini front ortida ishlashga majburiy jalb qilish tartibi",
+     "evidence": "front ortidagi xizmatlar"
+    },
+    {
+     "kind": "place",
+     "place": "Turkiston o‘lkasi",
+     "event": "Urush yillarida tabiiy boyliklari mustamlaka hukumat tomonidan ko‘proq o‘zlashtirilgan hudud",
+     "evidence": "jumladan, Turkiston o‘lkasidan ham yanada ko‘proq foy"
+    },
+    {
+     "kind": "place",
+     "place": "Turkiston, Sibir va Kavkaz",
+     "event": "1916-yilgi farmon bo‘yicha 19 yoshdan 43 yoshgacha erkaklar safarbar qilingan hududlar",
+     "evidence": "uchun Turkiston, Sibir va Kavkaz dan 19 yoshdan 43 yoshgacha"
+    },
+    {
+     "kind": "cause",
+     "cause": "Rossiya imperiyasining Birinchi jahon urushida ishtirok etishi",
+     "effect": "mamlakat iqtisodiyotini og‘ir ahvolga solib, podsho hukumatini mustamlakalarni ko‘proq talashga majbur qildi",
+     "evidence": "Rossiya imperiya sining Birinchi jahon urushida ishtirok etishi uni iqti"
+    },
+    {
+     "kind": "cause",
+     "cause": "Urush tufayli e’lon qilingan ommaviy safarbarlik",
+     "effect": "ko‘chirib keltirilganlarning asosiy boquvchisidan ajralishi va ularning yomon ahvolga tushishi",
+     "evidence": "urushga olinishi oilaning asosiy boquvchisidan ajralishiga va ularning"
+    },
+    {
+     "kind": "cause",
+     "cause": "Aholi turmush sharoitining yomonligi va oziq-ovqat yetishmasligi",
+     "effect": "o‘lkada norozilik kayfiyati oshib, ommaviy ko‘rinishdagi qo‘zg‘olonlar kuchaydi",
+     "evidence": "oziq-ovqat va boshqa mahsulotlarning yetish"
+    },
+    {
+     "kind": "number",
+     "number": "50",
+     "unit": "foiz",
+     "meaning": "Urushning bir yili davomida soliqlar miqdori shu foizga ko‘paygan",
+     "evidence": "urushning bir yili davomida soliqlar miqdori 50 foizga ko‘paydi"
+    }
+   ]
+  },
+  {
+   "number": 30,
+   "title": "Turkistonda 1916-yilgi qo‘zg‘olonning boshlanishi",
+   "page": 103,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil",
+     "event": "Mardikorlik ro‘yxatini tuzuvchi mahalliy boshqaruv vakillari tomonidan aholini zo‘rlash holatlari avj oldi",
+     "evidence": "yil da mardikorlikka olinadiganlar ro‘yxatini tuzadigan mahalliy boshqa"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 4-iyul",
+     "event": "Xo‘jand shahrida ko‘p sonli aholi norozilik bildirib yig‘ilib, mardikorlikdan bosh tortdi",
+     "evidence": "1916-yil 4-iyulda Xo‘jand shahrida norozilik bildirib ko‘p sonli aho"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 5-iyul",
+     "event": "Samarqandning Urgut qishlog‘ida mardikorlikka qarshi norozilik chiqishlari boshlandi",
+     "evidence": "5-iyulda Samarqandning"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 7-iyul",
+     "event": "Dahbedda ham mardikorlikka qarshi norozilik chiqishlari bo‘lib o‘tdi",
+     "evidence": "7-iyulda Dahbedda norozilik chiqishlari bo‘lib o‘tdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 9-iyul",
+     "event": "Andijonda podsho farmoni o‘qib eshittirilgach, aholi mardikorlikdan bosh tortib namoyishga chiqdi",
+     "evidence": "9-iyul kuni Andijonda"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 10-iyul",
+     "event": "Eski Marg‘ilonda taxminan 25 ming kishi norozilik bildirib, bozor atrofiga yig‘ildi",
+     "evidence": "10-iyulda Eski Marg‘ilonda taxminan 25 ming kishi norozilik bildirib"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 11-iyul",
+     "event": "Toshkentda Beshyog‘ochdagi politsiya mahkamasi oldiga ko‘p sonli aholi to‘plandi",
+     "evidence": "Toshkentda 11-iyulda ko‘p sonli aholi Beshyog‘ochdagi politsiya mahka"
+    },
+    {
+     "kind": "person",
+     "person": "A. Gippius",
+     "role": "Farg‘ona viloyati gubernatori",
+     "activity": "mardikorlik safarbari aholi orasida katta g‘alayonlar chiqishiga sabab bo‘lishi haqida ogohlantirgan",
+     "evidence": "viloyati gubernatori A. Gippius viloyatda norozilik kayfiyatidagi odam"
+    },
+    {
+     "kind": "person",
+     "person": "Rizvonbibi Ahmadjonova",
+     "role": "qo‘zg‘olon faoli",
+     "activity": "Toshkentda politsiyaga qarata o‘g‘illarini bermaslikni aytib xitob qilgan",
+     "evidence": "Qo‘zg‘olon faollaridan Rizvonbibi Ahmadjonova"
+    },
+    {
+     "kind": "person",
+     "person": "Nikolay II",
+     "role": "Rossiya imperatori",
+     "activity": "front ortidagi xizmatlar uchun aholini mardikorlikka olish farmonini chiqargan",
+     "evidence": "Imperator Nikolay II front ortidagi xizmatlar"
+    },
+    {
+     "kind": "term",
+     "term": "mardikorlik",
+     "definition": "Aholini front ortidagi og‘ir ishlarga majburiy safarbar qilish tartibi",
+     "evidence": "uchun aholining mardikorlikka olinishi to‘g‘"
+    },
+    {
+     "kind": "term",
+     "term": "pora",
+     "definition": "Badavlat xonadonlar vakillarining ro‘yxatga yozilmaslik uchun bergan puli",
+     "evidence": "badavlat xonadon vakillari pora be"
+    },
+    {
+     "kind": "term",
+     "term": "uyezd",
+     "definition": "Viloyat tarkibidagi ma’muriy birlik; Qo‘qon, Andijon, Namangan uyezdlarida qo‘zg‘olon keskin tus olgan",
+     "evidence": "viloyatining Qo‘qon, Rishton, Mar"
+    },
+    {
+     "kind": "term",
+     "term": "harbiy holat",
+     "definition": "Toshkentda qo‘zg‘olon bostirilgach joriy etilgan, nazorat va tekshiruvlar kuchaytirilgan tartib",
+     "evidence": "Shahar harbiy holatga tu shib, har bir joyda"
+    },
+    {
+     "kind": "place",
+     "place": "Xo‘jand shahri",
+     "event": "1916-yil 4-iyulda mardikorlikka qarshi norozilik bildirgan ko‘p sonli aholi to‘plangan joy",
+     "evidence": "Xo‘jand shahrida norozilik bildirib ko‘p sonli aho"
+    },
+    {
+     "kind": "place",
+     "place": "Toshkent",
+     "event": "11-iyulda namoyish bo‘lib, 11 kishi halok bo‘lgan va harbiy holat joriy etilgan shahar",
+     "evidence": "Toshkent shahri atrofidagi qish"
+    },
+    {
+     "kind": "place",
+     "place": "Eski Marg‘ilon",
+     "event": "10-iyulda 25 ming kishi norozilik bildirib, ma’muriy binolarga o‘t qo‘yilgan joy",
+     "evidence": "10-iyulda Eski Marg‘ilonda taxminan 25 ming kishi norozilik bildirib"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mardikorlik ro‘yxatlarini tuzishdagi adolatsizlik va poraxo‘rlik",
+     "effect": "keng xalq ommasi noroziligining kuchayishi va ommaviy chiqishlarning boshlanishi",
+     "evidence": "Bunday nohaqliklar keng xalq ommasi"
+    },
+    {
+     "kind": "cause",
+     "cause": "A. Gippiusning ogohlantirishlarini markaziy hokimiyat farmonni bajarmaslik deb baholashi",
+     "effect": "viloyat gubernatorining lavozimidan ozod qilinishi",
+     "evidence": "uni viloyat gubernatori lavozimidan ozod qiladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qo‘zg‘olonchilarning qurolsiz bo‘lishi",
+     "effect": "politsiya va harbiy kuchlar tomonidan otib o‘ldirilishi va yarador qilinishi",
+     "evidence": "qurolsiz namoyishchilardan"
+    },
+    {
+     "kind": "number",
+     "number": "87 ming",
+     "unit": "kishi",
+     "meaning": "Farmonga muvofiq Sirdaryo viloyatidan mardikorlikka yuborilishi belgilangan aholi soni",
+     "evidence": "Sirdaryo vilo yatidan 87 ming, Samarqanddan 38 ming, Farg‘onadan"
+    }
+   ]
+  },
+  {
+   "number": 31,
+   "title": "Jizzax qo‘zg‘oloni",
+   "page": 106,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 3-iyul",
+     "event": "Farmon e’lon qilinishi bilan Jizzaxda xalq orasida norozilik boshlandi",
+     "evidence": "1916-yil 3-iyulda"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 5-iyul",
+     "event": "Jizzaxda dastlabki g‘alayonlar boshlanib, aholi farmonning bekor qilinishini talab qildi",
+     "evidence": "5-iyulda dastlabki g‘alayonlar boshlandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 13-iyul",
+     "event": "Hunarmandlar Damin kulol boshchiligida ro‘yxatni talab qilib qishloq oqsoqoli oldiga bordilar",
+     "evidence": "13-iyulda Jiz"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 13-iyul",
+     "event": "Qo‘zg‘olonchilar temiryo‘l stansiyalarini, aloqa simlarini uzib, ko‘priklarni buzib tashladilar",
+     "evidence": "13-iyul kuni temiryo‘l stansiyalarini, aloqa simlarini uzib, temiryo‘l va"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 14-iyul",
+     "event": "Abdurahmon jevachi vakillar bilan yig‘ilish o‘tkazib, Kuyaboshida to‘planishga kelishildi",
+     "evidence": "14-iyulda Abdurahmon jevachi o‘z uyida"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 18-iyul",
+     "event": "Jizzaxdagi voqealardan xabar topgan podsho hukumati Turkistonda harbiy holat e’lon qildi",
+     "evidence": "18-iyul kuni Tur"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 20–21-iyul",
+     "event": "Abdurahmon jevachi 600 kishilik odamlari bilan polkovnik Afanasyev qo‘shiniga qarshi jang olib bordi",
+     "evidence": "qolgan 600 kishilik odamlari bilan 20–21-iyulda polkovnik Afanasyev"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil 26–27-iyul",
+     "event": "Jizzaxga qo‘shimcha jazo otryadlari yetib kelib, jazo choralarini yanada kuchaytirdi",
+     "evidence": "Jizzaxga 26–27-iyulda yana"
+    },
+    {
+     "kind": "person",
+     "person": "Nazirxo‘ja eshon",
+     "role": "Jizzax qo‘zg‘olonining umumiy rahbari",
+     "activity": "qo‘zg‘olonchilarga umumiy rahbarlik qilgan va o‘lim jazosiga hukm etilgan",
+     "evidence": "Nazirxo‘ja eshon va Abdurahmon jevachilar rahbarlik qilganlar"
+    },
+    {
+     "kind": "person",
+     "person": "Abdurahmon jevachi",
+     "role": "Jizzax qo‘zg‘oloni rahbari",
+     "activity": "600 kishilik otryad bilan polkovnik Afanasyev boshchiligidagi harbiy kuchlarga qarshi jang qilgan",
+     "evidence": "Abdurahmon jevachi omon"
+    },
+    {
+     "kind": "person",
+     "person": "Damin kulol",
+     "role": "hunarmandlar yetakchisi",
+     "activity": "13-iyulda hunarmandlar bilan ro‘yxatni talab qilib qishloq oqsoqoli oldiga borgan",
+     "evidence": "Damin kulol boshchiligida hunarmandlar mardikorlikka"
+    },
+    {
+     "kind": "person",
+     "person": "Mirzayor Xudoyorov",
+     "role": "Jizzax qishloq oqsoqoli",
+     "activity": "ro‘yxatni bermay, to‘plangan odamlarni haqorat qilgan",
+     "evidence": "qishloq oqsoqoli Mirzayor Xudoyo"
+    },
+    {
+     "kind": "term",
+     "term": "Jevachi",
+     "definition": "Qurol-aslahaxona boshlig‘i; Jizzax qo‘zg‘oloni rahbarlaridan birining unvoni",
+     "evidence": "qurol-aslahaxona boshlig‘i"
+    },
+    {
+     "kind": "term",
+     "term": "Pulemyot",
+     "definition": "O‘qni tez otadigan avtomatik qurol; ruscha «o‘q va metall otmoq» degan ma’noni bildiradi",
+     "evidence": "o‘qni tez otadigan avtomatik"
+    },
+    {
+     "kind": "term",
+     "term": "rota",
+     "definition": "Harbiy bo‘linma; Jizzaxni bostirishga polkovnik Ivanov qo‘shinida 13 ta rota soldat bo‘lgan",
+     "evidence": "Ivanov boshchiligida 13 ta rota"
+    },
+    {
+     "kind": "term",
+     "term": "kazak otryadlari",
+     "definition": "Jizzaxni bostirishga yuborilgan harbiy kuchlar tarkibidagi otliq qismlar",
+     "evidence": "soldat, 2 ta artilleriya qismi, kazak otryadlari, jami ikki yarim ming"
+    },
+    {
+     "kind": "place",
+     "place": "Jizzax uyezdi",
+     "event": "Samarqand viloyatidan 11 ming kishi mardikorlikka belgilangan hudud",
+     "evidence": "loyatining Jizzax uyezdidan 11 ming kishi belgilandi"
+    },
+    {
+     "kind": "place",
+     "place": "Kuyaboshi",
+     "event": "Jizzaxdan 12 chaqirim uzoqlikda joylashgan, qo‘zg‘olonchilar to‘planishga kelishgan joy",
+     "evidence": "zaxdan 12 chaqirim uzoqlikda joylashgan Kuyaboshi degan joyda to‘pla"
+    },
+    {
+     "kind": "place",
+     "place": "Zomin va Sangzor",
+     "event": "Mustamlakachi qo‘shin Jizzaxdan keyin egallab, yurish qilgan hududlar",
+     "evidence": "keyin Zominni egallab, so‘ng Sangzorga yurish qiladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yerlarning ko‘chirib keltirilganlarga berilishi va soliqlarning ko‘payishi",
+     "effect": "Jizzax aholisining yerlari qo‘lidan ketishi va ahvolining yomonlashuvi",
+     "evidence": "soliqlarning ko‘payib borishi ularning ahvoli"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qishloq oqsoqolining ro‘yxatni bermay odamlarni haqorat qilishi",
+     "effect": "aholining keskin noroziligi va yangi shahar qismiga yurishi",
+     "evidence": "kin noroziligini keltirib chiqardi. Shundan keyin ketmon, tayoqlar bi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ivanov boshchiligidagi harbiy kuchlarning yordamga kelishi",
+     "effect": "qo‘zg‘olonchilarning mag‘lubiyatga uchrashi va chekinishga majbur bo‘lishi",
+     "evidence": "chiligidagi harbiy kuchlarning yordamga kelishi qo‘zg‘olonchilarning"
+    },
+    {
+     "kind": "number",
+     "number": "13",
+     "unit": "rota",
+     "meaning": "Jizzaxga yuborilgan harbiy kuchlar tarkibida shu miqdorda soldat rotasi bo‘lgan",
+     "evidence": "zaxga polkovnik Ivanov boshchiligida 13 ta rota"
+    }
+   ]
+  },
+  {
+   "number": 32,
+   "title": "Turkistonda 1916-yilgi voqealarning oqibatlari va ahamiyati",
+   "page": 108,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1916-yil yoz fasli",
+     "date_label": "1916-yil yoz fasli",
+     "event": "Qo‘zg‘olon yozda bo‘lganligi bois ekinzorlar va qishloq xo‘jaligi mahsulotlari nobud bo‘ldi",
+     "evidence": "qo‘zg‘olon yoz faslida bo‘lib o‘tganligi bois ekinzorlar, qishloq xo‘jaligi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916–1917-yillar qish oylari",
+     "date_label": "1916–1917-yillar qish oylari",
+     "event": "Turkiston aholisi qish uchun g‘amlagan oziq-ovqat zaxirasining katta qismidan ayrildi",
+     "evidence": "1917-yillar qish oylari uchun g‘amlaydigan oziq-ovqat zaxirasining"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil",
+     "event": "Qo‘zg‘olon oqibatida Turkiston aholisidan 673 ming kishi o‘ldirildi va 300 mingdan ziyodi xorijga chiqdi",
+     "evidence": "1916-yilgi qo‘zg‘olon oqibatida Tur"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil",
+     "event": "Qo‘zg‘olonlar podsho hukumati tomonidan ayovsiz ravishda bostirildi",
+     "evidence": "1916-yildagi qo‘zg‘olonlar podsho hukumati tomo"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil",
+     "event": "Qo‘zg‘olonlar mustamlakachi hukumatni qattiq sarosimaga soldi",
+     "evidence": "1916-yilgi qo‘zg‘olonlar mustamlakachi hukumatni qattiq sarosima"
+    },
+    {
+     "kind": "date_event",
+     "date": "1916",
+     "date_label": "1916-yil",
+     "event": "Qo‘zg‘olon butun mustamlakachilik davomida Turkistondagi eng qudratli va uyushgan qo‘zg‘olon bo‘ldi",
+     "evidence": "Xullas, 1916-yilgi qo‘zg‘olon butun mustamlakachilik davomida Tur"
+    },
+    {
+     "kind": "person",
+     "person": "Fozil Yo‘ldosh o‘g‘li",
+     "role": "shoir",
+     "activity": "«Jizzax qo‘zg‘oloni» nomli dostonda Jizzax fojiasini to‘liq aks ettirgan",
+     "evidence": "Fozil Yo‘ldosh o‘g‘lining"
+    },
+    {
+     "kind": "person",
+     "person": "rus amaldorlaridan biri",
+     "role": "Rossiya amaldori",
+     "activity": "«Urush frontlariga yangi bir Turkiston fronti qo‘shildi» deb o‘lkadagi vaziyatga baho bergan",
+     "evidence": "qo‘zg‘olonlarga rus amaldorlaridan biri: «Urush frontlariga yangi bir"
+    },
+    {
+     "kind": "person",
+     "person": "qo‘zg‘olonchilar",
+     "role": "milliy-ozodlik kurashchilari",
+     "activity": "mustamlakachilik tartiblariga qarshi qo‘lga qurol olib tengsiz kurash olib borganlar",
+     "evidence": "Ular mustamlakachilik tartiblariga qar"
+    },
+    {
+     "kind": "term",
+     "term": "milliy-ozodlik harakati",
+     "definition": "Xalq ommasining mustamlakachilik tartiblariga qarshi qurolli kurashi",
+     "evidence": "Qo‘zg‘olon xarakteriga ko‘ra milliy-ozodlik ko‘ri"
+    },
+    {
+     "kind": "term",
+     "term": "«Jizzax fojiasi»",
+     "definition": "Jizzax qo‘zg‘olonining tarixda qolgan nomi",
+     "evidence": "tarixda «Jizzax fojiasi» degan nom qoldirdi"
+    },
+    {
+     "kind": "term",
+     "term": "xalq ommasi",
+     "definition": "Qo‘zg‘olonning asosiy harakatlantiruvchi kuchi bo‘lgan keng aholi qatlami",
+     "evidence": "asosiy harakatlantiruvchi kuchi xalq omma"
+    },
+    {
+     "kind": "place",
+     "place": "Jizzax atrofi",
+     "event": "Aholisi qo‘zg‘olonda qatnashgan qishloqlar yondirib yuborilgan hudud",
+     "evidence": "aholisi qo‘zg‘olonda qatnashgan Jizzax atrofidagi qishloq"
+    },
+    {
+     "kind": "place",
+     "place": "Turkiston",
+     "event": "1916-yilgi qo‘zg‘olonlar sodir bo‘lgan va eng qudratli qo‘zg‘olon hisoblangan o‘lka",
+     "evidence": "kistondagi eng qudratli va uyushgan qo‘zg‘olon edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qo‘zg‘olonchilarning aksariyati dehqon va hunarmand bo‘lib, harbiy sohadan bexabar bo‘lishi",
+     "effect": "qo‘zg‘olonning mag‘lubiyatga uchrashiga sabab bo‘lishi",
+     "evidence": "hunarmandlar bo‘lganligi va harbiy sohadan mutlaqo bexabar ekanligi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Taktik va strategik uquvsizlik hamda birdamlikda harakat qilmaslik",
+     "effect": "qo‘zg‘olonchilarning pand yeyishi va mag‘lubiyati",
+     "evidence": "likda va birdamlikda harakat qilmasligi pand berdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Turkiston aholisining mardikorlikka safarbar qilinishi",
+     "effect": "mahalliy aholining katta qismi boquvchisiz qolib, oziq-ovqat taqchilligi kuchaydi",
+     "evidence": "korlikka safarbar qilinishi mahalliy aholining katta qismini boquvchi"
+    },
+    {
+     "kind": "number",
+     "number": "673 ming",
+     "unit": "kishi",
+     "meaning": "1916-yilgi qo‘zg‘olon oqibatida Turkiston aholisidan o‘ldirilganlar soni",
+     "evidence": "kiston aholisidan 673 ming kishi o‘ldirildi, 300 mingdan ziyod aholi xo"
+    }
+   ]
+  },
+  {
+   "number": 33,
+   "title": "Buxoro amirligining davlat tuzumi va ijtimoiy-iqtisodiy hayoti",
+   "page": 111,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1868",
+     "date_label": "1868-yil",
+     "event": "Rossiya bilan tuzilgan shartnoma Buxoro amirligi taqdirini o‘zgartirib, u Rossiya protektoratiga aylandi",
+     "evidence": "Rossiya bilan 1868-yildagi shartnoma Buxoro amir"
+    },
+    {
+     "kind": "date_event",
+     "date": "1885",
+     "date_label": "1885-yil",
+     "event": "Rossiya imperatorining farmoni asosida amir siyosiy faoliyatini nazorat qiluvchi siyosiy agentlik tashkil etildi",
+     "evidence": "bevosita nazorat qilish uchun Rossiya imperatorining 1885-yildagi farmo"
+    },
+    {
+     "kind": "date_event",
+     "date": "1886–1917",
+     "date_label": "1886–1917-yillar",
+     "event": "«Rossiya imperatorining siyosiy agentligi» faoliyat yuritgan yillar",
+     "evidence": "ni asosida «Rossiya imperatorining siyosiy agentligi» (1886–1917) tashkil"
+    },
+    {
+     "kind": "date_event",
+     "date": "1885-yil iyul",
+     "date_label": "1885-yil iyul",
+     "event": "Baljuvon bekligida Vose rahnamoligidagi qo‘zg‘olonchilar amir Muzaffar lashkari bilan jang qildi",
+     "evidence": "1885-yil iyul oyining oxirgi kunlarida qo‘zg‘olon ko‘targan deh"
+    },
+    {
+     "kind": "date_event",
+     "date": "1888",
+     "date_label": "1888-yil",
+     "event": "Ko‘lob bekligida boshlangan yirik dehqonlar qo‘zg‘oloni Pomir chegara qo‘shinlari yordamida bostirildi",
+     "evidence": "qo‘lga olinib, qatl etildi. 1888-yili Ko‘lob bekligida boshlangan yirik"
+    },
+    {
+     "kind": "date_event",
+     "date": "1889-yil may",
+     "date_label": "1889-yil may",
+     "event": "Kalif bekligida dehqonlar qo‘zg‘oloni bo‘lib o‘tdi",
+     "evidence": "bostirildi. 1889-yil may oyida Kalif bekligida ham qo‘zg‘olon bo‘lib"
+    },
+    {
+     "kind": "date_event",
+     "date": "1887",
+     "date_label": "1887-yil",
+     "event": "Amirlik hududi orqali dastlabki temiryo‘l o‘tkazildi",
+     "evidence": "1887-yilda amirlik hududi orqali dastlabki temiryo‘l o‘tkazildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1888",
+     "date_label": "1888-yil",
+     "event": "Buxoro amirligi hududida rus qishloqlari vujudga kela boshladi",
+     "evidence": "1888-yilga kelib Buxoro amir"
+    },
+    {
+     "kind": "person",
+     "person": "Vose",
+     "role": "Baljuvon qo‘zg‘oloni rahnamosi",
+     "activity": "1885-yilda minglab dehqonlarni atrofiga uyushtirib, amir Muzaffar lashkariga qarshi kurashgan",
+     "evidence": "Baljuvon bekligida shijoatli va xalqparvar Vose ismli kishi rahnamoligi"
+    },
+    {
+     "kind": "person",
+     "person": "Amir Muzaffar",
+     "role": "Buxoro amiri",
+     "activity": "1885-yilda qo‘zg‘olonni bostirish uchun lashkar bilan jang qilgan",
+     "evidence": "qonlar va amir Muzaffar lashkari o‘rtasida jang bo‘lib o‘tdi"
+    },
+    {
+     "kind": "person",
+     "person": "Amir Abdulahad",
+     "role": "Buxoro amiri",
+     "activity": "har yili Peterburgga imperator huzuriga katta sovg‘a-salom bilan qatnagan",
+     "evidence": "Amir Abdulahad Peter"
+    },
+    {
+     "kind": "person",
+     "person": "bosh qozi",
+     "role": "oliy diniy-sudlov amaldori",
+     "activity": "diniy-sudlov ishlariga rahbarlik qilgan va uchala oliy amaldordan biri hisoblangan",
+     "evidence": "diniy-sudlov ishlariga rahbarlik qilardi"
+    },
+    {
+     "kind": "term",
+     "term": "qo‘shbegi",
+     "definition": "Davlat ishlarini boshqaruvchi, soliqlar yig‘imi nazoratini yuritgan oliy amaldor",
+     "evidence": "Davlat ishlarini boshqaruvchi oliy amaldor qo‘shbegi bo‘lib"
+    },
+    {
+     "kind": "term",
+     "term": "devonbegi",
+     "definition": "Xazina va zakot yig‘imini boshqargan, mavqeyi jihatidan qo‘shbegidan keyin turgan amaldor",
+     "evidence": "Xazina va zakot yig‘imini boshqargan"
+    },
+    {
+     "kind": "term",
+     "term": "kafsan",
+     "definition": "Xirmonlarni xatga olgani uchun amaldorga undirilgan qo‘shimcha maosh",
+     "evidence": "bir qatorda kafsan, dorug‘ayi muzd"
+    },
+    {
+     "kind": "term",
+     "term": "tanobona",
+     "definition": "Bog‘lar va polizlardan olingan daromadlar uchun to‘langan alohida yig‘im",
+     "evidence": "daromadlar uchun alohida yi g‘im – ta"
+    },
+    {
+     "kind": "place",
+     "place": "Baljuvon bekligi",
+     "event": "1885-yilda Vose rahnamoligida eng yirik dehqonlar qo‘zg‘oloni ko‘tarilgan hudud",
+     "evidence": "Natijada amirlikdagi eng yirik qo‘zg‘olonlardan biri 1885-yilda"
+    },
+    {
+     "kind": "place",
+     "place": "Buxoro",
+     "event": "Amirlik poytaxti; uchala oliy amaldor doim shu shaharda bo‘lishi shart bo‘lgan",
+     "evidence": "devonbegi va bosh qozi har doim Buxoroda bo‘lishi shart edi"
+    },
+    {
+     "kind": "place",
+     "place": "Ko‘lob bekligi",
+     "event": "1888-yilda yirik dehqonlar qo‘zg‘oloni Pomir chegara qo‘shinlari bilan bostirilgan hudud",
+     "evidence": "dehqonlar qo‘zg‘olonlari Pomir chegara qo‘shinlarining yordami bilan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Soliq yig‘uvchilarning o‘tgan kamhosil yillar uchun ham xiroj talab qilishi",
+     "effect": "dehqonlarning soliq to‘lashdan bosh tortishi va qurolli qo‘zg‘olon ko‘tarilishi",
+     "evidence": "esa nafaqat o‘sha yil uchun, balki o‘tgan kamhosil yillar uchun ham xiroj"
+    },
+    {
+     "kind": "cause",
+     "cause": "Amaldorlarning o‘z vakolatlarini suiiste’mol qilishi va dehqonlarning kasodga uchrashi",
+     "effect": "dehqonlarning qo‘zg‘olon ko‘tarishga majbur bo‘lishi",
+     "evidence": "latlarini suiiste’mol qilishlari dehqonlarni qo‘zg‘olon ko‘tarishga majbur"
+    },
+    {
+     "kind": "cause",
+     "cause": "Amaldor va xizmatchilarning daromadlarni shaxsiy manfaatlariga sarf qilishi",
+     "effect": "amirlikning zaruriy xarajatlari oddiy xalq gardaniga tushishi",
+     "evidence": "bir-biriga qon-qarindosh amaldorlar zimmasiga emas, balki oddiy xalq"
+    },
+    {
+     "kind": "number",
+     "number": "2 million",
+     "unit": "kishi",
+     "meaning": "XIX asr oxirida Buxoro amirligi aholisining taxminiy soni",
+     "evidence": "Aholisining soni 2 million kishi atro"
+    },
+    {
+     "kind": "number",
+     "number": "40–50",
+     "unit": "foiz",
+     "meaning": "Ayrim viloyatlarda yerdan olinadigan xiroj solig‘i hosilning shu qismiga yetgan",
+     "evidence": "vilo yat larda hosilning 40–50% iga"
+    }
+   ]
+  }
+ ]
+}

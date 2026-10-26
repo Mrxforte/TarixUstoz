@@ -1,0 +1,659 @@
+{
+  "chapter": "IX BO‘LIM. MUSTAMLAKA SHAROITIDA TURKISTONDA MADANIY HAYOT",
+  "topics": [
+    {
+      "number": 38,
+      "title": "38-§. Ta’lim tizimi. Matbuot",
+      "page": 135,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1884-yil",
+          "date_label": "1884-yil",
+          "event": "Toshkentda Saidg‘ani Saidazimboy uyida birinchi rus-tuzem maktabi ochilgan",
+          "evidence": "birinchi rus-tuzem maktabi 1884-yilda Toshkentda, Said-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1896-yil",
+          "date_label": "1896-yil",
+          "event": "Toshkentda birinchi gimnaziya ochilib, unda zamonaviy fanlar va kundalik bilimlar o‘qitilgan",
+          "evidence": "1896-yilda Toshkentda birinchi gimnaziya ochilib, unda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1911-yil",
+          "date_label": "1911-yil",
+          "event": "Turkistondagi rus-tuzem maktablarining soni 89 taga yetgan",
+          "evidence": "1911-yilda bunday maktablarning soni 89 taga yetadi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1911-yil",
+          "date_label": "1911-yil",
+          "event": "50 ga yaqin jadid maktabi yopib qo‘yilib, ularni ochish tashabbuskorlari nazoratga olingan",
+          "evidence": "Natijada 1911-yilda 50 ga yaqin jadid maktablari yopib qo‘yildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1913-yil",
+          "date_label": "1913-yil",
+          "event": "Buxoro amirligida barcha jadid maktablari yopib qo‘yilgan",
+          "evidence": "1913-yilga kelib Buxoro amirligida barcha jadid maktablari yopildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1870-yil",
+          "date_label": "1870-yildan boshlab",
+          "event": "Turkiston general-gubernatorligining rasmiy nashri va uning o‘zbekcha ilovasi chiqa boshlagan",
+          "evidence": "1870-yildan boshlab Turkiston general-gubernatorli-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1906-yil",
+          "date_label": "1906-yil",
+          "event": "Ismoil Obidov muharrirligida ilk o‘zbek milliy «Taraqqiy» gazetasi nashr etilgan",
+          "evidence": "1906-yilda Ismoil Obidov muharrirligida ilk bor o‘zbek milliy gaze-"
+        },
+        {
+          "kind": "date_event",
+          "date": "27-iyun",
+          "date_label": "27-iyun",
+          "event": "«Taraqqiy» gazetasining birinchi soni chiqqan kun Matbuot xodimlari kuni sifatida nishonlanadi",
+          "evidence": "27-iyu n hozirda O‘zbekistonda Matbuot va ommaviy axborot vositalari"
+        },
+        {
+          "kind": "person",
+          "person": "G. Rozenbax",
+          "role": "Turkiston general-gubernatori (1884–1889)",
+          "activity": "Boshlang‘ich maktablar va rus-tuzem maktablari tarmog‘ini yaratish loyihasini ishlab chiqqan",
+          "evidence": "G. Rozenbax (1884–1889) astoydil kirishdi."
+        },
+        {
+          "kind": "person",
+          "person": "Ismoil Obidov",
+          "role": "«Taraqqiy» gazetasining birinchi muharriri",
+          "activity": "1906-yilda ilk o‘zbek milliy gazetasini nashr ettirgan ma’rifatparvar noshir",
+          "evidence": "kelishida ham ko‘rindi. 1906-yilda Ismoil Obidovning muharrirligida"
+        },
+        {
+          "kind": "person",
+          "person": "Munavvarqori",
+          "role": "«Xurshid» gazetasining muharriri, jadid ma’rifatparvari",
+          "activity": "1906-yilda «Xurshid» gazetasini chop ettirgan faol matbuot arbobi",
+          "evidence": "«Taraqqiy», shu yili Munavvarqori muhar rirligida «Xurshid», 1907–"
+        },
+        {
+          "kind": "person",
+          "person": "Abdulla Avloniy",
+          "role": "«Shuhrat» gazetasining muharriri, jadid ma’rifatparvari",
+          "activity": "1907–1908-yillarda «Shuhrat» gazetasini chop ettirib, ma’rifat targ‘ib qilgan",
+          "evidence": "1908-yillarda Abdulla Avloniy muharrirligida «Shuhrat», Ahmadjon Bek-"
+        },
+        {
+          "kind": "person",
+          "person": "G‘afur G‘ulom",
+          "role": "Jadid maktablaridan yetishib chiqqan shoir va akademik",
+          "activity": "Yangi usul maktablari tarbiyalagan yetuk madaniyat arboblaridan biri sifatida tilga olinadi",
+          "evidence": "G‘afur G‘ulom, shoir va dramaturg Uyg‘un, Oybek"
+        },
+        {
+          "kind": "term",
+          "term": "Tuzem",
+          "definition": "Yerli xalq, mahalliy aholining mustamlakachilar tomonidan atalishini bildirgan so‘z",
+          "evidence": "Tuzem – yerli xalq, mahalliy aholining mustamlakachilar tomonidan"
+        },
+        {
+          "kind": "term",
+          "term": "Matbuot",
+          "definition": "Arabcha «bosma asarlar, nashrlar» ma’nosini bildiruvchi gazeta, jurnal va kitoblar majmuyi",
+          "evidence": "matbuot ( arabcha – bosma asarlar, nashrlar) – gazeta, jurnal va"
+        },
+        {
+          "kind": "term",
+          "term": "Gimnaziya",
+          "definition": "Ayrim fanlarga ixtisoslashtirilgan va ular bo‘yicha chuqur ta’lim beradigan o‘quv muassasasi",
+          "evidence": "Gimnaziya – ayrim fanlarga ixtisoslashtirilgan va ular bo‘yicha"
+        },
+        {
+          "kind": "term",
+          "term": "«Haftiyak»",
+          "definition": "Qur’oni Karimning yettidan birini tashkil etuvchi, boshlang‘ich maktablarda o‘qitilgan kitob",
+          "evidence": "oyatlaridan iborat bo‘lgan «Haftiyak» (ya’ni Qur’oni Karimning yetti-"
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "Birinchi rus-tuzem maktabi va birinchi gimnaziya ochilgan shahar",
+          "evidence": "Toshkentda Saidg‘ani Saidazimboy"
+        },
+        {
+          "kind": "place",
+          "place": "Buxoro",
+          "event": "Jadid maktablari dastlab ochilgan shaharlar qatoriga kirgan yirik madaniy markaz",
+          "evidence": "Buxoro, Toshkent, Qo‘qon, Andijon, Xiva kabi shaharlarda ochilgan edi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Mahalliy aholini ruslashtirish siyosati",
+          "effect": "Rus-tuzem maktablari ochilib, ularning soni jadal sur’atlarda ko‘paytirib borilgan",
+          "evidence": "va ular soni ning jadal sur’atlarda ko‘paytirib borilganligida ko‘rishimiz"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ma’muriyat vakillari bilan mahalliy aholi o‘rtasida vositachilik qiladigan tarjimonlar zarurati",
+          "effect": "Rus-tuzem maktablarida tarjimonlar tayyorlash ko‘zda tutilgan",
+          "evidence": "liy aholi o‘rtasida vositachilik qiladigan tarjimonlarni tayyorlash ko‘zda"
+        },
+        {
+          "kind": "cause",
+          "cause": "Jadidlar ta’lim tizimining mustamlakachilik siyosatiga jiddiy qarshilik ko‘rsata oladigan kuch ekanligi anglanishi",
+          "effect": "Jadidlar faoliyati qattiq ta’qibga olinib, yangi usul maktablariga ochiq qarshilik boshlangan",
+          "evidence": "o‘lkada mustamlakachilik siyosatiga jiddiy qarshilik ko‘rsata oladigan"
+        },
+        {
+          "kind": "number",
+          "number": "89",
+          "unit": "maktab",
+          "meaning": "1911-yilda Turkistondagi rus-tuzem maktablarining umumiy soni",
+          "evidence": "1911-yilda bunday maktablarning soni 89 taga yetadi."
+        }
+      ]
+    },
+    {
+      "number": 39,
+      "title": "39-§. Turkistonda ilm-fan taraqqiyoti",
+      "page": 139,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1908-yil",
+          "date_label": "1908-yil",
+          "event": "V. Vyatkin Ulug‘bek rasadxonasi binosi qoldiqlarini va asboblarining bir qismini topgan",
+          "evidence": "o‘rnini izladi. 1908-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1895-yil",
+          "date_label": "1895-yil",
+          "event": "Arxeologiya havaskorlari to‘garagi tashkil etilib, u tarixiy yodgorliklarni o‘rganishga kirishgan",
+          "evidence": "1895-yilda tashkil etilgan Arxeologiya havaskorlari to‘garagining qat-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1867-yil",
+          "date_label": "1867-yil",
+          "event": "Mustamlakachi hukumat mintaqaning bosh xaritasini tuzib chiqqan",
+          "evidence": "rishga ham harakat qildi. Eng avvalo, 1867-yilda mintaqaning bosh xa-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1871-yil",
+          "date_label": "1871-yil",
+          "event": "O‘rta Osiyo Olimlar jamiyati tashkil etilgan",
+          "evidence": "na zardagi ahamiyati bilan birinchi o‘rinda turardi. 1871-yilda tashkil"
+        },
+        {
+          "kind": "date_event",
+          "date": "1893-yil",
+          "date_label": "1893-yil",
+          "event": "O‘rta Osiyo Olimlar jamiyati mablag‘ yo‘qligi tufayli faoliyatini to‘xtatishga majbur bo‘lgan",
+          "evidence": "etilgan O‘rta Osiyo Olimlar jamiyati mablag‘ yo‘qligi tufayli 1893-yilda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1876-yil",
+          "date_label": "1876-yil",
+          "event": "Toshkentda Turkiston muzeyi tashkil etilgan, u hozirgi O‘zbekiston tarixi davlat muzeyidir",
+          "evidence": "1876-yil Toshkentda Turkiston muzeyi (hozirgi O‘zbekiston tarixi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1870-yil",
+          "date_label": "1870-yil",
+          "event": "Toshkentda Turkiston xalq kutubxonasi tashkil etilgan",
+          "evidence": "davlat muzeyi) tashkil etildi. 1870-yili Toshkentda Turkiston xalq kutub-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1910-yil",
+          "date_label": "1910-yil",
+          "event": "Abdulla Qodiriy ilk nasriy asarlarini e’lon qilgan",
+          "evidence": "Jadid adabiyotida 1910-yilda Abdulla Qodiriy ilk nasriy asarlarini"
+        },
+        {
+          "kind": "person",
+          "person": "Mulla Olim Maxdum hoji",
+          "role": "Tarixchi va jurnalist",
+          "activity": "«Tarixi Turkiston» asarini yozgan, u o‘zbek tilidagi ilk tarixiy asar sifatida shuhrat qozongan",
+          "evidence": "Tarixchi va jurnalist Mulla Olim Maxdum hoji «Tarixi Turkiston»"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Solih",
+          "role": "Yirik tarixchi olim",
+          "activity": "25 yillik izlanishdan keyin Toshkentning yangi tarixi haqidagi asarini yozgan",
+          "evidence": "tarixchi olimi Muhammad Solih edi. U 25 yillik"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Yusuf Bayoniy",
+          "role": "Xorazmlik mashhur olim",
+          "activity": "Avlodlarga «Xorazm tarixi» va «Shajarai Xorazmshohiy» asarlarini meros qoldirgan",
+          "evidence": "Bayoniy ham avlodlarga ikki yirik tarixiy asarini meros qoldirgan. Bular"
+        },
+        {
+          "kind": "person",
+          "person": "V. Vyatkin",
+          "role": "Sharqshunos va arxeolog (1869–1932), Samarqandda faoliyat yuritgan",
+          "activity": "Ulug‘bek rasadxonasi o‘rnini izlab, 1908-yilda binoning qoldiqlarini topgan",
+          "evidence": "Ulardan biri sharqshunos va arxeolog V. Vyatkin (1869–1932)"
+        },
+        {
+          "kind": "person",
+          "person": "A. P. Fedchenko",
+          "role": "Rus tadqiqotchisi",
+          "activity": "Farg‘ona vodiysi va Oloyni, shuningdek Zarafshon vodiysi bilan Qizilqumni tekshirib chiqqan",
+          "evidence": "A.P. Fedchenko Farg‘ona vodiysi va"
+        },
+        {
+          "kind": "term",
+          "term": "Meteorologiya",
+          "definition": "Yunoncha so‘z bo‘lib, Yer atmosferasi, uning xususiyatlari va undagi fizik jarayonlar haqidagi fan",
+          "evidence": "Meteorologiya (yunoncha) – Yer atmosferasi, uning xususiyatlari va"
+        },
+        {
+          "kind": "term",
+          "term": "Felyeton",
+          "definition": "Fransuzcha so‘z bo‘lib, kundalik turmushdagi salbiy hodisalarni tanqid qilib yozilgan matbuot maqolasi",
+          "evidence": "Felyeton (fransuzcha) – kundalik turmushda ro‘y beradigan salbiy"
+        },
+        {
+          "kind": "term",
+          "term": "Nasr",
+          "definition": "Jadidlar o‘z g‘oyalarini xalq ommasiga singdirishda keng foydalangan ommabop adabiyot shakli",
+          "evidence": "tushunarli adabiyot shakli edi. Shuning uchun ham"
+        },
+        {
+          "kind": "term",
+          "term": "Tanqidiy-realistik oqim",
+          "definition": "Turkiston she’riyatidagi so‘fiylikka qarama-qarshi bo‘lgan, xalq dardini aks ettiruvchi oqim",
+          "evidence": "bo‘lgan so‘fiylik va tanqidiy-realistik oqim mav jud"
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "Meteorologiya stansiyasi, Turkiston muzeyi va xalq kutubxonasi tashkil etilgan shahar",
+          "evidence": "Toshkentda meteorologiya stansiyasi tashkil etildi."
+        },
+        {
+          "kind": "place",
+          "place": "Samarqand",
+          "event": "V. Vyatkin faoliyat yuritgan, Ulug‘bek rasadxonasi o‘rni izlangan shahar",
+          "evidence": "bo‘lib, u Samarqandda faoliyat yuritdi. V. Vyatkin mahalliy tarixchilar"
+        },
+        {
+          "kind": "place",
+          "place": "Pomir",
+          "event": "Rus zoologi va sayyohi N. A. Seversev o‘rgangan tog‘ tizimi",
+          "evidence": "N. A. Seversev Pomir tog‘ tizimini o‘rganib chiqdi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Mutaxassislar yetishmasligi",
+          "effect": "Uzoq vaqt davomida keng ko‘lamli ilmiy tadqiqotlarni shakllantirish amalga oshirilmagan",
+          "evidence": "masligi sa babli uzoq vaqt davomida keng ko‘lamli ilmiy tadqiqotlarni"
+        },
+        {
+          "kind": "cause",
+          "cause": "O‘rta Osiyo Olimlar jamiyatida mablag‘ yo‘qligi",
+          "effect": "Jamiyat 1893-yilda o‘z faoliyatini to‘xtatishga majbur bo‘lgan",
+          "evidence": "etilgan O‘rta Osiyo Olimlar jamiyati mablag‘ yo‘qligi tufayli 1893-yilda"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mamlakatdagi og‘ir sharoit va mustamlakachilik tizimi illatlari",
+          "effect": "Jadid adabiyotida bu illatlar qoralanib, xalq ongini uyg‘otishga xizmat qilingan",
+          "evidence": "Bu adabiyot mazmunida mamlakatdagi og‘ir sharoit va"
+        },
+        {
+          "kind": "number",
+          "number": "25",
+          "unit": "yil",
+          "meaning": "Muhammad Solihning Toshkent tarixi haqidagi asari ustidagi izlanish davri",
+          "evidence": "tarixchi olimi Muhammad Solih edi. U 25 yillik"
+        }
+      ]
+    },
+    {
+      "number": 40,
+      "title": "40-§. Teatr va musiqa san’ati",
+      "page": 144,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1870-yil",
+          "date_label": "1870-yil",
+          "event": "Turkiston general-gubernatori taklifi bilan Samara teatri o‘lkada gastrol dasturlarini namoyish etgan",
+          "evidence": "1870-yil Turkiston general-gubernatori tomo ni dan taklif qilingan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1910-yil",
+          "date_label": "1910-yil",
+          "event": "Samarqand va Toshkentga rus aktrisasi V. F. Komissarjevskaya truppasining gastrollari uyushtirilgan",
+          "evidence": "1910-yilda Samarqand va Toshkentga rus aktrisasi V. F. Komissarjevs-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1910–1912-yillar",
+          "date_label": "1910–1912-yillar",
+          "event": "Tatar va ozarbayjon truppalarining Turkistondagi gastrollari katta madaniy voqeaga aylangan",
+          "evidence": "Tatar va ozarbayjon truppalarining 1910–1912-yillarda Turkistonda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1911-yil",
+          "date_label": "1911-yil",
+          "event": "Turkistonda dastlabki yozma milliy sahna asarlari yaratilgan",
+          "evidence": "Turkistonda 1911-yil dastlabki yozma milliy sahna asarlari yaratildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1914-yil",
+          "date_label": "1914-yil boshlari",
+          "event": "Abdulla Avloniy Toshkentda «Turon» nomidagi teatr truppasini tashkil etgan",
+          "evidence": "Avloniy Toshkent shahrida «Turon» nomidagi teatr"
+        },
+        {
+          "kind": "date_event",
+          "date": "1916-yil",
+          "date_label": "1916-yil",
+          "event": "Qo‘qon shahrida Hamza rahbarligida havaskorlar teatri tashkil etilgan",
+          "evidence": "1916-yil Qo‘qon shahrida Hamza rahbarligida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1903-yil",
+          "date_label": "1903-yil",
+          "event": "Xudoybergan Devonov Xivaning minoralari va hamyurtlarini suratga ola boshlagan",
+          "evidence": "Shunday qilib, 1903-yilda Xudoybergan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1878-yil",
+          "date_label": "1878-yil",
+          "event": "Birinchi o‘zbek kino va fotooperatori Xudoybergan Devonov tug‘ilgan",
+          "evidence": "Xudoybergan Devonov 1878-yilda tug‘ilgan. Bolaligidan bilimga"
+        },
+        {
+          "kind": "person",
+          "person": "Mahmudxo‘ja Behbudiy",
+          "role": "Jadidlar rahnamosi va dramaturg",
+          "activity": "«Padarkush» dramasining muallifi; birinchi o‘zbek milliy teatri uning rahbarligida tashkil etilgan",
+          "evidence": "durdonasiga aylangan Behbudiyning «Padarkush»"
+        },
+        {
+          "kind": "person",
+          "person": "Abdulla Avloniy",
+          "role": "Ulug‘ ma’rifatparvar va jadid arbobi",
+          "activity": "1914-yilda Toshkentda «Turon» truppasini tuzib, birinchi asar sifatida «Padarkush»ni sahnalashtirgan",
+          "evidence": "ma’rifatparvar Abdulla Avloniy va jadidlar harakati-"
+        },
+        {
+          "kind": "person",
+          "person": "Hamza Hakimzoda Niyoziy",
+          "role": "Jadidlar harakatining atoqli namoyandasi va dramaturg",
+          "activity": "1916-yilda Qo‘qonda havaskorlar teatrini tashkil etib, «Zaharli hayot» pyesasini sahnalashtirgan",
+          "evidence": "gan birinchi spektakl Hamzaning «Zaharli hayot yo-"
+        },
+        {
+          "kind": "person",
+          "person": "Xudoybergan Devonov",
+          "role": "Birinchi o‘zbek kino va fotooperatori (1878–1940)",
+          "activity": "Nemis tilini o‘rganib, fotosurat ishini egallagan va Xivada ilk suratlarini olgan",
+          "evidence": "chanqoqligi va ijodiy iste’dodi bilan ajralib turgan. U arab, fors va rus"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Rahimxon II (Feruz)",
+          "role": "Xiva xoni, ma’rifatli hukmdor, shoir va bastakor",
+          "activity": "Xorazm maqom va musiqa maktabini rivojlantirib, san’at namoyandalariga homiylik qilgan",
+          "evidence": "bo‘lgan Feruz san’at namoyandalariga katta imkoniyatlar yaratib berib,"
+        },
+        {
+          "kind": "term",
+          "term": "Maqom",
+          "definition": "Butun Sharqda keng tarqalgan, yirik turkumli og‘zaki-cholg‘uli (yakkaxon va cholg‘uli) asarlar",
+          "evidence": "etgan. Maqomlar yirik turkumli og‘zaki-cholg‘uli (yakkaxon va cholg‘uli)"
+        },
+        {
+          "kind": "term",
+          "term": "Ashula",
+          "definition": "Keng qamrovli, turli kuy-ohangga ega bo‘lgan lirik qo‘shiq turi",
+          "evidence": "edi. Ashula esa keng qamrovli turli kuy-ohangga ega lirik qo‘shiq hisob-"
+        },
+        {
+          "kind": "term",
+          "term": "Terma",
+          "definition": "Xalq qissago‘ylari bo‘lmish baxshilar va shoirlar ijro etadigan ohangdor kuylar",
+          "evidence": "shoirlar tomonidan ijro etiluvchi ohangdor kuylarni o‘zida mujassam etgan"
+        },
+        {
+          "kind": "term",
+          "term": "Masxaraboz",
+          "definition": "Xalq teatrida satirik tomoshalar ijro etgan, xasis boylar va amalparast beklarni fosh qilgan komik aktyor",
+          "evidence": "jud edi. Jumladan, Buxoro amirligida masxaraboz, qo‘g‘irchoqboz, raq-"
+        },
+        {
+          "kind": "place",
+          "place": "Samarqand",
+          "event": "Mahmudxo‘ja Behbudiy rahbarligida birinchi o‘zbek milliy teatri tashkil etilgan shahar",
+          "evidence": "qand shahrida Mahmudxo‘ja Behbudiy rahbarli-"
+        },
+        {
+          "kind": "place",
+          "place": "Qo‘qon",
+          "event": "An’anaviy teatr uyushmalari orasida Zokir eshon uyushmasi mashhur bo‘lgan shahar",
+          "evidence": "atr uyush malari vujudga keldi. Eng mashhurlari Qo‘qonda Zokir eshon,"
+        },
+        {
+          "kind": "place",
+          "place": "Xiva",
+          "event": "Xorazm maqom va musiqa maktabi Muhammad Rahimxon II davrida rivojlangan shahar",
+          "evidence": "Xorazm maqom va musiqa maktabi Xiva xoni Muhammad Rahimxon II"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mustamlakachi hukumatning siyosiy maqsadlari",
+          "effect": "O‘lkaga rus madaniyati jadal yoyilib, bunda teatr sohasiga ham muhim o‘rin berilgan",
+          "evidence": "larni na zarda tutib, o‘lkaga rus madaniyatini jadal"
+        },
+        {
+          "kind": "cause",
+          "cause": "Tatar va ozarbayjon truppalarining musiqali pyesalar bilan chiqishlari",
+          "effect": "Mahalliy teatr rivojlanishiga ham katta ta’sir ko‘rsatgan",
+          "evidence": "mahalliy teatr rivojlanishiga ham katta ta’sir ko‘rsatdi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Xalq teatrida yozma pyesalarning bo‘lmagani",
+          "effect": "Tomoshalar xalq og‘zaki ijodi mahsuli sifatida yod olingan mavzular asosida sahnalashtirilgan",
+          "evidence": "da, xalq og‘zaki ijodi mahsuli sifatida yod olingan mavzular sahnalashti-"
+        },
+        {
+          "kind": "number",
+          "number": "4",
+          "unit": "misra (to‘rtlik)",
+          "meaning": "Xalq dostonlarining she’riy tuzilishi va bandlarining shakli",
+          "evidence": "Mazkur dostonlar to‘rtlik she’r tuzilishiga ega bo‘lib, musi-"
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "title": "41-§. Me’morchilik va tasviriy san’at",
+      "page": 150,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1908–1910-yillar",
+          "date_label": "1908–1910-yillar",
+          "event": "Islomxo‘ja minorasi tiklangan va Xivaning faxriga aylangan",
+          "evidence": "XX asr boshlarida tiklangan Islomxo‘ja minorasining (1908–1910)"
+        },
+        {
+          "kind": "date_event",
+          "date": "1904–1912-yillar",
+          "date_label": "1904–1912-yillar",
+          "event": "Xiva xoni Muhammad Rahimxon II tomonidan Nurullaboy nomli saroy qurilgan",
+          "evidence": "luvchi saroyda (1904–1912) ham ko‘zga tashlanadi."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning ikkinchi yarmi",
+          "date_label": "XIX asrning ikkinchi yarmi",
+          "event": "Farg‘ona vodiysi me’morchiligiga Yevropa uslubidagi binolar qurish an’analari kirib kelgan",
+          "evidence": "tarmog‘i mavjud edi. XIX asrning ikkinchi yarmida vodiy milliy me’mor-"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxirlari",
+          "date_label": "XIX asr oxirlari",
+          "event": "Andijon jome masjidi qurilib, yuksak milliy me’morchilik namunasi bo‘lib qolgan",
+          "evidence": "rib keldi. Shunday bo‘lsa-da, XIX asr oxirlarida qurilgan Andijon jome"
+        },
+        {
+          "kind": "date_event",
+          "date": "XX asr boshlari",
+          "date_label": "XX asr boshlari",
+          "event": "Sitorai Mohi Xosa qurilishida nomlari mashhur me’morlar va ustalar faol qatnashgan",
+          "evidence": "larida barpo etilgan Sitorai Mohi Xosa"
+        },
+        {
+          "kind": "date_event",
+          "date": "XX asr boshlari",
+          "date_label": "XX asr boshlari",
+          "event": "An’anaviy devoriy naqshlarda suzib borayotgan kema, temiryo‘llar va hayvonlar tasvirlana boshlagan",
+          "evidence": "XX asr boshlarida an’anaviy devoriy naqshlarda ilgari ishlatilmagan"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshlari",
+          "date_label": "XIX asr oxiri – XX asr boshlari",
+          "event": "Tasviriy san’at Samarqand, Qo‘qon va Buxoro miniaturachilari ijodida namoyon bo‘lgan",
+          "evidence": "viriy san’at Samarqand, Qo‘qon, Buxoro miniatura-"
+        },
+        {
+          "kind": "person",
+          "person": "Usta Shirin Murodov",
+          "role": "Buxorolik mohir usta-ganchkor",
+          "activity": "Sitorai Mohi Xosaning Oq zalini ikki yil davomida ustalar guruhi bilan bezagan",
+          "evidence": "zaliga pardoz berish ishini Usta Shirin"
+        },
+        {
+          "kind": "person",
+          "person": "Odina Muhammad Murod",
+          "role": "Xorazm me’morchilik maktabining sarkori",
+          "activity": "Pardoz hamda naqshinkor parchinlarni joylashtirishning barcha sir-sinoatlarini egallagan",
+          "evidence": "sarkori Odina Muhammad Murod par-"
+        },
+        {
+          "kind": "person",
+          "person": "Islomxo‘ja",
+          "role": "Asfandiyorxonning bosh vaziri, ma’rifatli davlat arbobi",
+          "activity": "Islomxo‘ja minorasining tashabbuskori va homiysi bo‘lib, uni bunyod ettirgan",
+          "evidence": "ma’rifatli inson Islomxo‘ja edi. U bunyod ettirgan minora Xivaning fax-"
+        },
+        {
+          "kind": "person",
+          "person": "Ahmad Donish",
+          "role": "Miniaturachi rassom",
+          "activity": "Samarqand, Qo‘qon va Buxoro miniaturachilari qatorida tasviriy san’at an’analarini saqlagan",
+          "evidence": "chilari ijodida namoyon bo‘ldi (Ahmad Donish, Abdulxoliq maxdum,"
+        },
+        {
+          "kind": "person",
+          "person": "Olimxon",
+          "role": "Buxoro amiri",
+          "activity": "Sitorai Mohi Xosani yozgi qarorgoh sifatida ishlatib, unda chet el elchilarini qabul qilgan",
+          "evidence": "gan. Saroy Buxoro amiri Olimxonning yozgi qarorgohi bo‘lgan. Bundan"
+        },
+        {
+          "kind": "term",
+          "term": "Ganch o‘ymakorligi",
+          "definition": "Buxoro amaliy san’atining Oq zal bezagida eng so‘nggi yutuqlari bilan namoyon bo‘lgan turi",
+          "evidence": "uslubi ustunlik qiladi. Oq zal Buxoro ganch o‘ymakorligi san’atining"
+        },
+        {
+          "kind": "term",
+          "term": "Naqqoshlik",
+          "definition": "Diniy-falsafiy mazmunga ega bo‘lgan, real tasviriy san’atga o‘tilish bosqichidagi bezak san’ati",
+          "evidence": "diniy-falsafiy mazmundagi naqqoshlikdan bevosita real tasviriy san’atga"
+        },
+        {
+          "kind": "term",
+          "term": "Paxsa",
+          "definition": "Xalq me’morchiligida an’anaviy tarzda qo‘llanilgan qurilish materiali",
+          "evidence": "chiligida an’anaviy paxsa, guvala va xom g‘isht qo‘llash bilan birga"
+        },
+        {
+          "kind": "term",
+          "term": "Peshtoq",
+          "definition": "Xorazm me’morchiligida nozik did va nafosat timsoli bo‘lgan arabiy yozuvlar bilan bezatilgan me’moriy qism",
+          "evidence": "peshtoq lar, shiplar, burjlar o‘ta nozik did va nafosat timsoli arabiy yo-"
+        },
+        {
+          "kind": "place",
+          "place": "Sitorai Mohi Xosa",
+          "event": "Buxoro amirining yozgi saroyi, shahar markazidan 2,5 km janubda joylashgan",
+          "evidence": "Sitorai Mohi Xosa Buxoro shahri markazidan 2,5 km janubda joylash-"
+        },
+        {
+          "kind": "place",
+          "place": "Nurullaboy saroyi",
+          "event": "Xivada qurilgan, yetti xonadan iborat va G‘arb me’morchiligi an’analari ustunlik qilgan saroy",
+          "evidence": "ham G‘arb me’morchiligi an’analari ustunlik qiladi. Saroy yetti xona-"
+        },
+        {
+          "kind": "place",
+          "place": "Buxoro",
+          "event": "Naqsh amaliy san’atining markazi bo‘lib, ustalari asriy san’atni rivojlantirgan shahar",
+          "evidence": "Naqsh amaliy san’ati markazi Buxoro edi. Bu shahar ustalari nafaqat"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yalpi iqtisodiy tanazzul, o‘zaro urushlar va Rossiya imperiyasining harbiy yurishlari",
+          "effect": "Madaniy taraqqiyotga salbiy ta’sir ko‘rsatib, kelgusi taraqqiyotda og‘ir asoratlar qoldirgan",
+          "evidence": "yurishlari nafaqat siyosiy va iqtisodiy, balki madaniy taraqqiyotga ham"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yevropa me’morchilik an’analarining kirib kelishi",
+          "effect": "An’anaviy paxsa va guvala bilan birga zamonaviy g‘isht, faner, tunuka va oynadan foydalanilgan",
+          "evidence": "zamonaviy to‘rtburchak yuzli g‘isht, faner, tunuka, oyna kabi qurilish"
+        },
+        {
+          "kind": "cause",
+          "cause": "Harbiy qo‘shinlar va amaldorlar uchun turarjoy zarurati",
+          "effect": "Qal’alar, kazarmalar hamda yevropacha ko‘rinishdagi qarorgohlar qurila boshlagan",
+          "evidence": "dorlar, generallar uchun yevropacha ko‘rinishdagi qarorgohlar qurila"
+        },
+        {
+          "kind": "number",
+          "number": "2,5",
+          "unit": "km",
+          "meaning": "Sitorai Mohi Xosaning Buxoro shahri markazidan janubdagi masofasi",
+          "evidence": "Sitorai Mohi Xosa Buxoro shahri markazidan 2,5 km janubda joylash-"
+        },
+        {
+          "kind": "number",
+          "number": "7",
+          "unit": "xona",
+          "meaning": "Xivadagi Nurullaboy saroyi tarkibidagi xonalar soni",
+          "evidence": "ham G‘arb me’morchiligi an’analari ustunlik qiladi. Saroy yetti xona-"
+        }
+      ]
+    }
+  ]
+}

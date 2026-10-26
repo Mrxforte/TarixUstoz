@@ -76,6 +76,32 @@ fun QuizScreen(
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
+                Spacer(Modifier.height(8.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(2.dp)
+                ) {
+                    uiState.answeredCorrectly.forEachIndexed { index, wasCorrect ->
+                        val indicatorColor = when (wasCorrect) {
+                            true -> Color(0xFF16A085)
+                            false -> Color(0xFFDC2626)
+                            null -> MaterialTheme.colorScheme.surfaceVariant
+                        }
+                        val indicatorBorder = if (index == uiState.currentIndex && wasCorrect == null) {
+                            MaterialTheme.colorScheme.primary
+                        } else {
+                            MaterialTheme.colorScheme.outlineVariant
+                        }
+                        Box(
+                            Modifier
+                                .weight(1f)
+                                .height(8.dp)
+                                .clip(RoundedCornerShape(4.dp))
+                                .background(indicatorColor)
+                                .border(1.dp, indicatorBorder, RoundedCornerShape(4.dp))
+                        )
+                    }
+                }
                 Spacer(Modifier.height(16.dp))
 
                 // Question
@@ -92,7 +118,7 @@ fun QuizScreen(
                             Spacer(Modifier.height(8.dp))
                         }
                         Text(
-                            question.text,
+                            question.cleanText,
                             style = MaterialTheme.typography.titleLarge,
                             fontWeight = FontWeight.SemiBold
                         )

@@ -1,0 +1,784 @@
+{
+ "chapter": "I BOB. ROSSIYA IMPERIYASINING O‘RTA OSIYONI BOSIB OLISHI",
+ "topics": [
+  {
+   "number": 6,
+   "title": "Rossiya imperiyasi tomonidan O‘rta Osiyoni bosib olish uchun istilochilik harakatlarining boshlanishi",
+   "page": 19,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1718",
+     "date_label": "1718-yil",
+     "event": "Irtish daryosi sohilida podsho hukumati tomonidan yettita harbiy istehkom qurib bitkaziladi",
+     "evidence": "1718-yilda Irtish daryosi sohilida shunday istehkomlardan yettitasi qurib bitkazildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1825",
+     "date_label": "1825-yil",
+     "event": "M. Murkroft Angliya bilan aloqalarni yo‘lga qo‘yish maqsadida O‘rta Osiyoga yuboriladi va Buxoroda halok bo‘ladi",
+     "evidence": "1825-yilda M. Murkroft Angliya bilan aloqalarni yo‘lga qo‘yish uchun yuboriladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1847",
+     "date_label": "1847-yil",
+     "event": "Sirdaryoning Orolga quyilish joyida Raim qal’asi bunyod etiladi va Orenburg yo‘li istehkomlar bilan mustahkamlanadi",
+     "evidence": "Orolga quyilish joyida 1847-yilda Raim qal’asi bunyod etildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1855",
+     "date_label": "1855-yil",
+     "event": "Amudaryoning janubiy sohilidagi o‘zbeklar va tojiklar yashaydigan hududlar Afg‘oniston viloyatiga aylantiriladi",
+     "evidence": "1855-yilda o‘zbeklar va tojiklar yashaydigan Amudaryoning"
+    },
+    {
+     "kind": "date_event",
+     "date": "1847–1865",
+     "date_label": "1847–1865-yillar",
+     "event": "Bosib olishning birinchi bosqichida Qo‘qon xonligining shimoliy-g‘arbiy viloyatlari va Toshkent shahri istilo qilinadi",
+     "evidence": "Birinchi bosqich – 1847–1865-yillarda Rossiya imperiyasi tomonidan Qo‘qon xonligining"
+    },
+    {
+     "kind": "date_event",
+     "date": "1865–1868",
+     "date_label": "1865–1868-yillar",
+     "event": "Ikkinchi bosqichda Qo‘qon xonligi va Buxoro amirligiga qarshi istilochilik harakatlari amalga oshiriladi",
+     "evidence": "Ikkinchi bosqich – 1865–1868-yillarni qamrab olgan bo‘lib"
+    },
+    {
+     "kind": "date_event",
+     "date": "1873–1879",
+     "date_label": "1873–1879-yillar",
+     "event": "Uchinchi bosqich Xiva va Qo‘qon xonliklarining yerlarini bosib olishdan iborat bo‘ladi",
+     "evidence": "Uchinchi bosqich – 1873–1879-yillar davomida Xiva va Qo‘qon"
+    },
+    {
+     "kind": "date_event",
+     "date": "1880–1885",
+     "date_label": "1880–1885-yillar",
+     "event": "To‘rtinchi bosqichda turkmanlarning qarshiligi bostirilib, bosqinchilik urushlari yakunlanadi",
+     "evidence": "To‘rtinchi bosqich – 1880–1885-yillarda turkmanlarning"
+    },
+    {
+     "kind": "date_event",
+     "date": "1864",
+     "date_label": "1864-yil 12-iyul",
+     "event": "N. Veryovkin otryadi Qo‘qon xonligiga qarashli Turkiston shahrini bosib olib, Toshkentga tayyorgarlik boshlaydi",
+     "evidence": "N. Veryovkin otryadi Qo‘qon xonligiga qarashli Turkiston shahrini bosib oldi"
+    },
+    {
+     "kind": "person",
+     "person": "Aleksandr Bekovich-Cherkasskiy",
+     "role": "Pyotr I davrida yuborilgan harbiy ekspeditsiya boshlig‘i",
+     "activity": "Xiva va Buxoro tomon yo‘lga chiqqan ekspeditsiyaga rahbarlik qilgan, ammo yurish muvaffaqiyatsizlikka uchragan",
+     "evidence": "Pyotr I hukmronligi davridayoq Aleksandr Bekovich-Cherkasskiy boshchiligidagi harbiy ekspeditsiya jo‘natilgan"
+    },
+    {
+     "kind": "person",
+     "person": "Aleksandr II",
+     "role": "Rossiya imperatori (1855–1881), istilochilik yurishlari davrida taxtda bo‘lgan hukmdor",
+     "activity": "1859-yilda Qo‘qon xonligini bosib olishni davom ettirish to‘g‘risida ko‘rsatma bergan",
+     "evidence": "Rossiya imperatori Aleksandr II (1855–1881)"
+    },
+    {
+     "kind": "person",
+     "person": "N. Veryovkin",
+     "role": "Podsho qo‘shinlarining Turkiston shahri yo‘nalishida harakat qilgan otryadi boshlig‘i",
+     "activity": "Turkiston shahrini bosib olgan va uning himoyachilariga shaharni yakson qilish bilan do‘q qilgan",
+     "evidence": "12-iyul kuni N. Veryovkin otryadi"
+    },
+    {
+     "kind": "person",
+     "person": "M. Chernyayev",
+     "role": "Toshkentni bosib olishga yuborilgan qo‘shin qo‘mondoni",
+     "activity": "1864-yil kuzida Chimkent shahrini egallagan, shundan so‘ng Yangi Qo‘qon chizig‘i qal’alari birlashtirilgan",
+     "evidence": "Bu harbiy harakatlarga M. Chernya-yev qo‘mondon etib tayinlandi"
+    },
+    {
+     "kind": "term",
+     "term": "Harbiy istehkom",
+     "definition": "Harbiy maqsadlarda quriladigan mustahkam nuqta; Irtish daryosi sohilida shunday inshootlardan yettitasi qurilgan",
+     "evidence": "hukumati harbiy istehkomlar qurishga kirishdi"
+    },
+    {
+     "kind": "term",
+     "term": "Ayg‘oqchi",
+     "definition": "Sayyoh, savdogar va elchi sifatida yuborilib, xonliklarning siyosiy va harbiy ahvoli haqida ma’lumot to‘plagan shaxs",
+     "evidence": "Sayyoh, savdogar, elchilar sifatida yuborilgan ayg‘oqchilar"
+    },
+    {
+     "kind": "term",
+     "term": "Istilochilik harakati",
+     "definition": "Rossiya imperiyasining O‘rta Osiyo davlatlarini bosib olishga qaratilgan harbiy yurishlari va siyosati",
+     "evidence": "istilochilik harakatlarini yanada tezlashtirdi"
+    },
+    {
+     "kind": "term",
+     "term": "Istehkom chizig‘i",
+     "definition": "Raim qal’asidan Perovskiy fortigacha cho‘zilgan Sirdaryo istehkomlari tizimi; Sibir chizig‘i ham shunday tuzilgan",
+     "evidence": "Raim qal’asidan Perovskiy fortigacha Sirdaryo istehkom chizig‘i"
+    },
+    {
+     "kind": "place",
+     "place": "Oqmachit qal’asi",
+     "event": "1853-yilda egallanib, Toshkentni bosib olishda harbiy harakatlarning tayanch punktiga aylantirilgan",
+     "evidence": "Toshkentni bosib olishda Oqmachit qal’asi harbiy harakatlarning tayan chiga aylandi"
+    },
+    {
+     "kind": "place",
+     "place": "Avliyoota (hozirgi Taroz)",
+     "event": "1864-yil 4-iyunda M. Chernyayev boshchiligidagi qo‘shin tomonidan Talas daryosining chap sohilida bosib olinadi",
+     "evidence": "4-iyunda M. Chernyayev boshchiligidagi qo‘shin Talas daryosining chap sohilidagi Avliyoota"
+    },
+    {
+     "kind": "cause",
+     "cause": "Rossiya sanoatining xomashyoga ehtiyoji ortib, mahsulotlar uchun qo‘shimcha iste’mol bozorlari zarur bo‘lgan",
+     "effect": "O‘rta Osiyoning bosib olinishi yanada tezlashtirilgan",
+     "evidence": "muammolari O‘rta Osiyoning bosib olinishini yanada tezlashtirdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Angliya tovarlarining O‘rta Osiyoga kirib kelishi va bu hududga qiziqishining ortib borishi",
+     "effect": "Rossiya imperiyasi hukumatining istilochilik harakatlari yanada jadallashtirilgan",
+     "evidence": "Angliyaning bu hududga nisbatan qiziqishi ortib borishi Rossiya imperiyasi hukumatining istilochilik harakatlarini yanada tezlashtirdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "XIX asrning birinchi yarmida xonliklar o‘rtasidagi uzoq davom etgan o‘zaro urushlar",
+     "effect": "Xonliklar iqtisodiy va harbiy jihatdan zaiflashib, istilo qilish osonlashgan",
+     "evidence": "xonliklari o‘rtasidagi uzoq vaqt davom etgan o‘zaro urushlar"
+    },
+    {
+     "kind": "number",
+     "number": "7",
+     "unit": "ta istehkom",
+     "meaning": "1718-yilda Irtish daryosi sohilida qurib bitkazilgan harbiy istehkomlar soni",
+     "evidence": "shunday istehkomlardan yettitasi qurib bitkazildi"
+    },
+    {
+     "kind": "number",
+     "number": "20",
+     "unit": "kun",
+     "meaning": "Oqmachit qal’asining 400 nafar himoyachisi 3 mingdan ortiq qo‘shinga qarshilik ko‘rsatgan muddat",
+     "evidence": "qal’a himoyachilari 20 kun davomida qarshilik ko‘rsatdi"
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "title": "Toshkentning bosib olinishi",
+   "page": 23,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1864-yil 1-oktabr",
+     "date_label": "1864-yil 1-oktabr",
+     "event": "M. Chernyayev Toshkentni tezlik bilan qo‘lga kiritmoqchi bo‘lib birinchi hujumni boshlaydi",
+     "evidence": "1864-yil 1-oktabrida M. Chernyayev o‘zini"
+    },
+    {
+     "kind": "date_event",
+     "date": "1865-yil aprel",
+     "date_label": "1865-yil aprel oyi oxiri",
+     "event": "Podsho hukumatining harbiy qo‘shinlari Toshkent yaqiniga joylashtiriladi",
+     "evidence": "1865-yil aprel oyi oxirida podsho hukumatining harbiy qo‘shinlari"
+    },
+    {
+     "kind": "date_event",
+     "date": "1865-yil may",
+     "date_label": "1865-yil may",
+     "event": "M. Chernyayev boshchiligidagi istilochilar bevosita Toshkentga hujum boshlaydi",
+     "evidence": "may oyida bevosita Tosh kent ga hujum boshladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1865-yil 17-iyun",
+     "date_label": "1865-yil 17-iyun",
+     "event": "M. Chernyayev to‘rt daha oqsoqollarini chaqirib, shaharni «ixtiyoriy topshirish» to‘g‘risidagi hujjatni imzolatadi",
+     "evidence": "17-iyunda Beshyog‘och, Ko‘kcha, Sebzor va Shayxontohur dahalarining"
+    },
+    {
+     "kind": "date_event",
+     "date": "1865-yil 6-avgust",
+     "date_label": "1865-yil 6-avgust",
+     "event": "«Turkiston viloyatini boshqarish to‘g‘risidagi Muvaqqat Nizom» qabul qilinib, harbiylashtirilgan boshqaruv o‘rnatiladi",
+     "evidence": "6-avgustda qabul qi lingan «Turkiston viloyatini boshqarish to‘g‘risidagi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1865",
+     "date_label": "1865-yil",
+     "event": "Orenburg general-gubernatorligi tarkibida Turkiston viloyati tashkil qilinadi",
+     "evidence": "1865-yil Orenburg general-gubernatorligi tarkibida Turkiston viloyati tashkil qilin di"
+    },
+    {
+     "kind": "person",
+     "person": "M. Chernyayev",
+     "role": "Toshkentni egallashga yuborilgan harbiy qo‘shin qo‘mondoni",
+     "activity": "Niyozbek qal’asini egallab, shaharni suvdan uzgan va Kamolon darvozasi yonidan shaharga kirgan",
+     "evidence": "M. Chernyayev 70 nafardan ziyod askarlari-dan ajralib, Chimkentga cheki nishga majbur bo‘ldi"
+    },
+    {
+     "kind": "person",
+     "person": "Aliquli (Alimqul)",
+     "role": "Qo‘qon xonligi qo‘shinlarining amirlashkari",
+     "activity": "Toshkent mudofaasiga rahbarlik qilgan va ayovsiz janglarda yaralanib vafot etgan",
+     "evidence": "Qo‘qon xon ligi qo‘shinlari amirlashkar Aliquli boshchiligida qar shilik ko‘r satdi"
+    },
+    {
+     "kind": "person",
+     "person": "Solihbek dodxoh",
+     "role": "Toshkentning nufuzli kishilaridan biri, shahar dodxohi sifatida muzokarada qatnashgan",
+     "activity": "Soxta xat yozilishiga qarshi chiqqani uchun Sibirga surgun qilingan vatanparvar",
+     "evidence": "Solihbek dodxoh, Abulqosim eshon, Hakimxo‘ja singari vatanparvarlar Sibirga"
+    },
+    {
+     "kind": "person",
+     "person": "Hakimxo‘ja",
+     "role": "Toshkent qozikaloni, shaharning nufuzli ruhoniysi va amaldori",
+     "activity": "Muzokarada ishtirok etgan, keyinchalik soxta hujjatga qarshi chiqib Sibirga surgun qilingan",
+     "evidence": "Muzokarada Toshkent qozikaloni Hakimxo‘ja, Abulqosim"
+    },
+    {
+     "kind": "term",
+     "term": "Daha",
+     "definition": "Toshkent shahrining oqsoqol tomonidan boshqariladigan ma’muriy qismi; shahar to‘rtta dahaga bo‘lingan",
+     "evidence": "Toshkent to‘rtta – Beshyog‘och, Ko‘kcha, Sebzor va Shay xontohur dahalariga bo‘linib"
+    },
+    {
+     "kind": "term",
+     "term": "Ultimatum",
+     "definition": "Bir davlat hukumatining boshqa davlat hukumatiga bayon qilgan, e’tirozga o‘rin qoldirmaydigan qat’iy talabi",
+     "evidence": "Ultimatum (lotincha – so‘nggi, oxirgi) – biror masala yuzasidan bir dav-lat hukumatining"
+    },
+    {
+     "kind": "term",
+     "term": "Chor Rossiyasi",
+     "definition": "Rus tilida podsho «tsar» deb atalgani uchun mahalliy aholi tilida «chor» deb yuritilgan Rossiya davlati nomi",
+     "evidence": "Chor Rossiyasi (Царская Россия) – rus tilida podsho «царь» deyiladi"
+    },
+    {
+     "kind": "term",
+     "term": "Muvaqqat Nizom",
+     "definition": "1865-yil 6-avgustda qabul qilingan, Turkiston viloyatida harbiylashtirilgan boshqaruv tartibini belgilagan hujjat",
+     "evidence": "qat Nizom»ga muvofiq viloyatda harbiylashtirilgan boshqaruv tartiblari"
+    },
+    {
+     "kind": "place",
+     "place": "Niyozbek qal’asi",
+     "event": "Toshkentdan 25 km uzoqlikda, Chirchiq daryosining chap sohilida joylashgan; egallangach unga Toshkent darvozasi nomi berilgan",
+     "evidence": "Niyozbek qal’a siga kelib, uni jangsiz topshirishni taklif qiladi"
+    },
+    {
+     "kind": "place",
+     "place": "Kamolon darvozasi",
+     "event": "M. Chernyayev qo‘shinlari devorni shu darvoza yonidan buzib, shahar ichkarisiga kirgan",
+     "evidence": "Kamolon darvozasi yoni dan de vor ni buzib shaharga kirdi"
+    },
+    {
+     "kind": "place",
+     "place": "Chirchiq daryosi",
+     "event": "Toshkentni suv bilan ta’minlovchi daryodagi to‘g‘on Chernyayev buyrug‘i bilan buzib tashlangan",
+     "evidence": "Toshkent shahri aholisini suv bilan ta’minlaydigan Chirchiq dar-yosidagi to‘g‘on buzib tashlanadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Himoyachilar va istilochilarning harbiy kuchlari o‘rtasidagi farq juda katta bo‘lgan",
+     "effect": "Qal’a to‘plardan to‘xtovsiz o‘qqa tutilib, devorlari buzib tashlangan va u bosqinchilar qo‘liga o‘tgan",
+     "evidence": "Himoyachilar va istilochilarning harbiy kuchlari o‘rtasidagi farq juda katta edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Niyozbek qal’asining bosqinchilar tomonidan qo‘lga kiritilishi",
+     "effect": "M. Chernyayev Toshkentni suv ta’minotidan uzib qo‘yish imkoniga ega bo‘lgan",
+     "evidence": "Ushbu qal’aning qo‘lga kiritilishi M. Chernyayevga Tosh-kentni suv ta’minotidan uzib qo‘yish imkonini berdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Suv yo‘llarining to‘sib qo‘yilganligi va shaharda kuchli yong‘in chiqishi",
+     "effect": "Shaharda boshlangan yong‘inlarni o‘z vaqtida o‘chirish imkoni bo‘lmagan",
+     "evidence": "Suv yo‘l la-rining to‘sib qo‘yil ganligi yong‘inlarni o‘z vaqtida o‘chirish imkonini bermadi"
+    },
+    {
+     "kind": "number",
+     "number": "12",
+     "unit": "ta darvoza",
+     "meaning": "XIX asrning ikkinchi yarmida Toshkent shahrida bo‘lgan, soqchilar tomonidan qo‘riqlangan darvozalar soni",
+     "evidence": "12 ta, ya’ni Labzak, Taxtapul"
+    },
+    {
+     "kind": "number",
+     "number": "80",
+     "unit": "ming kishi",
+     "meaning": "XIX asr o‘rtalarida Toshkent shahri aholisining taxminiy soni",
+     "evidence": "shahar aholisi 80 mingga yaqin kishini tashkil qilgan"
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "title": "Turkiston general-gubernatorligining tashkil etilishi",
+   "page": 26,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1865",
+     "date_label": "1865-yil",
+     "event": "Tashkil qilingan Turkiston viloyati O‘rta Osiyodagi harbiy harakatlar uchun harbiy markaz rolini bajaradi",
+     "evidence": "1865-yilda tashkil qilingan Turkiston viloyati O‘rta Osiyodagi har-biy harakatlarni olib borishda harbiy markaz rolini bajardi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1867",
+     "date_label": "1867-yil",
+     "event": "Bosib olingan hududlarni o‘z ichiga oluvchi Turkiston general-gubernatorligi tashkil qilinadi va Turkiston harbiy okrugi tuziladi",
+     "evidence": "1867-yilda bosib olingan hududlarni o‘z ichiga oluvchi Turkiston ge neral-gubernatorligi tashkil qilindi va Turkiston harbiy okrugi tuzildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1867",
+     "date_label": "1867-yil",
+     "event": "Imperator farmoniga ko‘ra general-adyutant Konstantin Petrovich fon Kaufman Turkiston general-gubernatori etib tayinlanadi",
+     "evidence": "1867-yil Rossiy a imperatori farmoniga ko‘ra general-adyutant Konstantin Petrovich fon Kaufman (1867–1881) tayinlandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1868",
+     "date_label": "1868-yil",
+     "event": "Buxoro amirligiga qarashli yerlarda markazi Samarqand bo‘lgan Zarafshon okrugi tashkil qilinadi",
+     "evidence": "1868-yilda Buxoro amirligiga qarashli yerlarda Zarafshon okrugi (markazi – Samarqand)"
+    },
+    {
+     "kind": "date_event",
+     "date": "1873",
+     "date_label": "1873-yil",
+     "event": "Xiva xonligiga qarashli hududlarda markazi Petro-Aleksandrovsk bo‘lgan Amudaryo bo‘limi tashkil etiladi",
+     "evidence": "1873-yilda Xiva xonligiga qarashli hududlarda Amudaryo bo‘limi (markazi – Petro-Aleksandrovsk"
+    },
+    {
+     "kind": "date_event",
+     "date": "1876",
+     "date_label": "1876-yil",
+     "event": "Markazi Yangi Marg‘ilon bo‘lgan Farg‘ona viloyati tashkil qilinadi",
+     "evidence": "1876-yilda Farg‘ona viloyati (markazi – Yangi Marg‘ilon, keyinchalik Skobelev"
+    },
+    {
+     "kind": "date_event",
+     "date": "1881",
+     "date_label": "1881-yil",
+     "event": "Markazi Ashxobod shahri bo‘lgan Kaspiyorti viloyati tashkil qilingan",
+     "evidence": "1881-yilda Kaspiyorti viloyati (markazi – Ashxobod shahri) tashkil qilingan"
+    },
+    {
+     "kind": "person",
+     "person": "Aleksandr II",
+     "role": "Rossiya imperatori (1855–1881), Turkiston general-gubernatorligi tashkil etilgan davr hukmdori",
+     "activity": "Yo‘qotish va talafotlarga qaramay, navbatdagi harbiy rejalarni amalga oshirishni davom ettirishga buyruq bergan",
+     "evidence": "imperator Aleksandr II ning buyrug‘i bilan navbatdagi harbiy rejalarni amalga oshirish davom ettirildi"
+    },
+    {
+     "kind": "person",
+     "person": "K. P. fon Kaufman",
+     "role": "Turkiston general-gubernatori va Turkiston harbiy okrugi qo‘mondoni (1867–1881)",
+     "activity": "Imperiya manfaatlari yo‘lida keng vakolatlar olib, xalq orasida «yarim podsho» nomini olgan",
+     "evidence": "Shu-ning uchun u xalq orasida «yarim podsho» nomini olgan"
+    },
+    {
+     "kind": "term",
+     "term": "General-gubernatorlik",
+     "definition": "Bosib olingan joylarni o‘z ichiga oluvchi, alohida tartibda boshqariladigan ma’muriy-hududiy birlik",
+     "evidence": "bosib olingan joylarni o‘z ichi ga oluvch i ma’muriy-boshqaruv hudud, ya’ni alohida general-gubernatorlik"
+    },
+    {
+     "kind": "term",
+     "term": "Harbiy okrug",
+     "definition": "1847-yildan boshlab harbiy yurishlarda qatnashgan barcha harbiy qismlar kiritilgan, 40 ming harbiydan iborat tuzilma",
+     "evidence": "1847-yildan boshlab harbiy istilochilik yurishlarida ishtirok etgan barcha harbiy qismlar"
+    },
+    {
+     "kind": "term",
+     "term": "Verst",
+     "definition": "Masofa o‘lchov birligi; bir verst 1,066 kilometrga teng, viloyatlar maydoni shu birlikda hisoblangan",
+     "evidence": "1 verst – 1,066 km ga teng"
+    },
+    {
+     "kind": "term",
+     "term": "Nizom",
+     "definition": "Turkiston general-gubernatorining huquq va vakolatlarini belgilovchi 1867-yilgi rasmiy hujjat loyihasi",
+     "evidence": "Turkiston general-gubernatori 1867-yilgi «Nizom» loyihasida ko‘r-satil gan huquqlardan tash qari"
+    },
+    {
+     "kind": "place",
+     "place": "Toshkent",
+     "event": "General-gubernatorlikning markazi qilib belgilangan, qulay geografik makonda joylashgan shahar",
+     "evidence": "Toshkent shahri general-gubernatorlikning markazi qi-lib belgilandi"
+    },
+    {
+     "kind": "place",
+     "place": "Verniy",
+     "event": "Dastlab tashkil etilgan Yettisuv viloyatining markazi bo‘lgan shahar",
+     "evidence": "Yettisuv (markazi – Verniy) viloyatlariga bo‘lingan"
+    },
+    {
+     "kind": "place",
+     "place": "Petro-Aleksandrovsk",
+     "event": "Amudaryo bo‘limining markazi bo‘lgan, hozirgi To‘rtko‘l shahri o‘rnida joylashgan punkt",
+     "evidence": "Amudaryo bo‘limi (markazi – Petro-Aleksandrovsk; hozirgi To‘rtko‘l)"
+    },
+    {
+     "kind": "cause",
+     "cause": "O‘rta Osiyoning Orenburg general-gubernatorligidan uzoqda joylashganligi",
+     "effect": "Bosib olingan yerlarni o‘z ichiga oluvchi alohida general-gubernatorlik tashkil etishga kirishilgan",
+     "evidence": "Buning sababi O‘rta Osiyoning Orenburg general-gubernatorligidan uzoq da joylashganligi bo‘lsa"
+    },
+    {
+     "kind": "cause",
+     "cause": "Kelgusida bosib olinadigan yerlarni ham birlashtirish zarurati",
+     "effect": "O‘lka hududi va aholisi imperiya tarkibida yana bitta general-gubernatorlik tashkil qilishga yetarli deb topilgan",
+     "evidence": "bosh-qa yana bir sababi bu kelgusida bosib olinadigan yerlarni ham birlash-tirish bo‘lgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "O‘lkaning geografik xususiyatlari, iqtisodi va tabiiy boyliklarini imperiya manfaatlariga moslashtirish istagi",
+     "effect": "Alohida general-gubernatorlik tashkil qilinib, uning resurslaridan mustamlaka maqsadlarida foydalanilgan",
+     "evidence": "uning geografik xususiyatlari, iqtisodi, tabiiy boyliklari, mineral resurslarini imperiya manfaatlariga har tomonlama moslashtirish edi"
+    },
+    {
+     "kind": "number",
+     "number": "40",
+     "unit": "ming kishi",
+     "meaning": "Turkiston harbiy okrugidagi harbiylar soni",
+     "evidence": "Turkiston harbiy okru-gidagi harbiylar soni 40 ming kishidan iborat bo‘lgan"
+    },
+    {
+     "kind": "number",
+     "number": "2000",
+     "unit": "kv. verst",
+     "meaning": "O‘lkadagi hududiy jihatdan eng kichik Samarqand viloyatining maydoni",
+     "evidence": "Samarqand viloyatining maydoni 2000 kv. verst"
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "title": "Buxoro amirligiga qarshi harbiy harakatlarning boshlanishi",
+   "page": 29,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1866-yil 8-may",
+     "date_label": "1866-yil 8-may",
+     "event": "Erjar qishlog‘i yaqinida birinchi jang bo‘lib, kuchlar teng bo‘lmaganligi uchun amir qo‘shinlari mag‘lubiyatga uchraydi",
+     "evidence": "Birinchi jang 1866-yil 8-mayda Erjar qishlog‘i yaqinida bo‘lib"
+    },
+    {
+     "kind": "date_event",
+     "date": "1866-yil 24-may",
+     "date_label": "1866-yil 24-may",
+     "event": "Xo‘jand qal’asi ikki kunlik qamaldan so‘ng egallanib, shahar mudofaachilari qarshiligi sindiriladi",
+     "evidence": "mustamlakachilar qo‘shinlari 24-mayda tunga borib himoya chilarning mudofaasini yorib o‘tdilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "1866-yil oktabr",
+     "date_label": "1866-yil 12-oktabr",
+     "event": "O‘ratepa egallangandan so‘ng navbatdagi harbiy harakat Jizzaxga qarshi boshlanadi",
+     "evidence": "12-oktabrda navbatdagi harakat Jizzaxga qarshi boshlandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1866-yil 18-oktabr",
+     "date_label": "1866-yil 18-oktabr",
+     "event": "Ikki kecha-kunduz davom etgan jangdan so‘ng Jizzax shahri podsho hukumati qo‘liga o‘tadi",
+     "evidence": "1866-yil 18-oktabrda Jizzax shahri ham podsho hukumati qo‘liga o‘tdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1866",
+     "date_label": "1866-yil",
+     "event": "Qo‘qon xonligining taqdiri hal qilinib, Xo‘jandda Qo‘qonga qarshi hamma narsa tayyor holatga keltiriladi",
+     "evidence": "Qo‘qon xonligining taqdiri 1866-yil dayoq hal qilinib"
+    },
+    {
+     "kind": "date_event",
+     "date": "1864–1866",
+     "date_label": "1864–1866-yillar",
+     "event": "Bosib olingan hududlarni o‘z ichiga oluvchi Sirdaryo viloyati tashkil qilinadi",
+     "evidence": "1864–1866-yillar davomida bo-sib olin gan hududlarni o‘z ichiga oluvchi Sir daryo viloyati tashkil qilindi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1866",
+     "date_label": "1866-yil",
+     "event": "F. Romanovskiy Buxoro amirligi Rossiyaga qarshi urushga tayyorlanayotganini bahona qilib harbiy yurish uchun ruxsat so‘raydi",
+     "evidence": "F. Romanovskiy 1866-yilda Bu-xoro amirligi Rossiyaga qarshi urushga tayyorlanayotganligini bahona qilib"
+    },
+    {
+     "kind": "person",
+     "person": "F. Romanovskiy",
+     "role": "Turkiston viloyatining harbiy gubernatori, M. Chernyayevdan keyin tayinlangan",
+     "activity": "Buxoroga qarshi harbiy yurishni boshlab, Xo‘jand va O‘ratepani egallash harakatlariga rahbarlik qilgan",
+     "evidence": "tori qilib F. Romanovskiyni tayinladi"
+    },
+    {
+     "kind": "person",
+     "person": "N. Krijanovskiy",
+     "role": "Orenburg general-gubernatori, Qo‘qon va Buxoroga qarshi yurishlarni boshqargan",
+     "activity": "Buxoro amiridan 100 ming rubl tovon talab qilib, talab bajarilmagach amirlikka hujum boshlashga buyruq bergan",
+     "evidence": "ga Orenburg general-gubernatori N. Krijanovskiy"
+    },
+    {
+     "kind": "person",
+     "person": "M. Chernyayev",
+     "role": "Turkiston viloyatining sobiq gubernatori",
+     "activity": "O‘rta Osiyodan Sankt-Peterburgga chaqirib olinib, uning o‘rniga boshqa gubernator tayinlangan",
+     "evidence": "Podsho hukumati O‘rta Osiyodan M. Chernyayevni Sankt-Peter-"
+    },
+    {
+     "kind": "person",
+     "person": "Amir Muzaffar",
+     "role": "Buxoro amiri, Rossiya imperiyasining tovon talabini bajarmagan hukmdor",
+     "activity": "Erjar jangida qo‘shinlari mag‘lubiyatga uchragan va N. Krijanovskiyning tovon talabini bajarmagan",
+     "evidence": "Buxoro amiri talablarni bajarmaganligini bahona qilib"
+    },
+    {
+     "kind": "term",
+     "term": "Kazak",
+     "definition": "Rus davlatida chekka hududlarga qochib borib erkinlikka chiqqan kishilardan tuzilgan qo‘shin",
+     "evidence": "Kazak – Rus davlatida o‘rta asrlarda krepostnoy dehqonlar orasidan"
+    },
+    {
+     "kind": "term",
+     "term": "Tovon",
+     "definition": "Sulh shartnomasi bo‘yicha mag‘lub tomondan undiriladigan pul to‘lovi; amirdan 100 ming rubl talab qilingan",
+     "evidence": "10 kun mobaynida 100 ming rubl tovon to‘lashni talab qildi"
+    },
+    {
+     "kind": "term",
+     "term": "«Bo‘lib tashla, hukmronlik qil» shiori",
+     "definition": "Mustamlakachilarning asosiy qoidasi bo‘lib, xonliklarning birlashmasligiga qaratilgan siyosatni ifodalagan",
+     "evidence": "siy qoidasi hisoblangan «Bo‘lib tashla, hukmronlik qil» shioriga amal"
+    },
+    {
+     "kind": "place",
+     "place": "Erjar qishlog‘i",
+     "event": "1866-yil 8-mayda Buxoro amiri qo‘shinlari bilan birinchi jang bo‘lgan joy",
+     "evidence": "8-mayda Erjar qishlog‘i yaqinida"
+    },
+    {
+     "kind": "place",
+     "place": "Xo‘jand",
+     "event": "1866-yil may oyida qamal qilinib, 20 ta to‘pdan o‘qqa tutilgan va 24-mayda egallangan qal’a",
+     "evidence": "Xo‘jand qal’asi may oyi da qamal qilinib, 20 ta to‘pdan o‘qqa tutildi"
+    },
+    {
+     "kind": "place",
+     "place": "O‘ratepa",
+     "event": "1866-yil kuzida uch kun to‘plardan o‘qqa tutilib, hujum natijasida vayron qilingan va egallangan shahar",
+     "evidence": "F.Romanovskiyning harbiy qo‘shinlari O‘ratepaga yetib borgach, shahar uch kun to‘plardan o‘qqa tutildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xonliklarning birlashmasligiga qaratilgan siyosat olib borilishi",
+     "effect": "Mustamlakachilar xonliklarni navbat bilan bosib olish imkoniga ega bo‘lgan",
+     "evidence": "xonliklarning birlashmasligiga qaratilgan siyosat olib borildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Kuchlarning harbiy jihatdan teng bo‘lmaganligi",
+     "effect": "Erjar qishlog‘i yaqinidagi jangda amir qo‘shinlari mag‘lubiyatga uchragan",
+     "evidence": "kuchlar harbiy jihatdan teng bo‘lmaganligi uchun amir qo‘shinlari mag‘lubiyatga uchradi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Buxoro amirining tovon to‘lash haqidagi talabni bajarmaganligi",
+     "effect": "N. Krijanovskiy o‘z qo‘shinlariga amirlikka qarshi hujum boshlashga buyruq bergan",
+     "evidence": "N. Krijanovskiy Buxoro amiri talablarni bajarmaganligini bahona qilib"
+    },
+    {
+     "kind": "number",
+     "number": "100",
+     "unit": "ming rubl",
+     "meaning": "N. Krijanovskiy Buxoro amiridan sulh shartnomasi bo‘yicha 10 kun ichida to‘lashni talab qilgan tovon miqdori",
+     "evidence": "sulh shartnomasi bo‘yicha uchrashib, 10 kun mobaynida 100 ming rubl"
+    },
+    {
+     "kind": "number",
+     "number": "6",
+     "unit": "ming piyoda askar",
+     "meaning": "1866-yil kuzida O‘ratepaga qarab harakat boshlagan harbiy qo‘shinning piyoda askarlari soni",
+     "evidence": "1866-yilning kuzida 6 ming piyoda askar, 500 kazak, 28 to‘p"
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "title": "Buxoro amirligi ustidan Rossiya imperiyasi protektoratining o‘rnatilishi",
+   "page": 31,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1868-yil aprel",
+     "date_label": "1868-yil aprel",
+     "event": "K. P. fon Kaufman 4 mingdan ziyod qo‘shin to‘plab, Samarqandni bosib olishga kirishadi",
+     "evidence": "harbiy otryad to‘plab, 1868-yil aprelda Samarqandni bosib olishga kirishdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1868-yil 1-may",
+     "date_label": "1868-yil 1-may",
+     "event": "Cho‘ponota tepaligida fon Kaufman hujum boshlab, amir qo‘shinining ilg‘or qismini tor-mor keltiradi",
+     "evidence": "1868-yil 1-mayda fon Kaufman tepalikka hujum boshladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1868-yil may",
+     "date_label": "1868-yil may",
+     "event": "Zirabuloq tepaligida ikkinchi jang bo‘lib, Buxoro amiri qo‘shini yana mag‘lubiyatga uchraydi va podsho qo‘shinlari Samarqandga jangsiz kiradi",
+     "evidence": "so‘ng Zirabuloq tepaligida ikkinchi jang bo‘lib o‘tdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1868-yil 2-iyun",
+     "date_label": "1868-yil 2-iyun",
+     "event": "Jo‘rabek va Bobobek boshchiligidagi qo‘shin samarqandlik qo‘zg‘olonchilar bilan birga rus garnizoni joylashgan qal’aga hujum qiladi",
+     "evidence": "1868-yil 2-iyunda samarqandlik qo‘zg‘olonchilar bilan birga Rossiya"
+    },
+    {
+     "kind": "date_event",
+     "date": "1868-yil 4–7-iyun",
+     "date_label": "1868-yil 4–7-iyun",
+     "event": "Qal’ani egallash uchun shiddatli janglar davom etib, ikki tomon ham ko‘plab talafot ko‘radi",
+     "evidence": "Qal’ani egallash uchun 4-iyundan 7-iyungacha shiddatli janglar davom etdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1868-yil 23-iyun",
+     "date_label": "1868-yil 23-iyun",
+     "event": "Fon Kaufman Samarqandda amir Muzaffar bilan Buxoro amirligini Rossiya protektoratiga aylantirgan shartnomani imzolaydi",
+     "evidence": "Fon Kaufman 1868-yil 23-iyunda Samarqandda amir Muzaffar"
+    },
+    {
+     "kind": "date_event",
+     "date": "1873",
+     "date_label": "1873-yil",
+     "event": "Buxoro bilan Rossiya imperiyasi amirlikka o‘z vakilini tayinlash huquqini beruvchi yangi shartnoma imzolaydi",
+     "evidence": "Buxoro bilan Rossiya imperiyasi 1873-yilda amir-likka o‘z vakilini tayinlash huquqini beruvchi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1881-yil 10-dekabr",
+     "date_label": "1881-yil 10-dekabr",
+     "event": "Buxoro amirligi va Eron o‘rtasidagi chegara Eron shohi bilan Tehrondagi Rossiya elchisi imzolagan maxfiy shartnomada belgilanadi",
+     "evidence": "1881-yil 10-dekabrda Eron shohi bilan Tehrondagi Rossiya elchisi imzo-lagan maxfiy shartnomada belgilandi"
+    },
+    {
+     "kind": "person",
+     "person": "K. P. fon Kaufman",
+     "role": "Turkiston general-gubernatori, Buxoro amirligi protektoratini rasmiylashtirgan shartnoma tuzgan",
+     "activity": "Samarqandni egallab, amir Muzaffarga shahar, tovon va hududlarni Rossiyaga berish shartlarini taklif qilgan",
+     "evidence": "K. P. Kaufman Samarqand bekligini Rossiyaga berish"
+    },
+    {
+     "kind": "person",
+     "person": "Amir Muzaffar",
+     "role": "Buxoro amiri, Rossiya imperiyasining chegara loyihasini rad etgan hukmdor",
+     "activity": "Chegara loyihasini imzolashdan bosh tortgan, keyin mag‘lubiyatini tan olib protektorat shartnomasini imzolashga majbur bo‘lgan",
+     "evidence": "Amir Muzaffar bu shartnomani im zolash dan bosh tortdi"
+    },
+    {
+     "kind": "person",
+     "person": "Jo‘rabek",
+     "role": "Kitob hokimi, Samarqandda rus qo‘shinlariga qarshi kurash rahbari",
+     "activity": "Samarqandda Rossiya imperiyasiga qarshi xalq kurashiga rahbarlik qilgan",
+     "evidence": "Kitob hokimi Jo‘rabek va Shahrisabz hokimi Bobobek boshchiligida Samarqandda ku-rash olib borildi"
+    },
+    {
+     "kind": "person",
+     "person": "Bobobek",
+     "role": "Shahrisabz hokimi, rus qo‘shinlariga qarshi xalq harakati rahbarlaridan biri",
+     "activity": "Jo‘rabek bilan birga Samarqanddagi qal’aga hujum qilgan va shaharni ozod qilish kurashini davom ettirgan",
+     "evidence": "bosh chiligidagi qo‘shin Samar qandni ozod qilish uchun kurashlarini davom ettirdi"
+    },
+    {
+     "kind": "person",
+     "person": "Abdumalik to‘ra",
+     "role": "Amir Muzaffarning katta o‘g‘li, amir deb e’lon qilingan shaxs",
+     "activity": "Xalq qo‘llab-quvvatlagan harakatga boshchilik qilib, keyin Xiva va Afg‘onistonga o‘tgan, 1909-yilda Peshovarda vafot etgan",
+     "evidence": "Abdumalik to‘ra Peshovarga ketadi va u yerda 1909-yilda vafot etadi"
+    },
+    {
+     "kind": "term",
+     "term": "Protektorat",
+     "definition": "Mustamlaka qaramligining bir shakli; mamlakat ichki siyosatda birmuncha mustaqil, tashqi siyosati esa mustamlakachi davlat qo‘lida bo‘ladi",
+     "evidence": "Protektorat (lotincha – homiy) – mustamlaka mamlakat qaramligi-ning bir shakli"
+    },
+    {
+     "kind": "term",
+     "term": "Vassal",
+     "definition": "Siyosiy qaramlik tufayli tarixchilar tomonidan Buxoro hukmdoriga nisbatan qo‘llangan atama",
+     "evidence": "Buxoro hukm dori vassal deb ham yuritiladi"
+    },
+    {
+     "kind": "term",
+     "term": "Boj",
+     "definition": "Tovarlardan olinadigan soliq; rossiyalik savdogarlar uchun uning miqdori umumiy qiymatning 2,5 foizidan oshmasligi belgilangan",
+     "evidence": "tovarlardan olinadigan boj umu miy qiymat-ning 2,5 foizidan oshmasligi belgilanib"
+    },
+    {
+     "kind": "term",
+     "term": "Qo‘shbegi",
+     "definition": "Vakildan kerakli ko‘rsatmalarni olib amirga yetkazishga majbur bo‘lgan amaldor",
+     "evidence": "har kuni ertalab qo‘shbegi vakil dan kerakli ko‘rsatmalarni olib amirga yetkazishi shart"
+    },
+    {
+     "kind": "place",
+     "place": "Cho‘ponota tepaligi",
+     "event": "1868-yil 1-mayda Buxoro qo‘shinlari o‘rnashib olgan tepalikka fon Kaufman hujum boshlagan",
+     "evidence": "Bu vaqtda Buxoro qo‘shinlari Cho‘ponota tepaligida o‘rnashib olgan edi"
+    },
+    {
+     "kind": "place",
+     "place": "Urgut",
+     "event": "Mahalliy aholi podsho hukumati qo‘shinlariga qarshi kurash olib borgan, keyin qal’asi bosqinchilar tomonidan egallangan shahar",
+     "evidence": "Urgut shahrida mahalliy aholi podsho huku matining qo‘shinlariga qarshi kurash olib bordi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Amirlikning harbiy kuchi Qo‘qon bilan urushlar, ichki nizolar va texnikada ortda qolish tufayli zaiflashganligi",
+     "effect": "Fon Kaufman Buxoro amirligiga qarshi yurishni davom ettirishga qaror qilgan",
+     "evidence": "harbiy kuchi Qo‘qon xonligi bilan uzluksiz olib borilgan urushlar, ichki ni-zolar, zamonaviy harbiy texnikada ortda qolishi tufayli zaifl ash gan edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Amir Muzaffarning chegara loyihasini tasdiqlashni rad etishi",
+     "effect": "K. P. Kaufman amirni ayblab, Samarqandni bosib olishga tayyorgarlik ko‘rgan",
+     "evidence": "uni general-guber nator lik chegaralariga bos ti rib kirishga tayyorgarlik ko‘rish da ayb-lab"
+    },
+    {
+     "kind": "cause",
+     "cause": "Zirabuloq tepaligidagi jangda amir qo‘shinining mag‘lubiyatga uchrashi",
+     "effect": "Amir Muzaffar mag‘lubiyatini tan olib, general-gubernatorlikning yangi chegaralari haqidagi taklifni qabul qilishga majbur bo‘lgan",
+     "evidence": "Zirabuloq jan-gidan keyin Amir Muzaffar o‘z mag‘ lubiyatini tan olib"
+    },
+    {
+     "kind": "number",
+     "number": "500",
+     "unit": "ming rubl",
+     "meaning": "Protektorat shartnomasi bo‘yicha Rossiya qo‘shinlarining harbiy xarajatlari uchun abadiy do‘stlik belgisi sifatida to‘lanishi belgilangan summa",
+     "evidence": "Ros siya qo‘shinlarining harbiy xarajat-lari uchun 500 ming rubl to‘lanishi e’tirof etildi"
+    },
+    {
+     "kind": "number",
+     "number": "15",
+     "unit": "km",
+     "meaning": "P. Lessar qarorgoh qilgan Kogon shahrining Buxorodan uzoqligi",
+     "evidence": "U Buxorodan 15 km uzoqda joy lashgan Kogon shahrini qarorgoh qil di"
+    }
+   ]
+  }
+ ]
+}

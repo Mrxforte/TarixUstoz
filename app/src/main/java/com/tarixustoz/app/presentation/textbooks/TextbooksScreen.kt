@@ -3,7 +3,6 @@ package com.tarixustoz.app.presentation.textbooks
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -13,9 +12,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Book
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.MenuBook
-import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.QuestionAnswer
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.*
@@ -42,7 +39,6 @@ fun TextbooksScreen(
     val textbooks by viewModel.textbooks.collectAsState()
     val selectedGrade by viewModel.selectedGrade.collectAsState()
     val isRefreshing by viewModel.isRefreshing.collectAsState()
-    var selectedTextbookForTopics by remember { mutableStateOf<Textbook?>(null) }
     var showResetDialog by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
@@ -70,7 +66,7 @@ fun TextbooksScreen(
                     fontWeight = FontWeight.Bold
                 )
                 Text(
-                    "6-11 sinf tarix darsliklari va mavzular",
+                    "6-11 sinf tarix darsliklari (PDF va API)",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
@@ -110,8 +106,16 @@ fun TextbooksScreen(
 
         Spacer(Modifier.height(16.dp))
 
+        val sortedTextbooks = remember(textbooks) {
+            textbooks.sortedWith(
+                compareBy<Textbook> { it.gradeId }
+                    .thenBy { if (it.subjectId.contains("jahon")) 1 else 0 }
+                    .thenBy { it.title }
+            )
+        }
+
         // 2-Column Grid
-        if (textbooks.isEmpty()) {
+        if (sortedTextbooks.isEmpty()) {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -132,10 +136,10 @@ fun TextbooksScreen(
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Spacer(Modifier.height(16.dp))
-                    Button(onClick = { viewModel.resetAndReloadData() }) {
+                    Button(onClick = { viewModel.load() }) {
                         Icon(Icons.Default.Refresh, contentDescription = null)
                         Spacer(Modifier.width(8.dp))
-                        Text("Darsliklarni qayta yuklash")
+                        Text("API dan darsliklarni qayta yuklash")
                     }
                 }
             }
@@ -146,16 +150,15 @@ fun TextbooksScreen(
                 verticalArrangement = Arrangement.spacedBy(12.dp),
                 modifier = Modifier.weight(1f)
             ) {
-                items(textbooks) { textbook ->
-                    val pdfPath = textbook.pdfAsset ?: if (textbook.gradeId == 6) "textbooks/6_sinf_tarix.pdf" else null
+                items(sortedTextbooks) { textbook ->
+                    val subjectFileName = if (textbook.gradeId == 6) "Qadimgi_dunyo_tarixi" else if (textbook.subjectId.contains("jahon", ignoreCase = true)) "Jahon_tarixi" else "Ozbekiston_tarixi"
+                    val fallbackPdfUrl = "http://10.0.2.2:8000/media/pdfs/${textbook.gradeId}-sinf_$subjectFileName.pdf"
+                    val pdfPath = textbook.pdfAsset?.takeIf { it.isNotBlank() } ?: fallbackPdfUrl
+
                     TextbookGridCard(
                         textbook = textbook,
                         onClick = {
-                            if (pdfPath != null) {
-                                onOpenPdf(textbook.title, pdfPath)
-                            } else {
-                                selectedTextbookForTopics = textbook
-                            }
+                            onOpenPdf(textbook.title, pdfPath)
                         }
                     )
                 }
@@ -165,161 +168,16 @@ fun TextbooksScreen(
         Spacer(Modifier.height(16.dp))
     }
 
-    // Modal Dialog for Topics
-    selectedTextbookForTopics?.let { textbook ->
-        val topicsFlow = remember(textbook.id) { viewModel.getTopicsForTextbook(textbook.id) }
-        val topics by topicsFlow.collectAsState(initial = emptyList())
-
-        AlertDialog(
-            onDismissRequest = { selectedTextbookForTopics = null },
-            title = {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(
-                            textbook.title,
-                            style = MaterialTheme.typography.titleLarge,
-                            fontWeight = FontWeight.Bold,
-                            maxLines = 2
-                        )
-                        Text(
-                            "${textbook.gradeId}-sinf · ${textbook.authors}",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-                    IconButton(onClick = { selectedTextbookForTopics = null }) {
-                        Icon(Icons.Default.Close, contentDescription = "Yopish")
-                    }
-                }
-            },
-            text = {
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .heightIn(max = 380.dp)
-                ) {
-                    HorizontalDivider()
-                    Spacer(Modifier.height(8.dp))
-
-                    val pdfPath = textbook.pdfAsset ?: if (textbook.gradeId == 6) "textbooks/6_sinf_tarix.pdf" else null
-                    if (pdfPath != null) {
-                        Button(
-                            onClick = {
-                                val path = pdfPath
-                                val title = textbook.title
-                                onOpenPdf(title, path)
-                                selectedTextbookForTopics = null
-                            },
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(50.dp),
-                            shape = RoundedCornerShape(12.dp),
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor = MaterialTheme.colorScheme.primary
-                            )
-                        ) {
-                            Icon(Icons.Default.MenuBook, contentDescription = null)
-                            Spacer(Modifier.width(8.dp))
-                            Text(
-                                "PDF Darslikni o'qish (Full-screen)",
-                                style = MaterialTheme.typography.titleMedium,
-                                fontWeight = FontWeight.Bold
-                            )
-                        }
-                        Spacer(Modifier.height(12.dp))
-                    }
-
-                    Text(
-                        "Mavzular ro'yxati:",
-                        style = MaterialTheme.typography.labelLarge,
-                        color = MaterialTheme.colorScheme.primary,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Spacer(Modifier.height(8.dp))
-
-                    if (topics.isEmpty()) {
-                        Box(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(24.dp),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                "Ushbu darslik uchun mavzular hali kiritilmagan",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    } else {
-                        LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                            items(topics) { topic ->
-                                Card(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .clickable {
-                                            selectedTextbookForTopics = null
-                                            onTopicSelected(topic.id)
-                                        },
-                                    shape = RoundedCornerShape(12.dp),
-                                    colors = CardDefaults.cardColors(
-                                        containerColor = MaterialTheme.colorScheme.surfaceVariant
-                                    )
-                                ) {
-                                    Row(
-                                        modifier = Modifier.padding(12.dp),
-                                        verticalAlignment = Alignment.CenterVertically
-                                    ) {
-                                        Surface(
-                                            shape = RoundedCornerShape(8.dp),
-                                            color = MaterialTheme.colorScheme.primary,
-                                            modifier = Modifier.size(28.dp)
-                                        ) {
-                                            Box(contentAlignment = Alignment.Center) {
-                                                Text(
-                                                    "${topic.number}",
-                                                    style = MaterialTheme.typography.labelMedium,
-                                                    color = MaterialTheme.colorScheme.onPrimary
-                                                )
-                                            }
-                                        }
-                                        Spacer(Modifier.width(10.dp))
-                                        Text(
-                                            topic.title,
-                                            style = MaterialTheme.typography.bodyMedium,
-                                            fontWeight = FontWeight.Medium,
-                                            modifier = Modifier.weight(1f)
-                                        )
-                                        Icon(
-                                            Icons.Default.PlayArrow,
-                                            contentDescription = "O'qish / Test",
-                                            tint = MaterialTheme.colorScheme.primary,
-                                            modifier = Modifier.size(20.dp)
-                                        )
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            confirmButton = {}
-        )
-    }
-
     if (showResetDialog) {
         AlertDialog(
             onDismissRequest = { showResetDialog = false },
-            title = { Text("Darsliklarni tozalash va qayta yuklash") },
-            text = { Text("Barcha mavjud darsliklar o'chirib tashlanib, yangidan yuklanadi. Davom ettirasizmi?") },
+            title = { Text("Darsliklarni API orqali yangilash") },
+            text = { Text("Barcha darsliklar server API orqali qayta yuklanadi va yangilanadi. Davom ettirasizmi?") },
             confirmButton = {
                 TextButton(
                     onClick = {
                         showResetDialog = false
-                        viewModel.resetAndReloadData()
+                        viewModel.load()
                     }
                 ) {
                     Text("Ha, yangilash")

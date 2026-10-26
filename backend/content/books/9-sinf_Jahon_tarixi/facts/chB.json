@@ -1,0 +1,951 @@
+{
+  "chapter": "KIRISH",
+  "topics": [
+    {
+      "number": 7,
+      "title": "Fransiyaning tashqi siyosati",
+      "page": 27,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1879",
+          "date_label": "1879-yilda",
+          "event": "Germaniya bilan Avstriya-Vengriya o‘rtasida Fransiya mavqeyini zaiflashtirgan ittifoqchilik shartnomasi tuzildi",
+          "evidence": "Ayniqsa, 1879-yilda Germaniya va Avstriya-Vengriya o'rtasida tuzilgan ittifoqchilik shartnomasi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1881",
+          "date_label": "1881-yilda",
+          "event": "Fransiya Shimoliy Afrikadagi Tunisni bosib olib, yangi mustamlakalar egallash yo‘lida dastlabki qadamni qo‘ydi",
+          "evidence": "188l-yilda Shimoliy Afrikada joylashgan Tunisning bosib olinishi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1882",
+          "date_label": "1882-yilda",
+          "event": "Italiya Germaniya va Avstriya-Vengriya ittifoqiga qo‘shilib, Yevropada «Uchlar ittifoqi» qaror topdi",
+          "evidence": "Oxir-oqibatda, bu yaqinlashuv 1882-yilda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1891–1896",
+          "date_label": "1891–1896-yillarda",
+          "event": "Fransiya Gvineya, Senegal, Madagaskar va Mavritaniyani ham bosib oldi",
+          "evidence": "1891-1896-yillar davomida Gvineya"
+        },
+        {
+          "kind": "date_event",
+          "date": "1891",
+          "date_label": "1891-yilda",
+          "event": "Fransiya bilan Rossiya o‘rtasida ittifoq bitimi tuzilib, tashqi hujumda harbiy safarbarlik ko‘zda tutilgan",
+          "evidence": "Nihoyat, 1891-yilda bu ikki davlat o'rtasida ittifoq bitimi tuzildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1904",
+          "date_label": "1904-yilda",
+          "event": "Fransiya bilan Buyuk Britaniya mustamlakalar masalasida bitim imzolab, yaqinlashuvni yakunladi",
+          "evidence": "1904-yilda ular o'rtasida bitim imzolanishi bilan yakunlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1907",
+          "date_label": "1907-yilda",
+          "event": "Rossiya Fransiya va Buyuk Britaniya harbiy-siyosiy ittifoqiga qo‘shilib, Antanta vujudga keldi",
+          "evidence": "1907-yilda esa Rossiya 1904-yilda Buyuk Britaniya va Fransiya"
+        },
+        {
+          "kind": "date_event",
+          "date": "1912",
+          "date_label": "1912-yilda",
+          "event": "Fransiya Marokash ustidan o‘z protektoratini o‘rnatdi",
+          "evidence": "1912-yilda\nesa Marokash ustidan o'z protektoratini o'rnatdi."
+        },
+        {
+          "kind": "person",
+          "person": "Marokash sultoni",
+          "role": "Marokash davlatining hukmdori, sultonlik taxtining egasi",
+          "activity": "uning o‘z vazifasini bajara olmasligi ehtimoli ko‘rib chiqilib, mamlakat hududi taqdiri belgilangan",
+          "evidence": "Marokash sultoni o'z vazifasini bajara olmasligi ehtimoli borligi"
+        },
+        {
+          "kind": "person",
+          "person": "Marokash sultoni",
+          "role": "Marokash sultonligi taxtining egasi, davlat hukmdori",
+          "activity": "vazifasini bajara olmasa, hududining Gibraltar bo‘g‘oziga tutash qismi Ispaniyaga berilishi belgilab qo‘yilgan",
+          "evidence": "va shunday bo'lib qolsa, Marokash hududining Gibraltar bo'g'oziga"
+        },
+        {
+          "kind": "term",
+          "term": "mustamlakachilik siyosati",
+          "definition": "XIX asrning 70-yillari oxiridan bosib olingan hududlarni o‘zlashtirish va yangi mustamlakalar egallashga qaratilgan yo‘nalish",
+          "evidence": "avval bosib olingan mustamlaka hududlarini o'zlashtirish va yangi mustamlakalar bosib olishga qaratildi"
+        },
+        {
+          "kind": "term",
+          "term": "«Uchlar ittifoqi»",
+          "definition": "Germaniya, Avstriya-Vengriya va Italiya birlashgan, jahon tarixiga shu nom bilan kirgan harbiy-siyosiy ittifoq",
+          "evidence": "Yevropada jahon tarixiga ,,Uchlar ittifoqi\" nomi bilan kirgan"
+        },
+        {
+          "kind": "term",
+          "term": "Antanta",
+          "definition": "Fransiya, Buyuk Britaniya va Rossiya birlashgan ittifoq bo‘lib, Yevropa mustamlakachi davlatlarini ikki blokka bo‘ldi",
+          "evidence": "Shu tariqa Antanta vujudga keldi va Yevropaning"
+        },
+        {
+          "kind": "term",
+          "term": "protektorat",
+          "definition": "bir davlatning boshqa davlat hududi ustidan o‘rnatgan boshqaruvi; Fransiya uni Laos va Marokashda joriy etgan",
+          "evidence": "Oradan o'n yil o'tgach, Laos ustidan\nprotektorat o'rnatdi."
+        },
+        {
+          "kind": "term",
+          "term": "ta‘sir doirasi",
+          "definition": "bir davlatning boshqa davlat hududidagi ustunligi; Misrning Buyuk Britaniya ta‘sir doirasida ekanligi tan olingan",
+          "evidence": "Misrning Buyuk Britaniya ta'sir doirasida ekanligini tan oldi"
+        },
+        {
+          "kind": "place",
+          "place": "Tunis",
+          "event": "1881-yilda Fransiya tomonidan bosib olinib, mustamlakachilik kengayishining dastlabki qadami bo‘ldi",
+          "evidence": "Chunki Germaniya Italiyaning ham Tunisga"
+        },
+        {
+          "kind": "place",
+          "place": "Marokash",
+          "event": "1904-yilda Buyuk Britaniya Fransiyaning bu yerdagi manfaatlarini tan oldi, keyin Fransiya protektorat o‘rnatdi",
+          "evidence": "Buyuk Britaniya Fransiyaning Marokashdagi manfaatlarini"
+        },
+        {
+          "kind": "place",
+          "place": "Gibraltar bo‘g‘ozi",
+          "event": "Fransiya emas, Buyuk Britaniya nazoratida qolishi ma‘qul deb hisoblangan strategik bo‘g‘oz",
+          "evidence": "Buyuk Britaniya uchun Gibraltar bo'g'ozi Fransiyaning emas"
+        },
+        {
+          "kind": "cause",
+          "cause": "Prussiya bilan bo‘lgan urushdagi qaqshatqich mag‘lubiyat",
+          "effect": "Fransiyaning Yevropa qit‘asidagi yetakchi mavqeyi yo‘qqa chiqib, u Germaniya hujumidan xavfsiraydigan davlatga aylandi",
+          "evidence": "lan bo'lgan urushdagi qaqshatqich mag'lubiyatdan"
+        },
+        {
+          "kind": "cause",
+          "cause": "1879-yilgi Germaniya va Avstriya-Vengriya ittifoqchilik shartnomasi",
+          "effect": "Fransiyaning xalqaro mavqeyi yanada yomonlashib ketdi",
+          "evidence": "Fransiyaning xalqaro mavqeyini yanada yomonlashtirib yubordi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Italiyaning Tunisga da‘vogarligi va Fransiya bilan munosabatlar keskinlashuvi",
+          "effect": "Italiya Germaniya bilan yaqinlasha boshladi",
+          "evidence": "Fransiya bilan munosabatlari keskinlashgan Italiya endi Germaniya"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ikki imperiya manfaatlarining Bolqon yarimorolida to‘qnash kelishi",
+          "effect": "Rossiya bilan Avstriya-Vengriya munosabatlari tobora yomonlashib bordi",
+          "evidence": "Bunga ikki imperiya manfaatlarining Bolqon"
+        },
+        {
+          "kind": "number",
+          "number": "20",
+          "unit": "mln.",
+          "meaning": "Fransiya mustamlakachilik imperiyasi aholisining soni",
+          "evidence": "20 mln. aholi yashaydigan"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "XIX asr oxiri – XX asr boshlarida Germaniya. Imperiyaning tashkil topishi",
+      "page": 30,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1871-yil 18-yanvar",
+          "date_label": "1871-yil 18-yanvarda",
+          "event": "Versalda to‘plangan german monarxlari Prussiya qiroli Vilgelm I ni Germaniya imperatori deb e‘lon qildi",
+          "evidence": "Germaniyani birlashtibir paytda, ya'ni 1871-yilning 18-yanvar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1871",
+          "date_label": "1871-yilda",
+          "event": "Imperiya reyxstagi umumgerman konstitutsiyasini qabul qilib, Germaniya ittifoqchilar davlati bo‘lib qoldi",
+          "evidence": "1871-yil imperiya reyxstagi umumgerman"
+        },
+        {
+          "kind": "date_event",
+          "date": "1871–1890",
+          "date_label": "1871–1890-yillarda",
+          "event": "Otto fon Bismark deyarli 20 yil davomida mamlakat hukumatini boshqardi",
+          "evidence": "20 yil davomida (1871-1890) mamlakat huku-"
+        },
+        {
+          "kind": "date_event",
+          "date": "70–80-yillar",
+          "date_label": "70–80-yillarda",
+          "event": "Germaniya iqtisodi gurkirab rivojlanib, sanoat mahsulotlari barcha qit‘a davlatlari bozorlariga kirdi",
+          "evidence": "70-80-yillarda Germaniya iqtisodi gurkirab"
+        },
+        {
+          "kind": "date_event",
+          "date": "5 yil",
+          "date_label": "besh yil muddatga",
+          "event": "Reyxstag umumiy saylov huquqi asosida besh yil muddatga saylanadigan palata edi",
+          "evidence": "umumiy saylov huquqi\nasosida besh yil muddatga saylanardi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1914",
+          "date_label": "1914-yilga kelib",
+          "event": "Germaniyada sanoat ishlab chiqarishi 1871-yilga nisbatan 7 marta ko‘paydi",
+          "evidence": "1914-yilga kelib, Germaniyada sanoat ishlab chiqarishi"
+        },
+        {
+          "kind": "person",
+          "person": "Vilgelm I",
+          "role": "Prussiya qiroli va birinchi Germaniya imperatori",
+          "activity": "1871-yil 18-yanvarda Versalda imperator deb e‘lon qilinib, uning boshchiligida Germaniya birlashtirildi",
+          "evidence": "Prussiya qiroli Vilgelm I ni Germaniya imperatori deb e'lon qildilar"
+        },
+        {
+          "kind": "person",
+          "person": "Otto fon Bismark",
+          "role": "Germaniyaning birinchi imperiya kansleri",
+          "activity": "1871–1890-yillarda davlat boshqaruvini yuritib, katta tajribasi bilan mamlakat hukumatini boshqardi",
+          "evidence": "Germaniyaning birinchi imperiya kansleri lavozimiga Otto fon Bismark tayinlandi"
+        },
+        {
+          "kind": "person",
+          "person": "Otto fon Bismark",
+          "role": "Germaniya imperiyasining kansleri, imperatorning bosh amaldori",
+          "activity": "Germaniya tarixida «Temir kansler» laqabi bilan nom qoldirdi",
+          "evidence": ",Temir kansler\" laqabi\nbilan nom qoldirdi."
+        },
+        {
+          "kind": "person",
+          "person": "Tomson",
+          "role": "texnolog va ixtirochi, fosfor olish usulini takomillashtirgan mutaxassis",
+          "activity": "fosfor olish jarayonini soddalashtirib, Germaniya sanoatining gurkirab rivojlanishiga katta imkoniyat yaratdi",
+          "evidence": "Ayniqsa, Tomson tomonidan fosfor olish jarayonining soddalashtirilishi"
+        },
+        {
+          "kind": "term",
+          "term": "Reyxstag",
+          "definition": "Germaniya parlamentining quyi palatasi, u umumiy saylov huquqi asosida besh yil muddatga saylangan",
+          "evidence": "Germaniya parlamentining quyi palatasi."
+        },
+        {
+          "kind": "term",
+          "term": "Bundesrat (Ittifoq Kengashi)",
+          "definition": "Germaniya parlamentining yuqori palatasi bo‘lib, imperiyaning oliy vakolatli muassasalaridan biri hisoblangan",
+          "evidence": "Bundesrat (Ittifoq Kengashi) - Germaniya parlamentining yuqori"
+        },
+        {
+          "kind": "term",
+          "term": "Kansler",
+          "definition": "Germaniya imperiyasida bosh vazir vazifasini bajargan, imperator tayinlaydigan va ozod etadigan oliy amaldor",
+          "evidence": "quyi palatasi.\nKansler\nBosh vazir."
+        },
+        {
+          "kind": "term",
+          "term": "landtag",
+          "definition": "imperiya tarkibiga kirgan ayrim davlatlarning o‘z parlamentlari bo‘lib, ular saqlab qolindi",
+          "evidence": "parlamentlarini (landtaglarini) saqlab qoldi"
+        },
+        {
+          "kind": "term",
+          "term": "shtatgalter (hokim)",
+          "definition": "imperator tayinlaydigan va Elzas-Lotaringiya kabi maxsus imperiya viloyatini idora qiladigan amaldor",
+          "evidence": "hokim (shtatgalter) tomonidan\nidora qilinadigan ,maxsus imperiya viloyati\""
+        },
+        {
+          "kind": "place",
+          "place": "Versal",
+          "event": "1871-yil 18-yanvarda german davlatlari monarxlari to‘planib, Germaniya imperatori e‘lon qilingan joy",
+          "evidence": "german davlatlarining monarxlari\nVersalda to'planib"
+        },
+        {
+          "kind": "place",
+          "place": "Elzas-Lotaringiya",
+          "event": "imperiya tarkibiga hokim (shtatgalter) tomonidan idora qilinadigan maxsus imperiya viloyati sifatida kirdi",
+          "evidence": "Elzas-Lotaringiya imperiya tarkibiga"
+        },
+        {
+          "kind": "place",
+          "place": "Prussiya",
+          "event": "konstitutsiyada birlashgan Germaniyadagi gegemonligi mustahkamlab qo‘yilgan davlat",
+          "evidence": "Konstitutsiyada birlashgan Germaniyada Prussiya gegemonligi mustahkamlab qo'yildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Germaniyaning yagona davlatga birlashtirilganligi",
+          "effect": "yagona ichki bozor vujudga kelib, bojxona to‘siqlari olib tashlandi, yagona pul va o‘lchov birliklari joriy etildi",
+          "evidence": "tufayli yagona ichki bozor vujudga keldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Fransiyaning tovon to‘lashi (3 yil ichida 5 mlrd. frank)",
+          "effect": "Germaniya og‘ir sanoatining rivojida muhim ahamiyatga ega bo‘ldi",
+          "evidence": "Fransiya 3 yil ichida 5 mlrd. frank tovon to'lashga majbur etildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Boshqa davlatlar tajribasi va ilg‘or texnologiyaning joriy etilishi",
+          "effect": "Germaniya sanoatining gurkirab rivojlanishi uchun katta imkoniyatlar yaratildi",
+          "evidence": "Ishlab chiqarishga eng ilg'or texnologiya hamda fan va texnika yutuqlarini joriy etdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sanoatning tez sur‘atlar bilan harbiylashtirilishi",
+          "effect": "ishlab chiqarishning rivojlanishiga ta‘sir etmay qolmadi, harbiy buyurtmalar ko‘paydi",
+          "evidence": "sanoatning tez sur'atlar bilan harbiylashtirilishi ishlab chiqarishning rivojlanishiga ta'sir etmay qolmadi"
+        },
+        {
+          "kind": "number",
+          "number": "17,6",
+          "unit": "mln. tonna",
+          "meaning": "1912-yilda Germaniyada ishlab chiqarilgan cho‘yan miqdori",
+          "evidence": "Cho'yan ishlab chiqarish 1912-yilda 17,6 mln. ton"
+        },
+        {
+          "kind": "number",
+          "number": "60",
+          "unit": "%",
+          "meaning": "Prussiya monarxiyasi hududida yashagan Germaniya aholisining ulushi",
+          "evidence": "aholisining esa 60%i yashayotgan\nPrussiya monarxiyasi yetakchiligida Germaniyaning"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Imperiyaning ichki siyosati",
+      "page": 33,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1875",
+          "date_label": "1875-yilda",
+          "event": "Germaniya sotsial-demokratik partiyasi (GSDP) tashkil etilib, uning ta‘siri o‘sib bordi",
+          "evidence": "1875-yilda tashkil etilgan Germaniya sotsial-demokratik partiyasining"
+        },
+        {
+          "kind": "date_event",
+          "date": "1878",
+          "date_label": "1878-yilda",
+          "event": "sotsialistlarga qarshi favqulodda qonun qabul qilinib, partiya faoliyati amalda taqiqlandi",
+          "evidence": "1878-yilda sotsialistlarga qarshi favqulodda qonun"
+        },
+        {
+          "kind": "date_event",
+          "date": "1888",
+          "date_label": "1888-yilda",
+          "event": "Imperator Vilgelm I vafot etib, taxtni 28 yoshli Vilgelm II egalladi",
+          "evidence": "1888-yilda Vilgelm I vafot etdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1890",
+          "date_label": "1890-yilda",
+          "event": "Bismark iste‘fo berdi, yangi hukumat esa favqulodda qonunni bekor qildi",
+          "evidence": "1890-yilda iste'fo berdi.\nYangi hukumat favqulodda qonunni bekor qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1891",
+          "date_label": "1891-yildan boshlab",
+          "event": "yakshanba dam olish kuni deb belgilanib, 13 yoshdan kichik bolalar mehnati taqiqlandi va xotin-qizlar uchun 11 soatlik ish kuni joriy etildi",
+          "evidence": "1891-yildan boshlab yakshanba dam olish kuni deb belgilandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1906",
+          "date_label": "1906-yilda",
+          "event": "100 mingdan ortiq polyak bolasi maktabga borishdan bosh tortdi",
+          "evidence": "100 mingdan ortiq polyak\nbolalari maktabga borishdan bosh tortdi."
+        },
+        {
+          "kind": "person",
+          "person": "Vilgelm I",
+          "role": "Germaniya imperatori va Prussiya qiroli, davlat boshlig‘i",
+          "activity": "unga qarshi ikki marta suiqasd uyushtirilib, bu 1878-yilgi favqulodda qonun uchun bahona bo‘ldi",
+          "evidence": "imperator Vilgelm I ga nisbatan ikki\nbor uyushtirilgan suiqasd bahona bo'ldi."
+        },
+        {
+          "kind": "person",
+          "person": "Vilgelm II",
+          "role": "1888–1918-yillarda hukmronlik qilgan imperator",
+          "activity": "hokimiyatni hech kim bilan, hatto Bismark bilan ham bo‘lishishni istamay, yakka hukmronlikka intildi",
+          "evidence": "Taxtni 28 yoshli Vilgelm I\n(1888-1918) egalladi. U hokimiyatni hech kim"
+        },
+        {
+          "kind": "person",
+          "person": "Otto fon Bismark",
+          "role": "Germaniya imperiyasining kansleri va hukumat rahbari",
+          "activity": "1889-yilda sotsialistlarga qarshi qonunga doimiy tus berish masalasini Reyxstag oldiga qo‘ydi",
+          "evidence": "Bismark Reyxstag oldiga sotsialistlarga qarshi qonunga doimiy tus berish masalasini qo'ydi"
+        },
+        {
+          "kind": "person",
+          "person": "Otto fon Bismark",
+          "role": "Germaniya hukumatining rahbari, imperiya kansleri",
+          "activity": "katolik cherkovi ta‘siriga qarshi tadbirlar o‘tkazib, ular «Kulturkampf» nomini oldi",
+          "evidence": "katolik cherkovi ta'siriga qarshi qo llagan tadbirlari"
+        },
+        {
+          "kind": "term",
+          "term": "prusslashtirish siyosati",
+          "definition": "Germaniyani Prussiya ta‘siriga bo‘ysundirish, polyak va fransuz hududlarida majburiy nemislashtirish yuritilishi",
+          "evidence": "prusslashtirish siyosati yuritildi."
+        },
+        {
+          "kind": "term",
+          "term": "«Kulturkampf» (Madaniyat uchun kurash)",
+          "definition": "Bismarkning katolik cherkovi ta‘sirini kamaytirishga qaratilgan tadbirlari shu nom bilan atalgan",
+          "evidence": ",Kulturkampf'\n(Madaniyat uchun kurash) degan nom oldi."
+        },
+        {
+          "kind": "term",
+          "term": "Germaniya sotsial-demokratik partiyasi (GSDP)",
+          "definition": "1875-yilda tashkil etilgan, mehnatkashlar manfaatini himoya qilgan eng kuchli va ommaviy partiyalardan biri",
+          "evidence": "GSDP ochiq holatda ishlash sharoitiga o'tdi"
+        },
+        {
+          "kind": "term",
+          "term": "yunkerlar",
+          "definition": "katta yer egalari bo‘lib, qishloq xo‘jaligida yollanma mehnatdan foydalanishga o‘tganlar",
+          "evidence": "jalik yuritishda yollanma mehnatdan foydalanishga o'tdilar"
+        },
+        {
+          "kind": "term",
+          "term": "sotsialistlarga qarshi favqulodda qonun",
+          "definition": "2,5 yil muddatga qabul qilingan bo‘lsa-da, amalda 12 yil davomida amal qilgan ta‘qiq hujjati",
+          "evidence": "Bu qonun partiya faoliyatini amalda taqiqlab qo'ydi"
+        },
+        {
+          "kind": "place",
+          "place": "Polsha",
+          "event": "Germaniyaga o‘tgan hududlarida prusslashtirish yuritilib, polyak tilidagi maktablar yopib qo‘yildi",
+          "evidence": "Polsha va Fransiyaning Germaniyaga o'tgan hududlarida"
+        },
+        {
+          "kind": "place",
+          "place": "Parij",
+          "event": "Parij Kommunasi saboqlari GSDPning tinch, parlament yo‘lini tanlashiga asos bo‘ldi",
+          "evidence": "Parij Kommunasi saboqlaridan kelib chiqib"
+        },
+        {
+          "kind": "cause",
+          "cause": "Polyak tilida o‘qitiladigan maktablarning yopib qo‘yilishi",
+          "effect": "1906-yilda 100 mingdan ortiq polyak bolasi maktabga borishdan bosh tortdi",
+          "evidence": "Polyak tilida o'qitiladigan maktablar\nyopib qo'yildi."
+        },
+        {
+          "kind": "cause",
+          "cause": "1900–1903-yillardagi jahon iqtisodiy inqirozi",
+          "effect": "ishsizlik ortib, ish haqi yanada kamaydi va ishchilarning moddiy ahvoli og‘irlashdi",
+          "evidence": "1900-1903-yillardagi jahon iqtisodiy inqirozi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qishloq xo‘jaligida texnikaning keng qo‘llanilishi",
+          "effect": "ortiqcha ishchi kuchlari shaharga ko‘chib, rivojlanayotgan sanoatni ishchi kuchi bilan ta‘minladi",
+          "evidence": "Qishloq xo jaligida texnikaning keng qo'llanilishi ortiqcha ishchi"
+        },
+        {
+          "kind": "cause",
+          "cause": "GSDPning 1912-yilgi saylovda 34,8% ovoz olishi",
+          "effect": "hukumat yon berib, ish haqi qisman oshirildi va ish kuni qisqartirildi",
+          "evidence": "Natijada, ish haqi qisman bo'lsa-da oshirildi"
+        },
+        {
+          "kind": "number",
+          "number": "34,8",
+          "unit": "%",
+          "meaning": "1912-yilgi parlament saylovida GSDP olgan ovoz ulushi",
+          "evidence": "1912-yilgi parlament saylovida bu partiya 34,8% ovoz"
+        },
+        {
+          "kind": "number",
+          "number": "25",
+          "unit": "%",
+          "meaning": "qishloq xo‘jaligidagi haydaladigan yerlarning yunkerlar qo‘lida to‘plangan qismi",
+          "evidence": "25% ga yaqini yunkerlar (katta yer"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Imperiyaning tashqi siyosati",
+      "page": 35,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1879",
+          "date_label": "1879-yilda",
+          "event": "Germaniya Avstriya-Vengriya imperiyasi bilan ittifoq tuzib, o‘ziga ittifoqdosh topdi",
+          "evidence": "1879-yilda Germaniya Avstriya-\nVengriya bilan ittifoq tuzdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1882",
+          "date_label": "1882-yilda",
+          "event": "Avstriya-Vengriya — Germaniya ittifoqiga Italiya qo‘shilib, «Uchlar ittifoqi» tuzildi",
+          "evidence": "1882-yilda Avstriya-Vengriya - Germaniya ittifoqiga Italiya qo'shildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1889",
+          "date_label": "1889-yilda",
+          "event": "Vilgelm II Falastinga borib, Bag‘dod temiryo‘li qurilishi to‘g‘risida kelishib oldi",
+          "evidence": "1889-yilda Vilgelm II ,,hazrati Iso qabri\"ni ziyorat qilish bahonasi bilan Falastinga bordi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1891",
+          "date_label": "1891-yilda",
+          "event": "shovinistik «German ittifoqi» tashkil etilib, «Germaniya dunyo ustida» shiori ilgari surildi",
+          "evidence": "1891-yilda shovinistik tashkilot - ,,German ittifoqi\" tuzildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1905",
+          "date_label": "1905-yilda",
+          "event": "Germaniya qurolli kuchlari Bosh shtabi ikki frontda — G‘arbda va Sharqda urush rejasini ishlab chiqdi",
+          "evidence": "1905-yilda Germaniya qurolli kuchlari Bosh shtabi ikki frontda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1907",
+          "date_label": "1907-yilda",
+          "event": "Buyuk Britaniya, Fransiya va Rossiya ittifoqi Germaniyaning tashqi ahvolini murakkablashtirib yubordi",
+          "evidence": "Biroq 19o7-yilda tuzilgan Buyuk Britaniya, Fransiya va Rossiya"
+        },
+        {
+          "kind": "person",
+          "person": "Otto fon Bismark",
+          "role": "Germaniya tashqi siyosatini belgilovchi davlat arbobi",
+          "activity": "Germaniyaning xalqaro maydondagi ta‘sirini kuchaytirishni o‘z oldiga vazifa qilib qo‘ydi",
+          "evidence": "Bismark Germaniyaning xalqaro maydondagi ta'sirini kuchaytirishni o'z oldiga vazifa qilib qo'ydi"
+        },
+        {
+          "kind": "person",
+          "person": "Vilgelm II",
+          "role": "Germaniya imperatori, hukmron doiralar yetakchisi",
+          "activity": "hukmron doiralarning bosqinchilik siyosatining «jarchisi» va faol amalga oshiruvchisi bo‘lib chiqdi",
+          "evidence": "Vilgelm II Germaniya hukmron doiralari bosqinchilik siyosatining"
+        },
+        {
+          "kind": "person",
+          "person": "Vilgelm II",
+          "role": "Germaniya imperatori va qurolli kuchlar boshlig‘i",
+          "activity": "«Germaniyaning kelajagi dengizda» shiorini e‘lon qilib, Buyuk Britaniya flotiga teng flot yaratishni maqsad qildi",
+          "evidence": "Germaniya imperatori Vilgelm II ,Germaniyaning kelajagi dengizda\" degan shiorni e'lon qildi."
+        },
+        {
+          "kind": "person",
+          "person": "Simens",
+          "role": "nemis bankiri va yirik moliyachi tadbirkor",
+          "activity": "tashabbusi bilan Berlinni Fors qo‘ltig‘i bilan bog‘lovchi temiryo‘l qurish rejasi tuzildi",
+          "evidence": "Nemis bankiri Simens\ntashabbusi bilan Berlinni Fors qo'ltig'i bilan bog'lovchi temiryo'l\nqurish rejasi tuzildi."
+        },
+        {
+          "kind": "term",
+          "term": "«Uchlar ittifoqi»",
+          "definition": "uchta maslakdosh kuch — Germaniya, Avstriya-Vengriya va Italiya birlashgan harbiy-siyosiy blok",
+          "evidence": "uchta maslakdosh kuchlar birlashib,\n1882-yili harbiy ittifoq - ,Uchlar ittifoqini tuzishga erishdi"
+        },
+        {
+          "kind": "term",
+          "term": "ekspansiya",
+          "definition": "mustamlakachi davlatlarning o‘zgalar hududini, bozorlarini va xomashyo manbalarini bosib olishga qaratilgan siyosati",
+          "evidence": "Ekspansiya (lotincha - kengaytirish) - mustamlakachi davlatlarning"
+        },
+        {
+          "kind": "term",
+          "term": "koalitsiya",
+          "definition": "bir yoki bir qancha davlatga qarshi harakat qilish uchun ikki yoki undan ko‘p davlat tuzgan vaqtinchalik harbiy-siyosiy ittifoq",
+          "evidence": "Koalitsiya (lotincha - birlashgan) - bir yoki bir qancha davlatlarga"
+        },
+        {
+          "kind": "term",
+          "term": "protektorat",
+          "definition": "Germaniya bosib olgan hududni shu nom bilan e‘lon qilgan boshqaruv shakli",
+          "evidence": "bu yerni o'z protektorati deb e'lon qildi"
+        },
+        {
+          "kind": "term",
+          "term": "«Bag‘dod temiryo‘li»",
+          "definition": "Bosfordan Kichik Osiyo orqali Bag‘dodga va undan Fors qo‘ltig‘igacha qurilishi rejalashtirilgan yo‘l",
+          "evidence": "Bu yo'1 ,Bag'dod temiryo'li\" nomi bilan tarixga kirdi"
+        },
+        {
+          "kind": "place",
+          "place": "Angra-Peken buxtasi",
+          "event": "Afrikaning janubi-g‘arbiy sohilidagi buxta; 1882-yilda Bremen savdogarlari bu yerga kelib hudud sotib olgan",
+          "evidence": "Angra - Peken buxtasiga\nkeldilar."
+        },
+        {
+          "kind": "place",
+          "place": "Kil kanali",
+          "event": "Shimoliy dengizni Boltiq dengizi bilan tutashtirgan kema kanali ochildi",
+          "evidence": "Shimoliy dengizni Boltiq dengizi bilan tutashtirgan Kil kanali"
+        },
+        {
+          "kind": "place",
+          "place": "Bosfor va Dardanell bo‘g‘ozlari",
+          "event": "Qora dengizni O‘rtayer dengizi bilan bog‘laydigan, Usmonli davlatiga qarashli bo‘g‘ozlar; Rossiya ularga da‘vogarlik qildi",
+          "evidence": "Bosfor va Dardanell bo'g'ozlariga, Istanbul shahriga Rossiya da'vogarlik qila boshladi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Germaniyaning mustamlakalarga ega emasligi",
+          "effect": "hukmron doiralar «quyosh hammaning yelkasiga birday nur sochishi» talabi bilan chiqdi",
+          "evidence": "Germaniya hukmron doiralari ,quyoshning hammaning yelkasiga"
+        },
+        {
+          "kind": "cause",
+          "cause": "Rossiya va Buyuk Britaniyaning Germaniya kuchayishini istamasligi",
+          "effect": "Bismark o‘ziga ittifoqdosh izlab, uni Avstriya-Vengriya imperiyasidan topdi",
+          "evidence": "Biroq Rossiya bilan Buyuk Britaniya Germaniyaning kuchayib ketishini istamas edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Italiyaning Fransiya bilan munosabatlari keskinlashishi (Fransiya Tunisni bosib olgani)",
+          "effect": "Italiya Germaniya va Avstriya-Vengriya ittifoqiga qo‘shildi",
+          "evidence": "Bunga Italiyaning Fransiya bilan\nmunosabati keskinlashishi sabab bo'ldi."
+        },
+        {
+          "kind": "cause",
+          "cause": "«Bag‘dod temiryo‘li»ning Fors qo‘ltig‘iga chiqishi",
+          "effect": "Buyuk Britaniya Quvaytda o‘z protektoratini o‘rnatdi",
+          "evidence": "Britaniya ,Bag'dod temiryo'lining. Fors qo'ltig'iga chiqishiga yo'l"
+        },
+        {
+          "kind": "number",
+          "number": "200",
+          "unit": "ta",
+          "meaning": "Bremen savdogarlari yerli qabila boshlig‘iga bergan eski miltiqlar soni",
+          "evidence": "200 ta eski miltiq va 2000 marka badaliga"
+        },
+        {
+          "kind": "number",
+          "number": "5",
+          "unit": "baravar",
+          "meaning": "Germaniya egallagan mustamlakalar hududining o‘z hududidan ortiq bo‘lganligi",
+          "evidence": "mustamlakalar hududi ozining hududidan deyarli\nmuqarrarligi\nbesh baravar ortiq edi."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "XIX asr oxiri – XX asr boshlarida Buyuk Britaniyaning siyosiy va iqtisodiy ahvoli",
+      "page": 39,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1867",
+          "date_label": "1867-yilda",
+          "event": "parlament islohoti mulk senzini kamaytirib, erkak aholining 50 foizini saylov huquqi bilan ta‘minladi",
+          "evidence": "1867-yili o'tkazilgan parlament islohoti tufayli saylovda qatnashuvchilar uchun mulk senzi kamaytirildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1864–1874",
+          "date_label": "1864–1874-yillarda",
+          "event": "U. Gladston bosh vazirligi davrida tredyunionlar huquqi, yashirin ovoz berish va maktab islohoti o‘tkazildi",
+          "evidence": "(1864-1874-yillar) hukumat qator islohotlar o'tkazdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1875",
+          "date_label": "1875-yilda",
+          "event": "haftada 54 soatlik ish vaqti belgilanib, 10 yoshdan kichik bolalarni ishga qabul qilish taqiqlandi",
+          "evidence": "1875-yilda haftada 54 soatlik ish vaqti belgilandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1911",
+          "date_label": "1911-yilda",
+          "event": "yangi parlament islohoti demokratik jamiyat va huquqiy davlatchilik taraqqiyotida muhim bosqich bo‘ldi",
+          "evidence": "1911-yilda yana bir marta parlament islohoti o'tkazildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning so‘nggi choragi",
+          "date_label": "XIX asrning so‘nggi choragida",
+          "event": "Buyuk Britaniya iqtisodiy jihatdan orqada qola boshladi",
+          "evidence": "XIX asrning so'nggi choragida Buyuk Bri-"
+        },
+        {
+          "kind": "date_event",
+          "date": "80-yillar – XX asr boshi",
+          "date_label": "80-yillardan XX asr boshlarigacha",
+          "event": "Germaniyaning Buyuk Britaniyaga eksporti 41 foiz ko‘payib, AQSHdan eksport ikki martadan ziyod oshdi",
+          "evidence": "ya'ni 80-yillardan tortib XX asr boshlarigacha"
+        },
+        {
+          "kind": "person",
+          "person": "U. Gladston",
+          "role": "Liberallar partiyasi yetakchisi va bosh vazir",
+          "activity": "1864–1874-yillarda tredyunionlarga sudda himoya huquqini, yashirin ovoz berishni va maktab islohotini joriy etdi",
+          "evidence": "Liberallar partiyasidan bo'lgan U. Gladston bosh vazirligi davrida"
+        },
+        {
+          "kind": "person",
+          "person": "B. Dizraeli",
+          "role": "Buyuk Britaniya bosh vaziri va hukumat rahbari",
+          "activity": "1875-yilda haftada 54 soatlik ish vaqtini belgilab, 10 yoshdan kichik bolalar mehnatini taqiqladi",
+          "evidence": "B.Dizraeli bosh vazirligi davrida ham qator muhim tadbirlar"
+        },
+        {
+          "kind": "person",
+          "person": "Buyuk Britaniya qirollari",
+          "role": "davlat boshlig‘i, amalda davlatni boshqarmaganlar",
+          "activity": "ichki va tashqi siyosat parlament tuzadigan hukumat qo‘lida bo‘lgan",
+          "evidence": "Buyuk Britaniya qirollari davlat boshlig'i edi, xolos"
+        },
+        {
+          "kind": "term",
+          "term": "cheklangan monarxiya",
+          "definition": "qirol hokimiyati asosiy rol o‘ynamaydigan, davlat siyosatini parlament tuzadigan hukumat boshqaradigan tuzum",
+          "evidence": "Buyuk Britaniya bu davrda ham cheklangan mo-"
+        },
+        {
+          "kind": "term",
+          "term": "kuchli ikki partiyaviy tizim",
+          "definition": "Konservatorlar va Liberallar partiyalari mavjud bo‘lib, saylovda g‘olib chiqqan partiya hukumat tuzadigan tartib",
+          "evidence": "Mamlakatda kuchli ikki partiyaviy\ntizim qaror topgan bo'lib"
+        },
+        {
+          "kind": "term",
+          "term": "tredyunionlar",
+          "definition": "ishchilarning kasaba uyushmalari bo‘lib, Gladston davrida o‘z manfaatlarini sudda himoya qilish huquqini oldi",
+          "evidence": "tredyunionlarga o'z manfaatlarini sudda himoya qilish huquqi berildi"
+        },
+        {
+          "kind": "term",
+          "term": "kapital",
+          "definition": "lotincha «bosh, asosiy» ma‘nosini beruvchi sarmoya, o‘z egasiga daromad keltiruvchi vositalar va mablag‘lar",
+          "evidence": "Kapital (lotincha - bosh, asosiy) - sarmoya"
+        },
+        {
+          "kind": "term",
+          "term": "«jahon ustaxonasi»",
+          "definition": "XIX asrda Buyuk Britaniyaning sanoat yetakchiligiga berilgan nom; keyinchalik u o‘tmishga aylandi",
+          "evidence": "s,Jahon ustaxonasi deb nom olgan Buyuk"
+        },
+        {
+          "kind": "place",
+          "place": "London",
+          "event": "jahon moliya markazi hisoblangan shahar, jahon savdosida hisob-kitob funt sterlingda olib borilgan",
+          "evidence": "London jahon moliya markazi hisoblangan."
+        },
+        {
+          "kind": "place",
+          "place": "Buyuk Britaniya",
+          "event": "jahon ustaxonasi maqomini yo‘qotib, sanoat ishlab chiqarish hajmi bo‘yicha 3-o‘ringa tushib ketdi",
+          "evidence": "chiqarish hajmi bo'yicha 3-o'ringa tushib ketdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kapitalning asosan mustamlakalarga chiqarilishi",
+          "effect": "Buyuk Britaniyaning o‘z korxonalari zamonaviy texnika va texnologiyalar bilan qayta jihozlanmay qoldi",
+          "evidence": "Chunki mustamlakalar xomashyo va arzon\nishchi kuchi manbayi edi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Chetga kapital chiqarishning katta foyda keltirishi",
+          "effect": "foyda ketidan quvish oqibatida sanoat mahsulotlarining raqobatbardoshlik quvvati pasaydi",
+          "evidence": "Buning natijasida Buyuk Britaniya sanoat mahsulotlarining raqobatbardoshlik quvvati pasaydi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yosh rivojlanayotgan davlatlarning ingliz tovarlariga katta boj joriy etishi",
+          "effect": "bojsiz savdo an‘anasiga sodiq qolgan Buyuk Britaniyaning savdo mavqeyi zaiflashdi",
+          "evidence": "yosh rivojlanayotgan davlatlar ingliz tovarlariga"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xalqaro maydonda bo‘lingan dunyoni qayta bo‘lish uchun kurashning kuchayishi",
+          "effect": "Buyuk Britaniya harbiy xarajatlarni ko‘paytirishga majbur bo‘ldi",
+          "evidence": "Buyuk Britaniya harbiy xarajatlarni ko'paytirishga majbur bo'ldi"
+        },
+        {
+          "kind": "number",
+          "number": "50",
+          "unit": "%",
+          "meaning": "1867-yilgi islohotdan keyin saylov huquqiga ega bo‘lgan erkak aholi ulushi",
+          "evidence": "erkak aholining 50\nfoizi saylov huquqiga ega bo'ldi"
+        },
+        {
+          "kind": "number",
+          "number": "5",
+          "unit": "marta",
+          "meaning": "chetga chiqarilgan kapital foydasining tashqi savdo foydasidan ortib ketganligi",
+          "evidence": "tashqi savdo keltirgan foydadan 5 marta ko'p bo'lgan"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Buyuk Britaniyaning ichki siyosati",
+      "page": 42,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1875",
+          "date_label": "1875-yilda",
+          "event": "parlament deputati Parnell Irlandiyaga muxtoriyat (gomrul) berish haqidagi qonun qabul qilinishini talab qildi",
+          "evidence": "1875-yilda Buyuk Britaniyaning parlamenti deputati, olsterlik"
+        },
+        {
+          "kind": "date_event",
+          "date": "1881",
+          "date_label": "1881-yilda",
+          "event": "hukumat gomrul o‘rniga «Yer-suv akti»ni taklif qilib, ijara miqdorini komissiya belgilaydigan bo‘ldi",
+          "evidence": "Buyuk Britaniya hukumati 188l-yilda irlandlarga gomrul o'rniga"
+        },
+        {
+          "kind": "date_event",
+          "date": "1882",
+          "date_label": "1882-yilda",
+          "event": "Dublinda Irlandiya ishlari bo‘yicha stats-sekretar va Irlandiya lord-hokimi o‘ldirildi",
+          "evidence": "1882-yilda Dublinda Irlandiya\nishlari bo'yicha stats-sekretar va Irlandiya lord-hokimi o'ldirildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1886",
+          "date_label": "1886-yilda",
+          "event": "hukumat Irlandiyaga gomrul berishga qaror qildi, biroq parlament uni rad etdi",
+          "evidence": "Oxir-oqibatda, 1886-yilda hukumat gomrul berishga qaror qildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1905",
+          "date_label": "1905-yilda",
+          "event": "A. Griffit «Shinfeyn» («Biz o‘zimiz») partiyasini tuzib, mustaqil parlament tashviqotini boshladi",
+          "evidence": "1905-yili ,Shinfeyn (,Biz"
+        },
+        {
+          "kind": "date_event",
+          "date": "1912",
+          "date_label": "1912-yilda",
+          "event": "hukumat gomrul haqidagi qonun loyihasini yana parlamentga taqdim etdi, lekin u tasdiqlanmadi",
+          "evidence": "Hukumat 1912-yilda parlamentga yana gomrul haqidagi qonun"
+        },
+        {
+          "kind": "person",
+          "person": "Parnell",
+          "role": "Buyuk Britaniya parlamenti deputati, olsterlik protestant va yer egasi",
+          "activity": "Irlandiyaga muxtoriyat huquqi berilishi haqida qonun (gomrul) qabul qilishni talab qildi",
+          "evidence": "yer egasi Parnell Irlandiyaga muxtoriyat huquqi berilishi"
+        },
+        {
+          "kind": "person",
+          "person": "Parnell",
+          "role": "Irland muxolifat guruhining rahbari va parlament deputati",
+          "activity": "boykotni kuchaytirgani uchun qamoqqa olindi, «Yer-suv ligasi» esa taqiqlab qo‘yildi",
+          "evidence": "Parnell qamoqqa olindi. Yer-suv ligasi\" taqiqlab qo'yildi."
+        },
+        {
+          "kind": "person",
+          "person": "A. Griffit",
+          "role": "«Shinfeyn» partiyasining asoschisi va rahbari",
+          "activity": "Irlandiya mustaqil parlamenti tuzish tashviqotini olib bordi",
+          "evidence": "Ushbu guruhning rahbari A. Griffit"
+        },
+        {
+          "kind": "person",
+          "person": "D. Lloyd-Jorj",
+          "role": "Liberallar hukumati rahbari va Buyuk Britaniya bosh vaziri",
+          "activity": "«Leyboristlar partiyasining tuzilishi Liberallar hukumatining xatosi» deb afsus bilan qayd etgan",
+          "evidence": "rahbari D. Lloyd-Jorj ,Leyboristlar partiyasining tuzilishi Liberallar"
+        },
+        {
+          "kind": "term",
+          "term": "gomrul",
+          "definition": "Irlandiyaga beriladigan o‘z-o‘zini idora qilish huquqi",
+          "evidence": "Gomrul - o'z-o'zini idora qilish (lrlandiyada)."
+        },
+        {
+          "kind": "term",
+          "term": "boykot",
+          "definition": "Britaniya tovarlari va muassasalarini inkor qilish; irlandlar kurashining ommaviy usuli sifatida kuchaydi",
+          "evidence": "Britaniya tovarlariga boykot kuchaydi."
+        },
+        {
+          "kind": "term",
+          "term": "«Yer-suv ligasi»",
+          "definition": "Irland dehqonlarining ommaviy tashkiloti bo‘lib, Parnell rahbarlik qilgan muxolifatning tayanchi bo‘ldi",
+          "evidence": "dehqonlarining ,Yer-suv ligasi\" nomli ommaviy tashkiloti"
+        },
+        {
+          "kind": "term",
+          "term": "tred-yunionlar",
+          "definition": "kasaba uyushmalari; Britaniya ishchilar harakatida katta rol o‘ynab, kurashning parlament yo‘lini tanlagan",
+          "evidence": "tred-yunionlar (kasaba uyushmalari) katta rol o'ynagan"
+        },
+        {
+          "kind": "term",
+          "term": "Leyboristlar partiyasi",
+          "definition": "1900-yilda tuzilib, 1906-yildan shu nom bilan atalgan, ishchilar manfaatini parlament yo‘li bilan himoya qilgan partiya",
+          "evidence": "Bu partiya 1900-yilda tuzilgan va u 1906-yildan boshlab Leyboristlar partiyasi deb atala boshlandi"
+        },
+        {
+          "kind": "place",
+          "place": "Irlandiya",
+          "event": "Britaniya ichki siyosatidagi eng keskin muammo bo‘lib, ijaraga yer olgan dehqonlari nihoyatda muhtojlikda yashadi",
+          "evidence": "Irlandiyaning ijaraga yer olib kun ko'ruvchi dehqonlari nihoyatda muhtojlikda yashardilar"
+        },
+        {
+          "kind": "place",
+          "place": "Amerika",
+          "event": "tirikchilik ko‘yida irlandiyaliklar ommaviy ko‘chib ketib, Irlandiyada aholi soni kamaydi",
+          "evidence": "Amerikaga ko'chib ketdilar. Ochlik, o'lim va ko'chib ketish"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yerlarning Britaniya lendlordlari qo‘liga o‘tishi",
+          "effect": "irland dehqonlari muhtojlikda yashab, ochlik va ko‘chib ketish tufayli aholi soni kamaydi",
+          "evidence": "Chunki yerlarni Britaniya lendlordlari\no'zlariniki qilib olgan edilar."
+        },
+        {
+          "kind": "cause",
+          "cause": "Parnellning qamoqqa olinishi va «Yer-suv ligasi»ning taqiqlanishi",
+          "effect": "irland dehqonlari Parnellning da‘vati bilan lendlordlarga ijara haqi to‘lashdan bosh tortdi",
+          "evidence": "Irland dehqonlari Parnellning da'vati bilan britaniyalik lendlordlarga ijara haqi to'lashdan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Parnell tutgan kelishuvchilik va murosaga intilish yo‘li",
+          "effect": "Irlandiyadagi mayda terrorchi guruhlar faollashib, yangi terrorchilik to‘lqini ko‘tarildi",
+          "evidence": "Biroq Parnell tutgan kelishuvchilik yo'li Irlandiyadagi mayda terrorchi guruhlarni faollashtirib yubordi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Jahon urushining boshlanishi va ichki barqarorlik zarurati",
+          "effect": "parlament gomrul haqidagi qonunni tasdiqlashga majbur bo‘ldi",
+          "evidence": "Biroq boshlanib ketgan jahon urushi parlamentni gomrul haqidagi"
+        },
+        {
+          "kind": "number",
+          "number": "29",
+          "unit": "ta deputatlik o‘rni",
+          "meaning": "Leyboristlar partiyasi birinchi parlament saylovida egallagan o‘rinlar soni",
+          "evidence": "partiyasi birinchi parlament saylovidayoq 29 ta deputatlik o'rnini"
+        },
+        {
+          "kind": "number",
+          "number": "15",
+          "unit": "yil",
+          "meaning": "«Yer-suv akti» bo‘yicha ijara miqdori komissiya tomonidan belgilanadigan muhlat",
+          "evidence": "Unda 15 yil muhlatga ijara miqdorini\nadolat bilan belgilaydigan va ijarachiga"
+        }
+      ]
+    }
+  ]
+}

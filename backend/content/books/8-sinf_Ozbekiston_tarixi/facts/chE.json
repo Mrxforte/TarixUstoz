@@ -1,0 +1,948 @@
+{
+  "chapter": "II BOB. XIVA XONLIGI / IV BOB. XVIII-XIX ASRNING",
+  "topics": [
+    {
+      "number": 29,
+      "title": "Xiva xonligi tarixi bo‘yicha manbalar",
+      "page": 106,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1873",
+          "date_label": "1873-yilda",
+          "event": "Xiva xonligi Rossiya imperiyasi tomonidan bosib olinib, xon devonidagi hujjatlar Peterburg shahriga olib ketilgan",
+          "evidence": "Xiva xonligi Rossiya imperiyasi tomonidan bosib olingach, 1873-yilda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1962",
+          "date_label": "1962-yilda",
+          "event": "Xiva xonligi arxivi hujjatlari Toshkentdagi O‘zbekiston Davlat arxiviga olib kelindi",
+          "evidence": "Olib ketilgan hujatlar faqat 1962-yildagina Toshkentdagi\nO'zbekiston Davlat arxiviga olib kelindi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1620–1622",
+          "date_label": "1620–1622-yillarda",
+          "event": "I. D. Xoxlov Buxoro va Xiva xonliklarida elchi bo‘lib, elchilik natijalarini Rossiya podshosiga yetkazgan",
+          "evidence": "Rossiya elchisi 1. D. Xoxlov 1620-1622-yil-\nXiva tarixi bo'yicha\nlarda Buxoro va Xiva xonliklarida bo'ldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1725",
+          "date_label": "1725-yilda",
+          "event": "Florio Beneveni Xivaga Rossiya elchisi bo‘lib kelib, Pyotr I ning muhim topshiriqlarini bajargan",
+          "evidence": "1725-yilda Xivaga Rossiya elchisi bo'lib kelgan Florio Beneveni"
+        },
+        {
+          "kind": "date_event",
+          "date": "1819",
+          "date_label": "1819-yilda",
+          "event": "N. I. Muravyov Xiva xonligiga elchi sifatida kelib, xonlik haqida batafsil esdalik yozib qoldirgan",
+          "evidence": "Rossiya elchisi sifatida Xiva xonligiga 1819-yilda kelgan N.I. Muravyov"
+        },
+        {
+          "kind": "date_event",
+          "date": "1842",
+          "date_label": "1842-yilda",
+          "event": "Xiva va Rossiya o‘rtasida «Majburiyatlar akti» shartnomasi imzolanib, uni elchi G. Danilevskiy tayyorlagan",
+          "evidence": "1842-yilda Xiva va Rossiya o'rtasida ,Majburiyatlar akti** shartnomasining imzolanishiga erishgan elchi G. Danilevskiy"
+        },
+        {
+          "kind": "date_event",
+          "date": "1858",
+          "date_label": "1858-yilda",
+          "event": "Xiva va Buxoroga diplomatik missiya yuborilib, unga rahbar sifatida N. Ignatyev tayinlangan",
+          "evidence": "1858-yilda Xiva va Buxoroga yuborilgan diplomatik missiya rahbari N. Ignatyev"
+        },
+        {
+          "kind": "person",
+          "person": "Abulg‘oziy Bahodirxon",
+          "role": "Xiva xoni va tarixchi olim, «Shajarayi turk» asarining muallifi",
+          "activity": "Asarida turkiy qabilalar shajarasi, Xiva va xivaliklar tarixi hamda davlatni birlashtirish kurashi bayon etilgan",
+          "evidence": "Abulg'oziy Bahodirxonning (1603-1664) ,Shajarayi turk\" asari,"
+        },
+        {
+          "kind": "person",
+          "person": "Munis",
+          "role": "Xiva xonligi tarixchisi, «Firdavs uliqbol» asarining muallifi",
+          "activity": "Asarida Xorazmning 300 yillik tarixini yaxlit va tarixiy ketma-ketlikda bayon etgan",
+          "evidence": "Munisning ,Firdavs uliqbol\" deb alaluvchi tarixiy asarining ahamiyati"
+        },
+        {
+          "kind": "person",
+          "person": "Ogahiy",
+          "role": "Munis vafotidan so‘ng xonlik tarixini yozishni davom ettirgan tarixchi",
+          "activity": "Xonlik tarixini yozish ishini davom ettirib, tarix faniga oid bir qancha asarlar qoldirgan",
+          "evidence": "Munis vafot ctgach, xonlik tarixini yozish ishini Ogahiy davom\nettirdi."
+        },
+        {
+          "kind": "person",
+          "person": "X. Vamberi",
+          "role": "Venger sharqshunos olimi, «O‘rta Osiyo bo‘ylab sayohat» asari muallifi",
+          "activity": "Asarida Xiva tarixi bo‘yicha eng qimmatli ma’lumotlarni to‘plagan, kitob o‘zbek tilida ham chop etilgan",
+          "evidence": "taniqli venger sharqshunos olimi X. Vamberi yozib qoldirgan .O'rla Osiyo bo'ylab sayohat\"* deb"
+        },
+        {
+          "kind": "term",
+          "term": "Arxiv hujjatlari",
+          "definition": "Xiva xonligining davlat tuzumi, soliq va majburiyatlari, pul muomalasi va aholi xo‘jaligi haqida ma’lumot beruvchi hujjatlar",
+          "evidence": "Arxiv hujatlari Xiva xonligining davlat tuzumi, soliq va majburiyatlar:"
+        },
+        {
+          "kind": "term",
+          "term": "Esdalik",
+          "definition": "Elchilik safari chog‘ida ko‘rgan-kechirganlari asosida yozilgan, tarix uchun qimmatli manba bo‘lgan asar",
+          "evidence": "N.I. Muravyov ham yozib qoldirgan csdaliklar cng qimmatli manbalar qatorida turadi."
+        },
+        {
+          "kind": "term",
+          "term": "«Shajarayi turk»",
+          "definition": "Abulg‘oziy Bahodirxonning turkiy qabilalar shajarasiga bag‘ishlangan, juda katta tarixiy dalillar to‘plangan asari",
+          "evidence": "Asar turkiy qabilalar shajarasi haqida qimmaili ma'lumotlar beradi."
+        },
+        {
+          "kind": "term",
+          "term": "Bojxona to‘lovlari",
+          "definition": "Bir davlatdan ikkinchisiga o‘tishda, hatto bir mamlakat ichida ham olinadigan yig‘im; savdo rivojiga to‘siq bo‘lgan",
+          "evidence": "bojxona to'lovlari savdoni\nrivojlantirishga lo'siq bo'layoiganligi"
+        },
+        {
+          "kind": "place",
+          "place": "Peterburg",
+          "event": "1873-yilda Xiva xon devonida saqlanayotgan hujjatlar shu shaharga olib ketilgan",
+          "evidence": "xon devonida saqlanayotgan hujjatlar ham Peterburg shahriga olib"
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "Xiva xonlarining arxivi shu shaharga keltirilib, hozir Markaziy davlat arxivida saqlanmoqda",
+          "evidence": "1962-yil - Xiva xonlari arxivi Toshkent shahriga olib kelindi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Tarixiy ma’lumotlarning asosini tarixiy hujjatlarni o‘rganish tashkil etishi",
+          "effect": "Xiva xonligi tarixi bo‘yicha bilimlar birinchi navbatda tarixiy hujjatlar asosida to‘plangan",
+          "evidence": "birinchi navbatda, tarixiy hujatlarni o'rganish natijasida to'plangan."
+        },
+        {
+          "kind": "cause",
+          "cause": "Bojning bir davlat ichida ham viloyatdan viloyatga o‘tganda olinishi",
+          "effect": "Savdo-sotiqning rivojlanishiga jiddiy to‘siq paydo bo‘lgan",
+          "evidence": "viloyaldan ikkinchisiga o'1ganda ham olinishini qayd elgan."
+        },
+        {
+          "kind": "cause",
+          "cause": "Xiva xoni Sherg‘oziyxonning yo‘qotilishi",
+          "effect": "Mamlakatda tinchlik o‘rnatilib, barcha yo‘llar ochiq bo‘lishi mumkin edi",
+          "evidence": "Agar Xiva xoni Sherg'oziyxon yo'qotilsa, bu yerda tinchlik\no'rnatiladi va hamma yo'llar ochiq bo'ladi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Muravyov esdaligining ilmiy jihatdan nihoyatda qimmatli bo‘lishi",
+          "effect": "Kitob fransuz va nemis tillariga tarjima qilingan",
+          "evidence": "Shuning uchun ham bu kitob fransuz. va nemis\ntillariga tarjima qilingan edi."
+        },
+        {
+          "kind": "number",
+          "number": "300",
+          "unit": "yillik",
+          "meaning": "Munisning «Firdavs uliqbol» asari qamrab olgan Xorazm tarixi davrining uzunligi",
+          "evidence": "Xorazmning 300 yillik tarixi (1572-1825)"
+        },
+        {
+          "kind": "number",
+          "number": "2500",
+          "unit": "yillik",
+          "meaning": "Xiva shahrining yubiley sanasi; shu munosabat bilan «Xiva – ming gumbaz shahri» kitobi chop etilgan",
+          "evidence": "2500 yillik yubileyi munosabati bilan chop etilgan"
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "title": "XVI–XIX asrning birinchi yarmida qoraqalpoqlar",
+      "page": 110,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "VIII asr",
+          "date_label": "VIII asrda",
+          "event": "Amudaryo quyi etagida turkiy bijanaklar negizida qoraqalpoq xalqining shakllanish jarayoni boshlandi",
+          "evidence": "Qoraqalpoqlarning Amudaryo quyi elagida\nturkiy bijanaklar ncgizida xalq sifalida shakllanish jarayoni VIlI asrda\nboshlangan edi."
+        },
+        {
+          "kind": "date_event",
+          "date": "X–XI asrlar",
+          "date_label": "X–XI asrlarda",
+          "event": "Qoraqalpoq xalqining shakllanish jarayoni nihoyasiga yetib, shu davrda ularning davlati ham tashkil etilgan",
+          "evidence": "Bu jarayon X-XI asrlarda nihoyasiga yetdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIII asrning 20-yillari",
+          "date_label": "XIII asrning 20-yillarida",
+          "event": "Qoraqalpoq davlati Chingizxon hujumi natijasida barham topgan",
+          "evidence": "davlati Chingizxon hujumi natijasida XIlI asrning 20-yillarida barham\ntopdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1556",
+          "date_label": "1556-yilda",
+          "event": "No‘g‘ay xonligi parchalanib, qoraqalpoqlar Sirdaryoning quyi etagiga ko‘chib kelgan",
+          "evidence": "1556-yilda q0-\nraqalpoqlar Sirdaryoning quyi etagiga ko'chib keldilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1598",
+          "date_label": "1598-yilda",
+          "event": "Qoraqalpoqlarning alohida xalq ekanligi Buxoro xoni Abdullaxon II ning yorlig‘ida qayd etilgan",
+          "evidence": "Qoraqalpoqlarning alohida bir xalq ekanligini 1598- yilda Buxoro"
+        },
+        {
+          "kind": "date_event",
+          "date": "1723",
+          "date_label": "1723-yilda",
+          "event": "Jung‘orlar Sirdaryoning o‘rta qismini egallab, qoraqalpoqlar yana ko‘chishga majbur bo‘lgan",
+          "evidence": "1723-yilda\njung'orlar bostirib kclib, Sir-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1811",
+          "date_label": "1811-yilda",
+          "event": "Qoraqalpoqlar Xiva xonligiga to‘la bo‘ysundirilgan",
+          "evidence": "1811-yilda\ncsa qoraqalpoqlar Xiva xonligiga to'la bo'ysundirildi."
+        },
+        {
+          "kind": "person",
+          "person": "Chingizxon",
+          "role": "Mo‘g‘ul hukmdori, Xorazmshohlar davlatini bosib olgan sarkarda",
+          "activity": "Urganch shahrini egallab, uni suvga bostirish maqsadida Amudaryo to‘g‘onini buzdirgan",
+          "evidence": "Chingizxon Xorazmshohlar davlati poytaxti Urganch shahrini egallagach"
+        },
+        {
+          "kind": "person",
+          "person": "Abdullaxon II",
+          "role": "Buxoro xoni, qoraqalpoqlar tilga olingan yorliq muallifi",
+          "activity": "1598-yilda bergan yorlig‘ida «qoraqalpoqlar» so‘zini qayd ettirgan",
+          "evidence": "xoni Abdullaxon II ning bir yorlig'ida .qoraqalpoqlar\" degan so'z"
+        },
+        {
+          "kind": "person",
+          "person": "Abulxayrxon",
+          "role": "Qozoqlarning Kichik Juz xonligi hukmdori",
+          "activity": "1726-yilda Peterburgga o‘z elchilarini jo‘natib, Rossiya bilan muzokaralar boshlagan",
+          "evidence": "1726-yilda qozoqlarning Kichik Juz. xoni Abulxayrxon Peterburgga"
+        },
+        {
+          "kind": "person",
+          "person": "Oydo‘stbiy",
+          "role": "Qoraqalpoq biyi, Xiva hukmronligiga qarshi qo‘zg‘olon rahbari",
+          "activity": "Qo‘zg‘olonga boshchilik qilgan, 1827-yilda Xiva xoni Olloqulixon uni tor-mor etib, qatl ettirgan",
+          "evidence": "poqlar biyi Oydo\"stbiy boshchilik qildi."
+        },
+        {
+          "kind": "term",
+          "term": "«Qoraqalpoq» atamasi",
+          "definition": "Tepa tomoni ingichkalashib chiqqan qalpoq kiyib yurganliklari uchun xalqqa berilgan nom",
+          "evidence": "Qoraqalpoqlar tepa tomoni ingichkalashib chiqqan bosh kiyim"
+        },
+        {
+          "kind": "term",
+          "term": "Biylar og‘asi",
+          "definition": "Qoraqalpoqlarda butun hokimiyatni qo‘lida to‘plagan, maqomi xon maqomiga tenglashtirilgan mansabdor",
+          "evidence": "Butun hokimiyat Biylar og'asi qo'lida\nto'plandi."
+        },
+        {
+          "kind": "term",
+          "term": "Yasoq",
+          "definition": "Qoraqalpoqlar to‘laydigan soliq; u Rossiyaga emas, qozoqlarning Kichik Juz xonligiga to‘langan",
+          "evidence": "Kichik Juz. xonligiga yasoq\nto'lashi tan olindi."
+        },
+        {
+          "kind": "term",
+          "term": "Oqsoqollar kengashi",
+          "definition": "Ovul hayotiga rahbarlik qilgan, oqsoqollardan iborat boshqaruv organi",
+          "evidence": "Ovul boshlang'ich ma'muriy bo'g'in\nbo'lib, ularning butun hayotiga Oqsoqollar kengashi rahbarlik qilardi."
+        },
+        {
+          "kind": "place",
+          "place": "Kerder",
+          "event": "Qoraqalpoq davlatining poytaxti bo‘lgan shahar; hozirgi Kegayli tumani hududida joylashgan",
+          "evidence": "O'z hukmdori va davlat\nboshqaruvi tizimiga cga bo'lgan Kcrdcr shahri"
+        },
+        {
+          "kind": "place",
+          "place": "Jankent",
+          "event": "Sirdaryo bo‘yida joylashgan, qoraqalpoqlar o‘z davlatining poytaxti bo‘lgan shahar",
+          "evidence": "ular poytaxti\nJankcnt shahri bo'lgan o'z davlatlariga cga edi."
+        },
+        {
+          "kind": "place",
+          "place": "Qo‘ng‘irot va Chimboy",
+          "event": "Amudaryoning so‘l va o‘ng sohilidagi qoraqalpoqlarning bosh ma’muriy markazlari",
+          "evidence": "Amudaryoning so'l sohilidagi Qo'ng'irol, o'ng sohilidagi\nChimboy shaharlari qoraqalpoqlarning bosh ma'muriy markaziga aylandi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Chingizxonning Amudaryo to‘g‘onini buzdirishi",
+          "effect": "Amudaryo o‘zani o‘zgarib, suvsiz qolgan Orolbo‘yi qoraqalpoqlari ko‘chishga majbur bo‘lgan",
+          "evidence": "uni suvga bostirish maqsadida Amudaryo to'g'onini buzdirib\nlashlaganligi oqibatida Amudaryoning o'zani ham o'zgardi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Qoraqalpoqlarning Rossiya fuqaroligiga qabul qilinishi",
+          "effect": "Ular Eron hukmdori Nodirshoh hujumidan saqlanib qolgan",
+          "evidence": "Qoraqalpoqlarning Rossiya fuqgaroligiga qabul qilinishi - ularni Eron hukmdori Nodirshoh hujumidan saqlab qoldi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Xiva xonining qoraqalpoqlarga qattiq bosim o‘tkazishi",
+          "effect": "1859-yilda ularga o‘zini o‘zi boshqarish huquqi berilgan",
+          "evidence": "1859-yilda Xiva xoni Said Muhammadxon qoraqalpoq xalqining qattiq bosimi ostida"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qoraqalpoqlarning Xiva xonligiga bo‘ysundirilishi",
+          "effect": "Biylar og‘asi saylanmay, xon tomonidan tayinlanadigan bo‘lib qolgan",
+          "evidence": "Biylar og'asi ilgari urug' yig'inlarida saylangan bo'lsa, qoraqalpoqlar Xiva xonligiga bo'ysundirilgach, xon tomonidan tayinlanadigan"
+        },
+        {
+          "kind": "number",
+          "number": "25",
+          "unit": "iyul kuni",
+          "meaning": "1827-yilda Xiva xoni Olloqulixon Oydo‘stbiy qo‘zg‘olonini bostirish uchun qo‘shin jo‘natgan sana",
+          "evidence": "25-iyul kuni Xiva xoni Olloqulixon"
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "title": "Qoraqalpoqlarda madaniy va ma’naviy hayot",
+      "page": 113,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XVII asr oxiri – XVIII asr boshlari",
+          "date_label": "XVII asr oxiri – XVIII asr boshlarida",
+          "event": "Qoraqalpoqlar bunyod etgan yirik shaharlardan biri – Qo‘ng‘irot shahri barpo etilgan",
+          "evidence": "XVII asr oxiri - XVIII asr boshlarida barpo etildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr boshlari",
+          "date_label": "XIX asr boshlarida",
+          "event": "Shaharlarda 318 ta maktab, Qoraqum eshon, Qalila oxun kabi madrasalar mavjud bo‘lgan",
+          "evidence": "Shaharlarda XIX asr boshlarida 318 ta makiab"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVIII–XIX asrning birinchi yarmi",
+          "date_label": "XVIII–XIX asrning birinchi yarmida",
+          "event": "Qoraqalpoq yozma adabiyotining ko‘zga ko‘ringan namoyandalari qalam tebratgan",
+          "evidence": "XVIll-XIx asrning birinchi yarmida qoraqalpoq adabiyotining ko'zga ko'ringan bir"
+        },
+        {
+          "kind": "date_event",
+          "date": "1878",
+          "date_label": "1878-yilda",
+          "event": "Ajiniyozning Qiz Mengesh bilan aytishuvi deb atalgan asari yaratilgan",
+          "evidence": "Qiz Mengesh bilan aytishuv\" (1878) asari mashhur."
+        },
+        {
+          "kind": "date_event",
+          "date": "1999",
+          "date_label": "1999-yilda",
+          "event": "Ajiniyoz tavalludining 175 yilligi nishonlangan",
+          "evidence": "1999-yilda Ajiniyoz tavalludining 175 yilligi nishonlandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1998",
+          "date_label": "1998-yilda",
+          "event": "Mamlakatimizda Berdaq tavalludining 170 yilligi keng nishonlangan",
+          "evidence": "1998-yilda mamlakatimizda Berdaq tavalludining 170 yilligi\nkcng nishonlandi."
+        },
+        {
+          "kind": "person",
+          "person": "Jiyen Jirov",
+          "role": "Mashhur baxshi va hajvchi shoir (1730–1784)",
+          "activity": "«Darbadar el» dostonida qoraqalpoqlarning mashaqqatli ko‘chish davri tarixini haqqoniy bayon etgan",
+          "evidence": "Jiycn Jirov (1730-1784) mashhur baxshi, hajvchi shoir sifatida kamol topdi."
+        },
+        {
+          "kind": "person",
+          "person": "Kunxo‘ja Ibrohim",
+          "role": "Qoraqalpoq adabiyotining ko‘zga ko‘ringan vakili, shoir (1799–1880)",
+          "activity": "«O‘roqchilar», «Cho‘ponlar» va «El bilan» she’rlarida xalqning og‘ir ahvolini fosh etgan",
+          "evidence": "vakillaridan yana biri\nKunxo\"ja Ibrohim (1799-1880) edi."
+        },
+        {
+          "kind": "person",
+          "person": "Ajiniyoz",
+          "role": "Qoraqalpoq xalqining atoqli shoiri, taxallusi Zevar (1824–1878)",
+          "activity": "«Bo‘zatov» dostonida xalqning boshqa yurtlarga ko‘chirilishini tasvirlab, yuzdan ortiq she’r meros qoldirgan",
+          "evidence": "Ajiniyoz Qo'siboy o'g li\n(1824-1878) qoraqalpoq xalqining atoqli shoirlaridan\nbiridir."
+        },
+        {
+          "kind": "person",
+          "person": "Berdaq",
+          "role": "Qoraqalpoq yozma adabiyotining asoschisi, shoir (1827–1900)",
+          "activity": "«Omongeldi», «Oydo‘stbiy» va «Ernazarbiy» asarlarida xonlar zulmiga qarshi kurashgan qahramonlarni kuylagan",
+          "evidence": "Berdaq (1827-1900) (taxallusi;\nasl ismi Berdimurod Qarg'aboy o'g'li) nomi bilan mashhurdir."
+        },
+        {
+          "kind": "person",
+          "person": "O‘mirbek laqqi",
+          "role": "Qoraqalpoqlarning xalq qiziqchisi, latifachi",
+          "activity": "Latifalarida adolatsiz amaldorlar, qozilar va ruhoniylarning kirdikorlarini fosh etgan",
+          "evidence": "Afandisi kabi qoraqalpoqlarning qiziqchisi - O'mirbek laqqisi bor."
+        },
+        {
+          "kind": "term",
+          "term": "savkeli",
+          "definition": "Qalin bo‘zdan tikilib, kumush va marjonlar bilan bezatilgan qoraqalpoq ayollar va qizlar bosh kiyimi",
+          "evidence": "ayollar va qiz bolalar savkeli (qalin bo'zdan tikilib, kumush va marjonlar bilan bezatilgan bosh kiyim)"
+        },
+        {
+          "kind": "term",
+          "term": "jirov",
+          "definition": "Qahramonlik dostonlarini qo‘biz jo‘rligida ijro etuvchi dostonchi",
+          "evidence": "jijrochilari jirovlar, baxshilar va qissaxonlar dcb ataluvchi uch guruhga"
+        },
+        {
+          "kind": "term",
+          "term": "qissaxon",
+          "definition": "Doston qo‘lyozmalarini zo‘r mahorat bilan o‘qib yoki yoddan aytib beruvchi ijrochi",
+          "evidence": "Qissaxonlar esa doston\nqo'lyozmalarini zo'r mahorat bilan o'qib yoki yoddan aytib berganlar."
+        },
+        {
+          "kind": "term",
+          "term": "laqqi",
+          "definition": "Latifalar aytib, jamiyatdagi kamchiliklarni fosh etuvchi xalq qiziqchisi; O‘mirbek shunday so‘z ustasi",
+          "evidence": "O'mirbek laqqi o'z latifalarida jamiyatdagi kamchiliklar ustidan kuluvchi xalq qahramoni sifatida gavdalanadi."
+        },
+        {
+          "kind": "place",
+          "place": "Qo‘ng‘irot",
+          "event": "Qoraqalpoqlar bunyod etgan yirik shaharlardan biri, keyinchalik bosh ma’muriy markazga aylangan",
+          "evidence": "Qoraqalpoqlar Qo'ng'irot, Chimboy, Xo jayli kabi yi-"
+        },
+        {
+          "kind": "place",
+          "place": "Xo‘jayli",
+          "event": "Orol va Xiva oralig‘idagi savdo markazi bo‘lib, bojxona ham shu shaharda joylashgan",
+          "evidence": "Xo'jayli shahri\nOrol va Xiva oralig'idagi savdo markazi bo lib. bojxona shu shaharda joylashgan."
+        },
+        {
+          "kind": "cause",
+          "cause": "Qoraqalpoqlarning ko‘chmanchilikdan o‘troq turmush tarziga o‘tishi",
+          "effect": "Keyinchalik qo‘rg‘onlar va shaharlar vujudga kelgan",
+          "evidence": "Qoraqalpoqlar uzoq yillar davomida ko'chman-"
+        },
+        {
+          "kind": "cause",
+          "cause": "Har bir urug‘ning o‘z mustahkamligini saqlashga intilishi",
+          "effect": "Bir urug‘ ichida o‘zaro nikoh qat’iyan taqiqlangan",
+          "evidence": "har urug' a'zosi o'z urug'ining mustahkamligini ta'minlashga intilardi. Bir urug\""
+        },
+        {
+          "kind": "cause",
+          "cause": "Qoraqalpoqlarning qadimdan daryo va ko‘l bo‘ylarida yashab kelganligi",
+          "effect": "Gilam va kashtalardagi naqshlar suv ramzini eslatuvchi to‘lqin shaklida ishlangan",
+          "evidence": "Chunki qoraqalpoqlar qadimdan daryo va ko'l bo'ylarida yashab kelganlar."
+        },
+        {
+          "kind": "cause",
+          "cause": "Abulxayrxonga qarshi urushda qoraqalpoqlarning yengilishi",
+          "effect": "Ular azob-uquhalarga duchor bo‘lib, turli yurtlarga tarqab ketgan",
+          "evidence": "urushda qoraqalpoqlar ycngilgan edi. Bu mag'lubiyat natijasida ular"
+        },
+        {
+          "kind": "number",
+          "number": "20",
+          "unit": "jildlik",
+          "meaning": "Qoraqalpoq folklor namunalari nashr etilgan jildlar soni",
+          "evidence": "Qoraqalpoq folklor namunalari 20 jildligi"
+        },
+        {
+          "kind": "number",
+          "number": "12–13",
+          "unit": "yosh",
+          "meaning": "Hunarmandlarning shogirdlikka qabul qilgan bolalarining yoshi",
+          "evidence": "Iunarmandlar 12-13 yoshli bolalarni shogirdlikka qabul qilib, ularga hunar sirlarini o'rgatganlar."
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "title": "Qo‘qon xonligining tashkil topishi",
+      "page": 118,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1709",
+          "date_label": "1709-yilda",
+          "event": "Ming urug‘i vakillari Farg‘ona vodiysida hokimiyatni o‘z qo‘llariga olib, Qo‘qon xonligiga asos solgan",
+          "evidence": "1709-yilda ming urugi\nvakillari Farg'ona vodiysida hokimiyalni\no'z qo'llariga oldilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVIII asr boshlari",
+          "date_label": "XVIII asr boshlarida",
+          "event": "Buxoro xonligida markaziy hokimiyat ichki kurashlar oqibatida zaiflashgan",
+          "evidence": "XVIII asr boshlarida Buxoro xonligida markaziy hokimiyat ichki kurashlar oqibatida zaiflashdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1733–1750",
+          "date_label": "1733–1750-yillarda",
+          "event": "Abdulkarimbiy Xo‘jand hokimi sifatida taxtni egallab, xonlikni boshqargan",
+          "evidence": "Xo'jand hokimi Abdulkarimbiy egalladi (1733-1750)."
+        },
+        {
+          "kind": "date_event",
+          "date": "1740",
+          "date_label": "1740-yilda",
+          "event": "Jung‘orlar Farg‘ona vodiysiga hujum qilib, hujum juda qiyinchilik bilan qaytarilgan",
+          "evidence": "1740-yilda Farg'ona vodiysiga jungorlar hujum qildi. Iujum juda\nqiyinchilik bilan qaytarildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1751–1762",
+          "date_label": "1751–1762-yillarda",
+          "event": "Toj-u taxt uchun kurashda Abdurahimbiyning o‘g‘li Erdonabiy g‘olib chiqqan",
+          "evidence": "Abdurahimbiyning o'g li Erdonabiy g'olib chiqdi (1751-1762)."
+        },
+        {
+          "kind": "date_event",
+          "date": "1763",
+          "date_label": "1763-yilda",
+          "event": "Abdulkarimbiyning nabirasi Norbo‘tabiy Qo‘qon taxtiga o‘tqazilgan",
+          "evidence": "rasi Norbo'tabiy o'tqazildi (1763-1798)."
+        },
+        {
+          "kind": "date_event",
+          "date": "1776",
+          "date_label": "1776-yilda",
+          "event": "Norbo‘tabiy Qo‘qon xonlaridan birinchi bo‘lib xonlikning fals pulini zarb ettirgan",
+          "evidence": "1776-yilda Norbo'tabiy Qo'qon xonlaridan birinchi bo'lib xonlikning fals deb atalgan o'z pulini zarb ettirdi."
+        },
+        {
+          "kind": "person",
+          "person": "Shohruxbiy",
+          "role": "Minglar sulolasi asoschisi, Qo‘qon xonligining ilk hukmdori",
+          "activity": "1709-yilda taxtga o‘tqazilib, Tepaqo‘rg‘onni o‘z qarorgohiga aylantirgan",
+          "evidence": "Hukmdorlik laxliga\nShohruxbiy o'tqazildi."
+        },
+        {
+          "kind": "person",
+          "person": "Abdurahimbiy",
+          "role": "Shohruxbiyning o‘g‘li va vorisi, Qo‘qon hukmdori",
+          "activity": "Qo‘qon shahrini obod qilib, uni xonlik poytaxtiga aylantirgan va Xo‘jand, O‘ratepa viloyatlarini qo‘shib olgan",
+          "evidence": "Shohruxbiy vafot etganidan so'ng taxtga o'tirgan o'g'li Abdurahimbiy"
+        },
+        {
+          "kind": "person",
+          "person": "Abdulkarimbiy",
+          "role": "Xo‘jand hokimi, taxtni egallagan hukmdor (1733–1750)",
+          "activity": "Akasi boshlagan obodonlashtirish ishini davom ettirib, shahar atrofini devor bilan o‘ragan",
+          "evidence": "U akasining\nQo'qon shahrini obodonlashtirish borasida olib borgan ishini davom"
+        },
+        {
+          "kind": "person",
+          "person": "Norbo‘tabiy",
+          "role": "Qo‘qon xoni (1763–1798), xonlik qudratini mustahkamlagan hukmdor",
+          "activity": "Chustni bo‘ysundirib, birinchi bo‘lib fals pulini zarb ettirgan va bozorda narx-navoni arzonlashtirgan",
+          "evidence": "Norbo\"tabiy tez orada Chust (hozirgi Namangan viloyatidagi tuman)ni bo'ysundirdi."
+        },
+        {
+          "kind": "person",
+          "person": "Erdonabiy",
+          "role": "Abdurahimbiyning o‘g‘li, Qo‘qon xoni (1751–1762)",
+          "activity": "O‘sh va O‘zgan viloyatlarini bo‘ysundirib, xonlikni Buxoro amirligi bilan teng kurasha oladigan davlatga aylantirgan",
+          "evidence": "lirdonabiy hukmronligi davrida xonlikning ichki va lashqi siyosatda\nmuvaffaqiyatlarga erishilgan davrlar ham bo'ldi."
+        },
+        {
+          "kind": "term",
+          "term": "otaliq",
+          "definition": "Buxoro xoni tomonidan berilgan unvon; Shohruxbiy davlatni shu unvon bilan boshqargan",
+          "evidence": "Shuning uchun ashtarxoniy Abullayzxon Shohruxbiyga\n,otaliq\" unvonini bcrgan."
+        },
+        {
+          "kind": "term",
+          "term": "fals",
+          "definition": "Norbo‘tabiy zarb ettirgan mis pul; uning bir donasiga bir bosh qo‘y sotib olish mumkin bo‘lgan",
+          "evidence": "Manbalarda qayd etilishicha Norbo'tabiyning bir falsiga bir bosh qo'y sotib olish mumkin"
+        },
+        {
+          "kind": "term",
+          "term": "ming urug‘i",
+          "definition": "Farg‘ona vodiysidagi o‘zbek qabilalaridan biri; Qo‘qon xonligi uning vakillari tomonidan tashkil etilgan",
+          "evidence": "o'zbcklarning ming urug'i oqsoqollari yig ilishib"
+        },
+        {
+          "kind": "term",
+          "term": "qipchoqlar",
+          "definition": "Farg‘ona vodiysida katta nufuzga ega bo‘lgan qabila; u minglar hokimiyatini tan olmagan",
+          "evidence": "nuluzga ega bo'lgan qipchoqlar qabilasi minglar hokimiyalini tan\nolmadi."
+        },
+        {
+          "kind": "place",
+          "place": "Tepaqo‘rg‘on",
+          "event": "Shohruxbiyning qarorgohiga aylangan shahar, keyinchalik xonlikning muhim markazi",
+          "evidence": "Tepaqo'rg'on Shohruxbiyning qarorgohiga aylantirildi."
+        },
+        {
+          "kind": "place",
+          "place": "Chust",
+          "event": "Norbo‘tabiy tomonidan bo‘ysundirilgan, hozirgi Namangan viloyatidagi tuman",
+          "evidence": "Chust (hozirgi Namangan viloyatidagi tuman)"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ichki kuchlarni birlashtirish va mustaqil davlat tuzish zarurati",
+          "effect": "Farg‘ona vodiysida yangi mustaqil o‘zbek davlati – Qo‘qon xonligi vujudga kelgan",
+          "evidence": "Vaziyat ichki kuchlarni birlashishga,\nmustaqil davlat tuzishga undamoqda edi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Qipchoqlar qabilasining minglar hokimiyatini tan olmasligi",
+          "effect": "Minglar sulolasi oldida hokimiyatga qonuniy tus berish muammosi paydo bo‘lgan",
+          "evidence": "Endi minglar sulolasi oldida sulola hokimi-"
+        },
+        {
+          "kind": "cause",
+          "cause": "Jung‘orlarning 1745-yildagi yangi hujumi",
+          "effect": "Xonlikning iqtisodiy va siyosiy ahvoli juda mushkul holatga solib qo‘yilgan",
+          "evidence": "Garchand xonlikning mustaqilligi saqlab qolingan bo'lsa-da, bu hujum\nxonlikning iqtisodiy va siyosiy ahvolini juda mushkul holalga solib\nqo'ydi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Ekinlardan mo‘l hosil olinishi",
+          "effect": "Bozorda narx-navo arzonlashib, xonlikning qudrati oshgan",
+          "evidence": "Norbo'tabiy davrida ckinlardan mo'l hosil\nolinishi cvaziga bozorda narx-navo arzonlashdi."
+        },
+        {
+          "kind": "number",
+          "number": "bir",
+          "unit": "bosh qo‘y",
+          "meaning": "Norbo‘tabiyning bir fals puliga sotib olish mumkin bo‘lgan qo‘ylar soni",
+          "evidence": "bir falsiga bir bosh qo'y sotib olish mumkin"
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "title": "XVIII asrning ikkinchi yarmi – XIX asrning birinchi yarmida Qo‘qon xonligida siyosiy ahvol",
+      "page": 120,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1798",
+          "date_label": "1798-yilda",
+          "event": "Olimxonni qo‘llab-quvvatlagan guruh g‘olib kelib, u Qo‘qon taxtiga o‘tqazilgan",
+          "evidence": "1798-yilda taxtga o'tqazildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1805",
+          "date_label": "1805-yilda",
+          "event": "Olimxon xonlik nomi yozilgan kumush dinor pulini zarb ettirib, o‘zini xon deb e’lon qilgan",
+          "evidence": "o'zining xonlik nomi yozilgan kumush anga pul (dinor)ni zarb\nettirdi va o'zini xon deb e'lon qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1810",
+          "date_label": "1810-yilda",
+          "event": "Olimxon Chimkent, Sayram va Turkiston viloyatlariga harbiy yurish uyushtirgan",
+          "evidence": "1810-yilning fevral\noyida harbiy yurish uyushtirdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1822",
+          "date_label": "1822-yilda",
+          "event": "Umarxon vafot etib, taxtga uning katta o‘g‘li Muhammad Alixon (Madalixon) o‘tirgan",
+          "evidence": "Umarxon 1822-yilda vafot eldi. Taxlga katta o'g'li Muhammad\nAlixon (Madalixon) o'tirdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1841",
+          "date_label": "1841-yilda",
+          "event": "Madalixon ukasi Sulton Mahmudxon foydasiga taxtdan voz kechishga majbur bo‘lgan",
+          "evidence": "Oxir-oqibat, 1841-yilda Madalixon o'7.\nukasi Sulton Mahmudxon foydasiga taxtdan voz kechishga majbur\nbo'ldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1842",
+          "date_label": "1842-yilda",
+          "event": "Amir Nasrullo qo‘shinini Qo‘qonga qarshi safarbar etib, Qo‘qonni bosib olgan",
+          "evidence": "Amir Nasrullo 1842-yilda o'z qo'shinini Qo'qonga\nqarshi safarbar etdi va Qo'qonni bosib oldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1852",
+          "date_label": "1852-yilda",
+          "event": "Xudoyorxon Toshkentdan chaqirilgan qo‘shin bilan qipchoqlar qirg‘inini uyushtirgan",
+          "evidence": "1852-yil 9-oktabr kuni Xudoyorxon Toshkentdan chaqirilgan qoshin bilan qipchoqlar qirg'inini uyushtirdi."
+        },
+        {
+          "kind": "person",
+          "person": "Olimxon",
+          "role": "Qo‘qon xoni (1798–1810), davlatni xonlik maqomiga ko‘targan hukmdor",
+          "activity": "Muntazam qo‘shin tuzish maqsadida harbiy islohot o‘tkazib, xonlik hududini deyarli ikki marta kengaytirgan",
+          "evidence": "Uning hukmronligi davrida (1798-1810)\nxonlikning mavqeyi har qachongidan ham yuksaldi."
+        },
+        {
+          "kind": "person",
+          "person": "Umarxon",
+          "role": "Olimxonning ukasi, Qo‘qon xoni (1810–1822)",
+          "activity": "1812-yilda Turkistonni ishg‘ol qilib, so‘ngra «Amir al-muslimin» unvonini qabul qilgan",
+          "evidence": "Umarxon pul\nzarb clish orqali rasman o'zining hukmdorlik maqomini tasdiqlab"
+        },
+        {
+          "kind": "person",
+          "person": "Madalixon",
+          "role": "Muhammad Alixon (Madalixon), Qo‘qon xoni (1822–1841)",
+          "activity": "Otasining obro‘li a’yonlarini ta’qib qilib, xon hokimiyati bilan mahalliy zodagonlar ittifoqini buzgan",
+          "evidence": "Madalixon tcz orada\nko'ngli tusagan ishlarni qilavcrishini qo'llab-quvvallovchi a'yonlar"
+        },
+        {
+          "kind": "person",
+          "person": "Musulmonqul",
+          "role": "Qipchoqlar sardori, mingboshi lavozimini egallagan amaldor",
+          "activity": "Xudoyorxon nomidan xonlikni amalda boshqarib, 1852-yilda asir olinib, qatl ettirilgan",
+          "evidence": "Ularning sardori Musulmonqul mingboshi ctib tayinlandi."
+        },
+        {
+          "kind": "person",
+          "person": "Xudoyorxon",
+          "role": "Sheralixonning o‘g‘li, qipchoqlar hukmronligiga chek qo‘ygan xon",
+          "activity": "13 yoshida Namangan hokimi bo‘lib, keyinchalik qaynotasi Musulmonqul hukmronligini tugatgan",
+          "evidence": "13 yoshli Xudoyorxon bu davrda Namangan\nhokimi edi."
+        },
+        {
+          "kind": "term",
+          "term": "«Oltin beshik» rivoyati",
+          "definition": "Minglar sulolasining kelib chiqishini Bobur Mirzoga bog‘lovchi rivoyat; hokimiyatni qonuniylashtirish uchun ishlatilgan",
+          "evidence": "Rivoyat larixiy kiloblarga ., Oltin beshik\" nomi bilan kirgan."
+        },
+        {
+          "kind": "term",
+          "term": "harbiy islohot",
+          "definition": "Muntazam qo‘shin tuzishga qaratilgan o‘zgarish; Olimxon uni xonlikda amalga oshirgan",
+          "evidence": "Olimxon muniazam qo'shin tuzish maqsadi-\nXonlik hududining\nda harbiy islohot o'tkazdi."
+        },
+        {
+          "kind": "term",
+          "term": "Amir al-muslimin",
+          "definition": "«Musulmonlar amiri» ma’nosidagi unvon; uni Umarxon qabul qilib, xutbada o‘qitgan",
+          "evidence": "uni musulmonlar amiri (Amir al-muslimin) deb alash joiz"
+        },
+        {
+          "kind": "term",
+          "term": "shayxulislom",
+          "definition": "Xonlikdagi yuqori diniy mansabdor; Madalixon uni va uning o‘g‘lini badarga qildirgan",
+          "evidence": "xonlikning shayxulislomi ya o'g'li Iakimxonni badarga qildi."
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "Xudoyorxon 1852-yilda shu shahardan chaqirilgan qo‘shin bilan qipchoqlar qirg‘inini uyushtirgan",
+          "evidence": "Xudoyorxon Toshkentdan chaqirilgan qoshin bilan"
+        },
+        {
+          "kind": "place",
+          "place": "Turkiston",
+          "event": "1812-yilda Umarxon tomonidan ishg‘ol etilgan, Buxoroga qaramlikni e’tirof etgan shahar",
+          "evidence": "1812-yilda Bux0-\nroga qaramlikni e'tirof etgan Turkistonga ham qo'shin jo'natdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Olimxonning qattiqqo‘lligi va qabila rahnamolarining keskin noroziligi",
+          "effect": "Taxtga qarshi fitna tayyorlanib, hukmdorga qarshi kurash boshlangan",
+          "evidence": "esa turli qabila rahnamolarining, ayrim yuqori mansabdorlarning keskin noroziligiga sabab bo'ldi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Fitnachilarning qo‘shin orasida tarqatgan uydirmasi",
+          "effect": "Umarxon Qo‘qon taxtiga o‘tqazilib, Olimxon taxtdan mahrum qilingan",
+          "evidence": "Ular qo'shin orasida Olimxon vafot etdi, degan uydirmani tarqatdilar."
+        },
+        {
+          "kind": "cause",
+          "cause": "Amir noibining qo‘shimcha soliqlar joriy etishi",
+          "effect": "1842-yilda butun xonlik hududida katta qo‘zg‘olon ko‘tarilgan",
+          "evidence": "Natijada, butun Qo'qon xonligi hududida 1842-yili katta\nqo'zg'olon ko'tarildi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Qipchoqlarning ko‘chib kelib mahalliy aholini siqib chiqarishi",
+          "effect": "Aholining qattiq noroziligi va qo‘zg‘olon xavfi paydo bo‘lgan",
+          "evidence": "Bu siyosat mahalliy aholining qattiq noroziligiga sabab bo'ldi va\nxonlikda hukmronlarga qarshi qo'zg'olon ko'tarish xavfini tug'dirdi."
+        },
+        {
+          "kind": "number",
+          "number": "12",
+          "unit": "ming lashkar",
+          "meaning": "Fatvoda hukmdor qurol-yarog‘ va yem-xashak bilan ta’minlashi talab qilingan lashkar soni",
+          "evidence": "Qaysi hukmdor 12 ming lashkarni kerakli qurol-yarog' va anjomlar, otlarini esa yem-xashak bilan ta'minlasa"
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "title": "Qo‘qon xonligida davlat boshqaruvi",
+      "page": 126,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asrning birinchi yarmi",
+          "date_label": "XIX asrning birinchi yarmida",
+          "event": "Qo‘qon xonligi O‘rta Osiyodagi eng katta davlatga aylangan",
+          "evidence": "XIX asrning birinchi yarmida O'rla Osiyoda\ncng katta davlatga aylandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "Madalixon davri",
+          "date_label": "Madalixon davrida",
+          "event": "Janubda Qorategin, Darvoz, Ko‘lob va Shug‘non bekliklari xonlikka qo‘shib olingan",
+          "evidence": "janubda csa Madalixon davrida xonlikka qo'shib olingan Qorategin"
+        },
+        {
+          "kind": "date_event",
+          "date": "Dastlab",
+          "date_label": "Dastlab",
+          "event": "Qo‘qon xonligi hududi faqat Farg‘ona vodiysi bilan cheklangan bo‘lgan",
+          "evidence": "Dastlab faqal Farg'ona vodiysi hududi bilan"
+        },
+        {
+          "kind": "date_event",
+          "date": "Buxoroga qaramlikdan ozod bo‘lgandan keyin",
+          "date_label": "Buxoroga qaramlikdan ozod bo‘lgandan keyin",
+          "event": "Ko‘chmanchi qipchoq va qirg‘iz qabilalari xonlik siyosiy hayotida yetakchi mavqega da’vo qila boshlagan",
+          "evidence": "Qo'qon xonligi Buxoroga qaramlikdan ko'chmanchi qipchoq va\nqirg'iz qabilalari yordamida ozod etilgach, ular xonlik siyosiy hayotida yetakchi mavqega da'vo qila boshladilar"
+        },
+        {
+          "kind": "person",
+          "person": "Aliquli",
+          "role": "Qipchoq qabilasidan chiqqan harbiy arbob",
+          "activity": "Keyinchalik xonlikda qo‘shin qo‘mondoni lavozimini egallagan",
+          "evidence": "Ulardan biri. kcyinchalik xonlikda qo'shin qo'mondoni lavozimini"
+        },
+        {
+          "kind": "person",
+          "person": "Madalixon",
+          "role": "Qo‘qon xoni, janubda hududni kengaytirgan hukmdor",
+          "activity": "Qorategin, Darvoz, Ko‘lob va Shug‘non bekliklarini xonlikka qo‘shib olgan",
+          "evidence": "xonlikka qo'shib olingan Qorategin, Darvoz, Ko'lob va Shug'nan bekliklari"
+        },
+        {
+          "kind": "person",
+          "person": "Umarxon",
+          "role": "Qo‘qon xoni, urug‘ va qabila manfaatlarini hisobga olgan hukmdor",
+          "activity": "O‘troq va ko‘chmanchi qabilalar o‘rtasidagi manfaatlar muvozanatini eng ko‘p darajada e’tiborga olgan",
+          "evidence": "Umarxon va\nMadalixonlar bu omilni eng ko'p darajada hisobga olgan hukmdorlar"
+        },
+        {
+          "kind": "term",
+          "term": "mutlaq monarxiya",
+          "definition": "Cheklanmagan huquqqa ega xon boshqaradigan davlat tuzumi; Qo‘qon xonligi shunday tuzumga ega bo‘lgan",
+          "evidence": "xonligi kabi davlat tuzumiga ko'ra mutlaq monarxiya edi."
+        },
+        {
+          "kind": "term",
+          "term": "beklik",
+          "definition": "Xonlikning yirik ma’muriy-okrug birligi; ularning hokimlari harbiy qo‘mondon ham bo‘lgan",
+          "evidence": "Qo'qon, Toshkcnt, Marg'ilon, Shojixon,\nAndijon, Baliqchi. Chortoq, Koson bekliklari yirik okruglar bo'lib"
+        },
+        {
+          "kind": "term",
+          "term": "Oqsoqolliklar",
+          "definition": "Katta qishloq yoki bir necha kichik qishloq birlashmasi; uni aminlar, oqsoqollar va sarkorlar boshqargan",
+          "evidence": "Oqsoqolliklar katta-katta qishloq yoki bir qancha kichik-kichik\nqishloqlar birlashmalari edi. Ularni aminlar. oqsoqollar va sarkorlar\nboshqarganlar."
+        },
+        {
+          "kind": "term",
+          "term": "mingboshi",
+          "definition": "Qo‘shinning bosh qo‘mondoni va ayni paytda bosh vazir hisoblangan eng nufuzli mansabdor",
+          "evidence": "Umaro mansabdorlari ichida eng nufuzlisi mingboshi - Bosh vazir, qo'shinning Bosh qo'mondoni va tashqi siyosat masalalarida xonning bosh maslahatchisi edi."
+        },
+        {
+          "kind": "term",
+          "term": "devonbegi",
+          "definition": "Xonlik devonxonasiga rahbarlik qilib, moliya ishlarini boshqargan yuqori mansabdor",
+          "evidence": "Devonbegi ham yuqori davlat mansabi\nbo'lib, ul xonlik devonxonasiga rahbarlik qilgan. shuningdek, moliya ishlarini boshqargan."
+        },
+        {
+          "kind": "term",
+          "term": "dasturxonchi",
+          "definition": "Xon dasturxoniga taom tortuvchi mansabdor; bu lavozimga eng ishonchli odam qo‘yilgan",
+          "evidence": "Dasturxonchi - xon dasturxoniga taom tortuvchi mansabdor edi."
+        },
+        {
+          "kind": "term",
+          "term": "umaro va ulamo",
+          "definition": "Yuqori mansabdorlarning ikki toifasi: umaro dunyoviy, ulamo esa din ishlari bilan shug‘ullangan",
+          "evidence": "umaro (dunyoviy ishlar masalalari bilan shug'ullanuvchilar), ikkinchisi esa ulamo (din ishlari bilan shug ullanuvchilar)."
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "Yirik okruglar ichida eng muhim o‘rinni egallab, xon bu yerga ishonchli kishilarni hokim qilib tayinlagan",
+          "evidence": "ular orasida Toshkent\neng muhim o'rin luigan."
+        },
+        {
+          "kind": "place",
+          "place": "Xo‘jand va O‘ratepa",
+          "event": "Buxoro amirligi bilan Qo‘qon xonligi o‘rtasida qo‘ldan qo‘lga o‘tib turgan, ma’lum muddat xonlik tarkibida bo‘lgan shaharlar",
+          "evidence": "Xo'jand va O'ratcpa ham ma'lum muddat xonlik\nhududi tarkibida edi."
+        },
+        {
+          "kind": "place",
+          "place": "Dashti Qipchoq",
+          "event": "Xonlik hududi tarkibiga kirgan, hozirgi Qozog‘istonning janub va janubi-g‘arbidagi yerlar",
+          "evidence": "Dashti\nQipchoq (hozirgi Qozog'istonning janub va janubi-g'arbi), Yellisuv"
+        },
+        {
+          "kind": "cause",
+          "cause": "Har bir ma’muriy birlikning ayni paytda harbiy okrug sanalishi",
+          "effect": "Hokimlar harbiy kuchlarning qo‘mondonlari ham bo‘lib, aholi ro‘yxatga olingan",
+          "evidence": "har bir ma'muriy birlik harbiy okrug ham sanalardi va hokimlar harbiy kuchlarning qo'mondonlari ham edilar."
+        },
+        {
+          "kind": "cause",
+          "cause": "Urug‘ va qabila a’zolarining manzili bo‘yicha ro‘yxatga olinishi",
+          "effect": "Ovqat ortilgan 12 ming aravani tezda yig‘ib olish imkoniyati tug‘ilgan",
+          "evidence": "Bu lartib\novqat ortilgan 12 ming aravani lezda yig'a olish imkonini berardi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Taxtga minglarning balog‘atga yetmagan vakilining o‘tqazilishi",
+          "effect": "Qipchoqlar regentlikni qo‘lga kiritib, xonlikni o‘z istagan yo‘sinda boshqargan",
+          "evidence": "ular uchun taxtda\nminglarning balogatga yctmagan vakilini o'tqazish muhim edi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Hukmdorlarning taom yoki ichimlik orqali zaharlab o‘ldirilishi",
+          "effect": "Dasturxonchi lavozimiga eng ishonchli odam tayinlangan",
+          "evidence": "uchun ham xon dasturxonchi lavozimiga eng ishonchli odamni qo'ygan."
+        },
+        {
+          "kind": "number",
+          "number": "15",
+          "unit": "ta beklik",
+          "meaning": "Qo‘qon xonligidagi bekliklar soni; ularda 3 millionga yaqin aholi yashagan",
+          "evidence": "Xonlikda 15 ta beklik mavjud bo'lib"
+        },
+        {
+          "kind": "number",
+          "number": "3",
+          "unit": "million",
+          "meaning": "Xonlikda yashagan aholi soni (millionga yaqin)",
+          "evidence": "ularda 3 millionga\nyaqin aholi yashagan."
+        }
+      ]
+    }
+  ]
+}

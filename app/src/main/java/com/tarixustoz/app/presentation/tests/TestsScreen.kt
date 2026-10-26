@@ -23,20 +23,25 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.tarixustoz.app.domain.model.Textbook
 import com.tarixustoz.app.presentation.textbooks.TextbooksViewModel
 import com.tarixustoz.app.presentation.theme.BrandPurple
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TestsScreen(
-    onStartQuiz: (categoryOrTopic: String) -> Unit,
+    onStartQuizCategory: (count: Int, categoryCode: String, diff: String, time: Int) -> Unit,
+    onStartQuizForBookOrTopic: (id: String) -> Unit,
     onNavigateToTopicSelection: () -> Unit,
+    onNavigateToPeriodSelection: () -> Unit,
     onNavigateToMistakes: () -> Unit,
     onNavigateToAi: () -> Unit,
+    onNavigateToCustomOptions: () -> Unit,
     textbooksViewModel: TextbooksViewModel = hiltViewModel()
 ) {
     val textbooks by textbooksViewModel.textbooks.collectAsState()
-    var selectedGrade by remember { mutableIntStateOf(7) }
+    var selectedGrade by remember { mutableIntStateOf(0) }
+    var selectedTextbookForMenu by remember { mutableStateOf<Textbook?>(null) }
 
     LaunchedEffect(Unit) {
         textbooksViewModel.load()
@@ -50,7 +55,7 @@ fun TestsScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = "Testlar",
+                        text = "Test va Imtihonlar",
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold
                     )
@@ -80,7 +85,7 @@ fun TestsScreen(
                             selected = isSelected,
                             onClick = {
                                 selectedGrade = grade
-                                if (grade > 0) textbooksViewModel.setGrade(grade)
+                                textbooksViewModel.setGrade(grade)
                             },
                             label = {
                                 Text(
@@ -138,7 +143,7 @@ fun TestsScreen(
                                 )
                                 Spacer(Modifier.width(6.dp))
                                 Badge(containerColor = Color(0xFFEF4444), contentColor = Color.White) {
-                                    Text("11 ta xato")
+                                    Text("Xatolar")
                                 }
                             }
                             Spacer(Modifier.height(2.dp))
@@ -158,58 +163,52 @@ fun TestsScreen(
                 }
             }
 
-            // DTM Imtihon Card
+            // Official Exams Section Header
             item {
-                Surface(
-                    shape = RoundedCornerShape(18.dp),
-                    color = Color(0xFF1E1F38),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable { onStartQuiz("dtm_exam") }
-                        .testTag("tests_dtm_card")
-                ) {
-                    Row(
-                        modifier = Modifier.padding(16.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Surface(
-                            shape = CircleShape,
-                            color = Color(0xFF2E3056),
-                            modifier = Modifier.size(46.dp)
-                        ) {
-                            Box(contentAlignment = Alignment.Center) {
-                                Icon(
-                                    Icons.Default.EmojiEvents,
-                                    contentDescription = null,
-                                    tint = Color(0xFFFBBF24),
-                                    modifier = Modifier.size(24.dp)
-                                )
-                            }
-                        }
-                        Spacer(Modifier.width(14.dp))
-                        Column(modifier = Modifier.weight(1f)) {
-                            Text(
-                                text = "DTM BLOK SINOBI",
-                                color = Color.White,
-                                fontSize = 12.sp,
-                                fontWeight = FontWeight.Bold,
-                                letterSpacing = 0.5.sp
-                            )
-                            Spacer(Modifier.height(2.dp))
-                            Text(
-                                text = "30 savol • 60 daqiqa • Haqiqiy ball",
-                                color = Color(0xFF94A3B8),
-                                fontSize = 12.sp
-                            )
-                        }
-                        Icon(
-                            Icons.AutoMirrored.Filled.ArrowForward,
-                            contentDescription = null,
-                            tint = Color.White,
-                            modifier = Modifier.size(20.dp)
-                        )
-                    }
-                }
+                Text(
+                    text = "Rasmiy va RAG Imtihonlar",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+
+            // 1. Milliy Sertifikat Card
+            item {
+                ExamCategoryCard(
+                    title = "MILLIY SERTIFIKAT IMTIHONI",
+                    subtitle = "BMBA • 45 savol • 90 daqiqa • Yuqori daraja",
+                    description = "Tarix fanidan bilim darajasini baholash va Milliy Sertifikat sinovlari formati.",
+                    containerColor = Color(0xFF0F172A),
+                    accentColor = Color(0xFF38BDF8),
+                    icon = Icons.Default.VerifiedUser,
+                    onClick = { onStartQuizCategory(45, "NATIONAL_CERTIFICATE", "HARD", 90) }
+                )
+            }
+
+            // 2. O'qituvchilar Attestatsiyasi Card
+            item {
+                ExamCategoryCard(
+                    title = "O‘QITUVCHILAR ATTESTASIYASI",
+                    subtitle = "Pedagogik toifa • 35 savol • 60 daqiqa",
+                    description = "Tarix fani o'qituvchilari uchun rasmiy attestatsiya va toifa sinovlari formati.",
+                    containerColor = Color(0xFF311B92),
+                    accentColor = Color(0xFFB388FF),
+                    icon = Icons.Default.School,
+                    onClick = { onStartQuizCategory(35, "ATTESTATION", "HARD", 60) }
+                )
+            }
+
+            // 3. DTM BLOK SINOBI Card
+            item {
+                ExamCategoryCard(
+                    title = "DTM BLOK SINOBI (BMBA)",
+                    subtitle = "OTMga kirish • 30 savol • 60 daqiqa",
+                    description = "Oliy ta'lim muassasalariga kirish 30 ta majburiy va mutaxassislik testlari mashqi.",
+                    containerColor = Color(0xFF1E1F38),
+                    accentColor = Color(0xFFFBBF24),
+                    icon = Icons.Default.EmojiEvents,
+                    onClick = { onStartQuizCategory(30, "DTM_PRACTICE", "MEDIUM", 60) }
+                )
             }
 
             // Categories Header
@@ -221,10 +220,9 @@ fun TestsScreen(
                 )
             }
 
-            // Categories Grid (Tarixiy voqealar, obidalar, urushlar, shaxslar, yillar, shaharlar, sevimlilar)
+            // Categories Grid
             item {
                 Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    // Row 1: Tarixiy voqealar & Tarixiy obidalar
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(10.dp)
@@ -236,20 +234,19 @@ fun TestsScreen(
                             iconTint = Color(0xFF6366F1),
                             iconBg = Color(0xFFEEF2FF),
                             modifier = Modifier.weight(1f),
-                            onClick = { onStartQuiz("tarixiy_voqealar") }
+                            onClick = { onStartQuizCategory(15, "EVENT", "MEDIUM", 15) }
                         )
                         CategoryItemCard(
-                            title = "Tarixiy obidalar",
-                            count = "95 test",
-                            icon = Icons.Default.AccountBalance,
-                            iconTint = Color(0xFF8B5CF6),
+                            title = "Tarixiy shaxslar",
+                            count = "184 test",
+                            icon = Icons.Default.Person,
+                            iconTint = Color(0xFF7C3AED),
                             iconBg = Color(0xFFF5F3FF),
                             modifier = Modifier.weight(1f),
-                            onClick = { onStartQuiz("tarixiy_obidalar") }
+                            onClick = { onStartQuizCategory(15, "PERSON", "MEDIUM", 15) }
                         )
                     }
 
-                    // Row 2: Urushlar va janglar & Sevimli testlarim
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(10.dp)
@@ -261,45 +258,43 @@ fun TestsScreen(
                             iconTint = Color(0xFFDC2626),
                             iconBg = Color(0xFFFEF2F2),
                             modifier = Modifier.weight(1f),
-                            onClick = { onStartQuiz("urushlar_va_janglar") }
+                            onClick = { onStartQuizCategory(15, "EVENT", "HARD", 15) }
                         )
                         CategoryItemCard(
-                            title = "Sevimli testlarim",
-                            count = "Tanlanganlar",
-                            icon = Icons.Default.Bookmark,
-                            iconTint = Color(0xFFD97706),
-                            iconBg = Color(0xFFFEF3C7),
+                            title = "Yillar va sanalar",
+                            count = "Davr bo‘yicha tanlash",
+                            icon = Icons.Default.CalendarMonth,
+                            iconTint = Color(0xFF16A34A),
+                            iconBg = Color(0xFFF0FDF4),
                             modifier = Modifier.weight(1f),
-                            onClick = { onStartQuiz("favorites") }
+                            onClick = { onNavigateToPeriodSelection() }
                         )
                     }
 
-                    // Row 3: Shahar nomlari & Tarixiy shaxslar
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         CategoryItemCard(
-                            title = "Shahar nomlari",
+                            title = "Shahar va hududlar",
                             count = "120 test",
                             icon = Icons.Default.LocationOn,
                             iconTint = Color(0xFFF97316),
                             iconBg = Color(0xFFFFF7ED),
                             modifier = Modifier.weight(1f),
-                            onClick = { onStartQuiz("shahar_nomlari") }
+                            onClick = { onStartQuizCategory(15, "CITY", "MEDIUM", 15) }
                         )
                         CategoryItemCard(
-                            title = "Tarixiy shaxslar",
-                            count = "184 test",
-                            icon = Icons.Default.Person,
-                            iconTint = Color(0xFF7C3AED),
-                            iconBg = Color(0xFFF5F3FF),
+                            title = "Mantiqiy va DTM",
+                            count = "95 test",
+                            icon = Icons.Default.Psychology,
+                            iconTint = Color(0xFF0284C7),
+                            iconBg = Color(0xFFEFF6FF),
                             modifier = Modifier.weight(1f),
-                            onClick = { onStartQuiz("tarixiy_shaxslar") }
+                            onClick = { onStartQuizCategory(15, "LOGICAL", "HARD", 15) }
                         )
                     }
 
-                    // Row 4: Mavzu bo'yicha & Yillar bo'yicha
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(10.dp)
@@ -314,64 +309,13 @@ fun TestsScreen(
                             onClick = { onNavigateToTopicSelection() }
                         )
                         CategoryItemCard(
-                            title = "Yillar bo‘yicha",
-                            count = "215 test",
-                            icon = Icons.Default.CalendarMonth,
-                            iconTint = Color(0xFF16A34A),
-                            iconBg = Color(0xFFF0FDF4),
+                            title = "Test Sozlamalari",
+                            count = "Moslashuvchan",
+                            icon = Icons.Default.Tune,
+                            iconTint = Color(0xFFD97706),
+                            iconBg = Color(0xFFFEF3C7),
                             modifier = Modifier.weight(1f),
-                            onClick = { onStartQuiz("yillar_boyicha") }
-                        )
-                    }
-                }
-            }
-
-            // AI Tutor Teaser
-            item {
-                Surface(
-                    shape = RoundedCornerShape(16.dp),
-                    color = Color(0xFFEEF2FF),
-                    border = BorderStroke(1.dp, Color(0xFFC7D2FE)),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable { onNavigateToAi() }
-                ) {
-                    Row(
-                        modifier = Modifier.padding(14.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Surface(
-                            shape = CircleShape,
-                            color = BrandPurple,
-                            modifier = Modifier.size(40.dp)
-                        ) {
-                            Box(contentAlignment = Alignment.Center) {
-                                Icon(
-                                    Icons.Default.Psychology,
-                                    contentDescription = null,
-                                    tint = Color.White,
-                                    modifier = Modifier.size(22.dp)
-                                )
-                            }
-                        }
-                        Spacer(Modifier.width(12.dp))
-                        Column(modifier = Modifier.weight(1f)) {
-                            Text(
-                                text = "AI Tarixchi Ustoz",
-                                style = MaterialTheme.typography.titleSmall,
-                                fontWeight = FontWeight.Bold,
-                                color = BrandPurple
-                            )
-                            Text(
-                                text = "Tushunmagan savollaringizni AI bilan birga tahlil qiling",
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                        Icon(
-                            Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                            contentDescription = null,
-                            tint = BrandPurple
+                            onClick = { onNavigateToCustomOptions() }
                         )
                     }
                 }
@@ -380,22 +324,22 @@ fun TestsScreen(
             // Textbooks & Topics Header
             item {
                 Text(
-                    text = "Darsliklar va mavzular",
+                    text = "Darsliklar va sinflar",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold
                 )
             }
 
-            val filteredTextbooks = textbooks
-
-            items(filteredTextbooks) { textbook ->
+            items(textbooks) { textbook ->
                 Surface(
                     shape = RoundedCornerShape(16.dp),
                     color = MaterialTheme.colorScheme.surface,
                     border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable { onStartQuiz(textbook.id) }
+                        .clickable {
+                            selectedTextbookForMenu = textbook
+                        }
                 ) {
                     Row(
                         modifier = Modifier.padding(14.dp),
@@ -440,6 +384,223 @@ fun TestsScreen(
             item { Spacer(Modifier.height(16.dp)) }
         }
     }
+
+    if (selectedTextbookForMenu != null) {
+        val book = selectedTextbookForMenu!!
+        val totalQs = book.totalQuestions.coerceAtLeast(30)
+        val totalVariants = (totalQs / 30).coerceIn(1, 40)
+
+        ModalBottomSheet(
+            onDismissRequest = { selectedTextbookForMenu = null },
+            sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(20.dp),
+                verticalArrangement = Arrangement.spacedBy(14.dp)
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = book.title,
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            text = "${book.gradeId}-sinf • Jami ${book.totalQuestions} ta test mavjud",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                    IconButton(onClick = { selectedTextbookForMenu = null }) {
+                        Icon(Icons.Default.Close, contentDescription = "Yopish")
+                    }
+                }
+
+                HorizontalDivider()
+
+                Text(
+                    text = "Test ishlash rejimini tanlang:",
+                    style = MaterialTheme.typography.labelLarge,
+                    fontWeight = FontWeight.Bold,
+                    color = BrandPurple
+                )
+
+                // Option 1: Mavzular bo'yicha
+                Surface(
+                    shape = RoundedCornerShape(14.dp),
+                    color = MaterialTheme.colorScheme.surfaceVariant,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable {
+                            selectedTextbookForMenu = null
+                            onNavigateToTopicSelection()
+                        }
+                ) {
+                    Row(
+                        modifier = Modifier.padding(14.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(Icons.Default.MenuBook, contentDescription = null, tint = BrandPurple, modifier = Modifier.size(24.dp))
+                        Spacer(Modifier.width(12.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text("📚 Mavzular bo‘yicha test", fontWeight = FontWeight.Bold, fontSize = 15.sp)
+                            Text("Darslikdagi mavzulardan alohida tanlab ishlash", fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        }
+                        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null, tint = BrandPurple)
+                    }
+                }
+
+                // Option 2: Test Variantlari list
+                Text(
+                    text = "📄 Test Variantlari (${totalVariants} ta variant, har biri 30 ta savol):",
+                    style = MaterialTheme.typography.labelMedium,
+                    fontWeight = FontWeight.Bold
+                )
+
+                LazyRow(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    items(totalVariants) { index ->
+                        val varNum = index + 1
+                        val startQ = (index * 30) + 1
+                        val endQ = ((index + 1) * 30).coerceAtMost(book.totalQuestions)
+                        Button(
+                            onClick = {
+                                selectedTextbookForMenu = null
+                                onStartQuizForBookOrTopic("variant_${book.gradeId}_${book.subjectId}_$varNum")
+                            },
+                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple.copy(alpha = 0.12f), contentColor = BrandPurple),
+                            shape = RoundedCornerShape(10.dp)
+                        ) {
+                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                Text("Variant $varNum", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                                Text("$startQ–$endQ-savollar", fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            }
+                        }
+                    }
+                }
+
+                // Option 3: Aralash DTM / Olimpiada Test
+                Surface(
+                    shape = RoundedCornerShape(14.dp),
+                    color = Color(0xFFEFF6FF),
+                    border = BorderStroke(1.dp, Color(0xFFBFDBFE)),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable {
+                            selectedTextbookForMenu = null
+                            onStartQuizForBookOrTopic("book_${book.gradeId}")
+                        }
+                ) {
+                    Row(
+                        modifier = Modifier.padding(14.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(Icons.Default.EmojiEvents, contentDescription = null, tint = Color(0xFF0284C7), modifier = Modifier.size(24.dp))
+                        Spacer(Modifier.width(12.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text("🏆 Aralash DTM / Olimpiada Test (30 savol)", fontWeight = FontWeight.Bold, fontSize = 14.sp, color = Color(0xFF0369A1))
+                            Text("Ushbu darslik bo‘yicha tasodifiy 30 ta savol", fontSize = 11.sp, color = Color(0xFF0284C7))
+                        }
+                        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null, tint = Color(0xFF0284C7))
+                    }
+                }
+
+                // Option 4: 100 ta savoldan iborat Katta Blok Test
+                Surface(
+                    shape = RoundedCornerShape(14.dp),
+                    color = Color(0xFFFEF3C7),
+                    border = BorderStroke(1.dp, Color(0xFFFDE68A)),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable {
+                            selectedTextbookForMenu = null
+                            onStartQuizCategory(100, "ALL", "MEDIUM", 120)
+                        }
+                ) {
+                    Row(
+                        modifier = Modifier.padding(14.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(Icons.Default.Quiz, contentDescription = null, tint = Color(0xFFD97706), modifier = Modifier.size(24.dp))
+                        Spacer(Modifier.width(12.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text("⚡ Katta Blok Test (100 ta savol)", fontWeight = FontWeight.Bold, fontSize = 14.sp, color = Color(0xFFB45309))
+                            Text("Maksimal bilim sinovi • 120 daqiqa", fontSize = 11.sp, color = Color(0xFFD97706))
+                        }
+                        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null, tint = Color(0xFFD97706))
+                    }
+                }
+
+                Spacer(Modifier.height(12.dp))
+            }
+        }
+    }
+}
+
+@Composable
+private fun ExamCategoryCard(
+    title: String,
+    subtitle: String,
+    description: String,
+    containerColor: Color,
+    accentColor: Color,
+    icon: ImageVector,
+    onClick: () -> Unit
+) {
+    Surface(
+        shape = RoundedCornerShape(18.dp),
+        color = containerColor,
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Surface(
+                    shape = CircleShape,
+                    color = accentColor.copy(alpha = 0.2f),
+                    modifier = Modifier.size(36.dp)
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Icon(
+                            imageVector = icon,
+                            contentDescription = null,
+                            tint = accentColor,
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+                }
+                Spacer(Modifier.width(12.dp))
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = title,
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.White
+                    )
+                    Text(
+                        text = subtitle,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = accentColor
+                    )
+                }
+            }
+            Spacer(Modifier.height(10.dp))
+            Text(
+                text = description,
+                style = MaterialTheme.typography.bodySmall,
+                color = Color.White.copy(alpha = 0.8f)
+            )
+        }
+    }
 }
 
 @Composable
@@ -456,12 +617,10 @@ private fun CategoryItemCard(
         shape = RoundedCornerShape(16.dp),
         color = MaterialTheme.colorScheme.surface,
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-        modifier = modifier
-            .clickable(onClick = onClick)
-            .testTag("tests_category_${title.lowercase().replace(" ", "_")}")
+        modifier = modifier.clickable(onClick = onClick)
     ) {
         Row(
-            modifier = Modifier.padding(14.dp),
+            modifier = Modifier.padding(12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Surface(
@@ -471,7 +630,7 @@ private fun CategoryItemCard(
             ) {
                 Box(contentAlignment = Alignment.Center) {
                     Icon(
-                        icon,
+                        imageVector = icon,
                         contentDescription = null,
                         tint = iconTint,
                         modifier = Modifier.size(20.dp)
@@ -479,16 +638,18 @@ private fun CategoryItemCard(
                 }
             }
             Spacer(Modifier.width(10.dp))
-            Column {
+            Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = title,
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.SemiBold
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface
                 )
                 Text(
                     text = count,
-                    fontSize = 11.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    fontSize = 11.sp
                 )
             }
         }

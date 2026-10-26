@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.tarixustoz.app.data.repository.ContentRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
 import com.tarixustoz.app.domain.model.Textbook
+import com.tarixustoz.app.domain.model.Topic
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -33,14 +34,26 @@ class TextbooksViewModel @Inject constructor(
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
+    val allTopicsFlow: StateFlow<List<Topic>> = contentRepository.getAllTopicsFlow()
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
+
     fun load() {
         viewModelScope.launch {
-            contentRepository.seedIfNeeded()
+            _isRefreshing.value = true
+            contentRepository.syncWithDjangoBackend()
+            _isRefreshing.value = false
         }
     }
 
     fun setGrade(grade: Int) {
         _selectedGrade.value = grade
+        if (grade > 0) {
+            viewModelScope.launch {
+                _isRefreshing.value = true
+                contentRepository.syncBooksForGrade(grade)
+                _isRefreshing.value = false
+            }
+        }
     }
 
     fun getTopicsForTextbook(textbookId: String) =

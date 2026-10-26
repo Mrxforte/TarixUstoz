@@ -1,0 +1,868 @@
+{
+ "chapter": "II-BO‘LIM. Qadimgi Sharq va O‘rta Osiyo",
+ "topics": [
+  {
+   "number": 13,
+   "title": "Old Osiyo davlatlari",
+   "page": 53,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 2-ming yillik",
+     "date_label": "Mil. avv. 2-ming yillik",
+     "event": "Old Osiyo hududida Ossuriya, Xett, Mitanni kabi ilk davlatlar va Finikiya shahar-davlatlari vujudga kela boshlagan.",
+     "evidence": "Mil. avv. 2-ming yillikda Old Osiyo hududida yashagan xalqlarni birlashtirgan ilk davlatlar vujudga kela boshladi:"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 605-yil",
+     "date_label": "Mil. avv. 605-yil",
+     "event": "Ossuriya qo‘shinlari Bobil va Midiya tomonidan qirib tashlanib, davlat zavolga yuz tutgan.",
+     "evidence": "Ossuriya qo'shinlari Bobil va Midiya tomonidan qirib tashlangan- dan keyin davlat zavolga yuz tutdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. XVIII asr",
+     "date_label": "Mil. avv. XVIII asr",
+     "event": "Kichik Osiyo markazida xettlar o‘z davlatiga asos solgan, poytaxti Xattusa shahri bo‘lgan.",
+     "evidence": "Taxminan mil. avv. XVIII asrda Kichik Osiyo markazida (hozirgi Turkiya hududida) xettlar degan shimollik xalq o'z davlatiga asos soladi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. IX–VIII asr boshlari",
+     "date_label": "Mil. avv. IX–VIII asr boshlari",
+     "event": "Urartu davlati gullab-yashnab, Tushpa shahri davlat poytaxtiga aylangan.",
+     "evidence": "Mil. avv. IX–VIII asr boshlarida Urartu davlati gullab-yashnadi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. X asr",
+     "date_label": "Mil. avv. X asr",
+     "event": "Finikiyada 22 undosh harfdan iborat alifbo yaratilgan, uni yunonlar o‘zlashtirib olgan.",
+     "evidence": "Mil. avv. X asrda Finikiyada 22 undosh harfdan iborat bo'lgan alifbo yaratildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. XI asr",
+     "date_label": "Mil. avv. XI asr",
+     "event": "Falastin hududida Isroil podsholigi vujudga kelib, keyinchalik Yahudiy podsholigi bilan birlashgan.",
+     "evidence": "Mil. avv. XI asrda Falastin hududida Isroil podsholigi vujudga keldi, keyinchalik u Ya- hudiy podsholigi bilan birlashdi."
+    },
+    {
+     "kind": "person",
+     "person": "Oshshurbanapal",
+     "role": "Ossuriya podsholigining hukmdori; uning nomi Nineviyadagi kutubxona bilan bog‘liq.",
+     "activity": "Uning hukmronligi davrida Nineviyada Old Osiyodagi eng yirik mixxat lavhalardan iborat kutubxona jamlangan.",
+     "evidence": "Oshshurbanapal hukmronligi davrida Nineviya- da Old Osiyodagi eng yirik sopol tax tachalardan iborat kutubxona jamlangan edi."
+    },
+    {
+     "kind": "person",
+     "person": "Odam ato",
+     "role": "«Bibliya»da tilga olingan Yer yuzidagi ilk odamlardan biri",
+     "activity": "Qadimiy yahudiylarning diniy kitoblarida uning yaratilishi haqidagi rivoyat yozib borilgan.",
+     "evidence": "Yer yuzidagi ilk odamlar – Odam ato va Momo havoning yaratilishi, Yer yuzini To'fon bosishi haqida va boshqa rivoyatlar mavjud."
+    },
+    {
+     "kind": "person",
+     "person": "Momo havo",
+     "role": "«Bibliya»da tilga olingan Yer yuzidagi ilk odamlardan biri",
+     "activity": "Diniy kitoblardagi rivoyatga ko‘ra Odam ato bilan birga yaratilgan deb hikoya qilinadi.",
+     "evidence": "Momo havoning yaratilishi, Yer yuzini To'fon bosishi haqida va boshqa rivoyatlar mavjud."
+    },
+    {
+     "kind": "term",
+     "term": "mixxat yozuv",
+     "definition": "Ossuriyada qo‘llangan yozuv turi; Oshshurbanapal kutubxonasi shu yozuvdagi lavhalardan iborat bo‘lgan.",
+     "evidence": "mixxat yozuvidagi kutubxonasi"
+    },
+    {
+     "kind": "term",
+     "term": "alifbo",
+     "definition": "Mil. avv. X asrda Finikiyada yaratilgan, 22 undosh harfdan iborat yozuv tizimi.",
+     "evidence": "22 undosh harfdan iborat bo'lgan alifbo yaratildi."
+    },
+    {
+     "kind": "term",
+     "term": "Bibliya",
+     "definition": "Qadimiy yahudiylarning diniy kitoblari to‘plami; yunonchada bu so‘z «kitob» ma’nosini beradi.",
+     "evidence": "Bu kitoblar to'plami «Bibliya»ga jamlangan, bu so'z"
+    },
+    {
+     "kind": "term",
+     "term": "dengiz xalqlari",
+     "definition": "Tarixda nomlari noma’lum xalqlar; ular xettlar poytaxtini bosib olib, shaharni vayronaga aylantirgan.",
+     "evidence": "dengiz xalqlari» deb atashgan) xettlar poytaxtini bosib olib, shaharni butunlay vay- ronaga aylantirdilar."
+    },
+    {
+     "kind": "term",
+     "term": "o‘lpon",
+     "definition": "Bo‘ysundirilgan xalqlar Ossuriya hukmdoriga to‘lagan majburiy to‘lov.",
+     "evidence": "katta miqdorda o'lpon to'lagan."
+    },
+    {
+     "kind": "place",
+     "place": "Nineviya",
+     "event": "Ossuriya poytaxti; unda Oshshurbanapalning mixxat yozuvidagi kutubxonasi jamlangan edi.",
+     "evidence": "Nineviya shahri poytaxt bo'lgan."
+    },
+    {
+     "kind": "place",
+     "place": "Xattusa",
+     "event": "Xett podsholigining poytaxti bo‘lgan, keyinchalik «dengiz xalqlari» tomonidan vayron qilingan.",
+     "evidence": "Xattusa shahri ana shu davlatning poytaxti bo'lgan."
+    },
+    {
+     "kind": "place",
+     "place": "Tushpa",
+     "event": "Urartu davlati poytaxtiga aylangan shahar; davlat gullab-yashnagan davrda muhim markaz bo‘lgan.",
+     "evidence": "Tushpa shahri Urar- tu davlati poytaxtiga aylanadi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Ossuriyaliklar bosqinchilik yurishlari olib, raqiblardan boylik tortib olgan.",
+     "effect": "Yurishlarda olingan hamma narsa poytaxtga oqib kelib, saroylar va ibodatxonalar boylikka to‘lgan.",
+     "evidence": "Yurishlarda raqiblardan tortib olingan ham- ma narsa poytaxtga oqib kelar edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Ossuriya hujumlari xavfi kuchli bo‘lgan.",
+     "effect": "Yagona davlat tashkil topishi uchun mudofaa qilish zarurati tezlashgan.",
+     "evidence": "Yagona davlat tashkil topishini mudofaa qilish zarurati Ossuriya hujumlaridan tezlashtiradi."
+    },
+    {
+     "kind": "cause",
+     "cause": "«Dengiz xalqlari» xettlar poytaxtini bosib olib, shaharni butunlay vayronaga aylantirgan.",
+     "effect": "Xett davlati nurayib, xettlar boshqa xalqlarga singishib ketgan.",
+     "evidence": "Davlat nuradi, xettlar esa boshqa xalqlarga singishib ketdi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Ossuriyaliklar urartlarni tor-mor etib, Teyshebaini qal’asini ishg‘ol qilib vayron qilgan.",
+     "effect": "Urartu podsholigi ancha zaiflashib qolgan.",
+     "evidence": "Teyshebaini shahridagi qal'a ish g'ol etildi va vayron qilib tashlandi."
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "title": "Ahamoniylar davlati",
+   "page": 57,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VI asr",
+     "date_label": "Mil. avv. VI asr",
+     "event": "Hozirgi Eron hududida Ahamoniylar sulolasiga mansub shohlar asos solgan Fors podsholigi vujudga kelgan.",
+     "evidence": "Mil. avv. VI asrda hozirgi Eron hududida Ahamoniylar sulola- siga mansub shohlar asos sol- gan Fors podsholigi vujudga keldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 3-ming yillik",
+     "date_label": "Mil. avv. 3-ming yillik",
+     "event": "Eronning janubi-g‘arbiy qismida Elam davlati vujudga kelib, uning poytaxti Suza shahri bo‘lgan.",
+     "evidence": "ming-yillikda Eronning janubi-g'arbiy qismida Me- sopotamiya bi- lan chegarada Elam davlati vujudga keldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VII asr",
+     "date_label": "Mil. avv. VII asr",
+     "event": "Podsho Kiaksar hukmronligi davrida Midiya qudratli davlatga aylangan va Bobil bilan ittifoqda Ossuriyani bosib olgan.",
+     "evidence": "Mil. avv. VII asrda podsho Kiaksar hukm - ronligi davrida Midiya qudratli davlatga aylan- di. Midiya davlati Bobil bilan"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 558-yil",
+     "date_label": "Mil. avv. 558-yil",
+     "event": "Kir II barcha forslarni o‘z hokimiyati ostida birlashtirib, bosqinchilik yurishlarini davom ettirgan.",
+     "evidence": "Mil. avv. 558-yilda ahamoniy- lar sulolasidan bo'lmish podsho Kir II barcha forslarni o'z ho- kimiyati ostida birlashtirdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 522-yil",
+     "date_label": "Mil. avv. 522-yil",
+     "event": "Shoh Doro I Qadimgi Fors davlati taxtiga chiqib, avj olgan qo‘zg‘olonlarni bostirishga erishgan.",
+     "evidence": "shoh Doro I Qadimgi Fors davla- ti taxtiga chiqdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 330-yil",
+     "date_label": "Mil. avv. 330-yil",
+     "event": "Makedoniyalik Aleksandr Fors davlatini bosib olib, Ahamoniylar saltanati tugatilgan.",
+     "evidence": "Makedoniyalik Aleksandr mil. avv. 330-yil- da Fors davlatini bosib oldi."
+    },
+    {
+     "kind": "person",
+     "person": "Kir II",
+     "role": "Ahamoniylar sulolasidan bo‘lgan Fors hukmdori",
+     "activity": "Barcha forslarni o‘z hokimiyati ostida birlashtirib, Midiya, Armaniston, Lidiya va Bobilni zabt etgan.",
+     "evidence": "Kir II barcha forslarni o'z ho- kimiyati ostida birlashtirdi."
+    },
+    {
+     "kind": "person",
+     "person": "Kambiz II",
+     "role": "Kir II ning vorisi bo‘lgan Fors shohi, istilochilik siyosatini davom ettirgan hukmdor.",
+     "activity": "Misrni zabt etish orqali Fors davlati hududini nihoyatda kengaytirgan.",
+     "evidence": "Kambiz II Misrni zabt etish orqali Fors davlati hududini nihoyatda kengaytirdi."
+    },
+    {
+     "kind": "person",
+     "person": "Doro I",
+     "role": "Mil. avv. 522-yilda taxtga chiqqan Ahamoniylar shohi",
+     "activity": "Davlatni satrapliklarga bo‘lib, «darik» oltin tangasini muomalaga kiritgan va «shoh yo‘li»ni qurdirtirgan.",
+     "evidence": "Doro I butun mamlakat uchun «darik» deb nomlangan yagona oltin tangani muomalaga kiritdi."
+    },
+    {
+     "kind": "person",
+     "person": "Kiaksar",
+     "role": "Mil. avv. VII asrda hukmronlik qilgan Midiya podshosi",
+     "activity": "Midiya qudratli davlatga aylangan davrda Bobil bilan ittifoq tuzib, Ossuriyani bosib olgan.",
+     "evidence": "asr da podsho Kiaksar hukm- ronligi davrida Midiya qudrat- li davlatga aylandi."
+    },
+    {
+     "kind": "term",
+     "term": "satraplik",
+     "definition": "Doro I saltanatni bo‘lgan alohida harbiy-ma’muriy o‘lkalar; ularning boshiga noiblar qo‘yilgan.",
+     "evidence": "satrapliklar» deb nomlangan alohida harbiy- ma'muriy o'lkalarga taqsimladi."
+    },
+    {
+     "kind": "term",
+     "term": "darik",
+     "definition": "Doro I butun mamlakat uchun muomalaga kiritgan yagona oltin tanga.",
+     "evidence": "butun mamlakat uchun «darik» deb nomlangan yagona oltin tangani muomalaga kiritdi."
+    },
+    {
+     "kind": "term",
+     "term": "shoh yo‘li",
+     "definition": "Persepoldan O‘rtayer dengizigacha qurilgan savdo yo‘li.",
+     "evidence": "qadar «shoh yo'li» degan savdo yo'lini qurdirgan edi."
+    },
+    {
+     "kind": "term",
+     "term": "mixxat",
+     "definition": "Qadimgi forslar foydalangan belgi yozuvi; shoh bitiklari qoyalarga o‘yib yozilgan.",
+     "evidence": "Qadimgi forslar mixxat belgi yozuvidan foydalanishgan."
+    },
+    {
+     "kind": "place",
+     "place": "Suza",
+     "event": "Elam davlatining poytaxti; keyinchalik Ahamoniylar davlatining muhim savdo markazlaridan biri bo‘lgan.",
+     "evidence": "Bu davlatning poytaxti Suza shahri bo'lgan."
+    },
+    {
+     "kind": "place",
+     "place": "Persepol",
+     "event": "Fors podsholigi qarorgohi; unda Doro I va Kserksning yuz ustunli saroyi qoldiqlari saqlanib qolgan.",
+     "evidence": "Kserksning yuz ustunli zali bo'lgan saroyining qoldiqlari saqlanib qolgan."
+    },
+    {
+     "kind": "place",
+     "place": "Behistun",
+     "event": "Qoya; unga fors shohlarining yurishlar va qo‘zg‘olonlar haqidagi bitiklari o‘yib yozilgan.",
+     "evidence": "Behistun va Naqshi Rustam qoyalariga, shuningdek, Persepol saroyi devorlariga o'yib yozilgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Doro I Kichik Osiyodagi yunonlar koloniyalari va Frakiyani bo‘ysundirgan.",
+     "effect": "Yunon-fors urushlari boshlanib ketishiga sabab bo‘lgan.",
+     "evidence": "yunon-fors urushlari boshlanib ke- tishiga sabab bo'ldi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Doro I qo‘shinlarni qaytadan tuzib, saltanatni satrapliklarga taqsimlagan.",
+     "effect": "Davlat boshqaruvi qat’iy tartibga solinib, markaziy hokimiyat mustahkamlangan.",
+     "evidence": "Doro I qo'shinlarni qaytadan tuzdi, saltanatni «satrapliklar» deb nomlangan alohida harbiy- ma'muriy o'lkalarga taqsimladi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Doro I davrida bosib olingan mamlakatlarda qo‘zg‘olonlar avj olib ketgan.",
+     "effect": "Shoh ularni bostirishga erishib, hokimiyatini mustahkamlagan.",
+     "evidence": "olingan barcha mamlakatlarda qo'zg'olonlar avj olib ketgan edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Midiya davlati Bobil bilan ittifoq tuzgan.",
+     "effect": "Ossuriya bosib olinib, Midiya qudratli davlatga aylangan.",
+     "evidence": "Bobil bilan ittifoq bo'lib Os- suriyani bosib oladi."
+    },
+    {
+     "kind": "number",
+     "number": "200",
+     "unit": "yildan ziyod",
+     "meaning": "Ahamoniylar davlati hukmronlik qilgan davrning davomiyligi.",
+     "evidence": "Ahamoniylar davlati ikki yuz yildan ziyod hukmronlik qilgan."
+    }
+   ]
+  },
+  {
+   "number": 15,
+   "title": "Qadimgi Hindiston sivilizatsiyasi",
+   "page": 61,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 3-ming yillik",
+     "date_label": "Mil. avv. 3-ming yillik",
+     "event": "Hind daryosi vodiysida katta shaharlar vujudga kela boshlagan.",
+     "evidence": "Mil. avv. 3-ming yillikda Hind dar- yosi vodiysida katta shaharlar vujudga kela boshladi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. XVIII asr",
+     "date_label": "Mil. avv. XVIII asr",
+     "event": "Hind daryosi vodiysi shaharlari tez-tez ro‘y beruvchi toshqinlar natijasida zavolga yuz tuta boshlagan.",
+     "evidence": "asrdan Hind daryosi vodiysi shaharlari tez-tez ro'y beruvchi toshqinlar, o'rmonlar va changal- zorlar kengayishi natijasida"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 3-ming yillik",
+     "date_label": "Mil. avv. 3-ming yillik",
+     "event": "Moxenjodaro va Xarappa shaharlari vujudga kelgan.",
+     "evidence": "Moxenjodaro va Xarappa shaharlarining vujudga kelishi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. XVIII asr",
+     "date_label": "Mil. avv. XVIII asr",
+     "event": "Shaharlar o‘rmonlar va changalzorlar kengayishi natijasida butunlay vayronaga aylangan.",
+     "evidence": "natijasida zavolga yuz tutib, butunlay vayronaga aylanadi."
+    },
+    {
+     "kind": "person",
+     "person": "Indra",
+     "role": "Hindlarning momaqaldiroq xudosi, osmondagi suvni tutqunlikdan xalos etgan.",
+     "activity": "Osmondagi suvni tutqunlikdan xalos etib, Yer yuzidagi qurg‘oqchilikni tugatgan.",
+     "evidence": "Momaqaldiroq xudosi Indra"
+    },
+    {
+     "kind": "person",
+     "person": "Ganesha",
+     "role": "Donishmandlik xudosi, boshi filnikiga o‘xshagan",
+     "activity": "Hindlar uni yovvoyi hayvonlar timsolida tasavvur etilgan xudolardan biri deb bilishgan.",
+     "evidence": "donishmandlik xudosi Ganesha bo'lgan."
+    },
+    {
+     "kind": "person",
+     "person": "Braxma",
+     "role": "Hindlarning oliy xudosi; tabaqalar uning jismining qismlaridan yaratilgan deb hisoblangan.",
+     "activity": "Tabaqalarni o‘z jismining turli qismlaridan dunyoga keltirgan deb hisoblangan.",
+     "evidence": "oliy xudo Braxma o'z jismining qaysidir bir qismidan dunyoga keltirgan ekan."
+    },
+    {
+     "kind": "term",
+     "term": "kasta (varna)",
+     "definition": "Hindlarning mashg‘ulotiga qarab bo‘lingan to‘rt tabaqasi: braxmanlar, kshatriylar, vayshilar, shudralar.",
+     "evidence": "kasta yoki varna deb atalgan, jumladan: kohinlar – braxmanlar (hind ruhoniylari), jangchilar – kshatriylar, deh qon,"
+    },
+    {
+     "kind": "term",
+     "term": "braxmanlar",
+     "definition": "Kohinlar tabaqasi, ya’ni hind ruhoniylari.",
+     "evidence": "kohinlar – braxmanlar (hind ruhoniylari), jangchilar – kshatriylar, deh qon, hunarmand va savdogarlar – vayshilar,"
+    },
+    {
+     "kind": "term",
+     "term": "kshatriylar",
+     "definition": "Jangchilar tabaqasi; hind jamiyatining to‘rt tabaqasidan biri.",
+     "evidence": "jangchilar – kshatriylar, deh qon, hunarmand va savdogarlar – vayshilar, xizmatkorlar va qullar – shudralardan iborat bo'lgan."
+    },
+    {
+     "kind": "term",
+     "term": "shudralar",
+     "definition": "Xizmatkorlar va qullardan iborat tabaqa.",
+     "evidence": "xizmatkorlar va qullar – shudralardan iborat bo'lgan."
+    },
+    {
+     "kind": "term",
+     "term": "chandallar",
+     "definition": "Hech bir tabaqaga mansub bo‘lmagan, «hazar qilinadiganlar» deb atalgan guruh.",
+     "evidence": "kastalarga mansub odamlar bilan birga bir uyda yashay olmasdi, ular bilan bir dasturxon- ga o'tirish taqiqlangan."
+    },
+    {
+     "kind": "place",
+     "place": "Moxenjodaro",
+     "event": "Hind daryosi havzasidagi eng katta va chiroyli shahar; unda mohir hunarmandlar ko‘p bo‘lgan.",
+     "evidence": "Katta va chiroyli shahar – Moxenjodaroda mohir hunarmandlar ko'p bo'lgan."
+    },
+    {
+     "kind": "place",
+     "place": "Xarappa",
+     "event": "Hind daryosi havzasining eng yirik shaharlaridan biri, mustahkam mudofaa devorlari bilan himoyalangan.",
+     "evidence": "Moxenjodaro va Xarappa shaharlari Hind daryosi hav- zasining eng yirik shaharlari edi."
+    },
+    {
+     "kind": "place",
+     "place": "Gang vodiysi",
+     "event": "Tropik o‘rmonlar, ulkan daraxtlar va rang-barang o‘simliklarga boy vodiy.",
+     "evidence": "Gang vodiysidagi tropik o'rmonlar ulkan daraxtlar va rang-barang o'simliklarga boy bo'lgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Iqlim issiq bo‘lib, daryolar suv bilan birga serunum loyqani oqizib kelgan.",
+     "effect": "Dehqonchilik vujudga kelishi va rivoj topishi uchun imkoniyat yaratilgan.",
+     "evidence": "dehqonchilik vujudga kelishi va rivoj topishi uchun im- koniyat yaratdi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Himolay tog‘lari tabiiy «mudofaa devori» bo‘lib xizmat qilgan.",
+     "effect": "Dushmanlar va sovuq shamollar tajovuzidan himoya ta’minlangan.",
+     "evidence": "dushmanlar va sovuq shamollar ta- jovuzidan o'ziga xos tabiiy «mudofaa devori» bo'lib xizmat qilgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Toshqinlar tez-tez ro‘y berib, o‘rmon va changalzorlar kengaygan.",
+     "effect": "Hind daryosi vodiysi shaharlari zavolga yuz tutib, vayronaga aylangan.",
+     "evidence": "toshqinlar, o'rmonlar va changal- zorlar kengayishi natijasida zavolga yuz tutib, butunlay vayronaga aylanadi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Bir tabaqadan boshqasiga o‘tish va turli kastalarga mansub odamlar o‘rtasida nikoh taqiqlangan.",
+     "effect": "Tabaqalar o‘rtasidagi chegaralar qat’iy saqlanib qolgan.",
+     "evidence": "Bir tabaqadan boshqasiga o'tishning ham iloji bo'lmagan."
+    },
+    {
+     "kind": "number",
+     "number": "4",
+     "unit": "tabaqa",
+     "meaning": "Hind jamiyati bo‘lingan guruhlar soni: braxmanlar, kshatriylar, vayshilar, shudralar.",
+     "evidence": "qarab to'rt guruhga ajratilgan edi."
+    }
+   ]
+  },
+  {
+   "number": 16,
+   "title": "Miloddan avvalgi I ming yillikda Hindiston",
+   "page": 65,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VII–VI asrlar",
+     "date_label": "Mil. avv. VII–VI asrlar",
+     "event": "Hindistonda Magadha, Koshala, Malla va boshqa davlatlar vujudga kelgan.",
+     "evidence": "Mil. avv. VII-VI asrlarda Hindistonda bir nechta dav- latlar, jumladan: Magadha, Koshala, Malla va boshqalar vujudga keladi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. III asr",
+     "date_label": "Mil. avv. III asr",
+     "event": "Podsho Ashoka hukmronligi davrida Maurya davlati yuksak taraqqiyotga erishgan.",
+     "evidence": "Mil. avv. III asrda pod- sho Ashoka hukmronligi davrida Maurya rivoj- lanishda yuksak taraqqiyotga erishdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VI asr",
+     "date_label": "Mil. avv. VI asr",
+     "event": "Yangi buddaviylik dini yaratilgan; bu din Budda taxallusini olgan shahzoda nomi bilan bog‘liq.",
+     "evidence": "Mil. avv. VI asrda yangi buddaviylik dinining yaratilishi Budda taxallusini olgan shahzoda Siddhar- tha Gautama nomi bilan bog'liq."
+    },
+    {
+     "kind": "person",
+     "person": "Chandragupta",
+     "role": "Mashhur hind sarkardasi, Maurya davlatining asoschisi",
+     "activity": "Yunon-makedon qo‘shinlariga qarshi kurashga sardorlik qilib, Shimoliy Hindiston davlatlarini birlashtirgan.",
+     "evidence": "Chandragupta Shi- moliy Hindistondagi barcha davlatlarni o'z tarkibiga olgan Maurya davlatiga asos solgan."
+    },
+    {
+     "kind": "person",
+     "person": "Ashoka",
+     "role": "Mil. avv. III asrda hukmronlik qilgan Maurya podshosi",
+     "activity": "Uning davrida Maurya davlati rivojlanishda yuksak taraqqiyotga erishgan.",
+     "evidence": "Ashoka hukmronligi davrida Maurya rivoj- lanishda yuksak taraqqiyotga erishdi."
+    },
+    {
+     "kind": "person",
+     "person": "Siddhartha Gautama",
+     "role": "Budda taxallusini olgan shahzoda, buddaviylik diniga asos solgan",
+     "activity": "Saroydagi farog‘atli turmushdan voz kechib, hayot mazmunini izlab ma’rifatga erishgan.",
+     "evidence": "U saroydagi farog'atli turmushdan voz kechdi, hayot mazmunini izlab topish maqsadida dunyo bo'ylab sayohatga otlandi."
+    },
+    {
+     "kind": "person",
+     "person": "Makedoniyalik Aleksandr",
+     "role": "Makedoniya podshosi, Hindistonga yurish qilgan sarkarda",
+     "activity": "Panjob aholisining qarshiligiga uchrab, Hind vodiysigacha yetib borgan, so‘ng Bobilga qaytgan.",
+     "evidence": "Aleksandr qoldirgan qo'shin mahalliy aholining qarshiligiga bar- dosh bera olmay, Hindistondan ketishga maj- bur bo'ladi."
+    },
+    {
+     "kind": "term",
+     "term": "Maurya davlati",
+     "definition": "Chandragupta asos solgan, Shimoliy Hindiston davlatlarini birlashtirgan qadimgi hind davlati.",
+     "evidence": "Maurya davlatiga asos solgan."
+    },
+    {
+     "kind": "term",
+     "term": "sanskrit",
+     "definition": "Qadimiy hind tillari asosida vujudga kelgan yangi adabiy til; dostonlar shu tilda yozilgan.",
+     "evidence": "sanskrit tili vujudga kelgan."
+    },
+    {
+     "kind": "term",
+     "term": "buddaviylik",
+     "definition": "«Xudolarsiz din» deb atalgan ta’limot; unga Budda taxallusini olgan shahzoda asos solgan.",
+     "evidence": "buddaviylik dinining yaratilishi Budda taxallusini olgan shahzoda Siddhar- tha Gautama nomi bilan bog'liq."
+    },
+    {
+     "kind": "term",
+     "term": "shaxmat",
+     "definition": "Hindlar «qo‘shinning to‘rt turi» deb atagan o‘yin; bugun butun jahonga mashhur.",
+     "evidence": "qo'shinning to'rt turi» deb ataydigan o'yin bu- gungi kunda butun jahonda «shaxmat» nomi bilan ma'lum va mashhurdir."
+    },
+    {
+     "kind": "term",
+     "term": "nol",
+     "definition": "Hindlar o‘ylab topgan maxsus belgi; o‘nlik sanoq tizimida qo‘llangan.",
+     "evidence": "hindlar «nol»ni ifodalovchi maxsus belgini o'ylab topishadi"
+    },
+    {
+     "kind": "place",
+     "place": "Pataliputra",
+     "event": "Maurya davlatining poytaxtiga aylangan shahar.",
+     "evidence": "Pataliputra shahri esa Maurya davlati poytaxtiga aylandi."
+    },
+    {
+     "kind": "place",
+     "place": "Panjob",
+     "event": "Aleksandr bostirib kirgan o‘lka; aholisi bosqinchilarga qattiq qarshilik ko‘rsatgan.",
+     "evidence": "Mazkur o'lka aholisi bos- qinchilarga qattiq qarshilik ko'rsatadi."
+    },
+    {
+     "kind": "place",
+     "place": "Bobil",
+     "event": "Aleksandr Hindistondan qaytib ketgan shahar.",
+     "evidence": "Bobilga qaytib ketadi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Mahalliy aholi qarshiligi kuchli bo‘lgan.",
+     "effect": "Aleksandr qoldirgan qo‘shin Hindistondan ketishga majbur bo‘lgan.",
+     "evidence": "qo'shin mahalliy aholining qarshiligiga bar- dosh bera olmay, Hindistondan ketishga maj- bur bo'ladi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Hindlar raqamlarni o‘nlik tizimda yozib, «nol» belgisini ixtiro qilgan.",
+     "effect": "Bu raqamlar arab tili orqali dunyoga tarqalib, arab raqamlari deb atalgan.",
+     "evidence": "hindlardan qabul qilingan bu raqamlar arab tilida yozilgan asarlar orqali dunyoga keng tarqalgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Har qanday xohish-istak azob-uqubatga olib keladi.",
+     "effect": "Budda va uning izdoshlari barcha xohish-istaklardan voz kechish zarur deb hisoblagan.",
+     "evidence": "inson har qanday xohish-istaklardan voz kechishi zarur, negaki har qanday xo- hish-istak azob-uqubatga olib keladi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Buddaviylar xudolar inson azob-uqubatlarini yengillashtira olmaydi deb hisoblagan.",
+     "effect": "Avvaliga buddaviylikda xudo bo‘lmagan deb hisoblangan.",
+     "evidence": "chunki ular xudolar inson azob-uqubatlarini yengillashtira olmaydi, deb hisoblaganlar."
+    },
+    {
+     "kind": "number",
+     "number": "360",
+     "unit": "kun",
+     "meaning": "Hindlar tuzgan yil hisobi taqvimining kunlar soni.",
+     "evidence": "yil hisobining 360 kundan tarkib topgan taqvimini tuzadilar."
+    },
+    {
+     "kind": "number",
+     "number": "20",
+     "unit": "yosh",
+     "meaning": "Siddhartha Gautama shu yoshga to‘lgunga qadar otasi saroyida betashvish kun kechirgan.",
+     "evidence": "Siddhartha Gautama 20 yoshga to'lguniga qadar hukmdor otasi saroyida betashvish kun kechirgan."
+    }
+   ]
+  },
+  {
+   "number": 17,
+   "title": "Qadimgi Xitoy sivilizatsiyalari",
+   "page": 68,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 3-ming yillikning oxirlari",
+     "date_label": "Mil. avv. 3-ming yillikning oxirlari",
+     "event": "Xuanxe daryosining o‘rta oqimida ilk davlat paydo bo‘lib, uni Sya sulolasi boshqargan.",
+     "evidence": "3-ming yillikning oxirlarida qadimgi Xitoy hududida ilk davlat Xuanxe daryosining o'rta oqimida paydo b'oladi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 2-ming yillik",
+     "date_label": "Mil. avv. 2-ming yillik",
+     "event": "Shan va Chjou davlatlari mavjud bo‘lgan.",
+     "evidence": "2-ming yillik – Shan, Chjou davlatlari"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VIII–VII asrlar",
+     "date_label": "Mil. avv. VIII–VII asrlar",
+     "event": "Chjou davlatining markaziy hokimiyati zaiflasha boshlagan.",
+     "evidence": "Miloddan avvalgi VIII–VII asrlarda Chjou davlatining markaziy hokimiyati zaiﬂ a- sha boshladi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VII–V asrlar",
+     "date_label": "Mil. avv. VII–V asrlar",
+     "event": "Xitoy tarixida «ko‘p podsholiklar» davri boshlangan.",
+     "evidence": "VII–V asrlardagi davr tarixda «ko'p podsho- liklar» davri nomini olgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VII–V asrlar",
+     "date_label": "Mil. avv. VII–V asrlar",
+     "event": "«Kurashayotgan podsholiklar» o‘rtasidagi urushlar ikki yuz yildan uzoqroq davom etgan.",
+     "evidence": "boshlangan urush- lar ikki yuz yildan uzoqroq davom etdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 3-ming yillik",
+     "date_label": "Mil. avv. 3-ming yillik",
+     "event": "Sya sulolasi podshosi taxtdan ag‘darilib, davlat «Shan» deb atala boshlagan.",
+     "evidence": "Shan qabilasining boshlig'i Sya sulolasi podshosini taxtdan ag'darib, davlatni o'ziga bo'ysundir- gan."
+    },
+    {
+     "kind": "person",
+     "person": "Sin Shixuandi",
+     "role": "Markazlashgan Xitoy hukmdori; mamlakatni yagona davlatga birlashtirgan.",
+     "activity": "Mamlakatni yagona davlatga birlashtirib, markazlashgan boshqaruvni o‘rnatgan.",
+     "evidence": "Sin Shixuandi – mar kazlashgan Xitoy hukmdori."
+    },
+    {
+     "kind": "person",
+     "person": "Shan qabilasining boshlig‘i",
+     "role": "Shan qabilasining boshlig‘i, Sya sulolasini ag‘dargan rahbar.",
+     "activity": "Sya sulolasi podshosini taxtdan ag‘darib, davlatni o‘ziga bo‘ysundirgan.",
+     "evidence": "qabilasining boshlig'i Sya sulolasi podshosini taxtdan ag'darib, davlatni o'ziga bo'ysundir- gan."
+    },
+    {
+     "kind": "person",
+     "person": "Chjou hukmdori",
+     "role": "Chjou davlatining hukmdori, Shan yerlarini qo‘shib olgan rahbar.",
+     "activity": "Shan yerlarini o‘ziga qo‘shib olib, «Chjou» degan katta davlatni bunyod etgan.",
+     "evidence": "uning hukmdori Shan yerlarini o‘zinikiga"
+    },
+    {
+     "kind": "term",
+     "term": "Sya sulolasi",
+     "definition": "Xitoyning ilk davlatini boshqargan sulola.",
+     "evidence": "Bu davlatni Sya sulo- lasi hukmdorlari boshqarib turganlar."
+    },
+    {
+     "kind": "term",
+     "term": "«Osmon ostidagi podsholik»",
+     "definition": "Chjou davlati ulkanligi bois hukmdorlar tomonidan qo‘llangan nom.",
+     "evidence": "Davlat ulkanligi bois hukm- dorlar uni «Osmon ostidagi podsholik», o'zlarini esa «Osmon o'g'illari» deb atash- gan."
+    },
+    {
+     "kind": "term",
+     "term": "«ko‘p podsholiklar» davri",
+     "definition": "Miloddan avvalgi VII–V asrlardagi davrning tarixda olgan nomi.",
+     "evidence": "tarixda «ko'p podsho- liklar» davri nomini olgan."
+    },
+    {
+     "kind": "term",
+     "term": "ipak",
+     "definition": "Tut bargi bilan boqilgan ipak qurti pillasidan tayyorlangan yengil va nafis mato.",
+     "evidence": "Tut bargi bilan ipak qurti boqiladi."
+    },
+    {
+     "kind": "place",
+     "place": "Xuanxe",
+     "event": "Xitoy sivilizatsiyasi ildizlari vujudga kelgan katta daryo; ilk davlat uning o‘rta oqimida paydo bo‘lgan.",
+     "evidence": "Xuanxe daryosining o'rta oqimida paydo b'oladi."
+    },
+    {
+     "kind": "place",
+     "place": "Yantszi",
+     "event": "Xitoyda qadimgi sivilizatsiya vujudga kelgan ikkinchi katta daryo.",
+     "evidence": "daryolar bo'ylarida vujudga kelgan."
+    },
+    {
+     "kind": "place",
+     "place": "Shimoliy Xitoy",
+     "event": "Butun hududi Chjou davlati tarkibiga kirgan.",
+     "evidence": "Butun Shimoliy Xitoy ana shu davlat tarkibiga kirgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Chjou davlatining markaziy hokimiyati zaifashgan va noiblar podsho hokimiyatidan ozod bo‘lishga intilgan.",
+     "effect": "Chekka viloyatlar ajralib chiqib, o‘z davlatlarini tashkil eta boshlagan.",
+     "evidence": "Ayrim viloyatlar noiblari pod- sho hokimiyatidan ozod bo'lishga intilar edi- lar."
+    },
+    {
+     "kind": "cause",
+     "cause": "Xitoyga ko‘chmanchi qabilalar hujum qila boshlagan.",
+     "effect": "Undan foydalangan chekka viloyatlar aholisi ajralib chiqqan.",
+     "evidence": "Xitoyga ko'chmanchi qabilalar hujum qila boshlaganidan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dehqonchilik azaldan e’tiborli va faxrli kasb hisoblangan.",
+     "effect": "Asosiy dehqonchilik ekinlari javdar va bug‘doy bo‘lgan.",
+     "evidence": "dehqonchilik ekinlari javdar va bug'doy bo'lgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Tut daraxti yetishtirilib, ipak qurti boqilgan.",
+     "effect": "Pilladan yengil va nafis ipak shoyi matosi tayyorlangan.",
+     "evidence": "tolalarni o'raydi, pilladan esa nihoyatda yengil va naﬁ s mato bo'lmish ipak shoyi tayyorlanadi."
+    },
+    {
+     "kind": "number",
+     "number": "200",
+     "unit": "yildan uzoqroq",
+     "meaning": "«Kurashayotgan podsholiklar» davridagi urushlarning davomiyligi.",
+     "evidence": "ikki yuz yildan uzoqroq davom etdi."
+    }
+   ]
+  },
+  {
+   "number": 18,
+   "title": "Miloddan avvalgi III-mil. II asrlarda Xitoy",
+   "page": 72,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 246-yil",
+     "date_label": "Mil. avv. 246-yil",
+     "event": "Xitoyni o‘z hokimiyati ostida birlashtirgan hukmdor Sin Shixuandi nomini qabul qilgan.",
+     "evidence": "246-yilda Xitoyni o'z hokimiyati ostida birlashtirgan hukmdor Sin Shixu- andi nomini qabul qilgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 206-yil",
+     "date_label": "Mil. avv. 206-yil",
+     "event": "Sin sulolasiga qarshi dehqonlar qo‘zg‘oloni boshlanib, Sin podsholigi tugatilgan.",
+     "evidence": "206-yilda Sin su- lolasiga qarshi dehqon- lar qo'zg'oloniga Lyu Ban boshchilik qilgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. IV asr",
+     "date_label": "Mil. avv. IV asr",
+     "event": "Buyuk Xitoy devorini qurish ishlari boshlangan.",
+     "evidence": "Devorni qurish ishlari dast- lab mil. avvalgi IV asrda boshlangan."
+    },
+    {
+     "kind": "date_event",
+     "date": "milodning boshlari",
+     "date_label": "Milodning boshlari",
+     "event": "«Qizil qoshlilar» qo‘zg‘oloni bo‘lib o‘tgan.",
+     "evidence": "biri milodning boshlarida «qizil qoshlilar» qo'zg'oloni nomini olgandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "milodiy II asr",
+     "date_label": "Milodiy II asr",
+     "event": "«Sariq ro‘mollilar» qo‘zg‘oloni bo‘lib, butun mamlakatni qamrab olgan.",
+     "evidence": "Sariq ro'mollilar» qo'zg'oloni II asrda- gi eng yirik isyon bo'ldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. I asr",
+     "date_label": "Mil. avv. I asr",
+     "event": "Xitoyliklar tomonidan qog‘oz ixtiro qilingan.",
+     "evidence": "Mil. avv. I asrda esa qog'oz ixtiro qilindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "milodiy III asr",
+     "date_label": "Milodiy III asr",
+     "event": "Xan davlati uchta podsholikka parchalanib ketgan.",
+     "evidence": "Milodiy III asrda Xan davlati uchta podsholikka parchalanib ketdi."
+    },
+    {
+     "kind": "person",
+     "person": "Sin Shixuandi",
+     "role": "Xitoyni yagona davlatga birlashtirgan hukmdor",
+     "activity": "Davlati hududini 36 viloyatga taqsimlab, har biriga noiblarini rahbar etib tayinlagan.",
+     "evidence": "vilo-yatga taqsimlagan hukmdor har biriga noib-larini rahbar etib tayinladi"
+    },
+    {
+     "kind": "person",
+     "person": "Lyu Ban",
+     "role": "Sin sulolasiga qarshi dehqonlar qo‘zg‘olonining boshlig‘i",
+     "activity": "Qo‘zg‘olonchilar bilan poytaxtni egallab, Sin podsholigini tugatgan.",
+     "evidence": "lar qo'zg'oloniga Lyu Ban boshchilik qilgan."
+    },
+    {
+     "kind": "person",
+     "person": "U-Di",
+     "role": "Xan sulolasining hukmdori; uning davrida davlat eng qudratli bo‘lgan.",
+     "activity": "Uning hukmronligi davrida sulola davlati eng qudratli davlatga aylangan.",
+     "evidence": "Bu sulola davlati U-Di hukmronligi davrida eng qudratli davlatga aylandi."
+    },
+    {
+     "kind": "term",
+     "term": "kompas",
+     "definition": "Magnitlangan temirdan yasalgan uzun dastali katta qoshiqqa o‘xshagan moslama; dastasi doim janubni ko‘rsatgan.",
+     "evidence": "U magnitlangan temirdan yasalgan uzun dastali katta qoshiqni esla- tar edi."
+    },
+    {
+     "kind": "term",
+     "term": "seysmograf",
+     "definition": "Xitoyda ixtiro qilingan, zilzilani oldindan aniqlab beruvchi asbob.",
+     "evidence": "Xitoyda zilzilani oldindan aniqlab beruvchi seysmograf ham ixtiro qilingan."
+    },
+    {
+     "kind": "term",
+     "term": "Buyuk Xitoy devori",
+     "definition": "Shimoliy Xitoy bo‘ylab qurilgan mudofaa devori; balandligi 6–10 metr, uzunligi qariyb 4000 kilometr.",
+     "evidence": "devor tarixda Buyuk Xitoy devori deb atal- gan."
+    },
+    {
+     "kind": "term",
+     "term": "sopol askarlar",
+     "definition": "Sin Shixuandi qabridan topilgan, hukmdorni «qo‘riqlash» uchun o‘rnatilgan 6 mingta haykal.",
+     "evidence": "6 mingta sopol askarlar haykallari topilgan."
+    },
+    {
+     "kind": "place",
+     "place": "Shimoliy Xitoy",
+     "event": "Sin Shixuandi ko‘chmanchi xunnlar hujumidan himoya qilish uchun bu yer bo‘ylab mudofaa devorini mustahkamlashni buyurgan.",
+     "evidence": "Shimoliy Xitoy bo'ylab qurilgan mudofaa devorini yanada mustahkamlash- ni buyurgan."
+    },
+    {
+     "kind": "place",
+     "place": "Xitoy",
+     "event": "Sin Shixuandi tomonidan o‘z hokimiyati ostida birlashtirilgan va 36 viloyatga taqsimlangan mamlakat.",
+     "evidence": "Xitoyni o'z hokimiyati ostida birlashtirgan hukmdor Sin Shixu- andi nomini qabul qilgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Sin Shixuandi davlatiga ko‘chmanchi xunnlar hujum qilgan.",
+     "effect": "Sin Shixuandi mudofaa devorini yanada mustahkamlashni buyurgan.",
+     "evidence": "ko'chmanchi xunnlar- ning hujumlaridan himoya qilish uchun Shimoliy Xitoy bo'ylab qurilgan mudofaa devorini yanada mustahkamlash- ni buyurgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Og‘ir mehnat evaziga yetishtirilgan hosil ko‘pincha dehqonning o‘ziga nasib etavermasdi.",
+     "effect": "Jabr-zulm xalqning noroziligini kuchaytirib, qo‘zg‘olonlar boshlangan.",
+     "evidence": "Jabr-zulm hamisha xalqning noroziligini kuchaytirib yuboradi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Devorni qurishda podsho va amaldorlar minglab dehqonlarni majburan ishlatgan.",
+     "effect": "Dehqonlar og‘ir mehnat majburiyatlarini bajarishga majbur bo‘lgan.",
+     "evidence": "Podsho va amaldorlar devor qurilishida minglab dehqonlarni majburan ishlatganlar."
+    },
+    {
+     "kind": "cause",
+     "cause": "Xunnlar hujumlari kuchaygan.",
+     "effect": "Xan davlati zaifashib, milodiy III asrda uchta podsholikka parchalanib ketgan.",
+     "evidence": "Xunnlar hujumlari kuchayishi bilan davlat ham zaiﬂ ashdi."
+    },
+    {
+     "kind": "number",
+     "number": "36",
+     "unit": "viloyat",
+     "meaning": "Sin Shixuandi davlati hududi bo‘lingan viloyatlar soni.",
+     "evidence": "36 vilo- yatga taqsimlagan hukmdor har biriga noib- larini rahbar etib tayinladi."
+    },
+    {
+     "kind": "number",
+     "number": "720",
+     "unit": "ming odam",
+     "meaning": "Sin Shixuandi maqbarasini bunyod etgan kishilar soni.",
+     "evidence": "720 ming odam 37 yil mobaynida bunyod etgan"
+    }
+   ]
+  }
+ ]
+}

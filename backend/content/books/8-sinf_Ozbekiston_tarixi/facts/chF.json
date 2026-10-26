@@ -1,0 +1,988 @@
+{
+ "chapter": "IV BOB. XVIII–XIX ASRNING BIRINCHI YARMIDA QO‘QON XONLIGI",
+ "topics": [
+  {
+   "number": 35,
+   "title": "Qo‘qon xonligida harbiy ish",
+   "page": 129,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1805",
+     "date_label": "1805-yilda",
+     "event": "Qo‘qon xonligida birinchi muntazam qo‘shin tuzilib, uning soni 10 ming kishiga yetgan va asosini tog‘li lojiklar tashkil etgan",
+     "evidence": "1805-yilda birinchi bo'lib xonlikda 10 ming kishilik muntazam qo\"-\nshin tuzdi. Bu qo'shinning asosini 1og'li lojiklar lashkil cidi."
+    },
+    {
+     "kind": "date_event",
+     "date": "XIX asrning 30–40-yillari",
+     "date_label": "XIX asrning 30–40-yillarida",
+     "event": "Xonlikda jami 30 ming askar bo‘lgan, barcha mehnatga yaroqli erkaklar esa harbiy xizmatga chaqirilishi mumkin edi",
+     "evidence": "XIX asrning 30-40-yillarida xonlikda jami 30 ming askar bor\nedi."
+    },
+    {
+     "kind": "date_event",
+     "date": "Umarxon davri",
+     "date_label": "Umarxon davrida",
+     "event": "Muntazam qo‘shin soni 12 ming kishiga yetkazilgan",
+     "evidence": "Umarxon davrida ularning soni 12 ming kishiga yetkazildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "Xudoyorxon davri",
+     "date_label": "Xudoyorxon davrida",
+     "event": "Usmonli davlatidan sifalli tayyorlangan miltiq, ya’ni vintovka olib keltirilgan",
+     "evidence": "Xudoyorxon csa Usmonli davlatidan sifalli iayyorlangan miltiq (vintovka) olib kcltirdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "har yili",
+     "date_label": "Har yili",
+     "event": "Muntazam qo‘shin yiliga ikki marta harbiy ko‘rikdan o‘tkazib turilgan",
+     "evidence": "Muntazam qo'shin yiliga ikki marta harbiy ko'rikdan o'tkazib turilgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "harbiy harakatlar chog‘ida",
+     "date_label": "Harbiy harakatlar chog‘ida",
+     "event": "Har bir bo‘linmada 5 kishilik guruh yaradorlarni jang maydonidan olib chiqish va halok bo‘lganlarni dafn etish bilan shug‘ullangan",
+     "evidence": "Harbiy harakatiar chog\"ida har bir bo'linmada 5 kishilik guruh\nham faoliyat yuritgan."
+    },
+    {
+     "kind": "person",
+     "person": "Olimxon",
+     "role": "Qo‘qon xoni, o‘z davrida harbiy islohot o‘tkazgan hukmdor",
+     "activity": "Muntazam qo‘shinni xonlikda birinchi bo‘lib joriy etgan hukmdor sifatida tarixda qolgan",
+     "evidence": "Shuning uchun ham Olimxon"
+    },
+    {
+     "kind": "person",
+     "person": "Xudoyorxon",
+     "role": "Qo‘qon xoni, zamonaviy to‘pchi qo‘shin tuzdirgan hukmdor",
+     "activity": "Xonlikda nisbatan zamonaviy to‘pchi qo‘shinni shakllantirib, artilleriyaga alohida e’tibor bergan",
+     "evidence": "Xudoyorxon nisbatan zamonaviy to'pchi qo'shinni tuzdi."
+    },
+    {
+     "kind": "person",
+     "person": "Qozi askar",
+     "role": "harbiy ruhoniy mansabdor, qo‘shin ma’naviyati uchun javobgar shaxs",
+     "activity": "Harbiy harakat boshlanishidan oldin xon nomidan jihod e’lon qilgan, o‘ljani baholagan va qo‘shin ma’naviyati uchun javobgar bo‘lgan",
+     "evidence": "Qozi askar harbiy harakat boshlanishidan oldin xon nomidan jihod c'lon qilgan."
+    },
+    {
+     "kind": "person",
+     "person": "Qozi rais",
+     "role": "qozi, qo‘shin mufiysi fatvolarining ijrosini nazorat qilgan mansabdor",
+     "activity": "Qo‘shin mufiysi bergan fatvo ijrosining ta’minlanishini nazorat qilgan",
+     "evidence": "Qozi rais csa qo'shin mufiysi bcrgan faivo jjrosining la'minlanishini nazorat qilgan."
+    },
+    {
+     "kind": "person",
+     "person": "Xonning xos soqchilari",
+     "role": "xonning shaxsiy qo‘riqchilari, jangda askarlarni ruhlantirib turganlar",
+     "activity": "Jangda askarlarni ruhlantirib turgan va chekinayotganlarga burchlari haqida eslatib turgan",
+     "evidence": "soqchilari askarlarni jangda ruhlantirib turgan. Chekinayotganlarga"
+    },
+    {
+     "kind": "term",
+     "term": "navkariya",
+     "definition": "Xonlikdagi muntazam qo‘shinning nomi; uning asosini tog‘li lojiklar tashkil etib, askarlar o‘qotar qurollar bilan qurollantirilgan",
+     "evidence": "Navkariya dcb alalgan mazkur muntazam qo'shin o'qotar qurollar bilan"
+    },
+    {
+     "kind": "term",
+     "term": "qilquyruq, qoraqozon va qoracherik",
+     "definition": "Nomuntazam qo‘shin turlari; ular yordamchi bo‘linma hisoblanib, zaruratga qarab to‘plangan",
+     "evidence": "qilquyruq, qoraqozon va\nqoracherik dcb ataluvchi nomuntazam qo'shin ham saqlab qolindi."
+    },
+    {
+     "kind": "term",
+     "term": "tug va bayroq",
+     "definition": "1000 kishilik qo‘shin bo‘linmasi tug (minglik), 500–1000 kishilik bo‘linmasi esa bayroq deb atalgan",
+     "evidence": "1ooo kishidan iborat qo'shin bo'linmasi tug\n(minglik), 500-1000 tagacha qo'shin bo'linmasi bayroq dch atalgan."
+    },
+    {
+     "kind": "term",
+     "term": "shogirdpeshalar",
+     "definition": "Harbiy ishni maxsus ta’lim olmasdan, o‘z tajribalari asosida o‘rgatgan kishilar",
+     "evidence": "Bunday kishilar shogirdpeshalar deb atalishgan."
+    },
+    {
+     "kind": "term",
+     "term": "strategik",
+     "definition": "Umumiy maqsadga erishish uchun muhim bo‘lgan narsa yoki holat",
+     "evidence": "Strategik - umumiy maqsadga erishish uchun muhim bo'lgan."
+    },
+    {
+     "kind": "place",
+     "place": "Qo‘qon shahri qal’asi",
+     "event": "Ikkita himoya devori bilan o‘ralgan bo‘lib, ichida otlar, qurol-yarog‘ zaxirasi va askarlar uchun xonalar joylashgan",
+     "evidence": "Qo'qon shahri qal'asi ikkita himoya devori bilan o'ralgan. Uning"
+    },
+    {
+     "kind": "place",
+     "place": "Ohangaron va Chirchiq vohasi",
+     "event": "Kerovchi, To‘ytepa va Bo‘ka istehkomlari bunyod etilgan",
+     "evidence": "Ohangaron va Chirchiq vohasida Kerovchi, To'ytepa va Bo'ka"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xonlikda zobitlar tayyorlaydigan maxsus harbiy bilim yurtalari tashkil etilmagan",
+     "effect": "Qo‘shinning harbiy tayyorgarlik darajasi juda past bo‘lib qolgan",
+     "evidence": "Chunki qo'shin\nuchun zobilar tayyorlaydigan maxsus harbiy bilim yurilari tashkil"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qo‘shin saqlash juda katta xarajat talab qilgan",
+     "effect": "Xarajatlar soliq tushumlari hisobiga qoplangan va aholidan «miltiq puli» solig‘i undirilgan",
+     "evidence": ",miltiq puli\" deb ataluvchi soliq ham joriy etilgan bo'lib."
+    },
+    {
+     "kind": "cause",
+     "cause": "Xonlik sarhadlari xavfsizligini mustahkamlash zarurati",
+     "effect": "Harbiy qal’a va istehkomlar qurilishiga alohida e’tibor qaratilgan",
+     "evidence": "Xonlik sarhadlarining xavIsizligini mustahkam-"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qo‘shin uchun yordamchi bo‘linmalar zarur bo‘lgan",
+     "effect": "Ular aholi soniga va hududlarning iqtisodiy ahvoliga qarab to‘plangan",
+     "evidence": "Yordamchi bo'linma zaruratga\nqarab aholi soniga"
+    },
+    {
+     "kind": "number",
+     "number": "2,5",
+     "unit": "tilla",
+     "meaning": "«Miltiq puli» solig‘ining o‘rtahol oilalar uchun belgilangan miqdori",
+     "evidence": "u o'rtahol oilalar uchun 2,5 tilla, boy oilalar uchun 5 tilla miqdorida"
+    },
+    {
+     "kind": "number",
+     "number": "164",
+     "unit": "kg",
+     "meaning": "Bir botmon og‘irlik o‘lchov birligining taxminiy qiymati",
+     "evidence": "Botmon - ogirlik o'lchov birligi, 1 boimon laxminan 164 kg.ga"
+    }
+   ]
+  },
+  {
+   "number": 36,
+   "title": "Qo‘qon xonligida ijtimoiy-iqtisodiy hayot",
+   "page": 133,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1832",
+     "date_label": "1832-yilda",
+     "event": "Savdogarlardan boj yig‘ish huquqi qo‘lga kiritilgan",
+     "evidence": "1832-yilda imzosavdogarlardan boj yig'ish huquqini olgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "1842",
+     "date_label": "1842-yilda",
+     "event": "Qo‘qon shahri mustahkam devor bilan o‘ralgan",
+     "evidence": "1842-yilda Qo'qon mustahkam devor bilan o'raldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "2009",
+     "date_label": "2009-yilda",
+     "event": "Toshkent shahrining 2200 yilligi nishonlangan",
+     "evidence": "2009-yilda 2200 yilligi nishonlangan Toshkcnt ham"
+    },
+    {
+     "kind": "date_event",
+     "date": "1723",
+     "date_label": "1723-yilda",
+     "event": "Toshkentni ko‘chmanchi jung‘orlar egallab olgan, qaramlik 1758-yilgacha davom etgan",
+     "evidence": "1723-yilda Toshkcntni ko'chmanchi jung'orlar cgallab oldilar."
+    },
+    {
+     "kind": "date_event",
+     "date": "1784",
+     "date_label": "1784-yilda",
+     "event": "To‘rt hokimlik tugatilib, yagona Toshkent bekligi tashkil etilgan",
+     "evidence": "1784-yilda to'rt hokimlik tugatildi va yagona Toshkent bekligi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1810",
+     "date_label": "1810-yilda",
+     "event": "Olimxon hukmronligi davrida Toshkent Qo‘qon xonligi tarkibiga qo‘shib olingan",
+     "evidence": "1810-yilda Olimxon hukmronligi davrida Qo'qon"
+    },
+    {
+     "kind": "person",
+     "person": "A. Muhammadjonov",
+     "role": "tarixchi olim, akademik, Farg‘ona vodiysi shaharlari tarixi bo‘yicha tadqiqotchi",
+     "activity": "«Andijon» nomi «soy bo‘yidagi shahar» ma’nosini anglatishini ta’kidlagan",
+     "evidence": "akadcmik A. Muhammadjonovning ia'kidlashicha, ,Andijon\" soy"
+    },
+    {
+     "kind": "person",
+     "person": "Zahiriddin Muhammad Bobur",
+     "role": "Andijon hukmdori, shoir va «Boburnoma» asarining muallifi",
+     "activity": "Davrida Andijonda xo‘jalik, fan va madaniyat ravnaq topgan",
+     "evidence": "Bobur davrida Andijonda xo\"jalik, fan va madaniyat ravnaq topdi."
+    },
+    {
+     "kind": "person",
+     "person": "Qozi va minghoshi",
+     "role": "Andijon dahalariga tayinlangan ma’muriy va harbiy mansabdorlar",
+     "activity": "XIX asr o‘rtalarida har bir dahaga qozi va minghoshi tayinlangan",
+     "evidence": "Har\ndahaga qozi va minghoshi 1ayinlandi."
+    },
+    {
+     "kind": "person",
+     "person": "Oqsoqol",
+     "role": "mahalla boshlig‘i, mahalliy boshqaruvning quyi bo‘g‘ini",
+     "activity": "Andijon dahalari mahallalarga bo‘linib, ularni oqsoqol boshqargan",
+     "evidence": "ularni oqsoqol boshqargan."
+    },
+    {
+     "kind": "person",
+     "person": "Xon",
+     "role": "yerning oliy egasi, qo‘riq va yaylov yerlarining ham egasi",
+     "activity": "Uning yerlarida ishlash uchun safarbar etilganlar soni 10 ming nafargacha yetgan",
+     "evidence": "Xon yerlarida ishlash uchun safarbar etilganlarning soni 10 ming nalargacha yelardi."
+    },
+    {
+     "kind": "term",
+     "term": "amlok",
+     "definition": "Davlat yerlarining umumiy nomi; yer egaligi amlok, xususiy va vaqf yerlariga bo‘lingan",
+     "evidence": "u egalik shakliga ko'ra, amlok (davlat)."
+    },
+    {
+     "kind": "term",
+     "term": "vaqf yer",
+     "definition": "Sotilmaydigan, hadya qilinmaydigan va meros qilib qoldirilmaydigan yerlar",
+     "evidence": "vaqf ycrlar sotilmaydi, hadya qilinhtt!"
+    },
+    {
+     "kind": "term",
+     "term": "taqiq (qo‘riq) yer",
+     "definition": "Yaylov, qamishzor va chakalakzorlardan iborat bo‘lgan xon yerlari",
+     "evidence": "taqiq yer (qo'riq yer) deb alalgan va u yaylov, qamishzor va chakalakzorlardan iborat bo'lgan."
+    },
+    {
+     "kind": "term",
+     "term": "chorikor",
+     "definition": "Yersiz va ot-ulovsiz kambag‘allar; xususiy yerlarda hosilning 1/4 qismi uchun yollanib ishlaganlar",
+     "evidence": "ycrsiz, ol-ulovsiz kambag'allar csa chorikorlar dch alalar edi."
+    },
+    {
+     "kind": "term",
+     "term": "koranda",
+     "definition": "Yerni ijaraga olib, o‘z mehnat qurollari va ot-ulovlari bilan hosilning 1/2 qismi uchun ishlaganlar",
+     "evidence": "korandalar dcb ataluvchilar ham bo'lib. ular hosilning 1/2"
+    },
+    {
+     "kind": "place",
+     "place": "Qo‘qon",
+     "event": "XIX asr o‘rtalarida Madalixon, Norbo‘tabiy, Jome, Hokimoyim, Hoja dodxoh va Mingoyim madrasalari alohida ajralib turgan",
+     "evidence": "XIX asr o'rtalarida Qo'qondagi madrasalar ichida Madalixon, Norbo'tabiy, Jome, Hokimoyim, IIoja dodxoh, Mingoyim madrasalari alohida ajralib turadi."
+    },
+    {
+     "kind": "place",
+     "place": "Andijon",
+     "event": "«Buyuk ipak yo‘li»da bunyod etilgan, XV asrdan Farg‘ona vodiysining markaziga aylangan",
+     "evidence": "Andijon .,Buyuk ipak yo\"li\"da bunyod etilgan. Arablar istilo qilgan davrda shahar ,Andukon\" deb alalgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Rossiya o‘zbek davlatlaridan, jumladan Qo‘qondan paxta sotib ola boshlagan",
+     "effect": "Farg‘ona vodiysida paxta maydonlari kengayib, paxta savdosiga boj bekor qilingan",
+     "evidence": "Rossiyaning o'zbck davlatlaridan. jumladan, Qo'qondan paxta sotib ola"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xususiy yer egalari yerni meros qoldirish huquqiga ega bo‘lmagan",
+     "effect": "Egalik qilib turgan yerlarining bir qismini saqlab qolish uchun vaqf avlod qilganlar",
+     "evidence": "Yerni meros qilib\nqoldirish huquqiga ega bo'lmaganliklari uchun hozircha egalik qilib"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qo‘riq yerlar, chakalakzorlar, o‘tloqlar, ko‘llar va yaylovlar xonning ixtiyorida bo‘lgan",
+     "effect": "Aholi qal’a devorlarini ta’mirlash, kanal qazish va yo‘l qurilishida majburiy ishlagan",
+     "evidence": "Chunki hamma qo'riq ycrlar, chakalakzorlar, 1o'qaylar, daraxizorlar,"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xonlikda sun’iy sug‘orish mahorati mukammal egallangan va suvdan oqilona foydalanilgan",
+     "effect": "Bug‘doy va paxta asosiy ekin bo‘lib, meva, sabzavot va poliz ekinlarining deyarli barcha turlari yetishtirilgan",
+     "evidence": "suvdan oqilona foydalanilgan. Asosiy qishloq xo'jaligi ekini bug'doy va"
+    },
+    {
+     "kind": "number",
+     "number": "12",
+     "unit": "darvoza",
+     "meaning": "Qo‘qon shahriga kiriladigan darvozalar soni; shahar ma’muriy jihatdan ham 12 dahaga bo‘lingan",
+     "evidence": "Shaharga 12 darvozadan kirilardi."
+    },
+    {
+     "kind": "number",
+     "number": "30000",
+     "unit": "kishi",
+     "meaning": "Qo‘qon shahrida yashagan aholi soni (XIX asrning birinchi yarmi)",
+     "evidence": "Bu davrda shaharda 30000 aholi yashagan."
+    }
+   ]
+  },
+  {
+   "number": 37,
+   "title": "Qo‘qon xonligining tashqi siyosati",
+   "page": 137,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1755–1759",
+     "date_label": "1755–1759-yillarda",
+     "event": "Xitoy Sharqiy Turkistonni o‘ziga bo‘ysundirgan",
+     "evidence": "Xiloyning 1755-1759-yillar mobaynida Sharqiy"
+    },
+    {
+     "kind": "date_event",
+     "date": "1825",
+     "date_label": "1825-yilda",
+     "event": "Madalixon Qashqar aholisining Xitoyga qarshi ozodlik kurashini qo‘llab-quvvatlagan",
+     "evidence": "1825-yilda Qashqar\naholisining Xitoyga qarshi ozodlik kurashini qo'llab-quvvatlagani"
+    },
+    {
+     "kind": "date_event",
+     "date": "1829",
+     "date_label": "1829-yilda",
+     "event": "Xitoy Qo‘qonning Sharqiy Turkistondagi savdo ishlarini taqiqlab, savdogarlarni haydagan",
+     "evidence": "Xiioy hukumali bunga javoban 1829-yilda Qo'qonning"
+    },
+    {
+     "kind": "date_event",
+     "date": "1832",
+     "date_label": "1832-yilda",
+     "event": "Pekinda Xitoy–Qo‘qon shartnomasi imzolangan",
+     "evidence": "1832-yilda Pekinda Xiloy-Qo'qon shartnomasi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1831",
+     "date_label": "1831-yilda",
+     "event": "Madalixon Rossiyaga elchi yuborgan, biroq elchilik muvaffaqiyatsiz yakunlangan",
+     "evidence": "Shu maqsadda 1831-yilda Rossiyaga clechi yubordi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1842",
+     "date_label": "1842-yilda",
+     "event": "Mahmudxon yuborgan Qo‘qon elchilari Rossiya imperatori Nikolay I tomonidan qabul qilingan",
+     "evidence": "Qo'qon elchilari Rossiya\nimperatori Nikolay I tomonidan qabul qilindi."
+    },
+    {
+     "kind": "person",
+     "person": "Erdonabiy",
+     "role": "Qo‘qon xoni, jung‘orlarni tor-mor etib, qozoq juzlari yeriga hujum boshlagan hukmdor",
+     "activity": "Xitoy bilan tahqirli shartnoma imzolab, xonlikning Xitoyga qaramligini tan olgan",
+     "evidence": "lirdonabiy Xioy bilan Qo'qon xonligi uchun lahqirli sharinoma imzolashga majbur bo'ldi."
+    },
+    {
+     "kind": "person",
+     "person": "Madalixon",
+     "role": "Qo‘qon xoni, Xitoyga bo‘ysunmaslik siyosatini yuritgan hukmdor",
+     "activity": "Xitoyga umuman bo‘ysunmaslikka qaror qilib, davlat chegarasini Sharqiy Turkiston tomon kengaytirgan",
+     "evidence": "Madalixonning Xitoyga umuman bo'ysunmaslikka"
+    },
+    {
+     "kind": "person",
+     "person": "Jahongirxo‘ja",
+     "role": "Sharqiy Turkistondagi ozodlik kurashi rahbari, Xitoyga qarshi kurashgan shaxs",
+     "activity": "Xitoyga qarshi kurashda Qo‘qon xonidan yordam uchun qo‘shin olgan",
+     "evidence": "kurashi rahbari Jahongirxo'ja va uning ukasi Yusufxo'ja ixtiyoriga yordam uchun qo'shin jo'natdi."
+    },
+    {
+     "kind": "person",
+     "person": "Yusufxo‘ja",
+     "role": "Sharqiy Turkistondagi qo‘zg‘olon yetakchisi, Qashqarni egallagan shaxs",
+     "activity": "Qashqarni egallab, Yorkentni olishga harakat qilgan, mag‘lubiyatdan so‘ng 70 ming uyg‘ur oilasi bilan Farg‘onaga ko‘chgan",
+     "evidence": "Yusufxo\"ja Qashqarni egalladi"
+    },
+    {
+     "kind": "person",
+     "person": "Haydar",
+     "role": "Buxoro amiri, Qo‘qon va Xiva xonliklari ustidan da’vo bildirgan hukmdor",
+     "activity": "Usmonli sultoni Mahmud II ga Xiva va Qo‘qon xonliklari ustidan arz xat jo‘natgan",
+     "evidence": "Umarxon davrida Buxoro amiri Haydar hatto butun musulmon"
+    },
+    {
+     "kind": "term",
+     "term": "vassallik",
+     "definition": "Qaramlikni tan olish; Andijon, Marg‘ilon va Namangan bekligi Xitoyga vassalligini tan olgan",
+     "evidence": "bckliklari csa Xitoyga vassalligini tan oldilar."
+    },
+    {
+     "kind": "term",
+     "term": "tovon",
+     "definition": "Mag‘lubiyat yoki kelishuv asosida to‘lanadigan to‘lov; Qo‘qon xonligi Xitoyga katta tovon to‘lagan",
+     "evidence": "Xitoyga katta tovon to'ladi, imperatorga"
+    },
+    {
+     "kind": "term",
+     "term": "boj",
+     "definition": "Savdo uchun olinadigan yig‘im; 1832-yildan Qo‘qon savdogarlari Sharqiy Turkistonda boj to‘lamasdan savdo qilish huquqini olgan",
+     "evidence": "Qo'qon savdogarlariga Sharqiy Turkistonda boj\nto'lamasdan savdo qilish huquqi ham berildi."
+    },
+    {
+     "kind": "term",
+     "term": "elchilik",
+     "definition": "Davlatlararo muzokaralar uchun yuboriladigan vakillar missiyasi; 1831-yildagi elchilik muvaffaqiyatsiz yakunlangan",
+     "evidence": "Lckin clchilik\nmuvaffaqiyatsiz yakuniandi."
+    },
+    {
+     "kind": "place",
+     "place": "Qashqar",
+     "event": "Sharqiy Turkiston — uyg‘ur xalqining vatani bo‘lib, Xitoy hukumati Umarxondan uni Qashqarga o‘tkazmaslikni talab qilgan",
+     "evidence": "Sharqiy Turkiston (Qashqar)\nuyg'ur xalqining vatani."
+    },
+    {
+     "kind": "place",
+     "place": "O‘sh",
+     "event": "Erdonabiy hukmronligi davrida Sharqda bosib olingan viloyat",
+     "evidence": "Sharqda esa O'sh viloyatini (hozirgi Qirg'iziston"
+    },
+    {
+     "kind": "place",
+     "place": "Raim istehkomi",
+     "event": "Qo‘qon chegarasida qurilgan istehkom; Xudoyorxon undan norozi bo‘lgan, Rossiya uni buzmaslikni ma’lum qilgan",
+     "evidence": "Raim istehkomi qurilganligidan norozi ekanligini ham ma'lum"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xitoy Sharqiy Turkistonni bo‘ysundirgan va Qo‘qon xonligini kuchsizlantirishga uringan",
+     "effect": "Qo‘qon xonligining Sin imperiyasi bilan munosabatlari juda og‘ir kechgan",
+     "evidence": "sabatlari juda og'ir kcchdi. Bunga, bir tomondan,"
+    },
+    {
+     "kind": "cause",
+     "cause": "Madalixon Xitoyga bo‘ysunmaslikka qaror qilib, chegarani kengaytirib borgan va 1825-yilda Qashqar qo‘zg‘olonini qo‘llab-quvvatlagan",
+     "effect": "1829-yilda Xitoy Qo‘qonning savdo ishlarini taqiqlab, savdogarlarni haydab, mol-mulklarini musodara qilgan",
+     "evidence": "davlat chegarasini tobora Sharqiy Turkiston\ntomon kengaytirib borayotganligi,"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qo‘zg‘olonchilarda mustahkam birlik yo‘qligi va Buxoro–Qo‘qon munosabatlari yomonlashgani",
+     "effect": "Qo‘qon xoni qo‘shinini chaqirib olgani sababli Yusufxo‘ja mag‘lubiyatga uchragan",
+     "evidence": "Qo'zg'olonchilarning salida mustahkam birlik yo'qligi hamda Buxoro-Qo'qon munosabailari yomonlashuvi oqibatida"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xitoy moliyaviy qiyinchiliklar tufayli ochiq urush olib borishga qodir bo‘lmagan",
+     "effect": "1832-yilda Pekinda Xitoy–Qo‘qon shartnomasi imzolangan",
+     "evidence": "Ayni paytda, Xitoy moliyaviy qiyinchiliklar tufayli Qo'qon"
+    },
+    {
+     "kind": "number",
+     "number": "70",
+     "unit": "ming oila",
+     "meaning": "Yusufxo‘ja bilan birga Farg‘ona vodiysiga ko‘chib kelgan uyg‘ur oilalari soni",
+     "evidence": "U bilan 70 ming uyg'ur oilasi Fargona\nvodiysiga ko'chib keldi."
+    },
+    {
+     "kind": "number",
+     "number": "10",
+     "unit": "yil",
+     "meaning": "1831-yildagi elchilikdan keyin ikkinchi elchilar guruhi yuborilgunga qadar o‘tgan muddat",
+     "evidence": "iltimosi ham rad etildi. Nihoyat, oradan 1O yil"
+    }
+   ]
+  },
+  {
+   "number": 38,
+   "title": "Qo‘qon xonligida madaniy hayot",
+   "page": 142,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1821",
+     "date_label": "1821-yilda",
+     "event": "Fazliy Namangoniy Umarxon amriga binoan 63 shoir she’rlarini o‘z ichiga olgan «Majmuayi shoiron» to‘plamini tuzgan",
+     "evidence": "1821-yilda Fazliy\nNamangoniy, Umarxon amriga binoan. 63 shoirning she'rlarini o'z"
+    },
+    {
+     "kind": "date_event",
+     "date": "1844",
+     "date_label": "1844-yilda",
+     "event": "Shoir Maxmur vafot etgan, u XVIII asr oxirida tug‘ilgan",
+     "evidence": "XVIII asr\noxirida tug'ilib. 1844-yili vafot etdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1770",
+     "date_label": "1770-yilda",
+     "event": "Gulxaniy (Muhammad Sharif) hozirgi Tojikistonning Tavildara tumanida tug‘ilgan",
+     "evidence": "U 1770-yilda hozirgi\nTojikistonning Tavildara tumanida tug'ilgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "1792–1842",
+     "date_label": "1792–1842-yillarda",
+     "event": "Shoira va davlat arbobi Mohlaroyim – Nodira yashab ijod qilgan, u Andijonda tug‘ilgan",
+     "evidence": "Mohlaroyim - Nodira (1792-1842) Andijonda tugildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1711",
+     "date_label": "1711-yilda",
+     "event": "Boborahim Mashrab dinga shak keltirganlikda ayblanib, o‘lim jazosiga hukm etilgan",
+     "evidence": "1711-yilda o'lim jazosiga hukm ctildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1822",
+     "date_label": "1822-yilda",
+     "event": "Abdulkarim Fazliy Namangoniy Umarxon topshirig‘iga binoan «Umarnoma» asarini yozib tugatgan",
+     "evidence": "1822-yilda Umarxonning topshirig'iga\nbinoan, ., Umarnoma\""
+    },
+    {
+     "kind": "person",
+     "person": "Umarxon",
+     "role": "Qo‘qon xoni, ilm va adabiyot homiysi bo‘lgan hukmdor",
+     "activity": "«Amiriy» taxallusi bilan she’rlar yozgan, atrofida 70 dan ortiq shoir to‘plangan",
+     "evidence": "taxallusi bilan ko'plab she'rlar yozdi. Uning atrofida 70 dan ortiq shoir to'plandi."
+    },
+    {
+     "kind": "person",
+     "person": "Nodira (Mohlaroyim)",
+     "role": "shoira va davlat arbobi, «Komila» va «Maknuna» taxalluslari bilan ijod qilgan",
+     "activity": "O‘g‘li Muhammad Alixon taxtga o‘tirgach davlatni idora etishda faol ishtirok etgan, madrasalar qurdirgan",
+     "evidence": "Nodira o'g'li Muhammad Alixon taxtga o'tirgach, davlatni idora etishda faol ishtirok etdi, madrasalar qurdirdi."
+    },
+    {
+     "kind": "person",
+     "person": "Maxmur",
+     "role": "shoir va hajvchi, «Hapalak» she’rining muallifi",
+     "activity": "Hajviy she’rlari devonida 69 ta asar jamlangan, u milliy adabiyotda ijtimoiy hajviyani yuksak pog‘onaga ko‘targan",
+     "evidence": "Maxmurning hajviy she'rlari devoni saqlangan bo'lib, unda 69 ta asar"
+    },
+    {
+     "kind": "person",
+     "person": "Gulxaniy",
+     "role": "shoir va masalnavis, Namangan va Qo‘qonda mardikorlik qilgan ijodkor",
+     "activity": "O‘zbek adabiyotida masalni mustaqil janr sifatida birinchi bo‘lib kiritgan, «Zarbulmasal» muallifi",
+     "evidence": "Gulxaniy birinchi bo'lib o'zbek adabiyotida\npoeziyaga masalni"
+    },
+    {
+     "kind": "person",
+     "person": "Uvaysiy",
+     "role": "shoira, Navoiy, Lutfiy, Bobur, Fuzuliy va Jomiy ijodini o‘rgangan ijodkor",
+     "activity": "Qo‘qonga taklif etilib, ko‘p yoshlarga murabbiylik qilgan, Nodira bilan ijodiy hamkorlik qilgan",
+     "evidence": "Uvaysiy Qo'qonga taklif ctildi va bu yerda u juda ko'p yoshlarga"
+    },
+    {
+     "kind": "term",
+     "term": "«Zarbulmasal»",
+     "definition": "Gulxaniyning butun sharq adabiyotida mashhur bo‘lgan masallar to‘plami",
+     "evidence": "mashhur hisoblangan asari , Zarbulmasal\"dir."
+    },
+    {
+     "kind": "term",
+     "term": "«Muntaxab ut-tavorix»",
+     "definition": "Muhammad Hakimxon to‘ra asari; Buxoro amirligi va Qo‘qon xonligi tarixiga doir muhim manba",
+     "evidence": ", Muntaxab ut-tavorix\" (,Saralangan tarixlar\") asari meros qoldi."
+    },
+    {
+     "kind": "term",
+     "term": "«Tarixi jadidayi Toshkand»",
+     "definition": "Toshkentlik tarixchi Muhammad Solih asari; Toshkent va Qo‘qon xonligi tarixini o‘rganishda muhim manba",
+     "evidence": "Toshkentlik tarixchi olim Muhammad Solihning , Tarixi jadidayi"
+    },
+    {
+     "kind": "term",
+     "term": "qo‘lax",
+     "definition": "Hammomda o‘t yoquvchi; Gulxaniy shu ish bilan shug‘ullanib «Gulxaniy» taxallusini olgan",
+     "evidence": "Bu yerda hammomda\ngo'lax (o't yoquvchi) bo'lib ishladi."
+    },
+    {
+     "kind": "term",
+     "term": "muxammas",
+     "definition": "She’riy janr; Nodira Navoiy, Fuzuliy va Bedil g‘azallariga muxammaslar bog‘lagan",
+     "evidence": "Nodira Navoiy, Fuzuliy va Bedil g'azallariga muxammaslar"
+    },
+    {
+     "kind": "place",
+     "place": "Marg‘ilon",
+     "event": "Shaharda 80 ta maktabxona, 10 ta madrasa va masjid faoliyat ko‘rsatgan",
+     "evidence": "Marg'ilonda\n80 ta maktabxona, 10 ta madrasa va masjid faoliyat ko'rsatgan."
+    },
+    {
+     "kind": "place",
+     "place": "Namangan",
+     "event": "Boborahim Mashrab shu yerda tug‘ilgan, Gulxaniy esa muhtojlik oqibatida bu yerda mardikorlik qilgan",
+     "evidence": "Namanganda tug\"ildi. 15 yoshidan boshlab lasavvuf"
+    },
+    {
+     "kind": "cause",
+     "cause": "Umarxon ilm, madaniyat va adabiyot rivojiga e’tibor bergan, Nodira esa unga hamkorlik qilgan",
+     "effect": "XIX asr boshlarida Qo‘qon ilm-ma’rifat markaziga aylanib, Qo‘qon adabiy muhiti shakllangan",
+     "evidence": "Nodiraning sa'y-harakatlari natijasida XiX asr boshlarida Qo'qon"
+    },
+    {
+     "kind": "cause",
+     "cause": "Arab va fors tillaridagi kitoblar o‘zbek tiliga tarjima qilingan",
+     "effect": "Noyob kitoblar iste’dodli xattotlar tomonidan ko‘chirilib, nozik tasvirlar bilan bezatilgan",
+     "evidence": "Arab va fors tillaridagi kitoblar o'zbck tiliga larjima qilindi. Noyob kitoblar iste'dodli xattotlar tomonidan ko'chirildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mashrab g‘animlarning ig‘vosi bilan dinga shak keltirganlikda ayblangan",
+     "effect": "Shoir 1711-yilda o‘lim jazosiga hukm qilingan",
+     "evidence": "Mashrab g'animlarning ig'vosi bilan dinga shak keltirganlikda"
+    },
+    {
+     "kind": "cause",
+     "cause": "Nodira Uvaysiyning shoiralik iste’dodini qadrlagan",
+     "effect": "Uvaysiy yosh qizlar va kanizaklarni o‘qitish uchun muallimlikka taklif etilgan",
+     "evidence": "uni yosh qizlar va kanizaklarni o'qitish uchun muallimlikka taklif etdi."
+    },
+    {
+     "kind": "number",
+     "number": "120",
+     "unit": "ta",
+     "meaning": "Qo‘qon shahridagi maktabxonalar soni; Marg‘ilonda ular 80 ta edi",
+     "evidence": "birgina Qo'qon\nshahrida 120 ta maktabxona, 40 ta madrasa va masjid,"
+    },
+    {
+     "kind": "number",
+     "number": "69",
+     "unit": "ta asar",
+     "meaning": "Maxmurning saqlangan hajviy devonidagi asarlar soni (3717 misra)",
+     "evidence": "unda 69 ta asar (3717 misra) jamlangan."
+    }
+   ]
+  },
+  {
+   "number": 39,
+   "title": "Qo‘qon xonligida ta’lim",
+   "page": 147,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1841",
+     "date_label": "1841-yilda",
+     "event": "Qo‘qon shahri madrasalarida 1000 nafar mulla ta’lim olgan",
+     "evidence": "184l-yilda Qo'qon shahri\nmadrasalarida 1000 nafar mulla"
+    },
+    {
+     "kind": "date_event",
+     "date": "XIX asr",
+     "date_label": "XIX asrda",
+     "event": "Dilshod Otin Qo‘qonda ijod qilgan va maktabdorlik bilan shug‘ullangan",
+     "evidence": "no, Dilshodi Barno) edi. XIX asrda Qo'qonda ijod"
+    },
+    {
+     "kind": "date_event",
+     "date": "5–12 yosh",
+     "date_label": "5–12 yoshda",
+     "event": "Bolalar maktabxonaga qabul qilingan, o‘qish 5–7 yil davom etgan",
+     "evidence": "O'qishga 5 yoshdan\n12 yoshgacha bo'lgan bolalar qabul qilingan"
+    },
+    {
+     "kind": "date_event",
+     "date": "13–15 yosh",
+     "date_label": "13–15 yoshda",
+     "event": "O‘quvchilar madrasalarga qabul qilingan, o‘qish muddati 15–20 yil davom etgan",
+     "evidence": "Madrasalarga o'quvchilar i3-i5"
+    },
+    {
+     "kind": "date_event",
+     "date": "yoz fasli va ramazon oyi",
+     "date_label": "Yoz fasli va ramazon oyida",
+     "event": "O‘quvchilarga maktabxonada ta’til berilgan, juma va bayram kunlari dars bo‘lmagan",
+     "evidence": "Yoz fasli va ramazon (ro'za) oyida oquvchilarga ta'til"
+    },
+    {
+     "kind": "date_event",
+     "date": "1326–1389",
+     "date_label": "1326–1389-yillarda",
+     "event": "Xo‘ja Hofiz Sheroziy yashab ijod qilgan, uning «Devon»i maktabxonada o‘rganilgan",
+     "evidence": "Xo'ja IIofiz Shcroziyning (1326-1389)"
+    },
+    {
+     "kind": "person",
+     "person": "Dilshod Otin",
+     "role": "shoira va maktabdor (otin), qizlar uchun maktabxona ochgan muallima",
+     "activity": "51 yil davomida maktabdorlik qilib, 890 nafar qizning savodini chiqargan",
+     "evidence": "51 yil davomida\nmen makiabdorlik (o'qituvchilik) qildim"
+    },
+    {
+     "kind": "person",
+     "person": "Anbar Otin",
+     "role": "shoira, Dilshod Otinning maktabxonasida ta’lim olgan ijodkor",
+     "activity": "Dilshod Otinning iqtidorli o‘quvchilaridan biri bo‘lgan",
+     "evidence": "Xususan, Anbar Otin uning iqtidorli o'quvchilaridan bo'lgan."
+    },
+    {
+     "kind": "person",
+     "person": "So‘fi Olloyor",
+     "role": "kattaqo‘rg‘onlik shoir, islom dinining asosiy qoidalarini bayon etgan ijodkor",
+     "activity": "«Sabot ul-ojizin» kitobi maktabxonalarda asosiy darslik sifatida o‘qitilgan",
+     "evidence": "kattaqo'rgonlik So'fi Olloyorning , Sabot"
+    },
+    {
+     "kind": "person",
+     "person": "Sa’diy Sheroziy",
+     "role": "XIII asrda yashagan fors shoiri, «Bo‘ston» va «Guliston» muallifi",
+     "activity": "«Bo‘ston» va «Guliston» asarlari maktabxonalarda o‘rganilgan",
+     "evidence": ", Bo'ston\" va\nGuliston\" asarlari o'rganilgan."
+    },
+    {
+     "kind": "person",
+     "person": "Xo‘ja Hofiz Sheroziy",
+     "role": "shoir, 1326–1389-yillarda yashab ijod qilgan fors adabiyoti namoyandasi",
+     "activity": "Uning «Devon»i lirik she’rlar to‘plami bo‘lib, o‘quvchilarning axloqiy tarbiyasida asosiy qo‘llanma sanalgan",
+     "evidence": "bo'lib, o'quvchilarning axloqiy tarbiyasida asosiy qo'llanma sanalgan."
+    },
+    {
+     "kind": "term",
+     "term": "maktabxona",
+     "definition": "Boshlang‘ich ta’lim beruvchi maskan; ko‘pincha bitta sinfxonadan iborat bo‘lgani uchun shunday atalgan",
+     "evidence": "dan iborat bo'lganligi uchun maktabxona"
+    },
+    {
+     "kind": "term",
+     "term": "«Haftiyak»",
+     "definition": "Muqaddas Qur’oni Karimning 1/7 qismi ko‘chirib yozilgan kitob",
+     "evidence": ",Haftiyak\" (muqaddas Qur'oni Karimning 1/7 qismi ko'chirib yozilgan kitob)ni"
+    },
+    {
+     "kind": "term",
+     "term": "«Tavjud»",
+     "definition": "Qur’oni Karimni qiroat bilan o‘qish san’ati to‘g‘risidagi ilm",
+     "evidence": ",Tavjud\" (Qur'oni Karimni qiroat bilan"
+    },
+    {
+     "kind": "term",
+     "term": "«Chor kitob»",
+     "definition": "Islom dinining asosiy qoidalari bayon etilgan «To‘rt kitob»",
+     "evidence": ",Chor kitob\" (.,To'rt kitob\")ni o'rganishga"
+    },
+    {
+     "kind": "term",
+     "term": "«Maslak ul-muttaqin»",
+     "definition": "«Sabot ul-ojizin»ning fors tilida yozilgan asl nusxasi, «Taqvodorlar maslagi»",
+     "evidence": ",,Maslak ul-muiiaqin\" (,Taqvodorlar maslagi\") deb atalgan asl nusxasi"
+    },
+    {
+     "kind": "place",
+     "place": "Kattaqo‘rg‘on",
+     "event": "So‘fi Olloyor shu shaharlik bo‘lib, uning «Sabot ul-ojizin» asari maktabxonalarda o‘qitilgan",
+     "evidence": "Undan keyin kattaqo'rgonlik So'fi Olloyorning"
+    },
+    {
+     "kind": "place",
+     "place": "BMT Tinchlik Kengashi binosi",
+     "event": "Peshtoqiga Sa’diyning «Guliston» asaridan olingan misralar bitilgan",
+     "evidence": "BMT'ning Tinchlik Kengashi binosi peshloqiga"
+    },
+    {
+     "kind": "cause",
+     "cause": "Maktab ko‘pincha bitta sinfxonadan iborat bo‘lgan",
+     "effect": "Bunday boshlang‘ich ta’lim maskani maktabxona deb atalgan",
+     "evidence": "Maktablar ko'pincha bitta sinfxonava"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qiz bolalarni o‘qitish uchun alohida sharoit zarur bo‘lgan",
+     "effect": "Qizlar maktabxonalari otin ayollar uylarida yoki badavlat kishilar uylarida tashkil etilgan",
+     "evidence": "Qiz bolalar maktabxonalari otin ayollar uylarida yoki badavlat kishilarning"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dastlab kalimai shahodat va alifbe o‘rganilgan",
+     "effect": "So‘ngra «Haftiyak», «Tavjud», «Qur’oni Karim» va «Farzi ayn» ketma-ket o‘rganilgan",
+     "evidence": "Alifbe o'rganilib bo'lingach, ,Haftiyak\""
+    },
+    {
+     "kind": "cause",
+     "cause": "Sa’diy asarlari hayotiyligi bilan ajralib turgan",
+     "effect": "«Bo‘ston» va «Guliston» jahon ilm-u adab ahlini birday o‘ziga tortib kelgan",
+     "evidence": "birday oziga lortib kclmoqda."
+    },
+    {
+     "kind": "number",
+     "number": "350",
+     "unit": "ta",
+     "meaning": "Qo‘qon xonligida faoliyat ko‘rsatgan maktabxonalar soni",
+     "evidence": "Xonlikda 350 ta maktabxona"
+    },
+    {
+     "kind": "number",
+     "number": "890",
+     "unit": "nafar",
+     "meaning": "Dilshod Otin savodini chiqargan qizlar soni",
+     "evidence": "890 nafar qizning savodini"
+    }
+   ]
+  },
+  {
+   "number": 40,
+   "title": "O‘zbek davlatlarining taraqqiyotda orqada qolish sabablari va oqibatlari",
+   "page": 150,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "XVI asrning o‘rtalari",
+     "date_label": "XVI asrning o‘rtalaridan boshlab",
+     "event": "G‘arbiy Yevropada to‘qimachilik, qog‘oz va shisha ishlab chiqarishda manufakturalar vujudga kelgan",
+     "evidence": "XVI asrning o'rtalaridan boshlab to'qimachilik, qog'oz. shisha ishlab chiqarishda"
+    },
+    {
+     "kind": "date_event",
+     "date": "XVIII asrning ikkinchi yarmi",
+     "date_label": "XVIII asrning ikkinchi yarmida",
+     "event": "Asbob-uskunalarni harakatga keltiruvchi bug‘ mashinasi ixtiro qilingan",
+     "evidence": "XVIII asrning ikkinchi yarmida asbob-uskunalarni harakatga keltiruvchi bug' mashinasi (motor) ixtiro qilindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "XVII–XIX asrlar",
+     "date_label": "XVII–XIX asrlarda",
+     "event": "O‘zbek millati avvalgi yuksalish darajasidan tushib ketgan davr",
+     "evidence": "asrlarga kelib to shu chog'gacha erishgan yuksalish darajalaridan"
+    },
+    {
+     "kind": "date_event",
+     "date": "1991-yil 31-avgust",
+     "date_label": "1991-yil 31-avgustgacha",
+     "event": "Yurtimizning o‘zgalarga qaramligi davom etgan davr nihoyasiga yetgan",
+     "evidence": "Yurtimizning o'zgalarga qaramligi 1991-yil 31-avgustgacha davom"
+    },
+    {
+     "kind": "date_event",
+     "date": "2035",
+     "date_label": "2035-yilga borib",
+     "event": "Xalqimiz jahonning eng rivojlangan 50 ta davlati qatoridan joy olishni maqsad qilgan",
+     "evidence": "xalqimiz 2035-yilga borib jahonning cng rivojlangan 50"
+    },
+    {
+     "kind": "date_event",
+     "date": "so‘nggi uch asr",
+     "date_label": "So‘nggi uch asr mobaynida",
+     "event": "Mamlakat qoloqlikdan chiqmay kelgan davr",
+     "evidence": "Nega so'nggi uch asr mobaynida boshimiz qoloqlikdan"
+    },
+    {
+     "kind": "person",
+     "person": "Islom Karimov",
+     "role": "O‘zbekistonning Birinchi Prezidenti, mustaqillik davri davlat rahbari",
+     "activity": "Xonliklar davri tarixiga yangicha nazar tashlab, taraqqiyotda orqada qolish sabablarini savol ostiga olgan",
+     "evidence": "O'zbckistonning Birinchi Prczidenti Islom Karimov xonliklar davri"
+    },
+    {
+     "kind": "person",
+     "person": "Shavkat Mirziyoyev",
+     "role": "O‘zbekiston Prezidenti, 2035-yil maqsadini ilgari surgan davlat rahbari",
+     "activity": "Rahbarligida xalq 2035-yilga borib jahonning eng rivojlangan 50 ta davlati qatoridan joy olishni maqsad qilgan",
+     "evidence": "muhiaram Prezidentimiz. Sh.Mirziyoyev rahbarligida xalqimiz 2035-yilga borib"
+    },
+    {
+     "kind": "person",
+     "person": "Abdulla Qodiriy",
+     "role": "yozuvchi, «O‘tkan kunlar» romanining muallifi",
+     "activity": "«O‘tkan kunlar» romanida Yusufbek hoji tilidan Turkiston fojiasini tasvirlagan",
+     "evidence": "Abdulla Qodiriy o'zining s,O'tkan kunlar\" romanida Yusufbek hoji"
+    },
+    {
+     "kind": "person",
+     "person": "Yusufbek hoji",
+     "role": "«O‘tkan kunlar» romani qahramoni, ittifoqsizlikni tanqid qilgan savdogar",
+     "activity": "Ittifoqsizlik va mansabparastlik tufayli yurt istibdod ostida qolishi mumkinligini aytgan",
+     "evidence": ",ltifoqning nima ekanligini bilmagan, yolg'iz o'z manfaati, shaxsiyati yo'lida bir-birini yeb-ichgan mansabparast"
+    },
+    {
+     "kind": "person",
+     "person": "Xonlik hukmdorlari va amaldorlari",
+     "role": "davlat rahbarlari va saroy amaldorlari, eski ishlab chiqarish usulini himoya qilgan tabaqa",
+     "activity": "Xalq taqdiri o‘rniga shaxsiy manfaatni ustun qo‘yib, jaholat va g‘aflatga berilib kelgan",
+     "evidence": "Yurt hukmdorlari va amaldorlari xalgning taqdiri va kelajagi haqida"
+    },
+    {
+     "kind": "term",
+     "term": "manufaktura",
+     "definition": "Lotincha manus (qo‘l) va faktura (tayyorlash) so‘zlaridan; mehnat taqsimoti va qo‘l hunari texnikasiga asoslangan korxona",
+     "evidence": "manufakturalar (lotincha manus - qo 1, faktura - tayyorlash)lar vujudga keldi."
+    },
+    {
+     "kind": "term",
+     "term": "og‘ir sanoat",
+     "definition": "Mashinalar ishlab chiqarish yo‘lga qo‘yilishi natijasida vujudga kelgan sanoat tarmog‘i",
+     "evidence": "mashinalarni ishlab chiqarish yo'lga qo'yildi, og'ir sanoat vujudga keldi."
+    },
+    {
+     "kind": "term",
+     "term": "domna pechi",
+     "definition": "Cho‘yan va po‘lat oluvchi pech; u bug‘ mashinasi bilan birga yaratilgan",
+     "evidence": "va po'lat oluvchi domna pcchlar yaratildi,"
+    },
+    {
+     "kind": "term",
+     "term": "mustamlaka",
+     "definition": "O‘zaro nizo va urushlar oqibatida o‘zbek davlatlari Rossiya imperiyasi tomonidan aylantirilgan qaram hudud",
+     "evidence": "ularning Rossiya imperiyasi\ntomonidan mustamlakaga aylantirilishi uchun qulay imkoniyat yaratdi."
+    },
+    {
+     "kind": "term",
+     "term": "yagona ichki bozor",
+     "definition": "O‘zbek davlatlari o‘rtasida o‘zaro nizolar tufayli tashkil topmagan bozor",
+     "evidence": "o'zbek davlatlari o'rtasida yagona ichki bozor ham lashkil topmadi."
+    },
+    {
+     "kind": "place",
+     "place": "G‘arbiy Yevropa",
+     "event": "Ilg‘or mamlakatlarida sanoat ishlab chiqarish yetakchi tarmoqqa aylangan",
+     "evidence": "G'arbiy Yevropaning ilgor mamlakatlarida"
+    },
+    {
+     "kind": "place",
+     "place": "O‘rta Osiyo",
+     "event": "Iqtisodiy qoloqlik va harbiy nochorlik uni o‘z tasarrufiga kiritishga intilayotgan davlatlarga qo‘l kelgan",
+     "evidence": "bcqarorlik O'rta Osiyoni o'z lasarruliga kiritib olishga intilayotgan"
+    },
+    {
+     "kind": "place",
+     "place": "Turkiston",
+     "event": "Podsho istibodi tomonidan egallanishi Yusufbek hoji tilidan bashorat qilingan",
+     "evidence": "yaqindirki, podsho istibdodi Turkistonimizni egallar\"."
+    },
+    {
+     "kind": "cause",
+     "cause": "Bir butun mamlakat uch davlatga bo‘linib, ular o‘rtasida qarama-qarshilik va urushlar davom etgan",
+     "effect": "Mamlakat umumbashariy taraqqiyot jarayonidan uzilib, orqada qolishga mahkum bo‘lgan",
+     "evidence": "ular o'rtasida davom etgan qarama-qarshiliklar, urushlar mamlakatni"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xonliklarning asrlar davomida o‘zgarmagan davlat boshqaruv usuli",
+     "effect": "Mavjud boshqaruv tizimi taraqqiyotga g‘ov bo‘lib qolgan",
+     "evidence": "Xonliklarning asrlar davomida o'zgarmay kelayotgan davlat boshqaruv usuli taraqqiyotga g'ov bo'lib qolgan edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Yerga egalikning eski usuli o‘zgarmagan va dehqon yerning egasi bo‘lmagan",
+     "effect": "Dehqon yerni asrab-avaylashga, unumdorligini oshirishga intilmagan",
+     "evidence": "Shu boisdan dehqon yerni asrab-avaylashga, uning"
+    },
+    {
+     "kind": "cause",
+     "cause": "Aholi og‘ir soliqlar, yig‘im va majburiyatlardan azob chekkan",
+     "effect": "Turmush darajasi past bo‘lib, ishlab chiqarish iste’molga yo‘naltirilgani uchun iqtisodiy o‘sishga turtki bo‘lmagan",
+     "evidence": "Aholi og'ir soliqlardan, tinkani qurituvchi yigim va majburiyallardan azob chekardi."
+    },
+    {
+     "kind": "number",
+     "number": "50",
+     "unit": "ta davlat",
+     "meaning": "2035-yilga borib O‘zbekiston qatoridan joy olishi ko‘zlangan rivojlangan davlatlar soni",
+     "evidence": "(2035-yilda)\njahonning eng rivojlangan 50"
+    }
+   ]
+  }
+ ]
+}

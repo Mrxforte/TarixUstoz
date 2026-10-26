@@ -1,0 +1,806 @@
+{
+  "chapter": "TURKISTON O‘LKASIDA SOVET HOKIMIYATINING O‘RNATILISHI HAMDA O‘ZBEK XALQINING MUSTAQILLIK UCHUN KURASHI (1917 – 1924-yillar)",
+  "topics": [
+    {
+      "number": 1,
+      "title": "Turkiston o‘lkasi 1917-yil fevral – oktyabr oralig‘ida",
+      "page": 5,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1917-yil 27-fevral (12-mart)",
+          "date_label": "Fevral inqilobi",
+          "event": "Rossiyada Fevral inqilobi bo‘lib o‘tdi va samoderjaviyega barham berildi",
+          "evidence": "Ana shunday voqealardan biri 1917-yil 27-fevralda (yangi hisob bilan 12-martda) bo‘lgan Rossiyadagi Fevral inqilobi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 2-mart",
+          "date_label": "Nikolay II taxtdan voz kechdi",
+          "event": "Rossiya imperatori Nikolay II o‘z ixtiyori bilan taxtdan voz kechdi",
+          "evidence": "Rossiya imperatori Nikolay II o‘z ixtiyori bilan 2-mart kuni taxtdan voz kechdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 2-mart",
+          "date_label": "Toshkent Soveti tuzildi",
+          "event": "Toshkentda ishchi deputatlari Soveti tashkil etildi",
+          "evidence": "1917-yil 2-mart kuni ishchi deputatlari Soveti (Toshkent Soveti) tu -\nzilgan edi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 31-mart",
+          "date_label": "General Kuropatkin uy qamog‘ida",
+          "event": "Turkiston general-gubernatori A.N.Kuropatkin uy qamog‘iga tashlandi",
+          "evidence": "uning yordamchilari lavozimlaridan chetlashtirilib, 31-martda uy qamog‘iga tashlangan edi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 7-aprel",
+          "date_label": "Turkiston komiteti tuzildi",
+          "event": "Muvaqqat hukumat 9 kishidan iborat Turkiston komitetini tuzdi",
+          "evidence": "Muvaqqat hukumat tomonidan 1917-yil 7-aprelda Turkiston o‘lkasini boshqarish uchun 9 kishidan iborat Turkiston komiteti tuzildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 14-mart",
+          "date_label": "“Sho‘roi Islomiya” tuzildi",
+          "event": "Toshkentda “Sho‘roi Islomiya” (Islom kengashi) tashkiloti tuzildi",
+          "evidence": "1917-yil 14-martda Toshkent shahrida Turkiston taraqqiyparvarlarining ijtimoiy-siyosiy tashkiloti bo‘lgan “Sho‘roi Islomiya”"
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 16–23-aprel",
+          "date_label": "Butunturkiston musulmonlari I qurultoyi",
+          "event": "Toshkentda Butunturkiston musulmonlarining I qurultoyi bo‘lib o‘tdi",
+          "evidence": "1917-yil 16 – 23-aprelda Toshkent shahrida tashki-lot tashabbusi bilan Butunturkiston musulmonlarining I qurultoyi bo‘lib o‘tdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil iyun",
+          "date_label": "“Sho‘roi Ulamo” tashkil etildi",
+          "event": "Ulamolar guruhi ajralib chiqib, Qo‘qon va Toshkentda yangi jamiyat tuzdi",
+          "evidence": "1917-yil iyunda tashkilotdan bir guruh ulamolar ajralib chiqib, Qo‘qon va Toshkentda yangi jamiyat – “Sho‘roi Ulamo”ga asos solishdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil sentyabr",
+          "date_label": "“Ittifoqi muslimin” partiyasi tuzildi",
+          "event": "Turkiston va Qozog‘iston musulmonlari qurultoyida siyosiy partiya tuzildi",
+          "evidence": "Ulamochilar tashabbusi bilan 1917-yil sentyabrda Toshkentda Turkiston va Qozog‘iston musulmon-lari qurultoyi o‘tkazilgan."
+        },
+        {
+          "kind": "date_event",
+          "date": "1918-yil may",
+          "date_label": "“Sho‘roi Islomiya” va “Sho‘roi Ulamo” tugatildi",
+          "event": "Bolsheviklar ikkala tashkilot faoliyatini to‘xtatdi",
+          "evidence": "(1918-yil may oyida bolsheviklar tomonidan “Sho‘roi Islomiya” va “Sho‘roi Ulamo” tashkilotlari tugatildi)."
+        },
+        {
+          "kind": "person",
+          "person": "Abdurauf Fitrat",
+          "role": "jadidchilik harakatining yirik nazariyotchisi",
+          "activity": "1917-yil voqealarini “Rusiyada bosh ko‘targan yangi bir balo – bolshevik balosi” deb baholagan",
+          "evidence": "jadidchilik harakatining yirik nazariyotchisi Abdurauf Fitrat o‘sha paytda yozganidek"
+        },
+        {
+          "kind": "person",
+          "person": "Mahmudxo‘ja Behbudiy",
+          "role": "o‘zbek xalqining fidoyi farzandi, jadid",
+          "activity": "“Haq olinur, berilmas!” shiorini o‘rtaga tashlagan",
+          "evidence": "O‘zbek xalqining boshqa bir fidoyi farzandi Mahmudxo‘ja Beh-budiy tomonidan o‘rtaga tashlangan"
+        },
+        {
+          "kind": "person",
+          "person": "Mustafo Cho‘qay",
+          "role": "Turkiston o‘lka musulmonlar kengashi (Kraymussovet) raisi",
+          "activity": "Butunturkiston musulmonlari qurultoyida Milliy Markaz raisi etib saylangan",
+          "evidence": "Mustafo Cho‘qay unga rais, Munavvarqori Abdurashidxonov va Ahmad Zaki Validiy kotiblar bo‘lishdi."
+        },
+        {
+          "kind": "person",
+          "person": "Nikolay Shchepkin",
+          "role": "kadetlar partiyasi vakili",
+          "activity": "Muvaqqat hukumatning Turkiston komitetiga raislik qilgan",
+          "evidence": "Turkiston komitetiga kadetlar partiyasi vakili Nikolay Shchepkin va eser-lar partiyasidan Vladimir Nakivkin raislik qilishdi."
+        },
+        {
+          "kind": "term",
+          "term": "Muxtoriyat",
+          "definition": "biron-bir hududning davlat hokimiyatini mustaqil amalga oshirish huquqi",
+          "evidence": "Muxtoriyat – biron-bir hududning davlat hokimiyatini mustaqil amalga oshirish huquqi."
+        },
+        {
+          "kind": "term",
+          "term": "Kadetlar",
+          "definition": "“konstitutsion demokratlar” birikmasining bosh harflaridan olingan partiya a’zolari",
+          "evidence": "Kadetlar – “konstitutsion demokratlar” birikmasining bosh harflaridan olingan."
+        },
+        {
+          "kind": "term",
+          "term": "Eserlar",
+          "definition": "sotsial revolyutsionerlar nomidan olingan, sovetlar ichida dehqonlar manfaatini himoya qiluvchi guruh",
+          "evidence": "Eserlar – S (es) – sotsial, R (er) – revolyutsion (inqilobiy), ya’ni, sotsial revolyutsionerlar nomidan olingan"
+        },
+        {
+          "kind": "term",
+          "term": "Kraymussovet",
+          "definition": "Turkiston o‘lka musulmonlar kengashi, ya’ni musulmonlarning Milliy Markazi",
+          "evidence": "Turkiston musulmonlarining Milliy Markazi – Turkiston o‘lka musulmonlar kengashi (Kraymussovet) tashkil qilindi."
+        },
+        {
+          "kind": "place",
+          "place": "Petrograd",
+          "event": "Mitinglar va qo‘zg‘olonlar Fevral inqilobi g‘alabasi bilan yakunlangan shahar",
+          "evidence": "Rossiya imperiyasi poytaxti Petrogradda bu paytda mitinglar va qo‘zg‘olon-lar boshlanib, u Fevral inqilobi g‘alabasi bilan yakunlandi."
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "“Sho‘roi islom” nomli gazeta chiqarilgan, tashkilotlar faoliyat yuritgan shahar",
+          "evidence": "Toshkentda “Sho‘roi islom” nomli gazeta ham chiqarilgan."
+        },
+        {
+          "kind": "cause",
+          "cause": "Muvaqqat hukumat general-gubernatorlikni Turkiston komitetiga almashtirdi",
+          "effect": "Mustamlakachilik mohiyati avvalgicha qoldi, qarama-qarshiliklar kuchaydi",
+          "evidence": "Muvaqqat hukumat Turkiston o‘lkasi general-guberna-torligini Turkiston komitetiga almashtirish bilan mustamlakachilikdan iborat o‘lka boshqaruvini mohiyat e’tibori bilan avvalgicha qoldirdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Jadidlar bilan qadimchilar o‘rtasidagi kelishmovchiliklar kuchaydi",
+          "effect": "“Sho‘roi Islomiya” tashkiloti safida bo‘linish yuz berdi",
+          "evidence": "taraqqiyparvar ziyolilar (jadidlar) bilan eskilik tarafdorlari bo‘lgan ayrim ulamolar (qadimchilar) o‘rtasidagi kelishmovchiliklar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Jadidlar va ulamolar o‘rtasidagi ziddiyat tobora keskin tus oldi",
+          "effect": "Bolsheviklar va so‘l eserlar partiyalari vakillari uchun qulay sharoit yuzaga keldi",
+          "evidence": "Bu holat mintaqadagi boshqa siyosiy kuch – bolsheviklar va so‘l eserlar partiyalari vakillariga qo‘l kelgan."
+        },
+        {
+          "kind": "number",
+          "number": "13",
+          "unit": "kun",
+          "meaning": "Eski va yangi yil hisobi o‘rtasidagi farq, grigorian kalendari joriy etilganda tuzatilgan",
+          "evidence": "amalda mavjud bo‘lgan 13 kunlik farq tuzatildi"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Turkistonda sovet hokimiyatining majburiy tarzda o‘rnatilishi hamda bolsheviklar diktaturasi",
+      "page": 11,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1917-yil 24–25-oktyabr",
+          "date_label": "Qishki saroy egallandi",
+          "event": "Qurollangan ishchilar va soldatlar Qishki saroyga bostirib kirib, Muvaqqat hukumat a’zolarini qamoqqa oldi",
+          "evidence": "24-oktyabrdan 25-oktyabrga o‘tar kechasi qurollangan ishchilar, Petrograd garnizonining soldatlari va Bol-tiq flotining matroslari Qishki saroyga bostirib kirdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 27-oktyabr",
+          "date_label": "Toshkentga xabar yetib keldi",
+          "event": "Oktyabr to‘ntarishi haqidagi xabar Toshkentga yetib keldi",
+          "evidence": "Oktyabr to‘ntarishi haqida-gi xabar 27-oktyabrda Toshkentga yetib kelgach"
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 28-oktyabr",
+          "date_label": "Toshkentda qurolli to‘qnashuvlar",
+          "event": "Toshkentning yangi shaharida qurolli to‘qnashuvlar avj oldi",
+          "evidence": "28 oktyabrdan boshlab Toshkent-ning yangi shaharida qurolli to‘qnashuvlar avj oldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 15–22-noyabr",
+          "date_label": "Sovetlarning III o‘lka syezdi",
+          "event": "Toshkentda Turkiston o‘lka Xalq Komissarlari Soveti tuzildi",
+          "evidence": "Toshkentda 1917-yil 15 – 22-noyabrda bo‘lgan Turkiston ishchi va soldat deputatlari Sovetlarining III o‘lka syezdida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 12–15-noyabr",
+          "date_label": "Musulmon guruhlarining birlashgan kengashi",
+          "event": "Toshkentda “turli musulmon guruhlarining birlashgan kengashi” o‘tkazildi",
+          "evidence": "“Sho‘roi Ulamo” tashkilotining tashabbusi bilan 1917-yil 12 – 15-noyabrda “turli musulmon guruhlarining birlashgan kengashi”"
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil noyabr",
+          "date_label": "Viloyatlarda sovet hokimiyati",
+          "event": "Samarqand, Skobelev va boshqa shaharlarda sovet hokimiyati o‘rnatildi",
+          "evidence": "1917-yil noyabrda Samarqand, Skobelev va boshqa shaharlarda ham sovet hokimiyati o‘rnatildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil avgust oxiri – sentyabr",
+          "date_label": "Sovetlarda ko‘pchilik",
+          "event": "Bolsheviklar Petrograd va Moskva Sovetlarida ko‘pchilikni egalladi",
+          "evidence": "1917-yil avgust oxiri – sentyabr boshlarida bolsheviklar Petrograd va Moskva Sovetlarida ko‘pchilikni egalladi"
+        },
+        {
+          "kind": "person",
+          "person": "Vladimir Ilich Ulyanov (Lenin)",
+          "role": "bolsheviklar rahbari, sovet hukumatining boshlig‘i",
+          "activity": "Xalq Komissarlari Sovetini (XKS) tuzib, unga rahbarlik qilgan",
+          "evidence": "Vladimir Ilich Ulyanov (Lenin) boshchiligidagi hukumat – Xalq Komissar-lari Soveti (XKS)ni tuzdilar."
+        },
+        {
+          "kind": "person",
+          "person": "Fyodor Kolesov",
+          "role": "Turkiston o‘lkasi XKS raisi, kasbi chizmachi",
+          "activity": "Turkiston o‘lka hukumatining raisi lavozimini egallagan",
+          "evidence": "XKS raisi lavozimini kasbi chizmachi bo‘lgan bolshevik Fyodor\nKolesov egalladi"
+        },
+        {
+          "kind": "person",
+          "person": "Ye. Perfilev",
+          "role": "harbiy komissar, kasbi izvoshchi",
+          "activity": "Hukumat tarkibida harbiy komissar lavozimiga tayinlangan",
+          "evidence": "harbiy komissar qilib izvoshchi Ye.Perfilev"
+        },
+        {
+          "kind": "person",
+          "person": "P. Korovichenko",
+          "role": "Muvaqqat hukumat tayinlagan Turkiston o‘lkasi bosh komissari, general",
+          "activity": "Unga sodiq qismlar sovet hokimiyati o‘rnatilishiga qarshilik ko‘rsatdi",
+          "evidence": "Muvaqqat hukumat tomonidan Turkiston o‘lkasining bosh komissari qilib tayinlangan general P.Korovichenkoga sodiq qolgan qismlar"
+        },
+        {
+          "kind": "person",
+          "person": "Sherali Lapin",
+          "role": "“Sho‘roi Ulamo” tashkilotining Toshkent shu’basi yetakchisi",
+          "activity": "Bolsheviklarni qo‘llab-quvvatlagan va koalitsion hukumat tuzishni so‘ragan",
+          "evidence": "“Sho‘roi Ulamo” tashkilotining Toshkent shu’basi yetakchilari (Sherali Lapin va b.) hokimiyatni zo‘ravonlik bilan egallagan bolsheviklarni qo‘llab-quvvatlashdi."
+        },
+        {
+          "kind": "term",
+          "term": "Maksimalistlar",
+          "definition": "mavjud davlat tuzumini tanqid ostiga olib, radikal o‘zgarishlar va islohotlar talab etuvchi siyosiy oqim",
+          "evidence": "Maksimalistlar – mavjud davlat tuzumini tanqid ostiga olib, radikal o‘zgarishlar va islohotlar o‘tkazishni talab etuvchi siyosiy oqim."
+        },
+        {
+          "kind": "term",
+          "term": "Koalitsion hukumat",
+          "definition": "bir nechta partiya tomonidan hukumatni ittifoq bo‘lib boshqarish uchun tuzilgan birlashma",
+          "evidence": "Koalitsion hukumat – umumiy maqsadga erishish uchun tashkil etilgan ko‘ngilli birlashma, bir nechta partiya tomonidan hukumatni ittifoq bo‘lib boshqarish."
+        },
+        {
+          "kind": "term",
+          "term": "XKS",
+          "definition": "Xalq Komissarlari Soveti, Lenin boshchiligida tuzilgan sovet hukumati",
+          "evidence": "Vladimir Ilich Ulyanov (Lenin) boshchiligidagi hukumat – Xalq Komissar-lari Soveti (XKS)ni tuzdilar."
+        },
+        {
+          "kind": "term",
+          "term": "Diktatura",
+          "definition": "bolsheviklarning yevropalik ishchilar va harbiy qismlarga tayanib o‘rnatgan hukmronligi",
+          "evidence": "Bolsheviklar hukumati yevropalik ishchilar, qizil gvar-diyachilar va boshqa harbiy qismlarga tayanib, mintaqada o‘z diktaturasini o‘rnatdi."
+        },
+        {
+          "kind": "place",
+          "place": "Qishki saroy",
+          "event": "Petrogradda qurollangan ishchilar va matroslar bostirib kirgan saroy",
+          "evidence": "Petrograd garnizonining soldatlari va Bol-tiq flotining matroslari Qishki saroyga bostirib kirdi"
+        },
+        {
+          "kind": "place",
+          "place": "Qo‘qon",
+          "event": "Milliy Markaz va “Sho‘roi Islomiya” qarorgohini ko‘chirgan shahar",
+          "evidence": "noyabr oyi boshlarida Tosh-kentdan Qo‘qon shahriga ko‘chib o‘tib, Farg‘ona vodiysida o‘z faoliyatlarini kuchaytirdilar."
+        },
+        {
+          "kind": "cause",
+          "cause": "Oktyabr to‘ntarishi haqidagi xabar Toshkentga yetib keldi",
+          "effect": "Bolsheviklar va so‘l eserlar hokimiyatni zo‘ravonlik bilan egallashga kirishdi",
+          "evidence": "hokimiyatni zo‘ravonlik yo‘li bilan egallash uchun kurash boshladilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Korovichenkoga sodiq qismlar sovet hokimiyatiga qarshilik ko‘rsatdi",
+          "effect": "Toshkentning yangi shaharida qurolli to‘qnashuvlar boshlandi",
+          "evidence": "general P.Korovichenkoga sodiq qolgan qismlar bunga qarshilik ko‘rsatdilar. 28 oktyabrdan boshlab Toshkent-ning yangi shaharida qurolli to‘qnashuvlar avj oldi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Ulamochilar koalitsion hukumat tuzishni taklif qildi",
+          "effect": "Bolsheviklar bu talabni qat’iy suratda rad etdi",
+          "evidence": "Biroq bolsheviklar o‘zlari bilan koalitsion hukumat tuzishni orzu qilgan Sherali Lapin boshchiligidagi ulamo-chilarning fikrlarini qat’iy suratda rad etishdi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Milliy Markaz bolsheviklar bilan hamkorlik qilishga qarshi chiqdi",
+          "effect": "Tashkilot qarorgohini Toshkentdan Qo‘qonga ko‘chirdi",
+          "evidence": "Turkiston o‘lka musulmonlari Markaziy Kengashi (Milliy Markaz) bolshe-viklar bilan hamkorlik qilishga qarshi chiqdilar va noyabr oyi boshlarida Tosh-kentdan Qo‘qon shahriga ko‘chib o‘tib"
+        },
+        {
+          "kind": "number",
+          "number": "8",
+          "unit": "o‘rin",
+          "meaning": "Turkiston o‘lka XKS tarkibida so‘l eserlarga berilgan o‘rinlar soni",
+          "evidence": "Hukumatda 8 o‘rin so‘l eserlarga, 7 o‘rin bolsheviklar bilan maksi-malistlarga berildi"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Turkiston Muxtoriyati – tub yerli xalqlar davlatchiligi tarixida yangi bosqich",
+      "page": 14,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1917-yil 26–28-noyabr",
+          "date_label": "Butunturkiston musulmonlarining IV qurultoyi",
+          "event": "Qo‘qon shahrida o‘lka musulmonlarining favqulodda IV qurultoyi bo‘lib o‘tdi",
+          "evidence": "1917-yil 26 – 28-noyabrda Qo‘qon shahrida Butunturkiston o‘lka musulmonlari -ning favqulodda IV qurultoyi bo‘lib o‘tdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 27-noyabr",
+          "date_label": "Muxtoriyat e’lon qilindi",
+          "event": "Qurultoy Turkistonni Federativ Rossiya tarkibida hududiy muxtor deb e’lon qildi",
+          "evidence": "Qurultoyda 27-noyabr kuni kechqurun qabul qilingan qarorda shunday de-yiladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 28-noyabr",
+          "date_label": "Hukumat nomi aniqlandi",
+          "event": "Tashkil topayotgan hukumat “Turkiston Muxtoriyati” deb ataladigan bo‘ldi",
+          "evidence": "28-noyabrda tarkib topayotgan mazkur hukumatning nomi aniqlanib, Tur-kiston Muxtoriyati deb ataladigan bo‘ldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 1-dekabr",
+          "date_label": "Murojaatnoma e’lon qilindi",
+          "event": "Hukumat a’zolari imzolagan maxsus Murojaatnoma e’lon qilindi",
+          "evidence": "Qurultoy tugagach, 1-dekabrda Turkiston Muxtoriya-tining Muvaqqat hukumati a’zolari (8 kishi) imzolagan maxsus Murojaatnoma e’lon qilindi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1918-yil 19–26-yanvar",
+          "date_label": "Sovetlarning IV favqulodda syezdi",
+          "event": "Syezd Turkiston Muxtoriyati hukumatini kuch bilan tugatishga qaror qildi",
+          "evidence": "Turkiston o‘lkasi ishchi, soldat va dehqon deputatlari Sovetlarining favqu-lodda 1918-yil 19 – 26-yanvarda bo‘lib o‘tgan IV syezdida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1918-yil 30-yanvar",
+          "date_label": "Harbiy harakatlar boshlandi",
+          "event": "Turkiston o‘lka XKS muxtoriyatga qarshi harbiy harakatlarni boshladi",
+          "evidence": "Turkiston o‘lka XKS 1918-yil 30-yanvar kuni harbiy harakatlarni boshladi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1918-yil 31-yanvar",
+          "date_label": "Qo‘qonda jang boshlandi",
+          "event": "Qo‘qon shahri uchun jang harakatlari boshlandi",
+          "evidence": "31-yanvar tushdan keyin jang harakatlari boshlandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1918-yil 22-fevral",
+          "date_label": "“Tinchlik shartnomasi” imzolandi",
+          "event": "Qo‘qondagi Rus-Osiyo banki binosida “tinchlik shartnomasi” imzolandi",
+          "evidence": "Nihoyat, 1918-yil 22-fevralda Qo‘qon shahridagi Rus-Osiyo banki binosida bolsheviklar tomonidan tayyorlangan “tinchlik shartnomasi” imzolandi."
+        },
+        {
+          "kind": "person",
+          "person": "Muhammadjon Tinishboyev",
+          "role": "Turkiston Muxtoriyati hukumatining Bosh vaziri va ichki ishlar vaziri",
+          "activity": "Temiryo‘l muhandisi bo‘lib, muxtoriyat hukumatiga rahbarlik qilgan",
+          "evidence": "Hukumatning Bosh vaziri hamda ichki ishlar vaziri etib Muhammadjon Tinishboyev saylandi."
+        },
+        {
+          "kind": "person",
+          "person": "Mustafo Cho‘qay",
+          "role": "muxtoriyat hukumatining tashqi ishlar vaziri, huquqshunos",
+          "activity": "Keyinchalik Bosh vazir lavozimini bajarishga kirishgan",
+          "evidence": "Mustafo Cho‘qay – tashqi ishlar vaziri, Ubaydulla Xo‘jayev – harbiy vazir"
+        },
+        {
+          "kind": "person",
+          "person": "Ubaydulla Xo‘jayev",
+          "role": "muxtoriyat hukumatining harbiy vaziri, huquqshunos",
+          "activity": "Milliy qo‘shin tashkil etishda ishtirok etgan, ko‘rikda askarlar soni 2000 bo‘lgan",
+          "evidence": "Harbiy vazir Ubaydulla Xo‘jayev ishtirokida 1918-yil boshlarida o‘tkazilgan ko‘rik (parad) vaqtida askarlar soni 2000 kishi bo‘lgan."
+        },
+        {
+          "kind": "person",
+          "person": "Kichik Ergash qo‘rboshi",
+          "role": "Qo‘qon shahar mirshablar boshlig‘i",
+          "activity": "18-fevraldan boshlab amalda muxtoriyat hukumatining rahbariga aylangan",
+          "evidence": "Qo‘qon shahar mirshablar boshlig‘i Kichik Ergash qo‘rboshi 18-fevral-dan boshlab amalda muxtoriyat hukumatining rahbariga aylandi."
+        },
+        {
+          "kind": "term",
+          "term": "Dashnoqlar",
+          "definition": "arman millatchilarining “Dashnoqsutyun” (ittifoq) partiyasi a’zolari",
+          "evidence": "Dashnoqlar – (armancha) – arman millatchilarining “Dashnoqsutyun” (ittifoq) partiyasi a’zolari."
+        },
+        {
+          "kind": "term",
+          "term": "Eshelon",
+          "definition": "maxsus yuk, texnika, artilleriya, tank va qo‘shinlar ortilgan poyezd yoki avtokolonna",
+          "evidence": "Eshelon – (fr. – zina, zinapoya) maxsus yuk, texnika, artilleriya, tank va qo‘shinlar ortilgan poyezd yoki avtokolonna."
+        },
+        {
+          "kind": "term",
+          "term": "Ta’sis Majlisi",
+          "definition": "muxtoriyatning qaror topish shakllarini belgilashi ko‘zda tutilgan umumrossiya majlisi",
+          "evidence": "Qurultoy o‘sha kungi yig‘ilishda Bu-tunrossiya Ta’sis Majlisi chaqirilgunga qadar hokimiyat Turkiston Muvaq-qat Kengashi"
+        },
+        {
+          "kind": "term",
+          "term": "Turkiston Muvaqqat Kengashi",
+          "definition": "Ta’sis Majlisi chaqirilgunga qadar hokimiyatni qo‘lida ushlab turuvchi organ",
+          "evidence": "hokimiyat Turkiston Muvaq-qat Kengashi va Turkiston Xalq (Millat) Majlisi qo‘lida bo‘lishi kerak"
+        },
+        {
+          "kind": "place",
+          "place": "Qo‘qon",
+          "event": "Muxtoriyatning markazi deb belgilangan va qurultoy o‘tgan shahar",
+          "evidence": "Yig‘ilishda Muxtoriyatning markazi Qo‘qon shahri deb belgilandi."
+        },
+        {
+          "kind": "place",
+          "place": "Skobelev",
+          "event": "Bolsheviklarning harbiy otryadlari Qo‘qonga shu yerdan yetib kelgan",
+          "evidence": "30-yanvar kechqurun Toshkentdan yuborilgan dastlabki harbiy otryad-lar Skobelevdan Qo‘qonga to‘p va pulemyotlar bilan yetib keldi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Bolsheviklar va Toshkent Soveti muxtoriyatni katta xavf deb baholadi",
+          "effect": "Muxtoriyatni zudlik bilan tugatishga harakat qilindi",
+          "evidence": "Bolsheviklar va Toshkent Soveti (rahbari: Ivan Tobolin) unga katta xavf deb qaradilar hamda zudlik bilan tugatishga harakat qildilar."
+        },
+        {
+          "kind": "cause",
+          "cause": "Muxtoriyat hukumati qisqa muddat ichida xalq o‘rtasida katta e’tibor qozondi",
+          "effect": "Fitrat, Cho‘lpon, Hamza kabi shoirlar uni alqab, o‘tli she’rlar bitishdi",
+          "evidence": "Turkiston Muxtoriyati hukumati qisqa muddat ichida xalq o‘rtasida kat-ta e’tibor qozondi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Qo‘qonlik qurolsiz xaloyiq bolta, cho‘kich va tayoq bilan qarshilik ko‘rsatdi",
+          "effect": "Sovet qo‘shinlarining hujumi uch kun davomida qaytarildi",
+          "evidence": "qurolsiz bu kishilar sovet hukumati harbiy kuchlarining Qo‘qon shahriga qilgan hujumini uch kun davomida mardonavor qaytardilar."
+        },
+        {
+          "kind": "number",
+          "number": "72",
+          "unit": "kun",
+          "meaning": "Turkiston Muxtoriyati hukumati mavjud bo‘lgan muddat",
+          "evidence": "Turkiston Muxtoriyati hukumati atigi 72 kun mavjud bo‘lgan bo‘lsa ham"
+        },
+        {
+          "kind": "number",
+          "number": "10 000",
+          "unit": "kishi",
+          "meaning": "Qo‘qonning o‘zida uch kun davomida o‘ldirilgan tinch aholi soni",
+          "evidence": "Faqat Qo‘qonning o‘zida 3 kun davomida 10 000 kishi o‘ldirildi."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Turkiston o‘lkasida sovet hokimiyati boshqaruv tizimining tuzilishi va iqtisodiyot sohasidagi o‘zgarishlar",
+      "page": 20,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1918-yil 30-aprel",
+          "date_label": "Turkiston ASSR tuzildi",
+          "event": "Turkiston Sovet Respublikasi haqidagi Nizom qabul qilinib, Turkiston ASSR e’lon qilindi",
+          "evidence": "V.I. Lenin va I.V. Stalin ko‘rsat-masi asosida 30-aprelda “Rossiya Sovet federatsiyasining Turkiston Sovet Respublikasi haqidagi Nizom”ni qabul qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1918-yil 17–25-iyun",
+          "date_label": "TKP tashkiliy rasmiylashtirildi",
+          "event": "Toshkentda Turkiston Kommunistik partiyasi tashkiliy jihatdan rasmiylashtirildi",
+          "evidence": "1918-yil 17 – 25-iyunda Toshkentda Turkiston bolshevistik tashkilotlarining tashkiliy o‘lka syezdi bo‘lib o‘tib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1919-yil mart",
+          "date_label": "Musulmonlar byurosi tashkil qilindi",
+          "event": "Turkiston Kommunistik partiyasining II konferensiyasida Musbyuro tuzildi",
+          "evidence": "1919-yil mart oyida Turkiston Kommunistik partiya sining II konferensiyasida RKP (b) o‘lka Mu-sulmonlar byurosi (Musbyuro) tashkil qilindi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1920-yil yanvar",
+          "date_label": "“Turk Respublikasi” taklifi",
+          "event": "T. Risqulov respublika nomini o‘zgartirish va Turk partiyasini tuzish taklifi bilan chiqdi",
+          "evidence": "1920-yil yanvarda Turkiston ASSR MIK raisi, o‘lka Musulmonlar byurosi raisi T. Risqulov Turkiston Sovet Respublikasi nomini o‘zgartirib, uni Turk Respublikasi deb atash"
+        },
+        {
+          "kind": "date_event",
+          "date": "1918-yil 20-noyabr",
+          "date_label": "Ocharchilikka qarshi komissiya",
+          "event": "Turkiston ASSRda ocharchilikka qarshi kurash Markaziy komissiyasi tuzildi",
+          "evidence": "1918-yil 20-noyabrda Turkiston ASSRda T. Risqu-lov raisligida ocharchilikka qarshi kurash Markaziy komissiyasi tuzilgan."
+        },
+        {
+          "kind": "date_event",
+          "date": "1921-yil mart",
+          "date_label": "RKP (b) X syezdi",
+          "event": "Oziq-ovqat razvyorstkasi oziq-ovqat solig‘i bilan almashtirildi",
+          "evidence": "RKP (b) X syezdi (1921-yil mart) oziq-ovqat razvyorstkasini oziq-ovqat solig‘i bilan almashtirish to‘g‘risidagi qarori bilan bu ish boshlanib ketdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1921-yil avgust",
+          "date_label": "TKP VI syezdi",
+          "event": "Turkistonda yangi iqtisodiy siyosatga o‘tish siyosiy jihatdan asoslab berildi",
+          "evidence": "Turkiston ASSRda yangi iqtisodiy siyosatga o‘tish Turkiston Komparti -\nyasi VI syezdida (1921-yil avgust) siyosiy jihatdan asoslab berildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1921–1922-yillar",
+          "date_label": "Yer-suv islohotining birinchi bosqichi",
+          "event": "Turkiston ASSR va Qozog‘iston ASSRda yer-suv islohotining birinchi bosqichi amalga oshirildi",
+          "evidence": "1921-1922-yillarda Turkiston ASSR va Qozog‘iston ASSRda amalga oshiril-gan ijtimoiy-iqtisodiy tadbirlar birinchi bosqichni tashkil qiladi."
+        },
+        {
+          "kind": "person",
+          "person": "V.I. Lenin",
+          "role": "sovet hukumatining rahbari",
+          "activity": "Pyotr Kobozevni O‘rta Osiyoning favqulodda komissari qilib yuborgan",
+          "evidence": "Sovet hukumatining rahbari V.I. Lenin ning buyrug‘i bilan bolshevik Pyotr Kobozev O‘rta Osiyo-ning favqulodda komissari qilib jo‘natildi."
+        },
+        {
+          "kind": "person",
+          "person": "Pyotr Kobozev",
+          "role": "bolshevik, O‘rta Osiyoning favqulodda komissari",
+          "activity": "Sovet avtonomiyasini o‘rnatish uchun Turkiston o‘lkasiga yuborilgan",
+          "evidence": "bolshevik Pyotr Kobozev O‘rta Osiyo-ning favqulodda komissari qilib jo‘natildi."
+        },
+        {
+          "kind": "person",
+          "person": "Turor Risqulov",
+          "role": "Turkiston ASSR MIK raisi, o‘lka Musulmonlar byurosi raisi",
+          "activity": "Turkiston mustaqilligini ko‘zlagan takliflar bilan chiqqan, keyin vazifasidan ozod qilingan",
+          "evidence": "1920-yil yanvarda Turkiston ASSR MIK raisi, o‘lka Musulmonlar byurosi raisi T. Risqulov"
+        },
+        {
+          "kind": "person",
+          "person": "M.V. Frunze",
+          "role": "Turkiston fronti qo‘mondoni",
+          "activity": "Risqulovning Turkiston mustaqilligiga oid takliflariga keskin qarshi chiqqan",
+          "evidence": "Turkiston fronti qo‘mondoni M.V. Frunze va sovet hukumati rahbari V.I. Lenin keskin qarshi chiqishgach, bular amalga oshmadi."
+        },
+        {
+          "kind": "term",
+          "term": "“Harbiy kommunizm”",
+          "definition": "sovet hokimiyatining 1918 – 1920-yillarda yuritgan, qattiq markazlashtirishga asoslangan siyosati",
+          "evidence": "Bolshe-viklar sovet hokimiyatining dastlabki davri (1918 – 1920)da yuritgan siyosati “harbiy kommunizm” deb nomlangan."
+        },
+        {
+          "kind": "term",
+          "term": "NEP",
+          "definition": "yangi iqtisodiy siyosat, razvyorstkani soliq bilan almashtirishga asoslangan yo‘l",
+          "evidence": "Yangi iqtisodiy siyosat (NEP) degan yangi yo‘lning mohiyati shundan iborat edi."
+        },
+        {
+          "kind": "term",
+          "term": "Pud",
+          "definition": "16,38 kg ga teng og‘irlik o‘lchov birligi",
+          "evidence": "Pud – 16,38 kg ga teng og‘irlik o‘lchov birligi."
+        },
+        {
+          "kind": "term",
+          "term": "Desyatina",
+          "definition": "metrik sistema qabul etilgunga qadar qo‘llangan, 1,09 gektarga teng yer maydoni o‘lchovi",
+          "evidence": "Desyatina – (ruscha desyat – o‘n) metrik sistema qabul etilgunga qadar Rossiyada qo‘llangan, 1,09 gektarga teng yer maydoni o‘lchovi."
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "Markazning Turkkomissiya, Turkbyuro kabi vakolatli organlari jo‘natilgan shahar",
+          "evidence": "Markaz o‘z siyosatini amalga oshirish uchun maxsus komis-siyalar va byurolar (Turkkomissiya, Turkbyuro, O‘rta Osiyo byurosi va b.) tashkil qilib, ularni Toshkentga jo‘natdi"
+        },
+        {
+          "kind": "place",
+          "place": "Farg‘ona vodiysi",
+          "event": "1917 – 1923-yillarda ocharchilik natijasida 1 mln kishi o‘lib ketgan hudud",
+          "evidence": "Farg‘ona vodiysida 1917 – 1923-yillarda ocharchilik natijasida 1 mln kishi, Samarqand viloyatida 200 000 kishi o‘lib ketgan."
+        },
+        {
+          "kind": "cause",
+          "cause": "Bolsheviklar musulmon aholining o‘lkani boshqarishga bo‘lgan huquqini inkor qildi",
+          "effect": "Milliy va demokratik kuchlarning muxolifatga o‘tishi muqarrar bo‘lib qoldi",
+          "evidence": "Turkiston siyosiy hayotida milliy va demokratik kuchlarning kelgusida muxolifatga o‘tishini oldindan muqarrar qilib qo‘ydi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Og‘ir iqtisodiy vaziyat va “harbiy kommunizm” siyosati",
+          "effect": "Iqtisodiyotni boshqarishda tub o‘zgarishlar yasash zarurati paydo bo‘ldi",
+          "evidence": "Og‘ir iqtisodiy vaziyat, jumladan, Turkistondagi ahvol iqtisodiyot tarmoqlarida, uni boshqarishda tub o‘zgarishlar yasash zarurligini ko‘rsatdi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Risqulovning takliflariga Frunze va Lenin keskin qarshi chiqdi",
+          "effect": "Takliflar amalga oshmadi, Risqulov vazifasidan ozod qilinib, Moskvaga chaqirildi",
+          "evidence": "bular amalga oshmadi. 1920-yilning yozida T. Risqulov o‘z vazifasidan ozod qilinib, Moskvaga ishga chaqirib olindi."
+        },
+        {
+          "kind": "number",
+          "number": "1722626",
+          "unit": "desyatina",
+          "meaning": "Yer-suv islohotining birinchi bosqichida yer tuzish jamg‘armasiga qo‘shilgan yer maydoni",
+          "evidence": "Islohotning birinchi bosqichida yer tuzish jamg‘armasiga 1722626 desyatina yer qo‘shildi."
+        },
+        {
+          "kind": "number",
+          "number": "600000",
+          "unit": "desyatina",
+          "meaning": "Jamg‘armadan mahalliy aholiga ekin va yaylov uchun ajratilgan yer maydoni",
+          "evidence": "mahalliy aholiga faqat 600000 desyatina yer ekin ekish va yay-lovlar uchun ajratildi."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Turkiston ASSRda sovet hokimiyatiga qarshi qurolli harakatlar",
+      "page": 25,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1918-yil fevral oxiri",
+          "date_label": "Harakat boshlandi",
+          "event": "Istiqlolchilik harakati dastlab Qo‘qon atroflarida boshlandi",
+          "evidence": "istiqlolchilik harakati 1918-yil fevral oyining so‘nggi o‘n kunligida dastlab Qo‘qon atroflarida boshlandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1918-yil 27-fevral",
+          "date_label": "Kichik Ergash shahid bo‘ldi",
+          "event": "Bolsheviklar harbiy kuchlariga qarshi jangda Kichik Ergash shahid bo‘ldi",
+          "evidence": "27-fevralda bolsheviklar ning harbiy kuchlariga qarshi bo‘lgan janglarning birida Kichik Ergash shahid bo‘lgach"
+        },
+        {
+          "kind": "date_event",
+          "date": "1919-yil 12-oktyabr",
+          "date_label": "Farg‘ona muvaqqat muxtoriyat hukumati",
+          "event": "Ergashtom ovulidagi anjumanda Madaminbek boshchiligida hukumat tuzildi",
+          "evidence": "1919-yil 12-oktyabrda Pomirning Ergashtom ovuli-da bo‘lgan anjumanda Madaminbek boshchiligida Farg‘ona muvaqqat mux-toriyat hukumati tuzildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1920-yil 6-mart",
+          "date_label": "Yarash bitimi imzolandi",
+          "event": "Madaminbek bilan qizil armiya qo‘mondonligi o‘rtasida Skobelevda yarash bitimi tuzildi",
+          "evidence": "Madaminbek bilan 2-Turkiston o‘qchi diviziyasining boshlig‘i N.Veryovkin-Roxalskiy o‘rtasida 1920-yil 6-martda Skobelev shahrida yarash bitimi imzolandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1920-yil 3-may",
+          "date_label": "Turkiston – turk mustaqil islom jumhuriyati",
+          "event": "Shermuhammadbek boshchiligida mustaqil jumhuriyat tashkil topdi",
+          "evidence": "1920-yil 3-mayda Shermuhammadbek boshchiligida Turkiston – turk mustaqil islom jumhuriyati tashkil topdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1922-yil kuzi",
+          "date_label": "Bahrombek otib tashlandi",
+          "event": "Bahrombek va ukasi Shahriyor qo‘lga olinib, Samarqandda otib tashlandi",
+          "evidence": "Bolsheviklar chekistlar va josuslar yordamida 1922-yil kuzida Bahrombek va ukasi Shahriyor qo‘rboshini qo‘lga olishib, Samarqand shahrida otib tashlash-gan."
+        },
+        {
+          "kind": "date_event",
+          "date": "1923-yil 10-may",
+          "date_label": "Ochilbek halok bo‘ldi",
+          "event": "Ochilbek (Ochildov) qizil askarlar bilan jangda mardlarcha halok bo‘ldi",
+          "evidence": "1923-yil 10-mayda qizil askarlar bilan bo‘lgan janglarning birida Ochilbek"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil oxiri",
+          "date_label": "Harakatning birinchi davri yakunlandi",
+          "event": "Turkiston mintaqasida istiqlolchilik harakatining birinchi davri yakunlandi",
+          "evidence": "Xullas, 1924-yil oxirida Turkiston mintaqasida istiqlolchilik harakatining birinchi davri yakunlandi."
+        },
+        {
+          "kind": "person",
+          "person": "Madaminbek",
+          "role": "qo‘rboshi, Marg‘ilon militsiyasining sobiq boshlig‘i",
+          "activity": "Farg‘ona vodiysida kurash boshlab, 1919-yilda 30 000 ga yaqin yigitga boshchilik qilgan",
+          "evidence": "Marg‘ilonda esa militsiya -ning sobiq boshlig‘i Madaminbek – Muhammad Aminbek Ahmadbek o‘g‘li (1892 – 1920) kurash boshladi."
+        },
+        {
+          "kind": "person",
+          "person": "Katta Ergash",
+          "role": "Bachqir qishlog‘idan chiqqan qo‘rboshi (1882 – 1921)",
+          "activity": "Kichik Ergash shahid bo‘lgach, Farg‘ona vodiysida ozodlik bayrog‘ini ko‘targan",
+          "evidence": "1918-yil mart oyining oxiriga kelib Kat -\nta Ergashning nomi Farg‘ona vodiysi aholisi o‘rtasida\njuda mashhur bo‘lib ketdi"
+        },
+        {
+          "kind": "person",
+          "person": "Shermuhammadbek",
+          "role": "qo‘rboshi, 20 000 nafar askarga boshchilik qilgan",
+          "activity": "Turkiston – turk mustaqil islom jumhuriyatiga bosh bo‘lgan",
+          "evidence": "Shermuhammadbek istiqlolchilik harakatiga bosh bo‘ldi."
+        },
+        {
+          "kind": "person",
+          "person": "Bahrombek",
+          "role": "Samarqand viloyatidagi mashhur qo‘rboshi",
+          "activity": "1918-yildan boshlab 2000 yigit bilan qizil armiyaga qarshi janglarda qatnashgan",
+          "evidence": "Bahrombek 1918-yildan boshlab 2000 yigit bilan Samarqand viloyatida qizil armiyaga qarshi janglarda faol qatnashdi."
+        },
+        {
+          "kind": "person",
+          "person": "Ochilbek",
+          "role": "Samarqand viloyati qo‘rboshi, jasurligi uchun Ochildov nomi bilan mashhur",
+          "activity": "1921-yildan “Turkiston milliy birligi” tashkiloti ko‘rsatmalari asosida faoliyat ko‘rsatgan",
+          "evidence": "Ahmad Zaki Validiyning yozishicha, Ochilbek 1921-yildan boshlab “Tur-kiston milliy birligi” tashkiloti ko‘rsatmalari asosida faoliyat ko‘rsatgan."
+        },
+        {
+          "kind": "term",
+          "term": "“Bosmachilik”",
+          "definition": "sovet hujjatlarida milliy ozodlik harakatini soxtalashtirish uchun ishlatilgan noto‘g‘ri atama",
+          "evidence": "sovet hokimiyatining rasmiy hujjatlarida milliy ozodlik harakatining mohiyati soxtalashtirilib, u “bosmachilik” harakati, uning qatnashchilari esa “bosmachilar” tarzida noto‘g‘ri talqin qilindi."
+        },
+        {
+          "kind": "term",
+          "term": "Qo‘rboshi",
+          "definition": "istiqlolchilarning harbiy rahbari, xalq o‘rtasida jangovarligi bilan mashhur bo‘lgan shaxs",
+          "evidence": "O‘z vaqtida Farg‘ona vodiysida Kichik Ergash, Katta\nErgash, Madaminbek, Shermuhammadbek, Islom Polvon, Samarqand viloya -\ntida Ochilbek, Bahrombek va boshqalar harakatga rahbarlik qildilar"
+        },
+        {
+          "kind": "term",
+          "term": "Istiqlolchilik harakati",
+          "definition": "butun Turkistonning milliy istiqloli va mustaqilligi g‘oyasiga asoslangan qurolli kurash",
+          "evidence": "Harakatning boshdan oxirigacha ustuvor bo‘lgan fikr bu butun Tur-kistonning milliy istiqloli va mustaqilligi g‘oyasidir."
+        },
+        {
+          "kind": "term",
+          "term": "Yarash bitimi",
+          "definition": "Madaminbekning vaqt yutish uchun Farg‘ona fronti qo‘shinlari qo‘mondonligi bilan tuzgan kelishuvi",
+          "evidence": "Madaminbek vaqtdan yutish uchun Farg‘ona fronti qo‘shinlari qo‘mondonligiga yarash muzokaralari boshlashni taklif qildi."
+        },
+        {
+          "kind": "place",
+          "place": "Bachqir",
+          "event": "Qo‘qon uyezdidagi harakatning dastlabki tayanch nuqtasi bo‘lgan qishloq",
+          "evidence": "Qo‘qon uyezdidagi harakatning dastlabki tayanch nuqtasi Bachqir edi."
+        },
+        {
+          "kind": "place",
+          "place": "Samarqand viloyati",
+          "event": "1918–1923-yillarda Bahrombek va Ochilbek rahbarlik qilgan istiqlolchilik janglari hududi",
+          "evidence": "Samarqand viloyatidagi istiqlolchilarga 1918–1923-yillarda Bahrombek va Ochilbek kabi mashhur qo‘rboshilar rahbarlik qilgan."
+        },
+        {
+          "kind": "cause",
+          "cause": "Sovet hokimiyatining o‘lkada yuritgan mustamlakachilik va shovinistik siyosati",
+          "effect": "Turkistonda istiqlolchilik harakati vujudga keldi",
+          "evidence": "Turkistonda istiqlolchilik harakati vujudga kelishining bosh sababi sovet hokimiyatining o‘lkada yuritgan mustamlakachilik va shovinistik siyosati bo‘ldi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Sotsialistik tadbirlar va qizil armiya jangchilarining talonchiligi",
+          "effect": "Harakat alohida keskinlik va keng ko‘lam kasb etib, tobora kengaydi",
+          "evidence": "hamda qizil armiya jangchilarining talonchilik va bosqinchiliklari istiqlolchilik harakatiga alohida keskinlik va ko‘lam bag‘ishladi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Farg‘ona vodiysiga bolsheviklar tomonidan qo‘shimcha kuchlar kiritildi",
+          "effect": "1920-yil yanvar o‘rtalariga kelib jangovar tashabbus qizil armiya qo‘liga o‘tdi",
+          "evidence": "Farg‘ona vodiysiga bolsheviklar tomonidan qo‘shim cha kuchlarning boshlanishi natijasida 1920-yil yanvar oyining o‘rtalariga kelib jangovar tashabbus qizil armiya qo‘liga o‘tdi."
+        },
+        {
+          "kind": "number",
+          "number": "30 000",
+          "unit": "kishi",
+          "meaning": "1919-yil kech kuzida Madaminbek qo‘l ostida bo‘lgan yigitlar soni",
+          "evidence": "1919-yilning kech kuziga kelib Madaminbek qo‘l ostida 30 000 nafarga yaqin yigit qizil armiyaga qarshi istiqlol janglarini olib bordilar."
+        }
+      ]
+    }
+  ]
+}

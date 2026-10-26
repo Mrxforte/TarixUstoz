@@ -1,0 +1,810 @@
+{
+  "chapter": "Ikkinchi bob. Sovet hokimiyatining O‘zbekistonda yuritgan siyosati (1925 – 1939-yillar)",
+  "topics": [
+    {
+      "number": 11,
+      "title": "O‘zbekistonda qishloq xo‘jaligini kollektivlashtirish siyosati hamda quloqlarning surgun qilinishi",
+      "page": 61,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1925–1929-yillar",
+          "date_label": "1925–1929-yillar",
+          "event": "Yer-suv islohotining ikkinchi bosqichi amalga oshirilib, katta yer egaligini butunlay cheklash masalasi qo‘yildi",
+          "evidence": "1925 – 1929-yillarda yer-suv islohotining ikkinchi bosqichi amalga oshirildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1925-yil noyabr",
+          "date_label": "1925-yil noyabrdagi II syezd",
+          "event": "«Agrar inqilob»ning strategiya va taktikasi O‘zbekiston Kompartiyasining II syezdida tasdiqlandi",
+          "evidence": "O‘zbekiston Kompartiyasining II syezdi (1925-yil noyabr)da tasdiqlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1925-yil 2-dekabr",
+          "date_label": "1925-yil 2-dekabrdagi dekretlar",
+          "event": "Yer-suv islohoti O‘zbekiston SSR MIKning suv va yer-suv islohoti to‘g‘risidagi dekretlari bilan boshlandi",
+          "evidence": "1925-yil 2-dekabrdagi “Suv va suvni nat-sionalizatsiya qilish to‘g‘risida”"
+        },
+        {
+          "kind": "date_event",
+          "date": "1927-yil",
+          "date_label": "1927-yilgi ikkinchi bosqich",
+          "event": "Islohotning ikkinchi bosqichi Zarafshon viloyatida, ya’ni Buxoro va O‘rta Zarafshon okruglarida o‘tkazildi",
+          "evidence": "Zarafshon viloya-ti (Buxoro va O‘rta Zarafshon okruglari)"
+        },
+        {
+          "kind": "date_event",
+          "date": "1928–1929-yillar",
+          "date_label": "1928–1929-yillardagi uchinchi bosqich",
+          "event": "Islohotning uchinchi bosqichi Qashqadaryo, Surxondaryo va Xorazm okruglarida amalga oshirildi",
+          "evidence": "Qashqadaryo, Surxondaryo, Xorazm okruglari"
+        },
+        {
+          "kind": "date_event",
+          "date": "1930-yil 26-yanvar",
+          "date_label": "1930-yil 26-yanvardagi qaror",
+          "event": "VKP(b) MK Siyosiy byurosi yoppasiga jamoalashtirish rayonlarida quloq xo‘jaliklarini tugatish tadbirlari haqida qaror qabul qildi",
+          "evidence": "1930-yil 26-yanvardagi “Yoppasiga ja -moalashtirish rayonlarida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1930-yil 17-fevral",
+          "date_label": "1930-yil 17-fevraldagi qaror",
+          "event": "O‘zbekiston Kompartiyasi MK «Kollektivlashtirish va quloq xo‘jaliklarini tugatish to‘g‘risida» qaror qabul qildi",
+          "evidence": "1930-yil 17-fev-ralda O‘zbekiston Kompartiyasi Markaziy"
+        },
+        {
+          "kind": "date_event",
+          "date": "1931-yil bahor",
+          "date_label": "1931-yil bahori",
+          "event": "O‘zbekistonda yalpi jamoalashtiriladigan tumanlar qaytadan tuzildi",
+          "evidence": "1931-yilning bahoridan boshlab O‘zbekistonda yalpi jamoalashtiriladigan tumanlar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1932-yil",
+          "date_label": "1932-yil",
+          "event": "O‘zbekiston qishloq xo‘jaligini kollektivlashtirish rasman tugallandi",
+          "evidence": "O‘zbekiston qishloq xo‘jaligini kollektivlashtirish rasman 1932-yili tugallandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1939-yil",
+          "date_label": "1939-yilga kelib",
+          "event": "O‘zbekistonda yakka dehqon xo‘jaliklariga butkul barham berildi",
+          "evidence": "1939-yilga kelib O‘zbekistonda yakka dehqon xo‘jaliklariga butkul barham berildi"
+        },
+        {
+          "kind": "person",
+          "person": "Kirpanov",
+          "role": "O‘zbekiston Kompartiyasi MK sekretari",
+          "activity": "1930-yili «mutlaqo maxfiy» grifi ostida g‘alla yig‘ish bo‘yicha ma’lumotnoma tayyorlagan",
+          "evidence": "O‘zbekiston Kompartiyasi MK sekretari Kirpanov tomonidan “mutlaqo"
+        },
+        {
+          "kind": "person",
+          "person": "Jalilov",
+          "role": "Shahrisabz tumani g‘alla tayyorlash vakili",
+          "activity": "G‘alla tayyorlash kompaniyasini «urush» deb ta’riflab, uning murosasizligini ko‘rsatgan",
+          "evidence": "Shahrisabz tumani g‘alla tayyorlash vakili Jalilov"
+        },
+        {
+          "kind": "term",
+          "term": "Kollektivlashtirish",
+          "definition": "Mayda-mayda dehqon xo‘jaliklaridan ommaviy tarzda yirik kollektiv xo‘jaliklar (kolxozlar)ni tashkil qilish",
+          "evidence": "mayda-mayda dehqon xo‘jaliklaridan ommaviy tarzda yirik kollektiv xo‘jaliklar (kolxozlar)ni tashkil qilish"
+        },
+        {
+          "kind": "term",
+          "term": "Natsionalizatsiya",
+          "definition": "Ayrim shaxs yoki birlashmalarning xususiy mulki bo‘lgan yer va korxonalarni davlat ixtiyoriga olish",
+          "evidence": "ayrim shaxs yoki birlashmalar -ning xususiy mulki bo‘lgan"
+        },
+        {
+          "kind": "term",
+          "term": "«Quloqlar»",
+          "definition": "Badavlat va o‘rtahol dehqonlarni qishloq burjuaziyasi sifatida tugatish siyosati",
+          "evidence": "badavlat va o‘rtahol dehqonlarni qishloq burjuaziyasi sifatida tugatish siyosatidir"
+        },
+        {
+          "kind": "term",
+          "term": "Funt",
+          "definition": "Og‘irlik o‘lchov birligi bo‘lib, bir funt 410 grammga teng bo‘lgan",
+          "evidence": "og‘irlik o‘lchov birligi bo‘lib, 1 funt 410g.ga teng bo‘lgan"
+        },
+        {
+          "kind": "place",
+          "place": "Qashqadaryo okrugi",
+          "event": "1930-yil boshlarida dehqonlarning 14 ta norozilik chiqishi yuz berib, ularda 3700 kishi ishtirok etgan",
+          "evidence": "Faqat Qashqadaryo okrugida 1930-yil boshlarida dehqonlarning 14 ta norozilik chiqishlari yuz berib"
+        },
+        {
+          "kind": "place",
+          "place": "Bauman tumani",
+          "event": "Jilvon va Ko‘li Odina qishloq sovetlari hududida 2 ta «quloqlar» posyolkasi barpo etilgan",
+          "evidence": "Bauman (hozirgi Shofirkon) tumanidagi Jilvon va Ko‘li Odina qishloq sovetlari hududida"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kolxozga kirmaganlar suvdan mahrum etilishi va katta soliq solinishi bilan dag‘dag‘a qilindi",
+          "effect": "Ko‘pchilik tumanlarda kollektivlashtirish bir necha hafta ichida amalga oshirildi",
+          "evidence": "Natijada ko‘pchilik tumanlarda kollektivlashtirish bir necha hafta ichida amalga oshirildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yakka xo‘jaliklarga soliq oshirildi va majburan topshiriladigan mahsulot 50 foizga ko‘paytirildi",
+          "effect": "Yakka dehqon xo‘jaliklariga iqtisodiy tazyiq yanada kuchaydi",
+          "evidence": "davlatga majburan topshiriladigan mahsu-lot hajmi ham kolxozlarga nisbatan 50 foizga"
+        },
+        {
+          "kind": "cause",
+          "cause": "Dehqonlar o‘z chorva mollarini ommaviy ravishda so‘yib yubordi",
+          "effect": "Qoramollar miqdori 1930-yili 60 000 boshdan ziyodga kamayib ketdi",
+          "evidence": "Qoramollar miqdori 1930-yili 60 000 boshdan ziyodga kamayib ketdi"
+        },
+        {
+          "kind": "number",
+          "number": "75",
+          "unit": "foiz",
+          "meaning": "1932-yilga kelib respublikadagi dehqon xo‘jaliklarining kolxoz va sovxozlarga birlashgan ulushi",
+          "evidence": "dehqon xo‘ja-liklarining 75 foizi umumiylashtirilgan sektorga"
+        },
+        {
+          "kind": "number",
+          "number": "17",
+          "unit": "ta",
+          "meaning": "1931-yildan boshlab ko‘chirib keltirilganlar uchun tashkil qilingan majburiy mehnat posyolkalari soni",
+          "evidence": "ko‘chirib keltirilganlarning 17 ta majburiy mehnat posyolkalari tashkil qilindi"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "O‘zbekistonda industrlashtirish siyosatining amalga oshirilishi va kadrlar masalasi",
+      "page": 67,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1925-yil dekabr",
+          "date_label": "1925-yil dekabrdagi XIV syezd",
+          "event": "VKP(b) XIV syezdida SSSRda sotsialistik industrlashtirishga o‘tish ommaviy tarzda e’lon qilindi",
+          "evidence": "1925-yil dekabrda bo‘lgan VKP(b) XIV syezdida SSSRda iqtisodiyotni"
+        },
+        {
+          "kind": "date_event",
+          "date": "1928-yil",
+          "date_label": "1928-yil",
+          "event": "Qishloq xo‘jaligini zo‘ravonlik bilan kollektivlashtirish jarayonida sanoatni industrlashtirish ham amalga oshirildi",
+          "evidence": "1928-yili sanoatni industrlashtirish ham amalga oshirildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1928-yil oktyabr – 1932-yil dekabr",
+          "date_label": "Birinchi besh yillik",
+          "event": "Birinchi besh yillik reja muddatidan 9 oy oldin yakunlandi",
+          "evidence": "Birinchi besh yillik rejasi 1928-yil oktyabrda boshlanib, 1932-yil dekabrda muddatidan 9 oy oldin yakunlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1925-yil 3-mart",
+          "date_label": "1925-yil 3-mart",
+          "event": "O‘zSSR MIK huzurida Davlat apparatini mahalliylashtirish Markaziy komissiyasi tuzildi",
+          "evidence": "1925-yil 3-martda Bobon Mavlonbekov raisligida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1925-yil 22–30-noyabr",
+          "date_label": "1925-yil 22–30-noyabrdagi II syezd",
+          "event": "Samarqandda O‘zbekiston Kommunistik partiyasining II syezdi bo‘lib o‘tdi",
+          "evidence": "1925-yil 22 – 30-noyabrda Samarqand shahrida bo‘lib o‘tgan O‘zbekiston"
+        },
+        {
+          "kind": "date_event",
+          "date": "1927-yil 8-yanvar",
+          "date_label": "1927-yil 8-yanvar",
+          "event": "Komissiya nomi «Davlat apparati va sanoatni O‘zbeklashtirish Markaziy komissiyasi» deb o‘zgartirildi",
+          "evidence": "1927-yil 8-yanvarda O‘zbekiston SSR MIK huzuridagi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1927-yil 16–24-noyabr",
+          "date_label": "1927-yil 16–24-noyabrdagi III syezd",
+          "event": "O‘zbekiston Kommunistik partiyasining III syezdi mahalliylashtirish masalasini ko‘rib chiqdi",
+          "evidence": "1927-yil 16 – 24-noyabrda bo‘lgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1928-yil 18-fevral",
+          "date_label": "1928-yil 18-fevraldagi qo‘shma qaror",
+          "event": "MIK va XKS «Davlat apparatini o‘zbeklashtirish to‘g‘risida» qo‘shma qaror qabul qildi",
+          "evidence": "1928-yil 18-fevralda O‘zbekiston SSR MIK va XKSning"
+        },
+        {
+          "kind": "date_event",
+          "date": "1931-yil 11-dekabr",
+          "date_label": "1931-yil 11-dekabrdagi qaror",
+          "event": "SSSR MIK qarori bilan O‘zbekiston davlat apparatini o‘zbeklashtirish komissiyasi faoliyati to‘xtatildi",
+          "evidence": "1931-yil 11-dekabrda SSSR MIKning “O‘zSSR apparatini o‘zbeklashtirish to‘g‘risida”gi qarori"
+        },
+        {
+          "kind": "person",
+          "person": "Fayzulla Xo‘jayev",
+          "role": "O‘zbekiston SSR Xalq Komissarlari Soveti raisi",
+          "activity": "Tub xalqlardan mahalliy kadrlar tayyorlash va ularni yuqori lavozimlarga ko‘tarishda jonbozlik ko‘rsatgan",
+          "evidence": "Soveti raisi Fayzulla Xo‘jayev tub xalqlardan mahalliy kadrlar tayyorlash"
+        },
+        {
+          "kind": "person",
+          "person": "Bobon Mavlonbekov",
+          "role": "Markaziy komissiya raisi",
+          "activity": "1925-yil 3-martda Davlat apparatini mahalliylashtirish Markaziy komissiyasiga rais bo‘lgan",
+          "evidence": "Bobon Mavlonbekov raisligida “Davlat apparatini mahalliylashtirish Markaziy komissiyasi” tuzildi"
+        },
+        {
+          "kind": "person",
+          "person": "Akmal Ikromov",
+          "role": "Markaziy komissiya a’zosi",
+          "activity": "Mahalliy kadrlarni tayyorlash bo‘yicha markaziy komissiya tarkibiga kirgan",
+          "evidence": "Akmal Ikromov, Rahim Inog‘omov va boshqalar unga a’zo bo‘lishdi"
+        },
+        {
+          "kind": "term",
+          "term": "Industrlashtirish",
+          "definition": "Xalq xo‘jaligining barcha sohalarida yirik mashina ishlab chiqarish jarayonini keltirish, tarmoqlarni mashina texnikasi asosiga o‘tkazish",
+          "evidence": "Xalq xo‘jaligining barcha sohalarida yirik mashina ishlab chiqarish jarayonini keltirish"
+        },
+        {
+          "kind": "term",
+          "term": "GESlar kaskadi",
+          "definition": "Bir daryo oqimida bir-biridan ma’lum masofada joylashgan, umumiy suv xo‘jalik rejimi bilan bog‘langan gidroelektrostansiyalar",
+          "evidence": "bir daryo oqimida bir-biridan ma’lum masofada joylashgan"
+        },
+        {
+          "kind": "term",
+          "term": "O‘zbeklashtirish",
+          "definition": "Respublika hududidagi davlat apparati va ish yuritishni o‘zbeklashtirishni ko‘zda tutgan siyosat",
+          "evidence": "davlat apparati va ish yuritishni o‘zbeklashtirishni ko‘zda tutadi"
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "O‘rta Osiyo respublikalarida paxtachilik va mashinasozlik sanoatining to‘ng‘ichi bo‘lgan qishloq xo‘jaligi mashinasozligi zavodi barpo etildi",
+          "evidence": "Toshkent qishloq xo‘jaligi mashinasozligi zavodi barpo etildi"
+        },
+        {
+          "kind": "place",
+          "place": "Chirchiq",
+          "event": "XX asr 30-yillarida Chirchiq-Bo‘zsuv GESlar kaskadi barpo etildi",
+          "evidence": "XX asr 30-yillarida Chirchiq-Bo‘zsuv GESlar kaskadi barpo etildi"
+        },
+        {
+          "kind": "place",
+          "place": "Samarqand",
+          "event": "1925-yil 22–30-noyabrda O‘zbekiston Kommunistik partiyasining II syezdi bo‘lib o‘tdi",
+          "evidence": "1925-yil 22 – 30-noyabrda Samarqand shahrida"
+        },
+        {
+          "kind": "cause",
+          "cause": "Respublika iqtisodiyoti agrar xususiyatga ega bo‘lib, sanoatning 90 foizi qishloq xo‘jalik xomashyosini qayta ishlashga asoslangan edi",
+          "effect": "O‘zbekiston uchun sanoat qurilishini keng sur’atda jadallashtirish nihoyatda zarur edi",
+          "evidence": "Chunki respublika iqtisodiyoti bu davrda ham agrar xususiyatga egaligicha qolayotgan edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qishloq xo‘jalik mahsulotlarining xarid narxlari pasaytirildi",
+          "effect": "Dehqonlar qashshoqlashib, mamlakatda oziq-ovqat muammosi keskinlashdi",
+          "evidence": "Qishloq xo‘jalik mahsulotlarining xarid narxlari pasaytirildi. Natijada dehqonlar qashshoqlashib"
+        },
+        {
+          "kind": "cause",
+          "cause": "Davlat hokimiyati va xo‘jalik boshqaruvi organlarida milliy kadrlar juda oz bo‘lib, ish yuritish rus tilida olib borilgan",
+          "effect": "Kadrlarni mahalliylashtirish masalasi eng muhim muammolardan biriga aylandi",
+          "evidence": "davlat hokimiyati va xo‘jalik boshqaruvi organlarida milliy kadrlar juda oz bo‘lib"
+        },
+        {
+          "kind": "number",
+          "number": "289",
+          "unit": "ta",
+          "meaning": "Birinchi besh yillik davrida O‘zbekistonda qurilgan va ishga tushirilgan yangi sanoat korxonalari soni",
+          "evidence": "O‘zbekistonda 289 ta yangi sanoat korxonasi qurildi va ishga tushirildi"
+        },
+        {
+          "kind": "number",
+          "number": "62,6",
+          "unit": "foiz",
+          "meaning": "1927-yilda O‘zSSR xalq xo‘jaligida qishloq xo‘jaligining salmog‘i",
+          "evidence": "1927-yilda O‘zSSR xalq xo‘jaligida qishloq xo‘jaligining salmog‘i 62,6 %"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "O‘zbek xotin-qizlarining ozodlikka chiqarish jarayoni va muammolar",
+      "page": 71,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1926-yil sentyabr",
+          "date_label": "1926-yil sentyabr",
+          "event": "«Hujum» kompaniyasi O‘rta Osiyo xotin-qizlari kengashida e’lon qilindi",
+          "evidence": "“Hujum” kompaniyasi 1926-yil sentyabrda O‘rta Osiyo xotin-qizlari"
+        },
+        {
+          "kind": "date_event",
+          "date": "1926-yil dekabr",
+          "date_label": "1926-yil dekabr",
+          "event": "«Hujum» kompaniyasini o‘tkazish uchun O‘zbekistonda maxsus komissiyalar tuzildi",
+          "evidence": "1926-yil dekabrda “Hujum” kompaniyasini o‘tka zish uchun"
+        },
+        {
+          "kind": "date_event",
+          "date": "1927-yil 8-mart",
+          "date_label": "1927-yil 8-mart",
+          "event": "Ommaviy mitinglar boshlandi va 100 000 dan ortiq xotin-qiz paranji va chachvonini yoqdi",
+          "evidence": "1927-yil 8-martda ommaviy mitinglar boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1927–1928-yillar",
+          "date_label": "«Hujum» eng faol o‘tkazilgan yillar",
+          "event": "«Hujum» harakati eng faol o‘tkazilgan yillarda 2500 dan ortiq faol xotin-qiz qurbon bo‘ldi",
+          "evidence": "“Hujum” harakati eng faol o‘tkazilgan 1927-1928-yillarda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1926-yil",
+          "date_label": "1926-yil",
+          "event": "O‘zbekistonda 16 ta yirik ayollar arteli bo‘lib, ularda 814 nafar mahalliy xotin-qiz mehnat qilgan",
+          "evidence": "1926-yili O‘zbekistonda 16 ta yirik ayollar artellari bo‘lib, ularda 814 nafar mahalliy xotin-qizlar mehnat qilardi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1930-yil",
+          "date_label": "1930-yil",
+          "event": "50 dan ortiq artelda 5000 nafardan ko‘proq mahalliy ayol ishlagan",
+          "evidence": "1930-yilda respublika hunarmandchilik kooperatsiyasining 50 dan ortiq artellarida 5000 nafardan ko‘proq mahalliy ayollar ishlardi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1939-yil",
+          "date_label": "1939-yil",
+          "event": "2500 nafar xotin-qiz traktorchilar kursida o‘qishga majburan jalb qilindi",
+          "evidence": "Faqat 1939-yilda 2500 nafar xotin-qizlar traktorchilar kursida o‘qishga majburan jalb qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1927-yil",
+          "date_label": "1927-yil",
+          "event": "Andijondagi Eski shahar ayollar klubiga 134 nafar a’zo bo‘lgan",
+          "evidence": "1927-yili Andijondagi Eski sha-har ayollar klubida 134 nafar a’zo bo‘lgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1927-yil",
+          "date_label": "1927-yildagi rahbarlik lavozimlari",
+          "event": "Tuman ijroiya qo‘mitalari a’zolarining 20 foizi, okrug qo‘mitalari a’zolarining 17 foizi ayollar edi",
+          "evidence": "1927-yili respublikadagi tuman ijroiya qo‘mitalari a’zolarining 20 foizi"
+        },
+        {
+          "kind": "person",
+          "person": "Jahon Obidova",
+          "role": "O‘zSSR Markaziy Ijroiya Komiteti Prezidiumi raisining o‘rinbosari",
+          "activity": "Keyinchalik sovet hokimiyati tomonidan qatag‘on qilingan",
+          "evidence": "Jahon Obidova O‘zSSR Markaziy Ijroiya Komiteti Prezidiumi raisining o‘rinbosari"
+        },
+        {
+          "kind": "person",
+          "person": "Tojixon Shodiyeva",
+          "role": "O‘zSSR MIK Prezidiumi a’zosi",
+          "activity": "Keyinchalik sovet hokimiyati tomonidan qatag‘on qilingan",
+          "evidence": "Tojixon Shodiyeva esa Prezidium a’zosi bo‘lgan"
+        },
+        {
+          "kind": "person",
+          "person": "Halima Nosirova",
+          "role": "o‘zbek xonandasi",
+          "activity": "XX asr 30-yillarida iste’dodi yarq etib, o‘zbek san’atida mashhur bo‘lgan",
+          "evidence": "Halima Nosirova, Tamaraxonim, Sora Eshonto‘rayeva, Mukarrama Turg‘unboyeva kabi o‘zbek qizlarining iste’dodi"
+        },
+        {
+          "kind": "term",
+          "term": "Paranji",
+          "definition": "Musulmon ayollar begona erkaklarga ko‘rinmaslik uchun boshga yopinib yuradigan uzun yoping‘ich",
+          "evidence": "ko‘pchilik musulmon ayollar begona erkaklarga ochiq ko‘rinmaslik uchun boshga yopinib yuradigan"
+        },
+        {
+          "kind": "term",
+          "term": "Chachvon",
+          "definition": "Otning dumi qilidan to‘qilgan, paranji ostidan yuzga tutiladigan to‘r parda",
+          "evidence": "otning dumi qilidan to‘qilgan, paranji ostidan yuzga tutiladigan to‘r parda"
+        },
+        {
+          "kind": "term",
+          "term": "Artel",
+          "definition": "Kasb-hunar egalarining birgalashib, jamoa bo‘lib ishlash uchun tuzilgan uyushmasi",
+          "evidence": "kasb-hunar egalarining birgalashib, jamoa bo‘lib ishlash uchun tuzilgan uyushmasi"
+        },
+        {
+          "kind": "term",
+          "term": "Kooperatsiya",
+          "definition": "O‘zaro bog‘langan ishlab chiqarish jarayonida kishilarning hamkorlik asosida ishlashini tashkil etish shakli",
+          "evidence": "o‘zaro bog‘langan ishlab chiqa-rish jarayonida kishilarning yoki tashkilotlarning"
+        },
+        {
+          "kind": "place",
+          "place": "Andijon",
+          "event": "Eski shahar ayollar klubida 134 nafar a’zo bo‘lib, ayollar uchun madaniy-tarbiyaviy ishlar olib borilgan",
+          "evidence": "Andijondagi Eski sha-har ayollar klubida 134 nafar a’zo bo‘lgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ayollarni ozodlikka chiqarish masalasi qisqa muddatda shoshilinch hal qilindi",
+          "effect": "Katta yo‘qotishlar yuz berdi, ko‘plab xotin-qizlar o‘z yaqinlari tomonidan o‘ldirildi",
+          "evidence": "bu muammo qisqa muddat davomida shoshilinch hal qilindi, natijada katta yo‘qotishlar yuz berdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ayollarni ishga tayinlashda ularning nozik jins vakilasi ekanligi e’tiborga olinmadi",
+          "effect": "Bu holat ularning sog‘lig‘iga jiddiy shikast yetkazdi",
+          "evidence": "ularning nozik jins vakilasi – ojiza ekanligi e’tiborga olinmadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kolxoz va sovxozlar tashkil qilingach ayollar traktorchilikka majburan o‘rgatildi",
+          "effect": "Kursni tugatgan xotin-qizlarning ko‘pchiligi traktorchi bo‘lib ishlamadi",
+          "evidence": "Kursni tugatgan xotin-qizlarning ko‘pchiligi traktorchi bo‘lib ishlamasdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sovet hukumati arzon ishchi kuchidan foydalanishni asosiy maqsad qilib olgan edi",
+          "effect": "Ayollar amalda sho‘ro qullariga aylantirildi",
+          "evidence": "arzon-garovda ishlaydigan qo‘shimcha ishchi kuchlari sifatida ulardan foydalanish"
+        },
+        {
+          "kind": "number",
+          "number": "100 000",
+          "unit": "dan ortiq ayol",
+          "meaning": "1927-yil 8-martda paranji va chachvonlarini gulxanda yoqqan xotin-qizlar soni",
+          "evidence": "100 000 dan ortiq xo-tin-qizlar paranjilarini gulxanda yoqdilar"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "O‘zbekistonda sovet hokimiyati yuritgan madaniy siyosat",
+      "page": 75,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1932-yil 14-oktyabr",
+          "date_label": "1932-yil 14-oktyabr",
+          "event": "O‘zbekiston SSR Markaziy Ijroiya Qo‘mitasi Prezidiumi O‘zbekiston SSR Fanlar komitetini tuzdi",
+          "evidence": "1932-yil 14-oktyabrda O‘zbekiston SSR Markaziy Ijroiya Qo‘mitasi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1934-yil",
+          "date_label": "1934-yil",
+          "event": "Fanlar komitetiga Otajon Hoshimov rais qilib saylandi",
+          "evidence": "1934-yili unga Otajon Hoshimov rais qilib saylandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1940-yil 9-yanvar",
+          "date_label": "1940-yil 9-yanvar",
+          "event": "Fanlar komiteti SSSR Fanlar akademiyasining O‘zbekiston SSR filialiga aylantirildi",
+          "evidence": "1940-yil 9-yanvarda O‘zbekiston SSR Fanlar komiteti SSSR Fanlar akademiyasining"
+        },
+        {
+          "kind": "date_event",
+          "date": "1934-yil 10–17-yanvar",
+          "date_label": "1934-yil 10–17-yanvardagi VI syezd",
+          "event": "Toshkentda O‘zbekiston Kommunistik partiyasining VI syezdi bo‘lib o‘tdi",
+          "evidence": "1934-yil 10-17-yanvarda Toshkentda bo‘lib o‘tgan O‘zbekiston Kommunistik partiyasining VI syezdida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1935-yil 10–17-yanvar",
+          "date_label": "1935-yil 10–17-yanvardagi V qurultoy",
+          "event": "O‘zSSR Sovetlarining V qurultoyi majburiy yetti yillik ta’lim dasturini ishlab chiqishni taklif qildi",
+          "evidence": "SSR Sovetlarining 1935-yil 10 – 17-yanvarda Toshkentda bo‘lib o‘tgan V qurultoyi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1921–1922-yillar",
+          "date_label": "1921–1922-yillar",
+          "event": "Arab imlosi isloh qilinib, ancha soddalashtirildi",
+          "evidence": "1921-1922-yillarda dastlab arab imlosi isloh qilinib, ancha soddalashtirildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1929-yil may",
+          "date_label": "1929-yil maydagi konferensiya",
+          "event": "Samarqandda o‘tkazilgan konferensiyada o‘zbek yozuvini arab grafikasidan lotin grafikasiga o‘tkazish qaror qilindi",
+          "evidence": "1929-yil may oyida Samarqandda o‘tgan O‘zbekiston adiblari, imlochilari"
+        },
+        {
+          "kind": "date_event",
+          "date": "1929-yil 1-dekabr",
+          "date_label": "1929-yil 1-dekabr",
+          "event": "O‘zbekistonda arab alifbosidan lotin yozuviga o‘tildi",
+          "evidence": "1-dekabr-da O‘zbekistonda arab alifbosidan lotin yozuviga o‘tildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1940-yil 8-may",
+          "date_label": "1940-yil 8-maydagi III sessiya",
+          "event": "Oliy Sovet III sessiyasida lotin yozuvidan kirill asosidagi o‘zbek yozuviga o‘tish qaror qilindi",
+          "evidence": "8-mayda bo‘lgan O‘zbekiston SSR Oliy Soveti III sessiyasida"
+        },
+        {
+          "kind": "person",
+          "person": "Abdulla Avloniy",
+          "role": "ma’rifatparvar adib va jamoat arbobi",
+          "activity": "Ta’lim va tarbiyani «yo hayot – yo mamot» masalasi deb baholagan",
+          "evidence": "Abdulla Avloniy ta’lim va tarbiya haqida gapirib"
+        },
+        {
+          "kind": "person",
+          "person": "Toshmuhammad Qori-Niyozov",
+          "role": "matematik olim",
+          "activity": "1940-yil 8-mayda lotin yozuvidan kirill asosidagi yozuvga o‘tish bo‘yicha ma’ruza qilgan",
+          "evidence": "matematik olim Toshmuhammad Qori-Niyozovning ma’ruzasi bo‘yicha"
+        },
+        {
+          "kind": "person",
+          "person": "Otajon Hoshimov",
+          "role": "O‘zbekiston SSR Fanlar komiteti raisi",
+          "activity": "1934-yilda Fanlar komiteti raisligiga saylangan",
+          "evidence": "Otajon Hoshimov rais qilib saylandi"
+        },
+        {
+          "kind": "person",
+          "person": "Cho‘lpon",
+          "role": "o‘zbek shoiri",
+          "activity": "Asarlari bilan milliy qadriyatlarni saqlash va himoya qilishga uringan",
+          "evidence": "Fitrat, Cho‘lpon, Abdulla Qodiriy, Sadriddiy Ayniy, Hamza va boshqalar o‘z asarlari bilan milliy qadriyatlarni saqlash va himoya qilishga urindilar"
+        },
+        {
+          "kind": "person",
+          "person": "Yunus Rajabiy",
+          "role": "o‘zbek kompozitori",
+          "activity": "O‘zbek milliy musiqasini rivojlantirishda katta mehnat qilgan",
+          "evidence": "To‘xtasin Jalilov, Yunus Rajabiy, Muxtor Ashrafiy, Mutavakkil Burhonovlar katta mehnat qildilar"
+        },
+        {
+          "kind": "term",
+          "term": "Proletar",
+          "definition": "Yashash manbayi o‘z ishchi kuchini ishlab chiqarish vositalari egalariga sotishdan iborat yollanma ishchilar sinfi",
+          "evidence": "yashash manbayi o‘z ishchi kuchini ishlab chiqarish vositalari egalariga sotishdan iborat bo‘lgan yollanma ishchilar sinfi"
+        },
+        {
+          "kind": "term",
+          "term": "Konservatoriya",
+          "definition": "Maxsus musiqa o‘quv yurti; dastlab Italiyada yetim va qarovsiz bolalarga mo‘ljallangan boshpana",
+          "evidence": "maxsus musiqa o‘quv yurti. Dastlab Italiyada yetim va qarovsiz bolalarga mo‘ljallangan boshpana"
+        },
+        {
+          "kind": "term",
+          "term": "Kirill alifbosi",
+          "definition": "Kirill, ya’ni rus grafikasi negiziga qurilgan yozuv; 1940-yildan O‘zbekistonda joriy etilgan",
+          "evidence": "sovetlarning birdan-bir yagona orzusi bo‘lgan kirill – rus alifbosi negiziga qurilgan yozuvga o‘tildi"
+        },
+        {
+          "kind": "place",
+          "place": "Samarqand",
+          "event": "1929-yil may oyida o‘zbek adiblari, imlochilari va yetakchi ziyolilari konferensiyasi o‘tkazilgan",
+          "evidence": "1929-yil may oyida Samarqandda o‘tgan O‘zbekiston adiblari"
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "1936-yili davlat konservatoriyasi ochilgan shahar",
+          "evidence": "1936-yili Toshkentda ochilgan davlat konservatoriyasi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sovet hokimiyati dastlabki o‘n yilliklarda imloni uch marta o‘zgartirdi",
+          "effect": "Bu holat tub aholini savodsiz qilish va ruslashtirish siyosatini amalga oshirishga mo‘ljallangan edi",
+          "evidence": "Bu holat tub aholini savodsiz qilish-ga, uning asriy qadriyatlaridan mahrum qilib"
+        },
+        {
+          "kind": "cause",
+          "cause": "Universitet va institutlardagi talabalar o‘rtasida o‘zbeklar kamchilikni tashkil qilgan",
+          "effect": "Oliy o‘quv yurtlarida asosan slavyan tillariga mansub kishilar o‘qigan",
+          "evidence": "universitet va institutlardagi talabalar o‘rtasida o‘zbeklar kamchilikni tashkil qilgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ikkinchi besh yillik uchun 1,16 mlrd rubl mablag‘ sarflandi",
+          "effect": "35 000 o‘quvchi sig‘adigan 539 ta yangi maktab solindi",
+          "evidence": "Bu yirik mablag‘lar ikkinchi besh yillik davrida 35 000 o‘quvchi sig‘adigan 539 ta yangi maktab solishga imkon berdi"
+        },
+        {
+          "kind": "number",
+          "number": "18",
+          "unit": "tilda",
+          "meaning": "Ikkinchi besh yillik davrida respublika maktablarida o‘qish olib borilgan tillar soni",
+          "evidence": "Respublika maktablarida o‘qish 18 tilda olib borilgan"
+        },
+        {
+          "kind": "number",
+          "number": "139 000",
+          "unit": "nafar",
+          "meaning": "1937-yili o‘qish va yozishni o‘rganib olgan xotin-qizlar soni",
+          "evidence": "1937-yili 139 000 nafar xotin-qizlar o‘qish va yozishni o‘rganib oldilar"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "Sovet hokimiyatining O‘zbekistondagi qatag‘onlik siyosati: uning mohiyati va oqibatlari",
+      "page": 80,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1929-yil 17-fevral – 2-mart",
+          "date_label": "1929-yil 17-fevral – 2-mart",
+          "event": "Samarqandda O‘zbekiston Kommunistik partiyasining IV syezdi o‘tkazilib, jazo mexanizmi ishga tushirildi",
+          "evidence": "1929-yil 17-fevral – 2 martda Samarqandda o‘tkazilgan O‘zbekiston Kommunistik partiyasining IV syezdidan keyin jazo mexanizmi ishga tushirildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1929-yil mart",
+          "date_label": "1929-yil mart",
+          "event": "O‘zSSR Oliy sudi raisi Sa’dulla Qosimov lavozimidan bo‘shatilib, qamoqqa olindi",
+          "evidence": "Sa’dulla Qosimov 1929-yil mart oyida lavozimidan bo‘shatilib, qamoqqa olindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1930-yil",
+          "date_label": "1930-yildagi sayyor sessiya",
+          "event": "SSSR Oliy sudi sayyor sessiyasi Samarqandda Qosimov va 6 nafar safdoshi ustidan sud jarayonini o‘tkazdi",
+          "evidence": "SSSR Oliy sudi sayyor sessiyasi 1930-yil Samarqand shahrida sud jarayonini o‘tkazdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1932-yil 5-may – 15-iyun",
+          "date_label": "1932-yil 5-may – 15-iyun",
+          "event": "Toshkentda Shamsutdin Badriddinov va uning 5 nafar safdoshi ustidan sud jarayoni bo‘lib o‘tdi",
+          "evidence": "1932-yil 5-may – 15-iyunda Toshkent shahrida SSSR Oliy sudi harbiy kol-legiyasining sayyor sessiyasi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1930-yil avgust",
+          "date_label": "1930-yil avgust",
+          "event": "Samarqandda O‘zbekiston SSR Maorif xalq komissarligida bir guruh rahbar xodimlar hibsga olindi",
+          "evidence": "1930-yil avgust oyida Samarqand shahrida O‘zbekiston SSR Maorif xalq komissarligida bir guruh rahbar xodimlar hibsga olindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1929-yil 5-noyabr",
+          "date_label": "1929-yil 5-noyabr",
+          "event": "Toshkentda Munavvarqori Abdurashidxonov boshchiligida 38 nafar kishi qamoqqa olindi",
+          "evidence": "1929-yil 5-noyabrda Toshkentda ma’rifatparvar Munavvarqori Abdurashidxonov boshchiligida-gi 38 nafar kishi qamoqqa olindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1931-yil 25-aprel",
+          "date_label": "1931-yil 25-aprel",
+          "event": "Moskvadagi sud majlisida «Milliy Istiqlol» a’zolaridan 15 nafari otib o‘ldirishga hukm qilindi",
+          "evidence": "1931-yil 25-aprelda Moskvada bo‘lib o‘tgan sud majlisida Munavvarqori boshchiligidagi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1938-yil 4-oktyabr",
+          "date_label": "1938-yil 4-oktyabr",
+          "event": "Fitrat, Cho‘lpon va Abdulla Qodiriy bir kunda Toshkent shahri atrofida otib tashlandi",
+          "evidence": "Cho‘lpon va Abdulla Qodiriy bir kunda – 1938-yil 4-oktyabrda Toshkent shahri atrofida otib tashlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1938-yil 10-oktyabr",
+          "date_label": "1938-yil 10-oktyabr",
+          "event": "Mirkomil Mirsharopov boshchiligidagi 18 nafar o‘zbek harbiy komandiri Toshkent atrofida otib tashlandi",
+          "evidence": "18 nafar o‘zbek harbiy komandirlari va askarlari Toshkent atrofida 1938-yil 10-oktyabrda otib tashlangan"
+        },
+        {
+          "kind": "date_event",
+          "date": "2000-yil 12-may",
+          "date_label": "2000-yil 12-may",
+          "event": "Toshkent shahri Yunusobod tumanida Bo‘zsuv kanali bo‘yida «Shahidlar xotirasi» yodgorlik majmuasi ochildi",
+          "evidence": "2000-yil 12-mayda Toshkent shahri Yunusobod tumanidagi Bo‘zsuv kanali bo‘yida “Shahidlar xotirasi” yodgorlik"
+        },
+        {
+          "kind": "person",
+          "person": "Sa’dulla Qosimov",
+          "role": "O‘zbekiston SSR Oliy sudining raisi",
+          "activity": "1929-yil martda qamoqqa olinib, 1930-yilda otib o‘ldirishga hukm qilingan",
+          "evidence": "O‘zbekiston SSR Oliy sudining raisi Sa’dulla Qosimov 1929-yil mart oyida lavozimidan bo‘shatilib, qamoqqa olindi"
+        },
+        {
+          "kind": "person",
+          "person": "Munavvarqori Abdurashidxonov",
+          "role": "ma’rifatparvar, «Milliy Ittihod» va «Milliy Istiqlol» ishi bo‘yicha ayblangan",
+          "activity": "1931-yil 25-aprelda Moskvada otib o‘ldirishga hukm qilingan",
+          "evidence": "ma’rifatparvar Munavvarqori Abdurashidxonov boshchiligida-gi 38 nafar kishi qamoqqa olindi"
+        },
+        {
+          "kind": "person",
+          "person": "Mannon Ramziy",
+          "role": "O‘zSSR Maorif xalq komissari",
+          "activity": "«Narkompros» ishida maorif tizimini «millatchilik og‘usi» bilan zaharlaganlikda ayblangan",
+          "evidence": "O‘zSSR Maorif xalq komissari Mannon Ramziy – Mannon Abdullayev"
+        },
+        {
+          "kind": "person",
+          "person": "Mirkomil Mirsharopov",
+          "role": "19-tog‘li otliq O‘zbek diviziyasi komandiri",
+          "activity": "1937-yil 28-oktyabrda Maykopda qamoqqa olinib, keyinchalik otib tashlangan",
+          "evidence": "Maykopda 1937-yil 28-oktyabrda qamoqqa olindi"
+        },
+        {
+          "kind": "person",
+          "person": "Abdulla Qodiriy",
+          "role": "o‘zbek adibi",
+          "activity": "1938-yil 4-oktyabrda Toshkent shahri atrofida otib tashlangan",
+          "evidence": "3 nafar yorqin yulduzlari – Fitrat, Cho‘lpon va Abdulla Qodiriy bir kunda"
+        },
+        {
+          "kind": "term",
+          "term": "Firqa",
+          "definition": "Maqsadi, g‘oyasi va dunyoqarashi mushtarak bo‘lgan kishilar guruhi; partiya",
+          "evidence": "maqsadi, g‘oyasi, dunyoqarashining mushtarakligi jihatidan birlashgan kishilar guruhi"
+        },
+        {
+          "kind": "term",
+          "term": "«Qosimovchilik»",
+          "definition": "Sa’dulla Qosimov va safdoshlariga «bosmachilar»ni qo‘llab-quvvatlash aybi bilan qo‘yilgan yorliq",
+          "evidence": "ularga “qosimovchilik” yorlig‘i bosildi"
+        },
+        {
+          "kind": "term",
+          "term": "«O‘n sakkizlar guruhi»",
+          "definition": "XX asr 20-yillarining ikkinchi yarmida to‘qib chiqarilgan siyosiy ishlardan biri",
+          "evidence": "O‘zbekiston SSRda o‘n sakkizlar guruhi"
+        },
+        {
+          "kind": "place",
+          "place": "Samarqand",
+          "event": "Qosimov ishi bo‘yicha SSSR Oliy sudining sayyor sessiyasi o‘tkazilgan shahar",
+          "evidence": "1930-yil Samarqand shahrida sud jarayonini o‘tkazdi"
+        },
+        {
+          "kind": "place",
+          "place": "Moskva",
+          "event": "1931-yil 25-aprelda «Milliy Istiqlol» ishi bo‘yicha sud majlisi bo‘lib o‘tgan",
+          "evidence": "1931-yil 25-aprelda Moskvada bo‘lib o‘tgan sud majlisida"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mavjud tuzumga muxolifatda turganlar va unga qarshilik bildirganlar ta’qib ostiga olindi",
+          "effect": "Ommaviy qatag‘onlar va bedodlikning dastlabki kuchli to‘lqini yuz berdi",
+          "evidence": "O‘zbekistonda mavjud tuzumga muxolifatda turganlar va unga qarshilik bildirganlar ta’qib ostiga olindi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kommunistik partiya saflarini «tozalash» kompaniyasi o‘tkazildi",
+          "effect": "O‘zbekiston Kompartiyasi a’zolarining 25,6 foizi firqadan chiqarildi",
+          "evidence": "kommunistik partiya saflarini “tozalash” kompaniyasi natijasida O‘zbekiston Kompartiyasi a’zolarining 25,6 foizi firqadan chiqarildi"
+        },
+        {
+          "kind": "number",
+          "number": "41000",
+          "unit": "nafar kishi",
+          "meaning": "1937–1938-yillarda soxta ayblar bo‘yicha hibsga olinganlar soni",
+          "evidence": "O‘zbekistonda 41000 nafardan ortiq kishi hibsga olinib, ulardan 37000 nafardan ko‘prog‘i jazolandi"
+        },
+        {
+          "kind": "number",
+          "number": "6920",
+          "unit": "nafar kishi",
+          "meaning": "1937–1938-yillarda otib o‘ldirishga hukm qilinganlar soni",
+          "evidence": "6920 nafar kishi esa otib o‘ldirishga hukm qilindi"
+        }
+      ]
+    }
+  ]
+}

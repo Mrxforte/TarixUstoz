@@ -1,0 +1,1066 @@
+{
+ "chapter": "KIRISH",
+ "topics": [
+  {
+   "number": 20,
+   "title": "Rossiya imperiyasining tashqi siyosati",
+   "page": 69,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1873",
+     "date_label": "1873-yilda",
+     "event": "Xiva xonligi vassal davlatga aylantirildi, Rossiya O‘rta Osiyodagi bosqinchilik siyosatini davom ettirdi.",
+     "evidence": "bosqinchilik siyosatini davom ettirdi. 1873-yilda Xiva xonligi vassal\ndavlatga aylantirildi. O'rta Osiyo esa 1885-yilda to'la bo'ysundirildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1877",
+     "date_label": "1877-yil 24-aprelda",
+     "event": "Rossiya Usmonli davlatiga urush e‘lon qildi, urush harakatlarida Serbiya va Chernogoriya ham qatnashdi.",
+     "evidence": "muddao bo'ldi. Rossiya 1877-yilning 24-aprel kuni Usmonli davlatiga\nurush e'lon qildi. Serbiya va Chernogoriya ham urush harakatlarida"
+    },
+    {
+     "kind": "date_event",
+     "date": "1878",
+     "date_label": "1878-yilda",
+     "event": "San-Stefanoda Rossiya bilan Usmonli davlati o‘rtasida shartnoma imzolanib, Bolqonning siyosiy xaritasi tubdan o‘zgardi.",
+     "evidence": "1878-yilda San-Stefanoda Rossiya-Usmonli davlati"
+    },
+    {
+     "kind": "date_event",
+     "date": "1878",
+     "date_label": "1878-yil 13-iyunda",
+     "event": "Berlin kongressi ochilib, unda Berlin traktati deb nomlangan xalqaro hujjat imzolandi.",
+     "evidence": "Kongress 1878-yilning 13-iyunida ochildi. Kongressda ,Berlin traktati\" deb nomlangan hujat"
+    },
+    {
+     "kind": "date_event",
+     "date": "1902",
+     "date_label": "1902-yilda",
+     "event": "Yaponiya bilan Buyuk Britaniya o‘rtasida bitim imzolanib, tomonlar bir-birini har qanday sharoitda qo‘llab-quvvatlashga kelishdilar.",
+     "evidence": "1902-yilda Yaponiya-Buyuk Britaniya bitimi imzolandi. Ular har\nqanday sharoitda ham bir-birini qo'llab-quvvatlashga kelishib oldilar."
+    },
+    {
+     "kind": "date_event",
+     "date": "1904",
+     "date_label": "1904-yilda",
+     "event": "Yaponiya floti urush e‘lon qilmasdan Port-Arturdagi Rossiya harbiy dengiz kuchlariga hujum qilib, katta talafot yetkazdi.",
+     "evidence": "niya floti 1904-yilda urush e'lon qilmay turib, Port-Arturdagi Rossiya\nharbiy dengiz kuchlariga hujum qildi va unga katta talafot yetkazdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1905",
+     "date_label": "1905-yilda",
+     "event": "Susima yonida rus floti yakson qilinib, deyarli butun Tinch okeani floti halokatga uchradi.",
+     "evidence": "Nihoyat, Port-Artur taslim bo'ldi. 1905-yilda Susima yonida rus floti\nyakson qilindi.\nShu tariqa deyarli butun Tinch okeani floti halokatga"
+    },
+    {
+     "kind": "date_event",
+     "date": "1905",
+     "date_label": "1905-yil 23-avgustda",
+     "event": "AQSh vositachiligida Rossiya bilan Yaponiya o‘rtasida tinchlik shartnomasi imzolanib, Koreya Yaponiya ta’sir doirasi deb tan olindi.",
+     "evidence": "AQSH vositachiligida 1905-yilning 23-avgustida shunday shartnoma imzolandi.\nShartnomaga ko'ra, Rossiya Koreyani Yaponiya ta'sir doirasi deb"
+    },
+    {
+     "kind": "person",
+     "person": "Abdurahmon",
+     "role": "Afg‘onistonning Rossiya ta’sirida bo‘lgan siyosiy arbobi",
+     "activity": "Bosqinchilarga qarshi qo‘zg‘olonga boshchilik qildi va qo‘zg‘olonchilar inglizlar ustidan g‘alaba qozondilar.",
+     "evidence": "Qo'zg'olonga Afg'onistonning Rossiya ta'sirida bo'lgan siyosiy arbohti\nbi Abdurahmon boshchilik qildi. Qo'zg'olonchilar tez orada inglizlar\nustidan g'alaba qozondilar."
+    },
+    {
+     "kind": "term",
+     "term": "Demobilizatsiya",
+     "definition": "Armiyani urush holatidan chiqarib, harbiy xizmatchilarni bo‘shatish ma’nosini beruvchi atama.",
+     "evidence": "Demobilizatsiya - harbiy xizmatdan bo'shatish."
+    },
+    {
+     "kind": "term",
+     "term": "Traktat",
+     "definition": "Ikki yoki undan ortiq davlat o‘rtasida tuziladigan xalqaro shartnoma va bitimni bildiruvchi atama.",
+     "evidence": "Traktat - xalqaro shartnoma, bitim."
+    },
+    {
+     "kind": "term",
+     "term": "Vassal davlat",
+     "definition": "O‘z hukmdorini saqlab qolgan holda kuchliroq davlatga qaram bo‘lib qolgan davlat.",
+     "evidence": "davlatga aylantirildi. O'rta Osiyo esa 1885-yilda to'la bo'ysundirildi."
+    },
+    {
+     "kind": "term",
+     "term": "Mustamlakachi imperiya",
+     "definition": "Bosqinchilik urushlari yo‘li bilan vujudga keltirilgan, qo‘shni davlatlarni bevosita o‘ziga qo‘shib oluvchi davlat.",
+     "evidence": "Rossiya ham yirik mustamlakachi davlatlarmustamlakachi davlat\ndan biri bo'lgan. Bosqinchilik urushlari yo'li\nbilan ulkan imperiya vujudga keltirildi. Ayni"
+    },
+    {
+     "kind": "term",
+     "term": "General-gubernatorlik",
+     "definition": "Bosib olingan hududni boshqarish uchun tashkil etilgan harbiy-ma’muriy boshqaruv tizimi.",
+     "evidence": "Chunonchi, O'rta Osiyoning bosib olingan qismi imperiya tarkibiga qo'shilib, bu hududda Turkiston general-gubernatorligi tashkil etilganligi sizga -,O'zbekiston tarixi\" darsligidan ma'lum."
+    },
+    {
+     "kind": "place",
+     "place": "Berlin",
+     "event": "1878-yilda xalqaro kongress chaqirilgan shahar bo‘lib, unda Bolqon masalalari qayta ko‘rib chiqildi.",
+     "evidence": "Yakkalanib qolgan Rossiya yangi xalqaro kongress - Berlin kongressi\nchaqirilishiga noiloj rozi bo'ldi."
+    },
+    {
+     "kind": "place",
+     "place": "Kushka",
+     "event": "1885-yilda Rossiya qo‘shinlari tomonidan egallangan shahar, so‘ngra Afg‘oniston chegarasi masalasi hal etildi.",
+     "evidence": "Natijada, 1885-yilda Kushka shahri egallandi. Shundan so'ng\nBuyuk Britaniya va Rossiya o'rtasida Afg'onistonning taqdiri va"
+    },
+    {
+     "kind": "place",
+     "place": "Port-Artur",
+     "event": "1904-yilda Yaponiya floti hujum qilgan Rossiya harbiy dengiz bazasi, keyinchalik u taslim bo‘ldi.",
+     "evidence": "(155-betdagi ilovaga qarang).\nRossiya harbiy-iqtisodiy jihatdan urushga tayyor emas edi. Buning oqibatida ham dengizda, ham quruqlikda mag'lubiyatga uchradi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Rossiya qo‘shni davlatlarni bosib olib, ularni bevosita imperiya tarkibiga qo‘shib olgan edi",
+     "effect": "Shu sababli Rossiyaning okean ortida yoki dengiz ortida joylashgan mustamlakalari yo‘q edi.",
+     "evidence": "ga bevosita qo'shib olinishida edi. O'ziga qo'shni davlatlarni bosib\nolganligi sababli Rossiyaning okean yoki dengizorti mustamlakalari\nyo'q edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Usmonli davlati Serbiya bilan tinchlik shartnomasi tuzgan bo‘lsa-da, o‘z armiyasini demobilizatsiya qilmadi",
+     "effect": "Bu hol Rossiya uchun bahona bo‘lib, u 1877-yilda Usmonli davlatiga urush e‘lon qildi.",
+     "evidence": "Usmonli davlati Serbiya bilan tinchlik shartnomasi tuzgan bo'lsada, o'z armiyasini demobilizatsiya qilmadi. Bu Rossiya uchun ayni"
+    },
+    {
+     "kind": "cause",
+     "cause": "Buyuk Britaniya San-Stefano shartnomasini tan olmay, uni qayta ko‘rib chiqishni talab qildi, Germaniya va Avstriya-Vengriya ham unga qo‘shildi",
+     "effect": "Yakkalanib qolgan Rossiya yangi xalqaro kongress chaqirilishiga rozi bo‘ldi.",
+     "evidence": "Britaniya tan olmadi. U bu shartnomani qayta ko'rib chiqishni talab\netdi. Germaniya va Avstriya-Vengriya ham bu talabga qo'shildilar."
+    },
+    {
+     "kind": "cause",
+     "cause": "Rossiya harbiy-iqtisodiy jihatdan urushga tayyor emas edi",
+     "effect": "Shu tufayli u dengizda ham, quruqlikda ham mag‘lubiyatga uchrab, Port-Artur taslim bo‘ldi.",
+     "evidence": "Rossiya harbiy-iqtisodiy jihatdan urushga tayyor emas edi. Buning oqibatida ham dengizda, ham quruqlikda mag'lubiyatga uchradi."
+    },
+    {
+     "kind": "number",
+     "number": "155",
+     "unit": "bet",
+     "meaning": "Darslikning Port-Artur hujumi haqidagi ilovasi joylashgan bet raqami.",
+     "evidence": "(155-betdagi ilovaga qarang)."
+    }
+   ]
+  },
+  {
+   "number": 21,
+   "title": "Rossiyada Davlat dumasining tashkil etilishi",
+   "page": 73,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1883",
+     "date_label": "1883-yilda",
+     "event": "G. V. Plexanov rahbarlik qilgan „Mehnatni ozod qilish“ guruhi tuzilib, u jamiyatni islohotlar yo‘li bilan yangilashni yoqladi.",
+     "evidence": "Jamiyatda mavjud tuzumni o'zgartirish haqida o'ylovchi turli guruhlar, uyushmalar vujudga keldi. Ularning biri - G. V.Plexanov rahbarlik qilgan .,Mehnatni ozod qilish\" guruhi edi. Bu guruh 1883-yilht"
+    },
+    {
+     "kind": "date_event",
+     "date": "1895",
+     "date_label": "1895-yilda",
+     "event": "Peterburgda „Ishchilar sinfini ozod qilish uchun kurash ittifoqi“ nomli tashkilot tuzildi.",
+     "evidence": "1895-yilda Peterburgda ,Ishchilar sinfini ozod qilish uchun kurash\nittifoqi\" tuzildi. 1898-yilda Rossiyadagi barcha sotsial-demokratik"
+    },
+    {
+     "kind": "date_event",
+     "date": "1898",
+     "date_label": "1898-yilda",
+     "event": "Rossiyadagi barcha sotsial-demokratik guruhlar RSDRP — Rossiya sotsial-demokratik ishchi partiyasiga birlashdilar.",
+     "evidence": "guruhlar ,Rossiya sotsial-demokratik ishchi partiyasi\" (RSDRP) deb\natalgan siyosiy partiyaga birlashdilar. 1903-yildan boshlab bu partiyaga rahbarlik V.I. Ulyanov (Lenin) qo'liga o'tdi. U RSDRPdagi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1903",
+     "date_label": "1903-yildan boshlab",
+     "event": "RSDRPga rahbarlik V. I. Ulyanov (Lenin) qo‘liga o‘tib, u bolsheviklar oqimiga yetakchilik qildi.",
+     "evidence": "atalgan siyosiy partiyaga birlashdilar. 1903-yildan boshlab bu partiyaga rahbarlik V.I. Ulyanov (Lenin) qo'liga o'tdi. U RSDRPdagi\nbolsheviklar deb atalgan oqimga yetakchilik qildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1905",
+     "date_label": "1905-yil 9-yanvarda",
+     "event": "Peterburg ishchilaridan 250 ming kishi podshoga iltimoslarini bildirish uchun tinch namoyishga chiqdilar.",
+     "evidence": "ming kishi 9-yanvar, yakshanba kuni o'z iltimoslarini podshoga bildirish uchun tinch namoyishga chiqdilar. Iltimosnomada Ta'sis majlisi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1906",
+     "date_label": "1906-yil aprelda",
+     "event": "Davlat dumasiga saylov to‘g‘risidagi qonun qabul qilinib, 1-Davlat dumasi o‘z ishini boshladi.",
+     "evidence": "1905-yilning dekabrida Davlat dumasiga saylov to'g'risida qonun\nqabul qilindi. 1906-yil aprelda 1-Davlat dumasi o'z ishini boshladi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1907",
+     "date_label": "1907-yilning yanvarida",
+     "event": "2-Davlat dumasiga saylov o‘tkazilib, unda ham agrar masala asosiy masala bo‘ldi.",
+     "evidence": "1907-yilning yanvarida 2-Davlat dumasiga saylov o'tkazildi. Bu\nDumada ham agrar masala asosiy masala bo'ldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1907",
+     "date_label": "1907-yil 3-iyunda",
+     "event": "Nikolay II Dumani yana tarqatib yubordi va birinchi rus inqilobi mag‘lubiyat bilan tugadi.",
+     "evidence": "talab etdi. Bu talabga javob berishning cho'zilib ketganligi bahonasida Nikolay II 3-iyunda yana Dumani tarqatib yubordi. Shu tariqa,\nbirinchi rus inqilobi mag'lubiyat bilan tugadi."
+    },
+    {
+     "kind": "person",
+     "person": "G. V. Plexanov",
+     "role": "1883-yilda tashkil etilgan „Mehnatni ozod qilish“ guruhining rahbari bo‘lgan arbob",
+     "activity": "Hokimiyatni qurolli qo‘zg‘olon yo‘li bilan bosib olishga qarshi chiqib, jamiyatni islohotlar yo‘li bilan yangilashni yoqladi.",
+     "evidence": "hokimiyatni qurolli qo'zg'olon yo'li bilan bosib olishga qarshi va\njamiyatni islohotlar yo'li bilan yangilash tarafdori edi."
+    },
+    {
+     "kind": "person",
+     "person": "V. I. Ulyanov (Lenin)",
+     "role": "1903-yildan boshlab RSDRPga rahbarlik qilgan siyosiy arbob",
+     "activity": "Partiyadagi bolsheviklar deb atalgan oqimga yetakchilik qildi.",
+     "evidence": "bolsheviklar deb atalgan oqimga yetakchilik qildi."
+    },
+    {
+     "kind": "person",
+     "person": "Nikolay II",
+     "role": "Rossiya imperatori, 1905-yil voqealaridan keyin yon berishga majbur bo‘lgan hukmdor",
+     "activity": "Tinch namoyishni o‘qqa tutishni buyurdi, natijada voqea „Qonli yakshanba“ nomi bilan tarixga kirdi.",
+     "evidence": "Biroq Nikolay II tinch namoyishni o'qqa tutishni buyurdi. Bu"
+    },
+    {
+     "kind": "term",
+     "term": "Manifest",
+     "definition": "Hukumatning juda muhim voqea munosabati bilan xalqqa qilgan yozma murojaatini bildiruvchi lotincha atama.",
+     "evidence": "Manifest (lotincha) - hukumatning juda muhim voqea munosabati\nbilan xalqqa qilgan yozma murojaati."
+    },
+    {
+     "kind": "term",
+     "term": "Ekspluatatsiya",
+     "definition": "Mulkdorlarning boshqalar mehnati mahsulini o‘zlashtirib olishini bildiruvchi fransuzcha atama.",
+     "evidence": "Ekspluatatsiya (fransuzcha) - mulkdorlarning boshqalar mehnati\nmahsulini o'zlashtirib olishi."
+    },
+    {
+     "kind": "term",
+     "term": "Bolsheviklar",
+     "definition": "RSDRP ichidagi oqim bo‘lib, xususiy mulk bo‘lmaydigan va hokimiyat ishchilar qo‘lida bo‘ladigan jamiyat qurishni maqsad qilgan.",
+     "evidence": "Bolsheviklar Rossiyada xususiy mulk bo'lmaydigan, jamiyat\na'zolari ezuvchi va eziluvchilarga bo'linmaydigan, davlat hokimiyati, asosan, ishchilar sinfi qo'lida bo'ladigan, barcha mulk davlatniki"
+    },
+    {
+     "kind": "term",
+     "term": "Davlat dumasi",
+     "definition": "Qonun chiqaruvchi hokimiyat organi bo‘lgan parlament; Rossiyada u birinchi marta 1906-yilda ish boshlagan.",
+     "evidence": "huquqi, shuningdek, qonun chiqaruvchi hokimiyat - Davlat dumasi\n(parlament)ni joriy etish va'da qilindi."
+    },
+    {
+     "kind": "place",
+     "place": "Peterburg",
+     "event": "1895-yilda bu shaharda ishchilar ittifoqi tuzilgan, 1905-yil 9-yanvarda esa 250 ming ishchi tinch namoyishga chiqqan.",
+     "evidence": "Imperatorning ,odilligi\"ga ishongan Peterburg ishchilaridan 250"
+    },
+    {
+     "kind": "place",
+     "place": "Moskva",
+     "event": "„Qonli yakshanba“ga javoban bu shaharda va Riga, Varshava, Boku kabi shaharlarda ish tashlashlar va namoyishlar boshlandi.",
+     "evidence": "voqealarga javoban Moskva, Riga, Varshava,\nBoku va boshqa shaharlarning ishchilari ish tashladilar, namoyishlar"
+    },
+    {
+     "kind": "place",
+     "place": "Qora dengiz",
+     "event": "Bu dengiz flotiga qarashli „Potyomkin“ bronenosesi matroslari 1905-yilning yozida qo‘zg‘olon ko‘tardilar.",
+     "evidence": "harakat, hatto ayrim harbiy qismlarga ham ta'sir ko'rsatdi. Chunonchi, Qora dengiz flotiga qarashli ,Potyomkin\" bronenosesi matroslari\n1905-yilning yozida qo'zg'olon ko'tardilar."
+    },
+    {
+     "kind": "cause",
+     "cause": "Fabrikaga yollangan ishchi xo‘jayin do‘konidan mahsulotni nasiyaga va qimmat narxlarda olishga majbur edi",
+     "effect": "Do‘kon korxona egalari uchun ishchilarni qo‘shimcha ekspluatatsiya qilish vositasi vazifasini bajargan.",
+     "evidence": "va qimmat narxlarda olishga majbur edi. Do'kon korxona egalari\nuchun ishchilarni qo'shimcha ekspluatatsiya qilish vositasi vazifasini"
+    },
+    {
+     "kind": "cause",
+     "cause": "Inqilobiy harakatning tobora kuchayib, bunday tus olishi",
+     "effect": "Nikolay II yon berishga majbur bo‘lib, erkinliklar va Davlat dumasini joriy etishni va’da qilgan Manifest e’lon qildi.",
+     "evidence": "Inqilobiy harakatning bunday tus olishi\nRossiyada parlamentning\nNikolay II ni yon berishga majbur etdi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Nikolay II Dumadagi vaziyatdan tashvishda edi, chunki duma u o‘ylagandek yuvosh bo‘lib chiqmadi",
+     "effect": "Shu sababli imperator Davlat dumasini tarqatib yubordi.",
+     "evidence": "Nikolay II esa Dumadagi vaziyatdan tashvishda edi. Duma u\no'ylagandek yuvosh bo'lib chiqmadi. Shuning uchun ham Nikolay\nII Dumani tarqatib yubordi."
+    },
+    {
+     "kind": "cause",
+     "cause": "1907-yil 3-iyunda qabul qilingan yangi saylov qonuni hukmron tabaqa manfaatini to‘la darajada aks ettirdi",
+     "effect": "Bir pomeshchikning ovozi 4 ta yirik burjuaziya vakili, 260 nafar dehqon va 543 nafar ishchi ovoziga tenglashtirildi.",
+     "evidence": "qonun qabul qilindi. Yangi qonun o'zida hukmyangi qonun\nron tabaqa manfaatini to'la darajada aks ettirdi."
+    },
+    {
+     "kind": "number",
+     "number": "12-14",
+     "unit": "soat",
+     "meaning": "Rossiya korxonalarida ish vaqtining o‘rta hisobda davom etgan kunlik davomiyligi.",
+     "evidence": "Korxonalarda ish vaqti o'rta hisobda 12-14 soat davom etar edi."
+    },
+    {
+     "kind": "number",
+     "number": "543",
+     "unit": "nafar",
+     "meaning": "Bir pomeshchikning bir ovoziga tenglashtirilgan ishchilar soni.",
+     "evidence": "4 ta yirik burjuaziya vakilining, 260 nafar dehqonning va 543 nafar ishchining ovoziga teng"
+    }
+   ]
+  },
+  {
+   "number": 22,
+   "title": "XIX asr oxiri – XX asr boshlarida Avstriya-Vengriya imperiyasi",
+   "page": 76,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1867",
+     "date_label": "1867-yilda",
+     "event": "Avstriya bilan Vengriya hukmron tabaqalari o‘rtasidagi bitim asosida Avstriya-Vengriya imperiyasi vujudga keldi.",
+     "evidence": "imperiyasi 1867-yilda Avstriya\nSiyosiy tuzum\nva Vengriyaning\nhukmron tabaqalari o'rtasidagi\nbitim asosida\nujudga keldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1867-1918",
+     "date_label": "1867–1918-yillarda",
+     "event": "Imperator Gabsburglar sulolasi vakili bo‘lib, sulola imperiyani 1867-yildan 1918-yilgacha boshqargan.",
+     "evidence": "bo'lgan. Imperator Gabsburglar sulolasi vakili edi. Sulola imperiyani\n1867-yildan 1918-yilgacha boshqargan."
+    },
+    {
+     "kind": "date_event",
+     "date": "1884",
+     "date_label": "1884-yilda",
+     "event": "Avstriya hukumati Bismarkdan o‘rnak olib, ishchilar harakatiga qarshi „Favqulodda qonun“ joriy etdi.",
+     "evidence": "Avstriya hukumati ham Bismarkdan o'rnak olib, 1884-yilda ishchilar harakatiga qarshi ,Favqulodda qonun\" joriy etdi. Qonun ish-"
+    },
+    {
+     "kind": "date_event",
+     "date": "1889",
+     "date_label": "1889-yilda",
+     "event": "Ishchilar kurashni davom ettirib, Avstriya sotsial-demokratik partiyasini (ASDP) tuzdilar.",
+     "evidence": "nashr etish to'xtatildi. Shunday bo'lsa-da, ishchilar kurashni davom\nettirdilar. 1889-yilda esa Avstriya sotsial-demokratik partiyasi (ASDP)\ntuzildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1907",
+     "date_label": "1907-yilda",
+     "event": "Ishchilar harakati kuchaygani sababli hukumat saylov tizimi islohoti haqida qonun qabul qilishga majbur bo‘ldi.",
+     "evidence": "Ishchilar harakati tobora kuchayib boravergach, 1907-yilda hukumat saylov tizimi islohoti haqida qonun qabul qilishga majbur bo'ldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1912",
+     "date_label": "1912-yilda",
+     "event": "Avstriya-Vengriyada og‘ir iqtisodiy inqiroz yuz berib, imperiyaning eksport salohiyati keskin kamaydi.",
+     "evidence": "1912-yilda Avstriya-Vengriyada ogir iqtisodiy\nIqtisodiy inqiroz\ninqiroz yuz berdi. Oqibatda, yirik sanoat va"
+    },
+    {
+     "kind": "person",
+     "person": "Bismark",
+     "role": "Ishchilar harakatiga qarshi qat’iy siyosat yuritgan arbob, Avstriya hukumati uchun o‘rnak bo‘lgan",
+     "activity": "Uning tajribasidan foydalanib, Avstriya hukumati 1884-yilda „Favqulodda qonun“ joriy etdi.",
+     "evidence": "Avstriya hukumati ham Bismarkdan o'rnak olib"
+    },
+    {
+     "kind": "person",
+     "person": "Gabsburglar sulolasi",
+     "role": "Avstriya-Vengriya imperiyasini boshqargan hukmdorlar sulolasi",
+     "activity": "Sulola vakili imperator bo‘lib, u imperiyani 1867-yildan 1918-yilgacha boshqargan.",
+     "evidence": "Imperator Gabsburglar sulolasi vakili edi"
+    },
+    {
+     "kind": "term",
+     "term": "Federatsiya",
+     "definition": "Hududiy jihatdan muayyan siyosiy mustaqillikka ega bo‘lgan bir necha davlatdan iborat yagona ittifoq davlat.",
+     "evidence": "Federatsiya (lotincha - ittifoq) - hududiy jihatdan muayyan siyosiy\nmustaqillikka ega bo'lgan bir necha davlatlardan iborat yagona ittifoq davlat."
+    },
+    {
+     "kind": "term",
+     "term": "Ssuda",
+     "definition": "Moddiy boyliklar garovi hisobiga foiz to‘lash va qaytarib berish sharti bilan muayyan muddatga beriladigan qarz.",
+     "evidence": "Ssuda - moddiy boyliklar garovi hisobiga foiz to'lash va qaytarib\nberish sharti bilan muayyan muddatga qarzga beriladigan pul yoki\nmoddiy boylik."
+    },
+    {
+     "kind": "term",
+     "term": "Antisemitizm",
+     "definition": "Yahudiylarga qarshi milliy va irqiy dushmanlikni avj oldirish siyosatini bildiruvchi atama.",
+     "evidence": "Antisemitizm - yahudiylarga qarshi milliy, irqiy dushmanlikni avj\noldirish siyosati."
+    },
+    {
+     "kind": "term",
+     "term": "Trializm",
+     "definition": "Imperiyani Avstriya, Vengriya va slavyan xalqlari yerlaridan iborat uch teng huquqli federatsiyaga aylantirish g‘oyasi.",
+     "evidence": "Shunday bir sharoitda, ayrim siyosatchi arboblar trializm (uchlik)\ntalabi bilan chiqdilar. Trializm g'oyasi imperiyani Avstriya, Vengriya"
+    },
+    {
+     "kind": "term",
+     "term": "Muxtoriyat",
+     "definition": "Vengriya qirolligiga berilgan ichki o‘zini o‘zi boshqarish, o‘z parlamenti va hukumatiga ega bo‘lish huquqi.",
+     "evidence": "yat yuritganlar. Vengriya qirolligi o'z parlamentiga, ijroiya hokimiyatiga, siyosiy va ma'muriy muxtoriyatiga ega bo'lgan. Imperiya"
+    },
+    {
+     "kind": "place",
+     "place": "Vena",
+     "event": "Imperiya poytaxtida ishchilarning ommaviy namoyishi bo‘lib, unda demokratik erkinliklar berilishi talab qilindi.",
+     "evidence": "poytaxti Vena shahrida ishchilarning ommaviy namoyishi o'tkazildi.\nNamoyishchilar demokratik erkinliklar berilishini talab qildilar."
+    },
+    {
+     "kind": "place",
+     "place": "Budapesht",
+     "event": "Harbiylashtirish va milliy zulmga qarshi bu shaharda ko‘p ming kishilik namoyish o‘tkazildi.",
+     "evidence": "Mamlakatni harbiylashtirishga, urushga tayyorgarlik ko'rilayotganligiga va milliy zulmga qarshi Vengriyaning asosiy shahri Budapesht\nshahrida ko'p ming kishilik namoyish o'tkazildi."
+    },
+    {
+     "kind": "place",
+     "place": "Praga",
+     "event": "Bu shaharning universitetida o‘qitish nemis va chex tillarida olib boriladigan bo‘ldi.",
+     "evidence": "va ma'muriy ishlar uchun ikki til joriy qilindi. Praga universitetida\nham o'qitish ikki tilda (nemis va chex) olib boriladigan bo'ldi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Mamlakatda o‘rta asr feodalizm sarqitlari saqlanib qolgan edi",
+     "effect": "Ilg‘or Yevropa mamlakatlariga nisbatan sanoat taraqqiyoti sekinlashdi.",
+     "evidence": "lakatda o'rta asr feodalizm sarqitlarining saqlanib qolganligi ilg'or\nYevropa mamlakatlariga nisbatan sanoat taraqqiyoti sekinlashuviga\nsabab bo'ldi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Imperiya taraqqiyotida chet el kapitaliga qaramlik kuchayib bordi",
+     "effect": "Fransiya, Belgiya va Germaniya banklari qarz berish va sanoatga mablag‘ yo‘naltirish orqali Avstriyani o‘z kapitallari bilan to‘ldirib tashladi.",
+     "evidence": "edi. Fransiya, Belgiya,(Germaniya banklari qarz berish, sanoatga\nmablag'lar yo'naltirish orqali Avstriyani o'z kapitallari bilan to'ldirib\ntashladi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Hukumat „Favqulodda qonun“ orqali ishchilar harakatiga qarshi politsiya terrorini kuchaytirdi",
+     "effect": "Kasaba uyushmalari tarqatib yuborildi, ishchi gazetalarini nashr etish to‘xtatildi.",
+     "evidence": "chilar harakatiga qarshi politsiya terrorining kuchaytirilishiga ruxsat berdi. Kasaba uyushmalari tarqatib yuborildi. Ishchi gazetalarini"
+    },
+    {
+     "kind": "cause",
+     "cause": "Federatsiyaning slavyan qismi kuchayib ketishidan cho‘chigan hukmron doiralar trializm g‘oyasini rad etdilar",
+     "effect": "Birinchi jahon urushi arafasida imperiyada ichki ziddiyatlar keskinligicha qoldi.",
+     "evidence": "ketishidan cho'chigan hukmron doiralar trializm g'oyasini rad etdilar.\nBu hol Birinchi jahon urushi arafasida imperiyada ichki ziddiyatlarning keskinligicha qolishiga sabab bo'ldi."
+    },
+    {
+     "kind": "number",
+     "number": "3",
+     "unit": "ta",
+     "meaning": "Imperiya tashkil etilgach tuzilgan umumimperiya vazirliklarining soni.",
+     "evidence": "Imperiya tashkil etilgach, quyidagi 3 ta umumimperiya vazirligi tashkil etilgan: 1. Tashqi ishlar. 2.Harbiy va dengiz. 3. Moliya."
+    }
+   ]
+  },
+  {
+   "number": 23,
+   "title": "Avstriya-Vengriya imperiyasining tashqi siyosati",
+   "page": 80,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1908",
+     "date_label": "1908-yilda",
+     "event": "Avstriya-Vengriya Berlin kongressida olgan huquqqa asosan Bosniya va Gersegovinani egallab oldi.",
+     "evidence": "Berlin kongressida Avstriya-Vengriya Bolqondagi Bosniya va Gersegovinani bosib olish huquqini qo'lga kiritgach, nihoyat, 1908-yilda"
+    },
+    {
+     "kind": "date_event",
+     "date": "1911",
+     "date_label": "1911-yilda",
+     "event": "Usmonli davlati bilan Italiya o‘rtasida Shimoliy Afrikadagi manfaatlar to‘qnashuvi sababli urush kelib chiqdi.",
+     "evidence": "da.191l-yilda ular o'rtasida urush kelib\nko'rishi\nchiqishiga olib keldi. Bu urushda Usmonli davlatining yengilishi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1912",
+     "date_label": "1912-yilda",
+     "event": "Bolqon ittifoqi Usmonli davlatiga qarshi urush boshladi; bu urush Birinchi Bolqon urushi nomi bilan tarixga kirdi.",
+     "evidence": "Ittifoq 1912-yilda Usmonli\ndavlatiga qarshi urush boshladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1913",
+     "date_label": "1913-yilda",
+     "event": "Bolgariya Serbiya va Gretsiyaga hujum qilib, Ikkinchi Bolqon urushi boshlandi.",
+     "evidence": "Avstriya-Vengriya o'z maqsadiga erishdi ham. Oqibatda, 1913-yilda Bolgariya Serbiya va Gretsiyaga hujum qildi. Shu tariqa, Ikkinchi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1914",
+     "date_label": "1914-yilda",
+     "event": "Avstriya-Vengriyada parlament tarqatib yuborilib, mamlakatda urushga tayyorgarlik kuchaytirildi.",
+     "evidence": "1914-yilda esa parlament tarqatib yuborildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1914",
+     "date_label": "1914-yil 28-iyulda",
+     "event": "Serb millatchilari Avstriya-Vengriya taxti vorisi Frans Ferdinandni o‘ldirdi; bu urush boshlash uchun bahona bo‘ldi.",
+     "evidence": "1914-yil 28-iyulda Avstriya-Vengriya taxti vorisi Frans Ferdinandning o ldirilishi"
+    },
+    {
+     "kind": "person",
+     "person": "Frans Ferdinand",
+     "role": "Avstriya-Vengriya taxtining vorisi bo‘lgan archduke",
+     "activity": "1914-yil 28-iyulda serb millatchilari tomonidan o‘ldirilib, uning o‘limi urush boshlanishiga bahona bo‘ldi.",
+     "evidence": "Frans Ferdinandning o ldirilishi Avstriya-Vengriya"
+    },
+    {
+     "kind": "term",
+     "term": "Harbiy diktatura",
+     "definition": "Harbiylarning cheklanmagan hokimiyatiga asoslangan boshqaruv shakli.",
+     "evidence": "Harbiy diktatura\nharbiylarning cheklanmagan hokimiy ati."
+    },
+    {
+     "kind": "term",
+     "term": "Bolqon ittifoqi",
+     "definition": "Bolgariya, Serbiya, Chernogoriya va Gretsiya tuzgan, Usmonli davlatiga qarshi qaratilgan harbiy-siyosiy birlashma.",
+     "evidence": "davlatlari Bolgariya, Serbiya, Chernogoriya va ularga qo'shilgan Gretsiya tez orada Bolqon ittifoqini tuzdilar. Ittifoq 1912-yilda Usmonli"
+    },
+    {
+     "kind": "term",
+     "term": "Safarbarlik",
+     "definition": "Armiyani urush holatiga o‘tkazish, harbiy xizmatga chaqiruvni kuchaytirish tadbiri.",
+     "evidence": "Avstriya-Vengriyaning maqsadlari uni tashqi siyosatda Germaniyaga mutlaq qaram qilib qo'ydi. Avstriya-Vengriya urushga tayyorgarlik ko'ra boshladi. Mamlakatda qisman safarbarlik ham o'tkazildi."
+    },
+    {
+     "kind": "term",
+     "term": "Mustamlaka",
+     "definition": "Boshqa davlat tomonidan bosib olinib, unga siyosiy va iqtisodiy jihatdan qaram bo‘lgan hudud.",
+     "evidence": "aylantirishga urinardi. Ayni paytda, Bolqonda Usmonli davlati katta\nmustamlaka hududlariga ega edi."
+    },
+    {
+     "kind": "place",
+     "place": "Bolqon yarimoroli",
+     "event": "Avstriya-Vengriya bu yerda slavyan xalqlarini o‘ziga bo‘ysundirib, Rossiyaning ta’sirini kamaytirishga harakat qildi.",
+     "evidence": "slavyan xalqlari yerlarida mustahkam o'rnashib olishga, Rossiyaning\nBolqon yarimorolidagi ta'sirini keskin kamaytirishga jon-jahdi bilan\nharakat qilgan."
+    },
+    {
+     "kind": "place",
+     "place": "Serbiya",
+     "event": "Ikkinchi Bolqon urushi natijasida Bolqonning yetakchi davlatiga aylandi.",
+     "evidence": "Urush natijasida Serbiya Bolqonning yetakchi davlatiga aylandi."
+    },
+    {
+     "kind": "place",
+     "place": "Shimoliy Afrika",
+     "event": "Usmonli davlati bilan Italiya manfaatlari shu hududda to‘qnashib, ular o‘rtasida urush boshlanishiga sabab bo‘ldi.",
+     "evidence": "Usmonli davlati va Italiya manfaatlarining\nAvstriya-Vengriyaning\nShimoliy Afrikada to'qnashuvi, oxir-oqibaturushga tayyorgarlik"
+    },
+    {
+     "kind": "cause",
+     "cause": "Avstriya-Vengriya yakka o‘zi Bolqondagi vazifani uddalay olmas edi",
+     "effect": "Shu sababli u Germaniya bilan yaqinlashdi.",
+     "evidence": "Avstriya-Vengriyaning yakka o'zi bu vazifaning uddasidan chiqa\nolmas edi. Shuning uchun ham u Germaniya bilan yaqinlashdi. O'z"
+    },
+    {
+     "kind": "cause",
+     "cause": "Avstriya-Vengriyaning Bolqonga nisbatan yuritgan siyosati Rossiya bilan munosabatlarni yomonlashtirdi",
+     "effect": "Ikki imperiya o‘rtasida qachonlardir urush chiqishi muqarrar bo‘lib qoldi.",
+     "evidence": "Avstriya-Vengriyaning Bolqonga nisbatan yuritgan siyosati Rossiya\nbilan munosabatlarining yomonlashuviga olib kelgan. Bu ikki imperiya o'rtasida qachonlardir urush chiqishi muqarrar edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Bolgariya hammadan ko‘p ulush olishga urindi va uning da’volari Avstriya-Vengriya tomonidan qo‘llab-quvvatlandi",
+     "effect": "1913-yilda Bolgariya Serbiya va Gretsiyaga hujum qilib, Ikkinchi Bolqon urushi boshlandi.",
+     "evidence": "masalasida o'zaro kelisha olmadilar. Bunga Bolgariyaning hammadan\nko'p ulush olishga urinishi sabab bo'ldi. Uning da'volari Avstriya-\nVengriya tomonidan qo'llab-quvvatlandi. Avstriya-Vengriya shu yo'l"
+    },
+    {
+     "kind": "cause",
+     "cause": "Germaniya Avstriya-Vengriyani qo‘llab-quvvatlab, Rossiyaga qarshi urush e’lon qilishi mumkinligi bilan do‘q-po‘pisa qildi",
+     "effect": "Rossiya Avstriya-Vengriya istilosining oldini ola olmadi va slavyan xalqlari orasidagi obro‘siga putur yetdi.",
+     "evidence": "ham putur yetkazdi. Chunki Rossiya Avstriya-Vengriya istilosining\noldini ola olmadi. Bunga Germaniyaning Avstriya-Vengriyani qo'llabquvvatlashi, uning Rossiyaga qarshi urush e lon qilishi mumkinligi"
+    }
+   ]
+  },
+  {
+   "number": 24,
+   "title": "XIX asr oxiri – XX asr boshlarida Italiya",
+   "page": 83,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1870",
+     "date_label": "1870-yil 3-oktabrda",
+     "event": "Rim shahri Italiya qirolligi poytaxtiga aylantirildi; bungacha uni Fransiya armiyasi himoya qilib turgan edi.",
+     "evidence": "1870-yilning 3-oktabrida Fransiya qo'shini himoyasida bo'lgan\nitalyan qo'shini tomonidan egallangan Rim shahri Italiya qirolligi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1871",
+     "date_label": "1871-yilda",
+     "event": "Cherkov va davlat munosabatini tartibga soluvchi qonun qabul qilinib, Rim papasi muqaddas va daxlsiz deb e’lon qilindi.",
+     "evidence": "qoldi. 1871-yilda cherkov va davlat munosabatini tartibga soluvchi\nqonun qabul qilindi. Qonun Rim papasini muqaddas va daxlsiz deb\ne'lon qildi va uning qarorgohi joylashgan shahar-davlat - Vatikanga"
+    },
+    {
+     "kind": "date_event",
+     "date": "1896",
+     "date_label": "1896-yil 1-avgustda",
+     "event": "Adua yonida Italiya qo‘shinlari tor-mor etilib, 5 ming italyan askari halok bo‘ldi.",
+     "evidence": "Biroq 1896-yilning 1-avgustida Adua yonida Italiya qo'shinlari\ntor-mor etildi. Oqibatda, 5 ming italyan askari halok bo'ldi. Bu voqea Italiyada milliy sharmandalik sifatida qabul qilindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1898",
+     "date_label": "1898-yilda",
+     "event": "Milanda umumiy ish tashlash boshlanib, u 5 kunlik barrikada janglariga aylanib ketdi.",
+     "evidence": "dehqonlar qo'zg'olonining ko'tarilishiga olib keldi. 1898-yilda Milanda ro'y bergan umumiy ish tashlash 5 kunlik barrikada janglariga"
+    },
+    {
+     "kind": "date_event",
+     "date": "1902",
+     "date_label": "1902-yilda",
+     "event": "Italiya bilan Fransiya o‘rtasida bitim imzolanib, tomonlar o‘zaro qat’iy betaraflik majburiyatini oldilar.",
+     "evidence": "1902-yilda bu ikki davlat o'rtasida\nbitim imzolandi. Bitimga ko'ra, tomonlar ikki davlatning biri boshqa\ndavlatning hujumiga uchraydigan bo'lsa, o'zaro qat'iy betaraflik majburiyatini oldilar."
+    },
+    {
+     "kind": "date_event",
+     "date": "1906",
+     "date_label": "1906-yilda",
+     "event": "„Fiat“ aksiyadorlik jamiyati tashkil topib, u kimyo, rezina va avtomobil sanoatida ustunlik mavqeyini egalladi.",
+     "evidence": "1906-yilda tashkil topgan ,Fiat\" aksiyadorlik jamiyati kimyo,\nrezina, mashinasozlik, elektr, avtomobil sanoati va boshqa mahsulotlar ishlab chiqarishda tezda ustunlik mavqeyini egallab oldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1911",
+     "date_label": "1911-yilda",
+     "event": "Italiya Liviyaga hujum qilib, Italiya-Usmonli davlati urushi boshlandi.",
+     "evidence": "Qulay diplomatik sharoit yaratilgach, Italiya 191l-yilda Liviyaga\nhujum qildi. Liviya bu davrda rasman Usmonli davlati imperiyasi"
+    },
+    {
+     "kind": "person",
+     "person": "Piy IX",
+     "role": "Rim shahrining Italiyaga qo‘shilishiga qarshilik qilgan papa",
+     "activity": "Rimni Fransiya armiyasi himoyasida saqlab turishga urindi, ammo 1870-yilda shahar Italiya qirolligi poytaxtiga aylandi.",
+     "evidence": "qo'yildi. Bungacha papa Piy IX Rim shahrining Italiyaga qo'shilishiga\nqarshilik qilayotgan va uni Fransiya armiyasi himoya qilayotgan edi."
+    },
+    {
+     "kind": "person",
+     "person": "Viktor Emmanuil II",
+     "role": "Italiya qiroli, konstitutsiyaviy monarxiya davrida davlat boshlig‘i",
+     "activity": "Qonun chiqaruvchi hokimiyatni parlament bilan bo‘lib oldi va ikki palatali parlament tizimi shakllandi.",
+     "evidence": "palatasi) parlament tashkil etildi. Qirol Viktor Emmanuil II qonun\nchiqaruvchi hokimiyatni parlament bilan bo'lib oldi. Senatorlar qirol"
+    },
+    {
+     "kind": "person",
+     "person": "J. Jolitti",
+     "role": "1903–1914-yillarda Italiya hukumatini boshqargan mashhur siyosiy arbob",
+     "activity": "Aholi xarid quvvatini oshirmay turib sanoatni rivojlantirib bo‘lmasligini yaxshi tushunar edi.",
+     "evidence": "1903-1914-yillarda (orada ma'lum uzilishlar bilan) Italiya hukumatini o'z davrining mashhur siyosiy arbobi J. Jolitti boshqardi."
+    },
+    {
+     "kind": "person",
+     "person": "J. Jolitti",
+     "role": "Italiya bosh vaziri bo‘lib, ijtimoiy islohotlar o‘tkazgan davlat arbobi",
+     "activity": "Uning davrida bolalar va ayollar mehnatidan foydalanmaslik, mulk va savodxonlik senzini bekor qilish haqida qonunlar qabul qilindi.",
+     "evidence": "lar turadi\", deb ta'kidlagan edi. Uning davrida kasaba uyushmalari\nbolalar va ayollar mehnatidan foydalanmaslik, saylovchilarning mulk"
+    },
+    {
+     "kind": "term",
+     "term": "Mulk senzi",
+     "definition": "Saylovda qatnashish uchun fuqaroning ma’lum darajadagi mulkka ega bo‘lishini talab qiluvchi cheklov.",
+     "evidence": "Mulk senzi - saylovda qatnashish uchun fuqaroning ma'lum darajadagi mulkka ega bo'lishi (boshqa davlatlarda ham bo'lgan)."
+    },
+    {
+     "kind": "term",
+     "term": "Irredentizm",
+     "definition": "Qo‘shni davlatlarda italyanlar qisman yashaydigan hududlarni qo‘shib olishni targ‘ib qiluvchi millatchilik harakati.",
+     "evidence": "Irredentizm - Italiyaga qo'shni bo'lgan davlatlarda italyanlar qisman yashaydigan hududlarni qo'shib olishni targ'ib qiluvchi millatchilik harakati."
+    },
+    {
+     "kind": "term",
+     "term": "Aksiyadorlik jamiyati",
+     "definition": "Kapitalni aksiyalar chiqarish yo‘li bilan jamlaydigan, yangi sanoat tarmoqlarini barpo etuvchi korxona shakli.",
+     "evidence": "tarmoqlari aksiyadorlik jamiyatlari tariqasida vujudga keldi."
+    },
+    {
+     "kind": "term",
+     "term": "Zamindor",
+     "definition": "Yerga, asosan, o‘zi egalik qiluvchi yirik yer egasi; Italiyada bu tabaqa saqlanib qolgan edi.",
+     "evidence": "Yerga, asosan, yirik zamindorlarning egalik qilishi saqlanib qoldi."
+    },
+    {
+     "kind": "place",
+     "place": "Rim",
+     "event": "1870-yilda Italiya qirolligining poytaxtiga aylantirilgan shahar, papa hokimiyati Vatikan bilan cheklandi.",
+     "evidence": "poytaxtiga aylantirildi. Papa hokimiyati Vatikan saroyi bilan cheklab"
+    },
+    {
+     "kind": "place",
+     "place": "Vatikan",
+     "event": "Papa qarorgohi joylashgan shahar-davlat bo‘lib, unga boshqa davlatlar bilan diplomatik munosabat o‘rnatish huquqi berildi.",
+     "evidence": "e'lon qildi va uning qarorgohi joylashgan shahar-davlat - Vatikanga\nboshqa davlatlar bilan diplomatik munosabat o'rnatish huquqi berildi."
+    },
+    {
+     "kind": "place",
+     "place": "Adua",
+     "event": "1896-yil 1-avgustda Italiya qo‘shinlari bu joy yonida tor-mor etildi.",
+     "evidence": "Biroq 1896-yilning 1-avgustida Adua yonida Italiya qo'shinlari"
+    },
+    {
+     "kind": "cause",
+     "cause": "Italiya ichki va tashqi qarzi nihoyatda ko‘payib ketgan edi",
+     "effect": "Mamlakat oldida katta moliyaviy muammolar paydo bo‘ldi.",
+     "evidence": "bo'lgan. Bunga Italiya ichki va tashqi qarzining nihoyatda ko'payib\nketganligi sabab bo'ldi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Zamindorlar yeri hosilning to‘rtdan uch qismini to‘lash sharti bilan dehqonlarga ijaraga berilardi",
+     "effect": "Dehqonlar ahvoli og‘irlashib, Sitsiliyada dehqonlar qo‘zg‘oloni ko‘tarildi.",
+     "evidence": "Zamindorlar yerining katta qismi mayda uchastkalarga bo'linib, juda\nog'ir shartlar bilan (hosilning 3/4 qismini to'lash sharti bilan) dehqonlarga ijaraga berilardi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Mamlakat janubida ahvol ayniqsa og‘ir edi",
+     "effect": "Italiyaning ko‘plab fuqarolari ish izlab chet ellarga ketdilar.",
+     "evidence": "Ahvol, ayniqsa, mamlakat janubida og'ir edi. Oqibatda, Italiyaning ko'plab fuqarolari ish izlab chet ellarga ketdilar."
+    },
+    {
+     "kind": "cause",
+     "cause": "Fransiya Italiya da’vo qilayotgan Shimoliy Afrika davlatlari hududini birin-ketin egallay boshladi",
+     "effect": "Bu hol Italiyani Germaniya bilan yaqinlashtirib, u Germaniya va Avstriya-Vengriya ittifoqiga qo‘shildi.",
+     "evidence": "Fransiya egallay boshladi. Bu hol Italiyani Germaniya bilan yaqinlashtirdi"
+    },
+    {
+     "kind": "number",
+     "number": "3/4",
+     "unit": "qism",
+     "meaning": "Dehqonlar yer haqi sifatida hosilning qancha qismini to‘lagan.",
+     "evidence": "hosilning 3/4 qismini to'lash sharti bilan"
+    },
+    {
+     "kind": "number",
+     "number": "5",
+     "unit": "ming",
+     "meaning": "Adua yonidagi jangda halok bo‘lgan italyan askarlari soni.",
+     "evidence": "5 ming italyan askari halok bo'ldi"
+    }
+   ]
+  },
+  {
+   "number": 25,
+   "title": "XIX asr oxiri – XX asr boshlarida Bolqon davlatlari",
+   "page": 86,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1872",
+     "date_label": "1872-yilda",
+     "event": "Vasil Levskiy qatl etildi, biroq bu Bolgariyadagi ozodlik harakatini pasaytira olmadi.",
+     "evidence": "hududida yashirin qo'zg'olonchi qo'mitalar tuzdi. 1872-yilda V. Levskiyni qatl etishgan bo'lsa-da, ozodlik harakati pasaymadi. 1876-yil"
+    },
+    {
+     "kind": "date_event",
+     "date": "1876",
+     "date_label": "1876-yilda",
+     "event": "Bolgariyada qo‘zg‘olon boshlanib, qo‘zg‘olonchilar bayroqlariga „Ozodlik yoki o‘lim“ shiorini yozdilar.",
+     "evidence": "Bolgariyada qo'zg'olon boshlandi. Qo'zg'olonchilar o'z bayroqlariga\n,Ozodlik yoki o'lim\" shiorini yozgandilar. Iste'dodli publitsist va"
+    },
+    {
+     "kind": "date_event",
+     "date": "1878",
+     "date_label": "1878-yilda",
+     "event": "Bolgariyada qabul qilingan konstitutsiya yangidan vujudga keltirilgan davlatning tuzumini belgilab berdi.",
+     "evidence": "Bolgariyaning qayta\ndavlat tuzumini 1878-yilda qabul qilingan\ntiklanishi\nBolgariya konstitutsiyasi belgilab berdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1886",
+     "date_label": "1886-yilda",
+     "event": "Oliy zobitlarning bir guruhi Aleksandr Battenbergni taxtdan voz kechishga majbur etdilar.",
+     "evidence": "tarafdorlari bo'lgan oliy zobitlarning bir guruhi 1886-yilda Aleksandr"
+    },
+    {
+     "kind": "date_event",
+     "date": "1908",
+     "date_label": "1908-yilda",
+     "event": "Avstriya-Vengriya madadiga tayangan Bolgariya o‘zini Usmonli davlatidan to‘la mustaqil deb e’lon qildi.",
+     "evidence": "1908-yilda Avstriya-Vengriya madadiga tayangan Bolgariya o'zini\nUsmonli davlatidan to'la mustaqil deb e'lon qildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1909-1911",
+     "date_label": "1909–1911-yillarda",
+     "event": "Albaniyada qo‘zg‘olon ko‘tarilib, unda xalqning barcha tabaqalari ishtirok etdi.",
+     "evidence": "bizning ustimizda savdolashmoqdalar. 1909-1911-yillarda Albaniyada\nqo'zg'olon ko'tarildi. Unda xalqning barcha tabaqalari ishtirok etdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1912",
+     "date_label": "1912-yil 28-noyabrda",
+     "event": "Birinchi Bolqon urushida Usmonli davlati yengilishi natijasida Albaniya mustaqillikka erishdi.",
+     "evidence": "Birinchi Bolqon urushida Usmonli davlatining yengilishi natijasida, 1912-yil 28-noyabrda Albaniya mustaqillikka erishdi. Turklarning"
+    },
+    {
+     "kind": "person",
+     "person": "Vasil Levskiy",
+     "role": "Bolgariya milliy ozodlik harakatining jasur inqilobchisi",
+     "activity": "Mustaqil demokratik Bolgariya Respublikasini barpo etish rejasini ilgari surib, yashirin qo‘zg‘olonchi qo‘mitalar tuzdi.",
+     "evidence": "gar inqilobchisi Vasil Levskiy mustaqil demokratik\nBolgariya Respublikasini barpo etish rejasini ilgari surdi. U Bolgariya"
+    },
+    {
+     "kind": "person",
+     "person": "Xristo Botev",
+     "role": "Bolgariya ozodlik harakatining iste’dodli shoiri va publitsisti",
+     "activity": "Ozodlik harakatiga yo‘lboshchilik qilib, 1876-yil 1-iyunda turklar bilan jangda qahramonlarcha halok bo‘ldi.",
+     "evidence": "shoir Xristo Botev ozodlik harakatiga yo'lboshchilik qildi. U 1876-yil\n1-iyunda turklar bilan bo'lgan jangda qahramonlarcha halok bo'ldi."
+    },
+    {
+     "kind": "person",
+     "person": "Aleksandr II",
+     "role": "Bolgariya mustaqilligi davridagi Rossiya imperatori",
+     "activity": "Bolgariya davlati boshlig‘i etib o‘z qaynisi Aleksandr Battenbergni saylashni taklif qilgan Rossiya hukmdori.",
+     "evidence": "Rossiya imperatori Aleksandr II qaynisi\nMustaqillikdan keyingi\nhamda bir vaqtning o'zida Pruss zobiti"
+    },
+    {
+     "kind": "person",
+     "person": "Aleksandr Battenberg",
+     "role": "Bolgariya Buyuk Xalq majlisi tasdiqlagan davlat boshlig‘i",
+     "activity": "Rossiyadan mustaqil siyosat yuritishga urinib, G‘arb davlatlari bilan yaqinlashish yo‘lini tutdi.",
+     "evidence": "bo'lgan Aleksandr Battenbergni Bolgarihti\nya davlati boshlig'i etib saylashni taklif etdi. Bolgariya Buyuk Xalq\nmajlisi bu taklifni ma'qulladi."
+    },
+    {
+     "kind": "person",
+     "person": "Ferdinand Koburg",
+     "role": "Bolgariya taxtiga o‘tqazilgan Avstriya-Vengriya nomzodi",
+     "activity": "Uning taxtga kelishi Rossiya bilan Bolgariya o‘rtasidagi diplomatik munosabatlar uzilganidan keyin yuz berdi.",
+     "evidence": "Bolgariya taxtiga Avstriya-Vengriya nomzodi Ferdinand Koburg o'tqazildi"
+    },
+    {
+     "kind": "term",
+     "term": "Uchlar ittifoqi",
+     "definition": "Germaniya, Avstriya-Vengriya va Italiyadan iborat harbiy-siyosiy blok.",
+     "evidence": "Avstriya-Vengriya va Italiya) yordamida himoya qilishini ma'lum qildi. Bu bayonot Yevropada bo'lajak katta urushda Bolgariya ,Uchlar"
+    },
+    {
+     "kind": "term",
+     "term": "Buyuk Xalq majlisi",
+     "definition": "Bolgariyaning davlat boshlig‘ini saylash vakolatiga ega bo‘lgan oliy vakillik organi.",
+     "evidence": "ya davlati boshlig'i etib saylashni taklif etdi. Bolgariya Buyuk Xalq\nmajlisi bu taklifni ma'qulladi."
+    },
+    {
+     "kind": "term",
+     "term": "Tranzit boj",
+     "definition": "Chet el tovarlari bir davlat hududi orqali olib o‘tilganda undiriladigan boj.",
+     "evidence": "Berlin kongressi Serbiyaning Usmonli davlatidan mustaqil ekanligini tasdiqladi. Ayni paytda, Serbiya zimmasiga chet el tovarlaridan\ntranzit boj olmaslik va unga Usmonli davlatidan olib berilgan yangi"
+    },
+    {
+     "kind": "term",
+     "term": "Konstitutsiyaviy monarxiya",
+     "definition": "Monarx hokimiyati konstitutsiya va parlament bilan cheklangan boshqaruv shakli.",
+     "evidence": "Konstitutsiyaga muvofiq, Bolgariya konstitutsiyaviy monarxiya deb\ne'lon qilindi. Konstitutsiya Bolgariya mustaqilligini amalda tasdiqladi."
+    },
+    {
+     "kind": "place",
+     "place": "Bolgariya",
+     "event": "1876-yilgi qo‘zg‘olon shafqatsiz bostirilib, ko‘plab qishloqlar kultepaga aylantirildi.",
+     "evidence": "Bolgar xalqining kurashi juda og'ir kechdi. Kuchlar teng emas\nedi. Turklar ozodlik harakati qatnashchilarini beayov qilichdan o'tkazdilar va ko'plab qishloqlarni kultepaga aylantirdilar."
+    },
+    {
+     "kind": "place",
+     "place": "Serbiya",
+     "event": "XIX asr oxirida Usmonli davlatiga nomigagina qaram bo‘lib, serb yerlarini yagona davlatga birlashtirishni maqsad qilgan.",
+     "evidence": "Usmonli davlati qo'l ostida qolayotgan serb yerlarini to'la qaytarib\nolish va ularni yagona Serbiya davlatiga birlashtirishdan iborat edi."
+    },
+    {
+     "kind": "place",
+     "place": "Albaniya",
+     "event": "1909–1911-yillardagi qo‘zg‘olon va Birinchi Bolqon urushi natijasida mustaqillikka erishgan mamlakat.",
+     "evidence": "kuchaytirdi. Albaniyadagi barcha siyosiy kuchlar Albaniyani taqsimlab"
+    },
+    {
+     "kind": "cause",
+     "cause": "Chet el zulmi slavyan xalqlarining siyosiy, iqtisodiy va madaniy taraqqiyotiga to‘sqinlik qilardi",
+     "effect": "XIX asrning 70-yillaridan boshlab slavyan xalqlarining milliy ozodlik kurashi kuchaydi.",
+     "evidence": "siyosiy, iqtisodiy va madaniy taraqqiyotiga to'sqinlik qilardi.\nXIX asrning 70-yillaridan boshlab slavyan xalqlari-"
+    },
+    {
+     "kind": "cause",
+     "cause": "Buyuk Britaniya va Avstriya-Vengriya Bolqonda Rossiya mavqeyining mustahkamligidan tashvishda edilar",
+     "effect": "Ular Rossiyani San-Stefano sulh shartnomasini qayta ko‘rib chiqishga rozilik berishga majbur etdilar.",
+     "evidence": "Biroq Buyuk Britaniya ya Avstriya-Vengriya Bolqonda Rossiya\nmavqeyining mustahkamligidan hamda qudratli Bolgariya davlati\ntashkil topganligidan\ntashvishda edilar. Shuning uchun ham ular"
+    },
+    {
+     "kind": "cause",
+     "cause": "Bolgar xalqiga qarshi vahshiyliklar ko‘plab mamlakatlar jamoatchiligini qattiq g‘azablantirdi",
+     "effect": "Rus hukumati Bolqonda o‘z ta’sirini mustahkamlash uchun qo‘zg‘olonlardan foydalanishga qaror qildi.",
+     "evidence": "Bu vahshiyliklar ko'plab mamlakatlar jamoatchiligini qattiq g'azablantirdi. Rus hukumati Bolqonda o'z ta'sirini mustahkamlash"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yangi hukmdor Rossiyadan mustaqil siyosat yuritishga urindi",
+     "effect": "Rossiya hukumati unga Rossiyaning dushmani sifatida qaray boshladi.",
+     "evidence": "Biroq yangi hukmdor Rossiyadan mustaqil siyosat yuritishga urindi. Buning uchun unga tayanadigan davlatlar ham kerak edi. Shuning"
+    },
+    {
+     "kind": "number",
+     "number": "5",
+     "unit": "asr",
+     "meaning": "Usmonli davlatining Bolqon xalqlari ustidan hukmronligi davom etgan taxminiy davr.",
+     "evidence": "qariyb besh asr davom etgan hukmronligiga barham berildi."
+    }
+   ]
+  },
+  {
+   "number": 26,
+   "title": "XIX asrning oxiri va XX asr boshlarida Yaponiya",
+   "page": 90,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1867-1868",
+     "date_label": "1867–1868-yillarda",
+     "event": "Yaponiyada Meydzi islohoti o‘tkazilib, bozor munosabatlariga asoslangan jamiyat qurilishiga keng yo‘l ochildi.",
+     "evidence": "1867-1868-yillarda Yaponiyada yuz bergan Meyd-\nTub o'zgarishlar\nzi islohoti mamlakatda bozor munosabatlariga"
+    },
+    {
+     "kind": "date_event",
+     "date": "1869",
+     "date_label": "1869-yilda",
+     "event": "To‘rt tabaqa haqidagi qonun bekor qilinib, samuray, dehqon, hunarmand va savdogar tabaqalari teng huquqli deb e’lon qilindi.",
+     "evidence": "1869-yilda Yaponiyada to'rt tabaqa haqidagi qonun bekor qilindi.\nFeodal zamindor samuray, dehqon, hunarmand va savdogar tabaqalari\nrasman teng huquqli deb e'lon qilindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1871-1878",
+     "date_label": "1871–1878-yillarda",
+     "event": "Qishloq xo‘jaligida islohotlar o‘tkazilib, yerni erkin oldi-sotdi qilishga va har qanday ekinlarni ekishga ruxsat berildi.",
+     "evidence": "1871-1878-yillarda qishloq xo'jaligi sohasida islohotlar o'tkazilib,\nyerni erkin oldi-sotdi qilishga, istalgan turdagi ekinlarni ekishga ruxhtt"
+    },
+    {
+     "kind": "date_event",
+     "date": "1889",
+     "date_label": "1889-yilda",
+     "event": "Prussiya konstitutsiyasi namunasi asosida tuzilgan konstitutsiya qabul qilinib, ikki palatali parlament joriy etildi.",
+     "evidence": "1889-yilda Prussiya konstitutsiyasi namunasi asosida tuzilgan konstitutsiya qabul qilindi. Mamlakatda ikki palatali (yuqori (perlar) va"
+    },
+    {
+     "kind": "date_event",
+     "date": "1890",
+     "date_label": "1890-yilda",
+     "event": "To‘qimachilik sanoati barcha sanoat tarmoqlarining 45 foizini tashkil etdi.",
+     "evidence": "1890-yilda u barcha sanoat tarmoqlarining 45 foizini tashkil etdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1895",
+     "date_label": "1895-yilda",
+     "event": "Yaponiya bilan Xitoy o‘rtasida Simonoseki sulhi tuzilib, Xitoy Koreyaning mustaqilligini tan oldi.",
+     "evidence": "uyushtirib, Xitoy qo'shinlarini mag'lubiyatga uchratdi. 1895-yilda\nbu ikki davlat o'rtasida Simonoseki sulhi tuzildi. Xitoy Koreyaning"
+    },
+    {
+     "kind": "date_event",
+     "date": "1904-1905",
+     "date_label": "1904–1905-yillarda",
+     "event": "Rossiya-Yaponiya urushida erishilgan g‘alaba Yaponiyaning qudratini yanada orttirdi.",
+     "evidence": "bo'lib qolgan urushda Rossiya yolg'izlatib qo'yildi. 1904-1905-yillarda yuz bergan Rossiya-Yaponiya urushida erishilgan g'alaba Yaponiyaning qudratini yanada orttirdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1910",
+     "date_label": "1910-yilda",
+     "event": "Yaponiya Koreya yarimorolini harbiy kuch bilan o‘ziga qo‘shib oldi, Koreyada yapon general-gubernatori hukm surdi.",
+     "evidence": "1910-yilda Yaponiya Koreya yarimorolini harbiy kuch bilan o'ziga\nqo'shib oldi. Koreyada yapon general-gubernatori cheklanmagan"
+    },
+    {
+     "kind": "person",
+     "person": "Mutsixito",
+     "role": "Yaponiya imperatori, Meydzi islohotidan keyingi modernizatsiya davri hukmdori",
+     "activity": "Ishlab chiqarish kuchlarining rivojiga to‘sqinlik qiluvchi qonun va tartiblarni bekor qildi.",
+     "evidence": "qolgan holda jamiyatni G'arb modelida qayta qurish edi. Imperator\nMutsixito ishlab chiqarish kuchlarining rivojiga to'sqinlik qiluvchi"
+    },
+    {
+     "kind": "term",
+     "term": "Anneksiya",
+     "definition": "Bir davlat hududini zo‘ravonlik yo‘li bilan butunlay yoki qisman o‘z davlatiga qo‘shib olish.",
+     "evidence": "Anneksiya (lotincha - birlashtirish) - bir davlat hududini zoravonlik\nyo'li bilan butunlay yoki qisman o'z davlatiga qo'shib olish."
+    },
+    {
+     "kind": "term",
+     "term": "Tovon",
+     "definition": "Urushda mag‘lubiyatga uchragan davlatdan g‘olib chiqqan davlat foydasiga majburan undiriladigan haq.",
+     "evidence": "Tovon (forscha) - urushda mag'lubiyatga uchragan davlatdan g'olib\nchiqqan davlat foydasiga majburan undiriladigan haq."
+    },
+    {
+     "kind": "term",
+     "term": "Mol-mulk senzi",
+     "definition": "Saylov huquqini fuqaroning ma’lum miqdordagi mol-mulkka ega bo‘lishi sharti bilan cheklash.",
+     "evidence": "edi. Saylov huquqi mol-mulk senzi bilan\ncheklandi. Saylov yoshi"
+    },
+    {
+     "kind": "term",
+     "term": "Yashirin Kengash",
+     "definition": "Imperator huzuridagi organ bo‘lib, parlamentning barcha qarorlari undan o‘tishi zarur edi.",
+     "evidence": "Parlamentning barcha qarorlari imperator huzuridagi Yashirin\nKengashdan o'tishi zarur"
+    },
+    {
+     "kind": "term",
+     "term": "Modernizatsiya",
+     "definition": "Mamlakatni G‘arb modelida qayta qurish, ishlab chiqarish va jamiyatni yangilash jarayoni.",
+     "evidence": "qonun va tartiblarni bekor qildi. Yaponiya dunyoning barcha davlatlari uchun ochib qo'yildi. Mamlakatni modernizatsiyalash boshlandi."
+    },
+    {
+     "kind": "place",
+     "place": "Koreya",
+     "event": "1876-yilda yaponlar uchun ochiq mamlakat deb e’lon qilinib, yapon mahsulotlari bojsiz sotiladigan bo‘ldi.",
+     "evidence": "1876-yili yaponlar uchun Koreya ochiq mamlakat deb e'lon qilindi.\nYapon mahsulotlari bojsiz sotiladigan bo'ldi. Shu yo'l bilan Koreya"
+    },
+    {
+     "kind": "place",
+     "place": "Xitoy",
+     "event": "1895-yilgi shartnomaga ko‘ra Yaponiya bu davlat hududida sanoat korxonalari qurish huquqini oldi.",
+     "evidence": "Shartnomaga ko'ra, Yaponiya o'z savdosi uchun Xitoy hududida sanoat korxonalarini qurish va ulardan foydalanish huquqini\noldi. Endi uning maqsadi Uzoq Sharqdagi asosiy raqibi - Rossiyani"
+    },
+    {
+     "kind": "place",
+     "place": "Seul",
+     "event": "1894-yilda yaponlar bu shaharda saroy to‘ntarishi uyushtirib, yaponparast hukumat tuzdilar.",
+     "evidence": "1894-yil Yaponiya Seulda saroy to'ntarishi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Sanoat qishloqdan ishchi kuchi oqib kelishidan manfaatdor edi",
+     "effect": "Dehqonlarni tutib joyiga qaytarish uchun qo‘yilgan poyloqchilik manzillari tugatildi.",
+     "evidence": "poyloqchilik manzillari tugatildi. Chunki sanoat qishloqdan ishchi\nkuchi .,oqib\" kelishidan manfaatdor edi. Bu tadbirlar Yaponiyada"
+    },
+    {
+     "kind": "cause",
+     "cause": "Iqtisodiy islohotlardan kuchaygan burjuaziya davlatga rahbarlikni o‘z qo‘liga olishni da’vo qila boshladi",
+     "effect": "Hukumat yon berishga qaror qilib, 1889-yilda konstitutsiya qabul qilindi.",
+     "evidence": "juaziya davlatga rahbarlikni o'z qo'liga olishni\nda'vo qila boshladi.\nShunday sharoitda hukumat yon berishga qaror qildi. Nihoyat,"
+    },
+    {
+     "kind": "cause",
+     "cause": "Aholining kambag‘alligi sanoat mahsulotlarining sotib olinishini qiyinlashtirdi",
+     "effect": "Bu hol Yaponiya hukmron doiralarini qo‘shni davlatlar hududlarini bosib olishga undadi.",
+     "evidence": "Aholining kambag'alligi sanoat mahsulotlarining\nTashqi siyosat\nsotib olinishini qiyinlashtirdi. Bu hodisa Yaponiya hukmron doiralarini qo'shni davlatlar hududlarini bosib olishga"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ish haqi juda past bo‘lib, korxonada texnika xavfsizligiga javobgarlik yo‘q edi",
+     "effect": "Yapon ishchilari na siyosiy, na ijtimoiy huquqlardan foydalanar edilar.",
+     "evidence": "ahvoli og'ir edi. Chunki, ish haqi juda past edi. Korxonada texnika\nxavfsizligiga javobgarlik yo'q edi. Buning ustiga, yapon ishchilari va"
+    },
+    {
+     "kind": "number",
+     "number": "1300",
+     "unit": "ta",
+     "meaning": "Chorak asr davomida qurilgan sanoat korxonalari soni.",
+     "evidence": "Chorak asr davomida 13oo ta sanoat korxonasi qurildi. Ular dastlab"
+    },
+    {
+     "kind": "number",
+     "number": "45",
+     "unit": "foiz",
+     "meaning": "1890-yilda to‘qimachilik sanoatining barcha sanoat tarmoqlari ichida egallagan ulushi.",
+     "evidence": "barcha sanoat tarmoqlarining 45 foizini tashkil etdi"
+    }
+   ]
+  }
+ ]
+}

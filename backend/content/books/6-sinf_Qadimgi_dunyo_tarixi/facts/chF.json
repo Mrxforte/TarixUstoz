@@ -1,0 +1,931 @@
+{
+  "chapter": "IV BO'LIM. MILODDAN AVVALGI VI - MILODIY III ASRLARDA O'RTA OSIYO",
+  "topics": [
+    {
+      "number": 31,
+      "title": "O'rta Osiyoda ahamoniylar hukmronligi",
+      "page": 118,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 530",
+          "date_label": "mil. avv. 530-yil",
+          "event": "Kir II ulkan lashkar bilan massagetlar ustiga yurish qildi va jang maydonida halok bo'ldi",
+          "evidence": "Mil. avv. 530-yilda Kir II ulkan lashkar bilan"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 522",
+          "date_label": "mil. avv. 522-yil",
+          "event": "Frada boshchiligidagi qo'zg'olonchilar bilan forslar o'rtasida hal qiluvchi jang bo'lib, Frada asir olinib qatl etildi",
+          "evidence": "qiluvchi jang mil. avv. 522-yilda bo'ladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 519",
+          "date_label": "mil. avv. 519-yil",
+          "event": "Doro I saklar ustiga yurish qildi, saklar sardori Skunxa qo'lga tushirildi",
+          "evidence": "mil. avv. 519-yil"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 490",
+          "date_label": "mil. avv. 490-yil",
+          "event": "Marafon jangida fors qo'shinlari markazida turgan saklar muvaffaqiyatli urushgan",
+          "evidence": "Mashhur Marafon jangida (mil. avv. 490-yil) fors qo'shinlari markazida"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VI-IV asrlar",
+          "date_label": "mil. avv. VI-IV asrlar",
+          "event": "O'rta Osiyo madaniyatining rivojlanishi yozma va arxeologik manbalar asosida o'rganilgan",
+          "evidence": "VI - IV asrlarda madaniyatning rivojlanishi"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. V-IV asrlar",
+          "date_label": "mil. avv. V-IV asrlar",
+          "event": "O'rta Osiyo hududida dastlabki tanga pullar tarqaldi",
+          "evidence": "Mil. avv. V-IV asrlarda O'rta Osiyo"
+        },
+        {
+          "kind": "date_event",
+          "date": "1877",
+          "date_label": "1877-yil",
+          "event": "Amudaryo xazinasidan oltin va kumush buyumlar topilgan; ular Britaniya muzeyida saqlanmoqda",
+          "evidence": "Amudaryo xazinasidan to-pilgan oltin va kumush buyumlar"
+        },
+        {
+          "kind": "person",
+          "person": "Kir II",
+          "role": "Ahamoniylar sulolasi vakili, O'rta Osiyoni bosib olishga harakat qilgan dastlabki fors podshosi",
+          "activity": "Parfiya, Marg'iyona va Baqtriyani bosib oldi, mil. avv. 530-yilda massagetlarga qarshi yurishda halok bo'ldi",
+          "evidence": "Kir II O'rta Osiyo hududini bosib olishga harakat qilib"
+        },
+        {
+          "kind": "person",
+          "person": "To'maris",
+          "role": "Massagetlar malikasi",
+          "activity": "Bosqinchilarga tinch-omon qaytib ketishni taklif qilgan, Kir II bilan jangda g'olib chiqqan massagetlarni boshqargan",
+          "evidence": "To'maris bosqinchilarga tinch-omon qaytib"
+        },
+        {
+          "kind": "person",
+          "person": "Gerodot",
+          "role": "Yunon tarixchisi, «tarix otasi» deb atalgan",
+          "activity": "Kir II ning massagetlarga qarshi yurishi va jangini hikoya qilib bergan",
+          "evidence": "Bu yurish to'g'risida «tarix otasi»"
+        },
+        {
+          "kind": "person",
+          "person": "Frada",
+          "role": "Marg'iyonadagi qo'zg'olon rahbari",
+          "activity": "Mil. avv. 522-yildagi jangdan keyin asirlikka olinib qatl etilgan",
+          "evidence": "Qo'zg'olonga Frada rahbarlik qiladi"
+        },
+        {
+          "kind": "person",
+          "person": "Shiroq",
+          "role": "Sak qabilasidan chiqqan cho'pon",
+          "activity": "Fors qo'shinlarini suvsiz cho'l bo'ylab boshlab yurib, Doro I ning saklar ustiga yurishini barbod qilgan",
+          "evidence": "sak qabilasidan bo'lgan cho'pon Shiroq keladi"
+        },
+        {
+          "kind": "term",
+          "term": "Satraplik",
+          "definition": "Ahamoniylar davlatidagi viloyat; bu so'z forscha «xshatra» so'zidan kelib chiqqan",
+          "evidence": "«xshatra» - «viloyat» so'zidan kelib"
+        },
+        {
+          "kind": "term",
+          "term": "Satrap",
+          "definition": "Viloyat boshlig'i, cheklanmagan hokimiyatga ega bo'lgan, ko'pchiligi ahamoniylar sulolasi vakillari edi",
+          "evidence": "satrapga cheklan-magan hokimiyat berilgan edi"
+        },
+        {
+          "kind": "term",
+          "term": "Ahamoniylar",
+          "definition": "Ko'plab davlatlarni bosib olgan fors sulolasi; Kir II shu sulola vakili hisoblanadi",
+          "evidence": "Satraplarning ko'pchiligi ahamoniylar sulolasining"
+        },
+        {
+          "kind": "term",
+          "term": "Anhor",
+          "definition": "Dalalarga suv olib kelgan kanal; arxeologlar shahar va qo'rg'onlar atrofidan uning izlarini topganlar",
+          "evidence": "dalalarga suv olib kelgan anhorlar va"
+        },
+        {
+          "kind": "place",
+          "place": "Marg'iyona",
+          "event": "Doro I hukmronligining birinchi yilida fors istilochilariga qarshi yirik xalq qo'zg'oloni ko'tarilgan viloyat",
+          "evidence": "Marg'iyonada fors istilochilariga qarshi yirik xalq qo'zg'oloni"
+        },
+        {
+          "kind": "place",
+          "place": "Behistun",
+          "event": "Frada qo'zg'oloni va Doro I ning saklarga qarshi yurishi haqidagi ma'lumotlar qayd etilgan qoyatosh yozuvlari",
+          "evidence": "Behistun qo-yatosh yozuvlarida qayd etilgan"
+        },
+        {
+          "kind": "place",
+          "place": "Marafon",
+          "event": "Yunon-fors urushlaridagi jang maydoni; fors qo'shinlari markazida saklar jang qilgan",
+          "evidence": "Marafon jangida (mil. avv. 490-yil) fors qo'shinlari markazida"
+        },
+        {
+          "kind": "cause",
+          "cause": "To'marisning bosqinchilarga tinch-omon qaytib ketish taklifi",
+          "effect": "Fors shohi taklifni rad etib, Amudaryodan kechib o'tishni boshlash to'g'risida farmon berdi",
+          "evidence": "rad etadi va Amudaryodan kechib o'tishni"
+        },
+        {
+          "kind": "cause",
+          "cause": "Shiroqning forslarni suvsiz cho'l bo'ylab boshlab yurishi",
+          "effect": "Forslar aldanganliklarini sezib qoladilar, Doro I ning yurishi muvaffaqiyatsiz tugaydi",
+          "evidence": "forslar o'zlarining aldangan-liklarini sezib qoladilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Bosib olingan mamlakatlarni itoatda tutish zarurati",
+          "effect": "Ahamoniylar davlatni alohida viloyatlar - satrapliklarga bo'lib tashladilar",
+          "evidence": "Bosib olingan mamlakat-larni itoatda tutmoq uchun"
+        },
+        {
+          "kind": "number",
+          "number": "3",
+          "unit": "satraplik",
+          "meaning": "O'rta Osiyoning forslar bosib olgan viloyatlari bo'lingan satrapliklar soni",
+          "evidence": "bosib olgan vilo-yatlari uch satraplikka bo'linadi"
+        },
+        {
+          "kind": "number",
+          "number": "7",
+          "unit": "kun",
+          "meaning": "Shiroq forslarni suvsiz cho'l bo'ylab boshlab yurgan kunlar soni",
+          "evidence": "yetti kun yo'l bosishgach, tashnalikdan"
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "title": "O'rta Osiyo xalqlarining yunon-makedon istilochilariga qarshi kurashi",
+      "page": 123,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VII-IV asrlar",
+          "date_label": "mil. avv. VII-IV asrlar",
+          "event": "O'rta Osiyo jangchilari jangga sovut kiyib, boshlarida dubulg'a bilan kirganlar",
+          "evidence": "Mil. avv. VII-IV asrlarda"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 336",
+          "date_label": "mil. avv. 336-yil",
+          "event": "Aleksandr Makedoniya podshosi bo'ldi, o'sha yili u 20 yoshga to'lgan edi",
+          "evidence": "336-yilda Makedoniya podshosi bo'ladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 334",
+          "date_label": "mil. avv. 334-yil",
+          "event": "Aleksandr Sharqqa yurish boshladi, bu yurish 10 yil davom etdi",
+          "evidence": "Mil. avv. 334-yilda u Sharqqa yurish boshladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 330",
+          "date_label": "mil. avv. 330-yil",
+          "event": "Aleksandr Ahamoniylar sulolasining oxirgi shohi Doro III qo'shinlarini tor-mor keltirdi",
+          "evidence": "Mil. avv. 330-yilda Makedoniyalik"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 329",
+          "date_label": "mil. avv. 329-yil",
+          "event": "Yunon-makedon qo'shinlari Oks - Amudaryodan o'tib, Maroqanda shahrini egalladilar",
+          "evidence": "Miloddan avvalgi 329-yilda yunon-make-donlar Maroqandani egalladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 328",
+          "date_label": "mil. avv. 328-yil kuzi",
+          "event": "Spitamanning Aleksandr bilan hal qiluvchi jangi bo'lib, Spitaman yengildi va cho'lda o'ldirildi",
+          "evidence": "Mil. avv. 328-yil kuzida Spitamanning"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 323",
+          "date_label": "mil. avv. 323-yil",
+          "event": "Makedoniyalik Aleksandr vafot etdi, uning davlati uch qismga bo'linib ketdi",
+          "evidence": "323- yilda Makedoniya-lik Aleksandr vafot etdi"
+        },
+        {
+          "kind": "person",
+          "person": "Makedoniyalik Aleksandr",
+          "role": "Makedoniya podshosi, g'ayrioddiy kuch-g'ayrat va jasurlik sohibi bo'lgan sarkarda",
+          "activity": "Sharqqa o'n yillik yurish qilib, Kichik Osiyo, Suriya, Misr, Eron va Hindistonda hududlarni bosib oldi",
+          "evidence": "g'ayrioddiy kuch-g'ayrat va jasurlik sohibi bo'lgan"
+        },
+        {
+          "kind": "person",
+          "person": "Spitaman",
+          "role": "So'g'diyona qo'zg'oloni rahbari, iste'dodli tashkilotchi va harbiy yo'lboshchi",
+          "activity": "Maroqandani qamal qilgan, Zarafshon bo'yida makedonlarni pistirmada qirib tashlagan, 328-yilda yengilgan",
+          "evidence": "iste'dodli tashkilotchi va harbiy yo'lboshchi Spitaman boshchilik qiladi"
+        },
+        {
+          "kind": "person",
+          "person": "Bess",
+          "role": "Baqtriya satrapi, ahamoniylar sulolasi vakili",
+          "activity": "Baqtra shahrini dushmanga qoldirib, Amudaryoning narigi tarafiga qochib ketgan",
+          "evidence": "Bess Baqtriyaning satrapi bo'lgan"
+        },
+        {
+          "kind": "person",
+          "person": "Aristotel",
+          "role": "Qadimgi yunon faylasufi, Aleksandrning ustozi",
+          "activity": "Amudaryodan ikki podsho kechib o'tib mag'lub bo'lgani bois yaxshi tayyorgarlik ko'rishni maslahat bergan",
+          "evidence": "Aristotelning Amudaryodan ikki podsho"
+        },
+        {
+          "kind": "person",
+          "person": "Oksiart",
+          "role": "So'g'd zodagoni",
+          "activity": "Hisor tog'laridagi qal'asi Aleksandr tomonidan egallangan, qizi Ravshanak Aleksandrga turmushga chiqqan",
+          "evidence": "Oksiartning qizi Ravshanakka uylanadi"
+        },
+        {
+          "kind": "term",
+          "term": "Akinak",
+          "definition": "Xanjar; O'rta Osiyo jangchilarining asosiy qurollaridan biri, temir va bronzadan yasalgan",
+          "evidence": "Xanjar - «akinak», jangovar oybolta esa"
+        },
+        {
+          "kind": "term",
+          "term": "Sagaris",
+          "definition": "Jangovar oybolta; jangchilar uni xanjar va nayzalar bilan birga ishlatganlar",
+          "evidence": "«sagaris» deb nomlangan"
+        },
+        {
+          "kind": "term",
+          "term": "Politimet",
+          "definition": "Zarafshon daryosining qadimgi nomi; Spitaman shu daryo bo'yida pistirma qo'ygan",
+          "evidence": "Qadimda «Politimet» deb atalgan Zarafshon daryosi"
+        },
+        {
+          "kind": "term",
+          "term": "Bargustvon",
+          "definition": "Jangovar otlarning ustiga va ko'kragiga yopiladigan temirdan yasalgan himoya",
+          "evidence": "Jangovar otlar ustiga va ko'kragiga temirdan yasalgan bargustvon yopilgan"
+        },
+        {
+          "kind": "place",
+          "place": "Maroqanda",
+          "event": "Samarqand shahri; mil. avv. 329-yilda egallangan va Spitaman tomonidan qamal qilingan",
+          "evidence": "Maroqanda shahri (Samarqand)"
+        },
+        {
+          "kind": "place",
+          "place": "Baqtra (Zariasp)",
+          "event": "Baqtriya poytaxti; Aleksandr qishlash uchun shu yerga jo'nab ketgan, Bess uni tashlab qochgan",
+          "evidence": "Baqtriya poytaxti Baqtra (Zariasp) bo'ldi"
+        },
+        {
+          "kind": "place",
+          "place": "Aleksandriya Esxata",
+          "event": "Xo'jand yaqinida, Sirdaryo bo'yida saklarga qarshi qurilgan qal'a, «Chekka Aleksandriya» deb atalgan",
+          "evidence": "Bu qal'a Alek-sandriya Esxata (Chekka Aleksandriya) deb"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qo'shinlarning orqa tomonini xavfsizlantirish zarurati",
+          "effect": "Aleksandr Hindistonga yurishdan oldin Amudaryoning narigi tomonidagi elatlarni bo'ysundirishga qaror qildi",
+          "evidence": "qo'shinlarining orqa tomonini xavfsizlantirish maqsadida"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yunon-makedon qo'shinlarining bosqinchilik yurishlari",
+          "effect": "O'rta Osiyo yerlarini xarobazorga aylantirdi, aholining katta qismi qirilib, ko'plab shaharlar vayron etildi",
+          "evidence": "ning bosqinchlik yurishlari O'rta Osiyo yerlarini xarobazorga aylantirdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kuchlarning teng bo'lmaganligi",
+          "effect": "Spitaman mil. avv. 328-yildagi jangda yengilib, yana cho'lga chekinishga majbur bo'ldi",
+          "evidence": "Kuchlar teng bo'lmaganidan Spitaman yen-gilib"
+        },
+        {
+          "kind": "number",
+          "number": "10",
+          "unit": "yil",
+          "meaning": "Aleksandrning Sharqqa yurishi davom etgan davr",
+          "evidence": "bu yurish 10 yil davom etdi"
+        },
+        {
+          "kind": "number",
+          "number": "3",
+          "unit": "yil",
+          "meaning": "Aleksandrning O'rta Osiyo yerlarini bosib olishga sarflagan vaqti",
+          "evidence": "Aleksandr deyarli uch yil urindi"
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "title": "Salavkiylar davlati va Yunon-Baqtriya podsholigi",
+      "page": 129,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 323",
+          "date_label": "mil. avv. 323-yil",
+          "event": "Makedoniyalik Aleksandr vafot etdi, davlat Makedoniya, Misr va Suriyaga bo'linib ketdi",
+          "evidence": "Mil. avv. 323-yil Make-doniyalik Aleksandr vafot etdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 312",
+          "date_label": "mil. avv. 312-yil",
+          "event": "Aleksandrning lashkarboshilaridan biri Salavk Bobil (Suriya davlati) hukmdori bo'ldi",
+          "evidence": "mil. avv. 312-yilda kichik Makedoniyalik Aleksandrning lashkarboshilaridan biri Salavk"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 250",
+          "date_label": "mil. avv. 250-yil",
+          "event": "Baqtriya Salavkiylar davlati tarkibidan ajralib chiqdi",
+          "evidence": "Mil. avv. 250-yilda Baqtriya Sa-lavkiylar davlati tarkibidan ajralib chiqadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 250",
+          "date_label": "mil. avv. 250-yil",
+          "event": "Salavkiylardan ajralib chiqqan Parfiya Baqtriyaning raqibiga aylandi",
+          "evidence": "Salavkiylar davlati tarkibidan ajralib chiqqan"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 140-130",
+          "date_label": "mil. avv. 140-130-yillar",
+          "event": "Ko'chmanchi yuechji qabilalari Yunon-Baqtriya davlatini bosib oldilar",
+          "evidence": "140-130-yillar oralig'ida Yunon-Baqtriya dav-latini bosib oladilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "20 yilga yaqin",
+          "date_label": "20 yilga yaqin",
+          "event": "Antiox Sharqiy viloyatlar noibi sifatida ulkan davlatni boshqargan davr",
+          "evidence": "uni 20 yilga yaqin boshqardi"
+        },
+        {
+          "kind": "person",
+          "person": "Salavk",
+          "role": "Aleksandrning lashkarboshilaridan biri, mil. avv. 312-yildan Bobil (Suriya) hukmdori",
+          "activity": "Davlat tarkibiga Mesopotamiya, Eron, Parfiya, Baqtriya, So'g'diyona va Marg'iyonani kiritib, O'rta Osiyoni satrapliklarga ajratdi",
+          "evidence": "Salavk o'z davlati tarkibiga kirgan O'rta"
+        },
+        {
+          "kind": "person",
+          "person": "Antiox",
+          "role": "Salavkning o'g'li, Sharqiy viloyatlar noibi",
+          "activity": "Parfiya, Marg'iyona, Baqtriya va So'g'diyonaga noib etib tayinlangan, davlatni 20 yilga yaqin boshqargan",
+          "evidence": "Salavk o'z o'g'li Antioxni Sharqiy viloyatlar"
+        },
+        {
+          "kind": "person",
+          "person": "Diodot",
+          "role": "Mingta Baqtriya shahri hukmdori",
+          "activity": "Mil. avv. 250-yilda o'zini podsho deb e'lon qilib, Yunon-Baqtriya davlati tarixiga asos soldi",
+          "evidence": "Diodot o'zini podsho deb e'lon qiladi"
+        },
+        {
+          "kind": "person",
+          "person": "Demetriy",
+          "role": "Yevtidemning o'g'li, Yunon-Baqtriya podshosi",
+          "activity": "Hukmronligi davrida podsholik eng katta sarhadlarga ega bo'lib, Hindistonning bir qismi qo'shib olindi",
+          "evidence": "Demetriy hukmronligi davrida Yunon-Baqtriya podsholigi eng katta sarhadlarga ega bo'ldi"
+        },
+        {
+          "kind": "person",
+          "person": "Mitridat I",
+          "role": "Parfiya hukmdori",
+          "activity": "Parfiyada hokimiyatni qo'lga olib, Baqtriyaga harbiy tazyiqni kuchaytirgan",
+          "evidence": "hokimiyat Mitridat I qo'liga o'tishi"
+        },
+        {
+          "kind": "term",
+          "term": "Strateg",
+          "definition": "Davlat mudofaasi va qo'shinlarni tashkil etish bilan shug'ullangan, sobiq lashkarboshilardan tayinlangan amaldor",
+          "evidence": "tashkil etish bilan sobiq lashkarboshilardan"
+        },
+        {
+          "kind": "term",
+          "term": "Noib",
+          "definition": "Viloyatlarni boshqarish uchun tayinlanadigan vakil; bu lavozimga Antiox tayinlangan",
+          "evidence": "noib etib tayinladi"
+        },
+        {
+          "kind": "term",
+          "term": "Antik davr",
+          "definition": "Yunon-makedon istilolaridan keyin O'rta Osiyo tarixida boshlangan davr",
+          "evidence": "Yunon-makedon istilolaridan keyin O'rta Osiyo tarixida antik davr boshlandi"
+        },
+        {
+          "kind": "term",
+          "term": "Yunon-Baqtriya davlati",
+          "definition": "Mil. avv. 250-yilda Baqtriya ajralib chiqqach tashkil topgan, tarkibiga So'g'diyona va Marg'iyona kirgan davlat",
+          "evidence": "boshlab Yunon-Baqtriya davlati tarixi"
+        },
+        {
+          "kind": "place",
+          "place": "Baqtra",
+          "event": "Yunon-Baqtriya davlatining yirik shahri va madaniyat markazi",
+          "evidence": "Baqtra, Maroqanda, Marg'iyona Antioxiysi"
+        },
+        {
+          "kind": "place",
+          "place": "Marv",
+          "event": "Marg'iyona Antioxiysi deb ham atalgan yirik shahar va madaniyat markazi",
+          "evidence": "Marg'iyona Antioxiysi (Marv)"
+        },
+        {
+          "kind": "place",
+          "place": "Termiz",
+          "event": "Yunon-Baqtriya davridagi yirik shahar va madaniyat markazi",
+          "evidence": "Termiz yirik shahar va madaniyat"
+        },
+        {
+          "kind": "cause",
+          "cause": "Uzoq davom etgan o'zaro urushlar",
+          "effect": "Mil. avv. 312-yilda Salavk Bobil (Suriya davlati) hukmdori bo'ldi",
+          "evidence": "Uzoq davom etgan o'zaro urushlardan ke-yin"
+        },
+        {
+          "kind": "cause",
+          "cause": "Parfiyada hokimiyat Mitridat I qo'liga o'tishi va harbiy tazyiqning kuchayishi",
+          "effect": "Yunon-Baqtriya davlati tinimsiz urushlar olib borishga majbur bo'lib, kuchsizlandi",
+          "evidence": "bu hol uning kuch-sizlanishiga sabab bo'ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yunon-Baqtriya davlatining kuchsizlanishi",
+          "effect": "Ko'chmanchi yuechji qabilalari mil. avv. 140-130-yillarda uni bosib oldilar",
+          "evidence": "Bundan foydalan-gan ko'chmanchi yuechji qabilalari"
+        },
+        {
+          "kind": "number",
+          "number": "1000",
+          "unit": "shahar",
+          "meaning": "Diodot hukmdor bo'lgan Baqtriya shaharlari soni",
+          "evidence": "mingta Baqtriya shahri hukmdori bo'lmish"
+        },
+        {
+          "kind": "number",
+          "number": "3",
+          "unit": "qism",
+          "meaning": "Aleksandr barpo etgan davlat bo'linib ketgan mustaqil davlatlar soni",
+          "evidence": "uch qismga: Makedoniya, Misr va Suriyaga bo'linib ketdi"
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "title": "Qadimgi Xorazm, Qang' va Davan davlati",
+      "page": 133,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. IV asr",
+          "date_label": "mil. avv. IV asr",
+          "event": "Xorazm Ahamoniylar davlatidan ajralib chiqib, mustaqil davlatga aylandi",
+          "evidence": "Mil. avv. IV asrda Xorazm Aha-moniylar davlatidan"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VII asr",
+          "date_label": "miloddan avvalgi VII asr",
+          "event": "Xorazmda shaharsozlikning boshlanishi; Ko'zaliqir shahri xarobalari shu davrga borib taqaladi",
+          "evidence": "shaharsozlikning boshlani-shi miloddan avvalgi VII asrga"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. III-II asrlar",
+          "date_label": "miloddan avvalgi III-II asrlar",
+          "event": "Jonbosqal'a Xorazmning qadimgi shahri bo'lgan",
+          "evidence": "Miloddan avvalgi III-II asrlarda Jonbosqal'a Xorazmning qadimgi shahri bo'lgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy II-III asrlar",
+          "date_label": "milodiy II-III asrlar",
+          "event": "Tuproqqal'a shahrida bundan ham ulug'vor va muhtasham qurilish ishlari amalga oshirilgan",
+          "evidence": "Milodiy II-III asrlarda Tuproqqal'a shah-rida bundan ham ulug'vor"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy I asr",
+          "date_label": "milodiy I asr",
+          "event": "Xorazmda mahalliy taqvim ishlab chiqilgan, undan xorazmliklar VIII asrgacha foydalanishgan",
+          "evidence": "Milodiy I asrda Xorazmda ishlab chiqilgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. III asr",
+          "date_label": "mil. avv. III asr",
+          "event": "Qang' davlatiga saklar asos solgan, Toshkent vohasida Qanqa - Qang'xa shahar-qal'asi paydo bo'lgan",
+          "evidence": "Mil. avv. III asrda unga saklar asos solishgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. II asr oxiri",
+          "date_label": "miloddan avvalgi II asr oxiri",
+          "event": "Qang' qudratli davlat birlashmasiga aylanadi, uning hukmdorlari o'z nomidan tanga zarb qildiradilar",
+          "evidence": "Miloddan avvalgi II asr oxirida Qang' qud-ratli davlat birlashmasiga aylanadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy III asr",
+          "date_label": "milodiy III asr",
+          "event": "Qang' davlati parchalanib ketdi va mustaqil davlat sifatida mavjud bo'lishdan to'xtadi",
+          "evidence": "Milodiy III asrda Qang' davlati parchalanib ketdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy III asr",
+          "date_label": "milodiy III asr",
+          "event": "Olimlarning aniqlashicha, Davan davlati barham topgan",
+          "evidence": "milodiy III asrda Davan davlati barham topgan"
+        },
+        {
+          "kind": "person",
+          "person": "Qang' hukmdorlari",
+          "role": "Qang' davlatining hukmdorlari",
+          "activity": "Davlat qudratli birlashmaga aylangach, o'z nomidan tangalar zarb qildirganlar",
+          "evidence": "o'z nomidan tangalar zarb"
+        },
+        {
+          "kind": "person",
+          "person": "Xitoy hukmdorlari",
+          "role": "Xitoy imperiyasining hukmdorlari",
+          "activity": "Davan davlatini bir necha bor bosib olmoqchi bo'lishgan, bir yurishda Ershini egallab, tovon evaziga tashlab chiqishgan",
+          "evidence": "Xitoy hukmdorlari bir necha bor bu davlat-ni bosib olmoqchi bo'ldilar"
+        },
+        {
+          "kind": "person",
+          "person": "Mahalliy hukmdor",
+          "role": "Qadimgi Xorazm hukmdori",
+          "activity": "Ko'zaliqir shahrida uning qarorgohi bo'lgan ulkan qal'a bunyod etilgan",
+          "evidence": "Bu yerda ma-halliy hukmdorning qarorgohi bo'lgan ulkan qal'a bunyod etilgan edi"
+        },
+        {
+          "kind": "term",
+          "term": "Qang'yuy",
+          "definition": "Qang' davlatining Xitoy manbalarida tilga olinadigan nomi",
+          "evidence": "dav-latning Qang'yuy deb atal-gani ma'lum"
+        },
+        {
+          "kind": "term",
+          "term": "Qang'arlar",
+          "definition": "Qang' davlati aholisini shunday atashgan",
+          "evidence": "urushlarda qang'arlar (Qang' davlati aholisini shunday atashgan)"
+        },
+        {
+          "kind": "term",
+          "term": "Samoviy otlar",
+          "definition": "Farg'onaning zotli, baquvvat va chopqir otlari; xitoyliklar ularga shu nom bergan",
+          "evidence": "Otlar naslining biriga hatto ular «Samoviy» deb nom berganlar"
+        },
+        {
+          "kind": "term",
+          "term": "Mahalliy taqvim",
+          "definition": "Milodiy I asrda Xorazmda ishlab chiqilgan kalendar; VIII asrgacha qo'llangan",
+          "evidence": "mahalliy taqvimdan xorazmliklar VIII asrga qadar foydalanishgan"
+        },
+        {
+          "kind": "place",
+          "place": "Tuproqqal'a",
+          "event": "Qudratli mudofaa devorlari va burjlar bilan o'ralgan, markazida saroy va ibodatxonalar joylashgan shahar",
+          "evidence": "Shahar qudratli mudofaa devorlari bilan o'ralib"
+        },
+        {
+          "kind": "place",
+          "place": "Qanqa (Qang'xa)",
+          "event": "Toshkent vohasida mil. avv. III asrda asos solingan shahar-qal'a; saklar poytaxti Qang'dez bo'lgan",
+          "evidence": "Qanqa - Qang'xa shahar-qal'asi saklarning o'sha kezlardagi poytaxti Qang'dez bo'lgan"
+        },
+        {
+          "kind": "place",
+          "place": "Ershi",
+          "event": "Davan davlatining poytaxti; Xitoy hukmdorlari uni egallab, tovon evaziga tashlab chiqishgan",
+          "evidence": "ular Davan davlatining poytaxti Ershini qo'lga kiritdilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qang' hududidan Buyuk Ipak yo'lining shimoliy tarmog'i o'tganligi",
+          "effect": "Davlat iqtisodi gullab-yashnadi, biroq ko'chmanchi qabilalar bilan urushlar kelib chiqdi",
+          "evidence": "Uning hududidan Buyuk Ipak yo'lining shimoliy tarmog'i o'tganligi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xorazmning Ahamoniylar davlatidan ajralib chiqishi",
+          "effect": "Xorazm mustaqil davlatga aylandi va Aleksandr hamda salavkiylar davrida ham mustaqil qoldi",
+          "evidence": "hukm ronligi davrida ham Xorazm davlati mus-taqil edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xitoy hukmdorlarining Davan davlatini bosib olishga urinishlari",
+          "effect": "Aholi tovon to'lagach, ular shaharni tashlab chiqishga majbur bo'lishdi",
+          "evidence": "aholisining tovon to'lashi evaziga uni tashlab chiqishgan"
+        },
+        {
+          "kind": "number",
+          "number": "20",
+          "unit": "dan ortiq haykal",
+          "meaning": "Tuproqqal'a saroyi zallaridan biridagi tokchalarga o'rnatilgan bo'yalgan loy haykallar soni",
+          "evidence": "20 dan or-tiq bo'yalgan loy haykallar zallardan biridagi"
+        }
+      ]
+    },
+    {
+      "number": 35,
+      "title": "Kushon davlati",
+      "page": 137,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "milodiy I asr",
+          "date_label": "milodiy I asr",
+          "event": "Guyshuan (Kushon) xonadoni boshlig'i barcha yuechji mulklarini birlashtirib, Kushon davlatiga asos soldi",
+          "evidence": "milodiy I asrda Guyshuan (Kushon) xo-nadonining boshlig'i"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy I-III asr",
+          "date_label": "mil. I asr - mil. III asr",
+          "event": "Kushon davlati mavjud bo'lgan davr: milodiy I asrdan milodiy III asrgacha",
+          "evidence": "Kushon davlati (mil. I asr. – mil. III asr)"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy VIII asrgacha",
+          "date_label": "milodiy VIII asrgacha",
+          "event": "Buddaviylik dini zardushtiylik bilan birga O'rta Osiyoda saqlanib qoldi",
+          "evidence": "buddaviylik dini zar-dushtiylik bilan birga milodiy VIII asrgacha"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. II-I asrlar",
+          "date_label": "mil. avv. II-I asrlar",
+          "event": "Kushon podsholigi davriga oid ko'za yodgorligi saqlanib qolgan",
+          "evidence": "Mil.avv. II–I asrlarga oid ko'za"
+        },
+        {
+          "kind": "date_event",
+          "date": "I-II asr",
+          "date_label": "I-II asr",
+          "event": "Ayol kishi bosh tuzilishining haykali shu davrga oid",
+          "evidence": "Ayol kishi bosh tuzilishining haykali. I-II asr"
+        },
+        {
+          "kind": "date_event",
+          "date": "II-III asr boshlari",
+          "date_label": "II-III asr boshlari",
+          "event": "Dalvarzintepa yodgorligi shu davrga mansub",
+          "evidence": "Dalvarzintepa. II–III asr boshlari"
+        },
+        {
+          "kind": "person",
+          "person": "Kudzula Kadfiz",
+          "role": "Birlashgan yuechji qabilalarining birinchi hukmdori",
+          "activity": "Hukmronligi davrida Afg'oniston va Kashmir Kushon davlatiga qo'shib olindi",
+          "evidence": "Birlashgan yuechji qabilalarining birinchi hukmdori"
+        },
+        {
+          "kind": "person",
+          "person": "Vima Kadfiz",
+          "role": "Kudzula Kadfizning vorisi, Kushon hukmdori",
+          "activity": "Davlat hududini yanada kengaytirgan, hukmdor nomi ko'rsatilgan tanga zarb qilish va pul islohoti boshlangan",
+          "evidence": "hukmdor nomi ko'rsatilgan tanga zarb qilish boshlandi"
+        },
+        {
+          "kind": "person",
+          "person": "Kanishka",
+          "role": "Kushon podshosi; davrida podsholik ulkan davlatga aylanib, taraqqiyot cho'qqisiga erishgan",
+          "activity": "Poytaxt Baqtriyadan Peshovarga ko'chirilgan, Hindiston, Xitoy va Rim bilan savdo va elchilik munosabatlari yo'lga qo'yilgan",
+          "evidence": "Podsho Kanishka hukmronligi zamo-nida poytaxt Baqtriyadan Peshovar (hozirgi Pokiston)ga ko'chiriladi"
+        },
+        {
+          "kind": "term",
+          "term": "Chig'ir",
+          "definition": "Suv chiqaradigan moslama; Kushon davrida keng foydalanilgan",
+          "evidence": "Chig'ir – suv chiqaradigan moslama"
+        },
+        {
+          "kind": "term",
+          "term": "Oromiy yozuvi",
+          "definition": "G'arbiy Osiyoda paydo bo'lgan, alifboga asoslangan yozuv; Kushon davrida O'rta Osiyoda keng tarqalgan",
+          "evidence": "qadimgi oromiy yozuvi keng tarqaladi"
+        },
+        {
+          "kind": "term",
+          "term": "Kushon-baqtriya alifbosi",
+          "definition": "Oromiy yozuvi asosidagi alifbo; Qadimgi Termiz yodgorliklaridan uning namunalari topilgan",
+          "evidence": "oromiy yozuvi asosidagi kushon-baqtriya alifbosidagi yozuv namunalari to-pilgan"
+        },
+        {
+          "kind": "term",
+          "term": "Buddaviylik",
+          "definition": "Kanishka davrida Kushon davlati hududiga kirib kelgan din; zardushtiylik bilan birga saqlanib qolgan",
+          "evidence": "hududiga kirib kelgan buddaviylik dini zar-dushtiylik bilan birga"
+        },
+        {
+          "kind": "place",
+          "place": "Peshovar",
+          "event": "Kanishka davrida Kushon podsholigining poytaxti qilib ko'chirilgan shahar (hozirgi Pokiston)",
+          "evidence": "(hozirgi Pokiston)ga ko'chiriladi"
+        },
+        {
+          "kind": "place",
+          "place": "Xolchayon",
+          "event": "Kushon hukmdorlari saroyi joylashgan yodgorlik",
+          "evidence": "Xolchayondagi kushon hukmdorlari saroyi"
+        },
+        {
+          "kind": "place",
+          "place": "Ayritom",
+          "event": "Budda haykali va do'mbirachi tasviri topilgan Kushon yodgorligi",
+          "evidence": "Budda haykali va Ayritomda topilgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kanishka davrida Hindistonning bir qismi qo'shib olinib, yaqindan aloqalar o'rnatilishi",
+          "effect": "Kushon davlati hududiga buddaviylik dini kirib keldi",
+          "evidence": "Hindistonning bir qismi qo'shib olinib, yaqindan aloqalar o'rnatilgach"
+        },
+        {
+          "kind": "cause",
+          "cause": "To'xtovsiz urushlar",
+          "effect": "Kushon davlati inqirozga yuz tutdi va parchalanib ketdi",
+          "evidence": "To'xtovsiz urushlar oqibatida Kushon davlati inqirozga yuz tutdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Vima Kadfizning pul islohoti",
+          "effect": "Pul islohoti natijasida zarb qilingan tangalarning qadri ortdi",
+          "evidence": "Hukmdor pul is-lohoti o'tkazadi, zarb qilingan tangalar qadri ortadi"
+        },
+        {
+          "kind": "number",
+          "number": "3",
+          "unit": "metall turi",
+          "meaning": "Kushon tangalari zarb qilingan metallar: oltin, kumush va mis",
+          "evidence": "Tangalar oltin, kumush va misdan zarb qilingan"
+        }
+      ]
+    },
+    {
+      "number": 36,
+      "title": "Buyuk Ipak yo'li",
+      "page": 142,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. II asr",
+          "date_label": "mil. avv. II asr",
+          "event": "Buyuk Ipak yo'li qadimgi dunyoda mashhur karvon yo'li sifatida vujudga keldi",
+          "evidence": "II asrda vujudga kelgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. II asr",
+          "date_label": "mil. avv. II asr",
+          "event": "Yo'l «Buyuk meridianal yo'l» deb atalgan",
+          "evidence": "va «Buyuk me-ridianal yo'l» deb atalgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1877",
+          "date_label": "1877-yil",
+          "event": "Nemis geografi F. Rixtgofen yo'lga «Ipak yo'li» nomini bergan",
+          "evidence": "«Ipak yo'li» degan nom 1877-yilda"
+        },
+        {
+          "kind": "date_event",
+          "date": "milodiy XVI asrga qadar",
+          "date_label": "milodiy XVI asrga qadar",
+          "event": "Buyuk Ipak yo'li Sharq bilan G'arb xalqlari o'rtasidagi savdo va madaniy munosabatlarda muhim o'rin tutgan",
+          "evidence": "Milodiy XVI asrga qadar Sharq bilan G'arb xalqlari o'rtasidagi"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. II asr - XVI asr",
+          "date_label": "mil. avv. II asr - XVI asr",
+          "event": "Tayanch konspektda ko'rsatilgan Buyuk Ipak yo'li mavjud bo'lgan davr",
+          "evidence": "Buyuk Ipak yo'li (mil. avv. II asr - XVI asr)"
+        },
+        {
+          "kind": "date_event",
+          "date": "o'n yilcha",
+          "date_label": "o'n yilcha",
+          "event": "Chjan Syan xunnlar qo'lida asirlikda bo'lgan davr",
+          "evidence": "o'n yilcha hibsda bo'ladi"
+        },
+        {
+          "kind": "person",
+          "person": "Chjan Syan",
+          "role": "Xitoy imperatori U-Di yuborgan elchi",
+          "activity": "Xunnlar qo'lida o'n yilcha asirlikda bo'lgan, Farg'ona shaharlarini kashf etib, Xitoyga Farg'ona oti va beda urug'ini olib kelgan",
+          "evidence": "elchi Chjan Syanni ko'ch-manchi xunn qabilalariga"
+        },
+        {
+          "kind": "person",
+          "person": "U-Di",
+          "role": "Xitoy imperatori",
+          "activity": "Chjan Syanni xunnlarga qarshi ittifoqchi va hamkorlar topish uchun jo'natgan, saroyi yaqinida beda ekdirgan",
+          "evidence": "Imperator U-Di o'z saroyi yaqinida beda ektiradi"
+        },
+        {
+          "kind": "person",
+          "person": "F. Rixtgofen",
+          "role": "Nemis geografi",
+          "activity": "1877-yilda Buyuk Ipak yo'liga «Ipak yo'li» nomini bergan",
+          "evidence": "F. Rixtgofen tomonidan berilgan"
+        },
+        {
+          "kind": "term",
+          "term": "Buyuk Ipak yo'li",
+          "definition": "Sharq bilan G'arb xalqlarini bog'lagan karvon yo'li; Sariq dengiz sohilidan O'rtayer dengizi sohillarigacha borgan",
+          "evidence": "U Sariq dengiz sohilidan boshlanib"
+        },
+        {
+          "kind": "term",
+          "term": "Karvon yo'li",
+          "definition": "Xitoyni Markaziy va G'arbiy Osiyo bilan bog'lovchi jahon ahamiyatiga ega yo'l",
+          "evidence": "karvon yo'li o'tadigan bo'ldi"
+        },
+        {
+          "kind": "term",
+          "term": "Xunnlar",
+          "definition": "Xitoyning shimoliy tumanlarini talon-taroj qilgan ko'chmanchi qabila",
+          "evidence": "Xunnlar Xitoyning shimoliy tumanlarini talon-taroj qi-lar edilar"
+        },
+        {
+          "kind": "term",
+          "term": "Beda",
+          "definition": "Chjan Syan Xitoyga olib kelgan urug'; imperator saroyi yaqinida ekilgan",
+          "evidence": "beda urug'idan olib kelgan edi"
+        },
+        {
+          "kind": "place",
+          "place": "Samarqand",
+          "event": "Buyuk Ipak yo'lida joylashgan yirik shahar",
+          "evidence": "Yorkent, Samarqand, Buxoro"
+        },
+        {
+          "kind": "place",
+          "place": "Marv",
+          "event": "Buyuk Ipak yo'lida joylashgan shaharlardan biri, karvon yo'lining muhim manzili",
+          "evidence": "Buxoro, Termiz, Marv va boshqa bir qancha shaharlar"
+        },
+        {
+          "kind": "place",
+          "place": "Farg'ona vodiysi",
+          "event": "Chjan Syan asirlikdan qochib kelgan vodiy; uning shaharlari Farg'ona davlatiga qarashli bo'lgan",
+          "evidence": "U asirlikdan qochib Farg'ona vodiysiga keladi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xunnlarning Xitoyning shimoliy tumanlarini talon-taroj qilishi",
+          "effect": "Imperator U-Di Chjan Syanni ittifoqchi va hamkorlar topish uchun jo'natdi",
+          "evidence": "qarshi kurashda ittifoqchi va hamkorlar topish uchun jo'natadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Chjan Syan yurgan yo'l",
+          "effect": "Xitoyni Markaziy va G'arbiy Osiyo bilan bog'lovchi jahon ahamiyatiga ega karvon yo'li vujudga keldi",
+          "evidence": "Chjan Syan yurgan yo'l bo'ylab Xitoy mamlakatini Markaziy va G'arbiy Osiyo bilan bog'lovchi"
+        },
+        {
+          "kind": "cause",
+          "cause": "O'rta Osiyoning yo'lning asosiy yo'nalishlari kesib o'tadigan markazida joylashganligi",
+          "effect": "Bu yerga turli mamlakatlardan savdogarlar, hunarmandlar, olimlar va musiqachilar tashrif buyurar edilar",
+          "evidence": "O'rta Osiyo bu yo'lning asosiy yo'nalishlari kesib o'tadigan markazida joylashgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "O'zaro hamkorlik va madaniyatlar boyitilishi",
+          "effect": "Tinchlik va taraqqiyot asosi tashkil etilgan",
+          "evidence": "Bu o'zaro hamkorlik va madaniyatlar boyitilishi tarixi bo'lib"
+        },
+        {
+          "kind": "number",
+          "number": "12 ming",
+          "unit": "kilometr",
+          "meaning": "Buyuk Ipak yo'lining Sariq dengiz sohilidan O'rtayer dengizi sohillarigacha bo'lgan uzunligi",
+          "evidence": "Buyuk Ipak yo'li 12 ming kilometrgacha uzunlikda bo'lgan"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,791 @@
+{
+ "chapter": "UCHINCHI BOB. O‘ZBEKISTON IKKINCHI JAHON URUSHI YILLARIDA (1939 – 1945-yillar)",
+ "topics": [
+  {
+   "number": 16,
+   "title": "16-§. Ikkinchi jahon urushining boshlanishi hamda O‘zbekistonning urush girdobiga tortilishi",
+   "page": 87,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1939-yil 23-avgust",
+     "date_label": "1939-yil 23-avgust",
+     "event": "Moskvada SSSR va Germaniya o‘rtasida 10 yil muddatga hujum qilmaslik to‘g‘risida bitim imzolanadi",
+     "evidence": "1939-yil 23-avgustda I.V.Stalinning taklifi bilan Moskvada SSSR va Ger-"
+    },
+    {
+     "kind": "date_event",
+     "date": "1939-yil 1-sentyabr",
+     "date_label": "1939-yil 1-sentyabr",
+     "event": "Germaniya davlati Polshaga hujum qilib, shu hujum bilan Ikkinchi jahon urushi boshlanadi",
+     "evidence": "1939-yil 1-sentyabrda Adolf Gitler boshchiligidagi Germaniya davlati Pol- shaga hujum qildi. Bu hujum bilan Ikkinchi jahon urushi boshlandi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1939-yil 3-sentyabr",
+     "date_label": "1939-yil 3-sentyabr",
+     "event": "Fransiya va Angliya davlatlari Germaniyaga qarshi urush e’lon qiladi",
+     "evidence": "Fransiya va Angliya davlatlari Germaniyaga qarshi urush e’lon qildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1939-yil 19-sentyabr",
+     "date_label": "1939-yil 19-sentyabr",
+     "event": "Qizil armiya qo‘shinlari Vilnyus shahrini bosib oladi",
+     "evidence": "19-sentyabr kuni qizil armiya qo‘shinlari Vilnyusni bosib oldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1939-yil 30-noyabr – 1940-yil 12-mart",
+     "date_label": "1939-yil 30-noyabr – 1940-yil 12-mart",
+     "event": "Sovet-fin urushi bo‘lib o‘tdi, unda o‘zbekistonlik jangchilar ham qatnashdilar",
+     "evidence": "1939-yil 30-noyabr – 1940-yil 12-martda sovet-fin urushi bo‘lib o‘tdi. Unda o‘zbekistonliklar ham qatnashdilar."
+    },
+    {
+     "kind": "date_event",
+     "date": "1939-yil 14-dekabr",
+     "date_label": "1939-yil 14-dekabr",
+     "event": "Millatlar Ligasi SSSRni agressiyachi mamlakat deb e’lon qilib, uni a’zoligidan chiqaradi",
+     "evidence": "1939-yil 14-dekabrda Millatlar Ligasi SSSRni agressiyachi mamlakat deb e’lon qilib, uni Liga a’zoligidan chiqardi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1940-yil iyul",
+     "date_label": "1940-yil iyul",
+     "event": "Qizil armiya Latviya, Litva va Estoniya hududlarini bosib oladi",
+     "evidence": "1940-yil iyulda qizil armiya Latviya, Litva, Estoniya hududlarini bosib oldi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1941-yil 22-iyun",
+     "date_label": "1941-yil 22-iyun",
+     "event": "Gitlerchilar Germaniyasi hujum qilmaslik shartnomasiga qaramay to‘satdan SSSRga bostirib kiradi",
+     "evidence": "1941-yil 22-iyun kuni tong saharda gitlerchilar Germaniyasi o‘zaro hujum qilmaslik haqidagi shartnoma bo‘lishiga qaramay, to‘satdan SSSRga bostirib kirdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1941-yil 30-iyun",
+     "date_label": "1941-yil 30-iyun",
+     "event": "I.V.Stalin raisligida Davlat Mudofaa Qo‘mitasi tuzilib, hokimiyat uning qo‘liga o‘tadi",
+     "evidence": "1941-yil 30-iyunda SSSR XKS raisi va VKP(b) MK Bosh sekretari I.V.Stalin raisligida Davlat Mudofaa Qo‘mitasi (DMQ)ning tuzilishi bilan"
+    },
+    {
+     "kind": "person",
+     "person": "I.V.Stalin",
+     "role": "SSSR davlat va partiya rahbari, VKP(b) MK Bosh sekretari va XKS raisi",
+     "activity": "19-iyulda SSSR Mudofaa xalq komissari, 8-avgustda Qurolli kuchlar Oliy Bosh qo‘mondoni lavozimlarini egalladi",
+     "evidence": "I.V.Stalin 19-iyulda SSSR Mudofaa xalq komissari, 8-avgustda SSSR Qurolli kuchlari Oliy Bosh qo‘mondoni lavozimini egalladi."
+    },
+    {
+     "kind": "person",
+     "person": "Adolf Gitler",
+     "role": "Fashistlar Germaniyasi davlati rahbari, Ikkinchi jahon urushini boshlab bergan shaxs",
+     "activity": "1939-yil 1-sentyabrda boshchiligidagi Germaniya davlati Polshaga hujum qildi",
+     "evidence": "Adolf Gitler boshchiligidagi Germaniya davlati Pol- shaga hujum qildi"
+    },
+    {
+     "kind": "person",
+     "person": "Usmon Yusupov",
+     "role": "Urush yillarida O‘zbekiston Kompartiyasi Markaziy Komitetining birinchi sekretari",
+     "activity": "O‘zbekistonliklarni fashizmga qarshi kurashga safarbar qilishga bosh-qosh bo‘ldi",
+     "evidence": "birinchi sekretari Usmon Yusupov o‘zbekistonliklarni fashizmga qarshi kurashga safarbar qilishga bosh-qosh"
+    },
+    {
+     "kind": "person",
+     "person": "Tamaraxonim",
+     "role": "Mashhur o‘zbek raqqosasi, urush yillarida mudofaa fondiga hissa qo‘shgan san’atkor",
+     "activity": "Mudofaa fondiga 50 ming so‘m pul topshirgan",
+     "evidence": "mashhur o‘zbek raqqosasi Tamaraxonim mudofaa fondiga 50 ming so‘m topshirdi."
+    },
+    {
+     "kind": "term",
+     "term": "Molotov-Ribbentrop pakti",
+     "definition": "1939-yil 23-avgustda SSSR va Germaniya o‘rtasida imzolangan, maxfiy qismida ta’sir doiralari belgilangan bitim",
+     "evidence": "Bu bitim tarixda Molotov-Ribbentrop pakti nomi bilan mashhur"
+    },
+    {
+     "kind": "term",
+     "term": "DMQ",
+     "definition": "Davlat Mudofaa Qo‘mitasi: urush yillarida butun siyosiy, harbiy va xo‘jalik hokimiyatini qo‘lida to‘plagan organ",
+     "evidence": "Davlat Mudofaa Qo‘mitasi (DMQ)ning tuzilishi bilan mamlakatdagi butun siyosiy, harbiy va xo‘jalik hokimiyati uning"
+    },
+    {
+     "kind": "term",
+     "term": "Mudofaa jamg‘armasi",
+     "definition": "Urush yillarida aholi pul, obligatsiya, qimmatbaho boylik va buyumlar topshirgan maxsus jamg‘arma",
+     "evidence": "mudofaa jamg‘armasini tashkil etish harakatida faol ishtirok etdilar"
+    },
+    {
+     "kind": "term",
+     "term": "Harbiy holat",
+     "definition": "Urush boshlangan kuni mamlakatda joriy etilganligi haqida farmon e’lon qilingan alohida huquqiy tartib",
+     "evidence": "O‘sha kuni mamlakatda harbiy holat joriy etilganligi haqida farmon e’lon qilindi."
+    },
+    {
+     "kind": "place",
+     "place": "Brest-Litovsk",
+     "event": "1939-yil 22-sentyabrda sovet va nemis qo‘shinlarining qo‘shma paradi o‘tkazilgan shahar",
+     "evidence": "22-sentyabrda Brest-Litovskda Pol - shani tor-mor keltirish operatsiyasining tugatilishi sharafiga sovet va nemis qo‘shinlarining"
+    },
+    {
+     "kind": "place",
+     "place": "Toshkent aviatsiya zavodi",
+     "event": "1941-yil oktyabrda Ximki shahridan ko‘chirilgan zavod asosida barpo etilib, frontga qiruvchi samolyotlar ishlab chiqargan",
+     "evidence": "Ximki shahridan ko‘chirib keltirilgan zavod asosida 1941-yil oktyabrda Toshkent aviatsiya zavodi bar- po etildi."
+    },
+    {
+     "kind": "cause",
+     "cause": "1939-yil 23-avgustdagi bitimning maxfiy qismida ta’sir doiralari belgilanishi",
+     "effect": "Polsha, Boltiqbo‘yi va Finlyandiyada Sovet Ittifoqining ta’sir doirasi kuchaytirildi",
+     "evidence": "Bitimning maxfiy qismida ikkala davlatning bo‘lajak chegaralari va ta’sir doirasi belgilab olindi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Germaniya davlatining 1939-yil 1-sentyabrda Polshaga hujum qilishi",
+     "effect": "Ikkinchi jahon urushi boshlandi, Fransiya va Angliya Germaniyaga qarshi urush e’lon qildi",
+     "evidence": "Bu hujum bilan Ikkinchi jahon urushi boshlandi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Nemis qo‘shinlarining mamlakat ichkarisiga shiddat bilan harakatlanishi",
+     "effect": "Front yaqinidagi hududlardan aholi va sanoat korxonalarini Sharqqa ko‘chirish boshlandi",
+     "evidence": "Front yaqinidagi shahar va qishloqlardan aholi, sanoat korxonalari, muassasalar va boshqa moddiy boy- liklarni Sharqqa ko‘chirish boshlandi."
+    },
+    {
+     "kind": "number",
+     "number": "10",
+     "unit": "yil",
+     "meaning": "SSSR va Germaniya o‘rtasidagi hujum qilmaslik bitimining amal qilish muddati",
+     "evidence": "SSSR va Ger- maniya o‘rtasida 10 yil muddatga hujum qilmaslik to‘g‘risida bitim imzolan -"
+    }
+   ]
+  },
+  {
+   "number": 17,
+   "title": "17-§. O‘zbekiston sanoati va qishloq xo‘jaligi front xizmatida",
+   "page": 91,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1941-yil sentyabr – dekabr",
+     "date_label": "1941-yil sentyabr – dekabr",
+     "event": "Respublika hukumati xalq xo‘jaligini harbiy izga solish bo‘yicha aniq vazifalarni belgilab berdi",
+     "evidence": "1941-yil sentyabr – dekabr oylarida respublika hukumati xalq xo‘jaligini harbiy izga solish"
+    },
+    {
+     "kind": "date_event",
+     "date": "1941-yil dekabr",
+     "date_label": "1941-yil dekabr",
+     "event": "Toshkentdagi 63 ta va respublika hududidagi 230 ta sanoat korxonasi mudofaa mahsulotlari ishlab chiqara boshladi",
+     "evidence": "1941-yil dekabriga kelib Toshkentdagi 63 ta, respublika hududidagi 230 ta sanoat korxonalari mudofaa mahsulotarini ishlab chiqara boshladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1941-yil 14-dekabr",
+     "date_label": "1941-yil 14-dekabr",
+     "event": "Harbiy korxonalar xodimlari urushga safarbar qilinganlar qatoriga qo‘shildi va korxonalarga biriktirildi",
+     "evidence": "1941-yil 14-dekabrdan harbiy korxonalar xodimlari urushga safarbar qi- linganlar qatoriga qo‘shildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1942-yil",
+     "date_label": "1942-yil",
+     "event": "Respublikada yangi sanoat mahsulotini ishlab chiqarish 2 baravar ko‘paydi",
+     "evidence": "O‘zbekistonda 1942-yili yangi sanoat mahsulotini ishlab chiqarish 2 bara - var ko‘paydi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1943-yil",
+     "date_label": "1943-yil",
+     "event": "Sanoatning respublika xalq xo‘jaligidagi salmog‘i 75 foizgacha ortadi",
+     "evidence": "1943-yilda esa sanoatning respublika xalq xo‘jaligidagi salmog‘i 75 foizgacha ortdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1944-yil mart",
+     "date_label": "1944-yil mart",
+     "event": "Bekobodda O‘zbekiston metallurgiya zavodining birinchi navbati ishga tushirildi",
+     "evidence": "1944-yil martda Bekobodda O‘rta Osiyoda dastlabki zamonaviy metallurgiya kombinati"
+    },
+    {
+     "kind": "date_event",
+     "date": "1941-yil",
+     "date_label": "1941-yil",
+     "event": "Dehqonlar davlatga 1,6 mln tonnadan ziyod paxta topshirdi",
+     "evidence": "1941-yili davlatga 1,6 mln tonnadan ziyod paxta topshirildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1942-yil bahori",
+     "date_label": "1942-yil bahori",
+     "event": "Qo‘shimcha 220 500 gektar yangi yer o‘zlashtirilib, don va texnik ekinlar maydoni kengaytirildi",
+     "evidence": "1942-yil bahorida qo‘shimcha 220  500 gektar yer o‘zlashtirildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1943–1944-yillar",
+     "date_label": "1943–1944-yillar",
+     "event": "Kavkaz xalqlari, qrim tatarlari va Volgabo‘yi nemislari mamlakatning sharqiy hududlariga ko‘chirildi",
+     "evidence": "1943–1944-yillarda zudlik bilan mamlakatning sharqiy hududlariga ko‘chirilib yuborildi"
+    },
+    {
+     "kind": "person",
+     "person": "Shoahmad Shomahmudov",
+     "role": "Toshkentlik oddiy temirchi, urush yillarida ko‘p bolali oila boshlig‘i",
+     "activity": "Turli millatga mansub 15 bolani o‘z farzandiday ardoqlab, voyaga yetkazdi",
+     "evidence": "Turli millatlarga mansub bo‘lgan 15 bolani farzandlikka olgan temirchi usta Shoahmad Shomahmudov va uning xotini Bahri Akramovalar oilasi"
+    },
+    {
+     "kind": "person",
+     "person": "Hamid Samadov",
+     "role": "Kattaqo‘rg‘onlik urush nogironi, ko‘p bolali oila boshlig‘i",
+     "activity": "13 bolani o‘z tarbiyasiga olib, mehr bilan voyaga yetkazdi",
+     "evidence": "kattaqo‘rg‘onlik urush nogironi Hamid Samadov 13 bolani"
+    },
+    {
+     "kind": "person",
+     "person": "Fotima Qosimova",
+     "role": "Samarqandlik kolxozchi ayol, ko‘p bolali oila onasi",
+     "activity": "10 bolani o‘z quchog‘iga olib, mehr qo‘ri bilan tarbiyaladi",
+     "evidence": "samarqandlik kolxozchi ayol Fotima Qosimova 10 bolani olib tarbiyaladi"
+    },
+    {
+     "kind": "person",
+     "person": "Hasan Islomov",
+     "role": "G‘arbiy frontga oziq-ovqat va kiyim-kechak olib borgan delegatsiya rahbari",
+     "activity": "Delegatsiya tarkibida front ortidagi yordam ishlariga boshchilik qildi",
+     "evidence": "delegatsiya rahbari Hasan Islomov"
+    },
+    {
+     "kind": "term",
+     "term": "Agressiya",
+     "definition": "Bosqinchilikdan iborat bo‘lgan, tajovuzkorlikka asoslangan harakat",
+     "evidence": "Agressiya – bosqinchilikdan iborat bo‘lgan, tajovuzkorlikka asoslangan harakat."
+    },
+    {
+     "kind": "term",
+     "term": "Evakuatsiya",
+     "definition": "Odamlar, tashkilot va korxonalarni urush xavfidan saqlash maqsadida bir joydan boshqasiga ko‘chirish",
+     "evidence": "Evakuatsiya – (lot. – bo‘shatmoq, xoli qilmoq) odamlar, tashkilot, kor - xonalarni"
+    },
+    {
+     "kind": "term",
+     "term": "Kartochka tizimi",
+     "definition": "Shaharlarda oziq-ovqatni belgilangan norma bo‘yicha berish tartibi: ishchilarga kuniga 400-500 gramm non",
+     "evidence": "Shaharlarda oziq-ovqatga kartochka tizimi tashkil etilib, ishchi va xizmatchilarga kuniga 400-500 grammdan"
+    },
+    {
+     "kind": "term",
+     "term": "Payok",
+     "definition": "Rahbar xodimlarni maxsus oziq-ovqat bilan ta’minlash tartibi",
+     "evidence": "Rahbar xodimlar esa maxsus oziq-ovqat (payok) bilan ta’minlab turildi."
+    },
+    {
+     "kind": "place",
+     "place": "Farhod GES",
+     "event": "Urush yillarida qurilgan yirik gidroelektr stansiyalardan biri",
+     "evidence": "7 ta yirik gid - roelektr stansiyasi, jumladan Oqqovoq, Qibray, Salor va Farhod GESlari qurildi"
+    },
+    {
+     "kind": "place",
+     "place": "Yuqori Chirchiq kanali",
+     "event": "Kolxozchi dehqonlar va butun O‘zbekiston mehnatkashlari kuchi bilan qurilgan kanallardan biri",
+     "evidence": "Yuqori Chirchiq, Shimoliy Farg‘ona, So‘x-Shohimardon, Uchqo‘rg‘on kanallari, Kosonsoy va Rudasoy suv omborlari qurildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mehnat intizomini buzib, korxonadan o‘zboshimchalik bilan ketib qolish",
+     "effect": "Bunday xodimlarga 5 yildan 8 yilgacha qamoq jazosi belgilandi",
+     "evidence": "O‘zboshimchalik bilan korxonadan ketib qolganlarga 5 yildan 8 yilgacha qamoq jazosi belgilandi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Fashistlar bosib olgan hududlardan aholining ko‘chirib keltirilishi",
+     "effect": "O‘zbekistonga 1 mln nafardan ortiq kishi, jumladan 200 000 bola evakuatsiya qilindi",
+     "evidence": "O‘zbekistonga 1 mln nafardan ortiq kishi, jumladan, 200 000 bola evakuatsiya qi - lindi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Kolxozlarda majburiy ish kuni normasining 1,5 marta oshirilishi",
+     "effect": "Normani bajara olmagan kolxozchilar shafqatsiz jazolandi, qishloqlarda ocharchilik kuchaydi",
+     "evidence": "normasi 1,5 marta oshirilgan. Belgilangan mehnat normasini bajara olmagan kolxozchilar shafqatsiz jazolangan."
+    },
+    {
+     "kind": "number",
+     "number": "4 mln",
+     "unit": "tonna",
+     "meaning": "Urush yillarida davlatga topshirilgan paxta xomashyosining umumiy miqdori",
+     "evidence": "4 mln tonnadan ziyod paxta xomashyosi, 82 mln pud don"
+    },
+    {
+     "kind": "number",
+     "number": "30",
+     "unit": "ta gospital",
+     "meaning": "Respublikaga urush davrida joylashtirilgan harbiy gospitallar soni",
+     "evidence": "Respublikaga urush davrida 30 dan ortiq harbiy gospital joylashtirildi."
+    }
+   ]
+  },
+  {
+   "number": 18,
+   "title": "18-§. O‘zbekistonliklarning frontdagi jasorati va qahramonliklari",
+   "page": 95,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1941-yil yoz",
+     "date_label": "1941-yil yoz",
+     "event": "Samarqandda 19-O‘zbek tog‘-otliq diviziyasi qayta tuzilib, 221-motorlashtirilgan diviziya tashkil qilindi",
+     "evidence": "1941-yil yozida Samarqandda 19-O‘zbek tog‘-otliq diviziyasi qayta tuzilib"
+    },
+    {
+     "kind": "date_event",
+     "date": "1941-yil 13-noyabr",
+     "date_label": "1941-yil 13-noyabr",
+     "event": "Davlat Mudofaa Komitetining milliy harbiy qo‘shilmalar tashkil etish to‘g‘risidagi qarori chiqdi",
+     "evidence": "1941-yil 13-noyabrda Davlat Mudofaa Komitetining “Milliy harbiy qo‘shilmalar tashkil etish to‘g‘risida”gi qarori chiqib"
+    },
+    {
+     "kind": "date_event",
+     "date": "1942-yil 27-mart",
+     "date_label": "1942-yil 27-mart",
+     "event": "26 nafar ofitser va oddiy askarga Sovet Ittifoqi Qahramoni unvoni berildi",
+     "evidence": "1942-yil 27-martda SSSR Oliy Soveti Prezidiu - mining farmoni bilan 26 nafar ofitser va oddiy askarlarga Sovet Ittifoqi Qahramoni yuksak unvoni berildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1945-yil 26-mart",
+     "date_label": "1945-yil 26-mart",
+     "event": "Sobir Rahimov Polshadagi Gdansk shahrini shturm qilish vaqtida halok bo‘ldi",
+     "evidence": "S.Rahimov 1945-yil 26-mart kuni Polshadagi Gdansk (Dansig) shahrini shturm qilish vaqtida halok bo‘lgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "1943-yil yoz",
+     "date_label": "1943-yil yoz",
+     "event": "O‘zbekistonlik jangchilar Kursk va Oryol rayonidagi janglarda, Dneprni kechib o‘tishda oldingi saflarda bo‘lishdi",
+     "evidence": "O‘zbekistonlik jangchilar 1943-yil yozida bo‘lgan Kursk va Oryol rayo - nidagi janglarda"
+    },
+    {
+     "kind": "date_event",
+     "date": "1945-yil 9-may",
+     "date_label": "1945-yil 9-may",
+     "event": "Gitlerchilar Germaniyasi butunlay taslim bo‘ldi",
+     "evidence": "1945-yil 9-mayda gitlerchilar Germaniyasi butunlay tas - lim bo‘ldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1945-yil avgust",
+     "date_label": "1945-yil avgust",
+     "event": "Yaponiyaga qarshi urush sovet qo‘shinlarining hujumi bilan boshlandi",
+     "evidence": "Yaponiyaga qarshi urush 1945-yil avgustda sovet qo‘shinlarining hujumi bilan boshlandi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1945-yil 2-sentyabr",
+     "date_label": "1945-yil 2-sentyabr",
+     "event": "Yaponiya so‘zsiz taslim bo‘lganligi haqidagi hujjatga qo‘l qo‘yilib, urush yakunlandi",
+     "evidence": "Yaponiya 1945-yil 2-sentyabrda so‘zsiz taslim bo‘lganligi haqidagi hujjatga qo‘l qo‘ydi. Shu tariqa Ikkinchi jahon urushiga yakun yasaldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1999-yil may",
+     "date_label": "1999-yil may",
+     "event": "Toshkentda Xotira va Qadrlash maydoni barpo etilib, “Motamsaro ona” haykali o‘rnatildi",
+     "evidence": "Toshkentda 1999-yil may oyida Xotira va Qadrlash maydoni barpo etilib, unda “Motamsaro ona” haykali"
+    },
+    {
+     "kind": "person",
+     "person": "Zebo G‘aniyeva",
+     "role": "Moskva mudofaasida jang qilgan o‘zbek snayperchisi",
+     "activity": "28 nafar fashistni otib o‘ldirib, mardligi uchun Qizil Bayroq ordeni bilan mukofotlandi",
+     "evidence": "28 nafar fashistni otib o‘ldirgan snayperchi Zebo G‘aniyeva ham bo‘lib, u mardligi va jasorati uchun Qizil Bayroq ordeni bilan mukofotlandi."
+    },
+    {
+     "kind": "person",
+     "person": "Qo‘chqor Turdiyev",
+     "role": "Andijonlik jangchi, birinchi o‘zbek Sovet Ittifoqi Qahramoni",
+     "activity": "1942-yil 27-martdagi farmon bilan Sovet Ittifoqi Qahramoni yuksak unvoniga sazovor bo‘ldi",
+     "evidence": "birinchi o‘zbek qahramoni andijonlik Qo‘chqor Turdiyev ham bor edi."
+    },
+    {
+     "kind": "person",
+     "person": "Sobir Rahimov",
+     "role": "Toshkentda tuzilgan diviziya qo‘mondoni, gvardiyachi general-mayor",
+     "activity": "Kavkaz janglarida 3 oy ichida dushmanning 8 000 askar va ofitserini qirib tashladi",
+     "evidence": "Toshkentda tuzilgan Sobir Rahimov qo‘mondonligidagi diviziya 3 oy davom etgan janglarda dushmanning 8 000 nafar askar va ofitserini qirib tashladi."
+    },
+    {
+     "kind": "person",
+     "person": "Sulton Jo‘ra",
+     "role": "Iste’dodli o‘zbek shoiri, frontda halok bo‘lgan jangchi",
+     "activity": "1943-yil noyabrda Gomel atrofidagi jangda 33 yoshida mardlarcha halok bo‘ldi",
+     "evidence": "Gomel shahri atrofida iste’dodli o‘zbek shoiri Sulton Jo‘ra 33 yoshida mardlarcha halok bo‘ldi."
+    },
+    {
+     "kind": "term",
+     "term": "Gimnastyorka",
+     "definition": "Tik yoki qaytarma yoqali, ustidan kamar bog‘lanadigan ust ko‘ylak, ya’ni rasmiy harbiy kiyim",
+     "evidence": "Gimnastyorka – Tik yoki qaytarma yoqali, ustidan kamar bog‘lanadigan ust ko‘ylak (rasmiy harbiy kiyim)."
+    },
+    {
+     "kind": "term",
+     "term": "Sanitar poyezd",
+     "definition": "Tibbiy xizmat ko‘rsatish xodimlari va uskunalari bilan ta’minlangan poyezd",
+     "evidence": "Sanitar poyezd – tibbiy xizmat ko‘rsatish xodimlari va uskunaliri bilan ta’minlangan poyezd."
+    },
+    {
+     "kind": "term",
+     "term": "Turkiston legioni",
+     "definition": "1942-yil martda Mustafo Cho‘qay va Vali Qayumxon tashabbusi bilan asos solingan harbiy tuzilma",
+     "evidence": "Mustafo Cho‘qay va toshkentlik o‘zbek Vali Qayumxon tashabbusi bilan 1942-yil martda Turkiston legioniga asos solingan."
+    },
+    {
+     "kind": "term",
+     "term": "Milliy Turkiston Birligi Qo‘mitasi",
+     "definition": "Turkiston legionini siyosiy va mafkuraviy jihatdan boshqarish yuklatilgan qo‘mita",
+     "evidence": "Legionni siyosiy va mafkuraviy jihatdan boshqarish Milliy Turkiston Birligi Qo‘mitasiga yuklatilgan."
+    },
+    {
+     "kind": "place",
+     "place": "Brest qal’asi",
+     "event": "O‘zbekistonlik jangchilar mardlik va matonat namunalari ko‘rsatgan mudofaa janglaridan biri",
+     "evidence": "jangchilar Brest qal’asi, Kiyev, Smolensk, Odessa, Se - vastopol, Leningrad, Moskva va boshqa ko‘pgina shaharlar mudofaasida mardlik va matonat namunalarini ko‘rsatdilar."
+    },
+    {
+     "kind": "place",
+     "place": "Dnepr daryosi",
+     "event": "Kechib o‘tish janglarida qahramonlik ko‘rsatgan 26 nafar o‘zbek yigitiga Qahramon unvoni berilgan joy",
+     "evidence": "Dnepr uchun olib borilgan janglarda qahramonlik ko‘rsatgani uchun 26 nafar o‘zbek yigitiga Sovet Ittifoqi Qahramoni unvoni berildi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Urushning dastlabki bosqichlarida qurol-yarog‘ va o‘q-dorining mutlaqo yetishmasligi",
+     "effect": "O‘zbek jangchilarining hammasida ham hatto oddiy miltiq bo‘lmagan",
+     "evidence": "O‘zbek jangchilarining hammasida ham urushning dastlabki oylarida hatto oddiy miltiq (vintovka) ham bo‘lmagan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Stalingrad jangi",
+     "effect": "Ikkinchi jahon urushida tub burilishni boshlab berdi",
+     "evidence": "Stalingrad jangi Ikkinchi jahon urushida tub burilishni boshlab berdi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Manjuriyadagi yapon qo‘shinlarining sovet armiyasi tomonidan tor-mor qilinishi",
+     "effect": "Yaponiya 1945-yil 2-sentyabrda taslim bo‘lib, Ikkinchi jahon urushi yakunlandi",
+     "evidence": "Manjuriyadagi yapon qo‘shinlari sovet armiyasi tomonidan tor-mor qilingach, Yaponiya 1945-yil 2-sentyabrda so‘zsiz taslim bo‘lganligi haqidagi hujjatga qo‘l qo‘ydi."
+    },
+    {
+     "kind": "number",
+     "number": "280",
+     "unit": "nafar jangchi",
+     "meaning": "Sovet Ittifoqi Qahramoni unvoniga sazovor bo‘lgan o‘zbekistonlik jangchilar soni, ulardan 75 nafari o‘zbek",
+     "evidence": "O‘zbekistonlik 280 nafar jangchi Sovet Ittifoqi Qahramoni unvoniga sazovor bo‘ldi, ulardan 75 nafari o‘zbek edi."
+    }
+   ]
+  },
+  {
+   "number": 19,
+   "title": "19-§. O‘zbekiston fani va madaniyati – g‘alaba uchun xizmatda",
+   "page": 101,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1943-yil sentyabr",
+     "date_label": "1943-yil sentyabr",
+     "event": "I.V.Stalinning qarori asosida O‘zFAN negizida Fanlar akademiyasini tashkil etish yo‘lga qo‘yildi",
+     "evidence": "SSSR Xalq Komissarlari Soveti raisi I.V.Stalinning 1943-yil sentyabrdagi qarori asosida"
+    },
+    {
+     "kind": "date_event",
+     "date": "1943-yil 4-noyabr",
+     "date_label": "1943-yil 4-noyabr",
+     "event": "Toshkentda O‘zbekiston SSR Fanlar akademiyasi tashkil topdi",
+     "evidence": "1943- yil 4-noyabrda, Ikkinchi jahon urushining eng qizg‘in pallasida, Toshkentda O‘zbekiston SSR Fanlar akademiyasi (O‘zSSR FA) tashkil topdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1941–1945-yillar",
+     "date_label": "Urush yillarida",
+     "event": "San’at ustalari 30 ta konsert brigadasiga bo‘linib, front va gospitallarda chiqish qildi",
+     "evidence": "Urush yillarida O‘zbekiston san’ati ustalari 30 ta konsert brigadalariga bo‘ -"
+    },
+    {
+     "kind": "date_event",
+     "date": "1941–1945-yillar",
+     "date_label": "Urush yillarida",
+     "event": "Fashistlar bosib olgan hududlardan 200 nafardan ortiq taniqli yozuvchi va shoir O‘zbekistonga keldi",
+     "evidence": "fashistlar bosib olgan hududlardan olimlardan tashqari 200 nafardan ortiq taniqli yozuvchi va shoirlar"
+    },
+    {
+     "kind": "date_event",
+     "date": "1941–1945-yillar",
+     "date_label": "Urush yillari",
+     "event": "Toshkent minglab fan, adabiyot va san’at namoyandalari uchun najot beshigi bo‘lib xizmat qildi",
+     "evidence": "Urush yillari O‘zbekiston, xususan, Toshkent shahri minglab fan, adabiyot va san’at namoyandalari uchun najot beshigi bo‘lib xizmat qildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1941–1945-yillar",
+     "date_label": "Urush yillarida",
+     "event": "Respublikaga 31 ta oliy o‘quv yurti va 7 ta harbiy akademiya evakuatsiya qilindi",
+     "evidence": "respublikamizga Moskva, Leningrad, Kiyev, Minsk, Voronej va boshqa shaharlardan 31 ta oliy o‘quv yurti va 7 ta harbiy akademiya evakuatsiya qilindi."
+    },
+    {
+     "kind": "person",
+     "person": "Toshmuhammad Qori-Niyoziy",
+     "role": "O‘zbek matematik olimi (1897–1970), O‘zSSR Fanlar akademiyasining birinchi prezidenti",
+     "activity": "1943-yilda O‘zbekiston SSR Fanlar akademiyasiga prezident qilib saylandi",
+     "evidence": "o‘zbek matematik olimi Toshmuhammad Niyozovich Qori-Niyoziy (1897 – 1970) akademiyaning prezidenti qilib saylandi"
+    },
+    {
+     "kind": "person",
+     "person": "Hamid Olimjon",
+     "role": "O‘zbek shoiri, urush yillarida vatanparvarlik ruhidagi asarlar muallifi",
+     "activity": "“Muqanna” va “O‘zbekiston qilichi” asarlari teatr sahnasida namoyish etildi",
+     "evidence": "Hamid Olimjonning “Muqanna”, Uyg‘un va Izzat Sultonning “Alisher Navoiy”"
+    },
+    {
+     "kind": "person",
+     "person": "Tamaraxonim",
+     "role": "Taniqli o‘zbek raqqosasi, front konsert brigadalari tarkibidagi san’atkor",
+     "activity": "Frontdagi jangchilar va gospitallarda konsert dasturlari bilan chiqish qildi",
+     "evidence": "Front brigadalari tarkibida Tama  raxonim, Halima Nosirova, Sora Eshonto‘  rayeva"
+    },
+    {
+     "kind": "person",
+     "person": "Anna Axmatova",
+     "role": "Fashistlar bosib olgan hududdan O‘zbekistonga kelgan taniqli shoir",
+     "activity": "Toshkentda ijod qilib, respublika adabiy hayotiga jalb etildi",
+     "evidence": "tanqidchilar va adabiyotshunoslardan Anna Axmatova, Aleksey Tolstoy, Vladimir Yan"
+    },
+    {
+     "kind": "person",
+     "person": "G‘afur G‘ulom",
+     "role": "O‘zbek shoiri va yozuvchisi, urush yillari vatanparvarlik asarlari muallifi",
+     "activity": "Asarlarida fashizm kirdikorlarini fosh etib, g‘alabaga ishonchni mustahkamladi",
+     "evidence": "Hamid Olimjon, G‘afur G‘ulom, Abdulla Qahhor, Oybek, Sadriddiy Ayniy"
+    },
+    {
+     "kind": "term",
+     "term": "O‘zFAN",
+     "definition": "SSSR Fanlar akademiyasining O‘zbekiston SSR filiali; 1943-yilda uning negizida O‘zSSR FA tashkil topdi",
+     "evidence": "SSSR FA O‘zbekiston SSR filiali (O‘zFAN) negizida"
+    },
+    {
+     "kind": "term",
+     "term": "Konsert brigadasi",
+     "definition": "San’at ustalaridan tuzilib, frontdagi jangchilar va gospitallarda chiqish qilgan guruh",
+     "evidence": "O‘zbekiston san’ati ustalari 30 ta konsert brigadalariga bo‘ -"
+    },
+    {
+     "kind": "term",
+     "term": "Almanax",
+     "definition": "“Biz g‘alaba qozonamiz” nomli, o‘zbek va ko‘chib kelgan yozuvchilar birgalikda yaratgan to‘plam",
+     "evidence": "“Biz g‘alaba qozonamiz” nomli almanax"
+    },
+    {
+     "kind": "term",
+     "term": "Antologiya",
+     "definition": "“O‘zbekiston shoirlari frontga” nomli she’riy to‘plam",
+     "evidence": "“O‘zbekiston shoirlari frontga” nomli antologiya yaratdilar"
+    },
+    {
+     "kind": "place",
+     "place": "Toshkent",
+     "event": "1943-yilda O‘zSSR Fanlar akademiyasi tashkil topgan, fan va san’at namoyandalari boshpana topgan shahar",
+     "evidence": "Toshkent shahri minglab fan, adabiyot va san’at namoyandalari uchun najot beshigi bo‘lib xizmat qildi"
+    },
+    {
+     "kind": "place",
+     "place": "Leningrad",
+     "event": "Urush yillarida oliy o‘quv yurtlari evakuatsiya qilingan shaharlardan biri",
+     "evidence": "Moskva, Leningrad, Kiyev, Minsk, Voronej va boshqa shaharlardan 31 ta oliy o‘quv yurti"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mudofaa va xalq xo‘jaligi muammolarini hal qilish zarurati",
+     "effect": "Institutlarning ilmiy-tadqiqot ishlari rejasiga muhim o‘zgarishlar kiritildi",
+     "evidence": "Shu maqsadda institutlarning ilmiy-tadqiqot ishlari rejasiga muhim o‘zgarishlar kiritildi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Oliy o‘quv yurtlari va ilmiy institutlarning respublikaga ko‘chirib keltirilishi",
+     "effect": "O‘zbekistondagi oliy o‘quv yurtlari faoliyati Markaz darajasiga yaqinlashdi",
+     "evidence": "O‘zbekistondagi barcha oliy o‘quv yurtlarini butun o‘quv va ilmiy tadqiqotchilik faoliyatini Markaz darajasiga yana ham yaqinlashtirish imkonini berdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mahalliy ilmiy kadrlarning yetishmasligi",
+     "effect": "Ko‘chirib keltirilgan olimlar mahalliy ilmiy kadrlar tayyorlashga yordam berdi",
+     "evidence": "mahalliy ilmiy kadrlar tayyorlashga yordam bergan edilar"
+    },
+    {
+     "kind": "number",
+     "number": "35 000",
+     "unit": "ta konsert",
+     "meaning": "Urush yillarida frontdagi jangchilarga ko‘rsatilgan konsertlar soni",
+     "evidence": "frontdagi jangchilarga 35  000 ta va gospitallarda 26  000 ta konsert ko‘rsat"
+    },
+    {
+     "kind": "number",
+     "number": "375",
+     "unit": "nafar olim",
+     "meaning": "Toshkentga kelgan taniqli ilmiy xodimlar soni",
+     "evidence": "Toshkentning o‘ziga mamlakatning taniqli ilmiy xodimlaridan 375 nafar kishi kelgan"
+    }
+   ]
+  },
+  {
+   "number": 20,
+   "title": "20-§. O‘zbekiston xalq xo‘jaligining urushdan keyingi ahvoli",
+   "page": 105,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1945-yil oxiri",
+     "date_label": "1945-yil oxiri",
+     "event": "Mashinasozlik sanoati qishloq xo‘jaligi va irrigatsiya ehtiyojlari uchun mashina va uskunalar ishlab chiqarishga o‘tkazildi",
+     "evidence": "1945-yil oxiriga kelib O‘zbekistonning mashinasozlik sanoati qishloq xo‘jaligi va irrigatsiya ehtiyojlari uchun mashina va uskunalar ishlab chiqarishga o‘tkazildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1946-yil",
+     "date_label": "1946-yil",
+     "event": "O‘zbekiston metallurgiya zavodida yangi prokat sexi ishga tushirildi",
+     "evidence": "O‘zbekiston metallurgiya zavodida 1946-yili yangi prokat sexi ishga tushirildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1946-yil 5-fevral",
+     "date_label": "1946-yil 5-fevral",
+     "event": "SSSR hukumati paxtachilikni tiklash va rivojlantirish rejasi to‘g‘risida qaror qabul qildi",
+     "evidence": "1946-yil 5-fevralda SSSR hukumati “1946–1953-yillarda O‘zbekistonda paxtachilik -ni tiklash va yanada rivojlantirish rejasi va tadbirlari to‘g‘risida” qaror qabul qildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1947-yil dekabr",
+     "date_label": "1947-yil dekabr",
+     "event": "Oziq-ovqat va sanoat tovarlariga kartochka tizimi bekor qilindi",
+     "evidence": "1947-yil dekabrda mamlakatda oziq-ovqat va sanoat tovarlariga kartochka tizimi bekor qilindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1948-yil",
+     "date_label": "1948-yil",
+     "event": "“Tashselmash” zavodi paxta terish mashinalarining dastlabki partiyasini ishlab chiqardi",
+     "evidence": "1948-yili “Tashselmash” zavodi paxta terish mashinalarining dastlabki partiyasini ishlab chiqardi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1956-yil 6-avgust",
+     "date_label": "1956-yil 6-avgust",
+     "event": "Mirzacho‘lning qo‘riq yerlarini sug‘orish to‘g‘risida qaror qabul qilindi",
+     "evidence": "1956-yil 6-avgustda “Paxta yetishtirishni ko‘paytirmoq uchun O‘zbekiston SSR va Qozog‘iston SSRdagi Mirzacho‘lning qo‘riq yerlarini sug‘orish to‘g‘risida”gi qarori qabul qilindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1955–1959-yillar",
+     "date_label": "1955–1959-yillar",
+     "event": "O‘zbekistonda 160 000 gektardan ziyod yangi yer o‘zlashtirildi",
+     "evidence": "1955 – 1959-yillar davomida O‘zbekistonda 160 000 gektardan ziyodroq yangi yer o‘zlashtirildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1961-yil",
+     "date_label": "1961-yil",
+     "event": "Mirzacho‘l shaharchasi Guliston shahriga aylantirildi",
+     "evidence": "1961-yil Mirzacho‘l shaharchasi Guliston shahriga aylantirildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1969-yil",
+     "date_label": "1969-yil",
+     "event": "“Tashavtomash” zavodi bazasida Toshkent traktor zavodi (TTZ) barpo etildi",
+     "evidence": "Shu zavod bazasida 1969-yili Toshkent traktor zavodi (TTZ) barpo etildi."
+    },
+    {
+     "kind": "term",
+     "term": "Prokat sexi",
+     "definition": "Aylanuvchi jo‘valar orasidan siqib o‘tkazish yo‘li bilan metall mahsulotlari ishlab chiqarish sexi",
+     "evidence": "Prokat sexi – aylanuvchi ikki jo‘va (val) orasidan siqib o‘tkazish yo‘li bilan"
+    },
+    {
+     "kind": "term",
+     "term": "Monokultura",
+     "definition": "Almashlab ekishga amal qilmasdan, dalada faqat bir xil ekinni muttasil yetishtirish",
+     "evidence": "Monokultura – almashlab ekishga amal qilmagan holda dalada faqat bir xil ekinni muttasil yetishtirish."
+    },
+    {
+     "kind": "term",
+     "term": "Paxta monokulturasi",
+     "definition": "Respublikada boshqa ekinlarni siqib chiqarib, faqat paxta yetishtirishga o‘tilishi",
+     "evidence": "O‘zbekistonda paxta monokulturasini uzil-kesil joriy qi- lishga qaratilgan edi"
+    },
+    {
+     "kind": "term",
+     "term": "MTS",
+     "definition": "Mashina-traktor stansiyalari; texnikaning ular qo‘lida to‘planishi salbiy oqibatlarga olib keldi",
+     "evidence": "butun tex- nikaning mashina-traktor stansiyalari (MTS) qo‘lida to‘planishi salbiy oqibat-"
+    },
+    {
+     "kind": "term",
+     "term": "Artel",
+     "definition": "Hunarmandlarni birlashtirgan kooperativ tashkilot; yakka tartibdagi hunarmandchilik man etilgan",
+     "evidence": "Ular kooperativ artellarga birlashtirildi."
+    },
+    {
+     "kind": "place",
+     "place": "Polvontosh",
+     "event": "Urushdan keyingi yillarda ochilgan va o‘zlashtirilgan neft konlaridan biri",
+     "evidence": "Shu yillarda Polvontosh va Janubiy Olamushuk neft konlari ochildi va o‘zlashtirildi."
+    },
+    {
+     "kind": "place",
+     "place": "Mirzacho‘l",
+     "event": "Qo‘riq yerlarini o‘zlashtirish ishlari keng miqyosda olib borilgan hudud",
+     "evidence": "Mirzacho‘lni keng miqyosda o‘zlashtirish ishlari boshlandi."
+    },
+    {
+     "kind": "place",
+     "place": "Farg‘ona",
+     "event": "Urushdan keyin neftni qayta ishlash zavodi foydalanishga topshirilgan viloyat",
+     "evidence": "Farg‘onada neftni qayta ishlash zavodi foydalanishga topshirildi."
+    },
+    {
+     "kind": "cause",
+     "cause": "O‘zbekistonga faqat xomashyo yetkazib beruvchi o‘lka deb qaralishi",
+     "effect": "Iqtisodiyot bir tomonlama rivojlanib, respublika Ittifoqning asosiy paxta bazasi bo‘lib qoldi",
+     "evidence": "O‘zbekistonga faqat xomashyo yetkazib beruvchi chekka bir o‘lka deb qaraldi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Oziq-ovqat ekinlari maydonlarining chigit ekish uchun ajratilishi",
+     "effect": "Oziq-ovqat mahsulotlari yetishtirish qisqarib, oziq-ovqat muammosi o‘tkirlashdi",
+     "evidence": "Oziq-ovqat mahsulotlari yetishtirish qisqarib, oziq-ovqat muam - mosi o‘tkirlashdi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Sovet hokimiyatining hunarmandlar haq-huquqlari va erkin faoliyatini cheklashi",
+     "effect": "Hunarmandlar kooperativ artellarga birlashtirilib, yakka hunarmandchilik man etildi",
+     "evidence": "hunarmandlarning haq-huquqlari, erkin faoliyati cheklab qo‘yildi"
+    },
+    {
+     "kind": "number",
+     "number": "779 000",
+     "unit": "gektar",
+     "meaning": "1946-yilda O‘zSSR uchun belgilab berilgan paxta ekin maydoni",
+     "evidence": "1946-yili O‘zSSR uchun paxta ekin maydoni 779 000 gektar qilib belgilab berildi."
+    },
+    {
+     "kind": "number",
+     "number": "40",
+     "unit": "foiz",
+     "meaning": "1956-yilda MTSlarga to‘lanadigan natura haqi stavkalari kamaytirilgan miqdor",
+     "evidence": "haqi stavkalarini 40 % kamaytirish, suv uchun to‘lanadigan haqni bekor qilish"
+    }
+   ]
+  }
+ ]
+}

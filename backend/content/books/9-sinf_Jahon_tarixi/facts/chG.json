@@ -1,0 +1,536 @@
+{
+  "chapter": "KIRISH",
+  "topics": [
+    {
+      "number": 39,
+      "title": "Aniq va tabiiy fanlar rivoji",
+      "page": 141,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1904",
+          "date_label": "1904-yilda",
+          "event": "Rus olimi N. Y. Jukovskiy qanotning ko‘tarish kuchini aniqlash formulasini kashf qildi va bu zamonaviy aerodinamikaga asos bo‘ldi",
+          "evidence": "Rus olimi N.Y. Jukovskiy 1904-yilda shunday kashfiyot qildiki, bu kashfiyot hozirgi\nzamon aerodinamikasining taraqqiyoti uchun asos bo'ldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1870",
+          "date_label": "1870-yilda",
+          "event": "Ingliz olimi U. Kurks siyraklashtirilgan havodagi katod nurlarini kashf etdi",
+          "evidence": "1870-yilda ingliz\nolimi U. Kurks siyraklashtirilgan havodagi katod\nnurlarini kashf etdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1897",
+          "date_label": "1897-yilda",
+          "event": "Ingliz olimi J. Tomson katod nurlari manfiy zaryadli zarrachalar – elektronlar oqimi ekanligini aniqladi",
+          "evidence": "1897-yilda yana bir ingliz olimi J. Tomson katod nurlari manfiy\nzaryadli zarrachalar - elektronlar oqimi ekanlgini"
+        },
+        {
+          "kind": "date_event",
+          "date": "1869",
+          "date_label": "1869-yilda",
+          "event": "D. I. Mendeleyev atom og‘irliklari o‘rtasidagi bog‘liqlikni kashf etib, muntazam davriy sistemani yaratdi",
+          "evidence": "U 1869-yildayoq barcha kimyoviy elementlarning atom og'irliklari o'rtasidagi bog'liqlik mavjudligini kashf etdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1905",
+          "date_label": "1905-yilda",
+          "event": "Nemis olimi A. Eynshteyn nisbiylik nazariyasining asosiy g‘oyalarini e’lon qildi",
+          "evidence": "1905-yilda nemis olimi A. Eynshteyn\nnisbiylik nazariyasining asosiy g'oyalarini e'lon qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1887",
+          "date_label": "1887-yilda",
+          "event": "Shved olimi S. Arrenius elektrolitik dissotsiatsiya nazariyasini yaratdi",
+          "evidence": "1887-yili shved olimi S. Arrenius elektrolitik dissotsiatsiya nazariyasini yaratdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1895",
+          "date_label": "1895-yilda",
+          "event": "Nemis fizigi Vilgelm Konrad Rentgen buyumlardan turlicha o‘tuvchi ko‘rinmas nurlarni kashf etdi",
+          "evidence": "1895-yilda nemis fizigi Vilgelm Konrad\nRentgen har xil buyum, narsalardan turlicha\no'tuvchi ko'rinmas nurlarni kashf etdi."
+        },
+        {
+          "kind": "person",
+          "person": "D. I. Mendeleyev",
+          "role": "Rus olimi va kimyogar, atom zarralarini o‘rganishga asos solgan tadqiqotchi",
+          "activity": "Atom zarralarini chuqurroq o‘rganishga asos soldi va kimyoviy elementlarning davriy sistemasini yaratdi",
+          "evidence": "Atom zarralarini yanada chuqurroq o'rganishga rus olimi D. I. Mendeleyev asos soldi."
+        },
+        {
+          "kind": "person",
+          "person": "M. Sklodovskaya-Kyuri",
+          "role": "Fransuz fizigi, polyak olimasi, radioaktivlikni kashf etgan tadqiqotchi",
+          "activity": "Eri P. Kyuri bilan birgalikda radioaktiv elementlar uranga qaraganda intensivroq nur chiqarishini isbotladi",
+          "evidence": "U eri - atoqli fransuz fizigi P. Kyuri bilan birgalikda ba'zi radioaktiv elementlar uranga qaraganda intensivroq nur chiqarishini isbot qilishga"
+        },
+        {
+          "kind": "person",
+          "person": "E. Rezerford",
+          "role": "Ingliz fizigi, atomning planetar modelini yaratgan olim",
+          "activity": "Barcha atomlar og‘ir yadroga ega ekanligini isbotlab, atomning planetar modelini yaratdi",
+          "evidence": "Ingliz fizigi E. Rezerford hamma atomlar og'ir yadroga ega\nekanligini isbotladi."
+        },
+        {
+          "kind": "person",
+          "person": "Lui Paster",
+          "role": "Fransuz mikrobiologi va kimyogari, mikrobiologiya hamda immunologiya asoschisi",
+          "activity": "Mikrobiologiya va immunologiya fanlariga asos soldi, sterillash va pasterlash usullarini yaratdi",
+          "evidence": "mikrobiologiya va immunologiya fanining asoschisi Lui Paster nomi\nbilan bog'liq."
+        },
+        {
+          "kind": "person",
+          "person": "Charlz Darvin",
+          "role": "Buyuk ingliz tabiatshunos olimi, evolyutsiya ta’limoti muallifi va sayyoh",
+          "activity": "«Turlarning kelib chiqishi» asarini nashr etib, tirik tabiat evolutsiya mahsulidir degan xulosaga keldi",
+          "evidence": "Buyuk ingliz tabiatshunos olimi Charlz Darvinning\n.,Turlarning kelib chiqishi\" asarining nashr qilinishi fanda to'ntarish"
+        },
+        {
+          "kind": "term",
+          "term": "radioaktivlik",
+          "definition": "Ayrim atomlarning o‘z-o‘zidan nurlanib, atrofdagi jismlardan o‘tadigan nurlar chiqarish xususiyati",
+          "evidence": "Muayyan atomlarning bu xususiyatini u radioaktivlik deb atadi."
+        },
+        {
+          "kind": "term",
+          "term": "kvant",
+          "definition": "Elektron bir orbitadan ikkinchisiga sakraganda chiqaradigan energiya porsiyasi",
+          "evidence": "elektronlar bir orbitadan ikkinchisiga sakrab o'tib, bunda energiya\nporsiyasini (kvant) chiqaradi."
+        },
+        {
+          "kind": "term",
+          "term": "genetika",
+          "definition": "Irsiyat qonuniyatlarini o‘rganuvchi fan; uning rivojlanishiga G. Mendelning kashfiyotlari asos soldi",
+          "evidence": "G.Mendelning\nba'zi irsiyat qonunlarini kashf etishi yangi fan - genetikaning rivojlanishiga asos soldi."
+        },
+        {
+          "kind": "term",
+          "term": "pasterlash",
+          "definition": "Zararli mikroorganizmlarni o‘ldirish uchun suyuqlikni 60–80 °C gacha qizdirib, tezda sovitish usuli",
+          "evidence": "Pasterlash (muallif shaxs Paster nomidan olingan) - zararli mikroorganizmlarni o'ldirish uchun suyuqlikni"
+        },
+        {
+          "kind": "term",
+          "term": "sterilizatsiya",
+          "definition": "Tibbiyot va biologiyada turli moddalar, bog‘lov materiallari va oziq-ovqatni zararli mikroorganizmlardan tozalash",
+          "evidence": "Sterilizatsiya (lotincha - toza) - tibbiyot va biologiyada turli moddalar, bog'lov materiallari, oziq-ovqat mahsulotlarini zararli mikroorganizmlardan butunlay tozalash."
+        },
+        {
+          "kind": "place",
+          "place": "Parij",
+          "event": "Radioaktivlikni o‘rganishdagi navbatdagi qadamni M. Sklodovskaya-Kyuri Parijda tashladi",
+          "evidence": "Navbatdagi qadamni Parijda\nM. Sklodovskaya-Kyuri tashladi."
+        },
+        {
+          "kind": "place",
+          "place": "Polsha",
+          "event": "M. Sklodovskaya-Kyuri vatani Polsha sharafiga yangi radioaktiv elementni poloniy deb atadi",
+          "evidence": "Bu elementlar poloniy (M. Sklodovskaya-Kyurining vatani sharafiga, chunki u Polshadan edi)\nva radiy (ya'ni nurlanuvchi) deb ataldi."
+        },
+        {
+          "kind": "place",
+          "place": "Avstriya",
+          "event": "Matematika sohasidagi buyuk kashfiyotlar Avstriya matematigi D. Gilbert nomi bilan ham bog‘liqdir",
+          "evidence": "rus olimi N. I. Lobachevskiy, italyan olimi\nY. Beltrami, Avstriya matematigi D. Gilbert"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ayrim mamlakatlar o‘rtasida iqtisodiy raqobatning kuchayishi va dunyoning yangi hududlariga iqtisodiy kirib borishga intilish",
+          "effect": "Tabiat ilmining jadal taraqqiy etishi, eski tasavvurlarning ildiziga bolta urilishi",
+          "evidence": "Bu davrda tabiat ilmining taraqqiy etishi ayrim mamlakatlar o'rtasida iqtisodiy raqobatning kuchayishi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Fanlar yanada ixtisoslashtirildi va ilgari ayrim olingan fanlar o‘zaro birlashdi",
+          "effect": "Fizika bilan kimyo chegarasida mustaqil fizika-kimyo fani paydo bo‘ldi",
+          "evidence": "Ilgarigi ayrim\nolingan fanlar o'zaro birlashdi. Jumladan, fizika bilan kimyo chega-"
+        },
+        {
+          "kind": "cause",
+          "cause": "Bu davrda qilingan ilmiy kashfiyotlar va texnika fanlarining vujudga kelishi",
+          "effect": "XX asrning ikkinchi yarmidagi fan-texnika inqilobiga yo‘l ochib berildi",
+          "evidence": "Bu davrda qilingan kashfiyotlar XX asrning ikkinchi yarmidagi fan-texnika inqilobiga (FTI)\nyo'l ochib berdi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Sanoatda sovun olish usuli kashf etilib, undan kasalxonalarda jarrohlar foydalandi",
+          "effect": "Operatsiyalar paytida infeksiya xavfi kamaydi",
+          "evidence": "Sanoatda sovun olish usulining kashf etilishi, undan kasalxonalarda, ayniqsa, jarrohlar tomonidan foydalanish operatsiyalar paytida infeksiya xavfini kamaytirdi."
+        },
+        {
+          "kind": "number",
+          "number": "60–80",
+          "unit": "°C",
+          "meaning": "Pasterlashda suyuqlik qizdiriladigan harorat oralig‘i",
+          "evidence": "60-80°C gacha qizdirish\nva ularni tezda sovitish."
+        },
+        {
+          "kind": "number",
+          "number": "1843–1910",
+          "unit": "yil",
+          "meaning": "Batsillani kashf qilgan nemis olimi Robert Koxning hayot yillari",
+          "evidence": "chiqaruvchi batsillani kashf qilgan nemis olimi Robert Kox (1843-\n1910) ulkan hissa qo'shdi."
+        }
+      ]
+    },
+    {
+      "number": 40,
+      "title": "Xalq ta’limi. Gumanitar fanlar. San’at",
+      "page": 146,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshi",
+          "date_label": "XIX asr oxiri va XX asr boshlarida",
+          "event": "Z. Freyd asarlari Yevropada adabiyot va san’atning rivojlanishiga katta ta’sir ko‘rsatdi",
+          "evidence": "Uning asarlari XIX asr oxiri va XX asr boshiarida Yevropada adabiyot va san'atning rivojlanishiga katta ta'sir ko'rsatdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "XX asr boshi",
+          "date_label": "XX asr boshlariga kelib",
+          "event": "Tabiat fanlarining jadal rivojlanishi ilmiy dunyoqarash mavqeyining mustahkamlanishiga sharoit yaratdi",
+          "evidence": "tabiy fanlarning jadal rivojlanishi, texnikaning yanada ildam taraqqiyoti diniy xurofotlardan xoli bo'lgan ilmiy dunyoqarashning mavqeyi\nmustahkamlanishi uchun sharoit yaratdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshi",
+          "date_label": "Bu davrda",
+          "event": "Sharqda xalq ta’limi sohasida G‘arb yutuqlari tashviq qilina boshladi",
+          "evidence": "Bu davrda Sharqda xalq ta'limi sohasida G'arbning yutuqlari\ntashviq qilina boshlandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshi",
+          "date_label": "XIX asr oxiri – XX asr boshlarida",
+          "event": "Falsafada ma’rifatparvarlik g‘oyalari o‘rnini inson huquqlariga e’tibor egalladi",
+          "evidence": "kuchli bo'lsa, endi inson huquqlariga e'tibor kuchaydi."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshi",
+          "date_label": "Shu tariqa XIX asr oxiri – XX asr boshlarida",
+          "event": "Cherkov vijdon erkinligi, diniy e’tiqod erkinligi va barcha dinlarning tengligi tamoyillariga toqat bilan ko‘nikila boshlandi",
+          "evidence": "Shu tariqa, cherkov vijdon erkinligi, diniy e'tiqod erkinligi, barcha dinlarning tengligi tamoyillariga toqat bilan ko'nika boshladi."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshi",
+          "date_label": "Bu davrda",
+          "event": "Faylasuf Fridrix Nitsshe inson irodasi masalasiga katta e’tibor berdi",
+          "evidence": "Bu davrning mashhur faylasuflaridan biri Fridrix Nitsshe inson"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshi",
+          "date_label": "Bu davrda",
+          "event": "Musiqa san’atida realizm va xalqchillik dekadentlarcha noziklik va shaklan murakkablikka qarshi kurashda rivojlandi",
+          "evidence": "Musiqa san'atida realizm va xalqchillik dekadentlarcha"
+        },
+        {
+          "kind": "person",
+          "person": "Fridrix Nitsshe",
+          "role": "Nemis faylasufi, inson irodasi va kuchli shaxs g‘oyalarini ilgari surgan mutafakkir",
+          "activity": "«Zardusht tavallosi» asarida kuchli shaxslarni tarbiyalash g‘oyasini ilgari surdi",
+          "evidence": "U zardushtiylik\nta'siri ostida ,Zardusht tavallosi\" asarini yozdi. Bu asarda kuchli\nshaxslarni tarbiyalash g'oyasi ilgari surildi."
+        },
+        {
+          "kind": "person",
+          "person": "O. Shpengler",
+          "role": "Nemis faylasufi, madaniyatlar o‘ziga xosligi haqidagi ta’limot muallifi",
+          "activity": "Har bir madaniyatning o‘ziga xosligi haqidagi fikrlarni «Yevropa quyoshining botishi» asarida bayon etdi",
+          "evidence": "O. Shpengler ,Yevrosentrizm\"ga qarshi chiqdi. Har bir madaniyatning o'ziga xosligi, bir-biridan mustasno holda rivojlanish g'oyasini\nmutlaqlashtirdi."
+        },
+        {
+          "kind": "person",
+          "person": "Z. Freyd",
+          "role": "Avstriyalik shifokor va ruhshunos olim, psixoanaliz nazariyasi asoschisi",
+          "activity": "Psixoanaliz nazariyasiga asos soldi va ongsizlikni tahlil qilish mumkinligini asosladi",
+          "evidence": "Z. Freyd - psixoanaliz nazariyasining asoschisi, dunyoga tanilgan olim."
+        },
+        {
+          "kind": "person",
+          "person": "Klod Mone",
+          "role": "Fransuz rassomi, impressionizm oqimining eng iste’dodli namoyandalaridan biri",
+          "activity": "Quyosh yog‘dusini, fazo va teranlikni aks ettirishning yangi texnik vositalarini topdi",
+          "evidence": "Eduard Mane, Klod Mone, Ogyust Renuar va Kamil Pissaro\nimpressionizmning eng iste'dodli namoyandalari edilar."
+        },
+        {
+          "kind": "person",
+          "person": "Rixard Shtraus",
+          "role": "Bastakor va dirijor, «Salomeya» hamda «Elektra» operalari muallifi",
+          "activity": "Motsartcha operani qayta tikladi va «Salomeya», «Elektra» kabi asarlari bilan shuhrat qozondi",
+          "evidence": "R. Shtraus motsartcha operani qaytadan tikladi."
+        },
+        {
+          "kind": "term",
+          "term": "gumanitar fan",
+          "definition": "Inson va uning hayotini, madaniyatini o‘rganuvchi fanlar; masalan, tarix, falsafa, tilshunoslik, adabiyot",
+          "evidence": "Gumanitar fan - inson va uning hayotini, madaniyatini o'rganuvchi\nfanlar (masalan, tarix, falsafa, tilshunoslik, adabiyot va hokazo)."
+        },
+        {
+          "kind": "term",
+          "term": "yevrosentrizm",
+          "definition": "Barcha madaniyatlarni yevropalashtirish g‘oyasi",
+          "evidence": "Yevrosentrizm - barcha madaniyatlarni yevropalashtirish g'oyasi."
+        },
+        {
+          "kind": "term",
+          "term": "individ",
+          "definition": "Alohida odam, ayrim shaxs; jamiyat tarkibidagi bir kishini anglatuvchi tushuncha",
+          "evidence": "Individ - alohida odam, shaxs."
+        },
+        {
+          "kind": "term",
+          "term": "psixoanaliz",
+          "definition": "Z. Freyd ilgari surgan, asab kasalliklarini ongsiz mayllarni tahlil qilib davolash usuli",
+          "evidence": "Psixoanaliz - avstriyalik shifokor va ruhshunos olim Z. Freyd tomonidan ilgari surilgan asab kasalliklarini davolash usuli."
+        },
+        {
+          "kind": "term",
+          "term": "impressionizm",
+          "definition": "Tasviriy san’atdagi yangi oqim; rassomlar voqelikni kuzatishdan olingan taassurotlarni sof holda aks ettiradi",
+          "evidence": "Bu yangi oqimlarning biri impressionizm\n(taassurot) edi. Bu oqimga kirgan rassomlar voqelikni, kuzatishdan\nolingan taassurotlarni sof holda aks ettirardi."
+        },
+        {
+          "kind": "place",
+          "place": "Amerika Qo‘shma Shtatlari",
+          "event": "AQShda xalq maorifi tizimi irqchilik ruhida bo‘lib, qora tanli bolalar uchun alohida maktablar ochildi",
+          "evidence": "Xususan, Amerika Qo'shma Shtatlarida xalq maorifi tizimi irqchilik ruhida edi."
+        },
+        {
+          "kind": "place",
+          "place": "Yevropa",
+          "event": "Sharqda xalq ta’limi sohasida G‘arb yutuqlari tashviq qilina boshlanib, Yevropa ta’siri kuchaydi",
+          "evidence": "Yevropa ta'siri kuchaydi."
+        },
+        {
+          "kind": "place",
+          "place": "Myunxen",
+          "event": "Myunxenda avstriyalik oilada tug‘ilgan bastakor Rixard Shtraus o‘z asarlari bilan shuhrat qozondi",
+          "evidence": "Bu davrda Myunxenda avstriyalik oilasida tugilgan bastakor Rixard Shtraus"
+        },
+        {
+          "kind": "cause",
+          "cause": "Texnika taraqqiyoti yuqori saviyali mutaxassis va ishchilarga bo‘lgan ehtiyojni kuchaytirdi",
+          "effect": "Rivojlangan mamlakatlarda bolalarni umumiy majburiy va bepul o‘qitish joriy qilindi",
+          "evidence": "Texnika taraqqiyoti yuqori saviyali mutaxassis va"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xalqning asosiy qismi qashshoq yashab, bolaligidan tirikchilik uchun pul topishga majbur bo‘ldi",
+          "effect": "Ko‘plab bolalar o‘qishni oxiriga yetkazmasdan maktabni tashlab ketdi",
+          "evidence": "qismi qashshoq yashaganligi, yomon uy-joy sharoitlari, bolaligidan\ntirikchilik uchun pul topish zarurligi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Madaniyat, adabiyot va san’atning demokratik asosda rivojlanishi uchun sharoit yaratildi",
+          "effect": "Adabiyotda tanqidiy realizm va naturalizm yuzaga keldi",
+          "evidence": "Bu davrda madaniyat, adabiyot va san'atning demokratik asosda\nrivojlanishi uchun sharoit yaratildi. Ayniqsa, bu narsa adabiyotda\nyaqqol o'z ifodasini topdi."
+        },
+        {
+          "kind": "cause",
+          "cause": "AQShda irqchilik siyosati hukm surib, qora tanli bolalar alohida maktablarda o‘qitildi",
+          "effect": "Ularga oq tanli bolalarga qaraganda kam hajmda bilim berildi",
+          "evidence": "Qora tanlilarning bolalari uchun alohida maktablar\nochilgan bo'lib, bu maktablarda oq tanlilarning bolalari uchun tashkil\netilgan maktablardagiga qaraganda kam hajmda bilim berilar edi."
+        },
+        {
+          "kind": "number",
+          "number": "12–13",
+          "unit": "yosh",
+          "meaning": "Bolalarni umumiy majburiy va bepul o‘qitish joriy qilingan yosh chegarasi",
+          "evidence": "12-13 yoshgacha bo'lgan bolalarni umumiy majburiy va bepul o'qitish joriy qilindi."
+        },
+        {
+          "kind": "number",
+          "number": "XX",
+          "unit": "asr",
+          "meaning": "Tabiat fanlari jadal rivojlanib, ilmiy dunyoqarash mavqeyi mustahkamlangan davr boshlangan asr",
+          "evidence": "XX asr boshlariga kelib, jamiyat taraqqiyoti uchun zarur bo'lgan"
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "title": "Adabiyot",
+      "page": 150,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshi",
+          "date_label": "XIX asr oxiri – XX asr boshlarida",
+          "event": "Yevropa madaniy hayotida realistik oqim bilan dekadentlik oqimi o‘rtasida kurash avj oldi",
+          "evidence": "madaniy hayotida realistik oqim bilan dekadentlik oqimi o'rtasida kurash avj oldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "Ikkinchi imperiya davri",
+          "date_label": "Ikkinchi imperiya davrida",
+          "event": "E. Zolyaning «Rugon-Makkarlar» asari bir oilaning hayoti va ijtimoiy tarixiga bag‘ishlandi",
+          "evidence": "Ikkinchi imperiya davridagi bir oilaning hayoti va ijtimoiy tarixiga bag'ishlanadi."
+        },
+        {
+          "kind": "date_event",
+          "date": "Vilgelm II davri",
+          "date_label": "Vilgelm II davrida",
+          "event": "G. Mann asarlari sahifalarida qirollar, kanslerlar, amaldorlar va imperator Vilgelm II ni ko‘rish mumkin edi",
+          "evidence": "hatto imperator Vilgelm II ni ko'rish mumkin."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshi",
+          "date_label": "Bu davrda",
+          "event": "Satira katta ahamiyatga ega bo‘lib, fosh etuvchi kuch sifatida namoyon bo‘ldi",
+          "evidence": "Bu davrda satira katta ahamiyatga ega\nbo'ldi. Nemis yozuvchisi, yumorist G. Manning"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshi",
+          "date_label": "Bu davrda",
+          "event": "Dekadentlik oqimi ancha rivojlanib, tanazzul va umidsizlik kayfiyati qalamga olindi",
+          "evidence": "Bu davrda dekadentlik oqimi ham\nancha rivojlandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshi",
+          "date_label": "O‘sha davrda",
+          "event": "Hayotni o‘tkir badiiy bo‘yoqlarda tasvirlagan san’atkorlar o‘zlarini naturalistlar deb atadilar",
+          "evidence": "bir guruh san'atkorlar o'zlarini naturalistlar deb atadilar."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshi",
+          "date_label": "Bu davrda",
+          "event": "Yapon yozuvchilarining romanlari feodal qoldiqlarga va xorijning ma’naviy ta’siriga qarshi qaratildi",
+          "evidence": "romanlari feodal qoldiqlarga qarshi, milliy qadriyatlarni asrashga, xorijning ma'naviy ta'siriga qarshi qaratilgan edi."
+        },
+        {
+          "kind": "person",
+          "person": "Gi de Mopassan",
+          "role": "Fransuz yozuvchisi, ijtimoiy masalalarni rang-barang bo‘yoqlarda tasvirlagan ijodkor",
+          "activity": "«Hayot», «Azizim», «Mont-Oriol» asarlarida fransuz hayotining ijtimoiy masalalarini mahorat bilan tasvirladi",
+          "evidence": "boshqa asarlari bilan fransuz badiy dunyosida qator ijtimoiy masalalarni mahorat bilan rango-rang bo'yoqlarda tasvirlagan ijodkordir."
+        },
+        {
+          "kind": "person",
+          "person": "J. London",
+          "role": "Amerika yozuvchisi, radikal intilishlar bilan ajralib turgan ijodkor",
+          "activity": "«Temir tovon» va «Marten Iden» romanlarida halokat va soxta madaniyat bilan fojiali to‘qnashuvni ochib berdi",
+          "evidence": "Amerika yozuvchisi J. Londonning ijodi radikal intilishlar bilan\najralib turar edi."
+        },
+        {
+          "kind": "person",
+          "person": "R. Tagor",
+          "role": "Hind gumanist yozuvchisi, «Halokat» romani bilan dunyoga mashhur bo‘lgan shoir",
+          "activity": "Falsafiy teranligi va badiiy barkamolligi bilan ajralib turuvchi asarlar yaratdi, ijodi milliy mustaqillikka chaqiriqdan iborat",
+          "evidence": "Hind gumanist yozuvchisi R. Tagor falsafiy teranligi va badiy\nbarkamolligi bilan ajralib turuvchi romanlar, pyesalar, hikoya va\nshe'rlari bilan butun dunyoga mashhur bo'ldi."
+        },
+        {
+          "kind": "person",
+          "person": "Emil Zolya",
+          "role": "Fransuz yozuvchisi, naturalizm oqimining yirik namoyandasi",
+          "activity": "Fransiyadagi barcha sinflar va ijtimoiy guruhlarning mavqeyi, turmush tarzi va psixologiyasini ko‘rsatishni maqsad qildi",
+          "evidence": "Ularning yirik namoyandalaridan biri fransuz yozuvchisi Emil\nZolya Fransiyadagi barcha sinflar va ijtimoiy guruhlarning mavqeyini,\nturmush tarzini va psixologiyasini ko'rsatishni oldiga maqsad qilib"
+        },
+        {
+          "kind": "person",
+          "person": "Bernard Shou",
+          "role": "Ingliz dramaturgi, jamiyat qusurlarini tanqid qilgan pyesalar muallifi",
+          "activity": "Asarlarida ekspluatatsiyani, meshchanlik axloqini, munofiqlik va soxtalikni qoraladi",
+          "evidence": "Ingliz dramaturgi Bernard Shou o'z asarlarida ekspluatatsiyani, meshchanlik axloqini,\nmunofiqlik, soxtalikni qoralagan."
+        },
+        {
+          "kind": "term",
+          "term": "tanqidiy realizm",
+          "definition": "Voqelikni dadil va haqqoniy aks ettirishga intilgan yozuvchilar ijodi nomini olgan realizm oqimi",
+          "evidence": "Shuning uchun bu davr realizm yoki ,tanqidiy realizm nomini oldi."
+        },
+        {
+          "kind": "term",
+          "term": "naturalizm",
+          "definition": "Adabiyotni badiiy yangilashda inqilob yasagan, hayotni o‘tkir badiiy bo‘yoqlarda tasvirlovchi oqim",
+          "evidence": "Naturalizm adabiyotni badiy yangilashda inqilob"
+        },
+        {
+          "kind": "term",
+          "term": "dekadentlik",
+          "definition": "Yevropa madaniyatidagi inqiroz holatini ifoda etuvchi, tanazzul va umidsizlik kayfiyatini aks ettiruvchi oqim",
+          "evidence": "Dekadentlik (lotincha - tanazzul) - Yevropa madaniyatidagi inqiroz holatini umumiy tarzda ifoda etuvchi tushuncha."
+        },
+        {
+          "kind": "term",
+          "term": "demokratik adabiyot",
+          "definition": "Hukmron tabaqalar emas, xalq manfaatlari va kelajagiga xizmat qiluvchi, voqelikni haqqoniy aks ettiruvchi adabiyot",
+          "evidence": "hukmron tabaqalar manfaatiga emas, xalq\nmanfaatlari va kelajagiga xizmat qiluvchi, kishilarni kelajakka ishonch\nruhida tarbiyalovchi, voqelikni haqqoniy aks ettiruvchi adabiyot."
+        },
+        {
+          "kind": "term",
+          "term": "meshchan",
+          "definition": "Rossiyada revolyutsiyaga qadar shahar aholisining mayda savdogar va hunarmandlardan iborat toifalari",
+          "evidence": "Rossiyada revolutsiyaga qadar shahar aholisining turli\ntoifalari - mayda savdogarlar, hunarmandlar va shu kabilar."
+        },
+        {
+          "kind": "place",
+          "place": "Italiya",
+          "event": "Italiyada naturalizm namoyandalari Luiji Kapuana va Jovanni Vega bo‘lgan",
+          "evidence": "Italiyada naturalizm namoyandalaridan Luiji Kapuana va Jovanni\nVegalarni ko'rsatish mumkin."
+        },
+        {
+          "kind": "place",
+          "place": "Amerika",
+          "event": "Amerika naturalistlari Stiven Kreyn va Frenk Norris asarlarida katta ijtimoiy masalalarni ko‘tarib chiqdilar",
+          "evidence": "Amerika naturalistlaridan Stiven Kreyn ,,Jasoratning qonli\nbelgisi\", Frenk Norris ,,Girdob\" asarlarida juda katta ijtimoiy masalalarni ko'tarib chiqdilar."
+        },
+        {
+          "kind": "place",
+          "place": "Yaponiya",
+          "event": "Yaponiyalik yozuvchi Roka Tokutomining «Kurosivo» va «Yashamagan yaxshi» romanlari milliy qadriyatlarni asrashga qaratildi",
+          "evidence": "Bu davrda yaponiyalik mashhur yozuvchi Roka Tokutomining"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xalq dekadentlik ruhida yozilgan asarlarni qabul qilmadi",
+          "effect": "Turmushni aniq ifodalaydigan asarlarga ehtiyoj ortdi",
+          "evidence": "dekadentlik ruhida yozilgan asarlarni qabul qilmadi. Natijada, turmushni aniq ifodalaydigan asarlarga ehtiyoj ortdi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Realistik yozuvchilar atrofdagi voqelikni dadil va haqqoniy aks ettirishga intildilar",
+          "effect": "Bu davr realizm yoki «tanqidiy realizm» nomini oldi",
+          "evidence": "Realistik yozuvchilar atrofdagi voqelikni dadil va haqqoniy aks ettirishga intildilar."
+        },
+        {
+          "kind": "cause",
+          "cause": "Janubiy Italiyadagi qashshoqlik va unga qarshi kurashuvchilar naturalistlar diqqatini tortdi",
+          "effect": "Bu holat ularning asarlarida badiiy mahorat bilan aks ettirildi",
+          "evidence": "Ular o'z asarlarida Janubiy Italiyadagi\nqashshoqlikni, unga qarshi kurashuvchilarni badiy mahorat bilan aks"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yevropa davlatlarida xalqlar ma’naviyatida tanazzul belgilari va umidsizlik kuzatildi",
+          "effect": "Tarbiyani yaxshilash g‘oyalarini olg‘a suruvchi asarlar paydo bo‘ldi",
+          "evidence": "davlatlarida xalqlar ma'naviyatida tanazzul belgilarini, umidsizlikni\nqalamga olgan yozuvchilarning asarlari paydo bo'ldi va tarbiyani yaxshilash g'oyalarini olg'a surdi."
+        },
+        {
+          "kind": "number",
+          "number": "20",
+          "unit": "jild",
+          "meaning": "Emil Zolyaning «Rugon-Makkarlar» asari jildlarining soni",
+          "evidence": "Emil Zolyaning 20 jildli ,Rugon-Makkarlar\" asari"
+        },
+        {
+          "kind": "number",
+          "number": "XIX",
+          "unit": "asr",
+          "meaning": "«Tom tog‘aning kulbasi» romanida tasvirlangan Amerika qullari va quldorlari davri",
+          "evidence": "Romanda XIX asr Amerika qullari va quldorlari hayoti, ular o'rtasidagi ziddiyat"
+        }
+      ]
+    }
+  ]
+}

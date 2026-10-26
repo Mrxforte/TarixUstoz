@@ -1,0 +1,999 @@
+{
+ "chapter": "I BOB. O‘RTA ASRLARDA YERGA EGALIK QILISH MUNOSABATLARINING SHAKLLANISHI VA RIVOJLANISHI",
+ "topics": [
+  {
+   "number": 1,
+   "title": "Ijtimoiy-iqtisodiy o‘zgarishlar",
+   "page": 6,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "V asr",
+     "date_label": "V asr o‘rtalari",
+     "event": "Sug‘oriladigan yerlarning asosiy qismi hali ham qishloq jamoalari qaramog‘ida bo‘lib qolgan.",
+     "evidence": "V asrning o‘rtalariga kelib, garchi ekin yerlarining"
+    },
+    {
+     "kind": "date_event",
+     "date": "Ilk o‘rta asrlar",
+     "date_label": "Ilk o‘rta asrlar",
+     "event": "Shahar hunarmandchilik, savdo-sotiq va madaniy hayotning markaziga aylangan.",
+     "evidence": "Shahar ilk o‘rta asrlardan boshlab hunarmandchilik"
+    },
+    {
+     "kind": "term",
+     "term": "kashovarz",
+     "definition": "Qishloq jamoasi yerlarida yashab, yer va suvdan umumiy mulkka ega bo‘lgan erkin ziroatchilar tabaqasi.",
+     "evidence": "erkin ziroatchilar tabaqasi kashovarzlar deb atalardi"
+    },
+    {
+     "kind": "term",
+     "term": "kadivar",
+     "definition": "Yer va suvdan mahrum bo‘lib, mulkdor dehqonga qaram bo‘lib qolgan yersiz va erksiz aholi tabaqasi.",
+     "evidence": "yersiz va erksiz kadivar larga ajralib borgan"
+    },
+    {
+     "kind": "term",
+     "term": "chokar",
+     "definition": "Katta yer egalari saqlaydigan, sadoqatli o‘spirinlardan tanlangan maxsus jangovar askarlar guruhi.",
+     "evidence": "maxsus askarlar guruhi – chokarlari bo‘lgan"
+    },
+    {
+     "kind": "term",
+     "term": "dehqon",
+     "definition": "Ziroatkor aholi ustidan hukmronlik qilgan, yirik yer va suv boyligiga ega bo‘lgan yer egasi.",
+     "evidence": "O‘sha davrda ular dehqonlar deb atal gan"
+    },
+    {
+     "kind": "term",
+     "term": "mulkdor",
+     "definition": "Yangi o‘zlashtirilgan yer maydonlarining bir qismini meros mulkiga aylantirib olgan yirik yer egasi.",
+     "evidence": "ularning qo‘liga o‘tib, meros mulkiga aylangan"
+    },
+    {
+     "kind": "term",
+     "term": "sug‘orma dehqonchilik",
+     "definition": "Sun’iy sug‘orish tarmoqlariga asoslanib, mo‘l hosil beradigan dehqonchilik yo‘nalishi.",
+     "evidence": "sug‘orma deh qonchilik maydonlari kengaygan"
+    },
+    {
+     "kind": "place",
+     "place": "Qadimgi Turon",
+     "event": "Qang‘ davlati va Kushon podsholigi davrida yuksala boshlagan mamlakat diyori.",
+     "evidence": "Qadimgi Turon diyori yuksala boshlagan edi"
+    },
+    {
+     "kind": "place",
+     "place": "Vohalar",
+     "event": "Yirik sug‘orish tarmoqlari qazilib, sug‘orma dehqonchilik maydonlari kengaygan hududlar.",
+     "evidence": "Vohalarda yirik sug‘orish tarmoqlari qazilib"
+    },
+    {
+     "kind": "place",
+     "place": "Dasht va tog‘oldi mintaqalari",
+     "event": "Ko‘chmanchi va yarim ko‘chmanchi aholining o‘troq hayot tarziga o‘tishi kuchaygan hududlar.",
+     "evidence": "dasht va tog‘oldi mintaqalarida yashovchi ko‘ch manchi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Shaharlarda aholining ko‘payishi, hunarmandchilik va savdoning rivoj topishi",
+     "effect": "Qishloq xo‘jaligi mahsulotlariga ehtiyoj ortib, xomashyo yetkazuvchi qishloqlar nufuzi ko‘tarilgan.",
+     "evidence": "qishloq xo‘ jalik mah su lotlariga bo‘lgan ehtiyoj ortib borgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dehqonchilik uchun yaroqli sug‘oriladigan yerga bo‘lgan ehtiyojning ortishi",
+     "effect": "Qo‘riq va bo‘z yerlarga suv chiqarilib, katta-katta ekin maydonlari barpo etilgan.",
+     "evidence": "qo‘riq va bo‘z yerlarga suv chiqarilib, kattakatta ekin may don lari barpo etilgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ekin maydonlarini sug‘orish va ishlov berishning takomillashuvi",
+     "effect": "Aholi dehqonchilikdan mo‘l hosil olishga erishgan.",
+     "evidence": "tako mil lashuvi tufayli aholi dehqonchilikdan mo‘l hosil olgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Sug‘orish tarmoqlarining yuqori qismi va to‘g‘on boshini egallash",
+     "effect": "Qabila boshliqlari suv taqsimotini nazorat qilib, ziroatkor aholi ustidan hukmronlik qilgan.",
+     "evidence": "suv taqsimotini nazoratga olib, qishloq aholisi ustidan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yer egaligining tarkib topishi",
+     "effect": "Mamlakat ijtimoiy hayotida keskin o‘zgarishlar sodir bo‘lib, qishloq jamoalari tabaqalarga ajralgan.",
+     "evidence": "Yer egaligining tarkib topishi oqibatida mamlakatning"
+    },
+    {
+     "kind": "number",
+     "number": "30–40",
+     "unit": "chokar",
+     "meaning": "Har bir katta yer egasi qo‘l ostida saqlagan maxsus askarlarning eng kam soni.",
+     "evidence": "30–40, 50–100 va ba’zan undan ortiq maxsus askarlar guruhi"
+    },
+    {
+     "kind": "number",
+     "number": "50–100",
+     "unit": "chokar",
+     "meaning": "Ayrim yirik yer egalari qo‘l ostidagi chokarlar soni; ba’zan bundan ham ortiq bo‘lgan.",
+     "evidence": "50–100 va ba’zan undan ortiq"
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "title": "Ilk o‘rta asrlarda Xorazm, xioniylar, kidariylar davlatlari",
+   "page": 8,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "III asr",
+     "date_label": "III asr o‘rtalari",
+     "event": "Xorazm davlatining poytaxti qadimgi Tuproqqal’a shahar xarobasi o‘rnida joylashgan.",
+     "evidence": "III asr o‘rtalarida Xorazm davlatining poytaxti"
+    },
+    {
+     "kind": "date_event",
+     "date": "305",
+     "date_label": "305-yil",
+     "event": "Xorazmshoh Afrig‘ o‘z qarorgohini Xorazmning qadimgi Kat shahriga ko‘chirgan.",
+     "evidence": "Milodiy 305yilda Xorazmshoh Afrig‘ o‘z qarorgohini"
+    },
+    {
+     "kind": "date_event",
+     "date": "305",
+     "date_label": "305-yil",
+     "event": "305-yildan boshlab afrig‘iy shohlari kumush tangalar zarb eta boshlagan.",
+     "evidence": "305yildan boshlab, Xorazmning afrig‘iy shohlari kumush tangalar zarb etganlar"
+    },
+    {
+     "kind": "date_event",
+     "date": "IV–V asr",
+     "date_label": "IV asrning 70-yillaridan V asrning ikkinchi yarmigacha",
+     "event": "Xioniylar O‘rta Osiyoda hukmronlik qilgan.",
+     "evidence": "IV asrning 70yillaridan V asrning ikkin chi yarmigacha O‘rta Osiyoda xioniylar hukmronlik qilgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "V asr",
+     "date_label": "V asrning 20-yillari",
+     "event": "Sharqdan Sirdaryo va Orol bo‘ylari orqali Xorazm hamda Amudaryo havzasiga toxarlar kirib kelgan.",
+     "evidence": "V asrning 20yillari da sharqdan Sirdaryo va Orol bo‘ylari orqali Xorazm hamda Amudaryo havzasiga"
+    },
+    {
+     "kind": "date_event",
+     "date": "456",
+     "date_label": "456-yil",
+     "event": "Kidariylar va Sosoniylar davlatlari o‘rtasida to‘qnashuv bo‘lib o‘tgan.",
+     "evidence": "456yilda Kidariylar va Sosoniylar davlatlari o‘rtasida"
+    },
+    {
+     "kind": "person",
+     "person": "Afrig‘",
+     "role": "Xorazmshoh, afrig‘iylar sulolasining asoschisi va Xorazm hukmdori.",
+     "activity": "305-yilda qarorgohini Kat shahriga ko‘chirib, kumush tangalar zarb ettirgan.",
+     "evidence": "Xorazmshoh Afrig‘ o‘z qarorgohini"
+    },
+    {
+     "kind": "person",
+     "person": "Kidar",
+     "role": "Kidariylar deb atalgan ko‘chmanchi toxarlarning hukmdori.",
+     "activity": "Unga boshchilik qilgani uchun bu aholi manbalarda kidariylar deb atalgan.",
+     "evidence": "Ularga Kidar ismli hukmdor boshchilik qilganligi uchun"
+    },
+    {
+     "kind": "term",
+     "term": "afrig‘iylar",
+     "definition": "Xorazmda IV–X asrlarda hukmronlik qilgan xorazmshohlar sulolasi.",
+     "evidence": "Afrig‘iylar – Xorazmda IV–X asrlarda hukmronlik qil gan"
+    },
+    {
+     "kind": "term",
+     "term": "xioniylar",
+     "definition": "Turkiy qabilalardan bo‘lib, markazi Zarafshon vohasida joylashgan davlatga asos solgan xalq.",
+     "evidence": "Bu davlatga turkiy qabilalardan xioniylar asos solgan"
+    },
+    {
+     "kind": "term",
+     "term": "kidariylar",
+     "definition": "Balx markazli davlat barpo etgan, Kidar boshchiligidagi ko‘chmanchi toxarlar guruhi.",
+     "evidence": "ularni kidariylar deb ham atashadi"
+    },
+    {
+     "kind": "term",
+     "term": "toxarlar",
+     "definition": "Kushonlarning avlodlari bo‘lib, V asrda Amudaryo havzasiga kirib kelgan ko‘chmanchi chorvador aholi.",
+     "evidence": "ko‘chmanchi chorvador aholi – toxarlar kirib kelgan"
+    },
+    {
+     "kind": "term",
+     "term": "Xorazmshoh",
+     "definition": "Xorazm hukmdorlarining rasmiy unvoni; bu unvonni dastlab siyovushlar sulolasi qabul qilgan.",
+     "evidence": "Hukmdorlar “Xorazmshoh” un voniga sa zo vor bo‘lishgan"
+    },
+    {
+     "kind": "place",
+     "place": "Tuproqqal’a",
+     "event": "III asr o‘rtalarida Xorazm davlatining poytaxti joylashgan qadimgi shahar xarobasi.",
+     "evidence": "qadimgi Tuproqqal’a shahar xarobasining o‘rnida"
+    },
+    {
+     "kind": "place",
+     "place": "Kat",
+     "event": "305-yilda Xorazmshoh Afrig‘ qarorgohini ko‘chirgan, qayta tiklangan qadimgi shahar.",
+     "evidence": "Xo razm ning qadimgi Kat shahriga ko‘chiradi"
+    },
+    {
+     "kind": "place",
+     "place": "Balx",
+     "event": "Kidariylar davlatining poytaxtiga aylantirilgan shahar.",
+     "evidence": "Balx shahri bu yangi davlatning poytaxtiga ay lan tirilgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qang‘ davlatining zaiflashib borishi",
+     "effect": "Xorazm birinchi bo‘lib undan ajralib chiqib, afrig‘iylar sulolasi hukmronligini o‘rnatgan.",
+     "evidence": "Zaiflashib borayotgan  Qang‘ davlatidan birinchi bo‘lib Xorazm ajralib chiqadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Kumush tangalarning zarb etilishi",
+     "effect": "Mamlakatning ichki va tashqi savdo munosabatlari mustahkamlangan.",
+     "evidence": "Kumush tangalarning zarb etilishi mamlakatning ichki va tashqi savdo munosabatlarini mustahkamlagan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Kidariylarning Sosoniylardan yengilishi",
+     "effect": "Kidariylar davlati o‘zini qayta o‘nglay olmay, zaiflashib qolgan.",
+     "evidence": "Kidariylar davlati Soso niylardan yengiladi va o‘zini qayta o‘nglayolmaydi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Kidariylarning ko‘chmanchi eftallar bilan to‘qnashishi",
+     "effect": "Kidariylar Shimoliy Hindistonga chekinib, u yerda 75 yil hukm surgan.",
+     "evidence": "Kidariylar ko‘chmanchi chorvador aholi – eftallar bilan to‘qnashishi natijasida"
+    },
+    {
+     "kind": "number",
+     "number": "120",
+     "unit": "yil",
+     "meaning": "Xioniylar davlatining faoliyat yuritgan davri; 120 yildan oshiqroq davom etgan.",
+     "evidence": "Ushbu davlat 120 yildan oshiqroq faoliyat yuritgan"
+    },
+    {
+     "kind": "number",
+     "number": "75",
+     "unit": "yil",
+     "meaning": "Kidariylar Shimoliy Hindistonda hukm surgan davr davomiyligi.",
+     "evidence": "u yerda 75 yil hukm suradi"
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "title": "Eftallar davlati. Eftallar davrida ijtimoiy-iqtisodiy va madaniy hayot",
+   "page": 10,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "V–VI asr",
+     "date_label": "V asrning 20-yillaridan VI asrning 70-yillarigacha",
+     "event": "Eftaliylar davlati O‘rta Osiyoda faoliyat ko‘rsatgan.",
+     "evidence": "V asrning 20yillaridan VI asrning 70yillari gacha bo‘lgan davrda O‘rta Osiyoda eftaliylar"
+    },
+    {
+     "kind": "date_event",
+     "date": "V asr",
+     "date_label": "V asr boshlari",
+     "event": "Eftallar O‘rta Osiyo hududiga Sharqdan kirib kelgan.",
+     "evidence": "eftallar V asr boshlarida O‘rta Osiyo hududiga Sharqdan kirib kelganlar"
+    },
+    {
+     "kind": "date_event",
+     "date": "456",
+     "date_label": "456-yil",
+     "event": "Eftallar davlati o‘zaro aloqa o‘rnatish maqsadida Xitoyga elchi yuborgan.",
+     "evidence": "o‘zaro aloqa o‘rnatish maqsadida 456yilda Xitoyga elchi yuborgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "484",
+     "date_label": "484-yil",
+     "event": "Eftallarga qarshi urush sosoniylar shohi Pero‘zning halokati bilan tugagan.",
+     "evidence": "484yilda eftallarga qarshi bo‘lgan urush sosoniylar shohi Pero‘zning halokati bilan tugaydi"
+    },
+    {
+     "kind": "date_event",
+     "date": "563–567",
+     "date_label": "563–567-yillar",
+     "event": "Eftallar davlati Turk xoqonligi va Eron sosoniylarining zarbasi bilan barbod bo‘lgan.",
+     "evidence": "563–567yillarda eftallar davlati Turk xoqonligi hamda eron sosoniylarining zarbasiga uchragan"
+    },
+    {
+     "kind": "date_event",
+     "date": "V asr",
+     "date_label": "V asr",
+     "event": "Zog‘ariq, Bo‘zsuv va Darg‘om kanali kabi eng yirik sug‘orish tarmoqlari barpo etilgan.",
+     "evidence": "Darg‘om kanali V asrda barpo etilgan eng yirik sug‘orish tarmoqlaridan hisoblanadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "V asr",
+     "date_label": "V asr",
+     "event": "O‘rta Osiyoda shishasozlik rivojlanib, shisha sifati Vizantiya shishasidan ustun bo‘lgan.",
+     "evidence": "V asrda O‘rta Osiyoda shishasozlik rivojlangan"
+    },
+    {
+     "kind": "date_event",
+     "date": "V–VI asr",
+     "date_label": "V–VI asrlar",
+     "event": "Sug‘d, Xorazm va eftal yozuvlari tarqalgan.",
+     "evidence": "V–VI asrlarda sug‘d, xorazm va eftal yozuvlari tarqalgan"
+    },
+    {
+     "kind": "person",
+     "person": "Pero‘z",
+     "role": "Sosoniylar davlatining shohi, eftallarga qarshi urush qilgan hukmdor.",
+     "activity": "484-yilda eftallarga qarshi urushda halok bo‘lib, davlati ularga qaram bo‘lib qolgan.",
+     "evidence": "sosoniylar shohi Pero‘zning halokati bilan tugaydi"
+    },
+    {
+     "kind": "person",
+     "person": "Eftalon",
+     "role": "Eftallar shohi; eftallar, eftalitlar, xaytallar nomlari shundan kelib chiqqan.",
+     "activity": "Uning nomi xalqning yozma manbalardagi turli nomlariga asos bo‘lgan.",
+     "evidence": "eftallar shohi “Eftalon”"
+    },
+    {
+     "kind": "term",
+     "term": "eftallar",
+     "definition": "V asrning 20-yillaridan VI asrning 70-yillarigacha O‘rta Osiyoda hukmronlik qilgan davlat aholisi.",
+     "evidence": "Yozma manbalarda eftaliylar, eftal lar, eftalitlar, xaytallar kabi turli nomlar"
+    },
+    {
+     "kind": "term",
+     "term": "boj",
+     "definition": "Bir davlat ikkinchisiga to‘laydigan yoki bozorlarda savdogarlardan olinadigan maxsus to‘lov.",
+     "evidence": "Boj – o‘lpon, soliq"
+    },
+    {
+     "kind": "term",
+     "term": "otashparast",
+     "definition": "O‘t (olov) va quyoshga sig‘inuvchi diniy e’tiqodga ega bo‘lgan kishilar.",
+     "evidence": "eftallar o‘t (olov) va quyoshga sig‘inuvchi otashparast bo‘lganlar"
+    },
+    {
+     "kind": "term",
+     "term": "chaqa tangalar",
+     "definition": "Mahalliy hokimlar chiqargan, mamlakat ichki savdosida muomalada bo‘lgan mayda tangalar.",
+     "evidence": "mahal liy hokimlar tomonidan chiqarilgan chaqa tan ga lar"
+    },
+    {
+     "kind": "term",
+     "term": "Ipak yo‘li",
+     "definition": "Xitoy, Hindiston, Eron va Vizantiya o‘rtasidagi xalqaro savdo yo‘nalishi.",
+     "evidence": "“Ipak yo‘li”ni o‘z nazoratlari ostida tutib turishga harakat qilgan"
+    },
+    {
+     "kind": "place",
+     "place": "Poykant va Varaxsha",
+     "event": "Buxoro yaqinidagi, eftaliylar davlatining dastlabki poytaxti bo‘lgan shaharlar.",
+     "evidence": "dastlabki poytaxti Buxoro yaqinidagi Poykant va Varaxsha shaharlari"
+    },
+    {
+     "kind": "place",
+     "place": "Baqtriya",
+     "event": "Yozuvi asosida eftallar alifbosi shakllangan qadimgi yozuv madaniyati hududi.",
+     "evidence": "Eftallar alifbosi Baqtriya yozuvi asosida shakllangan"
+    },
+    {
+     "kind": "place",
+     "place": "Yettisuv va Farg‘ona",
+     "event": "Sug‘d tili xalqaro savdo tili sifatida foydalanilgan hududlar.",
+     "evidence": "sug‘d tili xalqaro savdo tili sifatida Yettisuv va Farg‘ona"
+    },
+    {
+     "kind": "cause",
+     "cause": "Iqtisodiy-savdo munosabatlarining izchil yo‘lga qo‘yilishi",
+     "effect": "Dehqonchilik, sun’iy sug‘orish, chorvachilik, bog‘dorchilik va hunarmandchilik ravnaq topgan.",
+     "evidence": "Iqtisodiysavdo munosabatlarining izchil yo‘l ga qo‘yilishi mamlakatda dehqonchilik"
+    },
+    {
+     "kind": "cause",
+     "cause": "Eftallarning tashqi savdo bojidan manfaatdor bo‘lishi",
+     "effect": "Ular «Ipak yo‘li»ni o‘z nazoratlari ostida tutib turishga harakat qilgan.",
+     "evidence": "Tashqi savdo bojidan manfaatdor bo‘lgan eftallar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Eftallarning tobora kuchayib borishidan xavfsirash",
+     "effect": "Sosoniylar ularga qarshi yurish qilib, 484-yildagi urushda Pero‘z halok bo‘lgan.",
+     "evidence": "eftallarning tobora kuchayib borayotganidan xavfsiragan sosoniylar ularga qarshi yurish qiladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Sug‘diylarning sosoniy savdogarlari bilan raqobatda vositachi bo‘lishi",
+     "effect": "Yo‘l, qatnov, ta’minot va xizmat ko‘rsatish tarmoqlari kengayib borgan.",
+     "evidence": "Bu esa o‘z o‘rnida yo‘l, qatnov, ta’minot, xizmat ko‘rsatish tarmoqlarining kengayib"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xalqaro savdo aloqalarining rivojlanishi",
+     "effect": "Mamlakatda tanga pul muomalasi tartibga solingan.",
+     "evidence": "Xalqaro savdo aloqalarining rivojlanishi bilan mamlakatda tanga pul muomalasi tartibga solinadi"
+    },
+    {
+     "kind": "number",
+     "number": "25",
+     "unit": "harf",
+     "meaning": "Eftallar davlati alifbosidagi harflar soni; yozuv chapdan o‘ngga bitilgan.",
+     "evidence": "Eftallar alifbosi 25 harfdan iborat bo‘lgan"
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "title": "O‘rta Osiyo xalqlari Turk xoqonligi davrida",
+   "page": 14,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "VI asr",
+     "date_label": "VI asr o‘rtalari",
+     "event": "Oltoy va Janubiy Sibirda turkiy qabilalarni birlashtirgan yangi davlat vujudga kelgan.",
+     "evidence": "VI asr o‘rtalarida Oltoy va Janubiy Sibirda yashagan turkiy qabilalarni birlashtirgan yangi davlat"
+    },
+    {
+     "kind": "date_event",
+     "date": "552",
+     "date_label": "552-yil",
+     "event": "Bumin «xoqon» deb e’lon qilinib, yangi davlat tarixga Turk xoqonligi nomi bilan kirgan.",
+     "evidence": "552yilda Bumin"
+    },
+    {
+     "kind": "date_event",
+     "date": "555",
+     "date_label": "555-yil",
+     "event": "Turklar Sirdaryo va Orol dengizi bo‘ylarigacha cho‘zilgan keng o‘lkalarni egallagan.",
+     "evidence": "555yildayoq turklar Sirdaryo va Orol dengizi bo‘ylarigacha"
+    },
+    {
+     "kind": "date_event",
+     "date": "531–579",
+     "date_label": "531–579-yillar",
+     "event": "Xusrav I Anushervon Eronda hukmronlik qilgan.",
+     "evidence": "Xusrav I Anu shervon (531–579)"
+    },
+    {
+     "kind": "date_event",
+     "date": "563",
+     "date_label": "563-yil",
+     "event": "Turklar eftallar davlati yerlariga bostirib kirib, Choch shahrini ishg‘ol qilgan.",
+     "evidence": "563yilda eftallar davlati yerlariga bostirib kiradilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "563–567",
+     "date_label": "563–567-yillar",
+     "event": "Eftallar davlati janubdan sosoniylar, shimoldan Turk xoqonligi zarbasidan tamomila barbod bo‘lgan.",
+     "evidence": "563–567yillar da zarbaga uchragan"
+    },
+    {
+     "kind": "date_event",
+     "date": "VI asr",
+     "date_label": "VI asrning 80-yillari oxirlari",
+     "event": "Turk xoqonligi Sharqiy va G‘arbiy turk xoqonliklariga bo‘linib ketgan.",
+     "evidence": "Turk xoqonligi VI asrning 80yillari oxirlari da ikkiga"
+    },
+    {
+     "kind": "person",
+     "person": "Bumin",
+     "role": "Turk xoqonligining asoschisi va birinchi xoqoni bo‘lgan turkiy hukmdor.",
+     "activity": "552-yilda xoqon deb e’lon qilinib, Oltoy davlatning markazi qilib belgilangan.",
+     "evidence": "Uning asoschisi Bumin edi"
+    },
+    {
+     "kind": "person",
+     "person": "Istami",
+     "role": "Turklarning g‘arbga yurishlariga boshchilik qilgan, «Yabg‘u xoqon» unvonini olgan sarkarda.",
+     "activity": "Yettisuv va Sharqiy Turkistondagi turkiy qabilalarni bo‘ysundirgan.",
+     "evidence": "Turklarning g‘arbga tomon yurishlariga Istami boshchilik qiladi"
+    },
+    {
+     "kind": "person",
+     "person": "Xusrav I Anushervon",
+     "role": "Eronshoh (531–579), turklar bilan harbiy ittifoq tuzgan hukmdor.",
+     "activity": "Tashabbusi bilan ittifoq tuzilib, Istamiga kuyov bo‘lishi orqali mustahkamlangan.",
+     "evidence": "Xusrav I Anu shervon (531–579) tashabbusi bilan"
+    },
+    {
+     "kind": "term",
+     "term": "xoqon",
+     "definition": "Buyuk hukmdor, podshoh, imperator ma’nosini bildiruvchi unvon.",
+     "evidence": "Xoqon  –  buyuk  hukmdor,  podshoh,  imperator"
+    },
+    {
+     "kind": "term",
+     "term": "budun",
+     "definition": "Ko‘chmanchi chorvador aholi; o‘z navbatida qabilalar ittifoqi birlashmasini tashkil etgan.",
+     "evidence": "“budun” yoki “qora budun” nomlari bilan yuritilgan"
+    },
+    {
+     "kind": "term",
+     "term": "yabg‘u",
+     "definition": "O‘n o‘q budun elining hokimi; faqat xoqon urug‘iga qon-qarindosh kishilarga berilgan.",
+     "evidence": "O‘n o‘q budun yoki elning hokimi “yabg‘u” yoki “jabg‘u” nomi bilan atalardi"
+    },
+    {
+     "kind": "term",
+     "term": "shod",
+     "definition": "O‘n ming suvoriydan iborat harbiy bo‘linma – tumanning qo‘mondoni.",
+     "evidence": "Shod  –  o‘n  ming  qo‘shin  qo‘mondoni"
+    },
+    {
+     "kind": "term",
+     "term": "yasoq",
+     "definition": "Dehqonlar va chorvadorlardan olinadigan soliq turi.",
+     "evidence": "Yasoq  –  dehqonlar  va  chorvadorlardan  olinadigan  soliq"
+    },
+    {
+     "kind": "place",
+     "place": "Oltoy",
+     "event": "Turk xoqonligining markazi qilib belgilangan hudud.",
+     "evidence": "Oltoy xoqonlikning markazi qilib belgilanadi"
+    },
+    {
+     "kind": "place",
+     "place": "Parak (Chirchiq) vodiysi va Choch",
+     "event": "563-yilda turklar tomonidan ishg‘ol qilingan vodiy va uning markazi.",
+     "evidence": "Parak (Chir chiq) vodiysi va uning markazi Choch shahri ishg‘ol qilinadi"
+    },
+    {
+     "kind": "place",
+     "place": "O‘tukan vodiysi",
+     "event": "Sharqiy turk xoqonligining poytaxti qaror topgan Mo‘g‘ulistondagi vodiy.",
+     "evidence": "poytaxti O‘tukan vodiysi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xoqonlik chegarasining eftallar davlati hududlariga tutashib ketishi",
+     "effect": "Eftallar davlatining shimoliy hududlari xavf ostida qolgan.",
+     "evidence": "Natijada eftallar davlatining shimo liy hududlari xavf osti da qoldi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Eftallar bilan to‘qnashuvning muqarrarligi va murakkab siyosiy vaziyat",
+     "effect": "Xoqonlik avval Eron, so‘ngra Vizantiya bilan yaqinlashgan.",
+     "evidence": "Bunday murakkab siyosiy vazi yat xoqonlikni eron, so‘ngra Vizantiya bilan yaqinlashtiradi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Eftallar davlatining qulashi",
+     "effect": "Uning merosi bo‘linib, Amudaryoning janubigacha bo‘lgan viloyatlar Eron tasarrufiga o‘tgan.",
+     "evidence": "Natijada mag‘lub davlatning merosi o‘zaro bo‘linib"
+    },
+    {
+     "kind": "cause",
+     "cause": "Katta-katta qabilalarning markaziy hokimiyatga bo‘ysunmaslikka intilishi",
+     "effect": "Xoqonlik mustahkam markazlashgan davlatga aylana olmagan.",
+     "evidence": "Bu omillar xoqonlikning mustahkam mar kazlashgan davlatga aylanishiga imkon bermagan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Hududlarni mahalliy hokimlar orqali boshqarish tartibi",
+     "effect": "Xoqonlik tobora zaiflashib, markaziy hokimiyatning kuchi pasaygan.",
+     "evidence": "xoqonlikni  tobora  zaiflashtira  borgan"
+    },
+    {
+     "kind": "number",
+     "number": "10",
+     "unit": "ming suvoriy",
+     "meaning": "Bir tuman, ya’ni o‘n ming suvoriydan iborat harbiy bo‘linmaning tarkibi.",
+     "evidence": "bir tuman (ya’ni o‘n ming) suvoriyni safga tortar edi"
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "title": "G‘arbiy turk xoqonligi",
+   "page": 17,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "VII asr",
+     "date_label": "VII asrning birinchi choragi",
+     "event": "G‘arbiy turk xoqonligi nihoyatda kuchayib, chegaralari Oltoy va Sind daryosigacha yetgan.",
+     "evidence": "VII asrning birinchi choragida G‘arbiy turk xoqonligi nihoyatda kuchaygan"
+    },
+    {
+     "kind": "date_event",
+     "date": "618–630",
+     "date_label": "618–630-yillar",
+     "event": "To‘ng yabg‘u hukmronlik qilgan davrda boshqaruv tartiblari isloh qilingan.",
+     "evidence": "Xoqon To‘ng yabg‘u (618–630) hukmronlik qilgan davrda boshqaruv tartiblari isloh qilingan"
+    },
+    {
+     "kind": "date_event",
+     "date": "VII asr",
+     "date_label": "VII asrning birinchi yarmi",
+     "event": "G‘arbiy turk xoqonligi bilan Xitoy o‘rtasida iqtisodiy aloqalar faollashgan.",
+     "evidence": "G‘arbiy turk xoqonligi bi lan Xitoy o‘rtasida VII asrning birinchi yarmida iqtisodiy aloqalar faollashdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "585–586",
+     "date_label": "585–586-yillar",
+     "event": "Buxoroda qashshoqlik va zulmga qarshi Abruy boshchiligida xalq qo‘zg‘oloni bo‘lib o‘tgan.",
+     "evidence": "585–586yillarda Buxoroda yuz beradi"
+    },
+    {
+     "kind": "person",
+     "person": "Abruy",
+     "role": "Xoqon xonadoniga mansub bo‘lib, xalq qo‘zg‘oloniga boshchilik qilgan shaxs.",
+     "activity": "585–586-yillarda Buxoroda qashshoqlik va jabr-zulmga qarshi isyon ko‘targan.",
+     "evidence": "Qo‘z g‘olonga xoqon xonadoniga mansub Abruy boshchilik qiladi"
+    },
+    {
+     "kind": "person",
+     "person": "To‘ng yabg‘u",
+     "role": "G‘arbiy turk xoqonligining 618–630-yillarda hukmronlik qilgan xoqoni.",
+     "activity": "Boshqaruv tartiblarini isloh qilib, mahalliy hukmdorlarga «yabg‘u» unvonini bergan.",
+     "evidence": "Xoqon To‘ng yabg‘u (618–630) hukmronlik qilgan davrda"
+    },
+    {
+     "kind": "person",
+     "person": "Sheri Kishvar (El Arslon)",
+     "role": "Turk xoqoni Qoracho‘rin o‘g‘li, qo‘zg‘olonni bostirgan sarkarda.",
+     "activity": "Abruy qo‘zg‘olonini bostirish uchun qo‘shin bilan yuborilgan.",
+     "evidence": "Sheri Kish var (El Arslon) boshliq qo‘shin yuboradi"
+    },
+    {
+     "kind": "person",
+     "person": "Qoracho‘rin",
+     "role": "Turk xoqoni; qo‘zg‘olonni bostirgan Sheri Kishvar (El Arslon)ning otasi.",
+     "activity": "Uning o‘g‘li Sheri Kishvar boshliq qo‘shin Abruy qo‘zg‘olonini bostirishga yuborilgan.",
+     "evidence": "Turk xoqoni Qoracho‘rin o‘g‘li Sheri Kish var"
+    },
+    {
+     "kind": "term",
+     "term": "yabg‘u",
+     "definition": "Mahalliy hukmdorlarga beriladigan unvon; unvon olgan hukmdor xoqonning noibiga aylangan.",
+     "evidence": "mahalliy hukmdorlarga xoqon likning “yabg‘u” unvoni berilib"
+    },
+    {
+     "kind": "term",
+     "term": "tudun",
+     "definition": "Xoqonlikning noiblari; O‘rta Osiyo hokimliklari huzuriga yuborilgan vakillar.",
+     "evidence": "xoqonlikning noiblari – tudunlar yubo riladi"
+    },
+    {
+     "kind": "term",
+     "term": "kashovarz",
+     "definition": "Yer mulkidan ajralib, mulkdor dehqonlar asoratiga tushib qolgan qaram aholi qatlami.",
+     "evidence": "O‘z yer mulkidan ajralgan kashovarzlar mulk dor dehqonlar asoratiga tushib"
+    },
+    {
+     "kind": "term",
+     "term": "asorat",
+     "definition": "Zulm va qaramlikdan iborat og‘ir ahvol; aholining noroziligiga sabab bo‘lgan.",
+     "evidence": "deh qonlar asoratiga qar shi aholi bosh ko‘tarishga majbur bo‘ladi"
+    },
+    {
+     "kind": "term",
+     "term": "kadivar",
+     "definition": "Yeridan ayrilib, mulkdor dehqonga qaram bo‘lib qolgan aholi toifasi.",
+     "evidence": "qaram kadivarlarga ayla nadi"
+    },
+    {
+     "kind": "place",
+     "place": "Buxoro",
+     "event": "585–586-yillarda Abruy boshchiligidagi xalq qo‘zg‘oloni bo‘lib o‘tgan shahar.",
+     "evidence": "585–586yillarda Buxoroda"
+    },
+    {
+     "kind": "place",
+     "place": "Sind (Hind) daryosi",
+     "event": "VII asrning birinchi choragida xoqonlikning janubiy chegarasi yetib borgan daryo.",
+     "evidence": "janubda esa Sind (Hind) daryosi bo‘ylariga borib yetgan"
+    },
+    {
+     "kind": "place",
+     "place": "Turkiston va Taroz atrofi",
+     "event": "Qo‘zg‘olondan qochgan mulkdor dehqonlar va boy savdogarlar o‘rnashgan hudud.",
+     "evidence": "Tur kiston  va  Taroz  atrofiga  borib  o‘rnashadilar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dehqonlar tomonidan yerlarni egallashning avj olishi va zulmning kuchayishi",
+     "effect": "O‘z yer mulkidan ajralgan kashovarzlar qaram kadivarlarga aylangan.",
+     "evidence": "dehqonlar tomonidan yerlarni egallash jarayoni tobora avj olib, zulm kuchayadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qashshoqlik, jabr-zulm va dehqonlar asorati",
+     "effect": "Aholi bosh ko‘tarib, 585–586-yillarda Buxoroda qo‘zg‘olon ko‘targan.",
+     "evidence": "Qashshoqlik, jabrzulm va deh qonlar asoratiga qar shi aholi bosh ko‘tarishga majbur bo‘ladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qo‘zg‘olondan vahimaga tushish",
+     "effect": "Mulkdor dehqonlar va boy savdogarlar Buxoro viloyatini tark etib, Turkiston va Taroz atrofiga o‘rnashgan.",
+     "evidence": "Qo‘zg‘olondan vahimaga tushgan mulkdor dehqonlar va boy savdogarlar Buxoro viloyatini tark etib"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qochqinlarning turk xoqoniga yordam so‘rab murojaat qilishi",
+     "effect": "Turk xoqoni Sheri Kishvar boshliq qo‘shin yuborib, qo‘zg‘olonni bostirgan.",
+     "evidence": "qo‘zg‘olonchilarga qarshi kurashda yordam be rishni so‘raganlar"
+    },
+    {
+     "kind": "number",
+     "number": "9",
+     "unit": "marta",
+     "meaning": "VII asrning birinchi yarmida Xitoyga yuborilgan savdo elchilari soni.",
+     "evidence": "Xitoyga to‘qqiz marotaba savdo elchilari yuboriladi"
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "title": "Mahalliy hokimliklarning tashkil topishi",
+   "page": 19,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "V–VII asr",
+     "date_label": "V–VII asrlar",
+     "event": "Mamlakat 15 dan ortiq hokimliklarga bo‘linib ketgan.",
+     "evidence": "V–VII asrlarda mamlakat 15 dan ortiq hokimliklarga bo‘linib ketgan edi"
+    },
+    {
+     "kind": "date_event",
+     "date": "718",
+     "date_label": "718-yil",
+     "event": "Samarqanddan hadya tariqasida dubulg‘a yuborilib, undan nusxa olib Xitoy qurolsozlari qo‘shinni temir qalpoq bilan ta’minlagan.",
+     "evidence": "718yilda hadya tariqasida Samarqanddan yuborilgan dubulg‘adan nusxa olib"
+    },
+    {
+     "kind": "date_event",
+     "date": "VII asr",
+     "date_label": "VII asrning dastlabki choragi",
+     "event": "G‘arbiy turk xoqonligi hukmdorlik qarorgohini Choch viloyatiga ko‘chirgan.",
+     "evidence": "VII asrning dastlabki choragida G‘arbiy turk xoqonligi hukmdorlik qarorgohini Choch viloyatiga"
+    },
+    {
+     "kind": "date_event",
+     "date": "V–VII asr",
+     "date_label": "V–VII asrlar",
+     "event": "Qishloqlarda «ko‘shk», «qasr», «qo‘rg‘on» kabi istehkomli turarjoylar qad ko‘targan.",
+     "evidence": "Qish loqlarda “ko‘shk”, “qasr”, “qo‘r g‘on” va “qo‘rg‘oncha” kabi istehkomli turarjoylar qad ko‘ tardi"
+    },
+    {
+     "kind": "term",
+     "term": "ixshid",
+     "definition": "Voha hokimi; Sug‘d ixshidlari mustaqil hokimliklar ichida eng yirigi hisoblangan.",
+     "evidence": "Sug‘d ixshidlari – voha hukmdorlari edi"
+    },
+    {
+     "kind": "term",
+     "term": "tudun",
+     "definition": "Choch shahri markazi bo‘lgan hokimlik hukmdori yuritilgan unvon.",
+     "evidence": "hukmdori “tudun” deb yuri tilardi"
+    },
+    {
+     "kind": "term",
+     "term": "dehqon",
+     "definition": "Eloq hokimlarining unvoni; Eloqning markazi Tunkat shahri hisoblangan.",
+     "evidence": "eloqning markazi Tunkat, hokimlari esa “dehqon” deb ata lardi"
+    },
+    {
+     "kind": "term",
+     "term": "ko‘shk",
+     "definition": "Qishloqlarda qad ko‘targan istehkomli turarjoy; mudofaa inshooti vazifasini ham o‘tagan.",
+     "evidence": "“ko‘shk”, “qasr”, “qo‘r g‘on” va “qo‘rg‘oncha” kabi istehkomli turarjoylar"
+    },
+    {
+     "kind": "term",
+     "term": "boshqaruv ma’muriyati",
+     "definition": "Ilk o‘rta asrlarda hokimliklarda tashkil topgan; boj, soliq va yasoq yig‘ish bilan shug‘ullangan.",
+     "evidence": "asosiy vazifasi fuqaro lardan boj, soliq va yasoq larni"
+    },
+    {
+     "kind": "term",
+     "term": "xvatun",
+     "definition": "Malika unvoni; vazirlik darajasiga ega bo‘lib, davlat boshqaruvida faol ishtirok etgan.",
+     "evidence": "malikasi – xvatun (xotun) vazirlik darajasiga ega bo‘lib"
+    },
+    {
+     "kind": "place",
+     "place": "Toxariston",
+     "event": "Janubiy O‘zbekiston, Janubiy Tojikiston va Shimoliy Afg‘onistonni o‘z ichiga olgan, poytaxti Balx bo‘lgan viloyat.",
+     "evidence": "Hozirgi Janu biy O‘zbe kiston va Janubiy Tojikiston, Shimoliy Afg‘onistonni o‘z ichi g a olgan"
+    },
+    {
+     "kind": "place",
+     "place": "Choch",
+     "event": "Chirchiq vodiysidagi hokimlik; markazi Choch shahri, hukmdori tudun deb yuritilgan.",
+     "evidence": "Chochning markazi Choch shahri bo‘lib"
+    },
+    {
+     "kind": "place",
+     "place": "Farg‘ona",
+     "event": "Hukmdorlari ixshid deb atalgan, paxta va sholi ekiladigan hosildor vodiy.",
+     "evidence": "Farg‘ona hukmdorlari “ixshid” deb atalgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Hokimliklarning eftallar va Turk xoqonligiga bo‘ysundirilishi",
+     "effect": "Ichki hayotiga deyarli aralashilmagani uchun ular mustaqilligini ma’lum darajada saqlab qolgan.",
+     "evidence": "eftallar ham, turk xoqonlari ham ularning ichki hayotiga deyarli aralashmaganlar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Karvon yo‘lining o‘lka orqali o‘tishi",
+     "effect": "Choch va Eloqda ichki va tashqi savdo kengayib, shaharlar aholisi ko‘paygan.",
+     "evidence": "Karvon yo‘lining o‘lka orqali o‘tishi Choch va Eloqqa ichki va tashqi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yerga egalik munosabatlarining o‘rnatilishi va ko‘chmanchilarning o‘troqlashuvi",
+     "effect": "Shahar va qishloqlarning qiyofasi, aholining turmush tarzi va ijtimoiy ahvoli jiddiy o‘zgargan.",
+     "evidence": "shahar va qishloqlarning qiyofasi hamda aho li sining turmush tarzi va ijtimoiy ahvoliga"
+    },
+    {
+     "kind": "cause",
+     "cause": "Tog‘oldi maydonlariga suv chiqarilib, yangi yerlarning o‘zlashtirilishi",
+     "effect": "Ziroatkor yerlar kengayib, dehqonchilik vohalarining suv ta’minoti yaxshilangan.",
+     "evidence": "Tog‘oldi maydonlariga suv chiqarilib, yangi yerlar o‘zlashtirildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Istehkomli qasr va qo‘rg‘onlarning qurilishi",
+     "effect": "Ular tashqi dushman hujumiga qarshi mudofaa inshooti va oziq-ovqat ombori bo‘lib xizmat qilgan.",
+     "evidence": "hujumiga qarshi mudofaa inshooti, chokarlar to‘planadigan joy"
+    },
+    {
+     "kind": "number",
+     "number": "15",
+     "unit": "hokimlik",
+     "meaning": "V–VII asrlarda mamlakat bo‘linib ketgan hokimliklar soni; 15 dan ortiq bo‘lgan.",
+     "evidence": "mamlakat 15 dan ortiq hokimliklarga"
+    },
+    {
+     "kind": "number",
+     "number": "27",
+     "unit": "viloyat",
+     "meaning": "Toxariston tarkibiga kirgan tog‘ va tog‘oldi viloyatlari soni.",
+     "evidence": "va boshqa 27 ta tog‘ va tog‘oldi vilo yatlaridan iborat"
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "title": "VI–VII asrlarda madaniy hayot",
+   "page": 22,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "VI–VII asr",
+     "date_label": "VI–VII asrlar",
+     "event": "O‘rta Osiyoda zardushtiylik, buddaviylik, nasroniylik, moniylik va shomoniylik kabi dinlar mavjud bo‘lgan.",
+     "evidence": "VI–VII asrlarda O‘rta Osiyoda zardushtiylik, buddaviylik"
+    },
+    {
+     "kind": "date_event",
+     "date": "V–VII asr",
+     "date_label": "V–VII asrlar",
+     "event": "Dehqonchilik maydonlarining kengayishi va savdoning avj olishi shaharlar ravnaqiga ta’sir etgan.",
+     "evidence": "V–VII asrlarda dehqonchilik maydonlari kengayib"
+    },
+    {
+     "kind": "date_event",
+     "date": "VI–VII asr",
+     "date_label": "VI–VII asrlar",
+     "event": "Sug‘d, Xorazm va Toxariston aholisining alohida-alohida yozuvlari bo‘lgan.",
+     "evidence": "Bu davrda Sug‘d, Xorazm va Toxariston aholisining alohidaalohida yozuvlari"
+    },
+    {
+     "kind": "person",
+     "person": "Bilga xoqon",
+     "role": "Nomiga ko‘kturk bitiklari bag‘ishlangan xoqon, qadimgi turkiy yozuv yodgorligi egasi.",
+     "activity": "Uning bitiklari Yettisuv, Farg‘ona va Zarafshon vodiylaridan topilib, o‘rganilgan.",
+     "evidence": "bitiklari (Kultegin va Bilga xoqon bi tik lari)"
+    },
+    {
+     "kind": "term",
+     "term": "qam",
+     "definition": "Ko‘k Tangriga sig‘inuvchi yakkaxudolik dini; qadimgi turklar o‘z dinini shu deb atagan.",
+     "evidence": "Qadimgi turklar o‘z dinini “qam” deb yuritganlar"
+    },
+    {
+     "kind": "term",
+     "term": "arkon",
+     "definition": "Dindagi eng muhim vazifa, suyanchiq; ibodat, ro‘za va sadaqa moniy dinining arkoni.",
+     "evidence": "Arkon – dindagi eng muhim vazifa"
+    },
+    {
+     "kind": "term",
+     "term": "moniylik",
+     "definition": "Olamning ibtidosi yorug‘lik va zulmat kabi ikki qarama-qarshi yaratuvchidan iborat deb biluvchi din.",
+     "evidence": "Moniy dini ta’limoti bo‘yicha olamning ibtidosi ikki qaramaqarshi yaratuvchi"
+    },
+    {
+     "kind": "term",
+     "term": "zardushtiylik",
+     "definition": "VI–VII asrlarda aholining ko‘pchiligi e’tiqod qilgan din.",
+     "evidence": "Aholining ko‘p chiligi zardushtiylik dini ga e’tiqod qil gan"
+    },
+    {
+     "kind": "term",
+     "term": "turkiy run xati",
+     "definition": "Ko‘kturk yozuvi; 38–40 harfdan iborat bo‘lib, tosh va yog‘ochga o‘yib yozishga qulay bo‘lgan.",
+     "evidence": "turkiy run (ko‘k turk) xati ham keng qo‘l lanilgan"
+    },
+    {
+     "kind": "term",
+     "term": "ganchkorlik",
+     "definition": "Ganch bilan ishlangan naqsh san’ati; nodir namunalari Varaxshada topilgan.",
+     "evidence": "ganchkorlik san’atining no dir yod gorligi namunalari Varaxsha"
+    },
+    {
+     "kind": "place",
+     "place": "Mug‘ qal’asi",
+     "event": "Panjikent yaqinidagi, sug‘d yozuvlari saqlanib qolgan qal’a.",
+     "evidence": "Panjikent yaqinidagi Mug‘ qal’asida"
+    },
+    {
+     "kind": "place",
+     "place": "Afrosiyob",
+     "event": "Samarqandning qadimiy xarobasi; sug‘d yozuvlari qayd etib o‘rganilgan joy.",
+     "evidence": "Samarqandning qadimiy xarobasi Afro siyobda"
+    },
+    {
+     "kind": "place",
+     "place": "Ajinatepa",
+     "event": "Farg‘ona vodiysida Qo‘rg‘on tepa yaqinidagi, bo‘yi 12 metrlik budda haykali topilgan yodgorlik.",
+     "evidence": "Qo‘r g‘on tepa yaqinidagi Ajinatepadan budda ning bahaybat haykal lari topilib"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qog‘ozning bahosi nihoyatda baland bo‘lishi",
+     "effect": "Xat va hujjatlar asosan charm, yog‘och va sopolga, kamdan-kam hollarda qog‘ozga bitilgan.",
+     "evidence": "Chunki qog‘ozning bahosi nihoyatda baland edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dehqonchilik maydonlarining kengayishi, hunarmandchilikka ehtiyoj va savdoning avj olishi",
+     "effect": "Shaharlarning ravnaqi jadallashib, hunarmandchilik va savdo yanada rivojlangan.",
+     "evidence": "savdosotiqning avj olishi shaharlarning ravnaqiga ta’sir etdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Buddaviylik dinining kuchli ta’siri",
+     "effect": "Haykaltaroshlik san’ati rivoj topib, buddaning bahaybat haykallari yaratilgan.",
+     "evidence": "Haykaltaroshlik rivojiga ayniqsa bud daviylik dini kuchli ta’sir ko‘rsatgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Sug‘dda bolalarning besh yoshdan yozuv va hisobga o‘rgatilishi",
+     "effect": "Ular 20 yoshga kirganlarida savdo ishlarini o‘rganish uchun chet mamlakatlarga jo‘natilgan.",
+     "evidence": "ular 20 yoshga kirganlarida savdo ish la rini o‘r ga nish uchun o‘z ga mamlakatlarga jo‘natilar edi"
+    },
+    {
+     "kind": "number",
+     "number": "38–40",
+     "unit": "harf",
+     "meaning": "Turkiy run (ko‘kturk) xatidagi harflar soni; harflar bir-biriga tutashib ketadi.",
+     "evidence": "38–40 harflardan iborat edi"
+    },
+    {
+     "kind": "number",
+     "number": "200",
+     "unit": "gektar",
+     "meaning": "Samarqand shahrining umumiy maydoni; davrning eng katta shaharlaridan biri.",
+     "evidence": "Uning umumiy maydoni qariyb 200 gektardan bo‘lgan"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,789 @@
+{
+ "chapter": "V BO‘LIM. QADIMGI RIM",
+ "topics": [
+  {
+   "number": 37,
+   "title": "Qadimgi Italiya",
+   "page": 145,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VIII–VI asrlar",
+     "date_label": "Mil. avv. VIII–VI asrlar",
+     "event": "Yunonlar Italiya sohillarida koloniyalarga asos solib, sigirlar uchun ajoyib o‘tloqlar topgan",
+     "evidence": "Mil. avv. VIII-VI asrlarda Italiya sohillarida koloni- yalarga asos solgan yunonlar bu mamlakatda sigirlarni o‘tlatish uchun ajoyib o‘tloqlarni top- ganlar."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VIII asr",
+     "date_label": "Mil. avv. VIII asr",
+     "event": "Etrusklar Italiyada 12 ta shahar-davlatning ittifoqini tuzishgan",
+     "evidence": "Mil. avv. VIII asr- da etrusklar Italiyada 12 ta shahar-davlatning ittifoqini tuzishadi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 753-yil",
+     "date_label": "Mil. avv. 753-yil",
+     "event": "Rivoyatga ko‘ra aka-uka Romul va Rem Tibr daryosi bo‘yida Rim shahriga asos solgan",
+     "evidence": "Rivoyatga qaraganda, mil. avv. 753-yilda Rim shahriga aka-uka Romul va Rem tomo- nidan asos solingan."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 753-yil",
+     "date_label": "Rimga asos solingan yil",
+     "event": "Romul inisi Remni o‘ldirib, barpo etilgan shaharga o‘z nomini bergan",
+     "evidence": "Romul o‘z inisini o‘ldirib qo‘yadi, shaharga esa o‘z nomini beradi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 509-yil",
+     "date_label": "Mil. avv. 509-yil",
+     "event": "Mag‘rur Tarkviniy quvg‘in qilinganidan keyin Rim respublika deb e’lon qilindi",
+     "evidence": "Mag‘rur Tark- viniy quvg‘in qilinganidan keyin, mil. avv. 509-yilda Rim respub- lika deb e‘lon qilindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 509-yil",
+     "date_label": "Podsho hokimiyati ag‘darilgach",
+     "event": "Shahar ahli hokimiyat bir kishi qo‘lida jamlanishiga yo‘l qo‘ymaydigan boshqaruv shakliga o‘tishga qaror qilgan",
+     "evidence": "Shahar ahli butun hokimiyat bir ki- shi qo‘lida jamlanishiga yo‘l qo‘ymaydigan boshqaruv shakliga o‘tishga qaror qiladi."
+    },
+    {
+     "kind": "person",
+     "person": "Romul",
+     "role": "afsonaviy shahar asoschisi, Rim shahriga o‘z nomini bergan",
+     "activity": "Voyaga yetgach Tibr bo‘yida shahar barpo etishga ahd qilgan va inisi Remni o‘ldirgan",
+     "evidence": "Voyaga yetganlarida esa ular Tibr bo‘yida shahar barpo etishga ahd qilishadi."
+    },
+    {
+     "kind": "person",
+     "person": "Rem",
+     "role": "Romulning ukasi, afsonaga ko‘ra shahar asoschilaridan biri",
+     "activity": "Aka-ukalar birgalikda shahar barpo etishga ahd qilishgan, keyin janjallashib qolishgan",
+     "evidence": "Aka-uka- lar janjallashib qolib, Romul o‘z inisini o‘ldirib qo‘yadi,"
+    },
+    {
+     "kind": "person",
+     "person": "Mag‘rur Tarkviniy",
+     "role": "Rim hukmdori, laqabi Mag‘rur bo‘lgan",
+     "activity": "Saylab qo‘yilgan hukmdorni o‘ldirib hokimiyatni egallagan, keyin shahardan haydab yuborilgan",
+     "evidence": "Laqabi Mag‘rur Tarkviniy degan kishi mam- lakatga saylab qo‘yilgan hukmdorni o‘ldirib, hokimiyatni egallab oldi."
+    },
+    {
+     "kind": "term",
+     "term": "Italiklar",
+     "definition": "Apennin yarimorolidagi qabilalar shu nom bilan atalgan",
+     "evidence": "Yarimorolning qabilalari italiklar deb nomlangan."
+    },
+    {
+     "kind": "term",
+     "term": "«Italiya» so‘zi",
+     "definition": "Yunoncha «vitulus» so‘zidan olingan bo‘lib, buqa, buzoqcha ma’nosini bildiradi",
+     "evidence": "«Italiya» so‘zi (yunoncha «vitulus» so‘zi- dan) buqa, buzoqcha ma‘nosini bildiradi."
+    },
+    {
+     "kind": "term",
+     "term": "Ligurlar",
+     "definition": "Italiyaning qadimgi qabilalaridan biri, chorvachilik bilan shug‘ullangan",
+     "evidence": "Lig‘urlar Italiyaning qadimgi qabilalaridan biri bo‘lib, chorvachilik bilan shug‘ullanganlar."
+    },
+    {
+     "kind": "term",
+     "term": "Etrusklar",
+     "definition": "Italiyaning shimoli-g‘arbiy qismida yashagan, asosiy mashg‘uloti dehqonchilik bo‘lgan qabila",
+     "evidence": "Italiyaning shimoli-g‘arbiy qismi- da etrusklar yashagan. Ularning asosiy mash- g‘uloti dehqonchilik bo‘lgan."
+    },
+    {
+     "kind": "place",
+     "place": "Apennin yarim oroli",
+     "event": "Iqlimi iliq bo‘lib, yil bo‘yi o‘rtacha yomg‘ir yog‘ib turgan",
+     "evidence": "Apennin yarimorolida iq- lim iliq bo‘lib, yil bo‘yi o‘rtacha yomg‘ir yog‘ardi."
+    },
+    {
+     "kind": "place",
+     "place": "Po daryosi",
+     "event": "Apennin yarimorolidagi eng katta daryo hisoblanadi",
+     "evidence": "Apennin yarimorolidagi eng katta daryo Po daryosidir."
+    },
+    {
+     "kind": "place",
+     "place": "Tibr daryosi",
+     "event": "Rim shahri bo‘yidagi dehqonchilik manzilgohlaridan boshlangan, toshqin paytida atrofi botqoqlikka aylangan",
+     "evidence": "Rim shahri Tibr daryosi bo‘yidagi dehqonchilik man- zilgohlaridan boshlangan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Iqlim iliq, yegulik mahsulotlar mo‘l-ko‘l va tuproq unumdor bo‘lgan",
+     "effect": "Ko‘p asrlar davomida Italiya aholisining asosiy mashg‘uloti dehqonchilik va chorvachilik bo‘lgan",
+     "evidence": "Yegulik mahsulotlar mo‘l-ko‘lligi va tuproq unum dorligi tufayli ko‘p asrlar davomida qadimgi Italiya aholisining asosiy mashg‘uloti dehqonchilik va chorvachilik bo‘lgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Tarkviniy saylab qo‘yilgan hukmdorni o‘ldirib hokimiyatni egallagan",
+     "effect": "Aholi darg‘azab bo‘lib qo‘zg‘olon ko‘targan va uni shahardan haydab yuborgan",
+     "evidence": "Bundan darg‘azab bo‘lgan aholi qo‘zg‘olon ko‘tarib, Tarkviniyni shahardan haydab yu- bordi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Shahar daryo va botqoqlik yonida joylashgan",
+     "effect": "Daryo va botqoqlik lotinlarni qo‘shni qabilalar hujumlaridan himoya qilgan",
+     "evidence": "Daryo va botqoqlik lotinlarni qo‘shni qabilalar hujumlaridan himoya qilar edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Etrusklar sharq mamlakatlari bilan erkin savdo-sotiq qilishni xohlagan",
+     "effect": "Ular yunon koloniyalariga qarshi kurash boshlagan, ularga Karfagen shahar-davlati ham qo‘shilgan",
+     "evidence": "Etrusklar Sharq mamlakat- lari bilan erkin savdo-sotiq qilish uchun yunon koloniyalariga qarshi kurash boshladilar."
+    },
+    {
+     "kind": "number",
+     "number": "12",
+     "unit": "shahar-davlat",
+     "meaning": "Etrusklar ittifoqiga birlashgan shahar-davlatlar soni",
+     "evidence": "etrusklar Italiyada 12 ta shahar-davlatning ittifoqini tuzishadi."
+    },
+    {
+     "kind": "number",
+     "number": "7",
+     "unit": "tepalik",
+     "meaning": "Rim shahri joylashgan yettita tepalikning soni, shahar shu tepaliklar ustida qurilgan",
+     "evidence": "Rim yettita te- palikda joylashgan."
+    }
+   ]
+  },
+  {
+   "number": 38,
+   "title": "Rim respublikasi",
+   "page": 148,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VI asr oxiri",
+     "date_label": "Mil. avv. VI asrning oxiri",
+     "event": "Rim davlati respublika deb yuritila boshlangan",
+     "evidence": "Mil. avv. VI asr oxiridan Rim davlati respublika deb yuritila boshlangan."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VI asr oxiri",
+     "date_label": "Respublika davrining boshlanishi",
+     "event": "Rim boshqaruvida faqat patritsiylar ishtirok eta olar edi",
+     "evidence": "Rim boshqaru- vida faqat patritsiylar ishtirok eta olar edi."
+    },
+    {
+     "kind": "date_event",
+     "date": "bir yil",
+     "date_label": "Bir yil muddat",
+     "event": "Xalq majlisi patritsiylardan ikki kishini bir yilga hokim qilib saylagan",
+     "evidence": "Xalq majlisi patritsiylardan ikki kishini bir yil muddatga hokim qilib saylagan."
+    },
+    {
+     "kind": "date_event",
+     "date": "olti oy",
+     "date_label": "Olti oy",
+     "event": "Diktator hokimiyatda olti oydan ko‘p tura olmas edi",
+     "evidence": "Ammo u hokimiyatda olti oydan ko‘p tura olmas edi."
+    },
+    {
+     "kind": "date_event",
+     "date": "har yili",
+     "date_label": "Har yil",
+     "event": "Konsullar Xalq majlisiga hisobot berar edilar",
+     "evidence": "Har yili ular Xalq majlisiga hisobot berar edilar."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. III asr boshlari",
+     "date_label": "Mil. avv. III asr boshlari",
+     "event": "Mavqeidan qat’iy nazar barcha fuqarolar qonun oldida teng bo‘lgan qonunlar qabul qilindi",
+     "evidence": "Faqat miloddan avvalgi III asr boshlariga kelib Rimning barcha fuqarolari mavqeidan qat‘iy nazar qonun oldida teng, deb hisobla- nadigan qonunlar qabul qilindi."
+    },
+    {
+     "kind": "person",
+     "person": "Konsul",
+     "role": "respublikaning bosh mansabdor shaxsi, har yili ikkita saylangan",
+     "activity": "Yil davomida respublikani boshqarib, rimliklarni sud qilgan, harbiy davrda qo‘shinlarga qo‘mondonlik qilgan",
+     "evidence": "Konsul- lar yil davomida Rim respublikasini boshqarib, rimliklarni sud qilar edilar."
+    },
+    {
+     "kind": "person",
+     "person": "Diktator",
+     "role": "urush yoki xalq qo‘zg‘oloni paytida tayinlangan cheklanmagan hokimiyatli hukmdor",
+     "activity": "Cheklanmagan hokimiyatga ega bo‘lgan, ammo olti oydan ko‘p hokimiyatda tura olmagan",
+     "evidence": "Urush boshlangan taqdirda yoki xalq qo‘zg‘oloni ro‘y berganda diktator va uning o‘rinbosari – qo‘shinlar boshlig‘i etib tayinla- nardi."
+    },
+    {
+     "kind": "person",
+     "person": "Xalq tribuni",
+     "role": "qashshoq rimliklar manfaatlarini ifoda etgan mansabdor shaxs",
+     "activity": "Barcha fuqarolarning teng va yashirin ovozi bilan saylangan, «veto» so‘zini aytish huquqiga ega bo‘lgan",
+     "evidence": "Xalq tribunlari qashshoq rimlik- lar manfaatlarini ifoda etgan."
+    },
+    {
+     "kind": "person",
+     "person": "Liktor",
+     "role": "har bir konsulni qo‘riqlab yuruvchi faxriy qorovul",
+     "activity": "Konsulning jazolash huquqi alomati sifatida yelkalariga boltacha sanchilgan bog‘lama taqib yurishgan",
+     "evidence": "Konsul jinoyatchilarni jazolash imkoniyatiga egaligi alomati sifatida liktorlar yelkalariga o‘rtasiga boltacha sanchilgan qayishqoq arqonchalar- dan bog‘lama taqib yurishardi."
+    },
+    {
+     "kind": "term",
+     "term": "Respublika",
+     "definition": "Lotincha «xalq ishi, umumiy ish» degan ma’noni anglatadi",
+     "evidence": "Lotinchadan tarjima qilinganda «respub- lika» so‘zi «xalq ishi, umumiy ish» degan ma‘nolarni anglatadi"
+    },
+    {
+     "kind": "term",
+     "term": "Senat",
+     "definition": "Lotincha «oqsoqollar kengashi» ma’nosini beradigan, 300 kishidan iborat organ",
+     "evidence": "lotinchadan tarjima qilinganda «senat» so‘zi «oqsoqollar kengashi» degan ma‘noni anglatadi."
+    },
+    {
+     "kind": "term",
+     "term": "Patritsiylar",
+     "definition": "Rimning tub aholisi, davlat boshqaruvida faqat ular ishtirok eta olar edi",
+     "evidence": "Rimning tub aholisi patritsiylar, Rimga ko‘chib kelgan odamlar va ularning av- lodlari plebeylar deb atalgan."
+    },
+    {
+     "kind": "term",
+     "term": "Plebeylar",
+     "definition": "Rimga ko‘chib kelgan odamlar va ularning avlodlari shu nom bilan atalgan",
+     "evidence": "Rimga ko‘chib kelgan odamlar va ularning av- lodlari plebeylar deb atalgan."
+    },
+    {
+     "kind": "term",
+     "term": "Veto",
+     "definition": "Xalq tribuni aytadigan «taqiqlayman» so‘zi, shundan keyin qonun qabul qilinmas edi",
+     "evidence": "Xalq tribuni «veto» (taqiqlay- man) so‘zini aytishi mumkin bo‘lgan, bunday holda qonun qabul qilinmas edi."
+    },
+    {
+     "kind": "place",
+     "place": "Muqaddas tog‘",
+     "event": "Isyon ko‘targan Rim qo‘shinlari ketib qolgan va o‘z qonunlariga ega yangi shahar tashkil qilish bilan ogohlantirgan",
+     "evidence": "Ular Rim atroﬁ dagi Muqaddas tog‘ga ketib qoladi- lar va o‘z qonunlariga ega bo‘lgan yangi sha- har tashkil qilamiz, deb ogohlantiradilar."
+    },
+    {
+     "kind": "place",
+     "place": "Forum",
+     "event": "12 jadval qonunlari hamma ko‘rishi uchun joylashtirilgan Rimning markaziy maydoni",
+     "evidence": "12 ta mis lavhaga o‘yib yozilgan qonun- larni hamma ko‘rishi uchun"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qonunchilik og‘zaki qonunlarga asoslangan, patritsiylar sudlarda adolatsiz qarorlar chiqargan",
+     "effect": "Plebeylar talabiga ko‘ra o‘nta patritsiydan iborat hay’at tuzilgan",
+     "evidence": "Plebeylar talabiga ko‘ra, o‘nta patritsiydan iborat hay‘at tuzilib, ular qonun- larning yozma majmuasini tuzishlari kerak bo‘lgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Hay’at qonunlarning yozma majmuasini oxiriga yetkaza olmagan",
+     "effect": "Plebeylardan iborat Rim qo‘shinlari isyon ko‘tarib Muqaddas tog‘ga ketib qolgan",
+     "evidence": "O‘shanda asosan plebeylardan iborat bo‘lgan Rim qo‘shinlari isyon ko‘taradi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Qo‘shinlar o‘z qonunlariga ega yangi shahar tashkil qilish bilan ogohlantirgan",
+     "effect": "Patritsiylar 12 jadvaldan tashkil topgan yangi qonunlarni qabul qilishga majbur bo‘lgan",
+     "evidence": "Patritsiy- lar 12 jadvaldan tashkil topgan yangi qonun- larni qabul qilishga majbur bo‘ladilar."
+    },
+    {
+     "kind": "cause",
+     "cause": "Urush boshlangan yoki xalq qo‘zg‘oloni ro‘y bergan",
+     "effect": "Diktator va uning o‘rinbosari – qo‘shinlar boshlig‘i tayinlangan",
+     "evidence": "diktator va uning o‘rinbosari – qo‘shinlar boshlig‘i etib tayinla- nardi."
+    },
+    {
+     "kind": "number",
+     "number": "300",
+     "unit": "kishi",
+     "meaning": "Senat tarkibidagi a’zolarning soni, ular umrbod senator bo‘lib qolishgan",
+     "evidence": "Senat 300 kishidan ibo- rat bo‘lgan."
+    },
+    {
+     "kind": "number",
+     "number": "12",
+     "unit": "kishi",
+     "meaning": "Har bir konsulni qo‘riqlab yurgan liktorlar soni",
+     "evidence": "Har bir konsulni 12 kishidan iborat faxriy qorovul – liktorlar qo‘riqlab yurardi."
+    }
+   ]
+  },
+  {
+   "number": 39,
+   "title": "Rim respublikasining hayoti",
+   "page": 152,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "14 yoshgacha",
+     "date_label": "14 yoshga to‘lgunga qadar",
+     "event": "O‘g‘il bolalar pushti yo‘llik toga kiyib yurgan",
+     "evidence": "o‘g‘il bolalar 14 yoshga to‘lgunga qadar pushti yo‘llik toga kiyishgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "14 yosh",
+     "date_label": "14 yoshga kirganlarida",
+     "event": "Ular voyaga yetgan shaxs hisoblanib, oppoq toga kiya boshlagan",
+     "evidence": "14 yoshga kirganlarida ular voyaga yetgan shaxs hisoblanar va op- poq toga kiya boshlar edilar."
+    },
+    {
+     "kind": "date_event",
+     "date": "kundalik hayotda",
+     "date_label": "Kundalik hayot",
+     "event": "Rimliklar o‘z xudolariga madad va homiylik so‘rab murojaat etishardi",
+     "evidence": "Kundalik hayotda rimliklar o‘z xudolariga madad va homiylik istab murojaat etishardi."
+    },
+    {
+     "kind": "date_event",
+     "date": "muhim ish boshlanishidan oldin",
+     "date_label": "Muhim ishni boshlashdan oldin",
+     "event": "Rimliklar xudolarga qurbonliklar bag‘ishlar edilar",
+     "evidence": "Muhim ishni boshlashdan oldin rimliklar xu- dolarga qurbonliklar bag‘ishlar edilar."
+    },
+    {
+     "kind": "date_event",
+     "date": "alomatlar noqulay chiqqanda",
+     "date_label": "Alomatlar ko‘ngildagidek bo‘lmasa",
+     "event": "Ishlar ma’lum muddatga kechiktirilar edi",
+     "evidence": "alo- matlar ko‘ngildagidek bo‘lmasa, ishlar ma‘lum muddatga kechiktirilar edi."
+    },
+    {
+     "kind": "date_event",
+     "date": "muqaddas olov yonib turgan davr",
+     "date_label": "Olov yonib turar ekan",
+     "event": "Muqaddas olov yonib turgan ekan, rimliklar hayot mavjud deb hisoblashgan",
+     "evidence": "Olov yonib turar ekan, hayot mavjuddir, deya hisoblashgan."
+    },
+    {
+     "kind": "person",
+     "person": "Yupiter",
+     "role": "Rimning bosh xudosi, osmon, momaqaldiroq va yashin podshosi",
+     "activity": "Rim davlatining homiysi hisoblangan, ibodatxonada uning ulkan haykali o‘rnatilgan",
+     "evidence": "Rimning bosh xudosi, osmon, momaqal- diroq va yashin podshosi Yupiter Rim dav- la tining homiysi bo‘lgan."
+    },
+    {
+     "kind": "person",
+     "person": "Mars",
+     "role": "Rim panteonidagi urush xudosi",
+     "activity": "Jangda mag‘lubiyatga uchragudek bo‘lishsa, rimliklar uning jahlini chiqargan deb xayol qilishgan",
+     "evidence": "qaysidir ish bilan urush xudosi Marsning jahlini chiqardik, degan xayolga borishgan."
+    },
+    {
+     "kind": "person",
+     "person": "Neptun",
+     "role": "Rim panteonidagi dengiz xudosi",
+     "activity": "Dengiz xudosi sifatida tilga olinib, hayotning dengizga bog‘liq jihatlarini boshqargan deb hisoblangan",
+     "evidence": "Neptun dengiz xu- dosi, uyqu xudosi Morfey, ov xudosi Diana,"
+    },
+    {
+     "kind": "person",
+     "person": "Vulqon",
+     "role": "Rim panteonidagi olov va temirchilik xudosi",
+     "activity": "Olov va temirchilik bilan bog‘liq ishlarga homiylik qilgan deb hisoblangan",
+     "evidence": "olov va temirchilik xudosi Vulqon, bahor va sevgi xudosi Venera,"
+    },
+    {
+     "kind": "person",
+     "person": "Fortuna",
+     "role": "Rim panteonidagi taqdir ilohasi",
+     "activity": "Rim xudolari ro‘yxatida taqdir ilohasi sifatida qayd etilgan",
+     "evidence": "sudlov ilohasi Yustitsiya, taqdir ilohasi esa Fortuna hisoblangan."
+    },
+    {
+     "kind": "term",
+     "term": "Mozaika",
+     "definition": "Shisha yoki tosh parchalaridan ishlangan suratlar",
+     "evidence": "Uy mozaikalar – shi- sha yoki tosh parchalaridan ishlangan suratlar bilan bezatilgan."
+    },
+    {
+     "kind": "term",
+     "term": "Freska",
+     "definition": "Villa devorlarini bezatgan, xom suvoqqa ishlangan rasmlar",
+     "evidence": "villalar devorlarini freskalar – xom suvoq- qa ishlangan rasmlar bezatib turgan."
+    },
+    {
+     "kind": "term",
+     "term": "Akveduk",
+     "definition": "Suv shaharga bir necha qavatli ko‘prikka o‘xshab ketuvchi inshoot orqali oqib kelgan",
+     "evidence": "Suv shaharga bir necha qa- vatli ko‘prikka o‘xshab ketuvchi akveduk orqali oqib kelgan."
+    },
+    {
+     "kind": "term",
+     "term": "Toga",
+     "definition": "Rimliklar kiyadigan libos, harir togani senatorlar ham kiyishgan",
+     "evidence": "Xuddi shunday harir togani senatorlar ham kiyishgan."
+    },
+    {
+     "kind": "term",
+     "term": "Altar",
+     "definition": "Qurbonlik baxshida etiladigan ko‘tarma joy",
+     "evidence": "Ibodatxona yonida altar – qurbonlik baxshida etiladigan ko‘tarma joy bo‘lgan."
+    },
+    {
+     "kind": "place",
+     "place": "Forum",
+     "event": "Har bir shahar markazida bozor maydoni, xalq yig‘ilishlari uchun joy va markaziy ibodatxona joylashgan",
+     "evidence": "Har bir shahar markazidagi Forumda bozor maydoni, xalq yig‘ilishlari uchun joy va markaziy ibo- datxona bo‘lgan."
+    },
+    {
+     "kind": "place",
+     "place": "Vesta ibodatxonasi",
+     "event": "Xonadon o‘chog‘i ilohasi Vesta ibodatxonasida muqaddas olov saqlangan",
+     "evidence": "Xonadon o‘chog‘i ilohasi Vesta ibodatxo- nasida muqaddas olov saqlangan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Davlat hududi kengayib borgan",
+     "effect": "Davlat hududi kengaygani sari shaharlar ham ko‘payib borgan",
+     "evidence": "Davlatning hududi kenga- yib borgani sayin shaharlar ham ko‘paydi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Badavlat odamlar o‘zlariga koshona qurib olgan",
+     "effect": "Bunday uylarda markaziy isitish tizimi bo‘lib, pollar isitilgan va quvurlar orqali suv kelgan",
+     "evidence": "Bunday uylarda markaziy isitish tizimi bo‘lgan: pollar isitilar, quvurlar orqali uylar- ga suv oqib kelar edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Rimliklar xudolaridan madad va homiylik istashgan",
+     "effect": "Xudolar uchun ulug‘vor ibodatxonalar barpo etilgan",
+     "evidence": "Xu- dolar uchun ulug‘vor ibodatxo- nalar barpo etilgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Olov yonib turgan ekan, hayot mavjud deb hisoblashgan",
+     "effect": "Muqaddas olovni saqlash vestalkalar majburiyatlari sirasiga kirgan",
+     "evidence": "Muqad- das olovni saqlash ayol kohinalar vestalkalar majburiyatlari sirasiga kirardi."
+    },
+    {
+     "kind": "number",
+     "number": "2–3",
+     "unit": "qavat",
+     "meaning": "Ko‘pchilik odamlar istiqomat qilgan binolarning qavatlar soni",
+     "evidence": "Ko‘pchilik odamlar 2–3 qavatli bino- larda istiqomat qilgan."
+    },
+    {
+     "kind": "number",
+     "number": "5–15",
+     "unit": "ruhoniy",
+     "meaning": "Pontifiklar hay’atiga jamlangan ruhoniylar soni",
+     "evidence": "5 nafardan 15 nafargacha ruhoniylardan jamlangan pontiﬁ klar hay‘atiga Buyuk pontiﬁ k rahbarlik qilgan."
+    }
+   ]
+  },
+  {
+   "number": 40,
+   "title": "O‘rtayer dengizida hukmronlik uchun kurash",
+   "page": 155,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. III asr o‘rtalari",
+     "date_label": "Mil. avv. III asr o‘rtalari",
+     "event": "Rim butun Italiyani zabt etishga erishgan",
+     "evidence": "Mil. avv. III asr o‘rtalariga kelib, Rim butun Italiyani zabt etishga erishdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 216-yil",
+     "date_label": "Mil. avv. 216-yil",
+     "event": "Kann yaqinidagi jangda Gannibal rimliklar armiyasini tor-mor etgan",
+     "evidence": "mil. avv. 216-yilda Kann yaqinidagi jang da rimliklar armiyasini tor-mor etdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 202-yil",
+     "date_label": "Mil. avv. 202-yil",
+     "event": "Zama shahri yaqinida Gannibal lashkari rimliklar tomonidan tor-mor etilgan",
+     "evidence": "mil. avv. 202-yilda uning lashkari Zama shahri yaqinida (Shimoliy Afrika) rim- liklar tomonidan tor-mor etildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 146-yil",
+     "date_label": "Mil. avv. 146-yil",
+     "event": "Karfagen butunlay vayronaga aylantirilgan",
+     "evidence": "mil. avv. 146-yilda Kar- fagen butunlay vayronaga aylantirildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "17 yosh",
+     "date_label": "17 yoshga yetganda",
+     "event": "Erkak fuqarolar armiyada xizmat qila olgan",
+     "evidence": "Armiyada 17 yoshga yetgan erkak fuqarolar xizmat qila olgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "25 yil",
+     "date_label": "25 yil",
+     "event": "Legionerlarning xizmat muddati shuncha bo‘lgan, evaziga uy-joy va oylik maosh olganlar",
+     "evidence": "Xizmat muddati 25 yil bo‘lgan. Shuncha muddatda- gi xizmati evaziga legio ner uy-joy, durustgi- na oylik maosh olish va Rim tarkibidagi turli o‘lkalarda xizmat qilish imkoniyatlariga ham ega bo‘lar edi."
+    },
+    {
+     "kind": "date_event",
+     "date": "ikki yil",
+     "date_label": "Ikki yil",
+     "event": "Karfagen shahri aholisi shaharni mudofaa qilgan, shaharda ochlik boshlangan",
+     "evidence": "Shahar aholisi ikki yil Karfagen- ni mudofaa qildi, shaharda ochlik boshlandi."
+    },
+    {
+     "kind": "person",
+     "person": "Gannibal",
+     "role": "Karfagen armiyasiga boshchilik qilgan tajribali sarkarda",
+     "activity": "Alp tog‘laridan oshib Italiyaga bostirib kirgan, Kann yaqinida rimliklar armiyasini tor-mor etgan",
+     "evidence": "Karfagen armiyasiga tajri- bali sarkarda Gannibal boshchilik qilardi."
+    },
+    {
+     "kind": "person",
+     "person": "Ssipion",
+     "role": "Rim sarkardasi",
+     "activity": "Qo‘shinlari bilan kutilmaganda Afrika qirg‘og‘iga kelib tushgan",
+     "evidence": "Rimlik sarkarda Ssi- pionning kutilmaganda o‘z qo‘shinlari bilan Afrika qirg‘og‘iga kelib tushganidan xabar top- gan"
+    },
+    {
+     "kind": "person",
+     "person": "Prokonsul",
+     "role": "provinsiyalarni boshqarish uchun tayinlangan noib",
+     "activity": "Cheklanmagan hokimiyatga ega bo‘lib, odatda bir yilga saylangan",
+     "evidence": "Provinsiyalarni boshqarish uchun noiblar – prokonsullar tayinlangan."
+    },
+    {
+     "kind": "term",
+     "term": "Senturiya",
+     "definition": "80 kishidan iborat jangchilar guruhi senturiyalar deb yuritilgan",
+     "evidence": "80 kishidan ibo- rat jangchilar guruhi senturiyalar deb yuritil- gan."
+    },
+    {
+     "kind": "term",
+     "term": "Kogorta",
+     "definition": "Bir necha senturiyadan tashkil topgan harbiy bo‘linma",
+     "evidence": "Bir necha senturiyalar kogortani, 10 ta kogorta legionni tashkil etgan."
+    },
+    {
+     "kind": "term",
+     "term": "Legion",
+     "definition": "10 ta kogortadan tashkil topgan yirik harbiy bo‘linma",
+     "evidence": "10 ta kogorta legionni tashkil etgan."
+    },
+    {
+     "kind": "term",
+     "term": "Triumf",
+     "definition": "Senat qaroriga ko‘ra g‘alabani nishonlash tantanasi",
+     "evidence": "Senat qaro- riga ko‘ra, Rim qo‘shinlari g‘alaba (triumf)ni n ishonlaganlar."
+    },
+    {
+     "kind": "term",
+     "term": "Provinsiya",
+     "definition": "Bosib olingan yerlarni rimliklar shunday deb atashgan",
+     "evidence": "Bosib olingan yerlarni rimliklar provinsiya de- yishgan."
+    },
+    {
+     "kind": "place",
+     "place": "Alp tog‘lari",
+     "event": "Gannibal qo‘shinlari o‘tib bo‘lmasdek tuyulgan bu tog‘lardan oshib Italiyaga bostirib kirgan",
+     "evidence": "O‘tib bo‘lmasdek tuyulgan tog‘lardan oshgan"
+    },
+    {
+     "kind": "place",
+     "place": "Sitsiliya oroli",
+     "event": "Karfagen quldorlari uning g‘arbiy qismini egallab olgan edilar",
+     "evidence": "Karfagen quldorlari Sitsiliya orolining g‘arbiy qismini egallab olgan edilar."
+    },
+    {
+     "kind": "place",
+     "place": "Zama shahri",
+     "event": "Shimoliy Afrikada joylashgan, mil. avv. 202-yilda Gannibal lashkari shu yerda tor-mor etilgan",
+     "evidence": "uning lashkari Zama shahri yaqinida (Shimoliy Afrika) rim- liklar tomonidan tor-mor etildi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Karfagen quldorlari Sitsiliya orolining g‘arbiy qismini egallab olgan edilar",
+     "effect": "Aynan Sitsiliya masalasi Rim va Karfagen o‘rtasidagi urush boshlanishiga sabab bo‘lgan",
+     "evidence": "Aynan Sitsiliya masalasi Rim va Karfagen o‘rtasidagi urush boshlanishiga sabab bo‘ladi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Gannibal qo‘shinlarining Ispaniyadan Italiyaga qarshi yurishlari",
+     "effect": "Ikkinchi Puni urushi boshlandi, Karfagen armiyasi Alp tog‘lari etaklariga yetib bordi",
+     "evidence": "Gannibal qo‘shinlarining Ispaniyadan Italiyaga qar- shi yurishlari tufayli ikkin- chi Puni urushi boshlandi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Karfagen yollanma qo‘shinlari mamlakatni talon-taroj qilib tashlagan edi",
+     "effect": "Italiya aholisi Gannibalni qo‘llab-quvvatlamagan",
+     "evidence": "Italiya aholisi Gannibalni qo‘llab-quvvatlamadi, chunki Kar- fagen yollanma qo‘shinlari mamlakatni talon- taroj qilib tashlagan edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Karfagen o‘z qudratini tiklashga harakat qilgan",
+     "effect": "Uchinchi Puni urushida rimliklar Karfagenni qamal qilganlar",
+     "evidence": "Uchinchi Puni urushida rimliklar Karfagenni qamal qildilar."
+    },
+    {
+     "kind": "number",
+     "number": "3",
+     "unit": "marta",
+     "meaning": "Rimliklar Karfagen bilan shuncha marta urushgan",
+     "evidence": "Rimliklar Karfagen bilan uch marotaba urushdilar."
+    },
+    {
+     "kind": "number",
+     "number": "70 ming",
+     "unit": "legioner",
+     "meaning": "Kann yaqinidagi jangda halok bo‘lgan rimliklar soni",
+     "evidence": "Bu jangda 70 ming rimlik legioner halok bo‘lgan."
+    }
+   ]
+  },
+  {
+   "number": 41,
+   "title": "Qullar va gladiatorlar",
+   "page": 160,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 74-yil",
+     "date_label": "Mil. avv. 74-yil",
+     "event": "Spartak boshchiligidagi qullar qo‘zg‘oloni boshlandi",
+     "evidence": "Mil. avv. 74-yilda bosh- langan Spartak bosh- chiligidagi qullar qo‘z- g‘oloni qadimgi dunyoda eng ommaviy va uyushgan qo‘zg‘olonlardan biri bo‘ldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 74–71-yillar",
+     "date_label": "Mil. avv. 74–71-yillar",
+     "event": "Qo‘zg‘olon davom etib, qullar mag‘lubiyati bilan yakun topgan",
+     "evidence": "mil. avv. 74–71- yil- lar davomi da bo‘lib, qo‘z- g‘olon qullar mag‘lubiyati bilan yakun topgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 71-yil bahori",
+     "date_label": "Mil. avv. 71-yilning bahori",
+     "event": "Hal qiluvchi jangda Spartak lashkari tor-mor etildi, Spartak halok bo‘ldi",
+     "evidence": "Mil. avv. 71-yilning bahorida ro‘y ber- gan hal qiluvchi jangda Spartak lashkari tor- mor etildi, uning o‘zi esa ana shu jangda halok bo‘ldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 71-yil",
+     "date_label": "Mil. avv. 71-yil",
+     "event": "6 mingdan ziyod asirlar Rim-Kapuya oralig‘idagi yo‘l bo‘ylaridagi xochlarga mixlab tashlandi",
+     "evidence": "6 mingdan ziyod asirlar Rim-Kapuya oralig‘idagi yo‘l bo‘ylaridagi xochlarga mixlab tashlandi."
+    },
+    {
+     "kind": "date_event",
+     "date": "asta-sekin",
+     "date_label": "Asta-sekin",
+     "event": "Boshqa qullar ham qo‘zg‘olonchilarga qo‘shilib, ularning soni 10 ming kishiga yetdi",
+     "evidence": "Asta-sekin boshqa qullar ham ularga kelib qo‘shila bosh- ladi va qo‘zg‘olon ko‘targanlar saﬁ kengaya bordi."
+    },
+    {
+     "kind": "date_event",
+     "date": "ko‘p o‘tmay",
+     "date_label": "Ko‘p o‘tmay",
+     "event": "Qo‘zg‘olon ko‘targanlar orasida ixtilof paydo bo‘ldi",
+     "evidence": "Ammo ko‘p o‘tmay qo‘zg‘olon ko‘targanlar orasida ixti- lof paydo bo‘ldi."
+    },
+    {
+     "kind": "person",
+     "person": "Spartak",
+     "role": "frakiyalik qul, Kapuya shahridagi gladiatorlik maktabiga sotib yuborilgan",
+     "activity": "Qullarni qo‘zg‘olon ko‘tarishga undagan va qo‘zg‘olonga boshchilik qilgan",
+     "evidence": "Rim armiyasida xizmat qilishdan bosh tort- ganligi uchun Kapuya shahridagi gladiatorlik maktabiga sotib yuborilgan frakiyalik qul Spar- tak qullarni qo‘zg‘olon ko‘tarishga undadi."
+    },
+    {
+     "kind": "person",
+     "person": "Mark Krass",
+     "role": "tajribali rim sarkardasi",
+     "activity": "Spartakka qarshi ko‘p ming sonli qo‘shin boshchiligida jo‘natilgan",
+     "evidence": "Spartakka qarshi tajribali sarkarda Mark Krass boshchiligida ko‘p ming sonli qo‘shin jo‘natildi."
+    },
+    {
+     "kind": "person",
+     "person": "Gladiator",
+     "role": "asosan qullar yoki jinoyatchilardan iborat bo‘lgan jangchi",
+     "activity": "Maxsus yopiq maktablarda ta’lim olib, tomoshabinlar ko‘nglini xushlash uchun bir-biri bilan olishgan",
+     "evidence": "Aksariyat gladiator- lar qullar yoki jinoyatchilar bo‘lishgan. Ularga maxsus yopiq maktablarda ta‘lim berishar,"
+    },
+    {
+     "kind": "term",
+     "term": "Kolonlar",
+     "definition": "Mayda yer ijarachilari, yerdan foydalanganlik uchun mahsulot bilan to‘lov berishgan",
+     "evidence": "Mayda yer ijarachilari kolonlar deb atalgan."
+    },
+    {
+     "kind": "term",
+     "term": "«Kulbali qullar»",
+     "definition": "Kichik yer, mehnat qurollari va urug‘ bilan ta’minlangan, oila qurishga ruxsat berilgan qullar",
+     "evidence": "Bunday qullar «kulbali qul- lar», ya‘ni uy-joyli qullar deb nomlangan."
+    },
+    {
+     "kind": "term",
+     "term": "Amfiteatr",
+     "definition": "Gladiatorlar janglari bo‘lib o‘tadigan ulkan tosh stadion",
+     "evidence": "Janglar ulkan tosh stadionlar – amﬁ teatrlarda bo‘lib o‘tardi."
+    },
+    {
+     "kind": "term",
+     "term": "Kolizey",
+     "definition": "50 ming tomoshabin sig‘adigan eng katta amfiteatr",
+     "evidence": "50 ming tomoshabin sig‘adigan Kolizey eng katta amﬁ teatr hisoblangan."
+    },
+    {
+     "kind": "term",
+     "term": "Changak",
+     "definition": "Uch ayrili nayza, gladiatorlar jangida ishlatilgan qurol",
+     "evidence": "boshqasi esa to‘r va changak (uch ayrili nayza) bilan qurollangan."
+    },
+    {
+     "kind": "place",
+     "place": "Vezuviy tog‘i",
+     "event": "Qo‘zg‘olonchilar shu tog‘dagi qoyaga chiqib olganlar",
+     "evidence": "Ular Vezuviy tog‘idagi qoyaga chiqib oladilar."
+    },
+    {
+     "kind": "place",
+     "place": "Kapuya shahri",
+     "event": "Gladiatorlik maktabi joylashgan shahar, Spartak shu yerga sotib yuborilgan",
+     "evidence": "Kapuya shahridagi gladiatorlik maktabiga sotib yuborilgan frakiyalik qul"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qullarga haq to‘lanmagan va mehnatdan manfaatdorlik hissi bo‘lmagan",
+     "effect": "Qullar kamroq va yomonroq ishlab, mehnat unumdorligi kamayib ketgan",
+     "evidence": "Ularga haq to‘lanmas edi. Shuning uchun qullar mumkin qadar kamroq va yomonroq ishlardilar. Bora- bora qullar mehnatining unumdorligi kamayib ketdi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Qullar mehnati quldorlar uchun foydali emasligi ma’lum bo‘lgan",
+     "effect": "Ko‘plab quldorlar qullarni yer ijarachilariga aylantira boshlagan",
+     "evidence": "Qullar mehnati quldorlar uchun foydali emasligi ma‘lum bo‘ldi. Ko‘plab quldorlar qul- larni yer ijarachilariga aylantira boshlashadi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Zamindorlar qullar qo‘zg‘olonidan qo‘rqqan va hosildorlikni oshirishga intilgan",
+     "effect": "Yerlarni kichik-kichik mulklarga bo‘lib, erkin kambag‘allarga ijaraga tarqatganlar",
+     "evidence": "Qullar qo‘zg‘olonidan qo‘rqqan, hosildorlikni oshirishga intilgan zamindorlar o‘z yerlarini ki- chik-kichik mulklarga bo‘lib tashladilar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yer ijarachisi yerga yaxshi ishlov bergan",
+     "effect": "Hosilning ko‘p ulushi o‘ziga nasib etgan",
+     "evidence": "Ular yerga qancha yaxshi ishlov bersalar, hosilning shuncha ko‘p ulushi o‘zlariga nasib etardi."
+    },
+    {
+     "kind": "number",
+     "number": "200 ga yaqin",
+     "unit": "tarafdor",
+     "meaning": "Spartakning qorovullarga hujum qilgan tarafdorlari soni",
+     "evidence": "Spartak va uning 200 ga yaqin tarafdorlari qorovullarga hujum qiladi- lar"
+    },
+    {
+     "kind": "number",
+     "number": "3 ming",
+     "unit": "kishi",
+     "meaning": "Qo‘zg‘olonchilarni tor-mor etishga jo‘natilgan qo‘shin soni",
+     "evidence": "Qo‘zg‘olon ko‘targan qullarni tor-mor etish- ga jo‘natilgan uch ming kishilik qo‘shin Vezu- viy tog‘lari yaqinida harbiy lager tikladi."
+    }
+   ]
+  }
+ ]
+}

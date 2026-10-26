@@ -1,0 +1,810 @@
+{
+ "chapter": "II BOB. ILK O‘RTA ASRLARDA OSIYO",
+ "topics": [
+  {
+   "number": 10,
+   "title": "Arabiston ilk o‘rta asrlar boshida",
+   "page": 47,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "570",
+     "date_label": "570-yil",
+     "event": "Islom payg‘ambari Muhammad (s.a.v.) Makkada dunyoga kelgan",
+     "evidence": "570yilda Makkada tavallud topganini yozadilar. U quraysh qabilasining"
+    },
+    {
+     "kind": "date_event",
+     "date": "570",
+     "date_label": "570-yil",
+     "event": "Eron shohi Xisrav I Yaman viloyatini istilo qilgan",
+     "evidence": "Xisrav I Yamanni 570yilda istilo qilishi bilan karvon yo‘li eronliklarga qarashli Ikki daryo"
+    },
+    {
+     "kind": "date_event",
+     "date": "610",
+     "date_label": "610-yil",
+     "event": "Muhammad (s.a.v.)ga Alloh taolodan ilk vahiy kela boshlagan",
+     "evidence": "610yildan boshlab Muhammad alayhis salomga Alloh taolodan vahiy kela boshlaydi. U qudratli"
+    },
+    {
+     "kind": "date_event",
+     "date": "622",
+     "date_label": "622-yil",
+     "event": "Muhammad (s.a.v.) tarafdorlari bilan Yasrib (Madina)ga ko‘chgan",
+     "evidence": "622yilda Muhammad (s.a.v.) o‘z tarafdorlari bilan Yasrib (Madina)ga keladi. Bu voqea hijrat (ko‘chish) nomini olib, musulmon yil"
+    },
+    {
+     "kind": "date_event",
+     "date": "630",
+     "date_label": "630-yil",
+     "event": "Arablarning katta qismi islom dinini qabul qilgan",
+     "evidence": "630yilga kelib arablarning katta qismi musulmon bo‘ladi."
+    },
+    {
+     "kind": "date_event",
+     "date": "VI asr",
+     "date_label": "VI asr",
+     "event": "Aholi soni ko‘payib, suv manbalari va yaylovlar uchun kurash kuchaygan",
+     "evidence": "VI asrda aholi soni ko‘payib, qabilalar ora sida suv manbalari va yaylovlar uchun ku rash kuchaygan."
+    },
+    {
+     "kind": "date_event",
+     "date": "VII asr",
+     "date_label": "VII asr boshlari",
+     "event": "Urug‘chilik tuzumining inqirozi tezlashgan",
+     "evidence": "Bu jarayon VII asrning bosh la ri da urug‘chilik tuzumining inqirozini tez lash tirgan."
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad (s.a.v.)",
+     "role": "Islom dinining asoschisi bo‘lgan payg‘ambar",
+     "activity": "Makkada tug‘ilib, islomni targ‘ib qilgan va arab qabilalarini birlashtirgan",
+     "evidence": "Islom tarixchilari uning asoschisi bo‘lajak payg‘ambar Muhammad alayhissalomni 570yilda Makkada tavallud topganini"
+    },
+    {
+     "kind": "person",
+     "person": "Xisrav I",
+     "role": "Eron davlatining shohi, Yaman viloyatini bosib olgan hukmdor",
+     "activity": "570-yilda Yamanni istilo qilib, karvon yo‘lini Ikki daryo oralig‘iga ko‘chirgan",
+     "evidence": "Eron shohi Xisrav I Yamanni 570yilda istilo qilishi bilan karvon yo‘li"
+    },
+    {
+     "kind": "person",
+     "person": "Abdulmutalib",
+     "role": "Muhammad (s.a.v.)ning bobosi va uning homiysi",
+     "activity": "Nabirasi Muhammad (s.a.v.)ni homiyligiga olib, tarbiyalab voyaga yetkazgan",
+     "evidence": "bobosi Abdulmutalib homiyligi ostida o‘ta boshlagan. Bobosining o‘limidan"
+    },
+    {
+     "kind": "person",
+     "person": "Abu Tolib",
+     "role": "Muhammad (s.a.v.)ning amakisi va tarbiyachisi",
+     "activity": "Bobosi vafotidan so‘ng Muhammad (s.a.v.)ni o‘z tarbiyasiga olgan",
+     "evidence": "amakisi Abu Tolib tarbiyasida qolgan.Islom dini manbalarida"
+    },
+    {
+     "kind": "person",
+     "person": "Omina",
+     "role": "Payg‘ambarimiz Muhammad (s.a.v.)ning onasi",
+     "activity": "O‘g‘li Muhammad (s.a.v.) olti yoshligida vafot etgan",
+     "evidence": "6 yoshligida esa onasi Omina vafot etgan."
+    },
+    {
+     "kind": "term",
+     "term": "somiy (semit) xalqlari",
+     "definition": "Arab, yahudiy, ossuriy, finikiy va oromiy xalqlar mansub bo‘lgan qadimiy xalqlar guruhi",
+     "evidence": "somiy (semit) xalqlaridan bo‘lib, somiylarga arablardan tashqari: yahudiylar, ossuriylar,"
+    },
+    {
+     "kind": "term",
+     "term": "badaviy (sahroyi)",
+     "definition": "Ko‘chmanchi arab chorvadorlari; cho‘l va yaylovlarda mol boqib yurgan aholi",
+     "evidence": "badaviy (sahroyi)lar tuyachilik, qo‘ychilik va yilqichilik bilan shug‘ullanib kelganlar. Badaviylar"
+    },
+    {
+     "kind": "term",
+     "term": "majusiy",
+     "definition": "Arablarning ko‘pchiligi tutgan, ko‘p ilohlarga sig‘inishga asoslangan qadimiy din",
+     "evidence": "majusiy bo‘lishgan. Ularning dinlari qo‘shni semit xalqlari dinlari bilan"
+    },
+    {
+     "kind": "term",
+     "term": "hijrat",
+     "definition": "Muhammad (s.a.v.)ning 622-yilda Makkadan Yasribga ko‘chishi, musulmon yil hisobi boshi",
+     "evidence": "Bu voqea hijrat (ko‘chish) nomini olib, musulmon yil hisobining bosh lanish sanasi hisob lanadi.Yasrib Muhammad (s.a.v.)"
+    },
+    {
+     "kind": "term",
+     "term": "Qur’on",
+     "definition": "Islomdagi muqaddas kitob; Alloh taolo tomonidan payg‘ambarga vahiy orqali nozil qilingan",
+     "evidence": "muqaddas kitobi bo‘lib, Alloh taolo tomonidan Muhammad (s.a.v.)ga vahiy orqali nozil qilingan."
+    },
+    {
+     "kind": "place",
+     "place": "Makka",
+     "event": "Karvon yo‘llari bo‘yida vujudga kelgan qo‘rg‘onlarning eng yirigi bo‘lgan",
+     "evidence": "eng yirigi Mak ka shahri bo‘lgan. Ko‘ch man chilar"
+    },
+    {
+     "kind": "place",
+     "place": "Yaman",
+     "event": "Unumdor yerlari va suv mo‘lligi tufayli xurmozor bog‘lari bilan nom chiqargan",
+     "evidence": "Yaman yerlari unumdorligi bilan nom chiqargan. Unda suv yetarli bo‘l ganidan mevali daraxtlar"
+    },
+    {
+     "kind": "place",
+     "place": "Yasrib (Madina)",
+     "event": "Muhammad (s.a.v.) tarafdorlari bilan hijrat qilgan va uni yaxshi kutib olgan shahar",
+     "evidence": "Yasrib (Madina)ga keladi. Bu voqea hijrat (ko‘chish)"
+    },
+    {
+     "kind": "cause",
+     "cause": "Buyuk Ipak yo‘li o‘tgan mamlakatlarda notinchlik boshlanishi",
+     "effect": "Karvon yo‘llari Arabiston hududiga siljigan",
+     "evidence": "tgan mamlakatlarda notinchlik bo‘lgan paytlarida kar von yo‘llari Arabistonga siljirdi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Urushlarda qo‘lga kiritilgan harbiy o‘ljalar sardorlar qo‘lida to‘planishi",
+     "effect": "Qabila sardorlari boyib, urug‘-qabila zodagonlari shakllangan",
+     "evidence": "Urushlarda olingan harbiy o‘ljalar qabila sardorlari va harbiy yo‘l bosh chi larning boyib borishiga olib kelgan. Buning natijasi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Karvon yo‘lining eronliklarga qarashli Ikki daryo oralig‘iga siljishi",
+     "effect": "Savdoning inqirozi barcha arab aholisining hayotini mushkullashtirgan",
+     "evidence": "Sav doning inqirozi barcha arab aholisining hayotini mushkullashtirgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mamlakatda vujudga kelgan iqtisodiy inqiroz",
+     "effect": "Ko‘chmanchilar yangi yerlarni istilo qilishga va yaylovlarni kengaytirishga undalgan",
+     "evidence": "Vujudga kelgan iqtisodiy inqiroz ko‘chman chilarni yangi yerlarni istilo qilishga, yaylovlarni kengaytirishga"
+    },
+    {
+     "kind": "number",
+     "number": "114",
+     "unit": "sura",
+     "meaning": "Qur’on kitobi o‘z ichiga olgan suralar soni",
+     "evidence": "114 suradan iborat"
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "title": "Arab xalifaligi",
+   "page": 51,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "632–634",
+     "date_label": "632–634-yillar",
+     "event": "Abu Bakr xalifalikka, ya’ni «o‘rin bosar» lavozimiga saylangan",
+     "evidence": "Abu Bakr (632–634) xalifalikka («o‘rin bosar») saylanadi. Uning bosh qaruvi davrida Arabiston"
+    },
+    {
+     "kind": "date_event",
+     "date": "711",
+     "date_label": "711-yil",
+     "event": "Toriq ibn Said boshchiligida arablar Gibraltar bo‘g‘ozidan o‘tib Ispaniyani bosib olgan",
+     "evidence": "Toriq ibn Said boshchiligida arablar qo‘shini 711yilda keyinchalik uning nomi bilan atalgan Gibraltar (Jabal"
+    },
+    {
+     "kind": "date_event",
+     "date": "732",
+     "date_label": "732-yil",
+     "event": "Puate jangida franklar arablarni yengib, ularning Yevropaga yurishini to‘xtatgan",
+     "evidence": "Puate jangida 732yilda franklar hukmdori Karl Martell arablarni yengib, ularning Yevropaga yu rishlariga chek qo‘yadi.Sharqda"
+    },
+    {
+     "kind": "date_event",
+     "date": "747",
+     "date_label": "747-yil",
+     "event": "Marv vohasida Abu Muslim boshchiligidagi yirik xalq qo‘zg‘oloni boshlangan",
+     "evidence": "Marv vohasida 747yilda boshlangan Abu Muslim boshchiligidagi qo‘zg‘olonda aholining barcha toifalari ishtirok etadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "756",
+     "date_label": "756-yil",
+     "event": "Ispaniyada xalifalikdan ajralib chiqqan birinchi mustaqil amirlik tashkil topgan",
+     "evidence": "birinchi mustaqil amirlik 756yilda Ispaniyada tashkil topadi. U X asrdan"
+    },
+    {
+     "kind": "date_event",
+     "date": "750–1258",
+     "date_label": "750–1258-yillar",
+     "event": "Abbosiylar sulolasi xalifalikda hukmronlik qilgan davr",
+     "evidence": "Arab xalifaligi 630–1258yillarda hukm surgan. Unda Umaviylar (661–750) va Abbosiylar"
+    },
+    {
+     "kind": "date_event",
+     "date": "1258",
+     "date_label": "1258-yil",
+     "event": "Mo‘g‘ul xoni Xuloku Bag‘dodni egallagach, Arab xalifaligi barham topgan",
+     "evidence": "ul xoni Xuloku 1258yilda Bag‘ dodni egallagandan so‘ng, Arab xalifaligi"
+    },
+    {
+     "kind": "person",
+     "person": "Abu Bakr",
+     "role": "Muhammad (s.a.v.)dan keyingi birinchi xalifa",
+     "activity": "Xalifalik qilgan davrida Arabiston yarimoroli aholisi islomni to‘liq qabul qilgan",
+     "evidence": "Abu Bakr (632–634) xalifalikka («o‘rin bosar») saylanadi. Uning bosh qaruvi davrida Arabiston"
+    },
+    {
+     "kind": "person",
+     "person": "Umar",
+     "role": "634–644-yillarda xalifalik qilgan ikkinchi xalifa",
+     "activity": "Saxiyligi, adolatparvarligi va din masalalarida qat’iyligi bilan shuhrat qozongan",
+     "evidence": "Keyingi xalifa Umar (634–644) islom dunyosida o‘zining saxiyligi, adolatparvarligi va din ma salalarida qa t’iyligi bilan shuhrat qo zongan."
+    },
+    {
+     "kind": "person",
+     "person": "Toriq ibn Said",
+     "role": "711-yilda Ispaniyaga yurishni boshqargan arab sarkardasi",
+     "activity": "Qo‘shin bilan Gibraltar bo‘g‘ozidan o‘tib, Ispaniyani bosib olgan",
+     "evidence": "Toriq ibn Said boshchiligida arablar qo‘shini 711yilda keyinchalik uning nomi bilan atalgan Gibraltar (Jabal"
+    },
+    {
+     "kind": "person",
+     "person": "Karl Martell",
+     "role": "Franklar davlatining hukmdori, Puate jangi g‘olibi",
+     "activity": "732-yilda Puate jangida arab qo‘shinini yenggan",
+     "evidence": "franklar hukmdori Karl Martell arablarni yengib, ularning Yevropaga yu rishlariga chek qo‘yadi.Sharqda arablar"
+    },
+    {
+     "kind": "person",
+     "person": "Abu Muslim",
+     "role": "Xuroson va Movarounnahrda ko‘tarilgan qo‘zg‘olon rahbari",
+     "activity": "747-yildagi qo‘zg‘olonni boshqarib, Umaviylar hukmronligini tugatgan",
+     "evidence": "Abu Muslim boshchiligidagi qo‘zg‘olonda aholining barcha toifalari ishtirok etadi. Qo‘zg‘olon Movarounnahr va Xurosonni qamrab oladi"
+    },
+    {
+     "kind": "term",
+     "term": "xalifa",
+     "definition": "Muhammad (s.a.v.)dan keyin musulmonlar davlatini boshqargan hukmdor; «o‘rin bosar»",
+     "evidence": "xalifalikka («o‘rin bosar») saylanadi."
+    },
+    {
+     "kind": "term",
+     "term": "xiroj",
+     "definition": "Arablar joriy etgan yer solig‘i; hosilning uchdan bir qismini tashkil etgan",
+     "evidence": "xiroj hosilning 1/3 qismini tashkil et gan. Islomni qabul qilmagan"
+    },
+    {
+     "kind": "term",
+     "term": "jizya",
+     "definition": "Islomni qabul qilmagan aholidan olinadigan soliq",
+     "evidence": "jizya solig‘i olingan"
+    },
+    {
+     "kind": "term",
+     "term": "zakot",
+     "definition": "Chorva mollari va savdodan olinadigan soliq; 1/40 hissani tashkil etgan",
+     "evidence": "1/40 hissani tashkil etgan. Xalifalikda qullar mehnatidan"
+    },
+    {
+     "kind": "term",
+     "term": "amirlik",
+     "definition": "Xalifalikdan ajralib chiqqan mustaqil davlat; birinchisi 756-yilda Ispaniyada tashkil topgan",
+     "evidence": "birinchi mustaqil amirlik 756yilda Ispaniyada tashkil topadi. U X asrdan"
+    },
+    {
+     "kind": "place",
+     "place": "Gibraltar bo‘g‘ozi",
+     "event": "Arablar 711-yilda undan o‘tib Ispaniyani bosib olgan; «Jabal at-Toriq» nomi shundan",
+     "evidence": "Gibraltar (Jabal at-Toriq – «Toriq to g‘i» so‘zidan) bo‘g‘ozidan o‘tib, Is paniyani bosib oladi. Yevropaga yurishlar Bordo"
+    },
+    {
+     "kind": "place",
+     "place": "Puate",
+     "event": "732-yilda shu yerda bo‘lgan jangda arablar franklardan yengilgan",
+     "evidence": "Puate jangida 732yilda franklar hukmdori Karl Martell arablarni yengib, ularning Yevropaga yu rishlariga chek qo‘yadi.Sharqda"
+    },
+    {
+     "kind": "place",
+     "place": "Marv vohasi",
+     "event": "747-yilda Abu Muslim boshchiligidagi qo‘zg‘olon boshlangan hudud",
+     "evidence": "Marv vohasida 747yilda boshlangan Abu Muslim boshchiligidagi qo‘zg‘olonda"
+    },
+    {
+     "kind": "cause",
+     "cause": "Franklar arablarni Puate jangida yenggani",
+     "effect": "Arablarning Yevropaga yurishlariga chek qo‘yilgan",
+     "evidence": "franklar hukmdori Karl Martell arablarni yengib, ularning Yevropaga yu rishlariga chek qo‘yadi.Sharqda arablar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Abu Muslim boshchiligidagi qo‘zg‘olon g‘alaba qozongan",
+     "effect": "Umaviylar hukmronligi tugab, boshqaruv Abbosiylar sulolasiga o‘tgan",
+     "evidence": "Umaviylar hukmronligi tugatilib, xalifalikda boshqaruv yangi sulola Abbosiylarga"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xalq qo‘zg‘olonlari, urushlar va hokimiyat uchun kurashlar",
+     "effect": "Xalifalikda siyosiy inqiroz yuzaga kelgan",
+     "evidence": "urushlar, hoki miyat uchun kurashlar xalifalikning siyosiy inqiroziga sabab bo‘ladi."
+    },
+    {
+     "kind": "number",
+     "number": "1/3",
+     "unit": "qism",
+     "meaning": "Xiroj solig‘i hosilning shu qismini tashkil etgan",
+     "evidence": "xiroj hosilning 1/3 qismini tashkil et gan. Islomni qabul qilmagan"
+    },
+    {
+     "kind": "number",
+     "number": "12",
+     "unit": "dirham",
+     "meaning": "Islomni qabul qilmagan kambag‘al dehqon va hunarmandlardan olingan jizya",
+     "evidence": "lardan 12 dir hamdan jizya solig‘i olingan."
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "title": "Hindiston",
+   "page": 53,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "320–340",
+     "date_label": "320–340-yillar",
+     "event": "Chandragupta I Hindistonda guptalar sulolasiga asos solgan",
+     "evidence": "Chandragupta I (320–340) guptalar sulolasiga asos soladi. Guptalar davlatining poytaxti"
+    },
+    {
+     "kind": "date_event",
+     "date": "IV asr",
+     "date_label": "IV asr so‘ngi",
+     "event": "Guptalar imperiyasi gullab-yashnagan, yer egaligi munosabatlari vujudga kelgan",
+     "evidence": "IV asrning so‘ngida – guptalar imperiyasi gullabyashnaydi. Ayni shu paytdan"
+    },
+    {
+     "kind": "date_event",
+     "date": "VI asr",
+     "date_label": "VI asr",
+     "event": "Eftaliylar hujumi ostida guptalar imperiyasi parchalanib ketgan",
+     "evidence": "eftaliylar hujumlari ostida guptalar imperiyasi parchalanib, istilochilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "VII asr",
+     "date_label": "VII asr",
+     "event": "Syuan Szyan Hindistonda 70 ga yaqin knyazlik bo‘lganini yozgan",
+     "evidence": "Syuan Szyanning yozishicha, unda 70 ga yaqin kattakichik knyaz liklar bo‘lgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "XI asr",
+     "date_label": "XI asr boshlari",
+     "event": "Mahmud G‘aznaviy qo‘shinlari Hindiston shimoliga 17 marta yurish qilgan",
+     "evidence": "aznaviyning qo‘shinlari XI asr boshlarida mamlakat shimoliga 17 marta bosqinchilik yurishlari uyushtirgan. Ma’lum"
+    },
+    {
+     "kind": "person",
+     "person": "Chandragupta I",
+     "role": "Hindistonda guptalar sulolasiga asos solgan hukmdor",
+     "activity": "320–340-yillarda hukmronlik qilgan, davlat poytaxti Pataliputra bo‘lgan",
+     "evidence": "Chandragupta I (320–340) guptalar sulolasiga asos soladi. Guptalar davlatining poytaxti"
+    },
+    {
+     "kind": "person",
+     "person": "Syuan Szyan",
+     "role": "VII asrda Hindistonda bo‘lgan xitoylik tarixchi",
+     "activity": "Hindistondagi 70 ga yaqin knyazliklar haqida yozib qoldirgan",
+     "evidence": "Syuan Szyanning yozishicha, unda 70 ga yaqin kattakichik knyaz liklar bo‘lgan."
+    },
+    {
+     "kind": "person",
+     "person": "Mahmud G‘aznaviy",
+     "role": "G‘azna davlatining hukmdori, mashhur sarkarda",
+     "activity": "XI asr boshlarida Hindiston shimoliga 17 marta bosqinchilik yurishi uyushtirgan",
+     "evidence": "aznaviyning qo‘shinlari XI asr boshlarida mamlakat shimoliga 17 marta bosqinchilik yurishlari uyushtirgan. Ma’lum"
+    },
+    {
+     "kind": "term",
+     "term": "guptalar sulolasi",
+     "definition": "Hindistonda Chandragupta I asos solgan, IV asrda gullab-yashnagan hukmdorlar sulolasi",
+     "evidence": "guptalar sulolasiga asos soladi. Guptalar davlatining poytaxti"
+    },
+    {
+     "kind": "term",
+     "term": "kastavarna (toifa)",
+     "definition": "Hindiston aholisining braxman, kshatriy, vayshi va shudra toifalariga bo‘linishi",
+     "evidence": "kastavarna (toifa)larga bo‘ li ni shi: brax manlar, kshatriylar, vayshilar va shudralar saqlanib"
+    },
+    {
+     "kind": "term",
+     "term": "grass",
+     "definition": "Harbiy xizmat o‘tash sharti bilan in’om etilgan yer maydoni; «bo‘lak» degani",
+     "evidence": "grass («bo‘lak» yoki «qultum») deb nomlanib, uni olgan shaxs harbiy"
+    },
+    {
+     "kind": "term",
+     "term": "patta",
+     "definition": "Amaldorlarga ma’lum muddatga foydalanish uchun berilgan yer; «yorliq»",
+     "evidence": "Bunday yerlar patta («yorliq» yoki «yorliqqa olingan yer») deb"
+    },
+    {
+     "kind": "term",
+     "term": "«dengiz xo‘jayini»",
+     "definition": "Hindistonning eng yirik portshahri Kalikut hokimiga berilgan unvon",
+     "evidence": "Kalikut hokimini «dengiz xo‘jayini» deb atashardi"
+    },
+    {
+     "kind": "place",
+     "place": "Pataliputra",
+     "event": "Guptalar davlatining poytaxti bo‘lgan shahar",
+     "evidence": "Pataliput ra shahri bo‘lgan. IV asrning so‘ngida – guptalar"
+    },
+    {
+     "kind": "place",
+     "place": "Kalikut",
+     "event": "Hindistonning eng yirik portshahri, hokimi «dengiz xo‘jayini» deb atalgan",
+     "evidence": "Kalikut hokimini «dengiz xo‘jayini» deb atashardi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Hukmdorlar amaldor va harbiy boshliqlarga yermulklar in’om etishi",
+     "effect": "Hindistonda yirik yer egalari tabaqasi shakllangan",
+     "evidence": "yermulklar in’om etganlar. Natijada, yirik yer ega lari tabaqasi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Eftaliylarning VI asrda Hindistonga bostirib kirishi",
+     "effect": "Guptalar imperiyasi parchalanib, istilochilar mamlakatning katta qismini egallagan",
+     "evidence": "eftaliylar hujumlari ostida guptalar imperiyasi parchalanib, istilochilar mamlakatning katta qismini qo‘lga"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mulkchilik munosabatlarining mustahkamlanib borishi",
+     "effect": "Patta yerlari avloddan-avlodga o‘tadigan merosiy mulkka aylangan",
+     "evidence": "merosiy mulkka aylana boshlagan.O‘zaro urushlardan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Hindiston knyazliklari o‘rtasidagi tinimsiz o‘zaro urushlar",
+     "effect": "Mamlakat kuchsizlanib, chet bosqinchilar uni talashga kirishgan",
+     "evidence": "zaro urushlardan kuchsizlanib borgan Hindistonni chet bosqinchilar ham talaganlar."
+    },
+    {
+     "kind": "number",
+     "number": "70",
+     "unit": "knyazlik",
+     "meaning": "VII asrda Hindistonda mavjud bo‘lgan kichik knyazliklar soni",
+     "evidence": "70 ga yaqin kattakichik knyaz liklar bo‘lgan. Knyazlar bilan rojalar o‘rtasida"
+    },
+    {
+     "kind": "number",
+     "number": "2–3",
+     "unit": "marta",
+     "meaning": "Dehqonlar yangi o‘zlashtirilgan yerlardan yiliga olgan hosil soni",
+     "evidence": "yiliga 2–3 marta hosil olganlar. Serunum"
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "title": "Xitoy (IV–X asrlarda)",
+   "page": 56,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "III asr",
+     "date_label": "III asr",
+     "event": "Xan quldorlik imperiyasi inqirozga uchrab, o‘rnida Vey, Shu va U davlatlari paydo bo‘lgan",
+     "evidence": "Xan quldorlik imperiyasi III asr da inqirozga uchrab, uning o‘rnida 3 ta mustaqil: Vey, Shu va U davlatlari vujudga keladi."
+    },
+    {
+     "kind": "date_event",
+     "date": "589–618",
+     "date_label": "589–618-yillar",
+     "event": "Suy sulolasi cheklanmagan hokimiyat bilan Xitoyni boshqargan",
+     "evidence": "Suy sulo lasi (589–618) vakili boshqargan. Uning ixtiyorida kuchli qo‘shindan"
+    },
+    {
+     "kind": "date_event",
+     "date": "618",
+     "date_label": "618-yil",
+     "event": "Li Yuan taxtni egallab, Tan sulolasiga asos solgan",
+     "evidence": "Li Yuan 618yilda taxtni egallab Tan sulolasiga (618–907) asos soladi.Yer egaligi"
+    },
+    {
+     "kind": "date_event",
+     "date": "624",
+     "date_label": "624-yil",
+     "event": "Dehqonlarga yer ijaraga berishni belgilovchi yangi qonun qabul qilingan",
+     "evidence": "624yilda qabul qi li ngan qonunga ko‘ra, har bir xo‘jalik uyhovlisi o‘rnidan tashqari 80 mugacha"
+    },
+    {
+     "kind": "date_event",
+     "date": "640",
+     "date_label": "640-yil",
+     "event": "Xitoy qo‘shinlari Buyuk Ipak yo‘lidagi Gaochan davlatini mag‘lub etgan",
+     "evidence": "640yilda Buyuk Ipak yo‘li ustida joylashgan Gaochan davlatini mag‘lub etadi. Shundan so‘ng uyg‘urlarga"
+    },
+    {
+     "kind": "date_event",
+     "date": "668",
+     "date_label": "668-yil",
+     "event": "Koreyaga qarshi urush Pxenyan olinishi bilan yakunlangan",
+     "evidence": "668yilda boshlangan urush, uning poytaxti Pxenyanning olinishi bilan yakunlanadi.VII–VIII asrlarda"
+    },
+    {
+     "kind": "date_event",
+     "date": "960–1279",
+     "date_label": "960–1279-yillar",
+     "event": "Yangi Sun sulolasi davrida Xitoyning xalqaro aloqalari yanada kengaygan",
+     "evidence": "Yangi Sun sulolasi davrida (960–1279) Xitoyning xalqaro aloqalari yanada kengayadi."
+    },
+    {
+     "kind": "person",
+     "person": "Li Yuan",
+     "role": "Xitoyning shimolig‘arbidagi mahalliy hokim, Tan sulolasi asoschisi",
+     "activity": "618-yilda taxtni egallab, Tan sulolasini tashkil etgan va imperator bo‘lgan",
+     "evidence": "Li Yuan 618yilda taxtni egallab Tan sulolasiga (618–907) asos soladi.Yer egaligi"
+    },
+    {
+     "kind": "person",
+     "person": "Tan imperatorlari",
+     "role": "Xitoyni boshqargan Tan sulolasi imperatorlari",
+     "activity": "Shaharlarda kechasi ko‘chaga chiqishni taqiqlab, darvoza yopish tartibini joriy qilgan",
+     "evidence": "Tan imperatorlari shaharlarda kechasi ko‘chaga chiqishni taqiqlaydi. Kechasi shahar darvozalari"
+    },
+    {
+     "kind": "term",
+     "term": "Buyuk kanal",
+     "definition": "Xuanxe va Yanszi daryolari oralig‘ini bog‘lash uchun qurilgan yagona suv yo‘li",
+     "evidence": "Buyuk kanal quriladi. Bu tadbir mam lakat miqyosida yagona suv yo‘lining barpo etilishidan"
+    },
+    {
+     "kind": "term",
+     "term": "mu",
+     "definition": "Xitoyda yer maydonini o‘lchash uchun ishlatilgan birlik; 1 mu – 6 sotix",
+     "evidence": "80 mugacha (1 mu – 6 so tix) haydaladigan yerni ijaraga olish huquqiga ega"
+    },
+    {
+     "kind": "term",
+     "term": "syan",
+     "definition": "VII asrdan Xitoyda joriy etilgan yagona pul; o‘rtasida to‘rt burchak teshigi bor",
+     "evidence": "yagona pul – syanning joriy etili shi ham iqti sodiy yuksalishga xizmat qilgan."
+    },
+    {
+     "kind": "term",
+     "term": "sex (kasb uyushmasi)",
+     "definition": "Shahar hunarmandlari tuzgan kasbiy birlashma",
+     "evidence": "kasb uyushmalari (sexlar)ni tuzib, ma’lum kasbdagi hunarmandlar"
+    },
+    {
+     "kind": "term",
+     "term": "yarmarka",
+     "definition": "Ichki savdoning kengayishiga xizmat qilgan davriy savdo majmuasi",
+     "evidence": "yar markalar ham ichki sav doning ken ga yishiga xizmat qilgan."
+    },
+    {
+     "kind": "place",
+     "place": "Yanchjou",
+     "event": "Suv va quruqlik savdo yo‘llari kesishgan joydagi eng yirik bozor shahri",
+     "evidence": "Eng yirik bozor Yanch jouda bo‘lib, bu shahar suv va quruqlik savdo yo‘llari"
+    },
+    {
+     "kind": "place",
+     "place": "Gaochan",
+     "event": "Buyuk Ipak yo‘lida joylashgan, 640-yilda Xitoy qo‘shinlari mag‘lub etgan davlat",
+     "evidence": "640yilda Buyuk Ipak yo‘li ustida joylashgan Gaochan davlatini mag‘lub etadi. Shundan so‘ng uyg‘urlarga"
+    },
+    {
+     "kind": "place",
+     "place": "Pxenyan",
+     "event": "Koreya poytaxti; 668-yilda boshlangan urushda Xitoy qo‘shinlari tomonidan olingan",
+     "evidence": "668yilda boshlangan urush, uning poytaxti Pxenyanning olinishi bilan yakunlanadi.VII–VIII asrlarda"
+    },
+    {
+     "kind": "cause",
+     "cause": "VI asrning ikkinchi yarmida Turk xoqonligi hujumi xavfi",
+     "effect": "Xitoyning yagona davlatga birlashuvi tezlashgan",
+     "evidence": "Turk xoqonligining hujumi xavfi Xitoyning birlashuviga turtki bo‘lgan. Mamlakatni"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mamlakatning to‘rt asr davom etgan o‘zaro urushlardan charchashi",
+     "effect": "Markazlashuv o‘rnatilib, iqtisod va madaniyat rivojlana boshlagan",
+     "evidence": "Mam la katning markazlashuvi to‘rt asr davom etgan o‘zaro urushlarga chek qo‘yib, iqtisod va madaniyatning rivojlani shiga olib kelgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Savdo-hunarmandchilik rivojining qonunlarni kuchaytirishni talab qilishi",
+     "effect": "Tan imperatorlari shaharlarda tungi chiqishni taqiqlagan",
+     "evidence": "qonunlarni kuchaytirishni taqozo etib, Tan imperatorlari shaharlarda"
+    },
+    {
+     "kind": "number",
+     "number": "2",
+     "unit": "million kishi",
+     "meaning": "Loyan Buyuk kanali qurilishiga jalb etilgan kishilar soni",
+     "evidence": "Loyan Buyuk kanali qurilishiga 2 million, Buyuk Xitoy devo rini qurish va ta’mirlashga 1 milliondan ortiq"
+    },
+    {
+     "kind": "number",
+     "number": "80",
+     "unit": "mu",
+     "meaning": "624-yil qonuniga ko‘ra bir xo‘jalik ijaraga olishi mumkin bo‘lgan yer",
+     "evidence": "80 mugacha (1 mu – 6 so tix) haydaladigan yerni ijaraga olish huquqiga ega"
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "title": "Osiyo mamlakatlari madaniyati",
+   "page": 59,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "IX asr boshlari",
+     "date_label": "IX asr boshlari",
+     "event": "Xalifa Horun ar-Rashid saroyida «Bayt ulhikma» – «Donishmandlik uyi» tashkil etilgan",
+     "evidence": "saroyida IX asr boshlarida «Bayt ulhikma» – «Donishmandlik uyi» tashkil etiladi.Bu davrda aniq"
+    },
+    {
+     "kind": "date_event",
+     "date": "IX asr",
+     "date_label": "IX asr",
+     "event": "Muhammad Xorazmiy algebra faniga asos solgan",
+     "evidence": "Muhammad Xorazmiy (IX asr) matematika tarixida birinchi bo‘lib algebra faniga asos soladi."
+    },
+    {
+     "kind": "date_event",
+     "date": "VIII asr",
+     "date_label": "VIII asr",
+     "event": "Xitoy imperatorlari saroyida olimlarning oliy yig‘inlari tashkil etilgan",
+     "evidence": "olimlarning oliy yig‘inlari tashkil etilib, u keyinchalik Xanlin akademiyasi nomini olgan. Xitoyliklar X asrda"
+    },
+    {
+     "kind": "date_event",
+     "date": "VIII asr",
+     "date_label": "VIII asr",
+     "event": "Pekinda «Poytaxt axboroti» nomli gazeta chiqarila boshlagan",
+     "evidence": "Pekinda VIII asrdan boshlab «Poytaxt axboroti» nomli gazeta chiqariladi."
+    },
+    {
+     "kind": "date_event",
+     "date": "X asr",
+     "date_label": "X asr",
+     "event": "Xitoyliklar selitradan porox olishni kashf qilgan",
+     "evidence": "selitradan porox olishni kashf qilishgan. Dastlab mushakbozlikda ishlatilgan poroxdan"
+    },
+    {
+     "kind": "date_event",
+     "date": "II asr mil. avv. – VII asr",
+     "date_label": "mil. avv. II – milodiy VII asr",
+     "event": "Ajanta g‘or ibodatxonalari majmuasi yaratilgan davr",
+     "evidence": "miloddan avvalgi II asr dan – milodiy VII asrga qadar g‘or ichida o‘yib ishlangan Ajanta (Markaziy Hindiston)"
+    },
+    {
+     "kind": "date_event",
+     "date": "XVII asr",
+     "date_label": "XVII asr o‘rtalari",
+     "event": "Yevropa tibbiyoti O‘rta Osiyolik allomalar asarlaridan bilim olgan davrning oxiri",
+     "evidence": "XVII asrning o‘rtalariga qadar bilim va amaliy tavsi yalarni O‘rta Osiyoda yetishib chiqqan allomalar – Abu Ali ibn Sino"
+    },
+    {
+     "kind": "person",
+     "person": "Horun ar-Rashid",
+     "role": "Xalifalik hukmdori; saroyida «Bayt ulhikma» tashkil etilgan",
+     "activity": "Saroyida «Bayt ulhikma» – «Donishmandlik uyi»ni tashkil ettirgan",
+     "evidence": "xalifa Horun ar-Rashid saroyida IX asr boshlarida «Bayt ulhikma» – «Donishmandlik uyi» tashkil etiladi.Bu"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad Xorazmiy",
+     "role": "O‘rta Osiyoda yetishib chiqqan buyuk matematik olim",
+     "activity": "IX asrda algebra faniga asos solgan, uning asarlari jahonga mashhur bo‘lgan",
+     "evidence": "Vatandoshimiz Muhammad Xorazmiy (IX asr) matematika tarixida birinchi bo‘lib algebra faniga"
+    },
+    {
+     "kind": "person",
+     "person": "Abu Ali ibn Sino",
+     "role": "O‘rta Osiyoda yetishib chiqqan mashhur alloma",
+     "activity": "Tibbiyotga oid asarlari Yevropada XVII asr o‘rtalarigacha qo‘llanilgan",
+     "evidence": "Abu Ali ibn Sino va Abu Bakr ar-Roziy asarlaridan"
+    },
+    {
+     "kind": "person",
+     "person": "Ibn Battuta",
+     "role": "Sharq mamlakatlarini kezgan arab sayyohi",
+     "activity": "Hindiston, Xitoy va Afrikaning chekka hududlari haqida asar yozib, xarita tuzgan",
+     "evidence": "Ibn Battuta ushbu o‘lkalar haqida qiziqarli asarlar yozib, xari talarini tuzadilar.Adabiyot. Musulmon adabiyoti"
+    },
+    {
+     "kind": "person",
+     "person": "Ziryab",
+     "role": "IX asrda yashagan musiqachi va qo‘shiqchi",
+     "activity": "Mavsumga qarab kiyinish va dasturxonga taom tortish tartibini joriy qilgan",
+     "evidence": "Ziryab IX asrda yashagan. U ko‘plab yangiliklar kiritgan. Hozirga qadar qachonlardir Ziryab kashf qilgan ko‘plab"
+    },
+    {
+     "kind": "term",
+     "term": "«Bayt ulhikma»",
+     "definition": "Bag‘doddagi «Donishmandlik uyi» – yirik ilm-fan markazi",
+     "evidence": "Donishmandlik uyi» tashkil etiladi.Bu davrda aniq fanlar –"
+    },
+    {
+     "kind": "term",
+     "term": "usturlob",
+     "definition": "Astronomik kuzatishlar uchun ishlatilgan asbob; xalifalikda ixtiro qilingan",
+     "evidence": "globus va usturlob (astrolyabiya)dan barcha mamlakatlarda foydalana bosh lanadi."
+    },
+    {
+     "kind": "term",
+     "term": "xattotlik",
+     "definition": "Husnixat san’ati; musulmon tasviriy san’atining asosini tashkil etgan",
+     "evidence": "husnixat san’ati bo‘lgan. Xattotlar yozish uchun zarur bo‘lgan matn mazmuniga monand yozuvning"
+    },
+    {
+     "kind": "term",
+     "term": "«Ming bir kecha»",
+     "definition": "Sayyohlar hikoyalari va afsonalari asosida yaratilgan arab adabiyoti durdonasi",
+     "evidence": "Ming bir kecha» yaratiladi."
+    },
+    {
+     "kind": "term",
+     "term": "«Poytaxt axboroti»",
+     "definition": "Pekinda VIII asrdan chiqarilgan, imperator farmonlarini bosgan gazeta",
+     "evidence": "nomli gazeta chiqariladi. Unda imperator farmonlari va eng muhim vo qealar yozilgan. Gazetani yog‘ochda o‘yib"
+    },
+    {
+     "kind": "place",
+     "place": "Ajanta",
+     "event": "Markaziy Hindistonda qoyalarga o‘yib ishlangan 29 xonali ibodatxonalar majmuasi",
+     "evidence": "Ajanta (Markaziy Hindiston) ibodatxonalari majmuasidir. Qadimgi me’morlar qoya"
+    },
+    {
+     "kind": "place",
+     "place": "Buxoro",
+     "event": "Ismoil Somoniy maqbarasi – arablar davri me’morchilik durdonasi joylashgan shahar",
+     "evidence": "Buxorodagi Ismoil Somoniy maq barasi – arablar davri me’morchiligi durdonalari hisob"
+    },
+    {
+     "kind": "place",
+     "place": "Qohira",
+     "event": "Hasan masjidi qurilgan shahar; u me’morchilik durdonalaridan biri hisoblanadi",
+     "evidence": "Qohi radagi Hasan masjidi, Buxorodagi Ismoil Somoniy maq barasi – arablar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Aniq fanlar – matematika, astronomiya va geografiyaning taraqqiy etishi",
+     "effect": "Hunarmandchilik va savdoning yuksalishi yuzaga kelgan",
+     "evidence": "bu jarayon hunarmandchilik va savdoning yuksalishiga olib keladi. Zamonlar o‘tib xalifalikda ixtiro qilingan globus"
+    },
+    {
+     "kind": "cause",
+     "cause": "Savdogar va sayyohlarning uzoq o‘lkalardan sarguzasht hikoyalar olib kelishi",
+     "effect": "Arab adabiyotining «Ming bir kecha» asari yaratilgan",
+     "evidence": "Ushbu sarguzashtlar, afsona va ertaklar aso sida arab ada bi yotining ajoyib durdonasi «Ming bir kecha» yaratiladi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Xitoyda buddizm dinining keng tarqalishi",
+     "effect": "Xitoy me’morchiligiga katta ta’sir ko‘rsatilgan",
+     "evidence": "Buddizmning tarqalishi nafaqat xitoyliklar hayotiga, balki ularning me’morchiligiga ham katta ta’sir ko‘rsatgan.1. Nima sababdan Muhammad"
+    },
+    {
+     "kind": "number",
+     "number": "28",
+     "unit": "harf",
+     "meaning": "Oromiy alifbosi asosida yaratilgan arab yozuvidagi harflar soni",
+     "evidence": "28 ta harfdan iborat bo‘lib, arab yozuvi chapdan o‘ngga emas,"
+    },
+    {
+     "kind": "number",
+     "number": "500",
+     "unit": "jild",
+     "meaning": "Sun sulolasi davriga oid, bizgacha yetib kelgan tarixiy solnomalar hajmi",
+     "evidence": "500 jildlik solnomalar bizga qadar saqlanib qolgan. Yirik shaharlarda"
+    }
+   ]
+  }
+ ]
+}

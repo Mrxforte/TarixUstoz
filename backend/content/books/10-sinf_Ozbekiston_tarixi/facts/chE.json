@@ -1,0 +1,662 @@
+{
+  "chapter": "O‘ZBEKISTONNING IJTIMOIY-IQTISODIY AHVOLI VA RIVOJLANISH MUAMMOLARI (1945 – 1959-yillar). O‘ZBEKISTON BARQAROR RIVOJLANISH DAVRIDA (1959 – 1983-yillar)",
+  "topics": [
+    {
+      "number": 21,
+      "title": "Ziyolilarning qatag‘on qilinishi va sovet jamiyatida shaxsga sig‘inishning fosh qilinishi",
+      "page": 109,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1950-yil 1-sentyabr",
+          "date_label": "1950-yil 1-sentyabr",
+          "event": "O‘zbekiston KP MK byurosi Fanlar akademiyasining ishi bo‘yicha masalani ko‘rib, bir guruh olimlarni nohaq ravishda qoraladi",
+          "evidence": "Fanlar akademiyasining ishi to‘g‘risida”gi masalani"
+        },
+        {
+          "kind": "date_event",
+          "date": "1952-yil fevral",
+          "date_label": "1952-yil fevral",
+          "event": "Mafkuraviy masalalarga bag‘ishlangan X plenumda O‘zbekiston ziyolilaridan bir guruhi noto‘g‘ri ravishda millatchilikda ayblandi",
+          "evidence": "mafkuraviy masalalarga bag‘ishlangan X plenumi (yalpi majlis) bo‘lib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1951-yil",
+          "date_label": "1951-yil",
+          "event": "Said Ahmad, Shukrullo, Maqsud Shayxzoda va boshqa 12 nafar ijodkor «sovetlarga qarshi millatchilik faoliyati»da ayblanib qamoqqa olindi",
+          "evidence": "1951-yilda qamoqqa olindi va 25 yilga ozodlikdan mahrum etildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1955-yil",
+          "date_label": "1955-yil",
+          "event": "Qatag‘on qilingan ijodkorlar sovet rejimi tomonidan oqlanib, qamoqdan ozod qilindi va O‘zbekistonga qaytishdi",
+          "evidence": "1955-yili sovet rejimi tomonidan oqlanib, qamoqdan ozod qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1953-yil 5-mart",
+          "date_label": "1953-yil 5-mart",
+          "event": "KPSS MK Bosh sekretari va SSSR Ministrlar Sovetining raisi Iosif Stalin vafot etdi",
+          "evidence": "1953-yil 5-martda KPSS MK Bosh sekretari va SSSR Ministrlar Sovetining raisi Iosif Stalin vafot etdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1956-yil 25-fevral",
+          "date_label": "1956-yil 25-fevral",
+          "event": "KPSS XX syezdining yopiq majlisida Nikita Xrushchev shaxsga sig‘inish va uning oqibatlari to‘g‘risida ma’ruza qildi",
+          "evidence": "1956-yil 25-fevralda bo‘lgan KPSS XX syezdining yopiq majlisida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1950-yil aprel",
+          "date_label": "1950-yil aprel",
+          "event": "O‘zbekiston KP MK birinchi sekretari Usmon Yusupov vazifasidan ozod qilinib, Moskvaga SSSR Paxtachilik ministri etib tayinlandi",
+          "evidence": "1950-yil aprelda O‘zbekiston Kompartiyasi Markaziy Komitetining birin"
+        },
+        {
+          "kind": "date_event",
+          "date": "1954-yil",
+          "date_label": "1954-yil",
+          "event": "Nikita Xrushchev Usmon Yusupovni respublika hukumati raisligidan olib tashlab, Mirzacho‘ldagi sovxozga direktor qilib jo‘natdi",
+          "evidence": "1954-yilda uni asossiz tarzda respublika hukumati raisligidan olib"
+        },
+        {
+          "kind": "person",
+          "person": "Abdusamad Boboxo‘jayev",
+          "role": "sharqshunos va tarixchi olim",
+          "activity": "1950-yilda Fanlar akademiyasi faoliyati yuzasidan masala ko‘rilganda nohaq ravishda qoralangan olimlar qatorida bo‘lgan",
+          "evidence": "sharqshunos va tarixchi Abdusamad Bobo"
+        },
+        {
+          "kind": "person",
+          "person": "Vohid Zohidov",
+          "role": "adabiyotshunos va faylasuf",
+          "activity": "Akademiya olimlari qatorida 1950-yil 1-sentyabrdagi byuro qarori bilan nohaq qoralangan",
+          "evidence": "adabiyotshunos va faylasuf Vohid Zohidov"
+        },
+        {
+          "kind": "person",
+          "person": "Amin Niyozov",
+          "role": "O‘zbekiston KP MK birinchi sekretari (1950 – 1955-yillar)",
+          "activity": "1952-yil fevraldagi X plenumda ma’ruza qilib, ziyolilar guruhini millatchilikda aybladi va qatag‘onchilik siyosatini olib bordi",
+          "evidence": "O‘zbekiston Kompartiyasi MK birinchi sekretari Amin Niyozov"
+        },
+        {
+          "kind": "person",
+          "person": "Nuriddin Muhitdinov",
+          "role": "O‘zbekiston KP MK birinchi sekretari (1955 – 1957-yillar)",
+          "activity": "O‘zbek ziyolilari oqlanishida tashabbuskorlik ko‘rsatdi va paxta xarid narxini oshirishni Markaz oldiga qo‘yib, bunga erishdi",
+          "evidence": "U o‘zbek ziyolilari oqlanishida tashabbuskorlik ko‘rsatdi"
+        },
+        {
+          "kind": "term",
+          "term": "Shaxsga sig‘inish",
+          "definition": "Hokimiyat oliy darajadagi qadriyatga aylanib, uni boshqarayotgan bir yoki bir nechta shaxs ilohiylashtiriladigan tuzum",
+          "evidence": "Shaxsga sig‘inish sharoitida hokimiyat oliy darajadagi qadriyatga aylanadi"
+        },
+        {
+          "kind": "term",
+          "term": "Qatag‘on",
+          "definition": "Mafkuraga mos kelmagan shaxslarni ta’qib qilish, qamoqqa olish va surgun qilish orqali yuritilgan sovet siyosati",
+          "evidence": "ularning “eng o‘tkirlari” doimiy ravishda qatag‘on qilib borildi"
+        },
+        {
+          "kind": "term",
+          "term": "Plenum",
+          "definition": "Partiya markaziy komiteti a’zolarining muhim masalalarni ko‘rib chiqadigan yalpi majlisi",
+          "evidence": "X plenumi (yalpi majlis) bo‘lib o‘tdi"
+        },
+        {
+          "kind": "term",
+          "term": "NKVD",
+          "definition": "Ichki ishlar xalq komissarligi; faoliyatida ommaviy va yetarli asoslanmagan qamoqqa olishlarga yo‘l qo‘yilgan organ",
+          "evidence": "Ichki ishlar xalq komissarlari (NKVD) faoliyatida juda katta kamchilik"
+        },
+        {
+          "kind": "place",
+          "place": "Marg‘ilon",
+          "event": "Amin Niyozov tug‘ilgan shahar; u shu yerda tug‘ilib, 1947 – 1950-yillarda Oliy Sovet Prezidiumi raisi bo‘lgan",
+          "evidence": "U Marg‘ilonda tug‘il"
+        },
+        {
+          "kind": "place",
+          "place": "Mirzacho‘l",
+          "event": "«4-Boyovut» sovxozi joylashgan hudud; Usmon Yusupov 1954-yilda shu yerga direktor qilib jo‘natilgan",
+          "evidence": "Mirzacho‘ldagi “4-Boyovut” sovxoziga direktor qilib jo‘natdi"
+        },
+        {
+          "kind": "place",
+          "place": "Moskva",
+          "event": "Usmon Yusupov 1950-yilda SSSR Paxtachilik ministri lavozimiga tayinlangan shahar",
+          "evidence": "Moskvaga SSSR Paxtachilik ministri lavozimiga tayinlandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "O‘zbekiston KP MK Markaz yo‘l-yo‘riqlariga tayangan holda mafkuradan farq qiladigan ijodiy ziyolilarga qarshi hujum boshladi",
+          "effect": "1951-yilda 12 nafar ijodkor ziyoli millatchilikda ayblanib qamoqqa olindi va 25 yilga ozodlikdan mahrum etildi",
+          "evidence": "Markazning yo‘l-yo‘riqlariga tayangan holda dunyoqarashi va ijodi kommunistik partiya mafkurasidan farq qiladigan"
+        },
+        {
+          "kind": "cause",
+          "cause": "1952-yil fevraldagi X plenumda ziyolilar noto‘g‘ri ravishda millatchilikda ayblandi",
+          "effect": "Ularning asarlari va «Alpomish» dostonini o‘qish taqiqlanib, O‘zbekistonning ma’naviy hayotiga kuchli zarba berildi",
+          "evidence": "qatag‘on qilingan bu vakillarining asarlari va “Alpomish”"
+        },
+        {
+          "kind": "cause",
+          "cause": "Stalin vafotidan so‘ng shaxsga sig‘inish qoralanib, qatag‘on qilinganlarni oqlash jarayoni boshlandi",
+          "effect": "O‘zbekiston bo‘yicha otilgan va qamoqqa olinganlardan 40 000 nafarga yaqin kishi oqlandi",
+          "evidence": "Bu davrda qatag‘on qilinganlarni oqlash jarayoni ham boshlandi"
+        },
+        {
+          "kind": "number",
+          "number": "40 000",
+          "unit": "nafarga yaqin kishi",
+          "meaning": "O‘zbekiston bo‘yicha otilgan va qamoqqa olinganlardan oqlangan yurtdoshlarimiz soni",
+          "evidence": "40 000 nafarga yaqin kishi oqlandi"
+        },
+        {
+          "kind": "number",
+          "number": "25",
+          "unit": "yil",
+          "meaning": "1951-yilda qamoqqa olingan 12 nafar ijodkor ziyoli ozodlikdan mahrum etilgan muddat",
+          "evidence": "25 yilga ozodlikdan mahrum etildi"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "O‘zbekistonda sanoatning bir tomonlama rivojlanishi",
+      "page": 113,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1946 – 1950-yillar",
+          "date_label": "1946 – 1950-yillar (to‘rtinchi besh yillik)",
+          "event": "To‘rtinchi besh yillikda davlat sanoatni o‘stirish uchun katta miqdorda kapital mablag‘ ajratdi, lekin ularning aksariyati og‘ir sanoatga sarflandi",
+          "evidence": "1946 – 1950-yillardagi to‘rtinchi va 1951 – 1955-yillardagi beshinchi besh yillik"
+        },
+        {
+          "kind": "date_event",
+          "date": "1951 – 1955-yillar",
+          "date_label": "1951 – 1955-yillar (beshinchi besh yillik)",
+          "event": "Beshinchi besh yillik davrida ham sanoatni o‘stirish uchun ajratilgan mablag‘larning asosiy qismi og‘ir sanoatga yo‘naltirildi",
+          "evidence": "beshinchi besh yillik davrida) davlat sanoatni o‘stirish uchun katta miqdorda kapital mablag‘lar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1947-yil",
+          "date_label": "1947-yil",
+          "event": "Uzunligi 600 km bo‘lgan Chorjo‘y-Qo‘ng‘irot temir yo‘li qurildi va sanoat markazlari yagona majmuaga birlashtirildi",
+          "evidence": "1947-yilda 600 km dan iborat Chorjo‘y-Qo‘ng‘irot temir yo‘li qurildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1947-yil",
+          "date_label": "1947-yil",
+          "event": "Toshkentda ilk marta trolleybuslar qatnay boshladi, bu shahar transportining yangi turi edi",
+          "evidence": "O‘sha yili Toshkentda ilk marta trolleybuslar qatnay boshladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1959 – 1968-yillar",
+          "date_label": "1959 – 1968-yillar",
+          "event": "Toshkent katta halqa avtomobil yo‘li loyihalashtirildi va qurildi, eski yo‘llar ta’mirlandi",
+          "evidence": "katta halqa avtomobil yo‘li loyihalashtirildi va qurildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XX asr 50-yillari o‘rtalari",
+          "date_label": "XX asr 50-yillari o‘rtalari",
+          "event": "O‘zbekiston havo yo‘llarida yuksak tezliklar va parvozlar davrini ochib bergan TU-104 rusumli samolyotlar paydo bo‘ldi",
+          "evidence": "50-yillari o‘rtalaridan boshlab yuksak tezliklar va parvozlar davrini ochib bergan TU-104"
+        },
+        {
+          "kind": "date_event",
+          "date": "1959-yil",
+          "date_label": "1959-yil",
+          "event": "Respublika aholisi tarkibida o‘zbeklarning salmog‘i 62 foizdan ortiq bo‘lsa ham, o‘zbek ishchilarning miqdori atigi 43 foizni tashkil etgan",
+          "evidence": "respublika aholisi tarkibida o‘zbeklarning salmog‘i 62 foizdan ortiq bo‘lsa"
+        },
+        {
+          "kind": "person",
+          "person": "O‘zbekiston KP MK ikkinchi sekretarlari",
+          "role": "Moskvadan yuborilgan vakillar (asosan slavyan va armanlar)",
+          "activity": "Katta huquq va imtiyozlarga ega bo‘lib, respublikadagi kadrlar taqdirini o‘z ixtiyorlari bilan hal qilishgan",
+          "evidence": "Moskvadan yuborilgan vakillar (asosan slavyan va armanlar)dan iborat bo‘lib"
+        },
+        {
+          "kind": "person",
+          "person": "O‘zbekiston Kompartiyasi MK birinchi sekretari",
+          "role": "Mahalliy millat vakilidan tayinlanadigan rahbar",
+          "activity": "Nomzodni Kreml tavsiya qilar edi, shu bois hokimiyatni idora qilish tizimi Moskvaning qo‘lida edi",
+          "evidence": "bu nomzodlarni Kreml tavsiya qilar edi"
+        },
+        {
+          "kind": "person",
+          "person": "Davlat xavfsizlik komiteti va muhim ministrliklar rahbarlari",
+          "role": "Moskvadan yuborilgan mas’ul vakillar",
+          "activity": "Viloyat va shahar partiya tashkilotlarining ikkinchi sekretarlari qatorida kadrlar taqdirini hal qilishgan",
+          "evidence": "Davlat xavfsizlik komiteti va muhim ministrliklar rahbarlari, viloyat va shahar partiya tashkilotlarining ikkinchi sekretarlari"
+        },
+        {
+          "kind": "term",
+          "term": "Besh yillik",
+          "definition": "Sovet iqtisodiyotini reja asosida rivojlantirishning besh yilga mo‘ljallangan davri",
+          "evidence": "Urushdan keyingi besh yilliklarda"
+        },
+        {
+          "kind": "term",
+          "term": "Yengil sanoat",
+          "definition": "Aholini iste’mol mollari bilan ta’minlashga xizmat qiluvchi sanoat tarmog‘i",
+          "evidence": "Yengil sanoatda ishlab chiqarish rejalari bajarilmas, aholining iste’mol mollari"
+        },
+        {
+          "kind": "term",
+          "term": "Trolleybus",
+          "definition": "Yo‘lovchilarni tashish uchun ishlatiladigan, elektr simidan quvvat oladigan transport turi",
+          "evidence": "Toshkentda ilk marta trolleybuslar qatnay boshladi"
+        },
+        {
+          "kind": "term",
+          "term": "Elektrlashtirish",
+          "definition": "Temir yo‘llarni elektr energiyasida ishlaydigan tizimga o‘tkazish ishlari",
+          "evidence": "temir yo‘llar tarmog‘ini elektrlashtirish, yuk va yo‘lovchilar"
+        },
+        {
+          "kind": "term",
+          "term": "Ruslashtirish siyosati",
+          "definition": "Kadrlar tarkibini Markazdan yuborilgan vakillar hisobiga shakllantirish siyosati",
+          "evidence": "mahalliy aholining moddiy va ma’naviy imkoniyatlariga zarar keltirib"
+        },
+        {
+          "kind": "place",
+          "place": "Chirchiq",
+          "event": "Chirchiq elektrkimyo kombinati qurilgan shahar; korxona aholi qalin yashaydigan joyda bo‘lib, atrof-muhitni ifloslantirdi",
+          "evidence": "elektrkimyo kombinati, Navoiy kimyo kombinati va boshq."
+        },
+        {
+          "kind": "place",
+          "place": "Yangiyo‘l",
+          "event": "Yangiyo‘l biokimyo zavodi joylashgan shahar; zavod atmosferaga zararli moddalar chiqargan",
+          "evidence": "Yangiyo‘l biokimyo zavodi aholi qalin yashaydigan joylarda"
+        },
+        {
+          "kind": "place",
+          "place": "Qoraqalpog‘iston",
+          "event": "Qo‘ng‘irot – Beynov temir yo‘li Qoraqalpog‘istonni Qozog‘iston bilan to‘g‘ri bog‘ladi",
+          "evidence": "Qoraqalpog‘istonni Qozog‘iston bilan to‘g‘ri bog‘lab"
+        },
+        {
+          "kind": "cause",
+          "cause": "Davlat sanoatni o‘stirish uchun ajratgan kapital mablag‘larning aksariyati og‘ir sanoatga sarflandi",
+          "effect": "Yengil sanoatda ishlab chiqarish rejalari bajarilmadi, aholining iste’mol mollari bilan ta’minlanishi Ittifoqqa nisbatan bir necha marta kam bo‘ldi",
+          "evidence": "Lekin ularning aksariyati og‘ir sanoatga sarflandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yirik kimyo korxonalari aholi qalin yashaydigan joylarda qurilgan",
+          "effect": "Atrof-muhit ifloslanib, ekologik vaziyat murakkablashdi, tabiatga va eng katta zararni shu yerda yashovchi insonlar ko‘rdi",
+          "evidence": "ular atrof-muhitni ifloslantirdi va ekologik vaziyatni murakkablashtirdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Temir yo‘llar va avtomobil yo‘llari qurilishi boshqa respublikalar hududlaridan o‘tkazildi",
+          "effect": "Turkmaniston, Tojikiston va Qozog‘iston iqtisodiy jihatdan Markazga qaram qilib qo‘yildi",
+          "evidence": "iqtisodiy jihatdan ular Markazga qaram qilib qo‘yildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kadrlar siyosatidagi nomutanosibliklar va ruslashtirish siyosati mahalliy aholining imkoniyatlariga zarar keltirdi",
+          "effect": "Respublikada ijtimoiy vaziyat keskinlashuvi hamda millatlararo munosabatlarning murakkablashuviga zamin yaratildi",
+          "evidence": "publikada ijtimoiy vaziyat keskinlashuvi hamda millatlararo munosabatlarning"
+        },
+        {
+          "kind": "number",
+          "number": "600",
+          "unit": "km",
+          "meaning": "1947-yilda qurilgan Chorjo‘y-Qo‘ng‘irot temir yo‘lining uzunligi",
+          "evidence": "600 km dan iborat Chorjo‘y-Qo‘ng‘irot temir yo‘li qurildi"
+        },
+        {
+          "kind": "number",
+          "number": "43",
+          "unit": "foiz",
+          "meaning": "1959-yilda respublika aholisi tarkibida o‘zbek ishchilarining miqdori",
+          "evidence": "undagi o‘zbek ishchilarining miqdori atigi 43 foiz"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "O‘zbekistonning siyosiy hayotidagi o‘zgarishlar hamda sovetlarning partiya organlariga qaramligi",
+      "page": 117,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1959-yil 15-mart",
+          "date_label": "1959-yil 15-mart",
+          "event": "O‘zbekiston Kompartiyasi Markaziy Komitetining birinchi sekretari lavozimiga Sharof Rashidov saylandi va bu lavozimda umrining oxirigacha ishladi",
+          "evidence": "1959-yil 15-martda O‘zbekiston Kompartiyasi Markaziy Komitetining birinchi sekretari lavozimiga"
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 7-noyabr",
+          "date_label": "1917-yil 7-noyabr",
+          "event": "Atoqli davlat va jamoat arbobi hamda mashhur yozuvchi Sharof Rashidov Jizzaxda tug‘ilgan",
+          "evidence": "1917-yil 7-noyabrda Jizzaxda tug‘ilgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1977-yil noyabr",
+          "date_label": "1977-yil noyabr",
+          "event": "Sharof Rashidov tashabbusi bilan boshlangan Toshkent metropolitenining birinchi navbati, ya’ni 9 ta bekat ishga tushirildi",
+          "evidence": "Metropolitenning birinchi navbati (9 ta bekat) 1977-yil noyabrda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1977-yil 7-oktyabr",
+          "date_label": "1977-yil 7-oktyabr",
+          "event": "SSSRning yangi Konstitutsiyasi qabul qilinib, milliy respublikalar huquqi rasmiy cheklandi va Markazga keng vakolatlar berildi",
+          "evidence": "1977-yil 7-oktyabrda qabul qilingan SSSRning yangi Konstitutsiyasi milliy respublikalar huquqini rasmiy chekladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1966-yil",
+          "date_label": "1966-yil",
+          "event": "Toshkentdagi zilziladan so‘ng shaharni qayta tiklash ishiga Sharof Rashidov ko‘p kuch-quvvat va g‘ayratini sarfladi",
+          "evidence": "1966-yildagi zilziladan so‘ng Toshkentni qayta tiklash ishiga"
+        },
+        {
+          "kind": "date_event",
+          "date": "1978 – 1983-yillar",
+          "date_label": "1978 – 1983-yillar",
+          "event": "Inomjon Usmonxo‘jayev O‘zbekiston SSR Oliy Soveti Prezidiumi raisi lavozimida faoliyat ko‘rsatdi",
+          "evidence": "1978 – 1983-yillarda Inomjon Usmon xo‘jayev O‘zbekiston SSR Oliy So-"
+        },
+        {
+          "kind": "date_event",
+          "date": "2017-yil 27-mart",
+          "date_label": "2017-yil 27-mart",
+          "event": "O‘zbekiston Respublikasi Prezidenti tomonidan «Sharof Rashidov tavalludining 100 yilligini nishonlash to‘g‘risida»gi qaror qabul qilindi",
+          "evidence": "2017-yil 27-martda “Sharof Rashidov tavalludining 100 yilligini nishonlash to‘g‘risida”gi qarori"
+        },
+        {
+          "kind": "person",
+          "person": "Sharof Rashidov",
+          "role": "O‘zbekiston KP MK birinchi sekretari (1959 – 1983-yillar), yozuvchi",
+          "activity": "Rahbarligida iqtisodiyot va madaniyat rivojlantirilib, paxtachilik, yangi yerlarni o‘zlashtirish va Toshkentni qayta tiklash ishlari amalga oshirildi",
+          "evidence": "U bu lavozimda umrining oxirigacha samarali faoliyat ko‘rsatdi"
+        },
+        {
+          "kind": "person",
+          "person": "Yodgor Nasriddinova",
+          "role": "O‘zbekiston SSR Oliy Soveti Prezidiumi raisi (1959 – 1970-yillar)",
+          "activity": "Nafaqat O‘zbekistonda yoki SSSRda, balki butun Sharqda parlament raisi bo‘lgan birinchi ayol hisoblanadi",
+          "evidence": "U nafaqat O‘zbekistonda yoki SSSRda, balki butun Sharqda parlament raisi bo‘lgan birinchi ayoldir"
+        },
+        {
+          "kind": "person",
+          "person": "Inomjon Usmonxo‘jayev",
+          "role": "O‘zbekiston SSR Oliy Soveti Prezidiumi raisi (1978 – 1983-yillar)",
+          "activity": "Respublika Oliy Soveti Prezidiumi raisi lavozimida faoliyat ko‘rsatgan rahbarlardan biri",
+          "evidence": "Inomjon Usmon xo‘jayev O‘zbekiston SSR Oliy So-"
+        },
+        {
+          "kind": "person",
+          "person": "Orif Alimov",
+          "role": "O‘zbekiston SSR Ministrlar Sovetining raisi (1959 – 1961-yillar)",
+          "activity": "Respublika hukumati raisi lavozimida mehnat qilgan rahbarlardan biri sifatida faoliyat yuritgan",
+          "evidence": "1959 – 1961-yillarda Orif Alimov"
+        },
+        {
+          "kind": "person",
+          "person": "Leonid Ilich Brejnev",
+          "role": "KPSS MK Bosh sekretari va SSSR Oliy Soveti Prezidiumi raisi",
+          "activity": "Rahbarligida 1977-yilgi SSSR Konstitutsiyasi tayyorlanib, unda rivojlangan sotsialistik jamiyat qurish nazariyasi ilgari surildi",
+          "evidence": "Leonid Ilich Brejnev (1906 – 1982) rahbarligida tayyorlandi"
+        },
+        {
+          "kind": "term",
+          "term": "Partiya nomenklaturasi",
+          "definition": "Partiya organlari bilan kelishib tayinlanadigan lavozimlar tartibi; mas’ul lavozimlarga faqat kommunistlar qo‘yilgan",
+          "evidence": "partiya nomenklaturasi (partiya organlari bilan kelishib tayinlanadigan lavozimlar)"
+        },
+        {
+          "kind": "term",
+          "term": "Komsomol",
+          "definition": "Sovet jamiyatining siyosiy tizimiga kirgan yoshlar tashkiloti",
+          "evidence": "komsomol (yoshlar tashkilotlari) kirardi"
+        },
+        {
+          "kind": "term",
+          "term": "Sovetlar",
+          "definition": "Sovet jamiyatidagi turli darajadagi davlat boshqaruvi organlari",
+          "evidence": "davlat boshqaruvi organlari turli darajadagi Sovetlar bo‘lgan"
+        },
+        {
+          "kind": "term",
+          "term": "Rivojlangan sotsialistik jamiyat",
+          "definition": "1977-yilgi SSSR Konstitutsiyasida ilgari surilgan rasmiy nazariya",
+          "evidence": "rivojlangan sotsialistik jamiyat qurish nazariyasini ilgari surdi"
+        },
+        {
+          "kind": "place",
+          "place": "Jizzax",
+          "event": "Sharof Rashidov 1917-yil 7-noyabrda shu shaharda tug‘ilgan",
+          "evidence": "1917-yil 7-noyabrda Jizzaxda tug‘ilgan"
+        },
+        {
+          "kind": "place",
+          "place": "Qo‘qon",
+          "event": "Yodgor Nasriddinova shu shaharda tug‘ilib, komsomol va partiya organlarida rahbar lavozimlarda ishlagan",
+          "evidence": "Yodgor Nasriddinova Qo‘qonda tug‘ilgan bo‘lib"
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "Metropoliten qurilishi Sharof Rashidov tashabbusi bilan shu shaharda boshlangan",
+          "evidence": "Toshkent metropoliteni qurilishi uning tashabbusi bilan"
+        },
+        {
+          "kind": "cause",
+          "cause": "SSSR Konstitutsiyasining 6-moddasida KPSSning sovet davlatidagi yetakchilik roli qonuniy mustahkamlab qo‘yildi",
+          "effect": "Partiya sovet va jamoat tashkilotlari ustidan hukmronlik qilib, o‘z irodasini amalda zo‘rlik bilan o‘tkazib kelgan",
+          "evidence": "KPSSning sovet davlatidagi yetakchilik roli qonuniy mustahkamlab qo‘yilgan edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "1977-yilgi yangi Konstitutsiya milliy respublikalar huquqini rasmiy chekladi",
+          "effect": "Sovetlar ikkinchi darajali masalalarni ham partiya komitetlaridan ruxsat olmasdan hal qila olmay qoldi",
+          "evidence": "respublikalar huquqini rasmiy chekladi va Markazga keng vakolatlar olib ber-"
+        },
+        {
+          "kind": "cause",
+          "cause": "Rahbarlar partiya idoralarining buyruqlarini bajarmagan",
+          "effect": "Bunday rahbarlar o‘z lavozimlaridan ozod etilgan",
+          "evidence": "Buyruqlarni bajarmagan rahbarlar o‘z lavozimlaridan ozod etilgan"
+        },
+        {
+          "kind": "number",
+          "number": "9",
+          "unit": "ta bekat",
+          "meaning": "1977-yil noyabrda ishga tushirilgan Toshkent metropoliteni birinchi navbatidagi bekatlar soni",
+          "evidence": "Metropolitenning birinchi navbati (9 ta bekat)"
+        },
+        {
+          "kind": "number",
+          "number": "100",
+          "unit": "yil",
+          "meaning": "2017-yilda nishonlanishi belgilangan Sharof Rashidov tavalludining yilligi",
+          "evidence": "tavalludining 100 yilligini nishonlash to‘g‘risida”gi qarori"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "O‘zbekistonda yoqilg‘i va tog‘-kon sanoatining vujudga keltirilishi hamda aholi milliy tarkibidagi o‘zgarishlar",
+      "page": 121,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XX asr 50-yillari boshlari",
+          "date_label": "XX asr 50-yillari boshlari",
+          "event": "Tabiiy gaz mavjud tumanlarda faol geologik-qidiruv ishlari olib borishga kirishildi va Jarqo‘rg‘on, Qorovulbozor, Sariqtosh gaz konlari ochildi",
+          "evidence": "faol geologik-qidiruv ishlari olib borishga XX asr 50-yillari boshlaridayoq"
+        },
+        {
+          "kind": "date_event",
+          "date": "1956-yil",
+          "date_label": "1956-yil",
+          "event": "Buxoro viloyatida dunyoda eng yirik va ulkan Gazli neft-gaz koni topildi va tabiiy gaz qazib chiqarish tez rivojlandi",
+          "evidence": "1956-yili Buxoro viloyatida dunyoda eng yirik va ulkan Gazli neft-gaz konining topilishi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1960-yil",
+          "date_label": "1960-yil",
+          "event": "Respublikada 0,4 mlrd m³ tabiiy gaz ishlab chiqarilgan, keyin bu ko‘rsatkich misli ko‘rilmagan darajada oshirildi",
+          "evidence": "1960-yilda 0,4 mlrd m 3 tabiiy gaz ishlab chiqarilgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1975-yil",
+          "date_label": "1975-yil",
+          "event": "Tabiiy gaz qazib chiqarish hajmi 33,7 mlrd m³ga yetdi, O‘zbekistonning ittifoqdagi ulushi 20 foizga ko‘tarildi",
+          "evidence": "1975-yilga kelib bu ko‘rsatkich 33,7 mlrd m 3ga yetdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1958-yil 3-sentyabr",
+          "date_label": "1958-yil 3-sentyabr",
+          "event": "Navoiy kon-metallurgiya kombinatiga poydevor qo‘yilishi bilan Navoiy shahriga asos solindi",
+          "evidence": "1958-yil 3-sentyabrda Navoiy kon-metallurgiya kombinatiga poydevor qo‘yilishi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1961-yil",
+          "date_label": "1961-yil",
+          "event": "Dunyoda eng yirik hisoblangan Muruntov oltin koni ishga tushirildi",
+          "evidence": "Muruntov oltin koni 1961-yili ishga tushirilib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1963-yil",
+          "date_label": "1963-yil",
+          "event": "Muruntov konida dastlabki sof quyma oltin tayyorlandi, uning probasi 999,9 bo‘lgan",
+          "evidence": "dastlabki sof quyma oltin (999,9 probali) 1963-yil tayyorlangan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1982-yil aprel",
+          "date_label": "1982-yil aprel",
+          "event": "Maxsus Navoiy viloyati tashkil qilindi, bu yangi sanoat markazining ma’muriy jihatdan rasmiylashuvi edi",
+          "evidence": "1982-yil aprelda maxsus Navoiy viloyati tashkil qilindi"
+        },
+        {
+          "kind": "person",
+          "person": "Gazchilar, «zangori olov» bunyodkorlari",
+          "role": "Gazli shahrida yashagan tabiiy gaz sanoati ishchilari",
+          "activity": "Tabiiy gaz qazib olish sur’atlarini misli ko‘rilmagan darajada oshirdilar va yangi shahar qurilishida ishtirok etdilar",
+          "evidence": "gazchilar yashaydigan Gazli shahriga zudlik bilan asos solindi"
+        },
+        {
+          "kind": "person",
+          "person": "Markazdan ko‘chirib keltirilgan kadrlar",
+          "role": "Yopiq shaharlarga joylashtirilgan mutaxassislar",
+          "activity": "Navbatsiz uy-joy va turli imtiyozlar bilan ta’minlanib, mahalliy aholidan ustun holatda bo‘lgan",
+          "evidence": "Bu yerga Markazdan ko‘chirib keltirilgan kadrlar navbatsiz uy-joy va turli imtiyozlar bilan ta’minlangan"
+        },
+        {
+          "kind": "person",
+          "person": "Qishloqlardan kelgan o‘zbek yigit-qizlari",
+          "role": "Yopiq shaharlarda ishlagan mahalliy yoshlar",
+          "activity": "Uy-joyga ega bo‘lish uchun eng qora ishlarni bajarishga majbur bo‘lib, ko‘p yillar navbatda turishgan",
+          "evidence": "qishloqlardan kelgan o‘zbek yigit-qizlari uy-joyga ega bo‘lish uchun eng qora ishlarni bajarishga"
+        },
+        {
+          "kind": "term",
+          "term": "«Zangori olov»",
+          "definition": "Tabiiy gazning xalq tilida keng qo‘llanadigan badiiy nomi",
+          "evidence": "“zangori olov” bunyodkorlari"
+        },
+        {
+          "kind": "term",
+          "term": "Yopiq shaharlar",
+          "definition": "Mahalliy hokimiyatga bo‘ysunmagan, maxfiy korxonalari faqat Markazga hisob beradigan shaharlar",
+          "evidence": "yopiq shaharlar” deb ataluvchi Navoiy, Zarafshon va Uchquduq"
+        },
+        {
+          "kind": "term",
+          "term": "Kon-metallurgiya kombinati",
+          "definition": "Foydali qazilmalarni qazib olib, qayta ishlovchi yirik sanoat korxonasi",
+          "evidence": "Navoiy kon-metallurgiya kombinatiga poydevor qo‘yilishi bilan Navoiy shahriga asos solindi"
+        },
+        {
+          "kind": "term",
+          "term": "Gazlashtirish",
+          "definition": "Uy-joy fondini tabiiy gaz bilan ta’minlash darajasi",
+          "evidence": "uy-joy fondini gazlashtirish salmog‘i nihoyatda past edi"
+        },
+        {
+          "kind": "place",
+          "place": "Gazli",
+          "event": "Buxoro viloyatidagi shaharcha; 1956-yilda shu yerda dunyodagi eng yirik neft-gaz koni topilgan",
+          "evidence": "Buxorodagi Gazli shaharchasi"
+        },
+        {
+          "kind": "place",
+          "place": "Muruntov",
+          "event": "Navoiy kon-metallurgiya kombinatiga qarashli shaharcha; dunyoda eng yirik oltin koni shu yerda joylashgan",
+          "evidence": "Navoiy, Sovetobod (hozirgi Nurobod), Zarafshon, Uchquduq shaharlari, Muruntov"
+        },
+        {
+          "kind": "place",
+          "place": "Qizilqum",
+          "event": "Bepoyon sahro; uning markaziy tumanlari sanoat jihatidan o‘zlashtirilib, oltin va uran qazib olish sanoati paydo bo‘ldi",
+          "evidence": "Bepoyon Qizilqum sahrosi markaziy tumanlarining sanoat jihatidan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Konlarda qazib olingan foydali qazilmalar, xususan oltin, uran va tabiiy gaz Markaz manfaatlariga xizmat qildi",
+          "effect": "Bu boyliklardan ularning haqiqiy sohibi bo‘lgan o‘zbek xalqi deyarli foydalanmadi",
+          "evidence": "oltin va uran, tabiiy gaz Markaz manfaatlariga xizmat qildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "1956-yilda Gazli neft-gaz konining topilishi",
+          "effect": "O‘zbekistonda tabiiy gaz qazib chiqarish tez sur’atlarda rivojlanib, Gazli shahriga asos solindi",
+          "evidence": "O‘zbekistonda tabiiy gaz qazib chiqarishning tez sur’atlarda rivojlanishiga asos bo‘ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ittifoq hukumati gaz ishlab chiqarishni oshirishdan maqsadni uni RSFSRning sanoat markazlariga ko‘proq tashib ketish deb belgilagan edi",
+          "effect": "Gaz asosan respublikadan tashqariga jo‘natilib, uy-joy fondini gazlashtirish salmog‘i nihoyatda past bo‘lib qoldi",
+          "evidence": "Ittifoq hukumatining O‘zbekistonda gaz ishlab chiqarishni oshirishdan maqsadi uni RSFSRning sanoat markazlariga ko‘proq tashib ketish edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yopiq shaharlarga Markazdan ko‘chirib keltirilgan kadrlar navbatsiz uy-joy va turli imtiyozlar bilan ta’minlandi",
+          "effect": "Ijtimoiy adolat tamoyillari buzilib, mahalliy yoshlar doimo kamsitilgan",
+          "evidence": "Ijtimoiy adolat tamoyillarining buzilishini yopiq shaharlar misolida yaqqol"
+        },
+        {
+          "kind": "number",
+          "number": "500",
+          "unit": "mlrd m³",
+          "meaning": "1956-yilda topilgan Gazli neft-gaz konining umumiy gaz zaxirasi",
+          "evidence": "bu konning umumiy zaxirasi 500 mlrd m 3 gaz bo‘lgan"
+        },
+        {
+          "kind": "number",
+          "number": "127",
+          "unit": "millat va elat",
+          "meaning": "XX asr 60 – 80-yillarida O‘zbekistonda yashagan millat va elatlar soni",
+          "evidence": "O‘zbekistonda 127 ta millat va elatlar yashagan"
+        }
+      ]
+    }
+  ]
+}

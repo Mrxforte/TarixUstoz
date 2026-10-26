@@ -1,0 +1,829 @@
+{
+ "chapter": "V BOB. OSIYO, AMERIKA VA AFRIKA XALQLARI",
+ "topics": [
+  {
+   "number": 40,
+   "title": "Koreya",
+   "page": 138,
+   "items": [
+    {
+     "kind": "term",
+     "term": "Choson",
+     "definition": "Koreya yarimorolidagi ilk koreys davlati; koreyschada «Tonggi tarovat» deb atalgan.",
+     "evidence": "Choson (koreyscha, «Tonggi tarovat») ilk koreys davlatidir"
+    },
+    {
+     "kind": "person",
+     "person": "Tangun",
+     "role": "Choson davlatining afsonaviy asoschisi va koreys xalqi tashkil topgan davr hukmdori",
+     "activity": "Pxenyanda Choson qirolligiga asos solgan, koreyslar uning davrini xalq tashkil topgan davr deb bilishadi.",
+     "evidence": "Tan gun Pxenyanda Choson qirolligiga asos solgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. I asr",
+     "date_label": "mil. avv. I asr",
+     "event": "Qadimgi Choson uch qirollikka – Pekche, Silla va Koguryoga bo‘linib ketdi.",
+     "evidence": "mil. avv. I asrda Qadimgi Chosonni uch qirollikka"
+    },
+    {
+     "kind": "date_event",
+     "date": "IV–V asrlar",
+     "date_label": "IV–V asrlar",
+     "event": "Koguryo Koreya yarimorolining shimoliy qismini va qo‘shni Lyaodun yarimorolini egallagan yirik davlatga aylandi.",
+     "evidence": "u IV–V asrlarda Koreya yarimorolining shimoliy qis mi, qo‘shni Lyaodun yarimorolini egallagan yirik davlat bo’lgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "IV asr",
+     "date_label": "IV asr boshlari",
+     "event": "Koguryo xitoyliklarni o‘z hududidan batamom surib chiqarib, har jihatdan rivojlangan qudratli davlatga aylandi.",
+     "evidence": "IV asr boshlarida Koguryo xitoyliklarni o‘z hududidan batamom surib chiqaradi"
+    },
+    {
+     "kind": "term",
+     "term": "Parxe",
+     "definition": "Koguryo o‘rnida tashkil topgan qirollik; IX asrning birinchi yarmida qudratli davlatga aylangan.",
+     "evidence": "Keyinchalik Koguryo o‘rniga Parxe davlatiga asos solinadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "IX asr",
+     "date_label": "IX asrning birinchi yarmi",
+     "event": "Parxe qirolligi qudratli davlatga aylanib, Yaponiya bilan elchilik aloqalarini o‘rnatdi.",
+     "evidence": "Parxe qirolligi IX asrning bi rinchi yarmida qud ratli davlatga aylangan"
+    },
+    {
+     "kind": "date_event",
+     "date": "X asr",
+     "date_label": "X asr",
+     "event": "Ko‘chmanchi kidanlarning zarbasidan so‘ng Parxe davlati parchalanib ketdi.",
+     "evidence": "X asrda ko‘ch manchi kidanlar zarbasidan so‘ng davlat parchalanib ketadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "III–IV asrlar",
+     "date_label": "III–IV asrlar",
+     "event": "Koreya yarimorolining janubida Pekche davlati vujudga kelib, IV asrda markazlashgan davlatga aylandi.",
+     "evidence": "Koreya yarimorolining janubiy qismida III–IV asrlarda Pekche davlati vujudga keladi. Pekche qirolligi IV asrda mar kazlashgan davlatga aylanadi"
+    },
+    {
+     "kind": "person",
+     "person": "Van In",
+     "role": "Pekche qirolligidan chiqqan olim, Yaponiya shahzodasiga ustoz",
+     "activity": "Yaponiya taxt vorisi bo‘lgan shahzodaga ustozlik qilib, Pekche madaniyati ta’sirini kuchaytirgan.",
+     "evidence": "pekchelik olim Van In Yaponiya taxt vorisi bo‘lgan shahzodaga ustozlik qilgan"
+    },
+    {
+     "kind": "term",
+     "term": "buddizm",
+     "definition": "Pekche sulolasi hukmdorlari orqali Koreyaga xitoy yozuvi va iyerogliflari bilan birga kirib kelgan din.",
+     "evidence": "Koreyaga xitoy yozuv va iyerogliflari hamda buddizm kirib keladi"
+    },
+    {
+     "kind": "term",
+     "term": "Silla",
+     "definition": "Koreya yarimorolining janubi-sharqida joylashgan, dastlab Uch qirollik ichida eng zaif bo‘lgan qirollik.",
+     "evidence": "Silla qirolligi Koreya yarimorolining janubisharqida joylashgan. Dastlab Uch qirollik ichida Silla qirolligi eng zaifi"
+    },
+    {
+     "kind": "date_event",
+     "date": "668",
+     "date_label": "668-yil",
+     "event": "Silla Xitoydagi Tan sulolasi bilan ittifoq tuzib, Koreya yarimorolini o‘z hokimiyati ostida birlashtirdi.",
+     "evidence": "Silla qirolligi 668yilda Xitoydagi Tan sulolasi bilan ittifoq tuzib"
+    },
+    {
+     "kind": "date_event",
+     "date": "VIII asr",
+     "date_label": "VIII asr o‘rtalari",
+     "event": "Silla qirolligining oltin davri boshlandi, davlat taraqqiyoti va qudratining cho‘qqisiga erishdi.",
+     "evidence": "VIII asr o‘rtalarida Silla qirolligi ning oltin davri boshlandi"
+    },
+    {
+     "kind": "cause",
+     "cause": "O‘zaro urushlarga chek qo‘yilishi va qo‘shni davlatlar bilan tinchlik o‘rnatilishi",
+     "effect": "Mamlakatda ishlab chiqarish kuchlari rivojiga yo‘l ochilishi",
+     "evidence": "O‘zaro urushlarga chek qo‘yilishi, qo‘shni davlatlar bilan tinchlik o’rnatilishi mamlakatda ishlab chiqarish kuchlari rivojiga yo‘l ochadi"
+    },
+    {
+     "kind": "person",
+     "person": "Van Gon",
+     "role": "Koryo sulolasining asoschisi bo‘lgan lashkarboshi va davlat arbobi",
+     "activity": "918-yilda Koryo sulolasiga asos solib, Koguryoning shimoli-sharqiy Xitoyda yo‘qotgan hududlarini qaytarishni maqsad qilgan.",
+     "evidence": "Lashkarboshi Van Gon tomonidan Koryo sulolasi (918–1392)ga asos solingan"
+    },
+    {
+     "kind": "term",
+     "term": "Koryo sulolasi",
+     "definition": "Van Gon asos solgan sulola (918–1392); Koreya davlatining nomi ham shu nomdan kelib chiqqan.",
+     "evidence": "Koreya nomi Koryo nomidan kelib chiqqan"
+    },
+    {
+     "kind": "place",
+     "place": "Sonak shahri",
+     "event": "Koryo davlatining poytaxti bo‘lgan; hozirgi Shimoliy Koreyadagi Keson shahri o‘rnida joylashgan.",
+     "evidence": "Ushbu davlat poytaxti Sonak shahri (hozirgi Shimoliy Koreyadagi Keson) bo‘lgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Koryo qirolligining o‘zaro kurashlardan zaiflashib qolishi",
+     "effect": "Mo‘g‘ullarning 1231-yilda Koryo qirolligini bosib olishi",
+     "evidence": "Koryo qirolligi o‘zaro kurashlardan zaiflashib qoladi. Bundan foydalangan mo‘g‘ullar"
+    },
+    {
+     "kind": "date_event",
+     "date": "1231–1368",
+     "date_label": "1231–1368-yillar",
+     "event": "Mo‘g‘ullar Koryo qirolligini bosib olib, uni o‘z qo‘l ostida tutib turdi.",
+     "evidence": "mo‘g‘ullar 1231yilda Koryo qirolligini bosib oladi va 1368yilgacha o‘z qo‘l ostida tutib turadi"
+    },
+    {
+     "kind": "person",
+     "person": "Li Son Ge",
+     "role": "Koryo harbiy sarkardasi va yangi Li sulolasining asoschisi",
+     "activity": "1392-yilda so‘nggi Koryo hukmdorini taxtdan chetlatib, yangi Li sulolasiga asos soldi va davlat yana Choson deb ataldi.",
+     "evidence": "Koryo harbiy sarkardalaridan biri Li Son Ge 1392yilda so‘nggi Koryo hukmdorini taxtdan chetlatib"
+    },
+    {
+     "kind": "place",
+     "place": "Xanson",
+     "event": "Choson davlatining yangi poytaxti (hozirgi Seul); poytaxt Kegyondan shu yerga ko‘chirilgan.",
+     "evidence": "Davlat poytaxti Kegyondan Xanson (hozirgi Seul)ga ko‘chiriladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "XV asr",
+     "date_label": "XV asr o‘rtalari",
+     "event": "Choson qirolligi iqtisodiy va madaniy jihatdan yuksaldi.",
+     "evidence": "Choson qirolligi XV asr o‘rtalarida iqtisodiy va madaniy jihatdan yuksaladi"
+    }
+   ]
+  },
+  {
+   "number": 41,
+   "title": "Hindiston",
+   "page": 140,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "XI–XII asrlar",
+     "date_label": "XI–XII asrlar",
+     "event": "Hindistonning shimoliy hududlariga turk va afg‘on qabilalarining hujumlari va joylashuvi kuchaydi.",
+     "evidence": "XI–XII asrlarda Hindistonning shimoliy hududlariga turk va afg‘on qabilalarining hujumlari va joylashuvi kuchaygan"
+    },
+    {
+     "kind": "term",
+     "term": "Dehli sultonligi",
+     "definition": "1206–1526-yillarda mavjud bo‘lgan, poytaxti Dehli shahri bo‘lgan davlat.",
+     "evidence": "1206–1526yillarda Dehli sultonligi faoliyat yuritgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "1206",
+     "date_label": "1206-yil",
+     "event": "Hindistonda poytaxti Dehli bo‘lgan sultonlik vujudga keldi.",
+     "evidence": "1206yilda poytaxti Dehli bo‘lgan sultonlik vujudga keladi"
+    },
+    {
+     "kind": "person",
+     "person": "Qutbiddin Oyboq",
+     "role": "Dehli sultonligining ilk hukmdori va uning qo‘shiniga asos solgan sarkarda",
+     "activity": "Qo‘shinining asosini turkiy qabilalardan tuzilgan suvoriylar tashkil qilgan, viloyatlar noibligiga harbiylarni tayinlagan.",
+     "evidence": "Dehli sultonligining ilk hukmdori Qutbiddin Oyboqning qo‘shini asosini turkiy qabilalardan tuzilgan suvoriylar tashkil qilgan"
+    },
+    {
+     "kind": "person",
+     "person": "Shamsiddin Eltutmish",
+     "role": "Dehli sultonligi hukmdori (1211–1236), Oyboqning vorisi",
+     "activity": "Qutbiddin Oyboq vafotidan so‘ng taxtga kelib, Panjob, Sind va Bengaliyani bo‘ysundirgan.",
+     "evidence": "taxtga Shamsiddin Eltutmish (1211–1236) keladi. Uning boshqaruvi paytida Panjob, Sind va Bengaliyalar bo‘ysundiriladi"
+    },
+    {
+     "kind": "term",
+     "term": "iqto",
+     "definition": "Dehli sultonligida yer egaligining asosiy turi; noiblar soliqning bir qismini olib, kerak bo‘lganda sultonga qo‘shin bergan.",
+     "evidence": "Mamlakatda yer egaligining asosiy turi iqto’ bo‘lgan"
+    },
+    {
+     "kind": "number",
+     "number": "10–20",
+     "unit": "%",
+     "meaning": "Viloyat noiblari to‘plangan soliqlardan o‘ziga qoldirgan ulush.",
+     "evidence": "Viloyat noiblari to‘plangan soliqlarning 10–20 % ini o‘ziga qoldirishi"
+    },
+    {
+     "kind": "term",
+     "term": "xolisa",
+     "definition": "Davlat ixtiyoridagi yerlar; solig‘i xazinaga tushib, davlat xarajatlari va maxsus qo‘shinni ta’minlashga sarflangan.",
+     "evidence": "xolisa deb nomlangan. Xolisa davlat ixtiyoridagi yerlar bo‘lib, undan olinadigan soliq lar xazinaga tu shib"
+    },
+    {
+     "kind": "term",
+     "term": "zamindorlar",
+     "definition": "Mahalliy hind feodallari; yermulklarning ma’lum qismi ularga tegishli bo‘lgan.",
+     "evidence": "Yermulklarning ma’lum qismi mahalliy hind feodallari – zamin dorlarga tegishli edi"
+    },
+    {
+     "kind": "person",
+     "person": "Alouddin Xiljiy",
+     "role": "Dehli sultoni, davlat xazinasini mustahkamlagan islohotchi hukmdor",
+     "activity": "Islohotlar o‘tkazib davlat xazinasi daromadlarini ko‘paytirgan va vaqtinchalik bo‘lsada avvalgi qudratni tiklagan.",
+     "evidence": "Alouddin Xiljiy islohotlar o‘tkazib, davlat xazinasi daromadlarini ko‘paytiradi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Alouddin Xiljiyning kuchli qo‘shin tuzib, o‘zboshimcha feodallarni bo‘ysundirishi",
+     "effect": "Davlatning vaqtinchalik bo‘lsada avvalgi qudratini tiklashiga yordam berishi",
+     "evidence": "Xiljiy kuchli qo‘shin tuzib, o‘zboshimcha feodallarni bo‘ysundiradi. Bu davlat vaqtinchalik bo‘lsada"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dehli sultonligining kuchli va intizomli qo‘shini bo‘lishi",
+     "effect": "Shimoldan mo‘g‘ullar hujumlarini qaytarish imkonining tug‘ilishi",
+     "evidence": "Dehli sultonligining kuchli va intizomli qo‘shini bo‘lishi shimoldan mo‘g‘ullar hujumlarini qaytarish imkonini beradi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1325",
+     "date_label": "1325-yil",
+     "event": "Muhammad Tug‘luq taxtga kelib, mustaqillik yo‘lini tutgan knyazliklarni bo‘ysundirishni boshladi.",
+     "evidence": "Muhammad Tug‘luq 1325yilda taxtga keladi. U o‘z hukmdorligini otasi paytida mustaqillik yo‘lini tutgan knyazliklarni bo‘ysundirishdan boshlaydi"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad Tug‘luq",
+     "role": "Dehli sultoni, o‘zini «Iskandar Zulqarnaynning davomchisi» deb atagan hukmdor",
+     "activity": "Hukmronligi davrida Hindiston yarimoroli to‘liq birlashtirilgan.",
+     "evidence": "O‘zini «Iskandar Zulqarnaynning davomchisi» deb nomla gan sulton davrida Hindiston yarimoroli to‘liq birlashtiriladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Soliq islohoti yuz bergan qurg‘oqchilik",
+     "effect": "Sultonning soliq islohotining muvaffaqiyatsiz tugashi",
+     "evidence": "Sultonning soliq islohoti yuz bergan qurg‘oqchilik tufayli muvaffaqiyatsiz tugaydi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mis tangalarni oltin va kumush pullar bilan teng muomalada bo‘lishi uchun zarb qildirish",
+     "effect": "Tangalarning qadrsizlanishi va har ikki islohotning natijasiz tugashi",
+     "evidence": "mis tangalarini zarb qildirishi uni ko‘p o‘tmay qadrsiz lanib ketishga, har ikki islohotning natijasiz tugashiga olib keladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Feruzshoh Tug‘luq davrida soliqlarning kamaytirilishi va davlat yerlarining dehqonlarga ijaraga berilishi",
+     "effect": "Qishloq xo‘jaligi va hunarmandchilikning yuksalishi, sultonning xalq homiysi sifatida shuhrat qozonishi",
+     "evidence": "Feruzshoh Tug‘luq davrida soliqlar ka maytirilib, davlat yerlari dehqonlarga ijaraga bo‘lib beriladi. Uning boshqaruvi paytida qishloq xo‘jaligi, hunarmandchilikning yuksalishi, oqilona boshqaruvi sulton ga xalq homiysi sifatida shuh rat keltiradi"
+    },
+    {
+     "kind": "date_event",
+     "date": "XIV asr",
+     "date_label": "XIV asr",
+     "event": "Mamlakatda siyosiy tarqoqlik boshlanib, ayrim knyazlarning mustaqillikka intilishi kuchaydi.",
+     "evidence": "XIV asrda boshlangan siyosiy tarqoqlik davrida, ayrim knyaz larning mustaqillikka intilish jarayo ni kucha yib boradi"
+    },
+    {
+     "kind": "person",
+     "person": "Mahmud",
+     "role": "Dehli sultonligining Amir Temur yurishi davridagi hukmdori",
+     "activity": "1398–1399-yillarda Amir Temur qo‘shinlariga qarshi kurashgan, ammo mag‘lubiyatga uchragan.",
+     "evidence": "Dehlining keyingi sultoni Mahmud 1398–1399yillarda Amir Temur qo‘shinlariga qarshi kurashadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1398–1399",
+     "date_label": "1398–1399-yillar",
+     "event": "Amir Temur qo‘shinlari Dehlini zabt etib, Samarqandga ko‘plab hind hunarmandlari va me’morlarini olib qaytdi.",
+     "evidence": "Dehlini zabt etadi. Sohibqiron Samar qandga ko‘plab hind hunarmandlari, me’morlarini olib qaytadi"
+    },
+    {
+     "kind": "place",
+     "place": "Samarqand",
+     "event": "Amir Temur Dehlidan olib qaytgan hind hunarmandlari va me’morlari keltirilgan shahar.",
+     "evidence": "Sohibqiron Samar qandga ko‘plab hind hunarmandlari, me’morlarini olib qaytadi"
+    },
+    {
+     "kind": "term",
+     "term": "Sayyidlar sulolasi",
+     "definition": "1414–1451-yillarda Dehli taxtida bo‘lgan sulola; uni afg‘on sardori Bahlul Lo‘diy taxtdan tushirgan.",
+     "evidence": "Sayyidlar sulolasi (1414–1451) taxtga keladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1451",
+     "date_label": "1451-yil",
+     "event": "Afg‘on qabilalari sardori Bahlul Lo‘diy Sayyidlar sulolasini taxtdan tushirdi.",
+     "evidence": "Sayyidlar sulolasini afg‘on qabilalari sardori Bahlul Lo‘diy (1451–1489) taxtdan tushiradi"
+    }
+   ]
+  },
+  {
+   "number": 42,
+   "title": "Amerika o‘rta asrlarda",
+   "page": 142,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "40 ming yil avval",
+     "date_label": "40 ming yil avval",
+     "event": "Amerika qit’asiga dastlabki odamlar Shimoliy Osiyodan Bering bo‘g‘ozi orqali o‘tgan.",
+     "evidence": "Amerika qit’asiga dastlabki odamlar Shimoliy Osiyo dan hozirgi Bering bo‘g‘ozi or qali"
+    },
+    {
+     "kind": "date_event",
+     "date": "milodiy I ming yillik",
+     "date_label": "Milodiy I ming yillik",
+     "event": "Mayyalarda shahar-davlatlar vujudga keldi.",
+     "evidence": "Milodiy I ming yillikda mayyalarda shahardavlatlar vujudga keladi"
+    },
+    {
+     "kind": "place",
+     "place": "Yukatan yarimoroli",
+     "event": "Markaziy Amerikada (hozirgi Meksika) mayya xalqlari qadimdan yashab kelgan hudud.",
+     "evidence": "Markaziy Amerikaning Yukatan yarimorolida (hozirgi Meksika) qadimdan mayya xalqlari yashab kelgan"
+    },
+    {
+     "kind": "term",
+     "term": "shahar-davlat",
+     "definition": "Mayyalarda «buyuk kishi» – hukmdor boshqargan, hokimiyati merosiy bo‘lgan alohida shahar.",
+     "evidence": "shahardavlatlar vujudga keladi. Ularning har birini « buyuk kishi» – hukm dor bosh qarib, uning hokimiyati me rosiy bo‘lgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "XII asr",
+     "date_label": "XII asr",
+     "event": "Asteklar katta ko‘l o‘rtasidagi orollarda Tenochtitlan shahriga asos soldi.",
+     "evidence": "asteklar katta ko‘l o‘rtasidagi orollarda XII asrda Tenochtitlan shahriga asos soladilar"
+    },
+    {
+     "kind": "place",
+     "place": "Tenochtitlan",
+     "event": "Asteklarning ko‘l o‘rtasidagi orolda qurilgan, to‘g‘onlar, ibodatxonalar va saroylarga ega shahri.",
+     "evidence": "ular sun’iy to‘g‘onlar bunyod etishgan, ibodatxonalar va saroylar qurishgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Asteklarda yerning taqchil bo‘lishi",
+     "effect": "Ko‘l tagidan suv o‘simliklari va unumdor loy ko‘tarib, «suzuvchi dalalar» yaratilishi",
+     "evidence": "Asteklarda yer taqchil bo‘lganidan ko‘l tagidan suv o‘sim liklari va unumdor loyni ko‘tarib, sollarda «suzuvchi dalalar» ham yaratganlar"
+    },
+    {
+     "kind": "term",
+     "term": "tlatoani",
+     "definition": "Asteklarda saylab qo‘yiladigan lashkarboshi; oliy hukmdor va bosh kohin vazifasini bajargan.",
+     "evidence": "Hukmron qabila vakillaridan tlatoani – lashkarboshi saylanib, u oliy hukmdor bo‘lishidan tash qari, bosh kohin vazifasini ham bajargan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Asteklar ma’danlarni bilishmaganligi",
+     "effect": "Bolta va pichoqlarning toshdan yasalishi davom etishi",
+     "evidence": "ular ma’danlarni bilishmaganligi sababli bolta va pichoqlarning toshdan yasalishi davom etgan"
+    },
+    {
+     "kind": "term",
+     "term": "mozaika",
+     "definition": "Qimmatbaho toshlarga ishlov berib yasalgan qadalma naqshlar; saroy va ibodatxona devorlarini bezashda ishlatilgan.",
+     "evidence": "qadalma naqshlar (mozaika) yasab, saroy va ibodatxona devorlarini bezashgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "XII–XIII asrlar",
+     "date_label": "XII–XIII asrlar",
+     "event": "Kechua tillariga mansub inklar Urubamba daryosi havzasida Kusko shahriga asos soldi.",
+     "evidence": "Kechua tillariga mansub inklar XII–XIII asrlarda Urubamba daryo si havzasida Kusko shahriga asos soladilar"
+    },
+    {
+     "kind": "place",
+     "place": "Kusko",
+     "event": "Inklar davlatining poytaxti; viloyatlar bilan tosh yo‘llar va pochta xizmati orqali bog‘langan.",
+     "evidence": "Poytaxt Kuskoni viloyatlar bilan bog‘laydigan"
+    },
+    {
+     "kind": "term",
+     "term": "Oliy Inka",
+     "definition": "Inklar davlatini boshqargan hukmdor; u «Quyoshning o‘g‘li» va uning yerdagi ramzi sanalgan.",
+     "evidence": "Bu dav latni Oliy Inka boshqargan. U «Qu yoshning o‘g‘li», uning yerdagi ram zi sanalgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Inklarning bosib olingan hududlar aholisiga o‘z tartiblari va madaniyatlarini o‘tkazishi",
+     "effect": "«ink» atamasining hukmron toifa – zodagonlarning umumiy nomiga aylanishi",
+     "evidence": "inklar o‘z tar tiblarini, madaniyatlarini o‘tkazganlar. Natija da dastlab qabila nomi bo‘lgan «ink» atamasi hukmron toifa – zodagonlarning umumiy nomiga aylangan"
+    },
+    {
+     "kind": "number",
+     "number": "2/3",
+     "unit": "qism",
+     "meaning": "Inka jamoalari yetishtirgan hosilning davlat va ibodatxonalarga topshirilgan ulushi.",
+     "evidence": "Jamoalar yetishtirgan hosilning 2/3 qismini davlat va ibodatxonalarga topshirganlar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Tog‘li hududlarning dehqonchilik uchun noqulayligi",
+     "effect": "Jamoa erkaklarining tik qoyalar yonbag‘rini o‘yib, ustiga unumli tuproq yoyishi",
+     "evidence": "Tog‘li hududlar dehqonchilik uchun noqulay edi. Natijada jamoa erkaklari tik qoyalar yonbag‘rini o‘yib, toshlarning ustiga unumli tuproq yoyishgan"
+    },
+    {
+     "kind": "number",
+     "number": "15",
+     "unit": "minglab kilometr",
+     "meaning": "Inklar poytaxti Kuskoni viloyatlar bilan bog‘lagan tosh yo‘llarning umumiy uzunligi.",
+     "evidence": "umumiy uzunligi 15 minglab kilometr bo‘lgan tosh yo‘llar barpo etil gan"
+    },
+    {
+     "kind": "term",
+     "term": "lama",
+     "definition": "Janubiy Amerikada boqilgan tuyasimon uy hayvoni; go‘shti, juni va yuk tashishda ishlatilgan.",
+     "evidence": "Ular uy hayvonlaridan shimolda itni, janubda tuyasimon – lamani boqishgan"
+    },
+    {
+     "kind": "term",
+     "term": "jamoa",
+     "definition": "Asteklar va inklarda urug‘ asosidagi birlik; boshliqlari saylab qo‘yilgan, yerlar a’zolarga taqsimlangan.",
+     "evidence": "Asteklar urug‘ jamoa bo‘lib yashaganlar. Jamoa boshliqlari saylab qo‘yilgan"
+    },
+    {
+     "kind": "place",
+     "place": "Tinch okeani",
+     "event": "Inklar And tog‘laridan shu okeangacha bo‘lgan ulkan hududda o‘z hokimiyatlarini o‘rnatgan.",
+     "evidence": "And tog‘laridan Tinch okea ni ga qadar ulkan xududda o‘z hokimiyatlarini o‘rna tadilar"
+    }
+   ]
+  },
+  {
+   "number": 43,
+   "title": "Afrika xalqlari o‘rta asrlarda",
+   "page": 146,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "I ming yillik oxiri",
+     "date_label": "I ming yillik oxiri",
+     "event": "Afrika aholisining aksari qismi tashqi dunyodan ajralgan holda yashagan.",
+     "evidence": "Aholining aksari qismi I ming yillik oxiriga qadar tashqi du n yo dan ajralgan holda yasha gan"
+    },
+    {
+     "kind": "place",
+     "place": "Sahroi Kabir",
+     "event": "Atrofida ko‘chmanchi, yarim ko‘chmanchi va o‘troq qabilalar, asosan, chorvachilik bilan shug‘ullangan.",
+     "evidence": "Sahroi Kabirning atrof larida ko‘chmanchi, yarim ko‘chmanchi va o‘troq qabilalar ham, asosan, chorvachilik bilan shug‘ullanganlar"
+    },
+    {
+     "kind": "date_event",
+     "date": "VII asr",
+     "date_label": "VII asr",
+     "event": "Arab savdogarlari O‘rta dengiz sohillaridan G‘arbiy Sudanga tuz va boshqa mollarni keltira boshladi.",
+     "evidence": "Arab savdogarlari VII asrlarda G‘arbiy Sudan yerlariga O‘rta dengiz sohil la ridan Afrikaga yuksak qadrlanuvchi tuz va boshqa mol larni keltirganlar"
+    },
+    {
+     "kind": "term",
+     "term": "qasaba-qo‘rg‘on",
+     "definition": "Savdo yo‘llari kesishgan joylarda vujudga kelgan yirik qo‘rg‘onlar: Aukar, Gana, Tombuktu, Gao, Mali.",
+     "evidence": "yirik qasaba – qo‘rg‘onlar: Aukar, Gana, Tombuktu, Gao, Mali vujudga kelgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "VIII asr",
+     "date_label": "VIII asr",
+     "event": "G‘arbiy Sudandagi Gana davlati vujudga keldi va keyinchalik o‘z taraqqiyotining cho‘qqisiga erishdi.",
+     "evidence": "Ularning dastlabkisi G‘arbiy Sudandagi Ga na bo‘lgan. U VIII asrda vujudga kelib"
+    },
+    {
+     "kind": "number",
+     "number": "200",
+     "unit": "ming askar",
+     "meaning": "Gana podshosining kuchli qo‘shinidagi askarlar soni.",
+     "evidence": "undagi 200 ming askar"
+    },
+    {
+     "kind": "person",
+     "person": "Abu Bakr",
+     "role": "Marokash sultoni, 1076-yilda Ganani istilo qilgan hukmdor",
+     "activity": "Katta qo‘shin bilan Ganani istilo qilib, uni talagan va o‘lkani Marokashga qaram qilgan.",
+     "evidence": "Marokash sultoni Abu Bakr 1076yilda katta qo‘shin bilan Ganani istilo"
+    },
+    {
+     "kind": "cause",
+     "cause": "Gananing Marokash tomonidan istilo qilinishi",
+     "effect": "Gana podshosining Marokashga qaram bo‘lib, bojyasoq to‘lashi va islomni qabul qilishga majbur bo‘lishi",
+     "evidence": "Gana podshosi Marokashga qaram bo‘lib, bojyasoq to‘lashdan tashqari, o‘z zodagonlari bilan islom dinini qabul qilishga ham majbur bo‘ladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mali aholisining XI asrdan islomni qabul qilishi",
+     "effect": "Mamlakatga musulmon savdogarlarining ko‘chib kelishining tezlashishi",
+     "evidence": "Bu esa mamlakatga musulmon sav dogarlarining ko‘chib kelishini tez lashtiradi"
+    },
+    {
+     "kind": "date_event",
+     "date": "XIII asr",
+     "date_label": "XIII asr",
+     "event": "Hunarmandchilik va savdo rivojlanishi natijasida Mali taraqqiyotining cho‘qqisiga erishdi.",
+     "evidence": "Hunarmandchilik va savdosotiqning ri vojlanishi natijasida XIII asrda Mali o‘z taraqqiyotining cho‘q qisiga erishadi"
+    },
+    {
+     "kind": "person",
+     "person": "Sundiata Keyt",
+     "role": "Mali davlatining 1230–1255-yillardagi hukmdori",
+     "activity": "Ko‘p sonli kuchli qo‘shin tuzib, karvon yo‘llari o‘tadigan hududlarni, oltin konlarini va qadimgi Gana yerlarini egallagan.",
+     "evidence": "Uning hukmdori Sundiata Keyt (1230–1255) ko‘p sonli kuchli qo‘shin tuzadi"
+    },
+    {
+     "kind": "term",
+     "term": "noib",
+     "definition": "Mali hukmdori tomonidan istilo etilgan viloyatlarga tayinlangan boshqaruvchi; soliqlar undirish unga yuklangan.",
+     "evidence": "Mali hukmdori istilo etilgan viloyatlar noibligiga o‘z qarindoshlari va yaqinlarini tayinlaydi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1324",
+     "date_label": "1324-yil",
+     "event": "Mali hukmdori Muso I Makkaga haj safari uyushtirdi.",
+     "evidence": "Uning hukmdori Muso I 1324yilda Makkaga haj safari uyushtiradi"
+    },
+    {
+     "kind": "person",
+     "person": "Muso I",
+     "role": "Mali hukmdori, 1324-yilda haj safari uyushtirgan saxiy podsho",
+     "activity": "Safarga 8 ming jangchi va 500 qul hamroh bo‘lib, oltinni yo‘lda saxiylik bilan tarqatib borgan.",
+     "evidence": "Hukmdorga 8 ming jangchi va 500 ta qul hamroh bo‘lib, bu katta karvon"
+    },
+    {
+     "kind": "number",
+     "number": "10–12",
+     "unit": "tonna",
+     "meaning": "Muso I karvoni o‘zi bilan olib ketgan oltin miqdori (taxminiy hisob).",
+     "evidence": "bu katta karvon 10–12 tonna oltinni o‘zi bilan olib ketgani taxmin qilinadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Muso I ning olib borgan oltinini yo‘lda saxiylik bilan tarqatishi",
+     "effect": "Uzoq yillar davomida arab dunyosida oltin narxining past bo‘lishi",
+     "evidence": "Bu voqea dan so‘ng uzoq yillar davomida arab dunyosida oltinning narxi past bo‘lgan"
+    },
+    {
+     "kind": "place",
+     "place": "Niara",
+     "event": "Mali davlatining poytaxti; hashamatli saroylar va masjidlar qurilgan shahar.",
+     "evidence": "Mali poytaxti Niara va boshqa shaharlarda hashamatli saroylar, mas jidlar quriladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "XIV asr oxiriga kelib feodal tarqoqlik va sulolaviy nizolarning kuchayishi",
+     "effect": "Malining zaiflashishi, XV asrda esa butunlay inqirozga uchrab parchalanishi",
+     "evidence": "XIV asr oxiriga kelib feodal tarqoqlik, sulolaviy nizolar Mali ning zaiflashishiga sabab bo‘ladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "XIV–XV asrlar",
+     "date_label": "XIV–XV asrlar",
+     "event": "Songai davlati yuksalib, Niger daryosi havzasida hukmronligini to‘liq o‘rnatdi.",
+     "evidence": "Songai davlati XIV–XV asrlarda yuksalgan. U Niger daryosi havzasida o‘z hukmronligini to‘liq o‘rnatadi"
+    },
+    {
+     "kind": "term",
+     "term": "tranzit savdosi",
+     "definition": "Songaining asosiy daromad manbai bo‘lgan, mamlakat hududi orqali o‘tuvchi savdo.",
+     "evidence": "Songaining asosiy daromad manbai tranzit savdosi va oltin konlari edi"
+    },
+    {
+     "kind": "place",
+     "place": "Gao",
+     "event": "Songai davlatining poytaxti bo‘lgan shahar; atrofida songai qabilalari yashagan.",
+     "evidence": "Almi ga XIV asr oxirida ularni yengib, poytaxti Gao bo‘l gan mustaqil davlat tuzish imkonini beradi"
+    },
+    {
+     "kind": "term",
+     "term": "yollanma qo‘shin",
+     "definition": "Songaida tuzilgan maxsus, haq evaziga xizmat qiladigan harbiy kuch.",
+     "evidence": "Songaida maxsus yollanma qo‘shin ham tuzilgan edi"
+    },
+    {
+     "kind": "date_event",
+     "date": "IV–V asrlar",
+     "date_label": "IV–V asrlar",
+     "event": "Aksum davlatining yuksalish davri boshlandi.",
+     "evidence": "Aksum davlati vujudga kelib, uning yuksalishi IV–V asrlarga to‘g‘ri keladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Aksumning Rim imperiyasi, keyinchalik Vizantiya bilan yaqin iqtisodiy va madaniy aloqada bo‘lishi",
+     "effect": "Aksum hukmdori va uning a’yonlarining xristian dinini qabul qilishi",
+     "evidence": "Shu sababli Aksum hukmdori va uning a’yonlari xristian dinini qabul qiladilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "XVI asr oxiri",
+     "date_label": "XVI asr oxiri",
+     "event": "Marokash sultoni Songai davlatini bosib oldi.",
+     "evidence": "Marokash sultoni XVI asr oxirida Songaini bosib oladi"
+    },
+    {
+     "kind": "person",
+     "person": "Manelik",
+     "role": "Rivoyatlarga ko‘ra Aksumning birinchi hukmdori",
+     "activity": "Podsho Sulaymonning Arabiston malikasidan tug‘ilgan o‘g‘li bo‘lgan, shu bilan sulola tarixiy asosga ega.",
+     "evidence": "Aksumning birinchi hukmdori Manelik – podsho Sulaymonning Arabiston malikasidan tug‘ilgan o‘g‘li bo‘lgan"
+    }
+   ]
+  },
+  {
+   "number": 44,
+   "title": "Osiyo, Amerika va Afrika xalqlari madaniyati",
+   "page": 151,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "XV asr oxiri",
+     "date_label": "XV asr oxiri",
+     "event": "Usmonlilar jamiyatida madaniyatning turli sohalari ravnaq topdi.",
+     "evidence": "Usmonlilar jamiyatida XV asr oxirida ma da niyatning turli sohalari ravnaq topdi"
+    },
+    {
+     "kind": "person",
+     "person": "Mehri xotun",
+     "role": "Usmonlilar jamiyatida XV asr oxirida ijod qilgan iqtidorli shoira",
+     "activity": "Mulla Mahmud kabi shoirlar bilan birga Usmonlilar madaniyati yuksalishiga hissa qo‘shgan.",
+     "evidence": "Mamlakatda shoira Mehri xotun va shoir Mulla Mahmud kabi qator iqtidorli shoirlar yetishib chiqdi"
+    },
+    {
+     "kind": "person",
+     "person": "Mulla Mahmud",
+     "role": "Mehri xotun bilan bir davrda yashab ijod qilgan usmonli shoiri",
+     "activity": "XV asr oxirida Usmonlilar jamiyatida yetishib chiqqan iqtidorli shoirlar qatoridan joy olgan.",
+     "evidence": "shoira Mehri xotun va shoir Mulla Mahmud kabi qator iqtidorli shoirlar yetishib chiqdi"
+    },
+    {
+     "kind": "person",
+     "person": "Xoja Sinon",
+     "role": "Yunon millatiga mansub mashhur me’mor, ko‘plab inshootlar muallifi",
+     "activity": "Ajoyib me’morchilik durdonalarini qurib, butun jahonga tanilgan va 300 dan ortiq inshoot qurilishiga boshchilik qilgan.",
+     "evidence": "Millati yunon bo‘lgan Xoja Sinon qurgan ajoyib me’morchilik durdonalari uni butun jahonga tanitdi"
+    },
+    {
+     "kind": "number",
+     "number": "300",
+     "unit": "ta inshoot",
+     "meaning": "Xoja Sinon boshchilik qilgan masjid, madrasa, saroy, favvora, hammom va ko‘prik kabi qurilishlar soni.",
+     "evidence": "U o‘z faoliyati davrida 300 dan ortiq inshootlar"
+    },
+    {
+     "kind": "term",
+     "term": "«Bahriya»",
+     "definition": "Piri Raisning O‘rta, Qora va Egey dengizlari atlasi; dunyo fanidagi katta yutuq hisoblangan.",
+     "evidence": "O‘rta, Qora va Egey dengizlari atlasi – «Bahriya» dunyo fanidagi katta yutuq edi"
+    },
+    {
+     "kind": "person",
+     "person": "Piri Rais",
+     "role": "Turkiyalik dengiz sayyohi va geografiya sohasidagi asarlar muallifi",
+     "activity": "Dengizlar atlasini yaratib, geografiya fanining taraqqiyotiga katta hissa qo‘shgan.",
+     "evidence": "Turkiyalik dengiz sayyohi Piri Raisning asarlari, uning O‘rta, Qora va Egey dengizlari atlasi"
+    },
+    {
+     "kind": "term",
+     "term": "«Sayohatnoma»",
+     "definition": "Evliya Chalabiyning Yevropa manbalari asosida bitilgan ko‘p jildli asari.",
+     "evidence": "Evliya Chalabiyning Yevropa manbalari aso sida bitilgan ko‘p jildli «Sayo hatnoma"
+    },
+    {
+     "kind": "term",
+     "term": "«Jahonnoma»",
+     "definition": "Xoja Xalifa yozgan asar; arab va jahonning turli mamlakatlari haqida ma’lumot beradi.",
+     "evidence": "Xoja Xa lifaning «Jahonnoma» asarlarida arab va jahonning turli mamlakatlari haqida bayon qilinadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1418–1450",
+     "date_label": "1418–1450-yillar",
+     "event": "Qirol Sechjon Buyuk hukmronlik qilib, koreys madaniyati va san’ati gullab-yashnadi.",
+     "evidence": "Sechjon Buyuk (1418–1450) soliq tizimida islohot o‘tkazadi"
+    },
+    {
+     "kind": "person",
+     "person": "Sechjon Buyuk",
+     "role": "Koreyaning donishmand va iqtidorli qiroli, islohotchi hukmdor",
+     "activity": "Soliq islohotini o‘tkazib, davlat boshqaruvini takomillashtirgan, ilm-fan va maorifni rivojlantirgan.",
+     "evidence": "Qirol Sechjon mamlakatning do ni shmand va iqtidorli hukmdori bo‘lgan"
+    },
+    {
+     "kind": "term",
+     "term": "«Pulguksa»",
+     "definition": "Budda ibodatxonasi; Sechjon Buyuk davrida qurilgan va koreys madaniyati yodgorligi hisoblanadi.",
+     "evidence": "Budda ibodatxonasi hisoblangan – Pulguksa quriladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qirol akademiyasi olimlarining Sechjon Buyuk rahbarligida ishlashi",
+     "effect": "Koreys milliy alifbosining Sechjon Buyuk davrida yaratilishi",
+     "evidence": "Sechjon Buyuk rahbarligida qirol akademiyasi olimlari koreys alifbosini yaratadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "milodiy asr boshlari",
+     "date_label": "Milodiy asr boshlari",
+     "event": "Mayyalarning iqtisodiy-madaniy taraqqiyoti yozuvni yaratish imkonini berdi.",
+     "evidence": "Mayyalarning iqtisodiymadaniy taraqqiyoti milodiy asr boshlarida yozuvni yaratish imkonini beradi"
+    },
+    {
+     "kind": "term",
+     "term": "iyeroglif",
+     "definition": "Mayya kohinlari qilqalam bilan bitib, rasmlar bilan bezatgan yozuv belgilari.",
+     "evidence": "Kohinlar qil qalam bilan iyerogliflarni bitib, rasmlar bilan beza tgan"
+    },
+    {
+     "kind": "place",
+     "place": "Chichen-Itsa",
+     "event": "Mayyalar poytaxtida qurilgan rasadxona; kohinlar sayyoralar harakati va tutilishlarni hisoblagan.",
+     "evidence": "Mamlakat poytaxti – Chi chen-Itsada rasadxona qurilgan. Unda kohinlar sayyora larning Quyosh tevaragida aylanishi vaqtini hisoblab chiqqanlar"
+    },
+    {
+     "kind": "term",
+     "term": "zinapoyali ehrom",
+     "definition": "Mayyalar maxsus tepaliklar yasab, baland poydevorlar ustida barpo etgan zinapoyali ibodat inshootlari.",
+     "evidence": "Mayyalar maxsus tepaliklar yasab, baland poydevorlar ustida o‘zlarining zinapoyali ehromlarini"
+    },
+    {
+     "kind": "cause",
+     "cause": "Asteklarning qo‘shni mayyalar ixtirosidan foydalanishi",
+     "effect": "O‘zlarining quyosh taqvimini yaratishlari",
+     "evidence": "Asteklar qo‘shni mayyalar ixtirosi asosida o‘zlarining quyosh taqvimini yaratganlar"
+    },
+    {
+     "kind": "term",
+     "term": "piktografik yozuv",
+     "definition": "Rasmli yozuv; ma’lumotning umumiy mazmunini rasmlar orqali tasvirlash usuli.",
+     "evidence": "Piktografik yozuv (lotincha pictus – rasmli va yunoncha grapho – yozaman, rasmli yozuv"
+    },
+    {
+     "kind": "term",
+     "term": "ko‘p xudolik",
+     "definition": "Asteklar dinining asosi; xudolar orasida urush xudosi eng e’tiborlisi bo‘lib, unga odamlar qurbonlik qilingan.",
+     "evidence": "Asteklar dini ko‘p xudolikka asos langan edi. Xudolar orasida eng e’ti borlisi, urush xudosi sharafiga hatto odamlar ham qurbonlik qilingan"
+    },
+    {
+     "kind": "place",
+     "place": "Tenochtitlan",
+     "event": "Asteklarning poytaxti; zodagonlar va oddiy xalq bolalari uchun alohida maktablar bo‘lgan shahar.",
+     "evidence": "Poytaxt Tenochtitlanda zoda gon larning farzandlari va oddiy xalq bola lari uchun"
+    },
+    {
+     "kind": "term",
+     "term": "kipu",
+     "definition": "Inklarning «tugunli xati»; uning sirlari faqat ruhoniylarga ma’lum bo‘lgan.",
+     "evidence": "Inklar ning o‘ziga xos «tugunli xati» (kipu) bo‘lib, uning sirlari faqat ruhoniylarga ma’lum edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Inklarda yozuvning bo‘lmasligi",
+     "effect": "Bolalarning din, boshqaruv tartibi, qonunlar va udumlarga oid ma’lumotlarni yodlashi",
+     "evidence": "Yozuv bo‘l magani sababli bolalar inklarning dini, bosh qaruv tartibi, qonunlari va udumlariga oid ma’lumotlarni yodlaganlar"
+    },
+    {
+     "kind": "number",
+     "number": "12",
+     "unit": "oy",
+     "meaning": "Inklarning aniq taqvimi bo‘lingan oylar soni.",
+     "evidence": "Ularning aniq taqvimi 12 oyga bo‘lingan"
+    },
+    {
+     "kind": "date_event",
+     "date": "IV asr",
+     "date_label": "IV asr",
+     "event": "Aksumda mahalliy yozuv islohoti o‘tkazildi; bu alifbo Efiopiyada hozirgacha saqlanib qolgan.",
+     "evidence": "Aksumda IV asrdayoq mahalliy yozuv islohoti o‘tkaziladi"
+    },
+    {
+     "kind": "place",
+     "place": "Efiopiya",
+     "event": "Aksum alifbosi hozirgi kungacha saqlanib qolgan mamlakat.",
+     "evidence": "Bu alifbo Efiopiyada hozirgi kunga qadar saq lanib qolgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Islom dinining qabul qilinishi",
+     "effect": "Arab mamlakatlaridan kelgan usta va me’morlarning masjid, saroy, kasalxona va bog‘lar qurishi",
+     "evidence": "Islom dini qabul qilinganidan keyin bu yerlarda arab mamlakatlaridan kelgan usta va me’morlar"
+    },
+    {
+     "kind": "term",
+     "term": "madrasa",
+     "definition": "Musulmon ta’lim muassasasi; Tombuktudagi madrasada ilohiyot bilan birga tarix, fiqh va astronomiya o‘qitilgan.",
+     "evidence": "Jumladan, Tombuktu mad rasasida ilohiyotdan tashqari tarix, fiqh, matematika, astronomiya kabi fanlar o‘qitilardi"
+    },
+    {
+     "kind": "place",
+     "place": "Benin",
+     "event": "Shoh saroyidan jezdan ishlangan podsho va a’yonlarning bo‘rtma rasmlari topilgan joy.",
+     "evidence": "Benindagi shoh saroyidan jezdan ishlangan podsho va a’yonlarning bo‘rtma rasmlari topilgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Afrika xalqlarida avloddan-avlodga o‘tib kelgan afsona va ertaklarning ko‘pligi",
+     "effect": "Ularning qimmatli tarixiy manba bo‘lib xizmat qilishi",
+     "evidence": "avloddanavlodga o‘tib kelgan ajoyib afsona va ertaklar ko‘p bo‘l gan. Ular qimmatli tarixiy manba bo‘lib xizmat qiladi"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,790 @@
+{
+  "chapter": "Ikkinchi jahon urushi va undan keyingi davr: 1946–1991-yillar",
+  "topics": [
+    {
+      "number": 14,
+      "title": "1918 – 1939-yillarda Afrika mamlakatlari",
+      "page": 62,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1922",
+          "date_label": "1922-yil",
+          "event": "Buyuk Britaniya Misr ustidan protektoratni bekor qilib, uning to‘liq mustaqilligini tan oldi",
+          "evidence": "1922-yili Buyuk Britaniya Misr ustidan o‘z protektoratini"
+        },
+        {
+          "kind": "date_event",
+          "date": "1923",
+          "date_label": "1923-yil",
+          "event": "Qabul qilingan konstitutsiyaga ko‘ra Misr monarxiya davlati deb e’lon qilindi",
+          "evidence": "1923-yili qabul qilin gan konstitutsiyaga ko‘ra"
+        },
+        {
+          "kind": "date_event",
+          "date": "1931",
+          "date_label": "1931-yil",
+          "event": "Liviya qarshilik harakati bostirilib, uning rahbarlari qatl qilindi",
+          "evidence": "1931-yili qar shi lik harakati bosti rilib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1926",
+          "date_label": "1926-yil",
+          "event": "Millatlar Ligasi «Qullik haqida» konvensiyasini qabul qilib, qullikni qoraladi",
+          "evidence": "1926-yili Millatlar Ligasi tomonidan « Qullik haqida» konvensiya qabul qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1940",
+          "date_label": "1940-yil",
+          "event": "Jazoir va Tunis Germaniya va Italiyaning xomashyo bazasiga aylantirildi",
+          "evidence": "1940-yili Fransiya mag‘lu biyatga uchragandan so‘ng Jazoir va Tunis Germaniya va Itali"
+        },
+        {
+          "kind": "date_event",
+          "date": "1941",
+          "date_label": "1941-yil",
+          "event": "Germaniya va Italiya qo‘shinlari Misr hududiga kirib keldi",
+          "evidence": "1941-yili Misr hududiga Germaniya va Italiya qo‘shinlari kiri tildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1920",
+          "date_label": "1920-yil",
+          "event": "Afrikada birinchi siyosiy partiya – Afrika Milliy kongressi (AMK) tashkil topdi",
+          "evidence": "1920-yili Afrikada birinchi siyosiy partiya"
+        },
+        {
+          "kind": "date_event",
+          "date": "1939",
+          "date_label": "1939-yil",
+          "event": "Ikkinchi jahon urushi boshlanishi bilan Afrika muhim strategik ahamiyat kasb etdi",
+          "evidence": "1939-yili Ikkinchi jahon urushi bosh lanishi bilan urush ish tirokchilarining"
+        },
+        {
+          "kind": "person",
+          "person": "Farhod Abbos",
+          "role": "Jazoirdagi milliy-ozodlik harakati yetakchisi",
+          "activity": "Jazoir mustamlakachiligiga qarshi avj olgan milliy-ozodlik harakatiga boshchilik qildi",
+          "evidence": "Jazoirda  –   Farhod Abbos, Tunisda  –   Habib"
+        },
+        {
+          "kind": "person",
+          "person": "Habib Burg‘iba",
+          "role": "Tunisdagi milliy-ozodlik harakati yetakchisi",
+          "activity": "Tunisda milliy-ozodlik harakatini boshqarib, arab xalqlari siyosiy ongining o‘sishiga hissa qo‘shdi",
+          "evidence": "Tunisda  –   Habib Burg‘iba, Marokashda  –   Abdul Karim boshchili gida"
+        },
+        {
+          "kind": "person",
+          "person": "Abdul Karim",
+          "role": "Marokashdagi milliy-ozodlik harakati rahbari",
+          "activity": "Marokashda mustamlakachilikka qarshi milliy-ozodlik harakatini boshqardi",
+          "evidence": "Marokashda  –   Abdul Karim boshchili gida milliy-ozodlik"
+        },
+        {
+          "kind": "person",
+          "person": "Uilyam Dyubua",
+          "role": "Panafrika harakatining ko‘zga ko‘ringan arbobi",
+          "activity": "Panafrikanizmning «otasi» sifatida irqiy kamsitishga chek qo‘yish talablarini ilgari surdi",
+          "evidence": "panafrikanizm ning «ota»lari Uilyam Dyubua va Markus Garvi edi"
+        },
+        {
+          "kind": "person",
+          "person": "Markus Garvi",
+          "role": "Panafrika harakatining ko‘zga ko‘ringan arbobi",
+          "activity": "Panafrikanizm g‘oyalarini targ‘ib qilib, Afrika xalqlarining siyosiy faollashuviga ta’sir qildi",
+          "evidence": "Dyubua va Markus Garvi edi"
+        },
+        {
+          "kind": "term",
+          "term": "Sivilizatsiya",
+          "definition": "Ijtimoiy taraqqiyot va moddiy madaniyat darajasining muayyan ijtimoiy-siyosiy tizimga xos bosqichi",
+          "evidence": "ijtimoiy taraqqiyot va moddiy madani yat darajasining ma’lum bir ijtimoiy-siyosiy tizimga"
+        },
+        {
+          "kind": "term",
+          "term": "Konvensiya",
+          "definition": "Alohida masala bo‘yicha tuziladigan xalqaro kelishuv, xalqaro shartnoma turi",
+          "evidence": "Konvensiya  –  alohida masala bo‘yicha xalqaro keli shuv, xalqaro shartnoma turi"
+        },
+        {
+          "kind": "term",
+          "term": "Missionerlik",
+          "definition": "O‘zga din vakillari orasida xristian dinini targ‘ib qilishga yo‘naltirilgan faoliyat",
+          "evidence": "Missionerlik  –  o‘zga din vakillari orasida xristian dinini targ‘ib qilishga yo‘naltirilgan faoliyat"
+        },
+        {
+          "kind": "term",
+          "term": "Iyerarxiya",
+          "definition": "Pastdan yuqoriga qarab amal pillapoyasi bo‘yicha bo‘ysunish tartibi",
+          "evidence": "Iyerarxiya  –  pastdan yuqoriga qarab amal pillapoyasi bo‘yicha bo‘ysunish tartibi"
+        },
+        {
+          "kind": "place",
+          "place": "Misr",
+          "event": "1922-yilda protektorat bekor qilinib, mamlakatning to‘liq mustaqilligi tan olindi",
+          "evidence": "1922-yili Buyuk Britaniya Misr ustidan o‘z protektoratini"
+        },
+        {
+          "kind": "place",
+          "place": "Liviya",
+          "event": "1931-yilda qarshilik harakati bostirilib, mamlakat Italiyaning mustamlakasiga aylantirildi",
+          "evidence": "Liviya qarshilik harakati otryad  lari Italiya qo‘shin lariga qarshi kurash olib bordi"
+        },
+        {
+          "kind": "place",
+          "place": "Jazoir",
+          "event": "1940-yilda Germaniya va Italiyaning xomashyo bazasiga aylantirildi",
+          "evidence": "1940-yili Fransiya mag‘lu biyatga uchragandan so‘ng Jazoir va Tunis"
+        },
+        {
+          "kind": "cause",
+          "cause": "Metropoliyalar Afrikada temiryo‘l, bandargoh va maktablar qurdilar",
+          "effect": "Afrikani modernizatsiyalashga intilish paydo bo‘lib, an’anaviy jamiyatga yevropacha unsurlar kirdi",
+          "evidence": "Natijada Afrikani modernizatsiya la sh uchun inti lishlar paydo bo‘ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Missionerlar mahalliy aholi orasida xristian dinini targ‘ib qildi",
+          "effect": "Afrikada xristian dini tarqaldi va missionerlik faoliyati kengaydi",
+          "evidence": "Missionerlik faoliyati orqali xristian dini tar qaldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Jazoir, Tunis va Marokash Fransiya mustamlakalari bo‘lib qolaverdi",
+          "effect": "Jahon urushlari oralig‘ida milliy-ozodlik harakatlari avj oldi",
+          "evidence": "Birin chi jahon urushidan keyin ham shu holat saqlanib qoldi"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "Ikkinchi jahon urushidan keyingi xalqaro munosabatlar: «sovuq urush»ning boshlanishi",
+      "page": 76,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1946",
+          "date_label": "1946-yil mart",
+          "event": "U. Cherchill Fulton shahrida «temir parda» haqidagi nutqini so‘zladi",
+          "evidence": "Cherchill 1946-yil martda AQSHning Fulton shahrida Vestmin s"
+        },
+        {
+          "kind": "date_event",
+          "date": "1947",
+          "date_label": "1947-yil iyun",
+          "event": "AQSH davlat kotibi J. Marshall Yevropa mamlakatlariga yordam berish g‘oyasini ilgari surdi",
+          "evidence": "1947-yil iyun oyida  AQSH davlat kotibi J.  Marshall Yevropa mam lakat lariga"
+        },
+        {
+          "kind": "date_event",
+          "date": "1949",
+          "date_label": "1949-yil yanvar",
+          "event": "SSSR va Sharqiy Yevropa davlatlari O‘zaro Iqtisodiy Yordam Kengashi tuzilganini e’lon qildilar",
+          "evidence": "1949-yil yanvarda  SSSR va Sharqiy Yevropaning ko‘pchilik dav latlari iqtisodiy ittifoq"
+        },
+        {
+          "kind": "date_event",
+          "date": "1949",
+          "date_label": "1949-yil aprel",
+          "event": "G‘arb davlatlari Shimoliy Atlantika Shartnomasi tashkiloti (NATO)ni tuzdilar",
+          "evidence": "G‘arb davlatlari 1949-yil aprelda Shimoliy Atlantika Shartnomasi tashkiloti"
+        },
+        {
+          "kind": "date_event",
+          "date": "1955",
+          "date_label": "1955-yil",
+          "event": "SSSR va Sharqiy Yevropa davlatlari Varshava Shartnomasi Tashkilotini tuzdilar",
+          "evidence": "NATOga javob tariqasida 1955-yili SSSR va Sharqiy Yevropa davlatlarining harbiy-siyosiy it"
+        },
+        {
+          "kind": "date_event",
+          "date": "1961",
+          "date_label": "1961-yil",
+          "event": "Mustamlakachilikdan ozod bo‘lgan mamlakatlar Qo‘shilmaslik harakatini tashkil qildilar",
+          "evidence": "1961-yili Qo‘shilmaslik harakatini  tashkil qildilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1972",
+          "date_label": "1972-yil",
+          "event": "SSSR bilan AQSH strategik qurollarni cheklash bo‘yicha birinchi shartnomani imzoladi",
+          "evidence": "1972-yili SSSR bilan AQSH o‘rtasida strategik qurollarni cheklash bo‘yicha birinchi shartnoma"
+        },
+        {
+          "kind": "date_event",
+          "date": "1975",
+          "date_label": "1975-yil",
+          "event": "Yevropada Xavfsizlik va hamkorlik kengashining Yakunlovchi akti imzolandi",
+          "evidence": "1975-yili Yevropada Xavfsizlik va hamkorlik kengashi ning Yakunlovchi akti imzolandi"
+        },
+        {
+          "kind": "person",
+          "person": "Uinston Cherchill",
+          "role": "Buyuk Britaniyaning urush yillarida katta obro‘ orttirgan sobiq bosh vaziri",
+          "activity": "1946-yilda Fultonda AQSHni sovet tajovuziga qarshi kurashga boshchilik qilishga chaqirdi",
+          "evidence": "Iste’foda bo‘lsa-da, urush yillari katta obro‘ orttirgan U.  Cherchill 1946-yil martda"
+        },
+        {
+          "kind": "person",
+          "person": "Jorj Marshall",
+          "role": "AQSH davlat kotibi, Yevropaga yordam ko‘rsatish g‘oyasini ilgari surgan siyosatchi",
+          "activity": "1947-yilda Yevropa mamlakatlarida urush oqibatlarini bartaraf qilish rejasini taklif qildi",
+          "evidence": "AQSH davlat kotibi J.  Marshall Yevropa mam lakat lariga urush oqibat larini bartaraf qilishda yordam ko‘rsa"
+        },
+        {
+          "kind": "person",
+          "person": "Iosif Broz Tito",
+          "role": "Qo‘shilmaslik harakati tashabbuskorlaridan biri",
+          "activity": "Mustamlakachilikdan ozod bo‘lgan mamlakatlar harakatini tashkil qilishda tashabbus ko‘rsatdi",
+          "evidence": "Iosif Broz Tito, Javoharlal Neru, Jamol Ab dul No"
+        },
+        {
+          "kind": "person",
+          "person": "Javoharlal Neru",
+          "role": "Qo‘shilmaslik harakati tashabbuskorlaridan biri",
+          "activity": "1961-yilda Qo‘shilmaslik harakatini tashkil qilish tashabbusi bilan chiqdi",
+          "evidence": "Javoharlal Neru, Jamol Ab dul No sir tashabbusiga ko‘ra"
+        },
+        {
+          "kind": "person",
+          "person": "Jamol Abdul Nosir",
+          "role": "Qo‘shilmaslik harakati tashabbuskorlaridan biri",
+          "activity": "Mustamlakachilikdan ozod bo‘lgan mamlakatlarni birlashtirish tashabbusini qo‘llab-quvvatladi",
+          "evidence": "Jamol Ab dul No sir tashabbusiga ko‘ra mustamlakachilikdan ozod bo‘lgan mamlakatlar"
+        },
+        {
+          "kind": "term",
+          "term": "Marshall rejasi",
+          "definition": "AQSH tomonidan Yevropa mamlakatlarini urush oqibatlaridan tiklash uchun taklif qilingan reja",
+          "evidence": "Marshall rejasi  –  Ikkinchi jahon urushidan so‘ng AQSH Davlat kotibi Jorj Marshall tomonidan Yev ropa mamlakatlarini tiklash bo‘yicha taklif qilingan reja"
+        },
+        {
+          "kind": "term",
+          "term": "NATO",
+          "definition": "Ayrim Yevropa va Shimoliy Amerika davlatlari tomonidan tuzilgan harbiy-siyosiy ittifoq",
+          "evidence": "NATO  –  Shimoliy Atlantika shartnomasi tashkiloti. Ayrim Yevropa va Shimoliy Amerika davlatlari tomoni dan"
+        },
+        {
+          "kind": "term",
+          "term": "Varshava Shartnomasi Tashkiloti",
+          "definition": "SSSR va Sharqiy Yevropadagi sotsialistik davlatlar tuzgan harbiy-siyosiy ittifoq",
+          "evidence": "Varshava Shartnomasi Tashkiloti  –  Ikkinchi jahon urushidan so‘ng SSSR va Sharqiy Yevropadagi sotsialistik davlatlar tomo nidan tuzilgan harbiy-siyosiy ittifoq"
+        },
+        {
+          "kind": "term",
+          "term": "temir parda",
+          "definition": "G‘arb bilan Sharq o‘rtasidagi ramziy chegarani ifodalagan, Cherchill qo‘llagan ibora",
+          "evidence": "Cherchill ushbu nutqida qo‘llagan «temir parda» iborasi uzoq vaqt G‘arb bilan Sharq o‘rtasidagi ramziy chegara bo‘lib qoldi"
+        },
+        {
+          "kind": "place",
+          "place": "Fulton",
+          "event": "1946-yil martda Cherchill bu shahardagi kollej tinglovchilari oldida nutq so‘zladi",
+          "evidence": "AQSHning Fulton shahrida Vestmin s"
+        },
+        {
+          "kind": "place",
+          "place": "Afg‘oniston",
+          "event": "1979-yil dekabrda bu mamlakatga sovet qo‘shinlari kiritilib, keskinlik boshlandi",
+          "evidence": "1979-yil dekabrda Afg‘onistonga sovet qo‘shinlari kiritildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "AQSH SSSRga qarshi yadro qurolini qo‘llash bilan tahdid qildi",
+          "effect": "G‘arbning liberal-demokratik davlatlari bilan SSSR o‘rtasidagi ziddiyatlar kuchayib bordi",
+          "evidence": "AQSH sovet  –  Amerika munosabatlari tarixida birin chi marta SSSRga qarshi yadro quroli ni qo‘llashi mumkinligi bilan tahdid qildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "«Marshall rejasi»ni qabul qilgan va rad etgan davlatlar ajralib chiqdi",
+          "effect": "Yevropada, keyin butun dunyoda bir-biriga qarama-qarshi harbiy-siyosiy ittifoqlar tizimi shakllandi",
+          "evidence": "Yevropaning ikki guruhga, bir tomondan, « Marshall rejasi»ni qabul qilgan va AQSH bilan yaqinlashuv yo‘lini tanlagan davlatlar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mustamlaka tizimi qulab, yangi mustaqil davlatlar tashkil topdi",
+          "effect": "Ikki qutbli tizimga kuchli zarba berilib, Qo‘shilmaslik harakati uchun zamin yaratildi",
+          "evidence": "Mustamlaka tizimi ning qulashi va yangi, mustaqil davlat larning tashkil topishi jahon taraq qiyotidagi ikki qutbli tizimga beril gan kuchli zarba bo‘ldi"
+        },
+        {
+          "kind": "number",
+          "number": "30",
+          "unit": "yil",
+          "meaning": "Insoniyat ikki eng dahshatli jahon urushiga bevosita guvoh bo‘lgan qisqa tarixiy davr",
+          "evidence": "bor-yo‘g‘i 30 yil ichida insoniyat tarixidagi eng dahshatli ikkita urushga"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "1946 – 1991-yillarda Amerika Qo‘shma Shtatlari",
+      "page": 81,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1952",
+          "date_label": "1952-yil",
+          "event": "Prezident saylovlarida respublikachi Duayt Eyzenxauer g‘olib chiqdi",
+          "evidence": "1952-yilgi saylovlarda respublikachilar partiyasidan nomzod Duayt Eyzenxauer g‘olib chiq di"
+        },
+        {
+          "kind": "date_event",
+          "date": "1960",
+          "date_label": "1960-yillar",
+          "event": "Kennedi va Jonson ma’muriyatlari iqtisodiy o‘sishni jadallashtirish yo‘lini tutdilar",
+          "evidence": "1960-yillari prezidentlar Jon Kennedi va Lindon Jonson ma’mu"
+        },
+        {
+          "kind": "date_event",
+          "date": "1963",
+          "date_label": "1963-yil",
+          "event": "AQSH prezidenti Jon Kennedi o‘ldirilib, mamlakatda siyosiy qotilliklar avj oldi",
+          "evidence": "1963-yili AQSH prezidenti Jon Kennedi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1965–1973",
+          "date_label": "1965–1973-yillar",
+          "event": "AQSH Vyetnamda faol urush harakatlarini olib bordi",
+          "evidence": "1965 – 1973-yillari AQSH Vyetnamda faol urush harakatla"
+        },
+        {
+          "kind": "date_event",
+          "date": "1968",
+          "date_label": "1968-yil",
+          "event": "Qora tanlilar tengligi uchun harakat arbobi Martin Lyuter King o‘ldirildi",
+          "evidence": "1968-yili qora tanlilar tengligi uchun hara kat ning eng mash"
+        },
+        {
+          "kind": "date_event",
+          "date": "1970",
+          "date_label": "1970-yillar boshi",
+          "event": "Iqtisodiy o‘sish sur’atlari sekinlashib, G‘arb davlatlari inqirozni boshdan kechirdi",
+          "evidence": "1970-yillar boshiga kelib iqti sodiy o‘sish sur’atlari sekinlashdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1980",
+          "date_label": "1980-yil",
+          "event": "Reygan ma’muriyati «Reyganomika» deb atalgan iqtisodiy tadbirlarni amalga oshirdi",
+          "evidence": "va boshqa bir qator tadbirlar «Rey ganomika» nomini oldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990",
+          "date_label": "1990-yillar boshi",
+          "event": "AQSH iqtisodiyotida qisqa muddatli retsessiya kuzatildi",
+          "evidence": "1990-yillar boshida AQSH iqtiso diyotida qisqa muddatli retsessiya"
+        },
+        {
+          "kind": "person",
+          "person": "Jon Kennedi",
+          "role": "AQSH prezidenti, iqtisodiy o‘sishni jadallashtirish siyosati tarafdori",
+          "activity": "Iqtisodiy o‘sishni jadallashtirish siyosatini yuritdi va 1963-yilda o‘ldirildi",
+          "evidence": "1960-yillari prezidentlar Jon Kennedi va Lindon Jonson ma’mu riyatlari iqti sodiy o‘sishni jadallashtirish sari yo‘l tutdilar"
+        },
+        {
+          "kind": "person",
+          "person": "Martin Lyuter King",
+          "role": "Qora tanlilar tengligi uchun harakat arbobi, Nobel sovrindori",
+          "activity": "1960-yillarda fuqarolar tengligi uchun ommaviy harakatning eng mashhur arbobiga aylandi",
+          "evidence": "Nobel tinchlik mukofoti sovrindori, ruhoniy Martin Lyuter King o‘ldi rildi"
+        },
+        {
+          "kind": "person",
+          "person": "Duayt Eyzenxauer",
+          "role": "AQSH prezidenti, respublikachilar partiyasi nomzodi",
+          "activity": "1952-yilgi saylovlarda g‘olib chiqib, hukumatni boshqargan dastlabki yillarda reaksiyani kuchaytirdi",
+          "evidence": "nomzod Duayt Eyzenxauer g‘olib chiq di"
+        },
+        {
+          "kind": "person",
+          "person": "Jozef Makkarti",
+          "role": "AQSH senatori, davlat organlarida tekshiruvlar olib borgan siyosatchi",
+          "activity": "Davlat organlarida josuslar va kommunistlarni aniqlash uchun tekshiruvlar olib bordi",
+          "evidence": "Sena tor Jozef Makkar ti"
+        },
+        {
+          "kind": "person",
+          "person": "Ronald Reygan",
+          "role": "AQSH prezidenti, davlatning iqtisodga aralashuvini cheklagan siyosatchi",
+          "activity": "Davlatning iqtisodga aralashuvini cheklab, «Reyganomika» siyosatini amalga oshirdi",
+          "evidence": "Ronald Reygan ma’ muriyati inqi rozdan chiqish yo‘l larini topishga urinib"
+        },
+        {
+          "kind": "term",
+          "term": "Retsessiya",
+          "definition": "Ishlab chiqarishning nisbatan mo‘tadil pasayishi yoki iqtisodiy o‘sish sur’atlarining sekinlashuvi",
+          "evidence": "Retsessiya (chekinish)  –  bu atama iqtisodiyotda ish lab chiqarishning nisbatan mo‘tadil pasayishini"
+        },
+        {
+          "kind": "term",
+          "term": "Konversiya",
+          "definition": "Harbiy sanoat korxonalarini xalq iste’mol tovarlari ishlab chiqarishga o‘tkazish",
+          "evidence": "Konversiya (aylantirmoq, o‘zgartirmoq)  –  harbiy sanoat kom p leksi korxonalarini xalq iste’mol tovarlari ishlab chiqarishga"
+        },
+        {
+          "kind": "term",
+          "term": "Inflatsiya",
+          "definition": "Qog‘oz pulning qadrsizlanishi, pul birligi xarid qobiliyatining pasayishi",
+          "evidence": "In\ufb02 atsiya  –  qog‘oz pulning qadrsizlanishi"
+        },
+        {
+          "kind": "term",
+          "term": "Makkartizm",
+          "definition": "AQSHda davlat organlarida josuslar va kommunistlarni aniqlashga qaratilgan tekshiruvlar siyosati",
+          "evidence": "Mam lakatda makkar tizm avj oldi"
+        },
+        {
+          "kind": "term",
+          "term": "Reyganomika",
+          "definition": "Soliq imtiyozlari va davlat aralashuvini cheklashga asoslangan Reygan iqtisodiy siyosati",
+          "evidence": "va boshqa bir qator tadbirlar «Rey ganomika» nomini oldi"
+        },
+        {
+          "kind": "place",
+          "place": "Vyetnam",
+          "event": "1965–1973-yillarda AQSH bu mamlakatda faol urush harakatlarini olib bordi",
+          "evidence": "AQSH Vyetnamda faol urush harakatla rini olib bordi"
+        },
+        {
+          "kind": "place",
+          "place": "Uotergeyt mehmonxonasi",
+          "event": "Saylovoldi shtabiga xufiya eshitish vositalari o‘rnatilib, «Uotergeyt ishi» janjaliga sabab bo‘ldi",
+          "evidence": "Demokratlar partiyasining Uotergeyt m e h m o n x o n a s i d a g i"
+        },
+        {
+          "kind": "cause",
+          "cause": "1970-yillar boshida Amerika valutasiga ishonchsizlik kuchaydi",
+          "effect": "G‘arb davlatlari jiddiy iqtisodiy inqirozni boshdan kechirib, AQSHda u ancha og‘ir kechdi",
+          "evidence": "Bu inqiroz bosh qa rivoj langan davlatlarga nisbatan AQSHda ancha og‘ir kechdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Reygan davlatning iqtisodga aralashuvini cheklab, sarmoya uchun soliq imtiyozlari joriy qildi",
+          "effect": "Inflatsiya pasayib, ishsizlik kamaydi, iste’mol buyumlariga talab va chet el kapitali oqimi ortdi",
+          "evidence": "Reyganomi ka» AQSH uchun yaxshi natijalarga olib keldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Fuqarolar tengligi uchun ommaviy norozilik harakati kuchaydi",
+          "effect": "O‘ta o‘ng harakat vakillari siyosiy qotilliklarni amalga oshira boshladilar",
+          "evidence": "Bunga qarshi o‘ta o‘ng harakat vakillari si yosiy qotilliklarni amalga oshira bosh ladilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Uotergeyt mehmonxonasidagi shtabda xufiya eshitish vositalari o‘rnatildi",
+          "effect": "«Uotergeyt ishi» siyosiy janjalga aylanib, prezident R. Niksonning impichmentiga olib keldi",
+          "evidence": "nomli siyosiy jan jalga aylanib, prezident Richard Niksonning impich"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "1946 – 1991-yillarda Buyuk Britaniya va Fransiya",
+      "page": 94,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1946",
+          "date_label": "1946-yil",
+          "event": "Fransiyaning yangi konstitutsiyasi kuchga kirib, To‘rtinchi respublika boshlandi",
+          "evidence": "1946-yili Fransiyaning yangi konsti tutsiyasi kuchga kirdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1949",
+          "date_label": "1949-yil",
+          "event": "Buyuk Britaniya Shimoliy Atlantika Shartnomasi tashkilotiga a’zo bo‘ldi",
+          "evidence": "1949-yil Buyuk Britaniya NATOga a’zo bo‘ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1951",
+          "date_label": "1951-yil",
+          "event": "Saylovlarda konservatorlar g‘alaba qozonib, U. Cherchill yana bosh vazir bo‘ldi",
+          "evidence": "1951-yili o‘tkazilgan saylovlarda konser va torlar g‘alaba qozondi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1958",
+          "date_label": "1958-yil",
+          "event": "Fransiyada siyosiy inqiroz boshlanib, To‘rtinchi respublika barham topdi",
+          "evidence": "1958-yili Fransiyada navbatdagi siyosiy inqiroz boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1964",
+          "date_label": "1964-yil",
+          "event": "Hokimiyatga kelgan leyboristlar bir qator islohotlarni amalga oshirdi",
+          "evidence": "Natijada 1964-yili hokimiyatga kelgan leybo ristlar bir qator islohotlarni amalga oshirdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1969",
+          "date_label": "1969-yil",
+          "event": "Shimoliy Irlandiya muammosi keskinlashib, Buyuk Britaniya u yerga qo‘shin kiritdi",
+          "evidence": "1969-yili Shimoliy Ir landiya muammosi yana keskin lashdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1979",
+          "date_label": "1979-yil",
+          "event": "Parlament saylovlarida konservatorlar g‘olib chiqib, Margaret Tetcher bosh vazir bo‘ldi",
+          "evidence": "1979-yilgi parlament saylov lari keskin siyosiy kurashlar ostida o‘tdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990",
+          "date_label": "1990-yil",
+          "event": "M. Tetcher bosh vazir lavozimidan iste’foga chiqib, uning o‘rniga J. Meyjor keldi",
+          "evidence": "1990-yili M.  Tetcher bosh vazir lavozimidan iste’foga chiqdi"
+        },
+        {
+          "kind": "person",
+          "person": "Uinston Cherchill",
+          "role": "Buyuk Britaniya bosh vaziri, 1951-yilda lavozimga qaytgan siyosatchi",
+          "activity": "1951-yilda konservatorlar g‘alaba qozongach, yana bosh vazir lavozimini egalladi",
+          "evidence": "Cherchill yana bosh vazir lavozi mini egalladi"
+        },
+        {
+          "kind": "person",
+          "person": "Margaret Tetcher",
+          "role": "Buyuk Britaniya bosh vaziri, 1979–1990-yillardagi islohotlar rahbari",
+          "activity": "Xususiy tadbirkorlikni rivojlantirib, soliqlarni kamaytirib, inflyatsiyaga qarshi kurashni bosh vazifa qildi",
+          "evidence": "Margaret Tetcher bosh vazir bo‘ldi"
+        },
+        {
+          "kind": "person",
+          "person": "J. Meyjor",
+          "role": "Buyuk Britaniya bosh vaziri, avval moliya vaziri lavozimida ishlagan",
+          "activity": "Tetcherdan keyin hukumatning neokonservatizm siyosatini davom ettirdi",
+          "evidence": "o‘rniga ilgari moliya vaziri lavozi mida bo‘lgan J.  Meyjor keldi"
+        },
+        {
+          "kind": "person",
+          "person": "Sharl de Goll",
+          "role": "Fransiya prezidenti, Beshinchi respublika konstitutsiyasi tashabbuskori",
+          "activity": "Kuchli iqtisod va mustaqil tashqi siyosatga ega davlatni shakllantirishga kirishdi",
+          "evidence": "1958-yil 21-dekabrda  Sh. de  Goll Fran siya prezidenti qilib saylandi"
+        },
+        {
+          "kind": "person",
+          "person": "Fransua Mitteran",
+          "role": "Fransiya prezidenti, so‘l kuchlar hamkorligi dasturini qo‘llab-quvvatlagan siyosatchi",
+          "activity": "So‘l kuchlarning hamkorlikdagi dasturida muhim ijtimoiy-iqtisodiy islohotlarni ko‘zda tutdi",
+          "evidence": "Shundan so‘ng sotsialist Fransua Mitteran Fransiya prezidenti etib saylan di"
+        },
+        {
+          "kind": "term",
+          "term": "Neokonservatizm",
+          "definition": "AQSHning harbiy va iqtisodiy qudratidan dushman rejimlarga qarshi foydalanish tarafdorlari mafkurasi",
+          "evidence": "Neokonservatizm  –  AQSHning harbiy va iqtisodiy qudratidan dushman rejimlarga qarshi va ularda de mokratik tizimni o‘rnatish uchun foydalanish tarafdor lari bo‘lgan bir qism konservativ siyosatchilar mafkurasi"
+        },
+        {
+          "kind": "term",
+          "term": "Eksport",
+          "definition": "Mahsulot, xizmat yoki kapitalni o‘z mamlakatidan tashqariga chiqarish",
+          "evidence": "Eksport  –  mahsulot, xizmat yoki kapitalni o‘z mamlakatidan tashqariga chiqarish"
+        },
+        {
+          "kind": "term",
+          "term": "Referendum",
+          "definition": "Davlat ahamiyatidagi muhim masalani hal qilish bo‘yicha o‘tkaziladigan umumxalq so‘rovi",
+          "evidence": "Referendum  –  umumxalq so‘rovi, davlat ahamiyatidagi muhim"
+        },
+        {
+          "kind": "term",
+          "term": "Tetcher davri",
+          "definition": "1979–1990-yillarda Buyuk Britaniyada xususiy tadbirkorlikni rivojlantirish siyosati davri",
+          "evidence": "1979 – 1990-yillar Buyuk Britaniya tarixida «Tetcher davri»  no mini oldi"
+        },
+        {
+          "kind": "place",
+          "place": "Folklend orollari",
+          "event": "1982-yilda Buyuk Britaniya bu orollar uchun Argentina bilan urush olib bordi",
+          "evidence": "1982-yili Folk lend orollari uchun Argentina bilan urush olib bordi"
+        },
+        {
+          "kind": "place",
+          "place": "Shimoliy Irlandiya",
+          "event": "1969-yilda muammo keskinlashib, Buyuk Britaniya u yerga qo‘shin kiritdi",
+          "evidence": "1969-yili Shimoliy Ir landiya muammosi yana keskin lashdi va Buyuk Britaniya u yerga qo‘shin kiritdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mamlakat iqtisodiy va moliyaviy jihatdan og‘ir ahvolga tushib qoldi",
+          "effect": "Buyuk Britaniya «Marshall rejasi»da ishtirok etishga qaror qildi",
+          "evidence": "Shunday iqtisodiy va moliyaviy og‘ir sharo itda mamlakat"
+        },
+        {
+          "kind": "cause",
+          "cause": "Leyboristlar islohoti kutilgan natijalarni bermadi",
+          "effect": "Davlatning moliyaviy ahvoli og‘irligicha qoldi",
+          "evidence": "Biroq ley boristlar islohoti kutilgan nati ja larni bermadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Referendumda saylovchilarning ko‘pchiligi prezidentni qo‘llamadi",
+          "effect": "Sh. de Goll iste’foga chiqishga majbur bo‘ldi",
+          "evidence": "Prezident tashabbusi bilan o‘tkazilgan referen dumda saylovchilarning ko‘pchiligi prezidentni qo‘llamadi"
+        },
+        {
+          "kind": "number",
+          "number": "13",
+          "unit": "yil",
+          "meaning": "Buyuk Britaniyani konservatorlar partiyasi uzluksiz boshqargan davr",
+          "evidence": "Konservatorlar Buyuk Britaniyani 13 yil boshqardi"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "1946 – 1991-yillarda Germaniya va Italiya",
+      "page": 99,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1948",
+          "date_label": "1948-yil 1-yanvar",
+          "event": "Italiyaning yangi konstitutsiyasi kuchga kirdi",
+          "evidence": "1948-yil 1-yanvardan  Italiyaning yangi konstitutsiyasi kuchga kir"
+        },
+        {
+          "kind": "date_event",
+          "date": "1949",
+          "date_label": "1949-yil may",
+          "event": "G‘arbiy okkupatsiya zonalarida Germaniya Federativ Respublikasi tashkil qilindi",
+          "evidence": "1949-yil mayda AQSH, Buyuk Britaniya va Fransiya okkupatsiya zonalarida Ger maniya Federativ Respublikasi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1949",
+          "date_label": "1949-yil 7-oktabr",
+          "event": "Sovet okkupatsiya zonasida Germaniya Demokratik Respublikasi tashkil qilindi",
+          "evidence": "1949-yil 7-oktabrda  sovetlar okku patsiya zonasi bo‘lgan shar qiy qis mida Germaniya"
+        },
+        {
+          "kind": "date_event",
+          "date": "1955",
+          "date_label": "1955-yil",
+          "event": "GFR NATOga a’zo bo‘lib, okkupatsiya davri tugadi",
+          "evidence": "yengib, 1955-yili NATOga a’zo bo‘ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1957",
+          "date_label": "1957-yil",
+          "event": "Yevropa iqtisodiy hamkorligini tuzish to‘g‘risida Rim shartnomasi imzolandi",
+          "evidence": "1957-yili Yevropa iqti sodiy hamkorligini ( YIH) tuzish to‘g‘risida Rim"
+        },
+        {
+          "kind": "date_event",
+          "date": "1974",
+          "date_label": "1974-yil",
+          "event": "Italiyada chuqur iqtisodiy inqiroz boshlandi",
+          "evidence": "1974-yili Italiyada chuqur iqtisodiy inqiroz boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1982",
+          "date_label": "1982-yil",
+          "event": "Xristian-demokrat Gelmut Kol GFR kansleri qilib saylandi",
+          "evidence": "1982-yilda xristian-demokrat Gelmut Kol GFR kansleri qilib saylandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1989",
+          "date_label": "1989-yil",
+          "event": "GDRda inqilob boshlanib, Berlin devori buzib tashlandi",
+          "evidence": "1989-yili GDRda inqilob boshlanib ketdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990",
+          "date_label": "1990-yil 3-oktabr",
+          "event": "Yagona Germaniya davlati tashkil topganligi e’lon qilindi",
+          "evidence": "1990-yil 3-oktabr kuni yagona Germaniya dav l a t i  t a s h k i l  t o p g a n l i g i"
+        },
+        {
+          "kind": "person",
+          "person": "Konrad Adenauer",
+          "role": "Germaniya Federativ Respublikasi kansleri",
+          "activity": "GFR tuzilganligini e’lon qilib, mamlakatda qulay iqtisodiy siyosat yuritdi",
+          "evidence": "Konrad Ade nauer kansler qilib saylan di"
+        },
+        {
+          "kind": "person",
+          "person": "Gelmut Kol",
+          "role": "GFR kansleri, xristian-demokrat partiya vakili",
+          "activity": "Soliqlarni qisqartirib, davlat xarajatlarini tartibga solib, biznesga aralashuvni kamaytirdi",
+          "evidence": "Uning davrida so liqlar qisqartirildi va davlat xarajatlari tartibga solindi"
+        },
+        {
+          "kind": "person",
+          "person": "G. Kol",
+          "role": "1990-yilgi navbatdan tashqari saylovda g‘olib chiqqan koalitsiya rahbari",
+          "activity": "Boshchiligidagi koalitsiya navbatdan tashqari saylovlarda yana g‘alaba qozondi",
+          "evidence": "yana G.  Kol boshchiligidagi koalitsiya g‘alaba qozondi"
+        },
+        {
+          "kind": "term",
+          "term": "Kansler",
+          "definition": "Germaniya va Avstriyada hukumat boshlig‘i, bosh vazir shunday ataladi",
+          "evidence": "Kansler  –  Germaniya va Avstriyada hukumat bosh lig‘i, bosh vazir shunday ataladi"
+        },
+        {
+          "kind": "term",
+          "term": "Defitsit",
+          "definition": "Taqchillik, biron-bir narsaning yetishmasligi; importning eksportdan oshib ketishi",
+          "evidence": "De\ufb01 tsit  –  taqchillik, biron-bir narsaning yetish masligi"
+        },
+        {
+          "kind": "term",
+          "term": "Mafiya",
+          "definition": "Zo‘rlik, qo‘rqitish va qotillik usullari bilan maqsadga erishuvchi uyushgan jinoyatchilik tashkiloti",
+          "evidence": "Ma\ufb01 ya  –  zo‘rlik, qo‘rqitish, terror, qotillik, ig‘vogarlik usullari"
+        },
+        {
+          "kind": "term",
+          "term": "nemis iqtisodiy mo‘jizasi",
+          "definition": "1960–1970-yillarda GFR iqtisodining jadal o‘sishi natijasida paydo bo‘lgan atama",
+          "evidence": "1960 – 1970-yillar iqtisodning jadal o‘sish davri bo‘lib, «nemis iqti sodiy mo‘jizasi» nomini oldi"
+        },
+        {
+          "kind": "place",
+          "place": "Berlin",
+          "event": "Sharqiy Berlin GDR poytaxti deb e’lon qilindi, keyinchalik Berlin devori «sovuq urush» ramzi bo‘ldi",
+          "evidence": "Sharqiy Berlin bu davlatning poytaxti deb e’lon qilindi"
+        },
+        {
+          "kind": "place",
+          "place": "Rim",
+          "event": "1957-yilda Yevropa iqtisodiy hamkorligini tuzish to‘g‘risidagi shartnoma imzolandi",
+          "evidence": "tuzish to‘g‘risida Rim shartnomasi imzolan di"
+        },
+        {
+          "kind": "cause",
+          "cause": "GFRda harbiy xarajatlar kam bo‘lib, «Marshall rejasi» bo‘yicha yordam olindi",
+          "effect": "Mamlakat xo‘jaligi jadal tiklanib, «nemis iqtisodiy mo‘jizasi» yuzaga keldi",
+          "evidence": "Harbiy xara jatlarning kamligi, « Marshall reja si» bo‘yicha Amerika ning"
+        },
+        {
+          "kind": "cause",
+          "cause": "GDRda inqilob boshlanib, Berlin devori buzib tashlandi",
+          "effect": "Germaniyaning ikki qismini birlashtirish bo‘yicha muzokaralar muvaffaqiyatli yakunlandi",
+          "evidence": "Germa niyaning ikki qismini birlashtirish bo‘yicha muzokaralar muvaf faqiyatli yakunlandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "1974-yilgi inqirozda ishlab chiqarish o‘sishi to‘xtab, ishsizlar soni ko‘paydi",
+          "effect": "Narx-navo ko‘tarilib, aholining kam daromadli qismi ahvoli og‘irlashdi",
+          "evidence": "Ishlab chiqa rishning o‘sishi deyarli to‘liq to‘xtadi, ishsizlar soni ko‘paydi"
+        }
+      ]
+    }
+  ]
+}

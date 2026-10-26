@@ -1,0 +1,982 @@
+{
+ "chapter": "I BOB. XV ASRNING OXIRI - XVI ASRNING",
+ "topics": [
+  {
+   "number": 1,
+   "title": "Dashti Qipchoqdagi siyosiy vaziyat",
+   "page": 5,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1240",
+     "date_label": "1240-yilda",
+     "event": "Botuxon Oltin O‘rda xonligiga asos soldi; bu davlat Jo‘ji ulusi deb ham ataldi.",
+     "evidence": "1240- yilda Chingizxonning nabirasi. Jo'jixonning (Chingizxonning\nkatta o'g'li) o'g'li (Botuxon Oltin O'rda xonligiga asos soldi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1425",
+     "date_label": "1425-yilda",
+     "event": "Shaybon ulusi hukmdori Davlaishayx vafot etdi va toj-taxt uchun kurash yanada avj oldi.",
+     "evidence": "ayniqsa, ulusning Shaybon naslidan bo'lgan hukmdori Davlaishayx\n1425-yilda vafot cigach yanada avj oldi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1428",
+     "date_label": "1428-yilda",
+     "event": "Abulxayrxon «O‘zbek ulusi» davlatiga asos soldi, uning poytaxti Tura shahri deb e’lon qilindi.",
+     "evidence": "1428-yilda ,O'zbek ulusi\" deb atalgan davlatga asos soldi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1431",
+     "date_label": "1431-yilda",
+     "event": "Abulxayrxon o‘z davlatini Oltin O‘rdadan mustaqil deb e’lon qildi.",
+     "evidence": "1431-yilda esa o'z davlatini\nOltin O'rdadan mustaqil dcb c'lon qildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1451",
+     "date_label": "1451-yilda",
+     "event": "Abulxayrxon temuriyzoda Abu Said Mirzoga Samarqand taxtini egallashda yordam berdi.",
+     "evidence": "U 1451-yilda o'zidan madad so'ragan temuriyzoda Abu Said Mirzoga Samarqand taxtini egallashda yordam berish"
+    },
+    {
+     "kind": "date_event",
+     "date": "1468",
+     "date_label": "1468-yilda",
+     "event": "Abulxayrxon vafot etgach, u tuzgan davlat parchalanib ketdi.",
+     "evidence": "1468-yilda Abulxayrxon vafot etgach, u tuzgan davlat parchalanib\nketdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1480",
+     "date_label": "1480-yilda",
+     "event": "Muhammad Shayboniyxon bobosi bunyod etgan O‘zbek ulusi davlatini qayta tikladi.",
+     "evidence": "1480-yil - Muhammad Shayboniyxon bobosi bunyod etgan O'zbek\nulusi davlatini qayta tikladi"
+    },
+    {
+     "kind": "person",
+     "person": "Abulxayrxon",
+     "role": "O‘zbek ulusi davlatining asoschisi, Shayboniyxonning bobosi",
+     "activity": "Taxt uchun kurashda doimiy nizolardan aziyat chekkan qabilalar va ruhoniylar uni qo‘llab-quvvatladi, natijada u 1428-yilda davlat tuzdi.",
+     "evidence": "Taxt uchun kurashda uni ulusdagi doimiy nizolardan aziyal chekayotgan boshqa o'zbek qabilalari hamda ruhoniylar qo'llab-quvvatladilar"
+    },
+    {
+     "kind": "person",
+     "person": "Davlaishayx",
+     "role": "Shaybon ulusining hukmdori, Abulxayrxonning otasi",
+     "activity": "1425-yilda vafot etdi; uning o‘limidan so‘ng ulusda toj-taxt uchun kurash yanada kuchaydi.",
+     "evidence": "Davlatshayxning o'g'li Abulxayrxon siyosat maydoniga chiqdi"
+    },
+    {
+     "kind": "person",
+     "person": "Boyshayx",
+     "role": "Uyg‘ur qavmidan bo‘lgan amir, shahzodalarga otaliq",
+     "activity": "Shohbudog‘ Sultonga otaliq qilgan, keyin Muhammad Shayboniy va Mahmud Sultonga ham otaliq etib tayinlangan.",
+     "evidence": "Uyg'ur qavmidan\nbo'lgan, Shohbudog' Sultonga otaliq qilgan amir Boyshayxni bu ikki\nshahzodalarga ham otaliq etib tayinladi"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad Shayboniy",
+     "role": "Shayboniylar sulolasi asoschisi, Abulxayrxonning nabirasi",
+     "activity": "Buxoro madrasalarida ilm olib, iste’dodli shoir sifatida tanildi va bobosi davlatini tiklab, xonlik taxtiga o‘tirdi.",
+     "evidence": "Shayboniy Buxoro\nmadrasalarida ilm oldi. Iste'dodli shoir sifatida tanildi"
+    },
+    {
+     "kind": "term",
+     "term": "Dashti Qipchoq",
+     "definition": "Sirdaryoning yuqori oqimidan Dnepr daryosining quyi oqimigacha cho‘zilgan dashtlarga nisbatan ishlatilgan geografik nom.",
+     "evidence": "Bu alama Sirdaryoning yuqori oqimi va Tyanshanning g'arbiy yonbag'ridan Dncpr daryosining quyi oqimiga qadar\ncho'zilgan dashilarga nisbatan ishlatilgan"
+    },
+    {
+     "kind": "term",
+     "term": "Jo‘ji ulusi",
+     "definition": "Oltin O‘rda xonligining boshqa nomi; unga Xorazm, Dashti Qipchoq, Qrim va G‘arbiy Sibir kirgan.",
+     "evidence": "Bu\ndavlat Jo'ji ulusi deb ham ataladi. U Xorazm, Shimoliy Kavkaz"
+    },
+    {
+     "kind": "term",
+     "term": "O‘zbek ulusi",
+     "definition": "1428-yilda Sharqiy Dashti Qipchoqda tuzilgan, poytaxti Tura shahri bo‘lgan davlat.",
+     "evidence": "Janubi-g'arbiy Sibirdagi Tura shahri bu\ndavlatning poytaxti deb e'lon qilindi"
+    },
+    {
+     "kind": "term",
+     "term": "yollanma qo‘shin",
+     "definition": "Harbiy ta’lim olgan, mustahkam intizomli, haq evaziga xizmat qiladigan yollanma askarlardan tuzilgan qo‘shin.",
+     "evidence": "Bu omil yaxshi harbiy ta'lim\nolgan, mustahkam intizomli yollanma qo'shin\ntuza olgan Shayboniyga juda qo'1 keldi"
+    },
+    {
+     "kind": "place",
+     "place": "Sig‘noq",
+     "event": "1446-yilda Abulxayrxon davlat poytaxtini bu shaharga ko‘chirdi.",
+     "evidence": "Davlat poyiaxtini csa Sig'noqqa\nko'chirdi"
+    },
+    {
+     "kind": "place",
+     "place": "Buxoro",
+     "event": "Muhammad Shayboniy bu shaharda ilm oldi va nufuzli davlat hamda din arboblari bilan yaqinlashdi.",
+     "evidence": "Shayboniy\nBuxoroda ilm olishdan tashqari nufuzli davlat va din arboblari bilan yaqinlashib ham oldi"
+    },
+    {
+     "kind": "place",
+     "place": "Sirdaryo",
+     "event": "Shayboniyxon bu daryo bo‘ylaridagi qo‘rg‘onlarni egallab, ularni Movarounnahrni istilo qilish uchun tayanchga aylantirdi.",
+     "evidence": "Vaqtlar o'tib, Shayboniyxon Sirdaryo bo'ylaridagi qo'rg'onlarni\nham egalladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Shaybon ulusida toj-taxt uchun o‘zaro kurashning kuchayishi",
+     "effect": "Markaziy hokimiyat zaiflashib, ulus mayda-mayda qismlarga bo‘linib ketdi.",
+     "evidence": "Ayni paylda, toj-u laxt uchun o'zaro kurash kuchaydi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Abulxayrxonning vafoti va dushmanlarining faollashuvi",
+     "effect": "Uning qarindoshlari va tarafdorlari qirg‘in qilindi, davlatdan juda ozchilik omon qoldi.",
+     "evidence": "Uning dushmanlari tomonidan Abulxayrxonning qarindoshlari\nva tarafdorlari qirg'in qilindi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qo‘shinni saqlash uchun katta xarajat talab qilinishi",
+     "effect": "Shayboniy temuriyzodalar va Mo‘g‘uliston hukmdorlariga haq evaziga harbiy yordam ko‘rsata boshladi.",
+     "evidence": "Biroq\nqo'shinni saqlash katta xarajat talab qilar edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Aholining turli tabaqalari ulusda tinchlik o‘rnatilishini xohlashi",
+     "effect": "Harbiy ta’lim olgan, intizomli qo‘shin tuza olgan Shayboniy uchun qulay sharoit yaratdi.",
+     "evidence": "Aholining\nturli tabaqalari ulusda tinchlik o'rnatilishini\nxohlamoqda edi"
+    },
+    {
+     "kind": "number",
+     "number": "80",
+     "unit": "yil",
+     "meaning": "XV asrning 80-yillari — Shayboniy bobosi bunyod etgan davlatni qayta tiklagan davr.",
+     "evidence": "XV asrning 80-yillarida bobosi bunyod etgan O'zbck ulusi davlatini qayta tiklashga muvaffaq bo ldi"
+    },
+    {
+     "kind": "number",
+     "number": "5",
+     "unit": "o‘g‘il",
+     "meaning": "Jo‘jixonning o‘g‘illari ichida Shaybon beshinchi bo‘lib, unga Dashti Qipchoqning sharqiy qismi tegdi.",
+     "evidence": "Dashti Qipchoqning sharqiy qismi Jo'jixonning bcshinchi og\"li Shaybonga tegdi"
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "title": "Movarounnahr va Xurosondagi siyosiy vaziyat",
+   "page": 8,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1447",
+     "date_label": "1447-yilda",
+     "event": "Shohrux Mirzo vafot etdi va Xuroson davlati o‘n bir qismga bo‘linib ketdi.",
+     "evidence": "1447-yil -\nShohrux Mirzo vafot etdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1451",
+     "date_label": "1451-yilda",
+     "event": "Sulton Abu Said Mirzo Abulxayrxon yordamida Movarounnahr taxti uchun kurashda g‘alaba qozondi.",
+     "evidence": "Bu kurashda oxir-ogibat l451-yilda Mironshohning nabirasi Sulton Abu Said Mirzo Abulxayrxon yordamida\ng'alaba qozondi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1469",
+     "date_label": "1469-yilda",
+     "event": "Abu Said Mirzo oq qo‘yunlilarga qarshi kurashda halok bo‘ldi.",
+     "evidence": "1469-yilda Abu Said Mirzo avval temuriylar\ntasarrufida bo'lgan Eronning g'arbiy qismini cgallab olgan oq qo'yunlilarga qarshi kurashda halok bo'ldi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1497",
+     "date_label": "1497-yilda",
+     "event": "Bobur Mirzo Boysung‘urni qal’aga yashirinishga majbur etdi.",
+     "evidence": "U 1497-yilda Boysung'urni qal'aga yashirinishga majbur etdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1500",
+     "date_label": "1500-yilda",
+     "event": "Bobur va Jahongir Mirzolar o‘rtasida sulh tuzildi; Axsi Jahongirda, Andijon Boburda qoldi.",
+     "evidence": "1500-yilda akauka Bobur va Jahongir Mirzolar o'riasida sulh tuzildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1506",
+     "date_label": "1506-yilda",
+     "event": "Sulton Husayn Boyqaro vafot etdi va Xurosonda qo‘shhokimiyatchilik vujudga keldi.",
+     "evidence": "1506-yilda Sulton Husayn Boyqaro vafot\netdi. Shundan keyin mamlakatda qo'shhokimiyatchilik vujudga keldi"
+    },
+    {
+     "kind": "person",
+     "person": "Shohrux Mirzo",
+     "role": "Amir Temurning kenja o‘g‘li, Xuroson hukmdori",
+     "activity": "Toj-taxt kurashida g‘olib chiqdi; uning davrida saltanat ikki mustaqil davlatga bo‘lib boshqarildi.",
+     "evidence": "oxir-oqibat uning kenja o'g'li Shohrux Mirzo g'olib chiqdi"
+    },
+    {
+     "kind": "person",
+     "person": "Abu Said Mirzo",
+     "role": "Mironshohning nabirasi, Movarounnahr hukmdori",
+     "activity": "1451-yilda Abulxayrxon yordamida taxtni egalladi, 1458-yilda Temuriylar davlatini bir qadar birlashtirdi.",
+     "evidence": "1458-yilda Amir Tcmurning\nuchinchi o'g'li Mironshohning nabirasi Sulon Abu Said Mirzo icmuriylar davlatini bir qadar birlashirishga muvaffaq boldi"
+    },
+    {
+     "kind": "person",
+     "person": "Sulton Husayn Boyqaro",
+     "role": "Umarshayxning nabirasi, Xuroson hukmdori",
+     "activity": "Salkam 40 yil hukmronlik qildi, uning davrida xo‘jalik va madaniy hayot ancha yuksaldi.",
+     "evidence": "Salkam 40 yil hukmronlik qilgan Sulton Husayn Boyqaro\ndavrida ham mamlakatda to'la osoyishtalik o'rnatilmadi"
+    },
+    {
+     "kind": "person",
+     "person": "Badiuzzamon",
+     "role": "Sulton Husayn Boyqaroning o‘g‘li, shahzoda",
+     "activity": "Oqil va tadbirkor, adolatpesha bo‘lib, saroyida olimlar, shoirlar va san’atkorlarni yig‘ib anjumanlar o‘tkazardi.",
+     "evidence": "Badiuzzamon oqil va tadbirkor, harbiy salohiyati yuqori, adolatpesha shahzoda edi"
+    },
+    {
+     "kind": "person",
+     "person": "Alisher Navoiy",
+     "role": "Sulton Husayn Boyqaro davridagi vazir, ulug‘ shoir",
+     "activity": "Xuroson davlatining xo‘jalik va madaniy hayoti yuksalishiga benihoya katta xizmat qilgan.",
+     "evidence": "Vazir\nAlisher Navoiyning xizmallari ham benihoya kalta bo'ldi"
+    },
+    {
+     "kind": "term",
+     "term": "qo‘shhokimiyatchilik",
+     "definition": "Bir vaqtning o‘zida ikki hukmdorning bir mamlakatda hukmronlik qilishi.",
+     "evidence": "Badiuzzamon va Muzaffar IIusaynlar bir vaqtda hukmdor dcb c'lon\nqilindilar"
+    },
+    {
+     "kind": "term",
+     "term": "sulh",
+     "definition": "1500-yilda Bobur va Jahongir o‘rtasida tuzilgan kelishuv; Sirdaryo bo‘yicha yerlar taqsimlandi.",
+     "evidence": "Unga ko'ra.\nSirdaryoning shimoliy tarali Axsi shahri bilan Jahongirda va daryoning\njanubiy tomoni Andijon shahri bilan Boburda qoldi"
+    },
+    {
+     "kind": "term",
+     "term": "qamal",
+     "definition": "Shaharni uzoq vaqt o‘rab olib, oziq-ovqat va tashqi yordamdan mahrum qilish.",
+     "evidence": "Qamalga bardosh berishga ko'zi yetmagan Boysung'ur Turkistonda"
+    },
+    {
+     "kind": "term",
+     "term": "toj-taxt uchun kurash",
+     "definition": "Temuriylar saltanatida hukmdorlikni egallash uchun olib borilgan ayovsiz kurash.",
+     "evidence": "Temuriylar saltanatida boshlangan toj-u taxt uchun ayovsiz. kurash\noqibatida saltanat inqirozga yuz tutdi"
+    },
+    {
+     "kind": "place",
+     "place": "Hirot",
+     "event": "Shohrux Mirzo davrida Xuroson davlatining poytaxti bo‘lgan shahar.",
+     "evidence": "Ularning biri Xuroson (poytaxti Hirot),\nikkinchisi esa Movarounnahr"
+    },
+    {
+     "kind": "place",
+     "place": "Samarqand",
+     "event": "1500-yilda Bobur Mirzo bu shahar taxtini egallab, o‘zini Amir Temur taxtining sohibi deb e’lon qildi.",
+     "evidence": "Bobur\ncsa Samarqand taxtini egallashga muvaflaq bo'ldi. U hobosi Amir\nTemur laxining sohibi dcb c'lon qilindi"
+    },
+    {
+     "kind": "place",
+     "place": "Yassi (Turkiston)",
+     "event": "Boysung‘ur qamalga bardosh berolmay, shu yerda turgan Shayboniyxondan yordam so‘radi.",
+     "evidence": "Boysung'ur Turkistonda\n(Yassida) turgan Shayboniyxondan yordam so'radi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Shohrux Mirzoning vafot etishi va toj-taxt uchun kurashning avj olishi",
+     "effect": "Xuroson davlati o‘n bir qismga bo‘linib, ularning har biri amalda mustaqil davlatga aylandi.",
+     "evidence": "bo'linib ketdi. Ularning har biri amalda\nmustaqil davlatlar\nedi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Shahar ichida oziq-ovqat tanqisligi vujudga kelishi",
+     "effect": "Boysung‘urning askarlari orasida parokandalik ro‘y berdi.",
+     "evidence": "Bu vaqtda shahar ichida oziq-ovqat tanqisligi vujudga kelganligi tufayli Boysung'ur askarlari orasida parokandalik ro'y bcrdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Boburning dushmanlari Farg‘ona taxtiga ukasi Jahongirni o‘tqazish uchun isyon ko‘tarishi",
+     "effect": "Bobur Samarqandni tashlab, Andijonga qaytishga majbur bo‘ldi.",
+     "evidence": "Bunga Boburning dushmanlari Farg'ona taxtiga ukasi\nJahongirni o'tqazish uchun ko'targan isyon sabab bo'ldi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Muzaffar Husayn Mirzoga nohaq yon bosilishi va Mo‘min Mirzoning qatl etilishi",
+     "effect": "Badiuzzamon bilan otasi o‘rtasida urush kelib chiqdi va Badiuzzamon yengildi.",
+     "evidence": "Otasi Sullon Husayn Boyqaroning Muzaffar Husayn Mirzoga nohaq yon bosishi, o'g'li Mo'min Mirzoning qatl etilishi oxir-oqibat\nBadiuzzamon va otasi o'rtasida urush keltirib chiqardi"
+    },
+    {
+     "kind": "number",
+     "number": "7",
+     "unit": "oy",
+     "meaning": "Samarqand qamalining davomiyligi — yetti oydan ziyod.",
+     "evidence": "Samarqand qamali 7 oydan ziyod davom etdi"
+    },
+    {
+     "kind": "number",
+     "number": "11",
+     "unit": "qism",
+     "meaning": "Shohrux Mirzo vafotidan so‘ng Xuroson davlati bo‘linib ketgan qismlar soni.",
+     "evidence": "Natijada, Xuroson\ndavlati o'n bir qismga\nbo'linib ketdi"
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "title": "Zahiriddin Muhammad Bobur va Muhammad Shayboniyxon munosabatlari",
+   "page": 11,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1483",
+     "date_label": "1483-yilda",
+     "event": "Zahiriddin Muhammad Bobur Andijon shahrida tug‘ildi.",
+     "evidence": "U 1483-yilning 14-fevralida Andijon shahrida lug\"ildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1494",
+     "date_label": "1494-yilda",
+     "event": "Umarshayx Mirzo halok bo‘lgach, hokimiyat 12 yoshli Bobur Mirzo qo‘liga o‘tdi.",
+     "evidence": "Umarshayx Mirzo\n1494-yilda baxisiz. hodisa lufayli halok bo'lgach, hokimiyal 12 yoshli\no'g'li Bobur Mirzo qo'liga o'idi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1500",
+     "date_label": "1500-yilda",
+     "event": "Shayboniyxon Samarqandni jangsiz egalladi va Sulton Ali Mirzoni qatl ettirdi.",
+     "evidence": "kaltabinligi sababli Shayboniyxon 1500-yilda Samarqandni jangsiz\negalladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1500",
+     "date_label": "1500-yilning kuzida",
+     "event": "Bobur Mirzo Samarqandga yurish qilib, taxtni ikkinchi marta egalladi.",
+     "evidence": "Sulolasi manfaatiga sadoqatli bo'lgan Bobur Mirzo\n1500-yilning kuzida Samarqandga yurish\nboshladi va taxtni ikkinchi marta egalladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1501",
+     "date_label": "1501-yilda",
+     "event": "Olti oylik qamaldan so‘ng Shayboniyxon sulh taklif qildi va Bobur unga rozi bo‘ldi.",
+     "evidence": "1501-yilda olti oylik qamaldan so'ng Shayboniyxon Bobur Mirzoga\nsulh 1aklif cidi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1504",
+     "date_label": "1504-yilda",
+     "event": "Bobur Mirzo Kobul viloyatida o‘z hokimiyatini o‘rnatib, mustaqil davlat tuzishga kirishdi.",
+     "evidence": "1504-yilda Kobul viloyalida (Kobul - hozirgi Afg'onision davlalining poytaxti) o'z hokimiyatini o'rnatdi"
+    },
+    {
+     "kind": "person",
+     "person": "Bobur Mirzo",
+     "role": "Sulton Abu Said Mirzoning nabirasi, Andijon hokimi",
+     "activity": "Otasi saroyida barcha zarur bilimlarni egalladi, keyin Samarqand taxtini egallashni o‘z oldiga maqsad qilib qo‘ydi.",
+     "evidence": "Bobur Mirzo Sulton Abu Said Mirzoning nabirasi\nedi"
+    },
+    {
+     "kind": "person",
+     "person": "Umarshayx Mirzo",
+     "role": "Boburning otasi, Farg‘ona viloyati hokimi",
+     "activity": "1455–1494-yillarda yashagan; avval Kobul, so‘ng Farg‘ona viloyatiga hokim etib tayinlangan.",
+     "evidence": "Otasi Umarshayx Mirzo (1455-1494) saroyida o'z davriga yarasha barcha zarur\nbilimlarni egalladi"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad Shayboniyxon",
+     "role": "Movarounnahr hukmdori, Temuriylar saltanatiga barham berishni maqsad qilgan sarkarda",
+     "activity": "1500-yilda Samarqandni egallab, raqibi Sulton Ali Mirzoni qatl ettirdi va 1501-yilda Boburni yengdi.",
+     "evidence": "Shayboniyxon\nSamarqandni egallagach, Sulton Ali Mirzoni qatl ettirdi"
+    },
+    {
+     "kind": "person",
+     "person": "Abulmakorim",
+     "role": "Shayxulislom, Movarounnahrning nufuzli davlat arbobi",
+     "activity": "Boshchiligida davlat arboblari Bobur Mirzoni Samarqand taxtini egallashga da’vat etdilar.",
+     "evidence": "shayxulislom Abulmakorim boshchiligida Bobur Mirzoni Samarqand taxtini\negallashga da'vat etdilar"
+    },
+    {
+     "kind": "person",
+     "person": "Gulbadanbegim",
+     "role": "Bobur Mirzoning qizi, «Humoyunnoma» asarining muallifi",
+     "activity": "1523–1603-yillarda yashagan; asarida Boburning Badaxshon va Kobulga yuzlanishi haqida yozgan.",
+     "evidence": "Bobur Mirzoning qizi Gulbadanbegim (1523-\n1603-yillarda yashagan"
+    },
+    {
+     "kind": "term",
+     "term": "sulh",
+     "definition": "Urushni to‘xtatish bo‘yicha tuzilgan kelishuv; 1501-yildagi shartlari Bobur uchun haqoratli bo‘lgan.",
+     "evidence": "Sulh shartlari Bobur Mirzo uchun juda haqoratli bo'lsa-da, unga rozi bo'lmaslikdan boshqa chorasi yo'q edi"
+    },
+    {
+     "kind": "term",
+     "term": "elchi",
+     "definition": "Yordam so‘rab boshqa yurtlarga yuboriladigan rasmiy vakil.",
+     "evidence": "Hisor, Hirot va boshqa yerlarga yordam yuborishlarini so'rab elchilar\nyubordi"
+    },
+    {
+     "kind": "term",
+     "term": "Konigil",
+     "definition": "Samarqanddan tashqarida joylashgan, hukmdorlar hordiq chiqaradigan joy.",
+     "evidence": "Bu paytda Shayboniyxon Samarqanddan\nlashqarida - Konigil (shahardan lashqaridagi\nhukmdorlar hordiq chiqaradigan joy)da lurar edi"
+    },
+    {
+     "kind": "term",
+     "term": "«Humoyunnoma»",
+     "definition": "Gulbadanbegim qalamiga mansub asar; unda Boburning yurtini tark etishi tasvirlangan.",
+     "evidence": "o'zining ,Humoyunnoma\" asarida bu haqda\nquyidagilarni yorgan edi"
+    },
+    {
+     "kind": "place",
+     "place": "Andijon",
+     "event": "1483-yilda Bobur Mirzo shu shaharda tug‘ildi, bolalik va yoshlik yillari shu yerda o‘tdi.",
+     "evidence": "Bolalik\nva yoshlik yillari Andijon va Axsi shaharlarida o'idi"
+    },
+    {
+     "kind": "place",
+     "place": "Samarqand",
+     "event": "1501-yilda Bobur Mirzo bu shaharni tark etib, ko‘p mashaqqatlar bilan o‘zga yurtlarga ketishga majbur bo‘ldi.",
+     "evidence": "Og'ir va nochor ahvolga tushib qolgan Bobur Mirzo Samarqandni\ntark etib, ko'p mashaqqatlarni boshdan kechirib"
+    },
+    {
+     "kind": "place",
+     "place": "Kobul",
+     "event": "1504-yilda Bobur Mirzo bu yerda hokimiyat o‘rnatib, Bog‘i Bobur va Bolo Hisor qal’asini o‘ziga qarorgoh qildi.",
+     "evidence": "Kobuldagi Bolo Hisor qal'asini o'zining qarorgohiga aylantirdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Movarounnahr hukmdori Sulton Ali Mirzoning kaltabinligi va onasining gapi bilan ish tutishi",
+     "effect": "Shayboniyxon 1500-yilda Samarqandni jangsiz egallab, Sulton Ali Mirzoni qatl ettirdi.",
+     "evidence": "Onasining\ngapi bilan ish tutgan Movarounnahr hukmdori Sulton Ali Mirzoning"
+    },
+    {
+     "kind": "cause",
+     "cause": "Amakisi Husayn Boyqaro va tog‘asi Sulton Mahmudxondan yordam kuchi kelmasligi",
+     "effect": "Bobur hech qayerdan yordam ololmay, noiloj sulhga rozi bo‘ldi.",
+     "evidence": "Biroq amakisi - Xuroson hukmdori Sulton Husayn Boyqaro\nva Qashqardagi tog'asi Sulton Mahmudxondan yordam kuchi kelmadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Husayn Boyqaroning 1506-yilda to‘satdan vafot etishi",
+     "effect": "Temuriyzodalar dushmanga qarshi ittifoq tuza olmadilar va saltanat butunlay barham topdi.",
+     "evidence": "Biroq Husayn Boyqaroning\n1506-yilda to'satdan vafot etishi vaziyatni og'irlashtirdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Shayboniylarning tobora kuchayib borayotgan yurishi",
+     "effect": "Husayn Boyqaro barcha temuriy hukmdorlarni maslahat yig‘iniga taklif etdi.",
+     "evidence": "Shayboniylarning tobora kuchayib borayotgan yurishiga qarshi birgalikda chora ko'rish maqsadida Sulton Husayn Boyqaro barcha temuriy"
+    },
+    {
+     "kind": "number",
+     "number": "12",
+     "unit": "yosh",
+     "meaning": "Otasi halok bo‘lganda Bobur Mirzo shu yoshda edi va davlatni beklar hamda onasi yordamida boshqardi.",
+     "evidence": "hokimiyal 12 yoshli\no'g'li Bobur Mirzo qo'liga o'idi"
+    },
+    {
+     "kind": "number",
+     "number": "6",
+     "unit": "oy",
+     "meaning": "1501-yildagi Samarqand qamalining davomiyligi.",
+     "evidence": "olti oylik qamaldan so'ng Shayboniyxon Bobur Mirzoga\nsulh 1aklif cidi"
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "title": "Movarounnahr va Xurosonda shayboniylar hukmronligining o‘rnatilishi",
+   "page": 13,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1500",
+     "date_label": "1500-yilda",
+     "event": "Muhammad Shayboniyxon Samarqandni qisqa muddatga egallab, Shayboniylar davlatiga asos soldi.",
+     "evidence": "marqandni dastlab 1500-yilda qisqa muddatga\nbo'lsa-da egalladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1501",
+     "date_label": "1501-yilda",
+     "event": "Samarqand uzil-kesil bo‘ysundirildi va butun Movarounnahrni egallash boshlandi.",
+     "evidence": "1501-yilda esa Samarqandni uzil-kesil bo'ysundirdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1503",
+     "date_label": "1503-yilda",
+     "event": "Toshkent va Shohruxiya shaharlari egallandi.",
+     "evidence": "1503-yilda Toshkent va Shohruxiya shaharlari egallanadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1504",
+     "date_label": "1504-yilda",
+     "event": "Farg‘ona vodiysi egallandi, Jonibek Sultonga Axsi va Andijon tortiq qilindi.",
+     "evidence": "1504-yilda esa Farg'ona egallandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1505",
+     "date_label": "1505-yilda",
+     "event": "Xorazm Shayboniyxon tomonidan egallandi.",
+     "evidence": "1505-yil\nXorazm cgallandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1507",
+     "date_label": "1507-yilda",
+     "event": "Hirot egallandi va u iqtisodiy, siyosiy hamda madaniy markaz sifatidagi nufuzini yo‘qotdi.",
+     "evidence": "1506-yilda Balx, 1507-yilda esa Hirot egallandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1510",
+     "date_label": "1510-yilda",
+     "event": "Marv yaqinidagi jangda Eron qo‘shini g‘alaba qozondi va Shayboniyxon halok bo‘ldi.",
+     "evidence": "Nihoyat, 1510-yilda ikki hukmdor qo'shini to'qnashdi"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad Shayboniyxon",
+     "role": "Shayboniylar davlati asoschisi, Movarounnahr va Xurosonni birlashtirgan hukmdor",
+     "activity": "1500-yilda davlatga asos soldi, 1501–1507-yillarda Movarounnahr, Xorazm va Xurosonni egalladi.",
+     "evidence": "Shu tariqa, Movarounnahr.\nXorazm va Xurosonni o'z ichiga olgan hududda Shayboniyxon hukmronligi o'rnatildi"
+    },
+    {
+     "kind": "person",
+     "person": "Shoh Ismoil Safaviy",
+     "role": "Eron shohi, Safaviylar davlati hukmdori",
+     "activity": "1510-yilda Marv yaqinida g‘alaba qozonib, butun Xurosonni egalladi.",
+     "evidence": "Bu g'alaba natijasida shoh Ismoil butun Xurosonni egalladi"
+    },
+    {
+     "kind": "person",
+     "person": "Jonibek Sulton",
+     "role": "Abulxayrxonning nabirasi, Shayboniyxonning jiyani",
+     "activity": "Harbiy yurishlarda eng faol qatnashib, Axsi va Andijonni tortiq oldi.",
+     "evidence": "Shayboniyxonning harbiy yurishlarida cng faol qainashgan amakisining o'g'li Jonibck Sultonga\nAxsi va Andijonni tortiq qildi"
+    },
+    {
+     "kind": "person",
+     "person": "Ko‘chkunchi Sulton",
+     "role": "Abulxayrxonning nabirasi, Shayboniyxonning amakisi",
+     "activity": "Turkistonga hokim etib tayinlandi, ukasi Suyunchxoja Sulton esa Toshkentga hokim bo‘ldi.",
+     "evidence": "amakilari Ko'chkunchi Sultonni Turkistonga va uning ukasi Suyunchxoja Sultonni Toshkentga"
+    },
+    {
+     "kind": "term",
+     "term": "to‘lg‘ama",
+     "definition": "Jang chog‘ida dushman qo‘shinini qanotlaridan aylanib o‘tib, qurshab olib zarba berish usuli.",
+     "evidence": "To'lg'ama - jang chog\"ida dushman qo'shinini qanoilaridan aylanib\no'tib, qurshab olib zarba berish usuli"
+    },
+    {
+     "kind": "term",
+     "term": "Safaviylar davlati",
+     "definition": "Shoh Ismoil tuzgan va tarixda shu nom bilan mashhur bo‘lgan saltanat.",
+     "evidence": "Ismoil Safaviy tuzgan saltanat tarixda Safaviylar davlati nomi bilan\nmashhur"
+    },
+    {
+     "kind": "term",
+     "term": "Shayboniylar davlati",
+     "definition": "1500-yilda Movarounnahrda tashkil topgan yangi o‘zbek davlati; uning poytaxti Samarqand bo‘ldi.",
+     "evidence": "Shu ltariqa, bulun Movarounnahrda shayboniylar sulolasi hukmronligi o'rnatildi"
+    },
+    {
+     "kind": "term",
+     "term": "etnik jarayon",
+     "definition": "Aholi tarkibining o‘zgarishi, turli qabilalarning mahalliy aholi bilan aralashib ketishi.",
+     "evidence": "Bu hodisa Vatanimiz.\nhududidagi elnik jarayonga ta'sir elmay qolmadi"
+    },
+    {
+     "kind": "place",
+     "place": "Samarqand",
+     "event": "1500-yildan boshlab shayboniylar davlatining poytaxti etib belgilandi.",
+     "evidence": "Samarqand shahri csa poytaxt ctib bclgilandi"
+    },
+    {
+     "kind": "place",
+     "place": "Marv",
+     "event": "1510-yilda bu shahar yaqinida shayboniylar va Eron qo‘shini o‘rtasida hal qiluvchi jang bo‘lib o‘tdi.",
+     "evidence": "Marv (hozirgi Turkmaniston hududi) yaqinida bo'lgan jangda Eron qo'shini\ngalaba qozondi"
+    },
+    {
+     "kind": "place",
+     "place": "Hirot",
+     "event": "1507-yilda egallandi va shundan so‘ng iqtisodiy, siyosiy va madaniy markaz sifatidagi nufuzini yo‘qotdi.",
+     "evidence": "Shundan\nso'ng Hirot o'zining iqtisodiy, siyosiy va madaniy markaz. sifatidagi\nnufuzini yo'qoldi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dashti Qipchoqdagi o‘zbek qabilalarining o‘troq hayotga o‘tish umidi",
+     "effect": "Unumdor yerlarda, birinchi navbatda Movarounnahrda Shayboniyxon hokimiyati o‘rnatilib, o‘troq hayotga o‘tish imkoni berildi.",
+     "evidence": "Movarounnahrda Muhammad Shayboniyxon hokimiyatining o'rnatilishi o'trog hayotga o'tish imkonini berishini ham\nyaxshi bilganlar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Movarounnahr aholisining temuriyzodalarning toj-taxt kurashlaridan charchashi",
+     "effect": "Xalq Muhammad Shayboniyxon timsolida tinchlik o‘rnatishga qodir yagona shaxsni ko‘rdi.",
+     "evidence": "Movarounnahr aholisi temuriyzodalarning\ntoj-u laxt uchun o'zaro kurashlaridan charchagan ham edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Rossiyaning sharqqa qarab tobora kengayib borishi",
+     "effect": "Shayboniyxonning Movarounnahrga yurishini tezlatib yubordi.",
+     "evidence": "Ayni payida, Rossiyaning sharqqa qarab tobora kengayib borishi\nham Shayboniyxonning Movarounnahrga yurishini tezlatib yubordi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xuroson temuriylar davlatining ichki nizolar oqibatida inqirozga yuz tutishi",
+     "effect": "Shayboniyxon uchun uni egallash qiyin kechmadi.",
+     "evidence": "So'nggi yillarda o'zaro ichki nizolar oqibatida inqirozga yuz tutgan temuriylarning Xuroson davlatini egallash Shayboniyxon uchun qiyin kechmadi"
+    },
+    {
+     "kind": "number",
+     "number": "XVI",
+     "unit": "asr",
+     "meaning": "Shu asrdan boshlab yurtimizda o‘zbek xalqining tarkibi kengayib bordi.",
+     "evidence": "Avvalo, XVI asrdan boshlab yurtimizda o'zbck xalqining tarkibi\nkcngayib bordi"
+    },
+    {
+     "kind": "number",
+     "number": "IX–XII",
+     "unit": "asr",
+     "meaning": "O‘zbek xalqi Movarounnahr va Xorazmda shu asrlarda shakllangan.",
+     "evidence": "va Xorazmda o'zbek xalqi IX-XIl asrlarda shakllangan"
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "title": "Buxoro xonligining tashkil topishi",
+   "page": 17,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1512",
+     "date_label": "1512-yilda",
+     "event": "28-apreldagi jangda shayboniylar Bobur va safaviylar qo‘shinini tor-mor qilib, Samarqand taxtini qayta egalladi.",
+     "evidence": "1512-yil 28-apreldagi jangda shayboniylar Bobur Mirzo bilan uning ittifoqchisi safaviylar\nqo\"shinini tor-mor qilib"
+    },
+    {
+     "kind": "date_event",
+     "date": "1533",
+     "date_label": "1533-yilda",
+     "event": "Ubaydullaxon xonlik poytaxtini Samarqanddan Buxoroga ko‘chirdi, davlat Buxoro xonligi deb atala boshlandi.",
+     "evidence": "U\n1533-yilda xonlik poytaxtini Samarqanddan Buxoroga ko'chirtirdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1536",
+     "date_label": "1536-yilda",
+     "event": "Buxoroda Mir Arab nomi bilan mashhur madrasa qurib bitkazildi.",
+     "evidence": "va 1533-1536-yillarda Buxoroda uning nomi bilan mashhur"
+    },
+    {
+     "kind": "date_event",
+     "date": "1540",
+     "date_label": "1540-yilda",
+     "event": "Navro‘z Ahmadxon Abdulatifxon bilan ittifoq tuzib, Buxoroni egalladi.",
+     "evidence": "Abdulatifxon bilan ittifoq tuzib 1540-yilda Buxoroni egalladi va hokimiyatni o'z tarafdorlariga topshirdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1548",
+     "date_label": "1548-yilda",
+     "event": "Abdulatifxon vafot etgach, Navro‘z Ahmadxon Samarqand taxtini egalladi va o‘z nomidan tanga zarb ettirdi.",
+     "evidence": "1548-yilda Abdulatifxon vafot\netgach, Samarqand taxtini egalladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1556",
+     "date_label": "1556-yilda",
+     "event": "Navro‘z Ahmadxon vafot etdi, shundan so‘ng Abdullaxon II hokimiyat uchun kurashni boshladi.",
+     "evidence": "Navro'z Ahmadxon esa Buxoroda noibini qoldirib Samarqandga qayidi va 1556-yilda vafo1 cidi"
+    },
+    {
+     "kind": "person",
+     "person": "Ko‘chkunchixon",
+     "role": "Shayboniyxonning amakisi, uning vafotidan keyin taxtga o‘tirgan xon",
+     "activity": "1512-yilda safaviylar bilan birga Boburni yengdi va 1530-yilgacha hukmronlik qildi.",
+     "evidence": "Ko'chkunchixon 1530-yilgacha hukmronlik qildi"
+    },
+    {
+     "kind": "person",
+     "person": "Ubaydullaxon",
+     "role": "Mahmud Sultonning o‘g‘li, 1533–1540-yillarda hukmronlik qilgan xon",
+     "activity": "Poytaxtni Buxoroga ko‘chirdi, safaviy hujumlarini bartaraf etib Movarounnahrni ularning tazyiqidan saqlab qoldi.",
+     "evidence": "hukmdorlik Shayboniyxonning ukasi Mahmud Sullonning o'g'li Ubaydullaxon (1533-1540) qo'liga o'idi"
+    },
+    {
+     "kind": "person",
+     "person": "Abdulla Sabroniy",
+     "role": "Mir Arab taxallusi bilan mashhur din peshvosi, Ubaydullaxonning do‘sti",
+     "activity": "Ubaydullaxonni safaviylarga qarshi kurashda ma’naviy ilhomlantirib, qo‘llab-quvvatladi.",
+     "evidence": "Ubaydullaxon safaviylarga qarshi kurashda o'zining ma'naviy ilhomchisi Mir Arab laxallusi bilan mashhur bo'lgan din pcshvosi Abdulla Sabroniy tomonidan qo'llab-quvvallandi"
+    },
+    {
+     "kind": "person",
+     "person": "Navro‘z Ahmadxon",
+     "role": "Toshkent va Turkiston hukmdori, Suyunchxoja Sultonning o‘g‘li",
+     "activity": "1540-yilda Buxoroni egallab, 1548-yilda Samarqand taxtini oldi va o‘z nomidan tanga zarb ettirdi.",
+     "evidence": "Toshkent va Turkislon hukmdori, Suyunchxojaning o'g'li Navro'z. Ahmadxon foydalanib qolishga qaror qildi"
+    },
+    {
+     "kind": "person",
+     "person": "Hofiz Tanish al-Buxoriy",
+     "role": "Tarixchi, Ubaydullaxon davri tarixini yozgan olim",
+     "activity": "Ubaydullaxon davlati va xalqining gullab-yashnaganini o‘z asarida qayd etgan.",
+     "evidence": "Tarixchi Iofiz Tanish al-Buxoriy bckorga"
+    },
+    {
+     "kind": "term",
+     "term": "qo‘shhokimiyatchilik",
+     "definition": "Bir mamlakatda bir vaqtning o‘zida ikki hukmdorning hokimiyatni bo‘lishib turishi; Abdullaxon I dan keyin shunday holat yuzaga keldi.",
+     "evidence": "unnahrda qo'shhokimiyalchilik, ya'ni bir\nvaqining o'zida ikki hukmdor hokimiyali o'rnatildi"
+    },
+    {
+     "kind": "term",
+     "term": "Buxoro xonligi",
+     "definition": "Shayboniylar davlatining 1533-yildan keyin, poytaxt Buxoroga ko‘chirilgach, atala boshlagan nomi.",
+     "evidence": "Shu tariqa, Shayboniylar davlati Buxoro xonligi deb atala boshladi"
+    },
+    {
+     "kind": "term",
+     "term": "Mir Arab madrasasi",
+     "definition": "Buxorodagi, hali-hamon ilm-ma’rifat o‘chog‘i bo‘lib qolayotgan madrasa.",
+     "evidence": "Mir Arab madrasasi hali-hamon ilm-ma'rifat o'chog'i bo'lib qolayotir"
+    },
+    {
+     "kind": "term",
+     "term": "xutba",
+     "definition": "Hukmdor nomi qo‘shib o‘qiladigan ma’ruza; hukmdor nomi shu orqali e’lon qilingan.",
+     "evidence": "Movarounnahrning ko'p shaharlarida uning nomi xutbaga qo*-\nshib o'qildi"
+    },
+    {
+     "kind": "place",
+     "place": "Buxoro",
+     "event": "1533-yilda xonlik poytaxtiga aylandi va uning poytaxt sifatidagi nufuzi har tomonlama o‘sdi.",
+     "evidence": "Ubaydullaxon hukmronligi davrida Buxoroning poytaxt sifatidagi\nnufuzi har 1omonlama o'sdi"
+    },
+    {
+     "kind": "place",
+     "place": "Samarqand",
+     "event": "1512-yilda shayboniylar bu shaharning taxtini tor-mor etilgan raqiblardan qayta qo‘lga kiritdi.",
+     "evidence": "tor-mor qilib, Samarqand laxtini qayla qo'lga kiriidilar"
+    },
+    {
+     "kind": "place",
+     "place": "Balx",
+     "event": "Kuchlar nisbatini to‘g‘ri baholagan Iskandarxon va uning o‘g‘li Abdulla shu shaharga ketishga majbur bo‘ldi.",
+     "evidence": "Kuchlar nisbatida Navro'z Ahmadxonning ustunligini bilgan ota-o'g'il Balxga\nkctishga majbur bo'ldilar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ubaydullaxonning poytaxtni Buxoroga ko‘chirishi",
+     "effect": "Shayboniylarning Movarounnahrda tashkil etgan davlati Buxoro xonligi deb atala boshladi.",
+     "evidence": "Chunki Shayboniyxon hayotligidayoq Buxoro hokimligini ukasi Mahmud Sulonga\nbergan edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Abdullaxon I ning qisqa hukmronligi va toj-taxt uchun kurashning kuchayishi",
+     "effect": "Bir vaqtda ikki hukmdor: Abdulazizxon Buxoroda, Abdulatifxon Samarqandda hukmronlik qila boshladi.",
+     "evidence": "Ulardan biri - Ubaydullaxonning o'g'li Abdulazizxon Buxoroda,\nikkinchisi Ko'chkunchixonning yana bir o'g'li Abdulatifxon Samarqandda hukmronlik qila boshladilar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ubaydullaxonning safaviylar ustidan g‘alaba qozonishi",
+     "effect": "Vatan mustaqilligi, xalq erki va din-or-nomus saqlab qolindi.",
+     "evidence": "Ubaydullaxon safaviylar ustidan erishgan g'alabasi\ntufayli Vatan mustaqilligini, xalq erkini va din-u diyonatini. or-nomusini saqlab qoldi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Iskandarxon va o‘g‘li Abdullaning Navro‘z Ahmadxonga itoat etishni istamasligi",
+     "effect": "Navro‘z Ahmadxon Miyonqolga yurish boshladi.",
+     "evidence": "Bunga\nqarshi Navro' Ahmadxon Miyonqolga yurish boshladi"
+    },
+    {
+     "kind": "number",
+     "number": "2",
+     "unit": "hukmdor",
+     "meaning": "Qo‘shhokimiyatchilik davrida bir vaqtda hukmdor bo‘lgan xonlar soni.",
+     "evidence": "bir\nvaqining o'zida ikki hukmdor hokimiyali o'rnatildi"
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "title": "Abdullaxon II davrida Buxoro xonligining yuksalishi",
+   "page": 19,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1556",
+     "date_label": "1556-yilda",
+     "event": "Navro‘z Ahmadxon vafot etgach, Abdullaxon II Karmana va Shahrisabzda hukmronligini tikladi.",
+     "evidence": "1556-yildaNavro'z Ahmadxonvafotelgach, Abdullaxon II darhol Karmana va"
+    },
+    {
+     "kind": "date_event",
+     "date": "1583",
+     "date_label": "1583-yilda",
+     "event": "Otasi Iskandarxon vafot etgach, Abdullaxon II rasman xon deb e’lon qilindi.",
+     "evidence": "1583-yilda otasi vafot etgach. Abdullaxon\nII rasman xon deb"
+    },
+    {
+     "kind": "date_event",
+     "date": "1598",
+     "date_label": "1598-yilda",
+     "event": "Abdullaxon II vafot etdi va taxtni o‘g‘li Abdulmo‘min egalladi.",
+     "evidence": "Abdullaxon Il 1598-yilda vafot etgach, taxini o'g'li Ahdulmo\"min\negalladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1601",
+     "date_label": "1601-yilda",
+     "event": "Pirmuhammadxon II Boqi Muhammad bilan to‘qnashuvda o‘ldirildi va shayboniylar sulolasi barham topdi.",
+     "evidence": "1601-yilda u bilan kelib chiqishi ashtarxoniylardan bo'lgan, Samarqand hokimi Boqi Muhammad o'rtasida qonli to'qnashuv yuz berdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "XVI asr oxiri",
+     "date_label": "XVI asr oxirida",
+     "event": "Abdullaxon II ning kurashi natijasida Buxoro xonligi markazlashgan ulkan davlatga aylandi.",
+     "evidence": "Abdullaxon II ning jasoratli kurashi natijasida XVI asr oxirida Buxoro xonligi markazlashgan ulkan"
+    },
+    {
+     "kind": "date_event",
+     "date": "XVI asrning ikkinchi yarmi",
+     "date_label": "XVI asrning ikkinchi yarmida",
+     "event": "Muhammad Islom va keyinchalik uning o‘g‘li Abubakr Sa’d Buxoroda shayxulislom lavozimida faoliyat yuritdi.",
+     "evidence": "keyinchalik uning o'g'li Abubakr Sa'd Buxoroda\nshayxulislom lavozimida faoliyat yuritdilar"
+    },
+    {
+     "kind": "person",
+     "person": "Abdullaxon II",
+     "role": "Iskandar Sultonning o‘g‘li, Jonibek Sultonning nabirasi",
+     "activity": "1583-yildan rasman xon bo‘lib, Buxoro xonligini markazlashgan ulkan davlatga aylantirdi.",
+     "evidence": "U shayboniylar sulolasining yorqin vakillaridan biri, nomi 4-mavzuda qayd etilgan\nJonibck Sultonning nabirasi edi"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad Islom",
+     "role": "Jo‘ybor qishlog‘ida yashovchi, g‘oyatda katta nufuzga ega shayx",
+     "activity": "Iskandarxon xonadoniga ixlosi baland bo‘lib, Abdullaxon II ga hokimiyat uchun kurashda juda katta madad berdi.",
+     "evidence": "g'oyatda katta nufuzga ega bo'lgan shayx\nMuhammad Islomning ixlosi baland bo'lganligi Abdullaxon II ga bu kurashda juda katta"
+    },
+    {
+     "kind": "person",
+     "person": "Iskandar Sulton",
+     "role": "Miyonqol hokimi, Abdullaxon II ning otasi",
+     "activity": "O‘g‘li tomonidan taxtga o‘tqazildi va 1583-yilda vafot etdi.",
+     "evidence": "dastlab amakisi Pirmuhammad Ini, uning vafotidan so'ng esa otasi Iskandarxonni taxtga"
+    },
+    {
+     "kind": "person",
+     "person": "Abdulmo‘min",
+     "role": "Abdullaxon II ning o‘g‘li, valiahd sifatida Balxni boshqargan",
+     "activity": "1598-yilda taxtni egalladi, biroq o‘sha yili fitnachilar tomonidan o‘ldirildi.",
+     "evidence": "Birog o\"sha yilning o'zidayoq Abdulmo'min finachilar lomonidan o'ldirildi"
+    },
+    {
+     "kind": "person",
+     "person": "Pirmuhammad II",
+     "role": "Balx hokimi, Abdullaxon II ning amakivachchasi",
+     "activity": "1598-yilda taxtga o‘tqazildi, xonlikni ikki yilcha idora qildi va 1601-yilda o‘ldirildi.",
+     "evidence": "taxtga Abdullaxon II ning amakivachchasi - Balx hokimi\nPirmuhammad II o'tqazildi"
+    },
+    {
+     "kind": "term",
+     "term": "markazlashgan davlat",
+     "definition": "Yagona hukmdor qo‘li ostida birlashtirilgan, markaziy hokimiyati kuchli davlat.",
+     "evidence": "butun Movarounnahr, Xorazm va\nXurosonning sharqiy qismigacha bo'lgan hududlar yagona hukmdor\nqo'li ostida birlashtirildi"
+    },
+    {
+     "kind": "term",
+     "term": "valiahd",
+     "definition": "Taxtning rasmiy vorisi; Abdulmo‘min shu maqomda Balx viloyatini boshqargan.",
+     "evidence": "U valiahd sifatida Balx viloyatini boshqarar edi"
+    },
+    {
+     "kind": "term",
+     "term": "«Buyuk Buxoro»",
+     "definition": "Rossiyada Buxoro xonligiga nisbatan qo‘llanilgan «Bejka Byxapua» iborasi.",
+     "evidence": "Rossiyada bu davlatga nisbatan bekorga ,Bejka Byxapua\" (Buyuk Buxoro) iborasi qo'llanilmagan edi"
+    },
+    {
+     "kind": "term",
+     "term": "ashtarxoniylar",
+     "definition": "1601-yilda taxt uchun kurashda ishtirok etgan sulola; undan Samarqand hokimi Boqi Muhammad chiqqan.",
+     "evidence": "kelib chiqishi ashtarxoniylardan bo'lgan, Samarqand hokimi Boqi Muhammad"
+    },
+    {
+     "kind": "place",
+     "place": "Buxoro",
+     "event": "1556-yilda Abdullaxon II tomonidan poytaxt maqomi qayta tiklangan shahar.",
+     "evidence": "Muhammad Islomning ko'magi bilan csa Buxoro taxtini egalladi va uning\npoytaxt maqomini qayta tikladi"
+    },
+    {
+     "kind": "place",
+     "place": "Balx",
+     "event": "Abdullaxon II bu viloyatda markaziy hokimiyatga qarshi ko‘tarilgan isyonlarni bostirdi.",
+     "evidence": "lekin shayboniylar qo'lida\nqolgan Balx, Maymana, Badaxshonda markaziy hokimiyatga qarshi\nko'tarilgan isyonlarni bostirdi"
+    },
+    {
+     "kind": "place",
+     "place": "Xorazm",
+     "event": "Abdullaxon II davrida xonlik tasarrufidan chiqib, davlat mustaqilligini tikladi.",
+     "evidence": "Xorazm esa xonlik tasarrulidan chiqib, davlat muslagilligini tiklab\noldi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Navro‘z Ahmadxonning vafoti va mamlakatdagi siyosiy tarqoqlik",
+     "effect": "Markaziy hokimiyatni yana tiklab, uni kuchaytirish zarurati tug‘ildi.",
+     "evidence": "uchun markaziy hokimiyatni yana tiklash\nva kuchaytirish zarur edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Samarqand, Toshkent, Sayram, Turkiston va Farg‘onaning markaziy hokimiyatga bo‘ysunishni istamasligi",
+     "effect": "Samarqand, Toshkent, Sayram, Turkiston va Farg‘ona qilich kuchi bilan bo‘ysundirildi.",
+     "evidence": "Markaziy hokimiyatga bo'ysunishni\nistamagan Samarqand, Toshkent, Sayram, Turkision va Farg'ona qilich\nkuchi bilan bo'ysundirildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Buxoro xonligidagi ichki nizolar tufayli vujudga kelgan og‘ir vaziyat",
+     "effect": "Eron hukmdori shoh Abbos bostirib kirib, Nishopur, Sabzavor, Mashhad va Hirotni egalladi.",
+     "evidence": "Ichki nizolar tufayli Buxoro xonligida\nsodir bo'lgan og'ir vaziyatdan foydalangan Eron hukmdori shoh"
+    },
+    {
+     "kind": "cause",
+     "cause": "Abdullaxon II ning toj-taxt masalasida o‘g‘li Abdulmo‘min bilan kelisha olmasligi",
+     "effect": "Sulola ichida nizo davom etib, shayboniylar hukmronligi zaiflashdi.",
+     "evidence": "Toj-u laxt masalasida hato o'zining o'g'li Abdulmo'min bilan\nkclisha olmadi"
+    },
+    {
+     "kind": "number",
+     "number": "3",
+     "unit": "yil",
+     "meaning": "Abdullaxon II vafotidan shu qadar vaqt o‘tgach shayboniylar sulolasi barham topdi.",
+     "evidence": "Abdullaxon II vafotidan atigi 3 yil o'tgach, bir asr hukmronlik qilgan\nshayboniylar sulolasi barham lopdi"
+    },
+    {
+     "kind": "number",
+     "number": "1534–1598",
+     "unit": "yillar",
+     "meaning": "Abdullaxon II ning tug‘ilgan va vafot etgan yillari, ya’ni butun umr yillari.",
+     "evidence": "hokimi Iskandar Sultonning o'g'li Abdullaxon Il (1534-1598) chiqdi"
+    }
+   ]
+  }
+ ]
+}

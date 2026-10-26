@@ -1,0 +1,1510 @@
+{
+ "chapter": "I BOB. O‘RTA ASRLARNING ILK DAVRI",
+ "topics": [
+  {
+   "number": 1,
+   "title": "German qabilalari va Rim imperiyasi",
+   "page": 8,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "IV–VI asr",
+     "date_label": "IV–VI asrlar",
+     "event": "Yevropani «Xalqlarning buyuk ko‘chishlari» jarayoni qamrab olgan, bu jarayonga xunn qabilalari boshlab bergan",
+     "evidence": "Milodiy IV–VI asrlarda Yevropani xunn qabilalari boshlab bergan «Xalqlarning buyuk ko‘chishlari"
+    },
+    {
+     "kind": "date_event",
+     "date": "II asr",
+     "date_label": "II asr",
+     "event": "Yevropada iqlimning sovib boshlashi keyingi asrlarda ekinzorlarni qurg‘oqqa, suv havzalari atrofini botqoqlikka aylantirgan",
+     "evidence": "Yevropada II asrdan iqlim ning soviy bosh lashi keyingi asrlarda ekinzorlarni"
+    },
+    {
+     "kind": "date_event",
+     "date": "IV asr",
+     "date_label": "IV asr",
+     "event": "Mulkiy tengsizlik kuchayib, jamoalar boylar va kambag‘allarga ajrala boshlagan, yangi ijtimoiy toifalar shakllangan",
+     "evidence": "IV asrda mulkiy tengsizlik kuchayib, jamo alar boylar va kambag‘allarga ajrala boshladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "IV–V asr",
+     "date_label": "IV–V asrlar",
+     "event": "German qabilalari keng hududlarni nazorat qiluvchi yirik qabila ittifoqlariga birlasha boshlagan",
+     "evidence": "German qabilalari IV–V asrlardan keng hududlarni nazorat qiluvchi qabila itti foqlariga birlasha boshlagan"
+    },
+    {
+     "kind": "date_event",
+     "date": "V asr",
+     "date_label": "V asr boshi",
+     "event": "Pireney yarim oroli va Galliyaning bir qismida dastlabki varvarlar davlati — Vestgot qirolligi tashkil topgan",
+     "evidence": "V asr bosh larida Pire ney yarim oroli va Gal liyaning bir qis mida dast labki varvarlar davla ti"
+    },
+    {
+     "kind": "date_event",
+     "date": "476",
+     "date_label": "476-yil",
+     "event": "Germanlar istilosi natijasida G‘arbiy Rim imperiyasi qulagan va Yevropada feodal jamiyatiga o‘tish davri boshlangan",
+     "evidence": "Germanlar istilosi 476yilda G‘arbiy Rim imperiyasining qulashiga sabab bo‘lgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "milodiy IV asr",
+     "date_label": "milodiy IV asr",
+     "event": "Bahorgi va kuzgi bug‘doy o‘rniga dukkakli ekinlar ekish hamda ikki dalali almashlab ekish qo‘llana boshlagan",
+     "evidence": "Milodiy IV asrdan bahorgi va kuzgi bug‘doy o‘rniga dukkakli ekinlar ekish, haydalgan yerni ikki dalaga"
+    },
+    {
+     "kind": "person",
+     "person": "Yuliy Sezar",
+     "role": "Rim sarkardasi, «Galliya urushi haqida xotiralar» asarining muallifi",
+     "activity": "Asarida qadimgi germanlar tarixiga oid boy ma’lumotlarni yozib qoldirgan",
+     "evidence": "Yuliy Sezarning «Galliya urushi haqida xotiralar"
+    },
+    {
+     "kind": "person",
+     "person": "Tatsit",
+     "role": "Rim tarixchisi, qadimgi germanlar haqida yozgan «Germaniya» asarining muallifi",
+     "activity": "«Germaniya» asarida german qabilalari tarixini yoritib bergan",
+     "evidence": "Rim tarixchisi Tatsitning"
+    },
+    {
+     "kind": "person",
+     "person": "Qabila harbiy yo‘lboshchisi",
+     "role": "German qabilasining harbiy bo‘linmasi boshlig‘i va jangchilar ta’minotchisi",
+     "activity": "Harbiy o‘ljaning katta qismini olgan, chunki jangchilarni ot, qurol, turarjoy va oziq-ovqat bilan ta’minlagan",
+     "evidence": "Harbiy o‘ljaning katta qismi yo‘lboshchiga tekkan"
+    },
+    {
+     "kind": "term",
+     "term": "varvarlar",
+     "definition": "Rimliklar madaniy taraqqiyotning ancha quyi pog‘onasida turuvchi xalqlarni shunday atagan",
+     "evidence": "madaniy taraqqiyotning ancha quyi pog‘onasida turuvchi xalqlarni «varvarlar» deb ataganlar"
+    },
+    {
+     "kind": "term",
+     "term": "konung",
+     "definition": "Qabila boshlig‘i, zodagonlarning oliy vakili; normann qabilalarida harbiy yo‘lboshchi",
+     "evidence": "Konung — qabila boshlig‘i, zodagonlarning oliy vakili"
+    },
+    {
+     "kind": "term",
+     "term": "ikki dalali almashlab ekish",
+     "definition": "Haydalgan yerni ikki dalaga bo‘lib, biriga don sepib, ikkinchisini shudgor qilib dam berish uslubi",
+     "evidence": "haydalgan yerni ikki dalaga bo‘lib (shuning uchun bu uslub ikki dalali almashlab"
+    },
+    {
+     "kind": "term",
+     "term": "qabila ittifoqi",
+     "definition": "Keng hududlarni nazorat qilgan, bir necha yuz ming kishidan iborat qabilalar birlashmasi",
+     "evidence": "keng hududlarni nazorat qiluvchi qabila itti foqlariga birlasha boshlagan"
+    },
+    {
+     "kind": "term",
+     "term": "«Germaniya» asari",
+     "definition": "Rim tarixchisi Tatsitning qadimgi german qabilalari haqidagi mashhur asari",
+     "evidence": "asarlarida uchratamiz"
+    },
+    {
+     "kind": "place",
+     "place": "Reyn va Elba daryolari havzasi",
+     "event": "Qadimgi german qabilalari — franklar, vestgotlar, ostgotlar, vandallar, burgundlar va langobardlar shu yerda yashagan",
+     "evidence": "Reyn va El ba daryolari havzasida joylashganlar"
+    },
+    {
+     "kind": "place",
+     "place": "Shimoliy Afrika",
+     "event": "Vandallar bosib olingan bu yerda o‘z davlatlarini tuzganlar",
+     "evidence": "Shimoliy Afrikada), ostgotlar (Italiyada), frank lar (Galliyada"
+    },
+    {
+     "kind": "place",
+     "place": "Italiya",
+     "event": "Ostgotlar bosib olingan bu yerda o‘z davlatlarini tuzganlar",
+     "evidence": "ostgotlar (Italiyada), frank lar (Galliyada), anglsaks lar (Britani yada"
+    },
+    {
+     "kind": "cause",
+     "cause": "Aholi sonining ko‘payishi va yangi yerga bo‘lgan talabning oshishi",
+     "effect": "German qabilalari yangi hududlarni egallashga intilgan",
+     "evidence": "aholi sonining ko‘payib borishi natijasida yangi yerlarga bo‘lgan talabning oshi shi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xunnlarning IV asrdan Sharqdan ko‘chishi va hujumlari",
+     "effect": "Ko‘plab varvar qabilalar o‘z yerlaridan siljishga majbur bo‘lgan",
+     "evidence": "xunnlarning IV asrdan Sharq dan ko‘chishlari va hujumlari ko‘p lab varvar qabi la larini o‘z yerlaridan siljishga majbur qilgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Omochdan temir plugga o‘tilishi",
+     "effect": "Mehnat unumdorligi va hosil miqdori sezilarli darajada oshgan",
+     "evidence": "omochdan temir plugga o‘tilishi mehnat unumdorligi ga, hosilning oshishiga sabab bo‘lgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xristianlik dinining tarqala boshlashi",
+     "effect": "Ijtimoiy taraqqiyot yanada tezlashib, jamiyat rivoji jadallashgan",
+     "evidence": "Xristianlik dini tarqala boshlashi natijasida ijtimoiy taraqqiyot yana da tezlashgan"
+    },
+    {
+     "kind": "number",
+     "number": "2–3",
+     "unit": "yil",
+     "meaning": "Yerga so‘qa bilan ishlov berilib, o‘g‘itlanmagani uchun hosil shu muddatdan so‘ng keskin kamaygan",
+     "evidence": "2–3 yildan so‘ng hosilning keskin kamayishiga olib kelgan"
+    },
+    {
+     "kind": "number",
+     "number": "bir necha yuz ming",
+     "unit": "kishi",
+     "meaning": "Alemann, got va frank qabila ittifoqlari aynan shuncha kishidan iborat bo‘lgan",
+     "evidence": "bir necha yuz ming kishi dan iborat bo‘lgan"
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "title": "Franklar. Franklar davlatining tashkil topishi",
+   "page": 12,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "486",
+     "date_label": "486-yil",
+     "event": "Xlodvig barcha frank qabilalari ustidan hukmronlik o‘rnatib, franklar davlatiga asos solgan",
+     "evidence": "486yilda Xlodvig franklar davlatiga asos soladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "VI asr oxiri",
+     "date_label": "VI asr oxiri",
+     "event": "Franklarning chek yerlari dehqon oilasi sotishi yoki in’om etishi mumkin bo‘lgan allodga aylangan",
+     "evidence": "VI asr oxiridan franklarning chek yerlari dehqon oilasining sotishi yoki in’om etishi mumkin bo‘lgan mulki – allodga aylanadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "VI asr oxiridan boshlab",
+     "date_label": "VI asr oxiri",
+     "event": "Feodallar yerlarida qullar va kolonlardan tashqari erkinligini yo‘qotgan franklar ham ishlay boshlagan",
+     "evidence": "VI asr oxiridan boshlab qullar, kolonlardan tashqari o‘z erkinligini yo‘qotgan franklar ham ishlaganlar"
+    },
+    {
+     "kind": "date_event",
+     "date": "X asr",
+     "date_label": "X asr",
+     "event": "Parij atrofidagi Il-de-Frans viloyati davlat nomiga asos bo‘lib, mamlakat Fransiya deb atala boshlagan",
+     "evidence": "X asrdan Parij atrofidagi viloyat Il de Frans davlat nomiga asos bo‘ladi va u Fransiya deb atala boshlandi"
+    },
+    {
+     "kind": "person",
+     "person": "Xlodvig",
+     "role": "Merovinglar sardori, franklar davlatining asoschisi va birinchi xristian qiroli",
+     "activity": "Raqiblarini yengib, 486-yilda barcha frank qabilalari ustidan hukmronlik o‘rnatgan va davlatga asos solgan",
+     "evidence": "Ularga frank qabilalaridan biri, merovinglar sardori Xlodvig boshchilik qiladi"
+    },
+    {
+     "kind": "person",
+     "person": "Egidiy",
+     "role": "G‘arbiy Rim imperiyasining Galliyadagi noibi va mustaqil knyazlik asoschisi",
+     "activity": "Imperiya inqirozidan keyin Galliyada mustaqil knyazlik tuzgan",
+     "evidence": "Galliyada rim noibi Egidiy mustaqil knyaz lik tuzadi"
+    },
+    {
+     "kind": "person",
+     "person": "Xilperik",
+     "role": "Franklar qiroli, yer merosiga oid yangi qonun chiqargan hukmdor",
+     "activity": "O‘g‘il voris bo‘lmasa yer qizi, singlisi yoki ukasiga o‘tish huquqini tasdiqlagan",
+     "evidence": "Qirol Xilperik davrida yangi qonun chiqarilib"
+    },
+    {
+     "kind": "person",
+     "person": "Xlodvigning vorislari",
+     "role": "Xlodviddan keyin frank taxtini egallagan qirollar",
+     "activity": "Davlat hokimiyatini mustahkamlash uchun jangchilar va yaqin hamkorlariga benefitsiylar tarqatgan",
+     "evidence": "Xlodvigning vorislari boshqaruvi paytida qirollar – alohida xizmatlari evaziga jangchilar va yaqin hamkorlariga yirik yermulk"
+    },
+    {
+     "kind": "person",
+     "person": "Graf",
+     "role": "Qirol tayinlaydigan viloyat hokimi va harbiy boshliq",
+     "activity": "Soliqlarni yig‘ib olish, harbiy qo‘shinga boshchilik qilish va sud qilish ishlarini bajargan",
+     "evidence": "Graf o‘z hududlarini qirol nomidan boshqarib, aho li dan soliqlarni yig‘ib olish, harbiy qo‘shinga boshchilik qilish, sud qilish"
+    },
+    {
+     "kind": "term",
+     "term": "benefitsiy",
+     "definition": "Senyor tomonidan vassaliga harbiy xizmati evaziga in’om etilgan yirik yermulk; Sharqda iqto deb atalgan",
+     "evidence": "senyorning o‘z vassaliga harbiy xizmati evaziga in’om etgan yermulk"
+    },
+    {
+     "kind": "term",
+     "term": "senyor",
+     "definition": "G‘arbiy Yevropada ixtiyorida qaram dehqonlari va mayda feodal vassallari bo‘lgan yirik yer egasi",
+     "evidence": "o‘rta asrlarda G‘arbiy Yevropada ixtiyorida qaram dehqonlari va mayda feodalvassallari bo‘lgan yer egasi"
+    },
+    {
+     "kind": "term",
+     "term": "vassallik",
+     "definition": "G‘arbiy Yevropa mamlakatlarida bir feodalning boshqa feodalga bo‘ysunish tartibi",
+     "evidence": "bir feodalning boshqa feodalga bo‘ysunish tartibi"
+    },
+    {
+     "kind": "term",
+     "term": "allod",
+     "definition": "Yerga to‘la egalik qilish; avloddan-avlodga meros bo‘lib o‘tadigan yermulk",
+     "evidence": "yerga to‘la egalik qilish; G‘arbiy Yevropa feodal jamiyatida avloddanavlodga meros bo‘lib o‘tadigan yermulk"
+    },
+    {
+     "kind": "term",
+     "term": "«Sali haqiqati»",
+     "definition": "Xlodvig buyrug‘iga binoan yozilgan franklarning an’anaviy odatlari to‘plami, odat huquqi yodgorligi",
+     "evidence": "Xlodvig buyrug‘iga binoan yozilgan franklarning an’anaviy odatlari to‘plami «Sali haqiqati» deb nomlangan"
+    },
+    {
+     "kind": "place",
+     "place": "Reyn daryosi quyi oqimi",
+     "event": "Buyuk ko‘chishlar boshlanishiga qadar franklar shu hududda yashaganlar",
+     "evidence": "franklar Reyn daryosi quyi oqimidagi hu dudlarda yashaganlar"
+    },
+    {
+     "kind": "place",
+     "place": "Shimoliy Galliya",
+     "event": "Frank qirolligi shu hududda tashkil topgan va undan keyin kengaygan",
+     "evidence": "Shimoliy Galliyada tashkil topgan frank qirolligi"
+    },
+    {
+     "kind": "place",
+     "place": "Luara daryosidan shimoldagi hududlar",
+     "event": "Urug‘ jamoa tuzumi bu yerda yana uzoq yillar saqlanib qolgan",
+     "evidence": "Luara daryosidan shimoldagi german qabilalari esa yana uzoq yillar urug‘ jamoa bo‘lib yashashda davom etganlar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xlodvigning xristianlikni Rimdan qabul qilishi",
+     "effect": "Gall yepiskopligi uni qo‘llab-quvvatlagan va qirol aholi orasida kuchaygan",
+     "evidence": "Xlodvigning xristianlikka o‘tishi unga aholi orasida ta’siri kuchli bo‘lgan gall yepiskopligining qo‘llashini ta’minlay"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xristianlik orqali Rim madaniyatining turli sohalari kirib kelishi",
+     "effect": "Franklar va rimliklar asta-sekin yaqinlashgan",
+     "evidence": "Xristianlik orqali Rim madaniyatining turli sohalari franklar davlatiga kirib kela boshlagan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yerning xususiy mulkka aylanishi",
+     "effect": "Mulkiy tabaqalanish tezlashib, yirik yer egaligi o‘sgan",
+     "evidence": "Yerning xususiy mulkka aylanishi, mulkiy tabaqalanishni tezlashti rib, yirik yer egaligining o‘sishiga olib keladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Tabiiy ofatlar, qurg‘oqchilik va hosilsizlikning tez-tez takrorlanishi",
+     "effect": "Dehqonlar o‘z yeridan ajralib, feodaldan ijara yer olib ishlashga majbur bo‘lgan",
+     "evidence": "Tabiiy ofatlar, qurg‘oqchilik, hosilsizlikning teztez takrorlanib turishi dehqonlarni o‘z yerlaridan ajrali shi ga"
+    },
+    {
+     "kind": "number",
+     "number": "1/3",
+     "unit": "qism",
+     "meaning": "Sud qarori bilan yig‘ilgan jarimalarning shu qismi qirol xazinasiga yuborilgan",
+     "evidence": "jarimalarning 1/3 qismi qirol xazinasiga yubo rilar edi"
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "title": "Franklar imperiyasi",
+   "page": 17,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "768–814",
+     "date_label": "768–814-yillar",
+     "event": "Buyuk Karl franklar qirolligini 46 yil boshqargan, 800-yildan davlati imperiya deb atalgan",
+     "evidence": "Karl sulola asoschisi Frank lar qirolligini (800yildan imperiyasini) 46 yil (768–814) boshqargan"
+    },
+    {
+     "kind": "date_event",
+     "date": "773",
+     "date_label": "773-yil",
+     "event": "Karl germanlarning langobard qabilasi Italiyada tuzgan davlatiga qarshi urush boshlagan",
+     "evidence": "germanlarning langobard qabilasi Italiyada tuzgan davlatiga qarshi 773yilda boshlanadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "778",
+     "date_label": "778-yil",
+     "event": "Karlning arab xalifaligi istilo qilgan Ispaniyaga qarshi yurishi muvaffaqiyatsiz tugagan",
+     "evidence": "Arab xalifaligi istilo qilgan Ispaniyaga qarshi 778yilda Karlning yurishi muvaffaqiyatsiz tugaydi"
+    },
+    {
+     "kind": "date_event",
+     "date": "772–804",
+     "date_label": "772–804-yillar",
+     "event": "Reyn daryosining o‘ng sohilida yashagan saks qabilalariga qarshi urushlar davom etgan",
+     "evidence": "saks qabi lalariga qarshi urushlar 30 yildan ortiq (772–804) davom etadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "800",
+     "date_label": "800-yil dekabr",
+     "event": "Rim papasi Karlga imperatorlik tojini kiydirgan va G‘arbda yangidan imperiya paydo bo‘lgan",
+     "evidence": "800yil ning dekabrida Karlga imperatorlik tojini kiydiradi"
+    },
+    {
+     "kind": "date_event",
+     "date": "VIII asr",
+     "date_label": "VIII asr",
+     "event": "So‘ngan G‘arbiy Rim imperiyasi haqidagi xotiralar turli xalqlar va qabilalar xotirasida saqlanib qolgan",
+     "evidence": "so‘ngan imperiya haqidagi xotiralar VIII asrda ham G‘arbiy Yev ropaning turli xalq lari va qabilalari xotirasida"
+    },
+    {
+     "kind": "date_event",
+     "date": "843",
+     "date_label": "843-yil",
+     "event": "Verden shartnomasi tuzilib, uning o‘rnida keyinchalik Fransiya, Germaniya va Italiya davlatlari tashkil topgan",
+     "evidence": "Verden shahrida 843yilda tu zilgan shartnomaga binoan vujudga kelgan qirolliklar"
+    },
+    {
+     "kind": "person",
+     "person": "Buyuk Karl",
+     "role": "Karl sulolasining asoschisi, 768–814-yillarda hukmronlik qilgan frank qiroli va imperator",
+     "activity": "Ko‘plab harbiy yurishlarga boshchilik qilib, yirik saltanat tuzgan, yangi qonunlar va maorifga asos solgan",
+     "evidence": "Buyuk» nomi unga ta rixchilar tomonidan ko‘plab harbiy yurishlarga boshchilik qilib"
+    },
+    {
+     "kind": "person",
+     "person": "Roland",
+     "role": "Karlning jiyani, franklar grafi va sarkardasi",
+     "activity": "778-yilda Ispaniyaga qarshi yurishda halok bo‘lib, keyinchalik xalq qahramoniga aylangan",
+     "evidence": "Karlning jiya ni graf Roland bu urushda halok bo‘ladi"
+    },
+    {
+     "kind": "person",
+     "person": "Papa Lev III",
+     "role": "Rim papasi, Karlga imperatorlik tojini kiydirgan diniy rahbar",
+     "activity": "800-yil dekabrida Karlga imperatorlik tojini kiydirib, G‘arbda imperiyani tiklagan",
+     "evidence": "Rim mahalliy zoda gonlarining papa Lev III ga qarshi isyon"
+    },
+    {
+     "kind": "person",
+     "person": "Horun ar-Rashid",
+     "role": "Arab xalifasi, Buyuk Karl davrida Sharqda hukmronlik qilgan hukmdor",
+     "activity": "Elchilari orqali Karlga qimmatbaho sovg‘alar va Quddusdagi muqaddas yerni taqdim etgan",
+     "evidence": "arab xalifasi Horun ar-Rashid o‘z elchilari or qali Karlga qimmatbaho sovg‘alar bilan birga Quddusdagi"
+    },
+    {
+     "kind": "term",
+     "term": "feod",
+     "definition": "Harbiy xizmat evaziga taqdim etilgan, keyinchalik merosiy mulkka aylangan yermulk",
+     "evidence": "harbiy xizmat evaziga taqdim etilib, keyinchalik merosiy mulkka aylangan"
+    },
+    {
+     "kind": "term",
+     "term": "ritsar",
+     "definition": "Otliq jangchi; faqat jangovar ot va qurol sotib olishga imkoni bo‘lgan boy zamindorlar xizmat qilgan",
+     "evidence": "R itsarlar (nemischa ritter – otliq) bo‘ linmalarida – faqat boy zamindorlar"
+    },
+    {
+     "kind": "term",
+     "term": "gersog",
+     "definition": "Yirik qabilalarni boshqargan, keyinchalik eng yuksak unvonlardan biriga aylangan lavozim",
+     "evidence": "gersoglar (nemischa, saylangan harbiy yo‘lboshchi, keyinchalik merosiy qabila boshlig‘i"
+    },
+    {
+     "kind": "term",
+     "term": "markgraf",
+     "definition": "Chegara harbiy viloyati — markani boshqargan hokim",
+     "evidence": "markalar (nemischa, chegara harbiy viloyati) tuzib, ularni markgraflar (nemischa, chegara viloyati hokimi) boshqargan"
+    },
+    {
+     "kind": "term",
+     "term": "«Roland haqida qo‘shiq»",
+     "definition": "Rolandning jasorati va halokati haqida yaratilgan fransuz xalq dostoni",
+     "evidence": "u haq da «Roland haqida qo‘shiq» dostoni yaratiladi"
+    },
+    {
+     "kind": "place",
+     "place": "Italiya",
+     "event": "Karl bu yerda langobardlar davlatini yengib, yerlarini grafliklarga bo‘lib, Frank qirolligiga qo‘shib olgan",
+     "evidence": "germanlarning langobard qabilasi Italiyada tuzgan davlatiga qarshi"
+    },
+    {
+     "kind": "place",
+     "place": "Saksoniya",
+     "event": "Uzoq kurashdan so‘ng bu hudud Buyuk Karl davlatiga qo‘shib olingan",
+     "evidence": "Saksoniya ham Buyuk Karl davlatiga qo‘shib olingan"
+    },
+    {
+     "kind": "place",
+     "place": "Verden shahri",
+     "event": "843-yilda shu shaharda tuzilgan shartnoma imperiyaning bo‘linishiga asos bo‘lgan",
+     "evidence": "Verden shahrida 843yilda tu zilgan shartnomaga binoan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Rim zodagonlarining papa Lev III ga qarshi isyon ko‘tarishi",
+     "effect": "Karl qo‘shin yuborib isyonni bostirgan va papaga yordam ko‘rsatgan",
+     "evidence": "papa Lev III ga qarshi isyon ko‘ tarishi orqali vujudga kelgan. Karl qo‘shin yuborib isyonni bostirgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Franklar mamlakatining hududlari behad katta bo‘lishi",
+     "effect": "Mamlakatdagi nazorat sezilarli darajada murakkablashgan",
+     "evidence": "Franklar mamlakatining hududlari behad katta bo‘lishi nazoratni murakkablashtirgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Graflarning graflikda o‘rnashib, uni o‘z avlodlariga meros qoldirishga intilishi",
+     "effect": "Imperiyaning zaiflashuvi va parchalanishiga yo‘l ochilgan",
+     "evidence": "graflar bor kuchi bilan graflikda o‘rnashishga, uni o‘z avlodlariga meros qilib qoldirishga intilgan. Bu esa franklar imperiyasini kelajakda zaif lashuvi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qirolning sud ishlarini boshqarishni graflarga topshirishi",
+     "effect": "Graflarning hokimiyati yanada kuchayib ketgan",
+     "evidence": "Qirolning sud ishlarini boshqarishni graflarga topshirishi ham ularning hokimiyatini kuchaytirib yuborgan"
+    },
+    {
+     "kind": "number",
+     "number": "46",
+     "unit": "yil",
+     "meaning": "Buyuk Karl franklar qirolligini aynan shuncha muddat davomida boshqargan",
+     "evidence": "46 yil (768–814) boshqargan"
+    },
+    {
+     "kind": "number",
+     "number": "30",
+     "unit": "yildan ortiq",
+     "meaning": "Saks qabilalariga qarshi urushlar aynan shuncha vaqt davom etgan",
+     "evidence": "30 yildan ortiq (772–804) davom etadi"
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "title": "Britaniyadan Angliyaga",
+   "page": 21,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "407",
+     "date_label": "407-yil",
+     "event": "Rim legionlari Britaniyani tashlab Italiyaga qaytib ketgan, orolning kelt aholisi o‘z holicha qolgan",
+     "evidence": "Rim legionlari 407yilda Brita niyani tashlab Italiyaga qaytadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "V asr o‘rtasi",
+     "date_label": "V asr o‘rtalari",
+     "event": "Yutlar Kent viloyatini bosib olgan, ularning izidan anglsakslar ham keltlarga hujum boshlagan",
+     "evidence": "Yutlar V asr o‘rtalarida Kent viloyatini bosib oladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "VI asr boshi",
+     "date_label": "VI asr boshlari",
+     "event": "Amvrosiy Avrelian brittlarni birlashtirib, qator yorqin g‘alabalarga erishgan",
+     "evidence": "Amvrosiy Avrelian VI asrning boshlarida brittlarni birlashtiradi"
+    },
+    {
+     "kind": "date_event",
+     "date": "842",
+     "date_label": "842-yil",
+     "event": "Normannlar Londonni bosib olib, shaharni talab, yondirib yuborganlar",
+     "evidence": "normannlar 842yilda Lon don ni bosib olib, talaydilar va yondirib yuboradilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "879",
+     "date_label": "879-yil",
+     "event": "Buyuk Alfred daniyaliklar bilan tinchlik sulhini tuzgan va orol ikki qismga bo‘lingan",
+     "evidence": "Alfred 879yilda daniyaliklar bilan tinchlik sulhini tuzadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "X asr",
+     "date_label": "X asrning so‘nggi choragi",
+     "event": "Angliya qirolligi Daniya qonunlari viloyatini qo‘shib olgan",
+     "evidence": "X asrning so‘nggi choragiga kelganda Angliya qirolligi"
+    },
+    {
+     "kind": "date_event",
+     "date": "XI asr boshi",
+     "date_label": "XI asr boshlari",
+     "event": "Daniya qiroli ingliz sohiliga qo‘shin tushirgan, faqat London shahri qarshilik ko‘rsatgan",
+     "evidence": "Daniya qiroli XI asr boshida ingliz sohiliga o‘z qo‘shinini tushiradi"
+    },
+    {
+     "kind": "person",
+     "person": "Amvrosiy Avrelian",
+     "role": "Britaniya orolidagi so‘nggi rimliklardan bo‘lgan sarkarda va brittlar yo‘lboshchisi",
+     "activity": "VI asr boshlarida brittlarni birlashtirib, anglsakslar tazyiqini deyarli yarim asrga to‘xtatgan",
+     "evidence": "Amvrosiy Avrelian nomi bilan bog‘liq. U oroldagi so‘nggi rimliklardan edi"
+    },
+    {
+     "kind": "person",
+     "person": "Buyuk Alfred",
+     "role": "Uesseks qiroli, daniyaliklarga qarshi kurashgan va davlatni mustahkamlagan hukmdor",
+     "activity": "Daniyaliklarni bir necha bor mag‘lub etib, yangi kuchli qo‘shin tuzgan va yilnoma yaratishni buyurgan",
+     "evidence": "Buyuk Alfred (871—900) Uesseksda taxtga kelguniga qadar"
+    },
+    {
+     "kind": "person",
+     "person": "Artur",
+     "role": "Rivoyatlarda bosqinchilarga zarba bergan qahramon sifatida shakllangan siymo",
+     "activity": "Uning atrofida VI asrga aloqasi bo‘lmagan ko‘plab tarixiy afsonalar to‘plangan",
+     "evidence": "Dostonchilar uni Artorius yoki Artur deb atay boshlashgan"
+    },
+    {
+     "kind": "term",
+     "term": "brittlar",
+     "definition": "Kelt qabilalaridan bo‘lib, Britaniya orolining asosiy aholisini tashkil etgan xalq",
+     "evidence": "Brittlar – kelt qabilalaridan bo‘lib, Britaniyaning aso siy aholisi hisoblangan"
+    },
+    {
+     "kind": "term",
+     "term": "drujina",
+     "definition": "Ko‘ngillilardan iborat harbiy bo‘linma; bir necha o‘ndan bir necha yuzgacha jangchini birlashtirgan",
+     "evidence": "Drujina – ko‘ngillilardan iborat harbiy bo‘linma"
+    },
+    {
+     "kind": "term",
+     "term": "Denlo",
+     "definition": "879-yilgi sulhga ko‘ra skandinavlarga qoldirilgan shimoliy hududlarning nomi",
+     "evidence": "Skandinavlarga qoldirilgan yerlar Denlo nomini oladi"
+    },
+    {
+     "kind": "term",
+     "term": "burg",
+     "definition": "Alfred o‘z mulklari chegaralarida barpo etgan qal’alar; daniyaliklar qamalni xush ko‘rmagan",
+     "evidence": "o‘z mulklari chegaralarida ko‘plab qal’alar – burglar barpo ettiradi"
+    },
+    {
+     "kind": "term",
+     "term": "«Anglosakson solnomasi»",
+     "definition": "Buyuk Alfred davrida tuzilgan, yilma-yil muhim voqealarni qayd etgan yilnoma",
+     "evidence": "Anglosakson solnomasi» tuzilib, unda yilmayil muhim voqealar qayd etila boshlanadi"
+    },
+    {
+     "kind": "place",
+     "place": "Yutlandiya yarimoroli",
+     "event": "Yut, angl va saks qabilalari Germaniyaning shimoli bilan birga shu yerda yashagan",
+     "evidence": "Bu qabilalar Germaniya ning shimoli va Yutlandiya yarimorolida yashardi"
+    },
+    {
+     "kind": "place",
+     "place": "Uesseks qirolligi",
+     "event": "Daniyaliklar istilosiga qarshi kurashni davom ettirgan yagona anglsaks qirolligi",
+     "evidence": "Qarshilikni faqat Uesseks qirolligi davom ettiradi"
+    },
+    {
+     "kind": "place",
+     "place": "Armorika viloyati",
+     "event": "Keltlar shu yerga ko‘chib o‘tgach, hudud Bretan nomini olgan va bu nomni hozirgacha saqlagan",
+     "evidence": "qit’aga, Armorika viloyatiga ko‘chib o‘tadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Piktlardan himoyalanish zarurati",
+     "effect": "Brittlar germanlarning yut, angl va saks qabilalaridan yollanma drujinalarni taklif etgan",
+     "evidence": "Piktlardan himoyalanish uchun mahalliy britt lar ilk marotaba germanlarning yut, angl va saks qabilalari dan yollanma drujinalarni taklif etgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Amvrosiy Avreliandan so‘ng brittlarda munosib yo‘lboshchi qolmasligi",
+     "effect": "Anglsakslar orolning katta qismini bosib olishga muvaffaq bo‘lgan",
+     "evidence": "brittlarda munosib yo‘lboshchi bo‘lmasligi anglsakslar tomonidan orolning katta qismi bosib olinishiga imkon beradi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Angl lar yashagan Mersiya shevasining tobora keng qo‘llanishi",
+     "effect": "Istilochilar tili ingliz, mamlakat esa Angliya nomini olgan",
+     "evidence": "angl lar yashagan Mersiya shevasi tobora keng qo‘llanila boshlaydi. Shu tufayli keyinchalik istilochilar muomalasidagi til ingliz, mamlakat esa Angliya nomini oladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Anglsaks qirolliklarining ichki nizolardan zaiflashgani",
+     "effect": "Ular bosqinchilarni oroldan qaytara olmagan",
+     "evidence": "Ichki nizolardan zaiflashgan anglsaks qirolliklari istilochilarni qaytara olmagan"
+    },
+    {
+     "kind": "number",
+     "number": "3",
+     "unit": "kema",
+     "meaning": "German qabilalari orolga dastlab aynan shuncha kemada kelib tushgan",
+     "evidence": "Dastlab germanlar uchta kemada kelishadi"
+    },
+    {
+     "kind": "number",
+     "number": "7",
+     "unit": "qirollik",
+     "meaning": "Istilochilar Britaniya yerlarida aynan shuncha qirollik tuzishgan",
+     "evidence": "Istilochilar Britaniya yerlarida yettita qirollik tuzishadi"
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "title": "Muqaddas Rim imperiyasi",
+   "page": 26,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "843",
+     "date_label": "843-yil",
+     "event": "Franklar imperiyasi uchga bo‘linib ketgan, dastlab ularning hammasini Buyuk Karlning avlodlari boshqargan",
+     "evidence": "Franklar imperiyasi 843yilda uchga bo‘linib ketganida, dastlab ularning hammasini Buyuk Karl ning avlodlari boshqargan"
+    },
+    {
+     "kind": "date_event",
+     "date": "919",
+     "date_label": "919-yil",
+     "event": "Sharqiy Frank qirolligida zodagonlar Saksoniya gersogi Genrixni qirollikka saylagan",
+     "evidence": "919yili Sharqiy Frank qirolligida (bo‘lajak Germaniya) mahalliy zodagonlar knyaz lardan eng qudratlisi bo‘lgan Saksoniya gersogi Genrixni qirollikka saylaydilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "936–973",
+     "date_label": "936–973-yillar",
+     "event": "Otton I davrida kuchli nemis otliq qo‘shini vujudga kelgan, uning asosini og‘ir qurollangan ritsarlar tashkil etgan",
+     "evidence": "Otton I (936–973) davrida kuchli nemis otliq qo‘shini vujudga kel di"
+    },
+    {
+     "kind": "date_event",
+     "date": "955",
+     "date_label": "955-yil",
+     "event": "Bavariyaning Lex daryosi bo‘yida bo‘lib o‘tgan og‘ir jangda vengerlar mag‘lub etilgan",
+     "evidence": "955yilda Bavariya ning Lex daryosi bo‘yida bo‘lib o‘tgan og‘ir jang da vengerlar mag‘lub etiladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "962",
+     "date_label": "962-yil",
+     "event": "Papa Ioann XII Otton I ga imperatorlik tojini kiydirgan va yangi imperiya vujudga kelgan",
+     "evidence": "962yilda o‘z qo‘shini bilan Rimga kelgan Otton I ga papa Ioann XII imperatorlik tojini kiydiradi"
+    },
+    {
+     "kind": "date_event",
+     "date": "962–1806",
+     "date_label": "962–1806-yillar",
+     "event": "Muqaddas Rim imperiyasi uzoq asrlar davomida hukm surgan",
+     "evidence": "Muqaddas Rim imperiyasi 962yildan 1806yilgacha hukm surgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "999–1003",
+     "date_label": "999–1003-yillar",
+     "event": "Gerbert Silvestr III nomi bilan Rim papaligiga saylangan",
+     "evidence": "Silvestr III (999–1003) nomi bilan Rim papaligiga saylanishiga erishgan"
+    },
+    {
+     "kind": "person",
+     "person": "Genrix I",
+     "role": "Saksoniya gersogi, 919-yilda Germaniya qiroli etib saylangan hukmdor",
+     "activity": "Vengerlar bilan 9 yilga sulh tuzib, mamlakat mudofaa qudratini yuksaltirish tadbirlarini o‘tkazgan",
+     "evidence": "Saksoniya gersogi Genrixni qirollikka saylaydilar"
+    },
+    {
+     "kind": "person",
+     "person": "Otton I",
+     "role": "Genrix I ning o‘g‘li, 936–973-yillarda hukmronlik qilgan nemis qiroli va imperator",
+     "activity": "955-yilda vengerlarni mag‘lub etib, 962-yilda Rimda imperatorlik tojini kiygan",
+     "evidence": "Genrix I ning o‘g‘li Otton I (936–973) davrida kuchli nemis otliq qo‘shini vujudga kel di"
+    },
+    {
+     "kind": "person",
+     "person": "Otton III",
+     "role": "Otton I ning nabirasi, zamondoshlari «dunyo mo‘jizasi» deb nomlagan imperator",
+     "activity": "Rimni ulkan davlat poytaxtiga aylantirishni va butun xristian dunyosini birlashtirishni orzu qilgan",
+     "evidence": "Otton I ning nabirasi Ot ton III Rimni ulkan davlatning poytaxtiga aylantirish orzusida bo‘lgan"
+    },
+    {
+     "kind": "person",
+     "person": "Ioann XII",
+     "role": "Rim papasi, Otton I ni imperatorlik toji bilan taqdirlagan diniy rahbar",
+     "activity": "962-yilda Otton I ga toj kiydirib, G‘arbda yangi imperiyaning e’lon qilinishiga sabab bo‘lgan",
+     "evidence": "papa Ioann XII imperatorlik tojini kiydiradi"
+    },
+    {
+     "kind": "term",
+     "term": "Muqaddas Rim imperiyasi",
+     "definition": "962-yilda Otton I toj kiydirgandan so‘ng vujudga kelgan, 1806-yilgacha hukm surgan davlat",
+     "evidence": "Yangi imperiya – Muqaddas Rim imperiyasi nomini oladi"
+    },
+    {
+     "kind": "term",
+     "term": "burg",
+     "definition": "Qal’a; Genrix I davrida aholi va ularning asosiy mulki shu yerga ko‘chirilgan istehkom",
+     "evidence": "har 9 kishidan bittasini tanlab, uni burg (qal’a)ga ko‘ chi radi"
+    },
+    {
+     "kind": "term",
+     "term": "karolinglar sulolasi",
+     "definition": "Franklar imperiyasini boshqargan sulola; Germaniyada mahalliy sakson sulolasi bilan almashgan",
+     "evidence": "franklarning karolinglar sulolasi o‘rniga mahalliy saksoniyaliklar sulolasi hoki myatga keladi"
+    },
+    {
+     "kind": "term",
+     "term": "abbat",
+     "definition": "Yirik katolik monastirining boshlig‘i, imperatorning joylardagi vakili",
+     "evidence": "yepiskop va abbatlarga yermulk, boyliklardan tashqari ko‘plab huquq va imtiyozlar beradi"
+    },
+    {
+     "kind": "term",
+     "term": "«dunyo mo‘jizasi»",
+     "definition": "Zamondoshlari tomonidan Otton I ga berilgan nom; u davlatni kuchaytirgan hukmdor sifatida atalgan",
+     "evidence": "Zamondoshlari «dunyo mo‘ jizasi» deb nomlagan"
+    },
+    {
+     "kind": "place",
+     "place": "Bavariya",
+     "event": "955-yilda Lex daryosi bo‘yida bo‘lib o‘tgan og‘ir jangda vengerlar mag‘lubiyatga uchragan",
+     "evidence": "955yilda Bavariya ning Lex daryosi bo‘yida"
+    },
+    {
+     "kind": "place",
+     "place": "Italiyaning shimoliy hududlari",
+     "event": "Imperiya tarkibiga kirgan, lekin bu yerdagi shaharlar german imperatorlariga to‘liq bo‘ysunmagan",
+     "evidence": "Uning tarkibiga Germaniya yerlaridan tashqari Italiyaning shimoliy hududlari ham kirgan"
+    },
+    {
+     "kind": "place",
+     "place": "Alp tog‘lari",
+     "event": "German qirollari Rimda imperatorlik tojini kiyish uchun shu yo‘l orqali Italiyaga yurish qilgan",
+     "evidence": "o‘z qo‘shini bilan Alp tog‘lari orqali Italiya ga yurish qilib"
+    },
+    {
+     "kind": "cause",
+     "cause": "Zodagonlarning saksoniyalik gersog Genrixni qirol etib saylashi",
+     "effect": "Karolinglar sulolasi o‘rniga mahalliy sulola kelib, Germaniya qirolligi vujudga kelgan",
+     "evidence": "Saksoniya gersogi Genrixni qirollikka saylaydilar. Natijada, franklarning karolinglar sulolasi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Lex daryosi bo‘yidagi jangda vengerlarning mag‘lub etilishi",
+     "effect": "Vengerlarning Germaniyaga bosqinlari to‘xtagan",
+     "evidence": "Shundan so‘ng ularning Germaniyaga bosqinlari to‘xtaydi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Otton I ning yepiskop va abbatlarga yermulk, boylik va imtiyozlar berishi",
+     "effect": "Cherkov zodagonlari hokimiyati bo‘yicha gersog va graflardan kam bo‘lmagan",
+     "evidence": "U Germaniyadagi yepiskop va abbatlarga yermulk, boyliklardan tashqari ko‘plab huquq va imtiyozlar beradi. Natijada cher kov zodagonlari o‘z imkoniyatlari"
+    },
+    {
+     "kind": "cause",
+     "cause": "Imperiyaning xristian katolik cherkovi homiyligida bo‘lgani",
+     "effect": "Unga «muqaddas» nomi berilgan va imperiya uzoq asrlar hukm surgan",
+     "evidence": "Xristian katolik cherkovi homiyligida bo‘lgani uchun unga «muqaddas» nomi berilgan"
+    },
+    {
+     "kind": "number",
+     "number": "9",
+     "unit": "yil",
+     "meaning": "Genrix I vengerlar bilan aynan shuncha muddatga tinchlik sulhi tuzgan",
+     "evidence": "Vengerlar bilan 9 yilga tinchlik sulhi tuzgan qirol"
+    },
+    {
+     "kind": "number",
+     "number": "9 kishidan 1",
+     "unit": "kishi",
+     "meaning": "Qishloqda yashagan har shuncha kishidan bittasi burg qurish uchun ko‘chirilgan",
+     "evidence": "qishloqda yashaydigan har 9 kishidan bittasini"
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "title": "Vizantiya: G‘arb va Sharq orasida",
+   "page": 29,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "395",
+     "date_label": "395-yil",
+     "event": "Imperator Feodosiyning o‘g‘illari Rim imperiyasini ikki mustaqil davlatga bo‘lib olishgan",
+     "evidence": "Imperator Feodosiy ning o‘g‘il lari 395yilda Rim im p eriyasini ikki mustaqil davlatga"
+    },
+    {
+     "kind": "date_event",
+     "date": "VI asr",
+     "date_label": "VI asr",
+     "event": "Konstantinopol, Aleksandriya, Antiokiya va Edessa yirik savdo va hunarmandchilik markazlari sifatida gullab-yashnagan",
+     "evidence": "VI asr da ham Konstantinopol, Aleksandriya, Anti oxiya, Edessa sha har lari yirik savdo va hunarmandchilik markazlari sifatida gullabyashnagan"
+    },
+    {
+     "kind": "date_event",
+     "date": "527–565",
+     "date_label": "527–565-yillar",
+     "event": "Vizantiya imperiyasi o‘z qudrati cho‘qqisiga Yustinian I imperatorligi davrida erishgan",
+     "evidence": "Yustinian I imperatorligi davri (527–565)da erishadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "534",
+     "date_label": "534-yil",
+     "event": "Yustinian I sarkarda Velisariyni Shimoliy Afrikadagi vandallarga qarshi yuborgan",
+     "evidence": "U 534yilda sarkarda Velisariyni Shimoliy Afrikada"
+    },
+    {
+     "kind": "date_event",
+     "date": "VI asr o‘rtalari",
+     "date_label": "VI asr o‘rtalari",
+     "event": "Vizantiyaga slavyan qabilalari kelib o‘rnasha boshlagan",
+     "evidence": "Vizantiyaga VI asr ning o‘rtalaridan slavyan qabi lalari kelib o‘rnasha boshladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "VII asr",
+     "date_label": "VII asr",
+     "event": "Arab xalifaligi hujumlari natijasida vizantiyaliklar Suriya va Misrni boy bergan",
+     "evidence": "VII asrda Arab xalifaligi hujumlari natijasida vizantiyaliklar Suriya va Misrni ham boy beradi"
+    },
+    {
+     "kind": "date_event",
+     "date": "X–XI asr",
+     "date_label": "X–XI asrlar",
+     "event": "Imperatorlar amaldorlar, ibodatxonalar va monastirlarga ko‘plab yermulklar in’om etgan",
+     "evidence": "X–XI asrlarda imperatorlar amaldorlar, ibodatxonalar va monastirlarga ko‘plab yermulklar in’om etadilar"
+    },
+    {
+     "kind": "person",
+     "person": "Yustinian I",
+     "role": "527–565-yillarda hukmronlik qilgan Vizantiya imperatori va islohotchi hukmdor",
+     "activity": "Islohotlar o‘tkazib, Rim imperiyasining avvalgi hududlarini tiklash uchun harbiy yurishlar uyushtirgan",
+     "evidence": "Yustinian I siymosida harakatchanlik, qat’iyat bilan bir qatorda siyosatdonlarga xos ikki yuzlamachilik"
+    },
+    {
+     "kind": "person",
+     "person": "Feodora",
+     "role": "Yustinian I ning rafiqasi, yoshligida aktrisa bo‘lgan malika",
+     "activity": "Aqli, shuhratparastligi va qo‘rqmasligi bilan ajralib turib, o‘z davrida mashhur bo‘lgan",
+     "evidence": "Yustinianning rafiqasi malika Feodora ham o‘z davrida mashhur bo‘lgan. Yoshligida Feodora aktrisa bo‘lgan"
+    },
+    {
+     "kind": "person",
+     "person": "Velisariy",
+     "role": "Yustinian I ning sarkardasi, Shimoliy Afrika va Italiyaga yurishlarga boshchilik qilgan",
+     "activity": "Vandallar qirolligini bo‘ysundirib, Shimoliy Afrikani Vizantiya viloyatiga aylantirgan",
+     "evidence": "Shundan so‘ng Velisariy Italiyaga yo‘l oladi"
+    },
+    {
+     "kind": "person",
+     "person": "Yustin",
+     "role": "Yustinian I ning amakisi, oddiy askardan imperatorlik taxtiga ko‘tarilgan hukmdor",
+     "activity": "Jiyanini saroyga yaqinlashtirib, uning yaxshi ta’lim olishiga sharoit yaratgan",
+     "evidence": "Amakisi Yustin oddiy askardan sarkarda darajasigacha ko‘tarilib"
+    },
+    {
+     "kind": "person",
+     "person": "Feodosiy",
+     "role": "Rim imperatori, imperiyani ikki o‘g‘li o‘rtasida bo‘lib bergan hukmdor",
+     "activity": "Vafotidan so‘ng o‘g‘illari imperiyani ikki mustaqil davlatga bo‘lib olishgan",
+     "evidence": "Imperator Feodosiy ning o‘g‘il lari"
+    },
+    {
+     "kind": "term",
+     "term": "Vizantiya",
+     "definition": "Rim imperiyasining sharqiy hududlarida vujudga kelgan davlat; Sharqiy Rim imperiyasi deb ham atalgan",
+     "evidence": "Vizantiya – Rim imperiyasi vorisi bo‘lib, imperiyaning sharqiy hududlarida vujudga kelgani uchun u Sharqiy Rim imperiyasi deb ham ataladi"
+    },
+    {
+     "kind": "term",
+     "term": "vasilevs",
+     "definition": "Yunoncha «podsho» ma’nosini bildiruvchi, Vizantiya imperiyasini boshqargan hukmdor unvoni",
+     "evidence": "Vizantiya imperiyasini vasilevs (yunoncha, podsho) boshqargan"
+    },
+    {
+     "kind": "term",
+     "term": "sinklit",
+     "definition": "Vasilevsga bo‘ysungan va maslahat organiga aylangan senat",
+     "evidence": "maslahat organiga aylangan sinklit (lotincha, senat"
+    },
+    {
+     "kind": "term",
+     "term": "numisma",
+     "definition": "Vizantiya oltin puli; ko‘p asrlar davomida eng ishonchli xalqaro pul hisoblangan",
+     "evidence": "Vizantiya oltin puli (numisma) ko‘p asrlar davomida eng ishonchli xalqaro pul hisoblangan"
+    },
+    {
+     "kind": "term",
+     "term": "«Oltin ko‘prik»",
+     "definition": "Konstantinopolning Osiyo va Yevropani bog‘lagani uchun olgan nomi",
+     "evidence": "Konstantinopol Osiyo va Yevropani bog‘laydigan «Oltin ko‘prik» hisoblangan"
+    },
+    {
+     "kind": "place",
+     "place": "Konstantinopol",
+     "event": "Shahar yunonlarning Megara koloniyasi o‘rnida vujudga kelgan va Vizantiy nomidan atalgan",
+     "evidence": "Kon stantinopol shahri o‘rnidagi yunonlarning Megara shahri koloniyasi Vizantiy nomi dan"
+    },
+    {
+     "kind": "place",
+     "place": "Kichik Osiyo",
+     "event": "Bolqon yarimoroli, Kavkaz, Suriya va Misr bilan birga Vizantiya tarkibiga kirgan hudud",
+     "evidence": "Vizantiya tarkibiga Bolqon yarimoroli, Kichik Osiyo, Kavkaz, Suriya, Falastin, Misr, shuningdek, Krit va Kipr orollari kirgan"
+    },
+    {
+     "kind": "place",
+     "place": "Ravenna",
+     "event": "Vizantiya Italiyada poytaxti shu shahar bo‘lgan alohida noiblik tuzgan",
+     "evidence": "poytaxti Ravenna bo‘lgan alohida noiblik tuzishadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yunonlarning imperiyada son jihatidan ko‘p bo‘lishi",
+     "effect": "Davrlar o‘tib yunon tili lotin tilini surib chiqarib, davlat tiliga aylangan",
+     "evidence": "yunon lar son jihatidan ko‘p bo‘lganidan davrlar o‘tib, yunon tili lotin tilini surib chiqarib, davlat tiliga aylanadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Aholining katta qismini erkin dehqonlar tashkil etishi va sun’iy sug‘orishga asoslangan ziroatchilik",
+     "effect": "Imperiyaning iqtisodiy barqarorligi ta’minlangan",
+     "evidence": "aholining katta qismini erkin dehqonlar tashkil eti shi, sun’iy sug‘orishga asos lan gan sermahsul ziroatchilikning bo‘lishi uning iqti sodiy barqarorligini ta’minlagan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yustinian I ning Rim imperiyasining avvalgi hududlarini tiklash maqsadi",
+     "effect": "U vandallar, ostgotlar va vestgotlarga qarshi harbiy yurishlar uyushtirgan",
+     "evidence": "Yustinian I ning maqsadi Rim imperiyasi ning avvalgi hududlarini tiklash edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Feodallar hokimiyatining kuchayishi va markaziy hokimiyatning zaiflashishi",
+     "effect": "IX–XI asrlarda yer egaligi munosabatlari uzilkesil o‘rnatilgan",
+     "evidence": "Feodallar hokimiyatining ku chayishi va markaziy hokimiyatning zaiflashishi IX–XI asr larda yer egaligi munosabatlarining uzilkesil o‘rnatilishiga olib keladi"
+    },
+    {
+     "kind": "number",
+     "number": "2",
+     "unit": "davlat",
+     "meaning": "Rim imperiyasi 395-yilda aynan shuncha mustaqil davlatga bo‘lib tashlangan",
+     "evidence": "ikki mustaqil davlatga"
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "title": "Slavyanlar va ularda davlatlarning tashkil topishi",
+   "page": 33,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "VI asr",
+     "date_label": "VI asr",
+     "event": "Yozma manbalarda vizantiyalik tarixchilar tomonidan «slavyanlar» atamasi ishlatila boshlagan",
+     "evidence": "vizantiyalik tarixchilar tomonidan «sla vyanlar» atamasi VI asrdan boshlab ishlatilgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. II–I asr",
+     "date_label": "miloddan avvalgi II–I asrlar",
+     "event": "Slavyan qabilalari yunon-rim tarixchilari asarlarida germanlar bilan bir paytda tilga olingan",
+     "evidence": "germanlar bilan bir paytda, miloddan avvalgi II–I asrlarda tilga olinadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "VI–VII asr",
+     "date_label": "VI–VII asrlar",
+     "event": "Slavyanlar g‘arbda Elba, sharqda Visla, shimolda Boltiq dengizi, janubda Dunay bilan chegaralangan hududda yashagan",
+     "evidence": "VI–VII asrlarga kelib, slavyanlar g‘arbda Elba daryosidan, sharqda Visla daryosiga qadar"
+    },
+    {
+     "kind": "date_event",
+     "date": "milodiy asr boshi",
+     "date_label": "milodiy asr boshlari",
+     "event": "Slavyanlar uy chorvachiligi va hunarmandchilik bilan ham shug‘ullana boshlagan",
+     "evidence": "Mi lodiy asr bosh laridan slavyanlar uy chor vachi ligi va hunar mandchilik bilan ham shug‘ullana boshlaganlar"
+    },
+    {
+     "kind": "date_event",
+     "date": "VII asr oxiri",
+     "date_label": "VII asr oxirlari",
+     "event": "Bolqon yarimorolida slavyanlar yashagan hududdagi ilk davlat — Bolgariya podsholigi tuzilgan",
+     "evidence": "U Bolqon yarimorolida VII asr ning oxirlarida tu zilgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "IX asr boshi",
+     "date_label": "IX asr boshlari",
+     "event": "Bolgariya podsholigi yirik davlatga aylangan",
+     "evidence": "IX asr bosh lariga kelib yirik davlatga aylanadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "893–927",
+     "date_label": "893–927-yillar",
+     "event": "Simeon davrida Bolgariya podsholigi o‘z qudratining cho‘qqisiga erishgan",
+     "evidence": "Simeon davrida (893–927) u o‘z qudratining cho‘qqisiga erishadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "X asr boshi",
+     "date_label": "X asr boshlari",
+     "event": "Chexiya davlati mahalliy slavyan qabilalari negizida tashkil topgan",
+     "evidence": "Chexiya davlati X asr boshlarida tashkil topdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "X asr o‘rtalari",
+     "date_label": "X asr o‘rtalari",
+     "event": "Knyaz Meshko polyak qabilalarini birlashtirib, Polsha davlatiga asos solgan",
+     "evidence": "Knyaz Meshko X asr o‘rtalarida Visla daryosi havzasida polyak qabilalarini birlashtirib, Polsha davlatiga asos solgan"
+    },
+    {
+     "kind": "person",
+     "person": "Asparux",
+     "role": "Bolg‘orlar xoni, Bolqon yarimorolida davlatga asos solgan hukmdor",
+     "activity": "Bolqon yarimorolida slavyanlar hududidagi ilk davlat — Bolgariya podsholigiga asos solgan",
+     "evidence": "turkiyzabon bul g‘orlar xoni Asparux (643–701) tomoni dan asos solingan davlat"
+    },
+    {
+     "kind": "person",
+     "person": "Simeon",
+     "role": "893–927-yillarda hukmronlik qilgan Bolgariya podsholigi hukmdori",
+     "activity": "Uning davrida Bolgariya podsholigi o‘z qudratining cho‘qqisiga erishgan",
+     "evidence": "Simeon davrida (893–927"
+    },
+    {
+     "kind": "person",
+     "person": "Vatslav",
+     "role": "920–935-yillarda hukmronlik qilgan chex knyazi, keyinchalik milliy avliyo",
+     "activity": "Xristianlikni Chexiyada yoyishga harakat qilib, knyazlar fitnasi natijasida o‘ldirilgan",
+     "evidence": "Knyaz Vatslav (920–935) yoshligidan xris tian aqida lari bo‘yicha tarbiyalangan"
+    },
+    {
+     "kind": "person",
+     "person": "Meshko I",
+     "role": "Piastlar sulolasining birinchi knyazi va Polsha davlatining asoschisi",
+     "activity": "Polyak qabilalarini birlashtirib, o‘z qo‘shini bilan xristianlikni qabul qilgan",
+     "evidence": "Piastlar sulolasining birinchi knyazi Meshko I dir"
+    },
+    {
+     "kind": "person",
+     "person": "Boleslav Jasur",
+     "role": "Meshko I ning o‘g‘li, polyak qabilalarini birlashtirishni tugatgan knyaz",
+     "activity": "Moraviya va Chexiyani bosib olib, qisqa muddatga Kiyevni ham egallagan",
+     "evidence": "Meshko I ning o‘g‘li Boleslav Jasur davrida polyak qabilalarini birlashtirish ishi tugallandi"
+    },
+    {
+     "kind": "term",
+     "term": "veche",
+     "definition": "Slavyanlardagi xalq yig‘ini; yozma manbalarda tilga olinadigan boshqaruv organi",
+     "evidence": "xalq yig‘inlari («ve che»), knyazlar, harbiy drujinalari"
+    },
+    {
+     "kind": "term",
+     "term": "Bolgariya podsholigi",
+     "definition": "Slavyanlar yashagan hududdagi ilk davlat; Bolqon yarimorolida VII asr oxirida tuzilgan",
+     "evidence": "Slavyanlar yashagan hududdagi ilk davlat Bolgariya podsholigidir"
+    },
+    {
+     "kind": "term",
+     "term": "Prjemislovichlar xonadoni",
+     "definition": "Chex qabila ittifoqi tepasida turgan knyazlar sulolasi",
+     "evidence": "Qabila ittifoqi tepasida Prjemislovichlar xonadonidan bo‘lgan knyaz lar turgan"
+    },
+    {
+     "kind": "term",
+     "term": "Piastlar sulolasi",
+     "definition": "Polsha knyazlarining sulolasi; hujjatlarda nomi qayd etilgan birinchi knyazi Meshko I",
+     "evidence": "hujjatlarda nomi qayd etilgan Piastlar sulolasining birinchi knyazi"
+    },
+    {
+     "kind": "place",
+     "place": "Vltava daryosi havzasi",
+     "event": "Chex qabilalari shu hududda yashab, mahalliy slavyan qabilalari ularga bo‘ysungan",
+     "evidence": "Mahalliy sla v yan qabilalari Vltava daryosi havzasida yashagan chex qabilalariga bo‘ysungan"
+    },
+    {
+     "kind": "place",
+     "place": "Visla daryosi havzasi",
+     "event": "Knyaz Meshko shu hududda polyak qabilalarini birlashtirib, davlatga asos solgan",
+     "evidence": "Visla daryosi havzasida polyak qabilalarini birlashtirib"
+    },
+    {
+     "kind": "place",
+     "place": "Itil (Volga) daryosi havzasi",
+     "event": "Turkiy bulg‘or qabilasi bu yerdan g‘arbga ko‘chib, Bolqon yarimoroliga joylashgan",
+     "evidence": "Itil (Volga) daryosi havzasida yasha gan turkiy bulg‘or qabilasi g‘arbga ko‘chib"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ayrim knyazlarning fitnasi",
+     "effect": "Knyaz Vatslavni tug‘ishgan ukasi xoinona o‘ldirgan",
+     "evidence": "Ayrim knyaz lar fitnasi tufayli tug‘ishgan ukasi uni xoinona o‘ldi rgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Bolgariya podsholigining zaiflashishi",
+     "effect": "Mamlakat keyinchalik qo‘shni Vizantiya tomonidan bosib olingan",
+     "evidence": "Bolgariya zaiflashib, keyinchalik qo‘shni Vizantiya tomonidan bosib olinadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Polsha mustaqilligini saqlab qolish zarurati",
+     "effect": "Boleslav qo‘shinlari german imperatorlariga qarshi kurashib, g‘olib chiqqan",
+     "evidence": "Boleslav qo‘shinlari Polsha mustaqilligini saqlab qolish uchun german imperatorlariga qarshi kurash olib boradi"
+    },
+    {
+     "kind": "number",
+     "number": "3",
+     "unit": "guruh",
+     "meaning": "Slavyanlar keyingi asrlarda aynan shuncha guruhga bo‘linib ketgan",
+     "evidence": "ular uch guruhga: g‘arbiy, janubiy va sharqiy slav yanlarga bo‘lingan"
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "title": "Sharqiy slavyanlar. Kiyev Rusi",
+   "page": 37,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "VIII asr",
+     "date_label": "VIII asr",
+     "event": "Vizantiyada «Ziroatchilik qonunlari» yozilgan, unda erkin dehqonlarning yerlari alohida ekani belgilangan",
+     "evidence": "Vizantiyada VIII asrda yozilgan «Ziroatchilik qonunlari»ga ko‘ra"
+    },
+    {
+     "kind": "date_event",
+     "date": "882",
+     "date_label": "882-yil",
+     "event": "Oleg lashkari bilan Kiyevni egallab, Kiyev Rusi nomini olgan davlatga asos solgan",
+     "evidence": "Oleg 882yilda o‘z lashkari bilan Kiyevni egallab, ayni paytda Kiyev Rusi nomini olgan davlatga asos soladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "945",
+     "date_label": "945-yil",
+     "event": "Igor drevlyan qabilalari bilan to‘qnashuvda halok bo‘lgan",
+     "evidence": "Igor 945yilda drevlyan qabilalari bilan to‘qnashuvda halok bo‘lganidan so‘ng"
+    },
+    {
+     "kind": "date_event",
+     "date": "X asr",
+     "date_label": "X asrning 50-yillari o‘rtalari",
+     "event": "Olga Konstantinopolga tashrif buyurib, xristianlikni qabul qilgan",
+     "evidence": "Olga X asr ning 50yillari o‘rtalarida Konstantinopolga tashrif buyurib, xristianlikni qabul qiladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "964",
+     "date_label": "964-yil",
+     "event": "Svyatoslav 22 yoshida knyazlik taxtiga o‘tirib, Sharqqa yurish boshlagan",
+     "evidence": "Svyatoslav 964yilda 22 yoshida knyazlik taxtiga o‘tirgach, Sharqqa yurish boshlagan"
+    },
+    {
+     "kind": "date_event",
+     "date": "988",
+     "date_label": "988-yil",
+     "event": "Vladimir ruslarni xristian diniga qabul qildirgan",
+     "evidence": "988yilda ruslarni xristian dinini qabul qildir gan hukm dor sifatida qadrlanadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1019–1054",
+     "date_label": "1019–1054-yillar",
+     "event": "Yaroslav boshqaruvi Kiyev Rusining gullab-yashnagan davri bo‘lgan",
+     "evidence": "Yaroslav (1019–1054) boshqaruvi Kiyev Rusi ning gullabyashnagan davri bo‘lgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "XI asr o‘rtalari",
+     "date_label": "XI asr o‘rtalari",
+     "event": "Ko‘chmanchi qipchoq qabilalari Yoyiq daryosidan Dunaygacha bo‘lgan hududlarni egallashgan",
+     "evidence": "Ko‘chmanchi qipchoq qabilalari XI asrning o‘rtalarida Yoyiq daryosidan Dunaygacha bo‘lgan hududlarni egallashgan"
+    },
+    {
+     "kind": "person",
+     "person": "Ryurik",
+     "role": "Varyaglardan kelib Novgorodda hukmronlik qilgan knyaz, sulola asoschisi",
+     "activity": "Ukasi vafotidan keyin yakka hukmronlik qilib, rus yerlarida knyazlik hukmronligini o‘rnatgan",
+     "evidence": "Ryurik Nov gorodda, Sineus Belo ozeroda, Truvor Izborskda knyazlik qiladilar"
+    },
+    {
+     "kind": "person",
+     "person": "Oleg",
+     "role": "Ryurikning qarindoshi, Igor yoshligida hokimiyatni boshqargan knyaz",
+     "activity": "882-yilda Kiyevni egallab, Kiyev Rusi davlatiga asos solgan va Vizantiya bilan shartnoma tuzgan",
+     "evidence": "hokimiyat un ing qarindoshi Oleg ga o‘tadi"
+    },
+    {
+     "kind": "person",
+     "person": "Igor",
+     "role": "912–945-yillarda hukmronlik qilgan Kiyev knyazi, Ryurikning o‘g‘li",
+     "activity": "Vizantiyaga ikki marta yurish qilib, tinchlik shartnomasi va katta o‘lpon olishga erishgan",
+     "evidence": "Igor o‘z knyazligini (912–945) ko‘ch manchi bija nak qabilalariga qarshi urushdan boshlaydi"
+    },
+    {
+     "kind": "person",
+     "person": "Olga",
+     "role": "Igorning rafiqasi, Svyatoslav voyaga yetgunga qadar Kiyevni boshqargan hukmdor",
+     "activity": "Rus mavqeini mohirona diplomatiya orqali yuksaltirib, Konstantinopolda xristianlikni qabul qilgan",
+     "evidence": "uning rafiqasi Olga o‘g‘li Svyatoslav balog‘atga yetgunicha Kiyev knyazligini bosh qargan"
+    },
+    {
+     "kind": "person",
+     "person": "Vladimir",
+     "role": "980–1015-yillarda hukmronlik qilgan Kiyev knyazi, Rusni cho‘qintirgan hukmdor",
+     "activity": "988-yilda ruslarni xristian diniga qabul qildirib, chegaralarda mudofaa qal’alari qurdirgan",
+     "evidence": "vorislari orasidagi kurash so‘ngida Vladimir (980–1015) taxtni egallaydi"
+    },
+    {
+     "kind": "person",
+     "person": "Yaroslav",
+     "role": "1019–1054-yillarda hukmronlik qilgan, Donishmand nomini olgan Kiyev knyazi",
+     "activity": "Bijanaklarni mag‘lub etib, «Rus haqiqati» qonunlar to‘plamini tuzdirgan",
+     "evidence": "taxt uchun kurashlarda g‘olib chiq qan Yaroslav (1019–1054"
+    },
+    {
+     "kind": "term",
+     "term": "«Ziroatchilik qonunlari»",
+     "definition": "Vizantiyada VIII asrda yozilgan, qishloq jamoasi va erkin dehqonlar yerlarini belgilagan qonunlar to‘plami",
+     "evidence": "qishloq jamoasining a’zolari – erkin dehqonlarning yerlari alohida bo‘lib"
+    },
+    {
+     "kind": "term",
+     "term": "varyaglar",
+     "definition": "Skandinaviyalik normannlar; slavyan qabilalari ulardan o‘zlariga knyaz yuborishni so‘ragan",
+     "evidence": "Sharqiy slav yan qabilalari var yaglarga (skandinaviyalik normannlarga) elchi jo‘natib"
+    },
+    {
+     "kind": "term",
+     "term": "drujinachi",
+     "definition": "Knyazning otliq jangchisi; o‘z hududini himoya qilib, qo‘shni o‘lkalarga yurishlar uyushtirgan",
+     "evidence": "Slavyanlar yo‘lboshchilari – otliq drujinachilar faqat o‘z hududlarini himoya qilibgina qolmay"
+    },
+    {
+     "kind": "term",
+     "term": "«Rus haqiqati»",
+     "definition": "Yaroslav davrida tuzilgan rus yerlarining dastlabki yozma qonunlari to‘plami",
+     "evidence": "rus yerlarining dastlabki yozma qonunlari to‘plami – «Rus haqiqati» tu zilgan"
+    },
+    {
+     "kind": "term",
+     "term": "Xazar xoqonligi",
+     "definition": "Itil (Volga) va Don daryolari oralig‘ida tashkil topgan davlat; Svyatoslav uni mag‘lub etgan",
+     "evidence": "Don daryolari oralig‘ida tashkil topgan Xazar xoqonligini mag‘lub etib"
+    },
+    {
+     "kind": "place",
+     "place": "Dnepr daryosi havzasi",
+     "event": "Drevlyanlar, rodimichlar, tiverlar va boshqa sharqiy slavyan qabilalari shu yerda yashagan",
+     "evidence": "ilk o‘rta asrlarda Dnepr daryosi havzasida yashaganlar"
+    },
+    {
+     "kind": "place",
+     "place": "Novgorod",
+     "event": "Ryurik shu shaharda knyazlik qilgan, keyinchalik bu yerda Yaroslav noib bo‘lgan",
+     "evidence": "Ryurik Nov gorodda, Sineus Belo ozeroda"
+    },
+    {
+     "kind": "place",
+     "place": "Itil shahri",
+     "event": "Svyatoslav Xazar xoqonligining poytaxti bo‘lgan bu shaharni egallagan",
+     "evidence": "uni ng poytaxti Itil shahrini egallagan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ryurikning vafot etishi va o‘g‘li Igorning yoshligi",
+     "effect": "Hokimiyat uning qarindoshi Oleg qo‘liga o‘tgan",
+     "evidence": "o‘g‘ li Igor yosh bo‘lganligi sababli hokimiyat un ing qarindoshi Oleg ga o‘tadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Tuzilgan shartnomaning Konstantinopol tomonidan bajarilmaganligi",
+     "effect": "Igor Vizantiyaga qarshi ikki marta yurish qilgan",
+     "evidence": "Tu zilgan shartnoma Konstantinopol tomonidan bajarilmaganligi tufayli Igor Vizantiyaga qarshi ikki marta yu rish qiladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Slavyan qabilalarini birlashtirish siyosati",
+     "effect": "Ladoga ko‘lidan Dneprning quyilishigacha bo‘lgan yerlar Oleg qo‘lida to‘plangan",
+     "evidence": "Slavyan qabilalarini bir lash tirish siyosati shimolda Ladoga ko‘li dan, janub da Dneprning quyilishigacha yerlarning Oleg qo‘lida to‘planishiga imkon beradi"
+    },
+    {
+     "kind": "number",
+     "number": "22",
+     "unit": "yosh",
+     "meaning": "Svyatoslav knyazlik taxtiga aynan shu yoshida o‘tirib, sharqqa yurish boshlagan",
+     "evidence": "22 yoshida knyazlik taxtiga"
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "title": "Yevropa xalqlari madaniyati",
+   "page": 41,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. IV asr",
+     "date_label": "miloddan avvalgi IV asr",
+     "event": "Platon Afinada akademiyaga asos solgan, bu maskan ming yildan ziyod faoliyat yuritgan",
+     "evidence": "Platon (mil. av. IV asrda) Afina akademiyasiga asos solgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "IX asr",
+     "date_label": "IX asr",
+     "event": "Konstantinopolda Magnavr oliy maktabi ochilgan",
+     "evidence": "Konstantinopolda IX asrda Magnavr oliy maktabi"
+    },
+    {
+     "kind": "date_event",
+     "date": "XI asr o‘rtalari",
+     "date_label": "XI asr o‘rtalari",
+     "event": "Huquqshunoslik va falsafa fakultetlaridan iborat universitet ochilgan",
+     "evidence": "XI asr o‘rtalarida huquqshunoslik va falsafa fakultetlaridan iborat universitet ochiladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "VII asr",
+     "date_label": "VII asr",
+     "event": "«Grek olovi» ixtiro qilingan va dengiz janglarida qo‘llana boshlagan",
+     "evidence": "VII asr da ixtiro qilingan «grek olovi"
+    },
+    {
+     "kind": "date_event",
+     "date": "X–XI asr",
+     "date_label": "X–XI asrlar",
+     "event": "To‘g‘ri burchakli ibodatxonalar o‘rniga o‘rtasi xoch gumbazli ibodatxonalar barpo qilingan",
+     "evidence": "X–XI asrlarda to‘g‘ri burchakli ibodatxonalar o‘rniga ko‘ rinishidan xochsifat, o‘rtasi xoch gumbazli ibodat xonalar barpo qilingan"
+    },
+    {
+     "kind": "date_event",
+     "date": "IX asr o‘rtalari",
+     "date_label": "IX asr o‘rtalari",
+     "event": "Kirill va Mefodiy yunon alifbosi asosida slavyan yozuvini yaratgan",
+     "evidence": "Kirill va Mefodiy – IX asr o‘rtalarida yunon alifbosi asosida slavyan yozuvini yaratib"
+    },
+    {
+     "kind": "date_event",
+     "date": "XII asr",
+     "date_label": "XII asrgacha",
+     "event": "Kitoblar asosan monastirlar kutubxonalarida saqlangan",
+     "evidence": "XII asrga qadar kitoblar monastirlar kutubxonalarida saqlangan"
+    },
+    {
+     "kind": "person",
+     "person": "Eyngard",
+     "role": "Saroy akademiyasi a’zosi bo‘lgan tarixchi-rohib, Karl hayotining muallifi",
+     "activity": "Buyuk Karl hayoti va faoliyati haqidagi ma’lumotlarni o‘z asarida qoldirgan",
+     "evidence": "tarixchirohib Eyngard asaridan biz Buyuk Karl hayoti va faoliyati haqidagi ma’lu motlarni olamiz"
+    },
+    {
+     "kind": "person",
+     "person": "Alkuin",
+     "role": "Saroy akademiyasining a’zosi va yirik maorif targ‘ibotchisi",
+     "activity": "Shogirdlari bilan birga maorifni yoyishda katta xizmat qilgan",
+     "evidence": "Saroy aka demiyasining y ana bir a’zosi Alkuin va u nin g shogirdlari maorifni yo yishda katta xizmat qilgan"
+    },
+    {
+     "kind": "person",
+     "person": "Platon",
+     "role": "Afinada akademiyaga asos solgan qadimgi yunon faylasufi",
+     "activity": "Sharq ilm-fanida «ustodi avval», ya’ni birinchi muallim nomi bilan shuhrat qozongan",
+     "evidence": "Platon Sharq ilmfanida «ustodi avval"
+    },
+    {
+     "kind": "person",
+     "person": "Kirill va Mefodiy",
+     "role": "Rohib olimlar, yunon alifbosi asosida slavyan yozuvini yaratgan ma’rifatparvarlar",
+     "activity": "Yunon tilidagi diniy asarlarni slavyan tiliga tarjima qilishgan va xristianlikni targ‘ib etishgan",
+     "evidence": "yunon tilidagi diniy asarlarni keyinchalik «kirillitsa» deb nom olgan yozuv orqali slavyan tiliga tarjima qilishgan"
+    },
+    {
+     "kind": "term",
+     "term": "saroy akademiyasi",
+     "definition": "Buyuk Karl saroyidagi olimlar birlashmasi; antik asarlarni o‘rganib, she’rlar bitgan",
+     "evidence": "Saroy akademiyasi antik davr mualliflari asarlarini o‘r ganish, she’rlar bitish bilan shug‘ullangan"
+    },
+    {
+     "kind": "term",
+     "term": "mozaika",
+     "definition": "Turli xomashyo bo‘laklaridan ishlangan tasvir, monumental bezak san’atining asosiy turi",
+     "evidence": "Mozaika (fransuzcha, mosaique – muzalarga bag‘ishlangan) – bir xil yoki turli xomashyo"
+    },
+    {
+     "kind": "term",
+     "term": "«grek olovi»",
+     "definition": "Neft, oltingugurt, selitra va qatronlar aralashmasidan tayyorlangan yonuvchi modda",
+     "evidence": "Grek olovi» uloqtiriladigan yonuvchi modda bo‘lib, uni neft, oltingugurt, selitra, turli qatronlar aralashmasidan tayyorlashgan"
+    },
+    {
+     "kind": "term",
+     "term": "roman uslubi",
+     "definition": "Salobatli devorlar, gumbazlar, qalin ustunlar va arkali eshiklar bilan ajralib turadigan me’morchilik uslubi",
+     "evidence": "Me’morchilikda roman uslubi, ayniqsa, yuksalib, unda ibodatxonalar ulkan, salobatli devorlari"
+    },
+    {
+     "kind": "term",
+     "term": "kirillitsa",
+     "definition": "Kirill va Mefodiy yaratgan, yunon alifbosi asosidagi slavyan yozuvi",
+     "evidence": "keyinchalik «kirillitsa» deb nom olgan yozuv orqali slavyan tiliga tarjima qilishgan"
+    },
+    {
+     "kind": "place",
+     "place": "Afina",
+     "event": "Ilm-fan eng rivojlangan shahar hisoblanib, «fanlar onasi» deb atalgan",
+     "evidence": "Ilmfan eng rivojlangan shahar, «fanlar onasi» – Afina edi"
+    },
+    {
+     "kind": "place",
+     "place": "Konstantinopol",
+     "event": "Yustinian I davrida bu shaharda ilk o‘rta asrlarning eng mahobatli ibodatxonasi barpo etilgan",
+     "evidence": "Yustinian I davrida Kons tantinopolda barpo etilgan Avliyo Sofiya ibodatxonasini"
+    },
+    {
+     "kind": "place",
+     "place": "Puate",
+     "event": "Fransiyada roman uslubida qurilgan eng mashhur ibodatxonalardan biri joylashgan",
+     "evidence": "Fransiyadagi Puate, Klyuni, Arl ibodatxonalari"
+    },
+    {
+     "kind": "cause",
+     "cause": "Vizantiyada antik madaniyat an’analarining saqlanib qolishi va yunon hamda Sharq madaniyatlari qorishmasi",
+     "effect": "Vizantiya yuksak madaniyati bilan Yevropaning eng ilg‘or mamlakati bo‘lib qolgan",
+     "evidence": "G‘arbiy Rimdan farqliroq, Vizantiyada antik madaniyat an’analari saqlanib, vizantiyaliklar ha y otida yunon hamda Sharq madaniyat lari qorishmasi"
+    },
+    {
+     "kind": "cause",
+     "cause": "«Grek olovi»ning ixtiro qilinishi",
+     "effect": "Vizantiyaning dengiz janglaridagi muvaffaqiyatlari ta’minlangan",
+     "evidence": "Vizan tiya ning dengiz janglaridagi muvaffaqiyatlarini ta’ minlagan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yangi dinning joriy etilishi va diniy kitoblarga ehtiyoj tug‘ilishi",
+     "effect": "Slavyan yozuvining yaratilishiga turtki bo‘lgan",
+     "evidence": "Yangi dinning joriy etilishi diniy kitoblarga ehtiyoj tug‘dirib, slavyan yozuvining yaratilishiga turtki bo‘lgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Buyuk Karl davlatida keng tarqalgan o‘rta maktablar",
+     "effect": "Asrlar o‘tib universitetlar ochilishi uchun asos bo‘lgan",
+     "evidence": "Buyuk Karl davlatida keng tarqalgan shu turdagi mak tablar asrlar o‘tib universitetlar ochilishi uchun asos bo‘ lgan"
+    },
+    {
+     "kind": "number",
+     "number": "40",
+     "unit": "deraza",
+     "meaning": "Avliyo Sofiya ibodatxonasining ulkan gumbazi shuncha deraza gulchambari bilan o‘ralgan",
+     "evidence": "Uning ulkan gumbazi 40 ta deraza gulchambari bilan qurshalgan"
+    },
+    {
+     "kind": "number",
+     "number": "300",
+     "unit": "ruhoniy",
+     "meaning": "Yaroslav Novgorodda shuncha ruhoniy tayyorlaydigan bilim yurtini ochgan",
+     "evidence": "Yaroslav Nov gorodda uch yuz ru honiy tayyorlaydigan bilim yurti ni ochadi"
+    }
+   ]
+  }
+ ]
+}

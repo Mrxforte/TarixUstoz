@@ -1,0 +1,881 @@
+{
+ "chapter": "KIRISH",
+ "topics": [
+  {
+   "number": 7,
+   "title": "Qadimgi Misr",
+   "page": 32,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "Qadimgi podsholik davri",
+     "date_label": "Qadimgi podsholik davri",
+     "event": "Sinay yarimoroli bosib olindi va mahalliy qabilalar Misrga soliq to'lay boshladi",
+     "evidence": "Sinay yarimoroli bosib olinadi, mahalliy qabilalar Misrga soliq to'lay boshlashdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "O'rta podsholik davri",
+     "date_label": "O'rta podsholik davri",
+     "event": "Janubiy Falastin yerlari va Nubiya shimoli Misrga qo'shib olindi",
+     "evidence": "Janubiy Falastin yerlari va Nubiya shimolini Misrga qo'shib olishga erishdilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. XVIII asr oxiri",
+     "date_label": "Miloddan avvalgi XVIII asr oxiri",
+     "event": "Ko'chmanchi giksoslar qabilalari Misrga hujum qilib, shahar va qishloqlarni taladi",
+     "evidence": "Mil. avv. XVIII asr oxirida ko'chmanchi gik-soslar qabilalari Misrga hujum qildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "Yangi podsholik davri",
+     "date_label": "Yangi podsholik davri boshlanishi",
+     "event": "Yaxmos giksoslarni tor-mor etib, bosqinchilarni Misrdan haydab chiqardi",
+     "evidence": "Yaxmos giksoslarni tor-mor etib, bos-qinchilarni Misrdan haydab chiqardi"
+    },
+    {
+     "kind": "date_event",
+     "date": "Yangi podsholik davri",
+     "date_label": "Yangi podsholik, Tutmos III yurishlari",
+     "event": "Misr qo'shini Old Osiyoga yurish qilib, misrliklar hukmronligini o'rnatdi",
+     "evidence": "Old Osiyoda misrliklar hukmronligi o'rnatildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "Yangi podsholik davri",
+     "date_label": "Yangi podsholik, bosqinchi yurishlar",
+     "event": "Fir'avnlar Nubiya va Old Osiyo mamlakatlariga hujum boshlab, bosqinchi sifatida yurish qildilar",
+     "evidence": "Fir'avnlar Nubiya va Old Osiyo mamlakatlariga hujumni boshlab yubordilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VII asr",
+     "date_label": "Miloddan avvalgi VII asr",
+     "event": "Misr yana yagona davlatga birlashdi, iqtisodiyot va madaniyatda yuksalish boshlandi",
+     "evidence": "Mil. avv. VII asrda Misr yana yagona davlatga birlashdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 525-yil",
+     "date_label": "Miloddan avvalgi 525-yil",
+     "event": "Fors shohi Kir II ning o'g'li Kambiz II ulkan lashkar bilan Misrni bosib oldi",
+     "evidence": "Kambiz II mil. avv. 525-yilda Misrni bosib oldi"
+    },
+    {
+     "kind": "person",
+     "person": "Yaxmos",
+     "role": "Fiva «nom»ining fir'avni, giksoslarni tor-mor etgan hukmdor",
+     "activity": "Itoatsiz hukmdorlarni o'ziga bo'ysundirib, yangi fir'avnlar sulolasiga asos soldi",
+     "evidence": "Itoatsiz hukmdorlarni o'ziga bo'ysundirgan Yaxmos yangi"
+    },
+    {
+     "kind": "person",
+     "person": "Tutmos II",
+     "role": "Misr fir'avni, Old Osiyoga ilk yurishlarni boshlagan hukmdor",
+     "activity": "Falastin, Finikiya va Suriyani istilo qilishni boshladi",
+     "evidence": "Fir'avn Tutmos II Falastin, Finikiya va Suriyani istilo qilishni boshladi"
+    },
+    {
+     "kind": "person",
+     "person": "Tutmos III",
+     "role": "Misr fir'avni, Old Osiyoda hukmronlik o'rnatgan sarkarda",
+     "activity": "Yurishlarni davom ettirib, Old Osiyoda misrliklar hukmronligini o'rnatdi",
+     "evidence": "Tutmos III yurishlarni davom etdi. Old Osiyoda misrliklar hukmronligi o'rnatildi"
+    },
+    {
+     "kind": "person",
+     "person": "Kir II",
+     "role": "Fors shahanshohi, Misrni zabt etgan Kambiz II ning otasi",
+     "activity": "Forslardan ulkan lashkar to'plagan shahanshoh; uning o'g'li Kambiz II Misrni bosib oldi",
+     "evidence": "Forslardan ulkan lashkar to'plagan sha-hanshoh Kir II ning o'g'li Kambiz II"
+    },
+    {
+     "kind": "person",
+     "person": "Kambiz II",
+     "role": "Fors shahanshohi, Kir II ning o'g'li, Misrni zabt etgan hukmdor",
+     "activity": "Mil. avv. 525-yilda Misrni bosib oldi, misrliklarni asirlikka olib ketdi",
+     "evidence": "Misrliklarni qadimgi fors podshosi Kambiz II asirlikka olib ketmoqda"
+    },
+    {
+     "kind": "term",
+     "term": "«nom»",
+     "definition": "O'rta podsholik davrida mayda bo'linib ketgan viloyat-hokimliklar; ular giksoslarga soliq to'lardi",
+     "evidence": "Bu vaqtda O'rta podsholik ko'plab mayda «nom»larga bo'linib ketgandi, ular giksoslarga soliq to'lardi"
+    },
+    {
+     "kind": "term",
+     "term": "giksoslar",
+     "definition": "Ko'chmanchi qabilalar; ularning asosiy kuchi otlar qo'shilgan jangovar aravalari bo'lgan",
+     "evidence": "giksos-larning asosiy kuchi otlar qo'shilgan jangovar aravalari bo'lgan"
+    },
+    {
+     "kind": "term",
+     "term": "jangovar arava",
+     "definition": "Otlari qo'shilgan jang aravasi; bir askar otlarni boshqargan, ikkinchisi kamondan o'q uzgan",
+     "evidence": "Bir askar otlarni boshqarib turgan, ikkinchisi esa kamondan dushman-larni nishonga olib o'q uzgan"
+    },
+    {
+     "kind": "term",
+     "term": "Yangi podsholik",
+     "definition": "Yaxmos asos solgan davr; fir'avnlar qo'shni davlatlarga bosqinchi sifatida yurish qilgan",
+     "evidence": "Yangi podsholik davri boshlandi"
+    },
+    {
+     "kind": "place",
+     "place": "Nubiya",
+     "event": "Janubdan Misr bilan chegaradosh mamlakat; misrliklar u yerga oltin va fil suyagi uchun borgan",
+     "evidence": "Misr janubdan Nubiya bi-lan chegaradosh bo'lgan"
+    },
+    {
+     "kind": "place",
+     "place": "Sinay yarimoroli",
+     "event": "Mis qazib olinadigan hudud; unga olib boradigan yo'l Quyi Misrdagi Memfis shahri orqali o'tgan",
+     "evidence": "orqali o'tadigan yo'l Sinay yarim oroliga olib borgan, bu yerda esa mis qazib olingan"
+    },
+    {
+     "kind": "place",
+     "place": "Fiva",
+     "event": "Giksoslarga itoat qilmagan shahar; uning atrofida «nom»lar hukmdorlari birlashgan",
+     "evidence": "Faqat Fiva shahri hukmdorlari-gina giksoslarga itoat qilmadilar"
+    },
+    {
+     "kind": "cause",
+     "cause": "O'rta podsholik mayda «nom»larga bo'linib ketgan edi",
+     "effect": "«Nom»lar hukmdorlari giksoslarga soliq to'lashga majbur bo'ldilar",
+     "evidence": "O'rta podsholik ko'plab mayda «nom»larga bo'linib ketgandi"
+    },
+    {
+     "kind": "cause",
+     "cause": "«Nom»lar hukmdorlari bosqinchilar zulmidan xalos bo'lish taraddudiga tushdilar",
+     "effect": "Ular Fiva shahri atrofiga birlasha boshladilar",
+     "evidence": "Bosqinchilar zulmidan xalos bo'lish tarad-dudiga tushib qolgan «nom»lar hukmdorlari Fiva shahri atrofi ga birlasha boshladilar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Bo'ysundirilgan xalqlar o'z erk va ozodliklari uchun kurash olib bordilar",
+     "effect": "Fir'avnlar uzoq urushlar olib bordi, davlat zaiflashib, Yangi podsholik «nom»larga tarqaldi",
+     "evidence": "Bo'ysundirilgan xalqlar misrliklardan naf-ratlanib, o'z erk va ozodliklari uchun kurash-ganlar"
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "title": "Qadimgi Misrda din",
+   "page": 35,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 2-ming yillikdan boshlab",
+     "date_label": "Miloddan avvalgi 2-ming yillikdan boshlab",
+     "event": "Quyosh xudosi Amon-Ra fir'avnlarning bosh ilohi va homiysi hisoblana boshladi",
+     "evidence": "Mil. avv. 2-ming yillikdan boshlab esa Qu-yosh xudosi Amon-Ra"
+    },
+    {
+     "kind": "date_event",
+     "date": "Dastavval",
+     "date_label": "Dastlab, Amon-Ra yagona ilohga aylanishidan oldin",
+     "event": "Fiva homiysi Amon va Quyosh xudosi Ra alohida xudolar bo'lib, keyin yagona ilohga birlashgan",
+     "evidence": "Dastavval ikkita xudo bo'lgan: Fiva shahri homiysi Amon va Quyosh xudosi Ra, so'ngra ikkalasi yagona xudoga birlashgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "O'shandan boshlab",
+     "date_label": "Osiris qayta tiriltirilganidan keyin",
+     "event": "Jon qaytib kelishi uchun barcha marhumlar mumiyolana boshladi",
+     "evidence": "O'shandan boshlab jon qaytib keladigan bo'lishi uchun barcha marhumlar mumiyolanadi"
+    },
+    {
+     "kind": "person",
+     "person": "Ptax",
+     "role": "Memfis shahrining bosh xudosi, misrliklarning qudratli ilohi",
+     "activity": "Qudrati shunchalik katta ediki, uni asl qiyofasida ko'rish mumkin emas deb hisoblangan",
+     "evidence": "Ptax misrliklar e'tiqodicha, shunchalik qudratliki, uni asl qiyofasida ko'rishning iloji yo'q"
+    },
+    {
+     "kind": "person",
+     "person": "Amon-Ra",
+     "role": "Quyosh xudosi, fir'avnlarning bosh ilohi va homiysi",
+     "activity": "Fiva homiysi Amon va Ra birlashuvidan hosil bo'lgan yagona xudo",
+     "evidence": "Fiva shahri homiysi Amon va Quyosh xudosi Ra, so'ngra ikkalasi yagona xudoga birlashgan"
+    },
+    {
+     "kind": "person",
+     "person": "Osiris",
+     "role": "Yerosti saltanati xudosi, Misrning ilk podsholaridan biri",
+     "activity": "Rivoyatga ko'ra xalqini dehqonchilikka o'rgatgan, birodari Set uni o'ldirgan",
+     "evidence": "Rivoyatda ayti-lishicha, Osiris Misrning ilk podsholaridan biri bo'lib, o'z xalqini dehqonchilikka o'rgatgan"
+    },
+    {
+     "kind": "person",
+     "person": "Isida",
+     "role": "Osirisning xotini, uni qayta tiriltirgan iloha",
+     "activity": "Marhum erini mumiyolab, qayta tiriltirgan; shundan keyin barcha marhumlar mumiyolangan",
+     "evidence": "Osiris-ning xotini Isida uni mumiyolagan va qayta tiriltirgan ekan"
+    },
+    {
+     "kind": "person",
+     "person": "Set",
+     "role": "Osirisning birodari, rivoyatda uni o'ldirgan xudo",
+     "activity": "Osirisni o'ldirgan; keyin Isida uni mumiyolab qayta tiriltirgan",
+     "evidence": "rodari Set esa, Osirisni o'ldiradi"
+    },
+    {
+     "kind": "term",
+     "term": "kohinlar",
+     "definition": "Ibodatxona ruhoniylari; xudolar bilan odamlar o'rtasida vositachi bo'lib, qurbonlik o'tkazganlar",
+     "evidence": "Kohinlar xudolar va odamlar o'rtasida vositachi bo'lishgan"
+    },
+    {
+     "kind": "term",
+     "term": "Apis",
+     "definition": "Ptaxning Yer yuzidagi qiyofasi; peshanasi va belida oq qashqasi bo'lgan qora ho'kiz timsolida",
+     "evidence": "u peshanasi va belida oq qashqasi bo'lgan qora ho'kiz timsolida tasavvur etilgan"
+    },
+    {
+     "kind": "term",
+     "term": "ibodatxona",
+     "definition": "Xudolarga sig'inish joyi; barcha «nom»larda bo'lgan, fir'avnlar ularga boylik va yerlar hadya etgan",
+     "evidence": "Barcha «nom»larda ibodatxo-nalar bo'lgan"
+    },
+    {
+     "kind": "term",
+     "term": "qurbonlik",
+     "definition": "Dindorlar xudolarga in'om tariqasida keltirgan narsalar; kohinlar uni o'tkazgan marosim",
+     "evidence": "xudolarni dindorlar in'om tariqasida keltirgan narsalar bilan boqish kerak"
+    },
+    {
+     "kind": "term",
+     "term": "hayvon siymosidagi xudolar",
+     "definition": "Misrliklar xudolari mushuk, qo'y, ho'kiz, arslon va sigir shaklida odamlar orasida yashaydi deb hisoblashgan",
+     "evidence": "xudolar hayvonlar siymosi-ga o'tib olib, mushuk, qo'y, ho'kiz, arslon, sigir shaklida odamlar orasida yashaydi"
+    },
+    {
+     "kind": "place",
+     "place": "Memfis",
+     "event": "Qadimgi Misr podsholigining poytaxti; uning bosh xudosi Ptax hisoblangan",
+     "evidence": "bosh xudosi – Ptax bo'lgan"
+    },
+    {
+     "kind": "place",
+     "place": "Fiva",
+     "event": "Amon xudosi homiy bo'lgan shahar; keyinchalik Amon Ra bilan yagona xudoga birlashgan",
+     "evidence": "Dastavval ikkita xudo bo'lgan: Fiva shahri homiysi Amon va Quyosh xudosi Ra"
+    },
+    {
+     "kind": "place",
+     "place": "Nil daryosi",
+     "event": "Xapi xudosi homiylik qilgan daryo; Misrdagi hayotning birlamchi manbai va posboni sanalgan",
+     "evidence": "Xapi – Nil xudosi – Misrdagi hayotning bir-lamchi manbai va posboni"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ptaxni asl qiyofasida ko'rishning iloji yo'q deb hisoblangan",
+     "effect": "Uning Yer yuzidagi qiyofasi oq qashqali qora ho'kiz – Apis timsolida tasavvur etilgan",
+     "evidence": "Shu sa-babli ham bu xudoning Yer yuzidagi qiyofasi Apis bo'lib"
+    },
+    {
+     "kind": "cause",
+     "cause": "Misrliklar xudolarning bir necha joni bor deb hisoblashgan",
+     "effect": "Xudolardan biri hayvon tanasida, boshqasi esa haykalida yashaydi deb o'ylashgan",
+     "evidence": "Misrliklar xudolarning bir qancha joni mav-jud: ulardan biri hayvon tanasida, boshqasi esa haykalida yashaydi, deb o'ylashgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Kohinlar diniy marosimlarni bilar va qurbonlik o'tkazganlar",
+     "effect": "Kundalik turmushda ham kohinlarsiz biron ish qilish mushkul edi",
+     "evidence": "Kundalik turmush-da ham kohinlarsiz biron ish qilish mushkul edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Fir'avnlar Quyosh xudosining o'g'illari deb qaralgan",
+     "effect": "Hukmdorlar hamma ishni o'zining samoviy otasi amri bilan amalga oshiradi deb hisoblangan",
+     "evidence": "Fir'avnlar Quyosh xudosining o'g'illari dir, hukmdorlar hamma ishni o'zining samoviy o tasi amri bilan amalga oshiradi"
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "title": "Piramidalar va daxmalar",
+   "page": 37,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "Qadimgi va O'rta podsholiklar davri",
+     "date_label": "Qadimgi va O'rta podsholiklar davri",
+     "event": "Misrliklar fir'avnlar dafn etiladigan ulkan piramidalar – maqbaralarni barpo etdilar",
+     "evidence": "Qadimgi va O'rta podsho-liklar davrida misrliklar barpo etgan ulkan pirami-dalar"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 2600-yil atrofida",
+     "date_label": "Miloddan avvalgi 2600-yil atrofida",
+     "event": "Xufu uchun eng katta piramida qurilgan; uning balandligi 147 metr bo'lgan",
+     "evidence": "mil. avv. 2600-yil atrofi da qurilgan. Uning ba-landligi 147 metr bo'lgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "Yangi podsholik davri",
+     "date_label": "Yangi podsholik davri",
+     "event": "Ehrom qurish to'xtatildi, fir'avnlar tog'larga o'yilgan tosh maqbaralarga dafn etila boshlandi",
+     "evidence": "Yangi podsholik davriga kelib ehrom qur-may qo'yishdi"
+    },
+    {
+     "kind": "person",
+     "person": "Xufu",
+     "role": "Fir'avn, yunonlarda Xeops deb atalgan hukmdor",
+     "activity": "Nomiga eng katta piramida qurilgan; inshoot jahonning yetti mo'jizasidan biri hisoblanadi",
+     "evidence": "Eng katta piramida Xufu uchun (yunonlar uni Xeops deb atashgan)"
+    },
+    {
+     "kind": "person",
+     "person": "Xafra",
+     "role": "Fir'avn, Memfis yaqinidagi piramida egasi",
+     "activity": "Memfis yaqinida piramida bunyod etilgan uch fir'avndan biri",
+     "evidence": "Xufu, Xafra va Men-kaura uchun bunyod etilgan"
+    },
+    {
+     "kind": "person",
+     "person": "Menkaura",
+     "role": "Fir'avn, Memfis yaqinidagi uchinchi piramida egasi",
+     "activity": "Piramidalari hozirga qadar saqlanib qolgan uch fir'avndan biri",
+     "evidence": "uch fi r'avn – Xufu, Xafra va Men-kaura uchun bunyod etilgan"
+    },
+    {
+     "kind": "person",
+     "person": "Tutanxamon",
+     "role": "Fir'avn, maqbarasi eng mashhur bo'lgan hukmdor",
+     "activity": "Tog'larga o'yilgan tosh maqbaraga dafn etilgan; maqbarasi eng mashhur bo'lgan",
+     "evidence": "Eng mashhur maqbara fi r'avn Tutanxamonga tegishli bo'lgan"
+    },
+    {
+     "kind": "person",
+     "person": "Bastet",
+     "role": "Mushuk ko'rinishidagi go'zallik xudosi, misrliklar ilohasi",
+     "activity": "Qadimgi misrliklar sig'ingan ilohalardan biri; mushuk siymosida tasvirlangan",
+     "evidence": "Mushuk ko'rinishidagi go'zallik xudo-si – Bastet"
+    },
+    {
+     "kind": "term",
+     "term": "piramida",
+     "definition": "Fir'avnlar dafn etiladigan ulkan maqbara; tosh bo'laklaridan qurilgan ko'p xonali inshoot",
+     "evidence": "fi r'avnlar dafn etila-digan joy) – maqbaralar bo'lgan"
+    },
+    {
+     "kind": "term",
+     "term": "sarkofag",
+     "definition": "Toshtobut; piramida ichidagi xonada fir'avnning mumiyolangan jasadi solingan",
+     "evidence": "fi r'avnning mumiyolangan jasadi solin-gan toshtobut – sarkofag joylashgan"
+    },
+    {
+     "kind": "term",
+     "term": "sfinks",
+     "definition": "Tanasi sherniki, boshi odamniki bo'lgan ulkan haykal; «Sahro shohi» deb atalgan",
+     "evidence": "tanasi sherniki va boshi odamniki bo'lgan ulkan haykal qo'riqlaydi"
+    },
+    {
+     "kind": "term",
+     "term": "daxma",
+     "definition": "Tog'larga o'yilgan tosh maqbara; devorlari munojot va qarg'ishlardan iborat bitiklar bilan qoplangan",
+     "evidence": "Daxmalar ichi devorlari esa munojotlar va qarg'ishlardan iborat bitiklar bilan qoplangan"
+    },
+    {
+     "kind": "term",
+     "term": "mumiyolash",
+     "definition": "Jasadga maxsus ishlov berib, matolarga o'rash; bu ish bilan tibbiy bilimlarga ega kohinlar shug'ullangan",
+     "evidence": "Mumiyolash bilan tibbiy bilimlarga ega kohinlar shug'ullanishgan"
+    },
+    {
+     "kind": "place",
+     "place": "Memfis",
+     "event": "Eng mashhur piramidalar shu shahar yaqinida uch fir'avn uchun bunyod etilgan",
+     "evidence": "Eng mashhur piramidalar Memfi s shahri yaqinida"
+    },
+    {
+     "kind": "place",
+     "place": "Nil daryosi",
+     "event": "Piramidalar uchun toshlar shu daryoning o'ng sohilidagi yassi tog'lardan olib kelingan",
+     "evidence": "toshlar Nil daryosining o'ng sohilidagi yassi tog'lardan olib kelingan"
+    },
+    {
+     "kind": "place",
+     "place": "Tutanxamon maqbarasi",
+     "event": "Eng mashhur maqbara; ichidagi boyliklar bizga qadar yetib kelgan",
+     "evidence": "Maqbara ichidagi tasavvurga sig'maydigan boyliklar bizga qadar yetib kel-gan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Misrliklar vafotdan keyin marhumlar saltanatida umr davom etadi deb hisoblashgan",
+     "effect": "Osiris qarshisida go'zal qiyofada qad rostlash uchun jasadni mumiyolashgan",
+     "evidence": "Qadimgi misrliklar inson vafot etganidan keyin marhumlar saltanatiga ketadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Marhumlar saltanatidagi hayot Osiris sudining natijalariga bog'liq bo'lgan",
+     "effect": "Tarozida yurak og'irroq kelsa, inson badbashara maxluqlarga yemish bo'lib qolgan",
+     "evidence": "Yurak og'irroq kelsa, inson bir talay yomon ishlarni qilgan bo'lib chiqadi va badbashara max-luqlarga yemish bo'ladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Bitiklar fir'avnni himoya qilishi va o'zga hayotga o'tishida yordam berishi nazarda tutilgan",
+     "effect": "Daxmalar devorlari munojotlar va qarg'ishlardan iborat bitiklar bilan qoplangan",
+     "evidence": "Ular fi r'avnni himoya qilishi va o'zga hayotga o'tayotganida unga yordam berishi nazarda tutilgan"
+    },
+    {
+     "kind": "number",
+     "number": 147,
+     "unit": "metr",
+     "meaning": "Xufu piramidasining balandligi; inshoot mil. avv. 2600-yil atrofida qurilgan",
+     "evidence": "Uning ba-landligi 147 metr bo'lgan"
+    },
+    {
+     "kind": "number",
+     "number": 70,
+     "unit": "kun",
+     "meaning": "Mumiyolash odatda shuncha kun davom etgan; bu ish bilan kohinlar shug'ullangan",
+     "evidence": "Odatda mumiyolash qariyb 70 kun davom etgan"
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "title": "Qadimgi Misr madaniyati",
+   "page": 40,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1822-yil",
+     "date_label": "1822-yil – iyerogliflar siri ochilgan yil",
+     "event": "Jak-Fransua Shampolyon birinchi bo'lib Misr matnlarini o'qishga erishdi va iyerogliflar sirini ochdi",
+     "evidence": "Taniqli fransuz olimi Jak-Fran-sua Shampolyon 1822-yil-da"
+    },
+    {
+     "kind": "date_event",
+     "date": "Avvaliga",
+     "date_label": "Yozuvning dastlabki bosqichi",
+     "event": "Har bir so'z rasm ko'rinishida yozilgan, yozuv duolar va marosimlar uchun ishlatilgan",
+     "evidence": "Avvaliga har bir so'z rasm ko'rinishida yozil-gan"
+    },
+    {
+     "kind": "person",
+     "person": "Jak-Fransua Shampolyon",
+     "role": "Taniqli fransuz olimi, iyerogliflar sirini ochgan tadqiqotchi",
+     "activity": "1822-yilda birinchi bo'lib Misr matnlarini o'qishga erishdi",
+     "evidence": "u birinchi bo'lib Misr matnlarini o'qishga erishdi"
+    },
+    {
+     "kind": "person",
+     "person": "Nefertiti",
+     "role": "Misr malikasi, ya'ni Qadimgi Misr hukmdorining xotini",
+     "activity": "Qadimgi Misr malikasi; darslikda uning haykaliy siymosi keltirilgan",
+     "evidence": "Nefertiti – Misr malikasi"
+    },
+    {
+     "kind": "person",
+     "person": "Osiris",
+     "role": "Marhumlar dunyosi hukmdori, Misr yerosti xudosi",
+     "activity": "Misr xudolari qatorida yerosti dunyosining hukmdori sifatida tilga olinadi",
+     "evidence": "Osiris – marhumlar dunyosi hukmdori"
+    },
+    {
+     "kind": "term",
+     "term": "iyerogliflar",
+     "definition": "Qadimgi Misr yozuvi; yunonlar ularni «toshga chekilgan muqaddas bitiklar» deb atagan",
+     "evidence": "de-yishgan («toshga chekilgan muqaddas bitiklar» ma'nosini ang latadi"
+    },
+    {
+     "kind": "term",
+     "term": "papirus",
+     "definition": "Papirus poyasidan ishlangan qog'oz; iyerogliflar qamish qilqalam bilan unga yozilgan",
+     "evidence": "qamish qilqalam bilan papirusga, ya'ni papirus poyasidan ishlangan qog'ozga yozishgan"
+    },
+    {
+     "kind": "term",
+     "term": "«podsho tirsagi»",
+     "definition": "Yagona o'lchov birligi; qo'llar uzunligi turlicha bo'lgani uchun joriy etilgan, 52,5 santimetrga teng",
+     "evidence": "Qo'llar uzunligi turlicha bo'lgani sababli «podsho tirsagi» degan yago-na o'lchov joriy etilgan"
+    },
+    {
+     "kind": "term",
+     "term": "suv soati",
+     "definition": "Vaqtni o'lchash uchun 24 ta bo'lmaga ajratilgan idish; bir soatda bir bo'lmadan ikkinchisiga suv oqadi",
+     "evidence": "Misrda vaqt 24 ta bo'lmaga ajratilgan max-sus idishdan iborat bo'lgan suv soatlari yor-damida o'lchangan"
+    },
+    {
+     "kind": "term",
+     "term": "taqvim",
+     "definition": "Misrliklar birinchi bo'lib tuzgan yil hisobi; 365 kun 30 kundan 12 oyga taqsimlangan",
+     "evidence": "birinchi bo'lib taqvim tuzdilar, 365 kunni esa 30 kundan 12 oyga taqsimladi-lar"
+    },
+    {
+     "kind": "place",
+     "place": "Rozett shahri",
+     "event": "Yaqinidagi toshda qadimgi misr va yunon tillaridagi bir xil ma'nodagi bitik bo'lgan",
+     "evidence": "Qohira shahridan uncha uzoq bo'lmagan Rozett shahri yaqinidagi bir toshga chekil"
+    },
+    {
+     "kind": "place",
+     "place": "Qohira",
+     "event": "Rozett shahri uning yaqinida joylashgan; bitiktosh shu hududda topilgan",
+     "evidence": "Qohira shahridan uncha uzoq bo'lmagan"
+    },
+    {
+     "kind": "place",
+     "place": "Britaniya muzeyi",
+     "event": "Londonda joylashgan; Rozett bitiktoshi bugungi kunda shu yerda saqlanmoqda",
+     "evidence": "Bugungi kunda Rozett bitiktoshi Londondagi Britaniya muzeyida saqlanmoqda"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yozuvdan duolar va marosimlarni yozib borishda foydalanishgan",
+     "effect": "Uni «muqaddas» yoki «xudolar kalomi» deb nomlashgan",
+     "evidence": "Shuning uchun ham uni «muqaddas» yoki «xudolar kalomi» deb nomlashgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Iyerogliflarni o'rganish ancha qiyin ish bo'lgan",
+     "effect": "Savod chiqarish ko'pchilikka nasib etavermagan, savodxonlar katta imtiyozlarga ega bo'lgan",
+     "evidence": "o'rganish ancha qiyin ish bo'lib, savod chiqa-rish ko'pchilikka ham nasib etavermagan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ziroatchilar urug'lik qadash va hosil yig'ishtirish muddatlarini bilishi zarur edi",
+     "effect": "Misrliklar bu muddatlarni yulduzlarga qarab aniqlab, astronomiya fanini yaratdilar",
+     "evidence": "Ziroatchilar qachon urug'likni yerga qadash, qay mahalda hosilni yig'ishtirib olishni bilishi zarur edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Anhorlar qazish va imorat barpo etishda maydon hajmini o'lchash zarur edi",
+     "effect": "Shu tariqa geometriya fani – yer yuzasini o'lchash ilmi dunyoga keldi",
+     "evidence": "Anhorlar qazilayotganda, istalgan imorat va inshootni barpo etayotganda maydon hajmini"
+    },
+    {
+     "kind": "number",
+     "number": 750,
+     "unit": "iyeroglif",
+     "meaning": "Misrliklar alifbosidagi iyerogliflar soni; har bir so'z bir qancha ramzni ifoda etgan",
+     "evidence": "Misrliklar alifbosi 750 iyeroglifdan iborat bo'lgan"
+    },
+    {
+     "kind": "number",
+     "number": "52,5",
+     "unit": "santimetr",
+     "meaning": "«Podsho tirsagi» deb atalgan yagona o'lchov birligining uzunligi",
+     "evidence": "u 52,5 santimetrga teng bo'lgan"
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "title": "Mesopotamiya sivilizatsiyalari",
+   "page": 43,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 4-ming yillik",
+     "date_label": "Miloddan avvalgi 4-ming yillik",
+     "event": "Shumerlar Janubiy Mesopotamiyada manzilgohlar barpo qilib, bu yurtni Shumer deb atadilar",
+     "evidence": "Mil. avv. 4 ming yillikda Mesopotami-y a da shumerlar manzilgohlari vujudga kela boshladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 4-ming yillik",
+     "date_label": "Miloddan avvalgi 4-ming yillik, yozuv ixtirosi",
+     "event": "Shumerlar jahondagi eng qadimgi yozuvlardan biri – mixxatni ixtiro qildilar",
+     "evidence": "Mil. avv. 4-ming yillikda shumerlar ja-hondagi eng qadimgi yozuvlardan biri mixxat-ni ixtiro qilishgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 3-ming yillikning ikkinchi yarmi",
+     "date_label": "Miloddan avvalgi 3-ming yillikning ikkinchi yarmi",
+     "event": "Sargon I Akkad va Shumer shaharlarini o'z hokimiyati ostida birlashtirdi",
+     "evidence": "mil. avv. 3-ming yillikning ikkinchi yarmida Akkad va Shumer shaharlarini o'z hokimi yati ostida birlashtiradi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 2-ming yillikning boshlari",
+     "date_label": "Miloddan avvalgi 2-ming yillik boshlari",
+     "event": "Shumer-Akkad davlati ko'chmanchi qabilalar zarbasidan parchalanib ketdi",
+     "evidence": "Mil. avv. 2-ming yillikning boshlarida Shu-mer-Akkad davlati ko'chmanchi qabilalar zar-basidan parchalanib ketdi"
+    },
+    {
+     "kind": "person",
+     "person": "Gilgamish",
+     "role": "Uruk shahrining podshosi, Mesopotamiya rivoyatlarining qahramoni",
+     "activity": "Boqiy hayot giyohini izlab topdi, ammo ilon uni o'g'irlab ketdi; ezgu ishlar umrboqiy qilishini tushundi",
+     "evidence": "Boqiy hayotga erishish uchun Gilgamish dengiz tubida o'sadigan sehrli giyohni izlab topadi"
+    },
+    {
+     "kind": "person",
+     "person": "Enkidu",
+     "role": "Gilgamishning do'sti, rivoyatdagi pahlavon",
+     "activity": "Gilgamish bilan birga yovuz maxluqotlarga qarshi kurashdi, ma'budlar uni jazolagach halok bo'ldi",
+     "evidence": "Gilgamish Enkidu degan pahlavon bilan do'st tutinadi"
+    },
+    {
+     "kind": "person",
+     "person": "Sargon I",
+     "role": "Shumer-Akkad shohi, Mesopotamiyani birlashtirgan hukmdor",
+     "activity": "Yagona o'lchovlar joriy etib, jahon tarixida birinchi bo'lib muntazam qo'shin tuzdi",
+     "evidence": "U jahon tarixida birinchi bo'lib muntazam qo'shin tuzadi"
+    },
+    {
+     "kind": "person",
+     "person": "Shamash",
+     "role": "Quyosh xudosi, oliy hakam, odamlarni sud qilgan iloh",
+     "activity": "Alohida ehtiromga sazovor bo'lgan iloh; yovuz ishlari uchun odamlarni sud qilgan",
+     "evidence": "Quyosh xudosi Shamash alohida ehtirom-ga sazovor bo'lgan iloh, oliy hakam hisoblanib, yovuz ishlari uchun odamlarni sud qilgan"
+    },
+    {
+     "kind": "person",
+     "person": "Ishtar",
+     "role": "Hosildorlik, sevgi va urush ilohasi, g'alaba ma'budasi",
+     "activity": "Shumerlar unga hosildorlik, sevgi, urush va g'alaba ilohasi sifatida sig'inganlar",
+     "evidence": "hosildorlik va sevgi, urush va g'alaba ilohasi Ishtarga sig'inganlar"
+    },
+    {
+     "kind": "term",
+     "term": "Mesopotamiya",
+     "definition": "Dajla va Frot daryolari oralig'idagi vodiy; yunonlar bergan nom, «Ikki daryo oralig'i» degani",
+     "evidence": "Dajla va Frot daryolari oralig'idagi vodiyni yunonlar Mesopotamiya deb nom-lashgan"
+    },
+    {
+     "kind": "term",
+     "term": "mixxat",
+     "definition": "Shumerlar ixtiro qilgan qadimiy yozuv; uchi o'tkirlangan tayoqchalar bilan loy taxtachalarga yozilgan",
+     "evidence": "Shumerlar uchi o'tkirlangan tayoqchalar bilan loy taxtachalarga yozish-gan"
+    },
+    {
+     "kind": "term",
+     "term": "zikkurat",
+     "definition": "Xom g'ishtdan terilgan muhtasham zinapoyali ibodatxona; davlatdagi hokimiyat markazi bo'lgan",
+     "evidence": "Mesopotamiya-ning qadimiy ibodatxonalari – zikkuratlar xom g'ishtdan terib chiqilgan muhtasham zinapo-yali inshoot bo'lgan"
+    },
+    {
+     "kind": "term",
+     "term": "mino",
+     "definition": "Mesopotamiyadagi og'irlik o'lchovi; 550 gramm kumushga barobar bo'lgan",
+     "evidence": "Mesopotamiyadagi og'irlik o'lchovi «mino» 550 gramm kumushga baro-bar bo'lgan"
+    },
+    {
+     "kind": "term",
+     "term": "shahar-davlat",
+     "definition": "Shahar va unga tutash dehqonchilik tumanlaridan iborat davlat; hukmdori oliy xudo hisoblangan",
+     "evidence": "Ular shahar va unga tutash dehqonchilik tumanlaridan iborat bo'lgan shahar-davlatlar edi"
+    },
+    {
+     "kind": "place",
+     "place": "Uruk",
+     "event": "Mesopotamiyadagi shahar-davlat; afsonaviy Gilgamish shu shaharning podshosi bo'lgan",
+     "evidence": "Gilgamish Uruk shahri podshosi bo'lgan"
+    },
+    {
+     "kind": "place",
+     "place": "Ur",
+     "event": "Mesopotamiyadagi qadimiy shahar-davlat; unda katta zikkurat qurilgan",
+     "evidence": "Urdagi katta zikkurat (ibodatxona)"
+    },
+    {
+     "kind": "place",
+     "place": "Lagash",
+     "event": "Shumer shaharlari qatorida vujudga kelgan shahar-davlatlardan biri",
+     "evidence": "Uruk, Umma, La-gash, Ur va boshqa sha-harlar yuzaga kelgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Daryolarning toshqin suvlari loyqalarni oqizib kelib, yerlarni o'g'itlagan",
+     "effect": "Mesopotamiya yerlari ishlov berish uchun qulay va serunum bo'lgan",
+     "evidence": "Ular yerlarni o'g'itlagan. Shu sababli Mesopotamiya yer lari ishlov berish uchun qulay, serunum bo'lgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yog'och va metall singari xo'jalik uchun zarur materiallar bo'lmagan",
+     "effect": "Aholi savdo-sotiq bilan shug'ullanib, donga ayirboshlab oltin, mis va kumush keltirgan",
+     "evidence": "Mesopotamiyada yog'och va metall singari xo'jalik uchun zarur materiallar bo'lmagan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qishda surunkali yomg'ir va daryolar toshqini bo'lib turgan",
+     "effect": "Yer yuzini butunlay suv bosishi to'g'risidagi To'fon rivoyati dunyoga kelgan",
+     "evidence": "Qishda surunkali yomg'ir va daryolar tosh-qini bo'lib turgani sababli Mesopotamiyada jahondagi eng qadimiy rivoyatlardan biri"
+    },
+    {
+     "kind": "cause",
+     "cause": "Shahar-davlatlar bir-birlari bilan tinimsiz urishar edi",
+     "effect": "Ana shu urushlar natijasida Sargon I butun Mesopotamiya podshosi bo'ldi",
+     "evidence": "Shahar-davlatlar bir-birlari bi-lan tinimsiz urishar edi. Ana shu urushlar natijasida Sar-gon I butun Mesopotamiya podshosi bo'ladi"
+    },
+    {
+     "kind": "number",
+     "number": 550,
+     "unit": "gramm",
+     "meaning": "«Mino» og'irlik o'lchovi shuncha kumushga barobar bo'lgan",
+     "evidence": "550 gramm kumushga baro-bar bo'lgan"
+    },
+    {
+     "kind": "number",
+     "number": 5400,
+     "unit": "nafar",
+     "meaning": "Sargon I tuzgan muntazam qo'shinning jangchilar soni",
+     "evidence": "Bu lashkar 5400 na-far jangchidan iborat bo'lgan"
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "title": "Bobil podsholigi",
+   "page": 49,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. II-ming yillik",
+     "date_label": "Miloddan avvalgi II-ming yillik",
+     "event": "Bobil podsholigi Mesopotamiya janubidagi eng yirik va qudratli davlatga aylandi",
+     "evidence": "Miloddan avvalgi II-ming yil-likda Bobil podsholigi Meso-potamiya janubidagi eng yirik qudratli davlatga aylandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. XVIII asr",
+     "date_label": "Miloddan avvalgi XVIII asr",
+     "event": "Podsho Xammurapi butun Mesopotamiyani yagona davlatga birlashtirishga muvaffaq bo'ldi",
+     "evidence": "Mil. avv. XVIII asrda Bobil podshosi Xam-murapi butun Mesopotamiyani yagona dav-latga birlashtirishga muvaffaq bo'ladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. VII asr",
+     "date_label": "Miloddan avvalgi VII asr",
+     "event": "Yangi Bobil podsholigi vujudga kelgach, Bobil qayta yuksaldi",
+     "evidence": "miloddan avvalgi VII asr-da Yangi Bobil podsholigi vujudga kelganda-gina, Bobil qayta yuksaladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 539-yil",
+     "date_label": "Miloddan avvalgi 539-yil",
+     "event": "Qadimgi forslar lashkari Bobilni zabt etdi, Yangi Bobil podsholigi Fors davlati tarkibiga kirdi",
+     "evidence": "Qadimgi forslar lashkari mil. avv. 539-yilda Bobilga bos tirib kiradi va shaharni zabt etadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 4-mingyillik",
+     "date_label": "Miloddan avvalgi 4-mingyillik",
+     "event": "Shumer mixxati – jahondagi eng qadimiy yozuvlardan biri vujudga keldi",
+     "evidence": "shumer mixxati – mil. avv. 4-mingyillikda vujudga kel-gan"
+    },
+    {
+     "kind": "date_event",
+     "date": "Navuxodonosor II hukmronligi davri",
+     "date_label": "Navuxodonosor II hukmronligi davri",
+     "event": "Yangi Bobil podsholigi o'z ravnaqining cho'qqisiga erishdi",
+     "evidence": "Navuxodonosor II hukmronligi davrida Yangi Bobil podsholigi o'z ravnaqining cho'qqisiga eri-shadi"
+    },
+    {
+     "kind": "person",
+     "person": "Xammurapi",
+     "role": "Bobil podshosi, tarixda qonunlar tuzgan birinchi hukmdor",
+     "activity": "Butun Mesopotamiyani yagona davlatga birlashtirib, tosh ustunlarga o'yilgan qonunlar tuzdi",
+     "evidence": "Xammurapi tarixda qonunlar tuzgan birinchi hukmdor sifatida nom qoldirgan"
+    },
+    {
+     "kind": "person",
+     "person": "Navuxodonosor II",
+     "role": "Yangi Bobil podsholigi hukmdori, Bobilni qal'aga aylantirgan podsho",
+     "activity": "Misrni qo'shib oldi, Iyerusalimni vayron qildi, Bobilni mustahkam qal'aga aylantirdi",
+     "evidence": "Bu hukmdor Misrni Yangi Bobil pod-sholigiga qo'shib oladi, Iyerusalim (Quddus)ni vayron qilib tashlaydi"
+    },
+    {
+     "kind": "person",
+     "person": "Ishtar",
+     "role": "G'alaba ilohasi, hosildorlik va sevgi ma'budasi",
+     "activity": "Nomiga Bobilning bosh ko'chasi boshlanadigan darvoza bag'ishlangan",
+     "evidence": "Bobilning bosh ko'chasi g'alaba ilohasi Ishtar darvozasidan boshlangan"
+    },
+    {
+     "kind": "term",
+     "term": "«Bobil»",
+     "definition": "Shahar nomi; «xudolar darvozasi» degan ma'noni anglatadi",
+     "evidence": "«Bobil» so'zining o'zi esa «xudolar darvozasi» degan ma'noni anglatadi"
+    },
+    {
+     "kind": "term",
+     "term": "Xammurapi qonunlari",
+     "definition": "Tosh ustunlarga yozib qo'yilgan qonunlar; xudolar xohish-irodasi sifatida talqin etilgan",
+     "evidence": "Qonunlarning matnlari mam-lakatning barcha shaharlarida o'rnatilgan tosh ustunlarga yozib qo'yilardi"
+    },
+    {
+     "kind": "term",
+     "term": "loy taxtacha",
+     "definition": "Oftobda quritilib, xumdonlarda pishirilgan yozuv taxtachasi; ilk kitoblar hisoblangan",
+     "evidence": "Loy taxtachalar avval oftobda quritilgan, so'ngra xumdonlarda pishirilgan. Bu taxtacha-lar ilk kitoblar bo'lib"
+    },
+    {
+     "kind": "term",
+     "term": "munajjimlar",
+     "definition": "Shumerlik va bobillik kohinlar; astronomiyaga oid bilimlarga ega bo'lishgan",
+     "evidence": "Shumerlik va bobillik kohinlar – munajjimlar astronomiyaga oid bilim"
+    },
+    {
+     "kind": "term",
+     "term": "asotir",
+     "definition": "Qadimiy rivoyat; olam yaratilishi haqidagi eng qadimiy asotirlardan biri Mesopotamiyada yaratilgan",
+     "evidence": "Olam yaratilishi haqidagi eng qadimiy asotirlardan biri Mesopotamiyada yaratilgan"
+    },
+    {
+     "kind": "place",
+     "place": "Bobil",
+     "event": "Frot va Dajla o'zanlari yaqinlashadigan hududda joylashgan; sakkizta darvozasi bo'lgan",
+     "evidence": "Bobil qulay geografi k o'ringa ega bo'lib, Frot va Dajla daryolari-ning o'zanlari bir-biriga yaqinlashib ketadi-gan hududda joylashgandi"
+    },
+    {
+     "kind": "place",
+     "place": "Ishtar darvozasi",
+     "event": "Bobilning bosh ko'chasi shu darvozadan boshlangan; koshin toshtaxtachalar bilan bezatilgan",
+     "evidence": "iloha Ishtar nomidagi darvoza chiroyli va nafi s bo'lib, afsonaviy hay-vonlar tasviri tushirilgan koshin toshtaxtacha-lar bilan bezatilgan"
+    },
+    {
+     "kind": "place",
+     "place": "Iyerusalim",
+     "event": "Navuxodonosor II vayron qilib tashlagan shahar (Quddus)",
+     "evidence": "Iyerusalim (Quddus)ni vayron qilib tashlaydi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Bobil Frot va Dajla o'zanlari yaqinlashadigan qulay geografik o'rinda joylashgan",
+     "effect": "Kemalarda suzib kelgan savdogarlar bu shaharga qo'nib o'tishgan",
+     "evidence": "Kemalarda turli mahsulotlar bilan suzib kelgan savdogar lar bu shaharga qo'nib o'tishar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xammurapi qonunlari xudolar xohish-irodasi sifatida talqin etilgan",
+     "effect": "Ularni so'zsiz, og'ishmasdan bajarish talab qilinardi",
+     "evidence": "Shuning uchun ham ularni so'zsiz, og'ishmasdan bajarish ta-lab qilinardi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Tog'lik kassitlar qabilalari shaharni bosib oldi",
+     "effect": "Bu bosqin Bobilning uzoq davom etgan inqiroziga sabab bo'ldi",
+     "evidence": "Ularning bos-qini Bobilning inqiroziga sabab bo'ladi. Inqiroz uzoq davom etadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Jarrohlik muolajasidan keyin bemor bevaqt vafot etgan",
+     "effect": "Shifokorning qo'llari kesib tashlanishi shart bo'lgan",
+     "evidence": "bemor bevaqt vafot etsa, shifokor-ning qo'llari kesib tashlanishi shart bo'lgan"
+    },
+    {
+     "kind": "number",
+     "number": 354,
+     "unit": "kun",
+     "meaning": "Oy yilining davomiyligi; shumerliklar uni 354 kun etib belgilagan",
+     "evidence": "oy yili esa 354 kun etib belgilangan"
+    },
+    {
+     "kind": "number",
+     "number": 8,
+     "unit": "darvoza",
+     "meaning": "Navuxodonosor II davrida Bobil shahrining darvozalari soni",
+     "evidence": "Bobil shahri-ning sakkizta darvozasi bo'lgan"
+    }
+   ]
+  }
+ ]
+}

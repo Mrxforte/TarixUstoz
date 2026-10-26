@@ -1,0 +1,1004 @@
+{
+ "chapter": "V BOB. OSIYO, AMERIKA VA AFRIKA XALQLARI",
+ "topics": [
+  {
+   "number": 34,
+   "title": "Saljuqiylar davlati",
+   "page": 121,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1071",
+     "date_label": "1071-yil",
+     "event": "Mansikert jangida Saljuqiylar sultoni Alp Arslon lashkari Vizantiyaning yollanma qo‘shinini tormor etadi.",
+     "evidence": "1071yilda Mansikert jangida tormor etiladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1038–1308",
+     "date_label": "1038–1308-yillar",
+     "event": "Saljuqiylar sulolasi boshqargan davlat mavjud bo‘lgan davr: unga Sulton To‘g‘rulbek asos solgan.",
+     "evidence": "Saljuqiylar sulolasi boshqargan davlat (1038–1308"
+    },
+    {
+     "kind": "date_event",
+     "date": "1243",
+     "date_label": "1243-yil",
+     "event": "Mo‘g‘ullar bosqini boshlanib, davlatning keyingi taraqqiyotiga salbiy ta’sir ko‘rsatadi.",
+     "evidence": "1243yildagi mo‘ g‘ullar bosqini davlatning keyingi taraqqiyotiga"
+    },
+    {
+     "kind": "date_event",
+     "date": "XI",
+     "date_label": "XI asr",
+     "event": "O‘g‘uz qabilalarining Old Osiyoga yirik harbiy yurishlari shu asrdan boshlab kuchayadi.",
+     "evidence": "yirik harbiy yurishlari XI asrdan boshlab kuchayadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "XI",
+     "date_label": "XI asr oxiri",
+     "event": "Kichik Osiyoni deyarli to‘liq bosib olgan o‘g‘uzlar o‘z amirliklarini tuza boshlaydi.",
+     "evidence": "XI asr oxirida Kichik Osi yo ni deyarli to‘liq bosib olgan o‘g‘uzlar"
+    },
+    {
+     "kind": "date_event",
+     "date": "XII–XIII",
+     "date_label": "XII–XIII asrlar",
+     "event": "Saljuqiylarda yer egaligiga asoslangan davlat uzilkesil shakllanadi.",
+     "evidence": "XII–XIII asrlarda saljuqiylarda ham yer egaligiga asoslangan davlatning uzilkesil shakllanishiga"
+    },
+    {
+     "kind": "date_event",
+     "date": "1220–1230",
+     "date_label": "XIII asrning 20–30-yillari",
+     "event": "Turkiy qabilalarning mahalliy aholi bilan aralashuvi va turk xalqi shakllanishi kuchayadi.",
+     "evidence": "XIII asrning 20–30yillarida kuchayadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "XIV",
+     "date_label": "XIV asr boshlari",
+     "event": "Kichik Osiyodagi Saljuqiylar davlati parchalanib ketadi.",
+     "evidence": "XIV asr boshlariga kelib, Kichik Osiyo dagi Saljuqiylar davlati parchalanib ketadi"
+    },
+    {
+     "kind": "person",
+     "person": "Saljuqbek",
+     "role": "O‘g‘uz qabilalari sulolasining asoschisi",
+     "activity": "O‘rta Osiyoda sulolaga asos solgan, uning boshchiligidagi o‘g‘uz qabilalari Old Osiyoga yurish qilgan.",
+     "evidence": "O‘rta Osiyoda Saljuqbek asos solgan sulola boshchiligidagi o‘g‘uz qabilalarining"
+    },
+    {
+     "kind": "person",
+     "person": "Alp Arslon",
+     "role": "Saljuqiylar davlatining sultoni va lashkar boshlig‘i",
+     "activity": "1071-yilda Mansikert jangida Vizantiyaning yollanma qo‘shinini tormor etgan.",
+     "evidence": "Saljuqiylar sultoni Alp Arslon lashkari tomonidan"
+    },
+    {
+     "kind": "person",
+     "person": "Roman IV Diogen",
+     "role": "Vizantiya (Sharqiy Rim) imperiyasining imperatori",
+     "activity": "1071-yilgi Mansikert jangida saljuqiylar tomonidan asir olingan.",
+     "evidence": "Imperator Roman IV Diogen jangda asir olinadi"
+    },
+    {
+     "kind": "person",
+     "person": "Sulton To‘g‘rulbek",
+     "role": "Saljuqning nevarasi, Saljuqiylar davlatiga asos solgan sulton",
+     "activity": "Saljuqiylar davlatiga asos solgan hukmdor, davlat uning sulolasi tomonidan boshqarilgan.",
+     "evidence": "Unga Saljuqning nevarasi Sulton To‘g‘rulbek asos solgan"
+    },
+    {
+     "kind": "term",
+     "term": "Iqto‘",
+     "definition": "Harbiylar va amaldorlarga xizmat muddati davomida foydalanish uchun berilgan yer mulki.",
+     "evidence": "Iqto’ dastlab merosiy mulk bo‘lmasdan, faqat xizmat muddati davomida foydalanish sharti bilan berilgan"
+    },
+    {
+     "kind": "term",
+     "term": "Amirlik",
+     "definition": "XI asr oxirida o‘g‘uz amirlari tuzgan, amalda mustaqil boshqarilgan hududiy mulk.",
+     "evidence": "o‘zlarining qator amirliklarini tuzadilar"
+    },
+    {
+     "kind": "term",
+     "term": "Urug‘-jamoachilik",
+     "definition": "Qabila va urug‘ jamoalariga asoslangan an’anaviy ijtimoiy tuzum, XI asrda inqirozga uchragan.",
+     "evidence": "urug‘-jamoachilikning inqirozi va mulkiy tabaqalarning bosqichida yashaganlar"
+    },
+    {
+     "kind": "term",
+     "term": "Yollanma qo‘shin",
+     "definition": "Vizantiya saljuqiylarga qarshi jangda foydalangan, pul evaziga yollangan harbiy qism.",
+     "evidence": "Vizantiyaning yollanma qo‘shini esa Saljuqiylar sultoni"
+    },
+    {
+     "kind": "place",
+     "place": "Kichik Osiyo",
+     "event": "1071-yilgi mag‘lubiyatdan so‘ng ko‘p sonli turkiy qabilalar bu yerga yo‘l oladi.",
+     "evidence": "ko‘p sonli turkiy qabilalar Kichik Osiyoga yo‘l oladi"
+    },
+    {
+     "kind": "place",
+     "place": "Mansikert",
+     "event": "1071-yilda Alp Arslon lashkari Vizantiya qo‘shinini tormor etgan jang joyi.",
+     "evidence": "Mansikert jangida tormor etiladi"
+    },
+    {
+     "kind": "place",
+     "place": "Old Osiyo",
+     "event": "Saljuqiylar boshchiligidagi o‘g‘uz qabilalari yirik harbiy yurishlar qilgan hudud.",
+     "evidence": "o‘g‘uz qabilalarining Old Osiyoga yirik harbiy yurishlari"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ichki ziddiyatlardan zaiflashgan Sharqiy Rim imperiyasi",
+     "effect": "Ko‘chmanchi turk qabilalarining hujumlariga qarshilik ko‘rsata olmaydi.",
+     "evidence": "Ichki ziddiyatlardan zaif lashgan Sharqiy Rim imperiyasi ko‘ch manchi turk qabilalari hujumlariga qarshilik ko‘rsata olmaydi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mansikert jangidagi mag‘lubiyat va vizantiyaliklarning qarshilik ko‘rsata olmasligi",
+     "effect": "Ko‘p sonli turkiy qabilalar Kichik Osiyoga yo‘l oladi.",
+     "evidence": "Bu mag‘lubiyatdan so‘ng vizantiyaliklar deyarli qarshilik ko‘rsata olmaganligi tufayli"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ko‘chmanchi turkiy qabilalarning o‘troq turmushga o‘tishi va dehqonchilik bilan shug‘ullanishi",
+     "effect": "XII–XIII asrlarda yer egaligiga asoslangan davlat uzilkesil shakllanadi.",
+     "evidence": "Ayni shu paytdan ko‘chmanchi turkiy qabilalarning o‘troq turmushga o‘tishi boshlanadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Turkiy qabilalarning mahalliy aholi bilan aralashishi",
+     "effect": "Yangi etnos – turk xalqining shakllanishiga asos bo‘ladi.",
+     "evidence": "turkiy qabilalarning mahalliy aholi bilan arala shishi yangi etnos – turk xalqining shakl lanishiga asos bo‘ladi"
+    }
+   ]
+  },
+  {
+   "number": 35,
+   "title": "Usmonli turklar davlati",
+   "page": 122,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1299–1326",
+     "date_label": "1299–1326-yillar",
+     "event": "Usmon hukmronligi davri; qator yurishlar uyushtirilib, Bursa shahri va atroflari bosib olinadi.",
+     "evidence": "Usmon (1299–1326) davrida qator yurishlar uyush tirilib, Bursa shahri"
+    },
+    {
+     "kind": "date_event",
+     "date": "1299–1922",
+     "date_label": "1299–1922-yillar",
+     "event": "Usmonlilar sulolasi boshqargan davlat mavjud bo‘lgan davr.",
+     "evidence": "usmonlilar sulolasi boshqargan davlat (1299–1922"
+    },
+    {
+     "kind": "date_event",
+     "date": "1389–1402",
+     "date_label": "1389–1402-yillar",
+     "event": "Sulton Boyazid hukmronlik qilib, tezkor g‘alabalari uchun Yildirim nomini olgan davr.",
+     "evidence": "Turk sul toni Boyazid (1389–1402) bu jang larda o‘zining tezkor g‘alabalari"
+    },
+    {
+     "kind": "date_event",
+     "date": "1402",
+     "date_label": "1402-yil",
+     "event": "Anqara yaqinidagi jangda Amir Temur qo‘shinlari Boyazid lashkarini yengadi.",
+     "evidence": "1402yilning yozida Anqara yaqinidagi jang da sohibqi ron qo‘ shin lari Boyazid lashkari ni yen gadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1453",
+     "date_label": "1453-yil",
+     "event": "Konstantinopol turklar tomonidan olinadi va Vizantiya imperiyasi tugaydi.",
+     "evidence": "1453yilning mayida Konstantinopol turklar tomoni dan olinadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "XIV",
+     "date_label": "XIV asr o‘rtalari",
+     "event": "Bolqon yarimorolidagi dastlabki turk bosqinlari shu davrda boshlangan.",
+     "evidence": "Bolqondagi dastlabki bosqinlar XIV asr o‘rtalarida bo‘lgan"
+    },
+    {
+     "kind": "person",
+     "person": "Usmon I",
+     "role": "Usmonlilar sulolasining asoschisi, Usmon beyligining hukmdori",
+     "activity": "1299–1326-yillarda hukmronlik qilib, Bursa shahri va atroflarini bosib olgan.",
+     "evidence": "Sulola asoschisi Usmon (1299–1326) davrida"
+    },
+    {
+     "kind": "person",
+     "person": "O‘rxon",
+     "role": "Usmonning o‘g‘li, beylikni mustahkamlagan hukmdor",
+     "activity": "Nikeya va Nikomediyani olib Qora dengiz sohiliga chiqqan, harbiy islohot o‘tkazgan.",
+     "evidence": "Uning o‘g‘li O‘rxon Vi zantiya shaharlari Nikeya va Nikomediyalarni olib"
+    },
+    {
+     "kind": "person",
+     "person": "Boyazid Yildirim",
+     "role": "Usmonlilar sultoni, tezkor yurishlar bilan shuhrat qozongan hukmdor",
+     "activity": "Tezkor g‘alabalari uchun Yildirim nomini olgan, Anqara jangida Amir Temurga yengilgan.",
+     "evidence": "o‘zining tezkor g‘alabalari bi lan shuhrat qozonib – Yildirim"
+    },
+    {
+     "kind": "person",
+     "person": "Amir Temur",
+     "role": "Sohibqiron, Boyazidga qarshi Kichik Osiyo yurishini boshlagan hukmdor",
+     "activity": "1402-yilda Anqara yaqinidagi jangda Boyazid lashkarini yenggan.",
+     "evidence": "Amir Temurning Bo ya zid ga qarshi Kichik Osiyo yuri shi"
+    },
+    {
+     "kind": "person",
+     "person": "Mexmet II",
+     "role": "Usmonlilar sultoni, Konstantinopolni egallagan hukmdor",
+     "activity": "Yuz minglik qo‘shin bilan Konstantinopolni qamal qilib, uni egallagan.",
+     "evidence": "Usmonlilar sultoni Mexmet II yuz minglik qo‘shini bilan Konstantino polni qamal qiladi"
+    },
+    {
+     "kind": "term",
+     "term": "Beylik",
+     "definition": "Bey boshqargan, turkiy qabila harbiy kuchlariga tayangan dastlabki davlat tuzilmasi.",
+     "evidence": "Usmon bey ligi Kichik Osiyo ning shimolig‘arbiy hududida tashkil topgan edi"
+    },
+    {
+     "kind": "term",
+     "term": "Vazir",
+     "definition": "O‘rxon boshqaruvi paytida ilk bor ta’sis etilgan oliy amaldor lavozimi.",
+     "evidence": "O‘r xonning boshqaruvi paytida ilk bor vazir lavozimi ta’sis etiladi"
+    },
+    {
+     "kind": "term",
+     "term": "Yanicharlar",
+     "definition": "Asirga olingan xristian bolalaridan tuzilgan, sultonga sodiq piyoda gvardiya.",
+     "evidence": "hukmdorga sadoqatli yanicharlar piyoda qo‘shinining mavjudligida edi"
+    },
+    {
+     "kind": "term",
+     "term": "Tumor",
+     "definition": "Otliq qo‘shin suvorisiga harbiy xizmat davomida beriladigan yer-mulk.",
+     "evidence": "Qo‘shinning har bir suvoriysiga yetarlicha daromad kel tiradigan yermulk – tumori berilgan"
+    },
+    {
+     "kind": "term",
+     "term": "Musallam",
+     "definition": "O‘rxon harbiy islohotida qo‘shin bo‘lingan otliq qismning nomi.",
+     "evidence": "qo‘shinni piyoda va otliq qism («mu sallam»)larga bo‘lib"
+    },
+    {
+     "kind": "place",
+     "place": "Bursa",
+     "event": "Usmon davrida bosib olingan shahar va uning atroflari.",
+     "evidence": "Bursa shahri va uning atroflari bosib olinadi"
+    },
+    {
+     "kind": "place",
+     "place": "Konstantinopol",
+     "event": "1453-yilda turklar tomonidan olingan Vizantiya poytaxti, keyinchalik Istanbul deb atalgan.",
+     "evidence": "Konstantino polni qamal qiladi"
+    },
+    {
+     "kind": "place",
+     "place": "Istanbul",
+     "event": "Konstantinopol olingach Usmonlilar poytaxtini ko‘chirgan shahar.",
+     "evidence": "Usmonlilar shaharni Istanbul deb nomlab, unga o‘z poytaxtlarini ko‘chiradi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Vizantiya bilan qo‘shni bo‘lish",
+     "effect": "Usmon beyligining keyingi taraqqiyoti uchun qulay sharoit yuzaga kelgan.",
+     "evidence": "Uning keyingi taraqqiyotiga Vizantiya bilan qo‘shni bo‘lgani qo‘l keladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Vizantiya imperiyasining tobora zaiflashib borishi",
+     "effect": "Beylik yerlarining kengayib borishi ta’minlanadi.",
+     "evidence": "Tobora zaiflashib borayotgan imperiyaga qarshi harbiy harakatlar beylik yerlarining kengayib borishini ta’ min laydi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Bolqondagi siyosiy tarqoqlik va ichki ziddiyatlar",
+     "effect": "Bu davlatlar turklar istilosiga qarshi birlasha olmaydi.",
+     "evidence": "Ammo siyosiy tarqoqlik va ichki ziddiyatlar bu davlat lar ni turklar istilosiga qarshi birlashuviga imkon bermadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "1402-yilda Anqara jangida Boyazidning mag‘lubiyati",
+     "effect": "Konstantinopol olinmay qolib, Vizantiya yana 50 yil yashaydi.",
+     "evidence": "Bu voqea turklar tomonidan Kons tan tinopolning olinishiga yo‘l qo‘ymay"
+    },
+    {
+     "kind": "cause",
+     "cause": "Beylikning kuchayib borishi",
+     "effect": "Boshqaruvda o‘zgarishlar yuz berib, vazir lavozimi ta’sis etiladi.",
+     "evidence": "Beylikning kuchayib borishi uning boshqaruviga ham o‘zga rishlar olib keladi"
+    },
+    {
+     "kind": "number",
+     "number": "150000",
+     "unit": "suvoriy",
+     "meaning": "Otliq qo‘shin yetgan 150 ming suvoriy – turklar qudratining omillaridan biri.",
+     "evidence": "Natijada otliq qo‘shin soni 150 ming suvoriygacha yetgan"
+    },
+    {
+     "kind": "number",
+     "number": "100000",
+     "unit": "jangchi",
+     "meaning": "Mexmet II Konstantinopolni qamal qilgan qo‘shinining yuz minglik soni.",
+     "evidence": "Mexmet II yuz minglik qo‘shini bilan"
+    }
+   ]
+  },
+  {
+   "number": 36,
+   "title": "Mo‘g‘ullar davlati",
+   "page": 125,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1155–1227",
+     "date_label": "1155–1227-yillar",
+     "event": "Temuchin (keyinchalik Chingizxon) yashagan umr davri.",
+     "evidence": "Mo‘g‘ul qabilalari orasidagi o‘zaro urushlarda Temuchin"
+    },
+    {
+     "kind": "date_event",
+     "date": "1206",
+     "date_label": "1206-yil",
+     "event": "Onon daryosi bo‘yidagi qurultoyda Temuchin ulug‘ xon deb e’lon qilinadi.",
+     "evidence": "1206yilda Onon daryosi bo‘yidagi qurultoyda u ulug‘ xon deb e’lon qilinadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1211",
+     "date_label": "1211-yil",
+     "event": "Chingizxon Shimoliy Xitoyga qarshi urush boshlaydi.",
+     "evidence": "Chingizxon 1211yilda Shimoliy Xitoyga qarshi urush boshlaydi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1218",
+     "date_label": "1218-yil",
+     "event": "Yettisuv va Sharqiy Turkistonga qarshi bosqinlar boshlanadi.",
+     "evidence": "Yettisuv va Sharqiy Turkistonga qarshi 1218yilda boshlangan bosqinlar"
+    },
+    {
+     "kind": "date_event",
+     "date": "1219–1221",
+     "date_label": "1219–1221-yillar",
+     "event": "Xorazmshohlar davlatiga qarshi bosqinlar davom etgan davr.",
+     "evidence": "Xorazmshohlar davlatiga 1219–1221yillardagi bosqinlar"
+    },
+    {
+     "kind": "date_event",
+     "date": "1223",
+     "date_label": "1223-yil",
+     "event": "Mo‘g‘ullar Kavkaz orqali Dashti Qipchoqqa chiqib, Kalka daryosi bo‘yida ruslar qo‘shinini mag‘lub etadi.",
+     "evidence": "Kavkaz orqali 1223yilda Dashti Qipchoq qa chiqadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1224",
+     "date_label": "1224-yil",
+     "event": "Chingizxon zabt etilgan hududlarni o‘g‘illariga ulus qilib bo‘lib beradi.",
+     "evidence": "zabt etilgan hududlarni o‘z o‘g‘illari: Jo‘ji, Chig‘atoy, O‘qtoy va Tuliga uluslarga bo‘-lib"
+    },
+    {
+     "kind": "date_event",
+     "date": "XII",
+     "date_label": "XII asrning ikkinchi yarmi",
+     "event": "Mo‘g‘ullar ijtimoiy munosabatlarida mulkiy tabaqalanish kuchaya boshlagan davr.",
+     "evidence": "XII asrning ikkinchi yarmidan boshlab mo‘ g‘ullar ijtimoiy munosabatla rida"
+    },
+    {
+     "kind": "person",
+     "person": "Temuchin (Chingizxon)",
+     "role": "Mo‘g‘ul qabilalarini birlashtirgan ulug‘ xon, Chingizxon unvoni egasi",
+     "activity": "1206-yilda ulug‘ xon deb e’lon qilinib, markazlashgan mo‘g‘ul davlatiga asos solgan.",
+     "evidence": "Mo‘g‘ul qabilalari orasidagi o‘zaro urushlarda Temuchin (1155–1227) g‘olib chiqadi"
+    },
+    {
+     "kind": "person",
+     "person": "Bosh shomon",
+     "role": "Mo‘g‘ullarning oliy ruhoniysi, unvon berish marosimini o‘tkazgan shaxs",
+     "activity": "1206-yilgi qurultoyda butun xalq oldida Temuchinga Chingizxon unvonini bergan.",
+     "evidence": "Bosh shomon butun xalq oldida Temu chin ga Chingizxon unvonini berad"
+    },
+    {
+     "kind": "person",
+     "person": "O‘qtoy",
+     "role": "Chingizxonning o‘g‘li, taxt vorisi etib tayinlangan ulus egasi",
+     "activity": "1224-yilda ulus olib, otasi tomonidan taxt vorisi etib tayinlangan.",
+     "evidence": "O‘qtoyni taxt vorisi etib tayinlaydi"
+    },
+    {
+     "kind": "person",
+     "person": "Jo‘ji",
+     "role": "Chingizxonning o‘g‘li, otasidan ulus olgan sarkarda",
+     "activity": "1224-yilda otasi zabt etgan hududlardan ulus olgan o‘g‘illardan biri.",
+     "evidence": "Jo‘ji, Chig‘atoy, O‘qtoy va Tuliga uluslarga"
+    },
+    {
+     "kind": "term",
+     "term": "Shomonlik",
+     "definition": "Yovuz va ezgu ruhlarga, ularning inson hayotiga ta’siriga ishonishga asoslangan e’tiqod.",
+     "evidence": "Shomonlik – yovuz va ezgu ruhlarga, ularning inson hayotiga ta’sir ko‘rsatishiga ishonish"
+    },
+    {
+     "kind": "term",
+     "term": "Ayl",
+     "definition": "Alohida ko‘chmanchi xo‘jalik yuritgan urug‘ jamoasi bo‘lagi, chorva egasi.",
+     "evidence": "Urug‘chilik jamoalari alohida ko‘ch manchi xo‘jalik – ayllarga bo‘linib"
+    },
+    {
+     "kind": "term",
+     "term": "Qurultoy",
+     "definition": "Urush, sulh, ittifoq tuzish va xon saylash masalalari hal etiladigan yig‘in.",
+     "evidence": "qurultoylarida eng muhim: urush, sulh, ittifoq tuzish, xonni saylash"
+    },
+    {
+     "kind": "term",
+     "term": "Keshik",
+     "definition": "Chingizxonning favqulodda vaziyatlar uchun doimo jangovar holatda turgan gvardiyasi.",
+     "evidence": "Chingizxon ixtiyorida «keshik» deb yuritilgan maxsus gvardiya ham tashkil etiladi"
+    },
+    {
+     "kind": "term",
+     "term": "Ulus",
+     "definition": "Chingizxon farzandlariga mulk sifatida bo‘lib bergan bosib olingan hududlar.",
+     "evidence": "Ulus (mo‘g‘ulcha – davlat, xalq, odamlar) – Chingizxon farzandlariga mulk sifatida bo‘lib bergan"
+    },
+    {
+     "kind": "place",
+     "place": "Onon daryosi",
+     "event": "1206-yilda ulug‘ xon e’lon qilingan qurultoy bo‘lib o‘tgan joy.",
+     "evidence": "1206yilda Onon daryosi bo‘yidagi qurultoyda"
+    },
+    {
+     "kind": "place",
+     "place": "Qoraqurum",
+     "event": "Chingizxon markazlashtirish maqsadida davlat poytaxtiga aylantirgan qal’a.",
+     "evidence": "Chingizxon Qoraqurum qal’asini o‘z davlatining poy taxtiga aylantiradi"
+    },
+    {
+     "kind": "place",
+     "place": "Kalka daryosi",
+     "event": "1223-yilda qipchoqlar ittifoqchisi bo‘lib kelgan ruslar qo‘shini mag‘lub etilgan jang joyi.",
+     "evidence": "Kalka daryosi bo‘yida qipchoqlarning ittifoqchisi sifatida ularga yordamga kelgan ruslar qo‘shini mag‘lub etiladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mulkiy tabaqalanish sharoitida hayotning o‘zi",
+     "effect": "Urug‘lar harbiy qabila ittifoqlariga birlashishga majbur bo‘ladi.",
+     "evidence": "Mulkiy tabaqalanish sharoitida hayotning o‘zi ularni harbiy qabila ittifoqlariga birlashishga maj bur qiladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Jangni mohirona boshqarish, kuchli va intizomli otliq qo‘shin, qo‘shni mamlakatlardagi siyosiy tarqoqlik",
+     "effect": "Mo‘g‘ul qo‘shinlariga g‘alaba keltirib, istilolarning muvaffaqiyatini ta’minlagan.",
+     "evidence": "Jangni mohirona boshqarish, kuchli va intizomli otliq qo‘shinning bo‘lishi, qo‘shni mamlakatlardagi siyosiy tarqoqlik mo‘g‘ullarga g‘alaba keltirgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mo‘g‘ullarning ko‘chmanchi turmush tarzi",
+     "effect": "Ular har qanday vaqtda otni egarlab yo‘lga tushishga tayyor bo‘lgan.",
+     "evidence": "Mo‘ g‘ullar turmush tarzi har qan day vaqtda otni egarlab yo‘lga tu shishga mos edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ko‘chmanchilar qo‘shini uchun urushga uzoq tayyorlanish zarurati yo‘qligi",
+     "effect": "Mo‘g‘ullar jangga tez tayyorlanib, tez harakat qila olgan.",
+     "evidence": "Ko‘chmanchilar qo‘shini uchun urushga uzoq tayyorlanish zarurati ham bo‘lmagan"
+    },
+    {
+     "kind": "number",
+     "number": "3",
+     "unit": "qism",
+     "meaning": "Ko‘chmanchilar qo‘shini bo‘lingan qismlar soni: markaz va ikki qanot.",
+     "evidence": "Ko‘chmanchilar qo‘shini, odatda, uchta qismga bo‘lingan: markaz va ikki qanot"
+    }
+   ]
+  },
+  {
+   "number": 37,
+   "title": "Oltin O‘rda xonligi",
+   "page": 128,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1235",
+     "date_label": "1235-yil",
+     "event": "Mo‘g‘ullar qurultoyi Rus va Shimoliy Kavkaz yerlarini bosib olish haqida qaror chiqaradi.",
+     "evidence": "Mo‘g‘ullarning 1235yilda bo‘lib o‘tgan qurultoyi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1237",
+     "date_label": "1237-yil",
+     "event": "Botu va Subutoy rus yerlariga hujum boshlab, dastlab Ryazanni bosib oladi.",
+     "evidence": "Botu va Subutoylar 1237yilning kuzida rus yerlariga hujum boshlab"
+    },
+    {
+     "kind": "date_event",
+     "date": "1238–1240",
+     "date_label": "1238–1240-yillar",
+     "event": "Vladimir, Suzdal, Kiyev, Galich va Volin kabi shaharlar bosib olinadi.",
+     "evidence": "1238–1240yillarda Vladimir, Suzdal, Kiyev, Galich, Volin"
+    },
+    {
+     "kind": "date_event",
+     "date": "1243",
+     "date_label": "1243-yil",
+     "event": "O‘qtoyning vafot etishi munosabati bilan Botuxon Volgabo‘yi dashtlariga qaytadi.",
+     "evidence": "1243yilda O‘qtoyning vafot etishi munosabati bilan"
+    },
+    {
+     "kind": "date_event",
+     "date": "1236–1255",
+     "date_label": "1236–1255-yillar",
+     "event": "Botuxon Oltin O‘rda davlatiga asos solgan va uni boshqargan davr.",
+     "evidence": "Botuxon (1236–1255) tomonidan asos so lin gan davlat"
+    },
+    {
+     "kind": "date_event",
+     "date": "1314",
+     "date_label": "1314-yil",
+     "event": "O‘zbekxon islomni Oltin O‘rdaning davlat dini deb e’lon qiladi.",
+     "evidence": "O‘zbekxon 1314yilda islomni davlat dini deb e’lon qiladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1395",
+     "date_label": "1395-yil",
+     "event": "Shimoliy Kavkazda To‘xtamish Amir Temurdan mag‘lub bo‘ladi.",
+     "evidence": "Shimoliy Kavkazda 1395yilda To‘xtamishning Amir Temurdan mag‘ lubiyati"
+    },
+    {
+     "kind": "person",
+     "person": "Botuxon",
+     "role": "Oltin O‘rda davlatining asoschisi va xoni (1236–1255)",
+     "activity": "1235-yilgi qurultoyda rus va Shimoliy Kavkaz yerlarini bosib olishga qo‘shinni yetaklagan.",
+     "evidence": "To‘planadigan qo‘shinga Botuxon yetakchilik qilishi e’lon qilinadi"
+    },
+    {
+     "kind": "person",
+     "person": "Subutoy Bahodir",
+     "role": "Chingizxonning sarkardalaridan biri, Botuxonning yordamchisi",
+     "activity": "1235-yilda Botuxonga yordamga berilib, rus yerlariga hujumda qatnashgan.",
+     "evidence": "Chingizxonning sar karda laridan Subutoy Bahodirning berilishiga kelishiladi"
+    },
+    {
+     "kind": "person",
+     "person": "Yaroslav",
+     "role": "Vladimir knyazi, rus knyazlari orasida «ulug‘» deb tan olingan",
+     "activity": "Oltin O‘rda bilan tinchlik siyosatini boshlab, boshqaruv yorlig‘ini olgan.",
+     "evidence": "Vladimir knyazi Yaroslav ular ning «ulug‘i» deb tan oli ngan"
+    },
+    {
+     "kind": "person",
+     "person": "O‘zbekxon",
+     "role": "Oltin O‘rda xoni, davlatni qudrat cho‘qqisiga olib chiqqan hukmdor",
+     "activity": "1314-yilda islomni davlat dini deb e’lon qilib, davlat qudratini mustahkamlagan.",
+     "evidence": "O‘zbekxon (1312–1342) va uning og‘li Jonibek"
+    },
+    {
+     "kind": "person",
+     "person": "To‘xtamishxon",
+     "role": "Oltin O‘rda xoni, Amir Temur bilan raqobat qilgan hukmdor",
+     "activity": "XIV asr oxirida davlatni o‘n besh yilga birlashtirgan, keyin Amir Temurga yengilgan.",
+     "evidence": "To‘xtamishxon XIV asrning oxirida uni o‘n besh yilga yana birlashtirgan"
+    },
+    {
+     "kind": "term",
+     "term": "Suyurg‘ol",
+     "definition": "Hukmdor tomonidan yirik amaldor va sarkardalarga berilgan, nasldan naslga o‘tadigan mol-mulk va yer-suv.",
+     "evidence": "Suyurg‘ol (mo‘g‘ulcha – in’om, sovg‘a) – hukmdor tomonidan davlat oldida alohida xizmat ko‘rsatgan"
+    },
+    {
+     "kind": "term",
+     "term": "Bosqoq",
+     "definition": "Soliq va bojlarning to‘la nishini nazorat etgan mo‘g‘ul noibi.",
+     "evidence": "maxsus ta yin langan mo‘g‘ul noiblari – bosqoqlar nazorat etishgan"
+    },
+    {
+     "kind": "term",
+     "term": "Beklarbegi",
+     "definition": "Oltin O‘rda qo‘shinini boshqargan, ba’zida xondan ham ko‘proq mavqega ega amaldor.",
+     "evidence": "Oltin O‘rda qo‘shinini beklarbegi boshqargan"
+    },
+    {
+     "kind": "term",
+     "term": "Yorliq",
+     "definition": "Rus knyazlariga Oltin O‘rdadan berilgan boshqaruv hujjati.",
+     "evidence": "Rusda barcha knyazlar Oltin O‘rdadan boshqaruv yorlig‘i olgan"
+    },
+    {
+     "kind": "term",
+     "term": "Ulusbegi",
+     "definition": "Ulusda qo‘shin boshlig‘i bo‘lish bilan birga boshqaruv masalalarini ham hal etgan amaldor.",
+     "evidence": "Bu viloyatlar ulusbegisi – qo‘shin boshlig‘i bo‘lishidan tashqari"
+    },
+    {
+     "kind": "place",
+     "place": "Saroy",
+     "event": "Oltin O‘rda poytaxti, Botuxon davrida Saroy Botu deb atalgan shahar.",
+     "evidence": "Oltin O‘rda poytaxti Saroy shahrida turli diniy ibodat xonalar qurilgan"
+    },
+    {
+     "kind": "place",
+     "place": "Ryazan",
+     "event": "1237-yilda rus yerlariga hujumda birinchi bosib olingan shahar.",
+     "evidence": "dastlab Ryazanni bosib olishadi"
+    },
+    {
+     "kind": "place",
+     "place": "Volgabo‘yi dashtlari",
+     "event": "1243-yilda Botuxon qaytgan va Oltin O‘rda davlati shakllangan hudud.",
+     "evidence": "Botuxon Volgabo‘yi dashtlariga qaytadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Rusdagi siyosiy tarqoqlik",
+     "effect": "Mo‘g‘ullarga qarshilik ko‘rsatish imkoni bo‘lmay, shaharlar ketma-ket bosib olinadi.",
+     "evidence": "Rusdagi siyosiy tarqoqlik mo‘g‘ullarga qarshilik ko‘rsatish imkonini ham bermasdan"
+    },
+    {
+     "kind": "cause",
+     "cause": "1243-yilda O‘qtoyning vafot etishi",
+     "effect": "Botuxon Volgabo‘yi dashtlariga qaytib, Oltin O‘rda davlati shakllanadi.",
+     "evidence": "munosabati bilan Botuxon Volgabo‘yi dashtlariga qaytadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "1395-yilda To‘xtamishning mag‘lubiyati",
+     "effect": "Saroy, Saroy Berka va Astraxan shaharlari vayron bo‘lib, savdo yo‘llari janubga siljigan.",
+     "evidence": "Saroy, Saroy Berka, Astraxan shaharlarining vayron etilishiga sabab bo‘ l gan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Amir Temurning Jo‘ji ulusiga qarshi yurishlari",
+     "effect": "Oltin O‘rda uzilkesil zaiflashib, XV asrda qator xonliklarga bo‘linib ketgan.",
+     "evidence": "uzilkesil zaiflashtirgan. Oltin O‘rda XV asrning birinchi yarmidan qator xonliklarga bo‘linib ketgan"
+    },
+    {
+     "kind": "number",
+     "number": "10",
+     "unit": "askar",
+     "meaning": "Har bir ulusdan qo‘shinga ajratilgan askarlar nisbati – o‘ntadan bittasi.",
+     "evidence": "Uluslardan o‘nta askar dan bittasining ajratilishi"
+    },
+    {
+     "kind": "number",
+     "number": "15",
+     "unit": "yil",
+     "meaning": "To‘xtamishxon Oltin O‘rdani birlashtirib turgan davr davomiyligi.",
+     "evidence": "uni o‘n besh yilga yana birlashtirgan"
+    }
+   ]
+  },
+  {
+   "number": 38,
+   "title": "Xitoy",
+   "page": 132,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "960–1279",
+     "date_label": "960–1279-yillar",
+     "event": "Sun sulolasi hukmronlik qilgan davr; siyosiy tarqoqlik va urushlarga chek qo‘yilgan.",
+     "evidence": "Sun sulolasining (960–1279) hokimiyatga kelishi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1279",
+     "date_label": "1279-yil",
+     "event": "Xitoy mo‘g‘ullar tomonidan to‘liq bo‘ysundiriladi.",
+     "evidence": "Xitoy 1279yili to‘liq bo‘ysundirilib"
+    },
+    {
+     "kind": "date_event",
+     "date": "1279–1368",
+     "date_label": "1279–1368-yillar",
+     "event": "Xitoyda hukmronlik qilgan Yuan (mo‘g‘ullar) sulolasi davri.",
+     "evidence": "mo‘g‘ullar sulolasi Yuan (1279–1368) nomini oladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1351",
+     "date_label": "1351-yil",
+     "event": "Xenan va Shandun viloyatlarida dehqonlar qo‘zg‘oloni boshlanadi.",
+     "evidence": "Xenan va Shan dun viloyatlarida 1351yilda boshlangan dehqonlar qo‘zg‘oloni"
+    },
+    {
+     "kind": "date_event",
+     "date": "1368",
+     "date_label": "1368-yil",
+     "event": "Yuan Chjan asos solgan Min imperiyasi tashkil topadi.",
+     "evidence": "1368yilda Xitoyda Yuan Chjan asos solgan Min imperiyasi tashkil topadi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1405–1433",
+     "date_label": "1405–1433-yillar",
+     "event": "Chjan Xe boshchiligidagi harbiy ekspeditsiyalar amalga oshirilgan davr.",
+     "evidence": "harbiy ekspeditsiya 1405–1433yillarda Zond arxipelagi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1406",
+     "date_label": "1406-yil",
+     "event": "Xitoy Vyetnamni istilo qilishiga yo‘l ochiladi, keyinchalik Mo‘g‘ulistonni ham egallaydi.",
+     "evidence": "bu esa Xitoyga 1406yilda Vyetnamni"
+    },
+    {
+     "kind": "date_event",
+     "date": "1415–1420",
+     "date_label": "1415–1420-yillar",
+     "event": "Xitoy imperatorlari Samarqandga, Ulug‘bek saroyiga elchilar yuborgan davr.",
+     "evidence": "Xitoy imperatorlari 1415–1420yillarda Sa marqandga Ulug‘bek saroyiga ham elchilar yuborgan"
+    },
+    {
+     "kind": "person",
+     "person": "Xubilayxon",
+     "role": "Mo‘g‘ul xoni, Yuan sulolasi davrida Xitoyni bo‘ysundirgan hukmdor",
+     "activity": "Xitoyning markaziy va janubiy hududlarini bo‘ysundirib, xitoycha boshqaruv usulini qo‘llagan.",
+     "evidence": "mo‘g‘ullar davlati Xubilay xo nligi davrida o‘z ta’sirini mamlakatning markaziy va janubiy hududlariga ham o‘tkazadi"
+    },
+    {
+     "kind": "person",
+     "person": "Marko Polo",
+     "role": "Venetsiyalik sayyoh va savdogar, Xubilayxon saroyida lavozim olgan",
+     "activity": "Xubilayxon saroyida yuksak lavozimni egallagan.",
+     "evidence": "venetsiyalik sayyoh va savdogar Marko Polo Xubi layxon saroyida yuksak lavozimni egal lagan"
+    },
+    {
+     "kind": "person",
+     "person": "Chju Yuan-Chjan",
+     "role": "Rohib, dehqonlar qo‘zg‘oloni yetakchisi va Min imperiyasi asoschisi",
+     "activity": "1351-yilgi dehqonlar qo‘zg‘oloniga boshchilik qilib, 1368-yilda Min imperiyasiga asos solgan.",
+     "evidence": "Qo‘zg‘olonga rohib Chju Yuan-Chjan boshchilik qiladi"
+    },
+    {
+     "kind": "person",
+     "person": "Chjan Xe",
+     "role": "Xitoy harbiy dengiz floti boshchisi, musulmon sayyoh",
+     "activity": "1405–1433-yillarda Zond arxipelagi, Shri Lanka va Hindistonga yetti marta yurish uyushtirgan.",
+     "evidence": "Chjan Xe boshchiligidagi harbiy dengiz floti faoliyatida namoyon bo‘ladi"
+    },
+    {
+     "kind": "term",
+     "term": "Zamindor",
+     "definition": "Yirik xususiy yer egasi; uning yerlari davlat yerlari hisobiga ko‘payib borgan.",
+     "evidence": "zamindorlarning xususiy yerlari tobora ko‘payib borgan"
+    },
+    {
+     "kind": "term",
+     "term": "Sex",
+     "definition": "Hunarmandlarni birlashtirgan, a’zolik majburiy bo‘lgan ustaxonalar tashkiloti.",
+     "evidence": "Sex a’zosi bo‘lish Xitoy hunarmandlari uchun majburiy edi"
+    },
+    {
+     "kind": "term",
+     "term": "Chig‘ir",
+     "definition": "Suvni balandroq joylarga ko‘tarib, ekin maydonlarini ko‘paytirishga xizmat qilgan moslama.",
+     "evidence": "Chig‘irdan foydalanish ekin maydonlarini ko‘ paytirish imkonini ber gan"
+    },
+    {
+     "kind": "term",
+     "term": "O‘qdori",
+     "definition": "Porox; Min qo‘shinlari mo‘g‘ullarga qarshi undan zambaraklar bilan birga foydalangan.",
+     "evidence": "xitoyliklarga o‘qdori (porox) va zambaraklardan keng foydalanish qo‘l keladi"
+    },
+    {
+     "kind": "term",
+     "term": "So‘zana",
+     "definition": "Ipakdan to‘qiladigan panno; XII asrda ixtiro qilinib, keng tarqalgan mato turi.",
+     "evidence": "XII asrda ipakdan shoyi so‘zana – panno to‘qish ixtiro qilinib"
+    },
+    {
+     "kind": "place",
+     "place": "Kayfin",
+     "event": "Xitoyning yirik savdo va hunarmandchilik markazlaridan biri.",
+     "evidence": "Kayfin, Chendu va Uchan shaharlari Xitoyning yirik savdo va hunarmandchilik markazlari edi"
+    },
+    {
+     "kind": "place",
+     "place": "Qoraqurum",
+     "event": "Min qo‘shinlari egallab yondirib yuborgan mo‘g‘ullar poytaxti.",
+     "evidence": "ularning poytaxti Qo ra qurumni egallab, yondirib yuboradi"
+    },
+    {
+     "kind": "place",
+     "place": "Samarqand",
+     "event": "Xitoy elchilari Ulug‘bek saroyiga elchilar yuborilgan shahar.",
+     "evidence": "Sa marqandga Ulug‘bek saroyiga ham elchilar yuborgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Sun sulolasining hokimiyatga kelishi va siyosiy tarqoqlikka chek qo‘yilishi",
+     "effect": "Mamlakat xo‘jaligining yuksalishi uchun zamin yaratilgan.",
+     "evidence": "siyo siy tarqoqlik va o‘zaro urushlarga chek qo‘yildi. Natijada mamlakat xo‘ja ligining yuksalishiga zamin yaratildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "To‘lovlarning oshib borishi va qo‘shimcha qog‘oz pul chiqarilishi",
+     "effect": "Pul qadrsizlanib, mahsulot va hunarmandchilik buyumlari qimmatlashgan.",
+     "evidence": "Bu esa pulning qadrsizlanishi ga, mahsulot va hunarmandchilik buyumlarining qimmatlashishiga sabab bo‘ladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Kambag‘allarning qarzlari",
+     "effect": "Ularning yerlari tortib olinib, yirik mulkdorlar yerlarini ko‘paytirgan.",
+     "evidence": "kambag‘allarning qarzlari evaziga yerlarining tortib olinishi ham sabab bo‘lgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Amir Temurning qo‘qqisdan vafot etishi",
+     "effect": "Xitoyga qarshi yurish amalga oshmay, 1406-yilda Vyetnamni istilo qilishga yo‘l ochiladi.",
+     "evidence": "Faqat Amir Temurning qo‘qqisdan vafot etishi Xi toyga qarshi yurishning amalga oshmasligiga sabab bo‘ladi"
+    },
+    {
+     "kind": "number",
+     "number": "62",
+     "unit": "kema",
+     "meaning": "Chjan Xe harbiy ekspeditsiyasi tarkibidagi kemalar soni.",
+     "evidence": "Tarkibida 62 ta kema"
+    },
+    {
+     "kind": "number",
+     "number": "7",
+     "unit": "marta",
+     "meaning": "Zond arxipelagi, Shri Lanka va Hindistonga uyushtirilgan yurishlar soni.",
+     "evidence": "Hindistonga 7 marta yurishlar tashkil qi ladi"
+    }
+   ]
+  },
+  {
+   "number": 39,
+   "title": "Yaponiya",
+   "page": 136,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "XI–XII",
+     "date_label": "XI–XII asrlar",
+     "event": "Yaponiyada yer egaligi munosabatlari uzilkesil shakllangan davr.",
+     "evidence": "Yaponiyada yer egaligi munosabatlari XI–XII asrlarda uzilkesil shakllangan"
+    },
+    {
+     "kind": "date_event",
+     "date": "XII",
+     "date_label": "XII asr",
+     "event": "Yaponiyani mikado – imperator boshqara boshlagan davr.",
+     "evidence": "Yaponiyani XII asrdan mikado – imperator boshqar gan"
+    },
+    {
+     "kind": "date_event",
+     "date": "XII",
+     "date_label": "XII asr oxiri",
+     "event": "Minamoto tomonidan syogunlik o‘rnatilgan davr.",
+     "evidence": "Dastlab syogunlik XII asr oxiridan mahalliy mulkdorlardan biri Minamoto tomonidan o‘rna tilgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "1483",
+     "date_label": "1483-yil",
+     "event": "Savdogarlar chet mamlakatlarga 67 ming dona qilich olib ketgan yil.",
+     "evidence": "1483yilda savdogarlar chet mamlakatlarga 67 ming dona qilich olib ketganlar"
+    },
+    {
+     "kind": "date_event",
+     "date": "XIV–XV",
+     "date_label": "XIV–XV asrlar",
+     "event": "Yapon qishloqlarida ocharchiliklar tez-tez takrorlangan davr.",
+     "evidence": "XIV–XV asrlarda yapon qish loqlarida ocharchiliklar teztez takrorlanib turgan"
+    },
+    {
+     "kind": "person",
+     "person": "Mikado",
+     "role": "Yaponiya imperatori, mamlakatdagi barcha yerlarning egasi",
+     "activity": "XII asrdan mamlakatni boshqargan, zodagonlar uning amaldorlari va noiblariga aylangan.",
+     "evidence": "U mamlakatdagi barcha yerlarning egasi hisoblangan"
+    },
+    {
+     "kind": "person",
+     "person": "Minamoto",
+     "role": "Mahalliy mulkdor, Yaponiyada syogunlikni o‘rnatgan sarkarda",
+     "activity": "Samuraylardan tuzilgan qo‘shin bilan raqiblarini yengib, Kiotoni qo‘lga kiritgan, Kamakuradan boshqargan.",
+     "evidence": "U samuraylardan tuzilgan qo‘shini bilan raqiblarini yengib"
+    },
+    {
+     "kind": "person",
+     "person": "Syogun",
+     "role": "Harbiy qo‘mondon, mamlakatdagi real hokimiyat egasi",
+     "activity": "Imperator hokimiyati zaiflashgach, real hokimiyat uning qo‘liga o‘tgan.",
+     "evidence": "real hokimiyat mamlakatdagi eng kuchli mulkdor, harbiy qo‘mondon – syogun qo‘liga o‘tgan"
+    },
+    {
+     "kind": "term",
+     "term": "Syoyen",
+     "definition": "Merosiy bo‘lib, barcha soliqlardan ozod etilgan yer mulki.",
+     "evidence": "yer egalari mulklari – syoyenlar vujudga kelgan"
+    },
+    {
+     "kind": "term",
+     "term": "Xanke",
+     "definition": "Yaponiyadagi eng nufuzli yirik yer egalari toifasi.",
+     "evidence": "Ulardan eng nufuzlilari – xanke deb nomlangan"
+    },
+    {
+     "kind": "term",
+     "term": "Ryokalar",
+     "definition": "Xanke yer egalarining vassallari hisoblangan yer egalari toifasi.",
+     "evidence": "Ularning vassal lari ryokalar bo‘lgan"
+    },
+    {
+     "kind": "term",
+     "term": "Samuray",
+     "definition": "Harbiy bo‘linma jangchisi; xo‘jayinidan harbiy xizmat evaziga yermulk olgan.",
+     "evidence": "Harbiy bo‘ linmalar jangchilari esa – samuraylar deb nomlangan"
+    },
+    {
+     "kind": "term",
+     "term": "Qo‘sh hokimiyatchilik",
+     "definition": "Imperator bilan birga syogun ham hokimiyat yuritgan boshqaruv holati.",
+     "evidence": "Shu tariqa Yaponiyada qo‘sh hokimi yatchilik paydo bo‘ladi"
+    },
+    {
+     "kind": "place",
+     "place": "Kamakura",
+     "event": "Minamoto davlatni boshqargan qal’a-saroy joylashgan shahar.",
+     "evidence": "Mina moto davlatni o‘zining Kamakuradagi qal’a – saroyidan turib boshqaradi"
+    },
+    {
+     "kind": "place",
+     "place": "Kioto",
+     "event": "Imperator poytaxti, Minamoto qo‘lga kiritgan shahar.",
+     "evidence": "imperator poytaxti Kiotoni qo‘lga kiritadi"
+    },
+    {
+     "kind": "place",
+     "place": "Nagasaki",
+     "event": "Aholi zich yashaydigan yirik port shaharlardan biri.",
+     "evidence": "Sakai, Xyogo, Xakata, Nagasaki kabi yirik, aholi zich yashaydigan port shaharlar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Viloyat noiblarining mustaqil boshqarishga intilishi",
+     "effect": "Mamlakat aksari holatlarda siyosiy tarqoqlikka tushgan.",
+     "evidence": "Viloyat noiblarining mustaqil boshqarishga intilishi esa aksari holatlarda mamlakatni siyosiy tar qoqlikka olib kelgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Imperator hokimiyatining zaiflanishi",
+     "effect": "Real hokimiyat mamlakatdagi eng kuchli mulkdor – syogun qo‘liga o‘tgan.",
+     "evidence": "Imperator hokimiyati zaiflana borib, ko‘p o‘tmay real hokimiyat"
+    },
+    {
+     "kind": "cause",
+     "cause": "Soliqlarning ko‘payib borishi",
+     "effect": "Xalq juda qiynalib, ocharchiliklar tez-tez takrorlangan.",
+     "evidence": "Soliqlarning ko‘-payib borishi xalqni juda qiyna gan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ocharchilik",
+     "effect": "Turli yuqumli kasalliklar tarqalib, ko‘plab kishilar halok bo‘lgan.",
+     "evidence": "Ochar chilik ko‘pincha turli yuqumli kasalliklar tarqalishi va ko‘plab kishilarning halok bo‘lishi bilan tugar edi"
+    },
+    {
+     "kind": "number",
+     "number": "67000",
+     "unit": "dona qilich",
+     "meaning": "1483-yilda savdogarlar chet mamlakatlarga olib ketgan qilichlar soni.",
+     "evidence": "chet mamlakatlarga 67 ming dona qilich olib ketganlar"
+    }
+   ]
+  }
+ ]
+}

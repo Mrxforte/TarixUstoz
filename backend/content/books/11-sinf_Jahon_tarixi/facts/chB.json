@@ -1,0 +1,959 @@
+{
+  "chapter": "II BOB. 1991 – 2017-YILLARDA DUNYO MAMLAKATLARI",
+  "topics": [
+    {
+      "number": 7,
+      "title": "1991–2017-yillarda Kavkazorti davlatlari",
+      "page": 33,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1991-yil 18-oktabr",
+          "date_label": "1991-yil 18-oktabr",
+          "event": "Ozarbayjon Respublikasi o‘z mustaqilligini e’lon qildi va mintaqa siyosatida muhim rol o‘ynay boshladi",
+          "evidence": "Ozarbayjon Respublikasi 1991-yil 18-oktabr kuni o‘z mustaqilli- gini e’lon qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1990-yil",
+          "date_label": "1990-yil",
+          "event": "Boku shahrida muxolifatchi Ozarbayjon Xalq frontining namoyishi boshlandi",
+          "evidence": "1990-yili Boku shahrida muxolifatchi siyosiy tashkilot"
+        },
+        {
+          "kind": "date_event",
+          "date": "1993-yil",
+          "date_label": "1993-yil",
+          "event": "Bo‘lib o‘tgan prezidentlik saylovlarida Geydar Aliyev Ozarbayjon Respublikasi Prezidenti etib saylandi",
+          "evidence": "1993-yili bo‘lib o‘tgan prezidentlik say lov larida G. Aliyev Ozar-bayjon Respub likasi Prezi denti etib saylandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2003-yil dekabr",
+          "date_label": "2003-yil dekabr",
+          "event": "Geydar Aliyev vafot etgach, mamlakat prezidenti etib uning o‘g‘li Ilhom Aliyev saylandi",
+          "evidence": "2003-yil dekabrda G. Aliyev vafot etganidan so‘ng mamlakat pre-zidenti etib uning o‘g‘li Ilhom Aliyev saylandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1991-yil 9-aprel",
+          "date_label": "1991-yil 9-aprel",
+          "event": "Gruziya o‘z mustaqilligini e’lon qildi, ayni paytda prezident lavozimi joriy qilindi",
+          "evidence": "1991-yil 9-aprel kuni Gruziya o‘z mustaqilligini e’lon qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2003-yil",
+          "date_label": "2003-yil",
+          "event": "Parlament saylovlaridan so‘ng hokimiyatga G‘arbda ta’lim olgan «yangi demokratlar» keldi",
+          "evidence": "2003-yili o‘tkazilgan parlament saylovlaridan so‘ng E.Shevardnadze iste’foga chiqqanli gini e’lon qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2008-yil avgust",
+          "date_label": "2008-yil avgust",
+          "event": "Gruziya, Rossiya, Janubiy Osetiya va Abxaziya ishtirokida harbiy to‘qnashuv bo‘lib o‘tdi",
+          "evidence": "2008-yil avgustda Gruziya, Rossiya, Janubiy Osetiya"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991-yil 21-sentabr",
+          "date_label": "1991-yil 21-sentabr",
+          "event": "Armanistonda respublika maqomi bo‘yicha referendum o‘tkazilib, ko‘pchilik SSSR tarkibidan chiqish uchun ovoz berdi",
+          "evidence": "1991-yil 21-sentabrda Armanistonda respublika ma-qomi bo‘yicha referendum o‘tkazildi."
+        },
+        {
+          "kind": "person",
+          "person": "Geydar Aliyev",
+          "role": "Ozarbayjon Respublikasi Prezidenti (1993–2003)",
+          "activity": "Mamlakatdagi ziddiyatli ahvolni yumshatdi, tinch taraqqiyotni ta’minladi, qo‘shnilar bilan hamkorlik o‘rnatdi",
+          "evidence": "G. Aliyev hokimiyatga kelgandan keyin respub likadagi ziddiyatli ahvol ni yumsha-tishga erishdi."
+        },
+        {
+          "kind": "person",
+          "person": "Ilhom Aliyev",
+          "role": "Ozarbayjon prezidenti (2003-yildan), Geydar Aliyevning o‘g‘li",
+          "activity": "Otasining siyosatini davom ettirib, mamlakatni boshqarishda davom etmoqda",
+          "evidence": "I. Aliyev otasining siyosatini davom ettirib kelmoqda."
+        },
+        {
+          "kind": "person",
+          "person": "Eduard Shevardnadze",
+          "role": "Gruziya Davlat kengashi rahbari, keyinchalik Oliy Kengash raisi",
+          "activity": "Gruzin-osetin urushini to‘xtatishga erishdi, ammo iqtisodiy og‘irlik norozilikni kuchaytirdi",
+          "evidence": "E. Shevardnadze bu uru shni to‘xtatishga erishdi."
+        },
+        {
+          "kind": "person",
+          "person": "Mixail Saakashvili",
+          "role": "2003-yilgi saylovlardan keyin hokimiyatga kelgan Gruziya rahbari",
+          "activity": "Soliqlarni kamaytirish va davlat mulkini xususiylashtirish islohotlarini o‘tkazdi, korrupsiyaga qarshi kurash e’lon qilindi",
+          "evidence": "M. Saakashvili hukumati Gruziyada fuqaro-larning davlat organlariga murojaat qilishini yengillashtirish, soliqlarni kamaytirish, davlat mulkini xususiylashtirish kabi muhim islo hot-larni amalga oshir di."
+        },
+        {
+          "kind": "person",
+          "person": "Levon Ter-Petrosyan",
+          "role": "Armanistonning birinchi prezidenti",
+          "activity": "1991-yil oktabrdagi saylovlarda saylanib, mustaqil Armanistonni boshqarishni boshladi",
+          "evidence": "Levon Ter-Petrosyan Arma-nistonning birinchi prezidenti etib saylandi."
+        },
+        {
+          "kind": "term",
+          "term": "Milliy siyosiy elita",
+          "definition": "Jamiyatni boshqarishning ma’lum layoqatiga ega shaxslar guruhi bo‘lib, siyosiy hokimiyatni o‘z qo‘lida jamlaydi",
+          "evidence": "Milliy siyosiy elita (elita – eng yaxshisi, saralan-gani) – bu jamiyatni boshqarishning ma’lum layoqatiga ega bo‘lgan shaxslar guruhi"
+        },
+        {
+          "kind": "term",
+          "term": "Xalq fronti",
+          "definition": "Ozarbayjonda Abulfayz Elchibey boshchiligida tuzilgan muxolifatchi siyosiy tashkilot",
+          "evidence": "Xalq fronti Abulfayz Elchi-bey boshchi ligida Milliy mudofaa ken gashi tuzil gan ligi ni e’lon qildi."
+        },
+        {
+          "kind": "term",
+          "term": "«Atirgullar inqilobi»",
+          "definition": "2003-yilgi parlament saylovlaridan so‘ng Gruziyada yuz bergan hokimiyat almashuvining matbuotdagi nomi",
+          "evidence": "Bu jarayonlar Gruziya va G‘arb matbuotida « Atirgullar inqi-lobi» nomini oldi."
+        },
+        {
+          "kind": "term",
+          "term": "Favqulodda holat",
+          "definition": "1990-yilda Boku voqealari ortidan mamlakatda e’lon qilingan maxsus boshqaruv tartibi",
+          "evidence": "Mamlakatda fav qu lodda holat e’lon qilindi."
+        },
+        {
+          "kind": "place",
+          "place": "Tog‘li Qorabog‘",
+          "event": "Ozarbayjon hududidagi avtonom viloyat bo‘lib, asosan arman aholi yashagan va muammo 1980-yillar oxirida yana ko‘tarilgan",
+          "evidence": "Tog‘li Qora bog‘ Ozarbayjon hududida joylashgan va asosan arman mil latiga man sub aholi yashaydigan avtonom viloyat edi."
+        },
+        {
+          "kind": "place",
+          "place": "Janubiy Osetiya va Abxaziya",
+          "event": "2008-yil avgustdagi harbiy to‘qnashuvdan so‘ng Rossiya ularning mustaqilligini tan oldi",
+          "evidence": "Ros-siya Abxaziya va Janubiy Ose tiyaning mustaqilligini tan olib, ular bilan ikki tomonlama munosa batlar o‘rnatdi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Tog‘li Qorabog‘ avtonom viloyati rahbarlarining viloyatni Armaniston tarkibiga qo‘shish so‘rovi",
+          "effect": "Mintaqadagi milliy muammolar chigallashib ketdi",
+          "evidence": "Tog‘li Qorabog‘ avtonom viloyati rahbar-larining viloyatni Arma-niston tarki biga qo‘shishini so‘rab qilgan muroja ati mintaqadagi milliy muammolarni chigallashtirib yubordi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Mamlakatda yig‘ilib qolgan muammolar, ayniqsa iqtisodiy ahvolning og‘irligi",
+          "effect": "E.Shevardnadze boshqaruviga aholining noroziligi kuchaydi",
+          "evidence": "Ammo mamla katda yig‘ilib qol-gan muammolar, ayniqsa, iqtisodiy ahvolning og‘irligi E.Shevardnadze boshqaruviga nisbatan aholining noroziligini kuchaytirdi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Gruziya bilan Janubiy Osetiya o‘rtasidagi mojaroning hal qilinmagani",
+          "effect": "2008-yil avgustda harbiy to‘qnashuv yuz berdi",
+          "evidence": "Ammo M. Saakashvili davrida ham Gruziya bilan Janubiy Ose tiya o‘rtasidagi mojaro o‘z yechi mini topmadi."
+        },
+        {
+          "kind": "number",
+          "number": "8",
+          "unit": "oy",
+          "meaning": "Zviad Gamsaxurdiya prezidentlik lavozimida faoliyat ko‘rsatgan davr",
+          "evidence": "Z.Gamsa xurdiya o‘zi ning sakkiz oylik prezident-lik davrida"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "1991–2017-yillarda Markaziy Osiyo davlatlari",
+      "page": 38,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1991-yil 16-dekabr",
+          "date_label": "1991-yil 16-dekabr",
+          "event": "Qozog‘iston o‘z mustaqilligini e’lon qilib, Nursulton Nazarboyev uning birinchi prezidenti bo‘ldi",
+          "evidence": "1991-yil 16-dekabrda Qozog‘iston o‘z mustaqil-ligini e’lon qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1993-yil noyabr",
+          "date_label": "1993-yil noyabr",
+          "event": "Qozog‘istonda milliy valuta – tenge muomalaga kiritildi",
+          "evidence": "1993-yil noyabrda milliy valuta – tenge muomalaga kiritildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2006-yil",
+          "date_label": "2006-yil",
+          "event": "Saparmurod Niyozov vafot etdi, Turkmaniston prezidenti etib Gurbanguli Berdimuhamedov saylandi",
+          "evidence": "vafot etdi. Turkma niston prezi denti etib Gurbanguli Ber di muhamedov say landi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1991-yil 9-sentabr",
+          "date_label": "1991-yil 9-sentabr",
+          "event": "Tojikiston o‘z mustaqilligini e’lon qildi",
+          "evidence": "1991-yil 9-sentabr kuni Tojikiston o‘z mustaqil-ligini e’lon qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1994-yil 6-noyabr",
+          "date_label": "1994-yil 6-noyabr",
+          "event": "Tojikiston konstitutsiyasi qabul qilindi va Imomali Rahmonov Prezident etib saylandi",
+          "evidence": "1994-yil 6-noyabrda Tojikiston konstitutsiyasi qabul qilindi va shu kuni o‘tka zilgan prezidentlik saylov larida Imomali Rahmonov Toji-kiston Prezidenti etib saylandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1991-yil 31-avgust",
+          "date_label": "1991-yil 31-avgust",
+          "event": "Qirg‘iziston mustaqilligini e’lon qildi, keyin umumxalq prezidentlik saylovlari o‘tkazildi",
+          "evidence": "1991-yil 31-avgustda Qirg‘iziston o‘z mustaqilligni e’lon qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2005-yil",
+          "date_label": "2005-yil",
+          "event": "«Lolalar inqilobi» natijasida Asqar Akayev hokimiyatdan ag‘darildi",
+          "evidence": "A. Akayevni hokimiyatdan ag‘darib tashlagan 2005-yilgi « Lola-lar inqilobi» juda tez va katta yo‘qotishlarsiz amalga oshirildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2010-yil",
+          "date_label": "2010-yil",
+          "event": "«Aprel inqilobi» deb atalgan ommaviy harakat natijasida K.Bakiyev hukumati ag‘darib tashlandi",
+          "evidence": "2010-yili « Aprel inqilobi» deb atalgan ommaviy hara kat natija-sida"
+        },
+        {
+          "kind": "person",
+          "person": "Nursulton Nazarboyev",
+          "role": "Qozog‘istonning birinchi prezidenti, 2010-yildan rasman «Elboshi»",
+          "activity": "Yangi konstitutsiya bo‘yicha katta vakolatlarga ega bo‘ldi, hukumat iqtisodiy islohotlarni boshlab yubordi",
+          "evidence": "1993-yil Qozog‘istonning yangi kons titutsiyasi qabul qilindi. Unda eng katta vakolatlar prezidentga berildi. Hukumat iqtisodiy is-lohotlarni boshlab yubor di."
+        },
+        {
+          "kind": "person",
+          "person": "Saparmurod Niyozov",
+          "role": "Turkmaniston davlat boshlig‘i, «Turkmanboshi» unvonini olgan rahbar",
+          "activity": "1999-yildan davlat boshlig‘i lavozimini umrbod egalladi, muxolifatchi partiyalar faoliyatini taqiqladi",
+          "evidence": "1999-yildan Xalq Maj-lisi qaroriga ko‘ra Saparmurod Ni yozov dav-lat boshlig‘i lavozimini umrbod egalla di."
+        },
+        {
+          "kind": "person",
+          "person": "Gurbanguli Berdimuhamedov",
+          "role": "Turkmaniston prezidenti (2006-yildan)",
+          "activity": "Niyozov vafotidan so‘ng mamlakat prezidenti etib saylanib, Turkmanistonni boshqarishni boshladi",
+          "evidence": "Turkma niston prezi denti etib Gurbanguli Ber di muhamedov say landi."
+        },
+        {
+          "kind": "person",
+          "person": "Imomali Rahmonov",
+          "role": "Tojikiston Prezidenti (1994-yildan)",
+          "activity": "Konstitutsiya qabul qilingan kuni prezident etib saylandi, tinchlik o‘rnatilgach iqtisodiyotni tiklashga kirishdi",
+          "evidence": "Imomali Rahmonov Toji-kiston Prezidenti etib saylandi."
+        },
+        {
+          "kind": "person",
+          "person": "Roza Otunbayeva",
+          "role": "2010-yilda tuzilgan muvaqqat hukumat rahbari",
+          "activity": "Mamlakatda tartibni saqlash uchun muvaqqat hukumatni boshqardi",
+          "evidence": "Mamlakatda tartibni saqlash uchun Roza Otunbayeva boshchiligida muvaqqat hukumat tashkil qilindi."
+        },
+        {
+          "kind": "term",
+          "term": "Siyosiy texnologiya",
+          "definition": "Siyosiy faoliyatning ma’lum usullari bo‘lib, jamiyat ongiga ta’sir o‘tkazib siyosiy maqsadga erishishga xizmat qiladi",
+          "evidence": "Siyosiy texnologiya – bu siyosiy faoliyatning ma’lum usullari bo‘lib, ulardan jamiyatning ongiga ta’sir o‘tkazish orqali ma’lum bir siyosiy maqsadga erishish uchun foydalaniladi."
+        },
+        {
+          "kind": "term",
+          "term": "Transmilliy korporatsiya",
+          "definition": "Bir nechta mamlakatlarda ishlab chiqarish bo‘limlariga ega bo‘lgan, asosini xalqaro biznes tashkil qiladigan kompaniya",
+          "evidence": "Transmilliy korporatsiya – bu bir nechta mamlakatlarda ish-lab chiqarish bo‘limlariga ega bo‘lgan va faoliyatining asosini xalqaro biznes tashkil qiladigan kompaniya."
+        },
+        {
+          "kind": "term",
+          "term": "Elboshi",
+          "definition": "Qozog‘istonning birinchi prezidenti maqomini mustahkamlagan rasmiy unvon, 2010-yilda qonun bilan belgilandi",
+          "evidence": "2010-yili Qozog‘istonning birinchi prezidenti – Elboshi to‘g‘risida qonun qabul qilindi."
+        },
+        {
+          "kind": "term",
+          "term": "Fuqarolar urushi",
+          "definition": "Tojikistonda mahalliy elitalar o‘rtasidagi hokimiyat kurashi natijasida 1992–1997-yillarda davom etgan urush",
+          "evidence": "Bu kurash 1992-yildan 1997-yilgacha davom etgan fuqa-rolar urushiga olib keldi. Urushdan mamlakat juda katta iqtisodiy zarar ko‘rdi."
+        },
+        {
+          "kind": "place",
+          "place": "Janaozen shahri",
+          "event": "2011-yildagi norozilik namoyishlari paytida tartibsizliklar bo‘lib, 15 kishi halok bo‘ldi",
+          "evidence": "Janaozen shahri dagi tartibsizliklarda 15 kishi halok bo‘ldi, o‘nlab namoyishchilar qamoqqa olindi."
+        },
+        {
+          "kind": "place",
+          "place": "O‘sh va Jalolobod",
+          "event": "2010-yil iyunda bu shaharlarda o‘zbek jamoalariga qarshi fitna uyushtirildi",
+          "evidence": "2010-yil iyunda Janubiy Qirg‘izis-tonning O‘sh va Jalolobod shaharlarida bu yerdagi o‘zbek jamoalariga qarshi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qozog‘iston iqtisodiyotining asosiy sohalari neft, gaz va metallurgiya bo‘lib qolgani",
+          "effect": "Aynan shu sohalar hisobiga iqtisodiyotning boshqa tarmoqlarida ham jadal o‘sishga erishildi",
+          "evidence": "Aynan shu sohalarning hisobiga iqtisodi yotning boshqa sohalarida ham jadal o‘sishga erishildi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Tojikistonda mahalliy elitalar o‘rtasida hokimiyat uchun kurashning qizib ketgani",
+          "effect": "1992–1997-yillarda fuqarolar urushi bo‘lib, mamlakat juda katta iqtisodiy zarar ko‘rdi",
+          "evidence": "mustaqil likdan keyin mamla katning turli minta qa-laridagi mahalliy eli ta lar o‘rtasida hokimi-yat uchun kurash qizib ketdi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Jahonda uglevodorodlarga talabning pasayishi",
+          "effect": "Turkmaniston iqtisodiyotining o‘sish sur’atlari susaydi",
+          "evidence": "Ammo so‘nggi yillarda ja honda uglevodorodlarga talabning pasayishi bilan Turkmaniston iqtisodiyo ti ning o‘sish sur’atlari susaydi."
+        },
+        {
+          "kind": "number",
+          "number": "15",
+          "unit": "kishi",
+          "meaning": "Janaozen shahridagi tartibsizliklarda halok bo‘lgan kishilar soni",
+          "evidence": "Janaozen shahri dagi tartibsizliklarda 15 kishi halok bo‘ldi"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "G‘arb mamlakatlarida integratsiyalashuv jarayonlarining jadallashuvi. Yevropa Ittifoqi va AQSH munosabatlari",
+      "page": 44,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1996-yil",
+          "date_label": "1996-yil",
+          "event": "Yangi a’zolarni qabul qilish yo‘nalishi bo‘yicha Yevroittifoq a’zolarining soni 15 taga yetdi",
+          "evidence": "Birinchidan, yangi a’zolarni qabul qilish yo‘nalishi bo‘lib, 1996-yili a’zolar soni 15 taga yetdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2002-yil",
+          "date_label": "2002-yil Kopengagen uchrashuvi",
+          "event": "Kopengagenda bo‘lib o‘tgan uchrashuvda Yevroittifoqqa o‘nta yangi a’zo qabul qilindi",
+          "evidence": "2002-yili Kopenga genda (Daniya) bo‘lib o‘tgan uchrashuvda Yevroittifoqqa yangi a’zolar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1987-yil",
+          "date_label": "1987-yil",
+          "event": "Yevropa Iqtisodiy Hamkorlik tashkiloti Yevropa Ittifoqiga aylantirildi",
+          "evidence": "1987-yili Yevropa Iqti-sodiy Hamkorlik tashkilotini YIga aylan tirish bilan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1993-yil",
+          "date_label": "1993-yil",
+          "event": "Yagona Yevropa fuqaroligini ta’minlagan Maastrixt kelishuvlari kuchga kirdi",
+          "evidence": "1 9 9 3 - y i l i y a g o n a Yevropa fuqaroli-gini ta’minlagan Maastrixt keli shuvlari kuchga kirdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2002-yil",
+          "date_label": "2002-yil",
+          "event": "Yevropada, Buyuk Britaniyadan tashqari, yagona valuta – yevro joriy qilindi",
+          "evidence": "2002-yili Yevropada ( Buyuk Britaniyadan tashqari) yagona valuta – yevro joriy qilindi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1990-yil",
+          "date_label": "1990-yil",
+          "event": "YI va AQSH o‘rtasida Transatlantik xartiya deb atalgan deklaratsiya imzolandi",
+          "evidence": "1990-yili YI va AQSH o‘rtasida Deklaratsiya – Trans atlantik xartiya imzolandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2016-yil iyun",
+          "date_label": "2016-yil iyun",
+          "event": "Buyuk Britaniyada referendum bo‘lib, aholining yarmidan ko‘pi Yevropa Ittifoqidan chiqish uchun ovoz berdi",
+          "evidence": "Bu norozilikning yorqin namoyishi Buyuk Britaniyada 2016-yil iyunda o‘tka zil gan refe rendum bo‘lib"
+        },
+        {
+          "kind": "date_event",
+          "date": "2017-yil oktabr",
+          "date_label": "2017-yil oktabr",
+          "event": "Ispaniyaning Kataloniya avtonom viloyatida mustaqillik bo‘yicha referendum o‘tkazildi",
+          "evidence": "Bu inqirozning yana bir namoyishi 2017-yil oktabr oyida Ispa niya-ning Kataloniya avtonom viloyatida o‘tkazilgan referendum bo‘ldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2007-yil",
+          "date_label": "2007-yil",
+          "event": "YI va AQSH Transatlantik iqtisodiy integratsiyani chuqurlashtirish to‘g‘risida kelishuv imzolab, Transatlantik iqtisodiy kengash tuzdi",
+          "evidence": "2007-yili YI va AQSH Transatlantik iqtisodiy integratsiyani chuqur-lashtirish to‘g‘risida kelishuv imzoladi va Transatlantik iqtisodiy ken-gash joriy qildi."
+        },
+        {
+          "kind": "person",
+          "person": "Aleksis Sipras",
+          "role": "2015-yilda Gretsiyada hokimiyatga kelgan so‘llar hukumatining rahbari",
+          "activity": "Mamlakat qarzini kreditorlar qo‘ygan shartlar bo‘yicha uza olmasligini e’lon qildi va qarzning bir qismidan voz kechishni talab qildi",
+          "evidence": "2015-yilgi saylov larda Gretsiyada hokimiyatga kelgan A.Sipras bosh-chiligidagi so‘llar hukuma ti mamlakatning qarzini kreditorlar qo‘ygan shartlar bo‘yicha uza olmasligini e’lon qildi."
+        },
+        {
+          "kind": "person",
+          "person": "Angela Merkel",
+          "role": "GFR kansleri, Yevropa Ittifoqi rahbarlari yig‘ilishida qatnashgan siyosatchi",
+          "activity": "Bratislavadagi yig‘ilishda nutq so‘zlab, Yevropa Ittifoqi og‘ir inqirozda ekanligini tan oldi",
+          "evidence": "Unda nutq so‘zlagan GFR kansleri A. Merkel YI og‘ir inqirozda ekanligini tan oldi."
+        },
+        {
+          "kind": "person",
+          "person": "Donald Tramp",
+          "role": "2016-yilda saylangan AQSH prezidenti",
+          "activity": "AQSHning iqlim o‘zgarishi bo‘yicha Parij konvensiyasidan chiqishini e’lon qildi",
+          "evidence": "AQSH prezidenti D.Tramp mamlakat ning bu konvensiyadan chiqishini e’lon qildi."
+        },
+        {
+          "kind": "term",
+          "term": "Kapital",
+          "definition": "Qo‘shimcha qiymat olishda foydalaniladigan moddiy, intellektual va moliyaviy vositalar yig‘indisi",
+          "evidence": "Kapital – bu qo‘shimcha qiymat olishda foydalani-ladigan moddiy, intellektual va moliyaviy vositalar yig‘indisi."
+        },
+        {
+          "kind": "term",
+          "term": "Subsidiya",
+          "definition": "Davlat yoki muassasa tomonidan boshqa davlat, muassasa yoki alohida shaxsga ko‘rsatiladigan moliyaviy va moddiy yordam",
+          "evidence": "Subsidiya – davlat yoki boshqa biron-bir muassasa to-monidan boshqa davlat, muassasa, alohida shaxsga ko‘rsatiladigan moliyaviy yoki moddiy yordam."
+        },
+        {
+          "kind": "term",
+          "term": "Restrukturizatsiya",
+          "definition": "Qarz yoki kreditni to‘lash shartlarini qayta ko‘rib chiqish va o‘zgartirish",
+          "evidence": "Restrukturizatsiya – bu qarz yoki kreditni to‘lash shartlarini qayta ko‘rib chiqish va o‘zgartirish."
+        },
+        {
+          "kind": "term",
+          "term": "Integratsiya",
+          "definition": "Kapital, tovarlar, xizmat ko‘rsatish va ishchi kuchining erkin harakatlanishiga asoslangan yaqinlashuv jarayoni",
+          "evidence": "XX asr ning ikkinchi yarmida bosh-langan kapital, tovarlar, xiz mat ko‘rsatish va ishchi kuchi ning erkin harakatlanishi G‘ar biy Yevropa mam la kat larida rivojlanish va yashash darajasini bir-biriga yaqin lash tir di."
+        },
+        {
+          "kind": "place",
+          "place": "Kopengagen (Daniya)",
+          "event": "2002-yilda Yevroittifoqqa o‘nta yangi a’zo qabul qilingan uchrashuv shu yerda bo‘lib o‘tdi",
+          "evidence": "2002-yili Kopenga genda (Daniya) bo‘lib o‘tgan uchrashuvda"
+        },
+        {
+          "kind": "place",
+          "place": "Kataloniya",
+          "event": "2017-yil referendumi natijalari Madrid tomonidan tan olinmadi, avtonomiya markazdan boshqarila boshlandi",
+          "evidence": "Madriddagi markaziy hokimiyat referendum natijalarini tan olmadi, Kata loniya hukumati a’zo larini qamoqqa oldi va avtonomiyaning to‘g‘ridan to‘g‘ri Madriddan boshqarilishini e’lon qildi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Yevropa Ittifoqiga kiruvchi bir qator davlatlar qarzining haddan oshib ketishi",
+          "effect": "Ittifoqda katta muammolar kelib chiqdi, Gretsiya qarzini restrukturizatsiya qilish talab qilindi",
+          "evidence": "Ammo so‘nggi paytlarda YIga kiruvchi bir qator davlatlar qar-zining haddan oshib ketishi katta muammolarni keltirib chiqardi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Iqtisodiy yetakchi Germaniya va Fransiyaning siyosiy bosimi",
+          "effect": "Yevropa Ittifoqida norozilik kuchayib bordi",
+          "evidence": "Ayni paytda YIda iqtisodiy jihatdan yetakchilik qilayotgan Germa niya va Fransiyaning siyosiy bosimidan ham norozilik kucha yib bormoqda."
+        },
+        {
+          "kind": "cause",
+          "cause": "Xalqaro mojarolarni hal qilishda AQSH kuchga, YI esa diplomatik vositalarga tayanishi",
+          "effect": "Tomonlar o‘rtasida xalqaro muammolarni hal etishda kelishmovchiliklar keskin ko‘zga tashlanadi",
+          "evidence": "AQSH xalqaro mojarolarni hal qilishda kuchga tayanish tarafdori, YI esa diplomatik"
+        },
+        {
+          "kind": "number",
+          "number": "15",
+          "unit": "davlat",
+          "meaning": "1996-yilga kelib Yevropa Ittifoqiga a’zo davlatlar soni",
+          "evidence": "1996-yili a’zolar soni 15 taga yetdi."
+        },
+        {
+          "kind": "number",
+          "number": "10",
+          "unit": "davlat",
+          "meaning": "2002-yilda Kopengagenda Yevroittifoqqa qabul qilingan yangi a’zolar soni",
+          "evidence": "Vengriya, Kipr, Latviya, Litva, Malta, Polsha, Slova kiya, Slo-veniya, Chexiya, Estoniya qabul qilindi."
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "1991–2017-yillarda Amerika Qo‘shma Shtatlari",
+      "page": 48,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1992-yil bahori",
+          "date_label": "1992-yil bahori",
+          "event": "Yalpi ichki mahsulotning o‘sish sur’atlari yana jadallasha boshladi",
+          "evidence": "1992-yil bahoridan yalpi ichki mahsulotning o‘sish sur’atlari yana jadallasha boshladi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1992-yil",
+          "date_label": "1992-yilgi prezidentlik saylovi",
+          "event": "Respublikachi J.Bush kutilmaganda yosh demokrat B.Klintonga yutqazib qo‘ydi",
+          "evidence": "1992-yilgi saylovlarda respublikachi J.Bush kutil-maganda yosh demokrat B.Klintonga yutqazib qo‘ydi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1994-yil",
+          "date_label": "1994-yilgi oraliq saylovlar",
+          "event": "Demokratlar qaqshatqich mag‘lubiyatga uchradi, ko‘pchilik o‘rinlarni respublikachilar egalladi",
+          "evidence": "1994-yilgi oraliq saylovlarda demokratlar qaqshatqich mag‘lubiyatga uchradi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2000-yil",
+          "date_label": "2000-yilgi saylovlar",
+          "event": "Respublikachilar vakili kichik Jorj Bush prezident etib saylandi",
+          "evidence": "2000-yilgi saylovlarda yana respublikachilar vakili kichik Jorj Bush prezident etib say landi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2007–2008-yillar",
+          "date_label": "2007–2008-yillar",
+          "event": "AQSHning moliya sektorida inqiroz boshlandi va u 2009-yilga kelib global retsessiyaga aylandi",
+          "evidence": "Biroq, 2007 – 2008-yillari AQSHning moliya sek torida boshlangan inqiroz 2009-yilga kelib dunyo miqyosidagi global retses siyaga ayla-nib ketdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2008-yil",
+          "date_label": "2008-yilgi saylovlar",
+          "event": "Demokratik partiyadan yagona nomzod Barak Obama AQSH prezidenti etib saylandi",
+          "evidence": "Natijada 2008-yili bo‘lib o‘tgan saylovlarda demo kratik partiyadan yagona nomzod Barak Obama"
+        },
+        {
+          "kind": "date_event",
+          "date": "2009-yil",
+          "date_label": "2009-yil",
+          "event": "B.Obamaga yadro qurolidan xalos qilish va hamkorlikni rivojlantirish yo‘lidagi harakatlari uchun Nobel tinchlik mukofoti berildi",
+          "evidence": "2009-yili dunyoni yadro qurolidan xalos qilish, xalqlar o‘rtasida hamkorlikni rivojlantirish yo‘lida qilgan ha-rakatlari uchun B. Obamaga Nobel tinchlik mukofoti berildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2016-yil",
+          "date_label": "2016-yilgi prezidentlik saylovi",
+          "event": "Demokratlar nomzodi Xillari Klinton yutqazib, prezident etib respublikachi Donald Tramp saylandi",
+          "evidence": "Natijada 2016-yili bo‘lib o‘tgan prezidentlik saylov-larida demo kratlar partiyasidan nomzod Xillari Klin-ton yutqazib qo‘ydi."
+        },
+        {
+          "kind": "person",
+          "person": "Bill Klinton",
+          "role": "AQSH prezidenti (1993–2001), demokrat",
+          "activity": "Ikkinchi muddatida ma’muriyati ijtimoiy sohani rivojlantirishga katta e’tibor qaratdi",
+          "evidence": "B.Klinton prezidentligining ikkinchi muddatida uning ma’muriyati ijtimoiy sohani rivojlantirishga katta e’tibor qaratdi."
+        },
+        {
+          "kind": "person",
+          "person": "Barak Obama",
+          "role": "AQSH prezidenti (2008-yilda saylangan), demokrat",
+          "activity": "Birinchi davrida terrorizmga qarshi kurash va AQSH yetakchiligini tiklashni ustuvor deb e’lon qildi",
+          "evidence": "B. Obama prezidentligining birinchi davrida dunyoda zo‘ravonlikka, ekstremizm va terrorizmga qarshi kurash, AQSHning dunyodagi yetak chilik pozitsiyasini tiklash hukumat tashqi siyosatining ustuvor yo‘nalishi deb e’lon qilindi."
+        },
+        {
+          "kind": "person",
+          "person": "Donald Tramp",
+          "role": "AQSH prezidenti (2016-yilda saylangan), respublikachi",
+          "activity": "Ichki siyosatda Amerikaning buyukligini tiklash, tashqi siyosatda boshqa davlatlar ishlariga aralashmaslikni e’lon qildi",
+          "evidence": "D. Tramp ichki siyosatda Amerikaning buyukligini tik lash, tashqi siyosat da esa boshqa davlatlar ishlariga ara lash maslikni e’lon qilgan edi."
+        },
+        {
+          "kind": "person",
+          "person": "Kichik Jorj Bush",
+          "role": "AQSH prezidenti (2000-yilda saylangan), respublikachi",
+          "activity": "Ikkinchi muddatida mamlakat iqtisodiy inqirozni boshdan kechirdi",
+          "evidence": "Uning ik-kinchi muddat prezi dentlik davrida AQSH iqtisodiy inqirozni boshdan kechirdi."
+        },
+        {
+          "kind": "term",
+          "term": "Iqtisodiy konyunktura",
+          "definition": "Pul harakati, foiz stavkalari, valuta kursi, ish haqi va ishlab chiqarish dinamikasi bilan xarakterlanuvchi iqtisodiy holat",
+          "evidence": "Iqtisodiy konyunktura – bu pulning harakati, foiz stav-kalari, valuta kursi, ish haqi, shuningdek, ishlab chiqarish va iste’molning dinamikasi bilan xarakterlanuvchi iqtisodi-yotning holati, uning faollik darajasini bildiradi."
+        },
+        {
+          "kind": "term",
+          "term": "Makrotexnologiya",
+          "definition": "Belgilangan parametrlarga ko‘ra muayyan mahsulot turini yaratish bo‘yicha barcha texnologik jarayonlar majmuyi",
+          "evidence": "Makrotexnologiya – bu belgilangan parametrlarga ko‘ra, ma’lum m a h s u l o t t u r i n i y a r a t i s h b o ‘ y i c h a b a r c h a t e x n o l o g i k j a r a y o n l a r"
+        },
+        {
+          "kind": "term",
+          "term": "Retsessiya",
+          "definition": "Iqtisodiyotda ishlab chiqarishning nisbatan mo‘tadil pasayishi yoki iqtisodiy o‘sish sur’atlarining sekinlashuvi",
+          "evidence": "Retsessiya – bu iqtisodiyotda ishlab chiqarishning nisbatan mo‘-tadil, unchalik xav fl i bo‘lmagan pasayishini yoki iqtisodiy o‘sish sur’atlarining sekinlashuvini anglatadi."
+        },
+        {
+          "kind": "term",
+          "term": "Pozitsiya",
+          "definition": "Holat, ma’lum voqea yoki hodisaga nisbatan munosabat",
+          "evidence": "Pozitsiya – holat, ma’lum voqea yoki hodisaga nisbatan munosabat."
+        },
+        {
+          "kind": "place",
+          "place": "Afg‘oniston",
+          "event": "Ekstremizm va terrorizmga qarshi kurash to‘liq tugallanmay turib, Yaqin Sharqda keskinlikning yangi o‘chog‘i paydo bo‘ldi",
+          "evidence": "Ammo ekstremizm va terro rizmga qarshi kurash Afg‘onistonda to‘liq tu-gallanmay turib, Yaqin Sharqda keskinlikning yangi o‘chog‘i paydo bo‘ldi."
+        },
+        {
+          "kind": "place",
+          "place": "Iroq",
+          "event": "Saddam Husayn rejimi ag‘darilgandan so‘ng Suriyadagi Bashar Asad rejimiga qarshi kurash kuchaydi",
+          "evidence": "Iroqda Saddam Husayn rejimi ag‘darilgandan so‘ng Suriyada-gi Bashar Asad rejimiga qarshi kurashda"
+        },
+        {
+          "kind": "cause",
+          "cause": "AQSH moliya sektorida 2007–2008-yillarda boshlangan inqiroz",
+          "effect": "2009-yilga kelib jahon miqyosidagi global retsessiya yuz berdi, ishsizlik rekord darajaga chiqdi",
+          "evidence": "Ish-sizlikning misli ko‘rilmagan darajada oshishi mehnat bozorini kuza-tishning butun tarixi davomida eng yuqori ko‘rsatkichga yetdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "AQSH hukumatining Suriyada Bashar Asad rejimiga qarshi mo‘tadil muxolifatchilarni qo‘llab-quvvatlashi",
+          "effect": "ISHID ko‘rinishidagi yangi terroristik guruh vujudga keldi",
+          "evidence": "Iroqda Saddam Husayn rejimi ag‘darilgandan so‘ng Suriyada-gi Bashar Asad rejimiga qarshi kurashda mo‘ta dil muxolifatchilarni qo‘llab-quvvatlagan AQSH hukumati ISHID ko‘rinishi dagi yangi ter-roristik guruhning vujudga kelishiga sabab bo‘ldi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Federal xarajatlarning asosiy qismi inson resurslarini rivojlantirishga yo‘naltirilgani",
+          "effect": "AQSHni ijtimoiy davlatga aylantirish boshlandi, bu siyosat «yangi iqtisodiy falsafa» nomini oldi",
+          "evidence": "Federal xara jatlarning asosiy qismi inson resurslarini rivojlantirishga sar fl andi. AQSHni ijtimo iy davlatga aylantirish bosh lan di."
+        },
+        {
+          "kind": "number",
+          "number": "200 mln",
+          "unit": "kishi",
+          "meaning": "2009-yilda dunyoda ishsizlar soni yetgan miqdor",
+          "evidence": "2009-yili dunyoda ishsizlar soni 200 mln ga yaqin kishini tashkil"
+        },
+        {
+          "kind": "number",
+          "number": "1/3",
+          "unit": "qism",
+          "meaning": "Yangi texnologiyalar yaratishga sarflanayotgan jahon xarajatlarining AQSH ulushiga to‘g‘ri keladigan qismi",
+          "evidence": "Dunyo bo‘yicha yangi texnologiyalar-ni yaratishga sar fl ana yotgan barcha xarajatlarning 1/3 qismi AQSH ulushiga to‘g‘ri keladi."
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "1991–2017-yillarda Germaniya Federativ Respublikasi",
+      "page": 52,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1990-yil 3-oktabr",
+          "date_label": "1990-yil 3-oktabr",
+          "event": "Yagona Germaniya davlati tashkil topganligi e’lon qilindi",
+          "evidence": "1 9 9 0 - y i l 3 - o k t a b r k u n i y a g o n a Germaniya davlati tashkil topganligi e’lon qilindi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1990-yil dekabr",
+          "date_label": "1990-yil dekabr",
+          "event": "Germaniyada navbatdan tashqari parlament saylovlari bo‘lib o‘tdi",
+          "evidence": "1990-yil dekabrda navbatdan tashqari parlament saylov-lari bo‘lib o‘tdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1994-yil",
+          "date_label": "1994-yilgi saylovlar",
+          "event": "Xristian-demokratlar bilan liberallar koalitsiyasining pozitsiyasi yanada mustahkamlandi",
+          "evidence": "1994-yili bo‘lib o‘tgan saylovlarda xristian-demo kratlar bilan liberallar koalitsiyasining po zitsiyasi yana-da mustah kam landi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1998-yil",
+          "date_label": "1998-yilgi parlament saylovlari",
+          "event": "GSDP g‘olib chiqdi va Gerxard Shryoder hukumati tuzildi",
+          "evidence": "Shunday sharoitda 1998-yilgi parlament saylov la rida GSDP g‘olib chiqdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2005-yil sentabr",
+          "date_label": "2005-yil sentabr",
+          "event": "Saylovlarda birorta partiya mutlaq ustunlikka erisha olmadi, noyabrda A.Merkel kansler bo‘ldi",
+          "evidence": "2 0 0 5 - y i l s e n t a b r d a b o ‘ l i b o ‘ t g a n s a y l o v-larda birorta partiya mutlaq ustunlikka eri-sha olmadi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2008–2009-yillar",
+          "date_label": "2008–2009-yillar",
+          "event": "Inqiroz Germaniya iqtisodiga ham katta zarar yetkazdi",
+          "evidence": "Biroq, 2008 – 2009-yillardagi inqiroz boshqalar qatori Germaniya iqti sodiga ham katta zarar yetkazdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2014-yil",
+          "date_label": "2014-yil",
+          "event": "Germaniyaning iqtisodiy o‘sish sur’atlari inqirozdan oldingi ko‘rsatkichlarga yetib oldi",
+          "evidence": "Faqat 2014-yilga kelib Germaniya-ning iqtisodiy o‘sish sur’ atlari in qirozdan oldingi ko‘rsatkichlarga yetib oldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2015-yil may",
+          "date_label": "2015-yil may",
+          "event": "A.Merkel fashizmdan ozod qilganlarni xotirlash uchun Moskvaga keldi",
+          "evidence": "2015-yil may oyida Yevropani fashizmdan ozod qilganlarni xotirlash uchun A. Merkel Moskvaga keldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2017-yil sentabr",
+          "date_label": "2017-yil sentabr",
+          "event": "Parlament saylovlarida A.Merkel boshchiligidagi koalitsiya 33% ovoz oldi, bu hukumat shakllantirishga yetmadi",
+          "evidence": "2017-yil sentabrda bo‘lib o‘tgan parlament saylovlarida A. Merkel boshchiligidagi koalitsiya 33% ovoz oldi."
+        },
+        {
+          "kind": "person",
+          "person": "Gerxard Shryoder",
+          "role": "1998-yilgi saylovlardan keyin tuzilgan GFR hukumati rahbari",
+          "activity": "Iqtisod va ijtimoiy sohada chuqur islohotlarni boshladi, ishsizlikni kamaytirishni maqsad qildi",
+          "evidence": "Gerxard Shryo der hukumati iqti sodda va ijti moiy so-hada chuqur islohotlarni bosh ladi"
+        },
+        {
+          "kind": "person",
+          "person": "Angela Merkel",
+          "role": "GFR kansleri (2005-yildan), birinchi ayol-kansler",
+          "activity": "Federativ tizimni isloh qilish, byurokratiyaga qarshi kurashish, ilmiy tadqiqotlarni rivojlantirish va sog‘liqni saqlashni isloh qilish dasturini e’lon qildi",
+          "evidence": "A.Merkel federativ tizimni isloh qilish, byurokratiyaga qarshi kurashish, ilmiy tadqiqotlarni rivojlantirish"
+        },
+        {
+          "kind": "person",
+          "person": "Ali Sonboli",
+          "role": "2016-yilda Myunxenda hujum uyushtirgan 18 yoshli shaxs",
+          "activity": "Savdo markazida odamlarga qarata o‘q otib, 9 kishining o‘limiga sabab bo‘ldi",
+          "evidence": "Natijada 9 kishi halok bo‘ldi, o‘nlab odamlar yaralandi. A. Sonboli o‘zini o‘zi otib o‘ldirdi."
+        },
+        {
+          "kind": "term",
+          "term": "Kansler",
+          "definition": "GFR hukumatining boshlig‘i bo‘lib, 2005-yil noyabridan bu lavozimni A.Merkel egallagan",
+          "evidence": "Noyabrda bo‘lib o‘tgan bundestag (parlament) yig‘i lishida A.Merkel GFR k a n s l e r i e t i b s a y l a n d i."
+        },
+        {
+          "kind": "term",
+          "term": "Bundestag",
+          "definition": "GFR parlamenti bo‘lib, uning yig‘ilishida hukumat rahbari saylanadi",
+          "evidence": "Noyabrda bo‘lib o‘tgan bundestag (parlament) yig‘i lishida"
+        },
+        {
+          "kind": "term",
+          "term": "Sanksiya",
+          "definition": "Germaniya Rossiyaning Qrimni qo‘shib olishiga javoban boshqa Yevropa davlatlari qatori e’lon qilgan cheklov choralari",
+          "evidence": "Germaniya Ros siyaning Qrimni qo‘shib olishiga qar shi qat’iy pozitsiyani egal ladi va boshqa Yevropa mamlakatlari qatori Ros siyaga qarshi sanksiyalar e’ lon qildi."
+        },
+        {
+          "kind": "term",
+          "term": "GDR",
+          "definition": "Germaniya Demokratik Respublikasi bo‘lib, birlashuvdan keyin unda bozor mexanizmlari joriy qilindi",
+          "evidence": "GDRda bozor mexanizmlarini joriy qi lish asosan GFR tomonidan moliyalashtirildi."
+        },
+        {
+          "kind": "place",
+          "place": "Myunxen",
+          "event": "2016-yilda savdo markazida otishma bo‘lib, 9 kishi halok bo‘ldi va o‘nlab odam yaralandi",
+          "evidence": "Masalan, 2016-yili kelib chiqishi eronlik bo‘lgan 18 yoshli Ali Son boli Myunxen shahridagi savdo markazida"
+        },
+        {
+          "kind": "place",
+          "place": "Moskva",
+          "event": "2015-yil may oyida A.Merkel fashizmdan ozod qilganlarni xotirlash uchun shu shaharga keldi",
+          "evidence": "2015-yil may oyida Yevropani fashizmdan ozod qilganlarni xotirlash uchun A. Merkel Moskvaga keldi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Ikki Germaniya birlashgach, GDRdagi iqtisodiy qoloqlikni bartaraf etish zarurati",
+          "effect": "GDRda bozor mexanizmlarini joriy qilish asosan GFR tomonidan moliyalashtirildi",
+          "evidence": "GDRda bozor mexanizmlarini joriy qi lish asosan GFR tomonidan moliyalashtirildi."
+        },
+        {
+          "kind": "cause",
+          "cause": "1990-yillarning birinchi yarmida ishsizlik darajasining Germaniya tarixidagi eng yuqori ko‘rsatkichga chiqishi",
+          "effect": "1998-yilgi parlament saylovlarida GSDP g‘olib chiqib, chuqur islohotlarni boshladi",
+          "evidence": "Ammo shu yillari ishsiz lik darajasi juda yuqori bo‘lib, bu Germaniya tarixida eng katta ko‘rsatkich edi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Suriyadan va urush harakatlari davom etayotgan boshqa mamlakatlardan kelayotgan qochoqlar muammosi",
+          "effect": "2015-yil oxiriga kelib A.Merkelning obro‘yi biroz pasaydi",
+          "evidence": "Bunga Suriyadan va urush harakat lari davom etayot gan boshqa mam la katlardan kelayotgan qochoq lar muam mosi sabab bo‘l di."
+        },
+        {
+          "kind": "number",
+          "number": "33%",
+          "unit": "ovoz",
+          "meaning": "2017-yil sentabrdagi parlament saylovlarida A.Merkel boshchiligidagi koalitsiya olgan ovoz ulushi",
+          "evidence": "A. Merkel boshchiligidagi koalitsiya 33% ovoz oldi."
+        },
+        {
+          "kind": "number",
+          "number": "9",
+          "unit": "kishi",
+          "meaning": "2016-yilda Myunxendagi savdo markazidagi otishmada halok bo‘lgan kishilar soni",
+          "evidence": "Natijada 9 kishi halok bo‘ldi, o‘nlab odamlar yaralandi."
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "1991–2017-yillarda Buyuk Britaniya",
+      "page": 55,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1990-yil",
+          "date_label": "1990-yil",
+          "event": "Jon Meyjor Buyuk Britaniya bosh vaziri etib saylandi",
+          "evidence": "1990-yili Buyuk Britaniya bosh vaziri etib saylangan Jon Meyjor"
+        },
+        {
+          "kind": "date_event",
+          "date": "1997-yil may",
+          "date_label": "1997-yil may",
+          "event": "Leyboristlar partiyasi parlament saylovlarida g‘olib chiqdi, Entoni Bler hukumat boshlig‘i bo‘ldi",
+          "evidence": "Leyboristlar partiyasi 1997-yil may oyida bo‘lib o‘tgan parlament saylovlarida g‘olib chiqdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1999-yil",
+          "date_label": "1999-yil",
+          "event": "Konstitutsiyaviy islohot bo‘yicha dastlabki yutuqlarga erishilib, Shotlandiya va Uels assambleyalariga saylovlar o‘tkazildi",
+          "evidence": "Faqat 1999-yilga kelib dastlabki yutuqlarga erishildi. Shotlandiya va Uels milliy assambleyalariga saylov-lar o‘tka zildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2003-yil",
+          "date_label": "2003-yil",
+          "event": "Buyuk Britaniya Iroqqa qarshi koalitsiyada ishtirok etdi va bu jamiyatda qizg‘in bahslarni keltirib chiqardi",
+          "evidence": "Tashqi siyosatda Buyuk Britaniyaning 2003-yili Iroqqa qarshi koa-litsiyada ishtiroki jamiyatda qizg‘in bahslarni keltirib chiqardi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2005-yil",
+          "date_label": "2005-yil",
+          "event": "Londonda to‘rtta terrorchilik akti amalga oshirilib, o‘nlab kishilar halok bo‘ldi",
+          "evidence": "2005-yil Londonda to‘rtta terrorchilik akti amalga oshi rildi, nati-jada o‘nlab kishilar halok bo‘ldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2007-yil iyun",
+          "date_label": "2007-yil iyun",
+          "event": "Entoni Bler iste’foga chiqdi, bosh vazir lavozimini Gordon Braun egalladi",
+          "evidence": "2007-yil iyunda E. Bler iste’foga chiqdi. Leyboristlar partiyasi-ning ichki saylovlarida partiyaning yangi yetakchisi va bosh vazir lavozim la ri ni Gordon Braun egalladi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2010-yil",
+          "date_label": "2010-yilgi parlament saylovlari",
+          "event": "Konservatorlar partiyasi g‘alaba qozondi, Devid Kemeron bosh vazir bo‘ldi",
+          "evidence": "Shunga qaramasdan, 2010-yili bo‘lib o‘tgan parlament saylovlarida konser vatorlar partiyasi g‘alaba qozondi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2014-yil sentabr",
+          "date_label": "2014-yil sentabr",
+          "event": "Shotlandiyada mustaqillik bo‘yicha referendum o‘tkazilib, aholining 45 foizi ajralib chiqish uchun ovoz berdi",
+          "evidence": "2014-yil sentabrda Shotlandiyada Buyuk Bri-taniyadan ajralib chiqish masala sida umumxalq referendumi o‘tkazilib, unda 45% aholi mus taqillik uchun ovoz berdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "2016-yil iyun",
+          "date_label": "2016-yil iyun",
+          "event": "Referendumda aholining yarmidan ko‘pi mamlakatning Yevropa Ittifoqidan chiqishi uchun ovoz berdi",
+          "evidence": "2 0 1 6 - y i l i y u n o y i d a b o ‘ l i b o ‘ t g a n refe rendumda ishtirok etgan Buyuk Britaniya aholisining 50 % dan ortig‘i mamlakatning Yevropa Itti foqidan chiqishi uchun ovoz berdi."
+        },
+        {
+          "kind": "person",
+          "person": "Jon Meyjor",
+          "role": "Buyuk Britaniya bosh vaziri (1990-yildan), konservator",
+          "activity": "M.Tetcher davridagi neokonservatizm kursini davom ettirishga, «tetcherizm» qoldiqlaridan asta-sekin voz kechishga harakat qildi",
+          "evidence": "1990-yili Buyuk Britaniya bosh vaziri etib saylangan Jon Meyjor si-yosati M. Tetcher davridagi neokonservatizm kur si ni davom etti rishga"
+        },
+        {
+          "kind": "person",
+          "person": "Entoni Bler",
+          "role": "Bosh vazir (1997-yildan), «yangi leyboristlar» yetakchisi",
+          "activity": "Hukumati tashqi siyosatdagi barcha masalalarda AQSHning eng yaqin hamkori bo‘ldi",
+          "evidence": "E. Bler hukumati tashqi siyosatdagi barcha ma salalarda AQSHning eng yaqin hamkori bo‘ldi."
+        },
+        {
+          "kind": "person",
+          "person": "Gordon Braun",
+          "role": "Bosh vazir (2007-yildan), leyboristlar partiyasi yetakchisi",
+          "activity": "Jahon iqtisodiyoti globallashuvi tarafdori bo‘lib, tashqi savdoda proteksionizm siyosatiga qarshi chiqdi",
+          "evidence": "G. Braun jahon iqtisodiyotining global lashuvi taraf dorlaridan edi. Tashqi savdoda proteksionizm siyo-satiga qarshi chiqdi."
+        },
+        {
+          "kind": "person",
+          "person": "Devid Kemeron",
+          "role": "Bosh vazir (2010-yildan), konservatorlar yetakchisi",
+          "activity": "2016-yilgi referendumdan so‘ng iste’foga chiqdi, lavozimni Tereza Mey egalladi",
+          "evidence": "Shundan so‘ng bosh vazir D. Kemeron iste’ foga chiqdi. Buyuk Bri-taniya bosh vaziri lavozimini Tereza Mey egalladi."
+        },
+        {
+          "kind": "term",
+          "term": "Proteksionizm",
+          "definition": "Ichki bozorni import va eksport boj to‘lovlari, subsidiyalar kabi cheklovlar orqali chet el raqobatidan himoyalash siyosati",
+          "evidence": "Proteksionizm – ichki bozorni ma’lum cheklovlar (im-port va eksport boj to‘lovlari, subsidiyalar va boshqa t a d b i r l a r) o r q a l i c h e t e l r a q o b a t i d a n h i m o y a q i l i s h g a qaratilgan siyosat."
+        },
+        {
+          "kind": "term",
+          "term": "Taktika",
+          "definition": "Ko‘zlangan maqsadga erishish uchun qo‘llaniladigan usul va vositalar yig‘indisi",
+          "evidence": "Taktika – bu ko‘zlangan maqsadga erishish uchun qo‘llaniladigan usul va vositalar yig‘indisi."
+        },
+        {
+          "kind": "term",
+          "term": "«Yangi leyboristlar»",
+          "definition": "1997-yilda saylovga yangi yetakchi va mafkuraviy dastur bilan chiqqan leyboristlar partiyasining o‘zini atashi",
+          "evidence": "Endi ular o‘zlarini «yangi ley borist lar» deb atadilar."
+        },
+        {
+          "kind": "term",
+          "term": "Konstitutsiyaviy islohot",
+          "definition": "E.Bler kabineti faoliyatining asosiy yo‘nalishi bo‘lib, Shotlandiya va Uelsga avtonomiya berishni ko‘zda tutgan",
+          "evidence": "E. Bler kabineti faoliya ti ning asosiy yo‘nalishi konsti tutsion islo hot bo‘ldi."
+        },
+        {
+          "kind": "place",
+          "place": "Shotlandiya",
+          "event": "1999-yilda milliy assambleyaga saylov o‘tkazildi, 2014-yilda esa mustaqillik bo‘yicha referendum bo‘lib o‘tdi",
+          "evidence": "2014-yil sentabrda Shotlandiyada Buyuk Bri-taniyadan ajralib chiqish masala sida umumxalq referendumi o‘tkazilib"
+        },
+        {
+          "kind": "place",
+          "place": "London",
+          "event": "2005-yilda to‘rtta terrorchilik akti amalga oshirilib, o‘nlab kishilar halok bo‘ldi",
+          "evidence": "2005-yil Londonda to‘rtta terrorchilik akti amalga oshi rildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Soliq tizimini isloh qilishga urinishning muvaffaqiyat keltirmagani",
+          "effect": "Konservatorlar partiyasining obro‘yiga salbiy ta’sir qildi",
+          "evidence": "Soliq tizimini isloh qilishga urinish muvaffaqiyat keltir-madi, aksin cha, konservatorlar partiyasining obro‘yiga salbiy ta’sir qildi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Buyuk Britaniyaning 2003-yilda Iroqqa qarshi koalitsiyada ishtirok etishi",
+          "effect": "Jamiyatda norozilik kuchayib, tashqi ishlar vaziri Robin Kuk iste’foga chiqdi",
+          "evidence": "E. Bler siyo satidan norozilik ramzi sifatida tashqi ishlar vaziri Robin Kuk iste’ foga chiqdi."
+        },
+        {
+          "kind": "cause",
+          "cause": "2008-yilda boshlangan jahon moliyaviy inqirozi",
+          "effect": "G.Braunning bank tizimini saqlab qolishga qaratilgan qat’iy harakatlari uning obro‘yini oshirdi",
+          "evidence": "2008-yili boshlangan jahon moliyaviy inqirozi sharoitida G. Bra unning"
+        },
+        {
+          "kind": "number",
+          "number": "45",
+          "unit": "foiz",
+          "meaning": "2014-yilgi Shotlandiya referendumida mustaqillik uchun ovoz bergan aholi ulushi",
+          "evidence": "unda 45% aholi mus taqillik uchun ovoz berdi."
+        }
+      ]
+    }
+  ]
+}

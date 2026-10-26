@@ -32,14 +32,17 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.tarixustoz.app.presentation.ai.AiTutorScreen
 import com.tarixustoz.app.presentation.home.HomeScreen
 import com.tarixustoz.app.presentation.leaderboard.LeaderboardScreen
 import com.tarixustoz.app.presentation.mistakes.MistakesScreen
 import com.tarixustoz.app.presentation.mistakes.MistakesViewModel
+import com.tarixustoz.app.presentation.profile.EditProfileScreen
 import com.tarixustoz.app.presentation.profile.ProfileScreen
+import com.tarixustoz.app.presentation.quiz.PeriodSelectionScreen
 import com.tarixustoz.app.presentation.quiz.QuizOptionsScreen
 import com.tarixustoz.app.presentation.quiz.QuizScreen
+import com.tarixustoz.app.presentation.quiz.TopicSelectionScreen
+import com.tarixustoz.app.presentation.tests.TestsScreen
 import com.tarixustoz.app.presentation.textbooks.PdfViewerScreen
 import com.tarixustoz.app.presentation.textbooks.TextbooksScreen
 import com.tarixustoz.app.presentation.textbooks.TopicDetailScreen
@@ -52,8 +55,8 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
     data object Quiz : Screen("quiz", "Testlar", Icons.Default.Quiz)
     data object Mistakes : Screen("mistakes", "Xatolar", Icons.Default.Warning)
     data object Leaderboard : Screen("leaderboard", "Reyting", Icons.Default.Leaderboard)
-    data object AiTutor : Screen("ai_tutor", "AI Ustoz", Icons.Default.Psychology)
     data object Profile : Screen("profile", "Profil", Icons.Default.Person)
+    data object EditProfile : Screen("edit_profile", "Profilni tahrirlash", Icons.Default.Person)
     data object Achievements : Screen("achievements", "Yutuqlar", Icons.Default.EmojiEvents)
     data object Analytics : Screen("analytics", "Tahlil", Icons.Default.Analytics)
     data object QuizOptions : Screen("quiz_options", "Test Sozlamalari", Icons.Default.Quiz)
@@ -68,7 +71,7 @@ fun TarixNavHost() {
     val bottomItems = listOf(
         Screen.Home,
         Screen.Textbooks,
-        Screen.QuizOptions,
+        Screen.Quiz,
         Screen.Mistakes,
         Screen.Profile
     )
@@ -77,30 +80,35 @@ fun TarixNavHost() {
         bottomBar = {
             val navBackStackEntry by navController.currentBackStackEntryAsState()
             val currentDestination = navBackStackEntry?.destination
-            NavigationBar {
-                bottomItems.forEach { screen ->
-                    NavigationBarItem(
-                        icon = {
-                            if (screen == Screen.Mistakes && mistakesCount > 0) {
-                                BadgedBox(badge = { Badge { Text("$mistakesCount") } }) {
+            val currentRoute = currentDestination?.route
+            val showBottomBar = bottomItems.any { it.route == currentRoute }
+
+            if (showBottomBar) {
+                NavigationBar {
+                    bottomItems.forEach { screen ->
+                        NavigationBarItem(
+                            icon = {
+                                if (screen == Screen.Mistakes && mistakesCount > 0) {
+                                    BadgedBox(badge = { Badge { Text("$mistakesCount") } }) {
+                                        Icon(screen.icon, contentDescription = screen.title)
+                                    }
+                                } else {
                                     Icon(screen.icon, contentDescription = screen.title)
                                 }
-                            } else {
-                                Icon(screen.icon, contentDescription = screen.title)
-                            }
-                        },
-                        label = { Text(screen.title) },
-                        selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
-                        onClick = {
-                            navController.navigate(screen.route) {
-                                popUpTo(navController.graph.findStartDestination().id) {
-                                    saveState = true
+                            },
+                            label = { Text(screen.title) },
+                            selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
+                            onClick = {
+                                navController.navigate(screen.route) {
+                                    popUpTo(navController.graph.findStartDestination().id) {
+                                        saveState = true
+                                    }
+                                    launchSingleTop = true
+                                    restoreState = true
                                 }
-                                launchSingleTop = true
-                                restoreState = true
                             }
-                        }
-                    )
+                        )
+                    }
                 }
             }
         }
@@ -112,12 +120,12 @@ fun TarixNavHost() {
         ) {
             composable(Screen.Home.route) {
                 HomeScreen(
-                    onNavigateToQuiz = { navController.navigate(Screen.QuizOptions.route) },
+                    onNavigateToQuiz = { navController.navigate(Screen.Quiz.route) },
                     onNavigateToMistakes = { navController.navigate(Screen.Mistakes.route) },
                     onNavigateToTextbooks = { navController.navigate(Screen.Textbooks.route) },
-                    onNavigateToAi = { navController.navigate(Screen.AiTutor.route) },
+                    onNavigateToAi = { },
                     onNavigateToLeaderboard = { navController.navigate(Screen.Leaderboard.route) },
-                    onNavigateToTestsHub = { navController.navigate(Screen.QuizOptions.route) },
+                    onNavigateToTestsHub = { navController.navigate(Screen.Quiz.route) },
                     onNavigateToNotifications = { },
                     onNavigateToTopicSelection = { navController.navigate(Screen.Textbooks.route) }
                 )
@@ -164,6 +172,38 @@ fun TarixNavHost() {
                     }
                 )
             }
+            composable(Screen.Quiz.route) {
+                TestsScreen(
+                    onStartQuizCategory = { count, categoryCode, diff, time ->
+                        navController.navigate("quiz/custom?count=$count&cat=$categoryCode&diff=$diff&time=$time&topics=all")
+                    },
+                    onStartQuizForBookOrTopic = { id ->
+                        navController.navigate("quiz/$id")
+                    },
+                    onNavigateToTopicSelection = { navController.navigate("topic_selection") },
+                    onNavigateToPeriodSelection = { navController.navigate("period_selection") },
+                    onNavigateToMistakes = { navController.navigate(Screen.Mistakes.route) },
+                    onNavigateToAi = { },
+                    onNavigateToCustomOptions = { navController.navigate(Screen.QuizOptions.route) }
+                )
+            }
+            composable("topic_selection") {
+                TopicSelectionScreen(
+                    onBack = { navController.popBackStack() },
+                    onStartTopicQuiz = { topicIds ->
+                        val topicsStr = if (topicIds.isEmpty()) "all" else topicIds.joinToString(",")
+                        navController.navigate("quiz/custom?count=15&cat=ALL&diff=MEDIUM&time=15&topics=$topicsStr")
+                    }
+                )
+            }
+            composable("period_selection") {
+                PeriodSelectionScreen(
+                    onBack = { navController.popBackStack() },
+                    onStartPeriodQuiz = { _, _, _ ->
+                        navController.navigate("quiz/custom?count=15&cat=YEAR&diff=MEDIUM&time=15&topics=all")
+                    }
+                )
+            }
             composable(Screen.QuizOptions.route) {
                 QuizOptionsScreen(
                     onStartQuiz = { count, category, diff, time, topics ->
@@ -200,11 +240,15 @@ fun TarixNavHost() {
             composable(Screen.Leaderboard.route) {
                 LeaderboardScreen()
             }
-            composable(Screen.AiTutor.route) {
-                AiTutorScreen()
-            }
             composable(Screen.Profile.route) {
-                ProfileScreen()
+                ProfileScreen(
+                    onNavigateToEditProfile = { navController.navigate(Screen.EditProfile.route) }
+                )
+            }
+            composable(Screen.EditProfile.route) {
+                EditProfileScreen(
+                    onBack = { navController.popBackStack() }
+                )
             }
         }
     }

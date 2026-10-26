@@ -8,11 +8,11 @@ import com.tarixustoz.app.data.repository.UserPreferencesRepository
 import com.tarixustoz.app.domain.model.Question
 import com.tarixustoz.app.domain.model.Difficulty
 import com.tarixustoz.app.domain.model.QuestionCategory
-import com.tarixustoz.app.domain.usecase.GenerativeQuizService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -21,6 +21,7 @@ data class QuizUiState(
     val isLoading: Boolean = true,
     val questions: List<Question> = emptyList(),
     val currentIndex: Int = 0,
+    val answeredCorrectly: List<Boolean?> = emptyList(),
     val selectedOptionId: String? = null,
     val showFeedback: Boolean = false,
     val wasCorrect: Boolean = false,
@@ -32,8 +33,7 @@ data class QuizUiState(
 class QuizViewModel @Inject constructor(
     private val contentRepository: ContentRepository,
     private val mistakesRepository: MistakesRepository,
-    private val preferences: UserPreferencesRepository,
-    private val generativeQuizService: GenerativeQuizService
+    private val preferences: UserPreferencesRepository
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(QuizUiState())
@@ -49,48 +49,109 @@ class QuizViewModel @Inject constructor(
     ) {
         viewModelScope.launch {
             _uiState.value = QuizUiState(isLoading = true)
-            contentRepository.seedIfNeeded()
             
-            val questions = if (topicId == "wrong_questions") {
-                contentRepository.getWrongQuestionsForReview(limit = customCount ?: 10)
-            } else if (topicId != null && topicId != "custom") {
-                val dbQuestions = contentRepository.getQuestionsForTopic(topicId)
-                if (dbQuestions.isNotEmpty()) {
-                    dbQuestions
+            val currentGrade = try {
+                preferences.selectedGrade.first()
+            } catch (_: Exception) { 6 }
+
+            contentRepository.seedIfNeeded()
+
+            val count = customCount ?: 10
+            val catCode = customCategory ?: "ALL"
+            val diffCode = customDifficulty ?: "ALL"
+
+            var questions: List<Question> = emptyList()
+
+            if (topicId == "wrong_questions") {
+                questions = contentRepository.getWrongQuestionsForReview(limit = count)
+            } else if (!topicId.isNullOrBlank() && topicId.startsWith("variant_")) {
+                val parts = topicId.split("_")
+                val reqGrade = parts.getOrNull(1)?.toIntOrNull() ?: currentGrade
+                val reqSubject = if (parts.size >= 4) parts[2] else "ALL"
+                val varIndexStr = if (parts.size >= 4) parts[3] else parts.getOrNull(2)
+                val varIndex = varIndexStr?.toIntOrNull() ?: 1
+                val offset = (varIndex - 1) * 30
+
+                val localVariant = contentRepository.getQuestionsForGradeAndSubjectWithOffset(reqGrade, reqSubject, 30, offset)
+                questions = if (localVariant.isNotEmpty()) {
+                    localVariant
                 } else {
-                    val topic = contentRepository.getTopicById(topicId)
-                    if (topic != null && topic.content.isNotBlank()) {
-                        val genQuestions = generativeQuizService.generateQuestions(
-                            topicContent = topic.content,
-                            count = customCount ?: 10,
-                            difficulty = customDifficulty?.let { enumValueOf<Difficulty>(it) } ?: Difficulty.MEDIUM,
-                            category = customCategory?.let { enumValueOf<QuestionCategory>(it) } ?: QuestionCategory.ALL
-                        )
-                        genQuestions.ifEmpty { dbQuestions }
+                    contentRepository.getQuestionsForGradeAndSubject(reqGrade, reqSubject, count)
+                }
+            } else if (!topicId.isNullOrBlank() && topicId != "custom") {
+                if (topicId.startsWith("book_") || topicId == "uz_6") {
+                    val book = contentRepository.getTextbookById(topicId)
+                    val reqGrade = book?.gradeId ?: if (topicId == "uz_6") 6 else 0
+                    val reqSubject = book?.subjectId ?: ""
+
+                    val apiQuestions = contentRepository.fetchQuizFromApi(
+                        count = count,
+                        categoryCode = catCode,
+                        grade = reqGrade,
+                        subject = reqSubject,
+                        difficulty = diffCode
+                    )
+                    questions = if (apiQuestions.isNotEmpty()) apiQuestions else contentRepository.getCustomQuestions(
+                        limit = count,
+                        category = catCode,
+                        difficulty = diffCode,
+                        topicIds = emptyList(),
+                        gradeId = reqGrade
+                    )
+                } else {
+                    val dbQuestions = contentRepository.getQuestionsForTopic(topicId)
+                    if (dbQuestions.isNotEmpty()) {
+                        questions = dbQuestions
                     } else {
-                        dbQuestions
+                        val apiQuestions = contentRepository.fetchQuizFromApi(
+                            count = count,
+                            categoryCode = catCode,
+                            grade = 0,
+                            subject = "",
+                            difficulty = diffCode,
+                            topicIds = listOf(topicId)
+                        )
+                        questions = if (apiQuestions.isNotEmpty()) apiQuestions else dbQuestions
                     }
                 }
             } else {
-                var currentGrade = 6
-                try {
-                    preferences.selectedGrade.collect { grade ->
-                        currentGrade = grade
-                    }
-                } catch (_: Exception) { }
+                val hasTopicFilters = !selectedTopicIds.isNullOrEmpty()
+                val reqGrade = if (hasTopicFilters) 0 else currentGrade
 
-                contentRepository.getCustomQuestions(
-                    limit = customCount ?: 10,
-                    category = customCategory ?: "ALL",
-                    difficulty = customDifficulty ?: "ALL",
-                    topicIds = selectedTopicIds ?: emptyList(),
-                    gradeId = currentGrade
+                // 1. Try API
+                val apiQuestions = contentRepository.fetchQuizFromApi(
+                    count = count,
+                    categoryCode = catCode,
+                    grade = reqGrade,
+                    subject = "",
+                    difficulty = diffCode,
+                    topicIds = selectedTopicIds ?: emptyList()
                 )
+                if (apiQuestions.isNotEmpty()) {
+                    questions = apiQuestions
+                } else {
+                    // 2. Fallback to Local Room DB
+                    questions = contentRepository.getCustomQuestions(
+                        limit = count,
+                        category = catCode,
+                        difficulty = diffCode,
+                        topicIds = selectedTopicIds ?: emptyList(),
+                        gradeId = reqGrade
+                    )
+                }
+            }
+
+            // 3. Guarantee fallback questions if still empty
+            if (questions.isEmpty()) {
+                questions = contentRepository.getFallbackQuestions(count, catCode, currentGrade)
             }
             
             _uiState.value = QuizUiState(
                 isLoading = false,
-                questions = questions.shuffled()
+                questions = questions
+                    .map { question -> question.copy(options = question.options.shuffled()) }
+                    .shuffled(),
+                answeredCorrectly = List(questions.size) { null }
             )
         }
     }
@@ -116,7 +177,10 @@ class QuizViewModel @Inject constructor(
         }
 
         _uiState.update {
+            val answers = it.answeredCorrectly.toMutableList()
+            if (state.currentIndex in answers.indices) answers[state.currentIndex] = isCorrect
             it.copy(
+                answeredCorrectly = answers,
                 showFeedback = true,
                 wasCorrect = isCorrect,
                 correctCount = if (isCorrect) it.correctCount + 1 else it.correctCount

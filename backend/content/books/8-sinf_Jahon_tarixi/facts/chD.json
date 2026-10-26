@@ -1,0 +1,663 @@
+{
+  "chapter": "V BOB. 1800–1870-YILLARDA OSIYO VA AFRIKA MAMLAKATLARI",
+  "topics": [
+    {
+      "number": 25,
+      "title": "Lotin Amerikasi xalqlarining milliy-ozodlik kurashi",
+      "page": 120,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1810",
+          "date_label": "1810-yil",
+          "event": "Meksikada ommaviy qo‘zg‘olon boshlanib, mustaqillik uchun urush avj oldi",
+          "evidence": "1810-yili mustamlakalarda ommaviy qo‘zg‘olon boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1821",
+          "date_label": "1821-yil",
+          "event": "Meksika mustaqillikka erishdi, qullik bekor qilindi, keyinroq u respublika deb e’lon qilindi",
+          "evidence": "1821-yili Meksika mustaqillikka erishdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1811",
+          "date_label": "1811-yil",
+          "event": "Venesuela mustaqil davlat deb e’lon qilindi",
+          "evidence": "1811-yili Venesuela mustaqil deb e’lon qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1810",
+          "date_label": "1810-yil",
+          "event": "Argentinada mustaqillik uchun qurolli kurash boshlandi",
+          "evidence": "uchun qurolli kurash 1810-yili boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "25-may",
+          "date_label": "25-may",
+          "event": "Kurash boshlangan kun Argentina xalqining milliy bayrami sifatida tarixda qoldi",
+          "evidence": "25-may sanasi tarixda Argentina xalqining milliy bayrami kuni"
+        },
+        {
+          "kind": "date_event",
+          "date": "1822",
+          "date_label": "1822-yil",
+          "event": "Braziliya Portugaliyadan mustaqil deb e’lon qilindi",
+          "evidence": "1822-yili esa Braziliya Portugaliyadan mustaqil deb e’lon qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1830",
+          "date_label": "1830-yil",
+          "event": "Simon Bolivar yirik pomeshiklarning bosimi ostida iste’foga chiqishga majbur bo‘ldi",
+          "evidence": "u 1830-yili iste’foga chiqishga majbur bo‘ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1860",
+          "date_label": "1860-yil",
+          "event": "Lotin Amerikasi mamlakatlarida iqtisodning sezilarli o‘sishi kuzatila boshlandi",
+          "evidence": "1860-yildan Lotin Amerikasi mamlakatlarida"
+        },
+        {
+          "kind": "person",
+          "person": "Migel Idalgo",
+          "role": "Qishloq ruhoniysi, Meksikadagi ozodlik kurashining rahbari",
+          "activity": "1810-yilda hindular va mulatlarni mustaqillik uchun kurashga chaqirdi, qullarni ozod qilishni buyurdi",
+          "evidence": "Qishloq ruhoniysi Idalgoni mahalliy aholi"
+        },
+        {
+          "kind": "person",
+          "person": "Xose Morelos",
+          "role": "Idalgoning eng yaqin safdoshi, ozodlik harakati davomchisi",
+          "activity": "Idalgo halok bo‘lgach uning ishini davom ettirdi, ammo ispan qo‘shini ustun kelib uni ham otib tashladi",
+          "evidence": "Idalgoning eng yaqin safdoshi Morelos uning ishini davom ettirdi"
+        },
+        {
+          "kind": "person",
+          "person": "Simon Bolivar",
+          "role": "Venesuela mustaqillik urushi rahbari, «Xaloskor» faxriy nomi sohibi",
+          "activity": "Ozodlik qo‘shinini tuzdi, qullikni bekor etdi va Buyuk Kolumbiya prezidenti lavozimini egalladi",
+          "evidence": "mustaqillik urushiga Simon Bolivar rahbarlik qildi"
+        },
+        {
+          "kind": "person",
+          "person": "Xose San-Martin",
+          "role": "Argentinani ozod qilgan inqilobiy qo‘shinning qo‘mondoni",
+          "activity": "Uning qo‘mondonligidagi qo‘shin Argentinani ozod qilib, mamlakat mustaqillikka erishdi",
+          "evidence": "Argentinani Xose San-Martin qo‘mondonligidagi inqilobiy qo‘shin ozod qildi"
+        },
+        {
+          "kind": "person",
+          "person": "general Sukre",
+          "role": "Bolivarning safdoshi, Yuqori Perudagi vatanparvarlar qo‘shini boshlig‘i",
+          "activity": "Ispan qo‘shinini tor-mor etib, Yuqori Peruning mustamlakachilik zulmidan ozod bo‘lishiga erishdi",
+          "evidence": "general Sukre boshchiligida ispan qo‘shinini tor-mor etdi"
+        },
+        {
+          "kind": "term",
+          "term": "kreollar",
+          "definition": "Lotin Amerikasiga dastlab ko‘chib kelgan ispan va portugallarning avlodlari",
+          "evidence": "Lotin Amerikasiga dastlab ko‘chib kelgan ispan va portugallarning avlodlari"
+        },
+        {
+          "kind": "term",
+          "term": "metis",
+          "definition": "Amerikada oq tanli aholiga mansub kishilar bilan hindular o‘rtasidagi nikohdan tug‘ilgan avlod",
+          "evidence": "oq tanli aholiga mansub kishilar bilan hindular o‘rtasidagi nikohdan tug‘ilgan avlod"
+        },
+        {
+          "kind": "term",
+          "term": "mulat",
+          "definition": "Oq tanli va qora tanli kishilar o‘rtasidagi nikohdan tug‘ilgan avlod",
+          "evidence": "oq tanli va qora tanli kishilar o‘rtasidagi nikohdan tug‘ilgan avlod"
+        },
+        {
+          "kind": "term",
+          "term": "Buyuk Kolumbiya",
+          "definition": "Venesuela Yangi Grenada bilan birlashgach, Xristofor Kolumb sharafiga shunday nomlangan davlat",
+          "evidence": "Buyuk Kolumbiya deb nom berildi"
+        },
+        {
+          "kind": "place",
+          "place": "Meksika",
+          "event": "Mustaqillik uchun urush boshlangan va 1821-yilda mustaqillikka erishgan mamlakat",
+          "evidence": "Meksikada mustaqillik uchun urush"
+        },
+        {
+          "kind": "place",
+          "place": "Venesuela",
+          "event": "Simon Bolivar ozodlik qo‘shini tuzgan va mustaqillik uchun urush olib borgan mamlakat",
+          "evidence": "Venesuela ozodlik qo‘shinini tuzdi"
+        },
+        {
+          "kind": "place",
+          "place": "Boliviya",
+          "event": "Yuqori Peru ispan zulmidan ozod bo‘lgach, Simon Bolivar sharafiga shunday atalgan davlat",
+          "evidence": "Yuqori Peru S. Bolivar sharafiga Boliviya"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mustamlakachilik zulmi qishloq xo‘jaligi va savdo rivojiga asosiy to‘siq bo‘lib qoldi",
+          "effect": "Bu omillar Ispaniya mustamlakachiligiga qarshi ozodlik harakatini keltirib chiqardi",
+          "evidence": "mustamlakachilik zulmiga qarshi ozodlik harakatini keltirib chiqardi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ispaniya amaldorlari kreollarni oliy ma’muriy lavozimlarga yo‘latmas va ular bilan takabburona muomala qilar edilar",
+          "effect": "Kreollar og‘ir soliqlar, amaldorlar beboshligi va savdo taqiqlaridan aziyat chekdilar",
+          "evidence": "Ispaniya amaldorlari kreollarni mustamlakalardagi oliy ma’muriy lavozimlarga yo‘latmas"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mustamlakalarda burjuaziya hali zaif edi",
+          "effect": "Ozodlik harakatiga kreollardan chiqqan inqilobchilar boshchilik qildilar",
+          "evidence": "Mustamlakalarda burjuaziya hali zaif edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Bolivar inqilobning hal qiluvchi davrida xalq bilan birga bo‘lib, unga fidokorona xizmat qildi",
+          "effect": "Yirik pomeshiklar unga qarshi chiqib, uni jismonan yo‘q qilishga qaror qildilar",
+          "evidence": "Shuning uchun ham u yirik pomeshiklarga yoqmadi"
+        },
+        {
+          "kind": "number",
+          "number": "10",
+          "unit": "kun",
+          "meaning": "Idalgo quldorlarga qullarini shu muddat ichida ozod qilib yuborishni buyurdi",
+          "evidence": "hamma qullarini o‘n kunlik muddatda ozod qilib yuborishni buyurdi"
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "title": "1800–1870-yillarda Hindiston",
+      "page": 126,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1800–1870",
+          "date_label": "1800–1870-yillar",
+          "event": "Hindistonda Buyuk Britaniyaning mustamlakachilik tartibi hukm surgan davr",
+          "evidence": "1870-YILLARDA HINDISTON"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr",
+          "date_label": "XIX asr, «yangi asr»",
+          "event": "Buyuk Britaniya Hindistonni butunlay o‘z mustamlakasiga aylantirish siyosatini davom ettirdi",
+          "evidence": "ham Hindistonni butunlay o‘z mus"
+        },
+        {
+          "kind": "date_event",
+          "date": "1857",
+          "date_label": "1857-yil",
+          "event": "Sipohiylar qo‘zg‘oloni boshlandi va tez orada katta hududni qamrab oldi",
+          "evidence": "Qo‘zg‘olon 1857-yili boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1857",
+          "date_label": "1857-yil, qo‘zg‘olon boshlanganidan so‘ng",
+          "event": "Sipohiylar Dehli shahrini egallab, Bahodirshoh II ni chaqiriq imzolashga majbur qildilar",
+          "evidence": "Sipohiylar tez orada Dehli"
+        },
+        {
+          "kind": "date_event",
+          "date": "1858",
+          "date_label": "1858-yil",
+          "event": "Hindiston Buyuk Britaniya mulki deb e’lon qilindi",
+          "evidence": "1858-yili Hindiston Buyuk Britaniya mulki deb e’lon qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1858",
+          "date_label": "1858-yil, qo‘zg‘olondan keyin",
+          "event": "Mustamlakachilar majburiy islohotlar o‘tkazib, yer egalarining soliqlarni oshirishini taqiqladilar",
+          "evidence": "soliqlarni oshirishi taqiqlab qo‘yildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr 70-yillari",
+          "date_label": "XIX asrning 70-yillari",
+          "event": "Hindistonning iqtisodiy va siyosiy hayotida muhim o‘zgarishlar yuz berib, kapitalizm rivojlandi",
+          "evidence": "XIX asrning 70-yillarigacha"
+        },
+        {
+          "kind": "person",
+          "person": "Bahodirshoh II",
+          "role": "Dehli shohi, sipohiylar qo‘zg‘oloni davrida taxtda o‘tirgan hukmdor",
+          "activity": "Sipohiylar shoh saroyiga bostirib kirgach, hind xalqini mustamlakachilarga qarshi qo‘zg‘olon ko‘tarishga chorlovchi chaqiriqni imzolashga majbur bo‘ldi",
+          "evidence": "Ular shoh saroyiga bostirib kirishdi, Bahodirshoh II hind xalqini"
+        },
+        {
+          "kind": "person",
+          "person": "Pirimqul Qodirov",
+          "role": "«Yulduzli tunlar» romanining muallifi",
+          "activity": "Romanida Boburiylarning Hindiston tarixini tasvirlagan, «Agra. Yulduzlar girdobi» qismi shu asardan olingan",
+          "evidence": "Pirimqul Qodirovning «Yulduzli tunlar» romanidan"
+        },
+        {
+          "kind": "term",
+          "term": "sipohiy",
+          "definition": "Buyuk Britaniya zobitlari rahbarlik qilgan, hindlardan tuzilgan yollanma qo‘shin askari",
+          "evidence": "Bu qo‘shin askari sipohiy deb atalardi"
+        },
+        {
+          "kind": "term",
+          "term": "«Ost-Indiya» kompaniyasi",
+          "definition": "Hindistonni boshqaruvchi mustamlakachi ma’muriyat apparatiga aylantirilgan savdo kompaniyasi",
+          "evidence": "kompaniya amalda Hindistonni boshqaruvchi mustamlakachi"
+        },
+        {
+          "kind": "term",
+          "term": "general-gubernator",
+          "definition": "Hindistondagi barcha mustamlakalar boshlig‘i etib tayinlangan Kalkutta gubernatori mansabi",
+          "evidence": "barcha mustamlakalari general-gubernatori etib tayinlandi"
+        },
+        {
+          "kind": "term",
+          "term": "«Hindiston ishlari bo‘yicha nazorat kengashi»",
+          "definition": "Buyuk Britaniyaning Hindistondagi mustamlakachilik siyosati yo‘nalishlarini belgilab borgan organ",
+          "evidence": "«Hindiston ishlari bo‘yicha nazorat kengashi»"
+        },
+        {
+          "kind": "term",
+          "term": "roja (knyaz)",
+          "definition": "Mahalliy hukmdor; qo‘zg‘olondan keyin uning o‘z yerlariga egalik huquqi daxlsiz deb e’lon qilindi",
+          "evidence": "Mahalliy roja (knyaz)"
+        },
+        {
+          "kind": "term",
+          "term": "ziyolilar",
+          "definition": "Yevropacha ma’lumot olgan, maktab va kollejlarda o‘qib, davlat xizmatiga jalb etila boshlagan hindlar qatlami",
+          "evidence": "mahalliy ziyolilar qatlami shakllana bordi"
+        },
+        {
+          "kind": "place",
+          "place": "Dehli",
+          "event": "Sipohiylar egallab, qo‘zg‘olon markaziga aylangan shahar; jang taqdiri shu yerda hal bo‘lgan",
+          "evidence": "fillarga ortib, Dehliga olib kirdilar"
+        },
+        {
+          "kind": "place",
+          "place": "Kalkutta",
+          "event": "«Ost-Indiya» kompaniyasi gubernatori joylashgan shahar, u general-gubernator etib tayinlandi",
+          "evidence": "Kalkutta shahridagi gubernatori"
+        },
+        {
+          "kind": "place",
+          "place": "Hindiston",
+          "event": "XIX asrda Buyuk Britaniya mustamlakasiga aylangan va sipohiylar qo‘zg‘oloni bo‘lib o‘tgan mamlakat",
+          "evidence": "Hindistonni boshqarish Britaniya ma’murlari qo‘liga o‘tdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Buyuk Britaniya to‘qimachilik mahsulotlari Hindistonda sotilib, mahalliy hunarmandlar sifat jihatidan raqobat qila olmadi",
+          "effect": "Mahalliy to‘qimachilik hunarmandlari xonavayron bo‘lib, o‘n minglab to‘quvchilar ochlikka mahkum etildi",
+          "evidence": "sotilishi mahalliy to‘qimachilik hunarmandlarini xonavayron qildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qo‘shinda patron bilan o‘qlanadigan miltiq joriy etilib, patron qog‘ozi sigir va cho‘chqa yog‘iga botirilgan degan gap tarqaldi",
+          "effect": "Sipohiylar buni o‘z dinining tahqirlanishi deb qabul qilib, yangi patronni olishdan bosh tortdilar",
+          "evidence": "Sipohiylar qo‘zg‘olonining boshlanishiga bevosita turtki bo‘lgan sabab"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mustamlakachilar sipohiylardan so‘zsiz itoat talab qilib, mahalliy aholining milliy his-tuyg‘ularini hisobga olmadilar",
+          "effect": "Sipohiylar orasida mustamlakachilik tartiblaridan norozilik tobora kuchayib bordi",
+          "evidence": "so‘zsiz itoat etib, xizmat qilishini istardi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sipohiylar qo‘zg‘oloni shafqatsiz bostirildi, qo‘zg‘olonchilar tor-mor keltirildi",
+          "effect": "Mustamlakachilar bir qator islohotlar o‘tkazishga majbur bo‘lib, «Ost-Indiya» kompaniyasi tugatildi",
+          "evidence": "zi islohotlarni o‘tkazishga majbur bo‘ldilar"
+        },
+        {
+          "kind": "number",
+          "number": "o‘n minglab",
+          "unit": "to‘quvchi",
+          "meaning": "Britaniya matolarining sotilishi tufayli xonavayron bo‘lib, ochlikka mahkum etilgan hind to‘quvchilari soni",
+          "evidence": "quvchilari ochlikka mahkum etildi"
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "title": "1800–1870-yillarda Xitoy",
+      "page": 130,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1757",
+          "date_label": "1757-yil",
+          "event": "Xitoy imperatori bandargohlarni tashqi savdo uchun yopiq deb e’lon qildi",
+          "evidence": "1757-yili Xitoy imperatori bandargohlarini tashqi savdo uchun yopiq deb e’lon qildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1840",
+          "date_label": "1840-yil",
+          "event": "Buyuk Britaniya afyun savdosini qonunlashtirish uchun Xitoyga qarshi urush boshladi",
+          "evidence": "1840-yili Xitoyga qarshi urush boshladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1842",
+          "date_label": "1842-yil",
+          "event": "Birinchi afyun urushi tugadi va Xitoy teng bo‘lmagan shartnoma imzolashga majbur bo‘ldi",
+          "evidence": "Bu urush 1842-yilgacha davom etdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1856–1860",
+          "date_label": "1856–1860-yillar",
+          "event": "Ikkinchi afyun urushi bo‘lib, Xitoy birlashgan ingliz-fransuz qo‘shinidan zarba oldi",
+          "evidence": "1856–1860-yillari Ikkinchi afyun urushi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1850",
+          "date_label": "1850-yil",
+          "event": "Dehqonlar qo‘zg‘oloni mamlakat janubida boshlandi",
+          "evidence": "Bu qo‘zg‘olon 1850-yilda mamlakat janubida boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1850–1864",
+          "date_label": "1850–1864-yillar",
+          "event": "Taypinlar davlati mavjud bo‘lib, uning markazi Nankin shahri edi",
+          "evidence": "Taypinlar davlati 1850–1864-yillar oralig‘ida mavjud bo‘ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1864",
+          "date_label": "1864-yil",
+          "event": "Hukumat qo‘shinlari Nankin shahrini ishg‘ol qildi va Taypinlar qo‘zg‘oloni bostirildi",
+          "evidence": "1864-yili hukumat qo‘shinlari qo‘zg‘olon rahbarlari joylashgan Nankin shahrini ishg‘ol qildilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr boshlari",
+          "date_label": "XIX asrning boshlari",
+          "event": "Xitoy hali buyuk davlat sanalgan bo‘lsa-da, G‘arb davlatlarining mustamlakachilik manfaatlari kesishgan hududga aylandi",
+          "evidence": "XIX asrning boshlarida hali buyuk davlat sanalgan Xitoy"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr o‘rtalari",
+          "date_label": "XIX asrning o‘rtalari",
+          "event": "Xitoy G‘arb davlatlari, AQSH, Rossiya va Yaponiyaning yarimmustamlakasiga aylandi",
+          "evidence": "uni G‘arb davlatlarining yarimmustamlakasiga aylantirdi"
+        },
+        {
+          "kind": "person",
+          "person": "Xun Syutsyuan",
+          "role": "Dehqonning o‘g‘li va maktab o‘qituvchisi, Taypinlar qo‘zg‘oloni rahbari",
+          "activity": "Qo‘zg‘olonga boshchilik qildi va Yanszi viloyatida «Samoviy mo‘l-ko‘lchilik davlati» ni barpo etdi",
+          "evidence": "dehqonning o‘g‘li, maktab o‘qituvchisi Xun Syu"
+        },
+        {
+          "kind": "person",
+          "person": "Xun Syutsyuan",
+          "role": "Taypinlar davlati rahbari, qo‘zg‘olon mag‘lubiyati davrida halok bo‘lgan shaxs",
+          "activity": "1864-yilda Nankin ishg‘ol qilingach, u o‘z joniga qasd qildi",
+          "evidence": "Xun Syutsyuan o‘z joniga qasd qildi"
+        },
+        {
+          "kind": "term",
+          "term": "«Yopiq eshiklar» siyosati",
+          "definition": "Xitoyni tashqi dunyodan ajratib qo‘yishga qaratilgan, bandargohlarni yopish siyosati",
+          "evidence": "«Yopiq eshiklar» deb nom olgan bu siyosat Xitoyni tashqi dunyodan ajratib qo‘yishga"
+        },
+        {
+          "kind": "term",
+          "term": "afyun",
+          "definition": "Kuchli giyohvand modda; nomi «mudratuvchi, uxlatuvchi» so‘zidan kelib chiqqan",
+          "evidence": "mudratuvchi, uxlatuvchi so‘zidan kelib chiqqan, kuchli giyohvand modda"
+        },
+        {
+          "kind": "term",
+          "term": "Taypinlar davlati",
+          "definition": "Qo‘zg‘olonchilar barpo etgan «Samoviy mo‘l-ko‘lchilik davlati», markazi Nankin shahri bo‘lgan",
+          "evidence": "«Samoviy mo‘l-ko‘lchilik davlati» («Taypin tyango»)"
+        },
+        {
+          "kind": "term",
+          "term": "yarimmustamlaka",
+          "definition": "Rasman mustaqil sanalgan, ammo chet el kapitaliga iqtisodiy va siyosiy jihatdan qaram davlat",
+          "evidence": "uning o‘z-o‘zicha saqlanib qolayotgan buyuk davlat maqomiga"
+        },
+        {
+          "kind": "term",
+          "term": "Chin (Sin) imperiyasi",
+          "definition": "XVIII asr oxirlarida istilochilik qudrati zaiflashgan, keyin G‘arbning yarimmustamlakasiga aylangan Xitoy davlati",
+          "evidence": "XVIII asr oxirlariga kelib, imperiyaning istilochilik qudrati zaiflashdi"
+        },
+        {
+          "kind": "place",
+          "place": "Gonkong oroli",
+          "event": "Birinchi afyun urushi yakunida Buyuk Britaniya tomonidan bosib olingan orol",
+          "evidence": "Buyuk Britaniya Gonkong orolini bosib oldi"
+        },
+        {
+          "kind": "place",
+          "place": "Nankin",
+          "event": "Taypinlar davlatining markazi bo‘lgan, 1864-yilda hukumat qo‘shinlari egallagan shahar",
+          "evidence": "Nankin shahri bo‘ldi"
+        },
+        {
+          "kind": "place",
+          "place": "Guanchjou porti",
+          "event": "Xitoy tashqi savdosi imperator amaldorlari nazorati ostida olib borilgan yagona port",
+          "evidence": "faqat Guanchjou porti orqaligina olib boriladigan bo‘ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Iqtisodiy turg‘unlik va mamlakat aholisining asosiy qismini tashkil etuvchi dehqonlarning qashshoqlashuvi",
+          "effect": "Dehqonlar qo‘zg‘olon ko‘tarishga majbur bo‘ldilar",
+          "evidence": "qashshoqlashuvi ularni qo‘zg‘olon ko‘tarishga majbur etdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Chet elliklarning mamlakatga ko‘plab kirib kelishi hukumatni xavotirga soldi",
+          "effect": "Imperator bandargohlarni tashqi savdo uchun yopiq deb e’lon qildi",
+          "evidence": "Chet elliklarning mamlakatga ko‘plab kirib kelishi"
+        },
+        {
+          "kind": "cause",
+          "cause": "«Yopiq eshiklar» siyosati va imperator ma’murlarining fan-texnika yutuqlarini rad etishi",
+          "effect": "Xitoyning iqtisodiy, ijtimoiy va madaniy rivojlanishiga katta zarar yetib, mamlakat qoloqlik botqog‘iga botdi",
+          "evidence": "Uning iqtisodiy, ijtimoiy va madaniy rivojlanishiga katta zarar yetkazdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Hukumatning taslimchilik siyosati va feodal zulmning kuchayishi",
+          "effect": "Xalq ommasining keskin noroziligi dehqonlar qo‘zg‘oloni ko‘tarilishiga sabab bo‘ldi",
+          "evidence": "chayishi xalq ommasining keskin noroziligiga sabab bo‘ldi"
+        },
+        {
+          "kind": "number",
+          "number": "1",
+          "unit": "askar",
+          "meaning": "Taypinlar davlatida har bir oila qo‘shinga shu miqdorda askar yetkazib berishi belgilangan edi",
+          "evidence": "Har bir oilaning qo‘shinga bitta askar yetkazib berishi belgilab"
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "title": "1800–1870-yillarda Yaponiya",
+      "page": 134,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1800–1870",
+          "date_label": "1800–1870-yillar",
+          "event": "Yaponiyaning kuch bilan «ochilishi», syogun hokimiyatining ag‘darilishi va Meydzi islohotlari davri",
+          "evidence": "1870-YILLARDA YAPONIYA"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVI asr",
+          "date_label": "XVI asr",
+          "event": "Yaponiyada xristian dinining tarqalishi taqiqlandi",
+          "evidence": "XVI asrdayoq Yaponiyada xristian dinining tarqalishi taqiqlangan"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVII asr",
+          "date_label": "XVII asr",
+          "event": "Yaponiya hukmdorlari mamlakatni chet elliklar uchun yopib, yevropaliklarni quvib yubordilar",
+          "evidence": "XVII asrda Yaponiya hukmdorlari mamlakatni chet elliklar uchun yopib qo‘ydilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1854",
+          "date_label": "1854-yil",
+          "event": "AQSH harbiy-dengiz floti Yaponiyani kuch bilan ochilishga majbur etdi",
+          "evidence": "Va nihoyat, 1854-yili AQSH harbiy-dengiz floti"
+        },
+        {
+          "kind": "date_event",
+          "date": "1854",
+          "date_label": "1854-yil, «Tinchlik va do‘stlik to‘g‘risida»gi shartnomadan so‘ng",
+          "event": "Yaponiya AQSHga ikkita portini ochdi va amerikalik konsulni qabul qildi",
+          "evidence": "Yaponiya AQSHga ikkita portini ochdi va AQSH konsulini qabul qildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1858",
+          "date_label": "1858-yil",
+          "event": "Amerikaliklarga yana bir nechta port ochib qo‘yildi va AQSH fuqarolariga eksterritoriallik huquqi berildi",
+          "evidence": "1858-yili amerikaliklarga yana bir nechta port ochib qo‘yildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1867",
+          "date_label": "1867-yil",
+          "event": "Tokugava sulolasining oxirgi syoguni oliy hokimiyatdan voz kechdi",
+          "evidence": "1867-yili tokugava sulolasining oxirgi syoguni imperator"
+        },
+        {
+          "kind": "date_event",
+          "date": "1867",
+          "date_label": "1867-yil, Meydzi davri boshlanishi",
+          "event": "Mutsuxito imperator Meydzi («ma’rifatli boshqaruv») nomi bilan toj kiydirildi",
+          "evidence": "nomi bilan toj kiydirildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr ikkinchi yarmi",
+          "date_label": "XIX asrning ikkinchi yarmi",
+          "event": "Yaponiyada kapitalizmning shiddatli rivojlanish davri boshlandi",
+          "evidence": "XIX asr, ayniqsa, uning ikkinchi yarmi Yaponiyada"
+        },
+        {
+          "kind": "person",
+          "person": "Mutsuxito",
+          "role": "Yaponiya imperatori, «Meydzi» («ma’rifatli boshqaruv») nomi bilan toj kiydirilgan hukmdor",
+          "activity": "1867-yilda oliy hokimiyatni qo‘lga olib, G‘arb namunasida modernizatsiya islohotlarini boshladi",
+          "evidence": "Meydzi islohotlarining boshlanishi"
+        },
+        {
+          "kind": "term",
+          "term": "syogun",
+          "definition": "Yaponiyada oliy harbiy va davlat hokimiyatini egallagan hukmdor; uning hokimiyati 1867-yilga kelib ag‘darildi",
+          "evidence": "Syogun farmonida shunday deyilgan edi"
+        },
+        {
+          "kind": "term",
+          "term": "«Ma’rifatli boshqaruv»",
+          "definition": "Imperator Meydzi nomining ma’nosi va uning islohotlari boshlangan davrning atamasi",
+          "evidence": "«Ma’rifatli boshqaruv» davrining boshlanishi"
+        },
+        {
+          "kind": "term",
+          "term": "eksterritorial huquq",
+          "definition": "Chet el fuqarolarining shaxsi, uy-joyi va mol-mulki daxlsizligi hamda mahalliy sud ularni sud qila olmasligi",
+          "evidence": "chet el fuqarolarining shaxsi, uy-joyi va mol"
+        },
+        {
+          "kind": "term",
+          "term": "modernizatsiya",
+          "definition": "Zamonaviylashtirish; Meydzi islohotlarining asosiy mazmunini tashkil etgan jarayon",
+          "evidence": "Modernizatsiya – zamonaviylashtirish"
+        },
+        {
+          "kind": "term",
+          "term": "samuray",
+          "definition": "Yaponiya harbiy tabaqasi vakili; islohotdan so‘ng avvalgi qiyofasini va imtiyozini yo‘qotgan",
+          "evidence": "Samuraylar avvalgi qiyofasini yo‘qotdi"
+        },
+        {
+          "kind": "term",
+          "term": "iyena",
+          "definition": "Meydzi islohotlari davrida joriy etilgan yagona yapon pul birligi",
+          "evidence": "Mamlakatda yagona pul birligi – iyena"
+        },
+        {
+          "kind": "place",
+          "place": "AQSH",
+          "event": "1854-yilda harbiy-dengiz flotini yuborib Yaponiyani ochilishga majbur etgan davlat",
+          "evidence": "AQSH harbiy-dengiz floti Yaponiyani ochilishga majbur etdi"
+        },
+        {
+          "kind": "place",
+          "place": "Fransiya",
+          "event": "Yaponiyaga harbiy mutaxassislar yuborib, yangi yevropacha qo‘shin tuzishda yordam bergan davlat",
+          "evidence": "Fransiyadan harbiy mutaxassislar taklif etildi"
+        },
+        {
+          "kind": "place",
+          "place": "Osiyo qit’asi",
+          "event": "Yaponiya keyinchalik keng ko‘lamli bosqinchilik urushlarini olib borgan hudud",
+          "evidence": "Yaponiyaning Osiyo qit’asida olib borgan keng ko‘lamli bosqinchilik"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xristian dini yapon milliy an’analarini buzuvchi deb hisoblanib, missionerlar bosqinchilarning dastlabki guruhi sanaldi",
+          "effect": "XVII asrda hukmdorlar mamlakatni chet elliklar uchun yopib, barcha yevropaliklarni quvib yubordilar",
+          "evidence": "bosqinchilarning dastlabki guruhi deb hisoblaganlar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yaponiya bozorlari chet el tovarlari bilan to‘ldirilib, mahalliy manufaktura va hunarmandchilikka zarba berildi",
+          "effect": "Chet elliklarni mamlakatdan quvib chiqarishni talab qiluvchilar harakati kuchaydi",
+          "evidence": "Yaponiya bozorlarining chet el tovarlari bilan to‘ldirilishi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Samuraylarning savodxon qismi va ziyolilar mamlakat AQSH va G‘arbiy Yevropadan orqada qolganini tushundilar",
+          "effect": "Chuqur islohotlar o‘tkazib, Yaponiyani zamonaviy davlatga aylantirish haqida o‘ylay boshladilar",
+          "evidence": "mamlakat taraqqiyoti AQSH va G‘arbiy Yevropa davlatlaridan orqada qolganligini"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mamlakatning kuch bilan ochilishi va syogun hukumatining teng bo‘lmagan shartnomalar imzolashi",
+          "effect": "Yaponiyada fuqarolar urushi boshlandi va syogun hokimiyati ag‘darildi",
+          "evidence": "mamlakatda fuqarolar urushi boshlanishiga turtki bo‘ldi"
+        },
+        {
+          "kind": "number",
+          "number": "50",
+          "unit": "foiz",
+          "meaning": "Yer uchun belgilangan soliq hosildan olinadigan daromad hajmiga nisbatan shu miqdorga teng edi",
+          "evidence": "hosildan olinadigan daromad hajmining"
+        },
+        {
+          "kind": "number",
+          "number": "1/3",
+          "unit": "qism",
+          "meaning": "Islohotdan 10 yil o‘tgach yer olgan dehqonlarning shu qismigina yerni qo‘lida saqlab qola oldi",
+          "evidence": "dehqonlarning atigi 1/3 qismi o‘zlariga berilgan yerni qo‘llarida"
+        }
+      ]
+    }
+  ]
+}

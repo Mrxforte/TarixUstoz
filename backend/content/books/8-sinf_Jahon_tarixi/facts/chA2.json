@@ -1,0 +1,655 @@
+{
+  "chapter": "II BOB. XVI–XVIII ASRLARDA YEVROPA VA AMERIKA MAMLAKATLARI",
+  "topics": [
+    {
+      "number": 5,
+      "title": "Angliyada qirol hokimiyatining kuchayishi. XVII asrdagi Angliya burjua inqilobi",
+      "page": 28,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XVI asr",
+          "date_label": "XVI asr",
+          "event": "Angliyada absolutizm shakllandi va qirolning mutlaq hokimiyati mustahkamlandi",
+          "evidence": "Absolutizm Angliyada XVI asrda shakllandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1558",
+          "date_label": "1558-yil",
+          "event": "Yelizaveta I hokimiyatga keldi va mamlakat jadal rivojlana boshladi",
+          "evidence": "1558-yili hokimiyatga kelgan Yelizaveta I"
+        },
+        {
+          "kind": "date_event",
+          "date": "1603",
+          "date_label": "1603-yil",
+          "event": "Yelizaveta I vafot etdi va tyudorlar sulolasi yakun topdi",
+          "evidence": "1603-yili Yelizaveta I ning o‘limi bilan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1640",
+          "date_label": "1640-yil",
+          "event": "Yangi parlament yig‘ilib, u «Uzoq muddatli parlament» nomini oldi",
+          "evidence": "1640-yili yangi parlament yig‘ildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1649-yil 19-may",
+          "date_label": "1649-yil 19-may",
+          "event": "Qirollik hokimiyati bekor qilinib, Angliya Respublika deb e’lon qilindi",
+          "evidence": "1649-yili 19-may kuni Angliya"
+        },
+        {
+          "kind": "date_event",
+          "date": "1688",
+          "date_label": "1688-yil",
+          "event": "Parlament Yakov II ni taxtdan mahrum qildi va «Sharafli inqilob» bo‘lib o‘tdi",
+          "evidence": "1688-yili parlament Yakov II ni taxtdan mahrum qildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1707",
+          "date_label": "1707-yil",
+          "event": "Parlament Angliya bilan Shotlandiya uniyasini qonuniylashtirdi, mamlakat Buyuk Britaniya deb ataldi",
+          "evidence": "1707-yili parlament Angliya bilan Shotlandiya o‘rtasidagi uniya"
+        },
+        {
+          "kind": "date_event",
+          "date": "1714",
+          "date_label": "1714-yil",
+          "event": "Oranyelar sulolasi tugadi va taxtga gannoverlik Georg I taklif qilindi",
+          "evidence": "1714-yili Angliya taxtida turgan oranyelar sulolasining oxirgi vakili vafot etdi"
+        },
+        {
+          "kind": "person",
+          "person": "Genrix VIII Tyudor",
+          "role": "Angliya qiroli, tyudorlar sulolasidan",
+          "activity": "Cherkovni va toifalar vakillaridan iborat parlamentni o‘z hokimiyatiga bo‘ysundirdi",
+          "evidence": "Genrix VIII Tyudor faqat cherkovni emas"
+        },
+        {
+          "kind": "person",
+          "person": "Yelizaveta I",
+          "role": "Angliya qirolichasi, tyudorlar sulolasidan",
+          "activity": "45 yillik hukmronligida Angliyani dunyoning yetakchi dengiz davlatiga aylantirdi",
+          "evidence": "Yelizaveta I o‘zining 45 yillik hukmronligi davrida"
+        },
+        {
+          "kind": "person",
+          "person": "Yakov I",
+          "role": "Angliya qiroli, styuartlar sulolasidan",
+          "activity": "Davrida absolutizm inqirozi kuchayib, burjua inqilobi uchun asoslar shakllandi",
+          "evidence": "Angliya taxtiga styuartlar sulolasidan bo‘lgan Yakov I o‘tirdi"
+        },
+        {
+          "kind": "person",
+          "person": "Oliver Kromvel",
+          "role": "Inqilobiy armiya qo‘mondoni, keyinchalik protektor",
+          "activity": "Otliq askarlari bilan g‘alabada asosiy rol o‘ynadi, Irlandiya va Shotlandiyani bosib oldi",
+          "evidence": "protektori Oliver Kromvel bo‘lgan"
+        },
+        {
+          "kind": "term",
+          "term": "Absolutizm",
+          "definition": "Davlatni boshqarish shakli bo‘lib, unda monarx hokimiyati mutlaqo cheklanmagan bo‘ladi",
+          "evidence": "Absolutizm – bu davlatni boshqarish shakli"
+        },
+        {
+          "kind": "term",
+          "term": "Puritanlar",
+          "definition": "XVI asrning ikkinchi yarmida kalvinizm asosida Angliyada shakllangan xristian dini mazhablaridan biri",
+          "evidence": "Puritanlar – XVI asrning ikkinchi yarmida kalvinizm asosida Angliyada"
+        },
+        {
+          "kind": "term",
+          "term": "Uzoq muddatli parlament",
+          "definition": "1640-yilda chaqirilgan va uzoq vaqt tarqatilmaganligi uchun shunday nom olgan parlament",
+          "evidence": "«Uzoq muddatli parlament» nomi bilan tarixga kirdi"
+        },
+        {
+          "kind": "term",
+          "term": "Kromvel protektorati",
+          "definition": "Angliya burjua inqilobining yakunlovchi bosqichi bo‘lib, davlatni protektor boshqargan",
+          "evidence": "Mamlakatda O. Kromvel protektorati"
+        },
+        {
+          "kind": "place",
+          "place": "Angliya",
+          "event": "Absolutizm shakllanib, XVII asrda burjua inqilobi bo‘lib o‘tgan va dengizlar malikasiga aylangan mamlakat",
+          "evidence": "Angliya asta-sekin kuchli dengiz davlati"
+        },
+        {
+          "kind": "place",
+          "place": "Irlandiya",
+          "event": "Kromvel armiyasi bosqin qilib, aholining katta qismi halok bo‘ldi",
+          "evidence": "Irlandiyani bo‘ysundirish uchun bu yerga bostirib kirdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Savdo va sanoatning rivojlanishi Angliyada soliqlar tushumini keskin oshirdi va muntazam armiya paydo bo‘ldi",
+          "effect": "Qirolning cheklanmagan hokimiyati to‘g‘risidagi g‘oya shakllandi",
+          "evidence": "Savdo va sanoatning rivojlanishi Angliyada soliqlar tushumini keskin oshirdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yangi zodagonlar kapitalizm rivojlanishidan manfaatdor, qirol va amaldorlar esa eski tartiblarni saqlash tarafdori edi",
+          "effect": "Ingliz jamiyatida bo‘linish yuz berib, inqilobning asosiy sababi vujudga keldi",
+          "evidence": "Yangi zodagonlar kapitalizm rivojlanishidan manfaatdor bo‘lsa"
+        },
+        {
+          "kind": "cause",
+          "cause": "1640-yil boshiga kelib xazina bo‘shab qoldi va mamlakatda ochlar qo‘zg‘oloni boshlandi",
+          "effect": "1640-yili yangi parlament yig‘ilib, Angliya burjua inqilobi boshlandi",
+          "evidence": "1640-yilning boshiga kelib, xazina bo‘shab qoldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Karl I parlamentni tarqatib yuborib, mamlakatda shaxsiy hukmronlik o‘rnatdi",
+          "effect": "Savdogarlar, yangi dvoryanlar va hurfikr dindorlar davlat ishlaridan chetlatildi",
+          "evidence": "Angliyada Karl I ning shaxsiy hukmronligi o‘rnatilib"
+        },
+        {
+          "kind": "number",
+          "number": "45",
+          "unit": "yil",
+          "meaning": "Yelizaveta I ning Angliya taxtidagi hukmronlik davri davomiyligi",
+          "evidence": "o‘zining 45 yillik hukmronligi davrida"
+        },
+        {
+          "kind": "number",
+          "number": "2",
+          "unit": "palata",
+          "meaning": "XVIII asrda Angliya parlamenti lordlar palatasi va jamoa palatasidan iborat bo‘lgan",
+          "evidence": "lordlar palatasi va jamoa palatasidan iborat parlament"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "XVI–XVIII asrlarda xalqaro munosabatlar",
+      "page": 34,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1618–1648",
+          "date_label": "1618–1648-yillar",
+          "event": "Yevropada diniy asosda boshlangan O‘ttiz yillik urush bo‘lib o‘tdi",
+          "evidence": "Urush 1618–1648-yillari bo‘lib o‘tdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1648",
+          "date_label": "1648-yil",
+          "event": "O‘ttiz yillik urush Vestfal sulhi bilan yakunlandi",
+          "evidence": "O‘ttiz yillik urush 1648-yili Vestfal sulhi bilan yakunlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1700",
+          "date_label": "1700-yil",
+          "event": "Ispaniya qiroli Karl II vafot etdi va vasiyatiga ko‘ra taxt Fransiya nabirasiga o‘tdi",
+          "evidence": "1700-yili Ispaniya qiroli Karl II vafot"
+        },
+        {
+          "kind": "date_event",
+          "date": "1714",
+          "date_label": "1714-yilgi tinchlik sulhi",
+          "event": "Filipp Anjuy Fransiya taxtiga bo‘lgan huquqidan voz kechdi",
+          "evidence": "1714-yilgi tinchlik sulhiga"
+        },
+        {
+          "kind": "date_event",
+          "date": "1700–1721",
+          "date_label": "1700–1721-yillar",
+          "event": "Shimoliy urushda Rossiya Shvetsiya ustidan g‘alaba qozondi",
+          "evidence": "Shimoliy urush (1700–1721) deb nom olgan bu urushda Rossiya g‘alaba qozondi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1756–1763",
+          "date_label": "1756–1763-yillar",
+          "event": "Yetti yillik urush bo‘lib o‘tdi, ammo Yevropadagi chegaralar o‘zgarmadi",
+          "evidence": "Yetti yillik urush (1756–1763) natijasida Yevropadagi chegaralar o‘zgarmadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1768",
+          "date_label": "1768-yil",
+          "event": "Usmoniylar sultoni Mustafo III Rossiyaga qarshi urush boshladi",
+          "evidence": "Mustafo III 1768-yili Rossiyaga qarshi urush"
+        },
+        {
+          "kind": "date_event",
+          "date": "1774",
+          "date_label": "1774-yil",
+          "event": "Urush Kuchukqaynarji shartnomasi bilan yakunlanib, Rossiya g‘alaba qozondi",
+          "evidence": "Urush 1774-yili Kuchukqaynarji shartnomasi bilan"
+        },
+        {
+          "kind": "person",
+          "person": "Filipp Anjuy",
+          "role": "Fransiya qirolining nabirasi, Ispaniya qiroli",
+          "activity": "Ispaniya taxtiga o‘tirdi, keyin Fransiya taxtiga bo‘lgan huquqidan voz kechdi",
+          "evidence": "Filipp Anjuy Fransiya taxtiga bo‘lgan huquqidan voz kechdi"
+        },
+        {
+          "kind": "person",
+          "person": "Karl II",
+          "role": "Ispaniya qiroli",
+          "activity": "1700-yilda vafot etib, vasiyatiga ko‘ra taxtni Fransiya qirolining nabirasiga qoldirdi",
+          "evidence": "Uning vasiyatiga ko‘ra, Ispaniya taxtiga"
+        },
+        {
+          "kind": "person",
+          "person": "Mustafo III",
+          "role": "Usmoniylar sultoni",
+          "activity": "1768-yilda Rossiyaga qarshi urush boshladi, urush mag‘lubiyat bilan tugadi",
+          "evidence": "Usmoniylar sultoni Mustafo III"
+        },
+        {
+          "kind": "person",
+          "person": "Gabsburglar sulolasi",
+          "role": "Avstriyadagi hukmron sulola",
+          "activity": "Katolik imperator boshchiligida yagona imperiya barpo etishga intildi",
+          "evidence": "Avstriyadagi hukmron gabsburglar sulolasi katolik imperator boshchiligida"
+        },
+        {
+          "kind": "term",
+          "term": "O‘ttiz yillik urush",
+          "definition": "1618–1648-yillarda diniy mojaro sifatida boshlanib, asosan Germaniya hududida olib borilgan urush",
+          "evidence": "tarixga O‘ttiz yillik urush nomi bilan kirdi"
+        },
+        {
+          "kind": "term",
+          "term": "Vestfal sulhi",
+          "definition": "1648-yilda tuzilgan va Yevropa davlatlari o‘rtasidagi yangi munosabatlarga asos solgan sulh",
+          "evidence": "Vestfal sulhi Yevropa davlatlari o‘rtasidagi yangi munosabatlarga asos soldi"
+        },
+        {
+          "kind": "term",
+          "term": "Yetti yillik urush",
+          "definition": "1756–1763-yillarda Yevropa davlatlarining deyarli barchasi ishtirok etgan urush",
+          "evidence": "Yevropa davlatlarining deyarli barchasi ishtirok etgan Yetti yillik"
+        },
+        {
+          "kind": "term",
+          "term": "Kuchukqaynarji shartnomasi",
+          "definition": "1774-yilda Rossiya bilan Usmoniylar imperiyasi o‘rtasidagi urushni yakunlagan shartnoma",
+          "evidence": "Kuchukqaynarji shartnomasi"
+        },
+        {
+          "kind": "place",
+          "place": "Italiya",
+          "event": "Fransiya va Ispaniya o‘rtasidagi ziddiyatlar Italiya urushlariga olib keldi, Italiya ispan qiroliga bo‘ysundirildi",
+          "evidence": "oxir-oqibatda, Italiya urush"
+        },
+        {
+          "kind": "place",
+          "place": "Gollandiya",
+          "event": "Vestfal sulhiga ko‘ra Ispaniyadan mustaqilligi tan olindi",
+          "evidence": "Gollandiyaning Ispaniyadan mustaqilligi tan olindi"
+        },
+        {
+          "kind": "place",
+          "place": "Qrim xonligi",
+          "event": "1774-yilgi shartnomaga binoan Rossiyaga qaram davlatga aylandi va keyin Rossiya tarkibiga qo‘shildi",
+          "evidence": "Qrim xonligi Rossiyaga qaram davlatga aylandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yevropaning kelajagi to‘g‘risida ikki xil qarash mavjud edi: gabsburglar yagona imperiya, Angliya va Fransiya milliy davlatlar tarafdori edi",
+          "effect": "Yevropa davlatlari o‘rtasida xalqaro mojarolar va urushlar kelib chiqdi",
+          "evidence": "Yevropaning kelajagi to‘g‘risida ikki xil qarash mavjud bo‘lib"
+        },
+        {
+          "kind": "cause",
+          "cause": "XVI asrda Yevropa katolik va protestant diniy mazhablariga bo‘linib, ular o‘rtasida ziddiyatlar kuchaydi",
+          "effect": "Yevropa miqyosidagi diniy urushlar boshlandi",
+          "evidence": "Ular o‘rtasidagi ziddiyatlar Yevropa miqyosidagi diniy urushlarga olib keldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mustamlakalar, bozorlar va dengiz savdo yo‘llarida hukmronlik uchun kurash avj oldi",
+          "effect": "Iqtisodiy qarama-qarshiliklar urushlarga sabab bo‘ldi",
+          "evidence": "dengiz savdo yo‘llarida hukmronlik uchun kurash"
+        },
+        {
+          "kind": "number",
+          "number": "3",
+          "unit": "sabab",
+          "meaning": "Matnda xalqaro mojaro va urushlarning uchta asosiy sababi sanab o‘tilgan",
+          "evidence": "Uchinchidan, iqtisodiy qarama-qarshiliklar"
+        },
+        {
+          "kind": "number",
+          "number": "2",
+          "unit": "qarash",
+          "meaning": "Yevropaning kelajagi to‘g‘risida ikki xil qarash mavjud bo‘lgan",
+          "evidence": "Yevropaning kelajagi to‘g‘risida ikki xil qarash"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Fransiyada mutlaq monarxiya. Buyuk fransuz burjua inqilobi",
+      "page": 37,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XVI asr oxiri – XVII asr boshlari",
+          "date_label": "XVI asr oxiri – XVII asr boshlari",
+          "event": "Fransiya jadal iqtisodiy o‘sish davrini boshdan kechirdi",
+          "evidence": "XVI asr oxiri – XVII asr boshlarida Fransiya jadal iqtisodiy o‘sish"
+        },
+        {
+          "kind": "date_event",
+          "date": "1789-yil 5-may",
+          "date_label": "1789-yil 5-may",
+          "event": "Qirol Lyudovik XVI General shtatlar majlisini ochdi",
+          "evidence": "1789-yil 5-may kuni qirol Lyudovik XVI General shtatlar majlisini ochdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1789-yil 14-iyul",
+          "date_label": "1789-yil 14-iyul",
+          "event": "Olomon Bastiliya qal’asiga bostirib kirdi va inqilob boshlandi",
+          "evidence": "1789-yil 14-iyulda Bastiliya qal’asiga bostirib kirdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1791-yil sentabr",
+          "date_label": "1791-yil sentabr",
+          "event": "Ta’sis majlisi Fransiya tarixida ilk konstitutsiyani qabul qildi",
+          "evidence": "1791-yil sentabrda Ta’sis majlisi Fransiya tarixida ilk"
+        },
+        {
+          "kind": "date_event",
+          "date": "1792-yil 22-sentabr",
+          "date_label": "1792-yil 22-sentabr",
+          "event": "Konvent monarxiyani bekor qilib, Respublika tuzumi to‘g‘risida dekret qabul qildi",
+          "evidence": "1792-yil 22-sentabrda Konvent monarxiyani bekor qilish"
+        },
+        {
+          "kind": "date_event",
+          "date": "1793-yil yanvar",
+          "date_label": "1793-yil yanvar",
+          "event": "Konvent qaroriga binoan qirol Lyudovik XVI Parijda qatl qilindi",
+          "evidence": "1793-yil yanvarda qirol Lyudovik XVI qatl qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1794-yil 27-iyul",
+          "date_label": "1794-yil 27-iyul",
+          "event": "Robespyer Konventda qamoqqa olindi va yakobinchilar diktaturasi quladi",
+          "evidence": "1794-yil 27-iyulda Robespyer Konventda gulduros qarsaklar ostida qamoqqa olindi"
+        },
+        {
+          "kind": "person",
+          "person": "Lyudovik XVI",
+          "role": "Fransiya qiroli",
+          "activity": "General shtatlar majlisini ochib yangi soliqlar so‘radi, keyin taxtdan ag‘darildi va qatl qilindi",
+          "evidence": "qirol Lyudovik XVI General shtatlar majlisini ochdi"
+        },
+        {
+          "kind": "person",
+          "person": "Gabriel de Mirabo",
+          "role": "Uchinchi tabaqa qarashlarining ifodachisi, tajribali siyosat arbobi",
+          "activity": "Uchinchi tabaqa deputatlarini birlikka chaqirdi",
+          "evidence": "Uchinchi tabaqa qarashlarining ifodachisi Gabriel de Mirabo"
+        },
+        {
+          "kind": "person",
+          "person": "Robespyer",
+          "role": "Yakobinchilar yo‘lboshchilaridan biri",
+          "activity": "Shafqatsiz terror boshqaruvini o‘rnatdi, 1794-yilda Konventda qamoqqa olindi",
+          "evidence": "Robespyer, Marat va Dantonga o‘tdi"
+        },
+        {
+          "kind": "person",
+          "person": "Marat",
+          "role": "Yakobinchilar yo‘lboshchilaridan biri",
+          "activity": "Hokimiyat yakobinchilar qo‘liga o‘tgach, terror boshqaruvida ishtirok etdi",
+          "evidence": "Robespyer, Marat va Dantonga o‘tdi"
+        },
+        {
+          "kind": "term",
+          "term": "Uchinchi tabaqa",
+          "definition": "Fransiyada imtiyozlarga ega ruhoniylar va dvoryanlardan boshqa barcha kishilar",
+          "evidence": "Uchinchi tabaqa – Fransiyada o‘rnatilgan tartibga ko‘ra imtiyozlarga ega"
+        },
+        {
+          "kind": "term",
+          "term": "Ta’sis majlisi",
+          "definition": "Konstitutsiya qabul qilish uchun yig‘iladigan parlament",
+          "evidence": "Ta’sis majlisi – konstitutsiya qabul qilish uchun yig‘iladigan parlament"
+        },
+        {
+          "kind": "term",
+          "term": "Yakobinchilar",
+          "definition": "O‘ta so‘l oqim bo‘lib, nomi Avliyo Yakob monastiri kutubxonasida yig‘ilganligidan kelib chiqqan",
+          "evidence": "ular Avliyo Yakob monastirining kutubxonasida yig‘ilganligi uchun"
+        },
+        {
+          "kind": "term",
+          "term": "Jirondachilar",
+          "definition": "So‘l deputatlarning ko‘pchiligi Jironda viloyatidan saylanganligi tufayli shunday nom olgan guruh",
+          "evidence": "Jironda viloyatidan saylanganligi tufayli ular jirondachilar"
+        },
+        {
+          "kind": "term",
+          "term": "Absolutizm",
+          "definition": "Davlatni idora qilish usuli bo‘lib, cheklanmagan hokimiyat davlat boshlig‘i monarxga tegishli",
+          "evidence": "Absolutizm – davlatni idora qilish usuli"
+        },
+        {
+          "kind": "place",
+          "place": "Bastiliya",
+          "event": "1789-yil 14-iyulda qal’a olingan, qal’a komendanti qatl etilgan",
+          "evidence": "Bastiliya qal’asiga bostirib kirdi"
+        },
+        {
+          "kind": "place",
+          "place": "Parij",
+          "event": "Poytaxtda hokimiyat shahar kengashi – Parij Kommunasi qo‘liga o‘tdi",
+          "evidence": "Poytaxtda hokimiyat shahar kengashi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Soliqlarning oshishi va xalq ommasi ahvolining yomonlashuvi davom etdi",
+          "effect": "Mamlakatda doimiy xalq qo‘zg‘olonlari bo‘lib turdi",
+          "evidence": "soliqlarning oshishi, xalq ommasi ahvolining"
+        },
+        {
+          "kind": "cause",
+          "cause": "Siyosiy va iqtisodiy islohotlarning absolutizm bilan sig‘ishmasligi ma’lum bo‘ldi",
+          "effect": "Jamiyatda ijtimoiy ziddiyatlar kuchayib, mamlakat inqilob yoqasiga kelib qoldi",
+          "evidence": "siyosiy va iqtisodiy islohotlarning absolutizm bilan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qirol o‘z nutqida aholiga yangi soliqlar joriy qilishni so‘radi",
+          "effect": "Uchinchi tabaqa vakillarining noroziligi boshlandi",
+          "evidence": "Qirolning nutqi uchinchi tabaqa vakillarining noroziligiga sabab bo‘ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Konvent qaroriga binoan qirol Lyudovik XVI qatl qilindi",
+          "effect": "Angliya va Ispaniya Fransiyaga qarshi urushga chorlandi",
+          "evidence": "Qirolning qatl qilinishi Angliya va Ispaniyani Fransiyaga qarshi urushga chorladi"
+        },
+        {
+          "kind": "number",
+          "number": "3",
+          "unit": "tabaqa",
+          "meaning": "Uchinchi tabaqaga savdogarlar, hunarmandlar, dehqonlar va burjuaziya kirgan",
+          "evidence": "Uchinchi tabaqa – savdogarlar, hunarmandlar, dehqonlar, burjuaziya"
+        },
+        {
+          "kind": "number",
+          "number": "25",
+          "unit": "yosh",
+          "meaning": "Saylash huquqi 25 yoshga to‘lgan barcha erkaklarga berildi",
+          "evidence": "25 yoshga to‘lgan barcha erkaklarga saylash huquqi berildi"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Buyuk fransuz burjua inqilobining yakunlanishi va tarixiy ahamiyati",
+      "page": 42,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1795-yil aprel",
+          "date_label": "1795-yil aprel",
+          "event": "Parijda xalq qo‘zg‘oloni boshlandi, minglab qurolsiz kishilar Konvent tomon keldi",
+          "evidence": "Shu tariqa 1795-yil aprelda qo‘zg‘olon boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1795-yil may",
+          "date_label": "1795-yil may",
+          "event": "Qo‘zg‘olonchilar Konventni egallab oldi, so‘ng tor-mor qilindi",
+          "evidence": "May oyida bu voqealar takrorlanib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1795-yil avgust",
+          "date_label": "1795-yil avgust",
+          "event": "Konvent yangi Konstitutsiyani qabul qildi",
+          "evidence": "1795-yilning avgustida Konvent yangi Konstitutsiyani qabul qildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1795-yil",
+          "date_label": "1795-yilgi Konstitutsiyaga ko‘ra",
+          "event": "Ijro hokimiyati besh kishidan iborat Direktoriyaga topshirildi",
+          "evidence": "Ijro hokimiyati Oqsoqollar kengashi tayinlaydigan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1798-yil",
+          "date_label": "1798-yil",
+          "event": "Misrga qilingan yurish Napoleonni siyosiy hokimiyatni egallashga chorladi",
+          "evidence": "1798-yilda Misrga qilingan yurish Napoleonni siyosiy hokimiyatni egallashga chorladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1799-yil 9-noyabr",
+          "date_label": "1799-yil 9-noyabr",
+          "event": "Davlat to‘ntarishi bo‘lib, Konsullik tasdiqlandi",
+          "evidence": "1799-yil 9-noyabr davlat to‘ntarishi"
+        },
+        {
+          "kind": "person",
+          "person": "Napoleon Bonapart",
+          "role": "General, fransuz armiyasi qo‘mondoni",
+          "activity": "Artilleriya yordamida Konventga qarshi isyonni tor-mor qilib, Konventning xaloskoriga aylandi",
+          "evidence": "tor-mor qilgan general Napoleon Bonapart"
+        },
+        {
+          "kind": "person",
+          "person": "Napoleon Bonapart",
+          "role": "Fransuz Respublikasining konsuli",
+          "activity": "1799-yilgi to‘ntarishdan so‘ng uch konsuldan biri bo‘lib, sadoqat qasamyodini qabul qildi",
+          "evidence": "Saylangan uch konsuldan biri Napoleon Bonapart edi"
+        },
+        {
+          "kind": "person",
+          "person": "Napoleon Bonapart",
+          "role": "Italiya va Misr yurishlari qo‘mondoni",
+          "activity": "Italiyaga qarshi yurish uni mashhur qildi, Misrga yurish hokimiyatni egallashga undadi",
+          "evidence": "Italiyaga qarshi qilingan yurish va uning bo‘ysundirilishi Napoleonni juda mashhur qilib yubordi"
+        },
+        {
+          "kind": "term",
+          "term": "Termidor",
+          "definition": "Fransiyada inqilob yillari qabul qilingan yangi taqvimda oyning nomi",
+          "evidence": "Termidor – Fransiyada inqilob yillari qabul qilingan yangi taqvimda oyning nomi"
+        },
+        {
+          "kind": "term",
+          "term": "Konvent",
+          "definition": "Ba’zi mamlakatlarda alohida vakolatlarga ega bo‘lgan vakillik organi",
+          "evidence": "Konvent – ba’zi mamlakatlarda alohida vakolatlarga ega bo‘lgan vakillik organi"
+        },
+        {
+          "kind": "term",
+          "term": "Direktoriya",
+          "definition": "Burjua inqilobi davrida Fransiyada hokimiyatni kollegial boshqarish shakli, ijroiya hokimiyati",
+          "evidence": "Direktoriya – burjua inqilobi davrida Fransiyada hokimiyatni kollegial bosh"
+        },
+        {
+          "kind": "term",
+          "term": "Konsul",
+          "definition": "Fransiyada burjua inqilobi yillari joriy qilingan ijroiya hokimiyatining uchta rahbaridan biri",
+          "evidence": "Konsul – Fransiyada burjua inqilobi yillari joriy qilingan ijroiya hokimiyatining"
+        },
+        {
+          "kind": "term",
+          "term": "Terror",
+          "definition": "Raqiblarni yo‘qotish yoki qo‘rqitish, aholi o‘rtasida vahima keltirib chiqarish",
+          "evidence": "Terror (qo‘rqinch, dahshat) – raqiblarni yo‘qotish yoki qo‘rqitish"
+        },
+        {
+          "kind": "place",
+          "place": "Misr",
+          "event": "1798-yilda Napoleon yurish qildi, bu yurish uni hokimiyatni egallashga chorladi",
+          "evidence": "1798-yilda Misrga qilingan yurish"
+        },
+        {
+          "kind": "place",
+          "place": "Italiya",
+          "event": "Napoleonning yurishi va Italiyaning bo‘ysundirilishi uning obro‘sini oshirdi",
+          "evidence": "Italiyaga qarshi qilingan yurish va uning bo‘ysundirilishi"
+        },
+        {
+          "kind": "place",
+          "place": "Belgiya",
+          "event": "Direktoriya davrida Fransiya tomonidan bosib olinib, Fransiyaga qo‘shib olindi",
+          "evidence": "Reynning so‘l qirg‘og‘i va Belgiya Fransiya"
+        },
+        {
+          "kind": "cause",
+          "cause": "Savdo erkinligi boshlanib, savdodagi cheklashlar bekor qilindi",
+          "effect": "Narxlar bir necha bor ko‘tarilib, pul keskin qadrsizlandi",
+          "evidence": "Savdo erkinligi boshlandi, narxlar bir necha bor ko‘tarilib ketdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Konvent deputatlarini endi xalqning ahvoli qiziqtirmas edi",
+          "effect": "Parij atrofida norozilik kuchayib, 1795-yil qo‘zg‘oloni boshlandi",
+          "evidence": "Konvent deputatlarini endi xalqning ahvoli qiziqtirmas edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yangi Konstitutsiya monarxiya tarafdorlarini kuchaytirib yubordi",
+          "effect": "Monarxiya tarafdorlari Konventga qarshi isyon ko‘tardi, isyonni Napoleon tor-mor qildi",
+          "evidence": "Yangi Konstitutsiya monarxiya tarafdorlarini kuchaytirib yubordi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Direktoriya hokimiyati xalq orasida obro‘ga ega emas edi",
+          "effect": "Hokimiyatga qarshi fitna uyushtirilib, Konsullik o‘rnatildi",
+          "evidence": "Direktoriya hokimiyati xalq orasida obro‘ga ega emasdi"
+        },
+        {
+          "kind": "number",
+          "number": "5",
+          "unit": "kishi",
+          "meaning": "Direktoriya Oqsoqollar kengashi tayinlaydigan besh kishidan iborat bo‘lgan",
+          "evidence": "Oqsoqollar kengashi tayinlaydigan besh kishi"
+        },
+        {
+          "kind": "number",
+          "number": "3",
+          "unit": "konsul",
+          "meaning": "Konsullik uch kishidan iborat ijroiya hokimiyati bo‘lgan",
+          "evidence": "uch kishidan iborat ijroiya hokimiyati"
+        }
+      ]
+    }
+  ]
+}

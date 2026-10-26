@@ -1,0 +1,932 @@
+{
+  "chapter": "II–III BO‘LIM. QADIMGI SHARQ VA O‘RTA OSIYO; QADIMGI YUNONISTON",
+  "topics": [
+    {
+      "number": 19,
+      "title": "19-§. O‘zbekiston hududidagi ilk davlatlar",
+      "page": 75,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VII–VI asrlar",
+          "date_label": "Mil. avv. VII–VI asrlar",
+          "event": "O‘zbekiston va qo‘shni hududlarda so‘g‘diylar, baqtriyaliklar, xorazmliklar hamda sak va massaget qabilalari yashagan",
+          "evidence": "mil. avv. VII-VI asrlarda O'zbekiston"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VII–VI asrlar",
+          "date_label": "Mil. avv. VII–VI asrlar",
+          "event": "Xorazm, So‘g‘d va Baqtriya aholisining asosiy mashg‘uloti sun’iy sug‘orishga asoslangan dehqonchilik bo‘lgan",
+          "evidence": "sun'iy sug'orishga asos"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VII–VI asrlar",
+          "date_label": "Mil. avv. VII–VI asrlar",
+          "event": "Manzilgohlardan yuqori sifatli kulolchilik idishlari, temir va bronza buyumlar topilgan",
+          "evidence": "zilgohlardan yuqori sifatli kulolchilik idishlari"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VII asr",
+          "date_label": "Mil. avv. VII asr",
+          "event": "Qadimiy Baqtriya davlati O‘rta Osiyo hududidagi qadimgi davlatlardan biri sifatida tashkil topgan",
+          "evidence": "Mil. avv. VII asrda tashkil"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VII–VI asrlar",
+          "date_label": "Mil. avv. VII–VI asrlar",
+          "event": "Hunarmandchilik va savdoning rivojlanishi natijasida qadimgi shaharlar rivojlanib, hunarmandchilik va savdo markazlariga aylangan",
+          "evidence": "rivojlanishi natijasida mil. avv. VII-VI asrlarda"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VIII–VII asrlar",
+          "date_label": "Mil. avv. VIII–VII asrlar",
+          "event": "Afrosiyob hozirgi Samarqandning sharqiy chegarasi hududlarida asos solingan qadimiy shahar xarobalari hisoblanadi",
+          "evidence": "mil. avv. VIII-VII asrlarda asos solingan"
+        },
+        {
+          "kind": "person",
+          "person": "qadimshunoslar",
+          "role": "Afrosiyob, Yerqo‘rg‘on, Uzunqir, Ko‘zaliqir va Qiziltepa kabi qadimiy shaharlarni o‘rgangan olimlar",
+          "activity": "O‘zbekiston hududidagi qadimiy shaharlarning ko‘rinishi va tuzilishini aniqlaganlar",
+          "evidence": "kabi qadimiy shaharlarni o'rganishgan"
+        },
+        {
+          "kind": "person",
+          "person": "ko‘chmanchi chorvadorlar",
+          "role": "sak va massaget qabilalari tarkibida bo‘lgan, asosiy mashg‘uloti chorvachilik bo‘lgan aholi",
+          "activity": "Tuya, ot, qo‘y va echki boqib, hayvon terisidan poyabzal, kiyim va chodir tikkanlar",
+          "evidence": "Ko'chmanchi sak va massaget qabilalari"
+        },
+        {
+          "kind": "person",
+          "person": "dehqonlar",
+          "role": "So‘g‘d, Xorazm va Baqtriyada sun’iy sug‘orishga asoslangan dehqonchilik bilan shug‘ullangan o‘troq aholi",
+          "activity": "Zarafshon va Qashqadaryo vohalarida istiqomat qilib, yerni sug‘orib ishlaganlar",
+          "evidence": "dehqonchilik bilan shug'ullanuvchi ko'plab"
+        },
+        {
+          "kind": "person",
+          "person": "hunarmandlar",
+          "role": "kulolchilik, qurolsozlik va zargarlik buyumlari tayyorlagan shahar aholisi",
+          "activity": "Mahalliy kulolchilik, qurolsozlik va zargarlik buyumlarining dovrug‘i o‘zga yurtlarga tarqalgan",
+          "evidence": "Mahalliy kulolchilik, qurolsozlik, zargarlik"
+        },
+        {
+          "kind": "person",
+          "person": "shahar hokimi",
+          "role": "mudofaa devorlari bilan o‘ralgan shahardagi qal’ada yashagan boshqaruvchi",
+          "activity": "Qal’adagi xom g‘ishtdan qurilgan katta saroyda joylashgan",
+          "evidence": "Shaharda hokim yashaydigan qal'a"
+        },
+        {
+          "kind": "term",
+          "term": "So‘g‘diyona",
+          "definition": "Zarafshon va Qashqadaryo vohasidagi hududning yunon yozma manbalarida atalgan nomi",
+          "evidence": "balarida bu hudud So'g'diyona deb nom"
+        },
+        {
+          "kind": "term",
+          "term": "Xorasmiya",
+          "definition": "Amudaryoning quyi oqimida yashagan xorazmliklarning yurtiga yunon manbalarida berilgan nom",
+          "evidence": "yurti  yunon manbalarida Xorasmiya deyilgan"
+        },
+        {
+          "kind": "term",
+          "term": "Baqtriana",
+          "definition": "Surxon vohasi, Afg‘onistonning shimoliy va Tojikistonning janubiy hududlarini yunon-rim mualliflari atagan nom",
+          "evidence": "yerlarni Baqtriana yoki Baqtriya deb"
+        },
+        {
+          "kind": "term",
+          "term": "saka-tigraxauda",
+          "definition": "o‘tkir uchli kigiz qalpoq kiyib yuruvchi saklar; ular hozirgi Toshkent viloyati va Janubiy Qozog‘iston yerlarida yashagan",
+          "evidence": "uchli kigiz qalpoq kiyib yuruvchi saklar"
+        },
+        {
+          "kind": "term",
+          "term": "Oks",
+          "definition": "Amudaryoning qadimgi nomi; daryo bo‘ylarida ko‘chmanchi massaget qabilalari yashagan",
+          "evidence": "daryoning qadimgi nomi Oks"
+        },
+        {
+          "kind": "place",
+          "place": "Ko‘zaliqir",
+          "event": "Qadimgi Xorazm vohasi markazlaridan biri bo‘lib, qalin va mustahkam mudofaa devorlari bilan o‘ralgan qal’a",
+          "evidence": "Ko'zaliqir qal'asi edi"
+        },
+        {
+          "kind": "place",
+          "place": "Qiziltepa",
+          "event": "Surxondaryo vohasidagi qadimiy shahar, Baqtriya va So‘g‘dning markaziy shaharlari qatorida bo‘lgan",
+          "evidence": "Qiziltepa, Uzunqir, Yerqo'rg'on"
+        },
+        {
+          "kind": "place",
+          "place": "Uzunqir",
+          "event": "Qashqadaryo vohasidagi qadimiy shahar, yoshi 2700 yildan kam bo‘lmagan markazlardan biri",
+          "evidence": "Uzunqir, Yerqo'rg'on"
+        },
+        {
+          "kind": "cause",
+          "cause": "Hunarmandchilik va savdoning rivojlanishi",
+          "effect": "Mil. avv. VII–VI asrlarda qadimgi shaharlar hunarmandchilik ishlab chiqarishi va savdo markazlariga aylangan",
+          "evidence": "mandchilik ishlab chiqarishi va savdo markaz"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ko‘chmanchi sak va massaget qabilalari chorvachilik bilan shug‘ullangan",
+          "effect": "Ular tuya, ot, qo‘y va echki boqib, teridan poyabzal, kiyim va chodir tikkanlar",
+          "evidence": "Chorvadorlar hayvon terisidan poyabzal"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xorazm vohasi aholisi dehqonchilik va chorvachilik bilan shug‘ullangan",
+          "effect": "Qadimgi Xorazmda hunarmandchilik, binokorlik va savdo-sotiq yuksak darajada rivojlangan",
+          "evidence": "Vohaning aholisi dehqonchilik"
+        },
+        {
+          "kind": "number",
+          "number": "2700",
+          "unit": "yil",
+          "meaning": "Qadimgi shaharlarning yoshi 2700 yildan kam emas",
+          "evidence": "shaharlarning yoshi 2700"
+        },
+        {
+          "kind": "number",
+          "number": "3",
+          "unit": "guruh",
+          "meaning": "Saklar uch guruhga bo‘lingan: tigraxauda, tiay-taradarayya va xaumovarka",
+          "evidence": "saklar uch guruhga bo'lingan"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "20-§. Zardushtiylik",
+      "page": 80,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 1-ming yillik",
+          "date_label": "Mil. avv. 1-ming yillik",
+          "event": "O‘rta Osiyoda zardushtiylik deb atalgan din keng tarqalgan",
+          "evidence": "Mil. avv. 1- ming yillikda"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 1-ming yillik",
+          "date_label": "Mil. avv. 1-ming yillik",
+          "event": "Zardushtiylar olov, tuproq, suv va yulduzlarga sig‘inib, ularni muqaddas hisoblashgan",
+          "evidence": "olov, tuproq, suv va yulduzlarga sig'inishgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 1-ming yillikning birinchi yarmi",
+          "date_label": "Mil. avv. 1-ming yillikning birinchi yarmi",
+          "event": "Zardusht tarixiy shaxs sifatida yashab o‘tgan",
+          "evidence": "yarmida yashab o'tgan tarixiy shaxs"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. IX–VIII asrlar",
+          "date_label": "Mil. avv. IX–VIII asrlar",
+          "event": "Zardushtiylarning muqaddas kitobi «Avesto»ning ilk qismi paydo bo‘lgan",
+          "evidence": "«Avesto»ning ilk qismi mil. avv. IX – VIII"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. III asr",
+          "date_label": "Mil. avv. III asr",
+          "event": "Zardusht va’zlari matnlarining hammasi 21 ta kitobda jamlanib, «Avesto» asosini tashkil etgan",
+          "evidence": "hammasi mil avv. III asrda 21"
+        },
+        {
+          "kind": "person",
+          "person": "Zardusht",
+          "role": "zardushtiylik dinining asoschisi va payg‘ambari",
+          "activity": "30 yoshida yangi diniy ta’limot payg‘ambari bo‘lib, qabilalarni birlikka da’vat qilgan",
+          "evidence": "Shu tarzda Zardusht 30 yoshida"
+        },
+        {
+          "kind": "person",
+          "person": "Ahuramazda",
+          "role": "zardushtiylarning ulug‘ va donishmand oliy xudosi",
+          "activity": "Zardushtni ezgu amallar haqidagi bilimlarni tarqatish uchun tanlagan",
+          "evidence": "Ahuramazda xudosi uning ezgu"
+        },
+        {
+          "kind": "person",
+          "person": "Mitra",
+          "role": "Quyosh va yorug‘lik xudosi, yovuzlik va o‘lim xudosi Ahriman bilan jang qiluvchi iloh",
+          "activity": "O‘tli chaqmoqlar yordamida Ahriman bilan jang qiladi",
+          "evidence": "Mitra – Quyosh va"
+        },
+        {
+          "kind": "person",
+          "person": "Anaxita",
+          "role": "zardushtiylikda hosildorlik va suv ilohasi hisoblangan iloh",
+          "activity": "Ehtiromga sazovor bo‘lgan uch xudodan biri sifatida ta’zim qilingan",
+          "evidence": "Anaxita zardushtiylikda hosildorlik va"
+        },
+        {
+          "kind": "person",
+          "person": "A.Dyuperron",
+          "role": "fransuz olimi, «Avesto» matnlarini ilk bor tarjima qilgan tadqiqotchi",
+          "activity": "Ilk marotaba «Avesto»ning alohida qismlarini tarjima qilgan",
+          "evidence": "Fransuz olimi A.Dyuperron ilk"
+        },
+        {
+          "kind": "term",
+          "term": "Avesto",
+          "definition": "zardushtiylarning muqaddas kitobi; «qat’iy belgilangan qonun-qoidalar» ma’nosini anglatadi",
+          "evidence": "nomi «Avesto» bo'lib"
+        },
+        {
+          "kind": "term",
+          "term": "Zand",
+          "definition": "«Avesto» matnlariga beriladigan sharh, diniy matnlar uchun izoh",
+          "evidence": "sharh esa «Zand» deb yuritiladi"
+        },
+        {
+          "kind": "term",
+          "term": "ossuariy",
+          "definition": "marhumning yomg‘irda yuvilib, oftobda qoqlagan suyaklari dafn etiladigan maxsus sopol tobutcha",
+          "evidence": "ossuariylar (suyakdonlar)da dafn etishgan"
+        },
+        {
+          "kind": "term",
+          "term": "astrolog",
+          "definition": "yulduzlar joylashuviga qarab kelajakni bashorat qilish bilan shug‘ullanadigan odam",
+          "evidence": "kelajakni bashorat qilish"
+        },
+        {
+          "kind": "term",
+          "term": "kohin",
+          "definition": "din xizmatchisi; diniy matnlarni yod olib, dindorlarga o‘qib bergan",
+          "evidence": "kohinlar tomonidan yozib olin"
+        },
+        {
+          "kind": "place",
+          "place": "O‘rta Osiyo",
+          "event": "Mil. avv. 1-ming yillikda zardushtiylik deb atalgan din keng tarqalgan hudud",
+          "evidence": "O'rta Osiyoda zardushtiylik"
+        },
+        {
+          "kind": "place",
+          "place": "Yunoniston",
+          "event": "Zardusht ismi «Zoroastr» shaklida jaranglagan va u donishmand, munajjim sifatida tanilgan",
+          "evidence": "Keyinroq Yunonistonda Zardushtning ismi"
+        },
+        {
+          "kind": "place",
+          "place": "Persepol",
+          "event": "Xudo Ahuramazdaning saroy devoridagi tasviri saqlangan shahar",
+          "evidence": "devoridagi tasviri. Persepol"
+        },
+        {
+          "kind": "cause",
+          "cause": "Turli qabilalarni istilochilarga qarshi kurashga birlashtirish zarurati",
+          "effect": "Zardusht qabilalarni birlikka da’vat qilgan",
+          "evidence": "birlashtirish uchun Zardusht"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ibodatxonalar va duo matnlarini o‘rganish uchun maxsus kitoblar bo‘lmagan",
+          "effect": "Diniy marosimlar ochiq osmon ostida, gulxan yonida yoki uy o‘chog‘i olovi atrofida o‘tkazilgan",
+          "evidence": "ochiq osmon ostida, gulxan yonida"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kohinlar diniy matnlarni yozib olib, yod olgan",
+          "effect": "Zardusht vafotidan keyin barcha marosim, madhiya va duolar «Avesto»ga jamlangan",
+          "evidence": "hiyalar va duolar zardushtiylar uchun muqad"
+        },
+        {
+          "kind": "cause",
+          "cause": "Zardushtiylar uchun yer, olov va suv muqaddas hisoblangan",
+          "effect": "Marhumning jasadini ko‘mish, kuydirish va suvga tashlash ta’qiqlangan",
+          "evidence": "suvga tashlab yuborish ham"
+        },
+        {
+          "kind": "number",
+          "number": "30",
+          "unit": "yosh",
+          "meaning": "Zardusht 30 yoshida yangi diniy ta’limot payg‘ambari bo‘lgan",
+          "evidence": "Zardusht 30 yoshida yangi"
+        },
+        {
+          "kind": "number",
+          "number": "21",
+          "unit": "kitob",
+          "meaning": "Zardusht va’zlari matnlari mil. avv. III asrda 21 ta kitobda jamlangan",
+          "evidence": "ta kitobda jamlangan"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "21-§. Antik tarixning boshlanishi",
+      "page": 84,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 2-ming yillik",
+          "date_label": "Mil. avv. 2-ming yillik",
+          "event": "Janubiy Yunoniston va Krit orolida ilk shahar-davlatlar vujudga kela boshlagan (Knoss, Miken)",
+          "evidence": "davlatlar vujudga kela boshladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 2-ming yillik",
+          "date_label": "Mil. avv. 2-ming yillik",
+          "event": "Krit orolida afsonaviy podsho Minos nomi bilan atalgan Minoy sivilizatsiyasi vujudga kelgan",
+          "evidence": "Krit orolidagi sivilizatsiya afsonaviy pod"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 1-ming yillik boshlari",
+          "date_label": "Mil. avv. 1-ming yillik boshlari",
+          "event": "Yunonlar joylashgan hududlarning chegarasi shakllangan",
+          "evidence": "Miloddan avvalgi 1 ming yillik"
+        },
+        {
+          "kind": "person",
+          "person": "Minos",
+          "role": "Krit oroli sivilizatsiyasi nomi bilan atalgan afsonaviy podsho",
+          "activity": "Uning nomi bilan Krit orolidagi sivilizatsiya Minoy sivilizatsiyasi deb atalgan",
+          "evidence": "Minos nomi bilan Minoy"
+        },
+        {
+          "kind": "person",
+          "person": "axeylar",
+          "role": "Yunoniston hududiga bostirib kirgan jangovar qabila",
+          "activity": "Minoy sivilizatsiyasi barbod bo‘lishini nihoyasiga yetkazganlar",
+          "evidence": "Aynan axeylar Minoy sivilizatsiyasi"
+        },
+        {
+          "kind": "person",
+          "person": "doriylar",
+          "role": "Janubiy Yunonistonga bostirib kirgan qabila",
+          "activity": "Miken davlatining tugatilishi va Sparta davlatining vujudga kelishiga sabab bo‘lgan",
+          "evidence": "ning Janubiy Yunonistonga bostirib kirishi"
+        },
+        {
+          "kind": "person",
+          "person": "tajribali dengizchilar",
+          "role": "yelkanlardan foydalanib olis sayohatlarga chiqqan yunon kemachilari",
+          "activity": "Misrga hamda O‘rtayer va Qora dengiz sohillaridagi shaharlarga suzib borganlar",
+          "evidence": "gizchilar esa yelkanlardan foydalanib, olis"
+        },
+        {
+          "kind": "person",
+          "person": "yunon dehqonlari va chorvadorlari",
+          "role": "qadim zamonlardan dehqonchilik va chorvachilik bilan shug‘ullangan aholi",
+          "activity": "Nina bargli o‘rmonlar o‘sgan shimoliy hududlarda va Peloponnesda yashaganlar",
+          "evidence": "dehqonchilik va chorvachilik bilan"
+        },
+        {
+          "kind": "term",
+          "term": "Qadimgi Yunoniston",
+          "definition": "Bolqon yarimoroli va O‘rtayer dengizi orollaridagi qadimgi yunon davlatlarining umumiy nomi",
+          "evidence": "nomi Qadimgi Yunoniston deb atalgan"
+        },
+        {
+          "kind": "term",
+          "term": "Minoy sivilizatsiyasi",
+          "definition": "Krit orolidagi, afsonaviy podsho Minos nomi bilan atalgan sivilizatsiya",
+          "evidence": "Minoy sivilizatsiyasi deb"
+        },
+        {
+          "kind": "term",
+          "term": "Oykumena",
+          "definition": "yunonlar odamlar yashaydigan hududlarni atashgan nom",
+          "evidence": "hududlarni Oykumena deb atashgan"
+        },
+        {
+          "kind": "place",
+          "place": "Krit oroli",
+          "event": "Minoy sivilizatsiyasi vujudga kelgan va Knoss shahri joylashgan orol",
+          "evidence": "Krit orolidagi sivilizatsiya afsonaviy pod"
+        },
+        {
+          "kind": "place",
+          "place": "Olimp",
+          "event": "Yunonistonning eng baland tog‘i, mamlakatning shimoli-sharqiy qismida joylashgan",
+          "evidence": "Yunonistonning eng baland tog'i Olimpdir"
+        },
+        {
+          "kind": "place",
+          "place": "Peloponnes",
+          "event": "Yunonlar uchun nihoyatda qadrli bo‘lgan nina bargli o‘rmonlar o‘sgan yarimorol",
+          "evidence": "shimolida va Peloponnesda"
+        },
+        {
+          "kind": "cause",
+          "cause": "Egey dengizidagi ko‘p sonli orollar, qulay qirg‘oqlar va qo‘ltiqlar",
+          "effect": "Yunonlar orasida dengizchilik rivoj topgan",
+          "evidence": "dengizchilik rivoj topishiga imkon"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yunonlarda katta kemalar bo‘lmagan, faqat kichik eshkakli qayiqlar mavjud edi",
+          "effect": "Ular sohildan yiroqqa suzmay, oroldan orolga yoki sohil yaqinida suzishgan",
+          "evidence": "katta kemalar bo'lmagan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kuchli zilzila va suv toshqiniga sabab bo‘lgan vulqon otilishi",
+          "effect": "Minoy sivilizatsiyasi vayron bo‘lgan, ammo ko‘p o‘tmay qayta tiklangan",
+          "evidence": "vulqon otilishi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Doriylarning Janubiy Yunonistonga bostirib kirishi",
+          "effect": "Miken davlati tugatilib, Sparta davlati vujudga kelgan",
+          "evidence": "tining vujudga kelishiga olib keldi"
+        },
+        {
+          "kind": "number",
+          "number": "1/3",
+          "unit": "qism",
+          "meaning": "Yunoniston hududining uchdan bir qismini tog‘lar egallagan",
+          "evidence": "uchdan bir qismini"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "22-§. Qadimgi Yunonistonning yuksalishi",
+      "page": 86,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 2-ming yillik",
+          "date_label": "Mil. avv. 2-ming yillik",
+          "event": "Attikaning g‘arbiy qismida yunonlar «Akropol», ya’ni «Yuqori shahar» deb atalgan qal’ani qurganlar",
+          "evidence": "Mil. avv. 2-ming yillikda Attikaning g'arbiy"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 2-ming yillik",
+          "date_label": "Mil. avv. 2-ming yillik",
+          "event": "Akropol tevaragiga odamlar ko‘chib kelib o‘rnashib, Afina shahri vujudga kelgan",
+          "evidence": "Akropol tevaragiga odamlar ko'chib kelib"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 2-ming yillik",
+          "date_label": "Mil. avv. 2-ming yillik",
+          "event": "Janubiy Yunonistonda Miken va Krit davlatlari mavjud bo‘lgan",
+          "evidence": "mil. avv. 2-ming yillikda –  Miken, Krit"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 1200-yil",
+          "date_label": "Mil. avv. 1200-yil",
+          "event": "Doriylar Miken davlatini vayronaga aylantirgan",
+          "evidence": "mil. avv. 1200-yil – doriylar Miken"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. XII asr",
+          "date_label": "Mil. avv. XII asr",
+          "event": "Doriylar Janubiy Yunoniston (Lakonika) hududiga bostirib kirib, Sparta shahar-davlatiga asos solgan",
+          "evidence": "Mil. avv. XII asrda Janubiy"
+        },
+        {
+          "kind": "person",
+          "person": "goplitlar",
+          "role": "og‘ir qurollangan yunon askarlari, qo‘shinning asosini tashkil etganlar",
+          "activity": "Bir-biriga zich joylashgan qatorlar bilan falanga bo‘lib jang qilganlar",
+          "evidence": "karlar – goplitlar tashkil etgan"
+        },
+        {
+          "kind": "person",
+          "person": "Miron",
+          "role": "palestralarda haykallari turgan mashhur haykaltarosh",
+          "activity": "«Diskobol» («Disk uloqtiruvchi») haykalini yaratgan",
+          "evidence": "tralardan birida Mironning «Diskobol»"
+        },
+        {
+          "kind": "person",
+          "person": "pedagog",
+          "role": "haq to‘lab yollanadigan, bolani yo‘lda kuzatib boruvchi o‘qituvchi",
+          "activity": "Ota-onalar o‘z bolalarini unga haq to‘lab o‘qitishgan",
+          "evidence": "zi «bolani yo'lda kuzatib boruvchi» ma'nosini a"
+        },
+        {
+          "kind": "person",
+          "person": "ilotlar",
+          "role": "spartaliklar qulga aylantirgan mahalliy aholi, aslida yunonlar",
+          "activity": "Spartaliklar oilasi yeriga ishlov berib, chorva boqqan va majburiyatlarni bajargan",
+          "evidence": "Ilotlar spartaliklardan qattiq nafratlanar edi"
+        },
+        {
+          "kind": "person",
+          "person": "perieklar",
+          "role": "shaxsan ozod, ammo to‘la-to‘kis huquqlarga ega bo‘lmagan kishilar",
+          "activity": "Spartada yashab, kulolchilik kabi hunarlar bilan shug‘ullangan",
+          "evidence": "shaxsan ozod kishilar – perieklar ham"
+        },
+        {
+          "kind": "term",
+          "term": "polis",
+          "definition": "yunoncha «shahar» deb atalgan, bir necha manzilgohlar birlashuvidan tashkil topgan shahar-davlat",
+          "evidence": "Bunday shaharlar yunoncha «polis»,"
+        },
+        {
+          "kind": "term",
+          "term": "falanga",
+          "definition": "bir-biriga zich joylashgan qatorlar bilan jang qilish uchun safga tizilish",
+          "evidence": "safga tizilish falanga deb atal"
+        },
+        {
+          "kind": "term",
+          "term": "Akropol",
+          "definition": "«Yuqori shahar» deb atalgan qal’a; atrofida Afina shahri vujudga kelgan",
+          "evidence": "«Akropol», ya'ni «Yuqori"
+        },
+        {
+          "kind": "term",
+          "term": "meteklar",
+          "definition": "Afina aholisining chet elliklar guruhi; fuqarolik huquqlariga ega bo‘lmagan",
+          "evidence": "fuqarolar, chet elliklar – meteklar"
+        },
+        {
+          "kind": "term",
+          "term": "palestra",
+          "definition": "xususiy gimnastika maktabi; unda adabiyot o‘qitilib, she’r yozish va musiqa o‘rgatilgan",
+          "evidence": "palestra – xususiy gimnastika"
+        },
+        {
+          "kind": "place",
+          "place": "Attika",
+          "event": "O‘rta Yunonistonning janubi-sharqiy qismidagi tog‘lik viloyat, Afina shahri shu yerda vujudga kelgan",
+          "evidence": "tika viloyati joylashgan"
+        },
+        {
+          "kind": "place",
+          "place": "Sparta",
+          "event": "Doriylar Lakonika hududida asos solgan shahar-davlat, eng yirik yunon davlatlaridan biri",
+          "evidence": "Sparta shahar-davlatiga asos soldi"
+        },
+        {
+          "kind": "place",
+          "place": "Pirey",
+          "event": "Afinaning asosiy porti; unga xilma-xil tovarlar bilan qullar ham keltirilgan",
+          "evidence": "Pirey bandargohidan mamlakatga"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yunonistonda dehqonchilik va hunarmandchilik rivoj topgan",
+          "effect": "Shaharlar soni ortib, ular shahar-davlatlarga aylangan",
+          "evidence": "Yunonistonda dehqonchilik va"
+        },
+        {
+          "kind": "cause",
+          "cause": "Polislar bir-birlari bilan tez-tez urushib turganlar",
+          "effect": "Yunonlar askarlarga ta’lim-tarbiya berishga va durust qurollantirishga intilganlar",
+          "evidence": "Polislar bir-birlari bilan tez-tez urushib turganlar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ilotlar spartaliklardan qattiq nafratlangan",
+          "effect": "Spartaliklar hukmronligini faqat kuch bilan saqlab, qat’iy intizom o‘rnatganlar",
+          "evidence": "o'z hukmronligini faqat kuch bilan saqlab qolish mumkin bo'lgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Afina davlatiga kumush konlari mahsuloti va tuz qazib olish katta daromad keltirgan",
+          "effect": "Dengiz savdosi rivoj topib, Pirey portiga tovarlar va qullar keltirilgan",
+          "evidence": "suloti va tuz qazib olish katta daromad keltir"
+        },
+        {
+          "kind": "number",
+          "number": "7",
+          "unit": "yosh",
+          "meaning": "Yetti yoshdan boshlab bolalarga yozuv va hisob o‘rgatilgan",
+          "evidence": "Yetti yoshdan boshlab bolalarga"
+        },
+        {
+          "kind": "number",
+          "number": "14",
+          "unit": "yosh",
+          "meaning": "O‘g‘il bolalar 14 yoshdan gimnastika bilan shug‘ullana boshlagan",
+          "evidence": "O'g'il bolalar 14 yoshdan"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "23-§. Yunon koloniyalari",
+      "page": 91,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VIII–VII asrlar",
+          "date_label": "Mil. avv. VIII–VII asrlar",
+          "event": "Qadimgi Yunonistonda yunon koloniyalari tashkil topgan",
+          "evidence": "mil. avv. VIII-VII asrlar – yunon koloniya"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VIII–VI asrlar",
+          "date_label": "Mil. avv. VIII–VI asrlar",
+          "event": "Ko‘pdan-ko‘p yunon koloniyalari tashkil topib, bu davr Buyuk Yunon koloniyalashtirishi deb atalgan",
+          "evidence": "Buyuk Yunon koloniyalashtirishi nomini"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VIII–VI asrlar",
+          "date_label": "Mil. avv. VIII–VI asrlar",
+          "event": "Qora dengiz sohillarida Olviya, Xersones va Pantikapey kabi yirik koloniyalar vujudga kelgan",
+          "evidence": "mil. avv. VIII – VI asrlar – Olviya, Xersones"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VIII asr",
+          "date_label": "Mil. avv. VIII asr",
+          "event": "Yunonistonda Finikiya alifbosiga asoslangan yangi yozuv vujudga kelgan",
+          "evidence": "valgi VIII asrda Yunonistonda Finikiya"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. VIII asr",
+          "date_label": "Mil. avv. VIII asr",
+          "event": "Alifbo 24 ta harfdan iborat bo‘lib, unda unli harflar paydo bo‘lgan",
+          "evidence": "Alifbo 24 ta harfdan iborat bo'lgan"
+        },
+        {
+          "kind": "person",
+          "person": "yunon ko‘chmanchilari",
+          "role": "zodagonlardan qarzdor bo‘lib qolgan, o‘z yer va mulkiga ega bo‘lmagan kishilar",
+          "activity": "Vatanini tark etib, begona yurtlarda omadini sinab ko‘rishga majbur bo‘lganlar",
+          "evidence": "ko'plab kishilar o'z vatanini tark etishga"
+        },
+        {
+          "kind": "person",
+          "person": "ellinlar",
+          "role": "yunonlar o‘zlarini atagan yagona xalq nomi",
+          "activity": "O‘z vatanini Ellada deb atab, yagona xalq sifatida tanilgan",
+          "evidence": "o'zini yagona xalq – ellinlar deb"
+        },
+        {
+          "kind": "person",
+          "person": "varvarlar",
+          "role": "o‘zlashtirilgan yerlar tevaragida yashovchi yunon bo‘lmagan xalqlar",
+          "activity": "Yunonlar o‘zlashtirilgan yerlar atrofidagi begona xalqlarni shu nom bilan atagan",
+          "evidence": "xalqlarni «varvarlar» deb"
+        },
+        {
+          "kind": "person",
+          "person": "koloniya hokimlari",
+          "role": "koloniya shahar-davlatlarini boshqargan hukmdorlar",
+          "activity": "O‘z qo‘shinlari, qonunlari va tangalariga ega bo‘lgan",
+          "evidence": "ning o'z hokimlari, qo'shinlari, qonunlari"
+        },
+        {
+          "kind": "term",
+          "term": "koloniya",
+          "definition": "yunonlarning yangi hududlarda tashkil etgan manzilgohi; keyinchalik shahar-davlatga aylangan",
+          "evidence": "har-davlatlarga aylana bordi"
+        },
+        {
+          "kind": "term",
+          "term": "Ellada",
+          "definition": "yunonlar o‘z vatanini atagan nom; yunonlar o‘zini ellinlar deb bilgan",
+          "evidence": "o'z vatanini esa Ellada deb atashgan"
+        },
+        {
+          "kind": "term",
+          "term": "Buyuk Yunon koloniyalashtirishi",
+          "definition": "mil. avv. VIII–VI asrlarda ko‘pdan-ko‘p yunon koloniyalari tashkil topgan davrning tarixiy nomi",
+          "evidence": "rixda Buyuk Yunon koloniyalashtirishi nomini"
+        },
+        {
+          "kind": "term",
+          "term": "alifbo",
+          "definition": "Finikiya yozuviga asoslangan, 24 harfdan iborat bo‘lgan va unlilari paydo bo‘lgan yunon yozuvi",
+          "evidence": "orasida unli harfl ar paydo"
+        },
+        {
+          "kind": "place",
+          "place": "Apennin yarimoroli",
+          "event": "Yunonistondan ko‘chib kelganlar uning janubiga o‘rnashgan",
+          "evidence": "Apennin yarimoroli"
+        },
+        {
+          "kind": "place",
+          "place": "Olviya",
+          "event": "Qora dengiz sohilidagi yirik yunon koloniyasi",
+          "evidence": "sohillarida Olviya, Xer"
+        },
+        {
+          "kind": "place",
+          "place": "Xersones",
+          "event": "Qora dengiz sohilidagi koloniya; shahridagi ibodatxona ustunlari saqlangan",
+          "evidence": "Xersones shahridagi ibodatxona"
+        },
+        {
+          "kind": "cause",
+          "cause": "Zodagonlardan qarzdor bo‘lib qolish va o‘z yer-u mulkiga ega bo‘lmaslik",
+          "effect": "Ko‘plab kishilar vatanini tark etib, begona yurtlarda omadini sinashga majbur bo‘lgan",
+          "evidence": "zodagonlardan qarzdor bo'lib qolgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yangi hududlarni o‘zlashtirish va begona yurtlarda omad izlash",
+          "effect": "O‘rtayer va Qora dengiz bo‘ylarida yunon manzilgohlari vujudga kelgan",
+          "evidence": "Ularning manzilgohlari O'rtayer va Qora"
+        },
+        {
+          "kind": "cause",
+          "cause": "Koloniyalar va yunon shaharlari o‘rtasida mahsulot ayirboshlanishi",
+          "effect": "Savdo-sotiq va hunarmandchilik ravnaq topgan",
+          "evidence": "boshlanishi savdo-sotiq va hunarmandchilik"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yangi mamlakatlar bilan tanishuv va koloniyalarda orttirilgan tajriba",
+          "effect": "Yunon madaniyati boyib, Finikiya alifbosiga asoslangan yangi yozuv vujudga kelgan",
+          "evidence": "Yangi mamlakatlar bilan tanishuv yunon"
+        },
+        {
+          "kind": "number",
+          "number": "24",
+          "unit": "harf",
+          "meaning": "Yunon alifbosi 24 ta harfdan iborat bo‘lgan",
+          "evidence": "24 ta harfdan iborat"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "24-§. Afinada demokratiya",
+      "page": 93,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 621-yil",
+          "date_label": "Mil. avv. 621-yil",
+          "event": "Drakont xalq boshqaruvini bekor qilgan qonunlarni yozib, amalga kiritgan",
+          "evidence": "Mil. avv. 621-yilda Drakont xalq boshqa"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 621-yil",
+          "date_label": "Mil. avv. 621-yil",
+          "event": "Drakont qonunlarni arzimas darajada buzganlik uchun ham bitta jazo – o‘lim jazosini belgilagan",
+          "evidence": "Drakont bitta jazo – o'lim jazosi belgilagan"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 594-yil",
+          "date_label": "Mil. avv. 594-yil",
+          "event": "Solon davlatni idora qilishning aristokratiya tizimini demokratiyaga almashtirgan",
+          "evidence": "Solon davlatni idora qilishning oldingi tizimini"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 594-yil",
+          "date_label": "Mil. avv. 594-yil",
+          "event": "Solonning taklifi bilan dehqonlarning qarzlari va qarzdorlarni qul qilish bekor qilingan",
+          "evidence": "lari va qarzdorlarni qul qilish bekor qilinadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 443–429-yillar",
+          "date_label": "Mil. avv. 443–429-yillar",
+          "event": "Perikl 15 marotaba strateg lavozimiga saylanib, Afina eng qudratli davlatga aylangan",
+          "evidence": "443 –429-yillarda"
+        },
+        {
+          "kind": "date_event",
+          "date": "mil. avv. 443–429-yillar",
+          "date_label": "Mil. avv. 443–429-yillar",
+          "event": "Perikl davrida Afinada katta qurilish ishlari olib borilib, Akropolda Parfenon qurilgan",
+          "evidence": "Afi nada katta quri lish ish"
+        },
+        {
+          "kind": "person",
+          "person": "Drakont",
+          "role": "Afina hukmdori, qonunlar yozgan va ularni amalga kiritgan shaxs",
+          "activity": "Qonunlari shu qadar qattiq ediki, afinaliklar ularni «siyoh qolib, qon bilan yozilgan» deb ta’riflashgan",
+          "evidence": "Drakont ismli hukmdorga"
+        },
+        {
+          "kind": "person",
+          "person": "Solon",
+          "role": "o‘ta bilimdon va tajribali zodagon, Afina hukmdori",
+          "activity": "Mil. avv. 594-yilda aristokratiyani demokratiyaga almashtirib, qarzlarni bekor qilgan",
+          "evidence": "O'ta bilimdon va tajribali Solon degan"
+        },
+        {
+          "kind": "person",
+          "person": "Perikl",
+          "role": "443–429-yillarda 15 marta strateg lavozimiga saylangan Afina davlat arbobi",
+          "activity": "Hukmronligi davrida Afina eng qudratli davlatga aylanib, demokratiya ravnaq topgan",
+          "evidence": "Perikl tarixchi Gerodot, haykaltarosh Fidiy"
+        },
+        {
+          "kind": "person",
+          "person": "Gerodot",
+          "role": "yunon tarixchisi; Perikl bilan do‘st tutingan",
+          "activity": "Perikl asrida ijod qilgan ajoyib yunon yozuvchilari qatorida bo‘lgan",
+          "evidence": "tarixchi Gerodot, haykaltarosh Fidiy"
+        },
+        {
+          "kind": "person",
+          "person": "Fidiy",
+          "role": "yunon haykaltaroshi; Perikl davrida ijod qilgan",
+          "activity": "Perikl bilan do‘st tutinib, Afina san’atini yuksaltirgan",
+          "evidence": "haykaltarosh Fidiy"
+        },
+        {
+          "kind": "term",
+          "term": "demokratiya",
+          "definition": "«demos» – xalq va «kratos» – hokimiyat so‘zlaridan olingan bo‘lib, «xalq hokimiyati» ma’nosini anglatadi",
+          "evidence": "ya'ni bu atama «xalq hokimiya"
+        },
+        {
+          "kind": "term",
+          "term": "agora",
+          "definition": "Afina shahridagi markaziy maydon, xalq yig‘ini joyi",
+          "evidence": "Maydon esa agora deb"
+        },
+        {
+          "kind": "term",
+          "term": "aristokratiya",
+          "definition": "aslzodalar hokimiyati; Solongacha mavjud bo‘lgan boshqaruv tizimi",
+          "evidence": "aslzodalar hokimiyati"
+        },
+        {
+          "kind": "term",
+          "term": "meteklar",
+          "definition": "Afinadagi chet elliklar; qonunlar muhokamasida va ovoz berishda ishtirok eta olmagan",
+          "evidence": "Ayollar va chet elliklar (ularni me"
+        },
+        {
+          "kind": "term",
+          "term": "Beshyuzlar kengashi",
+          "definition": "har yili saylanadigan, kundalik joriy masalalarni hal qiladigan davlat organi",
+          "evidence": "Har yili saylanadigan Beshyuzlar kengashi"
+        },
+        {
+          "kind": "place",
+          "place": "Akropol",
+          "event": "Perikl davrida qurilgan mashhur Parfenon ibodatxonasi joylashgan tepalik",
+          "evidence": "U Akropolda qu rilgan"
+        },
+        {
+          "kind": "place",
+          "place": "Parfenon",
+          "event": "Iloha Afina sharafiga Akropolda qurilgan ibodatxona",
+          "evidence": "mashhur inshoot Parfenon"
+        },
+        {
+          "kind": "cause",
+          "cause": "Aholining bir qismi zodagonlar, ikkinchi qismi esa ular foydasiga ishlashga majbur bo‘lgan demos edi",
+          "effect": "Afina aholisi o‘rtasida kelishmovchilik va nizolar vujudga kelgan",
+          "evidence": "lishmovchilik va nizolar vujudga kelgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xalq aslzodalar hukmronligidan norozi bo‘lib, ahvoli yomonlashgan",
+          "effect": "Odamlar o‘z haq-huquqlari uchun kurashga bel bog‘lab, zodagonlarning uy-qo‘rg‘onlariga hujum qilgan",
+          "evidence": "o'z haq-huquqlari uchun kurashga bel bog'ladilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Zodagonlar o‘z yeri va jonidan xavotirlangan",
+          "effect": "Ular xalq talablarining bir qismini bajarishga majbur bo‘lgan",
+          "evidence": "yeri va jonidan xavotirlangan zodagonlar yon"
+        },
+        {
+          "kind": "cause",
+          "cause": "Drakont qonunlari o‘ta qattiq va ayovsiz bo‘lgan",
+          "effect": "Afinaliklar norozi bo‘lib, Drakontni shahardan haydab yuborishgan",
+          "evidence": "norozi bo'la boshlashgan"
+        },
+        {
+          "kind": "number",
+          "number": "4",
+          "unit": "marta",
+          "meaning": "Erkak fuqarolar har oyda to‘rt marta agorada yig‘ilib, muammolar va yangi qonunlarni muhokama qilganlar",
+          "evidence": "har oyda to'rt"
+        },
+        {
+          "kind": "number",
+          "number": "15",
+          "unit": "marta",
+          "meaning": "Perikl 15 marotaba strateg lavozimiga saylangan",
+          "evidence": "15 marotaba strateg"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,993 @@
+{
+  "chapter": "I BOB. MUSTAQILLIKNING E’LON QILINISHI VA",
+  "topics": [
+    {
+      "number": 1,
+      "title": "O‘zbekiston Respublikasi mustaqilligining qo‘lga kiritilishi",
+      "page": 5,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1990",
+          "date_label": "1990-yil 20-iyunda",
+          "event": "O‘zbekiston SSR Oliy Kengashining II sessiyasida O‘zbekiston SSRning Mustaqillik Deklaratsiyasi qabul qilindi",
+          "evidence": "1990-yil 20-iyun kuni\nO‘zbekiston SSR Oliy Kengashining  II sessiyasida O‘zbekiston SSRning\nMustaqillik Deklaratsiyasi qabul qilindi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 19–21-avgustda",
+          "event": "Sovet Ittifoqida davlat to‘ntarishi sodir etilib, favqulodda holat joriy etildi va hokimiyat GKChP qo‘liga o‘tdi",
+          "evidence": "1991-yilning 19–21-av-\ngustida Sovet Ittifoqida davlat to‘ntarishi sodir etildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 21-avgustda",
+          "event": "Oliy Kengash Rayosati, Kompartiya Markaziy Komiteti va Prezident huzuridagi Vazirlar Mahkamasi qo‘shma majlis o‘tkazdi",
+          "evidence": "1991-yil 21-avgustda qo‘shma majlis o‘tkazib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 25-avgustda",
+          "event": "Prezident farmoni bilan Ichki ishlar vazirligi va Davlat xavfsizligi komiteti respublika tasarrufiga o‘tkazildi",
+          "evidence": "1991-yil 25-avgust kuni esa O‘zbekiston SSR Prezidenti"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 31-avgustda",
+          "event": "XII chaqiriq O‘zbekiston SSR Oliy Kengashining navbatdan tashqari VI sessiyasi o‘z ishini boshladi",
+          "evidence": "navbatdan tashqari VI sessiyasi 1991-yil 31-avgustda o‘z ishini boshladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 1-sentabrdan",
+          "event": "Oliy Kengash qaroriga ko‘ra 1-sentabr O‘zbekiston Respublikasining Mustaqillik kuni deb belgilandi",
+          "evidence": "1-sentabr O‘zbekiston\nRespublikasining Mustaqillik kuni deb belgilansin"
+        },
+        {
+          "kind": "date_event",
+          "date": "1992",
+          "date_label": "1992-yil 8-dekabrda",
+          "event": "XII chaqiriq O‘zbekiston Respublikasi Oliy Kengashining XI sessiyasi bo‘lib, Asosiy Qonun masalasi muhokama qilindi",
+          "evidence": "1992-yil 8-dekabrda XII chaqiriq O‘zbekiston Respublikasi Oliy\nKengashining XI sessiyasi bo‘ldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 18-noyabrda",
+          "event": "Oliy Kengashning VIII sessiyasida “O‘zbekiston Respublikasining davlat bayrog‘i to‘g‘risida”gi qonun qabul qilindi",
+          "evidence": "1991-yil 18-noyabrida bo‘lib o‘tgan VIII sessiyasi"
+        },
+        {
+          "kind": "person",
+          "person": "Islom Karimov",
+          "role": "O‘zbekiston Respublikasining Birinchi Prezidenti, davlat rahbari",
+          "activity": "1991-yil 31-avgustdagi sessiyada nutq so‘zlab, O‘zbekistonning davlat mustaqilligini e’lon qilgan",
+          "evidence": "Birinchi Prezidenti Islom\nKarimov nutq so‘zlab"
+        },
+        {
+          "kind": "person",
+          "person": "Islom Karimov",
+          "role": "Birinchi Prezident, Konstitutsiya loyihasini tayyorlash komissiyasi rahbari",
+          "activity": "Yangi Konstitutsiyani tayyorlash g‘oyasini 1990-yilning mart oyida ilgari surgan",
+          "evidence": "g‘oyasi dastlab Islom Karimov tomonidan 1990-yilning mart oyida ilgari"
+        },
+        {
+          "kind": "person",
+          "person": "Abdulla Oripov",
+          "role": "O‘zbek shoiri, Davlat madhiyasi matnining muallifi",
+          "activity": "Bastakor Mutal Burhonov bilan birga tayyorlagan madhiya varianti sessiyada tasdiqlangan",
+          "evidence": "shoir Abdulla Oripov\n(1941–2016) va bastakor Mutal Burhonov (1916–2002)"
+        },
+        {
+          "kind": "person",
+          "person": "Mutal Burhonov",
+          "role": "O‘zbek bastakori, Davlat madhiyasi musiqasining muallifi",
+          "activity": "Abdulla Oripov matni asosida madhiyaning musiqiy variantini tayyorlagan bastakor",
+          "evidence": "bastakor Mutal Burhonov (1916–2002)\ntomonidan tayyorlangan madhiya varianti tasdiqlandi"
+        },
+        {
+          "kind": "term",
+          "term": "Sessiya",
+          "definition": "Lotincha “sessio” so‘zidan olingan bo‘lib majlis, yig‘ilish ma’nosini bildiradi; vakolatli organning davriy yig‘ilishi",
+          "evidence": "Sessiya – (lot. sessio — majlis, yig‘ilish"
+        },
+        {
+          "kind": "term",
+          "term": "Deputat",
+          "definition": "Lotincha “deputatus” so‘zidan olingan bo‘lib vakil qilingan, yuborilgan ma’nosini bildiradi; saylangan vakil",
+          "evidence": "Deputat – (lot. deputatus — vakil qilingan, yuborilgan"
+        },
+        {
+          "kind": "term",
+          "term": "GKChP",
+          "definition": "Favqulodda holat davlat komiteti; 1991-yil avgustida hokimiyatni egallab olgan ittifoq miqyosidagi organ",
+          "evidence": "Favqulodda holat davlat komiteti\n(GKChP"
+        },
+        {
+          "kind": "term",
+          "term": "Mustaqillik Deklaratsiyasi",
+          "definition": "1990-yil 20-iyunda qabul qilingan, O‘zbekiston davlat mustaqilligini e’lon qilgan tarixiy hujjat",
+          "evidence": "Mustaqillik Deklaratsiyasidagi “O‘zbekistonning kelajagi uchun\ntarixiy mas’uliyatni chuqur his etgan holda"
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent shahridagi Mustaqillik maydoni",
+          "event": "1991-yil 5-sentabrda imzolangan Prezident farmoni bilan Lenin nomidagi maydonga shu nom berilgan",
+          "evidence": "Toshkent shahridagi Lenin nomidagi maydonni Mustaqillik\nmaydoni deb nomlash"
+        },
+        {
+          "kind": "place",
+          "place": "Sobiq Ittifoq hududi",
+          "event": "GKChP a’zolari bu hududdagi barcha xalqlarning mustaqillikka erishishiga yo‘l qo‘ymaslikni maqsad qilgan",
+          "evidence": "Ittifoq hududida yashovchi barcha\nxalqlarning mustaqillikni qo‘lga\nkiritishlariga yo‘l qo‘ymaslik edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mustaqillik Deklaratsiyasining qabul qilinishi",
+          "effect": "O‘zbekistonning mustaqillik uchun kurashi yangi bosqichga ko‘tarildi",
+          "evidence": "Deklaratsiyaning qabul qilinishi O‘zbekistonning mustaqillik uchun\nkurashining yangi bosqichini boshlab berdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "1991-yil avgustidagi davlat to‘ntarishi va favqulodda holat",
+          "effect": "O‘zbekiston rahbariyati GKChP hujjatlarini respublika hududida haqiqiy emas deb e’lon qildi",
+          "evidence": "SSSR GKChPning\nO‘zbekiston SSR Konstitutsiyasi va qonunlariga zid hujjatlari O‘zbekiston\nhududida amal qilmaydi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Davlat mustaqilligi va suverenitetini huquqiy mustahkamlash zarurati",
+          "effect": "Yangi Konstitutsiyani ishlab chiqish bo‘yicha amaliy ishlar boshlandi",
+          "evidence": "mustaqilligi va suverenitetini Konstitutsiya asosida mustahkamlash\nzarurati yuzaga keldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Konstitutsiya loyihasining birinchi varianti mukammal bo‘lmagan",
+          "effect": "1992-yil bahorida 149 moddadan iborat ikkinchi variant ishlab chiqildi",
+          "evidence": "1992-yil bahorida esa loyihaning 149 moddadan iborat\nikkinchi varianti ishlab chiqildi"
+        },
+        {
+          "kind": "number",
+          "number": "64",
+          "unit": "kishi",
+          "meaning": "Islom Karimov boshchiligidagi Konstitutsiya loyihasini tayyorlash komissiyasi a’zolari soni",
+          "evidence": "boshchiligida 64 kishidan iborat Konstitutsiya"
+        },
+        {
+          "kind": "number",
+          "number": "128",
+          "unit": "modda",
+          "meaning": "O‘zbekiston Respublikasi Konstitutsiyasi tarkibidagi moddalar soni",
+          "evidence": "6 bo‘lim, 26 bob, 128\nmoddadan iborat"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "O‘zbekiston Respublikasi milliy davlatchiligining shakllanishi va rivojlanishi",
+      "page": 11,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1990",
+          "date_label": "1990-yil 24-martda",
+          "event": "Respublikada prezidentlik instituti vujudga kelib, milliy davlatchilik rivojlanishida yangi bosqich boshlandi",
+          "evidence": "1990-yil 24-martda O‘zbekiston Respublikasida prezidentlik instituti"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990",
+          "date_label": "1990-yil 1-noyabrda",
+          "event": "Ijroiya va boshqaruv hokimiyati tuzilishini takomillashtirish to‘g‘risidagi qonun qabul qilindi",
+          "evidence": "1990-yil 1-noyabrda qabul qilingan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 29-dekabrda",
+          "event": "Prezidentlikka muqobillik asosida saylov bo‘lib o‘tdi, unda ikki nomzod qatnashdi",
+          "evidence": "1991-yil 29-dekabrda O‘zbekiston Respublikasi\nPrezidentligiga muqobillik asosida saylov bo‘lib o‘tdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1992",
+          "date_label": "1992-yil 4-yanvarda",
+          "event": "Vitse-prezidentlik tugatilib, Bosh vazir lavozimi ta’sis etildi va unga vitse-prezident vakolatlari berildi",
+          "evidence": "1992-yil 4-yanvarda vitse-prezident lavozimi tugatildi va\nO‘zbekiston Respublikasining Bosh vaziri lavozimi ta’sis etildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1995",
+          "date_label": "1995-yil 26-martda",
+          "event": "Prezident vakolat muddatini 1997-yildan 2000-yilgacha uzaytirish bo‘yicha referendum o‘tkazildi",
+          "evidence": "1995-yil 26-martda O‘zbekiston Respublikasi Oliy Majlisi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2002",
+          "date_label": "2002-yil 27-yanvarda",
+          "event": "Referendumda Prezidentlik lavozimi vakolati 5 yildan 7 yilga uzaytirildi",
+          "evidence": "2002-yil 27-yanvarda bo‘lib o‘tgan referendumda"
+        },
+        {
+          "kind": "date_event",
+          "date": "2008",
+          "date_label": "2008-yil 1-yanvardan",
+          "event": "O‘lim jazosi bekor qilinib, qamoqqa olishga sanksiya berish huquqi prokuraturadan sudlarga o‘tkazildi",
+          "evidence": "2008-yil 1-yanvardan mamlakatda o‘lim jazosi bekor"
+        },
+        {
+          "kind": "date_event",
+          "date": "2017",
+          "date_label": "2017-yil 21-fevralda",
+          "event": "Sud tizimi tuzilmasini tubdan takomillashtirish va faoliyati samaradorligini oshirish farmoni imzolandi",
+          "evidence": "Prezident Shavkat\nMirziyoyevning 2017-yil 21-fevraldagi"
+        },
+        {
+          "kind": "person",
+          "person": "Islom Karimov",
+          "role": "O‘zbekiston Respublikasining Birinchi Prezidenti, davlat rahbari",
+          "activity": "1991-yil 29-dekabrdagi muqobillik asosidagi saylovda 86 foiz ovoz bilan g‘alaba qozongan",
+          "evidence": "86 foizi Islom Karimov nomzodini"
+        },
+        {
+          "kind": "person",
+          "person": "Saloy Madaminov",
+          "role": "“Erk” Demokratik partiyasi vakili, 1991-yilgi saylovda muqobil nomzod",
+          "activity": "1991-yil 29-dekabrdagi Prezident saylovida 12,3 foiz ovoz to‘plagan nomzod",
+          "evidence": "“Erk” Demokratik partiyasi vakili Saloy Madaminov (Muhammad Solih)"
+        },
+        {
+          "kind": "person",
+          "person": "Shavkat Mirziyoyev",
+          "role": "O‘zbekiston Respublikasi Prezidenti, 2016-yil dekabrdan davlat rahbari",
+          "activity": "2016-yil 4-dekabrdagi saylovda 88,61 foiz ovoz bilan Prezident etib saylangan",
+          "evidence": "88,61 % ovoz bilan Bosh vazir"
+        },
+        {
+          "kind": "person",
+          "person": "Abdulla Aripov",
+          "role": "O‘zbekiston Respublikasi Bosh vaziri, hukumat rahbari",
+          "activity": "2016-yil 14-dekabrdan boshlab mamlakat hukumatiga rahbarlik qiladi",
+          "evidence": "2016-yil 14-dekabrdan Abdulla\nAripov Bosh vazir etib tasdiqlangan"
+        },
+        {
+          "kind": "term",
+          "term": "Referendum",
+          "definition": "Davlat ahamiyatiga ega masalalar bo‘yicha o‘tkaziladigan umumxalq so‘rovi, ovoz berish yo‘li bilan xalq fikrini aniqlash",
+          "evidence": "Referendum – (lot. – ma’lum qilinishi zarur bo‘lgan narsa"
+        },
+        {
+          "kind": "term",
+          "term": "Yurisdiksiya",
+          "definition": "Huquqiy masalalarni hal qilish, sudlov ishlarini olib borish huquqi; davlat organi vakolatlari doirasi",
+          "evidence": "Yurisdiksiya – (lot. – sud qilish, sud jarayoni"
+        },
+        {
+          "kind": "term",
+          "term": "Doktrina",
+          "definition": "Ilmiy yoki falsafiy ta’limot, nazariya; asosiy nazariy yoki siyosiy nuqtayi nazar",
+          "evidence": "Doktrina – (lot. – ta’limot; o‘qimishlilik"
+        },
+        {
+          "kind": "term",
+          "term": "Afv etish",
+          "definition": "Sud hukmi bilan jazo tayinlangan shaxsni jinoiy javobgarlikdan ozod qilish yoki jazoni yengillashtirish",
+          "evidence": "Afv etish – sud hukmi bilan jazo tayinlangan biror shaxsni jinoiy"
+        },
+        {
+          "kind": "place",
+          "place": "Moskva",
+          "event": "1991-yil 19–21-avgust kunlari davlat to‘ntarishi ro‘y bergan shahar",
+          "evidence": "sobiq ittifoq poytaxti Moskva shahrida"
+        },
+        {
+          "kind": "place",
+          "place": "Qoraqalpog‘iston Respublikasi",
+          "event": "Vazirlar Kengashining Raisi O‘zbekiston Respublikasi Vazirlar Mahkamasi tarkibiga kiradi",
+          "evidence": "Qoraqalpog‘iston Respublikasi Vazirlar Kengashining Raisi\nkiradi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Prezidentlik institutining ta’sis etilishi",
+          "effect": "Mamlakatda keng qamrovli islohotlar boshlanib, davlat boshqaruvi yangilandi",
+          "evidence": "ta’sis etilganidan so‘ng davlatimizda keng qamrovli islohotlar boshlandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "2002-yil 27-yanvarda o‘tkazilgan referendum",
+          "effect": "Oliy Majlis Qonunchilik palatasi va Senatdan iborat ikki palatali tuzildi",
+          "evidence": "Bu 2002-yil 27-yanvarda\no‘tkazilgan referendum va shu asosda"
+        },
+        {
+          "kind": "cause",
+          "cause": "Konstitutsiyaning 89-moddasiga o‘zgartirish kiritilishi",
+          "effect": "Vazirlar Mahkamasida Rais lavozimi bo‘lmaydigan bo‘ldi, hukumatga Bosh vazir rahbarlik qildi",
+          "evidence": "2003-yil O‘zbekiston Respublikasining Konstitutsiyasi\n89-moddasining"
+        },
+        {
+          "kind": "cause",
+          "cause": "Prezidentning 2017-yil 21-fevraldagi sud tizimi to‘g‘risidagi farmoni",
+          "effect": "Oliy sud va Oliy xo‘jalik sudi birlashtirilib, yagona oliy sud organi tashkil etildi",
+          "evidence": "Mazkur farmon asosida O‘zbekiston Respublikasi Oliy sudi va Oliy\nxo‘jalik sudi birlashtirilib"
+        },
+        {
+          "kind": "number",
+          "number": "150",
+          "unit": "deputat",
+          "meaning": "1991–1994-yillarda Oliy Kengash tarkibida faoliyat yuritgan deputatlar soni",
+          "evidence": "parlamenti Oliy Kengash nomi bilan atalib, 150 deputatdan"
+        },
+        {
+          "kind": "number",
+          "number": "143",
+          "unit": "davlat",
+          "meaning": "BMTga a’zo 193 ta davlatdan Prezident lavozimi ta’sis etilgan davlatlar soni",
+          "evidence": "193 ta davlatdan 143 tasida"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Fuqarolik jamiyati g‘oyasining rivojlanish tarixi",
+      "page": 22,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1992",
+          "date_label": "1992-yil 4-yanvarda",
+          "event": "Mahalliy hokimiyat idoralarini qayta tashkil etish to‘g‘risidagi qonun qabul qilindi",
+          "evidence": "1992-yil 4-yanvarda “O‘zbekiston Respublikasining mahalliy hokimiyat"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 18-noyabrda",
+          "event": "“O‘zbekiston Respublikasi Prezidenti saylovi to‘g‘risida”gi qonun qabul qilindi",
+          "evidence": "saylovi to‘g‘risida” (1991-yil\n18-noyabr)"
+        },
+        {
+          "kind": "date_event",
+          "date": "1999",
+          "date_label": "1999-yilda",
+          "event": "Fuqarolarning o‘zini o‘zi boshqarish organlari to‘g‘risidagi qonun qabul qilindi",
+          "evidence": "1999-yil «Fuqarolarning o‘zini o‘zi boshqarish organlari to‘g‘risida»"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yilning noyabrida",
+          "event": "Mustaqillik davridagi ilk siyosiy partiya – O‘zbekiston Xalq demokratik partiyasiga asos solindi",
+          "evidence": "Partiyaga 1991-yilning\nnoyabrida asos solindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1995",
+          "date_label": "1995-yilning iyunida",
+          "event": "O‘zbekiston Milliy tiklanish demokratik partiyasi tashkil topgan",
+          "evidence": "1995-yili iyunda tuzilgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "2003",
+          "date_label": "2003-yilning noyabrida",
+          "event": "O‘zbekiston Liberal-demokratik partiyasi (O‘zLiDeP) tashkil topgan",
+          "evidence": "partiyasi (O‘zLiDeP) 2003-yil noyabrda"
+        },
+        {
+          "kind": "date_event",
+          "date": "2008",
+          "date_label": "2008-yilning avgustida",
+          "event": "O‘zbekiston ekologik harakati tashkil topib, Qonunchilik palatasida 15 o‘rin olgan",
+          "evidence": "O‘zbekiston ekologik harakati 2008-yil avgustda tashkil topgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "2017",
+          "date_label": "2017-yil 22-dekabrda",
+          "event": "O‘zbekiston Respublikasi Prezidentining Oliy Majlisga Murojaatnomasi e’lon qilindi",
+          "evidence": "2017-yil 22-dekabrda O‘zbekiston Respublikasi Prezidentining Oliy"
+        },
+        {
+          "kind": "person",
+          "person": "Shavkat Mirziyoyev",
+          "role": "O‘zbekiston Respublikasi Prezidenti, 2016-yil dekabrdan davlat rahbari",
+          "activity": "2016-yil 14-dekabrda O‘zbekiston Respublikasi Prezidenti etib saylangan davlat rahbari",
+          "evidence": "2016-yil 14-dekabrda saylangan\nO‘zbekiston Respublikasi Prezidenti\nShavkat Miromonovich Mirziyoyev"
+        },
+        {
+          "kind": "person",
+          "person": "Shavkat Mirziyoyev",
+          "role": "Davlat rahbari, mahalla institutini rivojlantirish tashabbuskori",
+          "activity": "2017-yilda mahalla institutini yanada takomillashtirish to‘g‘risidagi farmonni imzolagan",
+          "evidence": "2017-yilda O‘zbekiston Respublikasi Prezidenti “Mahalla institutini yanada\ntakomillashtirish chora-tadbirlari to‘g‘risida”gi farmonni imzoladi"
+        },
+        {
+          "kind": "person",
+          "person": "Fuqarolar yig‘ini raisi (oqsoqol)",
+          "role": "Fuqarolarning o‘zini o‘zi boshqarish organi rahbari, mahalla arbobi",
+          "activity": "Konstitutsiyaning 105-moddasiga ko‘ra ikki yarim yil muddatga saylanadi",
+          "evidence": "yig‘inlari o‘zini o‘zi boshqarish organlari bo‘lib"
+        },
+        {
+          "kind": "person",
+          "person": "Viloyat va Toshkent shahar hokimi",
+          "role": "Hududda oliy mansabdor shaxs, Prezidentning shu joydagi vakili",
+          "activity": "Prezident tomonidan qonunga muvofiq tayinlanadi va lavozimidan ozod etiladi",
+          "evidence": "Toshkent shahar hokimi O‘zbekiston Prezidentining shu joylardagi vakili"
+        },
+        {
+          "kind": "term",
+          "term": "Ko‘ppartiyaviylik",
+          "definition": "Jamiyat hayotida ikki yoki undan ortiq siyosiy partiyaning erkin faoliyat yuritishi",
+          "evidence": "partiyaviylik – jamiyat hayotida ikki yoki undan ortiq partiyaning faoliyat"
+        },
+        {
+          "kind": "term",
+          "term": "Partiya",
+          "definition": "Lotincha “bo‘lak, qism” ma’nosini beradi; muayyan ijtimoiy qatlam manfaatini himoya qiluvchi tashkilot",
+          "evidence": "Partiya – (lot. partio — bo‘lak, qism)  g‘oyaviy jihatdan maslakdosh"
+        },
+        {
+          "kind": "term",
+          "term": "Modernizatsiya",
+          "definition": "Yangilanish, zamonaviylashish; davlat va jamiyat hayotining yangi uslub va ixtirolar asosida o‘zgarishi",
+          "evidence": "Modernizatsiya – (modern – zamonaviy) yangilanish, zamonaviy"
+        },
+        {
+          "kind": "term",
+          "term": "Fuqarolar yig‘ini",
+          "definition": "Shaharcha, qishloq, ovul va mahallalarda fuqarolarning o‘zini o‘zi boshqarish organi",
+          "evidence": "shaharlardagi mahallalarda\nfuqarolarning yig‘inlari o‘zini o‘zi boshqarish organlari bo‘lib"
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent shahri",
+          "event": "1992-yilda ilk bor hokim tayinlangan shahar, 12 ta viloyat bilan birga",
+          "evidence": "1992-yilda ilk bor Toshkent shahrida"
+        },
+        {
+          "kind": "place",
+          "place": "Qoraqalpog‘iston Respublikasi",
+          "event": "Jo‘qorg‘i Kengesi raisi Respublika kengashiga jamoatchilik asosida raislik qiladi",
+          "evidence": "Qoraqalpog‘iston Respublikasi Jo‘qorg‘i Kengesi"
+        },
+        {
+          "kind": "cause",
+          "cause": "O‘zbekiston Respublikasi Konstitutsiyasining qabul qilinishi",
+          "effect": "Fuqarolarning o‘zini o‘zi boshqarish tizimining huquqiy zamini mustahkamlandi",
+          "evidence": "Konstitutsiyasi qabul qilingach, fuqarolar-\nning o‘zini o‘zi boshqarish tizimining huquqiy zamini mustahkamlandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Konstitutsiya mahalliy vakillikning quyi bo‘g‘inini olib tashlashi",
+          "effect": "Quyi bo‘g‘in o‘rniga fuqarolarning o‘zini o‘zi boshqarish organlari tuziladigan bo‘ldi",
+          "evidence": "Konstitutsiya mahalliy vakillik organlarining ikki bo‘g‘inli tizimini\nmustahkamladi, ya’ni quyi bo‘g‘in olib tashlandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "2008-yilda saylov qonunchiligiga o‘zgartirish kiritilishi",
+          "effect": "Qonunchilik palatasi 150 deputatdan iborat bo‘lib, 15 o‘rin ekologik harakatga berildi",
+          "evidence": "besh yil muddatga 135 deputat saylanib, Qonunchilik palatasining\n15 deputati O‘zbekiston ekologik harakatidan"
+        },
+        {
+          "kind": "cause",
+          "cause": "2017-yildagi Prezident Murojaatnomasidagi taklif",
+          "effect": "Ekologik harakat deputatlik o‘rniga saylovlar orqali teng raqobatda erishishi belgilandi",
+          "evidence": "deputatlik o‘rni belgilab qo‘yilmasdan, Ekologik harakat boshqa partiyalar\nbilan teng raqobatga kirishgan holda, saylovlar orqali deputatlik o‘rniga\nerishishi lozimligi taklif etildi"
+        },
+        {
+          "kind": "number",
+          "number": "21",
+          "unit": "yosh",
+          "meaning": "Xalq deputatlari viloyat, tuman va shahar Kengashlariga saylanish uchun eng kichik yosh",
+          "evidence": "vakillik organlariga 21 yoshga to‘lgan"
+        },
+        {
+          "kind": "number",
+          "number": "150",
+          "unit": "deputat",
+          "meaning": "2008-yilgi qonundan keyin Qonunchilik palatasi deputatlarining umumiy soni",
+          "evidence": "palatasidagi deputatlarining soni 150 deputatdan"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "O‘zbekistonda fuqarolik jamiyati rivojlanishining bosqichlari va istiqbollari",
+      "page": 30,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "2000",
+          "date_label": "2000-yildan boshlab",
+          "event": "Kuchli davlatdan kuchli fuqarolik jamiyatiga bosqichma-bosqich o‘tish davri boshlandi",
+          "evidence": "2000-yildan bugungi kunga\nqadar bo‘lgan davrni qamrab olgan bosqichda"
+        },
+        {
+          "kind": "date_event",
+          "date": "2002",
+          "date_label": "2002-yilda",
+          "event": "Oliy Majlisning IX sessiyasida islohotlarga doir yettita ustuvor masala belgilab berildi",
+          "evidence": "2002-yili bo‘lib o‘tgan Oliy Majlisning IX sessiyasida"
+        },
+        {
+          "kind": "date_event",
+          "date": "2010",
+          "date_label": "2010-yil 12-noyabrda",
+          "event": "Qonunchilik palatasi va Senatning qo‘shma majlisida fuqarolik jamiyati konsepsiyasi muhokama qilindi",
+          "evidence": "2010-yil 12-noyabrda bo‘lib o‘tgan O‘zbekiston Respublikasi Oliy Majlisi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2016",
+          "date_label": "2016-yilda",
+          "event": "Aholi va hukumatning to‘g‘ridan-to‘g‘ri muloqoti ilk bor yo‘lga qo‘yildi",
+          "evidence": "2016-yilda ilk bor mamlakat\naholisi va hukumatning to‘g‘ridan-to‘g‘ri muloqoti yo‘lga qo‘yildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2016",
+          "date_label": "2016-yil 28-dekabrda",
+          "event": "Jismoniy va yuridik shaxslar murojaatlari bilan ishlash tizimini takomillashtirish farmoni qabul qilindi",
+          "evidence": "Prezident Shavkat Mirziyoyevning 2016-yil 28-dekabrdagi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2017",
+          "date_label": "2017-yil 7-fevralda",
+          "event": "2017–2021-yillarda rivojlantirishning beshta ustuvor yo‘nalishi bo‘yicha Harakatlar strategiyasi tasdiqlandi",
+          "evidence": "Prezidentining 2017-yil 7-fev-\nraldagi farmoni bilan"
+        },
+        {
+          "kind": "date_event",
+          "date": "2017",
+          "date_label": "2017-yilda",
+          "event": "Yil “Xalq bilan muloqot va inson manfaatlari yili” deb e’lon qilindi",
+          "evidence": "2017-yilning “Xalq bilan muloqot va inson manfaatlari\nyili” deb e’lon qilinishi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2017",
+          "date_label": "2017-yil dekabrda",
+          "event": "Konstitutsiyaning 25 yilligiga bag‘ishlangan marosimda Tezkor davlat xizmatlari agentligi g‘oyasi ilgari surildi",
+          "evidence": "2017-yil dekabrda\nO‘zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev"
+        },
+        {
+          "kind": "person",
+          "person": "Islom Karimov",
+          "role": "O‘zbekiston Respublikasining Birinchi Prezidenti, islohotlar tashabbuskori",
+          "activity": "2002-yilgi Oliy Majlis IX sessiyasida islohotlarning yettita ustuvor masalasini o‘rtaga tashlagan",
+          "evidence": "Birinchi Prezidenti Islom Karimov ayni ana shu ko‘p qirrali islohotlarni\namalga oshirishning yangi tamoyillarini o‘rtaga tashladi"
+        },
+        {
+          "kind": "person",
+          "person": "Islom Karimov",
+          "role": "Fuqarolik jamiyati konsepsiyasining muallifi, davlat rahbari",
+          "activity": "2010-yil 12-noyabrda demokratik islohotlarni chuqurlashtirish konsepsiyasi bo‘yicha ma’ruza qilgan",
+          "evidence": "qo‘shma majlisidagi “Mamlakatimizda\ndemokratik islohotlarni yanada chuqurlashtirish va fuqarolik jamiyatini\nrivojlantirish konsepsiyasi” mavzusida qilgan ma’ruzasi"
+        },
+        {
+          "kind": "person",
+          "person": "Shavkat Mirziyoyev",
+          "role": "2016-yilda saylangan O‘zbekiston Respublikasi Prezidenti",
+          "activity": "BMT Bosh Assambleyasining 72-sessiyasida xalq hokimiyatini amalda joriy qilish mexanizmlarini asoslagan",
+          "evidence": "Shavkat Mirziyoyev\nBirlashgan Millatlar Tashkiloti Bosh Assambleyasining 72-sessiyasida"
+        },
+        {
+          "kind": "person",
+          "person": "O‘zbekiston Respublikasi Bosh vaziri",
+          "role": "Hukumat rahbari, ijro etuvchi hokimiyat boshlig‘i",
+          "activity": "2016-yil sentabr oyida pm.gov.uz manzilida virtual qabulxona ochgan",
+          "evidence": "Bosh vazirning (pm.gov.uz elektron manzilida) virtual\nqabulxonasi ochildi"
+        },
+        {
+          "kind": "term",
+          "term": "Harakatlar strategiyasi",
+          "definition": "2017–2021-yillarda mamlakatni rivojlantirishning beshta ustuvor yo‘nalishi bo‘yicha tasdiqlangan hujjat",
+          "evidence": "Harakatlar strategiyasi 5 bosqichda amalga oshirilib, ularning har biri\nbo‘yicha yil nomlanishidan kelib chiqqan holda, alohida bir yillik davlat\ndasturini tasdiqlashni nazarda tutadi"
+        },
+        {
+          "kind": "term",
+          "term": "Konsepsiya",
+          "definition": "2010-yilda e’lon qilingan, fuqarolik jamiyatini rivojlantirishga qaratilgan olti qismli hujjat",
+          "evidence": "Konsepsiya olti qismdan iborat bo‘lib"
+        },
+        {
+          "kind": "term",
+          "term": "Xalq qabulxonasi",
+          "definition": "2016-yil 28-dekabrdagi farmonga binoan tashkil etilgan, fuqaro murojaatlari bilan ishlovchi tuzilma",
+          "evidence": "Farmoniga binoan Xalq qabul-\nxonalari tashkil etildi"
+        },
+        {
+          "kind": "term",
+          "term": "Milliy komissiya",
+          "definition": "Harakatlar strategiyasi ijrosini nazorat qiluvchi, Prezident rahbarlik qiladigan 14 kishilik organ",
+          "evidence": "Harakatlar strategiyasini amalga oshirish bo‘yicha Prezident rahbarlik\nqiladigan 14 kishilik Milliy komissiya tuzilib"
+        },
+        {
+          "kind": "place",
+          "place": "Birlashgan Millatlar Tashkiloti",
+          "event": "2017-yilda O‘zbekiston tajribasi e’tirof etilgan xalqaro minbar va tashkilot",
+          "evidence": "Birlashgan Millatlar Tashkiloti Bosh Assambleyasining 72-sessiyasida"
+        },
+        {
+          "kind": "place",
+          "place": "O‘zbekistonning barcha hududlari",
+          "event": "Prezidentning virtual va Xalq qabulxonalari tashkil etilgan hudud",
+          "evidence": "mamlakatimizning barcha\nhududida Prezidentning virtual va Xalq qabulxonalari tashkil etilganini"
+        },
+        {
+          "kind": "cause",
+          "cause": "Milliy davlatchilik asoslarini mustahkamlash bosqichining vazifasi",
+          "effect": "Kuchli davlatdan kuchli fuqarolik jamiyatiga bosqichma-bosqich o‘tish masalasi qo‘yildi",
+          "evidence": "kuchli davlatdan – kuchli fuqarolik jamiyatiga bosqichma-bosqich\no‘tish\nmasalasi qo‘yildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Konstitutsiyaning 78, 89, 93, 96, 98-moddalariga o‘zgartirish kiritilishi",
+          "effect": "Bosh vazir nomzodini eng ko‘p deputatlik o‘rnini olgan partiya taklif etadigan bo‘ldi",
+          "evidence": "78, 89, 93, 96, 98-moddalariga o‘zgartirishlar kiritilib"
+        },
+        {
+          "kind": "cause",
+          "cause": "Prezidentning virtual va Xalq qabulxonalari tashkil etilishi",
+          "effect": "Bir milliondan ortiq fuqaro o‘z dolzarb muammolarini hal qilgan",
+          "evidence": "bir milliondan ortiq fuqarolarimiz bu qabulxonalar\norqali o‘zlarining dolzarb muammolarini hal qilganini"
+        },
+        {
+          "kind": "cause",
+          "cause": "Jahon bozori talabining keskin o‘zgarishi va raqobatning kuchayishi",
+          "effect": "Mamlakatni rivojlantirish uchun mutlaqo yangicha yondashuv ishlab chiqish zarurati tug‘ildi",
+          "evidence": "raqobat tobora kuchayib borayotgani davlatimizni yanada jadal sur’atlar bilan\nrivojlantirish uchun mutlaqo yangicha yondashuvni ishlab chiqishni taqozo"
+        },
+        {
+          "kind": "number",
+          "number": "5",
+          "unit": "yo‘nalish",
+          "meaning": "Harakatlar strategiyasida belgilangan ustuvor yo‘nalishlar soni",
+          "evidence": "5 ta ustuvor yo‘nalish keltirilgan"
+        },
+        {
+          "kind": "number",
+          "number": "25",
+          "unit": "yil",
+          "meaning": "Konstitutsiya qabul qilinganining yubileyi munosabati bilan o‘tkazilgan marosim",
+          "evidence": "qabul qilinganining 25 yilligiga"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "O‘zbek modelining ishlab chiqilishi va iqtisodiy islohotlarning boshlanishi",
+      "page": 35,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1991",
+          "date_label": "1991-yil 18-noyabrda",
+          "event": "“Mulkni davlat tasarrufidan chiqarish va xususiylashtirish to‘g‘risida”gi qonun qabul qilindi",
+          "evidence": "Oliy Kengashi 1991-yil\n18-noyabrda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1992",
+          "date_label": "1992-yil fevralda",
+          "event": "Xususiylashtirishni tashkil qilish va unga rahbarlik qilish uchun Davlat qo‘mitasi ta’sis qilindi",
+          "evidence": "1992-yil fevralda Davlat mulkini\nboshqarish va xususiylashtirish Davlat qo‘mitasi ta’sis qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1993",
+          "date_label": "1993-yil 1-noyabrdan",
+          "event": "So‘m-kupon muomalaga kiritilib, uning kursi oldingi rublga tenglashtirildi",
+          "evidence": "1993-yil 1-noyabrdan O‘zbekistonda\nso‘m – kupon muomalaga kiritildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1994",
+          "date_label": "1994-yil 1-iyulidan",
+          "event": "Milliy valuta – so‘m yagona va qonuniy to‘lov vositasi sifatida muomalaga chiqarildi",
+          "evidence": "1994-yil 1-iyulidan boshlab respublika hududida yagona, cheklanmagan va"
+        },
+        {
+          "kind": "date_event",
+          "date": "1996",
+          "date_label": "1996-yilning iyulida",
+          "event": "Andijon viloyatining Asaka shahridagi “O‘zDAEWOOavto” qo‘shma korxonasi ochildi",
+          "evidence": "1996-yil iyulda “O‘zDAEWOOavto”"
+        },
+        {
+          "kind": "date_event",
+          "date": "1998",
+          "date_label": "1998-yildan boshlab",
+          "event": "Paxtachilikda Isroil texnologiyalari asosida tomchilatib sug‘orish usuli joriy etildi",
+          "evidence": "1998-yildan boshlab\npaxtachilikda Isroil texnologiyalari"
+        },
+        {
+          "kind": "date_event",
+          "date": "2016",
+          "date_label": "2016-yilning iyunida",
+          "event": "Angren–Pop temir yo‘li va Qamchiq tunneli ochilib, Farg‘ona vodiysi boshqa hududlar bilan bog‘landi",
+          "evidence": "2016-yil iyunda Angren–Pop temir"
+        },
+        {
+          "kind": "person",
+          "person": "Islom Karimov",
+          "role": "O‘zbekiston Respublikasining Birinchi Prezidenti, “O‘zbek modeli” muallifi",
+          "activity": "Bozor munosabatlariga o‘tishning besh tamoyilini ishlab chiqqan davlat rahbari",
+          "evidence": "Islom\nKarimov tomonidan ishlab chiqilgan besh tamoyil"
+        },
+        {
+          "kind": "person",
+          "person": "Andijonlik paxtakorlar",
+          "role": "Chigitni plyonka ostiga ekish texnologiyasining tashabbuskorlari",
+          "activity": "Andijonda chigitni plyonka ostiga ekish usulini joriy etgan paxtakorlar",
+          "evidence": "Andi-\njonlik paxtakorlar tashabbusi bilan"
+        },
+        {
+          "kind": "person",
+          "person": "O‘zbekiston Respublikasi rahbari",
+          "role": "Davlat rahbari, agrar sohadagi tashabbuslarning muallifi",
+          "activity": "2010-yilda Ukraina va Polshadan intensiv bog‘ ko‘chatlarini keltirish tashabbusi bilan chiqqan",
+          "evidence": "2010-yili respublika\nrahbarining tashabbusi bilan Ukraina va Polsha davlatlaridan"
+        },
+        {
+          "kind": "person",
+          "person": "O‘zbekiston Respublikasi Prezidenti",
+          "role": "Davlat rahbari, xorijiy investitsiyalarni jalb qiluvchi subyekt",
+          "activity": "Jizzax erkin iqtisodiy zonasida “Pejo Sitroen” bilan hamkorlikni yo‘lga qo‘yish qarorini qabul qilgan",
+          "evidence": "Mamlakat Prezidentining 2017-yildagi"
+        },
+        {
+          "kind": "term",
+          "term": "Konsepsiya",
+          "definition": "Biror sohani rivojlantirishga qaratilgan keng qamrovli loyiha yoki qarashlar majmui",
+          "evidence": "Konsepsiya –\n\nbiror sohani rivojlantirishga qaratilgan keng qamrovli\nloyiha yoki  qarashlar majmui"
+        },
+        {
+          "kind": "term",
+          "term": "Xususiylashtirish",
+          "definition": "Davlat mol-mulkini sotish yo‘li bilan mulkchilikning boshqa shakliga aylantirish jarayoni",
+          "evidence": "mol-mulki yangi mulkdorga faqat sotish yo‘li bilangina mulkchilikning\nboshqa shakliga aylantirila boshlandi"
+        },
+        {
+          "kind": "term",
+          "term": "Milliy valuta",
+          "definition": "Respublika hududida yagona, cheklanmagan va qonuniy to‘lov vositasi bo‘lgan milliy pul birligi",
+          "evidence": "qonuniy to‘lov vositasi sifatida milliy valuta – so‘m muomalaga chiqarilgan"
+        },
+        {
+          "kind": "term",
+          "term": "Sanksiya",
+          "definition": "Huquqshunoslikda huquqbuzarga nisbatan qo‘llaniladigan, uning uchun muayyan oqibatlar keltiruvchi chora",
+          "evidence": "Sanksiya – huquqshunoslikda huquqbuzarga nisbatan qoʻllaniladigan\nva uning uchun muayyan oqibatlar keltiruvchi chora"
+        },
+        {
+          "kind": "place",
+          "place": "Andijon viloyatining Asaka shahri",
+          "event": "1996-yilda Markaziy Osiyo hududidagi birinchi avtomobil zavodi ishga tushirilgan shahar",
+          "evidence": "1996-yil Andijon viloyati Asaka shahrida"
+        },
+        {
+          "kind": "place",
+          "place": "Navoiy–Uchquduq–Nukus temir yo‘li",
+          "event": "1994–2001-yillarda qurib bitkazilgan, uzunligi 700 kilometrga yaqin yo‘nalish",
+          "evidence": "1994–2001-yillarda uzunligi 700 kilometrga yaqin Navoiy–\nUchquduq–Nukus temir yo‘li qurib bitkazildi"
+        },
+        {
+          "kind": "place",
+          "place": "“Jizzax” erkin iqtisodiy zonasi",
+          "event": "2017-yilda “Pejo” va “Sitroen” brendlari ostida avtomobil ishlab chiqarish yo‘lga qo‘yilgan hudud",
+          "evidence": "“Jizzax” erkin iqtisodiy zonasida"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sovetlardan keyingi makonda yalpi ichki mahsulot ishlab chiqarishning keskin pasayishi",
+          "effect": "Rublning qadri ham shunga mos ravishda tushib bordi",
+          "evidence": "yalpi ichki mahsulot ishlab\nchiqarishning keskin pasayishi natijasida rublning qadri ham shunga mos\nravishda tushib bordi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Davlat mulkini xususiylashtirish bo‘yicha keng ko‘lamli amaliy ishlar",
+          "effect": "Mamlakatda ko‘p ukladli iqtisodiyot va mulkdorlar sinfi vujudga keldi",
+          "evidence": "xususiylashtirish yuzasidan mamlakatimizda olib borilgan katta ko‘lamdagi\namaliy ishlar natijasida mamlakatda ko‘p ukladli iqtisodiyot va mulkdorlar\nsinfi vujudga keldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mamlakatda kuzatilgan suv tanqisligi va suvni tejash zarurati",
+          "effect": "Paxtachilikda Isroil texnologiyalari asosida tomchilatib sug‘orish usuli joriy etildi",
+          "evidence": "Isroil texnologiyalari aso-\nsida tomchilatib sug‘orish usuli"
+        },
+        {
+          "kind": "cause",
+          "cause": "Chorvachilikni rivojlantirish bo‘yicha 1995-yildagi hukumat qarori",
+          "effect": "Respublikada ishlab chiqarilayotgan go‘sht va sutning 75 foizini xususiy sektor bera boshladi",
+          "evidence": "Natijada respublikada ishlab chiqarilayotgan go‘sht va sutning\n75% ini xususiy sektor bera boshladi"
+        },
+        {
+          "kind": "number",
+          "number": "50",
+          "unit": "%",
+          "meaning": "“O‘zDAEWOO avto” qo‘shma korxonasida har ikki ta’sischining ulushi",
+          "evidence": "tarafning qo‘shma\nkorxonadagi ulushi teng miqdorda 50% dan iborat"
+        },
+        {
+          "kind": "number",
+          "number": "82",
+          "unit": "%",
+          "meaning": "1990-yilda aholi iste’moli uchun chetdan keltirilgan g‘alla ulushi",
+          "evidence": "aholi iste’moli uchun zarur bo‘lgan g‘allaning\n82%"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Mamlakat ishlab chiqarish salohiyati va jahon iqtisodiy tizimiga integratsiyalashuv",
+      "page": 46,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "2002",
+          "date_label": "2002-yildan boshlab",
+          "event": "Import o‘rnini bosuvchi mahsulotlar ishlab chiqarish va mahalliylashtirish dasturi amalga oshirila boshlandi",
+          "evidence": "2002-\nyildan boshlab import o‘rnini bosuvchi mahsulotlar ishlab chiqarish"
+        },
+        {
+          "kind": "date_event",
+          "date": "1996",
+          "date_label": "1996-yilda",
+          "event": "“Erkin iqtisodiy zonalar to‘g‘risida”gi qonun qabul qilindi",
+          "evidence": "1996-yilda O‘zbekiston Respublikasining “Erkin iqtisodiy\nzonalar to‘g‘risida”gi qonuni qabul qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2013",
+          "date_label": "2013-yilda",
+          "event": "“Jizzax” va “Angren” maxsus industrial zonalarini barpo etish to‘g‘risidagi farmonlar qabul qilindi",
+          "evidence": "2013-yilda O‘zbekiston\nRespublikasi Prezidentining “Jizzax” maxsus industrial zonasini barpo"
+        },
+        {
+          "kind": "date_event",
+          "date": "2016",
+          "date_label": "2016-yil 5-oktabrda",
+          "event": "Tadbirkorlik faoliyatini jadal rivojlantirish va xususiy mulkni himoya qilish bo‘yicha farmon imzolandi",
+          "evidence": "2016-yil 5-oktabrdagi “Tadbirkorlik faoliyatining jadal"
+        },
+        {
+          "kind": "date_event",
+          "date": "2017",
+          "date_label": "2017-yil 2-sentabrda",
+          "event": "Xorijiy valutani cheklovlarsiz almashtirish bo‘yicha qaror qabul qilindi",
+          "evidence": "Prezidentining 2017-yil 2-sentabrdagi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2018",
+          "date_label": "2018-yil 1-yanvardan",
+          "event": "Soliq nazoratining yangi shakli – soliq monitoringi joriy etish belgilandi",
+          "evidence": "2018-yil 1-yanvaridan\nboshlab soliq organlari va halol soliq to‘lovchilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "2016",
+          "date_label": "2016-yilning oktabrida",
+          "event": "“Urgut”, “G‘ijduvon”, “Qo‘qon” va “Hazorasp” erkin iqtisodiy zonalari tashkil etildi",
+          "evidence": "2016-yil oktabrdagi “Urgut”,\n“G‘ijduvon”, “Qo‘qon” va “Hazorasp” erkin iqtisodiy zonalarini tashkil etish"
+        },
+        {
+          "kind": "person",
+          "person": "Shavkat Mirziyoyev",
+          "role": "O‘zbekiston Respublikasi Prezidenti, davlat rahbari",
+          "activity": "Tadbirkorlik yo‘lidagi to‘siqlarni olib tashlashni o‘zining eng katta vazifasi deb atagan",
+          "evidence": "Tadbirkorlik yo‘lidagi har qanday to‘siqlarni olib tashlash davlat rahbari\nsifatida mening eng katta vazifamdir"
+        },
+        {
+          "kind": "person",
+          "person": "Shavkat Mirziyoyev",
+          "role": "Tadbirkorlikni qo‘llab-quvvatlash siyosatining tashabbuskori",
+          "activity": "2016-yil 5-oktabrda tadbirkorlik faoliyatini jadal rivojlantirishga doir farmonni imzolagan",
+          "evidence": "Mirziyoyevning 2016-yil 5-oktabrdagi"
+        },
+        {
+          "kind": "person",
+          "person": "Tadbirkor",
+          "role": "Xususiy biznes subyekti, davlat tomonidan qo‘llab-quvvatlanadigan ishbilarmon",
+          "activity": "2018-yilda ikki yil muddatga tekshirishlardan moratoriy bilan himoyalangan",
+          "evidence": "tadbirkorlik subyektlarining moliya-xo‘jalik faoliyatini\ntekshirishga ikki yil muddatga moratoriy"
+        },
+        {
+          "kind": "person",
+          "person": "Xorijiy investor",
+          "role": "Erkin iqtisodiy zonalarga kapital kiritayotgan chet el tadbirkori",
+          "activity": "Kiritgan investitsiyasi miqdoriga qarab 3 yildan 7 yilgacha soliq imtiyozidan foydalanadi",
+          "evidence": "Iqtisodiy zonalar kiritiladigan investitsiya miqdoridan"
+        },
+        {
+          "kind": "term",
+          "term": "Dotatsiya",
+          "definition": "Bir subyekt tomonidan ikkinchisiga qaytarib bermaslik sharti bilan beriladigan pul mablag‘i",
+          "evidence": "Dotatsiya (lot. — tuhfa) – maʼlum xarajatlarni qoplash uchun\niqtisodiyotning bir subyekt tomonidan ikkinchisiga qaytarib bermaslik"
+        },
+        {
+          "kind": "term",
+          "term": "Aeronavigatsiya",
+          "definition": "Uchish apparatlarini asbob va vositalar yordamida belgilangan yo‘ldan olib borish haqidagi fan",
+          "evidence": "Aeronavigatsiya – (lot. — kemada suzish) uchish apparatlarini tegishli\nasbob va vositalar yordamida belgilangan yo‘ldan olib borish"
+        },
+        {
+          "kind": "term",
+          "term": "Erkin iqtisodiy zona",
+          "definition": "Aniq belgilangan ma’muriy chegaralari va alohida huquqiy tartiboti bo‘lgan, sarmoya jalb etiladigan hudud",
+          "evidence": "aniq belgilangan ma’muriy\nchegaralari va alohida huquqiy tartiboti bo‘lgan maxsus ajratilgan hudud\ntushuniladi"
+        },
+        {
+          "kind": "term",
+          "term": "Konvertatsiya",
+          "definition": "Milliy valutaning amaldagi kurs bo‘yicha boshqa xorijiy valutalarga erkin va cheklanmagan almashtirilishi",
+          "evidence": "Konvertatsiya – (lot. convertatio – o‘zgartirish, aylantirish) Milliy\nvalutaning amaldagi kurs bo‘yicha boshqa xorijiy valutalarga erkin va\ncheklanmagan miqdorda almashtirilishi"
+        },
+        {
+          "kind": "place",
+          "place": "“Navoiy” erkin iqtisodiy zonasi",
+          "event": "2008-yilda tashkil etilib, xalqaro intermodal logistika markazi bunyod etilgan hudud",
+          "evidence": "farmoni asosida “Navoiy”\nxalqaro intermodal logistika markazi bunyod etildi"
+        },
+        {
+          "kind": "place",
+          "place": "“Jizzax” va “Angren” maxsus industrial zonalari",
+          "event": "2013-yilda Prezident farmonlari bilan barpo etilgan hududlar",
+          "evidence": "“Angren” maxsus industrial zonasini barpo etish\nto‘g‘risida”gi farmonlari qabul qilindi"
+        },
+        {
+          "kind": "place",
+          "place": "“Urgut”, “G‘ijduvon”, “Qo‘qon” va “Hazorasp” zonalari",
+          "event": "2018-yilga kelib 10 hududda 14 ta erkin iqtisodiy zona faoliyat yuritgan",
+          "evidence": "10 hududda 14 ta erkin\niqtisodiy zona faoliyat yuritmoqda"
+        },
+        {
+          "kind": "cause",
+          "cause": "1996-yilda xalqaro iqtisodiy makonda yuz bergan paxta inqirozi",
+          "effect": "Paxta eksportidan tushadigan daromad shu yilning o‘zida 15 foizga qisqardi",
+          "evidence": "eksportidan tushadigan\ndaromad shu yilning o‘zida 15% qisqarishiga sabab bo‘ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "1998–1999-yillardagi noqulay ob-havo sharoiti",
+          "effect": "Paxta hosildorligiga jiddiy zarar yetib, uning eksporti 25 foizga qisqardi",
+          "evidence": "1998–1999-yillardagi noqulay ob-havo sharoiti paxta hosildorligiga jiddiy\nzarar yetkazdi, natijada uning eksporti 25% ga qisqardi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Paxta eksportidan tushadigan daromadning qisqarishi",
+          "effect": "Hukumat e’tibori import o‘rnini bosuvchi ishlab chiqarishni qo‘llab-quvvatlashga qaratildi",
+          "evidence": "Bunga javoban\nmamlakat hukumati e’tibori import o‘rnini bosuvchi ishlab chiqarishni"
+        },
+        {
+          "kind": "cause",
+          "cause": "2008-yildagi jahon moliyaviy-iqtisodiy inqirozining salbiy oqibatlari",
+          "effect": "Kichik biznes uchun kredit imkoniyatlari kengaytirilib, yagona soliq stavkasi pasaytirildi",
+          "evidence": "resurslaridan foydalanish imkoniyatlari kengaytirildi, ishlab chiqarish bilan\nshug‘ullanuvchi kichik korxonalar uchun yagona soliq to‘lovi stavkasi"
+        },
+        {
+          "kind": "number",
+          "number": "14",
+          "unit": "ta",
+          "meaning": "2018-yil holatiga ko‘ra faoliyat yuritgan erkin iqtisodiy zonalar soni",
+          "evidence": "mamlakatimizda 10 hududda 14 ta erkin"
+        },
+        {
+          "kind": "number",
+          "number": "5",
+          "unit": "%",
+          "meaning": "Kichik korxonalar uchun yagona soliq to‘lovining yakuniy stavkasi",
+          "evidence": "keyinchalik ushbu ko‘rsatkichning 5 foizga tushirilishi"
+        }
+      ]
+    }
+  ]
+}

@@ -48,6 +48,7 @@ data class TopicEntity(
     val importantDatesJson: String = "[]",
     val termsJson: String = "[]",
     val summary: String = "",
+    val gradeId: Int = 6,
     val imageAsset: String? = null,
     val imageCaption: String? = null
 )

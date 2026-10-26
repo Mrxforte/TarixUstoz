@@ -1,0 +1,915 @@
+{
+  "chapter": "III–IV BO‘LIM. ROSSIYA IMPERIYASINING TURKISTONDAGI MUSTAMLAKACHILIK SIYOSATI; XIX ASR OXIRIDA TURKISTONDAGI MILLIY-OZODLIK HARAKATLARI",
+  "topics": [
+    {
+      "number": 14,
+      "title": "14-§. Turkiston o‘lkasida Rossiya imperiyasining yer-suv siyosati",
+      "page": 50,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1886",
+          "date_label": "1886-yil",
+          "event": "1886-yilgi «Nizom»ning «Turkiston o‘lkasining yer tuzilishi» bo‘limida an’anaviy yerga egalik qilish munosabatlari o‘zgartirildi",
+          "evidence": "1886-yildagi «Nizom»ning «Turkiston o‘lkasining yer tuzilishi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1886",
+          "date_label": "1886-yil",
+          "event": "Nizomga ko‘ra Turkiston yerlari, o‘rmonlari va yerosti qazilma boyliklari davlat mulki deb e’lon qilinib, Rossiya imperiyasi mulkiga aylandi",
+          "evidence": "Unga ko‘ra Turkiston yerlari,\no‘rmonlari va yerosti qazilma boyliklari davlat mulki deb e’lon qilin"
+        },
+        {
+          "kind": "date_event",
+          "date": "1875",
+          "date_label": "1875-yil",
+          "event": "Avliyootada Rossiyadan kelgan dehqonlarning birinchi manzilgohi paydo bo‘ldi",
+          "evidence": "1875-yilda Avliyootada Rossiyadan kelgan dehqonlarning bi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1875–1890",
+          "date_label": "1875–1890-yillar",
+          "event": "15 yil davomida Turkiston o‘lkasiga 1300 oila ko‘chib kelib joylashdi va 19 ta rus qishlog‘i tashkil topdi",
+          "evidence": "15 yil davomida (1875–1890"
+        },
+        {
+          "kind": "date_event",
+          "date": "1891–1892",
+          "date_label": "1891–1892-yillar",
+          "event": "Faqat 1891–1892-yillarda ko‘chib kelganlarning 25 ta manzilgohi paydo bo‘ldi",
+          "evidence": "Faqat 1891–1892-yillardagina ko‘chib kelganlarning 25 ta manzilgohi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1892",
+          "date_label": "1892-yil",
+          "event": "1892-yildan boshlab o‘zboshimchalik bilan ko‘chib kelganlar ham ma’muriyat ruxsati bilan berilgan imtiyozlardan foydalanishi mumkin deb e’lon qilindi",
+          "evidence": "1892-yildan boshlab Rossiyadan o‘zboshimchalik bilan"
+        },
+        {
+          "kind": "person",
+          "person": "Turkiston general-gubernatori",
+          "role": "o‘lka ma’muriyatining oliy mansabdor shaxsi, vaqf ishlari ustidan nazorat qiluvchi",
+          "activity": "Yangi vaqf hujjatlarini tasdiqlash faqat uning roziligi bilan amalga oshirilgan va ular davlat soliqlaridan ozod qilinmagan",
+          "evidence": "Yangi vaqf hujjatlarini tasdiqlash faqat general-gubernator rozi-\nligi bilan"
+        },
+        {
+          "kind": "term",
+          "term": "Vaqf yerlari",
+          "definition": "Masjid, madrasa va boshqa diniy muassasalarga tegishli bo‘lgan, yerga ishlov berayotgan kishilarga ijaraga beriladigan yerlar",
+          "evidence": "Vaqf yerlari (masjid, madrasa va boshqa diniy muassasalarga tegishli"
+        },
+        {
+          "kind": "term",
+          "term": "Nizom",
+          "definition": "1886-yilda qabul qilingan, Turkiston o‘lkasining yer tuzilishi va yerga egalik qilish tartiblarini belgilovchi hujjat",
+          "evidence": "1886-yildagi «Nizom»ning"
+        },
+        {
+          "kind": "term",
+          "term": "Manzilgoh",
+          "definition": "Rossiyadan ko‘chib kelgan dehqonlar joylashib, ular asosida rus qishloqlari vujudga kelgan aholi punkti",
+          "evidence": "rinchi manzil gohi paydo bo‘ldi"
+        },
+        {
+          "kind": "term",
+          "term": "Ko‘chirish siyosati",
+          "definition": "Imperiyaning markaziy gubernalari aholisini Turkiston o‘lkasiga ko‘chirib keltirishga asoslangan mustamlakachilik chorasi",
+          "evidence": "impe riyaning markaziy guberna aholisini o‘lkaga ko‘chirib keltirish"
+        },
+        {
+          "kind": "term",
+          "term": "Davlat mulki",
+          "definition": "Nizomga ko‘ra Turkiston yerlari, o‘rmonlari va yerosti qazilma boyliklari e’lon qilingan mulk shakli",
+          "evidence": "davlat mulki deb e’lon qilin"
+        },
+        {
+          "kind": "place",
+          "place": "Avliyoota",
+          "event": "1875-yilda Rossiyadan kelgan dehqonlarning birinchi manzilgohi paydo bo‘lgan joy",
+          "evidence": "1875-yilda Avliyootada Rossiyadan kelgan dehqonlarning bi"
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "Bo‘z suv anhori shaharni yangi va eski qismga ajratgan chegara bo‘lgan shahar",
+          "evidence": "Toshkentdagi Bo‘z suv anho ri shaharni ikki qism"
+        },
+        {
+          "kind": "place",
+          "place": "Andijon",
+          "event": "Ko‘chib kelganlarning posyolkalari paydo bo‘lgan, yangi va eski qismga ajratilgan yirik shaharlardan biri",
+          "evidence": "Yangi Marg‘i lon, Samarqand,\nAndijon kabi shaharlarida ham ko‘chib kelgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Podsho hukumati yerga egalik qilish tartiblarini nazorat qilishni aholi ustidan hukmronlikni ta’minlashning muhim vositasi deb bilgan",
+          "effect": "an’anaviy yerga egalik qilish munosabatlari o‘zgartirilib, yer-suv masalasi qayta tartibga solingan",
+          "evidence": "Yerga\negalik qilish tartiblarini nazorat qilish podsho hukumatiga aholi ustidan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Vaqf mulklarini nazorat qilish mustamlakachi hukumat vakillari qo‘liga o‘tgan",
+          "effect": "masjidlar va maktablarning moddiy ahvoli yomonlashgan",
+          "evidence": "Vaqf mulklarini nazorat qilish mustamlakachi hukumat vakillari"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ko‘chib kelganlarga mablag‘, turar joy, yer maydonlari va kreditlar berilgan",
+          "effect": "o‘lkaga ko‘chib keluvchilar soni haddan ziyod ko‘paygan",
+          "evidence": "Ko‘chib kelganlarga yaratil gan imkoniyatlar o‘lkaga ko‘chib keluvchilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ko‘chirib keltirilgan aholiga unumdor yerlar berilishi",
+          "effect": "mahalliy aholi vakillarining jiddiy noroziligiga sabab bo‘lgan",
+          "evidence": "Ko‘chirib keltirib joylashtirilgan aholining ko‘payishi, ularga unum"
+        },
+        {
+          "kind": "number",
+          "number": "1300",
+          "unit": "oila",
+          "meaning": "1875–1890-yillarda Turkiston o‘lkasiga ko‘chib kelib joylashgan oilalar soni",
+          "evidence": "1300 oila ko‘chib kelib joylashib"
+        },
+        {
+          "kind": "number",
+          "number": "19",
+          "unit": "ta rus qishlog‘i",
+          "meaning": "1875–1890-yillarda ko‘chib kelganlar asosida tashkil topgan qishloqlar soni",
+          "evidence": "19 ta rus qishlog‘i tashkil top"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "15-§. Turkistonda sud tizimi va harbiy politsiya tartibotining o‘rnatilishi",
+      "page": 52,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1866",
+          "date_label": "1866-yil",
+          "event": "Toshkentda mahkama joriy qilinib, uning tarkibiga mahalliy aholidan saylangan qozi va 7 nafar a’lam kiritilgan",
+          "evidence": "1866-yil Toshkentda mahkama joriy qiladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1867",
+          "date_label": "1867-yil",
+          "event": "1867-yilgi «Nizom» loyihasi bo‘yicha o‘lkada qozi va biy sudlari, uyezd sudlari hamda harbiy-sudlov komissiyalari tashkil qilindi",
+          "evidence": "1867-yilgi «Nizom» loyi-\nhasi bo‘yicha o‘lkada qozilar va biy sudlari"
+        },
+        {
+          "kind": "date_event",
+          "date": "1881",
+          "date_label": "1881-yil",
+          "event": "«Davlat tartiboti va jamoat osoyishtaligini qo‘riqlashga qaratilgan chora-tadbirlar to‘g‘risidagi Nizom» e’lon qilindi",
+          "evidence": "1881-yilda «Davlat tartiboti va jamo-\nat osoyishtaligini qo‘riqlashga qaratilgan chora-tadbirlar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1886",
+          "date_label": "1886-yil",
+          "event": "1886-yilgi «Nizom»da ham Turkiston o‘lkasida qozilar sudi saqlanib qoldi, uyezd sudlari esa bekor qilindi",
+          "evidence": "1886-yilgi «Nizom»da ham Turkiston o‘lkasida qozilar sudi saqlanib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1898",
+          "date_label": "1898-yil",
+          "event": "Viloyat sudlari tugatilib, ularning o‘rniga okrug sudlari va Toshkent sud palatasi tuzildi",
+          "evidence": "1898-yilda Turkiston o‘lkasida sud nizomlarini qo‘llash qoidalari"
+        },
+        {
+          "kind": "date_event",
+          "date": "1892–1916",
+          "date_label": "1892–1916-yillar",
+          "event": "Turkiston 1892-yildan 1916-yilga qadar «kuchaytirilgan qo‘riqlov» va «favqulodda qo‘riqlov» holatida bo‘ldi",
+          "evidence": "1892-yildan boshlab 1916-yilga qadar Turkiston «kuchayti"
+        },
+        {
+          "kind": "date_event",
+          "date": "1882–1884",
+          "date_label": "1882–1884-yillar",
+          "event": "Imperatorning maxfiy maslahatchisi F. Girs o‘lkani tekshirib, Turkistonda 2404000 kishi yashashini yozgan",
+          "evidence": "1882–1884-yillarda o‘lkani tekshirgan imperatorning maxfiy mas"
+        },
+        {
+          "kind": "person",
+          "person": "F. Girs",
+          "role": "imperatorning maxfiy maslahatchisi, o‘lkani tekshirgan amaldor",
+          "activity": "1882–1884-yillarda Turkistonda 2404000 kishi yashashini yozib, mahalliy aholini armiyaga chaqirmaslik siyosatini yoqlab chiqqan",
+          "evidence": "F. Girs Turkistonda 2404000 kishi yashashini"
+        },
+        {
+          "kind": "person",
+          "person": "Turkiston general-gubernatori",
+          "role": "o‘lkaning bosh prokurori va oliy sudyasi vazifasini ham bajargan mansabdor shaxs",
+          "activity": "«Kuchaytirilgan» yoki «favqulodda» qo‘riqlash holatini o‘z ixtiyori bilan joriy etish va kuch ishlatish huquqiga ega bo‘lgan",
+          "evidence": "General-gubernator o‘lkaning bosh prokurori va oliy sudyasi"
+        },
+        {
+          "kind": "term",
+          "term": "Politsiya",
+          "definition": "Jamoat xavfsizligini saqlovchi tashkilot; atama nemischa «ma’muriyat» so‘zidan olingan",
+          "evidence": "Politsiya (nemischa – ma’muriyat) – jamoat xavfsizligini saqlovchi tash kilot"
+        },
+        {
+          "kind": "term",
+          "term": "Ispravnik",
+          "definition": "Uyezd politsiyasining boshlig‘i; unga uyezd boshliqlari ispravnik huquqini berib tenglashtirilgan",
+          "evidence": "Ispravnik – uyezd politsiyasi boshlig‘i"
+        },
+        {
+          "kind": "term",
+          "term": "Apellatsiya",
+          "definition": "Sud hukmidan norozi bo‘lgach, uning ustidan shikoyat arizasi berilishining bir shakli",
+          "evidence": "Apellatsiya (lotincha – shikoyat, norozilik bildirish"
+        },
+        {
+          "kind": "term",
+          "term": "Zemstvo",
+          "definition": "Vakolatlari cheklab qo‘yilgan mahalliy idora, boshqarma",
+          "evidence": "Zemstvo (ruscha) – vakolatlari cheklab qo‘yilgan mahalliy idora, boshqarma"
+        },
+        {
+          "kind": "term",
+          "term": "Biy sudlari",
+          "definition": "Qabila urf-odatlariga tayanib ish ko‘radigan, ko‘chmanchi aholi uchun faoliyat yuritgan sud",
+          "evidence": "Biy sudlari – qabila urf-odatlariga tayanib ish ko‘radigan sud"
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "1866-yilda mahkama joriy qilingan va 1898-yilda Toshkent sud palatasi tuzilgan shahar",
+          "evidence": "1866-yil Toshkentda mahkama joriy qiladi"
+        },
+        {
+          "kind": "place",
+          "place": "Samarqand",
+          "event": "Samarqandda ikkita qozi bo‘lib, Toshkentning to‘rt dahasida esa har birida bittadan qozi faoliyat yuritgan",
+          "evidence": "Samarqand shahrida ikkita qozi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Podsho hukumati mahalliy aholining qo‘zg‘olonlarga aylanib ketadigan norozilik harakatlaridan qo‘rqqan",
+          "effect": "imperiya manfaatlarini to‘liq himoyalaydigan huquqiy asoslar yaratishga harakat qilingan",
+          "evidence": "imperiya manfaatlarini to‘liq himoyalaydigan huquqiy\nasoslar yara tishga harakat qildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qozi va biy sudlariga bo‘lib o‘tadigan saylovlarda mustamlakachi hukumat aralashgan va natijalar noto‘g‘ri tasdiqlangan",
+          "effect": "ko‘plab janjallar, o‘zaro nizolar, ma’muriyatga ishonchsizlik va norozilik harakatlari kelib chiqqan",
+          "evidence": "saylov natijalarini tasdiqlashdagi noto‘g‘ri ishlar\nko‘plab janjallarni"
+        },
+        {
+          "kind": "cause",
+          "cause": "Saylangan qozi va biylar saylov vaqtidagi xarajatlarini poralar hisobiga qaytarib olishga harakat qilishgan",
+          "effect": "qozilik va biylik serdaromad mansabga aylangan",
+          "evidence": "Bu bilan qozilik va biylik\nserdaromad mansabga aylandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Diniy tartiblarga asoslangan sudlar faoliyati cheklangan va ular ustidan kuchli nazorat o‘rnatilgan",
+          "effect": "mahalliy aholining noroziligi keskinlashmagan holda sud tizimi bosqichma-bosqich o‘zgartirilgan",
+          "evidence": "diniy tartiblarga asoslangan sudlar faoliyati cheklanib, ular ustidan kuch-\nli nazorat o‘rnatildi"
+        },
+        {
+          "kind": "number",
+          "number": "7",
+          "unit": "nafar a’lam",
+          "meaning": "1866-yilda Toshkentda tashkil etilgan mahkama tarkibiga kirgan a’lamlar soni",
+          "evidence": "qozi va 7 nafar a’lam kirgan"
+        },
+        {
+          "kind": "number",
+          "number": "100",
+          "unit": "rubl",
+          "meaning": "Qozi sudlari ko‘rib chiqadigan da’vo hajmining yuqori chegarasi",
+          "evidence": "da’vo hajmi 100 rubldan oshmaydigan"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "16-§. XIX asrning ikkinchi yarmi – XX asrning boshlarida Turkistonda ijtimoiy-iqtisodiy ahvol",
+      "page": 57,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1888",
+          "date_label": "1888-yil",
+          "event": "Samarqandga dastlabki poyezd keldi, temiryo‘l qurilishi esa Ashxobodgacha davom ettirilgan",
+          "evidence": "1888-yili Samar-\nqandga dastlabki poyezd keldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1899",
+          "date_label": "1899-yil",
+          "event": "Temiryo‘l Toshkent orqali Andijongacha qurib bitkazildi",
+          "evidence": "1899-yilda esa temiryo‘l Toshkent orqali\nAndijongacha qurib bitkazildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1905",
+          "date_label": "1905-yil",
+          "event": "Orenburgdan Toshkentga qadar temiryo‘l qurib kelindi",
+          "evidence": "1905-yilda Oren burgdan Toshkentga\nqadar temiryo‘l qurib ke lindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1867–1900",
+          "date_label": "1867–1900-yillar",
+          "event": "Turkiston general-gubernatorligida 175 ta sanoat korxonasi ishga tushirilib, ularning aksariyati qo‘l mehnatiga asoslangan",
+          "evidence": "ral-gu ber natorligida ishga tushirilgan\n175 ta sanoat korxonasi bo‘lib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1884",
+          "date_label": "1884-yil",
+          "event": "Turkistonda mahalliy navlarga qaraganda ancha yuqori hosil beradigan yangi paxta navi yetishtirila boshlandi",
+          "evidence": "1884-yilda Tur kis tonda yangi paxta navi\n(Ame rika navi) yetishtirila boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1911",
+          "date_label": "1911-yil",
+          "event": "Sirdaryo magistral kanalini bunyod etish ishlari boshlandi",
+          "evidence": "1911-yilda\nSirdaryo magistral kanalini bunyod etish ishlari boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1913",
+          "date_label": "1913-yil",
+          "event": "Sirdaryo magistral kanalini bunyod etish ishlari yakunlandi",
+          "evidence": "1913-yilga\nkelib tugallandi"
+        },
+        {
+          "kind": "term",
+          "term": "Mustamlaka tartiboti",
+          "definition": "Harbiy kuch va keng tarmoqlangan politsiya tizimiga asoslangan boshqaruv tartibi",
+          "evidence": "Turkiston o‘lkasida mustamlaka tartiboti harbiy\nkuch va keng tarmoqlangan politsiya tizimiga\nasoslangan edi"
+        },
+        {
+          "kind": "term",
+          "term": "Paxta xomashyosiga dastlabki ishlov berish",
+          "definition": "Paxtani tozalash va yog‘ ishlab chiqarish bilan cheklangan soha; tayyor mahsulot imperiya markazida tayyorlangan",
+          "evidence": "Paxtani faqat tozalash va yog‘\nishlab chiqarish sohasigina yo‘lga qo‘-\nyilib"
+        },
+        {
+          "kind": "term",
+          "term": "Irrigatsiya",
+          "definition": "Paxta maydonlarini suv bilan ta’minlash maqsadida sug‘orish tarmoqlarini kengaytirish ishlari",
+          "evidence": "irri gatsiya tarmoqlarini kengaytirishga harakat qil gan"
+        },
+        {
+          "kind": "term",
+          "term": "Ish kuni",
+          "definition": "Korxonalarda 16 soatga yetgan, ishchilar huquqini himoya qiladigan tashkilotlar bo‘lmagan mehnat tartibi",
+          "evidence": "Korxonalarda ish kuni 16\nsoat bo‘lib"
+        },
+        {
+          "kind": "term",
+          "term": "Temiryo‘l",
+          "definition": "Harbiy qismlarni ko‘chirish va iqtisodiy maqsadlarda qurilgan, harbiy-strategik vazifalarni ham bajargan transport yo‘li",
+          "evidence": "harbiy-strategik maqsad-\nlarni ham ko‘zlab qurilgan edi"
+        },
+        {
+          "kind": "place",
+          "place": "Krasnovodsk",
+          "event": "Harbiy qo‘shinlar va qurol-aslahalar Kavkazdan O‘rta Osiyoga tashilgan, temiryo‘l boshlangan shahar",
+          "evidence": "Harbiy qo‘shinlar va qurol-aslahalarni Krasnovodskdan Qizilar vatga"
+        },
+        {
+          "kind": "place",
+          "place": "Farg‘ona vodiysi",
+          "event": "Yaylovlarning paxta maydonlariga aylantirilishi yaqqol sezilib, g‘alla va chorva mahsulotlari chetdan olib kelina boshlangan hudud",
+          "evidence": "Bu hol, ayniqsa,\nFarg‘ona vodiysida yaqqol sezilib"
+        },
+        {
+          "kind": "place",
+          "place": "Andijon",
+          "event": "1899-yilda temiryo‘l Toshkent orqali yetib borgan va qurilish nihoyasiga yetgan shahar",
+          "evidence": "1899-yilda esa temiryo‘l Toshkent orqali\nAndijongacha qurib bitkazildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "O‘lka iqtisodiyoti imperiya manfaatlariga to‘liq bo‘ysundirilgan va o‘zgarishlar bir tomonlama olib borilgan",
+          "effect": "paxtachilik, konchilik va xomashyoga dastlabki ishlov berish rivojlanib, boshqa sohalar qoloq qolgan",
+          "evidence": "Bu o‘zgarishlar o‘lkada paxtachilik, konchilik, xomashyoga dastlab-\nki ishlov berish, yog‘-moy sanoati kabi sohalarning rivojlanishiga ta’sir"
+        },
+        {
+          "kind": "cause",
+          "cause": "Imperiya to‘qimachilik sanoati uchun paxta yetishtirish ko‘paytirilgan",
+          "effect": "boshqa qishloq xo‘jalik mahsulotlari, ayniqsa g‘alla yetishtirish kamayib, tanqislik yuzaga kelgan",
+          "evidence": "boshqa tur-\ndagi qishloq xo‘jalik mahsulotlarining kamayi shi ga, ayniqsa, g‘allaning\ntanqisligiga sa bab bo‘ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Rossiyadan arzon narxlardagi zavod va fabrika mahsulotlari keltirilgan",
+          "effect": "mahalliy hunarmandlar mahsulotlari bozori kasodga uchrab, ko‘plab odamlar ishsiz qolgan",
+          "evidence": "Rossiyadan keltirilgan\narzon narxlardagi zavod va fabrika mahsulotlari mahalliy hunarmandlar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yaylovlar paxta maydonlariga aylantirilgan",
+          "effect": "chorvachilik va chorva mahsulotlari kamayib, ularning narxi keskin oshgan",
+          "evidence": "foydalani ladigan yer larning paxta may -\ndonlariga ay lan tirilishi"
+        },
+        {
+          "kind": "number",
+          "number": "175",
+          "unit": "ta sanoat korxonasi",
+          "meaning": "1867–1900-yillarda Turkiston general-gubernatorligida ishga tushirilgan korxonalar soni",
+          "evidence": "175 ta sanoat korxonasi"
+        },
+        {
+          "kind": "number",
+          "number": "16",
+          "unit": "soat",
+          "meaning": "Turkiston o‘lkasidagi korxonalarda ish kunining davomiyligi",
+          "evidence": "Korxonalarda ish kuni 16\nsoat bo‘lib"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "17-§. Turkistonda milliy-ozodlik harakatlarining boshlanishi va uning sabablari",
+      "page": 61,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1878",
+          "date_label": "1878-yil",
+          "event": "Mingtepada Yetimxon boshchiligida mustamlakachilarning siyosiy va iqtisodiy zulmiga qarshi qo‘zg‘olon ko‘tarildi",
+          "evidence": "1878-yili Mingtepada (hozirgi Mar-\nhamat tumani) mustamlakachilarning siyosiy va iqtisodiy zulmiga qarshi\nYetimxon bosh chiligida qo‘zg‘olon ko‘tarildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1879",
+          "date_label": "1879-yil kuzi",
+          "event": "Mahalliy aholi Farg‘ona viloyat boshqarmasi binosi oldiga yig‘ilib, soliqlarning kamaytirilishini talab qildi",
+          "evidence": "1879-yilning kuzida mahalliy aholi Farg‘ona vi-\nloyat boshqarmasi binosi oldiga ochiqchasiga norozilik bildirib yig‘ildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1880",
+          "date_label": "1880-yil noyabr",
+          "event": "Xo‘jand uyezdi boshlig‘i qo‘shimcha yer solig‘i olinishini e’lon qilib, aholining noroziligiga sabab bo‘ldi",
+          "evidence": "1880-yilning noyabrida aholi ham-\nma soliq larni to‘lagan ligiga qara-\nmay, Xo‘jand uyezdi ning boshlig‘i"
+        },
+        {
+          "kind": "date_event",
+          "date": "1882",
+          "date_label": "1882-yil boshlari",
+          "event": "Namangan aholisi ma’murlarga qarshi bosh ko‘tarib, uyezd boshlig‘ining uyini o‘rab oldi",
+          "evidence": "1882-\nyilning boshlarida Namangan aholisi ma’murlarga qarshi bosh ko‘tarib\nchiqdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1885",
+          "date_label": "1885-yil yozi",
+          "event": "Andijonda Darvishxon boshchiligida qo‘zg‘olon ko‘tarilib, u butun viloyatga yoyildi",
+          "evidence": "1885-yilning yozida Farg‘ona vodiysida xalq qo‘zgolonlari qaytadan\navj olib, Andijonda Darvishxon boshchiligida qo‘zg‘olon ko‘tarildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1896",
+          "date_label": "1896-yil",
+          "event": "Namangan uyezdining Oqsuv–Shahrixon volostida mingboshilar saylovidagi norozilik oshkora qo‘zg‘olonga aylandi",
+          "evidence": "1896-yilda Namangan uyezdining Oqsuv–Shahrixon volostidagi Nay-\nmanchi, Ko‘h na mozor, Langarbob qishloqlarida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1892",
+          "date_label": "1892-yil",
+          "event": "Mustamlakachilar ma’murlarga qarshilik ko‘rsatgan oddiy fuqarolarni bevosita harbiy dala sudiga bera boshladilar",
+          "evidence": "1892-yildan mustamlakachilar oddiy fuqarolarni ma’murlarga qar-\nshilik ko‘rsatgan taqdirda bevosita harbiy dala sudiga be ra boshladilar"
+        },
+        {
+          "kind": "person",
+          "person": "Yetimxon",
+          "role": "1878-yilda Mingtepada ko‘tarilgan qo‘zg‘olon boshchisi (Mingtepa hozirgi Marhamat tumanida)",
+          "activity": "Mustamlakachilarning siyosiy va iqtisodiy zulmiga qarshi qo‘zg‘olon ko‘targan, qo‘zg‘olon hukumat tomonidan kuch bilan bostirilgan",
+          "evidence": "Yetimxon bosh chiligida qo‘zg‘olon ko‘tarildi"
+        },
+        {
+          "kind": "person",
+          "person": "Rahmonqulihoji",
+          "role": "1880-yil noyabrda Xo‘jand uyezdidagi norozilik namoyishi rahbarlaridan biri",
+          "activity": "Aholi bilan birga uyezd boshlig‘i mahkamasiga borib, adolatsiz qo‘shimcha yer solig‘ini bekor qilishni talab qilgan",
+          "evidence": "Rahmonqulihoji, Mirkarimboylar bosh chiligida"
+        },
+        {
+          "kind": "person",
+          "person": "Mirkarimboy",
+          "role": "Xo‘jand uyezdidagi norozilik harakati rahbarlaridan biri",
+          "activity": "Rahmonqulihoji bilan birga namoyishda qatnashib, adolatsiz soliqni bekor qilishni talab qilgan",
+          "evidence": "Rahmonqulihoji, Mirkarimboylar bosh chiligida\nodamlar uyezd bosh lig‘ining mahkamasiga"
+        },
+        {
+          "kind": "person",
+          "person": "Darvishxon",
+          "role": "1885-yilda Andijonda ko‘tarilgan qo‘zg‘olon boshchisi",
+          "activity": "Qo‘zg‘olonchilarni boylar va volost boshliqlarining qarorgohlariga hujum uyushtirishga yetaklab, harakatni butun viloyatga yoygan",
+          "evidence": "Andijonda Darvishxon boshchiligida qo‘zg‘olon ko‘tarildi"
+        },
+        {
+          "kind": "term",
+          "term": "Sudxo‘rlik",
+          "definition": "Qarz berib, dehqonni o‘z shartlariga qaram qilib qo‘yish; o‘lkada mislsiz darajada avj olgan",
+          "evidence": "Sudxo‘rlik mislsiz darajada avj oldi"
+        },
+        {
+          "kind": "term",
+          "term": "Qarz beruvchi kassa",
+          "definition": "Mablag‘laridan faqat boylar, sudxo‘rlar va savdogarlar kabi vositachilar foydalangan kassa",
+          "evidence": "Qarz beruvchi kassa mablag‘laridan\nfaqat ayrim vositachilar"
+        },
+        {
+          "kind": "term",
+          "term": "Harbiy dala sudi",
+          "definition": "Ma’murlarga qarshilik ko‘rsatgan fuqarolarni sud qilish uchun qo‘llanilgan sud; o‘lim jazosi oshkora ijro etilgan",
+          "evidence": "harbiy sudga berish va\nbu sud o‘lim jazosini oshkora ijro\netishi"
+        },
+        {
+          "kind": "term",
+          "term": "Mingboshi",
+          "definition": "Qishloqlarda saylov yo‘li bilan belgilanadigan mahalliy mansabdor; saylov noroziligi qo‘zg‘olonga aylangan",
+          "evidence": "aholining mingboshilar\nsaylovlaridagi noro ziligi"
+        },
+        {
+          "kind": "term",
+          "term": "Xomashyo bazasi",
+          "definition": "Imperiya sanoatini xomashyo bilan ta’minlash uchun o‘lkani aylantirishga kirishilgan hudud",
+          "evidence": "o‘lkani Rossiya imperiyasi ning asosiy xomashyo bazasiga aylantirish-\nga kirishildi"
+        },
+        {
+          "kind": "place",
+          "place": "Mingtepa",
+          "event": "1878-yilda Yetimxon boshchiligida qo‘zg‘olon ko‘tarilgan joy, hozirgi Marhamat tumani hududi",
+          "evidence": "1878-yili Mingtepada (hozirgi Mar-\nhamat tumani"
+        },
+        {
+          "kind": "place",
+          "place": "Andijon",
+          "event": "1885-yilning yozida Darvishxon boshchiligida qo‘zg‘olon ko‘tarilgan shahar",
+          "evidence": "Andijonda Darvishxon boshchiligida qo‘zg‘olon ko‘tarildi"
+        },
+        {
+          "kind": "place",
+          "place": "Xo‘jand",
+          "event": "1880-yil noyabrida qo‘shimcha yer solig‘iga qarshi norozilik bo‘lgan uyezd markazi",
+          "evidence": "Xo‘jand uyezdi ning boshlig‘i\nXo‘jand va O‘ra tepa tumanlaridagi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yer-mulk boylar va yirik savdogarlar qo‘lida to‘plangan",
+          "effect": "kam yerli dehqonlar va chorakorlar ko‘payib, sudxo‘rlik mislsiz avj olgan",
+          "evidence": "Yer-mulkning boylar va yirik savdogarlar qo‘lida to‘plana borishi\nkam yerli dehqonlarning, chorakorlarning ko‘payishiga sabab bo‘ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "O‘rta Osiyo bozorlari Rossiya sanoatining uy-ro‘zg‘or va to‘qimachilik mahsulotlari bilan to‘ldirilgan",
+          "effect": "hunarmandchilikning ko‘plab turlari inqirozga uchragan",
+          "evidence": "O‘rta\nOsiyo bozorlarining to‘ldirilishi natijasida hunarmandchilikning ko‘plab\nturlari inqirozga uchradi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Iqtisodiy qiyinchiliklar, soliqlarning ko‘pligi va mehnat majburiyatlarining og‘irligi kuchaygan",
+          "effect": "mahalliy aholining ahvoli yomonlashib, kambag‘allar safi yanada ko‘paygan",
+          "evidence": "soliqlarning ko‘pligi, mehnat majburiyatla-\nrining og‘irligidan mahalliy aholining ahvoli yomonlashib ketdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Paxtani sotib oluvchilar dehqonning muhtojligidan foydalanib, kelasi hosil uchun juda past narx belgilagan",
+          "effect": "qarzga botgan dehqon xo‘jalik mustaqilligidan mahrum bo‘lib, qarz beruvchi buyurgan ekinni ekishga majbur bo‘lgan",
+          "evidence": "Paxtani sotib oluv chilar dehqonning nihoyat darajada muhtoj\nbo‘lib qolganligidan foydalanib"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "18-§. Toshkentda «Vabo isyoni»",
+      "page": 65,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1892-yil mart",
+          "date_label": "1892-yil mart",
+          "event": "Afg‘onistonda vabo kasalligi tarqalib, u keyinchalik Turkiston o‘lkasiga ham yetib kelgan",
+          "evidence": "1892-yilning mart oyida Afg‘onistonda vabo ka-\nsalligi tar qaldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1892-yil bahori",
+          "date_label": "1892-yil bahori",
+          "event": "Bahor oxirlariga kelib vabo Samarqand viloyatining Jizzax uyezdida qayd qilindi",
+          "evidence": "Bahor faslining oxirlariga kelib bu\nkasallik Samarqand viloyatining Jizzax uyezdida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1892-yil 7-iyun",
+          "date_label": "1892-yil 7-iyun",
+          "event": "Vabo kasalligi Toshkentda ham qayd qilinib, shahardagi 12 ta qabriston yopib qo‘yilgan",
+          "evidence": "7-iyunda esa Toshkentda ham qayd qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1892-yil 18-iyun",
+          "date_label": "1892-yil 18-iyun",
+          "event": "Turkiston o‘lkasida «Harbiy holatda deb e’lon qilingan joylar haqida Qoida» kuchga kirdi",
+          "evidence": "1892-yil 18-iyundan kuch-\nga kirgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1892-yil 24-iyun",
+          "date_label": "1892-yil 24-iyun",
+          "event": "Tarixda «Vabo isyoni» yoki «Toshotar voqeasi» deb nom olgan qo‘zg‘olon boshlandi",
+          "evidence": "deb nom olgan qo‘zg‘olon 1892-yilning 24-iyunida\nboshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1892",
+          "date_label": "1892-yil",
+          "event": "Toshkentdagi qo‘zg‘olon o‘lka ma’muriyatini jiddiy tashvishga solib, o‘lkada «mirshablik holati» joriy etilishiga olib keldi",
+          "evidence": "Toshkentdagi qo‘z g‘olon Turkiston mustamla-\nka ma’muriyatini jiddiy tash vishga soldi"
+        },
+        {
+          "kind": "person",
+          "person": "Inog‘omxo‘ja Umriyoxo‘jayev",
+          "role": "Toshkentning Eski shahridagi xalqparvar oqsoqol",
+          "activity": "Lavozimidan chetlashtirilgan; uning o‘rniga tayinlangan shaxsning qabristonga oid buyrug‘i xalqning keskin noroziligiga sabab bo‘lgan",
+          "evidence": "xalqpar-\nvar oqsoqoli Inog‘omxo‘ja Umriyoxo‘jayev lavo-\nzimidan chet lashtirildi"
+        },
+        {
+          "kind": "person",
+          "person": "S. Putinsev",
+          "role": "Toshkent shahar boshlig‘i",
+          "activity": "Muzokara o‘rniga kuch ishlatishni afzal ko‘rib, xalq hujumiga sabab bo‘lgan; uning odamlari tor-mor etilib, o‘zi kaltaklangan",
+          "evidence": "S. Putinsev esa muzokara o‘rniga kuch ishlatishni af-\nzal ko‘rdi"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Yoqub",
+          "role": "Toshkentning Eski shahar oqsoqoli",
+          "activity": "Olomondan qo‘rqib shahar boshlig‘i huzuriga borgan, xalq esa uni o‘z ixtiyoriga berishni talab qilgan",
+          "evidence": "Eski shahar oqsoqoli Muhammad Yo  qub olomondan qo‘rqib shahar\nboshlig‘i huzuriga boradi"
+        },
+        {
+          "kind": "term",
+          "term": "Vabo",
+          "definition": "1892-yilning mart oyida Afg‘onistondan tarqalib, Turkiston o‘lkasiga ham yetib kelgan yuqumli kasallik",
+          "evidence": "1892-yilning mart oyida Afg‘onistonda vabo ka-\nsalligi tar qaldi"
+        },
+        {
+          "kind": "term",
+          "term": "«Vabo isyoni»",
+          "definition": "1892-yil 24-iyunda boshlangan, «Toshotar voqeasi» deb ham atalgan Toshkent qo‘zg‘oloni",
+          "evidence": "Tarixda «Vabo isyoni» (yoki «Toshotar voqeasi"
+        },
+        {
+          "kind": "term",
+          "term": "«Kuchli muhofaza»",
+          "definition": "General-gubernator majlis-yig‘inlarni tarqatish, korxonalarni yopish va odamlarni surgun qilish huquqini olgan holat",
+          "evidence": "muhofazada» deb e’lon qilingan joylarda majlis"
+        },
+        {
+          "kind": "term",
+          "term": "«Favqulodda muhofaza»",
+          "definition": "Butun hokimiyat general-gubernator yoki u tayinlagan bosh noib qo‘liga o‘tadigan holat",
+          "evidence": "Favqulodda muhofazada» deb e’lon qilingan\njoylarda esa butun hokimiyat gene ral-gubernator"
+        },
+        {
+          "kind": "term",
+          "term": "«Mirshablik holati»",
+          "definition": "Sankt-Peterburg ruxsati bilan o‘lkada joriy etilgan, mustamlakachilarga keng vakolatlar bergan tartib",
+          "evidence": "o‘lkada «mirshablik holati»ni joriy etishga ruxsat berdi"
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "1892-yilda «Vabo isyoni» bo‘lib o‘tgan, shahardagi 12 ta qabriston yopilgan shahar",
+          "evidence": "shaharda-\ngi 12 ta qabristonni yopib qo‘ydi"
+        },
+        {
+          "kind": "place",
+          "place": "Jizzax uyezdi",
+          "event": "1892-yil bahorining oxirlarida vabo kasalligi qayd qilingan Samarqand viloyati hududi",
+          "evidence": "Samarqand viloyatining Jizzax uyezdida"
+        },
+        {
+          "kind": "place",
+          "place": "Afg‘oniston",
+          "event": "1892-yilning mart oyida vabo kasalligi tarqalgan mamlakat",
+          "evidence": "Afg‘onistonda vabo ka-\nsalligi tar qaldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Shahar ma’muriyati 12 ta qabristonni yopib, shahar tashqarisida faqat bitta yangi qabriston ochgan",
+          "effect": "dafn qilish tartibiga oid mish-mish gaplar va aholi noroziligi tarqalgan",
+          "evidence": "Lekin amalda shahardan tashqarida faqat bitta qabriston ochildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sanitariya tadbirlari xalqqa ishonarli tushuntirilmagan va shifokor-feldsherlar yetishmagan",
+          "effect": "bemorlar kech tekshirilib, suv va shifokorlar zaharlayotgani haqidagi gaplar tarqalgan",
+          "evidence": "tariya tadbirlari xalqqa ishonarli qilib tushuntirilmadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yangi tayinlangan oqsoqol boshqa kasallikdan vafot etganlarni ham vabo uchun ochilgan qabristonga ko‘mishni buyurgan",
+          "effect": "xalq keskin norozilik bildirib, bu holat qo‘zg‘olon boshlanishiga sabab bo‘lgan",
+          "evidence": "bosh-\nqa kasallik bilan og‘rib vafot etganlarni ham vabo\nuchu n ochilgan shahar chekkasidagi qabristonga\nko‘mishni buyurdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Amaldorlar o‘z mansablarini suiiste’mol qilib, poraxo‘rlik ko‘payib ketgan",
+          "effect": "bu holat 1892-yildagi norozilik harakatlarini keltirib chiqargan sabablardan biriga aylangan",
+          "evidence": "amaldorlarning o‘z man sablarini suiiste’mol qi-\nlishi, poraxo‘rligi kabi holatlarning ko‘payib ketishi bo‘ldi"
+        },
+        {
+          "kind": "number",
+          "number": "12",
+          "unit": "ta qabriston",
+          "meaning": "1892-yilda Toshkent shahar ma’muriyati yopib qo‘ygan qabristonlar soni",
+          "evidence": "12 ta qabristonni yopib qo‘ydi"
+        },
+        {
+          "kind": "number",
+          "number": "400",
+          "unit": "kishi",
+          "meaning": "Shahar boshlig‘i huzuriga chora ko‘rish talabi bilan yo‘l olgan qo‘zg‘olonchilarning taxminiy soni",
+          "evidence": "ular taxminan 400\nkishi atrofida edi"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "19-§. Andijon qo‘zg‘oloni",
+      "page": 67,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1886",
+          "date_label": "1886-yil",
+          "event": "«Turkiston o‘lkasini idora qilish to‘g‘risidagi Nizom» bilan mustamlaka siyosati qonun hujjatlari asosida mustahkamlandi",
+          "evidence": "1886-yilgi «Turkiston o‘lkasini idora qilish to‘g‘risidagi Nizom»ga\nko‘ra"
+        },
+        {
+          "kind": "date_event",
+          "date": "1891",
+          "date_label": "1891-yil",
+          "event": "Rossiyadan aholining Farg‘ona viloyatiga ko‘plab ko‘chirib keltirilishi vodiy ahvolini nihoyatda yomonlashtirgan",
+          "evidence": "1891-yilda Rossiyadan aholining Farg‘ona viloyatiga ko‘plab ko‘chi-\nrib keltirilishi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1898-yil 17-may",
+          "date_label": "1898-yil 17-may",
+          "event": "Muhammad Ali o‘z odamlari orqali qishloqlarga xabar tarqatib, qo‘zg‘olon boshlash vaqti kelganini e’lon qildi",
+          "evidence": "1898-yil 17-may kuni Muhammad Ali o‘z odamlari orqali atrofdagi qish-\nloqlarga xabar tarqatib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1898-yil 20-may",
+          "date_label": "1898-yil 20-may",
+          "event": "N. Korolkov qo‘zg‘olon oldi olinmaganligi uchun Farg‘ona viloyati harbiy gubernatori va bir qancha amaldorlarni lavozimidan bo‘shatdi",
+          "evidence": "N.Ko rolkov 1898-yil 20-may\nkuni qo‘zg‘olon ko‘tarilishining oldi olinmaganligi uchun"
+        },
+        {
+          "kind": "date_event",
+          "date": "1899-yil 20-iyun",
+          "date_label": "1899-yil 20-iyun",
+          "event": "Andijon qo‘zg‘olonidan bir yil o‘tib, Farg‘ona vodiysida yana yangi qo‘zg‘olon boshlandi",
+          "evidence": "1899-yil 20-\niyunda Farg‘ona vodiysida yana yangi qo‘zg‘olon boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1898",
+          "date_label": "1898-yil",
+          "event": "Qo‘zg‘olon bostirilgach, ikki ming kishi hibsga olinib, Dukchi eshon va uning yaqin safdoshlari osib o‘ldirildi",
+          "evidence": "Qo‘zg‘olon bos tirilgach, ikki ming\nkishi hibsga olindi"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Ali (Dukchi eshon)",
+          "role": "1846–1898-yillarda yashagan, 1898-yilgi Andijon qo‘zg‘oloni rahbari",
+          "activity": "Vodiy aholisi orasida «avliyo» deb hisoblanib, qo‘zg‘olonga boshchilik qilgan; qo‘zg‘olon bostirilgach osib o‘ldirilgan",
+          "evidence": "Dukchi eshon nomini olgan Muhammad Ali (1846–1898)\nrahbarlik qildi"
+        },
+        {
+          "kind": "person",
+          "person": "N. Korolkov",
+          "role": "Sirdaryo viloyati harbiy gubernatori, vaqtinchalik general-gubernator vazifasini bajaruvchi",
+          "activity": "Jazo ekspeditsiyasiga shaxsan rahbarlik qilib, qo‘zg‘olonni bostirgan va aybdor amaldorlarni ishdan bo‘shatgan",
+          "evidence": "jazo ekspeditsiyasi-\nga shaxsan rahbarlik qilish ham topshirildi"
+        },
+        {
+          "kind": "person",
+          "person": "A. Vrevskiy",
+          "role": "1898-yilgacha Turkiston general-gubernatori bo‘lgan general-leytenant",
+          "activity": "Andijon qo‘zg‘olonidan keyin podsho Nikolay II tomonidan lavozimidan chetlatilgan",
+          "evidence": "pod-\nsho Nikolay II Turkiston general-gubernatori ge-\nneral-leytenant A. Vrevskiyni lavozimidan chet-\nlatib"
+        },
+        {
+          "kind": "person",
+          "person": "G‘oyibnazar",
+          "role": "Qo‘yli qishlog‘ining mingboshisi",
+          "activity": "O‘z odamlari bilan qo‘zg‘olonchilar safiga qo‘shilib, harakatni kuchaytirgan",
+          "evidence": "mingboshi G‘o   yibnazar o‘z odamlari bi lan qo‘shildi"
+        },
+        {
+          "kind": "person",
+          "person": "Chibil bo‘lisi",
+          "role": "Ketmontepa va Ko‘gartdagi odamlarga boshchilik qilgan shaxs",
+          "activity": "Dukchi eshonga zudlik bilan qo‘shilish o‘rniga atrofdagi mustamlakachilarga qarshi kurash olib, taktik xatoga yo‘l qo‘ygan",
+          "evidence": "Chibil bo‘lisi Dukchi eshonga zudlik bilan qo‘shilish o‘rniga"
+        },
+        {
+          "kind": "term",
+          "term": "Eshon",
+          "definition": "Dindorlar orasida obro‘ qozongan diniy rahnamo unvoni",
+          "evidence": "Eshon – dindorlar orasida obro‘ qozongan diniy rahnamo unvoni"
+        },
+        {
+          "kind": "term",
+          "term": "Katorga",
+          "definition": "Jinoyatlari uchun og‘ir mehnat sharoitida jazoni o‘tash joyi",
+          "evidence": "Katorga – jinoyatlari uchun og‘ir mehnat sharoitida jazoni o‘tash joyi"
+        },
+        {
+          "kind": "term",
+          "term": "Kazarma",
+          "definition": "Harbiy qism joylashtirilgan maxsus bino; atama italyancha «uycha, kulba» degani",
+          "evidence": "Kazarma (italyancha – uycha, kulba) – harbiy qism joylashtirilgan max-\nsus bino"
+        },
+        {
+          "kind": "term",
+          "term": "Dukchi",
+          "definition": "Forscha «yig, duk» – charxning ip o‘ralib boriladigan qismi; duk yasovchi hunarmand shunday atalgan",
+          "evidence": "Dukchi (forscha – yig, duk) – charxning yigirilayotgan ip o‘ralib\nboriladigan qismi"
+        },
+        {
+          "kind": "place",
+          "place": "Andijon",
+          "event": "1898-yilgi qo‘zg‘olon bo‘lib o‘tgan, ruslar yashaydigan Yangi shaharida vahima uyg‘ongan shahar",
+          "evidence": "Qo‘zg‘olon\nAn dijonda, ayniqsa, ruslar yashaydigan Yangi sha-\nharda vahima uyg‘otdi"
+        },
+        {
+          "kind": "place",
+          "place": "Tojikqishloq",
+          "event": "Qo‘zg‘olonchilar telegraf simlarini qirqib tashlagan qishloq, shu bilan qo‘zg‘olon boshlanib ketgan",
+          "evidence": "Tojikqish-\nloqdagi telegraf simlari ning qirqib tashlanishi"
+        },
+        {
+          "kind": "place",
+          "place": "Qutchi",
+          "event": "Qo‘zg‘olonchilar yetib borganida ularning safiga yana 200 kishi qo‘shilgan qishloq",
+          "evidence": "Qo‘zg‘olon chilar Qutchi qishlog‘iga\nyetib borganlarida ular ning safiga yana 200 kishi"
+        },
+        {
+          "kind": "cause",
+          "cause": "1886-yilgi Nizom asosida mahalliy xalqqa tegishli yerlarning katta qismi tortib olinib, ko‘chib kelganlar uchun yer fondi tashkil etilgan",
+          "effect": "Farg‘ona vodiysida yer taqchilligi kuchayib, mahalliy aholining ahvoli yomonlashgan",
+          "evidence": "podsho ma’murlari mahalliy xalqqa tegish-\nli yer larning katta qismini tortib oldi va ular asosida Rossiyadan ko‘chib\nkelganlar uchun yer fondi tashkil etildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Vodiyda paxta yetishtirish ko‘paytirilgan",
+          "effect": "g‘alla va ozuqabop ekinlar maydoni qisqarib, oziq-ovqat mahsulotlari narxi keskin oshgan",
+          "evidence": "Vodiyda paxta yetishtirish ning ko‘paytirilishi sababli g‘alla, ozuqa-\nbop ekinlar maydoni va yaylovlarning qisqarishi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Vaqf mulklari qisqartirilib, ularning katta qismi davlat mulkiga aylantirilgan",
+          "effect": "din peshvolari, diniy muassasalar va ta’lim maskanlari mutasaddilarining keskin noroziligi kelib chiqqan",
+          "evidence": "Vaqf mulklariga tegishli yerlarni tugatishga qara-\ntilgan chora-tadbirlar esa vaqf yerlarining katta qismi davlat mulkiga ay-\nlantirilishiga olib keldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Maorif, tibbiy xizmat va obodonchilik ishlari qarovsiz qolib, ularga mablag‘ ajratilmagan",
+          "effect": "mahalliy xalqning mustamlakachilarga nafrati oshib, qarshi g‘alayon va qo‘zg‘olonlar ko‘tarilgan",
+          "evidence": "Maorif, tibbiy xizmat, obodonchi-\nlik ishlari qarovsiz bo‘lib, ularga hukumat\ntomonidan mablag‘ ajratilmagan"
+        },
+        {
+          "kind": "number",
+          "number": "200",
+          "unit": "kishi",
+          "meaning": "Qutchi qishlog‘ida qo‘zg‘olonchilar safiga qo‘shilgan kishilar soni",
+          "evidence": "safiga yana 200 kishi"
+        },
+        {
+          "kind": "number",
+          "number": "380",
+          "unit": "kishi",
+          "meaning": "Manbalarga ko‘ra o‘lim jazosiga mahkum qilingan kishilar soni",
+          "evidence": "jami 380 kishi o‘lim jazosiga mahkum qilindi"
+        }
+      ]
+    }
+  ]
+}

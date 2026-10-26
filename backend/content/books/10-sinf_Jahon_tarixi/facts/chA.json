@@ -1,0 +1,809 @@
+{
+  "chapter": "1918–1939-yillarda xalqaro munosabatlar, ilm-fan va yetakchi davlatlar",
+  "topics": [
+    {
+      "number": 1,
+      "title": "1918–1939-yillarda xalqaro munosabatlar",
+      "page": 4,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1919–1920",
+          "date_label": "1919-yil 18-yanvar – 1920-yil 21-yanvar",
+          "event": "Parij yaqinidagi Versal saroyida 27 davlat vakillari ishtirokida Parij tinchlik konferensiyasi bo‘lib o‘tdi",
+          "evidence": "Parij\nyaqinidagi Versal saroyida 1919-yil\n18-yanvardan 1920-yil 21-yanvarga-\ncha 27 davlat vakil lari ishtirokida\ntinchlik konferen siya si bo‘lib o‘tdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1919",
+          "date_label": "1919-yil 28-iyun",
+          "event": "Germaniya Versal tinchlik shartnomasini imzoladi va urush boshlanishi uchun yagona javobgar deb e’lon qilindi",
+          "evidence": "1919-yil 28-iyunda Germa niya Versal tinch  lik\nshartnomasini imzoladi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1919",
+          "date_label": "1919-yil may",
+          "event": "Buyuk Britaniya va Fransiya Osiyo va Afrikadagi katta hududlarni Millatlar Ligasi nomidan boshqarishga mandat oldi",
+          "evidence": "Mil-\nlatlar Li gasi nomidan 1919-yil may da\nBuyuk Britaniya va Fran siya Osi yo va\nAfrikadagi katta hudud lar ni bosh qa-\nrishga mandat oldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1921–1922",
+          "date_label": "1921-yil 12-noyabr – 1922-yil 6-fevral",
+          "event": "Uzoq Sharq va Tinch okeanidagi bahsli masalalarni hal qilish uchun to‘qqiz davlat vakillari Vashington konferensiyasiga yig‘ildi",
+          "evidence": "Uzoq\nSharq va Ti n c h  o k e a n i d a g i  b a h s l i  m u a m molarni hal qilish va\ndengizdagi qurol larni cheklash maqsa dida 1921-yil 12-noya brdan\n1922-yil 6-fevralgacha to‘qqiz davlat vakillari ishtirokida Vashing-\nton konferen siya"
+        },
+        {
+          "kind": "date_event",
+          "date": "1923",
+          "date_label": "1923-yil",
+          "event": "Lozanna tinchlik shartnomasi imzolanib, Turkiyaning urushdan keyingi chegaralari belgilandi va mustaqilligi tan olindi",
+          "evidence": "1923-yili Lozanna tinchlik shartnomasi imzolanib, unda Tur-\nkiyaning urush dan keyingi chegaralari belgilab berildi va musta qil ligi\ntan olindi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1931–1932",
+          "date_label": "1931–1932-yillar",
+          "event": "Yaponiya Manchjuriyani bosib oldi va u yerda Manchjou-Go qo‘g‘irchoq davlatini tuzdi",
+          "evidence": "1931 – 1932-yillari Yaponiya Manch ju riyani\nbosib oldi va Manchjou-Go qo‘g‘irchoq davlatini tuzdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1933",
+          "date_label": "1933-yil",
+          "event": "Yaponiya Millatlar Ligasidan chiqdi va Xitoyga qarshi tajovuzni yanada kuchaytirdi",
+          "evidence": "1933-yili\nYaponiya Millatlar Ligasidan chiqdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1937",
+          "date_label": "1937-yil iyul",
+          "event": "Yaponiya keng miqyosdagi urush harakatlarini boshlab, Markaziy Xitoyni va boshqa bir qator hududlarni bosib oldi",
+          "evidence": "Shundan so‘ng u Xitoyga qar-\nshi tajovuzni kuchaytirdi va 1937-yil iyulda k e n g  m i q y o s d a g i  u r u s h\nharakatlarini boshlab, Markaziy Xitoyni va boshqa bir qator hudud-\nlarni bosib oldi."
+        },
+        {
+          "kind": "person",
+          "person": "Vudro Vilson",
+          "role": "AQSH prezidenti, Parij tinchlik konferensiyasida hal qiluvchi rol o‘ynagan «Katta uchlik» a’zosi",
+          "activity": "Millatlar Ligasi xalqaro tashkilotini tashkil qilish tashabbusi bilan chiqqan",
+          "evidence": "AQSH\nprezidenti Vudro Vilson tashabbusi bilan Parij tinchlik konferen siya-\nsida xalqaro tashkilot  –  Millatlar Ligasi tashkil qilindi."
+        },
+        {
+          "kind": "person",
+          "person": "Devid Lloyd Jorj",
+          "role": "Buyuk Britaniya bosh vaziri, Parij konferensiyasidagi «Katta uchlik» a’zosi",
+          "activity": "Germaniya bilan sulh shartlarini kelishishda qatnashib, Britaniya manfaatlarini himoya qilgan",
+          "evidence": "Konferen siyada hal  qiluvchi rolni\n«Katta uchlik»  –  Buyuk Britaniya va\nFran siya bosh  vazir lari Devid Lloyd\nJorj, Jorj Kleman so va AQSH prezi-\ndenti Vudro Vilson o‘ynadi."
+        },
+        {
+          "kind": "person",
+          "person": "Jorj Klemanso",
+          "role": "Fransiya bosh vaziri, Parij tinchlik konferensiyasidagi «Katta uchlik» a’zosi",
+          "activity": "Germaniya bilan sulh shartlari bo‘yicha uzoq tortishuvlarda Fransiya manfaatlarini ifoda etgan",
+          "evidence": "Konferen siyada hal  qiluvchi rolni\n«Katta uchlik»  –  Buyuk Britaniya va\nFran siya bosh  vazir lari Devid Lloyd\nJorj, Jorj Kleman so va AQSH prezi-\ndenti Vudro Vilson o‘ynadi."
+        },
+        {
+          "kind": "term",
+          "term": "Millatlar Ligasi",
+          "definition": "Birinchi jahon urushidan keyin tuzilgan, xalqlarning tinchlik va xavfsizlik yo‘lidagi hamkorligini amalga oshiruvchi xalqaro tashkilot",
+          "evidence": "Millatlar Ligasi  –  Birinchi jahon urushidan ke yin\ntuzilgan xalqlarning tinchlik va xavfsizlik yo‘lidagi ham korligini\namalga oshiruvchi xalqaro tashkilot."
+        },
+        {
+          "kind": "term",
+          "term": "mandat",
+          "definition": "Millatlar Ligasi Nizomiga kiritilgan, ma’lum bir hududni boshqarish uchun beriladigan vakolat ma’nosini bildiruvchi tushuncha",
+          "evidence": "Germaniya mustamlakalarini va\nTur ki yaning Yaqin Sharqdagi yerlarini\ng‘olib davlatlar tomonidan bo‘lib olish\nuchun Millatlar Ligasi Ni zomiga man-\ndat, ya’ ni ma’lum bir hududni boshqarish\nuchun vakolat tushunchasi kiritildi."
+        },
+        {
+          "kind": "term",
+          "term": "konferensiya",
+          "definition": "Davlat yoki partiya, jamoat va olimlar vakillarining muayyan masalani muhokama etish uchun yig‘ilishi",
+          "evidence": "Konferensiya (konferentia  –  bir joyga to‘play man)  –\ndavlat yoki partiya, jamoat va olimlar vakillari ning\nmuayyan masalani muhokama etish uchun yig‘ilishi."
+        },
+        {
+          "kind": "term",
+          "term": "fashizm",
+          "definition": "Italiyada paydo bo‘lgan siyosiy oqim; hokimiyat tepasiga kelgach, terroristik diktatura o‘rnatgan harakat",
+          "evidence": "Fashizm (birlashma)  –  Italiyada paydo bo‘lgan siyosiy oqim."
+        },
+        {
+          "kind": "term",
+          "term": "Versal-Vashington tizimi",
+          "definition": "1919–1923-yillarda imzolangan shartnomalar va jahondagi kuchlarning yangi nisbati asosida shakllangan xalqaro munosabatlar tartibi",
+          "evidence": "1919  –  1923-yillari imzolangan shartnomalar va jahondagi kuch lar-\nning yangi nisbati xalqaro munosabatlarning Versal-Vashington tizi mi\nnomini oldi."
+        },
+        {
+          "kind": "place",
+          "place": "Parij yaqinidagi Versal saroyi",
+          "event": "1919–1920-yillarda 27 davlat vakillari ishtirokida Parij tinchlik konferensiyasi bo‘lib o‘tgan joy",
+          "evidence": "Parij\nyaqinidagi Versal saroyida 1919-yil\n18-yanvardan 1920-yil 21-yanvarga-\ncha 27 davlat vakil lari ishtirokida\ntinchlik konferen siya si bo‘lib o‘tdi."
+        },
+        {
+          "kind": "place",
+          "place": "Vashington",
+          "event": "1921–1922-yillarda Uzoq Sharq va Tinch okeani masalalariga bag‘ishlangan to‘qqiz davlat konferensiyasi o‘tkazilgan shahar",
+          "evidence": "Uzoq\nSharq va Ti n c h  o k e a n i d a g i  b a h s l i  m u a m molarni hal qilish va\ndengizdagi qurol larni cheklash maqsa dida 1921-yil 12-noya brdan\n1922-yil 6-fevralgacha to‘qqiz davlat vakillari ishtirokida Vashing-\nton konferen siya"
+        },
+        {
+          "kind": "place",
+          "place": "Lozanna",
+          "event": "1923-yilda Turkiyaning urushdan keyingi chegaralarini belgilagan tinchlik shartnomasi imzolangan shahar",
+          "evidence": "1923-yili Lozanna tinchlik shartnomasi imzolanib, unda Tur-\nkiyaning urush dan keyingi chegaralari belgilab berildi va musta qil ligi\ntan olindi."
+        },
+        {
+          "kind": "cause",
+          "cause": "G‘oliblar va mag‘lublar o‘rtasidagi o‘zaro ziddiyatlar hamda harbiy kuchga tayanish",
+          "effect": "Versal-Vashington tizimi omonat bo‘lib chiqdi va asta-sekin yemirilib bordi",
+          "evidence": "U ham g‘oliblar,\nham mag‘ lub lar o‘rtasidagi o‘zaro ziddiyatlar  tufayli yemirilib  bor-\ndi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Millatlar Ligasi Nizomiga mandat tushunchasining kiritilishi",
+          "effect": "G‘olib davlatlarning dunyoni o‘zaro bo‘lib olishiga qonuniy tus berildi va ittifoqchilar g‘alabasi mustahkamlandi",
+          "evidence": "Shu tari qa «abadiy\ntinchlik» vo sitasi deb e’lon qilingan\nMillatlar Ligasi g‘olib davlatlar ning dun-\nyoni o‘zaro bo‘lib olishi ga qonuniy tus\nberdi, ittifoqchilar ning urushdagi g‘a-\nlabasini mustah kamladi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Qurollanish poygasini cheklash bo‘yicha o‘tkazilgan konferensiyalarda umumiy kelishuvga erishilmagani",
+          "effect": "1930-yillarning oxiriga kelib Versal-Vashington tizimiga Yevropada hech bir davlat amal qilmay qo‘ydi",
+          "evidence": "Shundan\nso‘ng qurollanish  poygasini  cheklash  bo‘yicha o‘tkazilgan konferen-\nsiyalarning  birortasi  ijobiy natija ber ma  di, ularda  ham umumiy\nkelishuvga erishilmadi."
+        },
+        {
+          "kind": "number",
+          "number": "27",
+          "unit": "davlat",
+          "meaning": "Parij tinchlik konferensiyasida vakillari ishtirok etgan davlatlar soni",
+          "evidence": "Parij\nyaqinidagi Versal saroyida 1919-yil\n18-yanvardan 1920-yil 21-yanvarga-\ncha 27 davlat vakil lari ishtirokida\ntinchlik konferen siya si bo‘lib o‘tdi."
+        },
+        {
+          "kind": "number",
+          "number": "132",
+          "unit": "mlrd. marka",
+          "meaning": "Versal shartnomasi bo‘yicha Germaniya g‘olib davlatlar foydasiga to‘lashi lozim bo‘lgan reparatsiya miqdori",
+          "evidence": "U g‘olib dav latlar foydasiga juda katta  –  132 mlrd. marka repa-\nratsiya (tovon) to‘lashi lozim edi."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "1918–1939-yillarda ilmiy-texnik taraqqiyotning jadallashuvi, ilm-fandagi yutuqlar",
+      "page": 8,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1938",
+          "date_label": "1938-yil",
+          "event": "Nemis olimlari uran yadrolari ajralib chiqishining zanjirli reaksiyasini kashf etdilar va atom fizikasi shakllandi",
+          "evidence": "1938-yili nemis olimlari uran yadrolari ajralib chiqi shining\nzan jirli reaksiyasini kashf etdilar."
+        },
+        {
+          "kind": "date_event",
+          "date": "1942",
+          "date_label": "1942-yil",
+          "event": "Enriko Fermi Chikagoda ilk atom reaktorini yaratdi va AQSH raqiblaridan ancha oldinga lab ketdi",
+          "evidence": "1942-yili Chikagoda En-\nriko Fe r m i  i l k  a t o m  r e a k t o r i n i  y a r a t d i ."
+        },
+        {
+          "kind": "date_event",
+          "date": "1945",
+          "date_label": "1945-yil",
+          "event": "Birinchi atom bombasi AQSHning Nyu-Meksiko shtatidagi poligonda portlatildi",
+          "evidence": "Birinchi atom bombasi 1945-yil\nAQSHning Nyu-Meksiko shtatidagi poli gonda portlatildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1928",
+          "date_label": "1928-yil",
+          "event": "Boris Grabovskiy va Ivan Belyanskiy Toshkentda harakatlanuvchi tasvirni elektron-nurli trubka orqali masofaga uzatdilar",
+          "evidence": "Tarixda ilk bor harakatla nuv chi tas-\nvirni elektron-nurli trubka yor dami da\nmasofaga uzatishni 1928-yili ix tirochilar\nBoris Grabovskiy va Ivan Belyanskiy\nToshkentda amalga oshir dilar."
+        },
+        {
+          "kind": "date_event",
+          "date": "1927",
+          "date_label": "1927-yil",
+          "event": "Nyu-Yorkda namoyish etilgan film mutaxassislar tomonidan birinchi ovozli kino deb tan olindi va ovozli kino davri boshlandi",
+          "evidence": "Ko‘plab tajri-\nbalardan so‘ng 1927-yili Nyu-Yorkda namoyish qilingan «Jaz kuy-\nchisi» ﬁ lmi ni mutaxassislar birinchi ovozli kino deb tan olishgan."
+        },
+        {
+          "kind": "date_event",
+          "date": "1922",
+          "date_label": "1922-yil",
+          "event": "Jon Makleod va Frederik Banting ko‘plab tajribalar jarayonida o‘t pufagi gormoni bo‘lgan insulinni olishga muvaffaq bo‘ldilar",
+          "evidence": "1922-yili ﬁ ziolog olimlar Jon Makleod va Frederik Banting ko‘plab\ntajribalar jarayonida o‘t pufagi gormoni bo‘lgan insulinni olishga mu-\nvaffaq bo‘ldilar."
+        },
+        {
+          "kind": "date_event",
+          "date": "1928",
+          "date_label": "1928-yil",
+          "event": "Aleksandr Fleming laboratoriyasida Penicillium turiga mansub mog‘orni topib, penitsillinni kashf etdi",
+          "evidence": "1928-yili britaniyalik olim Aleksandr\nFleming o‘z laboratoriyasida bir qan cha\nvaqtdan beri to‘planib qolgan idish larni\nyig‘ishtirayotib, ulardan bi ridagi mog‘orga\nko‘zi tushadi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1927",
+          "date_label": "1927-yil",
+          "event": "Buyuk Britaniyaning mashhur radiokorporatsiyasi Bi-bi-si tashkil qilindi va radioeshittirishlar keng tarqaldi",
+          "evidence": "1927-yili Buyuk Britaniyaning mashhur radio-\nkorporatsiyasi Bi-bi-si tashkil qilindi."
+        },
+        {
+          "kind": "person",
+          "person": "Enriko Fermi",
+          "role": "Amerikalik fizik, uran yadrolarining zanjirli reaksiyasi haqidagi g‘oyani shakllantirgan olim",
+          "activity": "1942-yili Chikagoda ilk atom reaktorini yaratdi",
+          "evidence": "Amerikalik Enriko Fermi va fransuz Frederik Jolio-\nKyuri uran ning parchalanishi jarayoni da yuz beradigan zanjirli reak-\nsiya natijasida juda katta energiya aj ralib chiqishi to‘g‘risidagi g‘oyani\nshakllantirdi."
+        },
+        {
+          "kind": "person",
+          "person": "Aleksandr Fleming",
+          "role": "Britaniyalik olim, penitsillinni kashf etgan va 1945-yili Nobel mukofotiga sazovor bo‘lgan",
+          "activity": "Penicillium mog‘orini tekshirib, yuqumli kasalliklarni davolashda inqilob yasagan antibiotikni topdi",
+          "evidence": "1945-yili Aleksandr Fle-\nming Nobel muko fotiga sazovor bo‘l di."
+        },
+        {
+          "kind": "person",
+          "person": "Frederik Banting",
+          "role": "Fiziolog olim, insulin kashfiyoti uchun fiziologiya va tibbiyot bo‘yicha Nobel mukofotini olgan",
+          "activity": "Ko‘plab tajribalar jarayonida o‘t pufagi gormoni bo‘lgan insulinni olishga erishdi",
+          "evidence": "Jon Makleod va Frederik Banting ﬁ ziologiya\nva tibbiyot bo‘yicha Nobel mukofoti ga sazovor bo‘ldilar."
+        },
+        {
+          "kind": "person",
+          "person": "Boris Grabovskiy",
+          "role": "Ixtirochi, Toshkentda harakatlanuvchi tasvirni masofaga uzatish tajribasini o‘tkazganlardan biri",
+          "activity": "Ivan Belyanskiy bilan birga elektron-nurli trubka yordamida tasvirni masofaga uzatdi",
+          "evidence": "Tarixda ilk bor harakatla nuv chi tas-\nvirni elektron-nurli trubka yor dami da\nmasofaga uzatishni 1928-yili ix tirochilar\nBoris Grabovskiy va Ivan Belyanskiy\nToshkentda amalga oshir dilar."
+        },
+        {
+          "kind": "term",
+          "term": "atom fizikasi",
+          "definition": "XX asr boshlarida shakllangan fizikaning alohida yo‘nalishi bo‘lib, uran yadrolarining parchalanishini o‘rganadi",
+          "evidence": "Shu davrda ﬁ  zikaning alohida yo‘nalishi atom ﬁ zikasi ham shakl-\nlandi."
+        },
+        {
+          "kind": "term",
+          "term": "zanjirli reaksiya",
+          "definition": "Uran yadrolarining parchalanishi jarayonida yuz berib, juda katta energiya ajralib chiqishiga olib keladigan reaksiya",
+          "evidence": "Amerikalik Enriko Fermi va fransuz Frederik Jolio-\nKyuri uran ning parchalanishi jarayoni da yuz beradigan zanjirli reak-\nsiya natijasida juda katta energiya aj ralib chiqishi to‘g‘risidagi g‘oyani\nshakllantirdi."
+        },
+        {
+          "kind": "term",
+          "term": "insulin",
+          "definition": "O‘t pufagi gormoni bo‘lib, uning kashf etilishi qandli diabet kasalligini bedavo dard bo‘lishdan xalos qildi",
+          "evidence": "1922-yili ﬁ ziolog olimlar Jon Makleod va Frederik Banting ko‘plab\ntajribalar jarayonida o‘t pufagi gormoni bo‘lgan insulinni olishga mu-\nvaffaq bo‘ldilar."
+        },
+        {
+          "kind": "term",
+          "term": "penitsillin",
+          "definition": "Penicillium turiga mansub mog‘ordan olingan, yuqumli kasalliklarni davolashda haqiqiy inqilob yasagan antibiotik",
+          "evidence": "Penitsillin, keyin\nesa boshqa anti bio tiklarning kashf etilishi\nyuqum li kasal lik lar ni davolashda haqiqiy\nin qi lob bo‘l di."
+        },
+        {
+          "kind": "place",
+          "place": "Chikago",
+          "event": "1942-yili Enriko Fermi tomonidan ilk atom reaktori yaratilgan shahar",
+          "evidence": "1942-yili Chikagoda En-\nriko Fe r m i  i l k  a t o m  r e a k t o r i n i  y a r a t d i ."
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "1928-yili harakatlanuvchi tasvirni masofaga uzatish tajribasi o‘tkazilgan shahar",
+          "evidence": "Toshkent\ntramvay tresti baza sida o‘tkazilgan bu\ntajribani olim  lar zamonaviy televideni ye-\nning paydo bo‘ lishi, deb hisobla sha di."
+        },
+        {
+          "kind": "place",
+          "place": "Nyu-Meksiko shtatidagi poligon",
+          "event": "1945-yili tarixda birinchi atom bombasi portlatilgan joy",
+          "evidence": "Birinchi atom bombasi 1945-yil\nAQSHning Nyu-Meksiko shtatidagi poli gonda portlatildi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Fanni ishlab chiqaruvchi kuchga aylantirishning uzoq davom etgan jarayoni yakunlanishi",
+          "effect": "XX asr boshlarida ilmiy-texnik inqilob yuz berdi va fan jamiyat qiyofasini o‘zgartirdi",
+          "evidence": "Fanni ish-\nlab chiqaruvchi kuchga aylantirishning uzoq davom etgan ja ra yoni\nyakunlanib, XX asr boshlarida ilmiy-tex nik inqilobga olib keldi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Fizika sohasidagi yangi nazariyalarning amaliyotga tatbiq qilinishi",
+          "effect": "Ko‘plab yangi texnik ixtirolar paydo bo‘ldi va televideniye asri boshlandi",
+          "evidence": "Fizika sohasidagi yangi nazariya-\nlarning amaliyotga tatbiq qilinishi ko‘p-\nlab yangi texnik ixtirolarga olib keldi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Vitaminlar va gormonlarning kashf etilishi hamda virusologiya sohasidagi yutuqlar",
+          "effect": "Mikrobiologiya sanoatining paydo bo‘lishi uchun asos yaratildi",
+          "evidence": "Bu kash ﬁ yotlar\nmikro biologiya sanoatining paydo bo‘lishi uchun asos yaratdi."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "1918–1939-yillarda Buyuk Britaniya va Fransiya",
+      "page": 12,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1926",
+          "date_label": "1926-yil may",
+          "event": "Shaxtyorlar ish haqining kamaytirilishi Buyuk Britaniya tarixidagi eng katta umumiy ish tashlashni keltirib chiqardi",
+          "evidence": "Shun day sharoitda shaxtyor-\nlar ish ha qining kamaytirilishi Bu-\nyuk Bri taniya tarixidagi eng katta\nijti moiy mojarolardan biri  –  1926-yil\nmayda ishchilarning umumiy ish\ntashlashini keltirib chiqardi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1924",
+          "date_label": "1924-yil yanvar",
+          "event": "Leyboristlar Buyuk Britaniya tarixida birinchi marta hukumatni boshqarib, ishsizlar ahvolini yaxshilashga harakat qildi",
+          "evidence": "Ular\n1924-yil yanvarda  Buyuk Britaniya tari-\nxida birinchi marta hukumatni boshqardi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1931",
+          "date_label": "1931-yil",
+          "event": "Dominionlar bilan munosabatlarni belgilab bergan Vestminster statuti qabul qilindi va Britaniya Millatlar Hamdo‘stligi tuzildi",
+          "evidence": "Bu davrda Buyuk Britaniya bilan uning dominionlari  –  Kanada,\nAvs tra  liya, Janubiy Afrika Ittifoqi, Yangi Zelandiya o‘rtasidagi munosa-\nbatlarni 1931-yili qabul qi lingan Vestminster statuti deb nomlan-\ngan hujjat belgilab berdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1919",
+          "date_label": "1919-yil",
+          "event": "Hindistonning Armitsar shahrida ingliz qo‘shinlari tinch namoyishchilarni o‘qqa tutdi",
+          "evidence": "1919-yili Hindistonning Armit-\nsar shahrida ingliz qo‘shinlari tinch namoyishchilarni o‘qqa tutdi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1922",
+          "date_label": "1922-yil",
+          "event": "Inglizlar Misrning mustaqilligini tan olishga va Afg‘oniston hamda Eron siyosatini nazorat qilishdan voz kechishga majbur bo‘ldi",
+          "evidence": "Shunga qaramasdan, 1922-yili inglizlar Misrning\nmusta qilligini tan olishga, Buyuk Brita niya Afg‘oniston va Eronning\ntashqi va ichki siyosatini nazorat qilish dan ham voz kechishga maj-\nbur bo‘ldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1938",
+          "date_label": "1938-yil",
+          "event": "Nevill Chemberlen Myunxen kelishuvini imzoladi va Chexoslovakiyaning Sudet viloyati Germaniyaga berildi",
+          "evidence": "Boshlanishi mu qar rar\nbo‘lib qolgan urushni sharqqa qarab\nyo‘naltirish maq sadida Nevill Chem-\nberlen Adolf Gitler, Benito Mus so lini\nva Eduard Dalade bilan birga lik da\n1938-yili Myun xen kelishu vini imzo-\nladi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1930",
+          "date_label": "1930-yil",
+          "event": "Fransiyada jahon iqtisodiy inqirozi boshlandi, sanoat ishlab chiqarishi keskin pasayib, ishsizlar soni oshdi",
+          "evidence": "1929 – 1933-yillardagi jahon iqtiso diy  inqirozi Fransiyada 1930-yi li\nbosh landi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1940",
+          "date_label": "1940-yil 14-iyun",
+          "event": "Nemis qo‘shinlari Parijga kirib keldi va Uchinchi respublika barbod bo‘ldi",
+          "evidence": "1940-yil\n14-iyun kuni nemis  qo‘shinlari Parijga kirib keldi."
+        },
+        {
+          "kind": "person",
+          "person": "Nevill Chemberlen",
+          "role": "1937–1940-yillari Buyuk Britaniya hukumatini boshqargan konservatorlar yetakchisi, bosh vazir",
+          "activity": "«Tajovuzkorga yon berish» siyosatini olib borib, 1938-yili Myunxen kelishuvini imzolagan",
+          "evidence": "1937 – 1940-yillari huku matni konservatorlar yetakchisi Nevill\nChember len boshqardi."
+        },
+        {
+          "kind": "person",
+          "person": "Uinston Cherchill",
+          "role": "XX asr Buyuk Britaniya tarixida katta rol o‘ynagan siyosatchi, 1940-yildan hukumat boshlig‘i",
+          "activity": "Polshaga bostirib kirilgach, Germaniyaga qarshi urush e’lon qilgan hukumatni boshqargan",
+          "evidence": "Hukumatni XX   a s r  Buyuk Brita-\nniya tarixida juda katta rol o‘ynagan siyosatchi Uins ton Cherchill\nboshqardi."
+        },
+        {
+          "kind": "person",
+          "person": "Eduard Dalad’e",
+          "role": "Fransiya hukumati rahbari, Buyuk Britaniya bilan birga Myunxen kelishuvini ma’qullagan siyosatchi",
+          "activity": "Chexoslovakiyani fashistik Germaniyaga topshirishga rozi bo‘lib, yangi jahon urushiga yo‘l ochib berdi",
+          "evidence": "1938-yil kuzida Eduard Dalad’e  hukumati Bu-\nyuk Britaniya bilan birga Chexo slovakiyani fashis-\ntik Germaniyaga topshirgan Myunxen ke lishu vini\nma’ qulladi."
+        },
+        {
+          "kind": "person",
+          "person": "Pyer Laval",
+          "role": "Fransiyadagi o‘ng kuchlar yetakchisi, fashistlar bilan kelishuv tarafdori",
+          "activity": "«Xalq frontidan ko‘ra Gitler ma’qul» degan bayonot bilan chiqdi",
+          "evidence": "O‘nglar yetakchisi Pyer Laval: « Xalq\nfrontidan ko‘ra Gitler ma’qul»,  –  deya bayonot berdi."
+        },
+        {
+          "kind": "term",
+          "term": "dominion",
+          "definition": "O‘z ichki mustaqilligiga ega bo‘lib, metropoliya bilan birgalikda Britaniya Millatlar Hamdo‘stligini tashkil qilgan hudud",
+          "evidence": "Statutga ko‘ra o‘z ichki musta qilligiga ega\nbo‘lgan dominionlar bilan metropoliya bir ga likda Britaniya Millatlar\nHamdo‘stligi nomli ittifoqni tashkil qildi."
+        },
+        {
+          "kind": "term",
+          "term": "statut",
+          "definition": "Asosan Buyuk Britaniya huquqiy madaniyatiga xos bo‘lgan bayoniy xarakterdagi huquqiy hujjat yoki qaror",
+          "evidence": "Statut  –  asosan, Buyuk Britaniya huquqiy madani-\nyatiga xos bo‘lgan bayoniy xarakterdagi huquqiy huj-\njat, qaror."
+        },
+        {
+          "kind": "term",
+          "term": "shovinizm",
+          "definition": "Bir irqning boshqalardan ustunligini da’vo qiluvchi, millatlar o‘rtasida nizo urug‘ini sochuvchi o‘ta o‘ng millatchilik",
+          "evidence": "Shovinizm  –  bir irqning boshqalardan ustunligini\nda’vo qiluvchi, millatlar o‘rtasida nizo urug‘ini so-\nchuvchi o‘ta o‘ng, ashaddiy millatchilik."
+        },
+        {
+          "kind": "term",
+          "term": "«tajovuzkorga yon berish» siyosati",
+          "definition": "Fashistlarning tajovuzkor talablariga faol qarshilik ko‘rsatmay, urushni sharqqa yo‘naltirishga intilgan tashqi siyosat",
+          "evidence": "Bu siyosat tarixda\n«tajovuzkorga yon berish» siyo sati\nnomini  ol di."
+        },
+        {
+          "kind": "place",
+          "place": "Myunxen",
+          "event": "1938-yilda Buyuk Britaniya, Fransiya, Germaniya va Italiya rahbarlari kelishuv imzolagan shahar",
+          "evidence": "Boshlanishi mu qar rar\nbo‘lib qolgan urushni sharqqa qarab\nyo‘naltirish maq sadida Nevill Chem-\nberlen Adolf Gitler, Benito Mus so lini\nva Eduard Dalade bilan birga lik da\n1938-yili Myun xen kelishu vini imzo-\nladi."
+        },
+        {
+          "kind": "place",
+          "place": "Armitsar",
+          "event": "1919-yilda ingliz qo‘shinlari tinch namoyishchilarni o‘qqa tutgan Hindiston shahri",
+          "evidence": "1919-yili Hindistonning Armit-\nsar shahrida ingliz qo‘shinlari tinch namoyishchilarni o‘qqa tutdi."
+        },
+        {
+          "kind": "place",
+          "place": "Sudet viloyati",
+          "event": "Myunxen kelishuvi natijasida Germaniyaga berilgan, asosan nemis millatiga mansub aholi yashaydigan hudud",
+          "evidence": "Ke lishuv natijasida Chexo slo vakiyaning, aso san, ne mis milla tiga\nman sub aholi ya shaydigan Sudet viloyati  Ger maniyaga beril di."
+        },
+        {
+          "kind": "cause",
+          "cause": "Shaxtyorlar ish haqining kamaytirilishi va ish kunini qisqartirish talablari",
+          "effect": "1926-yil mayda mamlakat tarixidagi eng katta umumiy ish tashlash boshlandi",
+          "evidence": "Shun day sharoitda shaxtyor-\nlar ish ha qining kamaytirilishi Bu-\nyuk Bri taniya tarixidagi eng katta\nijti moiy mojarolardan biri  –  1926-yil\nmayda ishchilarning umumiy ish\ntashlashini keltirib chiqardi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Urush xarajatlari hamda AQSH va dominionlar oldida qarzdorlikning paydo bo‘lishi",
+          "effect": "Iqtisodiy o‘sish sur’atlari past bo‘lib, inqiroz va turg‘unlik odatiy holga aylandi",
+          "evidence": "Urushdan oldin kreditor (qarz beruvchi)  bo‘l gan Buyuk Britaniya\nAQSHdan va o‘z domi nionlaridan qarzdor bo‘lib qoldi. Iqti sodiy o‘sish\nsur’atlari juda past bo‘lib, inqiroz va turg‘unlik  odatiy holga aylandi."
+        },
+        {
+          "kind": "cause",
+          "cause": "1930-yillarda Germaniyadan qo‘rqish va fashistlar kuchlari SSSRga qarshi qaratiladi degan umid",
+          "effect": "Fashistlarning tajovuzkor siyosatiga faol qarshilik ko‘rsatilmadi va «tajovuzkorga yon berish» siyosati olib borildi",
+          "evidence": "Buyuk Britaniyada, umu man Yev-\nropaning boshqa davlatlarida ham fa shizm dan qo‘r qish hissi bo‘lajak\nurushda fashistlarning kuchlari Sovet It ti  fo qiga qarshi qaratiladi, de-\ngan umid bilan qo‘shilib ketgan edi."
+        },
+        {
+          "kind": "number",
+          "number": "15",
+          "unit": "yil",
+          "meaning": "Versal shartnomasiga binoan Fransiya Saar ko‘mir havzasini shu muddatga egallagan",
+          "evidence": "Versal shartnomasiga bi noan Fransiya Elzas va Lotaringiyani qay ta-\nrib ol di, 15 yilga Saar ko‘ mir havzasini egalladi, Ger maniya mustamla-\nka lari hi sobiga o‘z imperiyasini kengaytirib oldi."
+        },
+        {
+          "kind": "number",
+          "number": "2/3",
+          "unit": "ovoz",
+          "meaning": "1919-yil noyabrdagi saylovlarda Milliy blok guruhi olgan ovoz ulushi",
+          "evidence": "Mil liy\nblok saylovlarda 2/3 qismdan ko‘proq\novoz oldi."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "1918–1939-yillarda Amerika Qo‘shma Shtatlari",
+      "page": 20,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1924–1929",
+          "date_label": "1924–1929-yillar",
+          "event": "AQSH jadal rivojlanib, iqtisodiy jihatdan dunyoning eng rivojlangan mamlakatiga aylandi",
+          "evidence": "1924 – 1929-yillari jadal rivojlangan AQSH iqti-\nsodiy jihatdan dun yoning eng rivoj langan mamlakati-\nga aylandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1928",
+          "date_label": "1928-yil",
+          "event": "Kongressga bo‘lib o‘tgan saylovlarda yana respublikachilar g‘alaba qozondi",
+          "evidence": "Shunday sharoitda 1928-yili  kongres-\ng a  b o ‘ l i b  o ‘ t g a n  s a y l o v  l a r d a  y a n a  r e s -\npublika chilar g‘alaba qozondi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1929",
+          "date_label": "1929-yil yanvar",
+          "event": "Gerbert Guver AQSHning navbatdagi prezidenti qilib saylandi",
+          "evidence": "Ular\npartiyasidan prezidentlikka nomzod\nGer bert Guver 1929-yil yanvarda\nAQSH ning navbatdagi pre zidenti qilib\nsaylandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1929",
+          "date_label": "1929-yil 24-oktabr",
+          "event": "Nyu-York fond birjasida boshlangan inqiroz tufayli barqaror rivojlanish davri tugadi",
+          "evidence": "1929-yil 24-ok tabrda\nNyu-Yo r k  f o n d  b i r j a  s i d a  b o s h  l a n g a n  i n q i -\nroz tufayli barqa ror ri vojlanish davri tuga-\ndi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1929–1932",
+          "date_label": "1929–1932-yillar",
+          "event": "Sanoat ishlab chiqarishi hajmi 50% ga qisqardi, 13 mln.ga yaqin kishi o‘z ish joylaridan mahrum bo‘ldi",
+          "evidence": "1929 – 1932-yil lari sanoat ishlab chiqarishi hajmi 50  % ga\nqisqardi, 13    m l n ."
+        },
+        {
+          "kind": "date_event",
+          "date": "1932",
+          "date_label": "1932-yil noyabr",
+          "event": "Saylovlarda Guverga qarshi demokratik partiyadan Franklin Ruzvelt nomzodi qo‘yildi",
+          "evidence": "1932-yil noyabrdagi saylovlarda Gu v e r g a  q a r s h i  d e m o k r a t i k  p a r t i -\nyadan Franklin Ruz velt nomzodi qo‘yildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1933",
+          "date_label": "1933-yil",
+          "event": "Sovet Ittifoqi bilan diplomatik munosabatlar o‘rnatildi va neytralitet haqida qonunlar qabul qilindi",
+          "evidence": "1933-yili Sovet Ittifoqi bi-\nlan dip lomatik munosabatlar o‘rnatildi,\nshu yillari neytralitet haqi da hamda\nurushayot gan dav latlarga qurol yetka-\nzib berish va kredit ajratishni taqiq lash\nto‘g‘risida qonunlar qabul qilindi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1941",
+          "date_label": "1941-yil 7-dekabr",
+          "event": "Yaponiya floti Pyorl-Xarborga hujum qilgandan so‘ng AQSH Ikkinchi jahon urushiga qo‘shildi",
+          "evidence": "Faqat 1941-yil 7-dekabr\nkuni Ya poniya ﬂ oti Pyorl-Xarborga  –  AQSH ﬂ oti ning Tinch okea nidagi\nasosiy bazasiga hujum qilgandan so‘nggina AQSH Ikkinchi jahon uru-\nshiga qo‘shildi."
+        },
+        {
+          "kind": "person",
+          "person": "Gerbert Guver",
+          "role": "1929-yil yanvarda AQSH prezidenti etib saylangan respublikachi siyosatchi",
+          "activity": "Amerikacha individualizm va liberalizm tamoyillarini himoya qilib, ijtimoiy choralar ko‘rishga rozi bo‘lmadi",
+          "evidence": "AQSH preziden ti Ger bert Guver Amerikacha indi vi du alizm va\nlibera lizm tamo yil larini himoya qilib, hech qan day ijtimoiy choralar\nko‘rishga rozi bo‘lmadi."
+        },
+        {
+          "kind": "person",
+          "person": "Gerbert Guver",
+          "role": "Respublikachilar partiyasidan prezidentlikka ko‘rsatilgan nomzod, 1932-yilgi saylovda Ruzveltga raqib",
+          "activity": "1928-yili kongress saylovlarida partiyasi g‘alaba qozonganidan so‘ng davlat rahbari lavozimiga saylangan",
+          "evidence": "Shunday sharoitda 1928-yili  kongres-\ng a  b o ‘ l i b  o ‘ t g a n  s a y l o v  l a r d a  y a n a  r e s -\npublika chilar g‘alaba qozondi."
+        },
+        {
+          "kind": "person",
+          "person": "Franklin Ruzvelt",
+          "role": "AQSH prezidentligiga qatorasiga to‘rt marta saylangan yagona siyosatchi",
+          "activity": "«Yangi kurs» siyosatini e’lon qilib, mamlakatni iqtisodiy inqirozdan chiqargan",
+          "evidence": "Franklin Ruz velt umumiy muhit talabi dan kelib\nchiqib, nutq laridan birida: «Men Amerika xalqiga\nyangi kurs va’da qila man», – dedi."
+        },
+        {
+          "kind": "term",
+          "term": "«Yangi kurs»",
+          "definition": "Franklin Ruzvelt e’lon qilgan, AQSH iqtisodini davlat tartibga solishi yo‘li bilan inqirozdan chiqargan siyosat",
+          "evidence": "«Yangi kurs»\ndegan bu jozi bador so‘z omma viy shior va siyo-\nsatning nomiga aylandi."
+        },
+        {
+          "kind": "term",
+          "term": "neytralitet",
+          "definition": "Davlatlar o‘rtasida olib borilayotgan urushga qo‘shilmaslik imkonini ta’minlovchi huquqiy maqom",
+          "evidence": "Neytralitet  –  davlatlar o‘rtasida olib borilayotgan urushga\nqo‘shilmaslik imkonini ta’minlovchi huquqiy maqom."
+        },
+        {
+          "kind": "term",
+          "term": "izolatsionizm",
+          "definition": "Biron-bir davlatning xalqaro muammolarni hal qilishda ishtirok etishdan bosh tortish siyosati",
+          "evidence": "Izolatsionizm  –  biron-bir davlatning xalqaro muammolarni\nhal qilishda ishtirok etishdan bosh tortish siyosati."
+        },
+        {
+          "kind": "term",
+          "term": "individualizm",
+          "definition": "Alohida shaxs manfaatlarini jamiyat manfaatlaridan ustun qo‘yishga qaratilgan nazariya",
+          "evidence": "Individualizm  –  alohida shaxs manfaatlarini jamiyat\nmanfaatlaridan ustun qo‘yishga qaratilgan nazariya."
+        },
+        {
+          "kind": "place",
+          "place": "Nyu-York fond birjasi",
+          "event": "1929-yil 24-oktabrda jahon iqtisodiy inqirozi boshlangan joy",
+          "evidence": "1929-yil 24-ok tabrda\nNyu-Yo r k  f o n d  b i r j a  s i d a  b o s h  l a n g a n  i n q i -\nroz tufayli barqa ror ri vojlanish davri tuga-\ndi."
+        },
+        {
+          "kind": "place",
+          "place": "Pyorl-Xarbor",
+          "event": "AQSH flotining Tinch okeanidagi asosiy bazasi, 1941-yil 7-dekabrda Yaponiya hujumiga uchragan",
+          "evidence": "Faqat 1941-yil 7-dekabr\nkuni Ya poniya ﬂ oti Pyorl-Xarborga  –  AQSH ﬂ oti ning Tinch okea nidagi\nasosiy bazasiga hujum qilgandan so‘nggina AQSH Ikkinchi jahon uru-\nshiga qo‘shildi."
+        },
+        {
+          "kind": "place",
+          "place": "Vashington",
+          "event": "1932-yilda ishsizlar namoyishi bostirilgan shahar",
+          "evidence": "Ishsizlar namoyishining\nbostirilishi. Vashington, 1932-yil"
+        },
+        {
+          "kind": "cause",
+          "cause": "1929-yil 24-oktabrda Nyu-York fond birjasida inqirozning boshlanishi",
+          "effect": "Barqaror rivojlanish davri tugadi va butun kapitalistik dunyo jahon iqtisodiy inqirozi girdobiga sho‘ng‘idi",
+          "evidence": "1929-yil 24-ok tabrda\nNyu-Yo r k  f o n d  b i r j a  s i d a  b o s h  l a n g a n  i n q i -\nroz tufayli barqa ror ri vojlanish davri tuga-\ndi. AQSHning ortidan butun ka pitalistik\ndunyo jahon iqtiso diy inqi rozi girdobiga\nsho‘n g‘idi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Prezident Gerbert Guverning individualizm va liberalizm tamoyillariga sodiq qolishi",
+          "effect": "Inqiroz yillarida aholini qo‘llab-quvvatlovchi hech qanday ijtimoiy choralar ko‘rilmadi",
+          "evidence": "AQSH preziden ti Ger bert Guver Amerikacha indi vi du alizm va\nlibera lizm tamo yil larini himoya qilib, hech qan day ijtimoiy choralar\nko‘rishga rozi bo‘lmadi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Yaponiya flotining Pyorl-Xarborga hujumi",
+          "effect": "AQSH izolatsionizm siyosatidan voz kechib, Ikkinchi jahon urushiga qo‘shildi",
+          "evidence": "Faqat 1941-yil 7-dekabr\nkuni Ya poniya ﬂ oti Pyorl-Xarborga  –  AQSH ﬂ oti ning Tinch okea nidagi\nasosiy bazasiga hujum qilgandan so‘nggina AQSH Ikkinchi jahon uru-\nshiga qo‘shildi."
+        },
+        {
+          "kind": "number",
+          "number": "50",
+          "unit": "%",
+          "meaning": "1929–1932-yillarda AQSH sanoat ishlab chiqarishi hajmining qisqargan darajasi",
+          "evidence": "1929 – 1932-yil lari sanoat ishlab chiqarishi hajmi 50  % ga\nqisqardi, 13    m l n ."
+        },
+        {
+          "kind": "number",
+          "number": "13",
+          "unit": "mln. kishi",
+          "meaning": "Iqtisodiy inqiroz davrida o‘z ish joylaridan mahrum bo‘lgan amerikaliklar soni",
+          "evidence": "1929 – 1932-yil lari sanoat ishlab chiqarishi hajmi 50  % ga\nqisqardi, 13    m l n .ga yaqin kishi o‘z ish joylaridan mahrum bo‘ldi."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "1918–1939-yillarda Germaniya",
+      "page": 25,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1918",
+          "date_label": "1918-yil noyabr",
+          "event": "Kil shahridagi qo‘zg‘olondan boshlangan noyabr inqilobi g‘alaba qozonib, Germaniya respublika deb e’lon qilindi",
+          "evidence": "Noyabr inqilo-\nbi g‘ala ba qozonib, Germaniya respub lika\ndeb e’lon qilindi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1919",
+          "date_label": "1919-yil 31-iyul",
+          "event": "Veymar shahrida Ta’sis majlisi inqilobiy ommaning demokratik talablarini qoniqtiruvchi konstitutsiyani qabul qildi",
+          "evidence": "1919-yil 31-iyul  kuni Veymar shahrida Ta’sis majlisi inqilobiy om-\nmaning demokratik talablarini qoniqtiruvchi konstitutsiyani qabul qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1923",
+          "date_label": "1923-yil",
+          "event": "Fransuzlar Germaniyaning Rur viloyatiga bostirib kirdi va Rur inqirozi boshlandi",
+          "evidence": "1923-yili  fransuzlar Ger ma niyaning Rur viloyatiga\nbostirib kir di."
+        },
+        {
+          "kind": "date_event",
+          "date": "1924",
+          "date_label": "1924-yil",
+          "event": "Charlz Daues boshchiligidagi qo‘mita xalqaro moliya-kredit va savdo munosabatlarini tiklash rejasini qabul qildi",
+          "evidence": "1924-yili\namerikalik bankir Charlz Dau es boshchiligidagi\nqo‘mita xal qaro moliya-kredit va savdo muno sa-\nbatlarini tiklashning strategik reja si ni qabul qildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1923",
+          "date_label": "1923-yil 8-noyabr",
+          "event": "Myunxendagi pivoxonada boshlangan «Pivo isyoni» natsistlarning hokimiyatni egallashga birinchi urinishi bo‘ldi",
+          "evidence": "1923-yil 8 -noyabr\nkuni My u n  x e n  d a g i  j u d a  b a h a y b a t  p i v o x o n a g a  3 0 0 0   g a  y a q i n  o d a m\nyig‘ildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1933",
+          "date_label": "1933-yil 30-yanvar",
+          "event": "Prezident Paul fon Gindenburg Adolf Gitlerni reyxskansler lavozimiga tayinladi",
+          "evidence": "1933-yil 30-yanvarda prezident Paul fon Gindenburg reyxstag da (par-\nlament) eng katta fraksiyaga ega bo‘lgan natsional-sotsi alistlar yo‘lboshchisi\nAdolf Gi t l e r n i  r e y x s k a n s l e r  ( h u k u m a t  b o s h l i g ‘ i )  l a v"
+        },
+        {
+          "kind": "date_event",
+          "date": "1922",
+          "date_label": "1922-yil 30-dekabr",
+          "event": "Sobiq Rossiya imperiyasi hududida Sovet Sotsialistik Respublikalari Ittifoqi tashkil qilindi",
+          "evidence": "Natijada, 1922-yil\n30-dekabr kuni sobiq Rossiya imperiyasi hududida Sovet Sotsialistik\nRespublikalari Ittifoqi ( SSSR) tash kil qilindi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1939",
+          "date_label": "1939-yil 23-avgust",
+          "event": "Moskvada SSSR va Germaniya o‘rtasida o‘zaro hujum qilmaslik to‘g‘risidagi shartnoma imzolandi",
+          "evidence": "Natijada 1939-yil 23-av-\ngust kuni Moskvada SSSR va Ger-\nmaniya o‘r tasida o‘zaro hujum qil maslik\nto‘g‘risidagi shart no ma ( Molotov  –  Rib-\nbent rop pakti) imzo landi."
+        },
+        {
+          "kind": "person",
+          "person": "Fridrix Ebert",
+          "role": "Germaniyada noyabr inqilobi g‘alabasidan so‘ng tuzilgan yangi hukumat boshchisi",
+          "activity": "1918-yil noyabrida respublika e’lon qilingach, mamlakat boshqaruvini o‘z qo‘liga oldi",
+          "evidence": "Fridrix Ebert boshchili-\ngida yangi hu kumat tuzildi."
+        },
+        {
+          "kind": "person",
+          "person": "Charlz Daues",
+          "role": "Amerikalik bankir, xalqaro moliya-kredit munosabatlarini tiklash rejasini ishlab chiqqan qo‘mita rahbari",
+          "activity": "Reparatsiya va Yevropa qarzlari muammosini hal qilish rejasini taklif qilib, Nobel mukofotiga sazovor bo‘ldi",
+          "evidence": "Charlz\nDauesga Nobel mukofoti berildi."
+        },
+        {
+          "kind": "person",
+          "person": "Paul fon Gindenburg",
+          "role": "Germaniya prezidenti, 1932-yil apreldagi saylovlarda g‘olib chiqqan siyosatchi",
+          "activity": "1933-yilda reyxstagda eng katta fraksiyaga ega natsional-sotsialistlar yo‘lboshchisini hukumat boshlig‘i etib tayinlagan",
+          "evidence": "1932-yil aprelda  b o ‘ l i b  o ‘ t g a n  p r e z i d e n t l i k  s a y l o v l a r i d a  Ginden-\nburg g‘olib chiqdi, Gitler undan sal ortda qoldi."
+        },
+        {
+          "kind": "person",
+          "person": "Adolf Gitler",
+          "role": "Natsional-sotsialistik ishchi partiyasi yo‘lboshchisi, 1933-yildan reyxskansler va fyurer",
+          "activity": "Totalitar rejim o‘rnatib, Germaniyani urushga tayyorlash siyosatini olib bordi",
+          "evidence": "Ger maniya natsi onal-sot sialis tik ish-\nchi partiyasi 1919-yili paydo bo‘l di."
+        },
+        {
+          "kind": "person",
+          "person": "Iosif Stalin",
+          "role": "SSSRda Lenin vafotidan so‘ng davlatda asosiy rol o‘ynay boshlagan siyosatchi",
+          "activity": "Yangi iqtisodiy siyosatni bekor qilish va qatag‘onlarni kuchaytirish yo‘lini tutgan",
+          "evidence": "1924-yili Vladimir Lenin vafot etgandan so‘ng davlatda\nIosif Stalin va uning safdoshlari asosiy rol o‘ynay boshladi."
+        },
+        {
+          "kind": "term",
+          "term": "Veymar respublikasi",
+          "definition": "1919-yilda Veymarda konstitutsiya qabul qilingach boshlangan Germaniya tarixidagi yangi davr",
+          "evidence": "Germaniya tarixida yangi  –  Veymar respublikasi  davri bosh landi."
+        },
+        {
+          "kind": "term",
+          "term": "natsizm",
+          "definition": "Germaniyada shakllangan, italyan tipidagi fashizmdan farq qiluvchi totalitar oqim",
+          "evidence": "Ammo shuni inobatga olish lozimki,\nGer maniyada italyan tipidagi fa shizm\nemas, natsizm shakl landi."
+        },
+        {
+          "kind": "term",
+          "term": "totalitarizm",
+          "definition": "XX asr hodisasi bo‘lib, butun siyosiy tizimning davlatga bo‘ysunishi va jamiyat ustidan to‘liq nazoratni nazarda tutadi",
+          "evidence": "Totalitarizm (umumiy, yalpi)  –  XX asr hodisasi bo‘-\nlib, butun siyosiy tizimning davlatga bo‘ysunishini,\njamiyat hayoti va fuqarolar ustidan to‘liq davlat nazorati\no‘rnatilishini nazarda tutadi."
+        },
+        {
+          "kind": "term",
+          "term": "fraksiya",
+          "definition": "Biror-bir partiyaning parlamentdagi a’zolari yoki siyosiy partiya ichidagi alohida guruh",
+          "evidence": "Fraksiya  –  biror-bir partiyaning parlamentdagi a’zo-\nlari yoki siyosiy partiya ichidagi alohida guruh."
+        },
+        {
+          "kind": "place",
+          "place": "Veymar",
+          "event": "1919-yil 31-iyulda Ta’sis majlisi Germaniya konstitutsiyasini qabul qilgan shahar",
+          "evidence": "1919-yil 31-iyul  kuni Veymar shahrida Ta’sis majlisi inqilobiy om-\nmaning demokratik talablarini qoniqtiruvchi konstitutsiyani qabul qildi."
+        },
+        {
+          "kind": "place",
+          "place": "Myunxen",
+          "event": "1923-yil 8-noyabrda «Pivo isyoni» boshlangan shahar",
+          "evidence": "1923-yil 8 -noyabr\nkuni My u n  x e n  d a g i  j u d a  b a h a y b a t  p i v o x o n a g a  3 0 0 0   g a  y a q i n  o d a m\nyig‘ildi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Germaniyaning Birinchi jahon urushidagi mag‘lubiyati va urushdan keyingi og‘ir ahvol",
+          "effect": "Mamlakatda inqilobiy voqealar sodir bo‘lib, monarxiya ag‘darildi va respublika e’lon qilindi",
+          "evidence": "Germaniya Bi-\nrinchi jahon urushida mag‘lubiyatga uch-\nradi. Urushdan keyin bu yerda in qi lobiy\nvoqealar sodir bo‘ldi."
+        },
+        {
+          "kind": "cause",
+          "cause": "1923-yilda fransuzlarning Rur viloyatiga bostirib kirishi",
+          "effect": "Germaniyada siyosiy noroziliklar kuchaydi va mamlakatda pul eng qadrsiz holatga tushdi",
+          "evidence": "Rur inqirozi Germaniyaning o‘zida ham siyosiy norozi-\nlik larni keltirib chiqardi."
+        },
+        {
+          "kind": "cause",
+          "cause": "«Pivo isyoni»ning muvaffaqiyatsiz yakunlanishi va natsistlarning quvg‘in qilinishi",
+          "effect": "Natsistik partiya umumgermaniya miqyosidagi siyosiy kuchga aylandi",
+          "evidence": "Muvaffaqiyatsizlik bi-\nlan tugashiga qara masdan, aynan «pivo isyoni» natsistik par tiyani\numumger maniya miqyosidagi siyosiy kuchga aylantirdi."
+        },
+        {
+          "kind": "number",
+          "number": "3000",
+          "unit": "ga yaqin odam",
+          "meaning": "1923-yil 8-noyabrda Myunxendagi pivoxonaga yig‘ilgan odamlar soni",
+          "evidence": "1923-yil 8 -noyabr\nkuni My u n  x e n  d a g i  j u d a  b a h a y b a t  p i v o x o n a g a  3 0 0 0   g a  y a q i n  o d a m\nyig‘ildi."
+        },
+        {
+          "kind": "number",
+          "number": "10",
+          "unit": "barobar",
+          "meaning": "1936–1939-yillari Germaniyada harbiy xarajatlarning oshirilgan miqdori",
+          "evidence": "1936 – 1939-yillari Germaniya iqti so  diyoti\nto‘liq urush maqsadlariga bo‘ysundirildi, harbiy xarajatlar 10 barobar\noshirildi, qo‘shinlar soni 1914-yil darajasiga yetkazildi, harbiy-dengiz\nﬂ oti isloh qilindi."
+        }
+      ]
+    }
+  ]
+}

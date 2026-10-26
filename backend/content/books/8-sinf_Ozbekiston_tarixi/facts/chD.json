@@ -1,0 +1,1293 @@
+{
+  "chapter": "II BOB. XIVA XONLIGI",
+  "topics": [
+    {
+      "number": 20,
+      "title": "Buxoro amirligining tashqi siyosati",
+      "page": 71,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XVIII asrning so‘nggi choragi",
+          "date_label": "XVIII asrning so‘nggi choragida",
+          "event": "Ernazarbiy Rossiyaga ikki marta tashrif buyurib, Buxoro bilan Rossiya o‘rtasida o‘zaro ishonchga asoslangan munosabatlar o‘rnatilishiga harakat qildi.",
+          "evidence": "Ayniqsa, XVlll\nasrning so'nggi choragida elchi lErnazarbiyning Rossiyaga ikki bor\ntashrifi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1797",
+          "date_label": "1797-yilda",
+          "event": "Amir Shohmurod Polvonquli qurchi boshchiligidagi elchilikni Rossiyaga yuborib, Eron tahdidi sharoitida birgalikda harakat qilishni taklif qildi.",
+          "evidence": "Buxoro-Rossiya siyosiy munosabatlarida 1797-yilda amir Shohmurod yuborgan Polvonquli qurchi elchiligi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1825",
+          "date_label": "1825-yilda",
+          "event": "Buyuk Britaniya zobit U. Murkford boshchiligidagi ekspeditsiyani yuborib, Buxoro amirligini har tomonlama o‘rganishga kirishdi.",
+          "evidence": "Buyuk Britaniya dastlab 1825-yilda zobit"
+        },
+        {
+          "kind": "date_event",
+          "date": "1832",
+          "date_label": "1832-yilda",
+          "event": "Aleksandr Byorns boshchiligidagi ingliz missiyasi Buxoroga keldi va u o‘zini arman savdogari deb tanitib, qo‘shbegi bilan aloqa bog‘ladi.",
+          "evidence": "1832-yilda Alcksandr Byorns boshchiligida navbaidagi ingliz missiyasi Buxoroga kcldil"
+        },
+        {
+          "kind": "date_event",
+          "date": "1839",
+          "date_label": "1839-yilda",
+          "event": "Buyuk Britaniya Afg‘onistonga qarshi harbiy harakatlar boshlagach, Rossiya bilan munosabatlar yanada keskinlashdi.",
+          "evidence": "1839-yili Buyuk Britaniya Afg'onistonga qarshi harbiy harakatlar\nboshlaganida Rossiya-Buyuk Britaniya munosabatlari yanada keskinlashdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1858",
+          "date_label": "1858-yilda",
+          "event": "Buxoroga polkovnik Ignatyev boshchiligida Rossiya elchilari keldi; bu amirlikning mustaqil davlat maqomidagi oxirgi elchiligi bo‘ldi.",
+          "evidence": "1858-yilda Buxoroga polkovnik Ignalyev boshchiligida Rossiya\nelchilari keldi"
+        },
+        {
+          "kind": "person",
+          "person": "Ernazarbiy (Ernazar Maqsutov)",
+          "role": "Buxoro amirligining Rossiyadagi elchisi, diplomat va savdogar",
+          "activity": "Keng dunyoqarash va bilimga ega bo‘lib, ikki davlat o‘rtasida o‘zaro ishonchga asoslangan munosabat qaror topishi uchun astoydil harakat qildi.",
+          "evidence": "Ernazarbiy (Ernazar Maqsutov) kcng\ndunyoqarashga va bilimga cga diplomat va savdogar edi"
+        },
+        {
+          "kind": "person",
+          "person": "Doniyolbiy",
+          "role": "Ernazarbiy elchiligidan keyin yuborilgan Buxoro elchisi",
+          "activity": "Siyosiy maqsadlarni ham ko‘zlab, Buxoroning Usmonli davlati bilan do‘stlik aloqalarini mustahkamlash niyatini rus hukumatiga ma’lum qildi.",
+          "evidence": "Ernazarbiy elchiligidan Doniyolbiy siyosiy maqsadlarni ham ko'zlagan edi"
+        },
+        {
+          "kind": "person",
+          "person": "Polvonquli qurchi",
+          "role": "Amir Shohmurod tomonidan 1797-yilda Rossiyaga yuborilgan elchi",
+          "activity": "Eron tahdidi sharoitida Rossiya bilan birgalikda harakat qilishni taklif etdi, biroq Rossiya bu taklifni qabul qilmadi.",
+          "evidence": "birgalikda harakat qilishni taklif etdi. Biroq\nYevropadagi muammolari bilan band bo'lgan Rossiya bu taklifni\nqabul qilmadi"
+        },
+        {
+          "kind": "person",
+          "person": "U. Murkford",
+          "role": "1825-yilda yuborilgan ingliz ekspeditsiyasining zobit rahbari",
+          "activity": "Ekspeditsiya amirlikni har tomonlama o‘rganib, mahalliy hukmdorlar orasida inglizlarga tarafdor guruh shakllantirishga muvaffaq bo‘ldi.",
+          "evidence": "Ekspeditsiya natijasida inglizlar Buxoro\namirligini har tomonlama o'rganishga va mahalliy hukmdorlar orasida\no'zlariga tarafdor guruhni shakllantirishga muvaffaq bo'ldilar"
+        },
+        {
+          "kind": "person",
+          "person": "Aleksandr Byorns",
+          "role": "1832-yildagi ingliz missiyasining rahbari",
+          "activity": "O‘zini arman savdogari deb tanitib, Buxoro amirligi qo‘shbegisi bilan aloqa bog‘ladi va mamlakat hududida razvedka ma’lumotlari to‘pladi.",
+          "evidence": "A.Byorns mamlakat hududida katia razvcdka ma'lumoilari ham\nto'play oldi"
+        },
+        {
+          "kind": "term",
+          "term": "elchilar almashinuvi",
+          "definition": "Ikki davlat o‘rtasidagi o‘zaro manfaatli munosabatlar qaror topishida muhim rol o‘ynagan diplomatik aloqa shakli.",
+          "evidence": "Ikki davlat o'rtasidagi o'zaro manfaatli munosabatlarning qaror\ntopishida elchilar almashinuvi muhim rol o'ynadi"
+        },
+        {
+          "kind": "term",
+          "term": "Banoras",
+          "definition": "Hindistonning o‘sha davr manbalarida uchraydigan nomi; u yerdan Buxoroga ingliz tovarlari kiritilgan.",
+          "evidence": "Chunonchi, Banoras (Hindision)dan kiritilayolgan ingliz. tovarlari bu\nyerda o'z narxidan 6-9 marta arzon bahoda sotila boshlandi"
+        },
+        {
+          "kind": "term",
+          "term": "zambarak quroli",
+          "definition": "Amir Nasrullo elchilari Rossiya hukumatidan amirlikka sotib berishni so‘ragan qurol turi.",
+          "evidence": "amirlikka zambarak quroli sotish kabi masalalarni qo'ydilar"
+        },
+        {
+          "kind": "term",
+          "term": "boj to‘lovlari",
+          "definition": "Buxoro tovarlaridan olinadigan yig‘im; Amir Nasrullo elchilari uning kamaytirilishini so‘ragan.",
+          "evidence": "asosan, Buxoro tovarlaridan olinayotgan boj to'lovlarini kamaytirish"
+        },
+        {
+          "kind": "term",
+          "term": "savdo karvonlari",
+          "definition": "Ikki davlat o‘rtasida tovar tashuvchi karvonlar; ularni talashdan saqlash elchilik muzokaralarida ko‘tarilgan.",
+          "evidence": "savdo karvonlarining\ntalanishiga yo'l qo'ymaslik kabi masalalarni qo'ydilar"
+        },
+        {
+          "kind": "place",
+          "place": "Astraxon",
+          "event": "Buxoro musulmonlari Makkaga Haj safariga shu shahar orqali borib kelgan; elchilik kelishuvlarida bu yo‘l kafolatlandi.",
+          "evidence": "amirlik fuqarolarining Astraxon orqali Ilaj safariga crkin borib kclishlarining kafolatlanishiga -erishdi"
+        },
+        {
+          "kind": "place",
+          "place": "Xuroson",
+          "event": "Amirlik tashqi siyosatining ikkinchi tamoyili shu yerda mustahkam o‘rnashib olishdan iborat edi.",
+          "evidence": "ikkinchidan, Xurosonda mustahkam o'rnashib\nolish"
+        },
+        {
+          "kind": "place",
+          "place": "Afg‘oniston",
+          "event": "1839-yilda Buyuk Britaniyaning bu davlatga qarshi harbiy harakati Rossiya-Britaniya munosabatlarini keskinlashtirdi.",
+          "evidence": "Agar Afg'oniston bosib olingudek bo'lsa, navbat O'rta Osiyoga\nkelishi mumkin edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Buyuk Britaniya va Rossiyaning ikki mamlakatga ega bo‘lishga, bozorlar va boy xomashyo manbalarini qo‘lga kiritishga intilishi",
+          "effect": "XIX asrning birinchi yarmida O‘rta Osiyoda ikki davlat o‘rtasidagi raqobat kuchaydi.",
+          "evidence": "Bunga bu ikki\ntamlakalarga ega bo'lishga, ularning bozorlarini va boy xomashyo\nmanbalarini qo'lga kiritishga intilishlari sabab bo'ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kavkazda Rossiya va Eron munosabatlarining keskinlashgani",
+          "effect": "Amir Shohmurod bu omildan foydalanishga qaror qildi.",
+          "evidence": "Bu davrda Kavkazda\nRossiya-liron munosabatlari ham keskinlashgan edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Rossiyaning Qrim urushidagi mag‘lubiyati O‘rta Osiyoning siyosiy va strategik ahamiyatini ko‘rsatgani",
+          "effect": "Rossiya Hindistonga tahdid sola oladigan va arzon xomashyo oladigan omil sifatida O‘rta Osiyoni egallashga kirishdi.",
+          "evidence": "Rossiyaning Qrim urushidagi mag'lubiyati O'rta Osiyoning Rossiya\nuchun siyosiy va stralegik ahamiyati qanchalik katta ekanligini ko'rsaldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Buyuk Britaniya josuslari va tovarlarining O‘rta Osiyoga kirib kelishining kengayishi",
+          "effect": "Rossiya xavotirga tushib, o‘z manfaatlarini himoya qilish yo‘llarini izlay boshladi.",
+          "evidence": "Bu davrda Buyuk Britaniya josuslari va tovarlarining O'rta Osiyoga kirib kelishining kengayishi Rossiyani xavotirga solib qo'ydi"
+        },
+        {
+          "kind": "number",
+          "number": "6-9",
+          "unit": "marta",
+          "meaning": "Banoras orqali kiritilgan ingliz tovarlari Buxoroda o‘z narxidan shuncha marta arzon sotilgan.",
+          "evidence": "6-9 marta arzon bahoda sotila boshlandi"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "Buxoro amirligida madaniy hayot",
+      "page": 75,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1778",
+          "date_label": "1778-yilda",
+          "event": "Shoir Muhammadniyoz Nishotiy o‘zining «Husn-u Dil» dostonini yaratib, uni majoziy shaklda yozdi.",
+          "evidence": "Shoir 1778-yilda o'zining\najoyib ,.Ilusn-u Dil\" dostonini yaratdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1803-1804",
+          "date_label": "1803-1804-yillarda",
+          "event": "Amir Haydar islohot o‘tkazib, amirlikda hamma fuqarolar uchun zaruriy umumiy ta’lim joriy etdi.",
+          "evidence": "Amir Haydar 1803-1804-yillarda islohot o\"tkazdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "2018-yil 6-10-sentabr",
+          "date_label": "2018-yilning 6-10-sentabrida",
+          "event": "Shahrisabz shahrida Xalqaro maqom san’ati anjumani bo‘lib o‘tdi.",
+          "evidence": "2018-yilning 6-10-sentabr kunlari Shahrisabz shahrida"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr",
+          "date_label": "XIX asrda",
+          "event": "Mirzo Shams Buxoriy «Bayoni ba’zi havodisoti Buxoro, Qo‘qon va Qashqar» asarini yozib qoldirdi.",
+          "evidence": "XIX asrda yozilgan Mirzo Shams Buxoriyning"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVIII va XIX asr boshlari",
+          "date_label": "XVIII va XIX asr boshlarida",
+          "event": "«Gulshan ul-muluk» asarining ikkinchi qismida O‘rta Osiyoning shu davrdagi tarixi bayon etilgan.",
+          "evidence": "O'rta Osiyoning XVIII va XIX asr boshlaridagi tarixi\nbayon etilgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIII asr",
+          "date_label": "XIII asrda",
+          "event": "Alouddin Otamalik Juvayniyning «Tarixi Jahonkushoy» asari tarix darslari uchun asos qilib olingan.",
+          "evidence": "XllI asrda yashab b'tgan Alouddin Otamalik Juvayniyning"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammadniyoz Nishotiy",
+          "role": "O‘ziga xos iste’dod egasi bo‘lgan shoir va yozuvchi",
+          "activity": "Adabiyotda munozara janri taraqqiyotiga katta hissa qo‘shib, «Qushlar munozarasi» majmuasini yaratdi.",
+          "evidence": "Ulardan biri o'ziga xos\niste'dod egasi Muhammadniyoz Nisholiy edi"
+        },
+        {
+          "kind": "person",
+          "person": "Vola",
+          "role": "1770-1842-yillarda yashagan, ko‘zi tug‘ma ojiz shoir",
+          "activity": "Tabiat unga kuchli iroda, aql va yoqimli ovoz in’om etgan; 2 ta devon tuzib, 3 ming misra she’ri bizgacha yetib kelgan.",
+          "evidence": "Volaning (1770-1842) ko'zi tug'ma ojiz"
+        },
+        {
+          "kind": "person",
+          "person": "Ahmad Donish",
+          "role": "1827-1897-yillarda yashagan yirik olim, shoir va rassom",
+          "activity": "20 yil Buxoro saroy kutubxonasida xattotlik va rassomlik bilan shug‘ullanib, «Shohi darvesh» kabi qo‘lyozmalarni bezagan.",
+          "evidence": "Yirik olim, shoir Ahmad Donish (1827-1897) 20 yil mohaynida\nBuxoro saroy kulubxonasida xalioilik va rassomlik bilan shug'ullandi"
+        },
+        {
+          "kind": "person",
+          "person": "Alouddin Otamalik Juvayniy",
+          "role": "1226-1283-yillarda yashagan tarixchi olim va davlat arbobi",
+          "activity": "Arab, fors, mo‘g‘ul va uyg‘ur tillarini mukammal egallab, «Tarixi Jahonkushoy» asarini uch qismdan iborat qilib yozgan.",
+          "evidence": "Juvayniy (1226-1283) tarixchi olim va davlat arbobi bo'lgan edi"
+        },
+        {
+          "kind": "person",
+          "person": "Mir Ma’sum Olamiyon",
+          "role": "Amir Haydar davrida ijod qilgan xattot va rassom",
+          "activity": "«Axloqi Muhsiniy» kitobini hamda Sa’diyning she’riy asarlarini rasm bilan bezadi.",
+          "evidence": "Mir Ma'sum Olamiyon ,Axloqi Muhsiniy\" kitobini hamda\nSa'diyning she'riy asarlarini rasm bilan bezadi"
+        },
+        {
+          "kind": "term",
+          "term": "Shashmaqom",
+          "definition": "Buxoroda vujudga kelgan, Buzruk, Rost, Navo, Dugoh, Segoh va Iroq maqomlaridan iborat musiqiy asar.",
+          "evidence": "Buxoro Shashmaqomi Buzruk, Rost, Navo, Dugoh"
+        },
+        {
+          "kind": "term",
+          "term": "maqom",
+          "definition": "Musiqada bir qismli yoki turkumli cholg‘u va ashula yo‘llari; musiqiy uslub.",
+          "evidence": "Maqom - musiqada bir qismli yoki turkumli cholg'u va ashula yo'llari; musiqiy uslub"
+        },
+        {
+          "kind": "term",
+          "term": "Qushlar munozarasi",
+          "definition": "Nishotiyning majmuasi; unda jamiyat illatlari, jaholat va mansabparastlik majoziy shaklda tanqid qilingan.",
+          "evidence": "Bu o'rinda uning ,Qushlar munozarasi\" majmuasi katta ahamiyalga\nega"
+        },
+        {
+          "kind": "term",
+          "term": "maktabxona",
+          "definition": "Amirlikdagi boshlang‘ich maktab bo‘lib, ular asosan masjidlar qoshida ochilgan.",
+          "evidence": "o'quv yurtlari amirlikda ham boshlang'ich (maktabxona) va oliy (madrasa) maktabdan iborat edi"
+        },
+        {
+          "kind": "term",
+          "term": "vaqf mulki",
+          "definition": "Maktabxona va madrasalardagi ta’lim xarajatlari hisobidan amalga oshirilgan mulk.",
+          "evidence": "Makiabxona va madrasalardagi ta'lim xarajallari vaqf mulki hisobidan amalga oshirilgan"
+        },
+        {
+          "kind": "place",
+          "place": "Shahrisabz",
+          "event": "2018-yilda Xalqaro maqom san’ati anjumani o‘tkazilgan, dunyoning 73 davlatidan ijrochilar kelgan shahar.",
+          "evidence": "Shahrisabz shahrida Xalqaro\nmaqom san'ati anjumani bo'lib o'tdi"
+        },
+        {
+          "kind": "place",
+          "place": "Buxoro",
+          "event": "Amirlik poytaxti bo‘lib, bu davrda unda 60 ta madrasa va 300 ta masjid faoliyat ko‘rsatgan.",
+          "evidence": "Bu davrda Buxoroda 60 ta madrasa. 300 ta masjid\nfaoliyat ko'rsaiardi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Diniy mutaassiblikning texnika va tabiiy fanlar rivojlanishiga yo‘l qo‘ymagani",
+          "effect": "Asosiy asarlar tarix, adabiyot, san’at va me’morchilik sohasida yaratilgan.",
+          "evidence": "diniy mutaassiblik mang'itlar hukmronligi davrida ham texnika va\ntabiiy fanlarning rivojlanishiga imkon bermadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Amir Haydar islohotining hamma fuqarolar uchun zaruriy umumiy ta’limni joriy etishi",
+          "effect": "Islohotni amalga oshirish uchun har bir beklikka maxsus vakillar jo‘natildi.",
+          "evidence": "Islohotni amalga oshirish uchun\nhar bir bcklikka maxsus vakillar jo'nalildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Amir Haydarning o‘z davrining bilimdon hukmdorlaridan biri bo‘lib, Qur’oni Karimni yoddan bilgani",
+          "effect": "Amir huzurida tez-tez diniy va ilmiy munozaralar o‘tkazilib turilgan.",
+          "evidence": "Amir huzurida tez-tez diniy va ilmiy munozaralar\no'tkazilib turilgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Buxoro madrasalariga chet davlatlardan o‘qishga keluvchilar sonining ortishi",
+          "effect": "Ular uchun qulay sharoit yaratish choralari ko‘rilgan.",
+          "evidence": "Buxoro madrasalariga chet davlatlardan o'qishga\nkcluvchilar soni ortib borgan"
+        },
+        {
+          "kind": "number",
+          "number": "250",
+          "unit": "dan ortiq kuy",
+          "meaning": "Shashmaqom tarkibidagi har xil shakldagi kuy va ashula namunalari soni.",
+          "evidence": "250 dan ortiq har xil\nshakldagi kuy va ashula namunalaridan tashkil iopgan"
+        },
+        {
+          "kind": "number",
+          "number": "73",
+          "unit": "davlat",
+          "meaning": "Shahrisabzda bo‘lib o‘tgan xalqaro maqom anjumanida ishtirok etgan davlatlar soni.",
+          "evidence": "Unda dunyoning 73 davlatidan\n300 ga yaqin yakkaxon ijrochi"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "Xiva xonligining tashkil topishi",
+      "page": 80,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1505, 1510",
+          "date_label": "1505-1510-yillarda",
+          "event": "Shayboniyxon Xorazmni bosib oldi, 1510-yilda esa uni Eron hokimi shoh Ismoil egalladi.",
+          "evidence": "1505-yili Shayboniyxon, 1510-yilda esa Eron hukmdori shoh\nIsmoil Xorazmni bosib oldilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1480",
+          "date_label": "1480-yilda",
+          "event": "Muhammad Shayboniyxon taxt uchun kurashda Berka Sultonni o‘ldirgan; bu ikki xonadon o‘rtasidagi dushmanlik sabablaridan biri edi.",
+          "evidence": "1480-yilda o'zaro ioj-u iax1 uchun kurashda Muhammad Shayboniyxon\ntomonidan o'z bobokaloni Shaybonxon avlodiga mansub Bcrka Sultonning o'ldirilganligi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1512",
+          "date_label": "1512-yilda",
+          "event": "Xorazmning mustaqilligi tiklandi va bu mustaqil davlat keyinchalik Xiva xonligi deb atala boshlandi.",
+          "evidence": "1512-yilda Xora/mning mustaqilligi tiklandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1537-1538",
+          "date_label": "1537-1538-yillarda",
+          "event": "Buxoro xoni Ubaydullaxon Xorazmga hujum qilib, Xiva xonligini bo‘ysundirdi.",
+          "evidence": "Buxoro xoni Ubaydullaxon 1537-1538-yillarda Xorazmga hujum\nqilib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1598",
+          "date_label": "1598-yilda",
+          "event": "Buxoro xoni Abdullaxon I Xiva xonligini bir necha bor bosib olib, uzil-kesil bo‘ysundirdi.",
+          "evidence": "Buxoro xoni Abdullaxon I Xiva xonligini bir necha bor,\n1598-yilda csa uzil-kcsil bo\"ysundirdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1770",
+          "date_label": "1770-yilgacha",
+          "event": "Xiva xonligida shayboniylar sulolasining hukmronligi shu yilgacha davom etdi.",
+          "evidence": "Xiva xonligida shayboniylar hukmronligi 1770-yilgacha davom etdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVI asrning 70-yillari",
+          "date_label": "XVI asrning 70-yillarida",
+          "event": "Xiva xonligi iqtisodiy inqirozga duchor bo‘ldi.",
+          "evidence": "XVI asrning 70-yillarida Xiva xonligi iqtisodiy inqirozga duchor bo'ldi"
+        },
+        {
+          "kind": "person",
+          "person": "Umar qori",
+          "role": "Mustaqillik uchun kurashning tashabbuskori, Vazir shahrining qozisi",
+          "activity": "Xorazmni Eron safaviylaridan ozod etish va mustaqil davlat tuzish uchun kurash boshlab, xalqni safaviylarga qarshi da’vat etdi.",
+          "evidence": "Xorazmni Eron safaviylaridan ozod etish va mustaqil davlat tuzish\nuchun boshlangan kurashning tashabbuskori"
+        },
+        {
+          "kind": "person",
+          "person": "Elbarsxon",
+          "role": "Berka Sultonning o‘g‘li, 1512-yilda Xorazm taxtiga o‘tqazilgan hukmdor",
+          "activity": "Mamlakat poytaxtini Vazirdan Urganchga ko‘chirib, g‘alaba sharafiga o‘g‘illariga «g‘ozi» laqabini qo‘shib aytishni buyurdi.",
+          "evidence": "Elbarsxon davrida mamlakat poytaxti Vazir shahridan Urganch\nshahriga kochirildi"
+        },
+        {
+          "kind": "person",
+          "person": "Sayid Hisomiddin qattol",
+          "role": "Mustaqillik uchun kurashning faol ishtirokchisi",
+          "activity": "Xorazm xalqini mustaqillik uchun kurashga ko‘tarishda katta rol o‘ynagan.",
+          "evidence": "Xorazm xalqini\nmustaqillik uchun kurashga ko'tarishda Sayid Ilisomiddin qattol ham\nkatta rol o'ynadi"
+        },
+        {
+          "kind": "person",
+          "person": "Chin So‘fi",
+          "role": "Husayn Boyqaro davrida Xorazmga noib etib tayinlangan shaxs",
+          "activity": "Qo‘ng‘irot qabilasidan chiqqan bo‘lib, temuriy Xuroson davlati tarkibida Xorazmni boshqargan.",
+          "evidence": "IIusayn Boyqaro Xorazmga qo'ng\"iro1 qabilasidan chiqqan Chin So'fini noib ctib tayinlagan"
+        },
+        {
+          "kind": "term",
+          "term": "arabshohiylar",
+          "definition": "Xiva shayboniylarining yana bir nomi; ular Jo‘jixonning beshinchi o‘g‘li Shaybon naslidan bo‘lgan Arabshoh avlodlaridir.",
+          "evidence": "Arabshoh ibn Po'lodning avlodlari bo'lganligi uchun arabshohiylar deb ham ataladilar"
+        },
+        {
+          "kind": "term",
+          "term": "safaviylar",
+          "definition": "Eronda hukmronlik qilgan sulola; shoh Ismoil boshchiligida Xorazmni bosib olgan.",
+          "evidence": "Xorazmliklar safaviylar hukmronligiga qarshi kurash\nboshladi"
+        },
+        {
+          "kind": "term",
+          "term": "«g‘ozi» laqabi",
+          "definition": "Elbarsxon Vazirni ozod etgan g‘alaba sharafiga o‘g‘illariga qo‘shib aytishni buyurgan laqab.",
+          "evidence": "bu g'alaba sharafiga o'z o'g\"illari nomiga g'ozi\" laqabini qo'shib aytishni buyurdi"
+        },
+        {
+          "kind": "term",
+          "term": "xonadon",
+          "definition": "Bir shajaradan bo‘lsa-da, o‘zaro dushmanlik munosabatida bo‘lgan hukmdorlar oilasi.",
+          "evidence": "Berka Sultonning xonadoni Shayboniyxon xonadoni bilan garchand\nbir shajaradan bo'lsa-da, bir-biriga dushmanlik munosabatida edilar"
+        },
+        {
+          "kind": "place",
+          "place": "Vazir",
+          "event": "Xorazmning o‘sha davrdagi markazi bo‘lgan shahar; keyinchalik poytaxt Urganchga ko‘chirilgan.",
+          "evidence": "o'sha davrda Xorazmning\nmarkazi bo'lgan Vazir shahrining qozisi Umar qori bo'ldi"
+        },
+        {
+          "kind": "place",
+          "place": "Xuroson",
+          "event": "Shayboniyxon hujumi arafasida Xorazm temuriy Sulton Husayn Boyqaro hukmdor bo‘lgan shu davlat tasarrufida edi.",
+          "evidence": "bo'lgan Xuroson davlati iasarrulida edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Amudaryoning o‘z o‘zanini o‘zgartirib, Orol dengizi yo‘nalishida oqa boshlagani",
+          "effect": "Eski o‘zan atrofidagi yerlar cho‘lga aylandi, aholi xonlikning boshqa hududlariga ko‘chishga majbur bo‘ldi.",
+          "evidence": "Buning oqibatida cski o'zan atrofidagi ycrlar cho'lga aylandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xiva xonligining XVI asrda ikki marta Buxoro xonligi tomonidan bosib olinishi",
+          "effect": "Qabilaviy nizolar va og‘ir soliqlar bilan birga mamlakat aholisini xonavayron qildi.",
+          "evidence": "Bundan tashqari, Xiva xonligining xvI asrda ikki marta Buxoro xonligi\nlomonidan bosib olinishi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xonliklarning bosqinchilik urushlari hisobiga o‘z hududlarini bir-birining hisobiga kengaytirishga urinishlari",
+          "effect": "Xiva va Buxoro xonliklari o‘rtasida o‘zaro sovuq munosabatlar hukm surdi.",
+          "evidence": "Buning asosiy sababi - xonliklarning bosqinchilik\nurushlari hisobiga o'z hududlarini bir-birining hisobiga kcngaylirishga\nurinishlari"
+        },
+        {
+          "kind": "cause",
+          "cause": "Hukmron sulolalarning bir-biriga g‘anim bo‘lib qolgan xonadonlarga mansubligi",
+          "effect": "Ikki xonlik o‘rtasidagi adovat va g‘animlik to‘xtamadi.",
+          "evidence": "ikkinchisi, Buxoro va Xiva xonligida hukmron sulolalarning bir-biriga g'anim bo'lib qolgan xonadonlarga mansubligi\nedi"
+        },
+        {
+          "kind": "number",
+          "number": "beshinchi",
+          "unit": "o‘g‘il",
+          "meaning": "Jo‘jixonning Shaybon ismli o‘g‘lining tartib raqami; Xiva shayboniylari shu nasldan bo‘lgan.",
+          "evidence": "Xiva shayboniylari Jo'jixonning beshinchi o'g'li Shaybon naslidan\nbo'lgan"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "XVII–XVIII asrning birinchi yarmida xonlikdagi siyosiy ahvol",
+      "page": 82,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1602-1623",
+          "date_label": "1602-1623-yillarda",
+          "event": "Arab Muhammadxon davrida Xiva xonligidagi davlat parokandaligi yuqori nuqtasiga yetdi.",
+          "evidence": "Parokandalik Arab\nMuhammadxon davrida (1602-1623) yuqori nuqtasiga yetdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1621",
+          "date_label": "1621-yilda",
+          "event": "Habash va Elbars sultonlar otalariga qarshi isyon ko‘tarib, g‘olib chiqdi va otasi asir olindi.",
+          "evidence": "1621-yildagi isyon chogida otalari Arab Muhammadxon tarafida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1623",
+          "date_label": "1623-yilda",
+          "event": "Asfandiyor Eron shohi yordamida Xiva taxtini egallab, Habash va Elbars qatl etildi.",
+          "evidence": "1623-yilda uning yordamida Xiva taxtini egalladi va IIabash hamda\nElbars qatl etildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1644",
+          "date_label": "1644-yilda",
+          "event": "Asfandiyorxon vafot etgach, Abulg‘oziy Bahodirxon Xiva xonligi taxtini egalladi.",
+          "evidence": "Asfandiyorxon vafot\netgach, 1644-yilda Xiva xonligi taxtini egalladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1662",
+          "date_label": "1662-yilda",
+          "event": "Abulg‘oziy Bahodirxon Buxoro xonligi bilan sulh tuzdi.",
+          "evidence": "1662-yilda Buxoro xonligi bilan sulh tuzdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1700-yil 30-iyun",
+          "date_label": "1700-yilning 30-iyunida",
+          "event": "Pyotr I farmoni bilan Shohniyozning Rossiya qaramog‘iga qabul qilinish haqidagi iltimosiga rozilik bildirildi.",
+          "evidence": "Pyotr I\n1700-yilning 30-iyunidagi farmon bilan bu iltimosga rozilik bildirdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1714",
+          "date_label": "1714-yilda",
+          "event": "Pyotr I A. Bekovich-Cherkasskiy boshchiligidagi ekspeditsiyani uyushtirib, Xivani o‘z ta’siriga bo‘ysundirishga urindi.",
+          "evidence": "1714-yilda Pyotr I uyushtirgan A.Bekovich-\nCherkasskiy boshchiligidagi ekspediisiya"
+        },
+        {
+          "kind": "date_event",
+          "date": "1764",
+          "date_label": "1764-yilda",
+          "event": "Turkman yovmutlari hokimiyatni amalda o‘z qo‘liga oldi.",
+          "evidence": "Ular 1764-yilda hokimiyatni amalda o'z qo'liga oldilar"
+        },
+        {
+          "kind": "person",
+          "person": "Arab Muhammadxon",
+          "role": "Xiva xoni (1602-1623), parokandalik davrida hukmronlik qilgan hukmdor",
+          "activity": "Davrida poytaxtni Urganchdan Xivaga ko‘chirishga majbur bo‘lib, davlat endilikda Xiva xonligi deb atala boshlandi.",
+          "evidence": "Arab Muhammadxon xonlik poyiaxtini Urganchdan Xivaga ko'chirishga majbur bo'ldi"
+        },
+        {
+          "kind": "person",
+          "person": "Abulg‘oziy Bahodirxon",
+          "role": "Asfandiyorxonning ukasi, keyinchalik Xiva xoni",
+          "activity": "Eronda 10 yil tutqunlikda yashab, 1644-yilda taxtni egalladi va davlatchilikni mustahkamlashga qaratilgan islohotlar o‘tkazdi.",
+          "evidence": "Abulgoziy\nBahodirxon Hronda 1o yil tulqunlikda yashadi"
+        },
+        {
+          "kind": "person",
+          "person": "Asfandiyorxon",
+          "role": "Xiva xoni (1623-1643), Arab Muhammadxonning o‘g‘li",
+          "activity": "Eron shohi Abbos I huzuriga borib, uning yordamida taxtni egalladi va ukasi Abulg‘oziyni Urganch hokimi etib tayinladi.",
+          "evidence": "Asfandiyor esa Eron shohi Abbos I huzuriga yo'l oldi"
+        },
+        {
+          "kind": "person",
+          "person": "Shohniyoz",
+          "role": "Subhonqulixon tomonidan Xivaga noib etib tayinlangan eshikog‘aboshi",
+          "activity": "O‘z hokimiyatini mustahkamlash va Buxoroga qaramlikdan qutulish uchun Pyotr I huzuriga elchi yubordi.",
+          "evidence": "eshikog'aboshi\nShohniyozni Xivaga noib etib tayinladi"
+        },
+        {
+          "kind": "term",
+          "term": "parokandalik",
+          "definition": "Xonlarning qabila boshliqlarisiz masala hal eta olmasligi natijasida davlatda yuz bergan tarqoqlik holati.",
+          "evidence": "bu holat Xiva xonligida\ndavlat parokandaligi yuz berganligini anglatar edi"
+        },
+        {
+          "kind": "term",
+          "term": "inoq",
+          "definition": "Qabilaviy guruhga tayinlangan amaldor; Abulg‘oziy Bahodirxonning islohotlarida muhim rol o‘ynagan.",
+          "evidence": "Ilar bir qabilaviy guruhga inoq layinlandi"
+        },
+        {
+          "kind": "term",
+          "term": "«xonlar o‘yini»",
+          "definition": "Taxtga atayin chingiziylar avlodiga mansub xonlarni o‘tqazish va ularni tez-tez almashtirish hodisasi.",
+          "evidence": "Bu hodisa xonlik tarixiga .,xonlar o'yini\"\nnomi bilan kirdi"
+        },
+        {
+          "kind": "term",
+          "term": "o‘troqlashish",
+          "definition": "Ko‘chmanchi va yarim ko‘chmanchi aholining o‘troq hayotga o‘tish jarayoni; islohotlar uni kuchaytirgan.",
+          "evidence": "ko'chmanchilar va yarim\nko'chmanchilarning o'troqlashish jarayonini kuchaytirishga xizmat\nqildi"
+        },
+        {
+          "kind": "term",
+          "term": "Yoyiq kazaklari",
+          "definition": "Rossiya chegarasini qo‘riqlab turgan atamanlar boshchiligidagi kazaklar; ular Urganchga hujum qilgan.",
+          "evidence": "ataman Ncchay va aiaman Shamay boshchiligidagi Yoyiq kazaklari birin-kelin Urganchga hujum qildilar"
+        },
+        {
+          "kind": "place",
+          "place": "Xiva",
+          "event": "Arab Muhammadxon davrida poytaxt ko‘chirilgan va xonlik shu nom bilan atala boshlagan shahar.",
+          "evidence": "Xorazm davlati endilikda Xiva xonligi deb atala\nboshlandi"
+        },
+        {
+          "kind": "place",
+          "place": "Orol bo‘yi",
+          "event": "Abulg‘oziy Bahodirxon tutqunlikdan qochib, shu yerdagi o‘zbeklar qarorgohiga yetib kelgan.",
+          "evidence": "tutqunlikdan\nqochib, Orol o'zbeklari qarorgohiga yetib keldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xonlarning davlat hayotiga oid har bir masalani qabila boshliqlarisiz mustaqil hal eta olmay qolgani",
+          "effect": "Qabila boshliqlari xon taqdirini hal etib, davlat parokandaligi yuz berdi.",
+          "evidence": "ular xon tagdirini hal etardilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Amudaryo o‘zanining o‘zgarishi natijasida yuz bergan iqtisodiy tanglik",
+          "effect": "Davlatning siyosiy ahvoliga juda katta salbiy ta’sir ko‘rsatib, tashqi kuchlar bundan foydalanishga urindi.",
+          "evidence": "Yuz bergan iqtisodiy tanglik davlatning siyosiy ahvoliga\njuda katta salbiy ta'sir ko'rsatdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Aka-uka o‘rtasidagi munosabatlarning buzilishi",
+          "effect": "Abulg‘oziy Bahodirxon Turkiston, Toshkent va Buxoroda qochib yurishga majbur bo‘ldi.",
+          "evidence": "Biroq tez orada aka-uka o'rtasidagi munosabatlar buzildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Buxoro xoni Abulfayzxonning orolliklarni Xiva xoniga qarshi gijgijlashi",
+          "effect": "Orolbo‘yi aholisi Xiva xonligidan ajralib chiqdi.",
+          "evidence": "Bunga Buxoro xoni Abulfayzxonning orolliklarni Xiva xoniga qarshi gijgijlashi sabab bo'ldi"
+        },
+        {
+          "kind": "number",
+          "number": "4",
+          "unit": "birlashma",
+          "meaning": "Abulg‘oziy Bahodirxon Amudaryoning quyi oqimida yashovchi aholini shuncha birlashmaga bo‘lgan.",
+          "evidence": "u Amudaryoning quyi oqimida yashovchi aholini to'rtta birlashmaga\nbo'ldi"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "Xiva xonligida qo‘ng‘irotlar sulolasi hukmronligining o‘rnatilishi",
+      "page": 86,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1761",
+          "date_label": "1761-yilda",
+          "event": "Qo‘ng‘irot qabilasining yo‘lboshchisi Muhammad Amin inoqlik lavozimiga ko‘tarildi.",
+          "evidence": "Muhammad Amin\n1761-yilda inoqlik lavozimiga ko'tarildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1770",
+          "date_label": "1770-yilda",
+          "event": "Xiva xonligida qo‘ng‘irotlar sulolasining hukmronligi o‘rnatildi.",
+          "evidence": "Shu tariqa, 1770-yilda xonlikda qo'ngirotlar sulolasining hukmronligi o'rnatildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1804",
+          "date_label": "1804-yilda",
+          "event": "Avazning o‘g‘li Eltuzar o‘zini xon deb e’lon qildi; bu sana sulola hukmronligi rasman o‘rnatilgan sana sifatida kirdi.",
+          "evidence": "Faqat Avazning o'g'li Eltuzar 1804-yilda o'zini xon dcb\ne'lon qildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1809",
+          "date_label": "1809-yilda",
+          "event": "Muhammad Rahimxon I islohotlari davrida tilla tangalar zarb etish yo‘lga qo‘yildi.",
+          "evidence": "1809-yilda tilla tangalar zarb ctish yo'lga\nqo'yildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1811",
+          "date_label": "1811-yilda",
+          "event": "Qoraqalpoqlar ham Xiva xonligiga bo‘ysunishga majbur etildi.",
+          "evidence": "181l-yilda esa qoraqalpoqlar ham\nbo'ysunishga majbur etildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1825",
+          "date_label": "1825-yilda",
+          "event": "Muhammad Rahimxon I vafot etib, taxtni katta o‘g‘li Olloqulixon egalladi (1825-1842).",
+          "evidence": "Muhammad Rahimxon 1 1825-yilda vafot el"
+        },
+        {
+          "kind": "date_event",
+          "date": "1842",
+          "date_label": "1842-yilda",
+          "event": "Olloqulixon vafot etib, hayotligida tayyorlab qo‘ygan Pahlavon Mahmud maqbarasiga dafn etildi.",
+          "evidence": "1842-yilda vafot cidi va hayotligida layyorlab qo'ygan\nPahlavon Mahmud maqbarasiga dafn"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Amin",
+          "role": "Qo‘ng‘irot qabilasining yo‘lboshchisi, 1761-yildan inoq",
+          "activity": "Turkman qabilalariga qarshi kurashib, 1770-yilda Buxoro amirligi madadida Xivani egallab, siyosiy osoyishtalik yaratdi.",
+          "evidence": "Yirik zodagonlar va ruhoniylar tabaqasining madadiga\ntayangan qo'ng'irot qabilasining yo'lboshchisi Muhammad Amin"
+        },
+        {
+          "kind": "person",
+          "person": "Eltuzarxon",
+          "role": "Avazning o‘g‘li, 1804-yildan o‘zini xon deb e’lon qilgan hukmdor",
+          "activity": "Markazlashgan davlat siyosati yuritishga harakat qildi, biroq 1806-yilda Xiva-Buxoro urushida halok bo‘ldi.",
+          "evidence": "Eltuzarxon xonlikda markazlashgan davlat siyosati yuritish uchun\nharakal qildi"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Rahimxon I",
+          "role": "Xiva xoni, xonlikni siyosiy birlashtirgan va islohotlar o‘tkazgan hukmdor",
+          "activity": "Turkman qabilalarini bo‘ysundirib, 1811-yilda qoraqalpoqlarni bo‘ysundirdi, Oliy va Kichik Kengashlarni ta’sis etdi.",
+          "evidence": "Muhammad Rahimxon I Xiva xonligini siyosiy jihatdan birlashtirishga\nkirishdi"
+        },
+        {
+          "kind": "person",
+          "person": "Olloqulixon",
+          "role": "1825-1842-yillarda hukmronlik qilgan Xiva xoni",
+          "activity": "Yangi kanallar qazdirib, madrasa, karvonsaroy, tim va Toshhovli saroyini qurdirdi, koshinkorlikni yuksak pog‘onaga ko‘tardi.",
+          "evidence": "ko'tarish maqsadida yangi kanallar qazdirib, sug'oriladigan yer maydonlarini kengaytirdi"
+        },
+        {
+          "kind": "term",
+          "term": "xon navkarlari",
+          "definition": "Muhammad Rahimxon I tuzgan, o‘zbeklar va turkmanlardan iborat muntazam qo‘shin.",
+          "evidence": "Muhammad Rahimxon I o'zbeklar va turkmanlardan tuzilgan ,xon navkarlari\" deb\natalgan muntazam qo'shinga tayanib"
+        },
+        {
+          "kind": "term",
+          "term": "Oliy Kengash",
+          "definition": "Xon huzuridagi yuqori boshqaruv organi; xon farmonlarini tasdiqlovchi, ijro etuvchi va sud hokimiyati vazifasini bajargan.",
+          "evidence": "xon\nhuzurida yuqori boshqaruv organi - Oliy Kengash ta'sis etildi"
+        },
+        {
+          "kind": "term",
+          "term": "Kichik Kengash",
+          "definition": "Xonlik hayotiga oid kundalik masalalarni hal etish uchun ta’sis etilgan organ.",
+          "evidence": "xonlik hayotiga oid kundalik masalalarni hal etish uchun Kichik\nKengash ham ta'sis etildi"
+        },
+        {
+          "kind": "term",
+          "term": "soxta xonlar",
+          "definition": "Chingiziylar avlodiga mansub bo‘lmagan qo‘ng‘irotlar taxtda saqlab kelgan, amalda hokimiyatga ega bo‘lmagan xonlar.",
+          "evidence": "Clar aslida soxta xonlar bo'lib, amalda hcch qanday hokimiyatga\ncga bo'lmaganlar"
+        },
+        {
+          "kind": "term",
+          "term": "zarbxona",
+          "definition": "Muhammad Rahimxon I islohotlari davrida tashkil etilgan, tanga zarb qiluvchi muassasa.",
+          "evidence": "Bojxona xizmati\nva zarbxona tashkil ctildi"
+        },
+        {
+          "kind": "place",
+          "place": "Hazorasp, Xonqa, Urganch, Kat va Shohobod",
+          "event": "Turkman qabilalari tomonidan egallanib, xonavayron qilingan shaharlar.",
+          "evidence": "ko'plab. Hazorasp, Xonqa. Urganch,\nKat, Shohobod shaharlarini xonavayron qildilar"
+        },
+        {
+          "kind": "place",
+          "place": "Xuroson",
+          "event": "Bo‘ysunishni istamagan yovmut qabilasi ko‘chib ketgan, keyin Eron tazyiqi ostida qaytib kelgan hudud.",
+          "evidence": "Bo'ysunishni istamagan yovmut qabilasi Xurosonga ko'chib ketdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xiva xonligidagi boshboshdoqlik va o‘zaro to‘xtovsiz ichki urushlar",
+          "effect": "Kuchli markaziy hokimiyatning barpo etilishi tarixiy zaruriyatga aylandi.",
+          "evidence": "kimdir chck qo'yishi tarixiy zaruriyatga\naylandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xalqning beomon talanishi va tinimsiz urushlar tufayli xonavayron bo‘lishi",
+          "effect": "Aholi tevarak-atrofdagi yurtlarga qochib ketib jon saqlashga majbur bo‘ldi.",
+          "evidence": "tevarak-atrofdagi yurtlarga qochib ketib jon saqlashga majbur bo'ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Turkman qabilalarining Xorazmni egallashi, ocharchilik va vabo",
+          "effect": "Aholi Orolbo‘ylari va Buxoroga ketishga majbur bo‘ldi.",
+          "evidence": "Ocharchilik va vabo\nLarqalib, aholi Orolho'ylari va Buxoroga ketishga majbur bo'ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Rossiya tomonidan mustahkamlangan Orenburg liniyasining paydo bo‘lishi",
+          "effect": "Xiva xonligiga bevosita tahdid sola boshlab, xonlikni siyosiy birlashtirishni zarur qildi.",
+          "evidence": "Chunki Rossiya tomonidan mustahkamlangan Orenburg liniyasining\npaydo bo'lishi Xiva xonligiga bevosita tahdid solmoqda edi"
+        },
+        {
+          "kind": "number",
+          "number": "6250",
+          "unit": "metr",
+          "meaning": "Olloqulixon davrida qurilgan tashqi qal’a devorining uzunligi.",
+          "evidence": "6250 metrli tashqi qal'a qurildi"
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "title": "Xiva xonligida davlat boshqaruvi",
+      "page": 90,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XVIII asr",
+          "date_label": "XVIII asrdan boshlab",
+          "event": "Rossiya chegarasining janubga siljib borishi natijasida ikki davlat chegaralari yaqinlashdi.",
+          "evidence": "XVlll asrdan boshlab Rossiya chegarasining janubga siljib\nborishi natijasida ikki davlat chcgaralari yaqinlashdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning birinchi yarmi",
+          "date_label": "XIX asrning birinchi yarmida",
+          "event": "Xonlik hududi harbiy harakatlar natijasida tobora kengaytirilib borildi.",
+          "evidence": "XiX asrning butun birinchi yarmi davomida xonlik hududi harbiy\nharakatlar natijasida tobora kengaytirilib borildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning 40-yillari",
+          "date_label": "XIX asrning 40-yillarida",
+          "event": "Xonlik hududi 19 ming km² ni tashkil etdi.",
+          "evidence": "shu asrning\n40-yillarida uning hududi 19 ming km² ni lashkil eldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr o‘rtalari",
+          "date_label": "XIX asr o‘rtalarida",
+          "event": "Nomuntazam qo‘shin — xalq lashkarining soni 9-10 ming kishini tashkil etgan.",
+          "evidence": "XIX asr o'rialarida ularning soni 9-l0 ming kishini tashkil etgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "Muhammad Rahimxon I davri",
+          "date_label": "Muhammad Rahimxon I davrida",
+          "event": "Xiva xonligida muntazam qo‘shin tuzildi.",
+          "evidence": "Xiva xonligida Muhammad Rahimxon I davrida"
+        },
+        {
+          "kind": "date_event",
+          "date": "Qo‘ng‘irotlar davri",
+          "date_label": "Qo‘ng‘irotlar davrida",
+          "event": "Bo‘lajak xonni oq namatga o‘tqazib, taxtgacha ko‘tarib olib borish an’anasi saqlanib qoldi.",
+          "evidence": "Qo'ng'irotlar\ndavrida ham bo'lajak xonni oq namat (kigiz)ga o'tqazib"
+        },
+        {
+          "kind": "person",
+          "person": "Abulg‘oziy Bahodirxon",
+          "role": "Xiva xoni, davlat boshqaruvini isloh qilgan hukmdor",
+          "activity": "Dashti Qipchoqdan ko‘chib kelgan 32 ta o‘zbek qabilasini 4 ta guruhga bo‘lib joylashtirib, har biriga inoq tayinladi.",
+          "evidence": "Abulgoziy Bahodirxon ko'chib kclgan 32 ta o'zbck\nqabilalarini 4 ta guruhga bo'ldi"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Rahimxon I",
+          "role": "Xiva xoni, markaziy hokimiyatni mustahkamlagan islohotchi",
+          "activity": "Saroydagi amaldorlar sonini 360 tadan 100 taga tushirib, biy, otaliq va inoq mansablarini bekor qildi.",
+          "evidence": "Biy, otaliq va inoq mansablarini bckor qildi"
+        },
+        {
+          "kind": "person",
+          "person": "mehtar",
+          "role": "Bosh vazir mansabiga tayinlangan amaldor",
+          "activity": "O‘troq aholi vakillari orasidan tayinlanib, vaziri a’zam, dasturi mukarram, nizom al-mulk sifatlari bilan ulug‘langan.",
+          "evidence": "Bosh vazir mansabiga\ntayinlangan amaldor mehtar deb atalgan"
+        },
+        {
+          "kind": "person",
+          "person": "qo‘shbegi",
+          "role": "Soliqlarning xazinaga tushishini ta’minlagan va moliya ishlariga javobgar mansabdor",
+          "activity": "Ko‘chmanchi qabilalar vakillari orasidan tayinlanib, barcha harbiy harakatlarda ishtirok etgan.",
+          "evidence": "Qo'shbegi ko'chmanchi qabilalar vakillari\norasidan tayinlangan"
+        },
+        {
+          "kind": "term",
+          "term": "masjid qavmlari",
+          "definition": "Boshqaruvning eng quyi ma’muriy birligi; ularni oqsoqollar boshqargan.",
+          "evidence": "Boshqaruvning eng quyi\nma'muriy birligi masjid qavmlari"
+        },
+        {
+          "kind": "term",
+          "term": "noiblik",
+          "definition": "Xonlik hududidagi ma’muriy birliklardan biri; uni noiblar boshqargan.",
+          "evidence": "Viloyaularni\nbeklar, noibliklarni noiblar, shaharlarni hokimlar va masjid qavmlarini\nesa oqsoqollar boshqarishgan"
+        },
+        {
+          "kind": "term",
+          "term": "oqsoqol",
+          "definition": "Masjid qavmlarini boshqargan, aholi tomonidan saylanib, xon tomonidan tasdiqlangan shaxs.",
+          "evidence": "Oqsoqollar masjid qavmlari tomonidan\nsaylangan va xon tomonidan tasdiqlangan"
+        },
+        {
+          "kind": "term",
+          "term": "shug‘ovul",
+          "definition": "Chet el davlatlari elchilarini qabul qiluvchi va ularning ta’minoti uchun mas’ul amaldor.",
+          "evidence": "shug'ovul (chet cl\ndavlatlari elchilarini qabul qiluvchi va ularning ta'minoti uchun\nmas'ul amaldor"
+        },
+        {
+          "kind": "term",
+          "term": "mahram",
+          "definition": "Xonning maxfiy maslahatchisi, alohida topshiriqlarini bajaruvchi va elchi qilib jo‘natiladigan mansabdor.",
+          "evidence": "mahram (xonning maxfiy maslahatchisi, alohida topshiriqlarini bajaruvchi, zarurat bo'lganida elchi qilib jo'natiladigan\nmansabdor shaxs"
+        },
+        {
+          "kind": "place",
+          "place": "Orol dengizi",
+          "event": "Xonlikning shimoliy chegarasi shu dengiz havzasi bo‘ylab o‘tgan.",
+          "evidence": "shimolda Orol dengizi havzasi, janubda\ncsa Atrck daryosi"
+        },
+        {
+          "kind": "place",
+          "place": "Atrek daryosi",
+          "event": "Xonlikning janubiy chegarasi bo‘ylab oqqan daryo; uzunligi 669 km.",
+          "evidence": "hozirgi Eron va Turkmanistondagi daryo, uzunligi\n669 km. Kaspiy dengiziga quyiladi"
+        },
+        {
+          "kind": "place",
+          "place": "Xiva",
+          "event": "Xonlik poytaxti; unda 20 mingdan ortiq aholi yashagan.",
+          "evidence": "Poytaxt Xiva shahrida 20 mingdan ortiq aholi yashagan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xonlik hududining urug‘-qabila tamoyili asosida taqsimlangani",
+          "effect": "Xon inoqlar orqali qabilalar hayotiga tegishli masalalarni hal qilgan.",
+          "evidence": "Xon inoqlar orqali qabilalar hayotiga tcgishli masalalarni hal qilardi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Markaziy hokimiyatning kuchayishi",
+          "effect": "Avvallari juda katta nufuzga ega bo‘lgan inoqlarning mavqeyi XIX asrning birinchi yarmidan pasayib bordi.",
+          "evidence": "Markaziy hokimiyatning kuchayishi natijasida\navvallari xonlikda juda katta nufuzga ega bo'lgan inoqlarning mavqeyi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qozilikka nomzodlarni imtihon yo‘li bilan saralash tartibi",
+          "effect": "G‘oliblar xon farmoni bilan taqdirlanib, ularga xon yorlig‘i berilgan.",
+          "evidence": "orasidan imtihon o'tkazish yo'li bilan saralab olingan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sud qaroriga muftiy o‘z muhrini qo‘yishi",
+          "effect": "Shundan keyingina qaror rasmiy maqomga ega bo‘lgan.",
+          "evidence": "Sud qarori muftiy unga o'zining muhrini qo'yganidan\nso'nggina rasmiy maqomga cga bo\"lgan"
+        },
+        {
+          "kind": "number",
+          "number": "800",
+          "unit": "ming kishi",
+          "meaning": "Xonlik aholisining umumiy soni (taxminan).",
+          "evidence": "Xonlik aholisining umumiy soni 800 ming kishiga yaqin edi"
+        },
+        {
+          "kind": "number",
+          "number": "65",
+          "unit": "%",
+          "meaning": "Xonlik aholisining o‘zbeklar tashkil etgan qismi.",
+          "evidence": "Uning 65 foizini\no'zbcklar, 26 foizini lurkmanlar"
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "title": "Xiva xonligida ijtimoiy-iqtisodiy hayot",
+      "page": 94,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "995",
+          "date_label": "995-yilda",
+          "event": "Amir Ma’mun ibn Muhammad Kot shahridagi xorazmshohlar hokimiyatini ag‘darib, o‘zini Xorazmshoh deb e’lon qildi.",
+          "evidence": "995-yilda Kot shahridagi xorazmshohlar hokimiyatini ag'dardi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1646",
+          "date_label": "1646-yilda",
+          "event": "Abulg‘oziy Bahodirxon Yangi Urganch shahrini qurdirdi.",
+          "evidence": "Xiva xoni Abulg'oziy Bahodirxon 1646-yilda boshqa shahar - Yangi Urganch shahrini qurdirdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1842",
+          "date_label": "1842-yilda",
+          "event": "Xiva xoni Olloqulixon shaharni uzunligi 6250 metr, balandligi 7-8 metr bo‘lgan devor bilan o‘ratdi.",
+          "evidence": "1842-yilda Xiva xoni Olloqulixon"
+        },
+        {
+          "kind": "date_event",
+          "date": "1961",
+          "date_label": "1961-yilda",
+          "event": "Ichan qal’a me’moriy yodgorlik sifatida alohida muhofazaga olinib, muzey-qo‘riqxonaga aylantirildi.",
+          "evidence": "1961-yilda me'moriy yodgorlik sifalida alohida muhofazaga olindi va muzey-qo'riqxonaga aylantirildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1997",
+          "date_label": "1997-yilda",
+          "event": "YUNESKO qarori bilan Xiva shahrining 2500 yilligi katta shodiyona va faxr bilan nishonlandi.",
+          "evidence": "1997-yilda (xalqaro YUNliSKO lashkilolining qarori bilan) Xiva shahrining 2500 yilligi katta shodiyona va faxr bilan nishonlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1844, 1867",
+          "date_label": "1844 va 1867-yillarda",
+          "event": "Xiva Rossiyaga 137 ming rubllik, keyin 1,5 million rubllik tovar eksport qildi.",
+          "evidence": "1844-yilda Xiva\nRossiyaga 137 ming rublli, 1867-yilda 1,5 million rublli tovar"
+        },
+        {
+          "kind": "person",
+          "person": "Amir Ma’mun ibn Muhammad",
+          "role": "995-yilda Xorazmshoh deb e’lon qilingan hukmdor",
+          "activity": "Kot shahridagi xorazmshohlar hokimiyatini ag‘darib, Gurganjni Xorazm davlatining poytaxtiga aylantirdi.",
+          "evidence": "o'zini Xorazm hukmdori - Xora/mshoh dch c'lon qildi"
+        },
+        {
+          "kind": "person",
+          "person": "Abulg‘oziy Bahodirxon",
+          "role": "Xiva xoni, Yangi Urganchni qurdirgan hukmdor",
+          "activity": "Sarson-sargardon bo‘lib yurgan aholini yangi shaharga ko‘chirtirib keldi.",
+          "evidence": "Sarson-sargardon bo'lib yurgan aholini shu shaharga ko'chirtirib kcldi"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Aminxon",
+          "role": "Ichan qal’ada Kalta minorni qurdirgan Xiva xoni",
+          "activity": "Ichan qal’aning g‘arbiy qismida Ko‘hna ark yoniga Kalta minor nomi bilan mashhur bo‘lgan minorani qurdirdi.",
+          "evidence": "Muhammad Aminxon Ichan qal'aning g arbiy qismidagi Ko'hna ark\nyoniga Kalta minor nomi bilan mashhur bo'lgan minorani qurdirdi"
+        },
+        {
+          "kind": "person",
+          "person": "Abu Rayhon Beruniy va Abu Ali ibn Sino",
+          "role": "Ma’mun akademiyasida faoliyat yuritgan allomalar",
+          "activity": "Xorazmshoh ma’muniylar tashkil etgan ilm-fan markazida ishlab, ilm-fan yuksalishiga hissa qo‘shdilar.",
+          "evidence": "Abu Rayhon Beruniy, Abu Ali ibn Sino\nkabi o'nlab allomalari shu ilm maskanida faoliyat yuritdilar"
+        },
+        {
+          "kind": "term",
+          "term": "tarxon yerlari",
+          "definition": "Yirik amaldorlarga xizmatlari uchun berilgan yerlar; meros qoldirish va boshqaga o‘tkazish man etilgan.",
+          "evidence": "Yirik\nmartabali amaldorlarga davlat oldidagi xizmatlari uchun tarxon yerlari\nberilgan"
+        },
+        {
+          "kind": "term",
+          "term": "vaqf yerlari",
+          "definition": "Xonlikda keng tarqalgan, hajmi sug‘orilgan va ijaraga beriladigan yerlar turi.",
+          "evidence": "Xonlikda keng tarqalgani vaqf yerlari edi"
+        },
+        {
+          "kind": "term",
+          "term": "salg‘ut",
+          "definition": "Xonlikdagi asosiy soliq — yer solig‘i; u salg‘ut deb atalgan.",
+          "evidence": "Xonlikdagi asosiy\nsoliq yer solig'i bo'lib, u salg'ut deb alalgan"
+        },
+        {
+          "kind": "term",
+          "term": "begar",
+          "definition": "Aholining rasman 12 kunlik davlat majburiyati; kanal qazish va yo‘l tuzatish ishlariga jalb etilgan.",
+          "evidence": "rasman 12 kunlik davlat majburiyatiga jalb etilgan"
+        },
+        {
+          "kind": "term",
+          "term": "buxorochi",
+          "definition": "Xiva xonligining Buxoro, Eron va Afg‘oniston bilan savdo qiluvchi savdogarlari.",
+          "evidence": "savdo qiluvchi\nsavdogarlari .,buxorochi\" deb atalgan"
+        },
+        {
+          "kind": "place",
+          "place": "Ko‘hna Urganch",
+          "event": "Buyuk Xorazmshohlar davlatining ham poytaxti bo‘lgan, Chingizxon qo‘shini vayron qilgan shahar.",
+          "evidence": "Ko'hna\nUrganch Buyuk Xorazmshohlar davlatining ham poytaxti bo'lgan"
+        },
+        {
+          "kind": "place",
+          "place": "Ichan qal’a",
+          "event": "Xiva shahrining ichki qal’a (Shahriston) qismi; unga to‘rtta darvoza orqali kirilgan.",
+          "evidence": "Ichan\nqal'a Xiva shahrining ichki qal'a (Shahriston) qismidir"
+        },
+        {
+          "kind": "place",
+          "place": "Dishan qal’a",
+          "event": "Tashqi qal’a, Xiva shahrining rabod qismi; savdo va hunarmandchilik do‘konlari joylashgan.",
+          "evidence": "Dishan qal'a - Tashqi qal'a Xiva shahrining rabod"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yerning xususiy mulk qilib sotilishi",
+          "effect": "Yer egaligining mulk (xususiy yerlar) shakli vujudga keldi.",
+          "evidence": "Yerning xususiy mulk\nqilib sotilganligi haqida davlat nomidan bitim imzolangan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Amudaryoning Orol dengiziga quyila boshlashi",
+          "effect": "Gurganj shahri suvsiz qoldi, odamlar boshqa joylarga ko‘chib kela boshladi.",
+          "evidence": "Kaspiy dengiziga emas, Orol dengiziga quyila boshlashi tufayli Gurganj shahri suvsiz. qoldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xiva shahrining devor bilan ajralib turuvchi ikki qismga bo‘linishi",
+          "effect": "Ichan qal’a (ichki shahar) va Dishan qal’a (tashqi shahar) vujudga keldi.",
+          "evidence": "XIX\nasrda Xiva shahri bir-biridan devor bilan ajralib turuvchi ikki qismga - Ichan qal'a (Ichki shahar) va Dishan qal'a (Tashqi shahar)ga\nbo'lindi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Har bir otliq hisobiga 30-50 tanob yer mulki berilishi",
+          "effect": "Otliq olgan yer egasi xon talab qilgan vaqtda bir otliq askarni qurollantirib yuborgan.",
+          "evidence": "har bir otliq hisobiga foydalanish uchun 30-50 tanob yer mulki\nberilgan"
+        },
+        {
+          "kind": "number",
+          "number": "2,5",
+          "unit": "%",
+          "meaning": "Zakot solig‘ining mulk qiymatidan olinadigan miqdori.",
+          "evidence": "Uning miqdori mulk qiymalining 2,5% ini tashkil cigan"
+        },
+        {
+          "kind": "number",
+          "number": "54",
+          "unit": "ta obida",
+          "meaning": "Ichan qal’a hududida joylashgan tarixiy-me’moriy obidalar soni.",
+          "evidence": "Unda 54 ta larixiy-me'moriy obida joylashgan"
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "title": "Xiva xonligining tashqi siyosati",
+      "page": 99,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1822",
+          "date_label": "1822-yilda",
+          "event": "Muhammad Rahimxon I Marvni Buxorodan qaytarib oldi.",
+          "evidence": "Muhammad Rahimxon I 1822-yilda\nMarvni Buxorodan qaytarib oldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1845",
+          "date_label": "1845-yilda",
+          "event": "Xiva xonligi Marvni uzil-kesil o‘ziga qo‘shib oldi.",
+          "evidence": "1845-yilda Xiva xonligi Marvni uzil-kesil\no'ziga qo'shib oldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1812",
+          "date_label": "1812-yilda",
+          "event": "Xivaga Eron va qozoqlarning O‘rta juz xonligidan elchilar kelib, chegaralar xavfsizligi va savdo masalalarida kelishuvga erishildi.",
+          "evidence": "1812-yilda Xivaga Eron va qozoqlarning O'rta juz xonligidan clchilar kelishdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1843-1844",
+          "date_label": "1843-1844-yillarda",
+          "event": "Xivaga Qo‘qon xonligi elchilari kelib, hamdo‘stlik va savdo aloqalarini rivojlantirishga kelishildi.",
+          "evidence": "1843-1844-yillarda Xivaga Qo'qon xonligi elchilari keldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1839",
+          "date_label": "1839-yilda",
+          "event": "V. Perovskiy harbiy ekspeditsiyasi tashkil etildi.",
+          "evidence": "Shu maqsadda 1839-yilda V.Perovskiy harbiy\nekspeditsiyasi tashkil etildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1842-yil 27-dekabr",
+          "date_label": "1842-yilning 27-dekabrida",
+          "event": "Rossiya bosimi ostida Xiva-Rossiya o‘rtasidagi muzokaralar yakunlandi.",
+          "evidence": "Muzokaralar yakunida Rossiya bosimi ostida 1842-yilning 27-dekabrida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1847",
+          "date_label": "1847-yilda",
+          "event": "Rossiya xonliklarga olib boradigan yo‘lda harbiy istehkomlar qurdi.",
+          "evidence": "1847-yilda Rossiya xonliklarga olib boradigan yo'lda harbiy istehkomlar qurdi"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Rahimxon I",
+          "role": "Xiva xoni, Marv uchun kurash olib borgan hukmdor",
+          "activity": "Afg‘oniston shohi Mahmudning ikkinchi marta hokimiyat tepasiga kelishida yordam berib, evaziga savdo imtiyozlarini oldi.",
+          "evidence": "Muhammad\nRahimxon I hallo Afg'onistonda hokimiyal uchun kurashayotgan shoh\nMahmudning ikkinchi marta hokimiyat tepasiga kelishida yordam ham\nberdi"
+        },
+        {
+          "kind": "person",
+          "person": "Olloqulixon",
+          "role": "Xiva xoni, Karvonsaroy majmuasini bunyod etgan hukmdor",
+          "activity": "Chet ellik savdogarlar uchun 14 gumbazli tim, karvonsaroy va omborxonadan iborat majmua qurdirdi.",
+          "evidence": "Olloqulixon ajoyib me'moriy obida. xonlik ustalari\nyuksak mahoratining ko'zgularidan biri bo'lgan Karvonsaroy majmuasini bunyod cltirdi"
+        },
+        {
+          "kind": "person",
+          "person": "V. Perovskiy",
+          "role": "1839-yildagi rus harbiy ekspeditsiyasining boshlig‘i",
+          "activity": "Ustyurtning qattiq sovug‘i va oziq-ovqat yetishmasligi tufayli ekspeditsiya talafot ko‘rib, orqaga qaytishga majbur bo‘ldi.",
+          "evidence": "Oqibaida, V. Perovskiy orqaga qaytishga majbur bo'ldi"
+        },
+        {
+          "kind": "person",
+          "person": "G. Danilevskiy",
+          "role": "Rossiya elchilik missiyasining boshlig‘i",
+          "activity": "Xiva xoniga «Majburiyatlar akti»ni majburan imzolatish uchun yuborilgan missiyani boshqargan.",
+          "evidence": "Bu\nmaqsadga erishish uchun G.Danilevskiy boshchiligidagi elchilik missiyasini yubordi"
+        },
+        {
+          "kind": "term",
+          "term": "«Majburiyatlar akti»",
+          "definition": "1842-yil 27-dekabrda Rossiya bosimi ostida imzolangan Xiva-Rossiya shartnomasi.",
+          "evidence": "Xiva-Rossiya o'rtasida , Majburiyallar akti\" deb ataluvchi\nsharinoma imzolandi"
+        },
+        {
+          "kind": "term",
+          "term": "Kichik juz qozoqlari",
+          "definition": "Ikki davlat o‘rtasidagi kelishmovchilik sabablaridan biri — har ikki taraf ularni o‘z fuqarolari deb hisoblagan.",
+          "evidence": "har ikki tarafning Kichik juz qozoqlarini va\nqoraqalpoqlarni o'z fuqarolari decb hisoblashlari"
+        },
+        {
+          "kind": "term",
+          "term": "elchilik aloqalari",
+          "definition": "Xonlikning Osiyo davlatlari bilan savdo-iqtisodiy munosabatlari bilan birga rivojlangan diplomatik aloqalari.",
+          "evidence": "va clchilik aloqalari rivojlandi"
+        },
+        {
+          "kind": "term",
+          "term": "Karvonsaroy majmuasi",
+          "definition": "Olloqulixon qurdirgan, 14 gumbazli tim, karvonsaroy va omborxonadan iborat inshoot.",
+          "evidence": "Bu majmua 14 gumbazli tim (yopiq bozor),karvonsaroy\nva\nomborxonadan iborat qilib qurilgan"
+        },
+        {
+          "kind": "term",
+          "term": "boj to‘lovlari",
+          "definition": "Savdodan olinadigan yig‘im; shartnomaga ko‘ra Rossiya tovarlari qiymatining 5 foizidan oshmasligi belgilandi.",
+          "evidence": "boj\nlo'lovlari Rossiya tovarlari qiymalining 5 foiz. miqdoridan oshmasligi\nbelgilab qo'yildi"
+        },
+        {
+          "kind": "place",
+          "place": "Marv",
+          "event": "O‘rta Osiyo davlatlarini Eron bilan bog‘lovchi savdo yo‘lida joylashgan, Buxoro bilan to‘qnashuvga sabab bo‘lgan viloyat.",
+          "evidence": "Chunki Marv O'rla Osiyo davlalarini lron bilan bog'lovchi"
+        },
+        {
+          "kind": "place",
+          "place": "Kobul",
+          "event": "Afg‘oniston Xiva savdogarlariga shu shaharning bozorida erkin savdo qilish huquqini berdi.",
+          "evidence": "Alg'oniston Xiva xonligi savdogarlariga Kobul\nbozorida erkin savdo qilish huquqini berdi"
+        },
+        {
+          "kind": "place",
+          "place": "Nijniy Novgorod",
+          "event": "Xiva savdogarlari shu shaharda o‘tkaziladigan yarmarkalarda qatnashgan.",
+          "evidence": "Xiva savdogarlari\nNijniy Novgorod shahrida o'tkaziladigan yarmarkalarda qatnashganlar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xiva xonligi hududining savdogarlar va Haj safariga boruvchilar uchun Kaspiy orqali Makkaga o‘tish manzilgohiga aylangani",
+          "effect": "Xonlikning Osiyo davlatlari bilan savdo-iqtisodiy va elchilik aloqalari rivojlandi.",
+          "evidence": "Bunga. bir tomondan, Xiva xonligi\nhududining O'rla Osiyo savdogarlari va Haj\nsafariga boruvchilarning Kaspiy dengizi orqali muqaddas Makka"
+        },
+        {
+          "kind": "cause",
+          "cause": "Rossiya O‘rta Osiyoni egallashni maqsad qilgani",
+          "effect": "U o‘zbek davlatlariga, xususan Xiva xonligiga turli bahonalar bilan bosim o‘tkazishni kuchaytirdi.",
+          "evidence": "bo'lgan Rossiya o'zbek davlaulariga, xususan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Rossiyaning 1822-yilda O‘rta juz va 1824-yilda Kichik juz xonliklarini bo‘ysundirishi",
+          "effect": "Rossiya chegarasi bevosita Xiva xonligi chegarasiga yaqinlashib qoldi.",
+          "evidence": "Endi Rossiya chegarasi bevosita Xiva xonligi\nchegarasiga yaqinlashib qoldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ustyurtning qattiq sovug‘i, oziq-ovqat va yem-xashakning yetishmasligi",
+          "effect": "V. Perovskiy ekspeditsiyasi talafot ko‘rib, orqaga qaytishga majbur bo‘ldi.",
+          "evidence": "yem-xashakning yctishmasligi oqibatida ckspcditsiya talafot\nko'rdi"
+        },
+        {
+          "kind": "number",
+          "number": "105",
+          "unit": "hujra",
+          "meaning": "Olloqulixon qurdirgan ikki qavatli karvonsaroyning hujralari soni.",
+          "evidence": "Karvonsaroy ikki qavatli bo'lib, 105 hujrali edi"
+        }
+      ]
+    }
+  ]
+}

@@ -18,6 +18,9 @@ interface TextbookDao {
     @Query("SELECT * FROM textbooks WHERE id = :id")
     suspend fun getById(id: String): TextbookEntity?
 
+    @Query("SELECT COUNT(*) FROM textbooks")
+    suspend fun count(): Int
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(items: List<TextbookEntity>)
 
@@ -39,6 +42,9 @@ interface ChapterDao {
 
 @Dao
 interface TopicDao {
+    @Query("SELECT * FROM topics ORDER BY textbookId, number")
+    fun getAll(): Flow<List<TopicEntity>>
+
     @Query("SELECT * FROM topics WHERE id = :id")
     suspend fun getById(id: String): TopicEntity?
 
@@ -60,6 +66,12 @@ interface QuestionDao {
     @Query("SELECT * FROM questions WHERE topicId = :topicId")
     suspend fun getByTopic(topicId: String): List<QuestionEntity>
 
+    @Query("SELECT * FROM questions WHERE gradeId = :gradeId AND (subjectId = :subjectId OR :subjectId = 'ALL') LIMIT :limit OFFSET :offset")
+    suspend fun getByGradeAndSubjectWithOffset(gradeId: Int, subjectId: String, limit: Int, offset: Int): List<QuestionEntity>
+
+    @Query("SELECT * FROM questions WHERE gradeId = :gradeId AND (subjectId = :subjectId OR :subjectId = 'ALL') LIMIT :limit")
+    suspend fun getByGradeAndSubject(gradeId: Int, subjectId: String, limit: Int): List<QuestionEntity>
+
     @Query("SELECT * FROM questions WHERE textbookId = :textbookId")
     suspend fun getByTextbook(textbookId: String): List<QuestionEntity>
 
@@ -69,16 +81,29 @@ interface QuestionDao {
     @Query("SELECT * FROM questions WHERE gradeId = :gradeId AND subjectId = :subjectId LIMIT :limit")
     suspend fun getRandom(gradeId: Int, subjectId: String, limit: Int): List<QuestionEntity>
 
-    @Query("SELECT * FROM questions WHERE category = :category ORDER BY RANDOM() LIMIT :limit")
+    @Query("SELECT * FROM questions WHERE category = :category LIMIT :limit")
     suspend fun getByCategory(category: String, limit: Int): List<QuestionEntity>
 
-    @Query("SELECT * FROM questions WHERE difficulty = :difficulty ORDER BY RANDOM() LIMIT :limit")
+    @Query("SELECT * FROM questions WHERE difficulty = :difficulty LIMIT :limit")
     suspend fun getByDifficulty(difficulty: String, limit: Int): List<QuestionEntity>
 
-    @Query("SELECT * FROM questions WHERE (:gradeId = 0 OR gradeId = :gradeId) AND (:category = 'ALL' OR category = :category) AND (:difficulty = 'ALL' OR difficulty = :difficulty) AND (topicId IN (:topicIds) OR :selectAllTopics = 1) ORDER BY RANDOM() LIMIT :limit")
+    @Query("""
+        SELECT * FROM questions 
+        WHERE (:gradeId = 0 OR gradeId = :gradeId) 
+          AND (
+              :category = 'ALL' 
+              OR category = :category 
+              OR (:category = 'YEAR' AND (historicalDate IS NOT NULL AND historicalDate != ''))
+              OR (:category = 'PERSON' AND (personality IS NOT NULL AND personality != ''))
+              OR (:category IN ('ATTESTATION', 'NATIONAL_CERTIFICATE', 'DTM_PRACTICE') AND (category = :category OR category = 'ALL'))
+          ) 
+          AND (:difficulty = 'ALL' OR difficulty = :difficulty) 
+          AND (topicId IN (:topicIds) OR :selectAllTopics = 1) 
+        LIMIT :limit
+    """)
     suspend fun getFilteredWithTopics(gradeId: Int, category: String, difficulty: String, topicIds: List<String>, selectAllTopics: Boolean, limit: Int): List<QuestionEntity>
 
-    @Query("SELECT * FROM questions WHERE id IN (SELECT questionId FROM wrong_questions) ORDER BY RANDOM() LIMIT :limit")
+    @Query("SELECT * FROM questions WHERE id IN (SELECT questionId FROM wrong_questions) LIMIT :limit")
     suspend fun getWrongQuestions(limit: Int): List<QuestionEntity>
 
     @Query("SELECT COUNT(*) FROM questions WHERE textbookId = :textbookId")
@@ -86,6 +111,9 @@ interface QuestionDao {
 
     @Query("SELECT COUNT(*) FROM questions")
     suspend fun count(): Int
+
+    @Query("SELECT COUNT(*) FROM questions WHERE gradeId = :gradeId AND subjectId = :subjectId")
+    suspend fun countByGradeAndSubject(gradeId: Int, subjectId: String): Int
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(items: List<QuestionEntity>)
@@ -165,6 +193,12 @@ interface QuizAttemptDao {
     @Query("SELECT COUNT(*) FROM quiz_attempts")
     suspend fun getTotalCount(): Int
 
+    @Query("SELECT COUNT(*) FROM quiz_attempts WHERE wasCorrect = 1")
+    fun getCorrectCountFlow(): Flow<Int>
+
+    @Query("SELECT COUNT(*) FROM quiz_attempts")
+    fun getTotalCountFlow(): Flow<Int>
+
     @Query("DELETE FROM quiz_attempts")
     suspend fun deleteAll()
 }
@@ -210,4 +244,3 @@ interface PdfAnnotationDao {
     @Query("DELETE FROM pdf_annotations WHERE id = :id")
     suspend fun delete(id: Long)
 }
-

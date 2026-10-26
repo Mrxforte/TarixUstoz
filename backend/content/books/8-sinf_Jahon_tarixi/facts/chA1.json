@@ -1,0 +1,654 @@
+{
+  "chapter": "I BOB. YEVROPADA YANGI DAVRNING",
+  "topics": [
+    {
+      "number": 1,
+      "title": "Buyuk geografik kashfiyotlar va ularning tarixiy ahamiyati",
+      "page": 7,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XV-XVII asrlar",
+          "date_label": "XV-XVII asrlarda",
+          "event": "Yevropalik sayyohlar Afrika, Amerika, Osiyo va Okeaniyaga dengiz yo‘llarini ochib, yangi yerlarni kashf etdilar",
+          "evidence": "XV-XVII asrlarda yevropalik sayyohlar tomonidan Afrika, Amerika, Osiyo va Okeaniyaga"
+        },
+        {
+          "kind": "date_event",
+          "date": "XV asr oxiri",
+          "date_label": "XV asr oxiriga kelib",
+          "event": "Okean to‘lqinlariga bardosh beruvchi, shamolga qarshi suza oladigan karavella kemasi yaratildi",
+          "evidence": "yelkanli kema - karavella  yaratildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1492",
+          "date_label": "1492-yil 12-oktabr",
+          "event": "Xristofor Kolumb ekspeditsiyasi Bagama orollaridagi orolga yetib kelib, uni San-Salvador deb atadi",
+          "evidence": "1492-yil 12-oktabrda Bagama orollari tarkibiga kiruvchi bir orolga yetib keldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1497-1499",
+          "date_label": "1497-1499-yillar",
+          "event": "Vasko da Gama boshchiligidagi ekspeditsiya Afrikani janubdan aylanib o‘tib, Hind okeaniga chiqdi",
+          "evidence": "1497-yil Afrikani janubdan aylanib o‘tib, Hind okeaniga chiqdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1498",
+          "date_label": "1498-yili",
+          "event": "Vasko da Gama ekspeditsiyasi arab dengizchisi Ahmad ibn Majid yordamida Hindistonga yetib keldi",
+          "evidence": "arab dengizchisi Ahmad ibn Majid yordamida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1519-1522",
+          "date_label": "1519-1522-yillari",
+          "event": "Fernando Magellan ekspeditsiyasi Yer sharini aylanib suzib, Yerning dumaloqligini amalda isbotladi",
+          "evidence": "omon qolgan a‘zolari Yer sharini aylanib suzib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1606",
+          "date_label": "1606-yili",
+          "event": "Luis Torres bo‘g‘ozdan suzib o‘tib Avstraliya qirg‘oqlariga yetdi va yangi qit‘a kashf etildi",
+          "evidence": "ispan dengizchisi Luis Torres Osiyo bilan Avstraliya"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVI asrning ikkinchi yarmi - XVII asr boshlari",
+          "date_label": "XVI asrning ikkinchi yarmi - XVII asrning boshlarida",
+          "event": "Ispan dengizchilari Tinch okeani havzasiga ekspeditsiyalar uyushtirib, yangi orollarni kashf etdilar",
+          "evidence": "ispan dengizchilari Tinch okeani havzasiga bir nechta ekspeditsiya uyushtirdi"
+        },
+        {
+          "kind": "person",
+          "person": "Genrix Dengizchi",
+          "role": "Portugaliya shahzodasi, yangi yerlarni kashf etish va o‘zlashtirishga homiylik qilgan dengizchi",
+          "activity": "Boshlab bergan kashfiyotlar jarayoni Portugaliyaga katta shuhrat va boylik keltirdi",
+          "evidence": "shahzoda Genrix Dengizchi  nomi bilan bog‘liq"
+        },
+        {
+          "kind": "person",
+          "person": "Xristofor Kolumb",
+          "role": "Ispaniya xizmatidagi dengiz sayyohi, Amerika qit‘asini kashf etgan ekspeditsiya rahbari",
+          "activity": "Atlantika okeani bo‘ylab g‘arbga suzib, dengiz orqali Hindistonga yo‘l ochishni taklif qildi",
+          "evidence": "dengiz sayyohi Xristofor Kolumb  Ispaniya qiroliga Atlantika okeani"
+        },
+        {
+          "kind": "person",
+          "person": "Vasko da Gama",
+          "role": "Portugaliyalik dengiz sayyohi, Hindistonga dengiz yo‘lini ochgan ekspeditsiya rahbari",
+          "activity": "Afrikani janubdan aylanib o‘tib, 1498-yilda Hindistonga yetib keldi va muntazam yo‘l ochdi",
+          "evidence": "Vasko da Gama  boshchiligidagi ekspeditsiya 1497-yil"
+        },
+        {
+          "kind": "person",
+          "person": "Fernando Magellan",
+          "role": "Portugaliyalik dengizchi, dunyoni aylanib chiqqan ekspeditsiyaning rahbari",
+          "activity": "Amerika janubidagi bo‘g‘oz orqali Tinch okeaniga chiqib, sayohat davomida halok bo‘ldi",
+          "evidence": "F. Magellan uni  Tinch okeani  deb atadi"
+        },
+        {
+          "kind": "term",
+          "term": "karavella",
+          "definition": "XV-XVII asrlarda Yevropada keng tarqalgan, shamolga qarshi suza oladigan yelkanli kema",
+          "evidence": "Karavella - XV-XVII asrlarda Yevropada keng tarqalgan yelkanli kema"
+        },
+        {
+          "kind": "term",
+          "term": "ekspeditsiya",
+          "definition": "Maxsus belgilangan maqsad bilan uyushtiriladigan sayohat",
+          "evidence": "Ekspeditsiya - maxsus belgilangan maqsad bilan uyushtiriladigan sayohat"
+        },
+        {
+          "kind": "term",
+          "term": "burjuaziya",
+          "definition": "Kapitalistik jamiyatda mehnat qurollari va ishlab chiqarish vositalariga egalik qiluvchi hukmron sinf",
+          "evidence": "Burjuaziya  - kapitalistik jamiyatda mehnat qurollari va ishlab chiqarish"
+        },
+        {
+          "kind": "term",
+          "term": "hindular",
+          "definition": "Kolumb o‘zi kashf etgan yerlarni Hindiston deb hisoblab, ularning aholisini shunday atagan",
+          "evidence": "bu yerlarning aholisini hindular  deb atadi"
+        },
+        {
+          "kind": "place",
+          "place": "Bagama orollari",
+          "event": "1492-yil 12-oktabrda Kolumb ekspeditsiyasi yetib kelib, orolni San-Salvador deb atagan hudud",
+          "evidence": "Bagama orollari tarkibiga kiruvchi bir orolga yetib keldi"
+        },
+        {
+          "kind": "place",
+          "place": "Yaxshi Umid burni",
+          "event": "Afrika janubidagi burun; uni aylanib o‘tish Hindistonga yo‘l ochish istiqbolini yaratdi",
+          "evidence": "bu burunga Yaxshi Umid burni deb nom berdilar"
+        },
+        {
+          "kind": "place",
+          "place": "Tinch okeani",
+          "event": "Magellan tomonidan shunday atalgan, bo‘ronli bo‘lishini bilmagan ulkan okean",
+          "evidence": "bilmagan F. Magellan uni  Tinch okeani  deb atadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Osiyoga boruvchi savdo yo‘llari Usmoniylar davlati tomonidan yopib qo‘yildi",
+          "effect": "Yevropa Sharqdan keladigan mato, bo‘yoq va ziravorlardan ayrilib, yangi savdo yo‘llarini izlashga majbur bo‘ldi",
+          "evidence": "yangi savdo yo‘llarini izlashga majbur qildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Fan va texnika taraqqiyotida yevropaliklar erishgan yutuqlar",
+          "effect": "Ularga yangi yerlarni ochish va o‘zlashtirish imkonini berdi",
+          "evidence": "yutuqlar ularga yangi yerlarni ochish va o‘zlashtirish imkonini berdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Afrikada yangi yerlarning kashf etilishi",
+          "effect": "Qit‘aning uzoq yillar talanishi, aholining qul qilinib sotilishi jarayoni boshlandi",
+          "evidence": "Afrika aholisining qul qilinib, Yevropa va Amerikaga sotilishi jarayonini boshlab berdi"
+        },
+        {
+          "kind": "number",
+          "number": "3",
+          "unit": "ekspeditsiya",
+          "meaning": "Kolumb kashfiyotdan so‘ng yana shuncha ekspeditsiya uyushtirib, Antil orollari va materik qirg‘oqlarini kashf etdi",
+          "evidence": "X. Kolumb yana uchta ekspeditsiya uyushtirib"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Yangi davr boshlarida G‘arbiy Yevropa mamlakatlarida industrial jamiyatning shakllanishi",
+      "page": 13,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "Yangi davr boshlari",
+          "date_label": "Yangi davr boshlarida",
+          "event": "Amerikadan oltin, kumush va boshqa qimmatbaho metallar Yevropa bozorlariga ko‘plab keltirildi",
+          "evidence": "so‘ng Amerikadan oltin, kumush va boshqa qimmatbaho metallar"
+        },
+        {
+          "kind": "date_event",
+          "date": "O‘rta asrlar",
+          "date_label": "O‘rta asrlarda",
+          "event": "Banklar rolini pul maydalaydigan sarroflik do‘konlari bajargan",
+          "evidence": "O‘rta asrlarda  banklar rolini pul maydalaydigan sarroflik do‘konlari bajarar edi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XV asr",
+          "date_label": "XV asrda",
+          "event": "Genuyada zamonaviy ko‘rinishdagi ilk bank - Avliyo Georgiy banki paydo bo‘ldi",
+          "evidence": "XV asrda  zamonaviy ko‘rinishdagi ilk bank - Genuyadagi Avliyo"
+        },
+        {
+          "kind": "date_event",
+          "date": "O‘rta asrlar",
+          "date_label": "O‘rta asrlardagi",
+          "event": "Dehqonlar uch dalali ekishdan ko‘p dalali ekishga o‘tib, hosildorlik oshdi",
+          "evidence": "Dehqonlar O‘rta asrlardagi uch dalali  ekishdan ko‘p dalali ekishga"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVI asrning ikkinchi yarmi",
+          "date_label": "XVI asrning ikkinchi yarmidan",
+          "event": "Yevropaning savdo chorrahalari Shimoliy dengiz qirg‘oqlariga ko‘chdi",
+          "evidence": "XVI asrning ikkinchi yarmidan Yevropaning savdo chorrahalari"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVI asr",
+          "date_label": "XVI asrdagi",
+          "event": "Diniy urushlar va vabo epidemiyasida o‘n minglab parijliklar vafot etdi",
+          "evidence": "diniy urushlar va vabo epidemiyasida o‘n minglab parijliklar"
+        },
+        {
+          "kind": "date_event",
+          "date": "O‘rta asrlar",
+          "date_label": "O‘rta asrlardayoq",
+          "event": "Parij Yevropaning eng yirik shahriga aylanib, keyin rivojlanishda davom etdi",
+          "evidence": "O‘rta asrlardayoq Yevropaning eng yirik shahriga aylangan Parij"
+        },
+        {
+          "kind": "person",
+          "person": "tadbirkor",
+          "role": "Yangi davrda shakllangan, shaxsiy muvaffaqiyati yo‘lida har qanday ishga tayyor omilkor shaxs",
+          "activity": "Yollanma mehnatdan foydalanib, bozorda raqobatlashdi va kapital yig‘ib bordi",
+          "evidence": "kishilarning yangi tipi - tadbirkor"
+        },
+        {
+          "kind": "person",
+          "person": "savdogar",
+          "role": "Eski gildiyadan chiqib aksionerlik kompaniyasiga a‘zo bo‘lgan tadbirkor",
+          "activity": "Kompaniya xarajatlariga mablag‘ qo‘shib, foydadan o‘z ulushini olish huquqini oldi",
+          "evidence": "Eski gildiyadan chiqib aksionerlik kompaniyasiga a‘zo"
+        },
+        {
+          "kind": "person",
+          "person": "hunarmand",
+          "role": "O‘z sexini tark etib manufakturaga kirgan, yollanma haq oladigan ishchi",
+          "activity": "Bitta katta bino ostida yig‘ilib, bitta ish turi bilan shug‘ullandi",
+          "evidence": "o‘z sexini tark etib manufakturaga kirgan hunarmand"
+        },
+        {
+          "kind": "person",
+          "person": "fermer",
+          "role": "Qishloq jamoasi tarkibidan chiqib, yerni feodaldan ijaraga olgan kechagi dehqon",
+          "activity": "Ijaraga olingan yerda xo‘jalik yuritib, yollanma mehnatdan foydalandi",
+          "evidence": "yerni feodaldan ijaraga olib fermerga aylangan kechagi dehqon"
+        },
+        {
+          "kind": "term",
+          "term": "narx-navo inqilobi",
+          "definition": "Pulning ko‘payishi natijasida tovarlar narxi shiddat bilan o‘sgan davr",
+          "evidence": "Bu jarayon «narx-navo inqilobi» deb ataldi"
+        },
+        {
+          "kind": "term",
+          "term": "birja",
+          "definition": "Yirik shaharlarda tashkil qilingan, mahsulot e‘lon qilinadigan va shartnoma tuziladigan maxsus joy",
+          "evidence": "yirik shaharlarda tashkil qilingan va birja deb atalgan"
+        },
+        {
+          "kind": "term",
+          "term": "manufaktura",
+          "definition": "Ishlab chiqarishda mashinalar qo‘llanilmagan, qo‘l mehnatiga asoslangan katta korxona",
+          "evidence": "qo‘llanilmagan katta korxonalar manufaktura  deb ataladi"
+        },
+        {
+          "kind": "term",
+          "term": "aksiya",
+          "definition": "Kompaniya xarajatlariga mablag‘ qo‘shib, foydadan ulush olish huquqini beruvchi qimmatbaho qog‘oz",
+          "evidence": "foydadan o‘z ulushini olish huquqini beruvchi qimmatbaho qog‘oz"
+        },
+        {
+          "kind": "place",
+          "place": "Genuya",
+          "event": "XV asrda zamonaviy ko‘rinishdagi ilk Avliyo Georgiy banki paydo bo‘lgan shahar",
+          "evidence": "ilk bank - Genuyadagi Avliyo"
+        },
+        {
+          "kind": "place",
+          "place": "Antverpen",
+          "event": "XVI asrning ikkinchi yarmida Niderland qirolligining asosiy savdo markazi bo‘lgan shahar",
+          "evidence": "Niderland qirolligining Antverpen  shahri bo‘lib qoldi"
+        },
+        {
+          "kind": "place",
+          "place": "London",
+          "event": "Angliyaning jadal iqtisodiy taraqqiyoti tufayli Yevropaning asosiy savdo markaziga aylangan shahar",
+          "evidence": "poytaxti London  shahrini Yevropaning asosiy savdo markaziga"
+        },
+        {
+          "kind": "cause",
+          "cause": "Amerikadan oltin va kumush ko‘plab keltirilib, tangalar zarb qilindi",
+          "effect": "Hunarmandlar va savdogarlar narxni oshirishga majbur bo‘lib, narx-navo inqilobi yuz berdi",
+          "evidence": "kasodga uchramaslik uchun o‘z tovarlarining narxini oshirishga"
+        },
+        {
+          "kind": "cause",
+          "cause": "Bozorlarda mahsulot ko‘payib, ishlab chiqaruvchilar o‘rtasida raqobat paydo bo‘ldi",
+          "effect": "Mahsulotni tez, sifatli va arzon ishlab chiqarish talabi texnika rivojini tezlashtirdi",
+          "evidence": "mahsulotni tez, sifatli va arzon ishlab chiqarish talab qilinardi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Bitta katta bino ostida ko‘plab hunarmandlar turli ishlarga ixtisoslashib ishladi",
+          "effect": "Mehnat unumdorligi keskin oshib, mahsulot sifati yaxshilandi",
+          "evidence": "Bitta katta bino ostida ko‘plab hunarmandlar yig‘ilib"
+        },
+        {
+          "kind": "cause",
+          "cause": "Hindiston va Amerikaga dengiz yo‘llarining ochilishi",
+          "effect": "Savdo yo‘llari yo‘nalishi o‘zgarib, Lissabon va Sevilya shaharlari jadal rivojlandi",
+          "evidence": "muhim savdo yo‘llarining yo‘nalishini o‘zgartirib"
+        },
+        {
+          "kind": "number",
+          "number": "10 000",
+          "unit": "kishi",
+          "meaning": "XVI asrdagi diniy urushlar va vabo epidemiyasida vafot etgan parijliklar soni",
+          "evidence": "o‘n minglab parijliklar vafot etdi"
+        },
+        {
+          "kind": "number",
+          "number": "3",
+          "unit": "dalali ekish",
+          "meaning": "Dehqonlar o‘tgan O‘rta asrlardagi an‘anaviy ekish usuli",
+          "evidence": "O‘rta asrlardagi uch dalali  ekishdan"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Yevropada Reformatsiya",
+      "page": 18,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1517",
+          "date_label": "1517-yili",
+          "event": "Martin Lyuter indulgensiyalarga qarshi «95 tezislar» bilan chiqib, Reformatsiyani boshlab berdi",
+          "evidence": "Reformatsiya 1517-yili  Germaniyaning Vittenberg universiteti"
+        },
+        {
+          "kind": "date_event",
+          "date": "1524",
+          "date_label": "1524-yil yozida",
+          "event": "Germaniyada dehqonlar qo‘zg‘oloni boshlanib, tez orada butun mamlakatni qamrab oldi",
+          "evidence": "Dehqonlar qo‘zg‘oloni 1524-yil yozida Germaniyada boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1526",
+          "date_label": "1526-yil boshida",
+          "event": "Bir yildan oshiq davom etgan qo‘zg‘olon mag‘lubiyatga uchrab, ishtirokchilari qattiq jazolandi",
+          "evidence": "ishtirokchilari qattiq jazolandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1540",
+          "date_label": "1540-yili",
+          "event": "Rim papasi Reformatsiyaga qarshi kurashish uchun «Iso jamiyati» ordenini ta‘sis etdi",
+          "evidence": "papasi 1540-yili «Iso jamiyati»  yoki iyezuitlar"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVI asr",
+          "date_label": "XVI asrdagi",
+          "event": "Kontrreformatsiya jarayonida G‘arbiy Yevropa katolik va protestant qismlarga bo‘lindi",
+          "evidence": "XVI asrdagi kontrreformatsiya jarayonida G‘arbiy Yevropa katolik"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVI asr",
+          "date_label": "XVI asrda",
+          "event": "Germaniya va Fransiyada aholi ikki diniy mazhabga ajralib, bir-biriga qarshi urushlar olib bordi",
+          "evidence": "aholisi bir-biriga dushman ikki diniy mazhabga ajralib"
+        },
+        {
+          "kind": "person",
+          "person": "Martin Lyuter",
+          "role": "Vittenberg universitetining ilohiyot fani professori, Reformatsiya asoschisi",
+          "activity": "Indulgensiyalarga qarshi «95 tezislar» e‘lon qilib, papaga bo‘ysunishdan bosh tortdi",
+          "evidence": "ilohiyot fani professori Martin Lyuterning"
+        },
+        {
+          "kind": "person",
+          "person": "Tomas Myunser",
+          "role": "Ruhoniy, Xalq Reformatsiyasi deb atalgan qo‘zg‘olonning rahbari",
+          "activity": "1524-yilda dehqonlar qo‘zg‘oloniga boshchilik qildi va 1526-yilda qatl qilindi",
+          "evidence": "ruhoniy Tomas Myunser  boshchilik qildi"
+        },
+        {
+          "kind": "person",
+          "person": "Jan Kalvin",
+          "role": "Fransuz diniy islohotchisi, protestantlikning kalvinizm oqimi asoschisi",
+          "activity": "Jenevada «Duo o‘qi va ishla!» shiori asos bo‘lgan ta‘limotni yaratdi",
+          "evidence": "Jeneva shahrida fransuz Jan Kalvin  asos soldi"
+        },
+        {
+          "kind": "person",
+          "person": "Ignatiy Loyola",
+          "role": "Ispan zodagoni, «Iso jamiyati» ordenining asoschisi",
+          "activity": "1540-yilda ta‘sis etilgan iyezuitlar ordeniga asos soldi va uni boshqardi",
+          "evidence": "asoschisi ispan zodagoni Ignatiy Loyola bo‘ldi"
+        },
+        {
+          "kind": "person",
+          "person": "Rim papasi",
+          "role": "Katolik cherkovining rahbari, kontrreformatsiya tashabbuskori",
+          "activity": "M. Lyuterni Vorms shahar sudiga chaqirib, g‘oyalaridan voz kechishni talab qildi",
+          "evidence": "lekin u papaga bo‘ysunishdan"
+        },
+        {
+          "kind": "term",
+          "term": "Reformatsiya",
+          "definition": "Katolik cherkovini isloh qilish uchun boshlangan harakat, reforma - islohot",
+          "evidence": "bu jarayon Reformatsiya (reforma - islohot) deb ataldi"
+        },
+        {
+          "kind": "term",
+          "term": "indulgensiya",
+          "definition": "Gunohlarni afv etganlik to‘g‘risida Rim papasining maxsus yorlig‘i",
+          "evidence": "gunohlari uchun ham indulgensiyalar sotib olardi"
+        },
+        {
+          "kind": "term",
+          "term": "lyuteranlar",
+          "definition": "M. Lyuterning tarafdorlari bo‘lib, o‘z mazhabi va cherkovini tashkil qilganlar",
+          "evidence": "Ular lyuteranlar  deb ataldi"
+        },
+        {
+          "kind": "term",
+          "term": "protestantlar",
+          "definition": "Reformatsiya yutuqlarini bekor qilishga norozilik bildirgan M. Lyuter tarafdorlari",
+          "evidence": "ular protestantlar (protest  - norozilik) deb atala boshlandi"
+        },
+        {
+          "kind": "term",
+          "term": "kontrreformatsiya",
+          "definition": "Katolik cherkov tomonidan protestantlarga qarshi qo‘llanilgan barcha tadbirlar",
+          "evidence": "barcha tadbirlar tarixda kontrreformatsiya  nomini oldi"
+        },
+        {
+          "kind": "place",
+          "place": "Vittenberg",
+          "event": "Reformatsiya boshlangan universitet joylashgan Germaniya shahri",
+          "evidence": "Germaniyaning Vittenberg universiteti"
+        },
+        {
+          "kind": "place",
+          "place": "Jeneva",
+          "event": "Kalvinizm oqimiga asos solingan, Reformatsiya tarqalgan shahar",
+          "evidence": "Ulardan biriga Jeneva shahrida fransuz"
+        },
+        {
+          "kind": "place",
+          "place": "Vorms",
+          "event": "M. Lyuter Rim papasi tomonidan sudga chaqirilgan shahar",
+          "evidence": "M. Lyuterni Vorms shahar sudiga chaqirdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Cherkov marosimlari lotin tilida o‘tkazilib, oddiy odamlar uchun tushunarsiz edi",
+          "effect": "Odamlar orasida mavjud diniy tartiblardan norozilik kuchaydi",
+          "evidence": "odamlar orasida mavjud diniy tartiblardan norozilik"
+        },
+        {
+          "kind": "cause",
+          "cause": "Dehqonlar va shaharlik kambag‘allar pullarining bir qismini cherkov va ruhoniylarga berishni istamasdi",
+          "effect": "Ruhoniylar boyligi va cherkov soliqlariga norozilik kuchayib, Reformatsiya boshlandi",
+          "evidence": "pullarining bir qismini cherkov-u ruhoniylarga berishni"
+        },
+        {
+          "kind": "cause",
+          "cause": "Zodagonlar va knyazlar jamoa yerlarini egallab, dehqonlar ulushini qisqartirdi",
+          "effect": "Dehqonlarning og‘ir ahvoli ularni qo‘zg‘olon ko‘tarishga majbur qildi",
+          "evidence": "ahvoli ularni qo‘zg‘olon ko‘tarishga majbur qildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Narx-navo inqilobidan ham avvalo Yevropa dehqonlari aziyat chekdi",
+          "effect": "Dehqonlar qo‘zg‘oloni 1524-yilda Germaniyada boshlanib, butun mamlakatni qamrab oldi",
+          "evidence": "avvalo, Yevropa dehqonlari aziyat chekdi"
+        },
+        {
+          "kind": "number",
+          "number": "95",
+          "unit": "tezis",
+          "meaning": "Martin Lyuter indulgensiyalarga qarshi e‘lon qilgan da‘vatlar to‘plami",
+          "evidence": "«95 tezislar»  deb ataluvchi"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "G‘arbiy Yevropada Yangi davr madaniyatining shakllanishi",
+      "page": 22,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIV asr",
+          "date_label": "XIV asrga kelib",
+          "event": "Unutib yuborilgan antik madaniyat qayta tiklana boshladi va bu jarayon Renessans nomini oldi",
+          "evidence": "Shu tariqa, XIV asrga kelib, avval unutib yuborilgan antik"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIV asr o‘rtalari",
+          "date_label": "XIV asr o‘rtalarida",
+          "event": "Gumanizm dastlab Italiyada paydo bo‘lib, keyin boshqa mamlakatlarga tarqaldi",
+          "evidence": "Gumanizm XIV asr o‘rtalarida dastlab"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVI asr",
+          "date_label": "XVI asrga kelib",
+          "event": "Ko‘plab ruhoniylar va hatto Rim papalari gumanizm g‘oyalari bilan qiziqa boshladi",
+          "evidence": "Ammo XVI asrga kelib, ko‘plab ruhoniylar va hatto"
+        },
+        {
+          "kind": "date_event",
+          "date": "1564-1616",
+          "date_label": "1564-1616-yillar",
+          "event": "Uilyam Shekspir yashab ijod qilib, mashhur asarlarini kelgusi avlodlarga meros qoldirdi",
+          "evidence": "(1564-1616) bo‘lgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1452-1519",
+          "date_label": "1452-1519-yillar",
+          "event": "Leonardo da Vinchi rassom, shoir, me‘mor, haykaltarosh va ixtirochi olim sifatida ijod qildi",
+          "evidence": "Leonardo da Vinchi  (1452-1519) edi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVI-XVIII asrlar",
+          "date_label": "XVI-XVIII asrlarda",
+          "event": "Yevropada Yangi davr madaniyati shakllanib, san‘at va fan jadal rivojlandi",
+          "evidence": "XVI-XVIII asrlarda Yevropada Yangi"
+        },
+        {
+          "kind": "person",
+          "person": "Tomas Mor",
+          "role": "Angliyalik dono siyosatchi va qirolning birinchi vaziri",
+          "activity": "«Utopiya» asarida ideal davlat namunasini yaratdi",
+          "evidence": "dono siyosatchi va qirolning birinchi vaziri Tomas Mor"
+        },
+        {
+          "kind": "person",
+          "person": "Uilyam Shekspir",
+          "role": "Ingliz yozuvchisi, teatr aktyori va buyuk dramaturg",
+          "activity": "«Otello», «Hamlet», «Qirol Lir» va «Romeo va Juletta» asarlarini meros qoldirdi",
+          "evidence": "Ham aktyor, ham dramaturg sifatida ijod qildi"
+        },
+        {
+          "kind": "person",
+          "person": "Migel de Servantes",
+          "role": "Ispan yozuvchisi, mashhur «Don Kixot» asarining muallifi",
+          "activity": "Asarda adolatsizlik olamidagi so‘nggi oliyjanob ritsar obrazi yaratilgan",
+          "evidence": "ispan yozuvchisi Migel de Servantes"
+        },
+        {
+          "kind": "person",
+          "person": "Leonardo da Vinchi",
+          "role": "Italiyalik rassom, shoir, me‘mor, haykaltarosh, musiqachi va ixtirochi olim",
+          "activity": "«Mona Liza» asarini yaratib, rasm chizish san‘atini «san‘atlar malikasi» deb atagan",
+          "evidence": "U bir vaqtning o‘zida rassom, shoir, me‘mor, haykal"
+        },
+        {
+          "kind": "person",
+          "person": "Nikolay Kopernik",
+          "role": "Buyuk polyak astronomi, geliosentrik g‘oyalar asoschisi",
+          "activity": "30 yil osmon jismlarini kuzatib, Yer Quyosh atrofida aylanishi haqida xulosaga keldi",
+          "evidence": "Buyuk polyak astronomi Nikolay Kopernik"
+        },
+        {
+          "kind": "term",
+          "term": "Renessans",
+          "definition": "Antik madaniyatning qayta tiklanishi jarayoni, Uyg‘onish deb ham ataladi",
+          "evidence": "bu jarayon Renessans - Uyg‘onish"
+        },
+        {
+          "kind": "term",
+          "term": "gumanizm",
+          "definition": "Insonga dunyoviy va insoniy qarashga asoslangan, insonni markazga qo‘yuvchi oqim",
+          "evidence": "dunyoviy, insoniy qarash tarafdorlari gumanist"
+        },
+        {
+          "kind": "term",
+          "term": "gumanist",
+          "definition": "Inson haqidagi O‘rta asrchilik tasavvurlarini rad etgan ilg‘or qarash tarafdorlari",
+          "evidence": "Gumanistlar inson haqidagi O‘rta asrchilik tasavvurlarini rad etdi"
+        },
+        {
+          "kind": "term",
+          "term": "utopiya",
+          "definition": "Xayoliy, aslida bo‘lmagan adolatli jamiyat haqidagi asarlar va g‘oyalar",
+          "evidence": "va ularda ilgari surilgan g‘oyalarni «utopiya» deb"
+        },
+        {
+          "kind": "term",
+          "term": "antik madaniyat",
+          "definition": "Olimlar va ijodkorlar ideal hamda namuna izlab murojaat qilgan qadimgi davr madaniyati",
+          "evidence": "ideal va namuna izlab Antik davr madaniyatiga murojaat qildilar"
+        },
+        {
+          "kind": "place",
+          "place": "Italiya",
+          "event": "Gumanizm dastlab paydo bo‘lib, izdoshlari boshqa mamlakatlarga tarqalgan hudud",
+          "evidence": "italyan gumanistlarining izdoshlari"
+        },
+        {
+          "kind": "place",
+          "place": "Angliya",
+          "event": "Tomas Mor gumanizm g‘oyalari ta‘sirida «Utopiya» asarini yaratgan mamlakat",
+          "evidence": "Angliyada ularning g‘oyalari dono siyosatchi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Fan taraqqiyotidagi yutuqlar kishilarning olam haqidagi tasavvurlarini o‘zgartirdi",
+          "effect": "Madaniy aloqalarni kengaytirishga imkon beradigan yangi ufqlar ochildi",
+          "evidence": "dagi tasavvurlarini o‘zgartirib yubordi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Lotin tili o‘rniga italyan, ispan va fransuz kabi xalq tillari rivojlandi",
+          "effect": "Fan va adabiyot xalq tillarida rivojlanib, milliy madaniyat yuksaldi",
+          "evidence": "lotin tili o‘rniga italyan, ispan,"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ruhoniylar va Rim papalari gumanizm g‘oyalari bilan qiziqdi",
+          "effect": "Gumanistlarga o‘z fikrlarini erkin bayon qilish imkoni berildi",
+          "evidence": "gumanistlarga o‘z fikrlarini erkin bayon qilish imkonini berdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Cherkov gumanistlarni ta‘qib qilib, ularning asarlarini yondirdi",
+          "effect": "Fan va san‘at diniy taqiqdan chiqib, dunyoviy rivojlanish yo‘liga o‘tdi",
+          "evidence": "fan va san‘at diniy taqiqdan chiqdi"
+        },
+        {
+          "kind": "number",
+          "number": "37",
+          "unit": "yil",
+          "meaning": "Rafael Santi atigi shuncha yil umr ko‘rib, mashhur asarlar yaratdi",
+          "evidence": "U atigi 37 yil umr"
+        },
+        {
+          "kind": "number",
+          "number": "30",
+          "unit": "yil",
+          "meaning": "Nikolay Kopernik osmon jismlarini kuzatgan davr",
+          "evidence": "30 yil davomida osmon jismlarini kuzatib"
+        }
+      ]
+    }
+  ]
+}

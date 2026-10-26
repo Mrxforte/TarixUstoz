@@ -1,0 +1,664 @@
+{
+  "chapter": "Beshinchi–oltinchi boblar. Orol fojiasi, paxta ishi, qayta qurish va mustaqillik ostonasi",
+  "topics": [
+    {
+      "number": 25,
+      "title": "O‘zbekistonda ekologik vaziyatning og‘irlashuvi va Orol fojiasi",
+      "page": 123,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XX asr 60–80-yillari",
+          "date_label": "XX asr 60–80-yillari",
+          "event": "Ekologik muvozanatning buzilishi bashariyat uchun katta xavf tug‘dirgan davr bo‘ldi",
+          "evidence": "XX asr 60 – 80-yillarida bu muammo bashariyat uchun katta xavf"
+        },
+        {
+          "kind": "date_event",
+          "date": "1981",
+          "date_label": "1981-yil",
+          "event": "O‘zbekiston rahbariyati respublikada butifosdan foydalanishni taqiqladi",
+          "evidence": "O‘zbekiston rahbariyati 1981-yili respublikada bu kimyoviy moddadan foydalanishni taqiqlasa ham"
+        },
+        {
+          "kind": "date_event",
+          "date": "XX asr 60-yillari",
+          "date_label": "XX asrning 60-yillaridan",
+          "event": "Sug‘oriladigan ekin maydonlari kengaytirilib, dengizga quyiladigan suv miqdori kamaya bordi",
+          "evidence": "XX asrning\n60-yillaridan sug‘oriladigan ekin maydonlarining kengaytirilishi natijasida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1980–1985",
+          "date_label": "1980–1985-yillar",
+          "event": "Paxtachilik va chorvachilik har yili 30 mln rubldan ortiqroq zarar ko‘rdi",
+          "evidence": "Paxtachilik va chorvachilik\n1980 – 1985-yillarda har yili 30 mln rubldan ortiqroq zarar ko‘rdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1980",
+          "date_label": "1980-yil",
+          "event": "Bir yoshgacha bolalar o‘limi har ming bolaga nisbatan 46,5 nafarni tashkil etgan",
+          "evidence": "har ming bolaga nisbatan 1980-yildagi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1986",
+          "date_label": "1986-yil",
+          "event": "Bir yoshgacha bolalar o‘limi har ming bolaga nisbatan 72 nafarga yetdi",
+          "evidence": "46,5 nafardan 1986-yilda 72 nafarga yetdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XX asr oxiri",
+          "date_label": "XX asr oxiri",
+          "event": "Orol dengizining 40 000 km2dan ziyod qismi quruqlikka aylanib, Orolqum cho‘li vujudga keldi",
+          "evidence": "Orol dengizining 40  000 km2dan\nziyod qismi quruqlikka aylanishi natijasida XX asr oxirida vujudga keldi"
+        },
+        {
+          "kind": "person",
+          "person": "Islom Karimov",
+          "role": "O‘zbekiston Respublikasining Birinchi Prezidenti",
+          "activity": "O‘z nutqida Orolbo‘yi ekologik kulfat hududiga aylanganini ta’kidlagan davlat rahbari",
+          "evidence": "O‘zbekiston Respublikasining Birinchi Prezidenti Islom Karimov nutqidan"
+        },
+        {
+          "kind": "person",
+          "person": "Islom Karimov",
+          "role": "O‘zbekiston Respublikasi rahbari",
+          "activity": "Sug‘orish tizimlarini jadal qurish Orol halok bo‘lishining sababiga aylanganini aytgan",
+          "evidence": "ko‘plab aholi punktlariga va sanoat korxonalariga suv berish barobarida keng\nko‘lamdagi fojia – Orol halok bo‘lishining sababiga ham aylandi"
+        },
+        {
+          "kind": "person",
+          "person": "Islom Karimov",
+          "role": "O‘zbekiston Respublikasining Birinchi Prezidenti",
+          "activity": "Yangi sug‘orilgan yerlarni maqtash bilan birga Orolning jonsizlantirilishi xayolga kelmaganini aytgan",
+          "evidence": "sug‘orilgan yangi yerlar\nhaqida dabdaba bilan so‘zlanardi"
+        },
+        {
+          "kind": "term",
+          "term": "Ekologik muvozanat",
+          "definition": "Tabiatda mavjud bo‘lgan tabiiy muvozanat; uning buzilishi noxush ekologik vaziyatni vujudga keltiradi",
+          "evidence": "tabiatda mavjud muvozanatni buzib, noxush ekologik vaziyatni vujudga keltirdi"
+        },
+        {
+          "kind": "term",
+          "term": "Butifos",
+          "definition": "Zaharlilik darajasi yuqori bo‘lgan kimyoviy modda; g‘o‘zani defoliatsiya qilishda ishlatilgan",
+          "evidence": "Zaharlilik darajasi yuqori bo‘lgan kimyoviy modda – butifos g‘o‘zani de"
+        },
+        {
+          "kind": "term",
+          "term": "Defoliatsiya",
+          "definition": "G‘o‘zaning bargini to‘kish tadbiri; O‘zbekistonda asosan samolyotlarda bajarilgan",
+          "evidence": "Defoliatsiya asosan samolyotlarda bajarilar edi"
+        },
+        {
+          "kind": "term",
+          "term": "Pestitsidlar",
+          "definition": "Qishloq xo‘jaligida zararkunandalar va kasalliklarga qarshi qo‘llaniladigan o‘ta zaharli kimyoviy moddalar",
+          "evidence": "90 000 tonna pestitsidlar\nqishloq xo‘jaligida qo‘llanildi"
+        },
+        {
+          "kind": "term",
+          "term": "Orolqum",
+          "definition": "Orol dengizi qurishi natijasida vujudga kelgan, tipik qum-sho‘rxokli dunyodagi eng yosh cho‘l",
+          "evidence": "Orolqum – dunyodagi eng yosh cho‘l"
+        },
+        {
+          "kind": "place",
+          "place": "Navoiy, Chirchiq, Farg‘ona",
+          "event": "Aholisi ko‘p bu shaharlarda qurilgan kimyo zavodlari ekologik vaziyatga salbiy ta’sir ko‘rsatdi",
+          "evidence": "Kimyo zavodlari asosan aholisi ko‘p bo‘lgan Navoiy, Chirchiq,\nFarg‘ona shaharlarida qurilgan edi"
+        },
+        {
+          "kind": "place",
+          "place": "Mo‘ynoq, Qo‘ng‘irot, Chimboy",
+          "event": "Dengizga yaqin bu shaharlar va atrofdagi ovullar aholisi orol fojiasidan ko‘p aziyat chekdi",
+          "evidence": "dengizga yaqin bo‘lgan Mo‘ynoq, Qo‘ng‘irot, Chimboy shaharlari va\natrofidagi ovullar aholisi ko‘p aziyat chekdi"
+        },
+        {
+          "kind": "place",
+          "place": "Orolbo‘yi (Quyi Amudaryo)",
+          "event": "Ma’muriy jihatdan O‘zbekiston va Qozog‘iston hududlaridan iborat mintaqada og‘ir ekologik vaziyat yuzaga keldi",
+          "evidence": "Orolbo‘yi\n(Quyi Amudaryo) mintaqasi ma’muriy jihatdan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yangi yerlarning o‘zlashtirilishi va xo‘jalik faoliyatining nazoratdan chetga chiqishi",
+          "effect": "Tabiatdagi muvozanat buzilib, noxush ekologik vaziyat vujudga keldi",
+          "evidence": "Yangi yerlarning o‘zlashtirilishi, sanoat va qishloq\nxo‘jalik korxonalari, transport faoliyatining nazoratdan chetga chiqib ketishi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sovet hokimiyati va kommunistik partiyaning ekologiya muammosi yo‘q deb hisoblashi",
+          "effect": "Ekologik tahdidning oldini olish uchun hech qanday chora ko‘rilmadi",
+          "evidence": "bizning mamlakatimizda ekologiya muammosi yo‘q, deb bu tahdidning oldini olish uchun hech qanday chora ko‘rmadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yirik og‘ir sanoat tarmoqlari Ittifoq vazirliklari qaramog‘ida bo‘lgani",
+          "effect": "Ekologiyani asosan o‘sha tarmoqlarning korxonalari buzib keldi",
+          "evidence": "Ekologiyani asosan o‘sha tarmoqlarning korxonalari buzib keldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kimyo zavodlari aholisi zich yashaydigan shaharlarda qurilgani",
+          "effect": "Kimyo zavodlari va kombinatlari ekologik vaziyatga juda katta salbiy ta’sir ko‘rsatgan",
+          "evidence": "kimyo zavodlari va kombinatlari\nekologik vaziyatga juda katta salbiy ta’sir ko‘rsatgan"
+        },
+        {
+          "kind": "number",
+          "number": "90 000",
+          "unit": "tonna",
+          "meaning": "XX asr 80-yillari o‘rtalarida respublikada qishloq xo‘jaligida qo‘llanilgan pestitsidlar miqdori",
+          "evidence": "XX asr 80-yillari\no‘rtalarida respublikada 90 000 tonna pestitsidlar"
+        },
+        {
+          "kind": "number",
+          "number": "2–3",
+          "unit": "baravar",
+          "meaning": "Butifosning har gektar paxta maydoniga belgilangan me’yordan ortiq ishlatilishi",
+          "evidence": "belgilangan me’yordan 2-3 baravar ko‘p ishla"
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "title": "O‘zbekistonda paxta ishi va uning oqibatlari",
+      "page": 128,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1982-yil noyabr",
+          "date_label": "1982-yil noyabr",
+          "event": "SSSR Oliy Soveti Prezidiumi raisi Leonid Brejnev vafot etdi; u mamlakatni 18 yil boshqargan",
+          "evidence": "1982-yil noyabrda KPSS MK Bosh sekretari, SSSR Oliy Soveti Prezidiumi\nraisi Leonid Brejnev  vafot etdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1985-yil 11-mart",
+          "date_label": "1985-yil 11-mart",
+          "event": "Mixail Gorbachyov KPSS MK Bosh sekretari lavozimiga saylandi",
+          "evidence": "1985-yil 11-martda\nMixail Gorbachyov KPSS MK Bosh sekretari"
+        },
+        {
+          "kind": "date_event",
+          "date": "1985",
+          "date_label": "1985-yildan",
+          "event": "Mamlakatda qayta qurish siyosati boshlandi va u O‘zbekistonga ham ta’sir qildi",
+          "evidence": "1985-yildan\nmamlakatda qayta qurish siyosati boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1983-yil oktyabr",
+          "date_label": "1983-yil oktyabr",
+          "event": "O‘zbekiston Kompartiyasi MK birinchi sekretari Sharof Rashidov vafot etdi",
+          "evidence": "1983-yil oktyabrda O‘zbekiston Kompartiyasi Markaziy\nKomiteti birinchi sekretari Sharof Rashidov vafot etdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1984-yil 23-iyun",
+          "date_label": "1984-yil 23-iyun",
+          "event": "O‘zbekiston Kompartiyasi MK XVI plenumi o‘tkazilib, uning hujjatlari badnom qilish kompaniyasini boshladi",
+          "evidence": "Komitetining XVI plenumi mash’um rol"
+        },
+        {
+          "kind": "date_event",
+          "date": "1983-yil aprel",
+          "date_label": "1983-yil aprel",
+          "event": "T.X.Gdlyan va N.V.Ivanov rahbarligida alohida muhim ishlar bo‘yicha tergov guruhi tuzildi",
+          "evidence": "T.X.Gdlyan va N.V.Ivanov rahbarligida 1983-yil aprelda\ntuzilgan edi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1985–1990",
+          "date_label": "1985–1990-yillar",
+          "event": "“Paxta ishi” degan uydirma bo‘yicha jami 40 000 kishi tergov qilindi",
+          "evidence": "1985 – 1990-yillarda O‘zbekistonda “paxta ishi” degan uydirma bo‘yicha\njami 40  000 kishi tergov qilindi"
+        },
+        {
+          "kind": "person",
+          "person": "Sharof Rashidov",
+          "role": "O‘zbekiston Kompartiyasi MK birinchi sekretari",
+          "activity": "Respublikani qariyb chorak asr boshqargan, 1983-yil oktyabrda vafot etgan",
+          "evidence": "respublikani qariyb chorak asr davomida boshqargan edi"
+        },
+        {
+          "kind": "person",
+          "person": "Mixail Gorbachyov",
+          "role": "KPSS MK Bosh sekretari",
+          "activity": "1985-yil 11-martda saylangan sovet rahbari; shu yildan qayta qurish siyosati boshlandi",
+          "evidence": "Mixail Gorbachyov KPSS MK Bosh sekretari"
+        },
+        {
+          "kind": "person",
+          "person": "Inomjon Usmonxo‘jayev",
+          "role": "O‘zbekiston rahbari",
+          "activity": "1983–1988-yillarda O‘zbekistonga rahbarlik qilgan partiya arbobi",
+          "evidence": "1983 – 1988-yillarda Inomjon Usmonxo‘jayev"
+        },
+        {
+          "kind": "person",
+          "person": "Rafiq Nishonov",
+          "role": "O‘zbekiston rahbari",
+          "activity": "1988–1989-yillarda O‘zbekistonga rahbarlik qilgan partiya arbobi",
+          "evidence": "1988-1989-yillarda Rafiq Nishonov O‘zbekistonga rahbarlik qildi"
+        },
+        {
+          "kind": "person",
+          "person": "T.X.Gdlyan va N.V.Ivanov",
+          "role": "SSSR Bosh prokurori huzuridagi maxsus tergov guruhlari rahbarlari",
+          "activity": "1983-yil aprelda tuzilgan guruhlar asosida O‘zbekistonda navbatdagi qatag‘onni amalga oshirgan",
+          "evidence": "O‘zbekistonda navbatdagi qatag‘onni amalga oshirdi"
+        },
+        {
+          "kind": "term",
+          "term": "Paxta ishi",
+          "definition": "Sovet rejimining O‘zbekistondagi so‘nggi qatag‘on siyosati; uydirma ayblovlar asosida minglab kishilar jazoga tortildi",
+          "evidence": "Paxta ishi – sovet rejimining O‘zbekistondagi so‘nggi qatag‘on siyosa"
+        },
+        {
+          "kind": "term",
+          "term": "O‘zbeklar ishi",
+          "definition": "Markaziy matbuotda o‘zbek xalqini badnom etib, paxta ishiga ataylab siyosiy tus berilishi natijasida paydo bo‘lgan ibora",
+          "evidence": "paxta ishi -\nga ataylab siyosiy tus berildi va u “o‘zbeklar ishi”ga aylantirildi"
+        },
+        {
+          "kind": "term",
+          "term": "Sharof Rashidovchilik",
+          "definition": "Sh.Rashidovni o‘limidan so‘ng badnom qilish va shuhratini yerga urish uchun o‘ylab topilgan sun’iy ibora",
+          "evidence": "dovchilik” degan sun’iy ibora o‘ylab topilib"
+        },
+        {
+          "kind": "term",
+          "term": "Izolyator",
+          "definition": "Kazarma, lager, yuqumli kasal saqlanadigan va shu kabi vaqtincha ajratib qo‘yiladigan alohida xona yoki joy",
+          "evidence": "Izolyator – (ajratmoq, yakkalamoq)  kazarma, lager, yuqumli kasal saqla"
+        },
+        {
+          "kind": "term",
+          "term": "Sanksiya",
+          "definition": "Hujjat yoki qarorning oliy organ tomonidan tasdiqlanishi va shu tufayli qonuniy kuchga ega bo‘lishi",
+          "evidence": "hujjat, qarorlarning oliy organ\ntomonidan tasdiqlanishi"
+        },
+        {
+          "kind": "place",
+          "place": "Moskva, Leningrad va RSFSRning boshqa shaharlari",
+          "event": "1983–1987-yillarda bu yerlardan 1000 nafarga yaqin “desantchi” O‘zbekistonga yuborildi",
+          "evidence": "1983 – 1987-yillarda Moskva, Leningrad (hozirgi Sankt-Peterburg) va"
+        },
+        {
+          "kind": "place",
+          "place": "O‘zbekiston",
+          "event": "Paxta ishi bo‘yicha ishlar uchun “tajriba maydoni” sifatida tanlangan respublika",
+          "evidence": "“tajriba maydoni” sifatida O‘zbekiston tanlandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Respublika siyosiy rahbariyatida iroda va qat’iy jur’at yetishmasligi",
+          "effect": "Rahbarlar respublika mavqeyini ochiq himoya qilish o‘rniga Markaz topshiriqlarini bajarish bilan cheklandi",
+          "evidence": "Bu\nrahbarlar Markaz topshiriqlarini tezroq “uddalash”"
+        },
+        {
+          "kind": "cause",
+          "cause": "XVI plenum Moskva tashabbusi va ko‘rsatmasi bilan tashkil qilingani",
+          "effect": "O‘zbekistonda o‘zbek xalqini asossiz badnom qilish kompaniyasi boshlandi",
+          "evidence": "qabul qilingan hujjatlar O‘zbekistonda o‘zbek xalqini asossiz badnom qilish\nkompaniyasini boshlab berdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Markazning “tajriba maydoni” sifatida O‘zbekistonni tanlashi",
+          "effect": "Jinoiy ishga aloqador bo‘lmagan ko‘plab odamlar ham aybsiz jazoga tortildi",
+          "evidence": "jinoiy ishga aloqador kishilardan tashqari ko‘plab odamlar aybsiz jazoga\ntortildi"
+        },
+        {
+          "kind": "number",
+          "number": "40 000",
+          "unit": "kishi",
+          "meaning": "1985–1990-yillarda “paxta ishi” bo‘yicha tergov qilingan kishilar soni",
+          "evidence": "jami 40  000 kishi tergov qilindi"
+        },
+        {
+          "kind": "number",
+          "number": "5000",
+          "unit": "nafar",
+          "meaning": "Soxta ayblar bilan jinoiy javobgarlikka tortilgan kishilar soni",
+          "evidence": "5000 nafar kishi esa soxta ayblar bilan jinoiy\njavobgarlikka tortildi"
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "title": "Qayta qurish siyosati va uning inqirozi. Farg‘ona fojialari",
+      "page": 131,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1985-yil aprel",
+          "date_label": "1985-yil aprel",
+          "event": "KPSS MK Aprel plenumi sovet jamiyatining barcha sohalarini chuqur isloh qilish yo‘lini e’lon qildi",
+          "evidence": "KPSS MK Aprel (1985-y.) plenumi\nsovet jamiyati hayotining barcha sohalarini chuqur isloh qilish yo‘lini e’lon"
+        },
+        {
+          "kind": "date_event",
+          "date": "1985–1986",
+          "date_label": "1985–1986-yillar",
+          "event": "Qayta qurishning birinchi bosqichi ma’muriy-tashkiliy tadbirlar orqali olib borildi",
+          "evidence": "Qayta qurishning birinchi bosqichi (1985-1986-yillar)"
+        },
+        {
+          "kind": "date_event",
+          "date": "1987–1989",
+          "date_label": "1987–1989-yillar",
+          "event": "Jamiyatning barcha jabhalarini kompleks isloh qilish kun tartibiga qo‘yildi",
+          "evidence": "Qayta qurishning ikkinchi bosqichi (1987 – 1989-yillar) jamiyatning\nbarcha jabhalarini kompleks tarzda isloh qilishni kun tartibiga qo‘ydi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1989-yil may–iyun",
+          "date_label": "1989-yil may–iyun",
+          "event": "Quvasoyda yoshlar o‘rtasidagi bezorilik vodiyda millatlararo to‘qnashuvni keltirib chiqardi",
+          "evidence": "1989-yil may-iyun oylarida Quvasoyda yoshlar o‘rtasida bo‘lgan bezorilik"
+        },
+        {
+          "kind": "date_event",
+          "date": "1989-yil 7–8-iyun",
+          "date_label": "1989-yil 7–8-iyun",
+          "event": "Qo‘qondagi tinch namoyish harbiy qism askarlari tomonidan o‘qqa tutildi",
+          "evidence": "1989-yil 7-8-iyunda Qo‘qon shahrida mahalliy aholi qatnashgan tinch namo"
+        },
+        {
+          "kind": "date_event",
+          "date": "1989-yil 3–12-iyun",
+          "date_label": "1989-yil 3–12-iyun",
+          "event": "Farg‘ona viloyatidagi to‘qnashuvlarda rasmiy ma’lumotga ko‘ra 103 kishi halok bo‘ldi",
+          "evidence": "natijasida 103 nafar kishi halok bo‘lgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1989-yil 21-oktyabr",
+          "date_label": "1989-yil 21-oktyabr",
+          "event": "“O‘zbekiston SSR davlat tili haqida” Qonun qabul qilib, o‘zbek tiliga davlat tili maqomi berildi",
+          "evidence": "1989-yil 21-oktyabrda\nrespublika Oliy Sovetining XI sessiyasi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990-yil iyun",
+          "date_label": "1990-yil iyun",
+          "event": "O‘sh va O‘zgan shaharlarida qirg‘izlar bilan o‘zbeklar o‘rtasida etnik mojaro kelib chiqdi",
+          "evidence": "1990-yil iyunda Farg‘ona vodiysining O‘sh va O‘zgan shaharlarida"
+        },
+        {
+          "kind": "person",
+          "person": "Islom Karimov",
+          "role": "O‘zbekistonning yangi siyosiy rahbariyati boshchisi",
+          "activity": "Farg‘ona fojialaridan keyin millatlararo masalada prinsipial mavqeni egalladi",
+          "evidence": "Farg‘ona fojialaridan keyin O‘zbekistonning Islom Karimov boshchili"
+        },
+        {
+          "kind": "person",
+          "person": "Islom Karimov",
+          "role": "O‘zbekiston rahbari",
+          "activity": "“O‘zbekiston yana bir Farg‘onaga chidab tura olmaydi” deb ta’kidlagan",
+          "evidence": "“O‘zbekiston yana\nbir Farg‘onaga chidab tura olmaydi”, deb ta’kidladi"
+        },
+        {
+          "kind": "person",
+          "person": "M.S.Gorbachyov",
+          "role": "KPSS MK Bosh sekretari",
+          "activity": "Uning g‘oyasi asosida qayta qurishni amalga oshirish mumkin emasligi tan olingan",
+          "evidence": "M.S.Gorbachyov g‘oyasi asosida qayta qurishni amalga\noshirish mumkin emas edi"
+        },
+        {
+          "kind": "term",
+          "term": "Internatsionalizm",
+          "definition": "Xalqlar va ijtimoiy guruhlarning millatlar ozodligi, mustaqilligi, huquqiy tengligiga asoslangan birdamlik va o‘zaro hamkorlik tamoyili",
+          "evidence": "Internatsionalizm – Xalqlar va ijtimoiy guruhlarning millatlar ozodligi"
+        },
+        {
+          "kind": "term",
+          "term": "Partokratik",
+          "definition": "Partiya hukmronligiga asoslangan boshqaruv tizimi va siyosiy tuzilma",
+          "evidence": "Partokratik\n– partiya hukmronligiga asoslangan"
+        },
+        {
+          "kind": "term",
+          "term": "Qayta qurish",
+          "definition": "To‘planib qolgan ijtimoiy-siyosiy, iqtisodiy, madaniy va mafkuraviy muammolarni isloh qilish siyosati",
+          "evidence": "Qayta qurish siyosatining maqsadi va vazifasi mamlakatda to‘planib qolgan"
+        },
+        {
+          "kind": "term",
+          "term": "Nomenklatura",
+          "definition": "Partokratik rahbariyat saqlab qolishdan manfaatdor bo‘lgan imtiyozli mansabdorlar qatlami",
+          "evidence": "mamlakatdagi partokratik rahbariyat “nomenklatura”ni saqlab"
+        },
+        {
+          "kind": "place",
+          "place": "Quvasoy",
+          "event": "1989-yil may-iyun oylarida yoshlar o‘rtasidagi bezorilik millatlararo to‘qnashuvni keltirib chiqargan shahar",
+          "evidence": "Quvasoyda yoshlar o‘rtasida bo‘lgan bezorilik vodiyda millatlararo"
+        },
+        {
+          "kind": "place",
+          "place": "Qo‘qon",
+          "event": "1989-yil 7–8-iyunda tinch namoyish harbiy qism askarlari tomonidan o‘qqa tutilgan shahar",
+          "evidence": "Qo‘qon shahrida mahalliy aholi qatnashgan tinch namo"
+        },
+        {
+          "kind": "place",
+          "place": "Farg‘ona vodiysi va Toshkent viloyati",
+          "event": "Millatlararo to‘qnashuv shu hududlarga tarqalib, xavfli tus oldi",
+          "evidence": "U Farg‘ona vodiysi va Toshkent viloyatiga tarqalib"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qayta qurishning aniq, izchil va ilmiy asoslangan dasturi yo‘qligi",
+          "effect": "Demokratiya shiorlari amalda ma’muriy-buyruqbozlik usullari bilan birga yashadi",
+          "evidence": "qayta qurishning aniq va izchil, ilmiy jihatdan puxta ishlab\nchiqilgan dasturi yo‘q edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Partokratik rahbariyatning “nomenklatura”ni saqlab qolishdan manfaatdorligi",
+          "effect": "Mamlakatni eskicha usulda boshqarish oson bo‘lib, islohotlar to‘xtab qoldi",
+          "evidence": "Chunki mamlakatni eskicha usulda boshqarish oson edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ittifoqni yangilangan holatda saqlab qolish ko‘zda tutilgani",
+          "effect": "Milliy respublikalar suvereniteti haqidagi gaplar amalda cheklandi",
+          "evidence": "qayta qurishda milliy respublikalarning suvereniteti haqida\ngapirilsa ham Ittifoqni yangilangan holatda saqlab qolish ko‘zda tutilgan edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yakkapartiyaviy rahbarlik va mustabid boshqaruv usuli",
+          "effect": "U hech qachon demokratiya va oshkoralik bilan kelisha olmadi, qayta qurish mag‘lubiyatga uchradi",
+          "evidence": "mustabid boshqaruv usuli hech qachon demokratiya va oshkoralik bilan\nkelisha olmagan"
+        },
+        {
+          "kind": "number",
+          "number": "103",
+          "unit": "nafar",
+          "meaning": "1989-yil 3–12-iyunda Farg‘ona viloyatida halok bo‘lgan kishilar soni",
+          "evidence": "103 nafar kishi halok bo‘lgan"
+        },
+        {
+          "kind": "number",
+          "number": "757",
+          "unit": "xonadon",
+          "meaning": "Farg‘ona voqealari chog‘ida o‘t qo‘yilib vayron etilgan xonadonlar soni",
+          "evidence": "757 xonadonga o‘t qo‘yilib, vayron etilgan"
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "title": "O‘zbekiston mustaqillikka erishish ostonasida",
+      "page": 135,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1989-yil 23-iyun",
+          "date_label": "1989-yil 23-iyun",
+          "event": "Islom Karimov O‘zbekiston Kompartiyasi MK birinchi sekretari qilib saylandi",
+          "evidence": "1989-yil 23-iyunda tajribali iqtisodchi\nva partiya xodimi Islom Karimov O‘zbekiston\nKompartiyasi Markaziy Komitetining birinchi sekretari\nqilib saylandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1988-yil noyabr",
+          "date_label": "1988-yil noyabr",
+          "event": "“Birlik” xalq harakati jamoat tashkiloti sifatida tashkil topdi",
+          "evidence": "1988-yil noyabrda\n“Birlik” xalq harakati (rahbari professor Abdurahim Po‘latov) jamoat\ntashkiloti sifatida tashkil topdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990-yil 30-aprel",
+          "date_label": "1990-yil 30-aprel",
+          "event": "“Erk” demokratik partiyasining ta’sis qurultoyida dasturi va nizomi qabul qilindi",
+          "evidence": "1990-yil 30-aprelda “Erk” demokratik\npartiyasining ta’sis qurultoyida uning dasturi va nizomi qabul qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990-yil 24-mart",
+          "date_label": "1990-yil 24-mart",
+          "event": "O‘zbekistonda prezidentlik boshqaruvi ta’sis etilib, Islom Karimov Prezident qilib saylandi",
+          "evidence": "sessiyasida O‘zbekistonda prezidentlik boshqaruvi ta’sis etildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990-yil 20-iyun",
+          "date_label": "1990-yil 20-iyun",
+          "event": "O‘zbekiston SSR Oliy Sovetining II sessiyasida Mustaqillik Deklaratsiyasi qabul qilindi",
+          "evidence": "1990-yil 20-iyunda bo‘lgan O‘zbekiston SSR Oliy Soveti o‘n ikkinchi cha"
+        },
+        {
+          "kind": "date_event",
+          "date": "1990-yil 1-noyabr",
+          "date_label": "1990-yil 1-noyabr",
+          "event": "Ministrlar Soveti Prezident huzuridagi Vazirlar Mahkamasiga aylantirildi",
+          "evidence": "O‘zbekiston SSR Ministrlar Soveti O‘zbekiston\nSSR Prezidenti huzuridagi Vazirlar Mahkamasiga aylantirildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991-yil 17-mart",
+          "date_label": "1991-yil 17-mart",
+          "event": "SSSRda birinchi marta umumxalq referendumi o‘tkazildi",
+          "evidence": "1991-yil 17-martda birinchi marta\nSSSRda umumxalq referendumi o‘tkazilib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991-yil 19–21-avgust",
+          "date_label": "1991-yil 19–21-avgust",
+          "event": "Moskvada GKChP tuzildi, biroq demokratik kuchlar tomonidan bostirildi",
+          "evidence": "Moskvada 1991-yil 19 – 21-avgustda yuz bergan voqealar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991-yil 31-avgust",
+          "date_label": "1991-yil 31-avgust",
+          "event": "“O‘zbekiston Respublikasining Davlat Mustaqilligi asoslari to‘g‘risida” Qonun qabul qilindi",
+          "evidence": "Davlat Mustaqilligi asoslari to‘g‘risida” Qonun qabul qilin"
+        },
+        {
+          "kind": "date_event",
+          "date": "1991-yil 29-dekabr",
+          "date_label": "1991-yil 29-dekabr",
+          "event": "Birinchi marta yashirin ovoz berish yo‘li bilan muqobil prezidentlik saylovi o‘tkazildi",
+          "evidence": "29-dekabrda birinchi marta yashirin ovoz berish yo‘li bilan o‘tkazilgan"
+        },
+        {
+          "kind": "person",
+          "person": "Islom Karimov",
+          "role": "O‘zbekiston Kompartiyasi MK birinchi sekretari, keyinchalik Prezident",
+          "activity": "1991-yil 29-dekabrda 5 yil muddatga O‘zbekiston Respublikasi Prezidenti saylangan",
+          "evidence": "5 yil muddatga O‘zbekiston Respublikasining Prezidenti qilib"
+        },
+        {
+          "kind": "person",
+          "person": "Abdurahim Po‘latov",
+          "role": "professor, “Birlik” xalq harakati rahbari",
+          "activity": "1988-yil noyabrda jamoat tashkiloti sifatida tashkil topgan harakatga boshchilik qilgan",
+          "evidence": "“Birlik” xalq harakati (rahbari professor Abdurahim Po‘latov)"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Solih",
+          "role": "modern shoir (Saloy Madaminov)",
+          "activity": "“Birlik” faollari guruhidan chiqib, siyosiy partiya tuzish harakatiga boshchilik qilgan",
+          "evidence": "modern\nshoir Muhammad Solih (Saloy Madaminov) boshchiligida siyosiy partiya"
+        },
+        {
+          "kind": "person",
+          "person": "Gennadiy Yanayev",
+          "role": "SSSR vitse-prezidenti",
+          "activity": "1991-yil avgustda Favqulodda Holat Davlat Komitetiga boshchilik qilgan",
+          "evidence": "vitse-prezident Gennadiy Yanayev boshchiligidagi oliy eshelon rahbarlari"
+        },
+        {
+          "kind": "person",
+          "person": "Boris Yelsin",
+          "role": "RSFSR prezidenti",
+          "activity": "1991-yil avgustdagi isyonni demokratik kuchlar bilan birga bostirgan",
+          "evidence": "elsin rahbarligidagi demokra"
+        },
+        {
+          "kind": "term",
+          "term": "Referendum",
+          "definition": "Davlat ahamiyatiga ega muhim masalalar bo‘yicha o‘tkaziladigan umumxalq so‘rovi, ovoz berish yo‘li bilan xalq fikrini aniqlash",
+          "evidence": "davlat ahamiyatiga\nega bo‘lgan muhim masalalar bo‘yicha o‘tkaziladigan"
+        },
+        {
+          "kind": "term",
+          "term": "Vitse-prezident",
+          "definition": "Prezident o‘rinbosari ma’nosini anglatuvchi lavozim",
+          "evidence": "Vitse-prezident – prezident\no‘rinbosari"
+        },
+        {
+          "kind": "term",
+          "term": "Deklaratsiya",
+          "definition": "Hukumat yoki tashkilotning muhim hujjat, qonun yoki voqeani ko‘pchilik e’tiboriga yetkazuvchi bayonoti",
+          "evidence": "Deklaratsiya – (ma’lum qilaman) – hukumatning"
+        },
+        {
+          "kind": "place",
+          "place": "Novo-Ogaryovo",
+          "event": "1991-yil 23-aprelda SSSR Prezidenti va 9 ta respublika rahbarlari uchrashib, “9+1” bayonotini qabul qildi",
+          "evidence": "1991-yil 23-aprelda Moskva yaqinidagi Novo-Ogaryovoda SSSR Preziden"
+        },
+        {
+          "kind": "place",
+          "place": "Moskva",
+          "event": "1991-yil 19–21-avgustda GKChP tuzilib, SSSRning kelajagi yo‘qligidan dalolat bergan voqealar yuz berdi",
+          "evidence": "Moskvada 1991-yil 19 – 21-avgustda yuz bergan voqealar"
+        },
+        {
+          "kind": "cause",
+          "cause": "“Birlik” va “Erk” rahbarlarining hukumat siyosatiga muxoliflik yo‘liga o‘tishi",
+          "effect": "Jamiyatdagi fuqarolar totuvligiga putur yetib, 1992-yildan bu tashkilotlar faoliyatini to‘xtatdi",
+          "evidence": "bu narsa jamiyatdagi fuqarolar totuvligi va\nhamjihatligiga putur yetkaza boshladi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Moskva va uning respublikalardagi yugurdaklarining Ittifoqni saqlab qolishga urinishi",
+          "effect": "1991-yil 19–21-avgustda GKChP tuzilib, isyon barbod bo‘ldi",
+          "evidence": "Moskva\nva uning respublikalardagi yugurdaklari butun imkoniyatlarini ishga solib"
+        },
+        {
+          "kind": "cause",
+          "cause": "1990-yil mart–may oylarida Litva, Latviya va Estoniyaning SSSRdan chiqib ketishi",
+          "effect": "SSSRning davlat butunligiga jiddiy ta’sir ko‘rsatdi",
+          "evidence": "1990-yil mart – may oylarida Litva, Latvi"
+        },
+        {
+          "kind": "number",
+          "number": "125",
+          "unit": "yil",
+          "meaning": "Rossiya imperiyasi va SSSR mustamlakachilik davrining davomiyligi",
+          "evidence": "Rossiya imperiyasi va SSSRning 125 yil davom etgan mustamlakachilik davriga"
+        }
+      ]
+    }
+  ]
+}

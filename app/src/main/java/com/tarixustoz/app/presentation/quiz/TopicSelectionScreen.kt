@@ -1,5 +1,6 @@
 package com.tarixustoz.app.presentation.quiz
 
+import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -10,8 +11,12 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.automirrored.filled.Sort
+import androidx.compose.material.icons.filled.ArrowDownward
+import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.SwapVert
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -22,7 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.tarixustoz.app.domain.model.Topic
+import com.tarixustoz.app.domain.model.gradeId
 import com.tarixustoz.app.presentation.textbooks.TextbooksViewModel
 import com.tarixustoz.app.presentation.theme.BrandPurple
 
@@ -34,37 +39,88 @@ fun TopicSelectionScreen(
     viewModel: TextbooksViewModel = hiltViewModel()
 ) {
     var searchQuery by remember { mutableStateOf("") }
-    var selectedGradeFilter by remember { mutableIntStateOf(0) } // 0 = Barchasi
     val selectedTopicIds = remember { mutableStateListOf<String>() }
 
-    // Seeded topic list with metadata
-    val allTopics = remember {
-        listOf(
-            TopicMeta("uz6_t1", "uz_6", 6, "Qadimgi Misr madaniyati va Nil daryosi", "6-sinf • Jahon tarixi", 18),
-            TopicMeta("uz6_t2", "uz_6", 6, "Qadimgi Baqtriya va So‘g‘diyona davlati", "6-sinf • Jahon tarixi", 15),
-            TopicMeta("uz6_t3", "uz_6", 6, "Yunon-Baqtriya podsholigi va Kushonlar", "6-sinf • Jahon tarixi", 14),
-            TopicMeta("uz7_t1", "uz_7", 7, "Xioniylar, Kidariylar va Eftallar", "7-sinf • O‘zbekiston tarixi", 20),
-            TopicMeta("uz7_t2", "uz_7", 7, "Turk xoqonligi va Buyuk Ipak yo‘li", "7-sinf • O‘zbekiston tarixi", 22),
-            TopicMeta("uz7_t3", "uz_7", 7, "Arablarning Movarounnahrga kirib kelishi", "7-sinf • O‘zbekiston tarixi", 19),
-            TopicMeta("uz7_t4", "uz_7", 7, "Somoniylar davlatining tashkil topishi va madaniyat", "7-sinf • O‘zbekiston tarixi", 25),
-            TopicMeta("uz7_t5", "uz_7", 7, "Amir Temur saltanatining yuksalishi", "7-sinf • O‘zbekiston tarixi", 30),
-            TopicMeta("jahon7_t1", "jahon_7", 7, "Vizantiya imperiyasi va Salib yurishlari", "7-sinf • Jahon tarixi", 16),
-            TopicMeta("uz8_t1", "uz_8", 8, "Buxoro amirligi, Xiva va Qo‘qon xonliklari", "8-sinf • O‘zbekiston tarixi", 24),
-            TopicMeta("uz9_t1", "uz_9", 9, "Jadidchilik harakati va Mahmudxo‘ja Behbudiy", "9-sinf • O‘zbekiston tarixi", 21),
-            TopicMeta("uz10_t1", "uz_10", 10, "Turkiston Muxtoriyati fojiasi", "10-sinf • O‘zbekiston tarixi", 17),
-            TopicMeta("uz11_t1", "uz_11", 11, "O‘zbekiston Respublikasining Mustaqilligi e’lon qilinishi", "11-sinf • O‘zbekiston tarixi", 28)
-        )
+    val realTopics by viewModel.allTopicsFlow.collectAsState()
+    var selectedBookFilter by remember { mutableStateOf("all") }
+    var isReversedSort by remember { mutableStateOf(false) }
+
+    val allTopics = remember(realTopics) {
+        realTopics.map { t ->
+            val textbookTitle = when {
+                t.textbookId == "uz_6" -> "6-sinf • Qadimgi dunyo tarixi"
+                t.textbookId == "uz_7" -> "7-sinf • O‘zbekiston tarixi"
+                t.textbookId == "jahon_7" -> "7-sinf • Jahon tarixi"
+                t.textbookId == "uz_8" -> "8-sinf • O‘zbekiston tarixi"
+                t.textbookId == "jahon_8" -> "8-sinf • Jahon tarixi"
+                t.textbookId == "uz_9" -> "9-sinf • O‘zbekiston tarixi"
+                t.textbookId == "jahon_9" -> "9-sinf • Jahon tarixi"
+                t.textbookId == "uz_10" -> "10-sinf • O‘zbekiston tarixi"
+                t.textbookId == "jahon_10" -> "10-sinf • Jahon tarixi"
+                t.textbookId == "uz_11" -> "11-sinf • O‘zbekiston tarixi"
+                t.textbookId == "jahon_11" -> "11-sinf • Jahon tarixi"
+                t.textbookId.contains("jahon") -> "${t.gradeId}-sinf • Jahon tarixi"
+                else -> "${t.gradeId}-sinf • O‘zbekiston tarixi"
+            }
+            TopicMeta(
+                id = t.id,
+                textbookId = t.textbookId,
+                gradeId = t.gradeId,
+                title = t.title,
+                textbookTitle = textbookTitle,
+                questionCount = 20,
+                number = t.number
+            )
+        }
     }
 
-    val gradeFilters = listOf(0 to "Barchasi", 6 to "6-sinf", 7 to "7-sinf", 8 to "8-sinf", 9 to "9-sinf", 10 to "10-sinf", 11 to "11-sinf")
+    // Sort chronologically starting from 6-sinf to 11-sinf
+    val sortedTopics = remember(allTopics, isReversedSort) {
+        val baseSorted = allTopics.sortedWith(
+            compareBy<TopicMeta> { it.gradeId }
+                .thenBy { if (it.textbookId.contains("jahon")) 1 else 0 }
+                .thenBy { it.number }
+                .thenBy { it.title }
+        )
+        if (isReversedSort) baseSorted.reversed() else baseSorted
+    }
 
-    val filteredTopics = remember(searchQuery, selectedGradeFilter) {
-        allTopics.filter { topic ->
-            val matchesGrade = selectedGradeFilter == 0 || topic.gradeId == selectedGradeFilter
+    val gradeFilters = listOf(
+        "all" to "Barchasi (6-11 sinf)",
+        "6_all" to "6-sinf (Qadimgi dunyo)",
+        "7_uz" to "7-sinf O‘zbekiston",
+        "7_jahon" to "7-sinf Jahon",
+        "8_uz" to "8-sinf O‘zbekiston",
+        "8_jahon" to "8-sinf Jahon",
+        "9_uz" to "9-sinf O‘zbekiston",
+        "9_jahon" to "9-sinf Jahon",
+        "10_uz" to "10-sinf O‘zbekiston",
+        "10_jahon" to "10-sinf Jahon",
+        "11_uz" to "11-sinf O‘zbekiston",
+        "11_jahon" to "11-sinf Jahon"
+    )
+
+    val filteredTopics = remember(searchQuery, selectedBookFilter, sortedTopics) {
+        sortedTopics.filter { topic ->
+            val matchesFilter = when (selectedBookFilter) {
+                "all" -> true
+                "6_all" -> topic.gradeId == 6 || topic.textbookId == "uz_6"
+                "7_uz" -> topic.gradeId == 7 && (topic.textbookId == "uz_7" || !topic.textbookId.contains("jahon"))
+                "7_jahon" -> topic.gradeId == 7 && topic.textbookId.contains("jahon")
+                "8_uz" -> topic.gradeId == 8 && (topic.textbookId == "uz_8" || !topic.textbookId.contains("jahon"))
+                "8_jahon" -> topic.gradeId == 8 && topic.textbookId.contains("jahon")
+                "9_uz" -> topic.gradeId == 9 && (topic.textbookId == "uz_9" || !topic.textbookId.contains("jahon"))
+                "9_jahon" -> topic.gradeId == 9 && topic.textbookId.contains("jahon")
+                "10_uz" -> topic.gradeId == 10 && (topic.textbookId == "uz_10" || !topic.textbookId.contains("jahon"))
+                "10_jahon" -> topic.gradeId == 10 && topic.textbookId.contains("jahon")
+                "11_uz" -> topic.gradeId == 11 && (topic.textbookId == "uz_11" || !topic.textbookId.contains("jahon"))
+                "11_jahon" -> topic.gradeId == 11 && topic.textbookId.contains("jahon")
+                else -> true
+            }
             val matchesQuery = searchQuery.isBlank() ||
                     topic.title.contains(searchQuery, ignoreCase = true) ||
                     topic.textbookTitle.contains(searchQuery, ignoreCase = true)
-            matchesGrade && matchesQuery
+            matchesFilter && matchesQuery
         }
     }
 
@@ -87,6 +143,17 @@ fun TopicSelectionScreen(
                     }
                 },
                 actions = {
+                    IconButton(
+                        onClick = { isReversedSort = !isReversedSort },
+                        modifier = Modifier.testTag("reverse_sort_icon_btn")
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.SwapVert,
+                            contentDescription = "Tartibni almashtirish (Reverse)",
+                            tint = BrandPurple
+                        )
+                    }
+
                     TextButton(
                         onClick = {
                             if (isAllSelected) {
@@ -207,35 +274,67 @@ fun TopicSelectionScreen(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
-                items(gradeFilters) { (grade, label) ->
-                    val isSelected = selectedGradeFilter == grade
-                    FilterChip(
-                        selected = isSelected,
-                        onClick = { selectedGradeFilter = grade },
-                        label = {
-                            Text(
-                                label,
-                                fontSize = 12.sp,
-                                fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
-                            )
-                        },
-                        colors = FilterChipDefaults.filterChipColors(
-                            selectedContainerColor = BrandPurple,
-                            selectedLabelColor = Color.White
-                        ),
-                        shape = RoundedCornerShape(50)
-                    )
+                items(gradeFilters) { (filterKey, label) ->
+                    val isSelected = selectedBookFilter == filterKey
+                    Surface(
+                        shape = RoundedCornerShape(50),
+                        color = if (isSelected) BrandPurple else MaterialTheme.colorScheme.surfaceVariant,
+                        border = if (isSelected) null else BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+                        modifier = Modifier.clickable { selectedBookFilter = filterKey }
+                    ) {
+                        Text(
+                            text = label,
+                            fontSize = 12.sp,
+                            fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
+                            color = if (isSelected) Color.White else MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(horizontal = 14.dp, vertical = 8.dp)
+                        )
+                    }
                 }
             }
 
             Spacer(Modifier.height(8.dp))
 
-            Text(
-                text = "${filteredTopics.size} ta mavzu topildi • ${selectedTopicIds.size} ta tanlandi",
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(vertical = 4.dp)
-            )
+            // Subheader: topic count and Reverse sort toggle chip
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 4.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "${filteredTopics.size} ta mavzu topildi • ${selectedTopicIds.size} ta tanlandi",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+
+                Surface(
+                    shape = RoundedCornerShape(8.dp),
+                    color = BrandPurple.copy(alpha = 0.12f),
+                    border = BorderStroke(1.dp, BrandPurple.copy(alpha = 0.3f)),
+                    modifier = Modifier.clickable { isReversedSort = !isReversedSort }
+                ) {
+                    Row(
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            imageVector = if (isReversedSort) Icons.Default.ArrowUpward else Icons.Default.ArrowDownward,
+                            contentDescription = null,
+                            tint = BrandPurple,
+                            modifier = Modifier.size(14.dp)
+                        )
+                        Spacer(Modifier.width(4.dp))
+                        Text(
+                            text = if (isReversedSort) "11 ➔ 6-sinf (Z-A)" else "6 ➔ 11-sinf (A-Z)",
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = BrandPurple
+                        )
+                    }
+                }
+            }
 
             // Topics list with checkboxes
             LazyColumn(
@@ -314,5 +413,6 @@ private data class TopicMeta(
     val gradeId: Int,
     val title: String,
     val textbookTitle: String,
-    val questionCount: Int
+    val questionCount: Int,
+    val number: Int = 0
 )

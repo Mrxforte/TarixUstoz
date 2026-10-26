@@ -1,0 +1,1143 @@
+{
+  "chapter": "KIRISH",
+  "topics": [
+    {
+      "number": 13,
+      "title": "Buyuk Britaniyaning tashqi siyosati",
+      "page": 45,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asr",
+          "date_label": "XIX asrdan boshlab",
+          "event": "Buyuk Britaniya dunyoning barcha qit’alarida juda katta hududlarni bosib olib, ularni mustamlakaga aylantirdi",
+          "evidence": "Buyuk Britaniya XIX asrdan boshlab dunyoning barcha qit'alarida juda katta hududlarni bosib oldi va"
+        },
+        {
+          "kind": "date_event",
+          "date": "1875",
+          "date_label": "1875-yilda",
+          "event": "Buyuk Britaniya Misr hukumatidan Suvaysh kanali aksiyalarining 45 foizini sotib oldi",
+          "evidence": "Suvaysh kanalining 45% aksiyasini sotib oldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1876",
+          "date_label": "1876-yilda",
+          "event": "Britaniya qirolicha Viktoriyani Hindistonning imperatori deb e’lon qildi",
+          "evidence": "Britaniya o'z qirolichasi Viktoriyani Hindistonning"
+        },
+        {
+          "kind": "date_event",
+          "date": "1877",
+          "date_label": "1877-yilda",
+          "event": "Bolqon va bo‘g‘ozlar masalasidagi ziddiyat Rossiya bilan Usmonli davlati urushiga sabab bo‘ldi",
+          "evidence": "urinishi l877-yilda Rossiya-Usmonli"
+        },
+        {
+          "kind": "date_event",
+          "date": "1882",
+          "date_label": "1882-yilda",
+          "event": "Buyuk Britaniya Misrni egallab, keyingi yillarda Nigeriya, Somali, Keniya va Ugandani zabt etdi",
+          "evidence": "1882-yilda Misrni egalladi. Keyingi yillarda Nigeriya,"
+        },
+        {
+          "kind": "date_event",
+          "date": "1899",
+          "date_label": "1899-yilda",
+          "event": "Buyuk Britaniya Afrikada burlar respublikalariga qarshi urush harakatlarini boshladi",
+          "evidence": "qarshi urush harakatlarini boshladi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1902",
+          "date_label": "1902-yilda",
+          "event": "Bur respublikalari taslim bo‘lib, Transvaal va Oranj respublikalari Britaniya qo‘liga o‘tdi",
+          "evidence": "taslim bo'ldi (Transvaal va Oranj Respublikalari)."
+        },
+        {
+          "kind": "person",
+          "person": "Viktoriya",
+          "role": "Buyuk Britaniya qirolichasi va imperiyaning timsoli",
+          "activity": "1876-yilda Hindiston imperatori deb e’lon qilinib, Britaniya imperiyasi nomidan hukmronlik qilgan",
+          "evidence": "imperatori deb e'lon qildi. Shu tariqa, Buyuk Britaniya"
+        },
+        {
+          "kind": "person",
+          "person": "Buyuk Britaniya hukumati",
+          "role": "imperiya tashqi va ichki siyosatini yuritgan ijro hokimiyati",
+          "activity": "Eron va Xitoydagi inqiloblarga qarshi chiqib, mustamlakalarga dominion huquqini berishga majbur bo‘ldi",
+          "evidence": "Buyuk Britaniya hukumati, ayni paytda, o'zga davlatlarning ichki"
+        },
+        {
+          "kind": "person",
+          "person": "O‘sha davr tarixchilari",
+          "role": "mustamlakalar ahamiyatini majoziy ta’riflagan mualliflar",
+          "activity": "Hindistonni Britaniyani boquvchi enaga, Misrni esa imperiya tojiga o‘xshatib ta’riflagan",
+          "evidence": "O'sha davr tarixchilari Buyuk Britaniya uchun mustamlakalarning ahamiyati haqida majoziy ma'noda bunday deb yozgan edilar"
+        },
+        {
+          "kind": "term",
+          "term": "dominion",
+          "definition": "Britaniya mustamlakalariga rasmiyatchilik jihatdan berilgan mustaqillik huquqi",
+          "evidence": "mustaqillik huquqini (dominion) berishga majbur bo'ldi"
+        },
+        {
+          "kind": "term",
+          "term": "mustamlaka",
+          "definition": "Buyuk Britaniya bosib olib, o‘z tasarrufiga aylantirgan xorijiy hudud",
+          "evidence": "ularni o'z mustamlakasiga aylantirdi."
+        },
+        {
+          "kind": "term",
+          "term": "mustamlakachilik imperiyasi",
+          "definition": "metropoliya va unga tobe mustamlakalardan tashkil topgan yirik davlat birlashmasi",
+          "evidence": "tashkil etildi. Endilikda Buyuk Britaniya imperiya deb,"
+        },
+        {
+          "kind": "term",
+          "term": "madhiya",
+          "definition": "davlat ramzi bo‘lgan tantanali qo‘shiq; unda Britaniyaning dengiz hukmronligi kuylangan",
+          "evidence": "ligi hatto mamlakat madhiyasida ham o'z"
+        },
+        {
+          "kind": "term",
+          "term": "Berlin kongressi",
+          "definition": "buyuk davlatlarning anjumani bo‘lib, San-Stefano shartnomasi unda qayta ko‘rib chiqilgan",
+          "evidence": "buyuk davlatlarning Berlin kongressida qayta ko'rib chiqishga majbur"
+        },
+        {
+          "kind": "place",
+          "place": "Suvaysh kanali",
+          "event": "1875-yilda aksiyalarining 45 foizi sotib olinib, Hindistonga dengiz yo‘li nazorati Britaniya qo‘liga o‘tdi",
+          "evidence": "chiqadigan dengiz yo'llari nazorati to'la Britaniya qo'liga o'tdi"
+        },
+        {
+          "kind": "place",
+          "place": "Afg‘oniston",
+          "event": "Rossiya va Buyuk Britaniya manfaatlari to‘qnashgan hudud bo‘lib, ikki imperiya o‘rtasida bufer vazifasini o‘tagan",
+          "evidence": "Afg'oniston bu ikki mustamlakachi davlat manfaatlari tig'ini qaytarib turuvchi hudud vazifasini o'tashi lozim edi"
+        },
+        {
+          "kind": "place",
+          "place": "Kipr oroli",
+          "event": "Berlin kongressidagi xizmat evaziga Usmonli davlati Kiprdan Britaniya foydasiga voz kechdi",
+          "evidence": "evaziga Usmonli davlati Buyuk Britaniya foydasiga Kipr orolidan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mustamlakalardan keladigan daromad olinayotgan foydaning katta qismini tashkil etgan",
+          "effect": "Buyuk Britaniya yangi-yangi mustamlakalar bosib olishni kuchaytirishga majbur bo‘ldi",
+          "evidence": "Mustamlakalardan keladigan daromad olinayotgan foydaning katta"
+        },
+        {
+          "kind": "cause",
+          "cause": "Germaniya harbiy qudratining o‘sib borishi va Britaniya mustamlakalariga da’vo qilishi",
+          "effect": "Buyuk Britaniya Rossiyaga dushmanlik munosabatini o‘zgartirib, u bilan yaqinlashdi",
+          "evidence": "Bunga Germaniya harbiy qudratining tobora o'sib borayotganligi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Bozorlar va mustamlakalar uchun raqobatning kuchayishi",
+          "effect": "Buyuk Britaniyaning xalqaro ahvoli yomonlashib, Germaniya bilan ziddiyatlar keskinlashdi",
+          "evidence": "yib ketganligi Buyuk Britaniyaning xalqaro"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mustamlakalardagi milliy burjuaziyaning tazyiqi kuchaygan",
+          "effect": "Hukumat mustamlakalarga rasmiyatchilik jihatdan dominion huquqini berishga majbur bo‘ldi",
+          "evidence": "tazyiqi ostida hukumat bu mustamlakalarga rasmiyatchilik jihatdan"
+        },
+        {
+          "kind": "number",
+          "number": "33",
+          "unit": "mln. kv.km.",
+          "meaning": "XIX asr oxirida Britaniya mustamlakalari egallagan hududning umumiy maydoni",
+          "evidence": "33 mln. kv.km.ni tashkil etdi."
+        },
+        {
+          "kind": "number",
+          "number": "370",
+          "unit": "mln.",
+          "meaning": "Britaniya mustamlakalarida yashagan aholining umumiy soni",
+          "evidence": "Ularda qariyb 370 mln. aholi yashardi."
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "Amerika Qo‘shma Shtatlari",
+      "page": 49,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1870–1914",
+          "date_label": "1870–1914-yillarda",
+          "event": "AQShga 25 million kishi ko‘chib kelib, mamlakat taraqqiyotida muhim rol o‘ynadi",
+          "evidence": "1870-1914-yillarda AQSHga 25 mln. kishi ko'chib keldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1860",
+          "date_label": "1860-yilda",
+          "event": "AQSh sanoat mahsuloti hajmi jihatidan dunyoda to‘rtinchi o‘rinda turgan edi",
+          "evidence": "Agar 1860-yil AQSH sanoat mahsuloti hajmi jihatidan dunyoda 4-o'rinda turgan bo'lsa"
+        },
+        {
+          "kind": "date_event",
+          "date": "1870",
+          "date_label": "1870-yilda",
+          "event": "AQSh konstitutsiyasiga saylov huquqidagi irqiy cheklovlarni bekor qiluvchi tuzatish kiritildi",
+          "evidence": "1870-yilda AQSH konstitutsiyasiga tuzatish kiritildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1872",
+          "date_label": "1872-yilda",
+          "event": "Kongress janubdagi sobiq isyonchilarga umumiy afv berish to‘g‘risida qonun qabul qildi",
+          "evidence": "Kongress 1872-yilda Janubdagi sobiq isyonchilarga umumiy afy"
+        },
+        {
+          "kind": "date_event",
+          "date": "1890",
+          "date_label": "1890-yilda",
+          "event": "Yevropa davlatlarining AQShga qo‘ygan kapitali 3 milliard dollarga yetdi",
+          "evidence": "Yevropa davlatlarining AQSHga qo'ygan kapitali"
+        },
+        {
+          "kind": "date_event",
+          "date": "1894",
+          "date_label": "1894-yilga kelib",
+          "event": "AQSh sanoat mahsuloti hajmi bo‘yicha dunyoda birinchi o‘ringa chiqdi",
+          "evidence": "1894-yilga kelganda birinchi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1909",
+          "date_label": "1909-yilda",
+          "event": "AQShda sanoat mahsulotining qiymati 20 milliard dollardan oshdi",
+          "evidence": "Sanoat mahsulotining qiymati 1909-yilda 20 mlrd."
+        },
+        {
+          "kind": "person",
+          "person": "Morgan",
+          "role": "amerikalik yirik moliyachi va po?lat sanoati magnati",
+          "activity": "1901-yilda 1 milliard dollarlik kapitalga ega «Po‘lat korporatsiyasi» trestini tuzgan",
+          "evidence": "1901-yilda Morgan 1 milliard dollarlik kapitalga ega bo'lgan"
+        },
+        {
+          "kind": "person",
+          "person": "Rokfeller",
+          "role": "neft sanoati magnati, «Standart oyl» tresti egasi",
+          "activity": "Neft mahsulotlarining 90 foizini va okeanlarda qatnaydigan yuzlab paroxodlarni qo‘lga kiritgan",
+          "evidence": "Rokfellerning ,,Standart oyl tresti"
+        },
+        {
+          "kind": "person",
+          "person": "Ford",
+          "role": "avtomobil ishlab chiqarish sohasidagi yetakchi tadbirkor",
+          "activity": "AQShda avtomobil ishlab chiqarish rivojlanib, u «avtomobil qiroli» nomini olgan",
+          "evidence": "Ford avtomobil qiroliga aylandi."
+        },
+        {
+          "kind": "term",
+          "term": "trest",
+          "definition": "bir tarmoqdagi korxonalarni birlashtirib, bozorni nazorat qiluvchi monopolistik birlashma",
+          "evidence": "tarmoqlarida trestlar tashkil etildi."
+        },
+        {
+          "kind": "term",
+          "term": "latifundiya",
+          "definition": "lotincha so‘z bo‘lib, katta yer-mulk ma’nosini bildiradi",
+          "evidence": "Latifundiya (lotincha) - katta yer-mulk."
+        },
+        {
+          "kind": "term",
+          "term": "«amerikacha yo‘l»",
+          "definition": "qishloq xo‘jaligida yangi yerlarni ochish hisobiga mahsulotni ko‘paytirish usuli",
+          "evidence": "mahsulotlarni ko'paytirish qishloq xo'jaligini rivojlantirishning"
+        },
+        {
+          "kind": "term",
+          "term": "Ku-kluks-klan",
+          "definition": "AQShda irqchilik va terror olib borgan maxfiy tashkilot",
+          "evidence": "Ku-kluks-klan - irqchilik, terrorchi tashkilot."
+        },
+        {
+          "kind": "term",
+          "term": "Linch sudi",
+          "definition": "AQShda qora tanlilarni va demokratik harakat qatnashchilarini sudsiz jazolash",
+          "evidence": "Linch sudi - AQSHda qora tanli kishilar va demokratik harakat"
+        },
+        {
+          "kind": "place",
+          "place": "Turkiston",
+          "event": "beda va boshqa o‘simliklar AQShga keltirilib, mahalliylashtirilgan va yuqori hosil olingan",
+          "evidence": "Turkistondan beda va boshqa o'simliklar AQSHga keltirilib mahalliylashtirildi"
+        },
+        {
+          "kind": "place",
+          "place": "Shimoliy Afrika",
+          "event": "hosildor makkajo‘xori AQShga keltirilib, mahalliy sharoitga moslashtirilgan",
+          "evidence": "Shimoliy Afrikadan hosildor makkajo'xori, Rossiyadan bug'doy,"
+        },
+        {
+          "kind": "place",
+          "place": "Janub",
+          "event": "qulchilik tugatilib, qora tanli aholi jamiyat hayotida faollasha boshlagan hudud",
+          "evidence": "Janubda fuqarolar urushidan keyin katta o'zgarishlar yuz berdi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Yagona ichki bozorning vujudga kelishi, qulchilikning tugatilishi va boy tabiiy resurslar",
+          "effect": "AQSh iqtisodiy taraqqiyoti nihoyatda tezlashdi",
+          "evidence": "foydali qazilma boyliklarining ko'pligi, sersuv daryolar va poyonsiz"
+        },
+        {
+          "kind": "cause",
+          "cause": "AQShga yashash uchun kelganlarning katta qismi yuqori malakali mutaxassislar bo‘lgan",
+          "effect": "Mamlakat iqtisodiyoti malakali ishchi kuchi bilan ta’minlandi",
+          "evidence": "yashash uchun kelganlarning katta qismi amalda yuqori malakali mutaxassislar edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ishchi kuchiga doimiy muhtojlik sezilgan",
+          "effect": "Yangi texnika va texnologiyalar ishlab chiqarishga keng joriy etildi",
+          "evidence": "doimiy muhtojlik yangi texnika va"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yevropa kapitalining AQSh iqtisodiyotiga kirib kelishi",
+          "effect": "Sanoatning rivojlanishi tezlashib, yirik trestlar vujudga keldi",
+          "evidence": "AQSH sanoati o'sishida Yevropa kapitali ham muhim rol o'ynadi"
+        },
+        {
+          "kind": "number",
+          "number": "25",
+          "unit": "mln.",
+          "meaning": "1870–1914-yillarda AQShga ko‘chib kelgan kishilar soni",
+          "evidence": "AQSHga 25 mln. kishi ko'chib keldi"
+        },
+        {
+          "kind": "number",
+          "number": "90",
+          "unit": "%",
+          "meaning": "«Standart oyl» tresti qo‘lga kiritgan neft mahsulotlari ulushi",
+          "evidence": "jami neft mahsulotining 90"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "AQSHning ichki siyosati",
+      "page": 52,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1886",
+          "date_label": "1886-yil 1-mayda",
+          "event": "Umumiy ish tashlashlar bo‘lib, ishchilar 8 soatlik ish kuni joriy etilishini talab qildi",
+          "evidence": "1886-yil 1-may kuni umumiy ish tashlashlarda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1886",
+          "date_label": "1886-yilda",
+          "event": "Ishchilar tashkiloti Amerika Mehnat Federatsiyasi degan nom oldi",
+          "evidence": "1886-yilda u Amerika Mehnat Federatsiyasi degan nom oldi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1894",
+          "date_label": "1894-yilda",
+          "event": "Sentyabrning birinchi dushanbasi «Mehnat kuni» bayrami deb e’lon qilindi",
+          "evidence": "1894-yilda sentabrning birinchi dushanbasini ,Mehnat kuni"
+        },
+        {
+          "kind": "date_event",
+          "date": "1901",
+          "date_label": "1901-yilda",
+          "event": "Teodor Ruzvelt AQSh prezidenti lavozimini egalladi",
+          "evidence": "prezidenti lavozimini egallagan Teodor Ruzvelt ham bor edi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1912",
+          "date_label": "1912-yilda",
+          "event": "Prezident saylovlarida demokrat Vudro Vilson g‘alaba qozondi",
+          "evidence": "1912-yilgi prezident saylovlarida demokrat Vudro Vilson g'alaba"
+        },
+        {
+          "kind": "date_event",
+          "date": "1913",
+          "date_label": "1913-yil sentabrda",
+          "event": "Kolorado shtatida kon ishchilari ish tashlab, harbiy holat e’lon qilindi",
+          "evidence": "1913-yil sentabrda kon ishchilari og ir mehnat sharoitiga qarshi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1914",
+          "date_label": "1914-yilda",
+          "event": "Kongress trestlarga qarshi qonun qabul qilib, kasaba uyushmalaridan zarar undirishni bekor qildi",
+          "evidence": "1914-yilda AQSH Kongressi trestlarga qarshi qonun qabul qildi."
+        },
+        {
+          "kind": "person",
+          "person": "Teodor Ruzvelt",
+          "role": "AQSh prezidenti va taraqqiyparvarlar yetakchisi",
+          "activity": "Monopoliyalarga qarshi «Adolatli yo‘l» siyosatini olib borgan",
+          "evidence": "T. Ruzveltning monopoliyalarga qarshi kurash siyosati"
+        },
+        {
+          "kind": "person",
+          "person": "Vudro Vilson",
+          "role": "AQShning demokrat partiyadan saylangan prezidenti",
+          "activity": "Bojxona tariflarini 10 foizga kamaytiruvchi qonun qabul qilinishiga erishdi",
+          "evidence": "U Birinchi jahon urushi arafasida bojxona tariflari to'g'risida"
+        },
+        {
+          "kind": "person",
+          "person": "Shpis",
+          "role": "ommaviy harakat rahbari, o‘limga mahkum etilgan ishchi",
+          "activity": "Sud qarori bilan dorga osilib, oxirgi so‘zida kelajak haqidagi fikrini aytgan",
+          "evidence": "mahkum qilinganlardan biri - Shpis oxirgi so'zida"
+        },
+        {
+          "kind": "person",
+          "person": "Morgan",
+          "role": "temiryo‘l kompaniyasini nazorat qilgan moliyachi",
+          "activity": "Sud qarori bilan uning temiryo‘l kompaniyasi ikkiga bo‘lindi",
+          "evidence": "Morgan nazorat qiladigan temiryo'l kompaniyasi ikkiga bo'lindi."
+        },
+        {
+          "kind": "term",
+          "term": "segregatsiya",
+          "definition": "lotincha «bo‘lish» so‘zidan olingan bo‘lib, aholini majburan irqiy guruhlarga bo‘lish",
+          "evidence": "Segregatsiya (lotincha - bo'lish) - ayrim davlatlarda aholini majburan"
+        },
+        {
+          "kind": "term",
+          "term": "rezervatsiya",
+          "definition": "tub joy aholisining omon qolgan qismini zo‘rlab joylashtirish uchun ajratilgan hudud",
+          "evidence": "Rezervatsiya (lotincha - saqlayman) - biror davlatda tub joy"
+        },
+        {
+          "kind": "term",
+          "term": "AMF",
+          "definition": "Amerika Mehnat Federatsiyasi; asosan yuqori malakali ishchilar manfaatini himoya qilgan",
+          "evidence": "AMF, asosan, yuqori malakali ishchilar manfaatini"
+        },
+        {
+          "kind": "term",
+          "term": "taraqqiyparvarlar",
+          "definition": "monopoliyalarga qarshi kurash tarafdorlari bo‘lgan siyosiy oqim vakillari",
+          "evidence": "Monopoliyalarga qarshi kurash tarafdorlari taraqqiyparvarlar"
+        },
+        {
+          "kind": "place",
+          "place": "Chikago",
+          "event": "Senno maydonidagi mitingda politsiya o‘q uzib, 6 kishi halok bo‘lgan",
+          "evidence": "Shaharning Senno maydonida bo'lgan ommaviy miting vaqtida"
+        },
+        {
+          "kind": "place",
+          "place": "Kolorado shtati",
+          "event": "kon ishchilari harakati paytida butun shtatda harbiy holat e’lon qilindi",
+          "evidence": "Butun Kolorado shtatida harbiy holat e'lon qilindi."
+        },
+        {
+          "kind": "place",
+          "place": "Shimol",
+          "event": "qora tanlilar Janubdan qochib o‘tgan, lekin bu yerda ham alohida mavzelarda yashagan",
+          "evidence": "Ular Shimolga qochib o'tardilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ish kuni juda uzun bo‘lib, ishchilar huquqlari himoya qilinmagan",
+          "effect": "Ishchilar harakatining asosiy maqsadi ish kunini qisqartirish bo‘ldi",
+          "evidence": "Bu davrdagi ishchilar harakatining asosiy maqsadi ish kunini qisqartirishga erishish edi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Politsiya tinch miting qatnashchilariga qarab o‘q uzgan",
+          "effect": "Chikago ishchilari norozilik bildirib, ommaviy miting tashkil qildi",
+          "evidence": "politsiya ish tashlaganlarga qarab o'q uzdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Hindularga ajratilgan yerlarning unumsizligi va jamoaviy turmush tarzi",
+          "effect": "Hindularga fermerlik bilan shug‘ullanish imkonini bergan qonun amalda ishlamadi",
+          "evidence": "Bunga, birinchidan, hindularga ajratilgan yer maydonlarining unumsizligi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Monopoliyalarning mamlakat iqtisodiyotini egallab olishi",
+          "effect": "1900–1914-yillar AQSh tarixiga «taraqqiyparvar davr» nomi bilan kirdi",
+          "evidence": "prezidentlarining monopoliyalarga qarshi kuichki siyosat"
+        },
+        {
+          "kind": "number",
+          "number": "350",
+          "unit": "ming",
+          "meaning": "1886-yil 1-maydagi umumiy ish tashlashda qatnashgan ishchilar soni",
+          "evidence": "350 mingdan ortiq\nishchi ishtirok etdi"
+        },
+        {
+          "kind": "number",
+          "number": "10",
+          "unit": "%",
+          "meaning": "Vudro Vilson qonuni bo‘yicha kamaytirilgan bojxona tarif stavkasi",
+          "evidence": "Qonunga ko'ra, tarif stavkasi 10"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "AQSHning tashqi siyosati",
+      "page": 55,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1823",
+          "date_label": "1823-yilda",
+          "event": "«Monro doktrinasi» qabul qilinib, AQSh Lotin Amerikasida unga tayanib siyosat yuritgan",
+          "evidence": "1823-yilda qabul qilingan ,Monro doktrinasi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1889",
+          "date_label": "1889-yilda",
+          "event": "Vashingtonda birinchi Panamerika konferensiyasi chaqirildi",
+          "evidence": "1889-yilda AQSH Davlat departamenti tashabbusi bilan Vashingtonda birinchi Panamerika konferensiyasi chaqirildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1898",
+          "date_label": "1898-yilda",
+          "event": "Tinch okeanining eng markazida joylashgan Gavayi orollari bosib olindi",
+          "evidence": "1898-yilda Tinch okeanining eng markazida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1898",
+          "date_label": "1898-yil 10-dekabrda",
+          "event": "Parijda AQSh va Ispaniya o‘rtasida tinchlik shartnomasi imzolandi",
+          "evidence": "1898-yil 10- dekabrda Parij shahrida AQSH-Ispaniya tinchlik shartnomasi imzolandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1903",
+          "date_label": "1903-yilda",
+          "event": "AQSh Panamada Kolumbiyaga qarshi qo‘g‘irchoq hukumat tuzib, mustaqillikni e’lon qildi",
+          "evidence": "1903-yil AQSH Panamada Kolumbiyaga qarshi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1910",
+          "date_label": "1910-yilda",
+          "event": "Buenos-Ayresda IV Panamerika konferensiyasi o‘tkazilib, ittifoq nomi o‘zgartirildi",
+          "evidence": "1910-yilda Buenos-Ayresda o'tkazilgan IV"
+        },
+        {
+          "kind": "date_event",
+          "date": "1914",
+          "date_label": "1914-yilda",
+          "event": "Panama kanali qurilishi yakunlanib, u AQSh uchun strategik ahamiyatga ega bo?ldi",
+          "evidence": "Qurilish 1914-yilda tugallandi."
+        },
+        {
+          "kind": "person",
+          "person": "Xey",
+          "role": "AQSh davlat kotibi, ya’ni tashqi ishlar vaziri",
+          "activity": "1899-yilda buyuk davlatlarga «Ochiq eshiklar» doktrinasi haqida nota yubordi",
+          "evidence": "AQSH davlat kotibi Xey Buyuk Britaniya"
+        },
+        {
+          "kind": "person",
+          "person": "Teodor Ruzvelt",
+          "role": "AQSh prezidenti, «yo‘g‘on kaltak» siyosati muallifi",
+          "activity": "Monro doktrinasini AQSh manfaatlariga moslab talqin etgan",
+          "evidence": "doktrinani Teodor Ruzvelt AQSHga moslab talqin etdi."
+        },
+        {
+          "kind": "person",
+          "person": "Taft",
+          "role": "AQSh prezidenti, «dollar diplomatiyasi» siyosati asoschisi",
+          "activity": "Lotin Amerikasi davlatlariga nisbatan dollar diplomatiyasini e’lon qilgan",
+          "evidence": "Prezident Taft ,,dollar diplo-"
+        },
+        {
+          "kind": "person",
+          "person": "Vilson",
+          "role": "AQSh prezidenti, dunyoda yetakchilik uchun kurashgan siyosatchi",
+          "activity": "«Biz amerikaliklar dunyoni boshqarishimiz kerak» deb yozgan",
+          "evidence": "Bu davrda biz amerikaliklar dunyoni boshqarishimiz"
+        },
+        {
+          "kind": "term",
+          "term": "doktrina",
+          "definition": "lotincha «ta’limot» so‘zidan olingan bo‘lib, siyosiy rahbarlik tamoyilini bildiradi",
+          "evidence": "Doktrina (lotincha - ta'limot) - siyosiy rahbarlik tamoyili."
+        },
+        {
+          "kind": "term",
+          "term": "nota",
+          "definition": "bir davlatning boshqa davlatga yuboradigan rasmiy murojaatnomasi",
+          "evidence": "Nota (lotincha) - bir davlatning boshqa davlatga yozgan rasmiy"
+        },
+        {
+          "kind": "term",
+          "term": "Davlat departamenti",
+          "definition": "AQShda tashqi ishlar vazirligi vazifasini bajaruvchi idora",
+          "evidence": "Davlat departamenti - AQSH tashqi ishlar vazirligi."
+        },
+        {
+          "kind": "term",
+          "term": "«yo‘g‘on kaltak» siyosati",
+          "definition": "tartibsizliklar bo‘lsa, xalqaro politsiya rolini bajarishni nazarda tutgan siyosat",
+          "evidence": "taqdirda xalqaro politsiya rolini bajarish AQSHning burchi bo'lishi"
+        },
+        {
+          "kind": "place",
+          "place": "Gavayi orollari",
+          "event": "1898-yilda Tinch okeanining markazida strategik muhim nuqta sifatida bosib olindi",
+          "evidence": "dengiz yo'llari kesishgan joydagi Gavayi orollari bosib olindi"
+        },
+        {
+          "kind": "place",
+          "place": "Kuba",
+          "event": "1898-yilda nomiga mustaqillik olib, amalda AQShga qaram bo‘lib qoldi",
+          "evidence": "Kuba nomiga mustaqillik oldi. Amalda esa AQSHga qaram bo'lib qolaverdi."
+        },
+        {
+          "kind": "place",
+          "place": "Panama",
+          "event": "1903-yilda AQSh ko‘magida mustaqil respublika deb e’lon qilinib, kanal qurish huquqi berildi",
+          "evidence": "Panama mustaqil respublika deb e'lon qilindi."
+        },
+        {
+          "kind": "cause",
+          "cause": "AQSh bepoyon hududlarni va Alyaskani o‘zlashtirish bilan band bo‘lgan",
+          "effect": "Mustamlakalar va ta’sir doiralarini egallashga Yevropa davlatlaridan kechroq kirishgan",
+          "evidence": "bilan band bo'lgan AQSH mustamlakalar va"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ispaniyaga qarashli Kuba oroli Amerika hukmron doiralarining havasini keltirgan",
+          "effect": "AQSh Ispaniyaga qarshi urushga tayyorlana boshladi",
+          "evidence": "Kuba oroli Amerika hukmron doiralarining havasini keltirardi."
+        },
+        {
+          "kind": "cause",
+          "cause": "Kolumbiya Senati kanal qurish va undan foydalanish huquqiga qarshilik qilgan",
+          "effect": "AQSh Panamada qo‘g‘irchoq hukumat tuzib, uning mustaqilligini tan oldi",
+          "evidence": "foydalanish huquqiga Amerikaning to'la ega bo'lishiga Kolumbiya"
+        },
+        {
+          "kind": "cause",
+          "cause": "Boshqa davlatlar Xitoyni o‘z ta’sir doiralariga taqsimlab olgan",
+          "effect": "AQSh o‘z tovarlari uchun «Ochiq eshiklar» doktrinasini ishlab chiqishga majbur bo‘ldi",
+          "evidence": "boshqa davlatlar Xitoyni o'z ta'sir doiralariga taqsimlab olganlari sababli"
+        },
+        {
+          "kind": "number",
+          "number": "20",
+          "unit": "mln. dollar",
+          "meaning": "Filippin orollari uchun Ispaniyaga to‘langan summa",
+          "evidence": "Ispaniyaga 20 mln. dollar to'lab"
+        },
+        {
+          "kind": "number",
+          "number": "1,5",
+          "unit": "mlrd. dollar",
+          "meaning": "AQShning Meksikaga kiritgan kapitali 1911-yil oxirida",
+          "evidence": "Meksikaga kiritgan kapitali 1911-yil oxirida 1,5 mlrd."
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "Lotin Amerikasi davlatlari",
+      "page": 59,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1868–1878",
+          "date_label": "1868–1878-yillarda",
+          "event": "Kuba xalqi ispan mustamlakachilariga qarshi ozodlik kurashi olib bordi",
+          "evidence": "1868-1878-yillarda Kuba xalqi ispan mus-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1870",
+          "date_label": "1870-yilga kelib",
+          "event": "Lotin Amerikasida siyosiy jihatdan mustaqil davlatlarning tashkil topishi deyarli tugallandi",
+          "evidence": "tashkil topish jarayoni 1870-yilga kelib, deyarli tugallandi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1876",
+          "date_label": "1876-yilda",
+          "event": "Porfirio Dias prezident deb e’lon qilinib, 1911-yilgacha hokimiyatda turdi",
+          "evidence": "Porfirio Dias 1876-yilda prezident"
+        },
+        {
+          "kind": "date_event",
+          "date": "1895",
+          "date_label": "1895-yilda",
+          "event": "Kuba xalqi Xose Marti va Maksimo Gomes boshchiligida qo‘zg‘olon ko‘tardi",
+          "evidence": "1895-yilda Kuba xalqi o'z milliy qahramoni Xose Marti hamda Maksimo Gomeslar boshchiligida qo'zg'olon ko'tardi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1910–1917",
+          "date_label": "1910–1917-yillarda",
+          "event": "Meksika inqilobi «Burjua inqilobi» nomi bilan tarixga kirdi",
+          "evidence": "(1910-1917) Meksika tarixiga ,Burjua inqilobi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1913",
+          "date_label": "1913-yilda",
+          "event": "General Uerta davlat to‘ntarishi o‘tkazib, Madero otib tashlandi",
+          "evidence": "ruhlangan Uerta 1913-yilda davlat to'ntarishi o'tkazdi."
+        },
+        {
+          "kind": "person",
+          "person": "Xose Marti",
+          "role": "Kuba milliy qahramoni va ozodlik kurashi rahbari",
+          "activity": "1895-yilda Maksimo Gomes bilan birga qo‘zg‘olon ko‘targan",
+          "evidence": "milliy qahramoni Xose Marti hamda Maksimo Gomeslar boshchiligida"
+        },
+        {
+          "kind": "person",
+          "person": "Porfirio Dias",
+          "role": "Meksika prezidenti, diktatura rejimini o‘rnatgan siyosatchi",
+          "activity": "1876-yildan 1911-yilgacha hokimiyatda turib, chet el monopoliyalariga yo‘l ochdi",
+          "evidence": "Dias diktaturasi davri Meksikani chet el monopoliyalarining yarimmustamlakasiga aylantirish davri bo'ldi."
+        },
+        {
+          "kind": "person",
+          "person": "Madero",
+          "role": "meksikalik muxolifat yetakchisi va keyinchalik prezident",
+          "activity": "Saylov soxtaligini oshkor qilib, ish kunini o‘n soatgacha cheklagan",
+          "evidence": "Shunday bo'lsa-da, ish kunini l0"
+        },
+        {
+          "kind": "person",
+          "person": "Emiliano Sapata",
+          "role": "Meksika janubidagi dehqonlar harakati rahbari",
+          "activity": "1911-yilda yer islohotini talab qiluvchi agrar dasturni e’lon qildi",
+          "evidence": "dehqonlar harakatining rahbari Emiliano Sapata"
+        },
+        {
+          "kind": "person",
+          "person": "Fransisko Vilya",
+          "role": "Meksika shimolidagi dehqonlar harakati rahbari",
+          "activity": "Bayrog‘ida «Yer va ozodlik» shiori yozilgan qo‘shinga boshchilik qilgan",
+          "evidence": "Mamlakat shimolidagi dehqonlar harakati rahbari Fransisko Vilya"
+        },
+        {
+          "kind": "term",
+          "term": "diktatura",
+          "definition": "lotincha «cheklanmagan hokimiyat»; qonun bilan cheklanmagan, zo‘rlikka tayanuvchi hokimiyat",
+          "evidence": "Diktatura (lotincha - cheklanmagan hokimiyat)"
+        },
+        {
+          "kind": "term",
+          "term": "muxolifat",
+          "definition": "amaldagi hukumat siyosatiga qarshi turuvchi kuchlar",
+          "evidence": "Muxolifat - amaldagi hukumat siyosatiga qarshi kuchlar."
+        },
+        {
+          "kind": "term",
+          "term": "yarimmustamlaka",
+          "definition": "rasman mustaqil, amalda kuchli davlatga iqtisodiy va siyosiy qaram mamlakat",
+          "evidence": "AQSHning yarimmustamlakalariga aylanib qoldilar"
+        },
+        {
+          "kind": "term",
+          "term": "xunta",
+          "definition": "harbiy yoki inqilobiy guruh tomonidan tuzilgan boshqaruv organi",
+          "evidence": "Dehqonlarni himoya qilish xuntasi"
+        },
+        {
+          "kind": "place",
+          "place": "Kuba",
+          "event": "1510-yilda Ispaniya tomonidan bosib olinib, mustaqillik uchun uzoq kurash olib borgan orol",
+          "evidence": "(Ispaniya Kubani 1510-yilda bosib olgan edi)"
+        },
+        {
+          "kind": "place",
+          "place": "Meksika",
+          "event": "AQShning siyosiy va iqtisodiy qaramligiga tushib, Dias diktaturasini boshdan kechirgan davlat",
+          "evidence": "1821-yilda mustaqillikni qo'lga kiritgan"
+        },
+        {
+          "kind": "place",
+          "place": "Mexiko shahri",
+          "event": "1914-yilda Sapata va Vilya qurolli kuchlari tomonidan egallangan poytaxt",
+          "evidence": "poytaxti Mexiko shahrini egalladi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Lotin Amerikasi hukmron doiralari va siyosiy arboblari ispaniyalik va portugaliyaliklar bo‘lgan",
+          "effect": "Lotin Amerikasi taraqqiyotda orqada qolib ketdi",
+          "evidence": "ispaniyalik va portugaliyaliklar bo'lganligi bilan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ispaniya va Portugaliyada o‘rta asr feodal tartiblari saqlanib qolgan",
+          "effect": "Lotin Amerikasi davlatlarida ham feodal munosabatlar mustahkam saqlanib qoldi",
+          "evidence": "o'rta asr feodal tartiblarining hamon saqlanib kelinayotganligi"
+        },
+        {
+          "kind": "cause",
+          "cause": "AQShning Meksikani o‘ziga siyosiy va iqtisodiy qaram qilishga intilishi",
+          "effect": "AQSh va Meksika munosabatlari XIX asrning 70-yillarida keskinlashdi",
+          "evidence": "AQSHning Meksikani o'ziga siyosiy va iqtisodiy qaram qilishga intilishi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Dehqonlarning yersizligi va yer tanqisligi",
+          "effect": "Meksikada qudratli dehqonlar harakati boshlanib, u inqilobga aylandi",
+          "evidence": "Buning sababi dehqonlarning yersizligi edi."
+        },
+        {
+          "kind": "number",
+          "number": "1",
+          "unit": "mlrd. dollar",
+          "meaning": "AQShning Dias davri oxirida Meksikaga qo‘ygan kapitali",
+          "evidence": "qo'ygan kapitali 1 mlrd. dollardan oshdi."
+        },
+        {
+          "kind": "number",
+          "number": "10",
+          "unit": "soat",
+          "meaning": "Madero hokimiyatga kelgach belgilangan ish kuni chegarasi",
+          "evidence": "soatgacha cheklab qo'ydi va ishlab chiqarishda jarima tizimini bekor qildi"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "Lotin Amerikasining boshqa davlatlari",
+      "page": 63,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1888",
+          "date_label": "1888-yilda",
+          "event": "Malika Izabel Braziliyada qullarni ozod qildi",
+          "evidence": "malika Izabel 1888-yilda Braziliyada qullarni ozod"
+        },
+        {
+          "kind": "date_event",
+          "date": "1888",
+          "date_label": "1888-yildan keyin",
+          "event": "Qulchilik bekor qilingach, respublika uchun kurash kuchayib, Rio-de-Janeyroda katta namoyish bo‘ldi",
+          "evidence": "Qulchilik bekor qilingach, respublika uchun ku-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1889",
+          "date_label": "1889-yil 19-noyabrda",
+          "event": "Pedru II taxtdan voz kechib, Portugaliyaga jo‘nab ketdi va hokimiyat harbiylar qo‘liga o‘tdi",
+          "evidence": "19-noyabrda Pedru II taxtdan voz kechib,"
+        },
+        {
+          "kind": "date_event",
+          "date": "1891",
+          "date_label": "1891-yilda",
+          "event": "Yangi konstitutsiyaga binoan mamlakat Braziliya Qo‘shma Shtatlari deb ataldi",
+          "evidence": "1891-yilda qabul qilingan yangi konstitutsiyaga binoan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1876",
+          "date_label": "1876-yilda",
+          "event": "Argentinada immigratsiya va kolonizatsiya to‘g‘risida qonun qabul qilindi",
+          "evidence": "1876-yil immigratsiya va kolonizatsiya to'g'risida qonun qabul"
+        },
+        {
+          "kind": "date_event",
+          "date": "1895",
+          "date_label": "1895-yilda",
+          "event": "Argentinada Sotsialistik partiya tuzildi",
+          "evidence": "1895-yilda Sotsialistik partiya tuzildi."
+        },
+        {
+          "kind": "date_event",
+          "date": "1895–1896",
+          "date_label": "1895–1896-yillarda",
+          "event": "Gonduras, Salvador va Nikaragua Buyuk Markaziy Amerika Respublikasiga birlashdi",
+          "evidence": "Gonduras, Salvador va Nikaragua 1895-1896-yillarda yagona davlat"
+        },
+        {
+          "kind": "person",
+          "person": "Bonifatsio",
+          "role": "qullar qo‘zg‘oloni rahbari, qora tanlilar respublikasi prezidenti",
+          "activity": "Shakarqamish plantatsiyalarida ishlovchi qullar qo‘zg‘oloniga boshchilik qilgan",
+          "evidence": "Qul Bonifatsio boshchiligida shakarqamish"
+        },
+        {
+          "kind": "person",
+          "person": "Pedru II",
+          "role": "Braziliya imperiyasining oxirgi hukmdori",
+          "activity": "1889-yilda taxtdan voz kechib, Britaniya kemasida Portugaliyaga jo‘nab ketgan",
+          "evidence": "Kasalligi uchun vazifasini bajara olmayotgan imperator Pedru II"
+        },
+        {
+          "kind": "person",
+          "person": "Izabel",
+          "role": "Braziliya malikasi, vaqtincha davlatni boshqargan",
+          "activity": "1888-yilda qullarni ozod qilish to‘g‘risidagi qarorni amalga oshirgan",
+          "evidence": "imperator Pedru II o'rnida vaqtincha davlatni"
+        },
+        {
+          "kind": "person",
+          "person": "Antonio Predo",
+          "role": "abolitsionistik harakatni qo‘llab-quvvatlagan plantator va davlat vaziri",
+          "activity": "O‘z qullarini ozod qilib, vazir bo‘lgach qullarni ozod qilishni taklif etgan",
+          "evidence": "o'z qullarini ozod qilib yubordi"
+        },
+        {
+          "kind": "term",
+          "term": "abolitsionizm",
+          "definition": "lotincha «yo‘qotish, bekor qilish» ma’nosini beruvchi, qullikdan ozod qilish harakati",
+          "evidence": "Abolitsionizm (lotincha - yo'qotish, bekor qilish)"
+        },
+        {
+          "kind": "term",
+          "term": "milya",
+          "definition": "1609,3 metrga teng bo‘lgan uzunlik o‘lchov birligi",
+          "evidence": "Milya - 1609,3 metrga teng uzunlik o'lchovi."
+        },
+        {
+          "kind": "term",
+          "term": "«Ozodlik manifesti»",
+          "definition": "qullarni ozod qilishga chaqiruvchi hujjat",
+          "evidence": "qullarni ozod qilishga chaqiruvchi .,Ozodlik manifestini e'lon qildilar."
+        },
+        {
+          "kind": "term",
+          "term": "immigratsiya",
+          "definition": "chet eldan aholining mamlakatga ko‘chib kelishi jarayoni",
+          "evidence": "Immigratsiya rag'batlantirila boshlandi."
+        },
+        {
+          "kind": "place",
+          "place": "Rio-de-Janeyro",
+          "event": "qulchilik bekor qilingach, respublika tarafdorlarining katta namoyishi bo‘lib o‘tgan shahar",
+          "evidence": "kuchayib ketdi. Rio-de-Janeyroda respubli"
+        },
+        {
+          "kind": "place",
+          "place": "Buenos-Ayres",
+          "event": "milliy bank ochilib, harbiy ta’limga asos solingan shahar",
+          "evidence": "Buenos-Ayresda milliy bank ochildi."
+        },
+        {
+          "kind": "place",
+          "place": "Gvatemala",
+          "event": "ichki kurashlar natijasida holdan toyib, AQShga qaram bo‘lib qolgan davlat",
+          "evidence": "holdan toygan Gvatemala AQSHga qaram bo'lib qoldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Braziliyada qulchilik, qashshoqlik, jaholat va huquqsizlik keng avj olgan",
+          "effect": "Qullar o‘z insoniy huquqlarini himoya qilishga majbur bo‘lib, qo‘zg‘olon ko‘tardi",
+          "evidence": "qullar ham o'z insoniy huquqlarini himoya"
+        },
+        {
+          "kind": "cause",
+          "cause": "Respublika tarafdorlarining namoyishi harbiylar tomonidan qo‘llab-quvvatlangan",
+          "effect": "1889-yilda hokimiyat harbiylar qo‘liga o‘tib, respublika e’lon qilindi",
+          "evidence": "respublika tuzumi tarafdori bo'lgan harbiylar tomonidan qo'llab-quvvatlandi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Uzoq davom etgan ichki kurash va Paragvay bilan olib borilgan urush",
+          "effect": "Argentinada iqtisodiy hayot deyarli to‘xtab qolgan edi",
+          "evidence": "Uzoq davom etgan ichki kurash, Paragvay bi-"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yevropadan kelganlarga imtiyozli shartlar bilan davlatdan yer berilgan",
+          "effect": "Qisqa davr ichida Argentinaga 300 ming kishi ko‘chib keldi",
+          "evidence": "Yevropadan kelganlar imtiyozli shartlar bilan davlatdan yer oldilar."
+        },
+        {
+          "kind": "number",
+          "number": "750",
+          "unit": "ming",
+          "meaning": "1888-yilda Braziliyada mavjud bo‘lgan qullar soni",
+          "evidence": "Mamlakatda bu paytda 750 ming qul bor edi."
+        },
+        {
+          "kind": "number",
+          "number": "300",
+          "unit": "ming",
+          "meaning": "Argentinaga qisqa davr ichida ko‘chib kelgan kishilar soni",
+          "evidence": "Argentinaga 300 ming kishi ko'chib keldi."
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "Rossiya imperiyasining ijtimoiy-siyosiy va iqtisodiy ahvoli",
+      "page": 66,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri",
+          "date_label": "XIX asr oxiri – XX asr boshlarida",
+          "event": "Rossiya iqtisodiy taraqqiyotda boshqa buyuk davlatlarga nisbatan orqada edi",
+          "evidence": "XIX asr oxiri - XX asr boshlarida Rossiya"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri",
+          "date_label": "XIX asr oxiri – XX asr boshlarida",
+          "event": "Rossiya neft qazib chiqarish bo‘yicha AQShni ortda qoldirib, dunyoda birinchi o‘ringa chiqdi",
+          "evidence": "neft qazib chiqarish bo'yicha AQSHni ham ortda qoldirdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1904",
+          "date_label": "1904-yilda",
+          "event": "Rossiya va Yaponiya o‘rtasidagi urush xalq ommasining turmush darajasini og‘irlashtirdi",
+          "evidence": "1904-yildagi Rossiya-Yaponiya urushi xalq ommasining turmush"
+        },
+        {
+          "kind": "date_event",
+          "date": "1905",
+          "date_label": "1905-yilda",
+          "event": "Rossiyada birinchi rus inqilobi yuz berdi, ammo u yengildi",
+          "evidence": "birinchi rus inqilobi yuz berishiga olib keldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1906",
+          "date_label": "1906-yilda",
+          "event": "Imperator Nikolay II agrar islohot va dehqonlarni ko‘chirish to‘g‘risida farmon chiqardi",
+          "evidence": "Imperator Nikolay 11 1906-yilda agrar islohot o'tkazish"
+        },
+        {
+          "kind": "date_event",
+          "date": "1907",
+          "date_label": "1907-yilda",
+          "event": "Rangli metallurgiyada «Med» jamiyati hal qiluvchi mavqeni egalladi",
+          "evidence": "Rangli metallurgiya sohasida ,Med\" jamiyati (1907)"
+        },
+        {
+          "kind": "date_event",
+          "date": "1911",
+          "date_label": "1911-yilda",
+          "event": "Stolipin iste’fo talablariga qaramay, otib o‘ldirildi",
+          "evidence": "191l-yilda Stolipin otib o'ldirildi."
+        },
+        {
+          "kind": "person",
+          "person": "Nikolay II",
+          "role": "Rossiya imperatori, agrar islohot farmonini chiqargan hukmdor",
+          "activity": "1906-yilda dehqonlarni ko‘chirish va agrar islohot o‘tkazish farmonini imzolagan",
+          "evidence": "va dehqonlarni ko'chirish to'g'risida farmon chiqardi"
+        },
+        {
+          "kind": "person",
+          "person": "P.A. Stolipin",
+          "role": "Rossiya Bosh vaziri, agrar islohot muallifi",
+          "activity": "Jamoa yer egaligini bekor qilib, dehqonlarni Sibir va Turkistonga ko‘chirishni taklif etgan",
+          "evidence": "Bosh vazir P.A. Stolipin tashabbusi bilan bog'liq bo'lganligi uchun"
+        },
+        {
+          "kind": "term",
+          "term": "samoderjaviye",
+          "definition": "Rossiyada monarxiyaning cheklanmagan davlat tizimi, mustabid hokimiyat",
+          "evidence": "Samoderjaviye - Rossiyada monarxiyaning cheklanmagan davlat tizimi"
+        },
+        {
+          "kind": "term",
+          "term": "chorizm",
+          "definition": "Rossiya imperatorining cheklanmagan hokimiyatini asoslovchi davlat tuzumi",
+          "evidence": "Chorizm - Rossiya imperatorining, monarxiyaning cheklanmagan"
+        },
+        {
+          "kind": "term",
+          "term": "agrar islohot",
+          "definition": "yer-suv, yerga egalik va yerdan foydalanish tartiblarini qayta o‘zgartirish",
+          "evidence": "Agrar islohot - yer-suv, yerga egalik va yer-suvdan foydalanishga"
+        },
+        {
+          "kind": "term",
+          "term": "«Produgol»",
+          "definition": "Rossiya ko‘mir sanoatida vujudga kelgan yirik monopolistik birlashma",
+          "evidence": "ko'mir sanoatida ,Produgol\" nomli yirik monopoliyalar"
+        },
+        {
+          "kind": "term",
+          "term": "desyatina",
+          "definition": "yer maydonini o‘lchash birligi; bir desyatina 1,1 gektarga teng",
+          "evidence": "(1 desyatina = l,l gektar) yerga"
+        },
+        {
+          "kind": "place",
+          "place": "Sibir",
+          "event": "Stolipin islohoti bo‘yicha dehqonlar ko‘chirib o‘tkazilgan hududlardan biri",
+          "evidence": "dehqonlarning bir qismini Sibir, Turkiston, Uzoq Sharq va imperiyaning"
+        },
+        {
+          "kind": "place",
+          "place": "Turkiston",
+          "event": "yer tanqisligi kuchli bo‘lgan dehqonlar ko‘chirilgan milliy chekka o‘lka",
+          "evidence": "xususan, Turkistondagi mahalliy aholiga qarashli"
+        },
+        {
+          "kind": "place",
+          "place": "Peterburg",
+          "event": "«Peterburg xalqaro banki» joylashgan shahar; bank mamlakat hayotida yetakchi rol o‘ynagan",
+          "evidence": ",,Peterburg xalqaro banki\", ,Azov-Don"
+        },
+        {
+          "kind": "cause",
+          "cause": "Chet el kapitalining Rossiya sanoatiga kirib kelishi",
+          "effect": "Og‘ir sanoat tezlik bilan ilgarilab, metallurgiya va mashinasozlik yuksaldi",
+          "evidence": "Chet el kapitalining kirib kelishi tufayli og'ir sanoat tezlik bilan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Rossiya kapitalizmining zaifligi va arzon ishchi kuchining mavjudligi",
+          "effect": "Chetga kapital chiqarishdan ko‘ra chetdan Rossiyaga kapital kiritish ustun bo‘ldi",
+          "evidence": "kapital chiqarishdan ko'ra, chetdan Rossiyaga kapital kiritishning ustunligi edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Chorizm dehqonlarni inqilobdan chetlatish va qishloqda ijtimoiy tayanch yaratishni maqsad qilgan",
+          "effect": "Agrar islohot o‘tkazishga qaror qilinib, Stolipin islohoti boshlangan",
+          "evidence": "Bu maqsadlarni ro'yobga chiqarish uchun agrar islohot o'tkazishga"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ko‘chirish ishlari moddiy jihatdan yetarli ta’minlanmagan",
+          "effect": "Ko‘chib ketganlar avvalgi joylariga qaytishga majbur bo‘ldi",
+          "evidence": "Chunki ko'chirish moddiy jihatdan yetarli ta'minlanmadi."
+        },
+        {
+          "kind": "number",
+          "number": "7",
+          "unit": "mln. desyatina",
+          "meaning": "imperator xonadoniga tegishli bo‘lgan yer maydoni",
+          "evidence": "7 mln. desyatina (1 desyatina = l,l gektar) yerga"
+        },
+        {
+          "kind": "number",
+          "number": "100",
+          "unit": "dan ortiq",
+          "meaning": "Rossiya imperiyasi tarkibida yashagan millat va xalqlar soni",
+          "evidence": "Rossiya imperiyasi tarkibida 100 dan ortiq mil"
+        }
+      ]
+    }
+  ]
+}

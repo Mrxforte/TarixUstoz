@@ -1,0 +1,815 @@
+{
+  "chapter": "XIX asrning ikkinchi yarmi – XX asr boshlarida Turkiston va qoraqalpoqlar",
+  "topics": [
+    {
+      "number": 20,
+      "title": "Milliy-ozodlik harakatlarining ahamiyati",
+      "page": 73,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asrning ikkinchi yarmi",
+          "date_label": "XIX asrning ikkinchi yarmi",
+          "event": "Turkistondagi milliy-ozodlik harakatlari o‘lkaning podsho hukumati tomonidan istilochilik yo‘li bilan bosib olinganini isbotladi",
+          "evidence": "yana bir karra isbotladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning ikkinchi yarmi",
+          "date_label": "XIX asrning ikkinchi yarmi",
+          "event": "O‘lka arzon xomashyo bazasiga va Rossiyada tayyorlangan mahsulotlar uchun tayyor bozorga aylantirildi",
+          "evidence": "O‘lka arzon xomashyo bazasiga"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning ikkinchi yarmi",
+          "date_label": "XIX asrning ikkinchi yarmi",
+          "event": "Milliy-ozodlik harakatlari mahalliy aholining turli ko‘rinishlardagi chiqishlarida o‘z aksini topdi",
+          "evidence": "chiqishlarida o‘z aksini topdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning o‘rtalaridan",
+          "date_label": "XIX asrning o‘rtalaridan boshlab",
+          "event": "Milliy-ozodlik harakatlari o‘lkaning turli hududlarida to‘xtovsiz tarzda davom etdi",
+          "evidence": "o‘lkaning turli hududlarida to‘xtovsiz tarzda davom etdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning ikkinchi yarmi",
+          "date_label": "XIX asrning ikkinchi yarmi",
+          "event": "Milliy-ozodlik harakatlarida o‘lka xalqlarining deyarli barchasidan vakillar ishtirok etdi",
+          "evidence": "o‘lka xalqlarining deyarli barchasidan vakillar ishtirok etganligi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri",
+          "date_label": "XIX asr oxiridagi qo‘zg‘olonlar",
+          "event": "Podsho hukumati o‘lka tub aholisining mustaqillik va ozodlik yo‘lidan qaytmasligini tushunib yetdi",
+          "evidence": "mustaqillik va ozodlik yo‘lidan qaytmasligini"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning ikkinchi yarmi",
+          "date_label": "XIX asrning ikkinchi yarmi",
+          "event": "Milliy-ozodlik harakatlari Po‘latxon, Qurbonjon dodxoh, Yetim xon, Darvishxon va Muhammad Ali eshon boshchiligida bo‘lib o‘tdi",
+          "evidence": "Po‘latxon, Qurbonjon dod xoh, Yetim xon, Darvishxon, Muhammad Ali eshon kabilar boshchiligida"
+        },
+        {
+          "kind": "person",
+          "person": "Po‘latxon",
+          "role": "milliy-ozodlik harakati rahbari",
+          "activity": "XIX asrning ikkinchi yarmida Turkistonda bo‘lib o‘tgan milliy-ozodlik harakatlariga boshchilik qilgan rahnamolardan biri",
+          "evidence": "Po‘latxon, Qurbonjon dod"
+        },
+        {
+          "kind": "person",
+          "person": "Qurbonjon dodxoh",
+          "role": "milliy-ozodlik harakati rahbari",
+          "activity": "XIX asrning ikkinchi yarmidagi milliy-ozodlik harakatlariga boshchilik qilgan, xalq noroziliklarini boshqargan",
+          "evidence": "Qurbonjon dod xoh, Yetim xon"
+        },
+        {
+          "kind": "person",
+          "person": "Yetim xon",
+          "role": "milliy-ozodlik harakati rahbari",
+          "activity": "Mustamlakachilikka qarshi kurashda qo‘zg‘olonchilarga boshchilik qilgan tarixiy shaxslardan biri",
+          "evidence": "Yetim xon, Darvishxon"
+        },
+        {
+          "kind": "person",
+          "person": "Darvishxon",
+          "role": "milliy-ozodlik harakati rahbari",
+          "activity": "XIX asrning ikkinchi yarmida milliy mustaqillik va ozodlik kurashi harakatlariga rahbarlik qilgan",
+          "evidence": "Yetim xon, Darvishxon, Muhammad Ali eshon"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Ali eshon",
+          "role": "milliy-ozodlik harakati rahbari",
+          "activity": "Milliy-ozodlik harakatlarini boshqargan rahnamolardan biri sifatida xalq chiqishlariga yetakchilik qilgan",
+          "evidence": "Muhammad Ali eshon kabilar boshchiligida"
+        },
+        {
+          "kind": "term",
+          "term": "mustamlaka",
+          "definition": "Istilo qilingan hududlarning imperiya tarkibiga kiritilishi; bunda o‘lkada imperiya siyosiy, iqtisodiy manfaatlari birinchi o‘ringa qo‘yiladi",
+          "evidence": "imperiyaning tarkibiga mustamlaka sifatida kiritilib"
+        },
+        {
+          "kind": "term",
+          "term": "xomashyo bazasi",
+          "definition": "O‘lkaning arzon xomashyo yetkazib beruvchi manbaga aylantirilishi, Rossiya mahsulotlari uchun esa tayyor bozor bo‘lib qolishi",
+          "evidence": "O‘lka arzon xomashyo bazasiga"
+        },
+        {
+          "kind": "term",
+          "term": "milliy-ozodlik harakati",
+          "definition": "Mahalliy aholining mustamlakachilarga qarshi ozodlik uchun olib borgan kurashi va turli ko‘rinishdagi norozilik chiqishlari",
+          "evidence": "milliy ozodlik harakatlari mahalliy aholining turli ko‘rinishlardagi chiqishlarida"
+        },
+        {
+          "kind": "term",
+          "term": "ishchi kuchi",
+          "definition": "O‘lka aholisining arzon ishchi kuchiga aylanishi, ya’ni imperiya korxonalarida kam haq evaziga mehnat qilishi",
+          "evidence": "uning aholisi esa arzon ishchi kuchi"
+        },
+        {
+          "kind": "place",
+          "place": "Turkiston o‘lkasi",
+          "event": "XIX asrning ikkinchi yarmida milliy-ozodlik harakatlari aynan shu hududda to‘xtovsiz davom etgan asosiy o‘lka",
+          "evidence": "Turkiston o‘lkasining podsho"
+        },
+        {
+          "kind": "place",
+          "place": "Rossiya",
+          "event": "O‘lkadan arzon xomashyo olingan va o‘z mahsulotlari uchun tayyor bozor sifatida foydalanilgan imperiya markazi",
+          "evidence": "Rossiyada tayyorlangan mahsulotlar uchun tayyor bozorga"
+        },
+        {
+          "kind": "cause",
+          "cause": "Soliq va majburiyatlarning og‘irligi, mahalliy boshqaruv vakillarining podsho ma’murlariga xizmat qilishi",
+          "effect": "Mahalliy aholining turli ko‘rinishlardagi norozilik chiqishlari va milliy-ozodlik harakatlarining boshlanishi",
+          "evidence": "Bularga asosiy sabab soliq va majburiyatlarning og‘irligi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Rossiya o‘lkalaridan ko‘chirib keltirilgan aholiga yangi ekin maydonlarining bo‘lib berilishi",
+          "effect": "Tub joy aholisining yerdan mahrum bo‘lib, norozilik chiqishlarida ishtirok etishi",
+          "evidence": "yangi ekin maydonlarining bo‘lib berilishi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mahalliy aholi uchun tibbiy xizmatning yo‘qligi, yangi ishlab chiqarish va texnologiyalarning faqat imperiya manfaatlariga xizmat qilishi",
+          "effect": "Tub joy aholisining ommaviy ravishdagi norozilik chiqishlarida ishtirok etishi",
+          "evidence": "ommaviy ravishdagi noro zilik chiqishlarida ishtirok etishi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Har bir qo‘zg‘olonning butun o‘lka bo‘ylab keng aks sado berishi",
+          "effect": "Boshqa joylarda ham norozilik chiqishlarining ko‘tarilishi va aholining ozodlik kurashiga ruhan tayyorlanishi",
+          "evidence": "Har bir qo‘zg‘olon boshqa joylarda ham norozilik chi"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "XIX asrning ikkinchi yarmi – XX asr boshlarida qoraqalpoqlarning hududiy joylashuvi va ijtimoiy hayoti",
+      "page": 75,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asr boshlarida",
+          "date_label": "XIX asr boshlarida",
+          "event": "Qoraqalpoqlar quyi Amudaryo havzasi hamda Orolning janubiy va janubi-g‘arbiy tomonlarida muqim hayot tarziga o‘ta boshladilar",
+          "evidence": "ular XIX asr boshlarida quyi Amudaryo havzasi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr o‘rtalarida",
+          "date_label": "XIX asr o‘rtalarida",
+          "event": "Qoraqalpoqlar Xiva xonligi hukmronligi ostida bo‘lib, Amudaryoning har ikkala qirg‘og‘ida yashagan",
+          "evidence": "XIX asr o‘rtalarida qoraqalpoqlar Xiva xonligi hukmronligi ostida"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr o‘rtalarida",
+          "date_label": "XIX asr o‘rtalarida",
+          "event": "Qoraqalpoqlarning soni taxminan 100 ming nafardan oshmagan",
+          "evidence": "taxminan 100 ming nafardan osh magan"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning ikkinchi yarmiga kelib",
+          "date_label": "XIX asrning ikkinchi yarmiga kelib",
+          "event": "Qoraqalpoqlar o‘troqlashib, dehqonchilik ular hayotida asosiy o‘rinni egallay boshladi",
+          "evidence": "o‘troqlashib, dehqonchilik ular hayotida asosiy"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning ikkinchi yarmida",
+          "date_label": "XIX asrning ikkinchi yarmida",
+          "event": "Butun qoraqalpoq urug‘larini boshqarish uchun beklarbegi lavozimi tayin etilgan",
+          "evidence": "XIX asrning ikkinchi yarmida bu"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrda",
+          "date_label": "XIX asrda",
+          "event": "Urug‘lar va qabilalar yirik guruhlarga birlashtirilib, ularni boshqarish uchun otaliq va beklarbegi tayinlangan",
+          "evidence": "otaliq va beklarbegi ta yinlangan"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr ikkinchi yarmida",
+          "date_label": "XIX asr ikkinchi yarmida",
+          "event": "Urug‘ oqsoqollari, ruhoniylar va biylar ulushining kattaligi tabaqalanish jarayonini yanada tezlashtirgan",
+          "evidence": "tabaqalanish jarayonining kuchayishini yanada"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrda ham",
+          "date_label": "XIX asrda ham",
+          "event": "Qoraqalpoqlarning ayrim ovullarida urug‘ munosabatlari mustahkam tarzda davom etdi",
+          "evidence": "XIX asrda ham qoraqalpoqlarning ayrim ovullari"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Rahimxon I",
+          "role": "Xiva xoni",
+          "activity": "Qoraqalpoqlarni boshqarish qulay bo‘lishi uchun «Qoraqalpoq ulusi»ni shakllantirgan, barcha jamoalar shu ulusga kiritilgan",
+          "evidence": "Muhammad Rahimxon I «Qoraqalpoq ulusi»ni shakllan"
+        },
+        {
+          "kind": "person",
+          "person": "otaliq",
+          "role": "xon saroyining oliy amaldori",
+          "activity": "Qoraqalpoq urug‘lari va qabilalarini boshqarish uchun tayinlangan mansabdor shaxs",
+          "evidence": "otaliq va beklarbegi ta yinlangan"
+        },
+        {
+          "kind": "person",
+          "person": "beklarbegi",
+          "role": "xon saroyining oliy amaldori",
+          "activity": "XIX asrning ikkinchi yarmida qoraqalpoq urug‘larini boshqarish va majburiyatlar bajarilishini tartibga solgan",
+          "evidence": "XIX asrning ikkinchi yarmida bu"
+        },
+        {
+          "kind": "person",
+          "person": "biy",
+          "role": "urug‘ boshlig‘i",
+          "activity": "Qoraqalpoq urug‘larini oqsoqollari bilan birga boshqargan, Xiva xonlari tomonidan mansabga tasdiqlangan",
+          "evidence": "Qoraqalpoq urug‘larini boshqarish biy va uning oqsoqollari qo‘lida"
+        },
+        {
+          "kind": "term",
+          "term": "«Qoraqalpoq ulusi»",
+          "definition": "Muhammad Rahimxon I tomonidan qoraqalpoqlarni boshqarishni qulaylashtirish maqsadida shakllantirilgan ulus",
+          "evidence": "barcha qoraqalpoq jamoalari ana shu ulusga kirgan"
+        },
+        {
+          "kind": "term",
+          "term": "aris",
+          "definition": "«O‘n to‘rt urug‘» birlashmasi; qoraqalpoq urug‘larining yirik guruhga birlashgan shakli",
+          "evidence": "«o‘n to‘rt urug‘» – aris (urug‘) birlashmasini"
+        },
+        {
+          "kind": "term",
+          "term": "qozilar sudi va biylar sudi",
+          "definition": "Qoraqalpoqlar orasida mavjud bo‘lgan ikki turdagi sud: diniy qozilar sudi va urug‘ boshliqlari biylar sudi",
+          "evidence": "sudlarning ikki turi – qozilar sudi va biylar sudi mavjud edi"
+        },
+        {
+          "kind": "term",
+          "term": "urug‘ jamoasi",
+          "definition": "Yerdan jamoa tariqasida foydalanadigan, sug‘orish kanallari qazilishi uchun mas’ul bo‘lgan qoraqalpoq birligi",
+          "evidence": "lar sug‘orish kanallari qazilishi uchun mas’ul"
+        },
+        {
+          "kind": "place",
+          "place": "quyi Amudaryo havzasi",
+          "event": "Qoraqalpoqlar muqim hayot tarziga o‘tib, dehqonchilikni asosiy mashg‘ulotga aylantirgan hudud",
+          "evidence": "quyi Amudaryo havzasi, Orolning janub"
+        },
+        {
+          "kind": "place",
+          "place": "Orol dengizi",
+          "event": "Atrofidagi ko‘llarda baliq serob bo‘lib, baliqchilik qoraqalpoqlar hayotida muhim o‘rin egallagan",
+          "evidence": "Orol dengizi atrofidagi ko‘llarda"
+        },
+        {
+          "kind": "place",
+          "place": "Xiva xonligi",
+          "event": "Qoraqalpoqlar XIX asr o‘rtalarida shu xonlik hukmronligi ostida bo‘lib, yerlar uchun soliq to‘laganlar",
+          "evidence": "qoraqalpoqlar Xiva xonligi hukmronligi ostida"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qozoqlar va turkmanlarning qoraqalpoqlarga qilgan hujumlari",
+          "effect": "Qoraqalpoqlar Xiva xonligi fuqaroligiga o‘tishga majbur bo‘ldilar",
+          "evidence": "goh qozoq lar, goh turkmanlar hujumlariga uchrab"
+        },
+        {
+          "kind": "cause",
+          "cause": "Boylik orttirishni kasb qilib olgan qaroqchi guruhlarning o‘tovlarga to‘satdan hujum qilishi",
+          "effect": "Qoraqalpoqlar ko‘plab mol-mulklaridan ajralib, oqsoqollar xondan himoya so‘rab choparlar yuborgan",
+          "evidence": "qaroqchi guruhlar qoraqalpoqlar o‘tovlariga to‘satdan hujum qilar edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Urug‘ oqsoqollari, ruhoniylar va biylarning yer-suv hamda chorva mahsulotlaridagi ulushi katta bo‘lishi",
+          "effect": "XIX asrning ikkinchi yarmida tabaqalanish jarayoni yanada tezlashgan",
+          "evidence": "ruhoniylar va biylar ning ulushi katta miqdorni tashkil qilgan"
+        },
+        {
+          "kind": "number",
+          "number": "100 000",
+          "unit": "kishi",
+          "meaning": "XIX asr o‘rtalarida qoraqalpoqlar soni taxminan shu miqdordan oshmagan",
+          "evidence": "taxminan 100 ming nafardan osh magan"
+        },
+        {
+          "kind": "number",
+          "number": "14",
+          "unit": "urug‘",
+          "meaning": "Qoraqalpoqlardagi eng yirik urug‘ birlashmasi «o‘n to‘rt urug‘» arisini tashkil qilgan urug‘lar soni",
+          "evidence": "«o‘n to‘rt urug‘» – aris (urug‘) birlashmasini"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "Soliq va majburiyatlar. Xalq qo‘zg‘olonlari",
+      "page": 78,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1845–1855",
+          "date_label": "1845–1855-yillar",
+          "event": "Xiva xoni Muhammad Aminxon hukmronligi davrida Rossiya imperiyasining O‘rta Osiyoga harbiy tahdidi kuchayib ketdi",
+          "evidence": "Muhammad Aminxon (1845–1855)"
+        },
+        {
+          "kind": "date_event",
+          "date": "1855",
+          "date_label": "1855-yil",
+          "event": "Qoraqalpoqlarning qo‘ldovli qabilasidan bo‘lgan Ernazarbiy boshchiligidagi qo‘zg‘olon boshlandi",
+          "evidence": "1855-yil qoraqalpoqlarning qo‘ldovli qabilasi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1856",
+          "date_label": "1856-yil",
+          "event": "Said Muhammadxon Xiva taxtiga o‘tirgach, Ernazarbiy qo‘zg‘olonini bostirish uchun katta qo‘shin yubordi",
+          "evidence": "1856-yili Said Muhammadxon Xi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1853",
+          "date_label": "1853-yil",
+          "event": "Oqmachit qal’asi Rossiya qo‘shinlari tomonidan bosib olindi, keyinchalik undan qo‘zg‘olonchilar panoh topdi",
+          "evidence": "1853-yili Rossiya qo‘shinlari tomonidan bosib olingan Oqmachit qal’asidan panoh topishadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1858–1859",
+          "date_label": "1858–1859-yillar",
+          "event": "Qoraqalpoq urug‘larining ayrimlari yana qo‘zg‘olon ko‘tardi, Qo‘ng‘irot shahri qo‘zg‘olon markaziga aylandi",
+          "evidence": "1858–1859-yillarda qoraqalpoq urug‘laridan ay"
+        },
+        {
+          "kind": "date_event",
+          "date": "1881–1891",
+          "date_label": "1881–1891-yillar",
+          "event": "Biybozor va Nukus volostida Bobo Go‘klan boshchiligidagi xalq qo‘zg‘oloni qariyb o‘n yil davom etdi",
+          "evidence": "qariyb o‘n yil (1881–1891) davom etdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1900",
+          "date_label": "1900-yil",
+          "event": "Dehqonlarning ahvoli og‘irlashishi oqibatida Nukus volosti va Qo‘ng‘irot bekligida norozilik harakatlari bo‘lib o‘tdi",
+          "evidence": "1900-yil Nukus volosti"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning ikkinchi yarmida",
+          "date_label": "XIX asrning ikkinchi yarmida",
+          "event": "Aholidan 40 bosh qoramol uchun 9 so‘m, 40 bosh qo‘y va echki uchun 2 so‘m 50 tiyin zakot olingan",
+          "evidence": "XIX asrning ikkin"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Aminxon",
+          "role": "Xiva xoni (1845–1855)",
+          "activity": "Mudofaani kuchaytirish choralarini ko‘rgan, bo‘shab qolayotgan xazinani to‘ldirish uchun soliqlar miqdorini oshirgan",
+          "evidence": "Muhammad Aminxon (1845–1855)"
+        },
+        {
+          "kind": "person",
+          "person": "Ernazarbiy",
+          "role": "qo‘ldovli qabilasidan chiqqan qo‘zg‘olon rahbari",
+          "activity": "Xiva xonligiga bo‘ysunmaslikni e’lon qilib, Qozoqdaryo qo‘rg‘onida mudofaa jangiga tayyorgarlik ko‘rgan",
+          "evidence": "Ernazarbiy boshchiligidagi qo‘zg‘olon boshlanadi"
+        },
+        {
+          "kind": "person",
+          "person": "Said Muhammadxon",
+          "role": "Xiva xoni",
+          "activity": "1856-yilda taxtga o‘tirib, Ernazarbiy qo‘zg‘olonini bostirish uchun katta qo‘shin yuborgan",
+          "evidence": "1856-yili Said Muhammadxon Xi"
+        },
+        {
+          "kind": "person",
+          "person": "Zarliq",
+          "role": "Rossiya ta’siridagi qozoq urug‘ boshlig‘i",
+          "activity": "O‘zini xon qilib ko‘tarishga va Rossiya imperiyasi tobeligiga o‘tishga intilgan",
+          "evidence": "iqni xon qilib ko‘tarish va imperiya tobeli"
+        },
+        {
+          "kind": "person",
+          "person": "Bobo Go‘klan",
+          "role": "xalq qo‘zg‘oloni rahbari",
+          "activity": "Biybozor va Nukus volostida mustamlakachilarga qarshi qariyb o‘n yil davom etgan qo‘zg‘olonga boshchilik qilgan",
+          "evidence": "Bobo Go‘klan boshchiligida xalq qo‘zg‘oloni"
+        },
+        {
+          "kind": "term",
+          "term": "solg‘ut",
+          "definition": "Aholidan yer solig‘i sifatida undirilgan asosiy soliq turi",
+          "evidence": "yer solig‘i – solg‘ut"
+        },
+        {
+          "kind": "term",
+          "term": "ushr",
+          "definition": "Ruhoniylar foydasiga aholidan undirilgan soliq turi",
+          "evidence": "ruhoniylar foydasiga – ushr solig‘i undirilgan"
+        },
+        {
+          "kind": "term",
+          "term": "zakot",
+          "definition": "Chorvachilik bilan shug‘ullanuvchi har bir oila chorva mollarining qirqdan bir qismini to‘lagan soliq",
+          "evidence": "chorva mollarining qirqdan bir qismini zakot solig‘i tariqasida"
+        },
+        {
+          "kind": "term",
+          "term": "qozon puli",
+          "definition": "Urush paytlarida qoraqalpoqlar tomonidan to‘langan soliq turi",
+          "evidence": "qozon puli solig‘ini to‘lar edilar"
+        },
+        {
+          "kind": "term",
+          "term": "safarbarlik",
+          "definition": "Urush holatlarida aholining majburiy harbiy xizmatga chaqirilishi, har bir jamoa 1000–2000 askar bergan",
+          "evidence": "majburiy harbiy xizmatga chaqirilishi"
+        },
+        {
+          "kind": "place",
+          "place": "Qo‘ng‘irot shahri",
+          "event": "1858–1859-yillardagi qo‘zg‘olon markaziga aylangan va shafqatsiz bostirish natijasida vayron etilgan shahar",
+          "evidence": "uning markazi – Qo‘ng‘irot shahri vayron etiladi"
+        },
+        {
+          "kind": "place",
+          "place": "Qozoqdaryo qo‘rg‘oni",
+          "event": "Ernazarbiy o‘zi qurdirgan qo‘rg‘on bo‘lib, unda mudofaa jangiga tayyorgarlik ko‘rilgan",
+          "evidence": "Qozoqdaryo qo‘rg‘oniga joylashib olib, mudofaa jangiga tayyorgarlik"
+        },
+        {
+          "kind": "place",
+          "place": "Oqmachit qal’asi",
+          "event": "1853-yilda Rossiya qo‘shinlari tomonidan bosib olingan qal’a bo‘lib, mag‘lub qo‘zg‘olonchilar undan panoh topgan",
+          "evidence": "Oqmachit qal’asidan panoh topishadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Rossiya imperiyasining harbiy tahdidi kuchayishi va mudofaani kuchaytirish zarurati",
+          "effect": "Xarajatlar ortib, bo‘shab qolayotgan xazinani to‘ldirish uchun aholidan olinadigan soliqlar oshirilgan",
+          "evidence": "aholiga solinadigan soliqlar miqdorini oshirib borardi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qamal sharoitida qo‘zg‘olonchilar orasida kelishmovchilik chiqishi",
+          "effect": "Ernazarbiy otib tashlangan, uni qo‘llab-quvvatlagan guruhlar Oqmachit qal’asidan panoh topgan",
+          "evidence": "qo‘zg‘olonchilar orasida kelishmovchilik chiqadi va Ernazarbiy otib"
+        },
+        {
+          "kind": "cause",
+          "cause": "Dehqonlarning ahvoli og‘irlashishi",
+          "effect": "1900-yilda Nukus volosti va Qo‘ng‘irot bekligida norozilik harakatlari amalga oshirilgan",
+          "evidence": "Dehqonlarning ahvoli og‘irlashishi oqibatida 1900"
+        },
+        {
+          "kind": "number",
+          "number": "9",
+          "unit": "so‘m",
+          "meaning": "40 bosh qoramol uchun pul hisobida olingan zakot miqdori",
+          "evidence": "40 bosh qoramol uchun pul hisobida 9 so‘m"
+        },
+        {
+          "kind": "number",
+          "number": "12",
+          "unit": "kun",
+          "meaning": "Har oiladan bitta erkak kishining ariq qazish ishlarida qatnashish muddati",
+          "evidence": "12 kun davomida ariq"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "Qoraqalpoqlar Turkiston general-gubernatorligi tarkibida",
+      "page": 81,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asrning 70-yillariga kelib",
+          "date_label": "XIX asrning 70-yillariga kelib",
+          "event": "Qoraqalpoqlar deyarli o‘troq turmush kechira boshladilar",
+          "evidence": "70-yillariga kelib ular deyarli o‘troq turmush"
+        },
+        {
+          "kind": "date_event",
+          "date": "1868",
+          "date_label": "1868-yil",
+          "event": "Rossiya gazetasida qoraqalpoqlarning asosiy va deyarli birdan bir hunari dehqonchilik ekani yozilgan",
+          "evidence": "1868-yilda Rossiya gazetalaridan biri shunday yozadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1873",
+          "date_label": "1873-yil",
+          "event": "Podsho hukumati qo‘shinlari Xiva xonligiga bosqinchilik yurishi uyushtirdi",
+          "evidence": "1873-yil Xiva xonligiga bosqinchilik"
+        },
+        {
+          "kind": "date_event",
+          "date": "1873",
+          "date_label": "1873-yil, Gandimiyon shartnomasidan so‘ng",
+          "event": "Amudaryoning o‘ng qirg‘og‘idagi qoraqalpoqlar yerlari Rossiyaga qo‘shib olinib, Amudaryo bo‘limi tashkil etildi",
+          "evidence": "Gandimiyon shartnomasi imzolanganidan keyin"
+        },
+        {
+          "kind": "date_event",
+          "date": "1875",
+          "date_label": "1875-yil",
+          "event": "Armiya xizmati to‘g‘risidagi yangi nizomga bo‘ysunmagan Ural kazaklari bu yerga surgun qilib ko‘chirilgan",
+          "evidence": "1875-yilda podsho hukumati tomonidan armiya"
+        },
+        {
+          "kind": "date_event",
+          "date": "1871–1872",
+          "date_label": "1871–1872-yillar",
+          "event": "Ma’lumotlarga ko‘ra, urug‘ning aksariyat oddiy a’zolari chorvaga ega bo‘lmagan, ayrim boylar ming boshgacha qoramol boqqan",
+          "evidence": "1871–1872-yillar ma’lumotlariga qaraganda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1914",
+          "date_label": "1914-yil",
+          "event": "Qoraqalpoqlar yashaydigan joylarda atigi to‘rtta maktab va ikkita kasalxona mavjud bo‘lgan",
+          "evidence": "1914-yilda qoraqal"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning 70-yillarida",
+          "date_label": "XIX asrning 70-yillarida",
+          "event": "Savdo-sotiq munosabatlari rivojlanib, Chimboyda aholini iqtisodiy birlashtirgan shahar bozori vujudga keldi",
+          "evidence": "XIX asrning 70-yillarida qoraqalpoqlarda savdo"
+        },
+        {
+          "kind": "person",
+          "person": "Ural kazaklari",
+          "role": "surgun qilingan harbiy aholi",
+          "activity": "1875-yilda yangi nizomga bo‘ysunmagani uchun Amudaryo bo‘limiga surgun qilinib, asosan baliq ovlash bilan shug‘ullangan",
+          "evidence": "Ural kazaklari edi. Bu kazaklar, asosan, baliq ovlash"
+        },
+        {
+          "kind": "person",
+          "person": "biylar",
+          "role": "yirik yer egalari",
+          "activity": "Yer mulklari 15 ming tanobgacha yetgan, oddiy xalq tomorqalari esa 1–2 tanobdan oshmagan",
+          "evidence": "Ayrim biylar, yuzboshilar, mulla va eshonlarning yer mulklari"
+        },
+        {
+          "kind": "person",
+          "person": "eshon va mullalar",
+          "role": "ruhoniy tabaqa vakillari",
+          "activity": "Yer mulklari biylar va yuzboshilar bilan birga 15 ming tanobgacha bo‘lgan yirik yer egalari qatorida turgan",
+          "evidence": "mulla va eshonlarning yer mulklari 15 ming"
+        },
+        {
+          "kind": "person",
+          "person": "zamindorlar",
+          "role": "boy yer egalari",
+          "activity": "Yersiz va chorvasiz qolgan dehqonlar ularning mollari va yerlaridan foydalanganliklari uchun ishlab berishga majbur bo‘lgan",
+          "evidence": "badavlat chorvadorlar va zamindorlarning"
+        },
+        {
+          "kind": "term",
+          "term": "Amudaryo bo‘limi",
+          "definition": "1873-yildan keyin Turkiston general-gubernatorligining Sirdaryo viloyati tarkibiga kirgan ma’muriy birlik",
+          "evidence": "Amudaryo bo‘limi tashkil etil"
+        },
+        {
+          "kind": "term",
+          "term": "Gandimiyon shartnomasi",
+          "definition": "1873-yilda Xiva xonligiga yurishdan so‘ng imzolangan, Amudaryoning o‘ng qirg‘og‘ini Rossiyaga qo‘shgan shartnoma",
+          "evidence": "Gandimiyon shartnomasi imzolanganidan keyin"
+        },
+        {
+          "kind": "term",
+          "term": "«jarm-shi»",
+          "definition": "Jamoaning boy a’zolari qarindoshlariga yerni hosilning teng yarmi sharti bilan bergan ijara shakli",
+          "evidence": "yerni hosilning teng yarmi – «jarm"
+        },
+        {
+          "kind": "term",
+          "term": "tanob",
+          "definition": "Yer maydonini o‘lchash birligi; bir tanob 2500 kvadrat metr yerga teng",
+          "evidence": "1 tanob – 2500 kv. m yer"
+        },
+        {
+          "kind": "place",
+          "place": "Chimboy",
+          "event": "Aholi yashaydigan tumanlarni iqtisodiy jihatdan birlashtirgan shahar bozori vujudga kelgan joy",
+          "evidence": "Chimboyda aholi yashaydigan tumanlarni iqtisodiy"
+        },
+        {
+          "kind": "place",
+          "place": "Nukus qishlog‘i",
+          "event": "Rossiyadan ko‘chib kelgan odamlar, jumladan Ural kazaklari yashagan aholi punkti",
+          "evidence": "Nukus qishlog‘ida ya"
+        },
+        {
+          "kind": "place",
+          "place": "Petro-Aleksandrovsk",
+          "event": "Hozirgi To‘rtko‘l shahri o‘rnida bo‘lgan, Rossiyadan ko‘chib kelganlar yashagan manzil",
+          "evidence": "Petro-Aleksand rovsk"
+        },
+        {
+          "kind": "cause",
+          "cause": "Rossiya kapitalining qoraqalpoqlar yashagan hududlarga kirib kelishi",
+          "effect": "Tovar-pul munosabatlari o‘zgarib, paxta tozalash va baliqchilikda dastlabki sanoat korxonalari paydo bo‘ldi",
+          "evidence": "Rossiya kapitalining kirib kelishi tovar-pul munosabatlarini o‘zgartirib yubordi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Dehqonlarning qashshoqlashib, kasodga uchrashi",
+          "effect": "Ular katta yer egalari va boylarga qaram bo‘lib qolishdi",
+          "evidence": "kasodga uchragan dehqonlar katta yer ega"
+        },
+        {
+          "kind": "cause",
+          "cause": "Dehqonlar va chorvadorlar orasida mulkiy tabaqalanishning kuchayishi",
+          "effect": "Yersiz va chorvasiz qolgan dehqonlar boylar uchun har qanday og‘ir ishlarni bajarishga majbur bo‘ldi",
+          "evidence": "Dehqonlar va chorvadorlar orasida mulkiy tabaqalanish kuchaydi"
+        },
+        {
+          "kind": "number",
+          "number": "70 000",
+          "unit": "kishi",
+          "meaning": "Amudaryo bo‘limida yashagan qoraqalpoqlar soni, bu yerda ular jami aholining 48,6 foizini tashkil etgan",
+          "evidence": "qora qal poqlar soni qariyb 70 ming kishi"
+        },
+        {
+          "kind": "number",
+          "number": "15 000",
+          "unit": "tanob",
+          "meaning": "Ayrim biy, yuzboshi, mulla va eshonlar yer mulkining yetgan eng katta miqdori",
+          "evidence": "yer mulklari 15 ming"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "XIX asrning ikkinchi yarmi – XX asr boshlarida qoraqalpoqlar madaniyati",
+      "page": 84,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asr o‘rtalarida",
+          "date_label": "XIX asr o‘rtalarida",
+          "event": "Qoraqum eshon madrasasi qurilgan va dastlab masjid vazifasini bajargan",
+          "evidence": "Qoraqum eshon madrasasi XIX asr o‘rtalarida qurilgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1841",
+          "date_label": "1841-yil",
+          "event": "Tosh madrasa Mang‘it hokimi Xo‘janiyoz tomonidan qurdirilgan",
+          "evidence": "Tosh madrasa esa 1841-yil Mang‘it hokimi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri – XX asr boshlari",
+          "date_label": "XIX asr oxiri – XX asr boshlarida",
+          "event": "Qoraqalpoqlarda bir qancha madrasalar bo‘lib, ularning eng kattalari Qoraqum eshon va Tosh madrasalari edi",
+          "evidence": "XIX asr oxiri – XX asr boshlarida qoraqalpoqlarda bir qancha madrasalar"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asr oxiri",
+          "date_label": "XIX asr oxirida",
+          "event": "Qoraqalpoqlarning yozma asarlari rivojlana boshladi",
+          "evidence": "XIX asr oxirida qoraqalpoqlarning yozma asarlari rivojlana boshladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XX asr boshlari",
+          "date_label": "XX asr boshlariga kelib",
+          "event": "Qoraqalpoq adabiyotidagi demokratik an’analarni yangi avlod vakillari davom ettirdilar",
+          "evidence": "XX asr boshlariga kelib qoraqalpoq adabiyotidagi demokratik"
+        },
+        {
+          "kind": "date_event",
+          "date": "1827–1900",
+          "date_label": "1827–1900-yillar",
+          "event": "Qoraqalpoq xalq shoiri Berdaq shu yillarda yashab ijod qilgan",
+          "evidence": "Berdaq (1827–1900)"
+        },
+        {
+          "kind": "person",
+          "person": "Kunxo‘ja",
+          "role": "qoraqalpoq shoiri (1799–1880)",
+          "activity": "Ijodini ovullarning oddiy ahliga, ularning kundalik mehnati va turmushiga bag‘ishlagan, adolatsiz tartiblarni qoralagan",
+          "evidence": "Kunxo‘ja o‘z ijodiyotini ovullarning oddiy ahliga"
+        },
+        {
+          "kind": "person",
+          "person": "Otash Olshinboy",
+          "role": "qoraqalpoq shoiri (1788–1875)",
+          "activity": "XIX asr oxirida nomi keng tanilgan, bilimdon va o‘z taqdirini xalqi taqdiri bilan bog‘lagan ijodkor",
+          "evidence": "Otash Olshinboy (1788–"
+        },
+        {
+          "kind": "person",
+          "person": "Ajiniyoz",
+          "role": "qoraqalpoq shoiri, taxallusi Zevar",
+          "activity": "Qoraqalpoq ziyolilari orasida birinchilardan bo‘lib oxund darajasiga erishgan, o‘zbek, qozoq, turkman tillarini bilgan",
+          "evidence": "Ajiniyoz Qasiboy o‘g‘li (taxallusi Zevar)"
+        },
+        {
+          "kind": "person",
+          "person": "Berdaq",
+          "role": "qoraqalpoq xalq shoiri (1827–1900)",
+          "activity": "Qo‘ng‘irot urug‘iga mansub bo‘lib, yarim asr davomida turli mavzularda o‘lanlar to‘qigan",
+          "evidence": "Berdaq (1827–1900) qoraqalpoqlarning bu yuk shoi"
+        },
+        {
+          "kind": "person",
+          "person": "K. Sultonov",
+          "role": "qoraqalpoq yozuvchisi",
+          "activity": "Ajiniyozning hayoti va ijodi haqida «Ajiniyoz» romanini yozgan",
+          "evidence": "K. Sultonov «Ajiniyoz» romanini yozgan"
+        },
+        {
+          "kind": "term",
+          "term": "«Qirqqiz»",
+          "definition": "Qoraqalpoqlarning ozodlik va mustaqillik uchun fidoyilarcha kurashi tasvirlangan, xalq og‘zaki ijodi durdonasi sanalgan doston",
+          "evidence": "«Qirqqiz» dostoni alohida ajralib turadi"
+        },
+        {
+          "kind": "term",
+          "term": "oxund",
+          "definition": "O‘qimishli, ilmli kishi; xalq dostonlarining mahoratli kuychisi",
+          "evidence": "oxund (o‘qimishli, ilmli kishi"
+        },
+        {
+          "kind": "term",
+          "term": "laqqi",
+          "definition": "Xalq og‘zaki ijodidagi kulgi qahramoni obrazi bo‘lib, u orqali razillik va zolimlik hajv yo‘li bilan fosh etilgan",
+          "evidence": "O‘mirbek laqqi obrazi orqali razillik"
+        },
+        {
+          "kind": "term",
+          "term": "doston",
+          "definition": "Qahramonlik haqida she’riy asar bo‘lib, unda xalq baxt-saodati uchun kurashgan mard botirlarning jasoratlari madh etilgan",
+          "evidence": "Doston qahramonlik haqida she’riy asarlar"
+        },
+        {
+          "kind": "place",
+          "place": "Sarkub",
+          "event": "Dostonda tasvirlangan yer; uning hukmdori Olloyor qizi Guloyimga Muyeli degan hosildor yerlarni tortiq qilgan",
+          "evidence": "Sarkub hukmdori Olloyor o‘z qizi Guloyimga"
+        },
+        {
+          "kind": "place",
+          "place": "Mo‘ynoq",
+          "event": "Ajiniyoz Mo‘ynoqdagi eski maktabda, so‘ngra Xivadagi Sherg‘ozixon madrasasida ta’lim olgan joy",
+          "evidence": "Mo‘ynoqdagi eski maktab"
+        },
+        {
+          "kind": "place",
+          "place": "Orol bo‘yi",
+          "event": "Qoraqalpoq xalq shoiri Berdaq tug‘ilgan hudud",
+          "evidence": "Orol bo‘yida tug‘ilgan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Asrlar davomida bir joydan ikkinchi joyga ko‘chib yurish",
+          "effect": "Qoraqalpoq xalqi moddiy madaniyat yodgorliklarini to‘liq saqlab qolish imkoniyatiga ega bo‘lmagan",
+          "evidence": "ko‘chib yurgan mehnatsevar qoraqalpoq xalqi moddiy"
+        },
+        {
+          "kind": "cause",
+          "cause": "Dushmanlarning Sarkub yerlariga hujum qilib, Guloyimning otasini o‘ldirishi",
+          "effect": "Sarkub mulklari talanib, sarkubliklarning ko‘pi asir olinib haydab ketilgan",
+          "evidence": "Dushmanlar Sarkub yerlariga hujum qilib"
+        },
+        {
+          "kind": "cause",
+          "cause": "Guloyim va uning kanizaklarining dushmanga qarshi kurashga kirishishi",
+          "effect": "Qoraqalpoqlar asirlikdan ozod qilinib, ona yurtga ozodlik qaytarilgan",
+          "evidence": "qoraqalpoqlarni asirlik dan ozod qiladi"
+        },
+        {
+          "kind": "number",
+          "number": "100",
+          "unit": "ga yaqin asar",
+          "meaning": "Ajiniyoz adabiy merosidan bizga yetib kelgan she’rlar va dostonlar soni",
+          "evidence": "100 ga yaqin she’rlar va dostonlar yetib kelgan"
+        }
+      ]
+    }
+  ]
+}

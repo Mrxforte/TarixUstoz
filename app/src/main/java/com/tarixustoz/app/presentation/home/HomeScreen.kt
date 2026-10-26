@@ -286,35 +286,52 @@ fun HomeScreen(
                             color = MaterialTheme.colorScheme.onSurface
                         )
                         Text(
-                            text = "Har kuni yangi bilim",
+                            text = "Har kuni yangi bilim va savol",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                     }
 
-                    // Countdown Timer Pill
-                    Surface(
-                        shape = RoundedCornerShape(50),
-                        color = MaterialTheme.colorScheme.surfaceVariant,
-                        modifier = Modifier.wrapContentSize()
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
                     ) {
-                        Row(
-                            modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
-                            verticalAlignment = Alignment.CenterVertically
+                        IconButton(
+                            onClick = { viewModel.loadNextDailyQuestion() },
+                            modifier = Modifier.size(36.dp)
                         ) {
                             Icon(
-                                Icons.Outlined.Schedule,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                                modifier = Modifier.size(14.dp)
+                                Icons.Default.Refresh,
+                                contentDescription = "Yangi savol olmoq",
+                                tint = BrandPurple,
+                                modifier = Modifier.size(20.dp)
                             )
-                            Spacer(Modifier.width(4.dp))
-                            Text(
-                                text = uiState.dailyTimeRemaining,
-                                style = MaterialTheme.typography.labelSmall,
-                                fontWeight = FontWeight.Medium,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
+                        }
+
+                        // Countdown Timer Pill
+                        Surface(
+                            shape = RoundedCornerShape(50),
+                            color = MaterialTheme.colorScheme.surfaceVariant,
+                            modifier = Modifier.wrapContentSize()
+                        ) {
+                            Row(
+                                modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    Icons.Outlined.Schedule,
+                                    contentDescription = null,
+                                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    modifier = Modifier.size(14.dp)
+                                )
+                                Spacer(Modifier.width(4.dp))
+                                Text(
+                                    text = uiState.dailyTimeRemaining,
+                                    style = MaterialTheme.typography.labelSmall,
+                                    fontWeight = FontWeight.Medium,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
                         }
                     }
                 }
@@ -342,7 +359,7 @@ fun HomeScreen(
                                 color = Color(0xFFEEF2FF)
                             ) {
                                 Text(
-                                    text = "6-sinf • Qadimgi dunyo",
+                                    text = "6-11 sinf • O'zbekiston & Jahon",
                                     color = BrandPurple,
                                     fontSize = 11.sp,
                                     fontWeight = FontWeight.SemiBold,
@@ -355,7 +372,7 @@ fun HomeScreen(
                                 color = Color(0xFFFEF3C7)
                             ) {
                                 Text(
-                                    text = "+2 ball",
+                                    text = "+10 XP",
                                     color = Color(0xFFD97706),
                                     fontSize = 11.sp,
                                     fontWeight = FontWeight.Bold,
@@ -375,76 +392,164 @@ fun HomeScreen(
                         )
 
                         Spacer(Modifier.height(14.dp))
-                        // Answer option preview
-                        val firstOption = uiState.dailyQuestion?.options?.firstOrNull()?.text
-                            ?: "Yerlarning unumdor bo‘lishiga"
-                        Surface(
-                            shape = RoundedCornerShape(12.dp),
-                            color = MaterialTheme.colorScheme.surfaceVariant,
-                            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .clickable { onNavigateToQuiz("daily") }
-                        ) {
-                            Row(
-                                modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Surface(
-                                    shape = CircleShape,
-                                    color = MaterialTheme.colorScheme.surface,
-                                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                                    modifier = Modifier.size(26.dp)
-                                ) {
-                                    Box(contentAlignment = Alignment.Center) {
-                                        Text(
-                                            text = "A",
-                                            fontSize = 12.sp,
-                                            fontWeight = FontWeight.Bold,
-                                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                                        )
+
+                        val question = uiState.dailyQuestion
+                        val options = question?.options ?: emptyList()
+                        val optionLetters = listOf("A", "B", "C", "D")
+
+                        if (options.isNotEmpty()) {
+                            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                                options.forEachIndexed { idx, opt ->
+                                    val letter = optionLetters.getOrElse(idx) { "" }
+                                    val isSelected = uiState.selectedDailyOptionId == opt.id
+                                    val isCorrect = opt.isCorrect
+
+                                    val cardBg = when {
+                                        uiState.isDailyAnswered && isCorrect -> Color(0xFFDCFCE7)
+                                        uiState.isDailyAnswered && isSelected && !isCorrect -> Color(0xFFFEE2E2)
+                                        else -> MaterialTheme.colorScheme.surfaceVariant
+                                    }
+
+                                    val borderColor = when {
+                                        uiState.isDailyAnswered && isCorrect -> Color(0xFF16A34A)
+                                        uiState.isDailyAnswered && isSelected && !isCorrect -> Color(0xFFDC2626)
+                                        else -> MaterialTheme.colorScheme.outlineVariant
+                                    }
+
+                                    val textColor = when {
+                                        uiState.isDailyAnswered && isCorrect -> Color(0xFF15803D)
+                                        uiState.isDailyAnswered && isSelected && !isCorrect -> Color(0xFFB91C1C)
+                                        else -> MaterialTheme.colorScheme.onSurface
+                                    }
+
+                                    Surface(
+                                        shape = RoundedCornerShape(12.dp),
+                                        color = cardBg,
+                                        border = BorderStroke(1.dp, borderColor),
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .clickable(enabled = !uiState.isDailyAnswered) {
+                                                viewModel.answerDailyQuestion(opt.id)
+                                            }
+                                    ) {
+                                        Row(
+                                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp),
+                                            verticalAlignment = Alignment.CenterVertically
+                                        ) {
+                                            Surface(
+                                                shape = CircleShape,
+                                                color = if (uiState.isDailyAnswered && isCorrect) Color(0xFF16A34A) else MaterialTheme.colorScheme.surface,
+                                                border = BorderStroke(1.dp, borderColor),
+                                                modifier = Modifier.size(26.dp)
+                                            ) {
+                                                Box(contentAlignment = Alignment.Center) {
+                                                    Text(
+                                                        text = letter,
+                                                        fontSize = 12.sp,
+                                                        fontWeight = FontWeight.Bold,
+                                                        color = if (uiState.isDailyAnswered && isCorrect) Color.White else MaterialTheme.colorScheme.onSurfaceVariant
+                                                    )
+                                                }
+                                            }
+                                            Spacer(Modifier.width(10.dp))
+                                            Text(
+                                                text = opt.text,
+                                                fontSize = 13.sp,
+                                                fontWeight = if (isSelected || (uiState.isDailyAnswered && isCorrect)) FontWeight.Bold else FontWeight.Normal,
+                                                color = textColor,
+                                                modifier = Modifier.weight(1f)
+                                            )
+                                            if (uiState.isDailyAnswered && isCorrect) {
+                                                Icon(
+                                                    Icons.Default.CheckCircle,
+                                                    contentDescription = "To'g'ri",
+                                                    tint = Color(0xFF16A34A),
+                                                    modifier = Modifier.size(20.dp)
+                                                )
+                                            } else if (uiState.isDailyAnswered && isSelected && !isCorrect) {
+                                                Icon(
+                                                    Icons.Default.Cancel,
+                                                    contentDescription = "Noto'g'ri",
+                                                    tint = Color(0xFFDC2626),
+                                                    modifier = Modifier.size(20.dp)
+                                                )
+                                            }
+                                        }
                                     }
                                 }
-                                Spacer(Modifier.width(10.dp))
+                            }
+                        }
+
+                        // Feedback Banner
+                        if (uiState.isDailyAnswered && !uiState.dailyAnswerFeedback.isNullOrBlank()) {
+                            Spacer(Modifier.height(12.dp))
+                            Surface(
+                                shape = RoundedCornerShape(12.dp),
+                                color = if (uiState.isDailyCorrect) Color(0xFFDCFCE7) else Color(0xFFFEF3C7)
+                            ) {
                                 Text(
-                                    text = firstOption,
+                                    text = uiState.dailyAnswerFeedback!!,
                                     fontSize = 13.sp,
-                                    color = MaterialTheme.colorScheme.onSurface,
-                                    modifier = Modifier.weight(1f)
-                                )
-                                Icon(
-                                    Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                                    contentDescription = null,
-                                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                                    modifier = Modifier.size(20.dp)
+                                    fontWeight = FontWeight.SemiBold,
+                                    color = if (uiState.isDailyCorrect) Color(0xFF15803D) else Color(0xFFB45309),
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(12.dp)
                                 )
                             }
                         }
 
                         Spacer(Modifier.height(14.dp))
-                        // Javob berish Button
-                        Button(
-                            onClick = { onNavigateToQuiz("daily") },
-                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
-                            shape = RoundedCornerShape(14.dp),
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(48.dp)
-                                .testTag("home_daily_answer_button")
-                        ) {
-                            Text(
-                                text = "Javob berish",
-                                fontSize = 15.sp,
-                                fontWeight = FontWeight.SemiBold,
-                                color = Color.White
-                            )
-                            Spacer(Modifier.width(8.dp))
-                            Icon(
-                                Icons.AutoMirrored.Filled.ArrowForward,
-                                contentDescription = null,
-                                tint = Color.White,
-                                modifier = Modifier.size(18.dp)
-                            )
+
+                        // Action Button: Either Next/New Daily Question or Start Full Quiz
+                        if (uiState.isDailyAnswered) {
+                            Button(
+                                onClick = { viewModel.loadNextDailyQuestion() },
+                                colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
+                                shape = RoundedCornerShape(14.dp),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(48.dp)
+                                    .testTag("home_next_daily_button")
+                            ) {
+                                Icon(
+                                    Icons.Default.Refresh,
+                                    contentDescription = null,
+                                    tint = Color.White,
+                                    modifier = Modifier.size(18.dp)
+                                )
+                                Spacer(Modifier.width(8.dp))
+                                Text(
+                                    text = "Yangi kun savolini yechish 🔄",
+                                    fontSize = 15.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White
+                                )
+                            }
+                        } else {
+                            Button(
+                                onClick = { onNavigateToQuiz("daily") },
+                                colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
+                                shape = RoundedCornerShape(14.dp),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(48.dp)
+                                    .testTag("home_daily_answer_button")
+                            ) {
+                                Text(
+                                    text = "To‘liq test shaklida yechish",
+                                    fontSize = 15.sp,
+                                    fontWeight = FontWeight.SemiBold,
+                                    color = Color.White
+                                )
+                                Spacer(Modifier.width(8.dp))
+                                Icon(
+                                    Icons.AutoMirrored.Filled.ArrowForward,
+                                    contentDescription = null,
+                                    tint = Color.White,
+                                    modifier = Modifier.size(18.dp)
+                                )
+                            }
                         }
                     }
                 }

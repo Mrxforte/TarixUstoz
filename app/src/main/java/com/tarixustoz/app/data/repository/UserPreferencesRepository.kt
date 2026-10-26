@@ -33,6 +33,8 @@ class UserPreferencesRepository @Inject constructor(
         private val DISPLAY_NAME = stringPreferencesKey("display_name")
         private val USER_BIO = stringPreferencesKey("user_bio")
         private val USER_AVATAR = stringPreferencesKey("user_avatar")
+        private val USER_PHONE = stringPreferencesKey("user_phone")
+        private val USER_TARGET = stringPreferencesKey("user_target")
         private val FAVORITE_QUESTIONS = stringSetPreferencesKey("favorite_questions")
         private val CAMPAIGN_GRADE = intPreferencesKey("campaign_grade")
         private val CAMPAIGN_CHAPTER = intPreferencesKey("campaign_chapter")
@@ -63,6 +65,10 @@ class UserPreferencesRepository @Inject constructor(
     val userBio: Flow<String> = dataStore.data.map { it[USER_BIO] ?: "Tarix bilimdoni • DTM tayyorgarlik" }
 
     val userAvatar: Flow<String> = dataStore.data.map { it[USER_AVATAR] ?: "AS" }
+
+    val userPhone: Flow<String> = dataStore.data.map { it[USER_PHONE] ?: "+998 90 123 45 67" }
+
+    val userTarget: Flow<String> = dataStore.data.map { it[USER_TARGET] ?: "DTM 189 ball • O‘zbekiston tarixi" }
 
     val favorites: Flow<Set<String>> = dataStore.data.map { it[FAVORITE_QUESTIONS] ?: emptySet() }
 
@@ -104,6 +110,14 @@ class UserPreferencesRepository @Inject constructor(
 
     suspend fun setUserAvatar(avatar: String) {
         dataStore.edit { it[USER_AVATAR] = avatar }
+    }
+
+    suspend fun setUserPhone(phone: String) {
+        dataStore.edit { it[USER_PHONE] = phone }
+    }
+
+    suspend fun setUserTarget(target: String) {
+        dataStore.edit { it[USER_TARGET] = target }
     }
 
     suspend fun setDailyReminder(enabled: Boolean) {

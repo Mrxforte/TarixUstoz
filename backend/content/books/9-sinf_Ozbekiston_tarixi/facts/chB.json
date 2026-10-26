@@ -1,0 +1,531 @@
+{
+ "chapter": "II BOB. TURKISTON ROSSIYA IMPERIYASI MUSTAMLAKACHILIGIDA",
+ "topics": [
+  {
+   "number": 11,
+   "title": "Xiva xonligi ustidan Rossiya imperiyasi protektoratining o‘rnatilishi",
+   "page": 36,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1717",
+     "date_label": "1717-yil",
+     "event": "A. Bekovich-Cherkasskiy boshchiligidagi qo‘shin Xiva xonligiga yurishda mag‘lubiyatga uchraydi",
+     "evidence": "mag‘ lubiyatga uchraganligi (1717)"
+    },
+    {
+     "kind": "date_event",
+     "date": "1839",
+     "date_label": "1839-yil",
+     "event": "V. Perovskiy boshchiligidagi qo‘shinlar Xiva xonligigacha yetib borolmay, orqaga qaytib ketadi",
+     "evidence": "boshchiligidagi qo‘shinlarning Xiva xonligigacha"
+    },
+    {
+     "kind": "date_event",
+     "date": "1873–1879",
+     "date_label": "1873–1879-yillar",
+     "event": "Rossiya imperiyasining O‘rta Osiyoni istilo qilishdagi uchinchi bosqichi davom etadi",
+     "evidence": "O‘rta Osiyo istilo qilinishining uchinchi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1873-yil fevral",
+     "date_label": "1873-yil fevral",
+     "event": "Harbiy qo‘shin Toshkent, Orenburg, Mang‘ishloq va Krasnovodskdan deyarli bir vaqtda yo‘lga chiqadi",
+     "evidence": "harbiy qo‘shin 1873-yil fevralda o‘zlari o‘rnashgan joylari"
+    },
+    {
+     "kind": "date_event",
+     "date": "1873-yil may",
+     "date_label": "1873-yil may",
+     "event": "Toshkent va Orenburg yo‘nalishidan chiqqan qo‘shinlar Xiva xonligi chegaralariga yetib keladi",
+     "evidence": "Faqatgina Toshkent,"
+    },
+    {
+     "kind": "date_event",
+     "date": "1873-yil 29-may",
+     "date_label": "1873-yil 29-may",
+     "event": "Hazorasp darvozasining ochib berilishi xonlik poytaxtining egallanishiga olib keladi",
+     "evidence": "29-may kuni shaharning Hazorasp darvozasining"
+    },
+    {
+     "kind": "date_event",
+     "date": "12-avgust 1873",
+     "date_label": "1873-yil 12-avgust",
+     "event": "Xiva xoni Muhammad Rahimxon II Kaufman taklif etgan sulh shartnomasini imzolashga majbur bo‘ladi",
+     "evidence": "Rahimxon II 1873-yil 12-avgustda imzolashga majbur bo‘ldi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1873-yil may o‘rtalari",
+     "date_label": "1873-yil may o‘rtalari",
+     "event": "Mustamlakachi hukumatning asosiy qo‘shinlari Xiva shahriga yetib keladi",
+     "evidence": "may oyining o‘rtalariga kelib mustamlakachi hukumatning"
+    },
+    {
+     "kind": "person",
+     "person": "A. Bekovich-Cherkasskiy",
+     "role": "1717-yilda Xiva xonligiga yuborilgan rus qo‘shinlari boshlig‘i",
+     "activity": "Uning qo‘shini mag‘lubiyatga uchragani Xivaga qarshi keyingi yurishlar uchun sabab bo‘lgan",
+     "evidence": "A. Bekovich-Cherkasskiy boshchiligi dagi qo‘shinning"
+    },
+    {
+     "kind": "person",
+     "person": "V. Perovskiy",
+     "role": "1839-yilda Xiva xonligiga qarshi yurishga rahbarlik qilgan harbiy boshliq",
+     "activity": "Uning qo‘shinlari Xiva xonligigacha yetib borolmay, orqaga qaytib ketishga majbur bo‘lgan",
+     "evidence": "Pe rovskiy boshchiligidagi qo‘shinlarning Xiva xonligigacha"
+    },
+    {
+     "kind": "person",
+     "person": "K. P. Kaufman",
+     "role": "1873-yilda Xivaga hujum qilgan rus qo‘shinlarining bosh qo‘mondoni",
+     "activity": "Xivani egallab, xon xazinasini musodara qilgan va Gandimiyonda muzokaralar o‘tkazgan",
+     "evidence": "Bu qo‘shinga K. P. Kaufman boshchilik qildi"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad Rahimxon II",
+     "role": "Xiva xonligining hukmdori, shartnomani imzolagan xon",
+     "activity": "1873-yil 12-avgustda sulh shartnomasini imzolab, xonlikning Rossiyaga tobeligini tan olgan",
+     "evidence": "Rahimxon II 1873-yil 12-avgustda"
+    },
+    {
+     "kind": "person",
+     "person": "general Veryovkin",
+     "role": "Xivaga qilingan birinchi hujumga boshchilik qilgan general",
+     "activity": "Hujum himoyachilar tomonidan qaytarilib, uning o‘zi jangda yarador bo‘lgan",
+     "evidence": "Hujumga boshchilik qilgan general Veryovkin yarador"
+    },
+    {
+     "kind": "term",
+     "term": "Kontributsiya",
+     "definition": "Mag‘lub davlatning g‘olib davlat foydasiga to‘laydigan pul to‘lovi, ya’ni tovon",
+     "evidence": "Kontributsiya – mag‘lub davlatning g‘olib davlat foydasiga pul to‘lovi"
+    },
+    {
+     "kind": "term",
+     "term": "Pristan",
+     "definition": "Daryolar sohilida qayiqlar va kemalar to‘xtaydigan, maxsus jihozlangan joy – bandargoh",
+     "evidence": "Pristan (ruscha – kelib to‘xtamoq) – daryolar sohilida qayiqlar, kemalar"
+    },
+    {
+     "kind": "term",
+     "term": "protektorat",
+     "definition": "Davlat sifatida faqat nomigagina mavjud bo‘lib, mustaqilligini yo‘qotgan tobe xonlik holati",
+     "evidence": "protektoratga aylanganli gini ko‘rsatardi"
+    },
+    {
+     "kind": "term",
+     "term": "Gandimiyon shartnomasi",
+     "definition": "1873-yil 12-avgustda imzolangan va Xiva xonligining Rossiyaga tobeligini belgilagan hujjat",
+     "evidence": "Gandimiyon shartnomasi Xiva xonligining Rossiya imperiyasiga"
+    },
+    {
+     "kind": "place",
+     "place": "Hazorasp",
+     "event": "Xiva xonligidagi qal’a; 1873-yil may oyida uning darvozasi dushmanlarga ochib berilgan",
+     "evidence": "Hazorasp\nqal’asi, Qo‘ng‘irot, Xo‘jayli, Mang‘it shaharlari"
+    },
+    {
+     "kind": "place",
+     "place": "Gandimiyon qishlog‘i",
+     "event": "K. P. Kaufmanning qarorgohi bo‘lib, xonlik bilan sulh muzokaralari shu yerda o‘tkazilgan",
+     "evidence": "Gandimiyon qishlog‘idagi"
+    },
+    {
+     "kind": "place",
+     "place": "Sankt-Peterburg",
+     "event": "Xivadan olingan xazina, qadimiy qo‘lyozmalar, xonning taxti va toji jo‘natilgan shahar",
+     "evidence": "Sankt-Peterburgga jo‘natdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "A. Bekovich-Cherkasskiy qo‘shinining 1717-yildagi mag‘lubiyati va Perovskiy yurishining muvaffaqiyatsizligi",
+     "effect": "Xiva xonligiga qarshi harbiy yurishga besh yil davomida puxta tayyorgarlik ko‘riladi",
+     "evidence": "bunday uzoq tayyorgarlik ko‘rishning"
+    },
+    {
+     "kind": "cause",
+     "cause": "Amudaryoni qo‘lga kiritish orqali suv manbasi, savdo aloqalari va serhosil yerlardan foydalanish istagi",
+     "effect": "Xonlikni bosib olish Rossiya imperiyasi uchun muhim strategik maqsadga aylanadi",
+     "evidence": "Rossiya imperiyasi uchun Amudaryoni qo‘lga kiritish edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yo‘llarning yomonligi, 25 daraja sovuq, 40 darajadan yuqori harorat va suvsiz dashtlar",
+     "effect": "Harbiy qo‘shinning katta qismi yo‘lda kasalga chalinib, bir qismi halok bo‘ladi",
+     "evidence": "Uning katta qismi yo‘lda kasalga chalindi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Tomonlar kuchlarining teng emasligi va podsho qo‘shinlarining yaxshi qurollangani",
+     "effect": "Xonlik himoyachilari janglarda mag‘lubiyatga uchraydi",
+     "evidence": "xivaliklarga nisbatan podsho hukumati qo‘shinlari yaxshi"
+    },
+    {
+     "kind": "number",
+     "number": "12 mingdan ortiq",
+     "unit": "askar",
+     "meaning": "1873-yilda Xiva xonligiga qarshi yurishda ishtirok etgan harbiy qo‘shin tarkibi",
+     "evidence": "12 mingdan ortiq askar, 4600 ot va 20 ming tuyadan iborat harbiy"
+    },
+    {
+     "kind": "number",
+     "number": "2 million 200 ming",
+     "unit": "rubl",
+     "meaning": "Gandimiyon shartnomasi bo‘yicha Xiva xonligi 20 yil davomida to‘lashi belgilangan tovon",
+     "evidence": "Xiva xonligi 2 million 200 ming rubl miqdoridagi"
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "title": "Qo‘qon xonligining bosib olinishi",
+   "page": 39,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1850–1860-yillar",
+     "date_label": "XIX asrning 50–60-yillari",
+     "event": "Rossiya imperiyasi harbiy istilochilik yo‘li bilan Qo‘qon xonligi hududining bir qismini bosib oladi",
+     "evidence": "imperiyasi XIX asrning 50–60-yillarida"
+    },
+    {
+     "kind": "date_event",
+     "date": "1868",
+     "date_label": "1868-yil",
+     "event": "K. P. Kaufman xonlikda ta’sirini kuchaytirish maqsadida xon bilan shartnoma tuzadi",
+     "evidence": "1868-yilda xon bilan shartnoma tuzdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1875-yil bahori",
+     "date_label": "1875-yil bahori",
+     "event": "Mulla Is’hoq «Po‘latxon» nomi bilan qo‘zg‘olonga rahbarlik qilib, harakat avj oladi",
+     "evidence": "Ulardan biri 1875-yil bahorida avj olib"
+    },
+    {
+     "kind": "date_event",
+     "date": "17-iyul 1875",
+     "date_label": "1875-yil 17-iyul",
+     "event": "Abdurahmon Oftobachi va Iso Avliyolar boshchiligidagi qo‘shin qo‘zg‘olonchilar tomoniga o‘tadi",
+     "evidence": "17-iyulda qo‘zg‘olonchilar tomoniga o‘tib ketdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "20-iyul 1875",
+     "date_label": "1875-yil 20-iyul",
+     "event": "Xudoyorxon qo‘zg‘olon kuchayganidan keyin K. P. Kaufmandan yordam so‘rashga majbur bo‘ladi",
+     "evidence": "20-iyulda Xudoyorxon"
+    },
+    {
+     "kind": "date_event",
+     "date": "22-sentabr 1875",
+     "date_label": "1875-yil 22-sentabr",
+     "event": "Nasriddinbek mag‘lubiyatdan qo‘rqib taslim bo‘ladi va fon Kaufman bilan shartnoma imzolaydi",
+     "evidence": "1875-yil 22-sentabrda taslim bo‘ldi"
+    },
+    {
+     "kind": "date_event",
+     "date": "18-oktabr 1875",
+     "date_label": "1875-yil 18-oktabr",
+     "event": "General M. Skobelev qo‘shinlari Namanganga joylashib, Kaufman qo‘mondonligidagi kuchlarga qo‘shiladi",
+     "evidence": "1875-yil 18-oktabrda"
+    },
+    {
+     "kind": "date_event",
+     "date": "1876-yil yanvar",
+     "date_label": "1876-yil yanvar",
+     "event": "Andijon uyushtirilgan ikkinchi hujum natijasida qiyinchilik bilan egallanadi",
+     "evidence": "Shahar 1876-yil yanvarda uyushtirilgan ikkinchi"
+    },
+    {
+     "kind": "date_event",
+     "date": "19-fevral 1876",
+     "date_label": "1876-yil 19-fevral",
+     "event": "Qo‘qon xonligining tugatilganligi to‘g‘risidagi podsho farmoni e’lon qilinadi",
+     "evidence": "1876-yil 19-fevralda podsho hukumatining"
+    },
+    {
+     "kind": "person",
+     "person": "Po‘latxon",
+     "role": "Mulla Is’hoq Mullo Hasan o‘g‘li, 1875-yil qo‘zg‘oloni rahbari",
+     "activity": "Qo‘zg‘olonchilarni boshqarib, Nasriddinbekni siqib chiqarib hokimiyatni o‘z qo‘liga olgan",
+     "evidence": "unga Mulla Is’hoq"
+    },
+    {
+     "kind": "person",
+     "person": "Xudoyorxon",
+     "role": "Qo‘qon xonligining qo‘zg‘olon davridagi hukmdori",
+     "activity": "Qo‘zg‘olonni bostirishga urinib, oxir-oqibat Toshkentga qochgan va 1882-yilda Afg‘onistonda vafot etgan",
+     "evidence": "Xudo yorxon Orenburgdan"
+    },
+    {
+     "kind": "person",
+     "person": "Nasriddinbek",
+     "role": "Xudoyorxonning o‘g‘li, Xudoyorxondan keyin taxtga o‘tirgan xon",
+     "activity": "1875-yil 22-sentabrda taslim bo‘lib, Rossiya imperiyasi tobeligini tan olgan shartnoma imzolagan",
+     "evidence": "Xudoyorxondan so‘ng taxtga Nasriddinbek o‘tirdi"
+    },
+    {
+     "kind": "person",
+     "person": "general M. Skobelev",
+     "role": "Andijon va Namanganga hujum qilgan rus qo‘shinlari boshlig‘i",
+     "activity": "Harbiy yurishlarga rahbarlik qilib, 1876-yilda Farg‘ona viloyatiga harbiy gubernator etib tayinlangan",
+     "evidence": "general M. Skobelev harbiy gu"
+    },
+    {
+     "kind": "term",
+     "term": "Farg‘ona viloyati",
+     "definition": "1876-yilda Qo‘qon xonligi o‘rnida tashkil qilingan, Turkiston general-gubernatorligi tarkibiga kirgan ma’muriy birlik",
+     "evidence": "Farg‘ona viloyati tashkil qilindi"
+    },
+    {
+     "kind": "term",
+     "term": "harbiy gubernator",
+     "definition": "Qo‘qon xonligini bosib olishdagi harbiy yurishlarga rahbarlik qilgan generalga berilgan boshqaruv mansabi",
+     "evidence": "general M. Skobelev harbiy gu"
+    },
+    {
+     "kind": "term",
+     "term": "«sodiq quli»",
+     "definition": "Nasriddinbek shartnomada o‘zini Rossiya imperatoriga nisbatan tan olgan tobe maqomi",
+     "evidence": "deb tan olishi, tashqi siyosatda hech qanday bi"
+    },
+    {
+     "kind": "term",
+     "term": "Turkiston general-gubernatorligi",
+     "definition": "Qo‘qon xonligi hududi o‘rnida tuzilgan Farg‘ona viloyati tarkibiga kirgan imperiya ma’muriy tuzilmasi",
+     "evidence": "Turkiston general-gubernatorligi tarkibiga kiruvchi"
+    },
+    {
+     "kind": "place",
+     "place": "Andijon",
+     "event": "Qo‘zg‘olonchilarning asosiy kuchlari joylashgan shahar; 1875-yil oktabridan to‘plardan o‘qqa tutilib, 1876-yil yanvarda egallangan",
+     "evidence": "Andijon aholi si mudofaa janglarida"
+    },
+    {
+     "kind": "place",
+     "place": "Namangan",
+     "event": "1875-yil 18-oktabrda Skobelev qo‘shinlari joylashgan shahar; Rossiya ixtiyoriga o‘tgan yerlar hisobiga bo‘lim markazi bo‘lgan",
+     "evidence": "Namangan bo‘limiga general"
+    },
+    {
+     "kind": "place",
+     "place": "Go‘ktepa",
+     "event": "1881-yilda uch oy davom etgan janglardan so‘ng qo‘lga olingan turkmanlar qal’asi",
+     "evidence": "qal’asi – Go‘kte pa qo‘lga olindi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Urush natijasida ko‘rilgan zararlar va soliq hamda majburiyatlarning ko‘payishi",
+     "effect": "Xonlikda ichki nizolar va xalq noroziligi kuchayib, ko‘plab qo‘zg‘olonlar boshlanadi",
+     "evidence": "Buning oqibatida xonlikda ichki nizolar, xalq noroziligi kuchaydi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xudoyorxonning ukasi va ikkinchi o‘g‘lining ham qo‘zg‘olonchilar tomoniga o‘tib ketishi",
+     "effect": "Xudoyorxon general-gubernatordan panoh izlab Toshkentga ketishga majbur bo‘ladi",
+     "evidence": "gubernatordan panoh izlab Toshkentga"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qo‘zg‘olonchilarning asosiy kuchlari Andijonda joylashganligi",
+     "effect": "Mustamlakachi hukumat ularni tormor qilish uchun Andijonga hujum qiladi",
+     "evidence": "asosiy kuchlari shu yerda joylashgan edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Nasriddinbek imzolagan shartnomadan aholining norozi bo‘lishi",
+     "effect": "Yangi qo‘zg‘olon ko‘tarilib, Po‘latxon hokimiyatni o‘z qo‘liga oladi",
+     "evidence": "shartnomadan norozi bo‘l gan aholi yana"
+    },
+    {
+     "kind": "number",
+     "number": "2 million",
+     "unit": "rubl",
+     "meaning": "Nasriddinbek 1875-yil 22-sentabrdagi shartnoma bo‘yicha to‘lashga majbur bo‘lgan tovon",
+     "evidence": "ikki million rubl tovon to‘lashi"
+    },
+    {
+     "kind": "number",
+     "number": "uch soat",
+     "unit": "soat",
+     "meaning": "Andijon shahrini artilleriyadan betinim o‘qqa tutishning davomiyligi",
+     "evidence": "Uch soat davom etgan betinim o‘qqa tutishdan"
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "title": "Turkiston general-gubernatorligining siyosiy-ma’muriy boshqaruv tizimi",
+   "page": 45,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "6-avgust 1865",
+     "date_label": "1865-yil 6-avgust",
+     "event": "Aleksandr II «Turkiston viloyatini idora qilish to‘g‘risidagi Muvaqqat Nizom»ni tasdiqlaydi",
+     "evidence": "6-avgustda Alek sandr II"
+    },
+    {
+     "kind": "date_event",
+     "date": "1867",
+     "date_label": "1867-yil",
+     "event": "«Nizom» loyihasi asosida o‘troq aholi bir, chorvador aholi ikki bosqichli tizimga birlashtiriladi",
+     "evidence": "1867-yilgi «Nizom» loyihasi asosida o‘troq aholi bir bosqichli tizim"
+    },
+    {
+     "kind": "date_event",
+     "date": "1877",
+     "date_label": "1877-yil",
+     "event": "Toshkentda «Shahar nizomi» joriy etilib, shahar boshqaruvi Dumaga o‘tadi",
+     "evidence": "1877-yilda Toshkentda «Shahar nizomi»"
+    },
+    {
+     "kind": "date_event",
+     "date": "12-iyul 1886",
+     "date_label": "1886-yil 12-iyul",
+     "event": "Imperator Aleksandr III yangi «Turkiston o‘lkasini idora qilish to‘g‘risidagi Nizom»ni tasdiqlaydi",
+     "evidence": "12-iyulda imperator Aleksandr III tomonidan yangi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1885",
+     "date_label": "1885-yil",
+     "event": "Buxoroda Rossiya imperatorining siyosiy agentligi faoliyati yo‘lga qo‘yiladi",
+     "evidence": "1885-yil Rossiya imperatorining siyosiy agentligi faoliyati yo‘lga"
+    },
+    {
+     "kind": "date_event",
+     "date": "1898–1901",
+     "date_label": "1898–1901-yillar",
+     "event": "S. M. Duxovskoy Turkiston general-gubernatori lavozimida faoliyat olib boradi",
+     "evidence": "gubernatori S. M. Duxovskoy (1898–"
+    },
+    {
+     "kind": "date_event",
+     "date": "1908–1910",
+     "date_label": "1908–1910-yillar",
+     "event": "Senator K. Palen podsho topshirig‘i bilan Turkiston o‘lkasini taftish qiladi",
+     "evidence": "1908–1910-yillarda Turkiston o‘lkasini podsho topshirig‘i bilan"
+    },
+    {
+     "kind": "person",
+     "person": "Aleksandr II",
+     "role": "1865-yilda hukmronlik qilgan Rossiya imperatori",
+     "activity": "Toshkent bosib olingach, Turkiston viloyatini idora qilish to‘g‘risidagi Muvaqqat Nizomni tasdiqlagan",
+     "evidence": "II «Turkiston viloyatini idora qilish to‘g‘risidagi"
+    },
+    {
+     "kind": "person",
+     "person": "Aleksandr III",
+     "role": "1886-yilda hukmronlik qilgan Rossiya imperatori",
+     "activity": "Turkiston o‘lkasini idora qilish to‘g‘risidagi yangi Nizomni tasdiqlab, boshqaruvni qayta tashkil etgan",
+     "evidence": "imperator Aleksandr III tomonidan yangi"
+    },
+    {
+     "kind": "person",
+     "person": "S. M. Duxovskoy",
+     "role": "1898–1901-yillarda Turkiston general-gubernatori bo‘lgan mansabdor",
+     "activity": "O‘lkaning tarixiy o‘tmishi va etnografik xususiyatlarini hisobga olib, alohida e’tibor talab qilishini ta’kidlagan",
+     "evidence": "«Turkiston o‘lkasi boshqa o‘lkalarga nisbatan tarixiy o‘tmishi,"
+    },
+    {
+     "kind": "person",
+     "person": "K. Palen",
+     "role": "1908–1910-yillarda o‘lkani taftish qilgan senator",
+     "activity": "Taftish natijasida o‘lkadagi eng kichik boshqaruv ham harbiy boshliqlar qo‘lida ekanini ta’kidlagan",
+     "evidence": "tish qilgan senator K. Palen ta’kidlaganidek"
+    },
+    {
+     "kind": "term",
+     "term": "Duma",
+     "definition": "Rossiya imperiyasining qonunchilik hokimiyati; shahar dumasi – shaharning o‘zini o‘zi boshqarish organi",
+     "evidence": "Duma (ruscha – o‘ylash, fikrlamoq)"
+    },
+    {
+     "kind": "term",
+     "term": "Uyezd",
+     "definition": "Tumanlarga teng bo‘lgan ma’muriy-hududiy bo‘linma, viloyat tarkibiga kirgan birlik",
+     "evidence": "Uyezd – tumanlarga teng ma’muriy-hududiy bo‘linma"
+    },
+    {
+     "kind": "term",
+     "term": "Volost",
+     "definition": "Uyezd tarkibiga kirgan bir necha qishloq yoki ovullardan iborat hududiy bo‘linma",
+     "evidence": "Volost – uyezd tarkibiga kirgan bir necha qishloq yoki ovullardan"
+    },
+    {
+     "kind": "term",
+     "term": "Uchastka pristavi",
+     "definition": "Aholining yashash joyi ustidan nazorat olib boruvchi mansabdor shaxs",
+     "evidence": "Uchastka pristavi – aholi yashash joyi nazoratchisi"
+    },
+    {
+     "kind": "term",
+     "term": "Komendant",
+     "definition": "Qal’a yoki tumandagi barcha qo‘shinlarga boshchilik qiluvchi harbiy mansabdor",
+     "evidence": "Komendant – qal’a yoki tumandagi barcha qo‘shinlar boshlig‘i"
+    },
+    {
+     "kind": "place",
+     "place": "Toshkent",
+     "event": "General-gubernator qarorgohi joylashgan shahar; 1877-yilda «Shahar nizomi» joriy etilgan",
+     "evidence": "General-gubernator qarorgohi."
+    },
+    {
+     "kind": "place",
+     "place": "Samarqand viloyati",
+     "event": "1886-yilgi Nizomga muvofiq Zarafshon okrugi shu viloyatga aylantirilgan",
+     "evidence": "Zarafshon okrugi Samarqand viloyatiga aylantirildi"
+    },
+    {
+     "kind": "place",
+     "place": "Buxoro",
+     "event": "1885-yilda Rossiya imperatorining siyosiy agentligi faoliyat boshlagan joy",
+     "evidence": "Buxoroda esa 1885-yil Rossiya imperatorining"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mahalliy aholining ichki hayotiga keskin aralashish va an’anaviy turmush tarzini o‘zgartirish salbiy oqibatlar keltirib chiqarishi mumkinligi",
+     "effect": "Quyi boshqaruv organlari va soliq tizimi dastlab o‘zgartirilmasdan saqlab qolinadi",
+     "evidence": "ning an’anaviy turmush tarziga katta o‘zgartirishlar kiritish salbiy oqibatlarni"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yangi bosib olingan yerlarda qarshilik va norozilik harakatlarining davom etishi hamda o‘lka sharoitini biladigan boshqaruvchilar yo‘qligi",
+     "effect": "Dastlabki vaqtda mahalliy aholi vakillarining quyi boshqaruvda ishtirok etishiga yo‘l beriladi",
+     "evidence": "larda hali qarshilik va norozilik harakatlari davom etayotganligi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Imperiya markaziy rayonlaridan aholini ko‘chirib keltirib joylashtirish siyosati",
+     "effect": "O‘lkada mustamlakachilik siyosatini amalga oshirish uchun qo‘shimcha tayanch kuchlar paydo bo‘ladi",
+     "evidence": "qo‘shimcha ta yanch kuchlarga ega bo‘lish edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Imperiyaga xizmat qiladigan, o‘lka sharoitini yaxshi biladigan ishonchli mahalliy kishilarni topish zarurati",
+     "effect": "Turkistonda hukmronlikning dastlabki vaqtidayoq ishlab chiqilgan saylov tizimi joriy etiladi",
+     "evidence": "saylov tizimi yordam berdi"
+    },
+    {
+     "kind": "number",
+     "number": "1,7 million",
+     "unit": "kv. km",
+     "meaning": "1886-yilda Turkiston general-gubernatorligining umumiy hududi",
+     "evidence": "1,7 million kv. km bo‘lib, aholisining soni 5,2 million kishidan iborat"
+    },
+    {
+     "kind": "number",
+     "number": "80 ming",
+     "unit": "kishi",
+     "meaning": "Toshkent shahridagi mahalliy aholi soni; ulardan Duma uchun 21 deputat saylangan",
+     "evidence": "shaharning 80 ming mahalliy aholisidan 21 ta deputat"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,941 @@
+{
+ "chapter": "III-BO‘LIM. Qadimgi Yunoniston",
+ "topics": [
+  {
+   "number": 25,
+   "title": "Yunon-fors urushlari",
+   "page": 98,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 490",
+     "date_label": "Marafon jangi",
+     "event": "Fors harbiy floti Egey dengizini kesib o‘tib, Attika sohiliga langar tashladi.",
+     "evidence": "Egey dengizini kesib o'tdi va Attika sohiliga langar tashladi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 480",
+     "date_label": "Fermopil jangi",
+     "event": "Yunonlar Fermopil darasida forslarga pistirma qo‘yishga qaror qildilar.",
+     "evidence": "Yunonlar o'sha joyda pistirma qo'yishga qaror qilishdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 480",
+     "date_label": "Salamin jangi",
+     "event": "Yunonlar va forslar o‘rtasidagi hal qiluvchi dengiz jangi tor bo‘g‘ozda bo‘lib o‘tdi.",
+     "evidence": "hal qiluvchi dengiz jangi mil. avv. 480-yilda tor Salamin bo'g'ozida bo'lib o'tdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 479",
+     "date_label": "Plateya jangi",
+     "event": "Yunonlarning birlashgan lashkari fors qo‘shinlarini tor-mor etdi.",
+     "evidence": "Plateya shahri yaqinida fors qo'shinlarini tor-mor etdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 449",
+     "date_label": "Yunon-fors urushlarining yakuni",
+     "event": "Sulh tuzilib, urushlar yunonlarning to‘liq g‘alabasi bilan yakunlandi.",
+     "evidence": "mil. avv. 449 yildagi sulh natijasida yakunlandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. V asr boshlari",
+     "date_label": "Fors tahdidi",
+     "event": "Forslar Yunonistonga tahdid sola boshladi, Doro I bosqinchilik yurishlariga tayyorlanar edi.",
+     "evidence": "Yunonistonga forslar tah-did sola boshladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 480",
+     "date_label": "Afinaning ishg‘ol qilinishi",
+     "event": "Fermopil jangidan so‘ng Kserks qo‘shinlari O‘rta Yunonistonga yetib borib, Afinani ishg‘ol qildilar.",
+     "evidence": "Fermopil jangidan keyin Kserks qo'shinlari O'rta Yuno-nistonga yetib borib"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 479",
+     "date_label": "Forslarning yangi urinishi",
+     "event": "Forslar Afinani bosib olishga yana bir marta urinib ko‘rdilar.",
+     "evidence": "yana bir marta urinib ko'radilar"
+    },
+    {
+     "kind": "person",
+     "person": "Doro I",
+     "role": "Fors davlati shohi",
+     "activity": "Yunonistondan yer va suv talab qilib, yangi-yangi mamlakatlarni bosib olishga intilgan.",
+     "evidence": "Doro I hukmronlik qilayotgan Fors davlati yangi-yangi mamlakatlarni bosib olishga intilgan"
+    },
+    {
+     "kind": "person",
+     "person": "Kserks",
+     "role": "Fors shohi, Doro I ning o‘g‘li",
+     "activity": "Yunonistonga qarshi yurish boshlab, mag‘lubiyatdan so‘ng mamlakatni tark etishga majbur bo‘lgan.",
+     "evidence": "Yunonistonga qarshi uning o'g'li Kserks yurish boshladi"
+    },
+    {
+     "kind": "person",
+     "person": "Leonid",
+     "role": "Sparta podshosi",
+     "activity": "Yunonlar qo‘shiniga boshchilik qilib, forslarning hujumlarini qaytarib turgan.",
+     "evidence": "Yunonlar qo'shiniga Sparta pod-shosi Leonid boshchilik qilgan"
+    },
+    {
+     "kind": "term",
+     "term": "Triyera",
+     "definition": "Yunonlarning qoyalar orasidan va sayoz joylardan oson suzib o‘tadigan harbiy kemasi.",
+     "evidence": "Yunonlarda 200 ta har-biy kema"
+    },
+    {
+     "kind": "term",
+     "term": "Fors elchilari",
+     "definition": "Fors shohi nomidan yunon shaharlaridan yer va suv talab qilgan vakillar.",
+     "evidence": "fors elchilari paydo bo'lib"
+    },
+    {
+     "kind": "term",
+     "term": "Uch yuz spartalik jasorati",
+     "definition": "Fermopilda qahramonlarcha halok bo‘lgan spartaliklar xotirasiga berilgan tarixiy nom.",
+     "evidence": "«Uch yuz spartalik jasorati», deb tarixda mashhur bo'lib qolgan"
+    },
+    {
+     "kind": "place",
+     "place": "Marafon tekisligi",
+     "event": "Mil. avv. 490-yilda fors suvoriylari va piyoda jangchilari kemadan tushgan tekislik.",
+     "evidence": "Marafon tekisligiga nayza, xanjar va o'q-yoy-lar bilan qurollangan fors suvoriylari"
+    },
+    {
+     "kind": "place",
+     "place": "Fermopil darasi",
+     "event": "Yunoniston shimolidan janubiga olib boradigan birdan-bir tog‘ yo‘li bo‘lgan.",
+     "evidence": "Tog'lardagi Fermopil darasi Yunoniston shi-molidan janubiga olib boradigan birdan-bir yo'l edi"
+    },
+    {
+     "kind": "place",
+     "place": "Salamin bo‘g‘ozi",
+     "event": "Mil. avv. 480-yilda yunonlar va forslar o‘rtasidagi hal qiluvchi dengiz jangi bo‘lib o‘tgan tor bo‘g‘oz.",
+     "evidence": "tor Salamin bo'g'ozida bo'lib o'tdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Fors davlati yangi-yangi mamlakatlarni bosib olishga intilgan",
+     "effect": "Yunonistonga forslar tahdidi kuchayib, urush boshlangan.",
+     "evidence": "yangi-yangi mamlakatlarni bosib olishga intilgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Forslar yunon shaharlaridan yer va suv talab qilgan",
+     "effect": "Sparta bosqinchilarga itoat etmaslikka ahd qilgan.",
+     "evidence": "Sparta bosqinchilarga itoat et-maslikka ahd qildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Bir sotqin forslarga tog‘lar orqali o‘tadigan boshqa yo‘lni ko‘rsatib bergan",
+     "effect": "Fermopildagi yunon pistirmasi barbod bo‘lib, spartaliklar halok bo‘lgan.",
+     "evidence": "bir sotqin forslarga tog'lar orqali o'tgan boshqa yo'lni ko'rsatib bergan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yunon triyeralari qoyalar orasida va sayoz joylarda tez suzgan",
+     "effect": "Salamin bo‘g‘ozidagi jangda yunonlar forslarning harbiy flotini yenggan.",
+     "evidence": "qoyalar orasidan va sayoz joylardan oson suzib o'tar"
+    },
+    {
+     "kind": "number",
+     "number": "300",
+     "unit": "spartalik jangchi",
+     "meaning": "Leonid shu qadar spartalik bilan qolib, forslar hujumini qaytarib turgan.",
+     "evidence": "Leonid 300 spartalik-dan boshqa barcha yunon jangchilariga"
+    },
+    {
+     "kind": "number",
+     "number": "18",
+     "unit": "kilometr/soat",
+     "meaning": "Yunon triyeralarining tezligi o‘sha davr uchun juda katta hisoblangan.",
+     "evidence": "soatiga 18 kilometr tezlikda suza olgan"
+    }
+   ]
+  },
+  {
+   "number": 26,
+   "title": "Yunonistonning Makedoniya tomonidan bosib olinishi",
+   "page": 102,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 338",
+     "date_label": "Xeroniya jangi",
+     "event": "Yunonlar va makedonlarning asosiy kuchlari Beotiyadagi Xeroniya shahri yaqinida to‘qnashdilar.",
+     "evidence": "Beotiya-dagi Xeroniya shahri yaqinida to'qnashadilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 338",
+     "date_label": "Yunonlarning ustunligi",
+     "event": "Harbiy hiyla qo‘llagan yunonlar jangda ustunlikni qo‘lga oldilar.",
+     "evidence": "Harbiy hiyla qo'llagan yunonlar ustunlikni qo'lga oladilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 338",
+     "date_label": "Aleksandrning zarbasi",
+     "event": "Filipp II ning o‘g‘li qo‘mondonlik qilgan suvoriy qo‘shinlar qaqshatqich zarba berdi.",
+     "evidence": "qo'mondonlik qilayotgan suvoriy qo'shinlar qaqshatqich"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 338",
+     "date_label": "Yunon qo‘shinlarining tor-mor etilishi",
+     "event": "Yunon qo‘shinlari chekina boshladi va jangda tor-mor etildi.",
+     "evidence": "Yunon qo'shinlari chekina bosh-laydi va tor-mor etiladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 338",
+     "date_label": "Yunonistonning qaram bo‘lishi",
+     "event": "Xeroniya ostonasidagi mag‘lubiyatdan so‘ng Yunoniston Makedoniyaga qaram bo‘lib qoldi.",
+     "evidence": "mag'lubiyat oqibatida Yunoniston Makedoniyaga qaram bo'lib qoldi"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 337",
+     "date_label": "Korinf yig‘ilishi",
+     "event": "Spartadan tashqari barcha yunon shahar-davlatlarining vakillari Korinfga yig‘ildilar.",
+     "evidence": "Spartadan tashqari barcha yunon shahar-davlatlarining vakillari Korinfga yig'ildilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 337",
+     "date_label": "Forsga qarshi ittifoq",
+     "event": "Yunon shahar-davlatlari Makedoniya hokimiyati ostida forslarga qarshi ittifoq tuzdilar.",
+     "evidence": "forslarga qarshi yurish maqsadida yu-non shaharlari ittifoqini tuzdilar"
+    },
+    {
+     "kind": "person",
+     "person": "Filipp II",
+     "role": "Makedoniya podshosi",
+     "activity": "Yunonistonni bosib olishni ko‘zlab, suvoriylar va piyodalardan iborat qo‘shin tayyorlagan.",
+     "evidence": "Filipp II Yunonistonni bosib olishni ko'zlaydi"
+    },
+    {
+     "kind": "person",
+     "person": "Demosfen",
+     "role": "Mashhur notiq",
+     "activity": "Ellada shaharlari aholisini birlashish va makedonlarga qarshi kurashishga da’vat etgan.",
+     "evidence": "ularning aholisini birlashish va makedon-larga qarshi kurashishga da'vat etadi"
+    },
+    {
+     "kind": "person",
+     "person": "Aleksandr",
+     "role": "Filipp II ning o‘g‘li, suvoriy qo‘shin qo‘mondoni",
+     "activity": "Xeroniya jangida yunon qo‘shinlariga qaqshatqich zarba bergan.",
+     "evidence": "suvoriy qo'shinlar qaqshatqich"
+    },
+    {
+     "kind": "term",
+     "term": "Falanga",
+     "definition": "Piyodalarning 16 qator bo‘lib zich joylashuvi.",
+     "evidence": "Falanga – pi-yodalarning 16 qator bo'lib zich joyla-shuvi"
+    },
+    {
+     "kind": "term",
+     "term": "Yunon shaharlari ittifoqi",
+     "definition": "Makedoniya hokimiyati ostida forslarga qarshi yurish maqsadida tuzilgan birlashma.",
+     "evidence": "shaharlari ittifoqini tuzdilar"
+    },
+    {
+     "kind": "term",
+     "term": "Notiq",
+     "definition": "Ellada aholisini birlashish va makedonlarga qarshi kurashishga da’vat etgan so‘z ustasi.",
+     "evidence": "Mashhur notiq Demosfen Ellada shaharlarini kezib"
+    },
+    {
+     "kind": "term",
+     "term": "Qaramlik",
+     "definition": "Xeroniya jangidan keyin Yunonistonning Makedoniyaga tobe bo‘lib qolishi.",
+     "evidence": "Yunoniston Makedoniyaga qaram bo'lib qoldi"
+    },
+    {
+     "kind": "place",
+     "place": "Xeroniya shahri",
+     "event": "Mil. avv. 338-yilda yunonlar va makedonlar o‘rtasidagi hal qiluvchi jang bo‘lgan joy.",
+     "evidence": "Xeroniya shahri yaqinida to'qnashadilar"
+    },
+    {
+     "kind": "place",
+     "place": "Korinf",
+     "event": "Mil. avv. 337-yilda yunon shahar-davlatlari vakillari yig‘ilib, ittifoq tuzgan shahar.",
+     "evidence": "vakillari Korinfga yig'ildilar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yunoniston shaharlari bir-birlari bilan urushayotgan edi",
+     "effect": "Makedoniya podshosi Filipp II Yunonistonni bosib olishni ko‘zlagan.",
+     "evidence": "Yunoniston shaharlari bir-birlari bilan urushayotgan paytda Makedoniya pod-shosi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Filipp II yunonlarga qarshi harbiy yurishga jiddiy tayyorgarlik ko‘rgan",
+     "effect": "Makedon qo‘shinlari Yunonistonga bostirib kirgan.",
+     "evidence": "Yunonistonga qarshi harbiy yurish qilishga jiddiy tayyorgarlik ko'rdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yunon qo‘shinlari quvishga tushib, ikki bo‘lakka ajralib ketgan",
+     "effect": "Aleksandr qo‘mondonligidagi suvoriylar qaqshatqich zarba bergan.",
+     "evidence": "Yunonlarning qo'shinlari shunda ikki bo'lakka ajraladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Filipp II forslarga qarshi yurishini amalga oshirmasdan vafot etgan",
+     "effect": "Uning o‘g‘li Makedoniyalik Aleksandr hukmdor bo‘lgan.",
+     "evidence": "amalga oshira olmasdan vafot etdi"
+    },
+    {
+     "kind": "number",
+     "number": "16",
+     "unit": "qator",
+     "meaning": "Falanga piyodalarning shuncha qatordan iborat zich joylashuvi bo‘lgan.",
+     "evidence": "qo'shinlar 16 qatordan iborat falangada"
+    }
+   ]
+  },
+  {
+   "number": 27,
+   "title": "Fuqaro tarbiyasi",
+   "page": 104,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 776",
+     "date_label": "Ilk Olimpiya o‘yinlari",
+     "event": "Ilk bor Olimpiya o‘yinlari o‘tkazilgan, ana shu sanadan boshlab o‘yinlar muntazam takrorlana boshlagan.",
+     "evidence": "Mil. avv. 776-yilda ilk bor Olimpiya o'yinlari o'tkazilgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 776",
+     "date_label": "O‘yinlar tartibi",
+     "event": "Shu sanadan boshlab muqaddas olov har to‘rt yilda bir marta yondirilgan.",
+     "evidence": "har to'rt yilda bir marta Olimp tog'ida muqaddas olov"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. 394",
+     "date_label": "O‘yin maydonining vayron bo‘lishi",
+     "event": "Zilzila oqibatida o‘yin maydoni vayron bo‘lib, o‘yinlar o‘tkazish to‘xtagan.",
+     "evidence": "Mil. 394-yilda sodir bo'lgan zil-zila oqibatida"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. 776 – mil. 394",
+     "date_label": "O‘yinlarning o‘tkazilish davri",
+     "event": "Ilk Olimpiya o‘yinlari shu davr oralig‘ida o‘tkazilgan.",
+     "evidence": "Ilk Olimpiya o'yinlari mil. avv. 776-yildan mil. 394-yil-ga qadar o'tkazilgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "1896",
+     "date_label": "O‘yinlarning qayta tiklanishi",
+     "event": "Nihoyat, Olimpiya o‘yinlari qayta tiklanib, hozirgi kunga qadar davom etib kelmoqda.",
+     "evidence": "1896-yilda Olimpiya o'yinlari qayta tiklandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1896-yildan hozirgacha",
+     "date_label": "Mash’ala yoqish odati",
+     "event": "O‘yinlar ochiladigan kunda qadimgi mash’ala yoqish odati saqlanib qolgan.",
+     "evidence": "qadimgi mash'ala yoqish odati hozir-gacha saqlanib qolgan"
+    },
+    {
+     "kind": "person",
+     "person": "Gerakl",
+     "role": "Afsonaviy bahodir, Olimpiya o‘yinlari asoschisi",
+     "activity": "Afsonalarga ko‘ra o‘yinlarga asos solgan, arslonni yenggan pahlavon sifatida tasvirlangan.",
+     "evidence": "Afsonalarga ko'ra, Olimpiya o'yinlari asoschi-si Gerakl hisoblangan"
+    },
+    {
+     "kind": "person",
+     "person": "Zevs",
+     "role": "Olimp xudosi",
+     "activity": "Olimpiya o‘yinlari unga bag‘ishlab o‘tkazilgan.",
+     "evidence": "Yunonistondagi Olimpiya o'yinlari Olimp xudosi Zevs"
+    },
+    {
+     "kind": "person",
+     "person": "Diomed",
+     "role": "Frakiya podshosi",
+     "activity": "Uning yovvoyi otlarini Gerakl bo‘ysundirgani tasvirlangan.",
+     "evidence": "Gerakl Frakiya podshosi Diomedning yovvoyi otlarini bo'ysundir-moqda"
+    },
+    {
+     "kind": "person",
+     "person": "Yunon haykaltaroshi",
+     "role": "Qadimgi yunon haykaltaroshi",
+     "activity": "Geraklni barvasta pahlavon sifatida tasvirlagan.",
+     "evidence": "Qadimgi yunon haykaltaroshi Ge-raklni barvasta pahlavon sifatida tasvirlagan"
+    },
+    {
+     "kind": "term",
+     "term": "Fuqaro tarbiyasi",
+     "definition": "Maktablarda faol fuqarolar va davlat himoyachilarini tarbiyalashga qaratilgan ta’lim.",
+     "evidence": "Yunonlar maktablarida faol fuqarolar, davlat himoya-chilarini tarbiyalanishi lo-zim edi"
+    },
+    {
+     "kind": "term",
+     "term": "Beshkurash",
+     "definition": "Uzunlikka sakrash, disk va nayza uloqtirish, yugurish va kurashdan iborat musobaqa.",
+     "evidence": "Beshkurash esa uzunlikka sakrash, disk uloqtirish"
+    },
+    {
+     "kind": "term",
+     "term": "Gulchambar",
+     "definition": "G‘oliblarga muqaddas zaytun daraxti novdalaridan to‘qib taqilgan mukofot.",
+     "evidence": "muqaddas zaytun da-raxti novdalaridan to'qilgan gulchambar"
+    },
+    {
+     "kind": "term",
+     "term": "Harbiy ta’lim",
+     "definition": "Yigitlar umumiy ta’limdan tashqari ikki yil davomida oladigan tayyorgarlik.",
+     "evidence": "Umumiy ta'limdan tashqari, yigitlar ikki yil harbiy ta'lim ham olishgan"
+    },
+    {
+     "kind": "place",
+     "place": "Olimp tog‘i",
+     "event": "Muqaddas olov yondiriladigan va uch karra g‘oliblar haykali o‘rnatiladigan joy.",
+     "evidence": "Olimp tog'ida muqaddas olov Quyosh nurlaridan yondirilib"
+    },
+    {
+     "kind": "place",
+     "place": "Attika chegara qal’alari",
+     "event": "Ikkinchi yili ayrim yigitlar shu joylarda harbiy xizmatni o‘tashgan.",
+     "evidence": "ayrimlari Attika chegara qal'alarida harbiy xizmatni o'tashar"
+    },
+    {
+     "kind": "place",
+     "place": "Pirey bandargohi",
+     "event": "Boshqa yigitlar dengizchilik san’ati asoslarini shu yerda o‘rgangan.",
+     "evidence": "boshqalari Pirey bandargohida dengizchilik san'ati asoslarini o'rganishar edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yunonlar maktablarda faol fuqarolarni tarbiyalashni maqsad qilgan",
+     "effect": "Sport va Olimpiya o‘yinlariga qiziqishni rivojlantirishga e’tibor berilgan.",
+     "evidence": "Sportni rivojlantirish va Olimpiya o'yinlariga qiziqish ham shunga xizmat qilgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "O‘yinlar o‘tkazilayotgan paytda urushlar to‘xtatilgan",
+     "effect": "Odamlar va sportchilar Olimpiyaga eson-omon yetib kelgan.",
+     "evidence": "o'tkazilayotgan payt da urushlar to'xtatilgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xristian dini tarqalgan",
+     "effect": "Zevs sharafiga bag‘ishlangan Olimpiya o‘yinlari man qilingan.",
+     "evidence": "Xristian dini tarqalishi natijasida"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mamlakatni mudofaa qilish zarurati yuzaga kelgan",
+     "effect": "30 yoshga to‘lmagan erkaklar qurol-yarog‘lari bilan ko‘rikka yetib kelishi shart bo‘lgan.",
+     "evidence": "Mamlakatni mudofaa qilish zarurati yuzaga kelgan taqdirda"
+    },
+    {
+     "kind": "number",
+     "number": "776",
+     "unit": "yil (mil. avv.)",
+     "meaning": "Yunonlar yil hisobini ham shu o‘yinlardan boshlab yuritganlar.",
+     "evidence": "Yunonlar yil hisobini ham Olimpiya o'yinlariga qarab yuritganlar"
+    },
+    {
+     "kind": "number",
+     "number": "30",
+     "unit": "yosh",
+     "meaning": "Mudofaa zarurati bo‘lganda shu yoshga to‘lmagan erkaklar ko‘rikka kelishi shart edi.",
+     "evidence": "30 yoshga to'lmagan erkak-larning barchasi"
+    }
+   ]
+  },
+  {
+   "number": 28,
+   "title": "Qadimgi Yunoniston madaniyati",
+   "page": 107,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "ikki yarim ming yil muqaddam",
+     "date_label": "Teatrning paydo bo‘lishi",
+     "event": "Bundan ikki yarim ming yil muqaddam Yunonistonda teatr dunyoga keldi.",
+     "evidence": "Bundan ikki yarim ming yil muqaddam Yunonis-tonda teatr dunyoga kel-di"
+    },
+    {
+     "kind": "date_event",
+     "date": "to‘qqiz yil",
+     "date_label": "Troya qamali",
+     "event": "Yunonlar to‘qqiz yil davomida Troyani behuda qamal qildilar.",
+     "evidence": "Yu nonlar to'qqiz yil Troyani behuda qamal qiladilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "o‘ninchi yil",
+     "date_label": "«Iliada» voqealari",
+     "event": "«Iliada» urushning oxirgi, o‘ninchi yili haqida hikoya qiladi.",
+     "evidence": "«Iliada» ana shu urushning oxirgi, o'ninchi yili haqida hikoya qiladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "bir kecha",
+     "date_label": "Troya bosib olinishi",
+     "event": "Kechasi ot ichidan chiqqan jangchilar darvozalarni ochdilar va Troya bosib olindi.",
+     "evidence": "Kechasi otning ichidan chiqqan jangchilar darvozalarni ochadilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "XIX asrning oxiri",
+     "date_label": "Troya joyining aniqlanishi",
+     "event": "Nemis olimi Gomer hikoyalarini tadqiq qilib, Troya joylashgan yerni aniqladi.",
+     "evidence": "XIX asrning oxirida nemis olimi Genrix Shli-mann Gomer hikoyalarini tadqiq qilib"
+    },
+    {
+     "kind": "date_event",
+     "date": "kun bo‘yi",
+     "date_label": "Tomoshalarning davomiyligi",
+     "event": "Erta tongdan boshlangan tomoshalar kun bo‘yi davom etardi.",
+     "evidence": "boshlan gan tomoshalar kun bo'yi davom etardi"
+    },
+    {
+     "kind": "person",
+     "person": "Gomer",
+     "role": "Qadimgi yunon shoiri",
+     "activity": "«Iliada» va «Odisseya» poemalarini yozgan.",
+     "evidence": "Qadimgi yunon shoiri Gomer «Iliada» va «Odisseya» poemalarini yozdi"
+    },
+    {
+     "kind": "person",
+     "person": "Sofokl",
+     "role": "Tragediya muallifi",
+     "activity": "«Shoh Edip» va «Antigona» kabi mashhur tragediyalarni yozgan.",
+     "evidence": "«Shoh Edip» va «Antigona» singari eng mashhur tragediyalarni Sofokl yozgan"
+    },
+    {
+     "kind": "person",
+     "person": "Aristofan",
+     "role": "Komediyalar ustasi",
+     "activity": "Inson nuqsonlari ustidan kuladigan komediyalar yozgan.",
+     "evidence": "Aristofan komediyalar usta-si edi"
+    },
+    {
+     "kind": "person",
+     "person": "Fidiy",
+     "role": "Eng buyuk yunon haykaltaroshi",
+     "activity": "Parfenon barpo etilishi va Akropolning qayta qurilishiga boshchilik qilgan.",
+     "evidence": "Parfenon barpo etilishi va Akropolning qayta qurilishiga boshchilik qil-gan"
+    },
+    {
+     "kind": "person",
+     "person": "Dedal",
+     "role": "Arxitektor va haykaltarosh",
+     "activity": "Minos degan podsho uchun mashhur Labirint saroyini barpo etgan.",
+     "evidence": "Arxitektor va haykaltarosh Dedal Minos degan podsho uchun mashhur Labirint saroyini barpo etgan"
+    },
+    {
+     "kind": "term",
+     "term": "Tragediya",
+     "definition": "Qatnashuvchi kishilar halok bo‘lishi bilan tugaydigan pyesalar.",
+     "evidence": "qatnashuvchi kishilar halok bo'lishi bilan tugaydigan pyesalar trage-diya deyilgan"
+    },
+    {
+     "kind": "term",
+     "term": "Komediya",
+     "definition": "Inson nuqsonlari ustidan kuladigan, hazil va quvnoq sahnalarga boy pyesalar.",
+     "evidence": "Ajoyib qochiriqlar, quvnoq sahnalar, nozik yumorga boy komediyalar"
+    },
+    {
+     "kind": "term",
+     "term": "Teatr",
+     "definition": "Yunon tilidan «tomoshalar joyi», «tomoshaxona» deb tarjima qilinadigan so‘z.",
+     "evidence": "«Teatr» so'zi yunonchadan tarjima qilgan"
+    },
+    {
+     "kind": "term",
+     "term": "Troya oti",
+     "definition": "Hozirgi tillarda xosiyatsiz sovg‘a-salom ma’nosini anglatuvchi ibora.",
+     "evidence": "«Troya oti» iborasi xosiyatsiz sovg'a-salom ma'nosini anglatadi"
+    },
+    {
+     "kind": "term",
+     "term": "Axilles tovoni",
+     "definition": "Tovoniga tekkan o‘qdan halok bo‘lgan Axilles misolida nozik joyni anglatuvchi ibora.",
+     "evidence": "«Axilles tovoni» iborasi nozik joyni anglatadi"
+    },
+    {
+     "kind": "place",
+     "place": "Troya",
+     "event": "Kichik Osiyoda joylashgan, yunonlar to‘qqiz yil qamal qilgan shahar.",
+     "evidence": "Yunonlar Kichik Osiyoda joy-lashgan Troyaga"
+    },
+    {
+     "kind": "place",
+     "place": "Hisorlik tepaligi",
+     "event": "Turkiyadagi shu xarobalar hududida qazishmalar olib borilib, Troya qoldiqlari topilgan.",
+     "evidence": "Turkiyadagi Hisorlik tepaligi xarobalari hududida qazish-ma ishlarini"
+    },
+    {
+     "kind": "place",
+     "place": "Akropol",
+     "event": "Uning markazida Parfenon bunyod etilgan, qayta qurilishga Fidiy boshchilik qilgan.",
+     "evidence": "Akropol markazida bunyod etilgan Parfe-non"
+    },
+    {
+     "kind": "cause",
+     "cause": "Paris Sohibjamol Yelenani Troyaga o‘g‘irlab ketgan",
+     "effect": "Sparta podshosi qasos olishga ahd qilib, barcha yunonlarni urushga chaqirgan.",
+     "evidence": "Sohibjamol Yelenani Troyaga o'g'irlab ke tadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yunonlar ayyorlik bilan ichi bo‘sh ulkan yog‘och ot yasagan",
+     "effect": "Kechasi jangchilar chiqib darvozalarni ochgan va Troya bosib olingan.",
+     "evidence": "ichi bo'm-bo'sh ul-kan yog'och ot yasashadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Axilles chaqalog‘ligida Stiks daryosiga botirilgan, tovoniga suv tegmasdan qolgan",
+     "effect": "Janglardan birida Axilles tovoniga tekkan o‘qdan halok bo‘lgan.",
+     "evidence": "ush-lagan tovoniga suv tegmasdan qoladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qashshoq fuqarolarga teatrga borish uchun pul berilgan",
+     "effect": "Teatr barcha fuqarolar uchun ochiq bo‘lgan.",
+     "evidence": "Qashshoq fuqarolarga teatrga borishi uchun pul berilar edi"
+    },
+    {
+     "kind": "number",
+     "number": "7",
+     "unit": "mo‘jiza",
+     "meaning": "Fidiy yaratgan olimpiyalik Zevs haykali Yer yuzidagi yetti mo‘jizadan biri hisoblangan.",
+     "evidence": "Yer yuzidagi yetti mo'jizaning biri hisoblangan"
+    }
+   ]
+  },
+  {
+   "number": 29,
+   "title": "Qadimgi Yunoniston olimlari va mutafakkirlari",
+   "page": 111,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "mil. avv. V asr",
+     "date_label": "Gerodotning yashagan davri",
+     "event": "Gerodot shu davrda yashab, «Tarix» deb nomlangan kitob yozgan.",
+     "evidence": "Mil. avv. V asrda yashagan Gerodot"
+    },
+    {
+     "kind": "date_event",
+     "date": "mil. avv. V asr",
+     "date_label": "«Tarix» kitobining yozilishi",
+     "event": "Gerodot «Tarix» deb nomlangan kitob yozgan.",
+     "evidence": "«Ta-rix» deb nomlangan kitob yozgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "qadimda",
+     "date_label": "«Tarixning otasi» nomi",
+     "event": "Gerodotga «tarixning otasi» degan nom berilgan.",
+     "evidence": "Qadimda Gerodotga «tarixning otasi» degan nom beril-gan"
+    },
+    {
+     "kind": "date_event",
+     "date": "keyinchalik",
+     "date_label": "Aristotelning Sharqdagi nomi",
+     "event": "Aristotel Sharqda «Arastu» deb atala boshlagan.",
+     "evidence": "Aristotel-ni Sharqda «Arastu» deya aytish keyinchalik odatga aylangan"
+    },
+    {
+     "kind": "date_event",
+     "date": "barcha zamonlarda",
+     "date_label": "«Evrika!» an’anasi",
+     "event": "Olimlar yunon fizigi va matematigi Arximedning qiyqirig‘ini takrorlab yurishadi.",
+     "evidence": "Barcha zamonlarda olimlar ilmiy masala yechimini topgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "rimliklar Sirakuzani olgan payt",
+     "date_label": "Arximedning halokati",
+     "event": "Rimlik askar qumda chizma chizayotgan Arximedni qilich bilan urgan.",
+     "evidence": "Rimlik askar uni qilich bilan urganida «Mening chizmalarimga tegma!»"
+    },
+    {
+     "kind": "person",
+     "person": "Geraklit",
+     "role": "Mashhur yunon faylasufi",
+     "activity": "Yer yuzidagi hamma narsa olovdan kelib chiqqan deb uqtirgan.",
+     "evidence": "Geraklit Yer yu-zidagi hamma narsa, olovdan kelib chiqqan"
+    },
+    {
+     "kind": "person",
+     "person": "Demokrit",
+     "role": "Frakiyalik faylasuf",
+     "activity": "Hamma narsa ko‘zga ko‘rinmaydigan atomlardan tashkil topgan degan fikrni bayon etgan.",
+     "evidence": "mayda-mayda zarralar – atomlardan tashkil topgan"
+    },
+    {
+     "kind": "person",
+     "person": "Diogen",
+     "role": "Yunon faylasufi",
+     "activity": "Barcha qulayliklardan voz kechib, bir bochkada kun kechirgan.",
+     "evidence": "Hayot-dagi barcha qulayliklardan voz kechgan Dio-gen bir bochkada kun kechirgan"
+    },
+    {
+     "kind": "person",
+     "person": "Gerodot",
+     "role": "«Tarixning otasi» deb tanilgan olim",
+     "activity": "«Tarix» nomli kitob yozgan va qadimda shu nom bilan ulug‘langan.",
+     "evidence": "Qadimda Gerodotga «tarixning otasi» degan nom"
+    },
+    {
+     "kind": "person",
+     "person": "Arximed",
+     "role": "Yunon fizigi va matematigi",
+     "activity": "Richag qonunini ishlab chiqib, «Evrika!» qiyqirig‘i bilan mashhur bo‘lgan.",
+     "evidence": "Arximed richag (dastak) qonunini ishlab chiqdi"
+    },
+    {
+     "kind": "term",
+     "term": "Faylasuf",
+     "definition": "Qadimgi Yunonistonda donishmandlar, hayot murabbiylari deb atalgan kishilar.",
+     "evidence": "faylasuf-larni donishmandlar, hayot murab-biylari sifatida bilishgan"
+    },
+    {
+     "kind": "term",
+     "term": "Atomlar",
+     "definition": "Demokrit ta’limotiga ko‘ra, buyumlarni tashkil etuvchi ko‘zga ko‘rinmaydigan zarralar.",
+     "evidence": "bizni qurshab turgan hamma narsa ko'zga ko'rinmaydigan"
+    },
+    {
+     "kind": "term",
+     "term": "Richag (dastak)",
+     "definition": "Arximed qonun ishlab chiqqan dastak; u tayanch nuqtasi topilsa, Yerni ag‘darish mumkin, degan fikrni aytgan.",
+     "evidence": "richag (dastak) qonunini ishlab chiqdi va mashhur bo'lib ket"
+    },
+    {
+     "kind": "term",
+     "term": "Evrika!",
+     "definition": "Arximedning ilmiy yechim topilganda aytilgan «Topdim, topdim!» ma’nosidagi qiyqirig‘i.",
+     "evidence": "«Evrika!» («Topdim, topdim!»)"
+    },
+    {
+     "kind": "term",
+     "term": "O‘z-o‘zingni angla!",
+     "definition": "Delfiya ibodatxonasidagi bitik bo‘lib, Suqrotning sevimli hikmatiga aylangan.",
+     "evidence": "O'z-o'zingni angla"
+    },
+    {
+     "kind": "place",
+     "place": "Sirakuza",
+     "event": "Arximedning jonajon shahri bo‘lib, uni rimliklar bosib olganlar.",
+     "evidence": "uning jonajon shahri Sirakuzani bosib olganlarida"
+    },
+    {
+     "kind": "place",
+     "place": "Delfiya ibodatxonasi",
+     "event": "Undagi bitik Suqrotning sevimli hikmati bo‘lgan.",
+     "evidence": "ibodatxonasidagi bitik uning sevimli hikmati bo'lgan"
+    },
+    {
+     "kind": "place",
+     "place": "Afina",
+     "event": "Suqrot shaharning eng aqlli kishisi deb e’lon qilingan va keyin o‘limga mahkum etilgan.",
+     "evidence": "ning eng aqlli kishisi deb e'lon qilingan edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Geraklit olamning asosi olov deb uqtirgan",
+     "effect": "Uning «hamma narsa oqadi» hikmatlari mashhur bo‘lgan.",
+     "evidence": "«Hamma narsa oqadi, ham-ma narsa o'zgaruvchandir»"
+    },
+    {
+     "kind": "cause",
+     "cause": "Arximed yorug‘likni ko‘zgu orqali jamlagan",
+     "effect": "Sirakuza ustiga hujum qilayotgan rimliklarning kemalari yondirib yuborilgan.",
+     "evidence": "Sirakuza ustiga hujum qilib kelayotgan rimliklarning kemalarini yondirib yuborgani"
+    },
+    {
+     "kind": "cause",
+     "cause": "Sokrat Afinadagi ba’zi tartiblarni qo‘rqmasdan tanqid qilgan",
+     "effect": "Suqrot o‘limga mahkum etilgan, biroq boshqa davlatga qochib ketish imkoniyatini rad etgan.",
+     "evidence": "qo'rq-masdan tanqid qilgani uchun o'limga mahkum etilgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Suqrot o‘z fikrlarini og‘zaki bayon qilgan",
+     "effect": "Uning g‘oyalari Platon orqali bizgacha yetib kelgan.",
+     "evidence": "Uning g'oyalari Platon degan boshqa bir yu-non"
+    },
+    {
+     "kind": "number",
+     "number": "1",
+     "unit": "bochka",
+     "meaning": "Diogen butun hayotini shu bitta bochkada o‘tkazgan.",
+     "evidence": "bir bochkada kun kechirgan"
+    }
+   ]
+  },
+  {
+   "number": 30,
+   "title": "Qadimgi Yunoniston afsonalari",
+   "page": 115,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "azalda",
+     "date_label": "Dengizlar bilan o‘ralgan Yer",
+     "event": "Yer hamma tomondan dengizlar bilan o‘ralgan bo‘lgan.",
+     "evidence": "azalda Yer ham-ma tomondan dengizlar bilan o'ralgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "eng avvalo",
+     "date_label": "Olamning yaratilishi",
+     "event": "Yer va Osmon — Geya va Uran paydo bo‘lgan.",
+     "evidence": "Eng avvalo (Yer va Osmon) Geya va Uran paydo bo'ldi"
+    },
+    {
+     "kind": "date_event",
+     "date": "dastlab",
+     "date_label": "Dengiz hukmdori",
+     "event": "Dengizlarning hukmdori Okean degan titan bo‘lgan.",
+     "evidence": "Dastlab ularning hukmdori Okean degan titan bo'lgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "titanlar hukmronligi",
+     "date_label": "Taxtdan ag‘darilish",
+     "event": "Olimp tog‘ida yashovchi xudolar titanlarni taxtdan ag‘darmaguncha olamga titanlar hukmronlik qilgan.",
+     "evidence": "titanlar Olimp tog'ida yashovchi xudolar ularni taxtdan ag'darmaguncha"
+    },
+    {
+     "kind": "date_event",
+     "date": "qadimgi davr",
+     "date_label": "Afsonalarning manba sifatidagi ahamiyati",
+     "event": "Afsonalar mamlakat tarixining qadimgi davri haqida ko‘p narsalarni bilishga imkon beradi.",
+     "evidence": "mamlakat tarixidagi qadimgi davr haqida ko'p narsalarni bilishga imkon beradi"
+    },
+    {
+     "kind": "date_event",
+     "date": "Geraklning jasoratlaridan so‘ng",
+     "date_label": "Geraklning Olimpda tutgan o‘rni",
+     "event": "O‘n ikki jasorati tufayli Gerakl xudolar saltanatida faxrli o‘ringa ega bo‘lgan.",
+     "evidence": "rakl Olimp tog'idagi xudolar saltanatida faxrli"
+    },
+    {
+     "kind": "person",
+     "person": "Zevs",
+     "role": "Oliy xudo va qolgan barcha xudolarning rahnamosi",
+     "activity": "Osmonda hukmronlik qilib, Olamni boshqargan uch xudodan biri hisoblangan.",
+     "evidence": "Zevs oliy xudo va qolgan barcha xudolarning rahnamosi"
+    },
+    {
+     "kind": "person",
+     "person": "Poseydon",
+     "role": "Zevsning inisi, dengiz hukmdori",
+     "activity": "Dengizda hukmronlik qilgan xudo sifatida tasvirlangan.",
+     "evidence": "Zevsning inisi, dengiz hukmdori"
+    },
+    {
+     "kind": "person",
+     "person": "Aid",
+     "role": "Zevsning inisi, marhumlar saltanati xudosi",
+     "activity": "Marhumlar saltanatida oliy xudo deb hisoblangan.",
+     "evidence": "Aid Zevsning inisi, marhumlar saltanati xudosi"
+    },
+    {
+     "kind": "person",
+     "person": "Apollon",
+     "role": "Zevsning o‘g‘li, yorug‘lik, musiqa va she’riyat xudosi",
+     "activity": "Yorug‘lik, musiqa va she’riyat homiysi bo‘lgan.",
+     "evidence": "Zevsning o'g'li, yorug'lik, musiqa va she'riyat xudosi"
+    },
+    {
+     "kind": "person",
+     "person": "Gerakl",
+     "role": "Bahodir qahramon",
+     "activity": "O‘n ikki jasorati tufayli xudolar saltanatida faxrli o‘rin olgan.",
+     "evidence": "Yunonlarning rivoyatlari Gerakl, Axilles va boshqa bahodir qahramonlar jasorati haqida"
+    },
+    {
+     "kind": "term",
+     "term": "Afsona (mif)",
+     "definition": "Xudolar va bahodirlar haqidagi rivoyatlar; yunon tilida «mif» deb ataladi.",
+     "evidence": "Yunon afsonalari – xudolar va bahodirlar haqidagi rivoyatlar-dir"
+    },
+    {
+     "kind": "term",
+     "term": "Sirenalar",
+     "definition": "Yarim qush, yarim ayol ko‘rinishidagi afsonaviy mavjudotlar.",
+     "evidence": "sirenalar (yarim qush, yarim ayol-lar)"
+    },
+    {
+     "kind": "term",
+     "term": "Kentavrlar",
+     "definition": "Yarim ot, yarim odam ko‘rinishidagi afsonaviy mavjudotlar.",
+     "evidence": "kentavrlar (yarim otlar, yarim odamlar)"
+    },
+    {
+     "kind": "term",
+     "term": "Sikloplar",
+     "definition": "Peshanasida bitta ko‘zi bo‘lgan afsonaviy mavjudotlar.",
+     "evidence": "sikloplar – peshanasida bitta ko'zi bo'lgan af-sonaviy mavjudotlar"
+    },
+    {
+     "kind": "term",
+     "term": "Titanlar",
+     "definition": "Geya va Uranning farzandlari bo‘lib, keyinchalik Olimp xudolari ularni taxtdan ag‘dargan mavjudotlar.",
+     "evidence": "Ularning farzandlari – titanlar"
+    },
+    {
+     "kind": "place",
+     "place": "Olimp tog‘i",
+     "event": "Titanlar va xudolar yashagan, Gerakl esa u yerda faxrli o‘rin olgan.",
+     "evidence": "Olimp tog'ida yashovchi xudolar"
+    },
+    {
+     "kind": "place",
+     "place": "O‘rmon, daryo va tog‘lar",
+     "event": "Satirlar va nimfalar shu joylarda yashaydi deb tasavvur etilgan.",
+     "evidence": "Ular o'rmonlar, daryolar va tog'larda yashaydilar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yunonlar hayotni ko‘rinmas sirli kuchlarga tobe deb ishonganlar",
+     "effect": "Yunonlar bu ko‘rinmas kuchlarni xudolar deb atab, ularni hayotning hukmdori deb bilganlar.",
+     "evidence": "sirli kuchlarga tobe ekanligiga ishon"
+    },
+    {
+     "kind": "cause",
+     "cause": "Xudolar qasoskor va shafqatsiz bo‘lib, irodasiga qarshi borganlarni jazolagan",
+     "effect": "Yunonlar xudolardan qo‘rqib, ularga ibodatxonalar barpo etib qurbonlik qilganlar.",
+     "evidence": "Shuning uchun ham yunonlar o'zlari yaratgan xudolardan qo'rqishar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Afsonalar Olamning yaratilishi va qahramonlar jasorati haqida rivoyat qiladi",
+     "effect": "Ular orqali qadimgi davr tarixini bilish mumkin.",
+     "evidence": "Ular Olamning yara-tilishi, Yer yuzida hayot va odamning paydo bo'lishi"
+    },
+    {
+     "kind": "number",
+     "number": "3",
+     "unit": "xudo",
+     "meaning": "Olamni uch xudo boshqargan: Zevs osmonda, Poseydon dengizda, Aid marhumlar saltanatida.",
+     "evidence": "Qadimgi yunonlarning uch xudosi Olamni boshqarar edi"
+    }
+   ]
+  }
+ ]
+}

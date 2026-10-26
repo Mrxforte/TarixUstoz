@@ -1,0 +1,811 @@
+{
+  "chapter": "Birinchi bob. Turkiston o‘lkasida sovet hokimiyatining o‘rnatilishi hamda o‘zbek xalqining mustaqillik uchun kurashi",
+  "topics": [
+    {
+      "number": 6,
+      "title": "Buxoro amirligida islohotlar uchun kurash hamda qizil armiya tomonidan amir hokimiyatining ag‘darilishi. BXSRning tashkil topishi va faoliyati",
+      "page": 31,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1917-yil 7-aprel",
+          "date_label": "Amir islohot farmoni",
+          "event": "Buxoro amiri Sayid Olimxon turli islohotlar o‘tkazish to‘g‘risida farmon imzoladi, biroq 14-aprelda u bekor qilindi.",
+          "evidence": "Buxoro amiri Sayid Olimxon 1917-yil 7-aprelda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 2-dekabr",
+          "date_label": "Yangi Buxorodagi II syezd",
+          "event": "Amirlik hududidagi rus manzilgohlari Sovetlarining II syezdi amirlik tuzumini ag‘darishga qaror qildi.",
+          "evidence": "1917-yil 2-dekabrda Yangi Buxoro (hozirgi Kogon)da bo‘lib o‘tgan amirlik"
+        },
+        {
+          "kind": "date_event",
+          "date": "1918-yil 1-mart",
+          "date_label": "Kolesov otryadining kelishi",
+          "event": "Fyodor Kolesov boshchiligidagi 3500 kishidan iborat harbiy kuchlar Yangi Buxoroga yetib keldi.",
+          "evidence": "3500 kishidan iborat harbiy kuchlar 1918-yil 1-martda Yangi Buxoroga yetib keldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1918-yil 25-mart",
+          "date_label": "Qiziltepa bitimi",
+          "event": "Sovet Turkistoni bilan Buxoro amirligi o‘rtasida bitim imzolanib, amirlik katta miqdorda tovon to‘lashga majbur bo‘ldi.",
+          "evidence": "Bir necha kun davom etgan muzokaralardan keyin 1918-yil 25-martda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1920-yil 29-avgust",
+          "date_label": "Buxoroga hujum boshlanishi",
+          "event": "Sovet hukumati Buxoro amirligini tugatishga kirishdi, shu kundan Eski Buxoro havodan va yerdan bombardimon qilindi.",
+          "evidence": "1920-yil\n29-avgustda Buxoro amirligini tugatishga kirishdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1920-yil 2-sentyabr",
+          "date_label": "Buxoro shahrining egallanishi",
+          "event": "Qizil armiya Buxoro shahrini egalladi, amir hokimiyati ag‘darilib, Yosh buxoroliklar hokimiyat tepasiga keldi.",
+          "evidence": "1920-yil\n2-sentyabrda qizil armiya tomonidan Buxoro shahri egallangan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1920-yil 6-8-oktyabr",
+          "date_label": "BXSR e’lon qilinishi",
+          "event": "Butunbuxoro xalq vakillarining I qurultoyida Buxoro Xalq Sovet Respublikasi tuzilganligi tantanali ravishda e’lon qilindi.",
+          "evidence": "I qurultoyida Buxoro Xalq Sovet Respublikasi (BXSR) tuzilganligi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1921-yil 18-23 sentyabr",
+          "date_label": "BXSR Konstitutsiyasi",
+          "event": "Butunbuxoro xalq vakillarining II qurultoyida demokratik ruhdagi BXSR Konstitutsiyasi qabul qilindi.",
+          "evidence": "sentyabrda bo‘lgan Butunbuxoro xalq vakillarining II qurultoyida demokratik"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil 18-20-sentyabr",
+          "date_label": "BXSRning BSSRga aylantirilishi",
+          "event": "Butunbuxoro xalq vakillarining V qurultoyida respublika nomi o‘zgartirilib, u Buxoro Sovet Sotsialistik Respublikasi bo‘ldi.",
+          "evidence": "V qurultoyida BXSRning nomi o‘zgartirilib"
+        },
+        {
+          "kind": "person",
+          "person": "Fayzulla Xo‘jayev",
+          "role": "Yosh buxoroliklar yetakchisi, BXSR Nozirlar Sho‘rosi raisi",
+          "activity": "1920-yilda yangi hukumat raisi bo‘ldi, 1922-yilda Berlinga borib nemis banklari bilan mustaqil shartnoma tuzishga harakat qildi.",
+          "evidence": "Yosh buxoroliklar partiyasining yetakchisi Fayzulla\nXo‘jayev yangi hukumat"
+        },
+        {
+          "kind": "person",
+          "person": "Amir Sayid Olimxon",
+          "role": "Buxoro amiri (1881-1944)",
+          "activity": "1917-yilda islohot farmonini imzoladi, 1920-yilda shahar obidalari va aholini saqlash uchun poytaxtni tashlab chekindi.",
+          "evidence": "shahar obidalari va aholini omon\nsaqlash maqsadida poytaxtni tashlab, Sharqiy Buxoroga chekingan"
+        },
+        {
+          "kind": "person",
+          "person": "Abdulqodir Muhitdinov",
+          "role": "Butunbuxoro Markaziy Inqilobiy Qo‘mitasi raisi",
+          "activity": "BXSR tuzilgach Markaziy revkomga rais bo‘ldi va keyinchalik hukumatda mo‘tadil demokratik yo‘lni tutgan arboblar qatorida bo‘ldi.",
+          "evidence": "Muhitdinov Butunbuxoro Markaziy Inqilobiy Qo‘mitasi (Markaziy revkom)\nraisi bo‘ldi"
+        },
+        {
+          "kind": "person",
+          "person": "Mirza Salimbek",
+          "role": "Bosh zakotchi va tarixchi",
+          "activity": "1918-yilda Qiziltepa bitimini amir nomidan imzoladi va bu voqealarni “Tarixi Salimiy” asarida yozib qoldirdi.",
+          "evidence": "Amir nomidan bitimni bosh zakotchi Mirza Salimbek imzoladi"
+        },
+        {
+          "kind": "term",
+          "term": "Qo‘rboshi",
+          "definition": "O‘rta asrlarda xonliklardagi qurol-yarog‘ ombori mutasaddisi, keyinchalik sovet rejimiga qarshi harakat rahbarlari unvoni.",
+          "evidence": "Qo‘rboshi – O‘rta asrlarda O‘rta Osiyo xonliklari qurol-yarog‘ ombori"
+        },
+        {
+          "kind": "term",
+          "term": "“Bosmachilik”",
+          "definition": "Sho‘ro hukumati davrida bosqinchi qizil armiyaga qarshi qurolli harakatga berilgan rasmiy nom.",
+          "evidence": "Turkistonda 1918–1925-yillarda keng xalq ommasi"
+        },
+        {
+          "kind": "term",
+          "term": "Yosh buxoroliklar",
+          "definition": "Amirlik tuzumi doirasida demokratik islohotlar va konstitutsiyaviy monarxiya o‘rnatish tarafdori bo‘lgan partiya.",
+          "evidence": "Yosh buxoroliklar partiyasi dastlab mavjud amirlik tuzumi doirasida"
+        },
+        {
+          "kind": "place",
+          "place": "Qiziltepa",
+          "event": "1918-yil 25-martda sovet Turkistoni bilan Buxoro amirligi o‘rtasida bitim imzolangan joy.",
+          "evidence": "sovet Turkistoni bilan Buxoro amirligi o‘rtasida Qiziltepa bitimi"
+        },
+        {
+          "kind": "place",
+          "place": "Fathobod",
+          "event": "Buxoro shahri yaqinidagi joy; bu yerda amir qo‘shinlari bilan qizil askarlar o‘rtasidagi dastlabki to‘qnashuv bo‘lgan.",
+          "evidence": "Buxoro shahri yaqinidagi Fathobodda bo‘lgan dastlabki to‘qnashuv"
+        },
+        {
+          "kind": "cause",
+          "cause": "Rossiyada podsho hokimiyatining ag‘darilishi va Muvaqqat hukumatning amirlik mustaqilligini tan olishi",
+          "effect": "Buxoro amirligida islohotlar uchun kurash kuchayib, Yosh buxoroliklar partiyasi faollashdi.",
+          "evidence": "Rossiyada\npodsho hokimiyatining ag‘darilishi Buxoro amirligida ham ba’zi o‘zgarishlarni"
+        },
+        {
+          "kind": "cause",
+          "cause": "Amirning farmonni bekor qilib, namoyishni bostirishi va yosh buxoroliklarni ta’qib ostiga olishi",
+          "effect": "Islohotlar yo‘li to‘silib, jadidlar amir hokimiyatiga ishonchini yo‘qotdi.",
+          "evidence": "14-aprelda farmon bekor qilindi. Yosh buxoroliklar\namirlikda ta’qib ostiga olindi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kolesov otryadining Buxoroga bosqini va talon-toroj qilishi",
+          "effect": "Buxoro amirligi mustaqilligini himoya qildi, biroq bosqin uchun javobgar hisoblanib, katta tovon to‘lashga majbur bo‘ldi.",
+          "evidence": "o‘z mustaqilligini himoya qilgan Buxoro amirligi bosqinchi qizil askarlarning"
+        },
+        {
+          "kind": "number",
+          "number": "15 000",
+          "unit": "sarboz",
+          "meaning": "Amir Olimxon ixtiyoridagi sarbozlar soni; qo‘shinda 55 ta eski to‘p va 12 ta pulemyot bor edi.",
+          "evidence": "Amir Olimxon ixtiyorida 15 000 sarboz, 55 ta eski to‘p"
+        },
+        {
+          "kind": "number",
+          "number": "12 000",
+          "unit": "snaryad",
+          "meaning": "1-2-sentyabr kunlari bronepoyezd va to‘plardan Buxoro shahriga tashlangan snaryadlar soni.",
+          "evidence": "1-2-sentyabr kunlari shaharga 12 000 snaryad"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Xiva xonligida ahvol hamda xon hokimiyatining ag‘darilishi. XXSR ning tuzilishi va turli islohotlar",
+      "page": 37,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1917-yil 5-aprel",
+          "date_label": "Islohot manifesti",
+          "event": "Xiva xoni Asfandiyorxon Yosh xivaliklar partiyasining islohot to‘g‘risidagi manifestiga imzo chekdi.",
+          "evidence": "1917-yil 5-aprelda Xiva xoni Asfandiyorxon"
+        },
+        {
+          "kind": "date_event",
+          "date": "1917-yil 8-aprel",
+          "date_label": "Majlis va Nozirlar Sho‘rosi",
+          "event": "Xivada xon huzurida qozikalon Bobooxun Salimov boshchiligida Majlis hamda Nozirlar Sho‘rosi tashkil topdi.",
+          "evidence": "mamlakatni boshqarish uchun Xivada xon huzurida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1918-yil 30-oktyabr",
+          "date_label": "Asfandiyorxonning o‘ldirilishi",
+          "event": "Xivadagi saroy fitnasi oqibatida xon Asfandiyorxon o‘ldirilib, taxtga uning akasi Said Abdullaxon o‘tirdi.",
+          "evidence": "Xivada bo‘lgan saroy fitnasi oqibatida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1919-yil 9-aprel",
+          "date_label": "Taxta shartnomasi",
+          "event": "Xiva yaqinidagi Taxta qishlog‘ida Junaidxon bilan sovet hokimiyati vakillari o‘rtasida shartnoma imzolandi.",
+          "evidence": "1919-yil 9-aprelda Xiva yaqinidagi Taxta qishlog‘ida Junaidxon bilan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1920-yil 1-fevral",
+          "date_label": "Xiva bosib olinishi",
+          "event": "Xonlik poytaxti Xiva bosib olindi va xon Said Abdullaxon taxtdan voz kechdi, Junaidxon Qoraqumga chekindi.",
+          "evidence": "1920-yil 1-fevralda xonlik poytaxti Xiva bosib olindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1920-yil 26-30-aprel",
+          "date_label": "XXSR e’lon qilinishi",
+          "event": "Xiva shahrida bo‘lib o‘tgan Butunxorazm xalq vakillarining I qurultoyida Xorazm Xalq Sovet Respublikasi tuzilganligi e’lon qilindi.",
+          "evidence": "Xiva shahrida 1920-yil 26 – 30-aprelda bo‘lib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1921-yil 6-mart",
+          "date_label": "Harbiy to‘ntarish",
+          "event": "Xorazmda qizil askarlar uyushtirgan harbiy davlat to‘ntarishidan keyin P.Yusupov hukumati ag‘darib tashlandi.",
+          "evidence": "1921-yil 6-martda Xorazmda qizil askarlar uyushtirgan harbiy davlat to‘ntarishidan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1923-yil 17-20-oktyabr",
+          "date_label": "XXSRning XSSRga aylantirilishi",
+          "event": "Butunxorazm xalq vakillarining IV qurultoyi respublikani Xorazm Sovet Sotsialistik Respublikasiga aylantirishga qaror qildi.",
+          "evidence": "XXSRni Xorazm Sovet Sotsialistik Respublikasi (XSSR)ga aylantirish"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil oxiri",
+          "date_label": "XXSR va BXSRning tugatilishi",
+          "event": "Markaz tomonidan mustaqil davlatlar bo‘lgan XXSR va BXSR tugatilib, o‘zbek davlatchiligining ikki tarixiy markazi yo‘qotildi.",
+          "evidence": "1924-yil oxirida Markaz tomonidan mustaqil davlatlar bo‘lgan\nXXSR va BXSR tugatilib"
+        },
+        {
+          "kind": "person",
+          "person": "Asfandiyorxon",
+          "role": "Xiva xoni (1910-1918)",
+          "activity": "1917-yilda islohot manifestiga imzo chekdi, so‘ngra Majlisni tarqatib yubordi va 1918-yilda saroy fitnasida o‘ldirildi.",
+          "evidence": "Xiva xoni Asfandiyorxon\n(1910 – 1918)"
+        },
+        {
+          "kind": "person",
+          "person": "Junaidxon",
+          "role": "Xiva xonligi qurolli kuchlari qo‘mondoni",
+          "activity": "Turkmanlarning yovmut urug‘idan bo‘lib, sovet hokimiyatiga qarshi uzoq yillar kurashdi va 1924-yilda Afg‘onistonga ketdi.",
+          "evidence": "Junaidxonning asl ismi Qurbon\nMamed Sardor bo‘lib, u turkmanlarning yovmut urug‘iga mansub bo‘lgan"
+        },
+        {
+          "kind": "person",
+          "person": "Polvonniyoz Yusupov",
+          "role": "Yosh xivaliklar partiyasi rahbari",
+          "activity": "1917-yil mayda delegatsiya bilan Toshkentga keldi, 1920-yilda XXSR Nozirlar Sho‘rosining raisi etib saylandi.",
+          "evidence": "Yosh xivaliklar partiyasi rahbari Polvonniyoz Yusupov"
+        },
+        {
+          "kind": "person",
+          "person": "Bobooxun Salimov",
+          "role": "Qozikalon, XXSR elchisi",
+          "activity": "Xivada Majlisga boshchilik qildi, 1921-yilda Afg‘onistonga yuborilgan maxsus elchilik hay’atini boshqardi.",
+          "evidence": "Bobooxun Salimov boshchiligida maxsus elchilik hay’ati"
+        },
+        {
+          "kind": "term",
+          "term": "Idorai mashruta",
+          "definition": "Islohotlar amalga oshirilishini nazorat qilish uchun tuzilgan, 30 kishidan iborat maxsus organ.",
+          "evidence": "30\nkishidan iborat Idorai mashruta"
+        },
+        {
+          "kind": "term",
+          "term": "Majlis",
+          "definition": "Xon huzurida tashkil etilgan maslahat organi; 1917-yil iyunida xon uni tarqatib yubordi.",
+          "evidence": "iyun oyida Majlisni tarqatib yubordi"
+        },
+        {
+          "kind": "term",
+          "term": "Yosh xivaliklar",
+          "definition": "1914-yilda tashkil topgan, islohotlar va yangi usul maktablari tarafdori bo‘lgan partiya.",
+          "evidence": "Yosh xivaliklar partiyasi 1914-yil\ntashkil topgan edi"
+        },
+        {
+          "kind": "place",
+          "place": "To‘rtko‘l",
+          "event": "Amudaryo bo‘limining markazi bo‘lgan shahar; 1918-yil noyabrda Junaidxon qo‘shinlari unga hujum qilgan.",
+          "evidence": "1918-yil noyabrda Amudaryodan o‘tib, To‘rtko‘lga hujum qildi"
+        },
+        {
+          "kind": "place",
+          "place": "Taxta",
+          "event": "Xiva yaqinidagi qishloq; 1919-yil 9-aprelda Xiva xonligi mustaqilligini tan olgan shartnoma shu yerda imzolangan.",
+          "evidence": "Xiva yaqinidagi Taxta qishlog‘ida"
+        },
+        {
+          "kind": "cause",
+          "cause": "1917-yil fevral voqealari va jadidlarning islohot talablari",
+          "effect": "Xon manifestga imzo chekib, Xivada qisqa muddatga bo‘lsa ham konstitutsion monarxiya o‘rnatildi.",
+          "evidence": "Bu bilan Xiva xonligida qisqa muddatga bo‘lsa ham konstitutsion monarxiya o‘rnatildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xonning Majlisni tarqatib yuborishi va majlischilarni qatl ettirishi",
+          "effect": "Yosh xivaliklar mag‘lubiyatga uchrab, mamlakat hududidan chiqib ketishga majbur bo‘ldi.",
+          "evidence": "Xonning istibdod tuzumi bilan kurashda\nmag‘lubiyatga uchragan Yosh xivaliklar mamlakat hududidan chiqib ketishga"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xiva xonligi mustaqilligiga sovet Rossiyasi tomonidan tashqi xavf tug‘ilishi",
+          "effect": "Xon mudofaa choralari ko‘rib, 1918-yilda Junaidxonni qurolli kuchlar qo‘mondoni etib tayinladi.",
+          "evidence": "Xiva xonligi mustaqilligiga sovet Rossiyasi tomonidan tashqi xavfni his etgan"
+        },
+        {
+          "kind": "number",
+          "number": "5",
+          "unit": "yil",
+          "meaning": "XXSR mavjud bo‘lgan qariyb davr; shu vaqt ichida MIK raislari va hukumat boshliqlari 10 martadan o‘zgartirilgan.",
+          "evidence": "XXSR mavjud bo‘lgan qariyb 5 yil"
+        },
+        {
+          "kind": "number",
+          "number": "1,5",
+          "unit": "yil",
+          "meaning": "Junaidxon qo‘shinlari bilan qizil askarlar o‘rtasida To‘rtko‘l uchun bo‘lgan keskin janglarning davomiyligi.",
+          "evidence": "keskin janglar bo‘lib, u 1,5 yilcha davom"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "BXSR va XXSRda qizil armiyaga qarshi kurash",
+      "page": 42,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1920-yil sentyabr",
+          "date_label": "Olimxonning Sharqiy Buxoroga kelishi",
+          "event": "Sobiq amir Olimxon Sharqiy Buxoroga kelib katta kuchlar to‘pladi va qizil armiyaga qarshi kurashga rahbarlik qildi.",
+          "evidence": "1920-yil sentyabr\noyida Sharqiy Buxoroga kelgan sobiq amir Olimxon katta"
+        },
+        {
+          "kind": "date_event",
+          "date": "1921-yil mart",
+          "date_label": "Olimxonning Afg‘onistonga chiqishi",
+          "event": "Bir qator janglarda mag‘lubiyatga uchragan amir Olimxon Afg‘oniston hududiga o‘tib ketishga majbur bo‘ldi.",
+          "evidence": "mag‘lubiyatga uchragan Olimxon Afg‘oniston davlati hududiga o‘tib ketishga majbur bo‘ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1921-yil 9-noyabr",
+          "date_label": "Anvar Poshoning bayonoti",
+          "event": "Anvar Posho Qarshi yaqinidagi Qiliko‘l atrofida Mulla Nafis qo‘rboshi bilan uchrashib, maxsus bayonot bilan chiqdi.",
+          "evidence": "9-noyabrda Qarshi\nyaqinidagi Qiliko‘l\natrofida Mulla Nafis qo‘rboshi bilan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1922-yil avgust",
+          "date_label": "Anvar Poshoning halokati",
+          "event": "Sharqiy Buxoroning Baljuvon atrofidagi Obidara qishlog‘ida qizil askarlarga qarshi jangda mardlarcha halok bo‘ldi.",
+          "evidence": "avgustda Sharqiy Buxoroning Baljuvon atrofidagi Obidara\nqishlog‘ida qizil askarlarga qarshi bo‘lgan jangda mardlarcha halok bo‘ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1923-yil 12-yanvar",
+          "date_label": "Harbiy yordam so‘rovi",
+          "event": "XXSR MIK ikkinchi sessiyasida hukumat “bosmachilik” harakatiga qarshi ojiz ekani tan olib, RSFSRdan shoshilinch harbiy yordam so‘radi.",
+          "evidence": "1923-yil 12-yanvarda bo‘lgan uchinchi chaqiriq XXSR"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil 17-iyun",
+          "date_label": "Junaidxonning Hirotga ketishi",
+          "event": "Junaidxon yigirma nafar hamrohi bilan Afg‘onistondagi Hirot shahriga yetib keldi va qo‘shinini to‘ldirishga tayyorlandi.",
+          "evidence": "Junaidxon 1924-yil 17-iyunda o‘zining\n20 nafar hamrohi bilan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil kuzi",
+          "date_label": "Qurolli kurashning birinchi davri yakuni",
+          "event": "O‘rta Osiyoda milliy-hududiy chegaralanish o‘tkazilishi natijasida qurolli kurashning birinchi davri yakunlandi.",
+          "evidence": "natijasida qurolli kurashning birinchi davri yakunlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil oxiri",
+          "date_label": "Mulla Abdulqahhorning halokati",
+          "event": "Qizilqumda qizil askarlarga qarshi bo‘lgan janglarning birida qo‘rboshi Mulla Abdulqahhor halok bo‘ldi.",
+          "evidence": "qo‘rboshi Qizilqumda qizil askarlarga qarshi bo‘lgan janglarning\nbirida 1924-yilning oxirida halok bo‘ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1935-yil",
+          "date_label": "Istiqlolchilik harakatining mag‘lubiyati",
+          "event": "Turkistondagi istiqlolchilik harakati mag‘lubiyatga uchradi, tirik qolgan kurashchilar xorijiy davlatlarga muhojir bo‘lib ketdi.",
+          "evidence": "1935-yil\nga kelib Turkistondagi istiqlolchilik"
+        },
+        {
+          "kind": "person",
+          "person": "Mulla Abdulqahhor",
+          "role": "G‘arbiy Buxoro qo‘rboshisi",
+          "activity": "Buxoro, Karmana va Nurota viloyatlarida o‘nlab qo‘rboshi guruhlarini birlashtirib, 1924-yil oxirigacha kurash olib bordi.",
+          "evidence": "G‘arbiy Buxoro hududida Mulla Abdulqahhor, Sharqiy\nBuxoro hududida Ibrohimbek va Davlatmandbek"
+        },
+        {
+          "kind": "person",
+          "person": "Ibrohimbek",
+          "role": "Sharqiy Buxoro qo‘rboshisi",
+          "activity": "Sharqiy Buxoroda o‘z boshqaruv usulini joriy qilib, ko‘p yillar davomida qizil armiyaga qarshi fidokorona kurashdi.",
+          "evidence": "Ibrohimbek qo‘l ostidagi Sharqiy Buxoro hududida o‘zining boshqaruv\nusulini amalga oshirdi"
+        },
+        {
+          "kind": "person",
+          "person": "Anvar Posho",
+          "role": "Turkiyadan kelgan general",
+          "activity": "1921-yilda Buxoroga kelib, turk zobitlari bilan birlashgan qismlar tuzdi va g‘arbcha qo‘mondonlik uslubini joriy qildi.",
+          "evidence": "Anvar Posho 1921-yil oktyabrda"
+        },
+        {
+          "kind": "person",
+          "person": "Junaidxon",
+          "role": "Xorazmdagi harakat rahbari",
+          "activity": "Qo‘shinlari safida turkman, o‘zbek, qozoq va qoraqalpoqlar ko‘pchilik bo‘lib, 1922-yilda 15000 nafar yigitdan iborat kuchga ega edi.",
+          "evidence": "Uning qo‘shinlari safida turkman va o‘zbeklardan tashqari qozoq va qoraqalpoqlar ham ko‘pchilik edi"
+        },
+        {
+          "kind": "term",
+          "term": "Istiqlolchilik harakati",
+          "definition": "Bosqinchi qizil armiya va sovet rejimiga qarshi olib borilgan milliy ozodlik kurashi.",
+          "evidence": "milliy ozodlik kurashiga qo‘zg‘aldi"
+        },
+        {
+          "kind": "term",
+          "term": "Vatanparvarlar harakati",
+          "definition": "1920-yillarda Buxoro va Xorazmda bosqinchi qizil armiyaga qarshi kengayib, keng quloch otgan xalq harakati.",
+          "evidence": "hududlarda vatanparvarlar harakati kengayib, keng quloch otdi"
+        },
+        {
+          "kind": "term",
+          "term": "Yagona qo‘mondonlik",
+          "definition": "Barcha qo‘rboshi guruhlari bo‘ysunishi lozim bo‘lgan birlashgan boshqaruv; ayrim rahbarlar uni tan olmagan.",
+          "evidence": "yagona qo‘mondonlikka\nbo‘ysunmadi"
+        },
+        {
+          "kind": "place",
+          "place": "Qiliko‘l",
+          "event": "Qarshi yaqinidagi joy; 1921-yil 9-noyabrda Anvar Posho Mulla Nafis qo‘rboshi bilan shu yerda uchrashgan.",
+          "evidence": "Qarshi\nyaqinidagi Qiliko‘l"
+        },
+        {
+          "kind": "place",
+          "place": "Obidara",
+          "event": "Baljuvon atrofidagi qishloq; 1922-yil avgustda Anvar Posho qizil askarlarga qarshi jangda shu yerda halok bo‘lgan.",
+          "evidence": "Baljuvon atrofidagi Obidara"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qizil armiyaning Buxoro va Xorazmga bostirib kirishi, talonchilik va zo‘rliklari",
+          "effect": "Ommaviy norozilik kuchayib, milliy ozodlik kurashi va vatanparvarlar harakati boshlandi.",
+          "evidence": "qilgan talonchiliklari, zo‘rliklari,\nqon to‘kishlari ommaviy noroziliklarni keltirib chiqargan asosiy sabablardan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Harakatning yagona markazga birlasha olmasligi va yagona milliy dastur yo‘qligi",
+          "effect": "Turkistondagi istiqlolchilik harakati 1935-yilga kelib to‘liq mag‘lubiyatga uchradi.",
+          "evidence": "uning Turkiston mintaqasida\nyagona markaz ostida to‘liq birlasha olmasligi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xorazm hukumatining “bosmachilik” harakatiga qarshi kurashga ojizligi",
+          "effect": "RSFSRdan shoshilinch harbiy yordam so‘ralib, Xorazmni sovetlashtirish kuchaytirildi.",
+          "evidence": "Xorazmda 4 yildan buyon davom etib kelayotgan"
+        },
+        {
+          "kind": "number",
+          "number": "15000",
+          "unit": "kishi",
+          "meaning": "1922-yil ko‘klamida Junaidxon qo‘shinlari safidagi yigitlar soni.",
+          "evidence": "uning qo‘shinlari soni 15000 nafar yigitdan iborat bo‘lib"
+        },
+        {
+          "kind": "number",
+          "number": "10",
+          "unit": "yil",
+          "meaning": "Qurolli kurashning ikkinchi davri (1925-1935-yillar) davom etgan yillar soni.",
+          "evidence": "esa yana 10 yil davom etib"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "O‘rta Osiyo respublikalarida o‘tkazilgan milliy-hududiy chegaralanish va uning oqibatlari",
+      "page": 48,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1924-yil 12-iyun",
+          "date_label": "Siyosiy byuro qarori",
+          "event": "Stalinning taklifi bilan O‘rta Osiyo respublikalarini milliy-hududiy chegaralash to‘g‘risida maxsus qaror qabul qilindi.",
+          "evidence": "I.V.Stalinning taklifi bilan RKP(b) MK Siyosiy byurosining"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil 8-may",
+          "date_label": "Xorazm rahbarlarining maktubi",
+          "event": "Bir guruh Xorazm rahbarlari RKP(b) MKga maktub yuborib, Xorazmni chegaralanishga qo‘shmaslikni iltimos qildi.",
+          "evidence": "1924-yil 8-mayda bir guruh Xorazm rahbarlari RKP(b) MKga"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil 26-iyul",
+          "date_label": "Xorazmning roziligi",
+          "event": "Xorazm Kompartiyasining yangi rahbarlari respublikaning chegaralanishga kiritilishiga o‘z roziligini bildirdi.",
+          "evidence": "1924-yil 26-iyulda\nXorazm Kompartiyasining yangi rahbarlari"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil 16-sentyabr",
+          "date_label": "Turkiston ASSR MIK qarori",
+          "event": "Turkiston ASSR MIKning favqulodda sessiyasida O‘rta Osiyoda milliy-hududiy chegaralanish o‘tkazish to‘g‘risida qaror qabul qilindi.",
+          "evidence": "1924-yil 16-sentyabrda bo‘lgan Turkiston ASSR"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil 29-oktyabr",
+          "date_label": "Butunxorazm V qurultoyi qarori",
+          "event": "Butunxorazm xalq vakillarining V qurultoyida ham chegaralanish to‘g‘risidagi shunday mazmundagi qaror qabul qilindi.",
+          "evidence": "29-oktyabrda Butunxorazm xalq vakillarining V\nqurultoyida ham qabul qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil 14-oktyabr",
+          "date_label": "RSFSR MIK sessiyasi",
+          "event": "Turkiston ASSR MIKning chegaralanish to‘g‘risidagi qarori ayrim tuzatishlar bilan qabul qilindi.",
+          "evidence": "to‘g‘risidagi qarori ayrim tuzatishlar bilan qabul qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil 27-oktyabr",
+          "date_label": "SSSR MIK III sessiyasi",
+          "event": "Moskvada bo‘lgan sessiyada O‘rta Osiyoda milliy respublikalar tuzish to‘g‘risida maxsus qaror qabul qilindi.",
+          "evidence": "1924-yil 27-oktyabrda Moskvada\nbo‘lgan Butunittifoq"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil 31-oktyabr",
+          "date_label": "Muvaqqat inqilobiy komitet",
+          "event": "Fayzulla Xo‘jayev raisligida O‘zbekiston SSR Muvaqqat inqilobiy komiteti (Markaziy revkom) tashkil topdi.",
+          "evidence": "1924-yil 31-oktyabrda taniqli davlat arbobi Fayzulla Xo‘jayev\nraisligida O‘zbekiston SSR Muvaqqat inqilobiy komiteti"
+        },
+        {
+          "kind": "date_event",
+          "date": "1924-yil 18-noyabr",
+          "date_label": "Vakolatlarning topshirilishi",
+          "event": "Turkiston ASSR, Buxoro SSR va Xorazm SSR MIKlari qo‘shma qaror qabul qilib, vakolatlarini Muvaqqat inqilobiy komitetga topshirdi.",
+          "evidence": "1924-yil 18-noyabrda Turkiston ASSR, Buxoro SSR va Xorazm SSR"
+        },
+        {
+          "kind": "person",
+          "person": "Turor Risqulov",
+          "role": "Milliy kommunistlar guruhi rahbari",
+          "activity": "1920-yildayoq turkiy xalqlar tarixiy ildizlari va madaniyati mushtarakligi, yagona Turkistonni bo‘lib bo‘lmasligi g‘oyasini ilgari surgan.",
+          "evidence": "Turor Risqulov boshchiligidagi bir guruh milliy kommunistlar"
+        },
+        {
+          "kind": "person",
+          "person": "Sultonbek Xo‘janov",
+          "role": "Turkiston ASSR partiya xodimi",
+          "activity": "O‘rta Osiyo federatsiyasini tuzish taklifi bilan chiqib, Turkiston yagona va butun ekanini, uning yaxlitligini buzish maqsadga muvofiq emasligini ta’kidladi.",
+          "evidence": "S.Xo‘janov\nTurkiston yagona va butun, uning yaxlitligini buzish maqsadga muvofiq emas"
+        },
+        {
+          "kind": "person",
+          "person": "Fayzulla Xo‘jayev",
+          "role": "BXSR hukumati raisi",
+          "activity": "1924-yil fevralda chegaralanish bo‘yicha tezislar yozdi va Butunbuxoro V qurultoyida ma’ruza qildi.",
+          "evidence": "Fayzulla Xo‘jayev tomonidan yozilgan tezislarni qabul qildi"
+        },
+        {
+          "kind": "person",
+          "person": "Qalandar Odinayev",
+          "role": "Xorazm Kompartiyasi MK mas’ul kotibi",
+          "activity": "Chegaralanishga qarshi nuqtayi nazarni qo‘llab-quvvatlagani uchun 1924-yil iyulda o‘z vazifasidan olib tashlandi.",
+          "evidence": "mas’ul\nkotibi Qalandar Odinayev 1924-yil iyulda o‘z vazifasidan olib tashlandi"
+        },
+        {
+          "kind": "term",
+          "term": "Milliy-hududiy chegaralanish",
+          "definition": "O‘rta Osiyo respublikalarini milliy belgilar asosida qayta bo‘lib, yangi milliy respublikalar tuzish jarayoni.",
+          "evidence": "O‘rta Osiyo respublikalarini milliy-hududiy chegaralash to‘g‘risida"
+        },
+        {
+          "kind": "term",
+          "term": "Panturkizm va panislomizm",
+          "definition": "Markaz kommunistlari yagona Turkiston g‘oyasini noto‘g‘ri baholashda qo‘llagan ayblov atamalari.",
+          "evidence": "uni “panturkizm”, “panislomizm”, “burjua millatchiligi"
+        },
+        {
+          "kind": "term",
+          "term": "Hududiy komissiya",
+          "definition": "RKP(b) MK O‘rta Osiyo byurosi huzurida janjalli masalalarni hal qilish uchun tuzilgan maxsus organ.",
+          "evidence": "Hududiy komissiya tarkibiga"
+        },
+        {
+          "kind": "place",
+          "place": "Xorazm",
+          "event": "1924-yil 8-mayda rahbarlari chegaralanishga qo‘shmaslikni so‘rab maktub yuborgan, 26-iyulda esa rozilik bergan hudud.",
+          "evidence": "Xorazmni chegaralanishga qo‘shmaslikni iltimos qildilar"
+        },
+        {
+          "kind": "place",
+          "place": "Farg‘ona vodiysi",
+          "event": "1923-yil dekabrda uning vakillari RSFSR tarkibida Farg‘ona muxtor viloyatini tashkil etish taklifi bilan chiqqan hudud.",
+          "evidence": "1923-yil dekabrda Farg‘ona vodiysi vakillari"
+        },
+        {
+          "kind": "cause",
+          "cause": "Istiqlolchilik harakatining 1924-yilda asosan mag‘lubiyatga uchrashi",
+          "effect": "Turkistonni bo‘lib tashlash siyosati o‘zining so‘nggi bosqichiga qadam qo‘ydi.",
+          "evidence": "harakati 1924-yilda, asosan, mag‘lubiyatga uchraganidan keyin"
+        },
+        {
+          "kind": "cause",
+          "cause": "Markazning Turkiston o‘lkasini bo‘lib tashlab idora qilish qulayligi",
+          "effect": "Mintaqa xalqlari yagona makondan ajratilib, o‘zbek davlatchiligi markazlari zaiflashtirildi.",
+          "evidence": "Mustabid sovet rejimi va bolsheviklar uchun esa Turkiston o‘lkasini bo‘lib"
+        },
+        {
+          "kind": "cause",
+          "cause": "Milliy masalaning Markaz tomonidan sun’iy ravishda bo‘rttirib yuborilishi",
+          "effect": "Yangi tashkil qilinadigan milliy respublikalar va viloyatlar hududi tubdan qayta belgilandi.",
+          "evidence": "milliy masala\nMarkaz tomonidan sun’iy ravishda bo‘rttirib yuborildi"
+        },
+        {
+          "kind": "number",
+          "number": "6",
+          "unit": "ta",
+          "meaning": "O‘rta Osiyo hududida Turkiston ASSR, Buxoro va Xorazm respublikalari o‘rnida tashkil etilgan milliy davlat birlashmalari soni.",
+          "evidence": "oltita milliy davlat birlashmalari tashkil etildi"
+        },
+        {
+          "kind": "number",
+          "number": "4",
+          "unit": "yil",
+          "meaning": "Bolsheviklar bu masalani hal qilishni kechiktirib, yana shuncha yil sabr qilishga majbur bo‘lgan.",
+          "evidence": "bu masalada bolsheviklarni yana 4 yil sabr"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "O‘zbekiston SSRning tashkil topishi",
+      "page": 55,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1925-yil 13-fevral",
+          "date_label": "I ta’sis qurultoyi",
+          "event": "Buxoroda maxsus qurilgan Xalq uyida Butuno‘zbek Sovetlarining I ta’sis qurultoyi ochildi.",
+          "evidence": "13-fevralda Buxoroda maxsus qurilgan Xalq uyida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1925-yil 17-fevral",
+          "date_label": "Deklaratsiya qabul qilinishi",
+          "event": "Qurultoy qatnashchilari O‘zbekiston Sovet Sotsialistik Respublikasini tashkil etish to‘g‘risida Deklaratsiyani qabul qildi.",
+          "evidence": "17-fevralda\n“O‘zbekiston Sovet Sotsialistik Respublikasini tashkil etish"
+        },
+        {
+          "kind": "date_event",
+          "date": "1925-yil 6-12-fevral",
+          "date_label": "O‘zKP I ta’sis syezdi",
+          "event": "Eski Buxoro shahrida O‘zbekiston Kommunistik partiyasining I ta’sis syezdi bo‘lib o‘tdi.",
+          "evidence": "1925-yil 6 – 12 fevralda eski Buxoro shahrida O‘zbekiston"
+        },
+        {
+          "kind": "date_event",
+          "date": "1925-yil 13-may",
+          "date_label": "SSSR tarkibiga qabul qilinishi",
+          "event": "Butunittifoq Sovetlarining III syezdida O‘zbekiston SSR SSSR tarkibiga qabul qilindi.",
+          "evidence": "Butunittifoq Sovetlarining III syezdida 1925-yil 13-may"
+        },
+        {
+          "kind": "date_event",
+          "date": "1926-yil 29-sentyabr",
+          "date_label": "Rayonlashtirish qarori",
+          "event": "O‘zbekiston SSR Sovetlari MIKning V sessiyasi rayonlashtirish to‘g‘risida qaror qabul qildi, 10 ta okrug tuzildi.",
+          "evidence": "rayonlashtirish to‘g‘risida qarori qabul qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1927-yil 30-mart",
+          "date_label": "Birinchi Konstitutsiya",
+          "event": "O‘zSSR Sovetlarining II syezdida O‘zbekiston SSRning birinchi Konstitutsiyasi qabul qilindi.",
+          "evidence": "1927-yil 30-martda O‘zSSR Sovetlarining II syezdida"
+        },
+        {
+          "kind": "date_event",
+          "date": "1929-yil 16-oktyabr",
+          "date_label": "Tojikiston SSRning tashkil topishi",
+          "event": "Tojikiston ASSR o‘rniga Tojikiston SSR tashkil topdi va u O‘zbekiston SSR tarkibidan chiqdi.",
+          "evidence": "1929-yil 16-oktyabrda Tojikiston ASSR o‘rniga Tojikiston SSR tashkil"
+        },
+        {
+          "kind": "date_event",
+          "date": "1930-yil 20-sentyabr",
+          "date_label": "Poytaxtning ko‘chirilishi",
+          "event": "O‘zbekiston poytaxti respublikaning eng muhim iqtisodiy, siyosiy va madaniy markazi bo‘lgan Toshkentga ko‘chirildi.",
+          "evidence": "1930-yil 20-sentyabrda respublikaning eng muhim iqtisodiy, siyosiy va madaniy markazi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1936-yil 5-dekabr",
+          "date_label": "Qoraqalpog‘iston ASSRning kiritilishi",
+          "event": "Qoraqalpog‘iston ASSR hududi O‘zbekiston SSR tarkibiga kiritildi.",
+          "evidence": "1936-yil 5-dekabrda Qoraqalpog‘iston ASSR hududi"
+        },
+        {
+          "kind": "person",
+          "person": "Fayzulla Xo‘jayev",
+          "role": "O‘zbekiston SSR Xalq Komissarlari Soveti raisi",
+          "activity": "Qurultoyda respublika hukumatining raisi etib saylandi va keyinchalik poytaxtni Samarqanddan Toshkentga ko‘chirdi.",
+          "evidence": "Fayzulla Xo‘jayev O‘zbekiston SSR Xalq\nKomissarlari Soveti raisi"
+        },
+        {
+          "kind": "person",
+          "person": "Yo‘ldosh Oxunboboyev",
+          "role": "O‘zSSR MIK raisi",
+          "activity": "“Qo‘shchi” uyushmasi faoli bo‘lib, O‘zbekiston SSR Markaziy Ijroiya Qo‘mitasi raisi lavozimiga saylandi.",
+          "evidence": "O‘zbekiston SSR Markaziy Ijroiya Qo‘mitasi raisi lavozimlariga saylan"
+        },
+        {
+          "kind": "person",
+          "person": "Mixail Kalinin",
+          "role": "SSSR MIK raisi",
+          "activity": "Moskvadan maxsus kelib qurultoyda nutq so‘zladi, O‘zKP I ta’sis syezdida ham ma’ruza qildi.",
+          "evidence": "Markaziy Ijroiya Qo‘mitasi raisi\nMixail Kalinin qatnashdi"
+        },
+        {
+          "kind": "person",
+          "person": "Akmal Ikromov",
+          "role": "O‘zKP MK mas’ul sekretari",
+          "activity": "Vladimir Ivanov bilan birga O‘zbekiston Kompartiyasi Markaziy Komiteti mas’ul sekretarlari qilib saylandi.",
+          "evidence": "sekretarlari qilib Vladimir Ivanov\nva Akmal Ikromov saylandi"
+        },
+        {
+          "kind": "term",
+          "term": "“Qo‘shchi”",
+          "definition": "Dehqonlarni g‘oyaviy jihatdan birlashtirgan ittifoq (1920-1933); nomi qo‘sh haydovchi kishi ma’nosidan olingan.",
+          "evidence": "“Qo‘shchi” – Qo‘sh haydovchi kishi, dehqon"
+        },
+        {
+          "kind": "term",
+          "term": "VKP(b)",
+          "definition": "Butunittifoq kommunistlar (bolsheviklar) partiyasi; KPSSning 1925-1952-yillardagi nomi.",
+          "evidence": "VKP (b) – Butunittifoq kommunistlar (bolsheviklar) partiyasi"
+        },
+        {
+          "kind": "term",
+          "term": "Deklaratsiya",
+          "definition": "1925-yil 17-fevralda qabul qilingan, O‘zbekiston SSR tarkibiga kirgan viloyatlarni belgilagan hujjat.",
+          "evidence": "Sotsialistik Respublikasini tashkil etish to‘g‘risida"
+        },
+        {
+          "kind": "place",
+          "place": "Buxoro",
+          "event": "1925-yil fevraldan aprelgacha O‘zbekiston SSRning birinchi poytaxti bo‘lgan shahar.",
+          "evidence": "qisqa muddat (1925-yil fevral – aprel)\ndavomida Buxoro shahri poytaxt bo‘ldi"
+        },
+        {
+          "kind": "place",
+          "place": "Samarqand",
+          "event": "1925-yil apreldan 1930-yil sentyabrgacha O‘zbekiston SSR poytaxti sanalgan shahar.",
+          "evidence": "Samarqand shahri O‘zbekiston\nSSR poytaxti sanalgan"
+        },
+        {
+          "kind": "place",
+          "place": "Toshkent",
+          "event": "1930-yil 20-sentyabrdan respublikaning poytaxti bo‘lgan, Markazning nazorat tashkilotlari joylashgan shahar.",
+          "evidence": "madaniy markazi bo‘lgan Toshkent"
+        },
+        {
+          "kind": "cause",
+          "cause": "Samarqandning respublika markazida joylashganligi",
+          "effect": "Yangi tashkil qilingan hududning barcha qismlarini bir butun qilib birlashtirishga va sovet tashkilotlari ishini jonlantirishga yordam berdi.",
+          "evidence": "Samarqand respublikaning markazida joylashgan bo‘lib"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mahalliy hokimiyat organlarining mustahkamlanishi va markaziy muassasalar bilan aloqalarning kuchayishi",
+          "effect": "O‘zbekiston poytaxti 1930-yil 20-sentyabrda Toshkent shahriga ko‘chirildi.",
+          "evidence": "ularning markaziy hukumat muassasalari bilan aloqalari kuchaygandan so‘ng"
+        },
+        {
+          "kind": "cause",
+          "cause": "Respublika davlat boshqaruvi organlarining ittifoq organlari tartibida tuzilishi",
+          "effect": "Bu ittifoqdosh respublikalarni Markazdan turib boshqarishning eng oson va mustahkam shakli bo‘lib qoldi.",
+          "evidence": "respublikalarning Markazdan turib boshqarishning eng oson va"
+        },
+        {
+          "kind": "number",
+          "number": "312 394",
+          "unit": "km2",
+          "meaning": "O‘zbekiston SSR tashkil topgan paytdagi hududi (Tojikiston ASSR va Qoraqalpog‘iston hisobga olinmagan).",
+          "evidence": "O‘zbekiston SSR hududi 312 394 km2"
+        },
+        {
+          "kind": "number",
+          "number": "3 963 285",
+          "unit": "kishi",
+          "meaning": "O‘zbekiston SSRning tashkil topgan paytdagi aholisi.",
+          "evidence": "aholisi 3 963 285 kishi"
+        }
+      ]
+    }
+  ]
+}

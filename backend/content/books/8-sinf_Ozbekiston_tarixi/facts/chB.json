@@ -1,0 +1,974 @@
+{
+ "chapter": "I BOB. XV ASRNING OXIRI - XVI ASRNING",
+ "topics": [
+  {
+   "number": 7,
+   "title": "Buxoro xonligida ashtarxoniylar sulolasi hukmronligining o‘rnatilishi",
+   "page": 21,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "XV asrning 30-yillari",
+     "date_label": "XV asrning 30-yillarida",
+     "event": "Ashtarxon xonligi Volgabo‘yi yerlarida tashkil topdi",
+     "evidence": "XV asrning\n30-yillarida Volgabo'yi yerlarida tashkil topgan Ashtarxon"
+    },
+    {
+     "kind": "date_event",
+     "date": "1556",
+     "date_label": "1556-yilda",
+     "event": "Ashtarxon xonligi Rossiya tomonidan bosib olindi va tugatildi",
+     "evidence": "Rossiya bu xonlikni\n1556-yilda bosib oldi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1601",
+     "date_label": "1601-yilda",
+     "event": "Boqi Muhammad Buxoro taxtiga o‘tqazildi va ashtarxoniylar sulolasi hukmronligi boshlandi",
+     "evidence": "l601- yilda Jonibck Sultonning ikkinchi o'g'li, Samarqand hokimi Boqi Muhammad Buxoro taxtiga o'tqazildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1602",
+     "date_label": "1602-yilda",
+     "event": "Boqi Muhammad Eron safaviylariga zarba berib, Balxni bo‘ysundirdi va ukasi Vali Muhammadni hokim etib tayinladi",
+     "evidence": "1602-yilda Eron safaviylariga zarba bcrib, Balxni bo'ysundirdi va ukasi Vali Muhammadni hokim"
+    },
+    {
+     "kind": "date_event",
+     "date": "1613",
+     "date_label": "1613-yilda",
+     "event": "Imomqulixon Toshkentni qozoqlardan ozod etdi",
+     "evidence": "1613-yilda Toshkentni qozoqlardan ozod etdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1688",
+     "date_label": "1688-yilda",
+     "event": "Anushaxon taxtdan tushirildi va Xiva xonligi Buxoro tasarrufiga kiritildi",
+     "evidence": "Anushaxon taxtdan tushirildi va 1688-yilda xonlikni Buxoro tasarruliga kiritdi"
+    },
+    {
+     "kind": "person",
+     "person": "Yormuhammadxon",
+     "role": "Ashtarxon xonadoniga mansub shahzoda, shayboniylarga amakivachcha",
+     "activity": "Buxoro xonligidan boshpana topdi, uning o‘g‘li Jonibek Sulton Iskandarxonning qizi Zuhrabegimga uylandi",
+     "evidence": "Yormuhammadxon va uning xonadoni Buxoro xonligidan\nboshpana topdi"
+    },
+    {
+     "kind": "person",
+     "person": "Boqi Muhammad",
+     "role": "Buxoro xoni, ashtarxoniylar sulolasining asoschisi (1601–1605-yillar)",
+     "activity": "Markaziy hokimiyatni mustahkamlash uchun kurash olib bordi va 1603-yilda Eron qo‘shinlarini mag‘lubiyatga uchratdi",
+     "evidence": "Boqi Muhammad (1601-1605) mamlakat"
+    },
+    {
+     "kind": "person",
+     "person": "Imomqulixon",
+     "role": "Buxoro xoni, ashtarxoniylar sulolasi vakili (1611–1642-yillar)",
+     "activity": "Markaziy hokimiyatni nisbatan mustahkamladi, qozoq va jung‘orlarga qarshi muvaffaqiyatli kurash olib bordi",
+     "evidence": "Imomqulixon davrida markaziy davlat hokimiyati nisbatan mustahkamlandi"
+    },
+    {
+     "kind": "person",
+     "person": "Subhonqulixon",
+     "role": "Buxoro xoni, Abdulazizxondan keyin taxtga o‘tirgan hukmdor (1681–1702-yillar)",
+     "activity": "Xiva qo‘shinlarini Samarqanddan quvib chiqardi va Mahmudbiy otaliqqa Balx hokimligini topshirdi",
+     "evidence": "Subhonqulixon (1681-1702)\ndavrida ham ahvol o'nglanmadi"
+    },
+    {
+     "kind": "person",
+     "person": "Mahmudbiy otaliq",
+     "role": "Badaxshon hokimi, Buxoro saroyining nufuzli otaliq mansab egasi",
+     "activity": "Subhonqulixonga Xiva qo‘shinlarini Samarqanddan quvib chiqarishda yordam berdi va Balx hokimligini oldi",
+     "evidence": "Badaxshon hokimi Mahmudbiy otaliq yordamida"
+    },
+    {
+     "kind": "term",
+     "term": "Ashtarxoniylar sulolasi",
+     "definition": "1601-yildan Buxoro xonligini boshqargan, Ashtarxon xonadonidan chiqqan yangi sulola",
+     "evidence": "yangi sulola - ashtarxoniylar sulolasi hukmronligi boshlandi"
+    },
+    {
+     "kind": "term",
+     "term": "Taxt vorisi",
+     "definition": "Hukmdor o‘rniga taxtni egallashi lozim bo‘lgan merosxo‘r; shayboniylarda bunday voris qolmagan edi",
+     "evidence": "Shayboniylar sulolasidan taxt vorisi qolmagach"
+    },
+    {
+     "kind": "term",
+     "term": "Xutba",
+     "definition": "Xon nomini tilga olib o‘qiladigan va’z; Anushaxon Samarqandda o‘z nomiga xutba o‘qittirgan",
+     "evidence": "o'z nomiga xutba ham o'qittirdi va tanga\npullar zarb ettirdi"
+    },
+    {
+     "kind": "term",
+     "term": "Amirlar",
+     "definition": "Yirik qabila boshliqlari; xon hokimiyatiga bo‘ysunmay, muxolifatchilikni kuchaytirgan ijtimoiy qatlam",
+     "evidence": "Biroq qabila amirlari xon hokimiyatiga bo'ysunmay,\nmuxolifatchilikni kuchaytirdilar"
+    },
+    {
+     "kind": "place",
+     "place": "Ashtarxon (Hoji Tarxon)",
+     "event": "Ashtarxon xonligining poytaxti bo‘lgan, hozirgi Rossiya Federatsiyasi hududida joylashgan shahar",
+     "evidence": "Hozirgi Rossiya Federatsiyasiga qarashli Asiraxon\n(Ashiarxon) shahri uning poytaxti bo'lgan"
+    },
+    {
+     "kind": "place",
+     "place": "Balx",
+     "event": "1602-yilda Boqi Muhammad tomonidan bo‘ysundirilgan, keyinchalik Nodir Muhammad va Abdulazizxon hokim bo‘lgan viloyat",
+     "evidence": "Nodir Muhammad csa\nBalxga hokim cib layinlandi"
+    },
+    {
+     "kind": "place",
+     "place": "Toshkent",
+     "event": "1613-yilda qozoqlardan ozod etilgan shahar, xonlikning shimoli-sharqiy chegaralari uchun kurash markazi",
+     "evidence": "Imomqulixon Toshkcnt va xonlikning shimoli-sharqiy chcgaralari\nuchun qozoqlar, jung'orlarga qarshi muvaffaqiyatli kurash olib bordi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ichki o‘zaro kurashlar va tashqi hujumlar natijasida ahvolning murakkablashishi",
+     "effect": "1681-yilda Abdulazizxon taxtdan voz kechishga majbur bo‘ldi",
+     "evidence": "1681-yilda keksayib qolgan Abdulazizxon ichki ziddiyatlar va\ntashqi hujumlar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Buxoro xonligidagi o‘zaro kurashlardan foydalanish",
+     "effect": "Xiva xonlarining Buxoroga talonchilik yurishlari kuchaydi",
+     "evidence": "Buxoro xonligidagi o'zaro kurashlardan foydalangan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Subhonqulixonning Mahmudbiy otaliqqa Balx hokimligini topshirishi",
+     "effect": "Ko‘plab kishilar norozi bo‘lib, ichki nizolar mamlakat iqtisodiyotini tanazzulga uchratdi",
+     "evidence": "Xonning bu qarori ko'plab kishilarni norozi qildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qabila amirlarining xon hokimiyatiga bo‘ysunmasligi va isyon uyushtirishi",
+     "effect": "Vali Muhammad qochib ketdi, amirlar taxtga Imomqulixonni o‘tqazdilar",
+     "evidence": "uyushtirganligidan xabar topgan Vali Muhammad qochib ketdi"
+    },
+    {
+     "kind": "number",
+     "number": "uch",
+     "unit": "o‘g‘il",
+     "meaning": "Jonibek Sultonning Zuhrabegimdan ko‘rgan o‘g‘illar soni: Din Muhammad, Boqi Muhammad va Vali Muhammad",
+     "evidence": "Jonibek Sulton Zuhrabegimdan uch o'gil\n(Din Muhammad, Boqi Muhammad, Yali Muhammad) ko'rdi"
+    },
+    {
+     "kind": "number",
+     "number": "ikki",
+     "unit": "bor",
+     "meaning": "1655-yilda Xiva xoni Abulg‘oziy Bahodirxon Buxoro atroflarini shuncha marta talon-taroj qilgan",
+     "evidence": "Buxoro alrolarini ikki\nbor talon-taroj qildi"
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "title": "Buxoro xonligida markaziy hokimiyatning zaiflashuvi",
+   "page": 25,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1702",
+     "date_label": "1702-yilda",
+     "event": "Subhonqulixon vafot etdi va taxtni o‘g‘li Ubaydullaxon II egalladi",
+     "evidence": "1702- yili Subhonqulixon vafo1 cidi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1702-1711",
+     "date_label": "1702–1711-yillarda",
+     "event": "Ubaydullaxon II Buxoro xonligida hukmronlik qildi va siyosiy tarqoqlikni tugatishga urindi",
+     "evidence": "Ubaydullaxon II (1702-1711) egalladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1706",
+     "date_label": "1706-yilda",
+     "event": "Badaxshon hokimi Mahmudbiy Balxda o‘zini xon deb e’lon qildi",
+     "evidence": "o'zini 1706-yilda xon dcb c'lon\nqildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1708",
+     "date_label": "1708-yilda",
+     "event": "Pul islohoti o‘tkazilib, bir tangadan to‘rtta yangi tanga zarb etila boshlandi",
+     "evidence": "1708-yilda esa bu tangalarning bitasidan 4 la\nyangi tanga zarb etila boshlandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1709",
+     "date_label": "1709-yilda",
+     "event": "Farg‘ona vodiysi Buxoro xonligidan ajralib chiqdi va siyosiy ahvol murakkablashdi",
+     "evidence": "1709-yilda Farg'ona vodiysining Buxoro xonligidan ajralib chiqishi esa siyosiy ahvolni yanada murakkablashtirdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1711",
+     "date_label": "1711-yilda",
+     "event": "Fitnachilar Ubaydullaxonni o‘ldirdi va taxtga ukasi Abulfayzxon o‘tqazildi",
+     "evidence": "fiinachilar 1711-yilda\nUbaydullaxonni o'ldirdilar"
+    },
+    {
+     "kind": "date_event",
+     "date": "1723",
+     "date_label": "1723-yilda",
+     "event": "Ibrohimbiy Samarqandni egallab, kuyovi Rajab Sultonni taxtga o‘tqazdi",
+     "evidence": "1723-yilda Samarqandni\negallab, kuyovi Rajab Sultonni taxtga o'tqazdi"
+    },
+    {
+     "kind": "person",
+     "person": "Ubaydullaxon II",
+     "role": "Buxoro xoni, ashtarxoniylar sulolasining markaziy hokimiyatni kuchaytirishga uringan so‘nggi hukmdori",
+     "activity": "Siyosiy tarqoqlikni tugatishga harakat qildi, soliqlarni to‘rt barobar oshirdi va muvaffaqiyatsiz pul islohoti o‘tkazdi",
+     "evidence": "U ana shu maqsad yo'lida goh isyonkor\nqabilalarga qarshi"
+    },
+    {
+     "kind": "person",
+     "person": "Abulfayzxon",
+     "role": "1711-yilda taxtga o‘tqazilgan xon, amirlar va zodagonlar qo‘lidagi qo‘g‘irchoq hukmdor",
+     "activity": "Taxtga o‘tqazilganidan so‘ng amirlar va zodagonlar qo‘lida qo‘g‘irchoqqa aylandi, davlat ishlarini deyarli nazorat qilmadi",
+     "evidence": "Taxtga o'tqazilgan Abulfayzxon kundan kun"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad Hakimbiy",
+     "role": "Mang‘it qabilasidan chiqqan amir, barcha shahzodalar otaliqlarining boshlig‘i",
+     "activity": "Katta nufuzga ega bo‘ldi, keyinchalik Abulfayzxon uni Buxorodan chiqarib yuborishga qaror qildi",
+     "evidence": "Muhammad Hakimbiy katta nufuzga ega bo'lib oldi"
+    },
+    {
+     "kind": "person",
+     "person": "Ibrohimbiy",
+     "role": "Shahrisabz hokimi, kenagas qabilasidan chiqqan amir va «amir ul-umaro» unvoni egasi",
+     "activity": "Urgut va Miyonqol hokimlari bilan til biriktirib, Samarqand poytaxtli mustaqil davlat tuzishga qaror qildi",
+     "evidence": "Natijada, Shahrisabz.\nhokimi, kenagas qabilasidan chiqqan Tbrohimbiy Urgut va Miyonqol"
+    },
+    {
+     "kind": "term",
+     "term": "Parokandalik",
+     "definition": "Mamlakat viloyatlarining markaziy hokimiyatga bo‘ysunmasligi, siyosiy tarqoqlik",
+     "evidence": "Parokandalik - mamlakat viloyatlarining markaziy hokimiyatga bo'ysunmasligi, siyosiy tarqoqlik"
+    },
+    {
+     "kind": "term",
+     "term": "Qo‘g‘irchoq xon",
+     "definition": "Hokimiyati amirlar va zodagonlar qo‘lida bo‘lib, farmonlari saroy ostonasidan nariga o‘tmaydigan xon",
+     "evidence": "qo'g'irchoqqa aylandi. Uning farmonlari saroy ostonasidan nariga"
+    },
+    {
+     "kind": "term",
+     "term": "Muntazam qo‘shin",
+     "definition": "Doimiy saqlanadigan professional qo‘shin; uning yo‘qligi xon hokimiyati zaiflashuvining sabablaridan biri",
+     "evidence": "xonlikning muntazam qo'shinga cga( bo jlmaganligi ham sabab bo'ldi"
+    },
+    {
+     "kind": "term",
+     "term": "Amir ul-umaro",
+     "definition": "«Ulug‘ amir» ma’nosini bildiruvchi unvon; Ibrohimbiy uni o‘ziga olgan",
+     "evidence": "Ibrohimbiy o'ziga\n,amir ul-umaro\" (,ulug\" amir\") unvonini oldi"
+    },
+    {
+     "kind": "place",
+     "place": "Balx",
+     "event": "1706-yilda Mahmudbiy o‘zini xon deb e’lon qilgan viloyat; keyinchalik uning mustaqilligi tan olingan",
+     "evidence": "Ubaydullaxon davrida Mahmudbiy Balxda hokimiyatni to'liq o'z qo'liga oldi"
+    },
+    {
+     "kind": "place",
+     "place": "Farg‘ona vodiysi",
+     "event": "1709-yilda Buxoro xonligidan ajralib chiqqan va amalda mustaqil bo‘lib olgan hudud",
+     "evidence": "Samarqand, Qarshi, Balx,\nFarg'ona va Badaxshon amalda musiaqil bo'lib oldilar"
+    },
+    {
+     "kind": "place",
+     "place": "Samarqand",
+     "event": "1723-yilda Ibrohimbiy tomonidan egallanib, kuyovi Rajab Sulton taxtga o‘tqazilgan shahar",
+     "evidence": "Ibrohimbiyning navbatdagi maqsadi Buxoro taxtini egallash"
+    },
+    {
+     "kind": "cause",
+     "cause": "Soliqlarning to‘rt barobarga ko‘paytirilishi",
+     "effect": "Xalq xonavayron bo‘ldi va mamlakat iqtisodiy hayoti inqirozga yuz tutdi",
+     "evidence": "soliqlarni 4 barobarga ko'paytirdi. Natijada,\nxalq xonavayron bo'ldi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yangi tanga tarkibida kumush miqdorining to‘rt marta kamayishi",
+     "effect": "Do‘kondor va hunarmandlar keskin norozi bo‘lib, savdo ishlari susaydi",
+     "evidence": "Tanga tarkibida kumush foizining kamayishi do'kondor va hunarmandlarning keskin noroziligiga sabab bo'ldi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Jo‘ybor shayxlarining soliq to‘lamaslik imtiyozidan mahrum etilishi",
+     "effect": "Ular Ubaydullaxonning eng xatarli dushmaniga aylandilar",
+     "evidence": "ularni soliq to'lamaslik imtiyozidan mahrum etdi. Natijada, ular"
+    },
+    {
+     "kind": "cause",
+     "cause": "Muntazam qo‘shinni saqlash uchun mablag‘ning yetishmasligi",
+     "effect": "Xon hokimiyati amirlar qo‘lidagi qo‘g‘irchoqqa aylandi",
+     "evidence": "qo'shin tuzishga va uni saqlashga esa mablag' yetishmasdi"
+    },
+    {
+     "kind": "number",
+     "number": "35",
+     "unit": "foiz",
+     "meaning": "Ubaydullaxon II davrida muomalada bo‘lgan tanga tarkibining shuncha qismini kumush tashkil etgan",
+     "evidence": "tarkibining 35 foizini kumush tashkil ctuvchi"
+    },
+    {
+     "kind": "number",
+     "number": "4",
+     "unit": "marta",
+     "meaning": "Pul islohotidan keyin yangi tanga tarkibidagi kumush miqdori va amalda pulning qadri shuncha marta kamaygan",
+     "evidence": "kumush miqdori 4 marta, binobarin, amalda pulning qadri ham 4\nmarta kamaygan"
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "title": "Buxoro xonligida davlat boshqaruvi",
+   "page": 28,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "Shayboniyxon hukmdorligi davri",
+     "date_label": "Shayboniyxon hukmdorligi davrida",
+     "event": "Davlat tarkibiga Movarounnahr bilan birga Xorazm va Xuroson hududlari ham kirgan",
+     "evidence": "hukmdorligi davrida uning davlati tarkibiga\nMovarounnahrdan tashqari Xorazm va Xuroson hududlari ham kirgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "Shayboniyxon vafotidan keyin",
+     "date_label": "Shayboniyxon vafotidan so‘ng",
+     "event": "Xorazm butunlay qo‘ldan chiqdi, Xurosonning katta qismi esa Eron safaviylari tomonidan egallandi",
+     "evidence": "Uning o'limidan so'ng Xorazm butunlay qo'ldan chiqdi. Xurosonning\nkatta qismi esa Eron safaviylari tomonidan egallab olindi"
+    },
+    {
+     "kind": "date_event",
+     "date": "Abdullaxon II davri",
+     "date_label": "Abdullaxon II davrida",
+     "event": "Xonlik hududi yana kengayib, Xorazm va Xuroson qisqa muddatga bo‘ysundirildi",
+     "evidence": "Abdullaxon II davrida qisqa muddatga bo'lsa-da, xonlik hududi\nyana kengaydi"
+    },
+    {
+     "kind": "date_event",
+     "date": "Abdullaxon II vafotidan keyin",
+     "date_label": "Abdullaxon II vafotidan so‘ng",
+     "event": "Eron Xuroson hududini bo‘ysundirdi, Xorazm esa yana mustaqil davlatga aylandi",
+     "evidence": "Uning vafotidan so'ng esa Eron Xuroson hududini\nbo'ysundirgan bo'lsa, Xorazm yana mustaqil davlatga aylandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "XVI asr boshlari",
+     "date_label": "XVI asr boshlarida",
+     "event": "Xonlik aholisi ko‘chib kelgan o‘zbeklardan tashqari turk-chig‘atoy va tojiklardan iborat bo‘lgan",
+     "evidence": "XVI asr boshlarida xonlik aholisi ko'chib kelgan o'zbeklardan"
+    },
+    {
+     "kind": "date_event",
+     "date": "XVII asr oxirlari",
+     "date_label": "XVII asr oxirlarida",
+     "event": "Manbalarda xonlik aholisi o‘zbek va tojiklardan iboratligi qayd etilgan",
+     "evidence": "Manbalarda\nXVII asr oxirlarida esa o'zbek va tojiklardan iboratligi qayd etilgan"
+    },
+    {
+     "kind": "date_event",
+     "date": "XVI asrning 40-yillari",
+     "date_label": "XVI asrning 40-yillaridan boshlab",
+     "event": "O‘zaro nizolar oqibatida taxtning sulolaning yoshi eng katta vakiliga o‘tish an’anasi buzildi",
+     "evidence": "Biroq XVI asrning 40-yillaridan boshlab"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad Shayboniyxon",
+     "role": "Buxoro xonligi asoschisi, shayboniylar sulolasining hukmdori",
+     "activity": "Davlat hududini Movarounnahr, Xorazm va Xurosongacha kengaytirgan, taxt esa amakisi Ko‘chkunchixonga o‘tgan",
+     "evidence": "Muhammad Shayboniyxondan kcyin taxtga o'tirgan"
+    },
+    {
+     "kind": "person",
+     "person": "Abdullaxon II",
+     "role": "Shayboniylar sulolasining hukmdori, xonlik hududini qisqa muddatga kengaytirgan davlat arbobi",
+     "activity": "Xorazm va Xurosonni yana Buxoro xonligiga bo‘ysundirib, davlat hududini kengaytirdi",
+     "evidence": "Chunonchi, Xorazm va Xuroson yana Buxoro xonligiga\nbo'ysundirildi"
+    },
+    {
+     "kind": "person",
+     "person": "Ko‘chkunchixon",
+     "role": "Muhammad Shayboniyxonning amakisi, shayboniylar sulolasining eng yoshi katta vakili",
+     "activity": "Shayboniyxonning farzandi bo‘lmasa-da, sulolaning eng katta vakili sifatida xonlik taxtini egalladi",
+     "evidence": "Ko\"chkunchixon Shayboniyxonning farzandi emas, amakisi bo'lganligini bilib olgan edingiz"
+    },
+    {
+     "kind": "person",
+     "person": "Suyunchxo‘ja",
+     "role": "Ko‘chkunchixonning ukasi, valiahd etib tayinlangan shayboniy shahzoda",
+     "activity": "Valiahd bo‘lgan, biroq Ko‘chkunchixondan avval vafot etgani uchun xonlik taxtini egallay olmadi",
+     "evidence": "Ikkinchi yoshi katta - shayboniy\nKo'chkunchixonning ukasi Suyunchxo'ja valiahd ctib tayinlandi"
+    },
+    {
+     "kind": "term",
+     "term": "Dargoh",
+     "definition": "Xonlikdagi oliy davlat idorasi; temuriylar davridagidek shu nom bilan atalishda davom etgan",
+     "evidence": "oliy davlat idorasi temuriylar davridagidek dargoh, ijro etuvchi hokimiyat"
+    },
+    {
+     "kind": "term",
+     "term": "Devonbegi",
+     "definition": "Devonga, ya’ni vazirlikka rahbarlik qilgan bosh vazir; moliya va xo‘jalik ishlarini ham boshqargan",
+     "evidence": "Unga devonbegi (Bosh vazir) rahbarlik qildi.\nDevonbegi, ayni paytda, davlatning moliya va xo'jalik ishlarini\nham boshqarardi"
+    },
+    {
+     "kind": "term",
+     "term": "Amlok",
+     "definition": "Boshqaruvning eng quyi tizimi, bir necha katta-kichik qishloqdan iborat boshqaruv tuzilmasi",
+     "evidence": "Boshqaruvning eng quyi tizimi amlok\ndeb alalgan (ya'ni bir nechia katta-kichik qishloqdan iboral boshqaruv\ntuzilmasi"
+    },
+    {
+     "kind": "term",
+     "term": "Ko‘kaldosh",
+     "definition": "Xon sulolasiga eng yaqin shaxslardan tayinlanadigan mansab; davlat xavfsizlik xizmati idorasi rahbariga teng bo‘lgan",
+     "evidence": "ko'kaldosh davlat xavfsizlik\nxizmati idorasi rahbari bo'lgan"
+    },
+    {
+     "kind": "term",
+     "term": "Saroy qutvoli",
+     "definition": "Ashtarxoniylar davrida joriy etilgan mansab; qurilish, qal’a devorlarini ta’mirlash va obodonchilik ishlarini boshqargan",
+     "evidence": "ashtarxoniylar davrida saroy qutvoli davlat lavozimi joriy etildi"
+    },
+    {
+     "kind": "place",
+     "place": "Movarounnahr",
+     "event": "Shayboniyxon davlatining asosiy hududi; XVI asr boshlarida unga Dashti Qipchoq o‘zbeklari kirib kelgan",
+     "evidence": "XVI asr boshlarida Shayboniyxonning harbiy yurishlari davomida\nMovarounnahr va Xorazmga"
+    },
+    {
+     "kind": "place",
+     "place": "Xorazm",
+     "event": "Shayboniyxon vafotidan so‘ng qo‘ldan chiqqan, keyinchalik yana mustaqil davlatga aylangan hudud",
+     "evidence": "bo'ysundirgan bo'lsa, Xorazm yana mustaqil davlatga aylandi"
+    },
+    {
+     "kind": "place",
+     "place": "Xuroson",
+     "event": "Eron safaviylari tomonidan egallangan, Abdullaxon II davrida qaytarib olingan va keyin yana Eronga o‘tgan hudud",
+     "evidence": "Xurosonning\nkatta qismi esa Eron safaviylari tomonidan egallab olindi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dargohdagi mansablar mavqeyining kuchli bo‘lmaganligi",
+     "effect": "Shayboniylar davrida devon faoliyati temuriylar davridagidek nufuzga ega bo‘lmadi",
+     "evidence": "Bunga dargohdagi mansablar\nmavqeyining kuchli bo'lmaganligi sabab bo'ldi"
+    },
+    {
+     "kind": "cause",
+     "cause": "XVI asrning 40-yillaridan boshlab kuchaygan o‘zaro nizolar",
+     "effect": "Taxtning sulolaning yoshi eng katta vakiliga o‘tish an’anasi buzilib, taxt otadan bolaga meros bo‘ldi",
+     "evidence": "o'zaro nizolar oqibatida bu an'ana buzildi. Endi taxt otadan bolaga\nmcros bo'lib o'ladigan bo'ldi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Markaziy hokimiyatning zaiflashuvi va amirlar nufuzining kuchayishi",
+     "effect": "Ayrim qudratli qabila boshliqlari ham hokimlik mansabiga tayinlana boshladi",
+     "evidence": "Keyinchalik, markaziy hokimiyat zaiflashgach, ayrim qudratli qabila boshliqlari - amirlar ham shu mansabga layinlangan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Ashtarxoniylar davrida devonlar tizimining barbod bo‘lishi",
+     "effect": "Mahalliy hokimliklarni boshqarish imkoniyati qo‘ldan chiqib, markaziy hokimiyat deyarli yo‘qqa chiqdi",
+     "evidence": "Natijada, devonlar mahalliy hokimliklarni boshqarish imkoniyalini qo'ldan\nchiqardi"
+    },
+    {
+     "kind": "number",
+     "number": "500-600",
+     "unit": "ming o‘zbek",
+     "meaning": "XVI asr boshlarida Movarounnahr va Xorazmga kirib kelgan Dashti Qipchoq o‘zbeklarining soni",
+     "evidence": "Movarounnahr va Xorazmga 500-600 ming Dashti Qipchoq o'zbeklari\nkirib kelgan"
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "title": "Buxoro xonligida harbiy ish",
+   "page": 31,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1512",
+     "date_label": "1512-yilda",
+     "event": "G‘ijduvonda shayboniylar bilan safaviylar o‘rtasida hal qiluvchi jang bo‘lib o‘tdi",
+     "evidence": "1512-yilda G\"ijduvonda shayboniylar bilan salaviylar o'riasidagi hal qiluvchi jangda"
+    },
+    {
+     "kind": "date_event",
+     "date": "XVI asrning o‘rtalari",
+     "date_label": "XVI asrning o‘rtalaridan boshlab",
+     "event": "Qo‘shinda to‘fangni doimiy ravishda qo‘llash boshlandi",
+     "evidence": "Qo'shinda to'fangni doimiy ravishda qo'llash XVI asrning o'rtalaridan boshlandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "XVII asr",
+     "date_label": "XVII asrda",
+     "event": "O‘q-yoy otliq askar uchun asosiy qurol bo‘lib qolaverdi",
+     "evidence": "Biroq butun XVll asrda ham o'q-yoy\notliq askar uchun asosiy qurol bo'lib qolavcrdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "Shayboniylar davri",
+     "date_label": "Shayboniylar davrida",
+     "event": "Shayboniylar o‘z davriga yarasha qudratli qo‘shin tuzishga muvaffaq bo‘ldilar",
+     "evidence": "shayboniylar ham o'z davriga yarasha qudratli qo'shin tuzishga muvaffaq bo'lganlar"
+    },
+    {
+     "kind": "date_event",
+     "date": "Ashtarxoniylar hukmronligi davri",
+     "date_label": "Ashtarxoniylar hukmronligi davrida",
+     "event": "Xonlikning iqtisodiy taraqqiyoti tobora pasayib bordi",
+     "evidence": "Ashiarxoniylar hukmronligi davrida xonlikning iqtisodiy taraqqiyoti tobora pasayib bordi"
+    },
+    {
+     "kind": "date_event",
+     "date": "Harbiy yurish boshlangan vaqt",
+     "date_label": "Harbiy yurish boshlangan vaqtda",
+     "event": "Qo‘shin oldida ilg‘or deb ataluvchi qism borgan va yo‘l xavfsizligini tekshirgan",
+     "evidence": "Qo'shin harbiy yurish boshlagan vaqtda uning oldida ilg'or deb ataluvchi qism borgan"
+    },
+    {
+     "kind": "person",
+     "person": "Ubaydullo Sulton",
+     "role": "Shayboniy sulton, 1512-yilda G‘ijduvon jangida qalb qismiga qo‘mondonlik qilgan sarkarda",
+     "activity": "Qo‘shinning markaziy qismi bo‘lgan qalbga boshchilik qilib, safaviylar bilan hal qiluvchi jangda qatnashgan",
+     "evidence": "shayboniylar qo'shinining qalb qismiga Ubaydullo Sulton, o'ng qanotga"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad Temur",
+     "role": "Shayboniyxonning o‘g‘li, qo‘shinning o‘ng qanoti qo‘mondoni",
+     "activity": "1512-yilgi jangda o‘ng qanotga qo‘mondonlik qilib, safaviylarga qarshi kurashda qatnashgan",
+     "evidence": "o'ng qanotga Shayboniyxonning o'g'li Muhammad Temur"
+    },
+    {
+     "kind": "person",
+     "person": "Abu Said Sulton",
+     "role": "Ko‘chkunchixonning o‘g‘li, qo‘shinning chap qanoti qo‘mondoni",
+     "activity": "1512-yilgi jangda chap qanotga boshchilik qilib, shayboniylar qo‘shinida xizmat qilgan",
+     "evidence": "chap qanotga\nKo'chkunchixonning g'li Abu Said Sultonlar qo'mondonlik qilishdi"
+    },
+    {
+     "kind": "person",
+     "person": "Xon",
+     "role": "Qo‘shinning oliy bosh qo‘mondoni, davlatning eng yuqori harbiy rahbari",
+     "activity": "O‘ng va chap qanotlar hamda qalbni sultonlar va shahzodalarga topshirgan, qurchi tomonidan qo‘riqlangan",
+     "evidence": "Xon qo'shinning Qliy bosh qo'mondoni edi"
+    },
+    {
+     "kind": "term",
+     "term": "Qalb",
+     "definition": "Qo‘shinning markaziy qismi; o‘ng va chap qanot hamda hirovul bo‘linmalaridan tashkil topgan",
+     "evidence": "hamda hirovul (orqa qism) bolinmalaridan\niborat qalb, ya'ni markaziy qism tashkil etgan"
+    },
+    {
+     "kind": "term",
+     "term": "Ilg‘or",
+     "definition": "Yurish vaqtida qo‘shin oldida boruvchi qism; yo‘l xavfsizligini va pistirma bor-yo‘qligini aniqlagan",
+     "evidence": "Uning vazifasi yo'lning xavfsizligini, pistirma qo'yilgan-qo'yilmaganligini aniqlash edi"
+    },
+    {
+     "kind": "term",
+     "term": "Borgoh",
+     "definition": "Harbiy harakat vaqtida Oliy bosh qo‘mondon uchun maxsus rasmiy qabul marosimi o‘tkaziladigan joy",
+     "evidence": "maxsus rasmiy qabul marosimi o'ikazadigan joy - borgoh ham iayyorlangan"
+    },
+    {
+     "kind": "term",
+     "term": "Sadoq",
+     "definition": "Yoyga o‘q joylashtirib qo‘yiladigan moslama; otish qurolining muhim qismi hisoblangan",
+     "evidence": "Yoy (kamon) o'qi joylashtirib qo'yiladigan moslama sadoq deb\nalalgan"
+    },
+    {
+     "kind": "term",
+     "term": "Kejim",
+     "definition": "Harbiy yurishlarda otlarni o‘qlardan himoya qilish uchun ustiga yopiladigan maxsus yopinchiq",
+     "evidence": "otlar ustiga kejim deb\nataluvchi maxsus yopinchiq yopishgan. Bunday yopinchiq Yevropadan\nham olib kelingan"
+    },
+    {
+     "kind": "place",
+     "place": "Usmonli davlati",
+     "event": "Stvoli temirdan yasalgan to‘fanglari bilan Buxoro xonligi qo‘shini qurollantirilgan davlat",
+     "evidence": "Keyinchalik ular Usmonli davlatining stvoli temirdan yasalgan\nto'fanglari bilan almashtirildi"
+    },
+    {
+     "kind": "place",
+     "place": "Yevropa",
+     "event": "Otlarni o‘qlardan himoya qiluvchi kejim yopinchiqlari olib kelingan hudud",
+     "evidence": "Bunday yopinchiq Yevropadan\nham olib kelingan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Iqtisodiy tanazzul va undan kelib chiqqan siyosiy parokandalik",
+     "effect": "Ashtarxoniylar davrida xonlik muntazam qo‘shin saqlay olmadi",
+     "evidence": "Iqtisodiy tanazzul oqibatida ashtarxoniylar\ndavrida xonlik muntazam qo'shin saqlay olmadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "O‘q va yoyning hujumda ham, qal’a mudofaasida ham o‘zini oqlashi",
+     "effect": "O‘q-yoy otliq askar uchun asosiy qurol bo‘lib qoldi",
+     "evidence": "Ular hujum paytida ham, shahar yoki\nqal'a mudofaasida ham ishonchni to'la oqlagan"
+    },
+    {
+     "kind": "cause",
+     "cause": "Otlarni jangda o‘qlardan himoya qilish zarurati",
+     "effect": "Otlar ustiga kejim deb ataluvchi maxsus yopinchiq yopilgan",
+     "evidence": "Iarbiy yurish choglarida otlarni o'qlardan himoya qilish uchun otlar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Shahar yoki qal’alarni qamal qilish va dushman safini to‘zg‘itish zarurati",
+     "effect": "Naftandoz va manjanaq qurollari keng qo‘llanilgan",
+     "evidence": "naftandoz (nefini yondirib oluvchi) va manjanaq (tosh otuvchi) qurollar"
+    },
+    {
+     "kind": "number",
+     "number": "o‘n, ellik, yuz, ming",
+     "unit": "kishi",
+     "meaning": "Askarlar soniga qarab bo‘lingan qo‘shin bo‘linmalari; ularga o‘nboshi, ellikboshi, yuzboshi va mingboshilar boshchilik qilgan",
+     "evidence": "qo'shin askarlar soniga qarab bo'lingan. Ularga o'nboshi, ellikboshi. yuzboshi\nva mingboshilar boshchilik qilishgan"
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "title": "Buxoro xonligida ijtimoiy-iqtisodiy hayot",
+   "page": 34,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1507",
+     "date_label": "1507-yilda",
+     "event": "Muhammad Shayboniyxon xonlik iqtisodiyotini tartibga solish maqsadida pul islohoti o‘tkazdi",
+     "evidence": "Muhammad Shayboniyxon xonlik iqtisodiyotini tartibga solish va\nsavdoni rivojlantirish maqsadida 1507-yilda pul islohoti ham o'tkazdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1512",
+     "date_label": "1512-yilda",
+     "event": "Shayboniylar Movarounnahrni ikkinchi marta egallab, viloyatlarni qayta taqsimladilar",
+     "evidence": "1512-yilda shayboniylar Movarounnahrni ikkinchi marta egallagach"
+    },
+    {
+     "kind": "date_event",
+     "date": "1556-1585",
+     "date_label": "1556–1585-yillarda",
+     "event": "Zarafshon daryosida qator suv ayirg‘ichlari va ko‘plab suv omborlari bunyod etildi",
+     "evidence": "1556-1585-yillar\noralig'ida Zarafshon daryosida"
+    },
+    {
+     "kind": "date_event",
+     "date": "1577",
+     "date_label": "1577-yilda",
+     "event": "Buxoroda yirik, usti berk bozor, ya’ni tim qurildi",
+     "evidence": "1577-yilda Buxoroda yirik, usti berk bozor - tim\nqurildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "Temuriylar davri",
+     "date_label": "Temuriylar davrida",
+     "event": "Bitta kumush tanganing og‘irligi 4,8 gramm bo‘lib, qiymati o‘n olti mis tangaga teng edi",
+     "evidence": "Temuriylar davrida\nbitta kumush tanganing og'irligi 4,8 gramm bo'lib, uning qiymati\noltila mis langaga teng edi"
+    },
+    {
+     "kind": "date_event",
+     "date": "Abdullaxon II davri",
+     "date_label": "Abdullaxon II davrida",
+     "event": "Sun’iy sug‘orish ishlari, xususan yangi suv inshootlari qurilishi keng rivojlandi",
+     "evidence": "Sun'iy sug'orish ishlari, ayniqsa,\nAbdullaxon II davrida keng rivojlandi"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad Shayboniyxon",
+     "role": "Shayboniylar sulolasi hukmdori, yer va pul islohotlarini o‘tkazgan davlat arbobi",
+     "activity": "Temuriylar va amaldorlarga qarashli yerlarni musodara qildi, 1507-yilda pul islohoti o‘tkazdi",
+     "evidence": "Muhammad Shayboniyxon temuriylarga, temuriylar davri amaldorlariga"
+    },
+    {
+     "kind": "person",
+     "person": "Abdullaxon II",
+     "role": "Shayboniylar sulolasining hukmdori, pul islohoti va yirik qurilishlar tashabbuskori",
+     "activity": "Kumush tanga qiymatini 30 ta mis tangaga tenglashtirdi va oltin pul zarb etishni yo‘lga qo‘ydi",
+     "evidence": "Shayboniy Abdullaxon II o'ikazgan pul islohoti ham Buxoro\nxonligi tarixida muhim ahamiyatga cga bo'ldi"
+    },
+    {
+     "kind": "person",
+     "person": "Jonibek Sulton",
+     "role": "Shayboniylarning eng nufuzli vakili, viloyatlarni qayta taqsimlash topshirilgan amir",
+     "activity": "1512-yildan keyin viloyatlarni taqsimlab, Samarqandni Ko‘chkunchixonga, Toshkentni Suyunchxo‘jaga berdi",
+     "evidence": "shayboniy sultonlar mamlakat viloyatlarini qayta taqsimlashni shayboniylarning cng nufuzli vakili Jonibck Sultonga topshirdilar"
+    },
+    {
+     "kind": "person",
+     "person": "Ko‘chkunchixon",
+     "role": "Shayboniy sulton, 1512-yilda Samarqand viloyatini olgan hukmdor",
+     "activity": "Viloyatlar qayta taqsimlanganda unga Samarqand viloyati nasib etgan",
+     "evidence": "Samarqand Ko'chkunchixonga, Toshkent viloyati Suyunchxo\"jaga"
+    },
+    {
+     "kind": "term",
+     "term": "Mulki xos",
+     "definition": "Bevosita xonning o‘ziga tegishli yerlar; daromadi xon xarajatlari va vaqflarga xayr-ehsonga sarflangan",
+     "evidence": "Bevosita shaxsan xonning o'ziga tegishli yerlar mulki xos deb\nalalgan"
+    },
+    {
+     "kind": "term",
+     "term": "Mulki xolis",
+     "definition": "Davlatdan yer sotib olish yo‘li bilan qaror topgan yer mulki; yerning uchdan bir qismigina egasiga qolgan",
+     "evidence": "Mulki xolis davlatdan yer sotib olish orqali qaror topgan"
+    },
+    {
+     "kind": "term",
+     "term": "Suyurg‘ol",
+     "definition": "Mulk yerning bir shakli; dastlab xon uchun egalarini itoatda tutish vositasi bo‘lgan, keyin meros bo‘lib o‘tgan",
+     "evidence": "Yer egaligining suyurg'ol shakli dastlab xonga uning egalarini\nitoatda tutib turishning kuchli vositasi bo'lib xizmat qildi"
+    },
+    {
+     "kind": "term",
+     "term": "Tanho",
+     "definition": "Iqto turining yangicha nomi; davlat arboblari va harbiylarga xizmatlari uchun berilgan yer mulki",
+     "evidence": "Shayboniylargacha mavjud bo'lgan yer egaligining iqto turi yangicha\nnom - tanho (tanaxo) nomi bilan saqlab qolindi"
+    },
+    {
+     "kind": "term",
+     "term": "Xiroj",
+     "definition": "Sug‘oriladigan yerdan olinadigan asosiy soliq; daromadning 30 foizdan 40 foizgachasini tashkil qilgan",
+     "evidence": "Xonlikda asosiy soliq sug'oriladigan yerdan"
+    },
+    {
+     "kind": "place",
+     "place": "Zarafshon daryosi",
+     "event": "1556–1585-yillarda unda qator suv ayirg‘ichlari va ko‘plab suv omborlari bunyod etilgan",
+     "evidence": "Zarafshon daryosida qator suv ayirg'ichlari, ko'plab suv\nomborlari bunyod etildi"
+    },
+    {
+     "kind": "place",
+     "place": "Buxoro",
+     "event": "1577-yilda unda yirik, usti berk bozor qurilib, Abdullaxon timi deb atala boshlagan",
+     "evidence": "Bu inshoot Abdullaxon timi deb alaladigan bo'ldi"
+    },
+    {
+     "kind": "place",
+     "place": "Kesh viloyati",
+     "event": "Qashqadaryoning irmoqlaridan uning yerlarini sug‘orish uchun 10 dan ortiq kanal qazilgan",
+     "evidence": "Qashqadaryoning irmoqlaridan Kesh viloyati yerlarini sug'orish\nuchun 10 dan ortiq kanallar qazildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Suyurg‘ol mulklarning otadan bolaga meros bo‘lib o‘tishi",
+     "effect": "Markaziy hokimiyatdan mustaqil bo‘lishga intiluvchi kuchlar kuchayib, xonga bo‘ysunmay qo‘ydi",
+     "evidence": "Lckin suyurg'ol mulklar bora-bora markaziy hokimiyatdan mustaqil\nbo'lishga intiluvchi kuchlarning kuchayishiga sabab bo'ldi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yerlarning turli shakllarga bo‘linishi va vaqf yerlarining orib borishi",
+     "effect": "Davlat xazinasiga tushadigan soliq daromadlari kamaya boshladi",
+     "evidence": "Yerlarning turli shakllarga bo'linishi bcvosita davlat xazinasiga tushadigan soliq daromadlarining kamayishiga\nolib kela boshladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Soliq tushumining kamayishi va dehqonlarning qochib ketishi",
+     "effect": "Shayboniylar qishloq xo‘jaligini rivojlantirish uchun qator chora-tadbirlar ko‘rishga majbur bo‘ldi",
+     "evidence": "Soliq tushumining kamayishi shayboniylarni qishloq\nxo\"jaligini rivojlantirish uchun qator chora-tadbirlar ko'rishga majbur\nqildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "O‘zaro urushlar ko‘payib ketgan yillari davlat xarajatlarining oshishi",
+     "effect": "Soliqlar bir necha yil uchun oldindan olinadigan bo‘ldi",
+     "evidence": "O'zaro urushlar ko'payib kctgan\nyillari soliqlar bir necha yil uchun oldindan olinardi"
+    },
+    {
+     "kind": "number",
+     "number": "5,2",
+     "unit": "gramm",
+     "meaning": "Muhammad Shayboniyxonning 1507-yilgi pul islohotidan keyin zarb qilingan yangi kumush tanga vazni",
+     "evidence": "vazni bir xil - 5,2 gramm\nbo'lgan yangi kumush va mis tanga zarb qilindi"
+    },
+    {
+     "kind": "number",
+     "number": "1 million 200 ming",
+     "unit": "kub metr",
+     "meaning": "Abdullaxon bandi to‘g‘onida to‘plangan suv hajmi",
+     "evidence": "Abdullaxon bandiga\n1 million 200 ming kub metr suv to'plangan"
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "title": "Buxoro xonligining tashqi siyosati",
+   "page": 38,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "XVI asrning ikkinchi yarmi",
+     "date_label": "XVI asrning ikkinchi yarmidan",
+     "event": "Buxoro xonligining Rossiya bilan munosabatlari rivojlana bordi",
+     "evidence": "Buxoro xonligining Rossiya bilan mumunosabatlari\nnosabati XVI asrning ikkinchi yarmidan rivojlana bordi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1557-1558",
+     "date_label": "1557–1558-yillarda",
+     "event": "Buxoro xonligidan Moskvaga elchi yuborildi",
+     "evidence": "1557-i558-yillarda Buxoro xonligidan"
+    },
+    {
+     "kind": "date_event",
+     "date": "1558",
+     "date_label": "1558-yilda",
+     "event": "«Moskva kompaniyasi» o‘z elchisi Antoniy Jenkinsonni Buxoroga yubordi",
+     "evidence": "1558-yilda\nkompaniya Rossiya orqali Sharqqa yo'l ochish uchun o'z clchisi\nAnioniy Jcnkinsonni Buxoroga yubordi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1569",
+     "date_label": "1569-yilda",
+     "event": "Rossiya bilan Usmonli davlati o‘rtasida urush boshlandi va Usmonli davlati yengildi",
+     "evidence": "1569-yida Rossiya - Usmonli davlati o'rtasida urush boshlandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1572",
+     "date_label": "1572-yilda",
+     "event": "Rossiya sultonning haj safari yo‘lini ochib qo‘yish talabini qondirdi",
+     "evidence": "Oxiroqibat Rossiya 1572-yilda sultonning talabini qondirdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1718",
+     "date_label": "1718-yilda",
+     "event": "Pyotr I Irish daryosi sohilida yetti qo‘rg‘ondan iborat shahar qurdirdi",
+     "evidence": "Shu maqsadda 1718-yilda Irish daryosi sohilida yciti qo\"rg'ondan\niborat shahar"
+    },
+    {
+     "kind": "date_event",
+     "date": "1740",
+     "date_label": "1740-yilda",
+     "event": "Eron Buxoro xonligini qaram davlatga aylantirishga erishdi",
+     "evidence": "1740-yilda esa Eron Buxoro xonligini qaram davlatga aylantirishga erishdi"
+    },
+    {
+     "kind": "person",
+     "person": "Abdullaxon II",
+     "role": "Shayboniylar sulolasining hukmdori, Rossiya va Hindiston bilan aloqalarni rivojlantirgan davlat arbobi",
+     "activity": "Rossiya bilan savdo aloqalarini yaxshilab, davlatining siyosiy ahvolini mustahkamlashga erishmoqchi bo‘ldi",
+     "evidence": "Abdullaxon II Rossiya bilan savdo aloqalarini\nyaxshilashga harakat qilar ekan"
+    },
+    {
+     "kind": "person",
+     "person": "Ivan Grozniy",
+     "role": "Rossiya podshosi, uning davrida Rossiyaning xalqaro mavqeyi ko‘tarilgan",
+     "activity": "Qozon (1552) va Hojitarxon (1556) xonliklarini, Volga bo‘ylari va G‘arbiy Sibirni bosib oldi",
+     "evidence": "Grozniy davrida Rossiyaning mavqeyi kotarildi"
+    },
+    {
+     "kind": "person",
+     "person": "Antoniy Jenkinson",
+     "role": "«Moskva kompaniyasi»ning elchisi, Buxoroga yuborilgan ingliz vakili",
+     "activity": "Abdullaxon II tomonidan qabul qilinib, Rossiya va Buxoro o‘rtasida savdo-diplomatik aloqalarni yo‘lga qo‘ydi",
+     "evidence": "Antoniy Jcnkinson clchiligi natijasida Rossiya va Buxoro xonligi o'rtasida yaxshi savdo va diplomalik aloqalar yo'lga\nqo'yildi"
+    },
+    {
+     "kind": "person",
+     "person": "Pyotr I",
+     "role": "Rossiya podshosi, Buxoroni teng davlat emas deb hisoblagan hukmdor",
+     "activity": "Buxoroga tazyiq o‘tkazib, 1718-yilda Irish daryosi sohilida yangi shahar qurdirdi",
+     "evidence": "Pyotr I Buxoroni siyosiy jihatdan Rossiyag\ndcb hisobladi"
+    },
+    {
+     "kind": "person",
+     "person": "Akbarshoh",
+     "role": "Boburiylar saltanati hukmdori, diniy bag‘rikenglikni davlat siyosati darajasiga ko‘targan podshoh",
+     "activity": "Abdullaxon II ning Eronni o‘zaro taqsimlab olish taklifiga rozi bo‘lmadi",
+     "evidence": "Lekin Akbarshoh bunga rozi bo'lmadi"
+    },
+    {
+     "kind": "term",
+     "term": "Haj safari",
+     "definition": "Makka shahriga boriladigan ziyorat safari; unga Ashtarxon orqali borish eng qulay yo‘l hisoblangan",
+     "evidence": "Ashtarxon (Astraxon) orqali Buxoro xonligi fuqarolarining Makka shahriga Haj safariga borishi masalasi ham muhim o'rin tutgan"
+    },
+    {
+     "kind": "term",
+     "term": "«Moskva kompaniyasi»",
+     "definition": "1555-yilda Moskvada tashkil etilgan, ingliz-rus iqtisodiy aloqalari rivojiga xizmat qilgan kompaniya",
+     "evidence": "1555-yilda Moskvada_ingliz-rus iqtisodiy aloqalari rivojiga\nxizmat qiluvchi ,Moskva kompaniyasi\" tashkil etildi"
+    },
+    {
+     "kind": "term",
+     "term": "Elchilik",
+     "definition": "Davlatlar o‘rtasida muzokaralar olib borish va rasmiy topshiriqlarni bajarish uchun yuboriladigan vakillik",
+     "evidence": "Rossiya elchilari Buxoro xonligi bilan faqal savdo aloqalarini kengaytirish masalalarini hal etibgina qolmadilar"
+    },
+    {
+     "kind": "term",
+     "term": "Boj to‘lovi",
+     "definition": "Savdo-sotiqda olinadigan to‘lov; XVIII asrda Rossiya Buxoro bilan savdoda uning miqdorini oshirgan",
+     "evidence": "Xususan, boj to'lovi\nmiqdori oshirildi"
+    },
+    {
+     "kind": "place",
+     "place": "Xuroson",
+     "event": "Buxoro va Eron manfaatlari to‘qnashgan asosiy hudud; u orqali Hindistonga yo‘l o‘tgan",
+     "evidence": "Buxoro va Hron manfaatlari to'qnashgan"
+    },
+    {
+     "kind": "place",
+     "place": "Marv",
+     "event": "Abdullaxon II Xuroson yurishida egallagan yirik shaharlardan biri",
+     "evidence": "Abdullaxon Il Xurosonning Marv, Nishopur va Mashhad kabi yirik\nshaharlarini egalladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Volga bo‘ylari va G‘arbiy Sibirning Rossiya tomonidan bosib olinishi",
+     "effect": "Rossiya savdo yo‘llarini nazorat qilish imkoniga ega bo‘ldi",
+     "evidence": "Bu hol Rossiyaga savdo yo\"llarini nazorat qilish imkonini berdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Haj safari yo‘lining Eron safaviylari nazoratiga o‘tib qolishi",
+     "effect": "Buxoro xonligi Usmonli davlati bilan birgalikda harakat qilishga qaror qildi",
+     "evidence": "Chunki Xuroson orqali haj\nsafariga borishdagi cng qulay yo'l Eron safaviylari nazoratiga o'tib\nqolgan edi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dengiz savdo yo‘lining ochilishi va Buyuk ipak yo‘li ahamiyatining pasayishi",
+     "effect": "Usmonli davlati Ashtarxon yo‘lini o‘z nazoratida saqlab qolishga intildi",
+     "evidence": "dengiz savdo yo'lining ochilishi Buyuk ipak yo'lining ahamiyatini pasaytirdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Rossiya va Buxoro manfaatlarining Sibirda to‘qnash kelishi",
+     "effect": "Abdullaxon II Ko‘chimxonga yordam berdi, biroq 1598-yilda rus qo‘shini g‘alaba qozondi",
+     "evidence": "Rossiya - Buxoro manfaailari Sibirda ham to'qnashdi"
+    },
+    {
+     "kind": "number",
+     "number": "100 ming",
+     "unit": "rubl",
+     "meaning": "XVII asrda O‘rta Osiyo va Rossiya o‘rtasidagi savdoda tovar ayirboshlash shu miqdorni tashkil etgan",
+     "evidence": "XVII asrda O'rta Osiyo va Rossiya o'rtasida savdoda tovar ayirboshlash 100 ming rublni tashkil cidi"
+    },
+    {
+     "kind": "number",
+     "number": "200",
+     "unit": "ta ot",
+     "meaning": "Buxoro elchisining Boburga olib kelgan sovg‘a-salomlari qatoridagi yaxshi otlar soni",
+     "evidence": "qatorida 200 ta\nyaxshi ot ham olib keldi"
+    }
+   ]
+  }
+ ]
+}

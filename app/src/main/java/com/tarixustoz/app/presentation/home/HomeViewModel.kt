@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -32,6 +33,10 @@ data class HomeUiState(
     val todayGoalCompleted: Int = 12,
     val todayGoalTotal: Int = 20,
     val dailyQuestion: Question? = null,
+    val selectedDailyOptionId: String? = null,
+    val isDailyAnswered: Boolean = false,
+    val isDailyCorrect: Boolean = false,
+    val dailyAnswerFeedback: String? = null,
     val dailyTimeRemaining: String = "08:42:16",
     val mistakesCount: Int = 11,
     val unreadNotifications: Int = 3,
@@ -53,11 +58,14 @@ class HomeViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
 
+    private val seenQuestionIds = mutableSetOf<String>()
+
     fun load() {
         viewModelScope.launch {
             contentRepository.seedIfNeeded()
-            val dailyQ = contentRepository.getDailyQuestion()
-            _uiState.value = _uiState.value.copy(dailyQuestion = dailyQ)
+            if (_uiState.value.dailyQuestion == null) {
+                loadNextDailyQuestion()
+            }
         }
 
         viewModelScope.launch {
@@ -81,7 +89,68 @@ class HomeViewModel @Inject constructor(
                     level = (actualXp / 30 + 1).toInt(),
                     mistakesCount = actualMistakes
                 )
-            }.collect { _uiState.value = it }
+            }.collect { updated ->
+                _uiState.update { current ->
+                    current.copy(
+                        displayName = updated.displayName,
+                        userAvatar = updated.userAvatar,
+                        xp = updated.xp,
+                        streak = updated.streak,
+                        level = updated.level,
+                        mistakesCount = updated.mistakesCount
+                    )
+                }
+            }
+        }
+    }
+
+    fun loadNextDailyQuestion() {
+        viewModelScope.launch {
+            val nextQuestion = contentRepository.getDailyQuestion(seenQuestionIds)
+            if (nextQuestion != null) {
+                seenQuestionIds.add(nextQuestion.id)
+            }
+            _uiState.update {
+                it.copy(
+                    dailyQuestion = nextQuestion,
+                    selectedDailyOptionId = null,
+                    isDailyAnswered = false,
+                    isDailyCorrect = false,
+                    dailyAnswerFeedback = null
+                )
+            }
+        }
+    }
+
+    fun answerDailyQuestion(optionId: String) {
+        val currentState = _uiState.value
+        if (currentState.isDailyAnswered) return
+
+        val question = currentState.dailyQuestion ?: return
+        val correctOption = question.options.find { it.isCorrect }
+        val isCorrect = correctOption?.id == optionId
+
+        viewModelScope.launch {
+            if (isCorrect) {
+                preferences.addXp(10)
+            } else {
+                val userAnswerText = question.options.find { it.id == optionId }?.text ?: optionId
+                mistakesRepository.recordIncorrect(question, userAnswerText)
+            }
+        }
+
+        _uiState.update {
+            it.copy(
+                selectedDailyOptionId = optionId,
+                isDailyAnswered = true,
+                isDailyCorrect = isCorrect,
+                dailyAnswerFeedback = if (isCorrect) {
+                    "Barakalla! To‘g‘ri javob! +10 XP berildi 🎉"
+                } else {
+                    "Noto‘g‘ri javob. To‘g‘ri javob belgilandi."
+                },
+                todayGoalCompleted = if (isCorrect) it.todayGoalCompleted + 1 else it.todayGoalCompleted
+            )
         }
     }
 }

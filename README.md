@@ -51,7 +51,41 @@ app/
   domain/        # Models, use-cases
   presentation/  # Compose screens, ViewModels
   di/            # Hilt modules
+
+backend/                     # Django REST API + content pipeline
+  api/                       # models, serializers, viewsets, import commands
+  core/                      # settings, urls
+  content/
+    tools/                   # textbook -> facts -> questions pipeline
+    books/<sinf>-sinf_<Fan>/ # per-textbook source text, topics, verified facts
 ```
+
+## Content pipeline (100 000 tests per textbook)
+
+Every textbook is processed in four steps; all of it is reproducible from the
+files committed under `backend/content/books/<book>/`.
+
+```bash
+cd backend
+python content/tools/extract_mavzu_book.py --in <source.txt> --out-dir <book>/source --name <Name>
+python content/tools/validate_facts.py <book>/facts/*.json --topics <book>/source/topics.json
+python content/tools/build_book_bank.py 9-sinf_Jahon_tarixi --grade 9 --subject jahon --prefix j9j
+python manage.py import_jahon7_bank --ndjson <book>/generated/questions.ndjson \
+    --topics <book>/source/topics.json --grade 9 --subject "Jahon tarixi" --prefix j9j --replace
+```
+
+* `facts/*.json` — every fact carries an `evidence` field that must be a verbatim
+  quote from the textbook paragraph; the validator enforces this, so no question
+  can be answered from anything except the book.
+* Each bank contains exactly 100 000 questions, spread over the 20 fixed
+  combinations (5 000 each) with near-miss distractors (neighbouring year/century,
+  same-topic person, similar event).
+* `generated/questions.ndjson` is **not** committed (about 90 MB per book, 1 GB in
+  total). Rebuild any bank with `build_book_bank.py`; see
+  `backend/content/books/README.md` for the full table of books and commands.
+
+Textbooks that ship only as scanned PDFs (8-sinf and 9-sinf O‘zbekiston/Jahon
+tarixi) go through `ocr_pdf_book.py` + `clean_ocr.py` before segmentation.
 
 ## License
 

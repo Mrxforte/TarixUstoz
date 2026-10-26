@@ -1,0 +1,654 @@
+{
+  "chapter": "IV BOB. 1800–1870-YILLARDA YEVROPA VA AMERIKA MAMLAKATLARI",
+  "topics": [
+    {
+      "number": 21,
+      "title": "1800–1870-yillarda Fransiya",
+      "page": 101,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1799",
+          "date_label": "1799-yil",
+          "event": "Davlat to'ntarishidan so'ng Napoleon Fransiyada Birinchi konsul lavozimini egalladi",
+          "evidence": "1799-yilgi davlat to'ntarishidan so'ng Napoleon Birinchi konsul lavozimini egalladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1804",
+          "date_label": "1804-yil",
+          "event": "Senat Napoleonni Fransuzlar imperatori Napoleon I deb e'lon qildi va monarxiya qayta tiklandi",
+          "evidence": "Senat uni Fransuzlar imperatori Napoleon I deb e'lon qildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1805",
+          "date_label": "1805-yil",
+          "event": "Austerlis jangida Napoleon Rossiya va Avstriya birlashgan armiyasi ustidan hal qiluvchi g'alaba qozondi",
+          "evidence": "Rossiya va Avstriya qo'shinidan iborat birlashgan armiya ustidan hal qiluvchi g'alabani qo'lga kiritdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1812",
+          "date_label": "1812-yil",
+          "event": "Napoleon Rossiyaga qarshi urush boshladi, bu urush Rossiyada Vatan urushi deb ataldi",
+          "evidence": "1812-yili Napoleon Rossiyaga qarshi urush boshladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1813",
+          "date_label": "1813-yil",
+          "event": "Leypsig ostonasida Xalqlar jangi bo'lib, Napoleon qo'shini tor-mor etildi",
+          "evidence": "1813-yili Leypsig ostonasida bo'lib o'tdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1814",
+          "date_label": "1814-yil",
+          "event": "Ittifoqchi davlatlar armiyasi Parijga kirdi va Napoleon taxtdan voz kechishga majbur bo'ldi",
+          "evidence": "1814-yili ittifoqchi davlatlar armiyasi Parij shahriga kirib keldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1815",
+          "date_label": "1815-yil",
+          "event": "Vaterloo jangida Napoleon qo'shini butunlay tor-mor etildi va Birinchi imperiya quladi",
+          "evidence": "Vaterloo qishlog'ida (hozirgi Belgiya davlati hududida) hal qiluvchi jang bo'lib o'tdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1848",
+          "date_label": "1848-yil fevral",
+          "event": "Fevral inqilobi natijasida Iyul monarxiyasi quladi va Fransiya Respublika deb e'lon qilindi",
+          "evidence": "1848-yil fevral inqilobi natijasida Iyul monarxiyasi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1852",
+          "date_label": "1852-yil 2-dekabr",
+          "event": "Lui Napoleon Bonapart o'zini Napoleon III deb e'lon qilib, Ikkinchi imperiyani o'rnatdi",
+          "evidence": "1852-yil 2-dekabrda u o'zini Napoleon III nomi bilan Fransiya imperatori deb e'lon qildi"
+        },
+        {
+          "kind": "person",
+          "person": "Napoleon Bonapart",
+          "role": "Fransiya imperatori (Napoleon I)",
+          "activity": "1799-yildan Birinchi konsul, 1804-yildan imperator sifatida Yevropada qator urushlar olib bordi",
+          "evidence": "Napoleon Birinchi konsul lavozimini egalladi"
+        },
+        {
+          "kind": "person",
+          "person": "Aleksandr I",
+          "role": "Rossiya imperatori",
+          "activity": "1805-yili Austerlis jangida Napoleonga qarshi birlashgan armiya safida ishtirok etdi",
+          "evidence": "Rossiya va Avstriya imperatorlari Aleksandr I hamda Frans II ishtirok etdi"
+        },
+        {
+          "kind": "person",
+          "person": "Mixail Illarionovich Kutuzov",
+          "role": "Rossiya armiyasi qo'mondoni",
+          "activity": "Chekinayotgan fransuz qo'shinlarini ta'qib qilib, ularga katta talafot yetkazdi",
+          "evidence": "boshchiligidagi Rossiya armiyasi chekinayotgan fransuzlarni"
+        },
+        {
+          "kind": "person",
+          "person": "Lui Napoleon Bonapart",
+          "role": "Fransiya Prezidenti, keyinchalik imperator (Napoleon III)",
+          "activity": "1848-yil dekabrda prezident etib saylanib, 1852-yil 2-dekabrda o'zini imperator deb e'lon qildi",
+          "evidence": "jiyani Lui Napoleon Bonapart Fransiya Prezidenti etib saylandi"
+        },
+        {
+          "kind": "term",
+          "term": "Birinchi imperiya",
+          "definition": "1804-1814-yillarda Fransiyada mavjud bo'lgan, zodagonlarga emas, burjuaziyaga xizmat qilgan monarxiya",
+          "evidence": "Biroq bu monarxiya zodagonlarga emas"
+        },
+        {
+          "kind": "term",
+          "term": "Qit'a qamali",
+          "definition": "Napoleonga qaram davlatlarning Buyuk Britaniya bilan savdo-sotiq qilishini taqiqlovchi siyosat",
+          "evidence": "Napoleonga qaram barcha davlatlarning Buyuk Britaniya bilan savdo-sotiq qilishi"
+        },
+        {
+          "kind": "term",
+          "term": "Kontributsiya",
+          "definition": "Urushda yetkazilgan zarar o'rnini qoplash uchun mag'lub davlat tomonidan to'lanadigan to'lov",
+          "evidence": "Kontributsiya - urushda yetkazilgan zarar o'rnini qoplash uchun mag'lub davlat tomonidan to'lanadigan to'lov"
+        },
+        {
+          "kind": "term",
+          "term": "Senz",
+          "definition": "Fuqarolarning saylov huquqidan foydalanishlarini cheklaydigan shartlar, masalan mulk va yosh senzi",
+          "evidence": "Senz - fuqarolarning saylov huquqidan foydalanishlarini cheklaydigan shartlar"
+        },
+        {
+          "kind": "place",
+          "place": "Elba oroli",
+          "event": "Napoleon 1814-yili taxtdan voz kechgach, ittifoqchilar uni shu orolga surgun qildilar",
+          "evidence": "Ittifoqchilar uni Elba oroliga surgun qildilar"
+        },
+        {
+          "kind": "place",
+          "place": "Muqaddas Yelena oroli",
+          "event": "1815-yildan keyin Napoleon shu orolga surgun qilinib, 1821-yili vafot etdi",
+          "evidence": "Muqaddas Yelena oroliga surgun qilindi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qit'a qamali Napoleonning Buyuk Britaniyani bo'ysundirish maqsadini amalga oshira olmadi",
+          "effect": "Aholi tinimsiz urushlardan charchadi va mamlakatda norozilik kuchaydi",
+          "evidence": "Ammo Napoleon Buyuk Britaniyaga qarshi qit'a qamalidan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Noroziliklarni bostirish uchun Napoleonga katta g'olibona urush zarur edi",
+          "effect": "U Rossiyaga qarshi urush boshlab, unda g'alaba qozonishni rejalashtirdi",
+          "evidence": "Napoleonga bu noroziliklarni bostirish uchun katta bir g'olibona urush kerak edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Eski zodagonlar feodal tartiblar va mutlaq monarxiyani tiklashni talab qildi",
+          "effect": "Fransiyada ichki vaziyat murakkablashib bordi",
+          "evidence": "Bunga eski zodagonlarning feodal tartiblar va mutlaq"
+        },
+        {
+          "kind": "number",
+          "number": "100",
+          "unit": "kun",
+          "meaning": "Napoleon ikkinchi marta taxtga o'tirgach, hokimiyatda atigi 100 kun saqlanib qoldi",
+          "evidence": "atigi 100 kun boshqardi"
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "1800–1870-yillarda Germaniya va Italiya",
+      "page": 107,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1847",
+          "date_label": "1847-yil",
+          "event": "Iqtisodiy inqiroz Germaniyani ham qamrab olib, ishsizlik va narxlar o'sishiga olib keldi",
+          "evidence": "1847-yili yuz bergan iqtisodiy inqiroz Germaniyani ham chetlab o'tmadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1848",
+          "date_label": "1848-yil",
+          "event": "Fevral inqilobi ta'sirida Berlinda qo'zg'olon boshlanib, ko'cha janglari davom etdi",
+          "evidence": "1848-yilgi fevral inqilobi ta'sirida Berlinda qo'zg'olon boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1848",
+          "date_label": "1848-yil",
+          "event": "Prussiya qirolligida konstitutsiya joriy etilishi katta siyosiy voqea bo'ldi",
+          "evidence": "1848-yili Prussiya qirolligida konstitutsiya joriy etilishining o'zi katta siyosiy voqea bo'ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1860",
+          "date_label": "1860-yil",
+          "event": "Juzeppe Garibaldi harbiy kuchlari bilan Sitsiliya oroliga kelib tushdi",
+          "evidence": "Juzeppe Garibaldi 1860-yili o'z harbiy kuchlari bilan Sitsiliya oroliga kelib tushdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1861",
+          "date_label": "1861-yil",
+          "event": "Birlashgan Italiya qirolligi tashkil etildi va mamlakat yagona davlatga aylandi",
+          "evidence": "1861-yilda Birlashgan Italiya qirolligi tashkil etildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1866",
+          "date_label": "1866-yil",
+          "event": "Prussiya Avstriya ustidan tarixiy g'alaba qozondi va Shimoliy Germaniya Ittifoqi tuzildi",
+          "evidence": "1866-yili Prussiya Avstriya ustidan qozon"
+        },
+        {
+          "kind": "date_event",
+          "date": "1866",
+          "date_label": "1866-yil",
+          "event": "Avstriya qo'l ostida qolgan Venetsiya viloyati Italiya qirolligiga qo'shib olindi",
+          "evidence": "1866-yili Avstriya qo'l ostida qolgan Venetsiya viloyati ham"
+        },
+        {
+          "kind": "date_event",
+          "date": "1870",
+          "date_label": "1870-yil",
+          "event": "Fransiya ta'sirida bo'lgan Rim shahri Italiya qirolligiga qo'shib olindi",
+          "evidence": "1870-yilda esa Fransiya ta'sirida bo'lgan Rim shahri ham Italiya qirolligiga qo'shib olindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1919",
+          "date_label": "1919-yil",
+          "event": "Shimoliy Germaniya ittifoqi konstitutsiyasi Veymar konstitutsiyasi qabul qilingunga qadar amal qildi",
+          "evidence": "1919-yil Veymarda Germaniya Respublikasi Konstitutsiyasi qabul qilingunga qadar amal qilib keldi"
+        },
+        {
+          "kind": "person",
+          "person": "Kamillo Kavur",
+          "role": "Italiya bosh vaziri",
+          "activity": "Mo'tadil islohotlar va konstitutsiyaviy monarxiya tarafdori bo'lib, Avstriyaga qarshi Fransiya bilan shartnoma tuzdi",
+          "evidence": "Bosh vazir Kamillo Kavur uzoqni ko'ra oluvchi siyosatchi"
+        },
+        {
+          "kind": "person",
+          "person": "Juzeppe Garibaldi",
+          "role": "xalq qahramoni va italiyalik sarkarda",
+          "activity": "1860-yili Sitsiliyaga kelib, Palermo va Neapolni egallab, Italiya birlashuvini yakunlashga hissa qo'shdi",
+          "evidence": "Xalq ommasi uni xaloskor sifatida kutib oldi"
+        },
+        {
+          "kind": "person",
+          "person": "Juzeppe Madzini",
+          "role": "Yosh Italiya jamiyati rahnamosi",
+          "activity": "Italiyani birlashtirish yo'lida faoliyat yuritgan uch buyuk shaxsdan biri sifatida tanilgan",
+          "evidence": "Yosh Italiya jamiyatiga rahnamolik qilgan Juzeppe Madzinidir"
+        },
+        {
+          "kind": "person",
+          "person": "Otto fon Bismark",
+          "role": "Prussiya kansleri",
+          "activity": "Germaniyani yagona davlatga birlashtirishga rahbarlik qildi va Shimoliy Germaniya ittifoqi konstitutsiyasini ishlab chiqdi",
+          "evidence": "U Germaniyani yagona davlatga birlashtirishdek tarixiy ishga rahbarlik qildi"
+        },
+        {
+          "kind": "term",
+          "term": "Mo'tadil burjuaziya",
+          "definition": "Burjuaziyaning murosaga intiluvchi, muammolarni tinch yo'l bilan hal etishga intiluvchi qismi",
+          "evidence": "burjuaziyaning murosaga intiluvchi, muammolarni tinch yo'l bilan hal etishga"
+        },
+        {
+          "kind": "term",
+          "term": "Shimoliy Germaniya Ittifoqi",
+          "definition": "1866-yilda Prussiya bilan nemis davlatlari o'rtasida tuzilgan va Bismark kansler bo'lgan ittifoq",
+          "evidence": "Shimoliy Germaniya ittifoqi konstitutsiyasini ishlab chiqdi"
+        },
+        {
+          "kind": "term",
+          "term": "Bundeskansler",
+          "definition": "Shimoliy Germaniya Ittifoqida Bismark egallagan ittifoq kansleri lavozimi",
+          "evidence": "Bismark ittifoq kansleri - Bundeskansler lavozimini egalladi"
+        },
+        {
+          "kind": "term",
+          "term": "Ikki palatali parlament",
+          "definition": "Senat va Deputatlar palatasidan iborat bo'lgan, Italiyada joriy etilgan qonun chiqaruvchi organ",
+          "evidence": "ikki palatali parlament (Senat va Deputatlar palatasi) joriy etildi"
+        },
+        {
+          "kind": "place",
+          "place": "Berlin",
+          "event": "1848-yilda qo'zg'olon boshlanib, ko'chalari barrikadalar bilan qamrab olingan Prussiya poytaxti",
+          "evidence": "Berlin ko'chalari barrikadalar bilan qamrab olindi"
+        },
+        {
+          "kind": "place",
+          "place": "Sitsiliya oroli",
+          "event": "1860-yili Garibaldi harbiy kuchlari kelib tushgan va Palermo shahri egallangan orol",
+          "evidence": "o'z harbiy kuchlari bilan Sitsiliya oroliga kelib tushdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "O'rta asr feodal tartiblari kapitalistik taraqqiyotga to'siq bo'lib keldi",
+          "effect": "Germaniyada siyosiy tarqoqlik hukm surdi va yagona umumiy bozor vujudga kelmadi",
+          "evidence": "Germaniya inqilobining asosiy sababi - O'rta asr feodal tartiblarining kapitalistik taraqqiyotga to'siq bo'lib kelayotganligi edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "1847-yilgi iqtisodiy inqiroz ishsizlik va ish haqining pasayishiga olib keldi",
+          "effect": "Och qolgan aholi ko'chaga chiqdi va Berlinda qo'zg'olon boshlandi",
+          "evidence": "ishsizlikning ko'payishiga, ish haqining pasayishiga olib keldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kapitalizmni yanada rivojlantirish zarurati Italiyani birlashtirishni taqozo etdi",
+          "effect": "1861-yili Birlashgan Italiya qirolligi tashkil etildi",
+          "evidence": "lizmni yanada rivojlantirish zarurati"
+        },
+        {
+          "kind": "number",
+          "number": "50",
+          "unit": "yil",
+          "meaning": "Shimoliy Germaniya ittifoqi konstitutsiyasi 50 yildan ko'proq vaqt davomida amal qilib keldi",
+          "evidence": "50 yildan ko'proq vaqt davomida"
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "1800–1870-yillarda Rossiya",
+      "page": 110,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1812",
+          "date_label": "1812-yil",
+          "event": "Fransiya bilan urushdagi g'alabadan keyin ham samoderjaviye va krepostnoylik saqlanib qoldi",
+          "evidence": "1812-yilgi Fransiya - Rossiya urushida erishilgan g'alabadan keyin"
+        },
+        {
+          "kind": "date_event",
+          "date": "1825",
+          "date_label": "1825-yil 14-dekabr",
+          "event": "Dekabristlar qo'zg'oloni boshlandi, biroq u imperatorga sodiq harbiy kuchlar tomonidan bostirildi",
+          "evidence": "1825-yilning 14-dekabr kuni"
+        },
+        {
+          "kind": "date_event",
+          "date": "1853-1856",
+          "date_label": "1853-1856-yillar",
+          "event": "Qrim urushida Rossiya mag'lubiyatga uchradi va uning iqtisodiy qoloqligi namoyon bo'ldi",
+          "evidence": "1853-1856-yillardagi Qrim urushida Rossiya mag'lubiyatga uchradi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1861",
+          "date_label": "1861-yil 19-fevral",
+          "event": "Aleksandr II Krepostnoy huquqni bekor qilish to'g'risidagi Qonunni imzoladi",
+          "evidence": "imperator Aleksandr II 1861-yil 19-fevralda"
+        },
+        {
+          "kind": "date_event",
+          "date": "1864",
+          "date_label": "1864-yil",
+          "event": "Butun Kavkaz Rossiya tarkibiga kiritilib, O'rta Osiyoni bosib olish uchun harakatlar boshlandi",
+          "evidence": "1864-yilga kelib, butun Kavkaz Rossiya tarkibiga kiritildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1867",
+          "date_label": "1867-yil",
+          "event": "Turkiston general-gubernatorligi tashkil etildi",
+          "evidence": "1867-yilda Qo'qon xonligi va Buxoro amirligining bosib olingan hududlarida Turkiston general-gubernatorligi tashkil etildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1867",
+          "date_label": "1867-yil",
+          "event": "Rossiya o'ziga qarashli bo'lgan Alyaskani AQSHga sotdi",
+          "evidence": "1867-yilda Rossiya o'ziga qarashli bo'lgan Alyaskani AQSHga sotdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1800-1870",
+          "date_label": "1800-1870-yillar",
+          "event": "Rossiya ma'naviy hayotida chuqur o'zgarishlar yuz berib, madaniyati yuksak darajaga ko'tarildi",
+          "evidence": "1800-1870-yillari Rossiya ma'naviy hayotida chuqur o'zgarishlar yuz berdi"
+        },
+        {
+          "kind": "person",
+          "person": "Pavel Pestel",
+          "role": "Janubiy jamiyat arbobi, Vatan urushi qatnashchisi",
+          "activity": "Rus haqiqati loyihasida samoderjaviye va krepostnoylikni yo'q qilib, respublika joriy etishni ko'zda tutdi",
+          "evidence": "Vatan urushi qatnashchisi Pavel Pestel edi"
+        },
+        {
+          "kind": "person",
+          "person": "Nikita Muravyov",
+          "role": "Shimoliy jamiyat arbobi",
+          "activity": "Rossiyani konstitutsiyaviy monarxiya deb e'lon qilishni ko'zda tutgan konstitutsiya loyihasini tayyorladi",
+          "evidence": "Nikita Muravyov tayyorlagan konstitutsiya loyihasi Rossiyani konstitutsiyaviy monarxiya deb e'lon qilishni"
+        },
+        {
+          "kind": "person",
+          "person": "Aleksandr II",
+          "role": "Rossiya imperatori",
+          "activity": "1861-yil 19-fevralda krepostnoy huquqni bekor qilish to'g'risidagi Qonunni imzoladi",
+          "evidence": "imperator Aleksandr II 1861-yil 19-fevralda"
+        },
+        {
+          "kind": "person",
+          "person": "Aleksandr Sergeyevich Pushkin",
+          "role": "buyuk rus shoiri",
+          "activity": "Zamonaviy rus adabiy tiliga asos soldi va Ruslan va Lyudmila, Yevgeniy Onegin kabi asarlar yaratdi",
+          "evidence": "A.S. Pushkin zamonaviy rus adabiy tiliga asos soldi"
+        },
+        {
+          "kind": "person",
+          "person": "Pyotr Ilich Chaykovskiy",
+          "role": "buyuk rus kompozitori",
+          "activity": "Yevgeniy Onegin, Uxlayotgan go'zal va Shelkunchik operalarini yaratib, jahon teatrlarida shuhrat qozondi",
+          "evidence": "P.I. Chaykovskiy XIX asr rus madaniyatining yirik namoyandasi"
+        },
+        {
+          "kind": "term",
+          "term": "Samoderjaviye",
+          "definition": "Rossiyada hukmdorning cheklanmagan hokimiyatiga asoslangan boshqaruv tartibi",
+          "evidence": "Samoderjaviye - Rossiyada hukmdorning cheklanmagan hokimiyati"
+        },
+        {
+          "kind": "term",
+          "term": "Dekabristlar harakati",
+          "definition": "Zodagonlar farzandlari tomonidan samoderjaviye va krepostnoylikka qarshi olib borilgan kurash",
+          "evidence": "Bu kurash Rossiya tarixiga -Dekabristlar harakati- nomi bilan kirgan"
+        },
+        {
+          "kind": "term",
+          "term": "Chek yer",
+          "definition": "Krepostnoy huquq bekor qilinganda dehqonlarga berilgan yer uchastkasi",
+          "evidence": "Dehqonlarga berilgan yer chek yer deb ataldi"
+        },
+        {
+          "kind": "term",
+          "term": "Vikup",
+          "definition": "Krepostnoylikdan ozod bo'lgan dehqonning o'ziga berilgan yerni haq to'lash evaziga sotib olishi",
+          "evidence": "Vikup - krepostnoylikdan ozod bo'lgan dehqonning o'ziga berilgan yerni haq to'lash evaziga sotib olishi"
+        },
+        {
+          "kind": "place",
+          "place": "Qrim",
+          "event": "1853-1856-yillardagi urushda Rossiya mag'lubiyatga uchragan yarim orol",
+          "evidence": "1853-1856-yillardagi Qrim urushida"
+        },
+        {
+          "kind": "place",
+          "place": "Sibir",
+          "event": "Dekabristlar harakati rahbarlaridan boshqalari surgun qilingan hudud",
+          "evidence": "dorga osildi, qolgan ko'pchiliklari esa Sibir"
+        },
+        {
+          "kind": "cause",
+          "cause": "Krepostnoylik tartiblari Rossiya jamiyati taraqqiyotiga katta to'siq bo'lib qoldi",
+          "effect": "Manufaktura ishlab chiqarishi hukmron bo'lib, sanoat ilg'or davlatlardan orqada qoldi",
+          "evidence": "postnoylik tartiblari jamiyat taraqqiyotiga katta g'ov bo'lib qoldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qrim urushidagi mag'lubiyat Rossiyaning iqtisodiy qoloqligini ko'rsatdi",
+          "effect": "Krepostnoy huquq bekor qilinmasa kapitalizm rivojlana olmasligi ayon bo'ldi",
+          "evidence": "bu mag'lubiyat krepostnoy huquq bekor qilinmas ekan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xalq g'azabga kelishi mumkinligi va dehqonlarning soliq to'lovchi bo'lib qolishi",
+          "effect": "Hukumat dehqonlarni ozod qilib, ularga yer berishga majbur bo'ldi",
+          "evidence": "Shunday qilinmasa xalq g'azabga kelishi mumkin edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "1861-yilgacha saqlanib qolgan krepostnoy huquq va qoloq siyosiy tizim",
+          "effect": "Rossiya XIX asrning 70-yillarida ham Yevropaning eng qoloq davlatlaridan biri bo'lib qoldi",
+          "evidence": "1861-yilgacha saqlanib qolgan krepostnoy huquq hamda kishilar"
+        },
+        {
+          "kind": "number",
+          "number": "49",
+          "unit": "yil",
+          "meaning": "Dehqonlar vikup uchun davlat bergan qarzni 49 yil davomida foizi bilan to'lashga majbur bo'ldi",
+          "evidence": "Dehqonlar bu qarzni 49 yil"
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "1800–1870-yillarda Amerika Qo'shma Shtatlari",
+      "page": 115,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asrning 30-yillari",
+          "date_label": "XIX asrning 30-yillari",
+          "event": "AQSHda sanoat inqilobi boshlandi va sanoat tez sur'atlar bilan rivojlandi",
+          "evidence": "XIX asrning 30-yillarida sanoat inqilobi boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning 50-yillari oxiri",
+          "date_label": "XIX asrning 50-yillari oxiri",
+          "event": "Jon Braun Virjiniyada qullar qo'zg'olonini ko'tarishga urinib ko'rdi",
+          "evidence": "XIX asrning 50-yillarining oxirlarida Jon Braun Virjiniyada qullar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1860",
+          "date_label": "1860-yil",
+          "event": "Prezidentlik saylovida Respublikachilar partiyasi vakili Avraam Linkoln g'alaba qozondi",
+          "evidence": "1860-yili AQSH prezidentligi uchun bo'lgan saylovlarda Respublikachilar partiyasi vakili Avraam Linkoln g'alaba qozondi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1861",
+          "date_label": "1861-yil aprel",
+          "event": "Shimol bilan Janub o'rtasida fuqarolar urushi boshlandi",
+          "evidence": "1861-yilning aprel oyida Shimol bilan Janub o'rtasida fuqarolar urushi boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1865",
+          "date_label": "1865-yil aprel",
+          "event": "Fuqarolar urushi Shimolning g'alabasi bilan tugadi",
+          "evidence": "Fuqarolar urushi 1865-yilning aprelida Shimolning g'alabasi bilan tugadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1865",
+          "date_label": "1865-yil dekabr",
+          "event": "Fuqarolar urushi natijasida AQSHda qullik bekor qilindi va mamlakat yaxlitligi saqlandi",
+          "evidence": "1865-yilning dekabr oyida AQSHda qullik bekor qilindi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1866",
+          "date_label": "1866-yil",
+          "event": "Kongress konstitutsiyaga tuzatish kiritib, qora tanlilar huquqlarini tenglashtirdi",
+          "evidence": "1866-yili AQSH Kongressi tomonidan konstitutsiyaga tuzatish kiritildi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1809-1865",
+          "date_label": "1809-1865-yillar",
+          "event": "Avraam Linkoln yashab ijod qilgan va AQSH prezidenti sifatida faoliyat yuritgan davr",
+          "evidence": "arbobi Avraam Linkoln (1809-1865) edi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1850",
+          "date_label": "1850-yillardan boshlab",
+          "event": "AQSHda bir nechta tasviriy san'at va musiqa maktablari ochildi",
+          "evidence": "1850-yillardan boshlab, bir nechta tasviriy san'at va musiqa maktablari ochildi"
+        },
+        {
+          "kind": "person",
+          "person": "Jon Braun",
+          "role": "abolitsionist, oq tanli fermer",
+          "activity": "Virjiniyada qullar qo'zg'olonini ko'tarishga urinib, 22 kishidan iborat qurolli guruh tuzdi",
+          "evidence": "Braun tuzgan qurolli guruh 22 kishidan iborat bo'lgan"
+        },
+        {
+          "kind": "person",
+          "person": "Avraam Linkoln",
+          "role": "AQSH prezidenti, Respublikachilar partiyasi arbobi",
+          "activity": "Qulchilikka qarshi chiqib, 1860-yilgi saylovda g'alaba qozondi va fermerlarga yer bepul tarqatishni va'da qildi",
+          "evidence": "Linkolnning qulchilikka qarshi chiqishlarini ishchilar, fermerlar, burjuaziyaning ilg'or qismi qo'llab-quvvatladi"
+        },
+        {
+          "kind": "person",
+          "person": "Fenimor Kuper",
+          "role": "amerikalik yozuvchi",
+          "activity": "Pionerlar asarida tabiat va hindularni bo'ysundirish mavzusini davom ettirdi",
+          "evidence": "Keyinchalik Fenimor Kuper Pionerlar, German Melvill Mobi Dik asarlarida shu mavzuni davom ettirdi"
+        },
+        {
+          "kind": "person",
+          "person": "Mark Tven",
+          "role": "amerikalik yozuvchi",
+          "activity": "Eskilik bilan yangilik, eski va yangi dunyo o'rtasidagi kurash mavzusini asarlarida aks ettirdi",
+          "evidence": "Mark Tven kabi mashhur yozuvchilari asarlarida"
+        },
+        {
+          "kind": "term",
+          "term": "Abolitsionistlar",
+          "definition": "Amerikada qullikni bekor qilish tarafdorlari bo'lgan harakat ishtirokchilari",
+          "evidence": "Abolitsionistlar (bekor qilish) - Amerikada qullikni bekor qilish tarafdorlari"
+        },
+        {
+          "kind": "term",
+          "term": "Plantatsiya xo'jaligi",
+          "definition": "AQSHning janubida qullar mehnatiga asoslangan yirik dehqonchilik xo'jaligi",
+          "evidence": "Plantatsiya xo'jaligi - AQSHning janubida qullar mehnatiga asoslangan yirik dehqonchilik xo'jaligi"
+        },
+        {
+          "kind": "term",
+          "term": "Konfederatsiya",
+          "definition": "Aniq maqsad yoki harakatni amalga oshirish uchun birlashgan suveren davlatlar ittifoqi",
+          "evidence": "Konfederatsiya (ittifoq, birlashma) - aniq maqsad yoki harakatni amalga oshirish uchun birlashgan suveren davlatlar ittifoqi"
+        },
+        {
+          "kind": "term",
+          "term": "Gomstedlar to'g'risidagi Qonun",
+          "definition": "G'arbdagi bo'sh yotgan katta yer jamg'armasini fermerlarga bepul bo'lib berish to'g'risidagi qonun",
+          "evidence": "G'arbdagi bo'sh yotgan katta yer"
+        },
+        {
+          "kind": "place",
+          "place": "Virjiniya",
+          "event": "Jon Braun qullar qo'zg'olonini ko'tarishga uringan shtat",
+          "evidence": "Jon Braun Virjiniyada qullar"
+        },
+        {
+          "kind": "place",
+          "place": "Allegan tog'i",
+          "event": "Jon Braun qurolli guruhi bilan joylashib olib, qo'zg'olonni plantatsiyalarga yoyishni rejalashtirgan joy",
+          "evidence": "U Allegan tog'ida joylashib olib"
+        },
+        {
+          "kind": "cause",
+          "cause": "Buyuk Britaniya va AQSHda sanoat rivojlanib, paxtaga talab oshib bordi",
+          "effect": "Qullarni ekspluatatsiya qilish kuchaydi va plantatsiya xo'jaligi saqlanib qoldi",
+          "evidence": "Buyuk Britaniya fabrikalari AQSHdan paxta xarid qilishni ko'paytirib borganlari sari qullarni ekspluatatsiya qilish kuchaydi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Linkoln saylanishi bilan hukumatda quldorlar hukmronligiga barham berildi",
+          "effect": "Janub shtatlari AQSHdan chiqib, konfederatsiya tuzdi va urush muqarrar bo'ldi",
+          "evidence": "janubiy shtatlarda qulchilikka asoslangan alohida davlat tuzishga kirishdilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Kuchlar nisbati jihatidan Shimol ustun edi",
+          "effect": "Fuqarolar urushi 1865-yil aprelida Shimolning g'alabasi bilan tugadi",
+          "evidence": "Kuchlar nisbati jihatidan Shimol ustun edi"
+        },
+        {
+          "kind": "number",
+          "number": "22",
+          "unit": "kishi",
+          "meaning": "Jon Braun tuzgan qurolli guruh 22 kishidan iborat bo'lib, ulardan 5 nafari qora tanli edi",
+          "evidence": "22 kishidan iborat bo'lgan"
+        },
+        {
+          "kind": "number",
+          "number": "5",
+          "unit": "nafar",
+          "meaning": "Braunning qurolli guruhida 5 nafar qora tanli kishi ham bor edi",
+          "evidence": "Guruhda 5 nafar qora tanli kishi ham bor edi"
+        }
+      ]
+    }
+  ]
+}

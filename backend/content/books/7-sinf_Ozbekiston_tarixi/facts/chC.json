@@ -1,0 +1,1161 @@
+{
+  "chapter": "III BOB. MOVAROUNNAHRDA MUSTAQIL DAVLATLARNING TASHKIL TOPISHI",
+  "topics": [
+    {
+      "number": 15,
+      "title": "G‘aznaviylar",
+      "page": 53,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "962–963",
+          "date_label": "962–963-yillar",
+          "event": "Alptegin G‘azna viloyatini noib va lashkar amiri sifatida boshqargan, G‘aznaviylar davlati shu davrda shakllangan.",
+          "evidence": "962–963yillarda G‘azna viloyatini Alptegin noib va lash kar amiri sifatida boshqargan"
+        },
+        {
+          "kind": "date_event",
+          "date": "977–997",
+          "date_label": "Sobuqtegin hukmronligi",
+          "event": "G‘aznaviylarning siyosiy nufuzi ortib, ular somoniylar tomonidan rasman e’tirof etilgan.",
+          "evidence": "siyosiy nufuzi So buqtegin davrida (977–997) ortib, somoniylar tomonidan e’ti rof etilgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "997–1030",
+          "date_label": "Mahmud G‘aznaviy hukmronligi",
+          "event": "Davlat hududi kengayib, G‘aznaviylar Sharqning eng qudratli davlatlaridan biriga aylangan.",
+          "evidence": "Mahmud G‘aznaviy davrida (997–1030) esa uning hududi kengayib, Sharqning eng qudratli davlatlaridan biriga aylangan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1017",
+          "date_label": "1017-yil",
+          "event": "Mahmud G‘aznaviy Xorazm davlatini ham o‘z saltanatiga qo‘shib olgan.",
+          "evidence": "so‘ng Xorazm davlatini (1017) ham o‘z saltanatiga qo‘shib olgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1030–1040",
+          "date_label": "Mas’ud G‘aznaviy hukmronligi",
+          "event": "Mamlakat viloyatlari birin-ketin qo‘ldan chiqarilib, davlat tanazzulga yuz tutgan.",
+          "evidence": "Mas’ud G‘aznaviy davrida (1030–1040) mamlakat viloyatlari birinketin qo‘ldan chiqarilib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1186",
+          "date_label": "1186-yil",
+          "event": "G‘aznaviylar davlati butunlay tugatilib, sulolaning hukmronligi barham topgan.",
+          "evidence": "Oqibatda 1186yilda G‘aznaviylar davlati butunlay tugatilgan"
+        },
+        {
+          "kind": "person",
+          "person": "Alptegin",
+          "role": "G‘azna viloyatining noibi va lashkar amiri, G‘aznaviylar davlatiga asos solgan sarkarda",
+          "activity": "G‘azna va Kobul viloyatlarini mustaqil idora etishga intilib, G‘aznaviylar davlatiga asos soldi va poytaxtni G‘azna shahrida qaror toptirdi.",
+          "evidence": "U G‘azna va Kobul viloyatlarini mustaqil idora etishga intilib, G‘aznaviylar davlatiga asos solgan"
+        },
+        {
+          "kind": "person",
+          "person": "Mahmud G‘aznaviy",
+          "role": "G‘aznaviylar davlatining 997–1030-yillarda hukmronlik qilgan sultoni",
+          "activity": "Davlat hududini kengaytirib, uni Sharqning eng qudratli davlatlaridan biriga aylantirdi; Xuroson va Xorazmni saltanatiga qo‘shib oldi.",
+          "evidence": "Mahmud G‘aznaviy Xuroson hududlarini, so‘ng Xorazm davlatini (1017) ham o‘z saltanatiga qo‘shib olgan"
+        },
+        {
+          "kind": "person",
+          "person": "Mas’ud G‘aznaviy",
+          "role": "Mahmud G‘aznaviydan keyin 1030–1040-yillarda hukmronlik qilgan sulton",
+          "activity": "Uning davrida mamlakat viloyatlari birin-ketin qo‘ldan chiqarilib, davlat tanazzulga yuz tutdi.",
+          "evidence": "Ammo Mas’ud G‘aznaviy davrida (1030–1040) mamlakat viloyatlari birinketin qo‘ldan chiqarilib"
+        },
+        {
+          "kind": "person",
+          "person": "Abu Rayhon Beruniy",
+          "role": "G‘azna saroyida yashab ijod qilgan buyuk mutafakkir va olim",
+          "activity": "«Qonuni Ma’sudiy» asarini sulton Ma’sudga bag‘ishlagan, ilmiy merosi bilan G‘azna madaniyatini yuksaltirgan.",
+          "evidence": "Beruniy “Qonuni Ma’ sudiy”, Bayhaqiy “Tarixi Ma’ sudiy” asarlarini sulton Ma’sudga bag‘ishlaganlar"
+        },
+        {
+          "kind": "person",
+          "person": "Abul Qosim Firdavsiy",
+          "role": "G‘aznaviylar davrida ijod qilgan mashhur shoir",
+          "activity": "Mashhur «Shohnoma» dostonini yozib, uni sulton Mahmud G‘aznaviyga taqdim etgan.",
+          "evidence": "Abul Qosim Firdavsiy mashhur “Shohnoma” dostonini Mahmud G‘aznaviyga taqdim etgan"
+        },
+        {
+          "kind": "term",
+          "term": "hojib ul-hujob",
+          "definition": "G‘aznaviylar davlatidagi oliy harbiy mansablardan biri; iqtidorli lashkar boshilariga berilgan.",
+          "evidence": "hojib ulhujob yoki hojib ulbuzruk kabi oliy harbiy mansablarga tayinlab"
+        },
+        {
+          "kind": "term",
+          "term": "devon",
+          "definition": "Vazirlik tizimidagi idora; harbiy, elchilik, moliya va xabar-pochta ishlarini yuritgan.",
+          "evidence": "hamda xabarpochta devonlar faoliyat ko‘rsatgan"
+        },
+        {
+          "kind": "term",
+          "term": "voliy",
+          "definition": "Viloyat hukmdori unvoni; shahar hokimi esa rais deb yuritilgan.",
+          "evidence": "Viloyat hukmdori voliy, shahar hokimi rais deb yuritilgan"
+        },
+        {
+          "kind": "term",
+          "term": "rais",
+          "definition": "Shahar hokimi unvoni; viloyat darajasidagi hukmdor voliy deb atalgan.",
+          "evidence": "shahar hokimi rais deb yuritilgan"
+        },
+        {
+          "kind": "term",
+          "term": "kutvol",
+          "definition": "Shaharlarda boshqaruv ishlarini amalga oshirgan mansabdor; viloyatda bu ishni amid bajargan.",
+          "evidence": "shaharlarda esa kutvol tomonidan amalga oshirilgan"
+        },
+        {
+          "kind": "place",
+          "place": "G‘azna",
+          "event": "G‘aznaviylar davlatining poytaxti bo‘lib, unda madrasalar, masjidlar, saroylar va kutubxonalar barpo etilgan.",
+          "evidence": "poytaxti G‘azna shahrida qaror topgan"
+        },
+        {
+          "kind": "place",
+          "place": "Xorazm",
+          "event": "1017-yilda Mahmud G‘aznaviy tomonidan zabt etilib, G‘aznaviylar saltanatiga qo‘shib olindi.",
+          "evidence": "Xorazm davlatini (1017) ham o‘z saltanatiga qo‘shib olgan"
+        },
+        {
+          "kind": "place",
+          "place": "Balx",
+          "event": "G‘azna, Nishopur va Lohur bilan birga madrasa, masjid va saroylar qurilgan shaharlar qatoridan joy olgan.",
+          "evidence": "G‘azna, Balx, Nishopur, Lohur va boshqa shaharlarda ko‘plab madrasalar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Harbiy va mudofaa ishlari to‘liq turk hojiblari qo‘lida bo‘lgan.",
+          "effect": "Somoniylar davlatining turk hojiblaridan iborat saroy qo‘shinining siyosiy nufuzi nihoyatda kuchaydi.",
+          "evidence": "Chunki harbiy va mudofaa ishlari to‘la ular qo‘lida edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Turkiy sarkardalar somoniylar davlatiga katta xizmatlar qilgan.",
+          "effect": "Ular hojib ul-hujob kabi oliy harbiy mansablarga tayinlanib, ayrim viloyatlarni boshqarish huquqini oldilar.",
+          "evidence": "Turkiy sarkardalarning xizmatlari evaziga somoniy amirlari aksariyat iqtidorli lashkar boshilarni"
+        },
+        {
+          "kind": "cause",
+          "cause": "Somoniylar sulolasi barham topgan, ya’ni ularning hukmronligi tugagan.",
+          "effect": "Mahmud G‘aznaviy Xuroson hududlarini, so‘ng Xorazm davlatini o‘z saltanatiga qo‘shib oldi.",
+          "evidence": "Somoniylar sulolasi barham topgach, Mahmud G‘aznaviy Xuroson hududlarini"
+        },
+        {
+          "kind": "number",
+          "number": "400",
+          "unit": "nafar va undan ortiq",
+          "meaning": "Poytaxt saroyida ijod qilgan olim, shoir va san’atkorlarning soni.",
+          "evidence": "Poytaxt saroyida 400 dan ortiq olim, shoir va san’atkorlar ijod qilgan"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "Qoraxoniylar",
+      "page": 55,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "X asr o‘rtalari",
+          "date_label": "X asr o‘rtalari",
+          "event": "Qarluqlar yag‘mo, chigil, o‘g‘uz va boshqa qabilalar bilan yagona ittifoqqa birlashib, Xoqoniya davlatini tashkil etdilar.",
+          "evidence": "X asr o‘rtalarida qarluqlar yag‘mo, chigil, o‘g‘uz va boshqa qabilalar bilan yagona ittifoqqa birlashdilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "992",
+          "date_label": "992-yil",
+          "event": "Horun Bug‘roxon boshliq qoraxoniylar Movarounnahrga hujum boshlab, Buxoroni qarshiliksiz ishg‘ol qildilar.",
+          "evidence": "992yilda Horun Bug‘roxon boshliq qoraxoniylar Movarounnahrga hujum boshlaydilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "996",
+          "date_label": "996-yil",
+          "event": "Qoraxoniylar Movarounnahr tomon yana hujum boshlab, Sobuqtegin bilan shartnoma tuzdilar.",
+          "evidence": "996yilda qoraxoniylar Movarounnahr tomon yana hujum boshlaydilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "999",
+          "date_label": "999-yil",
+          "event": "Buxoro Nasr Eloqxon boshchiligida zabt etilib, somoniylar hukmronligi batamom barham topdi.",
+          "evidence": "999yilda Buxoroning Nasr Eloqxon boshchiligida qoraxoniylar tomonidan zabt etilishi bilan somoniylar hukmronligi batamom barham topdi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1006–1008",
+          "date_label": "1006 va 1008-yillar",
+          "event": "Qoraxoniylar Xuroson ustiga ikki marta qo‘shin tortdilar, Mahmud G‘aznaviy esa Xurosonni o‘z tasarrufida saqlab qoldi.",
+          "evidence": "1006va 1008yillar da qoraxoniylar Xuroson ustiga ikki marta qo‘shin tortadilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1038",
+          "date_label": "1038-yil",
+          "event": "Ibrohim Bo‘ritegin Amudaryo bo‘yi viloyatlari – Xuttalon, Vaxsh va Chag‘oniyonni g‘aznaviylardan tortib oldi.",
+          "evidence": "Ibrohim Bo‘ritegin 1038yilda Amudaryo bo‘yi viloyatlari – Xutta lon, Vaxsh va Chag‘oniyonni g‘aznaviylardan tortib oladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1137",
+          "date_label": "1137-yil",
+          "event": "Qoraxitoylar Xo‘jand shahri yaqinida qoraxoniylarning eloqxoni Mahmudga qaqshatqich zarba berdilar.",
+          "evidence": "1137yilda ular Xo‘jand shahri yaqinida qoraxoniylarning eloqxoni Mahmudga qaq shatqich zarba beradilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1141",
+          "date_label": "1141-yil",
+          "event": "Bo‘lib o‘tgan jangda qoraxitoylar g‘alaba qozonib, Qoraxoniylar davlati tugatildi.",
+          "evidence": "1141yilda bo‘lib o‘tgan jangda qoraxitoylar g‘alaba qozonadi"
+        },
+        {
+          "kind": "person",
+          "person": "Abdulkarim Sotuk Bug‘roxon",
+          "role": "Qoraxoniylar davlatining asoschisi, 859–955-yillarda yashagan hukmdor",
+          "activity": "Qarluq, chigil va yag‘mo qabilalarini birlashtirib, Qoraxoniylar davlatining barpo etilishiga asos soldi.",
+          "evidence": "Asoschisi – Abdulkarim Sotuk Bug‘roxon (859–955)"
+        },
+        {
+          "kind": "person",
+          "person": "Horun Bug‘roxon",
+          "role": "992-yilda Movarounnahrga hujumni boshlagan qoraxoniylar hukmdori",
+          "activity": "Uning boshchiligida qoraxoniylar Buxoroni qarshiliksiz ishg‘ol qilib, Somoniylar davlatiga katta xavf tug‘dirdi.",
+          "evidence": "992yilda Horun Bug‘roxon boshliq qoraxoniylar Movarounnahrga hujum boshlaydilar"
+        },
+        {
+          "kind": "person",
+          "person": "Sobuqtegin",
+          "role": "G‘aznadagi noib, keyinchalik Xuroson noibi etib tayinlangan sarkarda",
+          "activity": "Yigirma ming kishilik qo‘shin bilan Movarounnahrga kelib, qoraxoniylar noibi qo‘shinlarini tormor etdi.",
+          "evidence": "Nuh ibn Mansur qoraxoniylarga qarshi kurashish uchun G‘aznadagi noibi Sobuqteginni yordamga chaqiradi"
+        },
+        {
+          "kind": "person",
+          "person": "Ibrohim Bo‘ritegin",
+          "role": "Qoraxoniylarning mahalliy hukmdori, «bug‘roxon» unvonini olgan davlat arbobi",
+          "activity": "Xuttalon, Vaxsh va Chag‘oniyonni tortib olib, Movarounnahr va Farg‘onani bo‘ysundirdi va mustaqil siyosat yuritdi.",
+          "evidence": "Bundan foydalangan qoraxoniylarning mahalliy hukmdori Ibrohim Bo‘ritegin"
+        },
+        {
+          "kind": "person",
+          "person": "Go‘rxon",
+          "role": "Qoraxitoylarning hukmdori, Bolasog‘unni o‘z davlati poytaxtiga aylantirgan sarkarda",
+          "activity": "Qoraxitoylarni Yettisuvga joylashtirib, Sirdaryoning o‘rta oqimi va Movarounnahrga yurishlar uyushtirdi.",
+          "evidence": "Qoraxitoylar hukmdori Go‘rxon Bolasog‘un shahrini Qoraxitoylar davlatining poytaxtiga aylantirgan"
+        },
+        {
+          "kind": "term",
+          "term": "qoraxon",
+          "definition": "Qoraxoniylar hukmdorlarining unvoni; «buyuk xon» ma’nosini anglatgan.",
+          "evidence": "o‘zlarini “qoraxon”, ya’ni “buyuk xon” deb ataydilar"
+        },
+        {
+          "kind": "term",
+          "term": "eloqxon",
+          "definition": "Qoraxoniylar davlatida viloyatni boshqargan hukmdor; unvon faqat xonadon a’zolariga berilgan.",
+          "evidence": "Ularni eloqxon yoki takin (yoki tegin)lar boshqarardilar"
+        },
+        {
+          "kind": "term",
+          "term": "iqto",
+          "definition": "Yerdan foydalanish tartiboti; yerlar harbiy va ma’muriy xizmat evaziga hadya qilingan.",
+          "evidence": "XI asrdan boshlab yerdan foydalanishda iqto tartiboti juda keng yoyiladi"
+        },
+        {
+          "kind": "term",
+          "term": "vaqf yerlari",
+          "definition": "Musulmon ruhoniylari tasarrufiga o‘tgan yerlar; ularning siyosiy ta’siri ortishi bilan ko‘paygan.",
+          "evidence": "vaqf yerlari ham ancha ko‘paydi"
+        },
+        {
+          "kind": "term",
+          "term": "barzikorlar",
+          "definition": "Qishloq xo‘jaligida ishlagan, soliq va majburiyatlar yuklangan dehqonlar toifasi.",
+          "evidence": "bu davrda barzikorlar ilk o‘rta asrlardagi kadivar larga nisbatan ozod hisoblansalarda"
+        },
+        {
+          "kind": "place",
+          "place": "Bolasog‘un",
+          "event": "Sharqiy qoraxoniylar davlatining poytaxti bo‘lib, keyinchalik qoraxitoylar davlatining markaziga aylandi.",
+          "evidence": "Biri poytaxti Bola sog‘unda bo‘lgan Sharqiy qoraxoniylar"
+        },
+        {
+          "kind": "place",
+          "place": "Samarqand",
+          "event": "Movarounnahr qoraxoniylar davlatining markazi bo‘lib, unda Movarounnahr eloqxoni taxtga o‘tirgan.",
+          "evidence": "ikkinchisi markazi Samarqandda bo‘lgan Movarounnahrdagi Qora xoniylar davlati edi"
+        },
+        {
+          "kind": "place",
+          "place": "Buxoro",
+          "event": "992-yilda qarshiliksiz ishg‘ol qilinib, 999-yilda Nasr Eloqxon tomonidan zabt etilgan shahar.",
+          "evidence": "Qoraxoniylar Buxoroni qarshiliksiz ishg‘ol qiladilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qoraxoniylar Xurosonni ham o‘z davlatiga qo‘shib olish uchun harakat qildilar.",
+          "effect": "Qoraxoniylar va g‘aznaviylar o‘rtasida shiddatli urushlar boshlandi.",
+          "evidence": "Qoraxoniylar endi Xurosonni ham o‘z davlatiga qo‘shib olish uchun harakat qiladilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "G‘aznaviylarning saljuqiylar bilan jiddiy kurashi boshlandi.",
+          "effect": "Bundan foydalangan Ibrohim Bo‘ritegin Amudaryo bo‘yi viloyatlarini g‘aznaviylardan tortib oldi.",
+          "evidence": "G‘aznaviylarning saljuqiylar bilan jiddiy kurashi boshlanadi. Bundan foydalangan qoraxoniylarning mahalliy hukmdori Ibrohim Bo‘ritegin"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qoraxoniylar mahalliy mulkdor dehqonlarga tazyiq o‘tkazdilar.",
+          "effect": "Dehqonlar jon saqlash maqsadida o‘z yerlarini tashlab ketishga majbur bo‘ldilar.",
+          "evidence": "Qoraxoniylarning tazyiqi oqibatida mulkdor dehqonlar jon saqlash maqsadida o‘z yerlarini tashlab ketishga majbur bo‘ladilar"
+        },
+        {
+          "kind": "number",
+          "number": "20 000",
+          "unit": "kishi",
+          "meaning": "Sobuqtegin Movarounnahrga olib kelgan qo‘shinning soni.",
+          "evidence": "U yigirma ming kishilik qo‘shin bilan Movarounnahrga yetib keladi"
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "Xorazm davlati va uning yuksalishi",
+      "page": 60,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "995",
+          "date_label": "995-yil",
+          "event": "Ma’mun ibn Muhammad Kat shahrini ishg‘ol qilib, Xorazmning ikkala qismini birlashtirdi va Xorazmshoh unvonini oldi.",
+          "evidence": "995yilda Gurganch miri Ma’mun ibn Muhammad Kat shahrini ishg‘ol qilib, Xorazmning ikkala qismini birlashtirdi va Xorazmshoh unvoniga sazovor bo‘ldi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1017",
+          "date_label": "1017-yil",
+          "event": "Mahmud G‘aznaviy Xorazmni zabt etib, uni o‘z mustaqilligidan mahrum qildi.",
+          "evidence": "1017yilda Mahmud G‘aznaviy tomonidan zabt etilib, o‘z mustaqilligidan mahrum bo‘l gan Xorazm"
+        },
+        {
+          "kind": "date_event",
+          "date": "1040",
+          "date_label": "1040-yil",
+          "event": "Xorazm Saljuqiylar davlatiga qaram bo‘lib qoldi, unga noib tayinlana boshlandi.",
+          "evidence": "1040yilda Saljuqiylar davlatiga qaram bo‘lib qola"
+        },
+        {
+          "kind": "date_event",
+          "date": "1153",
+          "date_label": "1153-yil",
+          "event": "Ko‘chmanchi o‘g‘uzlar Sulton Sanjarga qarshi isyon ko‘tarib, Saljuqiylar davlatini zaiflashtirdilar.",
+          "evidence": "1153yilda Sulton Sanjarga qarshi ko‘chmanchi o‘g‘uzlar isyon ko‘taradilar"
+        },
+        {
+          "kind": "date_event",
+          "date": "1187–1193",
+          "date_label": "1187–1193-yillar",
+          "event": "Takash Nishopur, Ray va Marv shaharlarini zabt etib, davlat hududini kengaytirdi.",
+          "evidence": "1187–1193yillarda u Nisho pur, Ray va Marv shaharlarini zabt etadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1194",
+          "date_label": "1194-yil",
+          "event": "Saljuqiylar sultoni To‘g‘rulga qaqshatqich zarba berilib, Eron Xorazmga bo‘ysundirildi.",
+          "evidence": "1194yilda esa saljuqiylar sultoni To‘g‘rulga qaqshatqich zarba berib"
+        },
+        {
+          "kind": "date_event",
+          "date": "1210",
+          "date_label": "1210-yil",
+          "event": "Talos vodiysida qoraxitoylar mag‘lubiyatga uchrab, Yettisuvgacha bo‘lgan yerlar Xorazmga o‘tdi.",
+          "evidence": "1210yilda Talos vodiysida qoraxitoylar mag‘lubiyatga uchraydi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1212",
+          "date_label": "1212-yil",
+          "event": "Samarqandliklar Xorazmshohga qarshi qo‘zg‘olon ko‘tardilar, u shafqatsizlik bilan bostirildi.",
+          "evidence": "1212yilda esa samarqandliklar qo‘zg‘olon ko‘tardilar"
+        },
+        {
+          "kind": "person",
+          "person": "Ma’mun ibn Muhammad",
+          "role": "Gurganch miri, ma’muniylar sulolasining asoschisi va Xorazmshoh",
+          "activity": "Kat shahrini ishg‘ol qilib, Xorazmning ikkala qismini birlashtirdi; afrig‘iylar sulolasini barham toptirdi.",
+          "evidence": "Kat shahrini ishg‘ol qilib, Xorazmning ikkala qismini birlashtirdi"
+        },
+        {
+          "kind": "person",
+          "person": "Anushtegin",
+          "role": "Saljuqiylar hukmdori Malikshoh tomonidan Xorazmga tayinlangan noib",
+          "activity": "Xorazmni noib sifatida boshqarib, anushteginiylar sulolasining Xorazmdagi hukmronligiga asos soldi.",
+          "evidence": "Saljuqiylar hukmdori Malikshoh o‘z ma’murlaridan Anushteginni Xorazmga noib qilib tayinlaydi"
+        },
+        {
+          "kind": "person",
+          "person": "Otsiz",
+          "role": "1127–1156-yillarda hukmronlik qilgan xorazmshoh, Xorazm mustaqilligining asoschisi",
+          "activity": "Turkman va qipchoqlarni bo‘ysundirib, Sirdaryo etaklari va Mang‘ishloqni egallab, Xorazmshohlar davlati poydevorini barpo etdi.",
+          "evidence": "Xorazmning mustaqilligi Qut biddin Muhammadning o‘g‘li Otsiz (1127–1156) nomi bilan bog‘liqdir"
+        },
+        {
+          "kind": "person",
+          "person": "Takash",
+          "role": "1172–1200-yillarda hukmronlik qilgan xorazmshoh",
+          "activity": "Nishopur, Ray va Marvni zabt etib, saljuqiylar sultonini yengdi va Eronni Xorazmga bo‘ysundirdi.",
+          "evidence": "Otsizning nabirasi Takash davrida juda kengayadi"
+        },
+        {
+          "kind": "person",
+          "person": "Alovuddin Muhammad",
+          "role": "1200–1220-yillarda hukmronlik qilgan xorazmshoh, «Iskandari soniy» deb ulug‘langan hukmdor",
+          "activity": "Movarounnahrni qoraxitoylar qaramligidan ozod etish siyosatini davom ettirib, davlat hududini Yettisuvgacha kengaytirdi.",
+          "evidence": "1206yildan boshlab Mova rounnahrni qoraxitoylarning qaramligidan ozod etishga kirishildi"
+        },
+        {
+          "kind": "term",
+          "term": "devonxona",
+          "definition": "Xorazmshohlar davlatining markaziy boshqarmasi; unda moliya, soliq va harbiy mahkamalar ishlagan.",
+          "evidence": "Gurganchda shoh qarorgohi, markaziy boshqarma – devonxona tashkil etildi"
+        },
+        {
+          "kind": "term",
+          "term": "xo‘jayi buzruk",
+          "definition": "Vazirlik lavozimining unvoni; devonxona ishlariga mas’ul bo‘lgan eng yuqori amaldor.",
+          "evidence": "vazirlik – xo‘jayi buz ruk unvoniga ega bo‘lgan"
+        },
+        {
+          "kind": "term",
+          "term": "xorazmshoh",
+          "definition": "Xorazm davlatining oliy va mutlaq hokimi; bu unvon ma’muniylar davrida qayta tiklangan.",
+          "evidence": "Xorazmshoh davlatning oliy va mutlaq hokimi hisoblanardi"
+        },
+        {
+          "kind": "term",
+          "term": "Iskandari soniy",
+          "definition": "Muhammad Xorazmshohga berilgan laqab; «Ikkinchi Iskandar» ma’nosini anglatadi.",
+          "evidence": "Hukmdor Muhammad Xorazmshoh esa “Iskandari soniy” deb ulug‘langan"
+        },
+        {
+          "kind": "place",
+          "place": "Ko‘hna Urganch",
+          "event": "Ma’muniylar davrida Xorazmshohlar davlatining poytaxtiga aylangan qadimiy shahar.",
+          "evidence": "Ko‘hna Urganch Xorazmshohlar davla ti ning poytaxtiga aylandi"
+        },
+        {
+          "kind": "place",
+          "place": "Kat shahri",
+          "event": "995-yilda Ma’mun ibn Muhammad tomonidan ishg‘ol qilinib, Xorazmning birlashishiga asos bo‘lgan.",
+          "evidence": "Kat shahrini ishg‘ol qilib, Xorazmning ikkala qismini birlashtirdi"
+        },
+        {
+          "kind": "place",
+          "place": "Mang‘ishloq yarimoroli",
+          "event": "Otsiz tomonidan Sirdaryo etaklari bilan birga egallab, Xorazm davlati tarkibiga kiritilgan.",
+          "evidence": "Sirdaryo etaklari va Mang‘ishloq yarimorolini egallaydi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ko‘chmanchi o‘g‘uzlar Sulton Sanjarga qarshi isyon ko‘tardilar.",
+          "effect": "Saljuqiylar davlati keskin zarbaga uchrab, zaiflashib qoldi.",
+          "evidence": "ko‘chmanchi o‘g‘uzlar isyon ko‘taradilar. Buning oqibatida  Salju qiylar  davlati  keskin  zarbaga  uchrab,  zaiflashib qoladi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Saljuqiylar davlati zaiflashib, undan bir qancha viloyatlar ajralib ketdi.",
+          "effect": "Xorazmning hukmronlik doirasi kengaytirilib, uning mustaqilligi yanada mustahkamlandi.",
+          "evidence": "Xorazmning hukm ronlik doirasi kengaytirilib, uning mustaqilligi yanada mustahkamlanadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xorazmshohlarning harbiy yurishlari, soliq siyosatidagi beboshlik va amirlar zulmi davom etdi.",
+          "effect": "Shahar va qishloq aholisining Xorazmshohga qarshi noroziligi oshdi.",
+          "evidence": "shahar va qishloq aholisining Xorazm shohga qarshi noroziligini oshirdi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Viloyat hukmdorlarining isyonlari, xalq noroziligi va saroydagi fitnalar avj oldi.",
+          "effect": "Davlat beqaror holatga tushib, uzoq yashamadi.",
+          "evidence": "davlatning beqarorlik holatini yaqqol ko‘rsatar edi. Shuning uchun ham bu davlat ko‘p yashamadi"
+        },
+        {
+          "kind": "number",
+          "number": "27",
+          "unit": "hukmdor",
+          "meaning": "Muhammad Xorazmshoh saroyida doimo itoatda bo‘lgan hukmdorlar va ularning vakillari soni.",
+          "evidence": "Uning saroyida 27 hukmdor va ularning vakillari doimo itoatda bo‘lgan"
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "Xorazmshoh va Chingizxon munosabatlari",
+      "page": 63,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1206",
+          "date_label": "1206-yil",
+          "event": "Onon daryosi bo‘yidagi qurultoyda Temuchin ulug‘ xon deb e’lon qilinib, Mo‘g‘ullar davlatiga asos solindi.",
+          "evidence": "qurultoyida Temuchin ulug‘ xon (qoon) deb e’lon qilinadi, unga “Chingiz” laqabi beriladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1216",
+          "date_label": "1216-yil",
+          "event": "Chingizxon huzuriga Xorazmshohning Bahouddin Roziy boshchiligidagi elchilari yuborildi.",
+          "evidence": "1216yilda Chingizxon huzuriga Xorazmshoh Bahouddin Roziy boshchiligida o‘z el chi larini yuboradi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1218",
+          "date_label": "1218-yil bahori",
+          "event": "Sulton Muhammad Chingizxon elchilarini Buxoro shahrida qabul qildi.",
+          "evidence": "Chingizxon elchilarini Sulton Muhammad 1218yilning"
+        },
+        {
+          "kind": "date_event",
+          "date": "1218",
+          "date_label": "1218-yil",
+          "event": "Chingizxonning besh yuz tuyali savdo karvoni O‘tror shahrida ushlanib qoldi.",
+          "evidence": "Ammo karvon yo‘lda chegara shahar O‘trorda ushlanib qoladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIII asr boshlari",
+          "date_label": "XIII asr boshlari",
+          "event": "Xorazmshohlar saltanati qo‘shinining umumiy soni Chingizxon harbiy kuchiga nisbatan birmuncha oshiqroq edi.",
+          "evidence": "XIII asrning boshlarida Xorazmshohlar saltanati qo‘shinining umumiy soni Chingizxon harbiy kuchiga nisbatan birmuncha oshiqroq edi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1155–1227",
+          "date_label": "1155–1227-yillar",
+          "event": "Mo‘g‘ul urug‘ va qabilalarini qudratli davlatga birlashtirish Temuchin nomi bilan bog‘liq.",
+          "evidence": "Mo‘g‘ul urug‘ va qabilalari qud ratli davlatga birlashuvi va jipslashuvi Temuchin (1155–1227) nomi bilan bog‘liq"
+        },
+        {
+          "kind": "person",
+          "person": "Temuchin (Chingizxon)",
+          "role": "Mo‘g‘ullar davlatiga asos solgan ulug‘ xon, 1155–1227-yillarda yashagan sarkarda",
+          "activity": "Urug‘ va qabilalarni birlashtirib, 1206-yilda «Chingiz» laqabini oldi va qo‘shni viloyatlarni o‘z hukmronligi ostida birlashtirdi.",
+          "evidence": "unga “Chingiz” laqabi beriladi hamda Mo‘-g‘ullar davlatiga asos solinadi"
+        },
+        {
+          "kind": "person",
+          "person": "Bahouddin Roziy",
+          "role": "Xorazmshoh tomonidan Chingizxon huzuriga yuborilgan elchilar boshlig‘i",
+          "activity": "1216-yilda elchilik missiyasini boshqarib, ikki davlat o‘rtasidagi dastlabki muzokaralarni olib bordi.",
+          "evidence": "Xorazmshoh Bahouddin Roziy boshchiligida o‘z el chi larini yuboradi"
+        },
+        {
+          "kind": "person",
+          "person": "Mahmud Yalavoch",
+          "role": "Xorazmlik savdogar, Chingizxon elchilariga boshliq qilib tayinlangan elchi",
+          "activity": "Ikki davlat to‘g‘risida ma’lumot to‘plab qaytdi, keyinchalik Xorazmshohning josusi bo‘lishga majbur qilindi.",
+          "evidence": "xorazmlik savdogar Mahmud Yalavoch boshliq qilib tayinlanadi"
+        },
+        {
+          "kind": "person",
+          "person": "G‘oyirxon (Inolchiq)",
+          "role": "O‘tror shahrining noibi, karvonni talashda aybdor hisoblangan amaldor",
+          "activity": "Uning buyrug‘i bilan Chingizxonning savdo karvoni talanib, savdogarlarning hammasi qirib tashlandi.",
+          "evidence": "O‘tror noibi ning xiyonatkorona xattiharakatidan nihoyatda g‘azablandi"
+        },
+        {
+          "kind": "person",
+          "person": "Turkon xotun",
+          "role": "Sulton Muhammadning onasi, «turklar onasi» nomi bilan shuhrat topgan davlat arbobi",
+          "activity": "Qipchoq oqsuyaklari bilan urug‘-qabila aloqalari orqali bog‘lanib, saroydagi fitnalarga boshchilik qilgan.",
+          "evidence": "Turkon xotun, ya’ni “turklar onasi” nomi bilan shuhrat topgan Sulton Muhammadning volidasi"
+        },
+        {
+          "kind": "term",
+          "term": "qurultoy",
+          "definition": "Mo‘g‘ul urug‘ va qabila boshliqlarining umumiy yig‘ilishi; unda ulug‘ xon saylangan.",
+          "evidence": "mo‘g‘ul urug‘ va qabila boshliqlarining qurultoyida"
+        },
+        {
+          "kind": "term",
+          "term": "qoon",
+          "definition": "Mo‘g‘ullardagi oliy hukmdor unvoni; «ulug‘ xon» ma’nosini anglatgan.",
+          "evidence": "Temuchin ulug‘ xon (qoon) deb e’lon qilinadi"
+        },
+        {
+          "kind": "term",
+          "term": "Davlat kengashi",
+          "definition": "Sulton Muhammad hukmronligining so‘ngida ta’sis etgan maslahat organi; unga 6 nafar vakil jalb etilgan.",
+          "evidence": "Sulton Muhammad o‘z hukmronligining so‘ngida “Davlat ken gashi”ni ta’sis etadi"
+        },
+        {
+          "kind": "term",
+          "term": "josus",
+          "definition": "Yashirin ravishda razvedka ma’lumotlari to‘plovchi shaxs; Xorazmshoh Mahmud Yalavochni shunday vazifaga jalb qilmoqchi bo‘lgan.",
+          "evidence": "keyinchalik xon qarorgohida Xorazmshohning josusi bo‘lib qolishini talab qiladi"
+        },
+        {
+          "kind": "place",
+          "place": "Onon daryosi",
+          "event": "1206-yilda bo‘yida mo‘g‘ul urug‘ va qabila boshliqlarining qurultoyi o‘tkazilgan joy.",
+          "evidence": "1206yil da Onon daryosi bo‘yida chaqi ril gan mo‘g‘ul urug‘ va qabila boshliqlarining qurultoyida"
+        },
+        {
+          "kind": "place",
+          "place": "O‘tror",
+          "event": "Chegara shahar bo‘lib, unda Chingizxonning savdo karvoni ushlanib, talon-toroj qilindi.",
+          "evidence": "chegara shahar O‘trorda ushlanib qoladi"
+        },
+        {
+          "kind": "place",
+          "place": "Buxoro",
+          "event": "1218-yil bahorida Chingizxon elchilari Sulton Muhammad tomonidan shu shaharda qabul qilindi.",
+          "evidence": "bahorida Buxoro shahrida qabul qiladi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Chingizxon Sulton Muhammadni eng ardoqli o‘g‘illari qatorida ko‘rishini bildirdi.",
+          "effect": "Xorazmshoh buni Chingizxonning uni o‘ziga qaram qilib olish niyati deb tushundi.",
+          "evidence": "“Chingiz xonning Xorazmshohni o‘ziga qaram qilib olish niyati bor” degan ma’noni anglatardi"
+        },
+        {
+          "kind": "cause",
+          "cause": "O‘tror noibi karvonni talab, savdogarlarning hammasini qirib tashladi.",
+          "effect": "Chingizxon nihoyatda g‘azablanib, aybdorlarni jazolash talabi bilan elchi yubordi.",
+          "evidence": "tomonidan karvon talanib, savdogarlarning hammasi qirib tashlanadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xorazmshoh elchini o‘ldirib, mulozimlarini sharmanda qilib qaytardi.",
+          "effect": "Ikki davlat o‘rtasida savdo va elchilik aloqalari uzilib, urush boshlandi.",
+          "evidence": "har ikki buyuk davlatlar o‘rtasida urush boshlanishiga bahona bo‘ldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mansabdorlar itoatsizlik qilib, ayrim viloyat hokimlari amalda mustaqil edi.",
+          "effect": "Xorazmshoh hokimiyati ma’muriy jihatdan mustahkam bo‘lmay, davlat inqirozga yuz tutdi.",
+          "evidence": "Xorazmshoh hokimiyati siyo siy, xususan, ma’muriy boshqaruv jiha tidan mustahkam emas edi"
+        },
+        {
+          "kind": "number",
+          "number": "500",
+          "unit": "tuya",
+          "meaning": "Chingizxonning 1218-yilda Xorazmga jo‘natgan savdo karvonidagi tuyalar soni.",
+          "evidence": "ortilgan 500 tuyadan hamda 450 musulmon savdogarlardan tashkil topgan edi"
+        },
+        {
+          "kind": "number",
+          "number": "450",
+          "unit": "savdogar",
+          "meaning": "O‘tror yaqinida talangan karvon tarkibiga kirgan musulmon savdogarlar soni.",
+          "evidence": "450 musulmon savdogarlardan tashkil topgan edi"
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "Muhammad Xorazmshohning mamlakat mudofaasiga oid tadbirlari va uning oqibati",
+      "page": 66,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1219",
+          "date_label": "1219-yil kuzi",
+          "event": "Chingizxon Xorazmshohga qarshi yurish boshlab, mo‘g‘ul qo‘shini dastlab O‘tror ustiga yurdi.",
+          "evidence": "1219yilning kuzida Chingizxon Xorazmshohga qarshi yurish boshlaydi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1220",
+          "date_label": "1220-yil fevrali",
+          "event": "Chingizxon Buxoro ustiga qo‘shin tashlab, shaharni egallashga kirishdi.",
+          "evidence": "1220yilning fevrali da Chingizxon Buxoro ustiga qo‘shin tashladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1220",
+          "date_label": "1220-yil 16-fevral",
+          "event": "Buxoro mo‘g‘ullar tomonidan to‘liq egallanib, talon-toroj etildi.",
+          "evidence": "Shu yilning 16fevralida mo‘g‘ullar tomonidan Buxoro to‘liq egallanib, ta lontoroj etiladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1220",
+          "date_label": "1220-yil marti",
+          "event": "Mo‘g‘ullar Movarounnahrning eng yirik shahri bo‘lgan Samarqand tomon yo‘l oldi.",
+          "evidence": "1220yilning mart oyida mo‘ g‘ullar Movarounnahrning eng mashhur va yirik shahri bo‘lgan Samarqand tomon yo‘l oladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1221",
+          "date_label": "1221-yil boshlari",
+          "event": "Chingizxon qo‘shinlarining Xorazm poytaxti Urganchga yurishi boshlandi.",
+          "evidence": "1221yilning boshlarida Chingizxon qo‘ shin larining Urganchga yurishi boshlandi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1995",
+          "date_label": "1995-yil",
+          "event": "O‘zbekistonda Najmiddin Kubro tavalludining 850 yilligi keng nishonlandi.",
+          "evidence": "Najmiddin Kubro taval ludining 850 yilligi nishonlandi"
+        },
+        {
+          "kind": "person",
+          "person": "Sulton Muhammad Xorazmshoh",
+          "role": "Xorazmshohlar davlatining hukmdori, mudofaa rejasini tanlagan sarkarda",
+          "activity": "Qo‘shinni bir joyga to‘plashdan qo‘rqib, uni turli shaharlarga bo‘lib yubordi va mudofaa taktikasini qo‘llashga qaror qildi.",
+          "evidence": "Sulton nazarida bir joyga to‘plangan qo‘shin uni taxtdan ag‘darib tashlashi mumkin edi"
+        },
+        {
+          "kind": "person",
+          "person": "Jaloliddin",
+          "role": "Sulton Muhammadning o‘g‘li, harbiy kengashda faol fikr bildirgan sarkarda",
+          "activity": "Harbiy kuchlarni asosiy nuqtalarga to‘plab, dushmanga bir zarba berishni taklif etdi.",
+          "evidence": "Sul ton Muhammadning o‘g‘li Jaloliddin, Xo‘jand hokimi Temur Malik singari sarkardalar harbiy kuchlarini asosiy nuqtalarga to‘plab, dushmanga zarba berishni taklif etadilar"
+        },
+        {
+          "kind": "person",
+          "person": "Temur Malik",
+          "role": "Xo‘jand shahrining hokimi va mohir sarkarda",
+          "activity": "Xo‘jandliklar bilan birga qariyb bir oy shaharni mudofaa qilib, mo‘g‘ullarga kutilmagan qarshilik ko‘rsatdi.",
+          "evidence": "shahar hokimi Temur Malikning qahramonligi bilan xo‘jandliklar mo‘g‘ullarga kutilmagan qarshilikni ko‘rsatadilar"
+        },
+        {
+          "kind": "person",
+          "person": "G‘oyirxon",
+          "role": "O‘tror qal’asining noibi, shaharni so‘nggi nafasigacha himoya qilgan mudofaachi",
+          "activity": "O‘zini karvon savdogarlarining o‘ldirilishida aybdor his qilib, arkda mudofaani yana bir oygacha davom ettirdi.",
+          "evidence": "G‘oyirxon o‘zini Chingizxon savdogarlari va sarbonlarini o‘ldirishda ayb dor his qilib, so‘nggi nafasigacha dushmanga qarshi kura shadi"
+        },
+        {
+          "kind": "person",
+          "person": "Najmiddin Kubro",
+          "role": "Ulug‘ shayx, kubroviylik tariqatining asoschisi, Urganch mudofaasi rahnamosi",
+          "activity": "«Yo Vatan, yo sharofatli o‘lim» xitobi bilan muridlarini kurashga ilhomlantirib, jangda qahramonlarcha halok bo‘ldi.",
+          "evidence": "“Yo Vatan, yo sharofatli o‘lim” deb aytgan xitobi rahnamoligida"
+        },
+        {
+          "kind": "term",
+          "term": "mudofaa taktikasi",
+          "definition": "Qo‘shinni shaharlarga bo‘lib joylashtirib, dushmanga qarshi himoya janglarini olib borish usuli.",
+          "evidence": "urushda mudofaa taktikasini qo‘llashga qaror qiladi"
+        },
+        {
+          "kind": "term",
+          "term": "ark",
+          "definition": "Qal’aning ichki mustahkam qismi; O‘tror va Buxoroda mudofaa aynan shu yerda davom etgan.",
+          "evidence": "mudofaachilarning bir qismi O‘tror arkiga joylashib olib"
+        },
+        {
+          "kind": "term",
+          "term": "qamal",
+          "definition": "Shaharni o‘rab olib, uzoq vaqt davomida egallashga qaratilgan harbiy harakat.",
+          "evidence": "Manbalarga ko‘ra, O‘tror qamali 5 oy davom etgan"
+        },
+        {
+          "kind": "term",
+          "term": "kubroviylik tariqati",
+          "definition": "Najmiddin Kubro asos solgan tasavvufiy tariqat; uning taxallusi «dinning ulug‘ yulduzi» ma’nosini bergan.",
+          "evidence": "kubroviylik tariqatining asoschisi"
+        },
+        {
+          "kind": "place",
+          "place": "O‘tror",
+          "event": "Sirdaryo bo‘yidagi mustahkam qal’ali chegara shahar; qamal besh oy davom etgan.",
+          "evidence": "O‘tror mustahkam qal’ali chegara shahar edi"
+        },
+        {
+          "kind": "place",
+          "place": "Buxoro",
+          "event": "1220-yil fevralida talon-toroj etilib, Chingizxon amri bilan yoqib yuborilgan qadimiy shahar.",
+          "evidence": "Chingizxon amri bilan Buxoro yoqib yuboriladi"
+        },
+        {
+          "kind": "place",
+          "place": "Urganch",
+          "event": "Xorazmshohlar poytaxti; yetti oy mudofaa qilinib, keyin suv bosib vayron etilgan.",
+          "evidence": "Urganchliklar dushmanning harbiy kuch va zirhli qurollarining ustunligiga qaramay o‘z ona shahrini yetti oy mudofaa qiladilar"
+        },
+        {
+          "kind": "cause",
+          "cause": "Sulton bir joyga to‘plangan qo‘shin uni taxtdan ag‘darishi mumkin deb qo‘rqdi.",
+          "effect": "Qo‘shinlar turli shaharlarga bo‘lib yuborilib, mamlakat katta xavf ostida qoldi.",
+          "evidence": "Shu tariqa mamlakat katta xavf ostida qoldi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Chingizxon qang‘li qo‘shinlariga shahar olingach omonlik va’da qildi.",
+          "effect": "Ular taslim bo‘lib, shahar talandi va 30 minglik qang‘li qo‘shini qirib tashlandi.",
+          "evidence": "Qang‘li qo‘shinlariga u shahar olingach omonlik va’da qildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mo‘g‘ullar cho‘pon orqali suruvni darvoza yonidan haydab, pistirmada turdilar.",
+          "effect": "Och qolgan aholi darvozadan chiqib ketdi va ko‘plab odamlar qatl etildi.",
+          "evidence": "Och qolgan aholi darvozadan chiqib suruv ketidan quvib ketadilar"
+        },
+        {
+          "kind": "number",
+          "number": "5",
+          "unit": "oy",
+          "meaning": "O‘tror qamali davom etgan muddat; manbalarga ko‘ra, shahar shuncha vaqt himoyalangan.",
+          "evidence": "Manbalarga ko‘ra, O‘tror qamali 5 oy davom etgan"
+        },
+        {
+          "kind": "number",
+          "number": "110 000",
+          "unit": "nafar",
+          "meaning": "Xorazmshohlar poytaxti Urganchda turgan xorazmlik qo‘shinlarning soni.",
+          "evidence": "Xorazmshohlar poytaxtida xorazmliklarning 110000 nafar qo‘shini turardi"
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "Jaloliddin Manguberdining Xorazm taxtiga o‘tirishi",
+      "page": 71,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1220",
+          "date_label": "1220-yil apreli",
+          "event": "Muhammad Xorazmshoh Nishopurga kelib, mo‘g‘ullar ta’qibidan yashirinishga majbur bo‘ldi.",
+          "evidence": "1220yilning aprelida Muhammad Xorazmshoh Nishopurga keladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1220",
+          "date_label": "1220-yil dekabri",
+          "event": "Muhammad Xorazmshoh Ashura orolida Jaloliddinni taxt vorisi etib tayinlab, vafot etdi.",
+          "evidence": "o‘g‘li Jaloliddinni taxt vorisi etib tayinlab, 1220yilning dekabrida vafot etadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1221",
+          "date_label": "1221-yil",
+          "event": "G‘azna yaqinidagi Parvon dashtidagi jangda Jaloliddin mo‘g‘ullar ustidan g‘alaba qozondi.",
+          "evidence": "Parvon jangi (1221)"
+        },
+        {
+          "kind": "date_event",
+          "date": "1221",
+          "date_label": "1221-yil 25-noyabr",
+          "event": "Sind daryosi bo‘yida Jaloliddin va Chingizxon qo‘shinlari o‘rtasida qattiq jang bo‘ldi.",
+          "evidence": "Daryo bo‘yida 1221yilning 25noyabrida ikki o‘rtada qattiq jang bo‘ladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1198–1231",
+          "date_label": "1198–1231-yillar",
+          "event": "Jaloliddin Manguberdi shu yillarda yashab, Xorazmshohlar davlatining so‘nggi hukmdori bo‘ldi.",
+          "evidence": "Jaloliddin Manguberdi (to‘liq ismi Jaloliddin ibn Alo vuddin Muhammad) (1198–1231)"
+        },
+        {
+          "kind": "date_event",
+          "date": "1220–1231",
+          "date_label": "1220–1231-yillar",
+          "event": "Jaloliddin Manguberdi Xorazmshohlar davlatining so‘nggi hukmdori sifatida taxtda o‘tirdi.",
+          "evidence": "Xorazmshohlar davlatining so‘nggi hukmdori (1220–1231), mohir sarkarda"
+        },
+        {
+          "kind": "person",
+          "person": "Muhammad Xorazmshoh",
+          "role": "Xorazmshohlar davlatining hukmdori, 1220-yil dekabrida vafot etgan sulton",
+          "activity": "Buyuk shaharlar qo‘ldan ketgach chekinib, Kaspiy dengizidagi Ashura orolida Jaloliddinni taxt vorisi etib tayinladi.",
+          "evidence": "Oxiri Kaspiy dengizidagi Ashura orolida o‘g‘li Jaloliddinni taxt vorisi etib tayinlab"
+        },
+        {
+          "kind": "person",
+          "person": "Jaloliddin Manguberdi",
+          "role": "Xorazmshohlar davlatining so‘nggi hukmdori va mohir sarkarda",
+          "activity": "Valiyon qal’asi yaqinida mo‘g‘ullarni tormor etib, Parvon jangida g‘alaba qozondi va dushmanga qarshi tengsiz janglar olib bordi.",
+          "evidence": "Jaloliddin Valiyon qal’asini qamal qilayotgan mo‘g‘ul qo‘shinlariga qarshi hujum qilib, ularni tormor etadi"
+        },
+        {
+          "kind": "person",
+          "person": "Shiki Xutuxu no‘yon",
+          "role": "Chingizxon tomonidan Jaloliddinga qarshi yuborilgan mo‘g‘ul sarkardasi",
+          "activity": "Qirq besh minglik qo‘shin bilan yuborilib, Parvon dashtidagi jangda mag‘lubiyatga uchradi.",
+          "evidence": "Chingizxon Jaloliddin Manguberdiga qarshi Shiki Xutuxu no‘yonni 45 minglik qo‘shin bilan jo‘natadi"
+        },
+        {
+          "kind": "person",
+          "person": "Chingizxon",
+          "role": "Mo‘g‘ullar davlatining ulug‘ xoni, bosqinchi qo‘shinlarning sardori",
+          "activity": "Jaloliddinning jasoratiga qoyil qolib, uni ta’qib qilish fikridan qaytdi va o‘g‘illariga ibrat qilib ko‘rsatdi.",
+          "evidence": "Jaloliddinning jasoratiga qoyil qolgan Chingizxon  uni  ta’qib  qilish  fikridan qaytadi"
+        },
+        {
+          "kind": "term",
+          "term": "taxt vorisi",
+          "definition": "Hukmdor vafotidan keyin taxtga o‘tirishi belgilangan merosxo‘r; Jaloliddin shu maqomga tayinlangan.",
+          "evidence": "o‘g‘li Jaloliddinni taxt vorisi etib tayinlab"
+        },
+        {
+          "kind": "term",
+          "term": "Sultonband",
+          "definition": "Marv vohasining sug‘orish tarmoqlaridagi bosh to‘g‘on; mo‘g‘ullar tomonidan buzib tashlangan.",
+          "evidence": "Marv vohasining sug‘orish tarmoqlarining bosh to‘g‘oni – mashhur Sultonband buzib tashlandi"
+        },
+        {
+          "kind": "term",
+          "term": "Ipak yo‘li",
+          "definition": "Xitoy va Hindistondan Turkiston orqali Yevropaga o‘tgan savdo yo‘li; bosqin davrida harakatsiz qolgan.",
+          "evidence": "Xitoy va Hindistondan Turkiston orqali Kichik Osiyo va Yevropa tomon kesib o‘tgan mashhur Ipak yo‘li"
+        },
+        {
+          "kind": "term",
+          "term": "Manguberdi",
+          "definition": "Jaloliddinning laqabi; burnida xoli bo‘lgani uchun avval «Mankburni» deb atalgan.",
+          "evidence": "Jaloliddin burnida xoli (mank) bo‘lgani uchun Mankburni nomi bilan atalgan"
+        },
+        {
+          "kind": "place",
+          "place": "Ashura oroli",
+          "event": "Kaspiy dengizidagi orol; unda Muhammad Xorazmshoh taxt vorisini tayinlab, vafot etgan.",
+          "evidence": "Oxiri Kaspiy dengizidagi Ashura orolida"
+        },
+        {
+          "kind": "place",
+          "place": "Parvon dashti",
+          "event": "G‘azna yaqinidagi dasht; unda Jaloliddin mo‘g‘ullar ustidan yirik g‘alaba qozongan.",
+          "evidence": "G‘azna yaqinidagi Parvon dashtidagi jangda Jaloliddin g‘alaba qozondi"
+        },
+        {
+          "kind": "place",
+          "place": "Sind daryosi",
+          "event": "1221-yil 25-noyabrida bo‘yida qattiq jang bo‘lib, Jaloliddin otda suzib o‘tgan daryo.",
+          "evidence": "Jaloliddin taslim bo‘lishni xohlamay otda Sind daryosiga sakrab, narigi qirg‘oqqa suzib o‘tadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Parvon g‘alabasidan keyin o‘ljalarni taqsimlashda kelishmovchilik boshlandi.",
+          "effect": "Lashkarboshilar qo‘shindan ajralib ketib, Jaloliddinning harbiy kuchi zaiflashdi.",
+          "evidence": "o‘ljalarni taqsimlashda Jaloliddinning lashkarboshilari o‘rtasida o‘zaro kelishmovchilik boshlanadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Jaloliddinning harbiy kuchi zaiflashib qoldi.",
+          "effect": "Chingizxon G‘aznaga askar tortib, ajralib chiqqanlarni alohida-alohida tormor etdi.",
+          "evidence": "Fursatdan foydalangan Chingizxon G‘aznaga as kar tortadi va ajralib chiqqanlarni alohidaalohida tormor etadi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xorazm va Movarounnahrda ziroatchi aholi soni keskin kamayib ketdi.",
+          "effect": "Ekin maydonlari qisqarib, dehqonchilik inqirozga uchradi.",
+          "evidence": "Xorazm va Movarounnahrning ziroatchi aholisi soni keskin kamayib ketishi oqibatida ekin maydonlari jiddiy qisqarib, dehqonchilik inqirozga uchraydi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Mohir hunarmandlar majburan Mo‘g‘ulistonga yuborildi.",
+          "effect": "Qurolaslaha yasash, ipak matolar to‘qish va shishasozlik hunarmandchiligi barham topdi.",
+          "evidence": "Mohir hunarmandlar g‘oliblarning yurtini obod etish uchun majburan Mo‘g‘ulistonga yuborildi"
+        },
+        {
+          "kind": "number",
+          "number": "45 000",
+          "unit": "kishi",
+          "meaning": "Chingizxon Jaloliddinga qarshi yuborgan Shiki Xutuxu no‘yon qo‘shinining soni.",
+          "evidence": "Shiki Xutuxu no‘yonni 45 minglik qo‘shin bilan jo‘natadi"
+        },
+        {
+          "kind": "number",
+          "number": "10 000",
+          "unit": "nafar",
+          "meaning": "Sind daryosi bo‘yidagi jangni yakunlagan pistirmadagi saralangan mo‘g‘ul askarlari soni.",
+          "evidence": "Mo‘g‘ullarning pis tir malarga qo‘yilgan 10 ming nafar saralangan askari jangni yakunlaydi"
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "Jaloliddin Manguberdi mohir sarkarda",
+      "page": 74,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "1224",
+          "date_label": "1224-yil",
+          "event": "Jaloliddin Hindistonda o‘z noiblarini tayinlab, Iroqqa yo‘l oldi.",
+          "evidence": "1224yili bu yerda o‘z noiblarini tayinlab, o‘zi esa Iroqqa yo‘l oladi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1225",
+          "date_label": "1225-yil mayi",
+          "event": "Jaloliddin Manguberdi Ozarbayjon tomon yurish qilib, Marog‘a shahrini jangsiz qo‘lga kiritdi.",
+          "evidence": "1225yil mayda Jalo liddin"
+        },
+        {
+          "kind": "date_event",
+          "date": "1225",
+          "date_label": "1225-yil avgusti",
+          "event": "Garni qal’asi yaqinida gurjilarning 60 minglik qo‘shini tormor keltirildi.",
+          "evidence": "1225yil avgustda Garni qal’asi yaqinida gurjilarning 60 minglik qo‘shinini tormor keltiradi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1226",
+          "date_label": "1226-yil",
+          "event": "Gurjiston to‘liq egallanib, Ozarbayjon va Shirvon ham Xorazmshoh qo‘liga o‘tdi.",
+          "evidence": "1226yilda Gurjiston to‘liq egallanadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1227",
+          "date_label": "1227-yil sentabri",
+          "event": "Isfahon yaqinida Jaloliddin Taynol no‘yon boshliq mo‘g‘ul qo‘shinini yengdi.",
+          "evidence": "1227yil sentabrda Isfahon yaqinida Jaloliddin Manguberdi mo‘g‘ullarning Taynol no‘yon boshliq qo‘shinini yengadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1230",
+          "date_label": "1230-yil avgusti",
+          "event": "Arzinjon yaqinidagi jangda Jaloliddin kuchlari birlashgan qo‘shindan mag‘lubiyatga uchradi.",
+          "evidence": "1230yil avgustda Ko‘niya, Jazira, Damashq va Misrning birlashgan qo‘shinidan Jaloliddin Manguberdi kuchlari Arzinjon yaqinidagi jangda mag‘lubiyatga uch radi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1231",
+          "date_label": "1231-yil",
+          "event": "Mo‘g‘ullar Ozarbayjonga bostirib kirib, Jaloliddinni ta’qib etishdi va u fojiali halok bo‘ldi.",
+          "evidence": "1231yil da Ozarbayjonga bostirib kirib, Jalo liddin Mangu berdini ta’qib etishadi"
+        },
+        {
+          "kind": "date_event",
+          "date": "1256",
+          "date_label": "1256-yil",
+          "event": "Mo‘g‘ullar O‘rta Sharqni bosib oldi; bu voqea Jaloliddin vafotidan ancha keyin ro‘y berdi.",
+          "evidence": "Bu voqea ancha keyin – 1256yili ro‘y berdi"
+        },
+        {
+          "kind": "person",
+          "person": "Jaloliddin Manguberdi",
+          "role": "Xorazmshohlar davlatining sultoni, mohir sarkarda va vatanparvar hukmdor",
+          "activity": "Shimoliy Hindistonda davlat barpo etib, Eronda g‘alabalar qozondi va o‘n bir yil davomida mo‘g‘ullarni O‘rta Sharqqa qo‘ymadi.",
+          "evidence": "Shu tariqa, Jaloliddin Manguberdi Shimoliy Hindistonda davlat barpo qiladi"
+        },
+        {
+          "kind": "person",
+          "person": "Shamsuddin Eltutmish",
+          "role": "Dehli sultoni, Jaloliddinga qarshi chiqishdan bosh tortgan hukmdor",
+          "activity": "Jaloliddinga maktub yo‘llab, uni barcha musulmonlarning sultoni deb atadi va unga qarshi qurol ko‘tarmasligini bildirdi.",
+          "evidence": "Dehli sultoni Shamsuddin El tut mish Xorazmshohga bun day maktub yo‘l laydi"
+        },
+        {
+          "kind": "person",
+          "person": "G‘iyosiddin Pirshoh",
+          "role": "Jaloliddinning ukasi, akasiga birinchi bo‘lib xiyonat qilgan shahzoda",
+          "activity": "Akasi qarorgohini tark etib, mustaqil davlat barpo etishga urindi va Kirmon hokimi tomonidan qatl etildi.",
+          "evidence": "Jaloliddinning ukasi G‘iyosiddin Pirshoh birinchi bo‘lib xiyo nat yo‘liga o‘tdi"
+        },
+        {
+          "kind": "person",
+          "person": "Nosir",
+          "role": "Bag‘dod xalifasi, Jaloliddinga qarshi qurolli kurash olib borgan hukmdor",
+          "activity": "Xorazmshohning kuchayishidan xavfsirab, unga qarshi 20 minglik qo‘shin yubordi, ammo bu qo‘shin Basra yaqinida tormor keltirildi.",
+          "evidence": "Jaloliddin bu yurishga umumrahbar bo‘lishni o‘ylab, Bag‘dod xalifasi Nosirga maktub yo‘llaydi"
+        },
+        {
+          "kind": "person",
+          "person": "Sharofulmulk",
+          "role": "Jaloliddin davlatining bosh vaziri, sultonga qarshi fitna uyushtirgan amaldor",
+          "activity": "Hokimiyatni tortib olish maqsadida maktublar yozdi, maktubi qo‘lga tushgach hibsga olinib qatl etildi.",
+          "evidence": "Jaloliddinning bosh vaziri Sharofulmulk  sultonga  fitna uyush tira boshlaydi"
+        },
+        {
+          "kind": "term",
+          "term": "xutba",
+          "definition": "Juma namozida hukmdor nomini tilga olish; unga tobe hududlarda bu bilan bo‘ysunish belgilanadi.",
+          "evidence": "unga tobe hind mulklarida uning nomi xutbaga qo‘shib o‘qilgan"
+        },
+        {
+          "kind": "term",
+          "term": "ittifoq",
+          "definition": "Umumiy maqsad yo‘lida tuzilgan harbiy-siyosiy birlashma; hind hukmdorlari uni Jaloliddinga qarshi tuzmoqchi bo‘lgan.",
+          "evidence": "Ular o‘zaro til biriktirib Jaloliddin Manguberdiga qarshi ittifoq tuzmoqchi ekanliklari ayon bo‘lib qoldi"
+        },
+        {
+          "kind": "term",
+          "term": "sulh",
+          "definition": "Urush harakatlarini to‘xtatish bo‘yicha kelishuv; mo‘g‘ullar Jaloliddin bilan sulh tuzish fikridan qaytgan.",
+          "evidence": "u bilan sulh tuzish fikridan qay tishdi"
+        },
+        {
+          "kind": "term",
+          "term": "fitna",
+          "definition": "Davlatni zaiflashtirishga qaratilgan yashirin ichki kurash; saroyda fitnalar va xiyonatlar boshlandi.",
+          "evidence": "Ichki  fitnalar  va xiyonatlar boshlandi"
+        },
+        {
+          "kind": "place",
+          "place": "Tabriz",
+          "event": "Ozarbayjon egallangach, yangi barpo etilgan davlatning poytaxtiga aylantirilgan shahar.",
+          "evidence": "Tabriz shahrini yangi barpo etgan davlatining poytaxtiga aylantirdi"
+        },
+        {
+          "kind": "place",
+          "place": "Garni qal’asi",
+          "event": "1225-yil avgustida yaqinida gurjilarning 60 minglik qo‘shini tormor keltirilgan joy.",
+          "evidence": "1225yil avgustda Garni qal’asi yaqinida gurjilarning 60 minglik qo‘shinini tormor keltiradi"
+        },
+        {
+          "kind": "place",
+          "place": "Kurdiston tog‘lari",
+          "event": "Jaloliddin ta’qibdan qutulib chiqqan, keyin qaroqchi kurdlar qo‘lida fojiali halok bo‘lgan hudud.",
+          "evidence": "ta’qibdan qutu lib Kurdiston tog‘lariga chiqib keta di"
+        },
+        {
+          "kind": "cause",
+          "cause": "Ozarbayjon hukmdori aholini gurjilar talonchiligidan himoya qila olmadi.",
+          "effect": "Aholi Jaloliddin timsolida o‘zini gurjilar zo‘ravonligidan ozod etuvchi xaloskorni ko‘rdi.",
+          "evidence": "hukmdor aholini Gurjiston qo‘shinining talonchilik yurishlaridan himoya qilolmayotgan edi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Bag‘dod xalifasi Xorazmshohning kuchayib borishidan xavfsirab, unga qarshi 20 minglik qo‘shin yubordi.",
+          "effect": "Bu qo‘shin Basra yaqinidagi jangda tormor keltirildi.",
+          "evidence": "Uning Jaloliddin Manguberdiga qarshi yuborgan 20 minglik qo‘shini Basra yaqinidagi jangda tormor keltirildi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Hind hukmdorlari ittifoq tuzmoqchi bo‘ldi va lashkarboshilar Eltutmish tomoniga o‘tib xiyonat qildi.",
+          "effect": "Jaloliddin Hindistonda muqim o‘rnashish mushkul ekanini anglab, Iroqqa yo‘l oldi.",
+          "evidence": "Jaloliddin Manguberdi Shimoliy Hindistonda uch yil hukmronlik qiladi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Jaloliddin davlati kuchsiz ko‘rindi va ukasi G‘iyosiddin xiyonat qildi.",
+          "effect": "Mo‘g‘ullar sulh tuzish fikridan qaytib, Ozarbayjon va Gurjistonga talonchilik yurishlarini boshladi.",
+          "evidence": "Mo‘g‘ullar ushbu voqeadan so‘ng, Jaloliddin davlati ular o‘y la  gandek kuchli emasligini anglab"
+        },
+        {
+          "kind": "number",
+          "number": "60 000",
+          "unit": "kishi",
+          "meaning": "Garni qal’asi yaqinida Jaloliddin tormor keltirgan gurjilar qo‘shinining soni.",
+          "evidence": "gurjilarning 60 minglik qo‘shinini tormor keltiradi"
+        },
+        {
+          "kind": "number",
+          "number": "33",
+          "unit": "yil",
+          "meaning": "Jaloliddin Manguberdining umr ko‘rgan yillari.",
+          "evidence": "Atigi o‘ttiz uch yil umr ko‘rgan"
+        }
+      ]
+    }
+  ]
+}

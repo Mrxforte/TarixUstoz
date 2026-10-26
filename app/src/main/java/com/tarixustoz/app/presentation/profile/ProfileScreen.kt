@@ -1,7 +1,6 @@
 package com.tarixustoz.app.presentation.profile
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -9,14 +8,12 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.testTag
@@ -31,6 +28,7 @@ import com.tarixustoz.app.presentation.theme.ThemeViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(
+    onNavigateToEditProfile: () -> Unit = {},
     profileViewModel: ProfileViewModel = hiltViewModel(),
     themeViewModel: ThemeViewModel = hiltViewModel()
 ) {
@@ -41,6 +39,11 @@ fun ProfileScreen(
     val userXp by profileViewModel.userXp.collectAsState()
     val userStreak by profileViewModel.userStreak.collectAsState()
     val selectedGrade by profileViewModel.selectedGrade.collectAsState()
+    val levelTitle by profileViewModel.levelTitle.collectAsState()
+
+    val totalSolvedCount by profileViewModel.totalSolvedCount.collectAsState()
+    val accuracyPercentage by profileViewModel.accuracyPercentage.collectAsState()
+    val savedItemsList by profileViewModel.savedItemsList.collectAsState()
 
     val dailyReminder by profileViewModel.dailyReminder.collectAsState()
     val mistakeReminder by profileViewModel.mistakeReminder.collectAsState()
@@ -48,7 +51,6 @@ fun ProfileScreen(
     val soundEnabled by profileViewModel.soundEnabled.collectAsState()
     val reminderTime by profileViewModel.reminderTime.collectAsState()
 
-    var showEditProfileDialog by remember { mutableStateOf(false) }
     var showTimePickerDialog by remember { mutableStateOf(false) }
     var showSavedTestsDialog by remember { mutableStateOf(false) }
 
@@ -65,7 +67,7 @@ fun ProfileScreen(
                 },
                 actions = {
                     IconButton(
-                        onClick = { showEditProfileDialog = true },
+                        onClick = onNavigateToEditProfile,
                         modifier = Modifier.testTag("profile_edit_top_btn")
                     ) {
                         Icon(
@@ -96,7 +98,7 @@ fun ProfileScreen(
                 border = BorderStroke(1.2.dp, BrandPurple.copy(alpha = 0.25f)),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { showEditProfileDialog = true }
+                    .clickable(onClick = onNavigateToEditProfile)
                     .testTag("profile_user_card")
             ) {
                 Row(
@@ -106,7 +108,7 @@ fun ProfileScreen(
                     Box(
                         contentAlignment = Alignment.BottomEnd,
                         modifier = Modifier
-                            .clickable { showEditProfileDialog = true }
+                            .clickable(onClick = onNavigateToEditProfile)
                             .testTag("profile_avatar_btn")
                     ) {
                         Surface(
@@ -146,7 +148,7 @@ fun ProfileScreen(
                     Column(
                         modifier = Modifier
                             .weight(1f)
-                            .clickable { showEditProfileDialog = true }
+                            .clickable(onClick = onNavigateToEditProfile)
                     ) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Text(
@@ -175,7 +177,7 @@ fun ProfileScreen(
                                 color = Color(0xFFFEF3C7)
                             ) {
                                 Text(
-                                    text = "3-daraja • Bilimdon",
+                                    text = levelTitle,
                                     fontSize = 11.sp,
                                     fontWeight = FontWeight.Bold,
                                     color = Color(0xFFD97706),
@@ -224,8 +226,8 @@ fun ProfileScreen(
                     modifier = Modifier.weight(1f)
                 )
                 StatCard(
-                    title = "Testlar soni",
-                    value = "48 ta",
+                    title = "Yechilgan savollar",
+                    value = "$totalSolvedCount ta",
                     icon = Icons.Default.Quiz,
                     tint = BrandPurple,
                     modifier = Modifier.weight(1f)
@@ -237,14 +239,14 @@ fun ProfileScreen(
                 horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 StatCard(
-                    title = "To‘g‘rilik natijasi",
-                    value = "86%",
+                    title = "To‘g‘rilik ko'rsatkichi",
+                    value = "$accuracyPercentage%",
                     icon = Icons.Default.CheckCircle,
                     tint = Color(0xFF10B981),
                     modifier = Modifier.weight(1f)
                 )
                 StatCard(
-                    title = "Seriya",
+                    title = "Uzluksiz seriya",
                     value = "$userStreak kun",
                     icon = Icons.Default.LocalFireDepartment,
                     tint = Color(0xFFEF4444),
@@ -252,7 +254,7 @@ fun ProfileScreen(
                 )
             }
 
-            // NOTIFICATION SETTINGS (Moved to Profile as requested!)
+            // NOTIFICATION SETTINGS
             Text(
                 text = "Bildirishnoma sozlamalari",
                 style = MaterialTheme.typography.titleMedium,
@@ -392,74 +394,127 @@ fun ProfileScreen(
             ) {
                 Column {
                     ProfileMenuRow(
-                        title = "Saqlangan testlar",
-                        subtitle = "5 ta muhim mavzu va savollar saqlangan",
+                        title = "Saqlanganlar",
+                        subtitle = "${savedItemsList.size} ta saqlangan mavzu va manbalar",
                         icon = Icons.Default.Bookmark,
                         onClick = { showSavedTestsDialog = true }
                     )
                 }
             }
 
-            // Theme Setting
+            // Theme Setting Section
             Text(
-                text = "Ilova ko‘rinishi (Mavzu)",
+                text = "Ilova ko‘rinishi va Mavzu",
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold
             )
 
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                FilterChip(
-                    selected = themeMode == ThemeMode.SYSTEM,
-                    onClick = { themeViewModel.setThemeMode(ThemeMode.SYSTEM) },
-                    label = { Text("Tizim") },
-                    leadingIcon = { Icon(Icons.Default.Settings, null, Modifier.size(16.dp)) },
-                    shape = RoundedCornerShape(50),
-                    colors = FilterChipDefaults.filterChipColors(
-                        selectedContainerColor = BrandPurple,
-                        selectedLabelColor = Color.White
+            Surface(
+                shape = RoundedCornerShape(18.dp),
+                color = MaterialTheme.colorScheme.surface,
+                border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    // System follow switch row
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Surface(
+                            shape = CircleShape,
+                            color = BrandPurple.copy(alpha = 0.12f),
+                            modifier = Modifier.size(38.dp)
+                        ) {
+                            Box(contentAlignment = Alignment.Center) {
+                                Icon(
+                                    Icons.Default.SettingsSuggest,
+                                    contentDescription = null,
+                                    tint = BrandPurple,
+                                    modifier = Modifier.size(20.dp)
+                                )
+                            }
+                        }
+                        Spacer(Modifier.width(12.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                text = "Tizim rejimiga moslashish",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                            Text(
+                                text = "Android qurilmangizning dark/light sozlamasiga avtomatik moslashadi",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                        Switch(
+                            checked = themeMode == ThemeMode.SYSTEM,
+                            onCheckedChange = { isChecked ->
+                                if (isChecked) {
+                                    themeViewModel.setThemeMode(ThemeMode.SYSTEM)
+                                } else {
+                                    themeViewModel.setThemeMode(ThemeMode.LIGHT)
+                                }
+                            },
+                            colors = SwitchDefaults.colors(
+                                checkedThumbColor = Color.White,
+                                checkedTrackColor = BrandPurple
+                            )
+                        )
+                    }
+
+                    HorizontalDivider(
+                        modifier = Modifier.padding(vertical = 12.dp),
+                        color = MaterialTheme.colorScheme.outlineVariant
                     )
-                )
-                FilterChip(
-                    selected = themeMode == ThemeMode.LIGHT,
-                    onClick = { themeViewModel.setThemeMode(ThemeMode.LIGHT) },
-                    label = { Text("Yorug‘") },
-                    leadingIcon = { Icon(Icons.Default.LightMode, null, Modifier.size(16.dp)) },
-                    shape = RoundedCornerShape(50),
-                    colors = FilterChipDefaults.filterChipColors(
-                        selectedContainerColor = BrandPurple,
-                        selectedLabelColor = Color.White
+
+                    Text(
+                        text = "Alohida rejim tanlash:",
+                        style = MaterialTheme.typography.bodySmall,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(bottom = 10.dp)
                     )
-                )
-                FilterChip(
-                    selected = themeMode == ThemeMode.DARK,
-                    onClick = { themeViewModel.setThemeMode(ThemeMode.DARK) },
-                    label = { Text("Qorong‘u") },
-                    leadingIcon = { Icon(Icons.Default.DarkMode, null, Modifier.size(16.dp)) },
-                    shape = RoundedCornerShape(50),
-                    colors = FilterChipDefaults.filterChipColors(
-                        selectedContainerColor = BrandPurple,
-                        selectedLabelColor = Color.White
-                    )
-                )
+
+                    // 3 Segmented Theme Cards
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        ProfileThemeChoiceCard(
+                            title = "Tizim",
+                            subtitle = "Avto",
+                            icon = Icons.Default.PhoneAndroid,
+                            isSelected = themeMode == ThemeMode.SYSTEM,
+                            onClick = { themeViewModel.setThemeMode(ThemeMode.SYSTEM) },
+                            modifier = Modifier.weight(1f)
+                        )
+
+                        ProfileThemeChoiceCard(
+                            title = "Yorug‘",
+                            subtitle = "Light",
+                            icon = Icons.Default.LightMode,
+                            isSelected = themeMode == ThemeMode.LIGHT,
+                            onClick = { themeViewModel.setThemeMode(ThemeMode.LIGHT) },
+                            modifier = Modifier.weight(1f)
+                        )
+
+                        ProfileThemeChoiceCard(
+                            title = "Qorong‘u",
+                            subtitle = "Dark",
+                            icon = Icons.Default.DarkMode,
+                            isSelected = themeMode == ThemeMode.DARK,
+                            onClick = { themeViewModel.setThemeMode(ThemeMode.DARK) },
+                            modifier = Modifier.weight(1f)
+                        )
+                    }
+                }
             }
 
             Spacer(Modifier.height(30.dp))
         }
-    }
-
-    // PROFILE EDIT SCREEN / DIALOG (Opened on clicking avatar or name)
-    if (showEditProfileDialog) {
-        ProfileEditDialog(
-            currentName = displayName,
-            currentBio = userBio,
-            currentAvatar = userAvatar,
-            currentGrade = selectedGrade,
-            onDismiss = { showEditProfileDialog = false },
-            onSave = { name, bio, avatar, grade ->
-                profileViewModel.updateProfile(name, bio, avatar, grade)
-                showEditProfileDialog = false
-            }
-        )
     }
 
     // Time Picker Dialog for Notifications
@@ -503,17 +558,16 @@ fun ProfileScreen(
         )
     }
 
-    // Saqlangan testlar Dialog
+    // Saqlangan testlar va manbalar Dialog
     if (showSavedTestsDialog) {
         AlertDialog(
             onDismissRequest = { showSavedTestsDialog = false },
-            title = { Text("Saqlangan testlar", fontWeight = FontWeight.Bold) },
+            title = { Text("Saqlangan manbalar va testlar", fontWeight = FontWeight.Bold) },
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    SavedTestItem(title = "Amir Temur davlati va harbiy yurishlari", tag = "7-sinf • O‘zbekiston tarixi")
-                    SavedTestItem(title = "Qadimgi Misr va Nil madaniyati", tag = "6-sinf • Jahon tarixi")
-                    SavedTestItem(title = "Somoniylar davrida ilm-fan yuksalishi", tag = "7-sinf • O‘zbekiston tarixi")
-                    SavedTestItem(title = "Turk xoqonligining tashkil topishi", tag = "7-sinf • O‘zbekiston tarixi")
+                    savedItemsList.forEach { item ->
+                        SavedTestItem(title = item.title, tag = item.subtitle)
+                    }
                 }
             },
             confirmButton = {
@@ -523,161 +577,6 @@ fun ProfileScreen(
             }
         )
     }
-}
-
-@Composable
-private fun ProfileEditDialog(
-    currentName: String,
-    currentBio: String,
-    currentAvatar: String,
-    currentGrade: Int,
-    onDismiss: () -> Unit,
-    onSave: (String, String, String, Int) -> Unit
-) {
-    var name by remember { mutableStateOf(currentName) }
-    var bio by remember { mutableStateOf(currentBio) }
-    var avatar by remember { mutableStateOf(currentAvatar) }
-    var grade by remember { mutableIntStateOf(currentGrade) }
-
-    val avatarOptions = listOf("AS", "🎓", "🏛️", "⚔️", "👑", "📜", "🏹", "🦁", "🌟", "TM", "OT")
-
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(Icons.Default.Edit, contentDescription = null, tint = BrandPurple)
-                Spacer(Modifier.width(8.dp))
-                Text("Profilni tahrirlash", fontWeight = FontWeight.Bold)
-            }
-        },
-        text = {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .verticalScroll(rememberScrollState()),
-                verticalArrangement = Arrangement.spacedBy(14.dp)
-            ) {
-                // Avatar selection preview
-                Text(
-                    text = "Avatarni tanlang:",
-                    style = MaterialTheme.typography.bodyMedium,
-                    fontWeight = FontWeight.SemiBold
-                )
-
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    avatarOptions.take(5).forEach { opt ->
-                        Surface(
-                            shape = CircleShape,
-                            color = if (avatar == opt) BrandPurple else MaterialTheme.colorScheme.surfaceVariant,
-                            border = if (avatar == opt) BorderStroke(2.dp, Color.White) else null,
-                            modifier = Modifier
-                                .size(44.dp)
-                                .clickable { avatar = opt }
-                        ) {
-                            Box(contentAlignment = Alignment.Center) {
-                                Text(
-                                    text = opt,
-                                    fontSize = 18.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    color = if (avatar == opt) Color.White else MaterialTheme.colorScheme.onSurface
-                                )
-                            }
-                        }
-                    }
-                }
-
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    avatarOptions.drop(5).forEach { opt ->
-                        Surface(
-                            shape = CircleShape,
-                            color = if (avatar == opt) BrandPurple else MaterialTheme.colorScheme.surfaceVariant,
-                            border = if (avatar == opt) BorderStroke(2.dp, Color.White) else null,
-                            modifier = Modifier
-                                .size(44.dp)
-                                .clickable { avatar = opt }
-                        ) {
-                            Box(contentAlignment = Alignment.Center) {
-                                Text(
-                                    text = opt,
-                                    fontSize = 18.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    color = if (avatar == opt) Color.White else MaterialTheme.colorScheme.onSurface
-                                )
-                            }
-                        }
-                    }
-                }
-
-                // Name input
-                OutlinedTextField(
-                    value = name,
-                    onValueChange = { name = it },
-                    label = { Text("Ism yoki Taxallus") },
-                    singleLine = true,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .testTag("profile_edit_name_input")
-                )
-
-                // Bio / Status input
-                OutlinedTextField(
-                    value = bio,
-                    onValueChange = { bio = it },
-                    label = { Text("Maqom / Bio") },
-                    singleLine = true,
-                    placeholder = { Text("Tarix bilimdoni, DTM 189 ball...") },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .testTag("profile_edit_bio_input")
-                )
-
-                // Grade selection
-                Text(
-                    text = "Sinfingiz:",
-                    style = MaterialTheme.typography.bodyMedium,
-                    fontWeight = FontWeight.SemiBold
-                )
-
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(6.dp)
-                ) {
-                    listOf(6, 7, 8, 9, 10, 11).forEach { g ->
-                        FilterChip(
-                            selected = grade == g,
-                            onClick = { grade = g },
-                            label = { Text("$g") },
-                            colors = FilterChipDefaults.filterChipColors(
-                                selectedContainerColor = BrandPurple,
-                                selectedLabelColor = Color.White
-                            ),
-                            shape = RoundedCornerShape(8.dp)
-                        )
-                    }
-                }
-            }
-        },
-        confirmButton = {
-            Button(
-                onClick = { onSave(name, bio, avatar, grade) },
-                colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
-                modifier = Modifier.testTag("profile_edit_save_btn")
-            ) {
-                Text("Saqlash")
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Bekor qilish")
-            }
-        }
-    )
 }
 
 @Composable
@@ -828,6 +727,51 @@ private fun SavedTestItem(title: String, tag: String) {
         Column(modifier = Modifier.padding(10.dp)) {
             Text(title, fontSize = 13.sp, fontWeight = FontWeight.SemiBold)
             Text(tag, fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+    }
+}
+
+@Composable
+private fun ProfileThemeChoiceCard(
+    title: String,
+    subtitle: String,
+    icon: ImageVector,
+    isSelected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Surface(
+        shape = RoundedCornerShape(16.dp),
+        color = if (isSelected) BrandPurple.copy(alpha = 0.12f) else MaterialTheme.colorScheme.surfaceVariant,
+        border = BorderStroke(
+            width = if (isSelected) 2.dp else 1.dp,
+            color = if (isSelected) BrandPurple else MaterialTheme.colorScheme.outlineVariant
+        ),
+        modifier = modifier.clickable(onClick = onClick)
+    ) {
+        Column(
+            modifier = Modifier.padding(12.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Icon(
+                icon,
+                contentDescription = null,
+                tint = if (isSelected) BrandPurple else MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.size(22.dp)
+            )
+            Spacer(Modifier.height(6.dp))
+            Text(
+                text = title,
+                fontSize = 13.sp,
+                fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
+                color = if (isSelected) BrandPurple else MaterialTheme.colorScheme.onSurface
+            )
+            Text(
+                text = subtitle,
+                fontSize = 11.sp,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
         }
     }
 }

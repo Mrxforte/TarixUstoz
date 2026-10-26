@@ -1,0 +1,957 @@
+{
+ "chapter": "KIRISH",
+ "topics": [
+  {
+   "number": 1,
+   "title": "Monopolistik kapitalizm taraqqiyotida yuz bergan tub o‘zgarishlar",
+   "page": 4,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1900–1913",
+     "date_label": "1900–1913-yillarda",
+     "event": "Industrial davlatlar chetga chiqargan kapital hajmi ikki barobar oshdi",
+     "evidence": "Shu tufayli, 1900-1913-yillarda industrial davlatlar chetga chiqargan kapitalning hajmi ikki barobar oshganligi bejiz bo'lmagan edi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1910",
+     "date_label": "1910-yilda",
+     "event": "Millatlararo korporatsiyalar vujudga keldi va ularning soni 100 taga yetdi",
+     "evidence": "Shu tariqa, millatlararo korporatsiyalar vujudga kelgan. 1910-yilda\nularning soni loo taga yetgan."
+    },
+    {
+     "kind": "date_event",
+     "date": "1907",
+     "date_label": "1907-yilda",
+     "event": "AQSH va Germaniya elektr monopoliyalari jahon elektr bozorini bo‘lib olish to‘g‘risida shartnoma tuzdi",
+     "evidence": "1907-yilda esa goyat ulkan monopoliyalar - ,,Umumiy elektr\nkompaniyasi (AQSH) bilan .,Umumiy elektr jamiyati\" (Germaniya)\no'rtasida ham jahon elektr bozorini bo'lib olish"
+    },
+    {
+     "kind": "date_event",
+     "date": "XIX asr oxiri – XX asr boshlari",
+     "date_label": "XIX asr oxiri – XX asr boshlarida",
+     "event": "Yer yuzining yarmidan ko‘pi industrial davlatlar o‘rtasida hududiy jihatdan bo‘lib olingan edi",
+     "evidence": "XIX asr oxiri va XX asr boshlarigacha ular o'rtasida butun yer\nyuzining yarmidan ko'pi bo'lib olingan edi."
+    },
+    {
+     "kind": "date_event",
+     "date": "XIX asr oxiri",
+     "date_label": "XIX asr oxirida",
+     "event": "Mustamlakachilik urushlari kuchaydi va «imperializm» atamasi keng ishlatila boshlandi",
+     "evidence": "urushlarning, ayniqsa, XIX asr oxirida kuchayishi ,imperializm\" atamasining keng ishlatilishiga olib keldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "XX asr boshlari",
+     "date_label": "XX asr boshlarida",
+     "event": "Karnegi mulkini sotgach, tadbirkorlik omadi va boylik qudrati Morgan hamda Rokfellerda mujassamlashdi",
+     "evidence": "millionli mulkini sotganidan so'ng amerikaliklar nigohida tadbirkorlikdagi omad va boylikning qudrati ikki kishida"
+    },
+    {
+     "kind": "person",
+     "person": "Rokfeller",
+     "role": "amerikalik neft magnati va moliya oligarxiyasi vakili",
+     "activity": "Neft tresti mamlakatdagi neft mahsulotlarining deyarli barchasini ishlab chiqargan",
+     "evidence": "Morgan va Rokfellerda mujassamlashdi. Chunonchi, Rokfellerning neft tresti mamlakatdagi neft mahsulotlarining deyarli barchasini ishlab chiqarardi,"
+    },
+    {
+     "kind": "person",
+     "person": "Morgan",
+     "role": "amerikalik moliya magnati va yirik bank-sanoat imperiyasi egasi",
+     "activity": "Po‘lat tresti orqali mamlakatda ishlab chiqarilgan po‘latning 66 foizini bergan",
+     "evidence": "Morganning po'lat tresti esa po'latning 66 foizini berardi."
+    },
+    {
+     "kind": "person",
+     "person": "Karnegi",
+     "role": "AQSHdagi «katta uchlik»ning po‘lat sohasidagi vakili",
+     "activity": "XIX asr oxirida AQSH moliya oligarxiyasi tarkibida yirik po‘lat imperiyasiga egalik qilgan",
+     "evidence": "oilalardan ,,katta uchlik\" - Rokfeller (neft), Morgan (moliya), Karnegi (po'lat) ajralib turardi."
+    },
+    {
+     "kind": "person",
+     "person": "Rotshildlar",
+     "role": "Buyuk Britaniya va Fransiyadagi yirik moliya guruhi",
+     "activity": "Rokfeller guruhi bilan birga jahon kerosin bozorini bo‘lib olgan",
+     "evidence": "Rotshildlar (Buyuk Britaniya, Fransiya) guruhi jahonning kerosin bozorini bo'lib olgan."
+    },
+    {
+     "kind": "person",
+     "person": "Krupp",
+     "role": "Germaniyadagi yirik sanoat va moliya guruhining nomi",
+     "activity": "Uning nomi bilan «Kruppga nima yaxshi bo‘lsa, u Germaniya uchun ham yaxshi» degan ibora bog‘liq",
+     "evidence": "Yoki Germaniyada ,Kruppga nima yaxshi bo'lsa, u\nGermaniya uchun ham yaxshi, deyishardi."
+    },
+    {
+     "kind": "term",
+     "term": "Monopoliya",
+     "definition": "Iqtisodiyotning bir sohasidagi tanho hukmronlik; yunoncha «mono» – tanho, «poleo» – sotaman so‘zlaridan",
+     "evidence": "Monopoliya (yunoncha, mono - tanho, poleo - sotaman) - iqtisodiyotning bir sohasidagi tanho hukmronlik."
+    },
+    {
+     "kind": "term",
+     "term": "Oligarxiya",
+     "definition": "Iqtisodiy va siyosiy hukmronlikning bir hovuch yirik kapital egalari qo‘lida to‘planishi",
+     "evidence": "Oligarxiya (yunoncha - ozchilik hokimiyati) - iqtisodiy va siyosiy hukmronlikning bir hovuch ulkan kapital egalari qo'lida to'planishi."
+    },
+    {
+     "kind": "term",
+     "term": "Kartel",
+     "definition": "Bir tarmoqdagi mustaqil kompaniyalarning ishlab chiqarish va sotish hajmlari, narxlari, bozorlari to‘g‘risidagi bitimga asoslangan tuzilma",
+     "evidence": "Kartel (italyancha - qog'oz, hujjat) - bir tarmoqdagi mustaqil\nkompaniyalar, firmalarning ishlab chiqarish va sotishning umumiy\nhajmlari, narxlari, sotish bozorlari, har bir ishtirokchining ulushi"
+    },
+    {
+     "kind": "term",
+     "term": "Anneksiya",
+     "definition": "Bir davlat hududini butunlay yoki qisman egallab olishni bildiruvchi lotincha atama",
+     "evidence": "Anneksiya (lotincha - birlashtirish) - bir davlat hududini butunlay\nyoki qisman egallab olish."
+    },
+    {
+     "kind": "place",
+     "place": "Reyn-Vestfaliya",
+     "event": "Germaniyada tashkil topgan ko‘mir sindikati mamlakat ko‘mirining asosiy qismini qo‘lida to‘plagan",
+     "evidence": "Germaniyada tashkil topgan Reyn-Vestfaliya ko'mir sindikati mamlakatda\nqazib olinadigan va sotiladigan ko'mirning asosiy qismini o'z qo'lida to'plagan."
+    },
+    {
+     "kind": "place",
+     "place": "Lotin Amerikasi",
+     "event": "AQSH bu mintaqa mamlakatlari iqtisodiga kirib borishni ochiq qurolli hujumdan afzal ko‘rgan",
+     "evidence": "boshqa davlatlarga, birinchi navbatda, Lotin Amerikasi mamlakatlari\niqtisodiga kirib borishni afzal ko'rdi."
+    },
+    {
+     "kind": "place",
+     "place": "Puerto-Riko va Guam orollari",
+     "event": "AQSH ularni o‘zining yarimmustamlakasiga aylantirgan, Filippin esa bosib olingan",
+     "evidence": "Filippinni bosib oldi, Puerto-Riko va Guam orollarini o'zining yarimmustamlakasiga aylantirdi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Sanoat kapitali bilan bank kapitalining qo‘shilib ketishi",
+     "effect": "Moliya oligarxiyasi vujudga keldi, bank-gigantlar va moliyaviy markazlar paydo bo‘ldi",
+     "evidence": "Bu hodisa sanoat va bank kapitalining qo'shilishi natijasida sodir bo'lgan."
+    },
+    {
+     "kind": "cause",
+     "cause": "Ishlab chiqarishning markazlashuvi va sanoatning monopoliyalashuvi",
+     "effect": "Bank faoliyatida kapital markazlashdi va yirik banklar shakllandi",
+     "evidence": "Ishlab chiqarishning markazlashuvi va sanoatning monopoliyalashuvi jarayoni bank faoliyatida kapitalning markazlashuviga olib keldi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Monopoliyalarning chetga tovar emas, kapital chiqarishga o‘tishi",
+     "effect": "Metropoliyalarning rivojlanishiga to‘sqinlik qila boshladi",
+     "evidence": "monopoliyalar chetga kapital chiqarishni uni o'z\nmamlakatlari iqtisodiga solishdan afzal ko'rar edilar, bu hol metropoliyalarning rivojlanishiga to'sqinlik qila boshladi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Industrial davlatlarning mustamlakalarini kengaytirishga intilishi",
+     "effect": "Dunyoni hududiy jihatdan bo‘lib olish tezlashdi",
+     "evidence": "davlatlarning o'z mustamlakalarini kengaytirishga intilishlari yanada\nkuchaydi. Bu hol industrial davlatlar o'rtasida dunyoni hududiy jihatdan bo'lib olishni tezlashtirdi."
+    },
+    {
+     "kind": "number",
+     "number": "250",
+     "unit": "ta",
+     "meaning": "XIX asr oxirida Germaniyada faoliyat ko‘rsatgan monopoliyalar soni",
+     "evidence": "XIX asr oxirida Germaniyada 250 ta, AQSHda esa 185 ta mohtt.\nnopoliya faoliyat ko'rsatgan."
+    },
+    {
+     "kind": "number",
+     "number": "60",
+     "unit": "ta",
+     "meaning": "AQSH iqtisodiy hayotini nazorat qilgan, bank-sanoat imperiyalariga ega oilalar soni",
+     "evidence": "AQSHda mamlakatning iqtisodiy hayotini nazorat qilib turgan 60\nta oilaning shunday imperiyalari mavjud edi."
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "title": "Industrial sivilizatsiya",
+   "page": 11,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "XIX asrning 50–60-yillari",
+     "date_label": "XIX asrning 50–60-yillarida",
+     "event": "G‘arbiy Yevropa va AQSHda sanoat to‘ntarishi nihoyasiga yetib, industrial sivilizatsiya qaror topdi",
+     "evidence": "va AQSHda sanoat to'ntarishi nihoyasiga\nyetganligini bilib olgan edingiz. Shu tariqa, industrial sivilizatsiya\nuzil-kesil qaror topdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1850–1880",
+     "date_label": "1850–1880-yillarda",
+     "event": "Parij aholisi bir million kishidan ikki million kishiga yetdi",
+     "evidence": "Parij aholisi 1850-yili bir million bo'lgan bo'lsa, 1880-yilda esa ikki\nmillion kishidan iborat bo'ldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1853",
+     "date_label": "1853-yildan boshlab",
+     "event": "Parij 20 yil davomida qurilish maydoniga aylandi va zamonaviy qilib qaytadan qurildi",
+     "evidence": "XIX asrning o'rtalaridan boshlab, shaharlar qurilishida ham o'zgarish yuz berdi. Masalan, Parij 1853-yildan boshlab 20 yil davomida qurilish maydoniga aylandi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1889",
+     "date_label": "1889-yilda",
+     "event": "II Internatsional tashkil topdi, biroq ishchilar sinfi partiyalarini bir safga birlashtira olmadi",
+     "evidence": "Bu davrda 1889-yilda tashkil topgan II Internatsional qiyin sharoitda ish olib bordi. Ishchilar sinfi o'z partiyalarini bir safga birlashtira olmadi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1906–1916",
+     "date_label": "1906–1916-yillarda",
+     "event": "Buyuk Britaniya vazirlarining uchdan ikki qismi eng sara bilim yurtlari bitiruvchilari bo‘lgan",
+     "evidence": "1906-1916-yillarda\nBuyuk Britaniya vazirlarining uchdan ikki qismi eng sara bilim yurtlari bitiruvchilari edi."
+    },
+    {
+     "kind": "date_event",
+     "date": "XIX asrning 70-yillari",
+     "date_label": "XIX asrning 70-yillarida",
+     "event": "Germaniyada urbanizatsiya avj oldi, AQSHda jadal urbanizatsiya jarayoni ham shu davrga to‘g‘ri keldi",
+     "evidence": "masalan, Germaniyada XIX asrning 70-yillarida avj\noldi. AQSHda jadal urbanizatsiya jarayoni ham taxminan shu davrga\nto'g'ri keldi."
+    },
+    {
+     "kind": "person",
+     "person": "Aristokratlar",
+     "role": "XIX asrda asosiy boyligi yerga bog‘liq bo‘lgan imtiyozli tabaqa",
+     "activity": "Banklarda, sanoat kompaniyalarida va mustamlakalar ma’muriyatlarida rahbarlik lavozimlarini egallay boshlagan",
+     "evidence": "Ilgari yer mulkdorlari bo'lgan aristokratlar endi banklarda, sanoat\nkompaniyalarida, mustamlakalar ma'muriyatlarida rahbarlik lavozimlarini egallay boshladi."
+    },
+    {
+     "kind": "person",
+     "person": "Burjuaziya",
+     "role": "Yirik sanoat korxonalari va banklar tepasida turgan boylar tabaqasi",
+     "activity": "XIX asrda davlatning iqtisodiy va siyosiy hayotida tobora kattaroq rol o‘ynay boshlagan",
+     "evidence": "davlatning iqtisodiy va siyosiy hayotida burjuaziya tobora kattaroq rol o'ynay boshladi. Yirik sanoat korxonalari va banklar tepasida millionlab boylik to'plagan burjuaziya vakillari turardi."
+    },
+    {
+     "kind": "person",
+     "person": "O‘rta qatlam",
+     "role": "Muhandis, shifokor, o‘qituvchi, ofitser va huquqshunoslardan iborat «erkin kasb» egalari",
+     "activity": "Jamiyatga barqarorlik baxsh etgan, ijtimoiy buhronlarni ma’qullamay, islohotlarni afzal ko‘rgan",
+     "evidence": "O'rta qatlam jamiyatga barqarorlik baxsh etdi. Chunki, odatda, o'rta qatlam ijtimoiy\nbuhronlarni ma'qullamaydi, inqiloblardan islohotlarni afzal ko'radi."
+    },
+    {
+     "kind": "person",
+     "person": "Huquqshunoslar",
+     "role": "XIX asrning ikkinchi yarmida o‘rta qatlam ichida ajralib turgan toifa",
+     "activity": "Konstitutsiya va qonunlar yozish, kodekslar tuzish, banklarga maslahat berish bilan shug‘ullangan",
+     "evidence": "Ular konstitutsiyalar, qonunlar yozish, kodekslar tuzish, vasiyatlarni\nrasmiylashtirish, banklarga, tadbirkorlarga maslahatlar berish va sud\njarayonlarida ishtirok etish kabi ishlarni bajargan."
+    },
+    {
+     "kind": "person",
+     "person": "«Ishchi aristokratiyasi»",
+     "role": "Ko‘proq haq oladigan malakali mutaxassis ishchilar qatlami",
+     "activity": "XX asr boshlarida Buyuk Britaniyada umumiy ishchilar sonining uchdan birini tashkil qilgan",
+     "evidence": "malakali mutaxassis ishchilar esa ko'proq haq olib, ,ishchi\naristokratiyasini\" tashkil qilardi. XX asr boshlarida ,,ishchi aristokratiyasi\" Buyuk Britaniyada umumiy ishchilar sonining uchdan birini"
+    },
+    {
+     "kind": "term",
+     "term": "Industrial sivilizatsiya",
+     "definition": "Asosiy qadriyati texnika taraqqiyoti bo‘lgan sivilizatsiya",
+     "evidence": "Bu sivilizatsiya - asosiy qadriyati texnika taraqqiyoti bo'lgan sivilizatsiya edi."
+    },
+    {
+     "kind": "term",
+     "term": "Industrial jamiyat",
+     "definition": "«Industrial sivilizatsiya» atamasi o‘rnida ishlatiladigan va xuddi shu ma’noni anglatuvchi atama",
+     "evidence": "atamasi o'rnida ,,industrial jamiyat\" atamasi ham ishlatiladi va ular bir xil ma'noni anglatadi."
+    },
+    {
+     "kind": "term",
+     "term": "Urbanizatsiya",
+     "definition": "Jamiyat hayotida shaharlar rolining va shahar aholisi salmog‘ining ortib borishi",
+     "evidence": "Urbanizatsiya (fransuzcha va lotincha - shaharga mansub) - jamiyat hayotida shaharlar rolining va shahar aholisi salmog'ining ortib\nborishi."
+    },
+    {
+     "kind": "term",
+     "term": "Industriya",
+     "definition": "Sanoatni, xususan yirik sanoatni anglatuvchi atama",
+     "evidence": "Industriya (lotincha - faoliyat) - sanoat, xususan, yirik sanoatni\nanglatuvchi atama."
+    },
+    {
+     "kind": "place",
+     "place": "Parij",
+     "event": "XIX asr oxiriga kelib ichimlik va oqova suv tarmoqlariga, tramvay va metroga ega bo‘lgan",
+     "evidence": "XIX asr oxiriga kelib, ichimlik va oqova suv tarmoqlariga, tramvay\nva metroga ega bo'ldi."
+    },
+    {
+     "kind": "place",
+     "place": "Oksford va Kembrij universitetlari",
+     "event": "Buyuk Britaniyadagi imtiyozli oilalarning o‘g‘illari tahsil olgan, keyin ular parlamentga kirgan",
+     "evidence": "imtiyozli xususiy maktablarda, keyin esa Oksford yoki Kembrij universitetlarida o'qirdilar. Shundan keyingi faoliyat maydoni parlament"
+    },
+    {
+     "kind": "cause",
+     "cause": "Qishloq xo‘jaligida texnika qo‘llanishi natijasida ortiqcha ishchi kuchining paydo bo‘lishi",
+     "effect": "Qishloq aholisi ish izlab shaharlarga kela boshladi",
+     "evidence": "Bu, birinchidan, qishloq xo'jaligida texnikani qo'llash natijasida bir qism qishloq aholisining ortiqcha kuch bo'lib, ishsiz qolishi, ularning ish izlab shaharlarga kelishi hisobiga yuz berdi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Transportdagi o‘zgarishlar, temiryo‘llar qurilishi va sanoat markazlarining ko‘chishi",
+     "effect": "Aholi turar joyini o‘zgartirib, sanoat markazlari joylashgan shaharlarga ko‘chdi",
+     "evidence": "o'zgarishlar, temiryo'llar qurilishi, sanoat markazlarining yirik shaharlarga ko'chishi hisobiga yuz berdi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Sanoat ishlab chiqarishining deyarli butunlay shaharlarda joylashganligi",
+     "effect": "Shaharlar jamiyat hayotida alohida ahamiyat kasb eta boshladi",
+     "evidence": "Sanoat ishlab\nchiqarishi deyarli butunlay shaharlarda joylashgan edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Huquqiy davlat va fuqarolik jamiyatining shakllanishi, iqtisodiy hayotning rivojlanishi",
+     "effect": "Huquqshunoslarga bo‘lgan ehtiyoj ortib bordi",
+     "evidence": "Huquqiy davlatning\nshakllanishi, fuqarolik jamiyatining barpo bo'lishi, iqtisodiy hayotning rivojlanishi tufayli huquqshunoslarga bo'lgan ehtiyoj ortib bordi."
+    },
+    {
+     "kind": "number",
+     "number": "12–13",
+     "unit": "mln. kishi",
+     "meaning": "XIX asr 70-yillariga kelib Buyuk Britaniya, Fransiya va AQSHdagi sanoat ishchilari soni",
+     "evidence": "Sanoat to'ntarishi yuz bergan uchta yirik mamlakat\nBuyuk Britaniya, Fransiya va AQSHda 70-yillarga kelib sanoat ishchilari 12-13 mln. kishini,"
+    },
+    {
+     "kind": "number",
+     "number": "10,4",
+     "unit": "mln. nafar",
+     "meaning": "XX asr boshida AQSHda mavjud bo‘lgan sanoat ishchilari soni",
+     "evidence": "XX asr boshida AQSH sanoat ishchilari soni jihatdan birinchi\no'rinni egalladi. Bu yerda 1O,4 mln. nafar sanoat ishchisi mavjud"
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "title": "Fransiya-Prussiya urushi va uning yakunlari",
+   "page": 16,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "XIX asrning 60-yillari ikkinchi yarmi",
+     "date_label": "XIX asrning 60-yillari ikkinchi yarmidan boshlab",
+     "event": "Napoleon III mavqeyiga putur yetdi, chunki Fransiya iqtisodiy taraqqiyotda orqada qolayotgan edi",
+     "evidence": "XIX asrning 60-yillari ikkinchi yarmidan\nFransiya-Prussiya\nboshlab Fransiya imperatori Napoleon II\nurushining sabablari\nmavqeyiga putur yetdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1860",
+     "date_label": "1860-yildagi",
+     "event": "Buyuk Britaniya bilan Fransiya o‘rtasida tuzilgan savdo shartnomasi Fransiyada norozilik uyg‘otdi",
+     "evidence": "Fransiya hukmron doiralari 1860-yildagi Buyuk Britaniya-Fransiya savdo shartnomasidan ham norozi edi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1868",
+     "date_label": "1868-yilda",
+     "event": "Ispaniyada inqilob bo‘lib, qirolicha Izabella II Fransiyaga qochishga majbur bo‘ldi",
+     "evidence": "O'zining bir vaqtlardagi qudratini yo'qotgan Ispaniyada 1868-yilda inqilob yuz berdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1870-yil 17-iyul",
+     "date_label": "1870-yil 17-iyulda",
+     "event": "Fransiya Prussiyaga qarshi urush e’lon qildi va Fransiya-Prussiya urushi boshlandi",
+     "evidence": "1870-yil 17-iyulda Fransiya Prussiyaga qarshi urush e'lon qildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1870-yil 1-sentabr",
+     "date_label": "1870-yil 1-sentabrda",
+     "event": "Sedan qal’asi yonida Napoleon III qurshab olinib, fransuz qo‘shini taslim bo‘ldi",
+     "evidence": "1870-yil 1-sentabr kuni Fransiya qo'shini\nImperiyaning halokati\ntarkibida bo'lgan Napoleon III ham Sedan"
+    },
+    {
+     "kind": "date_event",
+     "date": "1815-yil 18-iyun",
+     "date_label": "1815-yil 18-iyunda",
+     "event": "Vaterloo qishlog‘i yonida Napoleon I qo‘shini tor-mor etilgan",
+     "evidence": "Bu qishloqda 1815-yilning 18-iyunida Napoleon I qo'shini tor-mor etilgan\njang bo'lib o'tgan."
+    },
+    {
+     "kind": "person",
+     "person": "Napoleon III",
+     "role": "Fransiya imperatori, Ikkinchi imperiya hukmdori",
+     "activity": "Prussiyaga qarshi g‘olibona urush orqali o‘z mavqeyini tiklashga umid qilgan",
+     "evidence": "Napoleon III uchun Prussiyaga qarshi g'olibona\nurush zarur edi."
+    },
+    {
+     "kind": "person",
+     "person": "Bismark",
+     "role": "Prussiya kansleri, urushni tezlashtirish siyosatini yuritgan",
+     "activity": "Qirol bilan Fransiya elchisi suhbati tafsilotini atayin buzib talqin qilib, «Ems depeshasi»ni vujudga keltirgan",
+     "evidence": "qirol va Fransiya elchisi o'rtasidagi suhbat tafsilotini atayin buzib\ntalqin etdi."
+    },
+    {
+     "kind": "person",
+     "person": "Vilgelm I",
+     "role": "Prussiya qiroli, Ispaniya taxti masalasida Fransiya talabiga ko‘ngan hukmdor",
+     "activity": "Germaniya nomzodini Ispaniya taxtidan qaytarib olishga rozi bo‘lgan",
+     "evidence": "Prussiya qiroli Vilgelm I bunga rozi bo'ldi."
+    },
+    {
+     "kind": "person",
+     "person": "Izabella II",
+     "role": "Ispaniya qirolichasi, 1868-yil inqilobidan keyin mamlakatni tashlab chiqqan",
+     "activity": "Taxtini qaytarib olish uchun Fransiyadan yordam so‘rashga umid qilgan",
+     "evidence": "Qirolicha Izabella II Fransiyaga\nqochib ketishga majbur bo'ldi."
+    },
+    {
+     "kind": "term",
+     "term": "Depesha",
+     "definition": "Shoshilinch xabar ma’nosini bildiruvchi atama",
+     "evidence": "Depesha - shoshilinch xabar."
+    },
+    {
+     "kind": "term",
+     "term": "Ems depeshasi",
+     "definition": "Qirol va Fransiya elchisi suhbati tafsiloti atayin buzib talqin etilgan gazeta xabari",
+     "evidence": "bilan gaplashishni xohlamagan va elchiga orqasini o'girib olgan (bu\nhodisa tarixga ,Ems depeshasi\" nomi bilan kirgan)."
+    },
+    {
+     "kind": "term",
+     "term": "Ikkinchi imperiya",
+     "definition": "Sedan yonidagi mag‘lubiyat natijasida halokatga uchragan Fransiya imperiyasi",
+     "evidence": "Bu mag'lubiyat\nikkinchi imperiya hokimiyatining halokati ham bo'ldi."
+    },
+    {
+     "kind": "term",
+     "term": "Kansler",
+     "definition": "Prussiyada hukumat boshlig‘i lavozimi; Bismark urushni tezlashtirishda foydalangan",
+     "evidence": "Urushga shoshilayotgan Prussiya kansleri Bismark esa gazetada"
+    },
+    {
+     "kind": "place",
+     "place": "Ispaniya",
+     "event": "XIX asrda taxt masalasi Yevropaning buyuk davlatlari o‘rtasida kurashga sabab bo‘lgan davlat",
+     "evidence": "Biroq, tez orada, Yevropaning buyuk davlatlari o'rtasida Ispaniya taxti uchun boshlanib ketgan kurash bunga imkon bermadi."
+    },
+    {
+     "kind": "place",
+     "place": "Sedan",
+     "event": "Napoleon III o‘zining «Vaterloosi»ni topgan, fransuz qo‘shini taslim bo‘lgan joy",
+     "evidence": "taslim bo'ldi. Napoleon III Sedanda o'z Vaterloosini topdi."
+    },
+    {
+     "kind": "place",
+     "place": "Mets qal’asi",
+     "event": "100 ming kishilik ikkinchi fransuz qo‘shini qurshovga tushib qolgan qal’a",
+     "evidence": "kishilik ikkinchi qo'shin ham Mets qal'asida qurshovga tushib qoldi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Fransiyaning iqtisodiy taraqqiyotda qo‘shnilari Buyuk Britaniya va Germaniyadan orqada qolishi",
+     "effect": "Napoleon III mavqeyiga putur yetdi va urushga ehtiyoj tug‘ildi",
+     "evidence": "Bunga sabab\nFransiyaning iqtisodiy taraqqiyot bo'yicha o'z qo'shnilari bo'lgan Buyuk Britaniya va Germaniyadan tobora orqada qolayotganligi bo'ldi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Ingliz tovarlarining Fransiyaga ko‘plab kiritilishi",
+     "effect": "Fransuz tovarlari bilan raqobat kuchaydi, ishsizlik va qimmatchilik davom etdi",
+     "evidence": "Chunki ingliz tovarlarining\nFransiyaga ko'plab kiritilishi fransuz tovarlari bilan raqobatni kuchaytirmoqda edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Germaniyaning yagona davlatga birlashishi ehtimoli",
+     "effect": "Fransiyaning xalqaro obro‘siga zarar yetishi va Yevropadagi mavqeyi barham topishi",
+     "evidence": "Germaniya yagona davlatga birlashadigan bo'lsa, Fransiyaning xalqaro maydondagi obro'siga jiddiy\nzarar yetar va Yevropadagi ikkinchi davlatdek mavqeyi barham topar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Prussiyaning Germaniyada hukmronligini mustahkamlab, uni birlashtirishni nihoyasiga yetkazish maqsadi",
+     "effect": "Fransiya bilan urushga tayyorgarlik ko‘rildi va bahona izlandi",
+     "evidence": "Uning maqsadi Germaniyada Prussiyaning\nhukmronligini mustahkamlashga to'siq bo'lgan Fransiyani yengish\nva Germaniyani birlashtirishni nihoyasiga yetkazish edi."
+    },
+    {
+     "kind": "number",
+     "number": "140",
+     "unit": "ming",
+     "meaning": "Sedan yonida fransuz qo‘shinini qurshab olgan nemis qo‘shinining soni",
+     "evidence": "Fransiya qo'shini nemislarning 140\nminglik qo'shini orasidan qurshovni yorib o'ta olmadi."
+    },
+    {
+     "kind": "number",
+     "number": "80",
+     "unit": "ming",
+     "meaning": "Sedan yonida Napoleon boshchiligida taslim bo‘lgan fransuz qo‘shinining soni",
+     "evidence": "tariqa, bu yerdagi 80 ming kishilik qo'shin"
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "title": "1871-yil 18-mart davlat to‘ntarishi",
+   "page": 18,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "4-sentabr",
+     "date_label": "4-sentabr kuni",
+     "event": "Fransiya Respublika deb e’lon qilindi — mamlakat tarixidagi Uchinchi Respublika boshlandi",
+     "evidence": "Xalq talabi bilan 4- sentabr kuni Fransiyaning qonun chiqahtt\nruvchi Korpusi imperator hokimiyati ag'darilganligini e'lon qilishga\nmajbur bo'ldi. Ayni paytda, Fransiya Respublika deb e'lon qilindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "19-sentabr",
+     "date_label": "19-sentabr kuni",
+     "event": "Parij Prussiya qo‘shini tomonidan qurshab olindi va Muvaqqat hukumat taslim bo‘ldi",
+     "evidence": "19-sentabr kuni Parij Prussiya qo'shini tomonidan qurshab olindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1871-yil fevral",
+     "date_label": "1871-yil fevral oyida",
+     "event": "Milliy Majlisga shoshilinch saylov o‘tkazilib, Tyer boshchiligida yangi hukumat tuzildi",
+     "evidence": "187i-yil fevral oyida Fransiyada Milliy Majlisga shoshilinch saylov o'tkazildi va Tyer boshchiligida yangi hukumat tuzildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1871-yil 18-mart",
+     "date_label": "1871-yil 18-mart kuni",
+     "event": "Hukumat qo‘shini Milliy gvardiyaga qarshi chiqib, Tyer hukumatni Versalga ko‘chirishga ko‘rsatma berdi",
+     "evidence": "18-mart kuni kechasi hukumat qo'shini Milliy gvardiyaga\nmat qo'shinini chekinishga majbur etdilar. Tyer hukumatni Versalga\nko'chirish haqida ko'rsatma berdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "28-may",
+     "date_label": "28-may kuni",
+     "event": "Kommuna to‘la tor-mor etildi, 30 mingga yaqin kommunachi otib tashlandi",
+     "evidence": "28-may kuni Kommuna to'la tor-mor etildi. Asir olingan 30\nmingga yaqin kommunachi otib tashlandi. 50 mingga yaqin kommunachilar qamoqqa olindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1871-yil 10-may",
+     "date_label": "1871-yil 10-mayda",
+     "event": "Frankfurtda Fransiya-Germaniya sulh shartnomasi imzolanib, tovon miqdori belgilandi",
+     "evidence": "Unga ko'ra, Fransiya Germaniyaga\n5 mlrd. frank tovon to'laydigan bo'ldi."
+    },
+    {
+     "kind": "person",
+     "person": "Tyer",
+     "role": "Fransiya hukumati boshlig‘i, Parij Kommunasini bostirish tarafdori",
+     "activity": "Milliy gvardiyani qurolsizlantirishni buyurib, hukumatni Versalga ko‘chirishga ko‘rsatma bergan",
+     "evidence": "Ayni paytda, Bosh vazir Tyer Milliy gvardiyani qurolsizlantirishni"
+    },
+    {
+     "kind": "person",
+     "person": "Troshyu",
+     "role": "general, Muvaqqat milliy-mudofaa hukumati rahbari",
+     "activity": "Qonun chiqaruvchi Korpus nomidan Muvaqqat milliy-mudofaa hukumatini tuzgan",
+     "evidence": "Qonun chiqaruvchi Korpus general Troshyu boshchiligida Muvaqqat milliy-mudofaa hukumatini tuzdi."
+    },
+    {
+     "kind": "person",
+     "person": "Bismark",
+     "role": "Germaniya kansleri, Tyer hukumatiga yordam ko‘rsatgan siyosatchi",
+     "activity": "40 ming fransuz askar va zobitni asirlikdan bo‘shatib, Tyer hukumati ixtiyoriga yuborgan",
+     "evidence": "Bismark 40 ming fransuz askar va zobitlarni asirlikdan bo'shatib, ularni Tyer hukumati ixtiyoriga yubordi."
+    },
+    {
+     "kind": "person",
+     "person": "Parij mehnatkashlari",
+     "role": "Qo‘zg‘olonning asosiy kuchini tashkil etgan poytaxt aholisi",
+     "activity": "Milliy gvardiya bilan birgalikda shaharning muhim ahamiyatga ega joylarini qo‘lga kiritgan",
+     "evidence": "Bunga javoban Parij mehnatkashlari qo'zg'olon ko'tardilar. Ular Milliy gvardiya bilan birgalikda\nharakat qilib, shaharning muhim ahamiyatga ega bo'lgan joylarini\nqo'lga kiritdilar."
+    },
+    {
+     "kind": "term",
+     "term": "Parij Kommunasi",
+     "definition": "Parij shahrining o‘zini o‘zi boshqarish organi bo‘lib, qonun chiqaruvchi hokimiyatni ham amalga oshirgan",
+     "evidence": "Parij Kommunasi - Parij shahrining o'zini o'zi boshqarish organi\nbo'lib, u qonun chiqaruvchi hokimiyatni amalga oshirgan;"
+    },
+    {
+     "kind": "term",
+     "term": "Milliy gvardiya",
+     "definition": "Parijda hokimiyatni qo‘lga olgan, Markaziy qo‘mitasi muvaqqat hukumat vazifasini bajargan tashkilot",
+     "evidence": "Parijda hokimiyat Milliy gvardiya Markaziy qo'mitasi qo'liga\no'tdi. Bu qo'mita muvaqqat hukumat vazifasini bajardi."
+    },
+    {
+     "kind": "term",
+     "term": "Muvaqqat hukumat",
+     "definition": "Prussiya qo‘shini Parijni qurshab olgach taslim bo‘lgan vaqtinchalik hukumat",
+     "evidence": "Muvaqqat hukumat noiloj taslim bo'ldi."
+    },
+    {
+     "kind": "term",
+     "term": "Kommuna Kengashi",
+     "definition": "26-mart saylovidan so‘ng tuzilgan, o‘z a’zolaridan komissiyalar tashkil etgan organ",
+     "evidence": "o'tkazildi va Kommuna Kengashi tuzildi. Bu kengash o'z a'zolaridan"
+    },
+    {
+     "kind": "place",
+     "place": "Versal",
+     "event": "Hukumat qarorgohi qilib tanlangan shahar, Tyer hukumati shu yerga ko‘chgan",
+     "evidence": "majbur bo'la boshlaganligi hamda hukumat qarorgohi etib Versal\nshahri tanlanganligi sabab bo ldi."
+    },
+    {
+     "kind": "place",
+     "place": "Elzas va Lotaringiya",
+     "event": "Prussiya tortib olmoqchi bo‘lgan, foydali qazilmalarga boy fransuz viloyatlari",
+     "evidence": "U Fransiyadan katta tovon undirishga hamda uning foydali qazilmalarga boy viloyatlari bo'lmish Elzas va Lotaringiyani tortib olishga"
+    },
+    {
+     "kind": "place",
+     "place": "Germaniya",
+     "event": "Parij Kommunasini tor-mor etishda Tyer hukumatiga yordam bergan davlat",
+     "evidence": "Kommunani tor-mor etishda Germaniya Tyer hukumatiga yordam"
+    },
+    {
+     "kind": "cause",
+     "cause": "Prussiyaga qarshi urushdagi mag‘lubiyat va ayanchli shartlar asosida imzolangan yarash shartnomasi",
+     "effect": "Parijliklarning hukumatga qarshi qahr-g‘azabi kuchayib ketdi",
+     "evidence": "shartnomasi parijliklarning hukumatga qarshi\nqahr-g'azabini kuchaytirib yubordi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Parijda muhtojlik, ishsizlik va oziq-ovqat narxining keskin oshishi",
+     "effect": "Hatto o‘rta tabaqa vakillari ham xonavayron bo‘la boshladi",
+     "evidence": "Buning ustiga, Parijda muhtojlik,\nishsizlik, oziq-ovqat mahsulotlari narxining keskin oshib ketishi yuz\nberdi. Hatto o'rta tabaqa vakillari ham xonavayron bo'la boshladi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Qamaldan so‘ng aholining qarzlarini to‘lashga majbur bo‘lishi",
+     "effect": "Parijliklarda hukumatga nisbatan ishonchsizlik paydo bo‘ldi",
+     "evidence": "Parijliklarda hukumatga nisbatan ishonchsizlik paydo bo'ldi. Bunga qamaldan so'ng aholining qarzlari bo'yicha to'lovlarni to'lashga"
+    },
+    {
+     "kind": "cause",
+     "cause": "Kommuna Tyer hukumatini ta’qib qilmagani va uni to‘plab olishga imkon bergani",
+     "effect": "Hukumat qo‘shini Parijni qamalga olishga muvaffaq bo‘ldi",
+     "evidence": "Birinchidan, Parijdan qochib ketgan Tyer hukumatini ta'qib qilto'plab olishga imkon berdi. Natijada, hukumat qo'shini Parijni qamalga olishga muvaffaq bo'ldi."
+    },
+    {
+     "kind": "number",
+     "number": "72",
+     "unit": "kun",
+     "meaning": "Parij Kommunasining tashkil topgandan barham topguniga qadar yashagan muddati",
+     "evidence": "Shu tariqa, 72 kun yashagan Kommunaga"
+    },
+    {
+     "kind": "number",
+     "number": "10",
+     "unit": "ta",
+     "meaning": "Kommuna Kengashi o‘z a’zolaridan tashkil etgan komissiyalar (vazirliklar) soni",
+     "evidence": "1o ta komissiya (vazirlik) tashkil etdi."
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "title": "Fransiyada iqtisodiy va siyosiy hayot",
+   "page": 21,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "XIX asr so‘nggi choragi",
+     "date_label": "XIX asr so‘nggi choragida",
+     "event": "Fransiya sanoat ishlab chiqarish hajmi bo‘yicha dunyoda ikkinchi o‘rindan to‘rtinchi o‘ringa tushdi",
+     "evidence": "Chunonchi, dunyoda sanoat ishlab chiqarish hajmi bo'yicha ikkinchi o'rindan to'rtinchi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1873",
+     "date_label": "1873-yilda",
+     "event": "Germaniyaga tovon to‘lab bo‘lindi va Germaniya qo‘shinlarini Fransiyadan olib chiqib ketdi",
+     "evidence": "1873-yilda Germaniyaga tovon to'lab bo'lindi. Nihoyat, Germaniya o'z qo'shinlarini Fransiyadan olib chiqib ketdi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1875",
+     "date_label": "1875-yilda",
+     "event": "Uchinchi Respublika Konstitutsiyasi qabul qilinib, ikki palatali parlament tashkil etildi",
+     "evidence": "ikki palatali (Deputatlar palatasi va Senat) parlament (Milliy Majlis)\ntashkil etildi."
+    },
+    {
+     "kind": "date_event",
+     "date": "Prussiya bilan urush tugagach",
+     "date_label": "Prussiya bilan urush tugagach",
+     "event": "Hukmron doiralar orasida hokimiyat uchun kurash kuchayib, ikki guruh shakllandi",
+     "evidence": "Ularni shartli ravishda ikki guruhga\nbo'lish mumkin edi. Birinchisi - monarxiya tarafdorlari, ikkinchisi -\nrespublika tarafdorlari edi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1875",
+     "date_label": "1875-yilgi Konstitutsiyadan so‘ng",
+     "event": "Matbuot, yig‘ilish o‘tkazish va siyosiy tashviqot bilan shug‘ullanish huquqlari e’lon qilindi",
+     "evidence": "O'sha davr uchun katta ahamiyatga ega bo'lgan qator huquq\nva erkinliklar e'lon qilindi. Xususan, matbuot va yig'ilish o'tkazish,"
+    },
+    {
+     "kind": "date_event",
+     "date": "1875",
+     "date_label": "1875-yilgi Konstitutsiyaga ko‘ra",
+     "event": "Xotin-qizlarga saylov huquqi berilmadi, ular saylov jarayonidan chetda qoldi",
+     "evidence": "Lekin xotin-qizlarga saylov huquqi berilmadi."
+    },
+    {
+     "kind": "person",
+     "person": "Prezident",
+     "role": "Konstitutsiyaga ko‘ra 7 yil muddatga saylanadigan davlat rahbari",
+     "activity": "Urush e’lon qilish, sulh tuzish va umumiy afv e’lon qilish vakolatlariga ega bo‘lgan",
+     "evidence": "Prezident vazirlarni tayinlash, respublika nomidan tashqi siyosat yuritish, shuningdek, urush e'lon qilish va sulh\ntuzish, umumiy afv e'lon qilish kabi vakolatlarga ega edi."
+    },
+    {
+     "kind": "person",
+     "person": "Monarxiyachilar",
+     "role": "Milliy Majlisda ko‘pchilikni tashkil etgan, monarxiyani tiklashga urinuvchilar",
+     "activity": "Prezidentni ikki marta saylagan bo‘lsalar-da, monarxiyani tiklashga urinishlari natijasiz tugadi",
+     "evidence": "Milliy Majlisda ko'pchilikni tashkil etgan monarxiyachilar o'z\nnomzodlarini ikki marta prezidentlikka saylagan bo'lsalar-da, monarxiyani tiklashga urinishi natijasiz tugadi."
+    },
+    {
+     "kind": "person",
+     "person": "Respublikachilar",
+     "role": "parlamentda ozchilikni tashkil etgan, aholi ko‘magiga tayangan siyosiy kuchlar",
+     "activity": "Keskin ichki siyosiy kurashda g‘alaba qozonib, respublika tuzumini mustahkamlagan",
+     "evidence": "Respublikachilar mamlakat parlamentida (Milliy Majlis) ozchilikni"
+    },
+    {
+     "kind": "person",
+     "person": "Sarmoyadorlar",
+     "role": "kapitalistlar, o‘z mablag‘larini chetga chiqarishni afzal ko‘rganlar",
+     "activity": "Sarmoyalarini mamlakat ishlab chiqarishiga emas, katta foiz evaziga chetga chiqarishni afzal ko‘rgan",
+     "evidence": "Shuning uchun ham sarmoyadorlar (kapitalistlar) o'z sarmoyalarini (kapitallarini) mamlakat ishlab chiqarishiga emas, balki chetga (katta foiz evaziga, albatta) chiqarishni afzal ko'rgan."
+    },
+    {
+     "kind": "term",
+     "term": "Parlament",
+     "definition": "Saylov asosida tuziladigan qonun chiqaruvchi oliy davlat organi",
+     "evidence": "Parlament (fr. gapirmoq) - saylov asosida tuziladigan qonun\nchiqaruvchi oliy davlat organi."
+    },
+    {
+     "kind": "term",
+     "term": "Respublika",
+     "definition": "Fuqarolarning umumiy saylovi asosida boshqariladigan davlat",
+     "evidence": "Respublika (lot. jamiyat ishi) - fuqarolarning umumiy saylovi\nasosida boshqariladigan davlat."
+    },
+    {
+     "kind": "term",
+     "term": "Monarxiya",
+     "definition": "Yakka hukmronlik ma’nosini anglatuvchi yunoncha atama",
+     "evidence": "Monarxiya (yunoncha) - yakka hukmronlik."
+    },
+    {
+     "kind": "term",
+     "term": "Konstitutsiya",
+     "definition": "1875-yilda qabul qilinib, prezidentlik lavozimi va ikki palatali parlamentni belgilagan hujjat",
+     "evidence": "yasi qabul qilindi. Unga ko'ra, prezident-\nKonstitutsiyasi\nlik lavozimi saqlab qolindi."
+    },
+    {
+     "kind": "place",
+     "place": "Prussiya",
+     "event": "Fransiya bilan urushi unga juda katta moddiy talafot yetkazgan davlat",
+     "evidence": "bilan bo'lgan urush Fransiyaga juda katta moddiy talafot yetkazdi."
+    },
+    {
+     "kind": "place",
+     "place": "Fransiya",
+     "event": "Aholisining katta qismi monarxiyaga qarshi bo‘lgan mamlakat",
+     "evidence": "Biroq Fransiya aholisining katta qismi monarxiyaga\nqarshi bo'lganligi ularga madad bo'lardi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Fransiyaning mayda tovar ishlab chiqaruvchilar davlati bo‘lib qolishi",
+     "effect": "Eksport importdan ortiq bo‘lmadi va ichki bozor cheklandi",
+     "evidence": "Fransiyaning hamon mayda tovar ishlab chiqaruvchilar davlati\nbo'lib qolayotganligi eksport hajmining importdan ortiq bo'lishiga\nolib kelmadi. Bu esa, o'z navbatida, ichki bozorning cheklanishiga"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mamlakatdagi ichki siyosiy vaziyatning beqarorligi",
+     "effect": "Mamlakat iqtisodiy ahvoliga katta salbiy ta’sir ko‘rsatdi",
+     "evidence": "Ichki siyosiy\nvaziyatning beqarorligi mamlakat iqtisodiy ahvoliga katta salbiy ta'sir"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dehqonlarning xarid quvvatining pastligi",
+     "effect": "Sanoat ishlab chiqarishi o‘sishiga salbiy ta’sir ko‘rsatdi",
+     "evidence": "Dehqonlar xarid quvvatining pastligi sanoat ishlab chiqarishi o'sishiga salbiy ta'sir ko'rsatayotgan edi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Hukumat a’zolarini prezident tayinlashi va ularning mas’uliyati",
+     "effect": "Hukumat a’zolari parlament oldida javobgar bo‘lgan",
+     "evidence": "Hukumat a'zolarini prezident tayinlasa-da, ular parlament oldida\njavobgar edi."
+    },
+    {
+     "kind": "number",
+     "number": "13",
+     "unit": "mlrd. frank",
+     "meaning": "Prussiya bilan urushda Fransiya ko‘rgan zarar miqdori",
+     "evidence": "Urushda Fransiya 13 mlrd. frank zarar ko'rdi."
+    },
+    {
+     "kind": "number",
+     "number": "7",
+     "unit": "yil",
+     "meaning": "Parlamentning ikki palatasi qo‘shma yig‘ilishida prezident saylanadigan muddat",
+     "evidence": "Parlament har ikki palatasining qo'shma yig'ilishi 7 yil muddatga\nmamlakat prezidentini saylar edi."
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "title": "Fransiyaning ichki siyosati",
+   "page": 23,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1881–1882",
+     "date_label": "1881–1882-yillarda",
+     "event": "Ta’lim to‘g‘risida qonun qabul qilinib, maktab cherkovdan ajratildi",
+     "evidence": "nonchi, 1881-1882-yilarda ta'lim to'g'risida\nqonun qabul qilindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1876",
+     "date_label": "1876-yilda",
+     "event": "Senatga bo‘lgan saylovlarda respublikachilar qo‘li baland keldi",
+     "evidence": "1876-yilgi Senatga bo'lgan\nsaylovlarda respublikachilar qo'li baland keldi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1884",
+     "date_label": "1884-yilda",
+     "event": "Kasaba uyushmalarining erkin faoliyati va ish tashlashga ruxsat beruvchi qonun qabul qilindi",
+     "evidence": "1884-yilda kasaba\nuyushmalarining erkin faoliyatiga hamda ish tashlashga ruxsat etuvchi\nqonun qabul qilindi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1897",
+     "date_label": "1897-yilda",
+     "event": "Haqiqiy josus haqidagi haqiqat matbuotda oshkor bo‘ldi",
+     "evidence": "Lekin bu haqiqat sirligicha qolib ketmadi. 1897-yilda u matbuot\nyuzini kordi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1906",
+     "date_label": "1906-yilda",
+     "event": "Kapitan A. Dreyfus faqat 1906-yilda to‘la oqlandi",
+     "evidence": "A. Dreyfus faqat 1906-yildagina to'la oqlandi."
+    },
+    {
+     "kind": "date_event",
+     "date": "1910",
+     "date_label": "1910-yilda",
+     "event": "Pensiya haqida qonun qabul qilinib, pensiya yoshi 65 yosh etib belgilandi",
+     "evidence": "1910-yilda esa pensiya haqida qonun qabul qilindi. Unda pensiya\nyoshi 65 yosh deb belgilandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1914",
+     "date_label": "1914-yilga kelib",
+     "event": "Fransiya Rossiya, Buyuk Britaniya, AQSH va Janubiy Amerika davlatlariga katta kapital chiqargan",
+     "evidence": "1914-yilga kelganda Rossiya, Buyuk Britaniya, AQSH va Janubiy Amerika davlatlariga\n24 mlrd. frank miqdorida kapital chiqardi."
+    },
+    {
+     "kind": "person",
+     "person": "Mak-Magon",
+     "role": "monarxiya tarafdori bo‘lgan Fransiya prezidenti",
+     "activity": "1876-yilgi Senat saylovlaridan so‘ng iste’fo berishga majbur bo‘lgan",
+     "evidence": "boshqargan monarxiya tarafdori bo'lgan Prezident Mak-Magon iste'fo\nberishga majbur bo'ldi."
+    },
+    {
+     "kind": "person",
+     "person": "A. Dreyfus",
+     "role": "Fransiya armiyasi Bosh shtabida xizmat qilgan yahudiy kapitan",
+     "activity": "Soxta hujjatlar yordamida josuslikda ayblanib, jinoiy javobgarlikka tortilgan",
+     "evidence": "Maxsus xizmat bu masalada Fransiya armiyasi Bosh shtabida xizmat qiluvchi, yahudiy millatiga mansub kapitan A.Dreyfusdan shubha\nqila boshladi. Tez orada u josuslikda ayblanib,"
+    },
+    {
+     "kind": "person",
+     "person": "Estergazi",
+     "role": "Bosh shtab mayori, haqiqiy josus bo‘lib chiqqan zobit",
+     "activity": "Fosh etilgach, Fransiyadan qochib ketishga muvaffaq bo‘lgan",
+     "evidence": "Va nihoyat, haqiqiy josus\naniqlandi. U bosh shtab mayori Estergazi bo'lib chiqdi."
+    },
+    {
+     "kind": "person",
+     "person": "J. Ferri",
+     "role": "Fransiya hukumatining boshlig‘i, mustamlakachilik siyosati tarafdori",
+     "activity": "1885-yilda deputatlar palatasida mustamlakalarni sarmoya kiritish uchun eng qulay obyekt deb atagan",
+     "evidence": "boshlig'i J. Ferrining 1885-yilda deputatlar palatasida so'zlagan\nnutqid an.)"
+    },
+    {
+     "kind": "person",
+     "person": "Sadi Karno",
+     "role": "1894-yilda anarxistlar terrori natijasida o‘ldirilgan Fransiya prezidenti",
+     "activity": "Mamlakat prezidenti sifatida suiqasd qurboni bo‘lgan",
+     "evidence": "1894-yilda hatto mamlakat prezidenti Sadi Karno ham o'ldirildi."
+    },
+    {
+     "kind": "term",
+     "term": "Anarxizm",
+     "definition": "Har qanday hokimiyat va davlat tuzumini rad etuvchi, faqat shaxs irodasini tan oluvchi ta’limot",
+     "evidence": "Anarxizm (yunoncha - hokimiyatsizlik, beboshlik) - alohida bir\nshaxsning xohish-irodasinigina tan olib, har qanday hokimiyat va\ndavlat tuzumini rad etuvchi ta'limot."
+    },
+    {
+     "kind": "term",
+     "term": "Shovinizm",
+     "definition": "Irqiy ayirmachilik va milliy nizoni avj oldirishga urinuvchi o‘taketgan millatchilik",
+     "evidence": "Shovinizm - irqiy ayirmachilik va milliy nizoni avj oldirishga\nurinuvchi o'taketgan millatchilik."
+    },
+    {
+     "kind": "term",
+     "term": "Siyosiy reaksiya",
+     "definition": "Taraqqiyotga qarshi, eskirgan ijtimoiy tartiblarni saqlab qolish tarafdori bo‘lgan kuch",
+     "evidence": "Siyosiy reaksiy\ntaraqqiyotga qarshi, eskirgan ijtimoiy tartiblarni\nsaqlab qolish tarafdori bo'lgan siyosiy kuch."
+    },
+    {
+     "kind": "term",
+     "term": "Fransiya ishchi partiyasi",
+     "definition": "1880-yilda ishchi tashkilotlari vakillari tomonidan tuzilgan siyosiy partiya",
+     "evidence": "1880-yilda ishchi tashkilotlari vakillari\n,,Fransiya ishchi partiyasi\"ni tuzdi."
+    },
+    {
+     "kind": "place",
+     "place": "Elzas va Lotaringiya",
+     "event": "Millatchilik tarafdorlari qudratli qo‘shin bilan qaytarib olishga umid qilgan viloyatlar",
+     "evidence": "tarafdorlari qudratli qo'shingina Elzas va Lotaringiyani qaytarib olishi mumkinligiga ishonar edi."
+    },
+    {
+     "kind": "place",
+     "place": "Germaniya",
+     "event": "Fransiya harbiy kuchlari haqidagi maxfiy ma’lumotlar yetkazib berilgan davlat",
+     "evidence": "Fransiya kontrrazvedkasi mamlakat harbiy kuchlari haqida josus tomonidan Germaniyaga maxfiy ma'lumotlar"
+    },
+    {
+     "kind": "cause",
+     "cause": "1881–1882-yillarda ta’lim to‘g‘risidagi qonunning qabul qilinishi",
+     "effect": "13 yoshgacha bo‘lgan bolalar uchun majburiy bepul ta’lim joriy etildi",
+     "evidence": "13 yoshgacha bo'lgan bolalar\nuchun majburiy bepul\nta'lim joriy etildi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Kasaba uyushmalarining erkin faoliyati va ish tashlashga ruxsat berilishi",
+     "effect": "Ishchilar kasaba uyushmalari va mehnat birjalarini tuzdi",
+     "evidence": "Ishchilar o'z kasaba uyushmalari va mehnat"
+    },
+    {
+     "kind": "cause",
+     "cause": "Demokratiyaga qarshi kuchlarning kuchayishi va millatchilik targ‘iboti",
+     "effect": "«Dreyfus ishi» millatchilik va shovinistik kayfiyatlarni avj oldirish uchun ishlatildi",
+     "evidence": "Siyosiy kuchlar ,Dreyfus ishi\"dan mamlakatda demokratiyaga\nqarshi tashviqotni kuchaytirish, millatchilik, shovinistik kayfiyatlarni\nyanada avj oldirish uchun foydalandi."
+    },
+    {
+     "kind": "cause",
+     "cause": "Mehnatkashlarning kuniga 10–12, ba’zan 14–16 soat ishlashga majbur bo‘lishi",
+     "effect": "Mehnatkashlar o‘z haq-huquqlari uchun kurasha boshladi",
+     "evidence": "Ular kuniga 10-12 soat, ba'zan 14-16 soatgacha ishlashga majbur edi. Mehnatkashlar o'z haq-huquqlari uchun\nkurasha boshladi."
+    },
+    {
+     "kind": "number",
+     "number": "36",
+     "unit": "%",
+     "meaning": "Sanoatda xizmat qilayotgan aholining ulushi",
+     "evidence": "Natijada, sanoatda xizmat qilayotgan aholining\nsoni 36 foizga yetdi."
+    },
+    {
+     "kind": "number",
+     "number": "40",
+     "unit": "%",
+     "meaning": "Qishloq xo‘jaligida band bo‘lgan aholining ulushi",
+     "evidence": "40 foiz aholi qishloq xo'jaligida band edi."
+    }
+   ]
+  }
+ ]
+}

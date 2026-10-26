@@ -7,4 +7,34 @@ local.properties
 .kotlin/
 .idea/caches/
 data_output.json
-backend/
+.idea/modules.xml
+.idea/modules/
+.idea/pySourceRootDetection.xml
+app/src/main/assets/topics_export.json
+
+# ---------------------------------------------------------------------------
+# Django backend (backend/): code and the content pipeline are tracked,
+# runtime data is not.
+# ---------------------------------------------------------------------------
+backend/venv/
+backend/.venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.env
+backend/*.sqlite3
+backend/*.sqlite3-wal
+backend/*.sqlite3-shm
+backend/media/
+backend/staticfiles/
+backend/*.log
+
+# Generated question banks are derived from content/books/*/facts — rebuild with
+#   python content/tools/build_book_bank.py <book> --grade N --subject S --prefix P
+backend/content/books/*/generated/
+
+# Scratch exports / temp files
+6-sinf_tarix_*_test.txt
+6-sinf_tarix_*_test.json
+6-sinf_tarix_*_test.zip
+temp_page.png
+*.zip

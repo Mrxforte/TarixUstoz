@@ -1,0 +1,496 @@
+{
+  "chapter": "I BOB. XIX ASR O‘RTALARIDA O‘ZBEK XONLIKLARINING SIYOSIY, IQTISODIY VA MADANIY HAYOTI",
+  "topics": [
+    {
+      "number": 1,
+      "title": "XIX asr o‘rtalarida O‘rta Osiyo davlatlarining hududi va aholisi",
+      "page": 5,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asr",
+          "date_label": "XIX asr",
+          "event": "O‘rta Osiyoda Buxoro amirligi, Xiva va Qo‘qon xonliklaridan iborat uchta mustaqil davlat mavjud bo‘lgan",
+          "evidence": "XIX asrda O‘rta Osiyoda uchta mustaqil davlat mav-"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning o‘rtalari",
+          "date_label": "XIX asr o‘rtalari",
+          "event": "Buxoro amirligi hududi Eron, Afg‘oniston, Qo‘qon va Xiva xonliklari hamda qozoq juzlari yerlari bilan chegaradosh bo‘lgan",
+          "evidence": "Davlat hududi XIX asrning o‘rtalarida Eron,"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning ikkinchi yarmi",
+          "date_label": "XIX asrning ikkinchi yarmi",
+          "event": "Xiva xonligi janubda Eron, sharqda Buxoro amirligi, g‘arbda Kaspiy dengizi bilan chegaralangan",
+          "evidence": "Xiva xonligi XIX asrning ikkinchi yarmida janubda Eron, sharqda"
+        },
+        {
+          "kind": "date_event",
+          "date": "XVIII asrning boshlari",
+          "date_label": "XVIII asr boshlari",
+          "event": "Farg‘ona vodiysi va Sirdaryoning quyi qismidagi hududlar ajralib, Qo‘qon xonligi tashkil topgan",
+          "evidence": "XVIII asrning boshlarida, asosan, Farg‘ona vodiysi va Sirdaryo ning"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning o‘rtalari",
+          "date_label": "XIX asr o‘rtalari",
+          "event": "Uchala xonlik aholisining etnik tarkibi bir-biriga yaqin bo‘lib, ularda asosan o‘zbeklar yashagan",
+          "evidence": "XIX asrning o‘rtalariga kelib Buxoro amirligi,"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning o‘rtalari",
+          "date_label": "XIX asr o‘rtalari",
+          "event": "Amirlik hududi janubda Amudaryoning chap qirg‘og‘idan boshlanib, shimolda Sirdaryogacha cho‘zilgan",
+          "evidence": "chega ralari janubda Amudaryoning chap qirg‘og‘idan boshlanib shi-"
+        },
+        {
+          "kind": "person",
+          "person": "Amir",
+          "role": "Buxoro amirligining oliy hukmdori; beklik va tumanlar unga bo‘ysungan",
+          "activity": "Beklik va tumanlarni boshqarish uchun beklarni shaxsan tayinlagan",
+          "evidence": "hududiy jihatdan beklik va tumanlarga bo‘linib, ularni amir tomonidan"
+        },
+        {
+          "kind": "person",
+          "person": "Xiva xoni",
+          "role": "Xiva xonligining oliy hukmdori; xonlik beklik va noibliklarga bo‘lingan",
+          "activity": "Beklik va noibliklarni boshqarish uchun beklar hamda to‘ralarni tayinlagan",
+          "evidence": "2 ta noiblikka bo‘lingan va ularni xon tomonidan tayinlangan beklar va"
+        },
+        {
+          "kind": "person",
+          "person": "Qo‘qon xoni",
+          "role": "Qo‘qon xonligining oliy hukmdori, bekliklarni boshqaruvchi",
+          "activity": "Bekliklarni o‘z qarindoshlari va yaqinlaridan tayinlangan kishilarga topshirgan",
+          "evidence": "bo‘linib, ularni, asosan, xon tomonidan o‘z qarindoshlari va yaqinlaridan"
+        },
+        {
+          "kind": "person",
+          "person": "Bek",
+          "role": "Amirlik va xonliklarda beklik hamda tumanlar hokimi",
+          "activity": "Hududni boshqarish uchun oliy hukmdor tomonidan tayinlangan amaldor",
+          "evidence": "tayinlangan beklar boshqargan. Amirlikda 40 ta beklik bo‘lgan."
+        },
+        {
+          "kind": "term",
+          "term": "Beklik",
+          "definition": "Amirlik va xonliklardagi hududiy-ma’muriy birlik bo‘lib, uni oliy hukmdor tayinlagan bek boshqargan",
+          "evidence": "hududiy jihatdan beklik va tumanlarga bo‘linib"
+        },
+        {
+          "kind": "term",
+          "term": "Noiblik",
+          "definition": "Xiva xonligidagi ma’muriy birlik; xonlik 18 ta beklik va 2 ta noiblikka bo‘lingan",
+          "evidence": "2 ta noiblikka bo‘lingan va ularni xon tomonidan"
+        },
+        {
+          "kind": "term",
+          "term": "Juz",
+          "definition": "Qozoq urug‘larining yirik birlashmasi; uning yerlari O‘rta Osiyo xonliklariga tutash bo‘lgan",
+          "evidence": "qozoq juz lari yerlari bilan che -"
+        },
+        {
+          "kind": "term",
+          "term": "Voha",
+          "definition": "Cho‘l ichidagi suvli va serhosil yer; aholining asosiy qismi sersuv vohalarda yashagan",
+          "evidence": "Aholining asosiy qismi sersuv vohalarda"
+        },
+        {
+          "kind": "term",
+          "term": "Buxoroi Sharif",
+          "definition": "Buxoro shahrining «Muqaddas Buxoro» ma’nosini beruvchi faxriy nomi",
+          "evidence": "«Muqaddas Buxoro» nomiga ega bo‘lgan"
+        },
+        {
+          "kind": "place",
+          "place": "Buxoro",
+          "event": "Amirlik poytaxti va islom dini markazlaridan biri bo‘lib, «Buxoroi Sharif» nomi bilan mashhur edi",
+          "evidence": "Amirlik poytaxti islom dini markazlaridan biri bo‘lib"
+        },
+        {
+          "kind": "place",
+          "place": "Zarafshon vodiysi",
+          "event": "Amirlikning markaziy qismi hisoblanib, unda Buxoro va Samarqand shaharlari joylashgan",
+          "evidence": "shaharlari joylashgan Zarafshon vodiysi hisoblangan."
+        },
+        {
+          "kind": "place",
+          "place": "Farg‘ona vodiysi",
+          "event": "Qo‘qon xonligi tashkil topgan asosiy hudud bo‘lib, Sirdaryoning quyi qismigacha cho‘zilgan",
+          "evidence": "XVIII asrning boshlarida, asosan, Farg‘ona vodiysi va Sirdaryo ning"
+        },
+        {
+          "kind": "cause",
+          "cause": "Farg‘ona vodiysi va Sirdaryoning quyi qismidagi hududlarning Buxoro amirligidan ajrashi",
+          "effect": "Mustaqil Qo‘qon xonligi davlati tashkil topgan",
+          "evidence": "hududlar Buxoro amirligidan ajrab, mustaqil"
+        },
+        {
+          "kind": "cause",
+          "cause": "Janubiy chegaradagi tog‘li o‘lkalar uchun ikki davlat o‘rtasidagi raqobat",
+          "effect": "Qo‘qon xonligi bilan Buxoro amirligi o‘rtasida tez-tez to‘qnashuvlar bo‘lib turgan",
+          "evidence": "bu hududlar uchun Buxoro amirligi bilan tez-tez to‘qnashuvlar"
+        },
+        {
+          "kind": "cause",
+          "cause": "O‘zbeklarning o‘troq turmush tarzi va yashash joylarida dehqonchilik an’anasi",
+          "effect": "Ular dehqonchilik, hunarmandchilik va savdo-sotiq bilan shug‘ullanishgan",
+          "evidence": "o‘troq turmush tarzida hayot kechirib, dehqonchilik"
+        },
+        {
+          "kind": "cause",
+          "cause": "Qozoqlar, qoraqalpoqlar, turkmanlar va qirg‘izlarning ko‘chmanchi turmushi",
+          "effect": "Ular asosan chorvachilik bilan shug‘ullangan",
+          "evidence": "ko‘chmanchi turmush kechirib, asosan, chorvachilik bi-"
+        },
+        {
+          "kind": "number",
+          "number": "40",
+          "unit": "ta beklik",
+          "meaning": "Buxoro amirligida mavjud bo‘lgan bekliklar soni",
+          "evidence": "Amirlikda 40 ta beklik bo‘lgan."
+        },
+        {
+          "kind": "number",
+          "number": "3 million",
+          "unit": "kishi",
+          "meaning": "Qo‘qon xonligi aholisining taxminiy soni",
+          "evidence": "Qo‘qon xonligida aholi soni 3 millionga yaqin bo‘lib"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "XIX asr o‘rtalarida o‘zbek xonliklarining ma’muriy boshqaruv tizimi",
+      "page": 8,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asrning o‘rtalari",
+          "date_label": "XIX asr o‘rtalari",
+          "event": "Buxoro amirligida amir hokimiyati avloddan avlodga meros tarzda o‘tgan",
+          "evidence": "unin g hokimiyati avloddan avlodga meros tarzda"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning o‘rtalari",
+          "date_label": "XIX asr o‘rtalari",
+          "event": "Amirlikda ijro hokimiyati bosh vazir – qo‘shbegi qo‘lida bo‘lgan",
+          "evidence": "kimiyati bosh vazir – qo‘shbegi qo‘lida bo‘lgan."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning o‘rtalari",
+          "date_label": "XIX asr o‘rtalari",
+          "event": "Viloyat va tuman hokimlari qo‘shbegining tavsiyasi bilan tayinlangan",
+          "evidence": "kimlari qo‘shbegi tavsiyasi bilan tayinlangan."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning o‘rtalari",
+          "date_label": "XIX asr o‘rtalari",
+          "event": "Moliya va xazina ishlari hamda soliqlar yig‘ilishini devonbegi idora qilgan",
+          "evidence": "soliqlar to‘planishi kabi sohalarni devonbegi idora qilgan."
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning o‘rtalari",
+          "date_label": "XIX asr o‘rtalari",
+          "event": "Shariat qoidalari ijrosi va sud ishlari nazoratini shayxulislom bajargan",
+          "evidence": "sud ishlarini nazorat qi lishni shayxul islom"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning o‘rtalari",
+          "date_label": "XIX asr o‘rtalari",
+          "event": "Xiva xonligi qo‘ng‘irotlar sulolasi tomonidan boshqarilib, xon cheklanmagan hokimiyatga ega bo‘lgan",
+          "evidence": "boshqarilib, uning oliy hukmdori xon hisob-"
+        },
+        {
+          "kind": "date_event",
+          "date": "XIX asrning o‘rtalari",
+          "date_label": "XIX asr o‘rtalari",
+          "event": "Qo‘qon xonligini minglar sulolasi boshqargan, uning markazi Qo‘qon shahri bo‘lgan",
+          "evidence": "Xonlik minglar sulolasi tomonidan boshqarilgan"
+        },
+        {
+          "kind": "person",
+          "person": "Mirzaboshi",
+          "role": "Amirlik hujjatlarini yuritishga mas’ul amaldor, devonbegiga bo‘ysungan",
+          "activity": "Amirlikning rasmiy hujjatlarini yuritish va yozuv ishlarini boshqarish",
+          "evidence": "ritishga mas’ul mirzaboshi bo‘ysungan."
+        },
+        {
+          "kind": "person",
+          "person": "Mushrif",
+          "role": "Soliqlarni o‘z vaqtida yig‘ish va hisobga olishga javobgar shaxs",
+          "activity": "Amirlikda soliqlar hisobi va ularning yig‘ilishini nazorat qilgan",
+          "evidence": "ularni hisobga olib borishga javobgar kishi mushrif"
+        },
+        {
+          "kind": "person",
+          "person": "To‘pchiboshi",
+          "role": "Buxoro amirligida amir qo‘shinlarining bosh qo‘mondoni",
+          "activity": "Amirning barcha qo‘shinlariga qo‘mondonlik qilgan harbiy amaldor",
+          "evidence": "To‘pchiboshi amir qo‘shinlarining"
+        },
+        {
+          "kind": "person",
+          "person": "Mirshabboshi",
+          "role": "Amir soqchilarining boshlig‘i va shahar tartibi mas’uli",
+          "activity": "Amirlik shaharlarida tinchlik va tartibni saqlashni ta’minlagan",
+          "evidence": "saqlashga amir soqchilari boshlig‘i – mirshabboshi mas’ul hisob langan."
+        },
+        {
+          "kind": "person",
+          "person": "Ko‘kaldosh",
+          "role": "Mamlakat xavfsizligi bilan shug‘ullanuvchi maxsus amaldor",
+          "activity": "Amirning yaqinlari va dushmanlari to‘g‘risida ma’lumotlar to‘plagan",
+          "evidence": "Ko‘kaldosh mamlakat xavfsizligi, amirning yaqinlari"
+        },
+        {
+          "kind": "term",
+          "term": "Mang‘itlar sulolasi",
+          "definition": "Buxoro amirligini boshqargan va cheklanmagan hokimiyatga ega bo‘lgan hukmdorlar sulolasi",
+          "evidence": "amirlikni mang‘itlar sulolasiga mansub"
+        },
+        {
+          "kind": "term",
+          "term": "Valiahd",
+          "definition": "Taxt vorisi; uning tarbiyasi bilan otaliq mashg‘ul bo‘lgan",
+          "evidence": "Amir qarorgohi hisoblangan arkda taxt vorisi – valiahd"
+        },
+        {
+          "kind": "term",
+          "term": "Kenegash",
+          "definition": "Xiva xonligida devonbegi ixtiyorida faoliyat ko‘rsatgan qo‘shbegi, mehtar va otaliqdan iborat kengash",
+          "evidence": "uning ixtiyorida qo‘shbegi, meh tar, otaliq-"
+        },
+        {
+          "kind": "term",
+          "term": "Amirlashkar",
+          "definition": "Qo‘qon xonligidagi eng yuqori harbiy lavozim, harbiy vazir",
+          "evidence": "yuqori harbiy lavozim amirlashkar bo‘lib, u harbiy vazir hisoblangan."
+        },
+        {
+          "kind": "term",
+          "term": "Ichan qal’a",
+          "definition": "Xiva shahridagi ichki qal’a; u mudofaa devori bilan o‘ralgan bo‘lgan",
+          "evidence": "Ichan qal’a va mudofaa devori bilan"
+        },
+        {
+          "kind": "place",
+          "place": "Buxoro",
+          "event": "Amirlikning ma’muriy markazi bo‘lib, unda oliy hukmdor saroyi va ark joylashgan",
+          "evidence": "Buxoro shahri amirlikning ma’muriy markazi edi."
+        },
+        {
+          "kind": "place",
+          "place": "Xiva",
+          "event": "Xon qarorgohi joylashgan shahar; ichki Ichan qal’a va tashqi Dishan qal’adan iborat",
+          "evidence": "xon qarorgohi Xiva shah-"
+        },
+        {
+          "kind": "place",
+          "place": "Qo‘qon",
+          "event": "Qo‘qon xonligining ma’muriy markazi bo‘lgan shahar",
+          "evidence": "uning ma’muriy markazi Qo‘qon shahri bo‘lgan."
+        },
+        {
+          "kind": "cause",
+          "cause": "Amir davlat boshqaruvini o‘z qarindoshlari va yaqin odamlariga topshirgan",
+          "effect": "Boshqaruv, moliya, sud va harbiy ishlar bir necha imtiyozli oila qo‘lida to‘plangan",
+          "evidence": "amirning qarindoshlari, o‘ziga yaqin odamlar tomonidan boshqarilgan."
+        },
+        {
+          "kind": "cause",
+          "cause": "Aholining bir qismi askarlik xizmatida bo‘lgan",
+          "effect": "Xizmatdagilar soliqlarni to‘lashdan ozod qilingan",
+          "evidence": "Askarlik xiz matida bo‘lganlar soliqlardan"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xonlar cheklanmagan siyosiy va harbiy hokimiyatga ega bo‘lgan",
+          "effect": "Sud, ma’muriy va harbiy hokimiyat xon qo‘lida mujassamlashgan",
+          "evidence": "xon cheklanmagan siyosiy,"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xiva xonligida sug‘orish inshootlari va suv ta’minoti katta ahamiyatga ega bo‘lgan",
+          "effect": "Mirobboshi suv taqsimoti va sug‘orish ishlariga mas’ul hisoblangan",
+          "evidence": "sug‘o rish inshootlari va suv ta’minoti hamda taqsi-"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "XIX asr o‘rtalarida o‘zbek xonliklarining ijtimoiy-iqtisodiy va madaniy hayoti",
+      "page": 10,
+      "items": [
+        {
+          "kind": "date_event",
+          "date": "XIX asr",
+          "date_label": "XIX asr",
+          "event": "O‘rta Osiyo xonliklari agrar davlatlar bo‘lib, aholi ahvoli yer egaligi va soliqlar miqdori bilan belgilangan",
+          "evidence": "XIX asrda O‘rta Osiyo xonliklari agrar davlat-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1812",
+          "date_label": "1812-yil",
+          "event": "Shermuhammad Munis Xorazmning 1812-yilga qadar bo‘lgan tarixini yozgan",
+          "evidence": "1812-yilga qadar bo‘lgan tarixini yozgan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1819",
+          "date_label": "1819-yil",
+          "event": "Munis Mirxondning «Ravzat us-safo» tarixiy asarini o‘zbek tiliga tarjima qilishni boshlagan",
+          "evidence": "U 1819-yilda Mirxondning «Ravzat us-safo»"
+        },
+        {
+          "kind": "date_event",
+          "date": "1809–1874",
+          "date_label": "1809–1874-yillar",
+          "event": "Muhammad Rizo Ernazar biy o‘g‘li Ogahiy 1809–1874-yillarda yashagan",
+          "evidence": "1809–1874-yillarda yashagan"
+        },
+        {
+          "kind": "date_event",
+          "date": "1857",
+          "date_label": "1857-yil",
+          "event": "Ahmad Donish Buxoro amiri Nasrulloning elchilari bilan Moskva va Peterburg shaharlarida bo‘lgan",
+          "evidence": "elchilari bilan 1857-yilda Moskva,"
+        },
+        {
+          "kind": "date_event",
+          "date": "1865",
+          "date_label": "1865-yil",
+          "event": "Ahmad Donish amir Muzaffar taklifi bilan astronomiyaga oid «Manozir ul-kavokib» asarini yozgan",
+          "evidence": "1865-yilda amir Muzaffar taklifi bilan «Ma-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1859",
+          "date_label": "1859-yil",
+          "event": "Muhammad Yunus «Xudoyqul anvar» asarida Muhammad Alixon davri voqealarini yoritgan",
+          "evidence": "Muhammad Yunus tomonidan 1859-yilda yozilgan «Xudoyqul an-"
+        },
+        {
+          "kind": "date_event",
+          "date": "1851–1855",
+          "date_label": "1851–1855-yillar",
+          "event": "Xiva shahridagi Ichan qal’ada Muhammad Aminxon madrasasi qurilgan",
+          "evidence": "Ichan qal’adagi Muhammad Aminxon madrasasi"
+        },
+        {
+          "kind": "person",
+          "person": "Mutavalli",
+          "role": "Vaqf yerlaridan olinadigan foyda hisob-kitobi va taqsimotiga mas’ul shaxs",
+          "activity": "Vaqf mulklari daromadini hisobga olib, uni belgilangan tartibda taqsimlagan",
+          "evidence": "taqsimoti bilan mutavalli shug‘ullangan"
+        },
+        {
+          "kind": "person",
+          "person": "Mirob",
+          "role": "Sug‘orish ishlari va suv taqsimoti bo‘yicha bilimli mutaxassis",
+          "activity": "Suv inshootlari qurilishi, ta’mirlanishi va suv taqsimotini nazorat qilgan",
+          "evidence": "mutaxassisla ri – miroblar shug‘ullanganlar"
+        },
+        {
+          "kind": "person",
+          "person": "Shermuhammad Munis",
+          "role": "Xiva xonligidagi tarixchi, shoir, tarjimon, xattot va ma’rifatparvar",
+          "activity": "Xorazm tarixini yozgan, «Ravzat us-safo» asarini o‘zbek tiliga tarjima qilgan",
+          "evidence": "tarixchi, ayni paytda shoir, tarjimon, xattot, ma’rifatparvar bo‘lgan"
+        },
+        {
+          "kind": "person",
+          "person": "Ogahiy",
+          "role": "Muhammad Rizo Ernazar biy o‘g‘li, Xorazm tarixchisi va shoiri",
+          "activity": "Xorazm tarixiga oid «Riyoz ud-davla», «Zubdat ut-tavorix» kabi asarlar yozgan",
+          "evidence": "«Riyoz ud-davla», «Zubdat ut-tavorix»"
+        },
+        {
+          "kind": "person",
+          "person": "Ahmad Donish",
+          "role": "Buxoro amirligidagi yozuvchi, faylasuf, musavvir va ma’rifatparvar",
+          "activity": "«Buxorodan Peterburgga sayohat» hamda «Navodir ul-vaqoe’» asarlarini yozgan",
+          "evidence": "yozuvchi, faylasuf, musavvir, ma’rifatparvar Ahmad Donish edi"
+        },
+        {
+          "kind": "term",
+          "term": "Yarimchi",
+          "definition": "Xiva xonligida ijaraga yer olib, hosilning yarmini ijara haqi sifatida to‘lagan dehqon",
+          "evidence": "ijaraga yer olgan dehqonlar yarimchi deb atalgan"
+        },
+        {
+          "kind": "term",
+          "term": "Amlok",
+          "definition": "Xonliklarda davlatga tegishli bo‘lgan yerlar; yer egaligining uch turidan biri",
+          "evidence": "amlok – davlat yerlari, mulk –"
+        },
+        {
+          "kind": "term",
+          "term": "Vaqf",
+          "definition": "Masjid va madrasalar hamda diniy muassasalarga qarashli bo‘lgan yerlar",
+          "evidence": "masjid va madrasalar, diniy muassasalarga qa-"
+        },
+        {
+          "kind": "term",
+          "term": "Begar",
+          "definition": "Aholining sug‘orish inshootlari, yo‘llar va ko‘priklar qurishdagi majburiy mehnati",
+          "evidence": "Mehnat majburiyati aholining ishlab"
+        },
+        {
+          "kind": "term",
+          "term": "Solg‘ut",
+          "definition": "Xiva xonligida undirilgan asosiy soliq turi; aholi uni mahsulot yoki pul bilan to‘lagan",
+          "evidence": "Xiva xonligida asosiy soliq"
+        },
+        {
+          "kind": "place",
+          "place": "Farg‘ona vodiysi",
+          "event": "Sug‘orma dehqonchilik rivojlangan vodiy; unda Shahrixonsoy, Andijonsoy kabi yirik inshootlar bo‘lgan",
+          "evidence": "Shahrixonsoy, Andi jonsoy, Marg‘ilonsoy, Yangiariq"
+        },
+        {
+          "kind": "place",
+          "place": "Rishton",
+          "event": "Kulolchilik bilan mashhur bo‘lgan hunarmandchilik markazi",
+          "evidence": "Rishtonda kulolchilik, Shah rixon-"
+        },
+        {
+          "kind": "cause",
+          "cause": "Yerlarning asosiy qismi xon, uning qarindoshlari va yirik yer egalari qo‘lida bo‘lgan",
+          "effect": "Aholining aksariyati ijaraga olingan yerda mehnat qilib, hosilning bir qismini xiroj to‘lagan",
+          "evidence": "katta yer egalariga tegishli ekin maydonlarida mehnat qilib"
+        },
+        {
+          "kind": "cause",
+          "cause": "Xonliklarda temir mahsulotlariga bo‘lgan ehtiyoj katta bo‘lgan",
+          "effect": "Metallga ishlov beruvchi mahalliy temirchilik sohasi rivojlangan",
+          "evidence": "temir mahsulotlariga ehtiyoj katta bo‘lganligi"
+        },
+        {
+          "kind": "cause",
+          "cause": "Uch davlat o‘rtasidagi kelishmovchiliklar, ichki nizolar va notinchliklar",
+          "effect": "Ichki va tashqi savdoning jadal rivojlanishiga salbiy ta’sir ko‘rsatgan",
+          "evidence": "kelishmovchiliklar, ichki nizolar"
+        },
+        {
+          "kind": "number",
+          "number": "16",
+          "unit": "ta asar",
+          "meaning": "Ogahiy qalamiga mansub tarixiy, ma’rifiy va tarjima asarlar soni",
+          "evidence": "16 ta tarixiy, ma’rifiy, tarjima asarlar"
+        }
+      ]
+    }
+  ]
+}

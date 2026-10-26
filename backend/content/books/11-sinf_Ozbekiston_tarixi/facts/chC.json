@@ -1,0 +1,992 @@
+{
+ "chapter": "VI–VIII bobl. Mustaqillik yillarida ilm-fan, ma’naviy-madaniy taraqqiyot va tashqi siyosat",
+ "topics": [
+  {
+   "number": 13,
+   "title": "O‘zbekiston Respublikasida jismoniy tarbiya va sportning rivojlanishi",
+   "page": 85,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1992",
+     "date_label": "1992-yilda",
+     "event": "Oliy Majlisning IX sessiyasida “Jismoniy tarbiya va sport to‘g‘risida” qonun qabul qilindi",
+     "evidence": "1992-yili O‘zbekiston Respublikasi Oliy Majlisining IX sessiyasida\n“Jismoniy tarbiya va sport to‘g‘risida” qonun qabul qilinishi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2015",
+     "date_label": "2015-yilda",
+     "event": "“Jismoniy tarbiya va sport to‘g‘risida”gi qonunning yangi tahriri tasdiqlanib, soha yanada rivojlandi",
+     "evidence": "2015-yilda yangi tahriri tas-\ndiqlanishi sport sohasining yanada rivojlanishiga xizmat qildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2017-yil 10-avgust",
+     "date_label": "2017-yil 10-avgustda",
+     "event": "Prezident jismoniy tarbiya instituti faoliyatini yanada takomillashtirish to‘g‘risidagi qarorni imzoladi",
+     "evidence": "2017-\nyil 10-avgustda “O‘zbekiston davlat jismoniy tarbiya instituti faoliyatini\nyanada takomillashtirish chora-tadbirlari to‘g‘risida”gi qarorni imzoladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2018-yil mart",
+     "date_label": "2018-yil martda",
+     "event": "Prezident farmoniga muvofiq Jismoniy tarbiya va sport davlat qo‘mitasi tashkil etildi",
+     "evidence": "2018-yil martdagi farmoniga\nmuvofiq, O‘zbekistonda Respublikasi Jismoniy tarbiya va sport davlat\nqo‘mitasi tashkil etildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1993-yil sentabr",
+     "date_label": "1993-yil sentabrda",
+     "event": "Xalqaro Olimpiya Qo‘mitasining 101-sessiyasida O‘zbekiston Milliy Olimpiya qo‘mitasi tan olindi",
+     "evidence": "1993-yilning sentabrida Xalqaro Olimpiya Qo‘mitasining\n101-sessiyasida O‘zbekiston Respublikasi Milliy Olimpiya Qo‘mitasi\nto‘la-to‘kis tan olindi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2001",
+     "date_label": "2001-yilda",
+     "event": "O‘zbekistonda belbog‘li kurash federatsiyasi tuzildi, kurash federatsiyasi esa 1992-yilda tashkil etilgan",
+     "evidence": "1992-yilda Oʻzbe-\nkistonda kurash federatsiyasi, 2001-yilda belbogʻli kurash federatsiyasi\ntuzildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1996-yil avgust",
+     "date_label": "1996-yil avgustda",
+     "event": "Toshkentda Olimpiya shon-shuhrati muzeyi tashkil etilib, olimpiya tarixini asrashga xizmat qildi",
+     "evidence": "Toshkentda 1996-yil avgustda Olimpiya shon-shuhrati muzeyi tashkil\netildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2016",
+     "date_label": "2016-yilda",
+     "event": "Rio-de-Janeyroda bo‘lib o‘tgan XXXI yozgi Olimpiada mamlakat tarixidagi eng sermahsul musobaqa bo‘ldi",
+     "evidence": "2016-yilgi Rio-de-Janeyro shahrida (Braziliya) bo‘lib o‘tgan XXXI\nyozgi Olimpiada mamlakatimiz tarixi-\ndagi eng sermahsul musobaqa bo‘ldi"
+    },
+    {
+     "kind": "person",
+     "person": "Islom Karimov",
+     "role": "O‘zbekiston Respublikasining Birinchi Prezidenti, Olimpiya Oltin ordeni sohibi",
+     "activity": "1996-yil yanvarda jahon sportini rivojlantirishdagi xizmatlari uchun Olimpiya Oltin ordeni bilan mukofotlandi",
+     "evidence": "O‘zbekiston Respublikasining Birinchi Prezidenti Islom Karimov\nOlimpiya Oltin ordeni bilan mukofotlandi"
+    },
+    {
+     "kind": "person",
+     "person": "Artur Taymazov",
+     "role": "erkin kurashchi, bir necha karra Olimpiya chempioni",
+     "activity": "Olimpiya chempioni unvoniga bir necha marta sazovor bo‘lgan yagona sportchi sifatida tarixga kirdi",
+     "evidence": "erkin kurashchi Artur Taymazov bir necha\nkarra Olimpiya chempioni unvoniga sazovor bo‘lgan yagona sportchi bo‘ldi"
+    },
+    {
+     "kind": "person",
+     "person": "Ravshan Ermatov",
+     "role": "futbol bo‘yicha xalqaro toifadagi o‘zbek hakami",
+     "activity": "2011-yilda xalqaro futbol uyushmalari federatsiyasi uni dunyoning eng yaxshi hakami deb tan oldi",
+     "evidence": "Xalqaro futbol uyushmalari federatsiyasi uni 2011-yilda “Dunyoning eng\nyaxshi hakami” sifatida tan oldi"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammadqodir Abdullayev",
+     "role": "boks bo‘yicha O‘zbekiston sportchisi, dunyo arenalarida yutuq qozongan",
+     "activity": "Boks bo‘yicha dunyo sport arenalaridagi yutuqlari O‘zbekiston sportchilarining dastlabki natijalari bo‘ldi",
+     "evidence": "Tennis bo‘yicha Iroda\nTo‘laganovaning, boks bo‘yicha Ruslan Chagayev, Artur Grigoryan va\nMuhammadqodir Abdullayevlarning dunyo sport arenalaridagi yutuqlari"
+    },
+    {
+     "kind": "term",
+     "term": "“Barkamol avlod” musobaqalari",
+     "definition": "O‘rta maxsus kasb-hunar kollejlari talabalari o‘rtasida o‘tkaziladigan uch bosqichli sport musobaqalari",
+     "evidence": "o‘rta maxsus kasb-hunar\nkollejlari talabalari o‘rtasida “Barkamol avlod"
+    },
+    {
+     "kind": "term",
+     "term": "Xalqaro kurash assotsiatsiyasi",
+     "definition": "1998-yilda Toshkentda Osiyo, Afrika va Yevropa vakillari ishtirokida tuzilgan xalqaro sport tashkiloti",
+     "evidence": "Osiyo, Afrika va Yevropa qit’asidan kelgan 28 davlat vakillari\nishtirokida Xalqaro kurash Assotsiatsiyasi tuzildi"
+    },
+    {
+     "kind": "term",
+     "term": "Bolalar sportini rivojlantirish respublika jamg‘armasi",
+     "definition": "Jismoniy tarbiya va sportni ommaviylashtirish maqsadida tashkil qilingan respublika jamg‘armasi",
+     "evidence": "Bolalar\nsportini rivojlantirish respublika\njamg‘armasining tashkil qilinishi"
+    },
+    {
+     "kind": "term",
+     "term": "“Universiada” musobaqalari",
+     "definition": "Oliy o‘quv yurtlari talabalari o‘rtasida 2000-yildan boshlab o‘tkazila boshlagan sport musobaqalari",
+     "evidence": "2000-yildan boshlab oliy o‘quv\nyurtlari talabalari o‘rtasida “Universiada"
+    },
+    {
+     "kind": "place",
+     "place": "Toshkent shahri",
+     "event": "“Yunusobod”, “Jar” va “Bunyodkor” kabi xalqaro standartlarga javob beradigan sport majmualari qurilgan shahar",
+     "evidence": "Toshkent shahridagi “Yunusobod”, “Jar”,\n“Bunyodkor"
+    },
+    {
+     "kind": "place",
+     "place": "Anqara shahri",
+     "event": "2000-yilda kurash bo‘yicha 2-jahon chempionati bo‘lib o‘tgan Turkiya poytaxti",
+     "evidence": "2000-yilda\nesa Turkiyaning Anqara\nshahrida kurash bo‘yicha 2-jahon chem-\npionati bo‘lib o‘tdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Davlat budjetidan jismoniy tarbiya va sportga ajratilayotgan mablag‘ning muttasil ortib borishi",
+     "effect": "Soha davlat siyosatining muhim yo‘nalishlaridan biri sifatida qaralib, unga katta e’tibor berildi",
+     "evidence": "Davlat budjetidan ajratilayotgan mablag‘ning muttasil\nortib borishi ham mamlakatda jismoniy tarbiya va sport sohasi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Sohaning davlat tomonidan muntazam ravishda qo‘llab-quvvatlanganligi",
+     "effect": "Mamlakat sportchilari nufuzli xalqaro musobaqalarda muvaffaqiyatli ishtirok etib keldi",
+     "evidence": "asosiy sabablaridan biri ham ushbu sohaning davlat tomonidan muntazam\nravishda qo‘llab-quvvatlanganligidir"
+    },
+    {
+     "kind": "cause",
+     "cause": "Uch bosqichli sport turnirlarining tashkil etilishi",
+     "effect": "Yoshlar o‘rtasida sog‘lom turmush tarzi targ‘ib qilinib, terma jamoa uchun nomzodlar tayyorlandi",
+     "evidence": "Uch bosqichli sport\nturnirlari tashkil etilishidan asosiy maqsad yoshlar o‘rtasida sog‘lom\nturmush tarzini targ‘ib qilish"
+    },
+    {
+     "kind": "cause",
+     "cause": "2017-yil 10-avgustdagi Prezident qarori",
+     "effect": "O‘zbekiston davlat jismoniy tarbiya instituti Toshkent viloyati Chirchiq shahriga ko‘chirildi",
+     "evidence": "Unga muvofiq O‘zbekiston davlat jismoniy tarbiya instituti Toshkent viloyati\nChirchiq shahriga ko‘chirildi"
+    },
+    {
+     "kind": "number",
+     "number": "536",
+     "unit": "ta",
+     "meaning": "Respublikada faoliyat ko‘rsatayotgan bolalar-o‘smirlar sport maktablarining soni",
+     "evidence": "536 ta bolalar-o‘smirlar sport maktablari, 5 ta olimpiya zaxiralari\nkollejlari, 8 ta respublika oliy sport mahorati maktablari"
+    },
+    {
+     "kind": "number",
+     "number": "7",
+     "unit": "nafar",
+     "meaning": "2016-yilgi Rio Olimpiadasida medal bilan qaytgan bokschilar soni",
+     "evidence": "Charm\nqo‘lqop ustalarimizning 7 nafari Riodan\nmedal bilan qaytishga muvaffaq bo‘l-\ndilar"
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "title": "O‘zbekistonda yoshlar siyosati",
+   "page": 90,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1996",
+     "date_label": "1996-yilda",
+     "event": "“Yoshlar ittifoqi” tashkiloti tugatilib, uning o‘rnida “Kamolot” jamg‘armasi tuzildi",
+     "evidence": "qarorlarda yoshlarning manfaatlari\nva ehtiyojlari to‘la aks etmaganligi natijasida 1996-yilda “Yoshlar ittifoqi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2001",
+     "date_label": "2001-yilda",
+     "event": "Toshkentdagi yoshlar qurultoyida “Kamolot” yoshlar ijtimoiy harakati tuzildi",
+     "evidence": "o‘zini o‘zi boshqara-\ndigan nodavlat notijorat tashkilot – O‘zbekiston Respublikasi “Kamolot”\nyoshlar ijtimoiy harakati tuzildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2017-yil 30-iyun",
+     "date_label": "2017-yil 30-iyunda",
+     "event": "“Kamolot” yoshlar ijtimoiy harakati qurultoyi bo‘lib o‘tdi va yangi ittifoq tashkil etilishi e’lon qilindi",
+     "evidence": "2017-yil 30-iyun kuni O‘zbekiston Respublikasi Prezidenti Shavkat\nMirziyoyev ishtirokida"
+    },
+    {
+     "kind": "date_event",
+     "date": "1991-yil noyabr",
+     "date_label": "1991-yil noyabrda",
+     "event": "“O‘zbekiston Respublikasida yoshlarga oid davlat siyosatining asoslari to‘g‘risida”gi qonun qabul qilindi",
+     "evidence": "1991-yil noyabrda “O‘zbekiston\nRespublikasida yoshlarga oid davlat siyosatining asoslari to‘g‘risida”gi qonun\nqabul qilindi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1997",
+     "date_label": "1997-yilda",
+     "event": "Iqtidorli yoshlarning chet ellarda o‘qishini qo‘llab-quvvatlash uchun “Umid” jamg‘armasi tashkil etildi",
+     "evidence": "iqtidorli\nyoshlarning chet ellarda o‘qishini qo‘llab-quvvatlash bo‘yicha “Umid”\njamg‘armasini tashkil etish to‘g‘risida farmoni"
+    },
+    {
+     "kind": "date_event",
+     "date": "2014",
+     "date_label": "2014-yilda",
+     "event": "Yoshlarga oid davlat siyosatini amalga oshirishga qaratilgan qo‘shimcha chora-tadbirlar to‘g‘risidagi qaror qabul qilindi",
+     "evidence": "2014-yildagi “O‘zbekiston\nRespublikasida yoshlarga oid davlat siyosatini amalga oshirishga qaratilgan\nqo‘shimcha chora-tadbirlar to‘g‘risida”gi qarorining qabul qilinishi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2016",
+     "date_label": "2016-yilda",
+     "event": "“Yoshlarga oid davlat siyosati to‘g‘risida”gi qonun qabul qilinib, 30 yoshgacha bo‘lganlar yoshlar deb qayd etildi",
+     "evidence": "2016-yilda “Yoshlarga oid davlat\nsiyosati to‘g‘risida”gi O‘zbekiston Respublikasi qonuni qabul qilindi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2005",
+     "date_label": "2005-yilda",
+     "event": "Muddatli harbiy xizmatchilarga beriladigan imtiyozlar tizimini takomillashtirish to‘g‘risidagi qaror e’lon qilindi",
+     "evidence": "2005-yilda O‘zbekiston\nRespublikasi Prezidentining “O‘zbekiston Respublikasi Qurolli kuchlari\nsafida muddatli harbiy xizmatni o‘tayotgan harbiy xizmatchilarga"
+    },
+    {
+     "kind": "person",
+     "person": "Shavkat Mirziyoyev",
+     "role": "O‘zbekiston Respublikasi Prezidenti, yoshlar siyosati islohotlarining tashabbuskori",
+     "activity": "2017-yil 30-iyundagi qurultoyda “Kamolot” tugatilib, “O‘zbekiston yoshlar ittifoqi” tashkil etilgani e’lon qilindi",
+     "evidence": "Bu qurultoyda “Kamolot” YoIH tashkiloti tugatilganligi va\n“O‘zbekiston yoshlar ittifoqi” tashkil etilganligi e’lon qilindi"
+    },
+    {
+     "kind": "person",
+     "person": "Muhammad al-Xorazmiy",
+     "role": "nomi axborot-kommunikatsiya texnologiyalari maktabiga berilgan alloma",
+     "activity": "2017-yil sentabrda uning nomidagi axborot-kommunikatsiya texnologiyalari maktabi tashkil etildi",
+     "evidence": "Muhammad al-Xorazmiy nomidagi axborot-kommunikatsiya texnologiyalari"
+    },
+    {
+     "kind": "person",
+     "person": "Zulfiya",
+     "role": "nomi bilan davlat mukofoti ta’sis etilgan shaxs, iqtidorli qizlar homiysi",
+     "activity": "1999-yilda uning nomidagi davlat mukofoti ta’sis etilib, iqtidorli qizlarni rag‘batlantirishga zamin yaratdi",
+     "evidence": "nomidagi davlat mukofotini\nta’sis etish bo‘yicha taklifl  arni qo‘llab-quvvatlash to‘g‘risida"
+    },
+    {
+     "kind": "person",
+     "person": "Temurbek",
+     "role": "buyuk sarkarda, nomi harbiy akademik litseylarga berilgan davlat arbobi",
+     "activity": "2017-yilda mamlakatdagi barcha harbiy akademik litseylarga “Temurbeklar maktabi” nomi berildi",
+     "evidence": "barcha\nharbiy akademik litseylarga “Temurbeklar maktabi” nomi berildi"
+    },
+    {
+     "kind": "term",
+     "term": "“Kamolot” jamg‘armasi",
+     "definition": "1996-yilda “Yoshlar ittifoqi” o‘rnida tuzilgan, yoshlar manfaatlari bo‘yicha dasturlar tuzish vazifasini olgan tashkilot",
+     "evidence": "Kamolot” jamg‘armasining vazifasi yoshlarning manfaat\nva ehtiyojlarini o‘rganish"
+    },
+    {
+     "kind": "term",
+     "term": "“Kamolot” yoshlar ijtimoiy harakati",
+     "definition": "2001-yilda tuzilgan, 14 yoshdan 28 yoshgacha bo‘lgan fuqarolarni birlashtirgan nodavlat notijorat tashkilot",
+     "evidence": "14 yoshdan\n28 yoshgacha bo‘lgan O‘zbekiston fuqarolari – yoshlarni o‘z safl  arida"
+    },
+    {
+     "kind": "term",
+     "term": "“O‘zbekiston yoshlar ittifoqi”",
+     "definition": "2017-yilda “Kamolot” o‘rniga tashkil etilgan, raisi bir vaqtda Prezidentning Davlat maslahatchisi bo‘lgan tashkilot",
+     "evidence": "O‘zbekiston yoshlar\nittifoqi” raisi bir paytning o‘zida Prezidentning Davlat maslahatchisi\nlavozimida bo‘lishi ham belgilab qo‘yildi"
+    },
+    {
+     "kind": "term",
+     "term": "“Mard o‘g‘lon” mukofoti",
+     "definition": "Yoshlarni yanada rag‘batlantirish maqsadida 2017-yilda ta’sis etilgan faxriy mukofot",
+     "evidence": "Mard o‘g‘lon” mukofoti ta’sis etildi"
+    },
+    {
+     "kind": "place",
+     "place": "Toshkent shahri",
+     "event": "2001-yilda yoshlar qurultoyi bo‘lib o‘tgan va “Kamolot” harakatining shahar bo‘limi tashkil etilgan shahar",
+     "evidence": "2001-yil Toshkentda bo‘lgan yoshlar qurultoyida"
+    },
+    {
+     "kind": "place",
+     "place": "Qoraqalpog‘iston Respublikasi",
+     "event": "“Kamolot” yoshlar ijtimoiy harakatining hududiy bo‘limlari tashkil etilgan respublika",
+     "evidence": "Harakatning Qoraqalpog‘iston Respublikasi, viloyatlar, Toshkent\nshahar, tuman va shahar bo‘limlari"
+    },
+    {
+     "kind": "cause",
+     "cause": "“Yoshlar ittifoqi” qarorlarida yoshlarning manfaatlari va ehtiyojlari to‘la aks etmaganligi",
+     "effect": "1996-yilda tashkilot tugatilib, uning o‘rnida “Kamolot” yoshlar jamg‘armasi tuzildi",
+     "evidence": "Tashkilot yoshlarni o‘z plenumi va konferensiyalari qarorlarini\nbajarishga safarbar qilishga urinishi"
+    },
+    {
+     "kind": "cause",
+     "cause": "“Kamolot” jamg‘armasining yoshlarning haqiqiy yetakchisiga aylana olmaganligi",
+     "effect": "2001-yilda “Kamolot” yoshlar ijtimoiy harakati tashkil etilib, unga yangi vazifalar yuklandi",
+     "evidence": "Kamolot”\nyoshlar jamg‘armasi bunday vazifalarni bajara olmadi, yoshlarning haqiqiy\nma’nodagi yetakchisiga aylana olmadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yoshlar muammolari va tashabbuslari Prezidentning bevosita e’tiborida bo‘lishini ta’minlash zarurati",
+     "effect": "“O‘zbekiston yoshlar ittifoqi” raisi bir vaqtda Prezidentning Davlat maslahatchisi lavozimini egalladi",
+     "evidence": "Yoshlarning\nmuammolari hamda tashabbuslari O‘zbekiston Prezidentining to‘g‘ridan-\nto‘g‘ri e’tiborida bo‘lishini ta’minlash maqsadida"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yuksak ma’naviyatli, mustaqil fikrlaydigan va barkamol avlodni voyaga yetkazish zarurati",
+     "effect": "2014-yilda yoshlarga oid davlat siyosatini amalga oshirishga qaratilgan qo‘shimcha chora-tadbirlar qabul qilindi",
+     "evidence": "yuksak ma’naviyatli, mustaqil va erkin fi  krlaydigan, zamonaviy\nilm-fan yutuqlarini puxta o‘zlashtirgan har tomonlama sog‘lom va barkamol\navlodni voyaga yetkazish"
+    },
+    {
+     "kind": "number",
+     "number": "60",
+     "unit": "%",
+     "meaning": "O‘zbekiston aholisining 30 yoshgacha bo‘lgan yoshlardan iborat ulushi",
+     "evidence": "O‘zbekiston\naholisining 60 foizdan ortig‘ini 30 yoshgacha bo‘lgan yoshlar tashkil etadi"
+    },
+    {
+     "kind": "number",
+     "number": "25",
+     "unit": "%",
+     "meaning": "Muddatli harbiy xizmatni o‘tab bo‘lganlarga oliy o‘quv yurtiga kirishda beriladigan qo‘shimcha ball miqdori",
+     "evidence": "test sinovlarida\nto‘planadigan eng ko‘p ballning 25 foizi miqdorida qo‘shimcha ball"
+    }
+   ]
+  },
+  {
+   "number": 15,
+   "title": "O‘zbekistonda ma’naviy va tarixiy merosning tiklanishi",
+   "page": 95,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1991",
+     "date_label": "1991-yilda",
+     "event": "Alisher Navoiy tavalludining 550-yilligi mamlakatda keng nishonlandi",
+     "evidence": "1991-yili Alisher Navoiy tavalludining 550-yilligi keng nishonlandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1994",
+     "date_label": "1994-yilda",
+     "event": "Hukumat qarori bilan yil Ulug‘bek yili deb e’lon qilinib, alloma tavalludining 600-yilligi nishonlandi",
+     "evidence": "1994-yilni hukumat qarori bilan mamlakatimizda Ulug‘bek yili, deb e’lon\nqilinishi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1996",
+     "date_label": "1996-yilda",
+     "event": "Amir Temur tavalludining 660 yilligi keng miqyosda nishonlandi",
+     "evidence": "1996-yil Amir Temur tavalludining 660 yilligi ham keng miqyosda\nnishonlandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1990-yil 2-iyun",
+     "date_label": "1990-yil 2-iyunda",
+     "event": "Musulmonlarning Saudiya Arabistoniga haj qilishi to‘g‘risidagi farmon e’lon qilindi",
+     "evidence": "1990-yil 2-iyun kuni “Musulmonlarning Saudiya Arabistoniga haj\nqilishi to‘g‘risida”gi farmonini e’lon qildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1992-yil 27-mart",
+     "date_label": "1992-yil 27-martda",
+     "event": "Ro‘za hayitini dam olish kuni deb e’lon qilish to‘g‘risidagi farmon qabul qilindi",
+     "evidence": "1992-yil 27-martda O‘zbekiston Prezidentining “Ro‘za hayitini dam olish\nkuni deb e’lon qilish to‘g‘risida”gi farmoniga ko‘ra"
+    },
+    {
+     "kind": "date_event",
+     "date": "2016",
+     "date_label": "2016-yilda",
+     "event": "O‘zbek palovi YuNESKOning nomoddiy madaniy meros ro‘yxatiga kiritildi",
+     "evidence": "2016-yil o‘zbek palovi YuNESKOning nomoddiy madaniy meros\nro‘yxatiga kiritildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2017-yil 25-yanvar",
+     "date_label": "2017-yil 25-yanvarda",
+     "event": "Birinchi Prezident Islom Karimov xotirasini abadiylashtirish to‘g‘risidagi qaror qabul qilindi",
+     "evidence": "2017-\nyil 25-yanvardagi “O‘zbekiston Respublikasining\nBirinchi Prezidenti Islom Abdug‘aniyevich Kari-\nmovning xotirasini abadiylashtirish to‘g‘risida”gi\nqaroriga ko‘ra"
+    },
+    {
+     "kind": "date_event",
+     "date": "2018-yil 30-yanvar",
+     "date_label": "2018-yil 30-yanvarda",
+     "event": "Islom Karimov tavalludining 80 yilligi keng nishonlanib, Samarqandda xalqaro konferensiya o‘tkazildi",
+     "evidence": "2018-yil 30-yanvarda Islom Kari-\nmov tavalludining 80 yilligi keng nishonlandi"
+    },
+    {
+     "kind": "person",
+     "person": "Alisher Navoiy",
+     "role": "buyuk shoir va mutafakkir, nomiga Davlat mukofoti ta’sis etilgan",
+     "activity": "1991-yilda tavalludining 550-yilligi nishonlanib, nomi Adabiyot instituti va Milliy bog‘ga berildi",
+     "evidence": "Alisher Navoiy nomida Davlat mukofoti ta’sis etildi"
+    },
+    {
+     "kind": "person",
+     "person": "Mirzo Ulug‘bek",
+     "role": "buyuk alloma, merosi umuminsoniy qadriyatga aylangan olim",
+     "activity": "1994-yilda tavalludining 600 yilligi O‘zbekistonda va Parijdagi YuNESKO qarorgohida nishonlandi",
+     "evidence": "buyuk allomalar\nqoldirgan meros umuminsoniy qadriyatga aylanganligining nishonasidir"
+    },
+    {
+     "kind": "person",
+     "person": "Amir Temur",
+     "role": "buyuk davlat arbobi va sarkarda, bobokalonimiz sifatida ulug‘langan",
+     "activity": "1996-yilda tavalludining 660 yilligi nishonlanib, “Temur tuzuklari” bir necha tilda chop etildi",
+     "evidence": "Temur tuzuklari” bir necha tilda chop etildi"
+    },
+    {
+     "kind": "person",
+     "person": "Sharof Rashidov",
+     "role": "atoqli davlat arbobi va taniqli yozuvchi",
+     "activity": "2017-yilda tavalludining 100 yilligi Jizzax shahrida tantanali tadbirlar bilan nishonlandi",
+     "evidence": "atoqli davlat arbobi,\ntaniqli yozuvchi Sharof Rashidov tavalludining\n100 yilligi nishonlanishi xalqimizni quvontirdi"
+    },
+    {
+     "kind": "person",
+     "person": "Islom Karimov",
+     "role": "O‘zbekiston Respublikasining Birinchi Prezidenti, davlat asoschisi",
+     "activity": "Xotirasini abadiylashtirish maqsadida haykallari Toshkent, Samarqand va Qarshi shaharlariga o‘rnatildi",
+     "evidence": "Islom Karimov haykallari O‘zbe-\nkiston poytaxti Toshkent shahriga"
+    },
+    {
+     "kind": "term",
+     "term": "Ma’naviy yangilanish",
+     "definition": "Ijtimoiy-siyosiy hayotda amalga oshirilishi mustaqillikni har tomonlama mustahkamlashning sharti bo‘lgan jarayon",
+     "evidence": "ijtimoiy-siyosiy hayotda ma’naviy yangilanish jarayonini amalga oshir-\nmasdan mustaqillikni har tomonlama mustahkamlab bo‘lmasligini"
+    },
+    {
+     "kind": "term",
+     "term": "“Ma’naviyat va ma’rifat” jamoatchilik markazi",
+     "definition": "1994-yilda Prezident qarori bilan tashkil etilgan, ma’naviy hayotni yaxshilashga xizmat qilgan markaz",
+     "evidence": "1994-yil Prezident qarori bilan tashkil etilgan “Ma’naviyat va ma’rifat”\njamoatchilik Markazi"
+    },
+    {
+     "kind": "term",
+     "term": "Haj kvotasi",
+     "definition": "O‘zbekistonlik fuqarolarning bir yilda haj ziyoratini ado etishi uchun belgilangan ruxsat etilgan kishi soni",
+     "evidence": "2017-yildan o‘zbekistonlik fuqarolar uchun\nhaj kvotasi soni 5200 dan 7200 nafarga ko‘paytirildi"
+    },
+    {
+     "kind": "term",
+     "term": "“Xotira va qadrlash kuni”",
+     "definition": "1999-yildan boshlab 9 mayda nishonlanadigan, ajdodlar xotirasini asrashga bag‘ishlangan rasmiy xotira kuni",
+     "evidence": "1999-yildan boshlab\n9 may – «Xotira va qadrlash kuni"
+    },
+    {
+     "kind": "place",
+     "place": "Parij shahri",
+     "event": "1994-yilda Mirzo Ulug‘bek tavalludining 600 yilligi YuNESKO qarorgohida nishonlangan shahar",
+     "evidence": "xususan,\nYuNESKO qarorgohi Parijda keng nishonlanishi"
+    },
+    {
+     "kind": "place",
+     "place": "Toshkent shahri",
+     "event": "Amir Temur yili munosabati bilan Temuriylar tarixi davlat muzeyi qurilgan poytaxt",
+     "evidence": "Toshkentda bobokalonimizning\ndunyoviy sha’ni va shavkatiga mos keladigan Temuriylar tarixi davlat muzeyi\nqurildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mustaqillikni har tomonlama mustahkamlash zarurati",
+     "effect": "Istiqlolning dastlabki paytidan ma’naviy yangilanish bo‘yicha zarur choralar ko‘rildi",
+     "evidence": "Shuning uchun ham mamlakat rahbariyati istiqlolning\ndastlabki paytidanoq bu borada zarur choralar ko‘rdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Tarixiy-madaniy yodgorliklarning tiklanishi va yozma adabiyotlarning ilmiy muomalaga kiritilishi",
+     "effect": "Juda qisqa fursatda Toshkentda Temuriylar tarixi davlat muzeyi qurildi",
+     "evidence": "O‘sha davr tarixiy-madaniy yodgorliklari tiklanib, yozma adabiyotlar ilmiy\nmuomalaga kiritildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Sovet davrida haj safari imkoniyatining juda cheklanganligi",
+     "effect": "Mustaqillik yillarida har yili 5000 dan ortiq fuqaro hoji bo‘lib qaytadigan bo‘ldi",
+     "evidence": "Agar sovet davrida\nmamlakatimiz fuqarolaridan 3–4 kishigina haj safarini ado etgan bo‘lsa"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dunyodagi murakkab va tahlikali vaziyat hamda sohadagi ishlarni tanqidiy baholash zarurati",
+     "effect": "2017-yil 28-iyulda ma’naviy-ma’rifiy ishlar samaradorligini oshirish to‘g‘risidagi qaror qabul qilindi",
+     "evidence": "dunyodagi murakkab va tahlikali vaziyat sohada\namalga\noshirilgan ishlarni tanqidiy baholab"
+    },
+    {
+     "kind": "number",
+     "number": "2500",
+     "unit": "yillik",
+     "meaning": "1997-yilda yubileyi nishonlangan Xiva va Buxoro shaharlarining yoshi",
+     "evidence": "1997-yil – Xiva va Buxoro shaharlarining 2500 yillik yubileyi nishonlandi"
+    }
+   ]
+  },
+  {
+   "number": 16,
+   "title": "O‘zbekistonda madaniyat va san’at",
+   "page": 102,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1991",
+     "date_label": "1991-yilda",
+     "event": "Farg‘onada davlat qo‘g‘irchoq teatri ish boshladi, keyin Xorazmda ham shunday teatr ochildi",
+     "evidence": "1991-yilda\nFarg‘ona, 1993-yilda Xorazmda davlat qo‘g‘irchoq teatrlari ish boshladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1993-yil sentabr",
+     "date_label": "1993-yil sentabrda",
+     "event": "Madaniy tadbirlar o‘tkaziladigan “Turkiston” saroyi ish boshladi",
+     "evidence": "1993-yilning sentabrida “Turkiston”\nsaroyi ish boshladi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2009",
+     "date_label": "2009-yilda",
+     "event": "“O‘zbekiston” xalqaro forumlar saroyi ochildi va xalqaro anjumanlarga xizmat qila boshladi",
+     "evidence": "2009-yilda “O‘zbe-\nkiston” xalqaro forumlar saroyi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2015-yil oktabr",
+     "date_label": "2015-yil oktabrda",
+     "event": "Rekonstruksiyadan so‘ng Alisher Navoiy nomidagi O‘zbekiston davlat akademik katta teatri ochildi",
+     "evidence": "2015-yil-\nning\noktabrida rekonstruksiya qilingan\nAlisher Navoiy nomidagi O‘zbekiston\ndavlat akademik katta teatrining ochilish\nmarosimi bo‘lib o‘tdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1997",
+     "date_label": "1997-yilda",
+     "event": "“O‘zbekraqs” milliy raqs birlashmasi va Toshkent davlat milliy raqs oliy maktabi tuzildi",
+     "evidence": "O‘zbekiston Respublikasi Prezidenti farmoni bilan 1997-yil"
+    },
+    {
+     "kind": "date_event",
+     "date": "1995",
+     "date_label": "1995-yilda",
+     "event": "“O‘zbekiston – Vatanim manim” mavzuidagi ko‘rik-tanlov o‘tkazish yuzasidan qaror qabul qilindi",
+     "evidence": "1995-yilda Vazirlar Mahkamasi “O‘zbekiston – Vatanim manim” mavzuida\nko‘rik-tanlov o‘tkazish yuzasidan qaror qabul qildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2002",
+     "date_label": "2002-yilda",
+     "event": "Toshkent davlat konservatoriyasi O‘zbekiston davlat konservatoriyasiga aylantirildi",
+     "evidence": "2002-yilda Toshkent davlat\nkonservatoriyasi O‘zbekiston davlat konservatoriyasiga aylantirildi"
+    },
+    {
+     "kind": "person",
+     "person": "Alisher Navoiy",
+     "role": "buyuk shoir, nomi akademik katta teatr va Milliy kutubxonaga berilgan",
+     "activity": "2011-yilda uning nomidagi Milliy kutubxonadan tashkil topgan Ma’rifat markazi majmuasi ochildi",
+     "evidence": "Alisher Na-\nvoiy nomidagi O‘zbekiston Milliy kutub-\nxonasidan\ntashkil topgan Ma’rifat markazi"
+    },
+    {
+     "kind": "person",
+     "person": "Shavkat Mirziyoyev",
+     "role": "O‘zbekiston Respublikasi Prezidenti, madaniyat va san’atni qo‘llab-quvvatlash tashabbuskori",
+     "activity": "2017-yil 29-dekabrda milliy kino san’ati xodimlari va mutasaddilari bilan uchrashuv o‘tkazdi",
+     "evidence": "2017-yil\n29-dekabr kuni milliy kino san’ati xodimlari va mutasaddilari bilan\nuchrashdi"
+    },
+    {
+     "kind": "person",
+     "person": "Mukarrama Turg‘unboyeva",
+     "role": "nomiga “O‘zbekraqs” milliy raqs birlashmasi berilgan san’atkor",
+     "activity": "1997-yilda uning nomidagi milliy raqs birlashmasi va raqs xoreografiyasi oliy maktabi tuzildi",
+     "evidence": "Mukarrama Turg‘unboyeva nomidagi “O‘zbekraqs” milliy raqs birlashmasi"
+    },
+    {
+     "kind": "person",
+     "person": "Abdulla Oripov",
+     "role": "shoir, mustaqillik davri adabiyotining yalovbardori va O‘zbekiston qahramoni",
+     "activity": "Tarixiy roman, pyesa va qissalarida Amir Temur, Mirzo Ulug‘bek va Bobur siymolarini yangicha talqin qildi",
+     "evidence": "Abdulla Oripov, Odil Yoqubov,\nPirimqul Qodirov, Xurshid Davron kabi ijodkorlarning tarixiy roman,\npyesa va qissalarida"
+    },
+    {
+     "kind": "person",
+     "person": "Said Ahmad",
+     "role": "O‘zbekiston qahramoni, mustaqillik davri adabiyotining yalovbardori",
+     "activity": "Ijodiy faoliyati bilan butun xalq faxrlanadigan yozuvchilar qatoridan munosib o‘rin oldi",
+     "evidence": "Mustaqillik davri adabiyotining yalovbardorlari O‘zbekiston qahra-\nmonlari Said  Ahmad"
+    },
+    {
+     "kind": "term",
+     "term": "Simpozium",
+     "definition": "Biror ilmiy masala bo‘yicha o‘tkaziladigan xalqaro ilmiy kengash, ilmiy anjuman",
+     "evidence": "Simpozium – (musiqa, she’r o‘qish bilan o‘tadigan yig‘in) biror ilmiy\nmasala bo‘yicha o‘tkaziladigan xalqaro ilmiy kengash"
+    },
+    {
+     "kind": "term",
+     "term": "Festival",
+     "definition": "San’at sohalarida erishilgan eng yaxshi yutuqlar bo‘yicha o‘tkaziladigan tanlov va ko‘rikdan iborat ommaviy bayram",
+     "evidence": "Festival – (ital. – bayramona, shod, quvnoq) san’atning musiqa,\nkino, teatr va boshqa sohalarida erishilgan eng yaxshi yutuqlar bo‘yicha"
+    },
+    {
+     "kind": "term",
+     "term": "Galereya",
+     "definition": "Binoning ikki qismini birlashtiruvchi usti yopiq uzun yo‘lak; tomosha zalining eng yuqorigi yarusi",
+     "evidence": "Galereya – (fran. – peshayvon) binoning ikki qismini birlashtiruvchi\nusti yopiq uzun yo‘lak"
+    },
+    {
+     "kind": "term",
+     "term": "Nomoddiy madaniy meros",
+     "definition": "YuNESKO tomonidan yuritiladigan, xalq ijodiyoti va madaniy an’analarini qamrab oluvchi meros ro‘yxati",
+     "evidence": "YuNESKO tomonidan yuritiladigan insoniyatning nomoddiy madaniy\nmerosi  ro‘yxatidan Shashmaqom (2008), Boysun madaniy muhiti (2008"
+    },
+    {
+     "kind": "place",
+     "place": "Samarqand shahri",
+     "event": "“Sharq taronalari” xalqaro musiqa festivali har ikki yilda bir marta o‘tkaziladigan shahar",
+     "evidence": "Samarqand shahrida “Sharq\ntaronalari” xalqaro musiqa festivali"
+    },
+    {
+     "kind": "place",
+     "place": "Termiz shahri",
+     "event": "2002-yilda Arxeologiya muzeyi ish boshlagan Surxondaryo viloyatining markazi",
+     "evidence": "Surxondaryo\nviloyatining markazi – Termiz shahrida Arxeologiya muzeyi ish boshladi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mustaqillik yillarida madaniy hayotda yuz bergan tub o‘zgarishlar",
+     "effect": "Teatr san’ati rivojlanib, yangi teatr dargohlari qurib ishga tushirildi",
+     "evidence": "Bu, avvalo, teatr san’ati rivojlanishida yaqqol\nsezila boshladi, yangi teatr dargohlari qurib ishga tushirildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "1998-yildagi “O‘zbekiston teatr san’atini rivojlantirish to‘g‘risida”gi farmon",
+     "effect": "“O‘zbekteatr” ijodiy-ishlab chiqarish birlashmasi tashkil etildi",
+     "evidence": "O‘zbekteatr” ijodiy-ishlab chiqarish birlashmasi tashkil etildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "2017-yilda “O‘zbekteatr” faoliyatining tanqidiy o‘rganilishi",
+     "effect": "Birlashma tugatilib, uning funksiyalari Madaniyat vazirligiga o‘tkazildi",
+     "evidence": "2017-yil faoliyati tanqidiy o‘rganilib, “O‘zbekteatr” birlashmasi tugatilib,\nuning funksiyalari Madaniyat vazirligiga o‘tkazildi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Madaniyat muassasalari xodimlari mehnatiga haq to‘lash tizimini takomillashtirish zarurati",
+     "effect": "Artistlar va boshqa xodimlarning mehnat haqi miqdori o‘rtacha 45 foizga oshirildi",
+     "evidence": "davlat madaniyat muassasalari\nartistlari,\nma’muriy-boshqaruv, badiiy-rahbar, ijodiy va boshqa xodimlarining\nmehnat haqi miqdorlari o‘rtacha 45 foizga oshirildi"
+    },
+    {
+     "kind": "number",
+     "number": "81",
+     "unit": "milliard so‘m",
+     "meaning": "2017-yilda 37 ta teatr faoliyatini ta’minlash uchun davlat budjetidan ajratilgan mablag‘",
+     "evidence": "37 ta teatr faoliyatini ta’minlash uchun 2017-yil-\nning o‘zida davlat budjetidan 81 milliard so‘mdan ortiq mablag‘ ajratildi"
+    },
+    {
+     "kind": "number",
+     "number": "450",
+     "unit": "ta",
+     "meaning": "2017-yilda faoliyat olib borgan muzeylar soni, 1991–1994-yillarda ular 73 ta edi",
+     "evidence": "1991–1994-yillarda 73 ta muzey mavjud bo‘lgan bo‘lsa, 2017-yilda\n450 ga yaqin muzey faoliyat olib bormoqda"
+    }
+   ]
+  },
+  {
+   "number": 17,
+   "title": "O‘zbekiston tashqi siyosiy faoliyatining shakllanishi va ustuvor yo‘nalishlari",
+   "page": 109,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1992-yil may",
+     "date_label": "1992-yil mayda",
+     "event": "Tashqi ishlar vazirligi faoliyatini tashkil etish masalalari to‘g‘risidagi qaror qabul qilindi",
+     "evidence": "Vazirlar\nMahkamasining 1992-yil may oyidagi “O‘zbekiston Respublikasi Tashqi\nishlar vazirligi faoliyatini tashkil etish masalalari to‘g‘risida”gi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1994-yil mart",
+     "date_label": "1994-yil martda",
+     "event": "Tashqi ishlar vazirligi faoliyatini takomillashtirish to‘g‘risidagi qaror qabul qilindi",
+     "evidence": "1994-yil\nmart oyida qabul qilingan “O‘zbekiston Respublikasi Tashqi ishlar vazirligi\nfaoliyatini takomillashtirish to‘g‘risida”gi qarorlari"
+    },
+    {
+     "kind": "date_event",
+     "date": "1996",
+     "date_label": "1996-yilda",
+     "event": "Tashqi siyosiy faoliyatining asosiy prinsiplari to‘g‘risidagi qonun qabul qilindi",
+     "evidence": "1996-yil “O‘zbekiston Respublikasi tashqi siyosiy faoliyatining asosiy\nprinsiplari to‘g‘risida”gi qonun qabul qilindi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2012-yil sentabr",
+     "date_label": "2012-yil sentabrda",
+     "event": "O‘zbekiston Respublikasining “Tashqi siyosiy faoliyati konsepsiyasi” e’lon qilindi",
+     "evidence": "2012-yil sentabrda O‘zbekiston Respublikasining “Tashqi siyosiy\nfaoliyati konsepsiyasi” e’lon qilindi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2018-yil yanvar",
+     "date_label": "2018-yil yanvarda",
+     "event": "Mamlakat tarixida ilk bor xorijiy davlatlardagi elchilar bilan ochiq muloqot shaklidagi yig‘ilish o‘tkazildi",
+     "evidence": "2018-yil yanvarda mamlakat tarixida\nilk bor O‘zbekistonning xorijiy davlatlardagi elchilari bilan ochiq\nmuloqot shaklidagi yig‘ilishni o‘tkazdi"
+    },
+    {
+     "kind": "date_event",
+     "date": "hozirda",
+     "date_label": "Hozirda",
+     "event": "Xalqaro hamjamiyat mustaqil O‘zbekiston diplomatiyasining dastlabki qadamlarini alohida tan olmoqda",
+     "evidence": "Hozirda xalqaro hamjamiyat mustaqil O‘zbekiston diplo-\nmatiyasining dastlabki qadamlari"
+    },
+    {
+     "kind": "date_event",
+     "date": "bugungi kun",
+     "date_label": "Bugungi kunda",
+     "event": "O‘zbekiston qo‘shni davlatlar o‘rtasida bog‘lovchi halqa vazifasini o‘tab kelmoqda",
+     "evidence": "O‘zbekiston bugungi kunda qo‘shni dav-\nlatlar – Qozog‘iston, Qirg‘iziston, Tojikiston, Turkmaniston va Afg‘onis-\nton o‘rtasida bog‘lovchi halqa vazifasini o‘tab kelmoqda"
+    },
+    {
+     "kind": "person",
+     "person": "Mendeleyev",
+     "role": "Mendeleyev davriy tizimi deb ataladigan kimyoviy elementlar jadvali muallifi",
+     "activity": "Uning davriy tizimidagi barcha elementlar O‘zbekiston yerostida mavjud ekanligi aniqlangan",
+     "evidence": "O‘zbekiston Respublikasining\nyerostida amaldagi Mendeleyev davriy tizimining barcha elementlari mavjud"
+    },
+    {
+     "kind": "person",
+     "person": "Shavkat Mirziyoyev",
+     "role": "O‘zbekiston Respublikasi Prezidenti, tashqi siyosat islohotlarining tashabbuskori",
+     "activity": "2018-yil yanvarda xorijiy davlatlardagi elchilar bilan uchrashuv o‘tkazib, ustuvor vazifalarni belgiladi",
+     "evidence": "2018-yil yanvarda Prezident\nShavkat Mirziyoyevning O‘zbekistonning xorijiy davlatlardagi elchilari\nbilan uchrashuvi"
+    },
+    {
+     "kind": "term",
+     "term": "Geosiyosiy vaziyat",
+     "definition": "Davlatning geografik joylashuvi bilan bog‘liq bo‘lib, ichki va tashqi siyosatni tanlashga ta’sir etuvchi holat",
+     "evidence": "respublikaning geosiyosiy vaziyati\nva geostrategik manfaatlari, uning ichki va tashqi siyosatini tanlash"
+    },
+    {
+     "kind": "term",
+     "term": "Tashqi siyosiy faoliyati konsepsiyasi",
+     "definition": "Davlat tashqi siyosatining prinsiplari va strategik ustuvor yo‘nalishlarini belgilab beradigan qarashlar tizimi",
+     "evidence": "konsepsiyasi – bu davlat tashqi siyosatining prinsiplari va\nstrategik ustuvor yo‘nalishlarini"
+    },
+    {
+     "kind": "term",
+     "term": "Tinchliksevar siyosat",
+     "definition": "Harbiy-siyosiy bloklarda ishtirok etmaslikni va nizolarni tinch yo‘l bilan hal etishni nazarda tutuvchi yo‘nalish",
+     "evidence": "O‘zbekistonning tinchliksevar siyosat yuritishi, harbiy-siyosiy\nbloklarda ishtirok etmasligi"
+    },
+    {
+     "kind": "term",
+     "term": "Suveren tenglik",
+     "definition": "Davlatlarning xalqaro munosabatlarda teng huquqli subyekt sifatida tan olinishiga asoslanadigan prinsip",
+     "evidence": "Uning tashqi siyosati davlatlarning suveren tengligi, kuch\nishlatmaslik yoki kuch bilan tahdid qilmaslik, chegaralarning daxlsizligi"
+    },
+    {
+     "kind": "term",
+     "term": "Hamkorlik uchun ochiqlik",
+     "definition": "Mafkuraviy qarashlardan qat’i nazar, umuminsoniy qadriyatlar va xavfsizlikni saqlash asosida aloqa qilish prinsipi",
+     "evidence": "mafkuraviy qarashlardan qat’i\nnazar hamkorlik uchun ochiqlik, umuminsoniy qadriyatlarga, tinchlik\nva xavfsizlikni saqlashga sodiqlik"
+    },
+    {
+     "kind": "place",
+     "place": "Toshkent shahri",
+     "event": "45 ta xorijiy davlatning elchixonasi, 9 ta faxriy konsullik va 11 ta xalqaro tashkilot vakolatxonasi joylashgan poytaxt",
+     "evidence": "Toshkentda\n45 ta xorijiy davlatning elchixonalari, 9 ta faxriy konsullik, 11 ta xalqaro\ntashkilotlarning vakolatxonalari faoliyat olib bormoqda"
+    },
+    {
+     "kind": "place",
+     "place": "Afg‘oniston",
+     "event": "O‘zbekiston bilan chegaradosh bo‘lib, hududida etnik murosasizlik va narkobiznes muammolari saqlanib qolgan davlat",
+     "evidence": "ichki mojarolar hali ham\ntugatilmagan Afg‘oniston kabi davlat bilan chegaradoshdir"
+    },
+    {
+     "kind": "place",
+     "place": "Orol dengizi",
+     "event": "Ekologik fojiasi mamlakatimiz uchun noqulaylik omili bo‘lib qolayotgan yopiq suv havzasi",
+     "evidence": "Orol fojiasi ham\nmamlakatimiz uchun noqulaylik omilidir"
+    },
+    {
+     "kind": "place",
+     "place": "Buyuk Ipak yo‘li",
+     "event": "Qadimda Sharq va G‘arb o‘rtasidagi savdo-sotiq, madaniy-ilmiy va diplomatik aloqalar yo‘li bo‘lgan karvon yo‘li",
+     "evidence": "qadimgi savdo-sotiq,  madaniy-\nilmiy va diplomatik aloqalar yo‘li bo‘lgan Buyuk Ipak yo‘li O‘zbekiston\nhududidan o‘tgan"
+    },
+    {
+     "kind": "cause",
+     "cause": "O‘zbekistonning Markaziy Osiyoning markazida joylashganligi",
+     "effect": "Mintaqada kuchlar muvozanatini saqlash va iqtisodiy integratsiyani rivojlantirish imkoniyati tug‘ildi",
+     "evidence": "Markaziy Osiyoning mar-\nkazida joylashgan O‘zbekiston o‘zining geografik holatidan kelib chiqib"
+    },
+    {
+     "kind": "cause",
+     "cause": "Neft va gazga boy Fors ko‘rfazi, Kaspiy va Tarim havzalari yarim halqasining strategik markazida joylashganlik",
+     "effect": "Mintaqada ko‘pgina davlatlarning bir-biriga mos kelmaydigan manfaatlari to‘qnashmoqda",
+     "evidence": "Shuning uchun bu hududda butun\ndunyoda energiya taqchilligi sharoitida ko‘pgina davlatlarning bir-biriga\nmos kelmaydigan manfaatlari o‘zaro to‘qnashmoqda"
+    },
+    {
+     "kind": "cause",
+     "cause": "Dengizga chiqa olmaslik va dengiz portlaridan eng uzoqda joylashganlik",
+     "effect": "Ochiq dengizlarga olib chiquvchi eng qisqa temir yo‘l qariyb 3 ming kilometrni tashkil etadi",
+     "evidence": "O‘zbekiston\nbevosita dengizga chiqa olmaydigan, buning ustiga dengiz portlaridan eng\nuzoqda joylashgan mamlakat hisoblanadi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Markaziy Osiyo muammolarini tashqi kuchlar aralashuvisiz hal etish zarurati",
+     "effect": "Konsepsiyada mintaqa masalalari davlatlarning o‘zlari tomonidan yechilishi kerakligi bayon etilgan",
+     "evidence": "Markaziy Osiyo muammolari tashqi kuchlarning aralashuvisiz, mintaqadagi\ndavlatlarning o‘zlari tomonidan yechilmog‘i zarur”, degan fi  kr bayon etilgan"
+    },
+    {
+     "kind": "number",
+     "number": "133",
+     "unit": "davlat",
+     "meaning": "Istiqlol yillarida O‘zbekiston rasmiy diplomatik munosabatlar o‘rnatgan davlatlar soni",
+     "evidence": "mamlakatimiz\n133 davlat bilan rasmiy diplomatik munosabatlar o‘rnatgan"
+    },
+    {
+     "kind": "number",
+     "number": "3",
+     "unit": "ming km",
+     "meaning": "Qora, Boltiq, Yapon va Shimoliy dengizlarga olib chiquvchi eng qisqa temir yo‘l uzunligi",
+     "evidence": "Qora dengiz, Boltiq dengizi,\nYapon dengizi va Shimoliy dengizlarga olib chiquvchi eng qisqa temir yo‘li\nqariyb 3 ming kilometrni tashkil etadi"
+    }
+   ]
+  },
+  {
+   "number": 18,
+   "title": "O‘zbekistonning Markaziy Osiyo mamlakatlari bilan o‘zaro hamkorligi",
+   "page": 113,
+   "items": [
+    {
+     "kind": "date_event",
+     "date": "1993-yil yanvar",
+     "date_label": "1993-yil yanvarda",
+     "event": "Markaziy Osiyo davlatlari rahbarlarining Toshkent uchrashuvi o‘tkazilib, Hamdo‘stlikka asos solindi",
+     "evidence": "Markaziy Osiyo davlatlari rahbarlarining Toshkent uchrashuvi tashkil\netildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1992-yil iyun",
+     "date_label": "1992-yil iyunda",
+     "event": "Turkiston shahrida Qozog‘iston bilan do‘stlik va hamkorlik to‘g‘risidagi shartnoma imzolandi",
+     "evidence": "Qozog‘iston Respublikasi o‘rtasida do‘stlik va hamkorlik to‘g‘risidagi\nshartnoma asosida mustahkamlanib bordi"
+    },
+    {
+     "kind": "date_event",
+     "date": "1998-yil oktabr",
+     "date_label": "1998-yil oktabrda",
+     "event": "O‘zbekiston va Qozog‘iston o‘rtasida abadiy do‘stlik shartnomasi imzolandi",
+     "evidence": "1998-yil oktabrda O‘zbekiston va Qozog‘iston o‘rtasida\nabadiy do‘stlik shartnomasi imzolandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2013",
+     "date_label": "2013-yilda",
+     "event": "Qozog‘iston bilan Strategik sheriklik to‘g‘risidagi shartnoma imzolanib, eng muhim hujjatlar sirasiga kirdi",
+     "evidence": "2013-yil imzolangan O‘zbekiston Respublikasi bilan Qozog‘iston\nRespublikasi o‘rtasida Strategik sheriklik to‘g‘risidagi shartnoma"
+    },
+    {
+     "kind": "date_event",
+     "date": "2010-yil iyul",
+     "date_label": "2010-yil iyulda",
+     "event": "Qirg‘izistondagi millatlararo qonli voqealar sharoitida O‘zbekiston 100 mingdan ortiq qochqinni qabul qildi",
+     "evidence": "2010-yil iyulda Qirg‘izistonda ekstremistik kuchlar tomonidan uyush-\ntirilgan millatlararo qonli voqealar sharoitida O‘zbekiston 100 mingdan ortiq\nqochqinlarni o‘z hududiga qabul qildi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2017-yil aprel",
+     "date_label": "2017-yil aprelda",
+     "event": "25 yillik tanaffusdan so‘ng Dushanbe va Toshkent o‘rtasidagi aviaqatnov yana tiklandi",
+     "evidence": "2017-yilning aprelida 25 yillik tanaffusdan\nso‘ng Dushanbe va Toshkent o‘rtasidagi aviaqatnov yana tiklandi"
+    },
+    {
+     "kind": "date_event",
+     "date": "2017-yil mart",
+     "date_label": "2017-yil martda",
+     "event": "Prezident Shavkat Mirziyoyev rasmiy tashrif bilan Turkmanistonda bo‘lib, qator hujjatlar imzolandi",
+     "evidence": "2017-yil 6–7-mart kunlari O‘zbekiston Respublikasi Prezidenti\nShavkat Mirziyoyev rasmiy tashrif bilan Turkmanistonda bo‘ldi"
+    },
+    {
+     "kind": "person",
+     "person": "Islom Karimov",
+     "role": "O‘zbekiston Respublikasining Birinchi Prezidenti, mintaqaviy hamkorlik tashabbuskori",
+     "activity": "1993-yil yanvarda tashabbusi bilan Markaziy Osiyo davlatlari rahbarlarining Toshkent uchrashuvi tashkil etildi",
+     "evidence": "1993-yilning\nyanvarida Mamlakatimiz Birinchi Prezidenti Islom Karimov tashabbusi"
+    },
+    {
+     "kind": "person",
+     "person": "Nursulton Nazarboyev",
+     "role": "Qozog‘iston Respublikasi Prezidenti, O‘zbekistonning strategik sherigi",
+     "activity": "2017-yil sentabrda O‘zbekistonga rasmiy tashrif bilan kelib, “El-yurt hurmati” ordeni bilan taqdirlandi",
+     "evidence": "Shavkat Mirziyoyev Nursulton Nazarboyevni “El-yurt hurmati”\nordeni bilan taqdirladi"
+    },
+    {
+     "kind": "person",
+     "person": "Sooranbay Jeenbekov",
+     "role": "Qirg‘iziston Respublikasining yangi saylangan Prezidenti",
+     "activity": "2017-yil dekabrda rasmiy tashrif bilan O‘zbekistonga kelib, hamkorlikka doir qator hujjatlar qabul qilindi",
+     "evidence": "Respublikasining yangi saylangan Prezidenti Sooranbay Jeenbekov rasmiy\ntashrif bilan mamlakatimizga keldi"
+    },
+    {
+     "kind": "person",
+     "person": "Imomali Rahmon",
+     "role": "Tojikiston Respublikasi Prezidenti, O‘zbekiston bilan aloqalarni tiklagan rahbar",
+     "activity": "1998-yil yanvarda O‘zbekistonga amaliy tashrif bilan kelib, qo‘shma axborot hujjati imzolandi",
+     "evidence": "1998-yil yanvarda Tojikiston Prezidenti Imomali Rahmon\nO‘zbekistonga amaliy tashrif bilan keldi"
+    },
+    {
+     "kind": "person",
+     "person": "Gurbanguli Berdimuhamedov",
+     "role": "Turkmaniston Prezidenti, ikki tomonlama hujjatlar tashabbuskori",
+     "activity": "2014-yil may oyida mamlakatimizga rasmiy tashrifi chog‘ida qator ikki tomonlama hujjatlar imzolandi",
+     "evidence": "Turkmaniston Prezidenti Gurbanguli\nBerdimuhamedovning 2014-yil may oyida mamlakatimizga rasmiy tashrifi"
+    },
+    {
+     "kind": "term",
+     "term": "Delimitatsiya",
+     "definition": "Davlat chegaralarini tuzilgan shartnomaga muvofiq tavsiflash va xaritalashtirish asosida belgilash",
+     "evidence": "Delimitatsiya – (lot. – chegaralamoq, ajratmoq) davlat chegaralarini\ntuzilgan shartnomaga muvofi  q tavsifl  ash va xaritalashtirish asosida\nbelgilash"
+    },
+    {
+     "kind": "term",
+     "term": "Sammit",
+     "definition": "Ikki yoki bir necha davlat boshliqlarining muhim xalqaro masalalar bo‘yicha uchrashuvi, oliy darajadagi kengash",
+     "evidence": "Sammit – (ingl. – tepa, yuqori, cho‘qqi; yuksak daraja) ikki yoki bir\nnecha davlat boshliqlarining muhim xalqaro masalalar bo‘yicha\nuchrashuvi"
+    },
+    {
+     "kind": "term",
+     "term": "Markaziy Osiyo Hamdo‘stligi",
+     "definition": "1993-yilda besh davlat rahbarlari imzolagan bitim asosida tashkil etilgan mintaqaviy birlashma",
+     "evidence": "Oliy darajadagi bu uchrashuvda Markaziy Osiyo Hamdo‘stligiga asos\nsolindi"
+    },
+    {
+     "kind": "term",
+     "term": "Respublika turkman madaniyat markazi",
+     "definition": "2001-yilda tashkil etilgan, yurtimizdagi turkman millati vakillarining madaniy hayotiga xizmat qiluvchi markaz",
+     "evidence": "Yurtimizda 2001-yilda tashkil etilgan Respublika turkman madaniyat\nmarkazi faoliyat olib bormoqda"
+    },
+    {
+     "kind": "place",
+     "place": "Turkiston shahri",
+     "event": "1992-yil iyunda Qozog‘iston bilan do‘stlik va hamkorlik shartnomasi imzolangan shahar",
+     "evidence": "1992-yil iyunda Turkiston shahrida O‘zbekiston\nPrezidentining Qozog‘istonga rasmiy davlat tashrifi"
+    },
+    {
+     "kind": "place",
+     "place": "Ashxobod shahri",
+     "event": "1999-yilda Orolni qutqarish Xalqaro jamg‘armasining majlisi bo‘lib o‘tgan Turkmaniston poytaxti",
+     "evidence": "1999-yil Turkmaniston-\nning Ashxobod shahrida Orolni qutqarish Xalqaro jamg‘armasining\nmajlisi bo‘lib o‘tdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Mintaqa xalqlarining tarixi, madaniyati, tili va dinining birligi",
+     "effect": "Markaziy Osiyo davlatlari bilan do‘stlik va hamkorlik aloqalarini mustahkamlash uchun zamin yaratildi",
+     "evidence": "Tariximiz,\nmadaniyatimiz, tilimiz, dinimizning birligi, tomirlarimizning tutashib ket-\nganligi"
+    },
+    {
+     "kind": "cause",
+     "cause": "Yangi tarixiy sharoitda vujudga kelgan ijtimoiy-siyosiy jarayonlar",
+     "effect": "Mintaqa xalqlari tarixi va turmush tarziga har qachongidan boshqacharoq qarash zarurati tug‘ildi",
+     "evidence": "Yangi tarixiy sharoitlarda vujudga kelayotgan ijtimoiy-siyosiy jarayonlar"
+    },
+    {
+     "kind": "cause",
+     "cause": "Tojikistonda 1992–1997-yillarda davom etgan birodarkushlik urushi",
+     "effect": "Tojikistonning iqtisodiy taraqqiyotiga va qo‘shni davlatlar bilan hamkorligiga salbiy ta’sir ko‘rsatdi",
+     "evidence": "Tojikistonda 1992–1997-yillarda davom etgan\nbirodarkushlik urushi Tojikistonning iqtisodiy taraqqiyotiga salbiy ta’sir\netdi"
+    },
+    {
+     "kind": "cause",
+     "cause": "1997-yilda Moskvada milliy murosa haqidagi shartnomaga erishilishi",
+     "effect": "Tojikistonning qo‘shni mamlakatlar bilan aloqalari yana tiklandi",
+     "evidence": "1997-yilda Moskvada Tojikistonning rasmiy hokimiyati bilan muxolifat\nkuchlar\no‘rtasida tuzilgan milliy murosa haqidagi shartnomaga erishilgach"
+    },
+    {
+     "kind": "number",
+     "number": "2440",
+     "unit": "km",
+     "meaning": "O‘zbekistonning Qozog‘iston bilan chegarasining umumiy uzunligi",
+     "evidence": "2440 km uzunlikdagi O‘zbekistonning Qozog‘iston bilan chegarasining\n96 % belgilab olindi"
+    },
+    {
+     "kind": "number",
+     "number": "170",
+     "unit": "ming",
+     "meaning": "O‘zbekiston hududida yashaydigan turkman millatiga mansub aholi soni",
+     "evidence": "Bugungi kunda O‘zbekiston hududida\nturkman millatiga mansub qariyb 170 ming aholi yashab"
+    }
+   ]
+  }
+ ]
+}
