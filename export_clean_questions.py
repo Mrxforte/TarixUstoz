@@ -1,112 +1,144 @@
-import sqlite3
+"""Build app/src/main/assets/content.json — the offline fallback of the app.
+
+The full 1.1 million questions live in the backend database and are synced per
+book over HTTP. Bundling all of them into the APK made the asset 41 MB, so the
+asset keeps a small sample per topic (default: 6) while the textbooks/topics
+catalog stays complete. Textbook `totalQuestions` values come from the database.
+
+Usage (from the project root, next to backend/):
+  python export_clean_questions.py                 # 6 questions per topic
+  python export_clean_questions.py --per-topic 10
+"""
+from __future__ import annotations
+
+import argparse
 import json
 import os
+import sqlite3
+from collections import defaultdict
 
-conn = sqlite3.connect('backend/db.sqlite3')
-cursor = conn.cursor()
+DB = os.path.join("backend", "db.sqlite3")
+OUT = os.path.join("app", "src", "main", "assets", "content.json")
 
-# Fetch all Topics
-cursor.execute("SELECT id, document_id, chapter_id, title, summary, `order` FROM api_topic")
-topic_rows = cursor.fetchall()
 
-topics_payload = []
-for t in topic_rows:
-    t_id, doc_id, ch_id, title, summary, order = t
-    topics_payload.append({
-        'id': f'topic_{t_id}',
-        'chapterId': f'ch_{ch_id}' if ch_id else 'ch_6',
-        'textbookId': f'book_{doc_id}' if doc_id else 'uz_6',
-        'number': order or 1,
-        'title': title or 'Tarixiy mavzu',
-        'summary': summary or ''
-    })
+def subject_id(subject: str) -> str:
+    return "jahon" if "jahon" in (subject or "").lower() else "uzbekiston"
 
-print(f"Loaded {len(topics_payload)} topics from DB")
 
-# Fetch Questions for Grade 6
-cursor.execute("SELECT id, topic_id, text, option_a, option_b, option_c, option_d, correct_option, explanation, source_citation, grade, subject, difficulty FROM api_question WHERE grade=6")
-rows_6 = cursor.fetchall()
+def textbook_id(grade: int, subject: str) -> str:
+    return "uz_6" if grade == 6 else f"{subject_id(subject)}_{grade}"
 
-# Fetch Questions for Grade 7 Jahon
-cursor.execute("SELECT id, topic_id, text, option_a, option_b, option_c, option_d, correct_option, explanation, source_citation, grade, subject, difficulty FROM api_question WHERE grade=7 AND (subject LIKE '%Jahon%' OR subject LIKE '%jahon%') LIMIT 2000")
-rows_7_jahon = cursor.fetchall()
 
-questions = []
-seen = set()
-
-def process_rows(rows, default_grade, default_subj):
-    for r in rows:
-        q_id, t_id, txt, a, b, c, d, corr, exp, src, grade, subj, diff = r
-        clean_txt = (txt or '').strip()
-        if clean_txt and clean_txt not in seen:
-            seen.add(clean_txt)
-            g = grade or default_grade
-            s_raw = subj or default_subj
-            s_id = "jahon" if "jahon" in s_raw.lower() else "uzbekiston"
-            if g == 6:
-                s_id = "uzbekiston"
-                tb_id = "uz_6"
-            else:
-                tb_id = f"{s_id}_{g}"
-
-            topic_ref = f'topic_{t_id}' if t_id else f'topic_{tb_id}_1'
-
-            questions.append({
-                'id': f'q_{q_id}',
-                'topicId': topic_ref,
-                'chapterId': f'ch_{g}',
-                'textbookId': tb_id,
-                'text': clean_txt,
-                'options': [
-                    {'id': 'a', 'text': a or '', 'isCorrect': corr == 'A'},
-                    {'id': 'b', 'text': b or '', 'isCorrect': corr == 'B'},
-                    {'id': 'c', 'text': c or '', 'isCorrect': corr == 'C'},
-                    {'id': 'd', 'text': d or '', 'isCorrect': corr == 'D'}
-                ],
-                'correctOption': corr or 'A',
-                'explanation': exp or f'To‘g‘ri javob: {corr} varianti.',
-                'categoryType': 'SINGLE_CHOICE',
-                'gradeId': g,
-                'subjectId': s_id,
-                'difficulty': diff or 'EXAM',
-                'sourceReference': src or ''
-            })
-
-process_rows(rows_6, 6, "Qadimgi dunyo tarixi")
-process_rows(rows_7_jahon, 7, "Jahon tarixi")
-
-q6_count = len([q for q in questions if q["gradeId"] == 6])
-q7_jahon_count = len([q for q in questions if q["gradeId"] == 7 and q["subjectId"] == "jahon"])
-
-print(f"Loaded Grade 6 questions: {q6_count}")
-print(f"Loaded Grade 7 Jahon questions: {q7_jahon_count}")
-
-# 11 Official Textbooks
-textbooks = [
-    {'id': 'uz_6', 'title': 'Tarix. Qadimgi dunyo', 'gradeId': 6, 'subjectId': 'uzbekiston', 'authors': 'A.S. Sagdullayev, V.A. Kostetskiy', 'year': 2017, 'edition': '5-nashr', 'coverAsset': 'file:///android_asset/images/uz_6_cover.png', 'pdfAsset': 'textbooks/6_sinf_tarix.pdf', 'totalChapters': 5, 'totalTopics': 44, 'totalQuestions': q6_count},
-    {'id': 'jahon_7', 'title': 'Jahon tarixi (V–XV asr)', 'gradeId': 7, 'subjectId': 'jahon', 'authors': 'T.O‘. Salimov, F.E. Sultonov', 'year': 2017, 'edition': '3-nashr', 'pdfAsset': 'http://10.0.2.2:8000/media/books/pdfs/7-sinf_Jahon_tarixi.pdf', 'totalChapters': 12, 'totalTopics': 40, 'totalQuestions': 99013},
-    {'id': 'uz_7', 'title': 'O‘zbekiston tarixi (IV–XVI asr)', 'gradeId': 7, 'subjectId': 'uzbekiston', 'authors': 'A. Muhammadjonov', 'year': 2017, 'edition': '3-nashr', 'pdfAsset': 'http://10.0.2.2:8000/media/books/pdfs/7-sinf_Ozbekiston_tarixi.pdf', 'totalChapters': 10, 'totalTopics': 35, 'totalQuestions': 98935},
-    {'id': 'uz_8', 'title': 'O‘zbekiston tarixi (XVI–XIX asr I yarmi)', 'gradeId': 8, 'subjectId': 'uzbekiston', 'authors': 'U. Jo‘rayev va b.', 'year': 2019, 'edition': '4-nashr', 'pdfAsset': 'http://10.0.2.2:8000/media/books/pdfs/8-sinf_Ozbekiston_tarixi.pdf', 'totalChapters': 12, 'totalTopics': 45, 'totalQuestions': 98866},
-    {'id': 'jahon_8', 'title': 'Jahon tarixi (XVI–XIX asr)', 'gradeId': 8, 'subjectId': 'jahon', 'authors': 'R. Farmonov, U. Jo‘rayev, Sh. Ergashev', 'year': 2019, 'edition': '4-nashr', 'pdfAsset': 'http://10.0.2.2:8000/media/books/pdfs/8-sinf_Jahon_tarixi.pdf', 'totalChapters': 10, 'totalTopics': 35, 'totalQuestions': 99191},
-    {'id': 'uz_9', 'title': 'O‘zbekiston tarixi (XIX asr II yarmi – XX asr boshi)', 'gradeId': 9, 'subjectId': 'uzbekiston', 'authors': 'S. Tillaboyev, A. Zamonov', 'year': 2019, 'edition': '3-nashr', 'pdfAsset': 'http://10.0.2.2:8000/media/books/pdfs/9-sinf_Ozbekiston_tarixi.pdf', 'totalChapters': 10, 'totalTopics': 30, 'totalQuestions': 99977},
-    {'id': 'jahon_9', 'title': 'Jahon tarixi (XX asr boshi)', 'gradeId': 9, 'subjectId': 'jahon', 'authors': 'M. Lafasov va b.', 'year': 2019, 'edition': '4-nashr', 'pdfAsset': 'http://10.0.2.2:8000/media/books/pdfs/9-sinf_Jahon_tarixi.pdf', 'totalChapters': 12, 'totalTopics': 40, 'totalQuestions': 99995},
-    {'id': 'uz_10', 'title': 'O‘zbekiston tarixi (1917–1991)', 'gradeId': 10, 'subjectId': 'uzbekiston', 'authors': 'Q. Rajabov, A. Zamonov', 'year': 2017, 'edition': '1-nashr', 'pdfAsset': 'http://10.0.2.2:8000/media/books/pdfs/10-sinf_Ozbekiston_tarixi.pdf', 'totalChapters': 10, 'totalTopics': 30, 'totalQuestions': 99988},
-    {'id': 'jahon_10', 'title': 'Jahon tarixi (1918–1991)', 'gradeId': 10, 'subjectId': 'jahon', 'authors': 'Sh. Ergashev, B. Xodjayev, J. Abdullayev', 'year': 2017, 'edition': '1-nashr', 'pdfAsset': 'http://10.0.2.2:8000/media/books/pdfs/10-sinf_Jahon_tarixi.pdf', 'totalChapters': 10, 'totalTopics': 30, 'totalQuestions': 100000},
-    {'id': 'uz_11', 'title': 'O‘zbekiston tarixi (Mustaqillik davri)', 'gradeId': 11, 'subjectId': 'uzbekiston', 'authors': 'N. Jo‘rayev, A. Zamonov', 'year': 2018, 'edition': '1-nashr', 'pdfAsset': 'http://10.0.2.2:8000/media/books/pdfs/11-sinf_Ozbekiston_tarixi.pdf', 'totalChapters': 8, 'totalTopics': 25, 'totalQuestions': 99994},
-    {'id': 'jahon_11', 'title': 'Jahon tarixi (1991–2017)', 'gradeId': 11, 'subjectId': 'jahon', 'authors': 'Sh. Ergashev, B. Xodjayev, J. Abdullayev', 'year': 2018, 'edition': '1-nashr', 'pdfAsset': 'http://10.0.2.2:8000/media/books/pdfs/11-sinf_Jahon_tarixi.pdf', 'totalChapters': 8, 'totalTopics': 25, 'totalQuestions': 100000}
+TEXTBOOKS = [
+    ("uz_6", "Tarix. Qadimgi dunyo", 6, "uzbekiston", "A.S. Sagdullayev, V.A. Kostetskiy", 2017, "5-nashr", "file:///android_asset/images/uz_6_cover.png", "textbooks/6_sinf_tarix.pdf", 5, 44),
+    ("jahon_7", "Jahon tarixi (V–XV asr)", 7, "jahon", "T.O‘. Salimov, F.E. Sultonov", 2017, "3-nashr", None, "http://10.0.2.2:8000/media/books/pdfs/7-sinf_Jahon_tarixi.pdf", 12, 40),
+    ("uz_7", "O‘zbekiston tarixi (IV–XVI asr)", 7, "uzbekiston", "A. Muhammadjonov", 2017, "3-nashr", None, "http://10.0.2.2:8000/media/books/pdfs/7-sinf_Ozbekiston_tarixi.pdf", 10, 35),
+    ("uz_8", "O‘zbekiston tarixi (XVI–XIX asr I yarmi)", 8, "uzbekiston", "U. Jo‘rayev va b.", 2019, "4-nashr", None, "http://10.0.2.2:8000/media/books/pdfs/8-sinf_Ozbekiston_tarixi.pdf", 12, 45),
+    ("jahon_8", "Jahon tarixi (XVI–XIX asr)", 8, "jahon", "R. Farmonov, U. Jo‘rayev, Sh. Ergashev", 2019, "4-nashr", None, "http://10.0.2.2:8000/media/books/pdfs/8-sinf_Jahon_tarixi.pdf", 10, 35),
+    ("uz_9", "O‘zbekiston tarixi (XIX asr II yarmi – XX asr boshi)", 9, "uzbekiston", "S. Tillaboyev, A. Zamonov", 2019, "3-nashr", None, "http://10.0.2.2:8000/media/books/pdfs/9-sinf_Ozbekiston_tarixi.pdf", 10, 30),
+    ("jahon_9", "Jahon tarixi (XX asr boshi)", 9, "jahon", "M. Lafasov va b.", 2019, "4-nashr", None, "http://10.0.2.2:8000/media/books/pdfs/9-sinf_Jahon_tarixi.pdf", 12, 40),
+    ("uz_10", "O‘zbekiston tarixi (1917–1991)", 10, "uzbekiston", "Q. Rajabov, A. Zamonov", 2017, "1-nashr", None, "http://10.0.2.2:8000/media/books/pdfs/10-sinf_Ozbekiston_tarixi.pdf", 10, 30),
+    ("jahon_10", "Jahon tarixi (1918–1991)", 10, "jahon", "Sh. Ergashev, B. Xodjayev, J. Abdullayev", 2017, "1-nashr", None, "http://10.0.2.2:8000/media/books/pdfs/10-sinf_Jahon_tarixi.pdf", 10, 30),
+    ("uz_11", "O‘zbekiston tarixi (Mustaqillik davri)", 11, "uzbekiston", "N. Jo‘rayev, A. Zamonov", 2018, "1-nashr", None, "http://10.0.2.2:8000/media/books/pdfs/11-sinf_Ozbekiston_tarixi.pdf", 8, 25),
+    ("jahon_11", "Jahon tarixi (1991–2017)", 11, "jahon", "Sh. Ergashev, B. Xodjayev, J. Abdullayev", 2018, "1-nashr", None, "http://10.0.2.2:8000/media/books/pdfs/11-sinf_Jahon_tarixi.pdf", 8, 25),
 ]
 
-payload = {
-    'textbooks': textbooks,
-    'chapters': [
-        {'id': f'ch_{g}', 'textbookId': 'uz_6' if g==6 else f'uz_{g}', 'number': g, 'title': f'{g}-SINF TARIXI'} for g in range(6, 12)
-    ],
-    'topics': topics_payload,
-    'questions': questions
-}
 
-os.makedirs('app/src/main/assets', exist_ok=True)
-with open('app/src/main/assets/content.json', 'w', encoding='utf-8') as f:
-    json.dump(payload, f, ensure_ascii=False, indent=2)
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--per-topic", type=int, default=6)
+    parser.add_argument("--db", default=DB)
+    args = parser.parse_args()
 
-print('Exported content.json successfully with matched topicIds!')
+    conn = sqlite3.connect(f"file:{args.db}?mode=ro", uri=True)
+    cur = conn.cursor()
+
+    topics_payload = [
+        {
+            "id": f"topic_{t_id}",
+            "chapterId": f"ch_{ch_id}" if ch_id else "ch_6",
+            "textbookId": f"book_{doc_id}" if doc_id else "uz_6",
+            "number": order or 1,
+            "title": title or "Tarixiy mavzu",
+            "summary": summary or "",
+        }
+        for t_id, doc_id, ch_id, title, summary, order in cur.execute(
+            "SELECT id, document_id, chapter_id, title, summary, `order` FROM api_topic"
+        )
+    ]
+
+    totals = {
+        textbook_id(grade, subject): count
+        for grade, subject, count in cur.execute(
+            "SELECT grade, subject, COUNT(*) FROM api_question "
+            "WHERE verification_status='VERIFIED' GROUP BY grade, subject"
+        )
+    }
+
+    questions, seen, per_topic = [], set(), defaultdict(int)
+    rows = cur.execute(
+        "SELECT id, topic_id, text, option_a, option_b, option_c, option_d, correct_option, "
+        "explanation, source_citation, grade, subject, difficulty, question_type "
+        "FROM api_question WHERE verification_status='VERIFIED' "
+        "ORDER BY grade, subject, topic_id, id"
+    )
+    for (q_id, t_id, txt, a, b, c, d, corr, exp, src, grade, subject, diff, qtype) in rows:
+        txt = (txt or "").strip()
+        topic_key = t_id or f"{grade}-{subject}"
+        if not txt or txt in seen or per_topic[topic_key] >= args.per_topic:
+            continue
+        seen.add(txt)
+        per_topic[topic_key] += 1
+        tb_id = textbook_id(grade, subject)
+        questions.append({
+            "id": f"q_{q_id}",
+            "topicId": f"topic_{t_id}" if t_id else f"topic_{tb_id}_1",
+            "chapterId": f"ch_{grade}",
+            "textbookId": tb_id,
+            "text": txt,
+            "options": [
+                {"id": "a", "text": a or "", "isCorrect": corr == "A"},
+                {"id": "b", "text": b or "", "isCorrect": corr == "B"},
+                {"id": "c", "text": c or "", "isCorrect": corr == "C"},
+                {"id": "d", "text": d or "", "isCorrect": corr == "D"},
+            ],
+            "correctOption": corr or "A",
+            "explanation": exp or f"To‘g‘ri javob: {corr} varianti.",
+            "categoryType": qtype or "SINGLE_CHOICE",
+            "gradeId": grade,
+            "subjectId": subject_id(subject),
+            "difficulty": diff or "MEDIUM",
+            "sourceReference": src or "",
+        })
+
+    textbooks = [
+        {
+            "id": tb_id, "title": title, "gradeId": grade, "subjectId": sbj,
+            "authors": authors, "year": year, "edition": edition,
+            **({"coverAsset": cover} if cover else {}),
+            "pdfAsset": pdf, "totalChapters": chapters,
+            "totalTopics": topics, "totalQuestions": totals.get(tb_id, 0),
+        }
+        for tb_id, title, grade, sbj, authors, year, edition, cover, pdf, chapters, topics in TEXTBOOKS
+    ]
+
+    payload = {
+        "textbooks": textbooks,
+        "chapters": [
+            {"id": f"ch_{g}", "textbookId": "uz_6" if g == 6 else f"uz_{g}", "number": g, "title": f"{g}-SINF TARIXI"}
+            for g in range(6, 12)
+        ],
+        "topics": topics_payload,
+        "questions": questions,
+    }
+
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
+    with open(OUT, "w", encoding="utf-8") as fh:
+        json.dump(payload, fh, ensure_ascii=False, separators=(",", ":"))
+    print(f"topics: {len(topics_payload)}, questions: {len(questions)}, "
+          f"per topic: {args.per_topic}, file: {os.path.getsize(OUT) / 1e6:.1f} MB")
+    print("totals:", dict(sorted(totals.items())))
+
+
+if __name__ == "__main__":
+    main()

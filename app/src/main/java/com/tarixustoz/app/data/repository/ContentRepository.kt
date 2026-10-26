@@ -601,8 +601,14 @@ class ContentRepository @Inject constructor(
     }
 
     suspend fun seedIfNeeded() = withContext(Dispatchers.IO) {
-        val count = db.textbookDao().count()
-        if (count < 11) {
+        val hasNewTopics = db.topicDao().getById("topic_10243")
+        if (hasNewTopics == null || db.textbookDao().count() < 11) {
+            db.questionDao().deleteAll()
+            db.topicDao().deleteAll()
+            db.chapterDao().deleteAll()
+            db.textbookDao().deleteAll()
+            db.wrongQuestionDao().deleteAll()
+
             val assetJson = loadAssetJson("content.json")
             if (!assetJson.isNullOrBlank()) {
                 importFromJsonString(assetJson)
