@@ -250,7 +250,7 @@ fun TestsScreen(
                     DirectionCard("WAR", "Urushlar va janglar", Icons.Default.Security, Color(0xFFDC2626), Color(0xFFFEF2F2)),
                     DirectionCard("YEAR", "Yillar va sanalar", Icons.Default.CalendarMonth, Color(0xFF16A34A), Color(0xFFF0FDF4)),
                     DirectionCard("CITY", "Shahar va hududlar", Icons.Default.LocationOn, Color(0xFFF97316), Color(0xFFFFF7ED)),
-                    DirectionCard("MONUMENT", "Tarixiy obidalar", Icons.Default.AccountBalance, Color(0xFF8B5CF6), Color(0xFFF5F3FF)),
+                    DirectionCard("FACT", "Tarixiy faktlar", Icons.Default.FactCheck, Color(0xFF8B5CF6), Color(0xFFF5F3FF)),
                     DirectionCard("LOGICAL", "Mantiqiy va DTM", Icons.Default.Psychology, Color(0xFF0284C7), Color(0xFFEFF6FF)),
                 )
                 Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {

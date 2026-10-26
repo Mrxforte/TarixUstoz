@@ -32,7 +32,7 @@ private val HOME_DIRECTIONS = listOf(
     Triple("PERSON", "Tarixiy shaxslar", "person"),
     Triple("YEAR", "Yillar bo'yicha", "calendar"),
     Triple("EVENT", "Tarixiy voqealar", "event"),
-    Triple("MONUMENT", "Tarixiy obidalar", "monument"),
+    Triple("FACT", "Tarixiy faktlar", "fact"),
     Triple("WAR", "Urushlar va janglar", "war"),
     Triple("LOGICAL", "Mantiqiy va DTM", "logical"),
     Triple(null, "Mavzu bo'yicha", "topic")
@@ -63,7 +63,7 @@ data class HomeUiState(
         HomeCategoryItem("tarixiy_shaxslar", "Tarixiy shaxslar", "…", "person", 0, "PERSON"),
         HomeCategoryItem("yillar_boyicha", "Yillar bo'yicha", "…", "calendar", 0, "YEAR"),
         HomeCategoryItem("tarixiy_voqealar", "Tarixiy voqealar", "…", "event", 0, "EVENT"),
-        HomeCategoryItem("tarixiy_obidalar", "Tarixiy obidalar", "…", "monument", 0, "MONUMENT"),
+        HomeCategoryItem("tarixiy_faktlar", "Tarixiy faktlar", "…", "fact", 0, "FACT"),
         HomeCategoryItem("urushlar", "Urushlar va janglar", "…", "war", 0, "WAR"),
         HomeCategoryItem("mantiqiy_dtm", "Mantiqiy va DTM", "…", "logical", 0, "LOGICAL"),
         HomeCategoryItem("mavzu_boyicha", "Mavzu bo'yicha", "Mavzular ro'yxati", "topic", 0, null)
