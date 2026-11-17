@@ -1,5 +1,6 @@
 package com.tarixustoz.app.di
 
+import com.tarixustoz.app.BuildConfig
 import com.tarixustoz.app.data.remote.ApiService
 import dagger.Module
 import dagger.Provides
@@ -15,8 +16,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    // 10.0.2.2 points to localhost of developer machine on Android Emulator
-    private const val BASE_URL = "http://10.0.2.2:8000/api/"
+
 
     @Provides
     @Singleton
@@ -32,7 +32,7 @@ object NetworkModule {
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BuildConfig.TARIX_API_BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

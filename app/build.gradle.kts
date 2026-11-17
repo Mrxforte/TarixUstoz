@@ -33,6 +33,12 @@ android {
                 localProperties.load(stream)
             }
         }
+        val apiBaseUrl = providers.gradleProperty("TARIX_API_BASE_URL")
+            .orElse("https://tarix.1xbet-getapk.com/api/").get()
+        require(apiBaseUrl.startsWith("https://") && apiBaseUrl.endsWith("/")) {
+            "TARIX_API_BASE_URL must use HTTPS and end with /"
+        }
+        buildConfigField("String", "TARIX_API_BASE_URL", "\"$apiBaseUrl\"")
         val geminiApiKey = localProperties.getProperty("GEMINI_API_KEY") ?: ""
         
         buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")

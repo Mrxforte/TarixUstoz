@@ -1,0 +1,36 @@
+name: Android and backend verification
+on:
+  push:
+    branches: [master, codex/tarix-namecheap-ready]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: gradle
+      - name: Build APK and run unit tests
+        run: ./gradlew assembleDebug testDebugUnitTest --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TarixUstoz-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+  backend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r backend/requirements.txt
+      - run: python manage.py test api --noinput
+        working-directory: backend

@@ -112,7 +112,7 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
 
     def list(self, request, *args, **kwargs):
         grade = request.query_params.get('grade')
-        limit = self._int_param('limit', 5000)
+        limit = max(1, min(self._int_param('limit', 1000), 5000))
         offset = self._int_param('offset', 0)
 
         # The database is the primary source: it is paginated and always current.
@@ -189,9 +189,7 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
         return qs.order_by('id')
 
     def get_queryset(self):
-        limit = self._int_param('limit', 200)
-        offset = self._int_param('offset', 0)
-        return self._filtered_queryset()[offset: offset + limit]
+        return self._filtered_queryset()
 
     @action(detail=False, methods=['get'])
     def ticket(self, request):

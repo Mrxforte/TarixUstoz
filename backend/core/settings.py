@@ -10,27 +10,36 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
+
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+def env_list(name):
+    return [value.strip() for value in os.environ.get(name, "").split(",") if value.strip()]
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# Set DJANGO_SECRET_KEY in the environment for any non-local deployment.
-SECRET_KEY = os.environ.get(
-    "DJANGO_SECRET_KEY",
-    "django-insecure-!y5$!huy)-*va)1tc+@c16#xldpt-1dpjnf1^()7f5!dvpw#yf",
-)
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ["*"]
+PRODUCTION = os.environ.get("DJANGO_ENV") == "production"
+DEBUG = not PRODUCTION
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
+ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS")
+if PRODUCTION and (not SECRET_KEY or len(SECRET_KEY) < 50 or not ALLOWED_HOSTS or "*" in ALLOWED_HOSTS):
+    raise ImproperlyConfigured(
+        "Production requires a DJANGO_SECRET_KEY of at least 50 characters and explicit DJANGO_ALLOWED_HOSTS."
+    )
+SECRET_KEY = SECRET_KEY or "django-insecure-tarixustoz-local-development-only"
+ALLOWED_HOSTS = ALLOWED_HOSTS or ["localhost", "127.0.0.1", "[::1]", "10.0.2.2"]
+CSRF_TRUSTED_ORIGINS = env_list("DJANGO_CSRF_TRUSTED_ORIGINS")
+SESSION_COOKIE_SECURE = PRODUCTION
+CSRF_COOKIE_SECURE = PRODUCTION
+SECURE_SSL_REDIRECT = PRODUCTION and os.environ.get("DJANGO_ENFORCE_HTTPS") == "1"
+SECURE_HSTS_SECONDS = int(os.environ.get("DJANGO_HSTS_SECONDS", "0")) if PRODUCTION else 0
+if PRODUCTION and os.environ.get("DJANGO_TRUST_PROXY_HTTPS") == "1":
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 # Application definition
@@ -80,9 +89,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 
 
 # Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-import os
+# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DB_ENGINE = os.environ.get('DB_ENGINE', 'django.db.backends.sqlite3')
 if DB_ENGINE in ('postgresql', 'django.db.backends.postgresql'):
@@ -91,7 +98,7 @@ if DB_ENGINE in ('postgresql', 'django.db.backends.postgresql'):
             "ENGINE": "django.db.backends.postgresql",
             "NAME": os.environ.get("DB_NAME", "tarixustoz_db"),
             "USER": os.environ.get("DB_USER", "postgres"),
-            "PASSWORD": os.environ.get("DB_PASSWORD", "postgres"),
+            "PASSWORD": os.environ.get("DB_PASSWORD", "" if PRODUCTION else "postgres"),
             "HOST": os.environ.get("DB_HOST", "localhost"),
             "PORT": os.environ.get("DB_PORT", "5432"),
         }
@@ -142,10 +149,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = os.environ.get("DJANGO_STATIC_URL", "static/")
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = os.environ.get("DJANGO_MEDIA_URL", "media/").rstrip("/") + "/"
+MEDIA_ROOT = Path(os.environ.get("DJANGO_MEDIA_ROOT", BASE_DIR / "media"))
 
 # Structured Media directories
 BOOKS_DIR = MEDIA_ROOT / 'books'
@@ -168,7 +176,8 @@ JSONL_EXPORTS_DIR = BOOKS_DIR / 'jsonl'
 for _d in [MEDIA_ROOT, BOOKS_DIR, BOOKS_PDF_DIR, BOOKS_JSON_DIR, BOOKS_TXT_DIR, TESTS_DIR, TESTS_JSON_DIR, TESTS_TXT_DIR, SQL_BACKUPS_DIR]:
     os.makedirs(_d, exist_ok=True)
 
-CORS_ALLOW_ALL_ORIGINS = True # Faqat ishlab chiqish (development) uchun
+CORS_ALLOW_ALL_ORIGINS = DEBUG
+CORS_ALLOWED_ORIGINS = env_list("DJANGO_CORS_ALLOWED_ORIGINS")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
