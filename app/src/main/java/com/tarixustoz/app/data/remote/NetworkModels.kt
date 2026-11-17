@@ -54,7 +54,7 @@ data class ApiPdfBookDto(
         get() = grade ?: gradeId.takeIf { it > 0 } ?: 6
 
     val effectiveSubject: String
-        get() = subjectId ?: subject ?: "uzbekiston"
+        get() = if ((subjectId ?: subject).orEmpty().contains("jahon", ignoreCase = true)) "jahon" else "uzbekiston"
 }
 
 @Serializable

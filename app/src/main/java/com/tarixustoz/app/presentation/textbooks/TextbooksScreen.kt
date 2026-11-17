@@ -1,5 +1,6 @@
 package com.tarixustoz.app.presentation.textbooks
 
+import com.tarixustoz.app.data.remote.MediaUrls
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -151,8 +152,7 @@ fun TextbooksScreen(
                 modifier = Modifier.weight(1f)
             ) {
                 items(sortedTextbooks) { textbook ->
-                    val subjectFileName = if (textbook.gradeId == 6) "Qadimgi_dunyo_tarixi" else if (textbook.subjectId.contains("jahon", ignoreCase = true)) "Jahon_tarixi" else "Ozbekiston_tarixi"
-                    val fallbackPdfUrl = "http://10.0.2.2:8000/media/pdfs/${textbook.gradeId}-sinf_$subjectFileName.pdf"
+                    val fallbackPdfUrl = MediaUrls.textbook(textbook.gradeId, textbook.subjectId)
                     val pdfPath = textbook.pdfAsset?.takeIf { it.isNotBlank() } ?: fallbackPdfUrl
 
                     TextbookGridCard(

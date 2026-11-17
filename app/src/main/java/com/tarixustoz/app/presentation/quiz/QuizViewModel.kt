@@ -129,7 +129,7 @@ class QuizViewModel @Inject constructor(
                 }
                 title = "$varIndex-Variant"
             } else if (!topicId.isNullOrBlank() && topicId != "custom") {
-                if (topicId.startsWith("book_") || topicId == "uz_6") {
+                if (topicId.startsWith("book_") || topicId.startsWith("uz_") || topicId.startsWith("jahon_")) {
                     val book = contentRepository.getTextbookById(topicId)
                     val reqGrade = book?.gradeId ?: if (topicId == "uz_6") 6 else 0
                     val reqSubject = book?.subjectId ?: ""
