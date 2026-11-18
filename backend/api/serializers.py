@@ -29,7 +29,7 @@ class PdfBookSerializer(serializers.ModelSerializer):
             request = self.context.get('request')
             if request:
                 return request.build_absolute_uri(obj.pdf_file.url)
-            return f"http://127.0.0.1:8000/media/{obj.pdf_file}"
+            return obj.pdf_file.url
         return None
 
     def get_cover_url(self, obj):
@@ -37,7 +37,7 @@ class PdfBookSerializer(serializers.ModelSerializer):
             request = self.context.get('request')
             if request:
                 return request.build_absolute_uri(obj.cover_image.url)
-            return f"http://127.0.0.1:8000/media/{obj.cover_image}"
+            return obj.cover_image.url
         return None
 
     def get_total_topics(self, obj):
@@ -45,7 +45,7 @@ class PdfBookSerializer(serializers.ModelSerializer):
 
     def get_total_questions(self, obj):
         from api.models import Question
-        return Question.objects.filter(grade=obj.grade, subject__icontains=obj.subject).count()
+        return Question.objects.filter(grade=obj.grade, subject=obj.subject).count()
 
 class CategorySerializer(serializers.ModelSerializer):
     pdf_books = PdfBookSerializer(many=True, read_only=True)

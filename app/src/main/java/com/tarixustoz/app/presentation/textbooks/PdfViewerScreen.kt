@@ -1,5 +1,6 @@
 package com.tarixustoz.app.presentation.textbooks
 
+import com.tarixustoz.app.data.remote.MediaUrls
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
@@ -200,11 +201,12 @@ fun PdfViewerScreen(
     LaunchedEffect(pdfAssetPath) {
         withContext(Dispatchers.IO) {
             try {
-                val tempFile = File(context.cacheDir, "pdf_cache_${pdfAssetPath.hashCode()}.pdf")
+                val resolvedPath = MediaUrls.resolve(pdfAssetPath) ?: pdfAssetPath
+                val tempFile = File(context.cacheDir, "pdf_cache_${resolvedPath.hashCode()}.pdf")
                 if (!tempFile.exists() || tempFile.length() == 0L) {
-                    val formattedPath = pdfAssetPath.replace("127.0.0.1", "10.0.2.2").replace("localhost", "10.0.2.2").trim()
+                    val formattedPath = resolvedPath
                     if (formattedPath.startsWith("http://") || formattedPath.startsWith("https://") || formattedPath.startsWith("/")) {
-                        val targetUrl = if (formattedPath.startsWith("/")) "http://10.0.2.2:8000$formattedPath" else formattedPath
+                        val targetUrl = formattedPath
                         val cleanUrl = targetUrl.replace(" ", "%20")
                         val client = OkHttpClient.Builder()
                             .connectTimeout(30, TimeUnit.SECONDS)

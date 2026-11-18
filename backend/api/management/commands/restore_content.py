@@ -20,6 +20,7 @@ from pathlib import Path
 from django.conf import settings
 from django.core.management import call_command
 from django.core.management.base import BaseCommand, CommandError
+from django.db import transaction
 
 from api.models import PdfBook, Question
 
@@ -59,19 +60,26 @@ class Command(BaseCommand):
         if current == entry["count"] and not force:
             self.stdout.write(f"{entry['folder']}: up to date ({current})")
             return
+        if current and not force:
+            raise CommandError(
+                f"{entry['folder']}: found {current} existing questions. "
+                "Use an empty destination or explicitly request replacement with --force."
+            )
+
         self.stdout.write(f"{entry['folder']}: importing {entry['count']} (had {current})")
-        call_command(
-            "import_jahon7_bank",
-            ndjson=str(CONTENT / "banks" / entry["archive"]),
-            topics=str(CONTENT / "books" / entry["folder"] / "source" / "topics.json"),
-            grade=grade,
-            subject=subject,
-            prefix=entry["prefix"],
-            replace=True,
-        )
-        restored = Question.objects.filter(grade=grade, subject=subject).count()
-        if restored != entry["count"]:
-            raise CommandError(f"{entry['folder']}: expected {entry['count']}, got {restored}")
+        with transaction.atomic():
+            call_command(
+                "import_jahon7_bank",
+                ndjson=str(CONTENT / "banks" / entry["archive"]),
+                topics=str(CONTENT / "books" / entry["folder"] / "source" / "topics.json"),
+                grade=grade,
+                subject=subject,
+                prefix=entry["prefix"],
+                replace=True,
+            )
+            restored = Question.objects.filter(grade=grade, subject=subject).count()
+            if restored != entry["count"]:
+                raise CommandError(f"{entry['folder']}: expected {entry['count']}, got {restored}")
 
     def _restore_pdf(self, entry: dict) -> None:
         src = CONTENT / "pdfs" / f"{entry['folder']}.pdf"

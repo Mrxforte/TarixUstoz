@@ -1,5 +1,8 @@
 package com.tarixustoz.app.data.repository
 
+import com.tarixustoz.app.BuildConfig
+import com.tarixustoz.app.data.remote.MediaUrls
+import kotlinx.coroutines.CancellationException
 import android.content.Context
 import com.tarixustoz.app.data.local.*
 import com.tarixustoz.app.data.remote.ApiService
@@ -276,7 +279,11 @@ class ContentRepository @Inject constructor(
         try {
             val numericTopicIds = topicIds.mapNotNull { it.removePrefix("topic_").toLongOrNull() }
             val effectiveGrade = if (numericTopicIds.isNotEmpty()) 0 else grade
-            val effectiveSubject = if (numericTopicIds.isNotEmpty()) "" else subject
+            val effectiveSubject = when {
+                numericTopicIds.isNotEmpty() -> ""
+                grade == 6 -> "qadimgi"
+                else -> subject
+            }
 
             val req = QuizGenerateRequest(
                 count = count,
@@ -306,7 +313,7 @@ class ContentRepository @Inject constructor(
         return Question(
             id = "q_$id",
             topicId = if (topicId != null) "topic_$topicId" else "general",
-            textbookId = "book_$gradeId",
+            textbookId = if (subjectId == "jahon") "jahon_$gradeId" else "uz_$gradeId",
             gradeId = gradeId,
             subjectId = subjectId ?: "uzbekiston",
             type = QuestionType.SINGLE_CHOICE,
@@ -527,14 +534,13 @@ class ContentRepository @Inject constructor(
             if (apiBooks.isNotEmpty()) {
                 val entities = apiBooks.map { b ->
                     val rawPdfUrl = b.pdfUrl ?: b.pdfFile
-                    val formattedPdfUrl = rawPdfUrl?.replace("127.0.0.1", "10.0.2.2")?.replace("localhost", "10.0.2.2")
-                    val formattedCoverUrl = (b.coverUrl ?: b.coverImage)?.replace("127.0.0.1", "10.0.2.2")?.replace("localhost", "10.0.2.2")
+                    val formattedPdfUrl = MediaUrls.resolve(rawPdfUrl)
+                    val formattedCoverUrl = MediaUrls.resolve(b.coverUrl ?: b.coverImage)
 
-                    val subjectFileName = if (b.effectiveGrade == 6) "Qadimgi_dunyo_tarixi" else if (b.effectiveSubject.contains("jahon", ignoreCase = true)) "Jahon_tarixi" else "Ozbekiston_tarixi"
-                    val fallbackPdfUrl = "http://10.0.2.2:8000/media/pdfs/${b.effectiveGrade}-sinf_$subjectFileName.pdf"
+                    val fallbackPdfUrl = MediaUrls.textbook(b.effectiveGrade, b.effectiveSubject)
 
                     TextbookEntity(
-                        id = "book_${b.id}",
+                        id = if (b.effectiveSubject == "jahon") "jahon_${b.effectiveGrade}" else "uz_${b.effectiveGrade}",
                         title = b.title,
                         gradeId = b.effectiveGrade,
                         subjectId = b.effectiveSubject,
@@ -617,7 +623,7 @@ class ContentRepository @Inject constructor(
         withContext(Dispatchers.IO) {
             // 6-sinf darsligi («Qadimgi dunyo tarixi») backendda uzbekiston bucketiga tushadi
             val bookSubjectId = if (grade == 6) "uzbekiston" else subjectId
-            val key = "book_${grade}_$bookSubjectId"
+            val key = bookDownloadKey(grade, bookSubjectId)
             if (bankPrefs.getBoolean(key, false) &&
                 db.questionDao().countByGradeAndSubject(grade, bookSubjectId) > 0
             ) {
@@ -629,6 +635,7 @@ class ContentRepository @Inject constructor(
                 else -> "zbekiston"
             }
 
+            val effectivePageSize = pageSize.coerceIn(1, 5000)
             var offset = 0
             var inserted = 0
             while (true) {
@@ -636,11 +643,13 @@ class ContentRepository @Inject constructor(
                     apiService.getQuestions(
                         grade = grade,
                         subject = subjectParam,
-                        limit = pageSize,
+                        limit = effectivePageSize,
                         offset = offset
                     )
+                } catch (e: CancellationException) {
+                    throw e
                 } catch (e: Exception) {
-                    break
+                    return@withContext inserted
                 }
                 if (page.isEmpty()) break
                 page.map { it.toEntity() }
@@ -648,7 +657,7 @@ class ContentRepository @Inject constructor(
                     .forEach { chunk -> db.questionDao().insertAll(chunk) }
                 inserted += page.size
                 offset += page.size
-                if (page.size < pageSize) break
+                if (page.size < effectivePageSize) break
             }
             if (inserted > 0) {
                 bankPrefs.edit().putBoolean(key, true).apply()
@@ -662,8 +671,13 @@ class ContentRepository @Inject constructor(
         if (grade != 6) syncBook(grade, "uzbekiston")
     }
 
+    private fun bookDownloadKey(grade: Int, subjectId: String): String {
+        val subject = if (grade == 6) "uzbekiston" else subjectId
+        return "${BuildConfig.TARIX_API_BASE_URL}:book_${grade}_$subject"
+    }
+
     fun isBookDownloaded(grade: Int, subjectId: String): Boolean =
-        bankPrefs.getBoolean("book_${grade}_$subjectId", false)
+        bankPrefs.getBoolean(bookDownloadKey(grade, subjectId), false)
 
     private fun com.tarixustoz.app.data.remote.ApiQuestionDto.toEntity(): QuestionEntity {
         val optionsList = listOf(
@@ -675,7 +689,7 @@ class ContentRepository @Inject constructor(
         return QuestionEntity(
             id = "q_$id",
             topicId = if (topicId != null) "topic_$topicId" else "general_topic",
-            textbookId = "book_$gradeId",
+            textbookId = if (subjectId == "jahon") "jahon_$gradeId" else "uz_$gradeId",
             gradeId = gradeId,
             subjectId = subjectId ?: "uzbekiston",
             type = QuestionType.SINGLE_CHOICE.name,
@@ -770,17 +784,17 @@ class ContentRepository @Inject constructor(
 
     private suspend fun seedContent() {
         val textbooks = listOf(
-            TextbookEntity("uz_6", "Tarix. Qadimgi dunyo", 6, "uzbekiston", "A.S. Sagdullayev, V.A. Kostetskiy", 2017, "5-nashr", 5, 44, 150, "file:///android_asset/images/uz_6_cover.png", "textbooks/6_sinf_tarix.pdf"),
-            TextbookEntity("uz_7", "O‘zbekiston tarixi (IV–XVI asr)", 7, "uzbekiston", "A. Muhammadjonov", 2017, "3-nashr", 10, 35, 70, pdfAsset = "http://10.0.2.2:8000/media/books/pdfs/7-sinf_Ozbekiston_tarixi.pdf"),
-            TextbookEntity("jahon_7", "Jahon tarixi (V–XV asr)", 7, "jahon", "T.O‘. Salimov, F.E. Sultonov", 2017, "3-nashr", 12, 40, 75, pdfAsset = "http://10.0.2.2:8000/media/books/pdfs/7-sinf_Jahon_tarixi.pdf"),
-            TextbookEntity("uz_8", "O‘zbekiston tarixi (XVI–XIX asr I yarmi)", 8, "uzbekiston", "U. Jo‘rayev va b.", 2019, "4-nashr", 12, 45, 90, pdfAsset = "http://10.0.2.2:8000/media/books/pdfs/8-sinf_Ozbekiston_tarixi.pdf"),
-            TextbookEntity("jahon_8", "Jahon tarixi (XVI–XIX asr)", 8, "jahon", "R. Farmonov, U. Jo‘rayev, Sh. Ergashev", 2019, "4-nashr", 10, 35, 80, pdfAsset = "http://10.0.2.2:8000/media/books/pdfs/8-sinf_Jahon_tarixi.pdf"),
-            TextbookEntity("uz_9", "O‘zbekiston tarixi (XIX asr II yarmi – XX asr boshi)", 9, "uzbekiston", "S. Tillaboyev, A. Zamonov", 2019, "3-nashr", 10, 30, 70, pdfAsset = "http://10.0.2.2:8000/media/books/pdfs/9-sinf_Ozbekiston_tarixi.pdf"),
-            TextbookEntity("jahon_9", "Jahon tarixi (XX asr boshi)", 9, "jahon", "M. Lafasov va b.", 2019, "4-nashr", 12, 40, 85, pdfAsset = "http://10.0.2.2:8000/media/books/pdfs/9-sinf_Jahon_tarixi.pdf"),
-            TextbookEntity("uz_10", "O‘zbekiston tarixi (1917–1991)", 10, "uzbekiston", "Q. Rajabov, A. Zamonov", 2017, "1-nashr", 10, 30, 65, pdfAsset = "http://10.0.2.2:8000/media/books/pdfs/10-sinf_Ozbekiston_tarixi.pdf"),
-            TextbookEntity("jahon_10", "Jahon tarixi (1918–1991)", 10, "jahon", "Sh. Ergashev, B. Xodjayev, J. Abdullayev", 2017, "1-nashr", 10, 30, 60, pdfAsset = "http://10.0.2.2:8000/media/books/pdfs/10-sinf_Jahon_tarixi.pdf"),
-            TextbookEntity("uz_11", "O‘zbekiston tarixi (Mustaqillik davri)", 11, "uzbekiston", "N. Jo‘rayev, A. Zamonov", 2018, "1-nashr", 8, 25, 55, pdfAsset = "http://10.0.2.2:8000/media/books/pdfs/11-sinf_Ozbekiston_tarixi.pdf"),
-            TextbookEntity("jahon_11", "Jahon tarixi (1991–2017)", 11, "jahon", "Sh. Ergashev, B. Xodjayev, J. Abdullayev", 2018, "1-nashr", 8, 25, 50, pdfAsset = "http://10.0.2.2:8000/media/books/pdfs/11-sinf_Jahon_tarixi.pdf")
+            TextbookEntity("uz_6", "Tarix. Qadimgi dunyo", 6, "uzbekiston", "A.S. Sagdullayev, V.A. Kostetskiy", 2017, "5-nashr", 5, 44, 150, "file:///android_asset/images/uz_6_cover.png", MediaUrls.textbook(6, "uzbekiston")),
+            TextbookEntity("uz_7", "O‘zbekiston tarixi (IV–XVI asr)", 7, "uzbekiston", "A. Muhammadjonov", 2017, "3-nashr", 10, 35, 70, pdfAsset = MediaUrls.textbook(7, "uzbekiston")),
+            TextbookEntity("jahon_7", "Jahon tarixi (V–XV asr)", 7, "jahon", "T.O‘. Salimov, F.E. Sultonov", 2017, "3-nashr", 12, 40, 75, pdfAsset = MediaUrls.textbook(7, "jahon")),
+            TextbookEntity("uz_8", "O‘zbekiston tarixi (XVI–XIX asr I yarmi)", 8, "uzbekiston", "U. Jo‘rayev va b.", 2019, "4-nashr", 12, 45, 90, pdfAsset = MediaUrls.textbook(8, "uzbekiston")),
+            TextbookEntity("jahon_8", "Jahon tarixi (XVI–XIX asr)", 8, "jahon", "R. Farmonov, U. Jo‘rayev, Sh. Ergashev", 2019, "4-nashr", 10, 35, 80, pdfAsset = MediaUrls.textbook(8, "jahon")),
+            TextbookEntity("uz_9", "O‘zbekiston tarixi (XIX asr II yarmi – XX asr boshi)", 9, "uzbekiston", "S. Tillaboyev, A. Zamonov", 2019, "3-nashr", 10, 30, 70, pdfAsset = MediaUrls.textbook(9, "uzbekiston")),
+            TextbookEntity("jahon_9", "Jahon tarixi (XX asr boshi)", 9, "jahon", "M. Lafasov va b.", 2019, "4-nashr", 12, 40, 85, pdfAsset = MediaUrls.textbook(9, "jahon")),
+            TextbookEntity("uz_10", "O‘zbekiston tarixi (1917–1991)", 10, "uzbekiston", "Q. Rajabov, A. Zamonov", 2017, "1-nashr", 10, 30, 65, pdfAsset = MediaUrls.textbook(10, "uzbekiston")),
+            TextbookEntity("jahon_10", "Jahon tarixi (1918–1991)", 10, "jahon", "Sh. Ergashev, B. Xodjayev, J. Abdullayev", 2017, "1-nashr", 10, 30, 60, pdfAsset = MediaUrls.textbook(10, "jahon")),
+            TextbookEntity("uz_11", "O‘zbekiston tarixi (Mustaqillik davri)", 11, "uzbekiston", "N. Jo‘rayev, A. Zamonov", 2018, "1-nashr", 8, 25, 55, pdfAsset = MediaUrls.textbook(11, "uzbekiston")),
+            TextbookEntity("jahon_11", "Jahon tarixi (1991–2017)", 11, "jahon", "Sh. Ergashev, B. Xodjayev, J. Abdullayev", 2018, "1-nashr", 8, 25, 50, pdfAsset = MediaUrls.textbook(11, "jahon"))
         )
         db.textbookDao().insertAll(textbooks)
 
