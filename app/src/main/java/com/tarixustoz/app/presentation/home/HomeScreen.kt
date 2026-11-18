@@ -2,6 +2,7 @@ package com.tarixustoz.app.presentation.home
 
 import android.app.Activity
 import android.widget.Toast
+import com.tarixustoz.app.ads.findActivity
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -598,7 +599,7 @@ fun HomeScreen(
             // 3.5. Rewarded Ad Banner Card (Kuniga 2 marta max)
             item {
                 val context = LocalContext.current
-                val activity = context as? Activity
+                val activity = context.findActivity()
                 Surface(
                     shape = RoundedCornerShape(18.dp),
                     color = Color(0xFFFAF5FF),

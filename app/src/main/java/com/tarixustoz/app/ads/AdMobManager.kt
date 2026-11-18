@@ -2,6 +2,7 @@ package com.tarixustoz.app.ads
 
 import android.app.Activity
 import android.content.Context
+import android.content.ContextWrapper
 import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
@@ -21,6 +22,12 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+
+tailrec fun Context.findActivity(): Activity? = when (this) {
+    is Activity -> this
+    is ContextWrapper -> baseContext.findActivity()
+    else -> null
+}
 
 object AdMobManager {
 
@@ -62,36 +69,30 @@ object AdMobManager {
                 .padding(vertical = 4.dp),
             contentAlignment = Alignment.Center
         ) {
-            AndroidView(
-                modifier = Modifier.fillMaxWidth(),
-                factory = { context ->
-                    AdView(context).apply {
-                        setAdSize(AdSize.BANNER)
-                        setAdUnitId(activeUnitId)
-                        adListener = object : AdListener() {
-                            override fun onAdLoaded() {
-                                isAdLoaded = true
-                            }
+            key(activeUnitId) {
+                AndroidView(
+                    modifier = Modifier.fillMaxWidth(),
+                    factory = { context ->
+                        AdView(context).apply {
+                            setAdSize(AdSize.BANNER)
+                            setAdUnitId(activeUnitId)
+                            adListener = object : AdListener() {
+                                override fun onAdLoaded() {
+                                    isAdLoaded = true
+                                }
 
-                            override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                                Log.w(TAG, "Banner load failed for $activeUnitId: ${loadAdError.message}. Switching to test banner.")
-                                if (activeUnitId != TEST_BANNER_AD_UNIT_ID) {
-                                    activeUnitId = TEST_BANNER_AD_UNIT_ID
-                                    setAdUnitId(TEST_BANNER_AD_UNIT_ID)
-                                    loadAd(AdRequest.Builder().build())
+                                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                                    Log.w(TAG, "Banner load failed for $activeUnitId: ${loadAdError.message}. Switching to test banner.")
+                                    if (activeUnitId != TEST_BANNER_AD_UNIT_ID) {
+                                        activeUnitId = TEST_BANNER_AD_UNIT_ID
+                                    }
                                 }
                             }
+                            loadAd(AdRequest.Builder().build())
                         }
-                        loadAd(AdRequest.Builder().build())
                     }
-                },
-                update = { view ->
-                    if (view.adUnitId != activeUnitId) {
-                        view.setAdUnitId(activeUnitId)
-                        view.loadAd(AdRequest.Builder().build())
-                    }
-                }
-            )
+                )
+            }
 
             // Visual Placeholder Card shown while loading
             if (!isAdLoaded) {
