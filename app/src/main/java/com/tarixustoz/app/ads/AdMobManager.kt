@@ -22,9 +22,9 @@ object AdMobManager {
 
     private const val TAG = "AdMobManager"
 
-    // Test Ad Unit IDs provided by Google AdMob
-    const val TEST_BANNER_AD_UNIT_ID = "ca-app-pub-3940256099942544/6300978111"
-    const val TEST_REWARDED_AD_UNIT_ID = "ca-app-pub-3940256099942544/5224354917"
+    // Real AdMob Ad Unit IDs
+    const val BANNER_AD_UNIT_ID = "ca-app-pub-2360068229850342/4905512084"
+    const val REWARDED_AD_UNIT_ID = "ca-app-pub-2360068229850342/4905512084"
 
     fun initAdMob(context: Context) {
         try {
@@ -42,7 +42,7 @@ object AdMobManager {
     @Composable
     fun BannerAdView(
         modifier: Modifier = Modifier,
-        adUnitId: String = TEST_BANNER_AD_UNIT_ID
+        adUnitId: String = BANNER_AD_UNIT_ID
     ) {
         AndroidView(
             modifier = modifier
@@ -63,7 +63,7 @@ object AdMobManager {
      */
     fun showRewardedAd(
         activity: Activity,
-        adUnitId: String = TEST_REWARDED_AD_UNIT_ID,
+        adUnitId: String = REWARDED_AD_UNIT_ID,
         onRewardEarned: () -> Unit,
         onAdFailedToLoad: (() -> Unit)? = null
     ) {
