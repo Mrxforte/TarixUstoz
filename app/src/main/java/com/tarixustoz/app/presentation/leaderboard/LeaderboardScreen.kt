@@ -1,7 +1,10 @@
 package com.tarixustoz.app.presentation.leaderboard
 
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,8 +21,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -56,6 +63,20 @@ fun LeaderboardScreen(
     var isRefreshing by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
     val pullState = rememberPullToRefreshState()
+
+    // Trigger animation filling on every tab or filter entry
+    var startAnimation by remember { mutableStateOf(false) }
+    val animProgress by animateFloatAsState(
+        targetValue = if (startAnimation) 1f else 0f,
+        animationSpec = tween(durationMillis = 1000, easing = FastOutSlowInEasing),
+        label = "chartAnim"
+    )
+
+    LaunchedEffect(mainTab, periodFilter) {
+        startAnimation = false
+        delay(50)
+        startAnimation = true
+    }
 
     val users = remember(periodFilter) {
         when (periodFilter) {
@@ -100,6 +121,16 @@ fun LeaderboardScreen(
         CategoryAnalytics("Mantiqiy va DTM", 95, 78, 82, 20)
     )
 
+    val forexChartData = listOf(
+        "Du" to 0.45f,
+        "Se" to 0.58f,
+        "Ch" to 0.64f,
+        "Pa" to 0.72f,
+        "Ju" to 0.79f,
+        "Sh" to 0.84f,
+        "Ya" to 0.86f
+    )
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         contentWindowInsets = WindowInsets(0.dp),
@@ -114,7 +145,8 @@ fun LeaderboardScreen(
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background
-                )
+                ),
+                windowInsets = WindowInsets(0.dp)
             )
         }
     ) { innerPadding ->
@@ -123,7 +155,9 @@ fun LeaderboardScreen(
             onRefresh = {
                 coroutineScope.launch {
                     isRefreshing = true
-                    delay(800)
+                    startAnimation = false
+                    delay(500)
+                    startAnimation = true
                     isRefreshing = false
                 }
             },
@@ -145,7 +179,7 @@ fun LeaderboardScreen(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(horizontal = 16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
+                verticalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 // Modern Split View Segmented Switch
                 item {
@@ -305,15 +339,23 @@ fun LeaderboardScreen(
                                     }
                                     Column {
                                         Text("To'g'rilik", color = Color.White.copy(alpha = 0.8f), fontSize = 11.sp)
-                                        Text("86%", color = Color(0xFF86EFAC), fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                                        Text("${(86 * animProgress).toInt()}%", color = Color(0xFF86EFAC), fontWeight = FontWeight.Bold, fontSize = 14.sp)
                                     }
                                     Column {
                                         Text("O'sish sur'ati", color = Color.White.copy(alpha = 0.8f), fontSize = 11.sp)
-                                        Text("+18%", color = Color(0xFFFDE047), fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                                        Text("+${(18 * animProgress).toInt()}%", color = Color(0xFFFDE047), fontWeight = FontWeight.Bold, fontSize = 14.sp)
                                     }
                                 }
                             }
                         }
+                    }
+
+                    // Forex / Trading Style Animated Line Chart
+                    item {
+                        ForexStyleProgressChart(
+                            points = forexChartData,
+                            animProgress = animProgress
+                        )
                     }
 
                     item {
@@ -341,10 +383,10 @@ fun LeaderboardScreen(
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
                                     Text(cat.title, fontWeight = FontWeight.Bold, fontSize = 14.sp)
-                                    Text("${cat.correctCount}/${cat.totalSolved} (${cat.accuracyPercent}%)", fontWeight = FontWeight.Bold, color = BrandPurple, fontSize = 12.sp)
+                                    Text("${cat.correctCount}/${cat.totalSolved} (${(cat.accuracyPercent * animProgress).toInt()}%)", fontWeight = FontWeight.Bold, color = BrandPurple, fontSize = 12.sp)
                                 }
                                 LinearProgressIndicator(
-                                    progress = { (cat.accuracyPercent / 100f).coerceIn(0f, 1f) },
+                                    progress = { (cat.accuracyPercent / 100f * animProgress).coerceIn(0f, 1f) },
                                     modifier = Modifier
                                         .fillMaxWidth()
                                         .height(6.dp)
@@ -352,7 +394,7 @@ fun LeaderboardScreen(
                                     color = BrandPurple,
                                     trackColor = MaterialTheme.colorScheme.surfaceVariant
                                 )
-                                Text("O'sish progressi: +${cat.growthPercent}%", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                Text("O'sish progressi: +${(cat.growthPercent * animProgress).toInt()}%", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                             }
                         }
                     }
@@ -445,6 +487,172 @@ fun LeaderboardScreen(
                 }
 
                 item { Spacer(Modifier.height(16.dp)) }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ForexStyleProgressChart(
+    points: List<Pair<String, Float>>,
+    animProgress: Float,
+    modifier: Modifier = Modifier
+) {
+    Surface(
+        shape = RoundedCornerShape(20.dp),
+        color = MaterialTheme.colorScheme.surface,
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+        modifier = modifier.fillMaxWidth()
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Surface(
+                        shape = RoundedCornerShape(8.dp),
+                        color = Color(0xFFEEF2FF),
+                        modifier = Modifier.size(32.dp)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Icon(
+                                Icons.Default.ShowChart,
+                                contentDescription = null,
+                                tint = BrandPurple,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
+                    }
+                    Spacer(Modifier.width(8.dp))
+                    Column {
+                        Text(
+                            text = "O'sish dinamikasi (Forex Chart)",
+                            fontSize = 13.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            text = "Haftalik aniqlik va bilim grafigi",
+                            fontSize = 11.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+
+                Surface(
+                    shape = RoundedCornerShape(12.dp),
+                    color = Color(0xFFDCFCE7)
+                ) {
+                    Text(
+                        text = "📈 +18% Trend",
+                        color = Color(0xFF15803D),
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 11.sp,
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                    )
+                }
+            }
+
+            // Forex / Trading Canvas Line Chart with Animated Drawing
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(130.dp)
+            ) {
+                Canvas(modifier = Modifier.fillMaxSize()) {
+                    if (points.size < 2) return@Canvas
+
+                    val width = size.width
+                    val height = size.height
+                    val spacing = width / (points.size - 1)
+
+                    val maxVal = 1.0f
+                    val minVal = 0.2f
+
+                    val pathPoints = points.mapIndexed { index, pair ->
+                        val x = index * spacing
+                        val normY = ((pair.second - minVal) / (maxVal - minVal)).coerceIn(0f, 1f)
+                        val y = height - (normY * height * 0.8f * animProgress) - (height * 0.1f)
+                        Offset(x, y)
+                    }
+
+                    // Build Smooth Curve Path
+                    val strokePath = Path().apply {
+                        moveTo(pathPoints[0].x, pathPoints[0].y)
+                        for (i in 0 until pathPoints.size - 1) {
+                            val p1 = pathPoints[i]
+                            val p2 = pathPoints[i + 1]
+                            val controlX1 = p1.x + (p2.x - p1.x) / 2
+                            val controlY1 = p1.y
+                            val controlX2 = p1.x + (p2.x - p1.x) / 2
+                            val controlY2 = p2.y
+                            cubicTo(controlX1, controlY1, controlX2, controlY2, p2.x, p2.y)
+                        }
+                    }
+
+                    // Fill Gradient Path under curve
+                    val fillPath = Path().apply {
+                        addPath(strokePath)
+                        lineTo(width, height)
+                        lineTo(0f, height)
+                        close()
+                    }
+
+                    // Draw Gradient Area Fill
+                    drawPath(
+                        path = fillPath,
+                        brush = Brush.verticalGradient(
+                            colors = listOf(
+                                BrandPurple.copy(alpha = 0.40f * animProgress),
+                                Color(0xFF6366F1).copy(alpha = 0.15f * animProgress),
+                                Color.Transparent
+                            )
+                        )
+                    )
+
+                    // Draw Line Curve
+                    drawPath(
+                        path = strokePath,
+                        color = Color(0xFF6366F1),
+                        style = Stroke(
+                            width = 3.5.dp.toPx(),
+                            cap = StrokeCap.Round
+                        )
+                    )
+
+                    // Draw Glowing Data Points
+                    pathPoints.forEach { point ->
+                        drawCircle(
+                            color = Color.White,
+                            radius = 5.dp.toPx(),
+                            center = point
+                        )
+                        drawCircle(
+                            color = BrandPurple,
+                            radius = 3.5.dp.toPx(),
+                            center = point
+                        )
+                    }
+                }
+            }
+
+            // X-Axis Labels (Du, Se, Ch, Pa, Ju, Sh, Ya)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                points.forEach { pair ->
+                    Text(
+                        text = pair.first,
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
             }
         }
     }
