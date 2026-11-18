@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -257,7 +258,9 @@ fun TestsScreen(
                 Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     directionCards.chunked(2).forEach { rowCards ->
                         Row(
-                            modifier = Modifier.fillMaxWidth(),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(IntrinsicSize.Max),
                             horizontalArrangement = Arrangement.spacedBy(10.dp)
                         ) {
                             rowCards.forEach { card ->
@@ -267,7 +270,9 @@ fun TestsScreen(
                                     icon = card.icon,
                                     iconTint = card.tint,
                                     iconBg = card.background,
-                                    modifier = Modifier.weight(1f),
+                                    modifier = Modifier
+                                        .weight(1f)
+                                        .fillMaxHeight(),
                                     onClick = { onNavigateToTickets(card.code, card.title) }
                                 )
                             }
@@ -276,7 +281,9 @@ fun TestsScreen(
                     }
 
                     Row(
-                        modifier = Modifier.fillMaxWidth(),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(IntrinsicSize.Max),
                         horizontalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         CategoryItemCard(
@@ -285,7 +292,9 @@ fun TestsScreen(
                             icon = Icons.Default.MenuBook,
                             iconTint = Color(0xFF0284C7),
                             iconBg = Color(0xFFEFF6FF),
-                            modifier = Modifier.weight(1f),
+                            modifier = Modifier
+                                .weight(1f)
+                                .fillMaxHeight(),
                             onClick = { onNavigateToTopicSelection() }
                         )
                         CategoryItemCard(
@@ -294,7 +303,9 @@ fun TestsScreen(
                             icon = Icons.Default.Tune,
                             iconTint = Color(0xFFD97706),
                             iconBg = Color(0xFFFEF3C7),
-                            modifier = Modifier.weight(1f),
+                            modifier = Modifier
+                                .weight(1f)
+                                .fillMaxHeight(),
                             onClick = { onNavigateToCustomOptions() }
                         )
                     }
@@ -597,10 +608,14 @@ private fun CategoryItemCard(
         shape = RoundedCornerShape(16.dp),
         color = MaterialTheme.colorScheme.surface,
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-        modifier = modifier.clickable(onClick = onClick)
+        modifier = modifier
+            .defaultMinSize(minHeight = 68.dp)
+            .clickable(onClick = onClick)
     ) {
         Row(
-            modifier = Modifier.padding(12.dp),
+            modifier = Modifier
+                .padding(12.dp)
+                .fillMaxHeight(),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Surface(
@@ -618,18 +633,26 @@ private fun CategoryItemCard(
                 }
             }
             Spacer(Modifier.width(10.dp))
-            Column(modifier = Modifier.weight(1f)) {
+            Column(
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.Center
+            ) {
                 Text(
                     text = title,
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.onSurface
+                    color = MaterialTheme.colorScheme.onSurface,
+                    maxLines = 2,
+                    overflow = TextOverflow.Ellipsis
                 )
+                Spacer(Modifier.height(2.dp))
                 Text(
                     text = count,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    fontSize = 11.sp
+                    fontSize = 11.sp,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis
                 )
             }
         }

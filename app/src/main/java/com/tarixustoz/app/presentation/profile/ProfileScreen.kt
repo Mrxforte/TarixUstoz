@@ -14,6 +14,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.testTag
@@ -47,6 +48,7 @@ fun ProfileScreen(
     val totalSolvedCount by profileViewModel.totalSolvedCount.collectAsState()
     val accuracyPercentage by profileViewModel.accuracyPercentage.collectAsState()
     val savedItemsList by profileViewModel.savedItemsList.collectAsState()
+    val achievementsList by profileViewModel.achievementsList.collectAsState()
 
     val dailyReminder by profileViewModel.dailyReminder.collectAsState()
     val mistakeReminder by profileViewModel.mistakeReminder.collectAsState()
@@ -56,6 +58,7 @@ fun ProfileScreen(
 
     var showTimePickerDialog by remember { mutableStateOf(false) }
     var showSavedTestsDialog by remember { mutableStateOf(false) }
+    var showAchievementsModal by remember { mutableStateOf(false) }
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
@@ -318,6 +321,37 @@ fun ProfileScreen(
                     tint = Color(0xFFEF4444),
                     modifier = Modifier.weight(1f)
                 )
+            }
+
+            // Dynamic Achievements Section Header
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Mening Yutuqlarim 🏆",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold
+                )
+                TextButton(onClick = { showAchievementsModal = true }) {
+                    Text(
+                        text = "Barchasi (${achievementsList.count { it.isUnlocked }}/${achievementsList.size})",
+                        color = BrandPurple,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+
+            // Dynamic Achievements Cards List
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                achievementsList.take(3).forEach { achievement ->
+                    AchievementItemCard(
+                        achievement = achievement,
+                        onClick = { showAchievementsModal = true }
+                    )
+                }
             }
 
             // NOTIFICATION SETTINGS
@@ -624,6 +658,46 @@ fun ProfileScreen(
         )
     }
 
+    // Barcha Yutuqlar Modal Dialog
+    if (showAchievementsModal) {
+        AlertDialog(
+            onDismissRequest = { showAchievementsModal = false },
+            title = {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text("Barcha Yutuqlar 🏆", fontWeight = FontWeight.Bold)
+                    Text(
+                        "${achievementsList.count { it.isUnlocked }}/${achievementsList.size}",
+                        color = BrandPurple,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 14.sp
+                    )
+                }
+            },
+            text = {
+                Column(
+                    modifier = Modifier.verticalScroll(rememberScrollState()),
+                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    achievementsList.forEach { achievement ->
+                        AchievementItemCard(
+                            achievement = achievement,
+                            onClick = {}
+                        )
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { showAchievementsModal = false }) {
+                    Text("Yopish")
+                }
+            }
+        )
+    }
+
     // Saqlangan testlar va manbalar Dialog
     if (showSavedTestsDialog) {
         AlertDialog(
@@ -694,6 +768,81 @@ private fun NotificationSettingRow(
                 checkedTrackColor = BrandPurple
             )
         )
+    }
+}
+
+@Composable
+private fun AchievementItemCard(
+    achievement: AchievementUiState,
+    onClick: () -> Unit
+) {
+    val cardBg = if (achievement.isUnlocked) Color(0xFFF0FDF4) else MaterialTheme.colorScheme.surface
+    val borderClr = if (achievement.isUnlocked) Color(0xFF86EFAC) else MaterialTheme.colorScheme.outlineVariant
+    val iconTint = if (achievement.isUnlocked) Color(0xFF16A34A) else BrandPurple
+
+    Surface(
+        shape = RoundedCornerShape(16.dp),
+        color = cardBg,
+        border = BorderStroke(1.dp, borderClr),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick)
+    ) {
+        Row(
+            modifier = Modifier.padding(14.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Surface(
+                shape = CircleShape,
+                color = iconTint.copy(alpha = 0.15f),
+                modifier = Modifier.size(42.dp)
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Icon(
+                        achievement.icon,
+                        contentDescription = null,
+                        tint = iconTint,
+                        modifier = Modifier.size(22.dp)
+                    )
+                }
+            }
+            Spacer(Modifier.width(12.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = achievement.title,
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        text = if (achievement.isUnlocked) "Ochildi 🎉" else "${achievement.currentProgress}/${achievement.targetProgress}",
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = if (achievement.isUnlocked) Color(0xFF15803D) else BrandPurple
+                    )
+                }
+                Spacer(Modifier.height(2.dp))
+                Text(
+                    text = achievement.description,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Spacer(Modifier.height(6.dp))
+                LinearProgressIndicator(
+                    progress = { (achievement.currentProgress.toFloat() / achievement.targetProgress.coerceAtLeast(1)).coerceIn(0f, 1f) },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(4.dp)
+                        .clip(RoundedCornerShape(2.dp)),
+                    color = if (achievement.isUnlocked) Color(0xFF16A34A) else BrandPurple,
+                    trackColor = MaterialTheme.colorScheme.surfaceVariant
+                )
+            }
+        }
     }
 }
 

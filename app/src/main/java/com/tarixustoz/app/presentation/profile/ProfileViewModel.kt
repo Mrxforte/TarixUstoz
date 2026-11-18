@@ -1,5 +1,8 @@
 package com.tarixustoz.app.presentation.profile
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tarixustoz.app.data.local.AppDatabase
@@ -16,6 +19,17 @@ import javax.inject.Inject
 data class SavedItemDto(
     val title: String,
     val subtitle: String
+)
+
+data class AchievementUiState(
+    val id: String,
+    val title: String,
+    val description: String,
+    val icon: ImageVector,
+    val isUnlocked: Boolean,
+    val currentProgress: Int,
+    val targetProgress: Int,
+    val tier: String
 )
 
 @HiltViewModel
@@ -76,6 +90,76 @@ class ProfileViewModel @Inject constructor(
     ) { correct, total ->
         if (total > 0) (correct * 100) / total else 100
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 100)
+
+    val achievementsList: StateFlow<List<AchievementUiState>> = combine(
+        database.quizAttemptDao().getTotalCountFlow(),
+        preferencesRepository.userStreak,
+        accuracyPercentage,
+        preferencesRepository.userXp
+    ) { solved, streak, accuracy, xp ->
+        listOf(
+            AchievementUiState(
+                id = "ach_first_step",
+                title = "Birinchi Qadam",
+                description = "Kamida 1 ta test yechish",
+                icon = Icons.Default.CheckCircle,
+                isUnlocked = solved >= 1,
+                currentProgress = solved.coerceAtMost(1),
+                targetProgress = 1,
+                tier = "BRONZE"
+            ),
+            AchievementUiState(
+                id = "ach_explorer",
+                title = "Tarix Izlanuvchisi",
+                description = "20 ta test savolini yechish",
+                icon = Icons.Default.Explore,
+                isUnlocked = solved >= 20,
+                currentProgress = solved.coerceAtMost(20),
+                targetProgress = 20,
+                tier = "BRONZE"
+            ),
+            AchievementUiState(
+                id = "ach_streak_master",
+                title = "Mug'ambir O'quvchi",
+                description = "7 kunlik uzluksiz seriyaga erishish",
+                icon = Icons.Default.LocalFireDepartment,
+                isUnlocked = streak >= 7,
+                currentProgress = streak.coerceAtMost(7),
+                targetProgress = 7,
+                tier = "SILVER"
+            ),
+            AchievementUiState(
+                id = "ach_master",
+                title = "Tarix Bilimdoni",
+                description = "50 ta test savolini yechish",
+                icon = Icons.Default.EmojiEvents,
+                isUnlocked = solved >= 50,
+                currentProgress = solved.coerceAtMost(50),
+                targetProgress = 50,
+                tier = "SILVER"
+            ),
+            AchievementUiState(
+                id = "ach_sharpshooter",
+                title = "Mergan O'quvchi",
+                description = "80% va undan yuqori aniqlikka erishish",
+                icon = Icons.Default.Stars,
+                isUnlocked = accuracy >= 80 && solved >= 5,
+                currentProgress = if (solved >= 5) accuracy.coerceAtMost(80) else 0,
+                targetProgress = 80,
+                tier = "GOLD"
+            ),
+            AchievementUiState(
+                id = "ach_historian",
+                title = "Buyuk Tarixchi",
+                description = "100 ta test savolini yechish",
+                icon = Icons.Default.MilitaryTech,
+                isUnlocked = solved >= 100,
+                currentProgress = solved.coerceAtMost(100),
+                targetProgress = 100,
+                tier = "GOLD"
+            )
+        )
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
     val dailyReminder: StateFlow<Boolean> = preferencesRepository.dailyReminder
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), true)
