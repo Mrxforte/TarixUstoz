@@ -72,6 +72,9 @@ fun TestsScreen(
 
     val grades = listOf(0 to "Barchasi", 6 to "6-sinf", 7 to "7-sinf", 8 to "8-sinf", 9 to "9-sinf", 10 to "10-sinf", 11 to "11-sinf")
 
+    var isRefreshing by remember { mutableStateOf(false) }
+    val coroutineScope = rememberCoroutineScope()
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         contentWindowInsets = WindowInsets(0.dp),
@@ -91,13 +94,26 @@ fun TestsScreen(
             )
         }
     ) { innerPadding ->
-        LazyColumn(
+        PullToRefreshBox(
+            isRefreshing = isRefreshing,
+            onRefresh = {
+                coroutineScope.launch {
+                    isRefreshing = true
+                    textbooksViewModel.load()
+                    testsViewModel.loadCounts(selectedGrade)
+                    isRefreshing = false
+                }
+            },
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .padding(horizontal = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
             // Grade Filter Chips
             item {
                 LazyRow(
@@ -375,6 +391,7 @@ fun TestsScreen(
             }
 
             item { Spacer(Modifier.height(16.dp)) }
+        }
         }
     }
 

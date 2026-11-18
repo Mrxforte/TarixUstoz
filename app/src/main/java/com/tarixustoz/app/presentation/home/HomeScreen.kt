@@ -95,52 +95,23 @@ fun HomeScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets(0.dp)
-    ) { innerPadding ->
-        PullToRefreshBox(
-            isRefreshing = isRefreshing,
-            onRefresh = {
-                coroutineScope.launch {
-                    isRefreshing = true
-                    viewModel.loadDirectionCounts(forceRefresh = true)
-                    viewModel.loadNextDailyQuestion()
-                    isRefreshing = false
-                }
-            },
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
-        ) {
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = 16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
-            ) {
-            item { Spacer(Modifier.height(4.dp)) }
-
-            // 1. Top Bar: Avatar, Greeting, Notification Bell
-            item {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 4.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
+        contentWindowInsets = WindowInsets(0.dp),
+        topBar = {
+            TopAppBar(
+                title = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Surface(
                             shape = CircleShape,
                             color = BrandPurple,
                             modifier = Modifier
-                                .size(46.dp)
+                                .size(42.dp)
                                 .testTag("home_user_avatar")
                         ) {
                             Box(contentAlignment = Alignment.Center) {
                                 Text(
                                     text = uiState.userAvatar,
                                     color = Color.White,
-                                    fontSize = if (uiState.userAvatar.length > 2) 20.sp else 16.sp,
+                                    fontSize = if (uiState.userAvatar.length > 2) 18.sp else 15.sp,
                                     fontWeight = FontWeight.Bold
                                 )
                             }
@@ -160,14 +131,15 @@ fun HomeScreen(
                             )
                         }
                     }
-
-                    // Notification Bell with Badge
+                },
+                actions = {
                     Surface(
                         shape = CircleShape,
                         color = MaterialTheme.colorScheme.surface,
                         border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
                         modifier = Modifier
-                            .size(44.dp)
+                            .padding(end = 12.dp)
+                            .size(42.dp)
                             .clickable { onNavigateToNotifications() }
                             .testTag("home_notifications_button")
                     ) {
@@ -192,15 +164,42 @@ fun HomeScreen(
                                     Icons.Outlined.Notifications,
                                     contentDescription = "Bildirishnomalar",
                                     tint = MaterialTheme.colorScheme.onSurface,
-                                    modifier = Modifier.size(22.dp)
+                                    modifier = Modifier.size(20.dp)
                                 )
                             }
                         }
                     }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.background
+                ),
+                windowInsets = WindowInsets(0.dp)
+            )
+        }
+    ) { innerPadding ->
+        PullToRefreshBox(
+            isRefreshing = isRefreshing,
+            onRefresh = {
+                coroutineScope.launch {
+                    isRefreshing = true
+                    viewModel.loadDirectionCounts(forceRefresh = true)
+                    viewModel.loadNextDailyQuestion()
+                    isRefreshing = false
                 }
-            }
+            },
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+        ) {
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                item { Spacer(Modifier.height(4.dp)) }
 
-            // 2. Daily Streak Gradient Card
+                // 2. Daily Streak Gradient Card
             item {
                 Surface(
                     shape = RoundedCornerShape(24.dp),

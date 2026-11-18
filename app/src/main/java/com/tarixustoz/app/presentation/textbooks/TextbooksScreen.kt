@@ -66,6 +66,28 @@ fun TextbooksScreen(
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         contentWindowInsets = WindowInsets(0.dp),
+        topBar = {
+            TopAppBar(
+                title = {
+                    Column {
+                        Text(
+                            "Darsliklar",
+                            style = MaterialTheme.typography.titleLarge,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            "6–11-sinf tarix darsliklari",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.background
+                ),
+                windowInsets = WindowInsets(0.dp)
+            )
+        },
         snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
     ) { innerPadding ->
         PullToRefreshBox(
@@ -80,23 +102,7 @@ fun TextbooksScreen(
                     .fillMaxSize()
                     .padding(horizontal = 16.dp)
             ) {
-                Spacer(Modifier.height(12.dp))
-
-                // Header
-                Column {
-                    Text(
-                        "Darsliklar",
-                        style = MaterialTheme.typography.headlineMedium,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Text(
-                        "6-11 sinf tarix darsliklari",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-
-                Spacer(Modifier.height(12.dp))
+                Spacer(Modifier.height(8.dp))
 
                 // Grade Filter Chips
                 LazyRow(
