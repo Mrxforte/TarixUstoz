@@ -23,6 +23,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavDestination.Companion.hierarchy
@@ -44,6 +45,7 @@ import com.tarixustoz.app.presentation.quiz.QuizOptionsScreen
 import com.tarixustoz.app.presentation.quiz.QuizScreen
 import com.tarixustoz.app.presentation.quiz.TicketListScreen
 import com.tarixustoz.app.presentation.quiz.TopicSelectionScreen
+import com.tarixustoz.app.presentation.tests.SavedTestsScreen
 import com.tarixustoz.app.presentation.tests.TestsScreen
 import com.tarixustoz.app.presentation.textbooks.PdfViewerScreen
 import com.tarixustoz.app.presentation.textbooks.TextbooksScreen
@@ -103,7 +105,8 @@ fun TarixNavHost() {
                         NavigationBarItem(
                             icon = {
                                 if (screen == Screen.Mistakes && mistakesCount > 0) {
-                                    BadgedBox(badge = { Badge { Text("$mistakesCount") } }) {
+                                    val badgeText = if (mistakesCount > 9) "9+" else "$mistakesCount"
+                                    BadgedBox(badge = { Badge(containerColor = Color(0xFFEF4444), contentColor = Color.White) { Text(badgeText) } }) {
                                         Icon(screen.icon, contentDescription = screen.title)
                                     }
                                 } else {
@@ -289,7 +292,14 @@ fun TarixNavHost() {
             composable(Screen.Profile.route) {
                 ProfileScreen(
                     onNavigateToEditProfile = { navController.navigate(Screen.EditProfile.route) },
-                    onNavigateToAuth = { navController.navigate("auth") }
+                    onNavigateToAuth = { navController.navigate("auth") },
+                    onNavigateToSavedTests = { navController.navigate("saved_tests") }
+                )
+            }
+            composable("saved_tests") {
+                SavedTestsScreen(
+                    onBack = { navController.popBackStack() },
+                    onStartSavedQuiz = { navController.navigate("quiz/wrong_questions?count=10") }
                 )
             }
             composable(Screen.EditProfile.route) {

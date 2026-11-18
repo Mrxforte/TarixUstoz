@@ -1,13 +1,19 @@
 package com.tarixustoz.app.presentation.profile
 
+import android.content.Context
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
 import com.tarixustoz.app.data.local.AppDatabase
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
+import com.tarixustoz.app.presentation.common.DailyNotificationWorker
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
@@ -15,6 +21,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.util.Calendar
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 data class SavedItemDto(
@@ -59,6 +66,7 @@ data class DailyGoalUiState(
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val preferencesRepository: UserPreferencesRepository,
     private val database: AppDatabase
 ) : ViewModel() {
@@ -292,7 +300,10 @@ class ProfileViewModel @Inject constructor(
     }
 
     fun setDailyReminder(enabled: Boolean) {
-        viewModelScope.launch { preferencesRepository.setDailyReminder(enabled) }
+        viewModelScope.launch {
+            preferencesRepository.setDailyReminder(enabled)
+            scheduleDailyNotification(enabled)
+        }
     }
 
     fun setMistakeReminder(enabled: Boolean) {
@@ -308,7 +319,30 @@ class ProfileViewModel @Inject constructor(
     }
 
     fun setReminderTime(time: String) {
-        viewModelScope.launch { preferencesRepository.setReminderTime(time) }
+        viewModelScope.launch {
+            preferencesRepository.setReminderTime(time)
+            scheduleDailyNotification(true)
+        }
+    }
+
+    private fun scheduleDailyNotification(enabled: Boolean) {
+        try {
+            val workManager = WorkManager.getInstance(context)
+            if (enabled) {
+                val request = PeriodicWorkRequestBuilder<DailyNotificationWorker>(
+                    24, TimeUnit.HOURS
+                ).build()
+                workManager.enqueueUniquePeriodicWork(
+                    "daily_quiz_notification",
+                    ExistingPeriodicWorkPolicy.UPDATE,
+                    request
+                )
+            } else {
+                workManager.cancelUniqueWork("daily_quiz_notification")
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     fun signOut() {

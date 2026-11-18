@@ -1,5 +1,6 @@
 package com.tarixustoz.app.presentation.profile
 
+import android.app.TimePickerDialog
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -18,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -26,12 +28,14 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.ThemeMode
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import com.tarixustoz.app.presentation.theme.ThemeViewModel
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(
     onNavigateToEditProfile: () -> Unit = {},
     onNavigateToAuth: () -> Unit = {},
+    onNavigateToSavedTests: () -> Unit = {},
     profileViewModel: ProfileViewModel = hiltViewModel(),
     themeViewModel: ThemeViewModel = hiltViewModel()
 ) {
@@ -424,7 +428,7 @@ fun ProfileScreen(
                         title = "Saqlanganlar",
                         subtitle = "${savedItemsList.size} ta saqlangan mavzu va manbalar",
                         icon = Icons.Default.Bookmark,
-                        onClick = { showSavedTestsDialog = true }
+                        onClick = onNavigateToSavedTests
                     )
                 }
             }
@@ -546,6 +550,7 @@ fun ProfileScreen(
 
     // Time Picker Dialog for Notifications
     if (showTimePickerDialog) {
+        val context = LocalContext.current
         AlertDialog(
             onDismissRequest = { showTimePickerDialog = false },
             title = { Text("Eslatma vaqtini tanlang", fontWeight = FontWeight.Bold) },
@@ -575,11 +580,39 @@ fun ProfileScreen(
                             Text(time, fontSize = 16.sp, fontWeight = FontWeight.Medium)
                         }
                     }
+
+                    HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
+
+                    OutlinedButton(
+                        onClick = {
+                            val parts = reminderTime.split(":")
+                            val hour = parts.getOrNull(0)?.toIntOrNull() ?: 8
+                            val minute = parts.getOrNull(1)?.toIntOrNull() ?: 30
+
+                            TimePickerDialog(
+                                context,
+                                { _, h, m ->
+                                    val formatted = String.format(Locale.getDefault(), "%02d:%02d", h, m)
+                                    profileViewModel.setReminderTime(formatted)
+                                    showTimePickerDialog = false
+                                },
+                                hour,
+                                minute,
+                                true
+                            ).show()
+                        },
+                        shape = RoundedCornerShape(12.dp),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Icon(Icons.Default.Schedule, contentDescription = null, modifier = Modifier.size(18.dp))
+                        Spacer(Modifier.width(8.dp))
+                        Text("Boshqa aniq vaqt tanlash (TimePicker)")
+                    }
                 }
             },
             confirmButton = {
                 TextButton(onClick = { showTimePickerDialog = false }) {
-                    Text("Yopish")
+                    Text("Bekor qilish")
                 }
             }
         )

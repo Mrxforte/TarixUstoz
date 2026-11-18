@@ -1,46 +1,48 @@
 package com.tarixustoz.app.presentation.leaderboard
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
+import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
+import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tarixustoz.app.presentation.theme.BrandPurple
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 data class LeaderboardUser(
     val rank: Int,
     val name: String,
     val initials: String,
-    val score: Int, // Modest, realistic small XP number
+    val score: Int,
     val accuracy: Int,
+    val timeSpentMinutes: Int,
     val isCurrentUser: Boolean = false
 )
 
-data class TestProgressStat(
+data class CategoryAnalytics(
     val title: String,
-    val icon: ImageVector,
-    val iconColor: Color,
-    val completionPercent: Int, // Necha foiz tugagan
-    val errorPercent: Int,      // Necha foiz xato
-    val growthPercent: Int,     // O'sish progress foizi
-    val totalCount: Int
+    val totalSolved: Int,
+    val correctCount: Int,
+    val accuracyPercent: Int,
+    val growthPercent: Int
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -49,84 +51,53 @@ fun LeaderboardScreen(
     onStartQuiz: (String) -> Unit = {},
     onNavigateToAnalysis: (String) -> Unit = {}
 ) {
-    var mainTab by remember { mutableIntStateOf(0) } // 0 = Reyting jadvali, 1 = Natijalar & Tahlil
-    var timeFilter by remember { mutableIntStateOf(0) } // 0 = Haftalik, 1 = Barcha vaqt
+    var mainTab by remember { mutableIntStateOf(0) } // 0 = O'z natijam & Tahlil, 1 = Umumiy Reyting
+    var periodFilter by remember { mutableIntStateOf(1) } // 0 = Bugun, 1 = Haftalik, 2 = Oylik, 3 = Barcha vaqt
+    var isRefreshing by remember { mutableStateOf(false) }
+    val coroutineScope = rememberCoroutineScope()
+    val pullState = rememberPullToRefreshState()
 
-    // Modest, realistic small XP numbers
-    val leaders = listOf(
-        LeaderboardUser(1, "Madina Umarova", "MU", 96, 95),
-        LeaderboardUser(2, "Jasurbek Mirzayev", "JM", 92, 91),
-        LeaderboardUser(3, "Dilnoza Rahimova", "DR", 89, 88),
-        LeaderboardUser(4, "Azizbek (Siz)", "AS", 78, 86, isCurrentUser = true),
-        LeaderboardUser(5, "Bobur To‘rayev", "BT", 68, 82),
-        LeaderboardUser(6, "Shahnoza Aliyeva", "SA", 55, 79),
-        LeaderboardUser(7, "Otabek Qodirov", "OQ", 48, 75)
-    )
+    val users = remember(periodFilter) {
+        when (periodFilter) {
+            0 -> listOf( // Bugun
+                LeaderboardUser(1, "Madina Umarova", "MU", 25, 95, 45),
+                LeaderboardUser(2, "Jasurbek Mirzayev", "JM", 22, 91, 38),
+                LeaderboardUser(3, "Dilnoza Rahimova", "DR", 20, 88, 35),
+                LeaderboardUser(4, "Azizbek (Siz)", "AS", 18, 86, 32, isCurrentUser = true),
+                LeaderboardUser(5, "Bobur To‘rayev", "BT", 15, 82, 25)
+            )
+            1 -> listOf( // Haftalik
+                LeaderboardUser(1, "Madina Umarova", "MU", 145, 95, 210),
+                LeaderboardUser(2, "Jasurbek Mirzayev", "JM", 132, 91, 190),
+                LeaderboardUser(3, "Dilnoza Rahimova", "DR", 120, 88, 175),
+                LeaderboardUser(4, "Azizbek (Siz)", "AS", 108, 86, 160, isCurrentUser = true),
+                LeaderboardUser(5, "Bobur To‘rayev", "BT", 95, 82, 140),
+                LeaderboardUser(6, "Shahnoza Aliyeva", "SA", 88, 79, 130),
+                LeaderboardUser(7, "Otabek Qodirov", "OQ", 76, 75, 110)
+            )
+            2 -> listOf( // Oylik
+                LeaderboardUser(1, "Madina Umarova", "MU", 480, 96, 680),
+                LeaderboardUser(2, "Jasurbek Mirzayev", "JM", 450, 93, 620),
+                LeaderboardUser(3, "Dilnoza Rahimova", "DR", 410, 89, 570),
+                LeaderboardUser(4, "Azizbek (Siz)", "AS", 390, 87, 540, isCurrentUser = true),
+                LeaderboardUser(5, "Bobur To‘rayev", "BT", 340, 83, 490)
+            )
+            else -> listOf( // Barcha vaqt
+                LeaderboardUser(1, "Madina Umarova", "MU", 1250, 96, 1850),
+                LeaderboardUser(2, "Jasurbek Mirzayev", "JM", 1120, 93, 1620),
+                LeaderboardUser(3, "Dilnoza Rahimova", "DR", 980, 89, 1450),
+                LeaderboardUser(4, "Azizbek (Siz)", "AS", 850, 87, 1280, isCurrentUser = true),
+                LeaderboardUser(5, "Bobur To‘rayev", "BT", 760, 83, 1100)
+            )
+        }
+    }
 
-    val categoryStats = listOf(
-        TestProgressStat(
-            title = "Tarixiy voqealar",
-            icon = Icons.Default.Event,
-            iconColor = Color(0xFF6366F1),
-            completionPercent = 65,
-            errorPercent = 12,
-            growthPercent = 22,
-            totalCount = 120
-        ),
-        TestProgressStat(
-            title = "Tarixiy faktlar",
-            icon = Icons.Default.AccountBalance,
-            iconColor = Color(0xFF8B5CF6),
-            completionPercent = 48,
-            errorPercent = 15,
-            growthPercent = 18,
-            totalCount = 95
-        ),
-        TestProgressStat(
-            title = "Urushlar va janglar",
-            icon = Icons.Default.Security,
-            iconColor = Color(0xFFDC2626),
-            completionPercent = 58,
-            errorPercent = 16,
-            growthPercent = 25,
-            totalCount = 110
-        ),
-        TestProgressStat(
-            title = "Tarixiy shaxslar",
-            icon = Icons.Default.Person,
-            iconColor = Color(0xFF7C3AED),
-            completionPercent = 82,
-            errorPercent = 8,
-            growthPercent = 34,
-            totalCount = 184
-        ),
-        TestProgressStat(
-            title = "Yillar va sanalar",
-            icon = Icons.Default.CalendarMonth,
-            iconColor = Color(0xFF16A34A),
-            completionPercent = 40,
-            errorPercent = 24,
-            growthPercent = 14,
-            totalCount = 215
-        ),
-        TestProgressStat(
-            title = "Shahar nomlari",
-            icon = Icons.Default.LocationOn,
-            iconColor = Color(0xFFF97316),
-            completionPercent = 60,
-            errorPercent = 14,
-            growthPercent = 19,
-            totalCount = 120
-        ),
-        TestProgressStat(
-            title = "Darsliklar: 6-sinf Qadimgi dunyo",
-            icon = Icons.Default.MenuBook,
-            iconColor = Color(0xFF0284C7),
-            completionPercent = 75,
-            errorPercent = 10,
-            growthPercent = 28,
-            totalCount = 80
-        )
+    val categoryAnalytics = listOf(
+        CategoryAnalytics("Tarixiy voqealar", 140, 119, 85, 18),
+        CategoryAnalytics("Tarixiy shaxslar", 184, 150, 82, 24),
+        CategoryAnalytics("Urushlar va janglar", 110, 84, 76, 12),
+        CategoryAnalytics("Yillar va sanalar", 215, 168, 78, 15),
+        CategoryAnalytics("Mantiqiy va DTM", 95, 78, 82, 20)
     )
 
     Scaffold(
@@ -143,664 +114,338 @@ fun LeaderboardScreen(
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background
-                ),
-                windowInsets = WindowInsets(0.dp)
+                )
             )
         }
     ) { innerPadding ->
-        LazyColumn(
+        PullToRefreshBox(
+            isRefreshing = isRefreshing,
+            onRefresh = {
+                coroutineScope.launch {
+                    isRefreshing = true
+                    delay(800)
+                    isRefreshing = false
+                }
+            },
+            state = pullState,
+            indicator = {
+                PullToRefreshDefaults.Indicator(
+                    state = pullState,
+                    isRefreshing = isRefreshing,
+                    color = BrandPurple,
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    modifier = Modifier.align(Alignment.TopCenter)
+                )
+            },
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .padding(horizontal = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            // Main Top Navigation Tabs: Reyting vs Natijalar & Tahlil
-            item {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    FilterChip(
-                        selected = mainTab == 0,
-                        onClick = { mainTab = 0 },
-                        label = {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Icon(Icons.Default.EmojiEvents, contentDescription = null, modifier = Modifier.size(16.dp))
-                                Spacer(Modifier.width(6.dp))
-                                Text("Reyting jadvali", fontWeight = if (mainTab == 0) FontWeight.Bold else FontWeight.Normal)
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                // Modern Split View Segmented Switch
+                item {
+                    Surface(
+                        shape = RoundedCornerShape(16.dp),
+                        color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .padding(4.dp)
+                                .fillMaxWidth()
+                        ) {
+                            Surface(
+                                shape = RoundedCornerShape(12.dp),
+                                color = if (mainTab == 0) BrandPurple else Color.Transparent,
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .clickable { mainTab = 0 }
+                            ) {
+                                Box(
+                                    modifier = Modifier.padding(vertical = 10.dp),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                        Icon(
+                                            Icons.Default.Analytics,
+                                            contentDescription = null,
+                                            tint = if (mainTab == 0) Color.White else MaterialTheme.colorScheme.onSurfaceVariant,
+                                            modifier = Modifier.size(16.dp)
+                                        )
+                                        Spacer(Modifier.width(6.dp))
+                                        Text(
+                                            text = "O'z natijam",
+                                            color = if (mainTab == 0) Color.White else MaterialTheme.colorScheme.onSurfaceVariant,
+                                            fontSize = 13.sp,
+                                            fontWeight = FontWeight.Bold
+                                        )
+                                    }
+                                }
                             }
-                        },
-                        colors = FilterChipDefaults.filterChipColors(
-                            selectedContainerColor = BrandPurple,
-                            selectedLabelColor = Color.White
-                        ),
-                        shape = RoundedCornerShape(50),
-                        modifier = Modifier
-                            .weight(1f)
-                            .testTag("leaderboard_tab_rank")
-                    )
-                    FilterChip(
-                        selected = mainTab == 1,
-                        onClick = { mainTab = 1 },
-                        label = {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Icon(Icons.Default.TrendingUp, contentDescription = null, modifier = Modifier.size(16.dp))
-                                Spacer(Modifier.width(6.dp))
-                                Text("Natijalar & Tahlil", fontWeight = if (mainTab == 1) FontWeight.Bold else FontWeight.Normal)
-                            }
-                        },
-                        colors = FilterChipDefaults.filterChipColors(
-                            selectedContainerColor = BrandPurple,
-                            selectedLabelColor = Color.White
-                        ),
-                        shape = RoundedCornerShape(50),
-                        modifier = Modifier
-                            .weight(1f)
-                            .testTag("leaderboard_tab_analytics")
-                    )
-                }
-            }
 
-            if (mainTab == 0) {
-                // 🏆 TAB 1: REYTING JADVALI
+                            Surface(
+                                shape = RoundedCornerShape(12.dp),
+                                color = if (mainTab == 1) BrandPurple else Color.Transparent,
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .clickable { mainTab = 1 }
+                            ) {
+                                Box(
+                                    modifier = Modifier.padding(vertical = 10.dp),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                        Icon(
+                                            Icons.Default.EmojiEvents,
+                                            contentDescription = null,
+                                            tint = if (mainTab == 1) Color.White else MaterialTheme.colorScheme.onSurfaceVariant,
+                                            modifier = Modifier.size(16.dp)
+                                        )
+                                        Spacer(Modifier.width(6.dp))
+                                        Text(
+                                            text = "Umumiy Reyting",
+                                            color = if (mainTab == 1) Color.White else MaterialTheme.colorScheme.onSurfaceVariant,
+                                            fontSize = 13.sp,
+                                            fontWeight = FontWeight.Bold
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Time Filter Chips (Bugun, Haftalik, Oylik, Barcha vaqt)
                 item {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
-                        FilterChip(
-                            selected = timeFilter == 0,
-                            onClick = { timeFilter = 0 },
-                            label = { Text("Haftalik reyting", fontSize = 12.sp) },
-                            colors = FilterChipDefaults.filterChipColors(
-                                selectedContainerColor = MaterialTheme.colorScheme.surfaceVariant,
-                                selectedLabelColor = MaterialTheme.colorScheme.onSurface
-                            ),
-                            shape = RoundedCornerShape(50),
-                            modifier = Modifier.weight(1f)
-                        )
-                        FilterChip(
-                            selected = timeFilter == 1,
-                            onClick = { timeFilter = 1 },
-                            label = { Text("Barcha vaqtlar", fontSize = 12.sp) },
-                            colors = FilterChipDefaults.filterChipColors(
-                                selectedContainerColor = MaterialTheme.colorScheme.surfaceVariant,
-                                selectedLabelColor = MaterialTheme.colorScheme.onSurface
-                            ),
-                            shape = RoundedCornerShape(50),
-                            modifier = Modifier.weight(1f)
-                        )
-                    }
-                }
-
-                // Top 3 Podium with realistic small XP
-                item {
-                    Surface(
-                        shape = RoundedCornerShape(20.dp),
-                        color = MaterialTheme.colorScheme.surface,
-                        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .testTag("leaderboard_podium")
-                    ) {
-                        Row(
-                            modifier = Modifier
-                                .padding(vertical = 20.dp, horizontal = 12.dp)
-                                .fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceEvenly,
-                            verticalAlignment = Alignment.Bottom
-                        ) {
-                            // 2nd Place
-                            PodiumColumn(
-                                place = 2,
-                                name = "Jasurbek",
-                                score = "92 XP",
-                                badgeColor = Color(0xFF94A3B8),
-                                avatarBg = Color(0xFFE2E8F0),
-                                initials = "JM",
-                                avatarSize = 54.dp
-                            )
-
-                            // 1st Place (Highest)
-                            PodiumColumn(
-                                place = 1,
-                                name = "Madina",
-                                score = "96 XP",
-                                badgeColor = Color(0xFFFBBF24),
-                                avatarBg = Color(0xFFFEF3C7),
-                                initials = "MU",
-                                avatarSize = 68.dp
-                            )
-
-                            // 3rd Place
-                            PodiumColumn(
-                                place = 3,
-                                name = "Dilnoza",
-                                score = "89 XP",
-                                badgeColor = Color(0xFFD97706),
-                                avatarBg = Color(0xFFFFEDD5),
-                                initials = "DR",
-                                avatarSize = 50.dp
+                        val filters = listOf("Bugun", "Haftalik", "Oylik", "Barchasi")
+                        filters.forEachIndexed { index, label ->
+                            val isSelected = periodFilter == index
+                            FilterChip(
+                                selected = isSelected,
+                                onClick = { periodFilter = index },
+                                label = { Text(label, fontSize = 12.sp, fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal) },
+                                colors = FilterChipDefaults.filterChipColors(
+                                    selectedContainerColor = BrandPurple,
+                                    selectedLabelColor = Color.White
+                                ),
+                                shape = RoundedCornerShape(50),
+                                modifier = Modifier.weight(1f)
                             )
                         }
                     }
                 }
 
-                // Rank list header
-                item {
-                    Text(
-                        text = "Barcha qatnashchilar",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
-
-                // Rank list
-                itemsIndexed(leaders) { _, user ->
-                    Surface(
-                        shape = RoundedCornerShape(16.dp),
-                        color = if (user.isCurrentUser) Color(0xFFEEF2FF) else MaterialTheme.colorScheme.surface,
-                        border = BorderStroke(
-                            if (user.isCurrentUser) 1.5.dp else 1.dp,
-                            if (user.isCurrentUser) BrandPurple else MaterialTheme.colorScheme.outlineVariant
-                        ),
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Row(
-                            modifier = Modifier.padding(14.dp),
-                            verticalAlignment = Alignment.CenterVertically
+                if (mainTab == 0) {
+                    // TAB 0: O'z natijam & Tahlil
+                    item {
+                        // User Personal Rank Card
+                        Surface(
+                            shape = RoundedCornerShape(20.dp),
+                            color = BrandPurple,
+                            modifier = Modifier.fillMaxWidth()
                         ) {
-                            Text(
-                                text = "#${user.rank}",
-                                fontSize = 15.sp,
-                                fontWeight = FontWeight.Bold,
-                                color = if (user.isCurrentUser) BrandPurple else MaterialTheme.colorScheme.onSurfaceVariant,
-                                modifier = Modifier.width(36.dp)
-                            )
-
-                            Surface(
-                                shape = CircleShape,
-                                color = if (user.isCurrentUser) BrandPurple else MaterialTheme.colorScheme.surfaceVariant,
-                                modifier = Modifier.size(40.dp)
-                            ) {
-                                Box(contentAlignment = Alignment.Center) {
-                                    Text(
-                                        text = user.initials,
-                                        fontSize = 14.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        color = if (user.isCurrentUser) Color.White else MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                }
-                            }
-
-                            Spacer(Modifier.width(12.dp))
-
-                            Column(modifier = Modifier.weight(1f)) {
-                                Text(
-                                    text = user.name,
-                                    fontSize = 14.sp,
-                                    fontWeight = if (user.isCurrentUser) FontWeight.Bold else FontWeight.SemiBold,
-                                    color = MaterialTheme.colorScheme.onSurface
-                                )
-                                Text(
-                                    text = "Aniqlik: ${user.accuracy}%",
-                                    fontSize = 12.sp,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
-
-                            Surface(
-                                shape = RoundedCornerShape(8.dp),
-                                color = if (user.isCurrentUser) BrandPurple else MaterialTheme.colorScheme.surfaceVariant
-                            ) {
-                                Text(
-                                    text = "${user.score} XP",
-                                    fontSize = 12.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    color = if (user.isCurrentUser) Color.White else MaterialTheme.colorScheme.onSurface,
-                                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
-                                )
-                            }
-                        }
-                    }
-                }
-            } else {
-                // 📊 TAB 2: NATIJALAR VA PROGRESBAR TAHLIL (User requested feature!)
-                // 1. Overall summary progress card (Barcha testlar umumiy tahlili)
-                item {
-                    Surface(
-                        shape = RoundedCornerShape(20.dp),
-                        color = MaterialTheme.colorScheme.surface,
-                        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable { onNavigateToAnalysis("Barcha testlar umumiy tahlili") }
-                            .testTag("leaderboard_overall_progress_card")
-                    ) {
-                        Column(modifier = Modifier.padding(18.dp)) {
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.SpaceBetween,
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Text(
-                                    text = "Barcha testlar umumiy progressi",
-                                    style = MaterialTheme.typography.titleMedium,
-                                    fontWeight = FontWeight.Bold
-                                )
-                                Surface(
-                                    shape = RoundedCornerShape(50),
-                                    color = Color(0xFFECFDF5)
-                                ) {
-                                    Row(
-                                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
-                                        verticalAlignment = Alignment.CenterVertically
-                                    ) {
-                                        Icon(
-                                            Icons.Default.TrendingUp,
-                                            contentDescription = null,
-                                            tint = Color(0xFF059669),
-                                            modifier = Modifier.size(14.dp)
-                                        )
-                                        Spacer(Modifier.width(4.dp))
-                                        Text(
-                                            "+26% O‘sish",
-                                            fontSize = 11.sp,
-                                            fontWeight = FontWeight.Bold,
-                                            color = Color(0xFF059669)
-                                        )
-                                    }
-                                }
-                            }
-
-                            Spacer(Modifier.height(16.dp))
-
-                            // 1. Tugaganlik progressi
                             Column(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable { onNavigateToAnalysis("Barcha testlar umumiy tahlili") }
+                                modifier = Modifier.padding(18.dp),
+                                verticalArrangement = Arrangement.spacedBy(12.dp)
                             ) {
                                 Row(
                                     modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.SpaceBetween
-                                ) {
-                                    Text(
-                                        text = "Tugallangan testlar ulushi",
-                                        fontSize = 13.sp,
-                                        fontWeight = FontWeight.Medium
-                                    )
-                                    Text(
-                                        text = "58% tugagan (534/920)",
-                                        fontSize = 13.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        color = BrandPurple
-                                    )
-                                }
-                                Spacer(Modifier.height(6.dp))
-                                LinearProgressIndicator(
-                                    progress = { 0.58f },
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .height(8.dp),
-                                    color = BrandPurple,
-                                    trackColor = MaterialTheme.colorScheme.surfaceVariant,
-                                    strokeCap = androidx.compose.ui.graphics.StrokeCap.Round
-                                )
-                            }
-
-                            Spacer(Modifier.height(14.dp))
-
-                            // 2. Xatolik ulushi
-                            Column(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable { onNavigateToAnalysis("Barcha testlar umumiy tahlili") }
-                            ) {
-                                Row(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.SpaceBetween
-                                ) {
-                                    Text(
-                                        text = "Xatoliklar foizi",
-                                        fontSize = 13.sp,
-                                        fontWeight = FontWeight.Medium
-                                    )
-                                    Text(
-                                        text = "14% xato",
-                                        fontSize = 13.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        color = Color(0xFFDC2626)
-                                    )
-                                }
-                                Spacer(Modifier.height(6.dp))
-                                LinearProgressIndicator(
-                                    progress = { 0.14f },
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .height(8.dp),
-                                    color = Color(0xFFEF4444),
-                                    trackColor = MaterialTheme.colorScheme.surfaceVariant,
-                                    strokeCap = androidx.compose.ui.graphics.StrokeCap.Round
-                                )
-                            }
-
-                            Spacer(Modifier.height(14.dp))
-
-                            // 3. O'sish dinamikasi foizi
-                            Column(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable { onNavigateToAnalysis("Barcha testlar umumiy tahlili") }
-                            ) {
-                                Row(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.SpaceBetween
-                                ) {
-                                    Text(
-                                        text = "Bilim o‘sish progressi",
-                                        fontSize = 13.sp,
-                                        fontWeight = FontWeight.Medium
-                                    )
-                                    Text(
-                                        text = "+26% o‘sish",
-                                        fontSize = 13.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        color = Color(0xFF059669)
-                                    )
-                                }
-                                Spacer(Modifier.height(6.dp))
-                                LinearProgressIndicator(
-                                    progress = { 0.72f },
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .height(8.dp),
-                                    color = Color(0xFF10B981),
-                                    trackColor = MaterialTheme.colorScheme.surfaceVariant,
-                                    strokeCap = androidx.compose.ui.graphics.StrokeCap.Round
-                                )
-                            }
-
-                            Spacer(Modifier.height(14.dp))
-
-                            // Banner Callout to open full analysis screen
-                            Surface(
-                                shape = RoundedCornerShape(10.dp),
-                                color = BrandPurple.copy(alpha = 0.08f),
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable { onNavigateToAnalysis("Barcha testlar umumiy tahlili") }
-                            ) {
-                                Row(
-                                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.SpaceBetween
+                                    horizontalArrangement = Arrangement.SpaceBetween,
+                                    verticalAlignment = Alignment.CenterVertically
                                 ) {
                                     Row(verticalAlignment = Alignment.CenterVertically) {
-                                        Icon(
-                                            Icons.Default.PieChart,
-                                            contentDescription = null,
-                                            tint = BrandPurple,
-                                            modifier = Modifier.size(16.dp)
-                                        )
-                                        Spacer(Modifier.width(8.dp))
+                                        Surface(
+                                            shape = CircleShape,
+                                            color = Color.White.copy(alpha = 0.2f),
+                                            modifier = Modifier.size(44.dp)
+                                        ) {
+                                            Box(contentAlignment = Alignment.Center) {
+                                                Text("AS", color = Color.White, fontWeight = FontWeight.Bold)
+                                            }
+                                        }
+                                        Spacer(Modifier.width(12.dp))
+                                        Column {
+                                            Text("Azizbek (Siz)", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                                            Text("Aktiv bilimdon", color = Color.White.copy(alpha = 0.8f), fontSize = 12.sp)
+                                        }
+                                    }
+
+                                    Surface(
+                                        shape = RoundedCornerShape(12.dp),
+                                        color = Color.White.copy(alpha = 0.25f)
+                                    ) {
                                         Text(
-                                            text = "Batafsil doira va chiziqli grafik tahlili",
-                                            fontSize = 12.sp,
-                                            fontWeight = FontWeight.SemiBold,
-                                            color = BrandPurple
+                                            "#4-o'rin",
+                                            color = Color.White,
+                                            fontWeight = FontWeight.Bold,
+                                            fontSize = 14.sp,
+                                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
                                         )
                                     }
-                                    Icon(
-                                        Icons.Default.ChevronRight,
-                                        contentDescription = null,
-                                        tint = BrandPurple,
-                                        modifier = Modifier.size(18.dp)
-                                    )
+                                }
+
+                                HorizontalDivider(color = Color.White.copy(alpha = 0.2f))
+
+                                Row(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    horizontalArrangement = Arrangement.SpaceBetween
+                                ) {
+                                    Column {
+                                        Text("Sarflangan vaqt", color = Color.White.copy(alpha = 0.8f), fontSize = 11.sp)
+                                        Text("2 soat 40 daq", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                                    }
+                                    Column {
+                                        Text("To'g'rilik", color = Color.White.copy(alpha = 0.8f), fontSize = 11.sp)
+                                        Text("86%", color = Color(0xFF86EFAC), fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                                    }
+                                    Column {
+                                        Text("O'sish sur'ati", color = Color.White.copy(alpha = 0.8f), fontSize = 11.sp)
+                                        Text("+18%", color = Color(0xFFFDE047), fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                                    }
                                 }
                             }
                         }
                     }
-                }
 
-                // Header for Category breakdown
-                item {
-                    Text(
-                        text = "Alohida test yo‘nalishlari progressi (Bosib ko‘ring)",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
+                    item {
+                        Text(
+                            text = "Bo'limlar bo'yicha tahlil",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
 
-                // List of progress cards for each category
-                items(categoryStats) { stat ->
-                    Surface(
-                        shape = RoundedCornerShape(16.dp),
-                        color = MaterialTheme.colorScheme.surface,
-                        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable { onNavigateToAnalysis(stat.title) }
-                            .testTag("test_progress_card_${stat.title.replace(" ", "_")}")
-                    ) {
-                        Column(modifier = Modifier.padding(16.dp)) {
+                    itemsIndexed(categoryAnalytics) { _, cat ->
+                        Surface(
+                            shape = RoundedCornerShape(16.dp),
+                            color = MaterialTheme.colorScheme.surface,
+                            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Column(
+                                modifier = Modifier.padding(14.dp),
+                                verticalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                Row(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    horizontalArrangement = Arrangement.SpaceBetween,
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Text(cat.title, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                                    Text("${cat.correctCount}/${cat.totalSolved} (${cat.accuracyPercent}%)", fontWeight = FontWeight.Bold, color = BrandPurple, fontSize = 12.sp)
+                                }
+                                LinearProgressIndicator(
+                                    progress = { (cat.accuracyPercent / 100f).coerceIn(0f, 1f) },
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .height(6.dp)
+                                        .clip(RoundedCornerShape(3.dp)),
+                                    color = BrandPurple,
+                                    trackColor = MaterialTheme.colorScheme.surfaceVariant
+                                )
+                                Text("O'sish progressi: +${cat.growthPercent}%", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            }
+                        }
+                    }
+
+                } else {
+                    // TAB 1: Umumiy Reyting List
+                    item {
+                        Text(
+                            text = "Peshqadamlar Jadvali",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+
+                    itemsIndexed(users) { index, user ->
+                        val rankColor = when (user.rank) {
+                            1 -> Color(0xFFF59E0B) // Gold
+                            2 -> Color(0xFF94A3B8) // Silver
+                            3 -> Color(0xFFD97706) // Bronze
+                            else -> MaterialTheme.colorScheme.onSurfaceVariant
+                        }
+
+                        Surface(
+                            shape = RoundedCornerShape(16.dp),
+                            color = if (user.isCurrentUser) BrandPurple.copy(alpha = 0.08f) else MaterialTheme.colorScheme.surface,
+                            border = BorderStroke(
+                                width = if (user.isCurrentUser) 1.5.dp else 1.dp,
+                                color = if (user.isCurrentUser) BrandPurple else MaterialTheme.colorScheme.outlineVariant
+                            ),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
                             Row(
-                                modifier = Modifier.fillMaxWidth(),
+                                modifier = Modifier.padding(14.dp),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
+                                Text(
+                                    text = "#${user.rank}",
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 15.sp,
+                                    color = rankColor,
+                                    modifier = Modifier.width(36.dp)
+                                )
+
                                 Surface(
                                     shape = CircleShape,
-                                    color = stat.iconColor.copy(alpha = 0.12f),
-                                    modifier = Modifier.size(38.dp)
+                                    color = if (user.isCurrentUser) BrandPurple else rankColor.copy(alpha = 0.2f),
+                                    modifier = Modifier.size(40.dp)
                                 ) {
                                     Box(contentAlignment = Alignment.Center) {
-                                        Icon(
-                                            stat.icon,
-                                            contentDescription = null,
-                                            tint = stat.iconColor,
-                                            modifier = Modifier.size(20.dp)
+                                        Text(
+                                            text = user.initials,
+                                            fontWeight = FontWeight.Bold,
+                                            color = if (user.isCurrentUser) Color.White else rankColor,
+                                            fontSize = 14.sp
                                         )
                                     }
                                 }
+
                                 Spacer(Modifier.width(12.dp))
+
                                 Column(modifier = Modifier.weight(1f)) {
                                     Text(
-                                        text = stat.title,
-                                        fontSize = 14.sp,
+                                        text = user.name,
                                         fontWeight = FontWeight.Bold,
-                                        color = MaterialTheme.colorScheme.onSurface
+                                        fontSize = 14.sp,
+                                        color = if (user.isCurrentUser) BrandPurple else MaterialTheme.colorScheme.onSurface
                                     )
                                     Text(
-                                        text = "Jami: ${stat.totalCount} ta test",
-                                        fontSize = 11.sp,
+                                        text = "${user.accuracy}% aniqlik • ${user.timeSpentMinutes} daq",
+                                        fontSize = 12.sp,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant
                                     )
                                 }
 
                                 Surface(
-                                    shape = RoundedCornerShape(8.dp),
-                                    color = Color(0xFFECFDF5)
+                                    shape = RoundedCornerShape(10.dp),
+                                    color = BrandPurple.copy(alpha = 0.1f)
                                 ) {
                                     Text(
-                                        text = "+${stat.growthPercent}% o‘sish",
-                                        fontSize = 11.sp,
+                                        text = "${user.score} XP",
                                         fontWeight = FontWeight.Bold,
-                                        color = Color(0xFF059669),
-                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                        color = BrandPurple,
+                                        fontSize = 13.sp,
+                                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp)
                                     )
                                 }
-                            }
-
-                            Spacer(Modifier.height(12.dp))
-
-                            // Completion Progress bar (Clickable!)
-                            Column(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable { onNavigateToAnalysis(stat.title) }
-                            ) {
-                                Row(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.SpaceBetween
-                                ) {
-                                    Text(
-                                        text = "Tugallangan:",
-                                        fontSize = 12.sp,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                    Text(
-                                        text = "${stat.completionPercent}%",
-                                        fontSize = 12.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        color = BrandPurple
-                                    )
-                                }
-                                Spacer(Modifier.height(4.dp))
-                                LinearProgressIndicator(
-                                    progress = { stat.completionPercent / 100f },
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .height(6.dp),
-                                    color = BrandPurple,
-                                    trackColor = MaterialTheme.colorScheme.surfaceVariant,
-                                    strokeCap = androidx.compose.ui.graphics.StrokeCap.Round
-                                )
-                            }
-
-                            Spacer(Modifier.height(8.dp))
-
-                            // Error rate progress bar (Clickable!)
-                            Column(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable { onNavigateToAnalysis(stat.title) }
-                            ) {
-                                Row(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.SpaceBetween
-                                ) {
-                                    Text(
-                                        text = "Xatolik ko‘rsatkichi:",
-                                        fontSize = 12.sp,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                    Text(
-                                        text = "${stat.errorPercent}% xato",
-                                        fontSize = 12.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        color = Color(0xFFEF4444)
-                                    )
-                                }
-                                Spacer(Modifier.height(4.dp))
-                                LinearProgressIndicator(
-                                    progress = { stat.errorPercent / 100f },
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .height(6.dp),
-                                    color = Color(0xFFEF4444),
-                                    trackColor = MaterialTheme.colorScheme.surfaceVariant,
-                                    strokeCap = androidx.compose.ui.graphics.StrokeCap.Round
-                                )
-                            }
-
-                            Spacer(Modifier.height(10.dp))
-
-                            // Bottom prompt to open full diagram screen
-                            Row(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable { onNavigateToAnalysis(stat.title) },
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.SpaceBetween
-                            ) {
-                                Row(verticalAlignment = Alignment.CenterVertically) {
-                                    Icon(
-                                        Icons.Default.PieChart,
-                                        contentDescription = null,
-                                        tint = BrandPurple,
-                                        modifier = Modifier.size(15.dp)
-                                    )
-                                    Spacer(Modifier.width(6.dp))
-                                    Text(
-                                        text = "Diagramma, grafik va maslahatlar",
-                                        fontSize = 12.sp,
-                                        fontWeight = FontWeight.SemiBold,
-                                        color = BrandPurple
-                                    )
-                                }
-                                Icon(
-                                    Icons.Default.ChevronRight,
-                                    contentDescription = null,
-                                    tint = BrandPurple,
-                                    modifier = Modifier.size(16.dp)
-                                )
                             }
                         }
                     }
                 }
-            }
 
-            item { Spacer(Modifier.height(16.dp)) }
-        }
-    }
-}
-
-@Composable
-private fun PodiumColumn(
-    place: Int,
-    name: String,
-    score: String,
-    badgeColor: Color,
-    avatarBg: Color,
-    initials: String,
-    avatarSize: androidx.compose.ui.unit.Dp
-) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Box(contentAlignment = Alignment.BottomEnd) {
-            Surface(
-                shape = CircleShape,
-                color = avatarBg,
-                border = BorderStroke(2.dp, badgeColor),
-                modifier = Modifier.size(avatarSize)
-            ) {
-                Box(contentAlignment = Alignment.Center) {
-                    Text(
-                        text = initials,
-                        fontSize = if (place == 1) 18.sp else 14.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onSurface
-                    )
-                }
-            }
-            Surface(
-                shape = CircleShape,
-                color = badgeColor,
-                modifier = Modifier
-                    .size(20.dp)
-                    .offset(x = 2.dp, y = 2.dp)
-            ) {
-                Box(contentAlignment = Alignment.Center) {
-                    Text(
-                        text = "$place",
-                        fontSize = 11.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.White
-                    )
-                }
+                item { Spacer(Modifier.height(16.dp)) }
             }
         }
-        Spacer(Modifier.height(6.dp))
-        Text(
-            text = name,
-            fontSize = 13.sp,
-            fontWeight = FontWeight.Bold
-        )
-        Text(
-            text = score,
-            fontSize = 11.sp,
-            color = BrandPurple,
-            fontWeight = FontWeight.SemiBold
-        )
     }
 }
