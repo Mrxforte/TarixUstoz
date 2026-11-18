@@ -1,6 +1,7 @@
 package com.tarixustoz.app.presentation.profile
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -49,6 +50,7 @@ fun ProfileScreen(
     val accuracyPercentage by profileViewModel.accuracyPercentage.collectAsState()
     val savedItemsList by profileViewModel.savedItemsList.collectAsState()
     val achievementsList by profileViewModel.achievementsList.collectAsState()
+    val dailyGoalUiState by profileViewModel.dailyGoalUiState.collectAsState()
 
     val dailyReminder by profileViewModel.dailyReminder.collectAsState()
     val mistakeReminder by profileViewModel.mistakeReminder.collectAsState()
@@ -275,6 +277,9 @@ fun ProfileScreen(
                     }
                 }
             }
+
+            // Kunlik reja Chart Card
+            DailyGoalChartCard(dailyGoal = dailyGoalUiState)
 
             // Stats: Ball, testlar soni, to'g'rilik va seriya
             Text(
@@ -768,6 +773,154 @@ private fun NotificationSettingRow(
                 checkedTrackColor = BrandPurple
             )
         )
+    }
+}
+
+@Composable
+private fun DailyGoalChartCard(
+    dailyGoal: DailyGoalUiState
+) {
+    Surface(
+        shape = RoundedCornerShape(20.dp),
+        color = MaterialTheme.colorScheme.surface,
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+        shadowElevation = 1.dp,
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Column(
+            modifier = Modifier.padding(18.dp),
+            verticalArrangement = Arrangement.spacedBy(14.dp)
+        ) {
+            // Header Row: Kunlik reja + 20 savol pill
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Surface(
+                        shape = RoundedCornerShape(10.dp),
+                        color = Color(0xFFFEF3C7),
+                        modifier = Modifier.size(36.dp)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Icon(
+                                Icons.Default.EventNote,
+                                contentDescription = null,
+                                tint = Color(0xFFD97706),
+                                modifier = Modifier.size(20.dp)
+                            )
+                        }
+                    }
+                    Spacer(Modifier.width(10.dp))
+                    Text(
+                        text = "Kunlik reja",
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+
+                Surface(
+                    shape = RoundedCornerShape(20.dp),
+                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+                    color = MaterialTheme.colorScheme.surface
+                ) {
+                    Text(
+                        text = "${dailyGoal.todayGoalTotal} savol",
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Medium,
+                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp)
+                    )
+                }
+            }
+
+            HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
+
+            // 7-Day Bar Chart
+            val maxCount = dailyGoal.weekDays.maxOfOrNull { it.count }?.coerceAtLeast(20) ?: 20
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(90.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.Bottom
+            ) {
+                dailyGoal.weekDays.forEach { day ->
+                    val barRatio = (day.count.toFloat() / maxCount).coerceIn(0.08f, 1f)
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Bottom,
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .width(28.dp)
+                                .height(60.dp * barRatio)
+                                .clip(RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp))
+                                .background(
+                                    if (day.isToday) BrandPurple
+                                    else if (day.count > 0) BrandPurple.copy(alpha = 0.35f)
+                                    else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.4f)
+                                )
+                        )
+                        Spacer(Modifier.height(6.dp))
+                        Text(
+                            text = day.dayName,
+                            fontSize = 11.sp,
+                            fontWeight = if (day.isToday) FontWeight.Bold else FontWeight.Medium,
+                            color = if (day.isToday) BrandPurple else MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+            }
+
+            // Today Progress Box
+            Surface(
+                shape = RoundedCornerShape(14.dp),
+                color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(modifier = Modifier.padding(12.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text("Bugun", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                        Text(
+                            "${dailyGoal.todaySolved}/${dailyGoal.todayGoalTotal} savol",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 12.sp,
+                            color = BrandPurple
+                        )
+                    }
+                    Spacer(Modifier.height(6.dp))
+                    LinearProgressIndicator(
+                        progress = { (dailyGoal.todaySolved.toFloat() / dailyGoal.todayGoalTotal).coerceIn(0f, 1f) },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(6.dp)
+                            .clip(RoundedCornerShape(3.dp)),
+                        color = BrandPurple,
+                        trackColor = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
+                    )
+                    Spacer(Modifier.height(6.dp))
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text("To'g'ri: ${dailyGoal.todayCorrect}", fontSize = 11.sp, color = Color(0xFF16A34A), fontWeight = FontWeight.Bold)
+                        Text("Aniqlik: ${if (dailyGoal.todaySolved > 0) "${dailyGoal.todayAccuracy}%" else "—"}", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    }
+                }
+            }
+
+            Text(
+                text = "Hafta: ${dailyGoal.weeklyTotalSolved} savol • maqsad bajarilgan: ${dailyGoal.daysGoalMetThisWeek}/7 kun",
+                fontSize = 11.sp,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
     }
 }
 

@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import java.util.Calendar
 import javax.inject.Inject
 
 data class SavedItemDto(
@@ -30,6 +31,30 @@ data class AchievementUiState(
     val currentProgress: Int,
     val targetProgress: Int,
     val tier: String
+)
+
+data class DayActivity(
+    val dayName: String,
+    val count: Int,
+    val isToday: Boolean
+)
+
+data class DailyGoalUiState(
+    val todaySolved: Int = 0,
+    val todayCorrect: Int = 0,
+    val todayGoalTotal: Int = 20,
+    val todayAccuracy: Int = 0,
+    val weeklyTotalSolved: Int = 0,
+    val daysGoalMetThisWeek: Int = 0,
+    val weekDays: List<DayActivity> = listOf(
+        DayActivity("Du", 0, false),
+        DayActivity("Se", 0, false),
+        DayActivity("Ch", 0, false),
+        DayActivity("Pa", 0, false),
+        DayActivity("Ju", 0, false),
+        DayActivity("Sh", 0, false),
+        DayActivity("Ya", 0, false)
+    )
 )
 
 @HiltViewModel
@@ -90,6 +115,67 @@ class ProfileViewModel @Inject constructor(
     ) { correct, total ->
         if (total > 0) (correct * 100) / total else 0
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
+
+    private fun getStartOfDayMillis(): Long {
+        val cal = Calendar.getInstance()
+        cal.set(Calendar.HOUR_OF_DAY, 0)
+        cal.set(Calendar.MINUTE, 0)
+        cal.set(Calendar.SECOND, 0)
+        cal.set(Calendar.MILLISECOND, 0)
+        return cal.timeInMillis
+    }
+
+    private fun getStartOfWeekMillis(): Long {
+        val cal = Calendar.getInstance()
+        cal.set(Calendar.DAY_OF_WEEK, cal.firstDayOfWeek)
+        cal.set(Calendar.HOUR_OF_DAY, 0)
+        cal.set(Calendar.MINUTE, 0)
+        cal.set(Calendar.SECOND, 0)
+        cal.set(Calendar.MILLISECOND, 0)
+        return cal.timeInMillis
+    }
+
+    val dailyGoalUiState: StateFlow<DailyGoalUiState> = combine(
+        database.quizAttemptDao().getTodayTotalCountFlow(getStartOfDayMillis()),
+        database.quizAttemptDao().getTodayCorrectCountFlow(getStartOfDayMillis()),
+        database.quizAttemptDao().getWeeklyAttemptsFlow(getStartOfWeekMillis())
+    ) { todayTotal, todayCorrect, weeklyAttempts ->
+        val accuracy = if (todayTotal > 0) (todayCorrect * 100) / todayTotal else 0
+        val daysOfWeekUz = listOf("Du", "Se", "Ch", "Pa", "Ju", "Sh", "Ya")
+
+        val cal = Calendar.getInstance()
+        val currentDayOfWeek = (cal.get(Calendar.DAY_OF_WEEK) + 5) % 7
+
+        val countsByDay = IntArray(7) { 0 }
+        weeklyAttempts.forEach { attempt ->
+            val attemptCal = Calendar.getInstance()
+            attemptCal.timeInMillis = attempt.timestamp
+            val dayIdx = (attemptCal.get(Calendar.DAY_OF_WEEK) + 5) % 7
+            if (dayIdx in 0..6) {
+                countsByDay[dayIdx]++
+            }
+        }
+
+        val weekDaysList = daysOfWeekUz.mapIndexed { index, name ->
+            DayActivity(
+                dayName = name,
+                count = countsByDay[index],
+                isToday = index == currentDayOfWeek
+            )
+        }
+
+        val daysGoalMet = countsByDay.count { it >= 20 }
+
+        DailyGoalUiState(
+            todaySolved = todayTotal,
+            todayCorrect = todayCorrect,
+            todayGoalTotal = 20,
+            todayAccuracy = accuracy,
+            weeklyTotalSolved = weeklyAttempts.size,
+            daysGoalMetThisWeek = daysGoalMet,
+            weekDays = weekDaysList
+        )
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), DailyGoalUiState())
 
     val achievementsList: StateFlow<List<AchievementUiState>> = combine(
         database.quizAttemptDao().getTotalCountFlow(),

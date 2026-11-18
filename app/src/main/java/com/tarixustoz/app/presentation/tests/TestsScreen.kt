@@ -217,54 +217,6 @@ fun TestsScreen(
                 }
             }
 
-            // Official Exams Section Header
-            item {
-                Text(
-                    text = "Rasmiy va RAG Imtihonlar",
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold
-                )
-            }
-
-            // 1. Milliy Sertifikat Card
-            item {
-                ExamCategoryCard(
-                    title = "MILLIY SERTIFIKAT IMTIHONI",
-                    subtitle = "BMBA • 45 savol • 90 daqiqa • Yuqori daraja",
-                    description = "Tarix fanidan bilim darajasini baholash va Milliy Sertifikat sinovlari formati.",
-                    containerColor = Color(0xFF0F172A),
-                    accentColor = Color(0xFF38BDF8),
-                    icon = Icons.Default.VerifiedUser,
-                    onClick = { onStartQuizCategory(45, "NATIONAL_CERTIFICATE", "HARD", 90) }
-                )
-            }
-
-            // 2. O'qituvchilar Attestatsiyasi Card
-            item {
-                ExamCategoryCard(
-                    title = "O‘QITUVCHILAR ATTESTASIYASI",
-                    subtitle = "Pedagogik toifa • 35 savol • 60 daqiqa",
-                    description = "Tarix fani o'qituvchilari uchun rasmiy attestatsiya va toifa sinovlari formati.",
-                    containerColor = Color(0xFF311B92),
-                    accentColor = Color(0xFFB388FF),
-                    icon = Icons.Default.School,
-                    onClick = { onStartQuizCategory(35, "ATTESTATION", "HARD", 60) }
-                )
-            }
-
-            // 3. DTM BLOK SINOBI Card
-            item {
-                ExamCategoryCard(
-                    title = "DTM BLOK SINOBI (BMBA)",
-                    subtitle = "OTMga kirish • 30 savol • 60 daqiqa",
-                    description = "Oliy ta'lim muassasalariga kirish 30 ta majburiy va mutaxassislik testlari mashqi.",
-                    containerColor = Color(0xFF1E1F38),
-                    accentColor = Color(0xFFFBBF24),
-                    icon = Icons.Default.EmojiEvents,
-                    onClick = { onStartQuizCategory(30, "DTM_PRACTICE", "MEDIUM", 60) }
-                )
-            }
-
             // Categories Header
             item {
                 Text(

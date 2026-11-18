@@ -226,6 +226,15 @@ interface QuizAttemptDao {
     @Query("SELECT COUNT(*) FROM quiz_attempts")
     fun getTotalCountFlow(): Flow<Int>
 
+    @Query("SELECT COUNT(*) FROM quiz_attempts WHERE timestamp >= :startOfDay")
+    fun getTodayTotalCountFlow(startOfDay: Long): Flow<Int>
+
+    @Query("SELECT COUNT(*) FROM quiz_attempts WHERE timestamp >= :startOfDay AND wasCorrect = 1")
+    fun getTodayCorrectCountFlow(startOfDay: Long): Flow<Int>
+
+    @Query("SELECT * FROM quiz_attempts WHERE timestamp >= :startOfWeek")
+    fun getWeeklyAttemptsFlow(startOfWeek: Long): Flow<List<QuizAttemptEntity>>
+
     @Query("DELETE FROM quiz_attempts")
     suspend fun deleteAll()
 }

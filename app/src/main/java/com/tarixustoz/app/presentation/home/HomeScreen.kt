@@ -342,11 +342,26 @@ fun HomeScreen(
                 }
             }
 
-            // Permanent Banner Ad under Streak Banner
+            // Styled AdMob Banner Card
             item {
-                AdMobManager.BannerAdView(
+                Surface(
+                    shape = RoundedCornerShape(20.dp),
+                    color = MaterialTheme.colorScheme.surface,
+                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.6f)),
+                    shadowElevation = 1.dp,
                     modifier = Modifier.fillMaxWidth()
-                )
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        AdMobManager.BannerAdView(
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    }
+                }
             }
 
             // 3. Kun savoli (Daily Question)

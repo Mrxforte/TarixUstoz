@@ -287,146 +287,209 @@ private fun TicketCardItem(
     ticket: TicketItemUiState,
     onStart: () -> Unit
 ) {
-    val cardBg = when {
-        ticket.isPassed -> Color(0xFFF0FDF4)
-        ticket.isUnlocked -> MaterialTheme.colorScheme.surface
-        else -> MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
-    }
-
+    val cardBg = MaterialTheme.colorScheme.surface
     val borderColor = when {
         ticket.isPassed -> Color(0xFF86EFAC)
-        ticket.isUnlocked -> BrandPurple.copy(alpha = 0.4f)
+        ticket.isUnlocked -> BrandPurple.copy(alpha = 0.3f)
         else -> MaterialTheme.colorScheme.outlineVariant
     }
 
     Surface(
-        shape = RoundedCornerShape(18.dp),
+        shape = RoundedCornerShape(20.dp),
         color = cardBg,
-        border = BorderStroke(1.5.dp, borderColor),
+        border = BorderStroke(1.2.dp, borderColor),
+        shadowElevation = 2.dp,
         modifier = Modifier
             .fillMaxWidth()
             .clickable(enabled = ticket.isUnlocked, onClick = onStart)
             .testTag("ticket_card_${ticket.index}")
     ) {
-        Row(
-            modifier = Modifier.padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
+        Column(
+            modifier = Modifier.padding(18.dp),
+            verticalArrangement = Arrangement.spacedBy(14.dp)
         ) {
-            // Ticket Number Badge
-            Surface(
-                shape = CircleShape,
-                color = when {
-                    ticket.isPassed -> Color(0xFF16A34A)
-                    ticket.isUnlocked -> BrandPurple
-                    else -> MaterialTheme.colorScheme.outline
-                },
-                modifier = Modifier.size(48.dp)
+            // 1. Top Header Row: Title & Status Badge
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Box(contentAlignment = Alignment.Center) {
-                    if (ticket.isUnlocked) {
-                        Text(
-                            text = "${ticket.index}",
-                            color = Color.White,
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 18.sp
-                        )
-                    } else {
-                        Icon(
-                            Icons.Default.Lock,
-                            contentDescription = "Qulflangan",
-                            tint = Color.White,
-                            modifier = Modifier.size(22.dp)
-                        )
+                Column {
+                    Text(
+                        text = "${ticket.index}-Bilet",
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp
+                    )
+                    val startQ = (ticket.index - 1) * 30 + 1
+                    val endQ = ticket.index * 30
+                    Text(
+                        text = "$startQ–$endQ-savollar",
+                        fontSize = 12.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+
+                // Status Badge
+                Surface(
+                    shape = RoundedCornerShape(20.dp),
+                    color = when {
+                        ticket.isPassed -> Color(0xFFDCFCE7)
+                        ticket.isUnlocked -> Color(0xFFEFF6FF)
+                        else -> MaterialTheme.colorScheme.surfaceVariant
+                    }
+                ) {
+                    Text(
+                        text = when {
+                            ticket.isPassed -> "O‘tildi 🎉"
+                            ticket.isUnlocked -> "Ochiq"
+                            else -> "Yopilgan 🔒"
+                        },
+                        color = when {
+                            ticket.isPassed -> Color(0xFF15803D)
+                            ticket.isUnlocked -> BrandPurple
+                            else -> MaterialTheme.colorScheme.onSurfaceVariant
+                        },
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 12.sp,
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 5.dp)
+                    )
+                }
+            }
+
+            // 2. Middle Stats Grid: Duration & Questions Count
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                // Duration
+                Row(
+                    modifier = Modifier.weight(1f),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        Icons.Default.Schedule,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    Column {
+                        Text("Davomiyligi", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Text("20 daqiqa", fontSize = 13.sp, fontWeight = FontWeight.Bold)
+                    }
+                }
+
+                // Questions Count
+                Row(
+                    modifier = Modifier.weight(1f),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        Icons.Default.Assignment,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    Column {
+                        Text("Savollar", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Text("30 ta", fontSize = 13.sp, fontWeight = FontWeight.Bold)
                     }
                 }
             }
 
-            Spacer(Modifier.width(14.dp))
-
-            Column(modifier = Modifier.weight(1f)) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
-                        text = "${ticket.index}-Bilet",
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    if (ticket.isPassed) {
-                        Surface(
-                            shape = RoundedCornerShape(12.dp),
-                            color = Color(0xFFDCFCE7)
-                        ) {
-                            Text(
-                                text = "O‘tildi",
-                                color = Color(0xFF15803D),
-                                fontWeight = FontWeight.Bold,
-                                fontSize = 11.sp,
-                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp)
-                            )
-                        }
-                    }
-                }
-
-                Spacer(Modifier.height(4.dp))
-
-                val startQ = (ticket.index - 1) * 30 + 1
-                val endQ = ticket.index * 30
-                Text(
-                    text = "$startQ–$endQ-savollar • 30 ta savol",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-
-                Spacer(Modifier.height(6.dp))
-
-                if (ticket.isUnlocked) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        val progressFraction = ((ticket.ongoingAnsweredCount ?: ticket.bestScore).toFloat() / 30f).coerceIn(0f, 1f)
-                        LinearProgressIndicator(
-                            progress = { progressFraction },
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(6.dp)
-                                .clip(RoundedCornerShape(3.dp)),
-                            color = if (ticket.isPassed) Color(0xFF16A34A) else BrandPurple,
-                            trackColor = MaterialTheme.colorScheme.surfaceVariant
+            // Progress Bar (if unlocked)
+            if (ticket.isUnlocked) {
+                Column {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "Natija",
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.Medium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
-                        Spacer(Modifier.width(8.dp))
                         Text(
                             text = if (ticket.ongoingAnsweredCount != null && ticket.ongoingAnsweredCount > 0)
                                 "${ticket.ongoingScore ?: 0}/30 (${ticket.ongoingAnsweredCount} ta ishlangan)"
                             else
                                 "${ticket.bestScore}/30",
-                            fontSize = 11.sp,
+                            fontSize = 12.sp,
                             fontWeight = FontWeight.Bold,
                             color = if (ticket.isPassed) Color(0xFF15803D) else BrandPurple
                         )
                     }
-                } else {
-                    Text(
-                        text = "🔒 ${ticket.index - 1}-biletda kamida 10 ta to'g'ri toping",
-                        fontSize = 11.sp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    Spacer(Modifier.height(4.dp))
+                    val progressFraction = ((ticket.ongoingAnsweredCount ?: ticket.bestScore).toFloat() / 30f).coerceIn(0f, 1f)
+                    LinearProgressIndicator(
+                        progress = { progressFraction },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(6.dp)
+                            .clip(RoundedCornerShape(3.dp)),
+                        color = if (ticket.isPassed) Color(0xFF16A34A) else BrandPurple,
+                        trackColor = MaterialTheme.colorScheme.surfaceVariant
                     )
                 }
             }
 
-            Spacer(Modifier.width(10.dp))
+            // 3. Banner Mode Card (Gold/Yellow Card - "Bepul" badge removed!)
+            Surface(
+                shape = RoundedCornerShape(14.dp),
+                color = if (ticket.isUnlocked) Color(0xFFFEF3C7) else MaterialTheme.colorScheme.surfaceVariant,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Row(
+                    modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        imageVector = if (ticket.isUnlocked) Icons.Default.FitnessCenter else Icons.Default.Lock,
+                        contentDescription = null,
+                        tint = if (ticket.isUnlocked) Color(0xFFD97706) else MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(10.dp))
+                    Text(
+                        text = if (ticket.isUnlocked) "Mashq rejimi ochiq" else "Kamida 10 ta to'g'ri topsangiz ochiladi",
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = if (ticket.isUnlocked) Color(0xFF92400E) else MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
 
+            // 4. Primary Button: "Testni boshlash" or "Qayta topshirish"
             Button(
                 onClick = onStart,
                 enabled = ticket.isUnlocked,
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = if (ticket.isPassed) Color(0xFF16A34A) else BrandPurple
+                    containerColor = if (ticket.isPassed) Color(0xFF16A34A) else Color(0xFF1E293B)
                 ),
-                shape = RoundedCornerShape(12.dp),
-                contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
+                shape = RoundedCornerShape(14.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(48.dp)
             ) {
-                Text(
-                    text = if (ticket.isPassed) "Qayta" else if (ticket.isUnlocked) "Boshlash" else "Qulf",
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Bold
-                )
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        imageVector = if (ticket.isPassed) Icons.Default.Refresh else Icons.Default.FitnessCenter,
+                        contentDescription = null,
+                        tint = Color.White,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    Text(
+                        text = if (ticket.isPassed) "Qayta topshirish" else if (ticket.isUnlocked) "Testni boshlash" else "Qulflangan",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.White
+                    )
+                }
             }
         }
     }
