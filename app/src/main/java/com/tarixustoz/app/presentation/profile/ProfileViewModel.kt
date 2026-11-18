@@ -49,9 +49,21 @@ data class DayActivity(
 data class DailyGoalUiState(
     val todaySolved: Int = 0,
     val todayCorrect: Int = 0,
+    val todayIncorrect: Int = 0,
     val todayGoalTotal: Int = 20,
     val todayAccuracy: Int = 0,
     val weeklyTotalSolved: Int = 0,
+    val weeklyCorrect: Int = 0,
+    val weeklyIncorrect: Int = 0,
+    val weeklyAccuracy: Int = 0,
+    val monthlyTotalSolved: Int = 0,
+    val monthlyCorrect: Int = 0,
+    val monthlyIncorrect: Int = 0,
+    val monthlyAccuracy: Int = 0,
+    val yearlyTotalSolved: Int = 0,
+    val yearlyCorrect: Int = 0,
+    val yearlyIncorrect: Int = 0,
+    val yearlyAccuracy: Int = 0,
     val daysGoalMetThisWeek: Int = 0,
     val weekDays: List<DayActivity> = listOf(
         DayActivity("Du", 0, false),
@@ -143,12 +155,51 @@ class ProfileViewModel @Inject constructor(
         return cal.timeInMillis
     }
 
+    private fun getStartOfMonthMillis(): Long {
+        val cal = Calendar.getInstance()
+        cal.set(Calendar.HOUR_OF_DAY, 0)
+        cal.set(Calendar.MINUTE, 0)
+        cal.set(Calendar.SECOND, 0)
+        cal.set(Calendar.MILLISECOND, 0)
+        cal.set(Calendar.DAY_OF_MONTH, 1)
+        return cal.timeInMillis
+    }
+
+    private fun getStartOfYearMillis(): Long {
+        val cal = Calendar.getInstance()
+        cal.set(Calendar.HOUR_OF_DAY, 0)
+        cal.set(Calendar.MINUTE, 0)
+        cal.set(Calendar.SECOND, 0)
+        cal.set(Calendar.MILLISECOND, 0)
+        cal.set(Calendar.DAY_OF_YEAR, 1)
+        return cal.timeInMillis
+    }
+
     val dailyGoalUiState: StateFlow<DailyGoalUiState> = combine(
         database.quizAttemptDao().getTodayTotalCountFlow(getStartOfDayMillis()),
         database.quizAttemptDao().getTodayCorrectCountFlow(getStartOfDayMillis()),
-        database.quizAttemptDao().getWeeklyAttemptsFlow(getStartOfWeekMillis())
-    ) { todayTotal, todayCorrect, weeklyAttempts ->
+        database.quizAttemptDao().getWeeklyAttemptsFlow(getStartOfWeekMillis()),
+        database.quizAttemptDao().getMonthlyAttemptsFlow(getStartOfMonthMillis()),
+        database.quizAttemptDao().getYearlyAttemptsFlow(getStartOfYearMillis())
+    ) { todayTotal, todayCorrect, weeklyAttempts, monthlyAttempts, yearlyAttempts ->
+        val todayIncorrect = (todayTotal - todayCorrect).coerceAtLeast(0)
         val accuracy = if (todayTotal > 0) (todayCorrect * 100) / todayTotal else 0
+
+        val weeklyTotal = weeklyAttempts.size
+        val weeklyCorrect = weeklyAttempts.count { it.wasCorrect }
+        val weeklyIncorrect = (weeklyTotal - weeklyCorrect).coerceAtLeast(0)
+        val weeklyAccuracy = if (weeklyTotal > 0) (weeklyCorrect * 100) / weeklyTotal else 0
+
+        val monthlyTotal = monthlyAttempts.size
+        val monthlyCorrect = monthlyAttempts.count { it.wasCorrect }
+        val monthlyIncorrect = (monthlyTotal - monthlyCorrect).coerceAtLeast(0)
+        val monthlyAccuracy = if (monthlyTotal > 0) (monthlyCorrect * 100) / monthlyTotal else 0
+
+        val yearlyTotal = yearlyAttempts.size
+        val yearlyCorrect = yearlyAttempts.count { it.wasCorrect }
+        val yearlyIncorrect = (yearlyTotal - yearlyCorrect).coerceAtLeast(0)
+        val yearlyAccuracy = if (yearlyTotal > 0) (yearlyCorrect * 100) / yearlyTotal else 0
+
         val daysOfWeekUz = listOf("Du", "Se", "Ch", "Pa", "Ju", "Sh", "Ya")
 
         val cal = Calendar.getInstance()
@@ -177,9 +228,21 @@ class ProfileViewModel @Inject constructor(
         DailyGoalUiState(
             todaySolved = todayTotal,
             todayCorrect = todayCorrect,
+            todayIncorrect = todayIncorrect,
             todayGoalTotal = 20,
             todayAccuracy = accuracy,
-            weeklyTotalSolved = weeklyAttempts.size,
+            weeklyTotalSolved = weeklyTotal,
+            weeklyCorrect = weeklyCorrect,
+            weeklyIncorrect = weeklyIncorrect,
+            weeklyAccuracy = weeklyAccuracy,
+            monthlyTotalSolved = monthlyTotal,
+            monthlyCorrect = monthlyCorrect,
+            monthlyIncorrect = monthlyIncorrect,
+            monthlyAccuracy = monthlyAccuracy,
+            yearlyTotalSolved = yearlyTotal,
+            yearlyCorrect = yearlyCorrect,
+            yearlyIncorrect = yearlyIncorrect,
+            yearlyAccuracy = yearlyAccuracy,
             daysGoalMetThisWeek = daysGoalMet,
             weekDays = weekDaysList
         )
@@ -273,6 +336,13 @@ class ProfileViewModel @Inject constructor(
     val wrongQuestionsCount: StateFlow<Int> = database.wrongQuestionDao().getAll().map { it.size }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
+    val totalSavedCount: StateFlow<Int> = combine(
+        database.wrongQuestionDao().getAll(),
+        preferencesRepository.favorites
+    ) { wrongQs, favs ->
+        wrongQs.size + favs.size
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
+
     val savedItemsList: StateFlow<List<SavedItemDto>> = combine(
         database.wrongQuestionDao().getAll(),
         preferencesRepository.favorites
@@ -285,7 +355,7 @@ class ProfileViewModel @Inject constructor(
             list.add(SavedItemDto("Tanlangan savollar", "${favs.size} ta savol sevimlilarga qo'shilgan"))
         }
         if (list.isEmpty()) {
-            list.add(SavedItemDto("6-sinf Qadimgi dunyo tarixi", "Barcha 1100 ta savollar to'plami va darslik"))
+            list.add(SavedItemDto("Mavzular to'plami", "Saqlangan test va darsliklar"))
         }
         list
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
@@ -329,9 +399,30 @@ class ProfileViewModel @Inject constructor(
         try {
             val workManager = WorkManager.getInstance(context)
             if (enabled) {
+                val timeStr = reminderTime.value
+                val parts = timeStr.split(":")
+                val targetHour = parts.getOrNull(0)?.toIntOrNull() ?: 8
+                val targetMinute = parts.getOrNull(1)?.toIntOrNull() ?: 30
+
+                val now = Calendar.getInstance()
+                val target = Calendar.getInstance().apply {
+                    set(Calendar.HOUR_OF_DAY, targetHour)
+                    set(Calendar.MINUTE, targetMinute)
+                    set(Calendar.SECOND, 0)
+                    set(Calendar.MILLISECOND, 0)
+                    if (before(now)) {
+                        add(Calendar.DAY_OF_YEAR, 1)
+                    }
+                }
+
+                val initialDelayMillis = target.timeInMillis - now.timeInMillis
+
                 val request = PeriodicWorkRequestBuilder<DailyNotificationWorker>(
                     24, TimeUnit.HOURS
-                ).build()
+                )
+                    .setInitialDelay(initialDelayMillis, TimeUnit.MILLISECONDS)
+                    .build()
+
                 workManager.enqueueUniquePeriodicWork(
                     "daily_quiz_notification",
                     ExistingPeriodicWorkPolicy.UPDATE,

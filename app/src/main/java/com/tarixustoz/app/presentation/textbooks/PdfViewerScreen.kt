@@ -316,7 +316,7 @@ fun PdfViewerScreen(
     }
 
     Scaffold(
-        contentWindowInsets = WindowInsets(0.dp),
+        contentWindowInsets = WindowInsets.safeDrawing,
         topBar = {
             AnimatedVisibility(
                 visible = isControlsVisible,
@@ -440,7 +440,6 @@ fun PdfViewerScreen(
                                     Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Orqaga")
                                 }
                             },
-                            windowInsets = WindowInsets(0.dp),
                             actions = {
                                 // Search Icon
                                 IconButton(onClick = { isSearchActive = true }) {

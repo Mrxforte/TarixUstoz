@@ -24,6 +24,8 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.ThemeMode
 import com.tarixustoz.app.presentation.theme.BrandPurple
@@ -34,7 +36,6 @@ import java.util.Locale
 @Composable
 fun ProfileScreen(
     onNavigateToEditProfile: () -> Unit = {},
-    onNavigateToAuth: () -> Unit = {},
     onNavigateToSavedTests: () -> Unit = {},
     profileViewModel: ProfileViewModel = hiltViewModel(),
     themeViewModel: ThemeViewModel = hiltViewModel()
@@ -47,11 +48,10 @@ fun ProfileScreen(
     val userStreak by profileViewModel.userStreak.collectAsState()
     val selectedGrade by profileViewModel.selectedGrade.collectAsState()
     val levelTitle by profileViewModel.levelTitle.collectAsState()
-    val userEmail by profileViewModel.userEmail.collectAsState()
-    val isGuest by profileViewModel.isGuest.collectAsState()
 
     val totalSolvedCount by profileViewModel.totalSolvedCount.collectAsState()
     val accuracyPercentage by profileViewModel.accuracyPercentage.collectAsState()
+    val totalSavedCount by profileViewModel.totalSavedCount.collectAsState()
     val savedItemsList by profileViewModel.savedItemsList.collectAsState()
     val achievementsList by profileViewModel.achievementsList.collectAsState()
     val dailyGoalUiState by profileViewModel.dailyGoalUiState.collectAsState()
@@ -68,7 +68,7 @@ fun ProfileScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets(0.dp),
+        contentWindowInsets = WindowInsets.safeDrawing,
         topBar = {
             TopAppBar(
                 title = {
@@ -92,8 +92,7 @@ fun ProfileScreen(
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background
-                ),
-                windowInsets = WindowInsets(0.dp)
+                )
             )
         }
     ) { innerPadding ->
@@ -221,68 +220,7 @@ fun ProfileScreen(
                 }
             }
 
-            // Google Account / Optional Sign-In Card
-            Surface(
-                shape = RoundedCornerShape(18.dp),
-                color = if (isGuest) Color(0xFFFAF5FF) else Color(0xFFF0FDF4),
-                border = BorderStroke(1.dp, if (isGuest) BrandPurple.copy(alpha = 0.3f) else Color(0xFF86EFAC)),
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Row(
-                    modifier = Modifier.padding(16.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Surface(
-                        shape = CircleShape,
-                        color = if (isGuest) BrandPurple else Color(0xFF16A34A),
-                        modifier = Modifier.size(40.dp)
-                    ) {
-                        Box(contentAlignment = Alignment.Center) {
-                            Icon(
-                                Icons.Default.AccountCircle,
-                                contentDescription = null,
-                                tint = Color.White,
-                                modifier = Modifier.size(22.dp)
-                            )
-                        }
-                    }
-                    Spacer(Modifier.width(12.dp))
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(
-                            text = if (isGuest) "Mehmon rejimi" else "Google hisobi",
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 14.sp
-                        )
-                        Spacer(Modifier.height(2.dp))
-                        Text(
-                            text = if (isGuest) "Hisobingizni Google ga ulab natijalarni saqlang" else (userEmail ?: "Ulangani: Google"),
-                            fontSize = 12.sp,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-                    Spacer(Modifier.width(8.dp))
-                    if (isGuest) {
-                        Button(
-                            onClick = onNavigateToAuth,
-                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
-                            shape = RoundedCornerShape(12.dp),
-                            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
-                        ) {
-                            Text("Kirish", fontSize = 12.sp, fontWeight = FontWeight.Bold)
-                        }
-                    } else {
-                        OutlinedButton(
-                            onClick = { profileViewModel.signOut() },
-                            shape = RoundedCornerShape(12.dp),
-                            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
-                        ) {
-                            Text("Chiqish", fontSize = 12.sp)
-                        }
-                    }
-                }
-            }
-
-            // Kunlik reja Chart Card
+            // Natijalar Chart Card
             DailyGoalChartCard(dailyGoal = dailyGoalUiState)
 
             // NOTIFICATION SETTINGS
@@ -426,7 +364,7 @@ fun ProfileScreen(
                 Column {
                     ProfileMenuRow(
                         title = "Saqlanganlar",
-                        subtitle = "${savedItemsList.size} ta saqlangan mavzu va manbalar",
+                        subtitle = if (totalSavedCount > 0) "$totalSavedCount ta saqlangan mavzu va manbalar" else "Hali saqlanganlar yo'q",
                         icon = Icons.Default.Bookmark,
                         onClick = onNavigateToSavedTests
                     )
@@ -544,77 +482,19 @@ fun ProfileScreen(
                 }
             }
 
-            Spacer(Modifier.height(30.dp))
+            Spacer(Modifier.height(100.dp))
         }
     }
 
-    // Time Picker Dialog for Notifications
+    // Time Picker Dialog for Notifications (Alarm Clock Style)
     if (showTimePickerDialog) {
-        val context = LocalContext.current
-        AlertDialog(
-            onDismissRequest = { showTimePickerDialog = false },
-            title = { Text("Eslatma vaqtini tanlang", fontWeight = FontWeight.Bold) },
-            text = {
-                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    val times = listOf("07:00", "08:30", "12:00", "18:00", "20:00", "21:30")
-                    times.forEach { time ->
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .clickable {
-                                    profileViewModel.setReminderTime(time)
-                                    showTimePickerDialog = false
-                                }
-                                .padding(vertical = 8.dp)
-                        ) {
-                            RadioButton(
-                                selected = reminderTime == time,
-                                onClick = {
-                                    profileViewModel.setReminderTime(time)
-                                    showTimePickerDialog = false
-                                },
-                                colors = RadioButtonDefaults.colors(selectedColor = BrandPurple)
-                            )
-                            Spacer(Modifier.width(8.dp))
-                            Text(time, fontSize = 16.sp, fontWeight = FontWeight.Medium)
-                        }
-                    }
-
-                    HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
-
-                    OutlinedButton(
-                        onClick = {
-                            val parts = reminderTime.split(":")
-                            val hour = parts.getOrNull(0)?.toIntOrNull() ?: 8
-                            val minute = parts.getOrNull(1)?.toIntOrNull() ?: 30
-
-                            TimePickerDialog(
-                                context,
-                                { _, h, m ->
-                                    val formatted = String.format(Locale.getDefault(), "%02d:%02d", h, m)
-                                    profileViewModel.setReminderTime(formatted)
-                                    showTimePickerDialog = false
-                                },
-                                hour,
-                                minute,
-                                true
-                            ).show()
-                        },
-                        shape = RoundedCornerShape(12.dp),
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Icon(Icons.Default.Schedule, contentDescription = null, modifier = Modifier.size(18.dp))
-                        Spacer(Modifier.width(8.dp))
-                        Text("Boshqa aniq vaqt tanlash (TimePicker)")
-                    }
-                }
+        AlarmClockTimePickerDialog(
+            initialTime = reminderTime,
+            onTimeSelected = { newTime ->
+                profileViewModel.setReminderTime(newTime)
+                showTimePickerDialog = false
             },
-            confirmButton = {
-                TextButton(onClick = { showTimePickerDialog = false }) {
-                    Text("Bekor qilish")
-                }
-            }
+            onDismiss = { showTimePickerDialog = false }
         )
     }
 
@@ -746,7 +626,7 @@ private fun DailyGoalChartCard(
             modifier = Modifier.padding(18.dp),
             verticalArrangement = Arrangement.spacedBy(14.dp)
         ) {
-            // Header Row: Kunlik reja + 20 savol pill
+            // Header Row: Natijalar + 20 savol pill
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -769,7 +649,7 @@ private fun DailyGoalChartCard(
                     }
                     Spacer(Modifier.width(10.dp))
                     Text(
-                        text = "Kunlik reja",
+                        text = "Natijalar",
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold
                     )
@@ -829,7 +709,7 @@ private fun DailyGoalChartCard(
                 }
             }
 
-            // Today Progress Box
+            // Today Progress Box with Dual-color bar chart (Green correct, Red incorrect)
             Surface(
                 shape = RoundedCornerShape(14.dp),
                 color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
@@ -849,32 +729,77 @@ private fun DailyGoalChartCard(
                             color = BrandPurple
                         )
                     }
-                    Spacer(Modifier.height(6.dp))
-                    LinearProgressIndicator(
-                        progress = { (dailyGoal.todaySolved.toFloat() / dailyGoal.todayGoalTotal).coerceIn(0f, 1f) },
+                    Spacer(Modifier.height(8.dp))
+
+                    val solved = dailyGoal.todaySolved
+                    val correct = dailyGoal.todayCorrect
+                    val incorrect = dailyGoal.todayIncorrect
+                    val correctRatio = if (solved > 0) correct.toFloat() / solved else 0f
+                    val incorrectRatio = if (solved > 0) incorrect.toFloat() / solved else 0f
+
+                    Row(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(6.dp)
-                            .clip(RoundedCornerShape(3.dp)),
-                        color = BrandPurple,
-                        trackColor = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
-                    )
-                    Spacer(Modifier.height(6.dp))
+                            .height(8.dp)
+                            .clip(RoundedCornerShape(4.dp))
+                            .background(MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f))
+                    ) {
+                        if (correctRatio > 0f) {
+                            Box(
+                                modifier = Modifier
+                                    .weight(correctRatio)
+                                    .fillMaxHeight()
+                                    .background(Color(0xFF16A34A))
+                            )
+                        }
+                        if (incorrectRatio > 0f) {
+                            Box(
+                                modifier = Modifier
+                                    .weight(incorrectRatio)
+                                    .fillMaxHeight()
+                                    .background(Color(0xFFEF4444))
+                            )
+                        }
+                        if (solved == 0) {
+                            Box(modifier = Modifier.fillMaxSize())
+                        }
+                    }
+
+                    Spacer(Modifier.height(8.dp))
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Text("To'g'ri: ${dailyGoal.todayCorrect}", fontSize = 11.sp, color = Color(0xFF16A34A), fontWeight = FontWeight.Bold)
-                        Text("Aniqlik: ${if (dailyGoal.todaySolved > 0) "${dailyGoal.todayAccuracy}%" else "—"}", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Text("To'g'ri: $correct", fontSize = 11.sp, color = Color(0xFF16A34A), fontWeight = FontWeight.Bold)
+                        Text("Noto'g'ri: $incorrect", fontSize = 11.sp, color = Color(0xFFEF4444), fontWeight = FontWeight.Bold)
+                        Text("Aniqlik: ${dailyGoal.todayAccuracy}%", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, fontWeight = FontWeight.Bold)
                     }
                 }
             }
 
-            Text(
-                text = "Hafta: ${dailyGoal.weeklyTotalSolved} savol • maqsad bajarilgan: ${dailyGoal.daysGoalMetThisWeek}/7 kun",
-                fontSize = 11.sp,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
+            // Hafta, Oy, Yil Sarhisbi
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 4.dp),
+                verticalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
+                Text(
+                    text = "Hafta sarhisbi: ${dailyGoal.weeklyTotalSolved} savol (To'g'ri: ${dailyGoal.weeklyCorrect}, Noto'g'ri: ${dailyGoal.weeklyIncorrect}, Aniqlik: ${dailyGoal.weeklyAccuracy}%)",
+                    fontSize = 11.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = "Oy sarhisbi: ${dailyGoal.monthlyTotalSolved} savol (To'g'ri: ${dailyGoal.monthlyCorrect}, Noto'g'ri: ${dailyGoal.monthlyIncorrect}, Aniqlik: ${dailyGoal.monthlyAccuracy}%)",
+                    fontSize = 11.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = "Yil sarhisbi: ${dailyGoal.yearlyTotalSolved} savol (To'g'ri: ${dailyGoal.yearlyCorrect}, Noto'g'ri: ${dailyGoal.yearlyIncorrect}, Aniqlik: ${dailyGoal.yearlyAccuracy}%)",
+                    fontSize = 11.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
         }
     }
 }
@@ -1095,6 +1020,252 @@ private fun ProfileThemeChoiceCard(
                 fontSize = 11.sp,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun AlarmClockTimePickerDialog(
+    initialTime: String,
+    onTimeSelected: (String) -> Unit,
+    onDismiss: () -> Unit
+) {
+    val parts = remember(initialTime) { initialTime.split(":") }
+    val defaultHour = remember(parts) { parts.getOrNull(0)?.toIntOrNull() ?: 8 }
+    val defaultMinute = remember(parts) { parts.getOrNull(1)?.toIntOrNull() ?: 30 }
+
+    var selectedHour by remember { mutableIntStateOf(defaultHour) }
+    var selectedMinute by remember { mutableIntStateOf(defaultMinute) }
+
+    var showKeyboardInput by remember { mutableStateOf(false) }
+
+    key(selectedHour, selectedMinute) {
+        val timePickerState = rememberTimePickerState(
+            initialHour = selectedHour,
+            initialMinute = selectedMinute,
+            is24Hour = true
+        )
+
+        val currentFormattedTime = remember(timePickerState.hour, timePickerState.minute) {
+            String.format(Locale.getDefault(), "%02d:%02d", timePickerState.hour, timePickerState.minute)
+        }
+
+        Dialog(
+            onDismissRequest = onDismiss,
+            properties = DialogProperties(usePlatformDefaultWidth = false)
+        ) {
+            Surface(
+                shape = RoundedCornerShape(28.dp),
+                color = MaterialTheme.colorScheme.surface,
+                tonalElevation = 6.dp,
+                border = BorderStroke(1.2.dp, BrandPurple.copy(alpha = 0.25f)),
+                modifier = Modifier
+                    .fillMaxWidth(0.92f)
+                    .padding(16.dp)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .padding(20.dp)
+                        .verticalScroll(rememberScrollState()),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(14.dp)
+                ) {
+                    // Header with Alarm Clock Icon
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Surface(
+                                shape = CircleShape,
+                                color = BrandPurple.copy(alpha = 0.12f),
+                                modifier = Modifier.size(42.dp)
+                            ) {
+                                Box(contentAlignment = Alignment.Center) {
+                                    Icon(
+                                        imageVector = Icons.Default.Alarm,
+                                        contentDescription = null,
+                                        tint = BrandPurple,
+                                        modifier = Modifier.size(24.dp)
+                                    )
+                                }
+                            }
+                            Spacer(Modifier.width(12.dp))
+                            Column {
+                                Text(
+                                    text = "Eslatma vaqti",
+                                    style = MaterialTheme.typography.titleMedium,
+                                    fontWeight = FontWeight.Bold
+                                )
+                                Text(
+                                    text = "Budilnik sozlamasi",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                        }
+
+                        // Mode Toggle (Dial vs Keyboard)
+                        IconButton(
+                            onClick = { showKeyboardInput = !showKeyboardInput },
+                            modifier = Modifier
+                                .clip(CircleShape)
+                                .background(MaterialTheme.colorScheme.surfaceVariant)
+                        ) {
+                            Icon(
+                                imageVector = if (showKeyboardInput) Icons.Default.Schedule else Icons.Default.Edit,
+                                contentDescription = "Kiritish rejimi",
+                                tint = BrandPurple
+                            )
+                        }
+                    }
+
+                    // Large Digital Time Display (Alarm Clock Style)
+                    Surface(
+                        shape = RoundedCornerShape(20.dp),
+                        color = BrandPurple.copy(alpha = 0.08f),
+                        border = BorderStroke(1.5.dp, BrandPurple.copy(alpha = 0.35f)),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 12.dp, horizontal = 16.dp),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(
+                                text = currentFormattedTime,
+                                fontSize = 40.sp,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = BrandPurple,
+                                letterSpacing = 2.sp
+                            )
+                            Text(
+                                text = "Har kuni shu vaqtda eslatiladi",
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Medium,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+
+                    // Preset Quick Choice Chips
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalAlignment = Alignment.Start
+                    ) {
+                        Text(
+                            text = "Tayyor vaqtlar:",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(bottom = 6.dp)
+                        )
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            val quickTimes = listOf("07:00", "08:30", "12:00", "18:00", "21:30")
+                            quickTimes.forEach { qTime ->
+                                val isSelected = currentFormattedTime == qTime
+                                Surface(
+                                    shape = RoundedCornerShape(10.dp),
+                                    color = if (isSelected) BrandPurple else MaterialTheme.colorScheme.surfaceVariant,
+                                    modifier = Modifier
+                                        .weight(1f)
+                                        .clickable {
+                                            val qParts = qTime.split(":")
+                                            selectedHour = qParts.getOrNull(0)?.toIntOrNull() ?: 8
+                                            selectedMinute = qParts.getOrNull(1)?.toIntOrNull() ?: 30
+                                        }
+                                ) {
+                                    Box(
+                                        contentAlignment = Alignment.Center,
+                                        modifier = Modifier.padding(vertical = 6.dp)
+                                    ) {
+                                        Text(
+                                            text = qTime,
+                                            fontSize = 11.sp,
+                                            fontWeight = FontWeight.Bold,
+                                            color = if (isSelected) Color.White else MaterialTheme.colorScheme.onSurface
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // Time Picker Component
+                    Box(
+                        modifier = Modifier.fillMaxWidth(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        if (showKeyboardInput) {
+                            TimeInput(
+                                state = timePickerState,
+                                colors = TimePickerDefaults.colors(
+                                    timeSelectorSelectedContainerColor = BrandPurple.copy(alpha = 0.15f),
+                                    timeSelectorSelectedContentColor = BrandPurple
+                                )
+                            )
+                        } else {
+                            TimePicker(
+                                state = timePickerState,
+                                colors = TimePickerDefaults.colors(
+                                    clockDialSelectedContentColor = Color.White,
+                                    clockDialUnselectedContentColor = MaterialTheme.colorScheme.onSurface,
+                                    selectorColor = BrandPurple,
+                                    timeSelectorSelectedContainerColor = BrandPurple.copy(alpha = 0.15f),
+                                    timeSelectorSelectedContentColor = BrandPurple
+                                )
+                            )
+                        }
+                    }
+
+                    // Action Buttons
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.End,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        TextButton(
+                            onClick = onDismiss,
+                            shape = RoundedCornerShape(12.dp)
+                        ) {
+                            Text(
+                                text = "Bekor qilish",
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+
+                        Spacer(Modifier.width(8.dp))
+
+                        Button(
+                            onClick = {
+                                val timeStr = String.format(Locale.getDefault(), "%02d:%02d", timePickerState.hour, timePickerState.minute)
+                                onTimeSelected(timeStr)
+                            },
+                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
+                            shape = RoundedCornerShape(14.dp),
+                            contentPadding = PaddingValues(horizontal = 20.dp, vertical = 10.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Check,
+                                contentDescription = null,
+                                modifier = Modifier.size(18.dp)
+                            )
+                            Spacer(Modifier.width(6.dp))
+                            Text(
+                                text = "Saqlash",
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 14.sp
+                            )
+                        }
+                    }
+                }
+            }
         }
     }
 }

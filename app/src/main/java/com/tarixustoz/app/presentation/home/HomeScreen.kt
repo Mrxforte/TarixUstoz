@@ -13,6 +13,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.outlined.Schedule
@@ -37,42 +38,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.ads.AdMobManager
+import com.tarixustoz.app.domain.model.Topic
+import com.tarixustoz.app.domain.model.gradeId
 import com.tarixustoz.app.presentation.common.components.TestSectionRow
 import com.tarixustoz.app.presentation.tests.TestCardItem
+import com.tarixustoz.app.presentation.tests.toTestCardItem
 import com.tarixustoz.app.presentation.theme.*
-
-private fun iconForCategory(iconType: String): ImageVector = when (iconType) {
-    "person" -> Icons.Default.Person
-    "calendar" -> Icons.Default.CalendarMonth
-    "event" -> Icons.Default.Event
-    "fact", "monument" -> Icons.Default.FactCheck
-    "war" -> Icons.Default.Security
-    "logical" -> Icons.Default.Psychology
-    "topic" -> Icons.Default.MenuBook
-    else -> Icons.Default.Category
-}
-
-private fun tintForCategory(iconType: String): Color = when (iconType) {
-    "location" -> Color(0xFFF97316)
-    "person" -> Color(0xFF8B5CF6)
-    "calendar" -> Color(0xFF16A34A)
-    "event" -> Color(0xFF6366F1)
-    "fact" -> Color(0xFF8B5CF6)
-    "monument" -> Color(0xFF8B5CF6)
-    "war" -> Color(0xFFDC2626)
-    "logical" -> Color(0xFF0284C7)
-    else -> Color(0xFF0284C7)
-}
-
-private fun backgroundForCategory(iconType: String): Color = when (iconType) {
-    "location" -> Color(0xFFFFF7ED)
-    "fact", "monument" -> Color(0xFFF5F3FF)
-    "calendar" -> Color(0xFFF0FDF4)
-    "event" -> Color(0xFFEEF2FF)
-    "war" -> Color(0xFFFEF2F2)
-    "logical", "topic" -> Color(0xFFEFF6FF)
-    else -> Color(0xFFEFF6FF)
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -86,6 +57,9 @@ fun HomeScreen(
     onNavigateToTestsHub: () -> Unit,
     onNavigateToNotifications: () -> Unit,
     onNavigateToTopicSelection: () -> Unit,
+    onNavigateToVerticalCards: (title: String, categoryType: String) -> Unit = { _, _ -> },
+    onNavigateToTickets: (categoryKey: String, categoryTitle: String) -> Unit = { _, _ -> },
+    onStartQuizForBookOrTopic: (id: String) -> Unit = {},
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -94,13 +68,18 @@ fun HomeScreen(
     val coroutineScope = rememberCoroutineScope()
     val pullState = rememberPullToRefreshState()
 
+    val homeTopicCards by viewModel.homeTopicCards.collectAsState()
+    val homeGradeCards by viewModel.homeGradeCards.collectAsState()
+    val homeDirectionCards by viewModel.homeDirectionCards.collectAsState()
+
     LaunchedEffect(Unit) {
+        viewModel.loadDirectionCounts()
         viewModel.load()
     }
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets(0.dp),
+        contentWindowInsets = WindowInsets.safeDrawing,
         topBar = {
             TopAppBar(
                 title = {
@@ -177,8 +156,7 @@ fun HomeScreen(
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background
-                ),
-                windowInsets = WindowInsets(0.dp)
+                )
             )
         }
     ) { innerPadding ->
@@ -210,7 +188,8 @@ fun HomeScreen(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(horizontal = 16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+                contentPadding = PaddingValues(bottom = 90.dp)
             ) {
                 item { Spacer(Modifier.height(4.dp)) }
 
@@ -496,7 +475,7 @@ fun HomeScreen(
                             }
                         } else {
                             Button(
-                                onClick = { onNavigateToQuiz("daily") },
+                                onClick = { viewModel.loadNextDailyQuestion() },
                                 colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
                                 shape = RoundedCornerShape(14.dp),
                                 modifier = Modifier
@@ -505,14 +484,14 @@ fun HomeScreen(
                                     .testTag("home_daily_answer_button")
                             ) {
                                 Text(
-                                    text = "To‘liq test shaklida yechish",
+                                    text = "Tasodifiy savol / Yangi test",
                                     fontSize = 15.sp,
                                     fontWeight = FontWeight.SemiBold,
                                     color = Color.White
                                 )
                                 Spacer(Modifier.width(8.dp))
                                 Icon(
-                                    Icons.AutoMirrored.Filled.ArrowForward,
+                                    Icons.Default.Refresh,
                                     contentDescription = null,
                                     tint = Color.White,
                                     modifier = Modifier.size(18.dp)
@@ -604,90 +583,44 @@ fun HomeScreen(
                 }
             }
 
-            // 4. Test yo'nalishlari Section Header
+            // 4. Tarixiy Yo'nalishlar Horizontal Row (Cards like Image #2)
             item {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Column {
-                        Text(
-                            text = "Test yo‘nalishlari",
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold,
-                            color = MaterialTheme.colorScheme.onSurface
-                        )
-                        Text(
-                            text = "Bilimingizni sinab ko‘ring",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-
-                    Row(
-                        modifier = Modifier
-                            .clickable { onNavigateToTestsHub() }
-                            .padding(4.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text(
-                            text = "Barchasi",
-                            style = MaterialTheme.typography.labelLarge,
-                            fontWeight = FontWeight.SemiBold,
-                            color = BrandPurple
-                        )
-                        Icon(
-                            Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                            contentDescription = null,
-                            tint = BrandPurple,
-                            modifier = Modifier.size(16.dp)
-                        )
-                    }
-                }
+                TestSectionRow(
+                    sectionTitle = "Tarixiy yo'nalishli testlar",
+                    items = homeDirectionCards,
+                    onSeeAllClick = { onNavigateToVerticalCards("Tarixiy Yo'nalishlar", "directions") },
+                    onCardClick = { code, _, title -> onNavigateToTickets(code, title) }
+                )
             }
 
-            // 4 Categories Grid (dynamic, 2 per row)
+            // 5. Mavzulashgan testlar Horizontal Row (Cards like Image #2)
             item {
-                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    uiState.categories.chunked(2).forEach { rowItems ->
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(IntrinsicSize.Max),
-                            horizontalArrangement = Arrangement.spacedBy(10.dp)
-                        ) {
-                            rowItems.forEach { category ->
-                                CategoryGridCard(
-                                    title = category.title,
-                                    count = category.countLabel,
-                                    icon = iconForCategory(category.iconType),
-                                    iconTint = tintForCategory(category.iconType),
-                                    iconBg = backgroundForCategory(category.iconType),
-                                    modifier = Modifier
-                                        .weight(1f)
-                                        .fillMaxHeight(),
-                                    onClick = {
-                                        val direction = category.direction
-                                        if (direction != null) {
-                                            onStartDirectionQuiz(direction)
-                                        } else {
-                                            onNavigateToTopicSelection()
-                                        }
-                                    }
-                                )
-                            }
-                            if (rowItems.size == 1) {
-                                Spacer(Modifier.weight(1f))
-                            }
-                        }
+                TestSectionRow(
+                    sectionTitle = "Mavzulashgan testlar",
+                    items = homeTopicCards,
+                    onSeeAllClick = { onNavigateToVerticalCards("Mavzulashgan Testlar", "topics") },
+                    onCardClick = { topicId, _, title ->
+                        onNavigateToTickets(topicId, title)
                     }
-                }
+                )
+            }
+
+            // 6. Sinf testlari Horizontal Row (Cards like Image #2)
+            item {
+                TestSectionRow(
+                    sectionTitle = "Sinf testlari (6-11 sinflar)",
+                    items = homeGradeCards,
+                    onSeeAllClick = { onNavigateToVerticalCards("Sinf Testlari", "grades") },
+                    onCardClick = { gradeKey, _, gradeTitle ->
+                        onNavigateToTickets(gradeKey, gradeTitle)
+                    }
+                )
             }
 
             item { Spacer(Modifier.height(16.dp)) }
         }
     }
+}
 
     // Interactive Notification Bottom Sheet
     if (showNotificationSheet) {
@@ -732,73 +665,6 @@ fun HomeScreen(
                     time = "Kecha"
                 )
                 Spacer(Modifier.height(24.dp))
-            }
-        }
-    }
-}
-}
-
-@Composable
-private fun CategoryGridCard(
-    title: String,
-    count: String,
-    icon: ImageVector,
-    iconTint: Color,
-    iconBg: Color,
-    modifier: Modifier = Modifier,
-    onClick: () -> Unit
-) {
-    Surface(
-        shape = RoundedCornerShape(16.dp),
-        color = MaterialTheme.colorScheme.surface,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-        shadowElevation = 0.5.dp,
-        modifier = modifier
-            .defaultMinSize(minHeight = 68.dp)
-            .clickable(onClick = onClick)
-            .testTag("category_card_${title.lowercase().replace(" ", "_")}")
-    ) {
-        Row(
-            modifier = Modifier
-                .padding(12.dp)
-                .fillMaxHeight(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Surface(
-                shape = RoundedCornerShape(12.dp),
-                color = iconBg,
-                modifier = Modifier.size(40.dp)
-            ) {
-                Box(contentAlignment = Alignment.Center) {
-                    Icon(
-                        icon,
-                        contentDescription = null,
-                        tint = iconTint,
-                        modifier = Modifier.size(20.dp)
-                    )
-                }
-            }
-            Spacer(Modifier.width(10.dp))
-            Column(
-                modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = title,
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.onSurface,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis
-                )
-                Spacer(Modifier.height(2.dp))
-                Text(
-                    text = count,
-                    fontSize = 11.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
             }
         }
     }

@@ -235,6 +235,12 @@ interface QuizAttemptDao {
     @Query("SELECT * FROM quiz_attempts WHERE timestamp >= :startOfWeek")
     fun getWeeklyAttemptsFlow(startOfWeek: Long): Flow<List<QuizAttemptEntity>>
 
+    @Query("SELECT * FROM quiz_attempts WHERE timestamp >= :startOfMonth")
+    fun getMonthlyAttemptsFlow(startOfMonth: Long): Flow<List<QuizAttemptEntity>>
+
+    @Query("SELECT * FROM quiz_attempts WHERE timestamp >= :startOfYear")
+    fun getYearlyAttemptsFlow(startOfYear: Long): Flow<List<QuizAttemptEntity>>
+
     @Query("DELETE FROM quiz_attempts")
     suspend fun deleteAll()
 }

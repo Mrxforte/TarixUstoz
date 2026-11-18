@@ -1,29 +1,40 @@
 package com.tarixustoz.app.presentation.quiz
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.ads.AdMobManager
 import com.tarixustoz.app.domain.model.AnswerOption
+import com.tarixustoz.app.presentation.theme.BrandPurple
+import kotlinx.coroutines.delay
+import kotlin.math.roundToInt
 
 @Composable
 fun QuizScreen(
@@ -51,6 +62,7 @@ fun QuizScreen(
             ResultScreen(
                 correct = uiState.correctCount,
                 total = uiState.questions.size,
+                timeSpentSeconds = uiState.timeSpentSeconds,
                 onRetry = { viewModel.startQuiz(topicId) }
             )
         }
@@ -62,7 +74,8 @@ fun QuizScreen(
         else -> {
             val question = uiState.questions[uiState.currentIndex]
             Scaffold(
-                containerColor = MaterialTheme.colorScheme.background
+                containerColor = MaterialTheme.colorScheme.background,
+                contentWindowInsets = WindowInsets.safeDrawing
             ) { innerPadding ->
                 Column(
                     modifier = Modifier
@@ -268,33 +281,225 @@ fun QuizScreen(
 }
 
 @Composable
-private fun ResultScreen(correct: Int, total: Int, onRetry: () -> Unit) {
-    val accuracy = if (total > 0) correct.toFloat() / total else 0f
+private fun ResultScreen(
+    correct: Int,
+    total: Int,
+    timeSpentSeconds: Int,
+    onRetry: () -> Unit
+) {
+    val incorrect = (total - correct).coerceAtLeast(0)
+    val accuracyPct = if (total > 0) (correct * 100f / total).roundToInt() else 0
+
+    var startAnim by remember { mutableStateOf(false) }
+    val animProgress by animateFloatAsState(
+        targetValue = if (startAnim) 1f else 0f,
+        animationSpec = tween(durationMillis = 1000, easing = FastOutSlowInEasing),
+        label = "resultAnim"
+    )
+
+    LaunchedEffect(Unit) {
+        startAnim = false
+        delay(50)
+        startAnim = true
+    }
+
+    val displayCorrect = (correct * animProgress).roundToInt()
+    val displayIncorrect = (incorrect * animProgress).roundToInt()
+    val displayTotal = (total * animProgress).roundToInt()
+    val displayAccuracy = (accuracyPct * animProgress).roundToInt()
+    val displaySeconds = (timeSpentSeconds * animProgress).roundToInt()
+
+    val formattedTime = remember(displaySeconds) {
+        val min = displaySeconds / 60
+        val sec = displaySeconds % 60
+        if (min > 0) "${min} daq ${sec} son" else "${sec} son"
+    }
+
     Column(
-        Modifier.fillMaxSize().padding(24.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(20.dp)
+            .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
+        Spacer(Modifier.height(10.dp))
+
         Text(
-            "Natija",
-            style = MaterialTheme.typography.headlineLarge,
-            fontWeight = FontWeight.Bold
+            text = "Test Natijasi 🎯",
+            style = MaterialTheme.typography.headlineMedium,
+            fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colorScheme.onSurface
         )
-        Spacer(Modifier.height(16.dp))
+
+        // Ring Accuracy Chart
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier.size(170.dp)
+        ) {
+            val primaryColor = BrandPurple
+            val trackColor = MaterialTheme.colorScheme.surfaceVariant
+            val successColor = Color(0xFF10B981)
+
+            Canvas(modifier = Modifier.fillMaxSize()) {
+                val strokeWidth = 14.dp.toPx()
+                drawArc(
+                    color = trackColor,
+                    startAngle = 0f,
+                    sweepAngle = 360f,
+                    useCenter = false,
+                    style = Stroke(width = strokeWidth)
+                )
+                val sweepAngle = 360f * (accuracyPct / 100f) * animProgress
+                drawArc(
+                    color = if (accuracyPct >= 70) successColor else primaryColor,
+                    startAngle = -90f,
+                    sweepAngle = sweepAngle,
+                    useCenter = false,
+                    style = Stroke(width = strokeWidth, cap = StrokeCap.Round)
+                )
+            }
+
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text(
+                    text = "$displayAccuracy%",
+                    fontSize = 32.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = if (accuracyPct >= 70) Color(0xFF10B981) else BrandPurple
+                )
+                Text(
+                    text = "Aniqlik",
+                    fontSize = 12.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    fontWeight = FontWeight.Medium
+                )
+            }
+        }
+
         Text(
-            "$correct / $total",
-            style = MaterialTheme.typography.displayMedium,
-            color = MaterialTheme.colorScheme.primary
+            text = if (accuracyPct >= 80) "Ajoyib natija! Barakalla! 🎉"
+            else if (accuracyPct >= 60) "Yaxshi ko‘rsatkich, yana bir oz harakat qiling! 👍"
+            else "Xatolar ustida ishlab bilimlarni oshiring! 💪",
+            style = MaterialTheme.typography.titleSmall,
+            fontWeight = FontWeight.SemiBold,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
         )
-        Text(
-            "Aniqlik: ${(accuracy * 100).toInt()}%",
-            style = MaterialTheme.typography.titleMedium
-        )
-        Spacer(Modifier.height(32.dp))
-        Button(onClick = onRetry, shape = RoundedCornerShape(12.dp)) {
+
+        // 4 Metric Detail Cards
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                // To'g'ri javoblar
+                ResultMetricCard(
+                    modifier = Modifier.weight(1f),
+                    title = "To‘g‘ri javob",
+                    value = "$displayCorrect ta",
+                    subtitle = "$displayAccuracy%",
+                    icon = Icons.Default.CheckCircle,
+                    color = Color(0xFF10B981),
+                    bgColor = Color(0xFFECFDF5)
+                )
+
+                // Xato javoblar
+                ResultMetricCard(
+                    modifier = Modifier.weight(1f),
+                    title = "Xato javob",
+                    value = "$displayIncorrect ta",
+                    subtitle = "${(100 - accuracyPct).coerceAtLeast(0)}%",
+                    icon = Icons.Default.Cancel,
+                    color = Color(0xFFEF4444),
+                    bgColor = Color(0xFFFEF2F2)
+                )
+            }
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                // Sarflangan vaqt
+                ResultMetricCard(
+                    modifier = Modifier.weight(1f),
+                    title = "Sarflangan vaqt",
+                    value = formattedTime,
+                    subtitle = "Vaqt tahlili",
+                    icon = Icons.Default.Schedule,
+                    color = Color(0xFF0284C7),
+                    bgColor = Color(0xFFEFF6FF)
+                )
+
+                // Jami ishlangan testlar
+                ResultMetricCard(
+                    modifier = Modifier.weight(1f),
+                    title = "Jami savol",
+                    value = "$displayTotal ta",
+                    subtitle = "Ishlangan test",
+                    icon = Icons.Default.Quiz,
+                    color = BrandPurple,
+                    bgColor = Color(0xFFF5F3FF)
+                )
+            }
+        }
+
+        Spacer(Modifier.height(8.dp))
+
+        // Action Buttons
+        Button(
+            onClick = onRetry,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp),
+            shape = RoundedCornerShape(14.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple)
+        ) {
             Icon(Icons.Default.Refresh, contentDescription = null)
             Spacer(Modifier.width(8.dp))
-            Text("Qayta urinish")
+            Text("Qayta urinish", fontWeight = FontWeight.Bold, fontSize = 15.sp)
+        }
+
+        Spacer(Modifier.height(10.dp))
+    }
+}
+
+@Composable
+private fun ResultMetricCard(
+    modifier: Modifier = Modifier,
+    title: String,
+    value: String,
+    subtitle: String,
+    icon: ImageVector,
+    color: Color,
+    bgColor: Color
+) {
+    Surface(
+        shape = RoundedCornerShape(16.dp),
+        color = bgColor,
+        border = BorderStroke(1.dp, color.copy(alpha = 0.25f)),
+        modifier = modifier
+    ) {
+        Row(
+            modifier = Modifier.padding(14.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Surface(
+                shape = CircleShape,
+                color = color.copy(alpha = 0.15f),
+                modifier = Modifier.size(38.dp)
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Icon(icon, contentDescription = null, tint = color, modifier = Modifier.size(20.dp))
+                }
+            }
+            Spacer(Modifier.width(10.dp))
+            Column {
+                Text(title, fontSize = 11.sp, color = Color.Gray, fontWeight = FontWeight.Medium)
+                Text(value, fontSize = 15.sp, fontWeight = FontWeight.Bold, color = color)
+                Text(subtitle, fontSize = 10.sp, color = color.copy(alpha = 0.8f))
+            }
         }
     }
 }

@@ -29,7 +29,9 @@ data class QuizUiState(
     val showFeedback: Boolean = false,
     val wasCorrect: Boolean = false,
     val correctCount: Int = 0,
-    val isFinished: Boolean = false
+    val isFinished: Boolean = false,
+    val startTimeMillis: Long = System.currentTimeMillis(),
+    val timeSpentSeconds: Int = 0
 )
 
 @HiltViewModel
@@ -297,11 +299,13 @@ class QuizViewModel @Inject constructor(
     fun nextQuestion() {
         val state = _uiState.value
         if (state.currentIndex >= state.questions.lastIndex) {
-            _uiState.update { it.copy(isFinished = true) }
+            val totalSeconds = ((System.currentTimeMillis() - state.startTimeMillis) / 1000).toInt().coerceAtLeast(1)
+            _uiState.update { it.copy(isFinished = true, timeSpentSeconds = totalSeconds) }
             val cat = currentTicketCategory
             val idx = currentTicketIndex
             viewModelScope.launch {
                 preferences.clearActiveQuiz()
+                preferences.recordQuizCompletion(state.questions.size, totalSeconds)
                 if (cat != null && idx != null) {
                     val score = state.correctCount
                     val passed = score >= 10

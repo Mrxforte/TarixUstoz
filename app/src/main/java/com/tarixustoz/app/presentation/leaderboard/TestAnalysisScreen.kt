@@ -1,11 +1,16 @@
 package com.tarixustoz.app.presentation.leaderboard
 
+import android.graphics.Paint
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
+import kotlinx.coroutines.delay
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -58,6 +63,7 @@ data class CategoryAnalysisItem(
     val mistakePct: Int,
     val unattemptedPct: Int,
     val totalQuestions: Int,
+    val timeSpentMinutes: Int,
     val growthPct: Int,
     val categoryKey: String,
     val barGradients: List<Color>,
@@ -85,6 +91,7 @@ fun TestAnalysisScreen(
                 mistakePct = 18,
                 unattemptedPct = 14,
                 totalQuestions = 480,
+                timeSpentMinutes = 160,
                 growthPct = 26,
                 categoryKey = "all",
                 barGradients = listOf(Color(0xFF6366F1), Color(0xFF8B5CF6)),
@@ -103,8 +110,9 @@ fun TestAnalysisScreen(
                 mistakePct = 15,
                 unattemptedPct = 20,
                 totalQuestions = 120,
+                timeSpentMinutes = 42,
                 growthPct = 22,
-                categoryKey = "tarixiy_voqealar",
+                categoryKey = "EVENT",
                 barGradients = listOf(Color(0xFF4F46E5), Color(0xFF818CF8)),
                 adviceList = listOf(
                     "Qadimgi dunyo davlatlarining tashkil topishi va inqirozi bo‘yicha xronologik ketma-ketlikka e’tibor bering.",
@@ -114,42 +122,6 @@ fun TestAnalysisScreen(
                 recommendedChapter = "6-sinf Qadimgi dunyo tarixi: 4-bob. Bobil va Mesopotamiya madaniyati"
             ),
             CategoryAnalysisItem(
-                title = "Tarixiy faktlar",
-                icon = Icons.Default.AccountBalance,
-                iconColor = Color(0xFF8B5CF6),
-                correctPct = 52,
-                mistakePct = 28,
-                unattemptedPct = 20,
-                totalQuestions = 95,
-                growthPct = 18,
-                categoryKey = "tarixiy_obidalar",
-                barGradients = listOf(Color(0xFF7C3AED), Color(0xFFC084FC)),
-                adviceList = listOf(
-                    "Bibixonim madrasasi, Registon ansambli (Ulug‘bek, Sherdor, Tillakori) qurilgan asrlar va me’morlar bo‘yicha xatolar aniqlandi.",
-                    "Maslahat: Har bir me’moriy yodgorlikni davr hukmdori va shahri bilan kartochka qilib takrorlang.",
-                    "Me’morchilik atamalari: gumbaz, peshtoq va muqarnas uslublarini qayta ko‘rib chiqing."
-                ),
-                recommendedChapter = "8-sinf O‘zbekiston tarixi: Samarqand va Buxoro me’moriy durdonalari"
-            ),
-            CategoryAnalysisItem(
-                title = "Urushlar va janglar",
-                icon = Icons.Default.Security,
-                iconColor = Color(0xFFDC2626),
-                correctPct = 58,
-                mistakePct = 24,
-                unattemptedPct = 18,
-                totalQuestions = 110,
-                growthPct = 25,
-                categoryKey = "urushlar_va_janglar",
-                barGradients = listOf(Color(0xFFDC2626), Color(0xFFFB7185)),
-                adviceList = listOf(
-                    "Jaloliddin Manguberdi va Chingizxon o‘rtasidagi Sind daryosi bo‘yidagi jang hamda Amir Temur yurishlarida sanalar va sarkardalar nomlarini farqlashda diqqatli bo‘ling.",
-                    "Taktik maslahat: Jang sanalarini xaritadagi joylashuvi bilan bog‘lab yodlasangiz, xatoliklar darhol 40% ga kamayadi.",
-                    "O‘sish sur‘ati yuqori (+25%). DTM bloklarida harbiy sarkardalar bo‘yicha kamida 3 ta savol tushadi."
-                ),
-                recommendedChapter = "7-sinf Tarix: 14-bob. Amir Temurning To‘xtamishga qarshi yurishlari"
-            ),
-            CategoryAnalysisItem(
                 title = "Tarixiy shaxslar",
                 icon = Icons.Default.Person,
                 iconColor = Color(0xFF059669),
@@ -157,8 +129,9 @@ fun TestAnalysisScreen(
                 mistakePct = 10,
                 unattemptedPct = 8,
                 totalQuestions = 135,
+                timeSpentMinutes = 48,
                 growthPct = 34,
-                categoryKey = "tarixiy_shaxslar",
+                categoryKey = "PERSON",
                 barGradients = listOf(Color(0xFF059669), Color(0xFF34D399)),
                 adviceList = listOf(
                     "Ajoyib natija! Tarixiy shaxslar bo‘yicha to‘g‘rilik ko‘rsatkichi 82% dan oshdi.",
@@ -168,6 +141,25 @@ fun TestAnalysisScreen(
                 recommendedChapter = "7-sinf Tarix: 18-bob. Mirzo Ulug‘bek va uning ilmiy akademiyasi"
             ),
             CategoryAnalysisItem(
+                title = "Urushlar va janglar",
+                icon = Icons.Default.Security,
+                iconColor = Color(0xFFDC2626),
+                correctPct = 58,
+                mistakePct = 24,
+                unattemptedPct = 18,
+                totalQuestions = 110,
+                timeSpentMinutes = 38,
+                growthPct = 25,
+                categoryKey = "WAR",
+                barGradients = listOf(Color(0xFFDC2626), Color(0xFFFB7185)),
+                adviceList = listOf(
+                    "Jaloliddin Manguberdi va Chingizxon o‘rtasidagi Sind daryosi bo‘yidagi jang hamda Amir Temur yurishlarida sanalar va sarkardalar nomlarini farqlashda diqqatli bo‘ling.",
+                    "Taktik maslahat: Jang sanalarini xaritadagi joylashuvi bilan bog‘lab yodlasangiz, xatoliklar darhol 40% ga kamayadi.",
+                    "O‘sish sur‘ati yuqori (+25%). DTM bloklarida harbiy sarkardalar bo‘yicha kamida 3 ta savol tushadi."
+                ),
+                recommendedChapter = "7-sinf Tarix: 14-bob. Amir Temurning To‘xtamishga qarshi yurishlari"
+            ),
+            CategoryAnalysisItem(
                 title = "Yillar va sanalar",
                 icon = Icons.Default.DateRange,
                 iconColor = Color(0xFFD97706),
@@ -175,8 +167,9 @@ fun TestAnalysisScreen(
                 mistakePct = 32,
                 unattemptedPct = 20,
                 totalQuestions = 85,
+                timeSpentMinutes = 30,
                 growthPct = 15,
-                categoryKey = "yillar_boyicha",
+                categoryKey = "YEAR",
                 barGradients = listOf(Color(0xFFD97706), Color(0xFFFBBF24)),
                 adviceList = listOf(
                     "Sanalar va yillar bo‘limida xatoliklar 32% ni tashkil qilmoqda. Bu bo‘lim eng ko‘p diqqat talab etadi.",
@@ -184,6 +177,242 @@ fun TestAnalysisScreen(
                     "Kunlik 10 tadan sana testini yechish orqali 1 haftada xatoliklarni 10% ga tushirish mumkin."
                 ),
                 recommendedChapter = "8-sinf Tarix: Xronologik jadvallar va muhim sanalar"
+            ),
+            CategoryAnalysisItem(
+                title = "Shahar va hududlar",
+                icon = Icons.Default.LocationOn,
+                iconColor = Color(0xFFF97316),
+                correctPct = 72,
+                mistakePct = 16,
+                unattemptedPct = 12,
+                totalQuestions = 90,
+                timeSpentMinutes = 28,
+                growthPct = 20,
+                categoryKey = "CITY",
+                barGradients = listOf(Color(0xFFF97316), Color(0xFFFDBA74)),
+                adviceList = listOf(
+                    "Qadimgi shaharlar va xaritalar bo‘yicha bilimingiz yuqori darajada.",
+                    "Buxoro, Samarqand va Xiva me'morchiligini taqqoslab takrorlang."
+                ),
+                recommendedChapter = "7-sinf Tarix: Qadimgi shaharlar va karvon yo'llari"
+            ),
+            CategoryAnalysisItem(
+                title = "Tarixiy faktlar",
+                icon = Icons.Default.FactCheck,
+                iconColor = Color(0xFF8B5CF6),
+                correctPct = 68,
+                mistakePct = 18,
+                unattemptedPct = 14,
+                totalQuestions = 100,
+                timeSpentMinutes = 32,
+                growthPct = 19,
+                categoryKey = "FACT",
+                barGradients = listOf(Color(0xFF8B5CF6), Color(0xFFC084FC)),
+                adviceList = listOf(
+                    "Manbalar va yozma yodgorliklar bo'yicha faktlar bilan tanishib chiqing.",
+                    "O'rta asrlar tarixiga oid faktik ma'lumotlar qayta ko'rib chiqilsin."
+                ),
+                recommendedChapter = "8-sinf Tarix: Yozma manbalar va arxeologik faktlar"
+            ),
+            CategoryAnalysisItem(
+                title = "Tarixiy obidalar",
+                icon = Icons.Default.AccountBalance,
+                iconColor = Color(0xFFD97706),
+                correctPct = 62,
+                mistakePct = 22,
+                unattemptedPct = 16,
+                totalQuestions = 80,
+                timeSpentMinutes = 26,
+                growthPct = 17,
+                categoryKey = "MONUMENT",
+                barGradients = listOf(Color(0xFFD97706), Color(0xFFFBBF24)),
+                adviceList = listOf(
+                    "Me'moriy obidalar qurilgan yillar va hukmdorlar nomlarini takrorlang."
+                ),
+                recommendedChapter = "8-sinf Tarix: O'zbekiston me'moriy obidalari"
+            ),
+            CategoryAnalysisItem(
+                title = "Mantiqiy va DTM",
+                icon = Icons.Default.Psychology,
+                iconColor = Color(0xFF0284C7),
+                correctPct = 78,
+                mistakePct = 12,
+                unattemptedPct = 10,
+                totalQuestions = 150,
+                timeSpentMinutes = 55,
+                growthPct = 28,
+                categoryKey = "LOGICAL",
+                barGradients = listOf(Color(0xFF0284C7), Color(0xFF38BDF8)),
+                adviceList = listOf(
+                    "DTM darajasidagi murakkab savollarga tayyorgarlik darajangiz a'lo.",
+                    "Aralash va mantiqiy savollarga ko'proq vaqt ajrating."
+                ),
+                recommendedChapter = "11-sinf Tarix: DTM va Blok Test topshiriqlari"
+            ),
+            CategoryAnalysisItem(
+                title = "6-sinf Tarix (Qadimgi dunyo)",
+                icon = Icons.Default.MenuBook,
+                iconColor = Color(0xFF16A34A),
+                correctPct = 85,
+                mistakePct = 10,
+                unattemptedPct = 5,
+                totalQuestions = 150,
+                timeSpentMinutes = 50,
+                growthPct = 30,
+                categoryKey = "uz_6",
+                barGradients = listOf(Color(0xFF16A34A), Color(0xFF4ADE80)),
+                adviceList = listOf("Qadimgi Misr, Mesopotamiya va Gretsiya bo'yicha bilimlaringiz juda yaxshi."),
+                recommendedChapter = "6-sinf Tarix: Qadimgi dunyo sivilizatsiyalari"
+            ),
+            CategoryAnalysisItem(
+                title = "7-sinf O‘zbekiston tarixi",
+                icon = Icons.Default.MenuBook,
+                iconColor = Color(0xFF6366F1),
+                correctPct = 76,
+                mistakePct = 14,
+                unattemptedPct = 10,
+                totalQuestions = 110,
+                timeSpentMinutes = 36,
+                growthPct = 21,
+                categoryKey = "uz_7",
+                barGradients = listOf(Color(0xFF6366F1), Color(0xFF818CF8)),
+                adviceList = listOf("Ilk o'rta asrlar va Somoniylar davrini takrorlang."),
+                recommendedChapter = "7-sinf O'zbekiston tarixi: Somoniylar va Qoraxoniylar"
+            ),
+            CategoryAnalysisItem(
+                title = "7-sinf Jahon tarixi",
+                icon = Icons.Default.MenuBook,
+                iconColor = Color(0xFF0284C7),
+                correctPct = 70,
+                mistakePct = 18,
+                unattemptedPct = 12,
+                totalQuestions = 95,
+                timeSpentMinutes = 30,
+                growthPct = 19,
+                categoryKey = "jahon_7",
+                barGradients = listOf(Color(0xFF0284C7), Color(0xFF38BDF8)),
+                adviceList = listOf("V-XV asrlar Yevropa va Osiyo tarixiga e'tibor bering."),
+                recommendedChapter = "7-sinf Jahon tarixi: O'rta asrlar Yevropasi"
+            ),
+            CategoryAnalysisItem(
+                title = "8-sinf O‘zbekiston tarixi",
+                icon = Icons.Default.MenuBook,
+                iconColor = Color(0xFFD97706),
+                correctPct = 74,
+                mistakePct = 16,
+                unattemptedPct = 10,
+                totalQuestions = 105,
+                timeSpentMinutes = 35,
+                growthPct = 23,
+                categoryKey = "uz_8",
+                barGradients = listOf(Color(0xFFD97706), Color(0xFFFBBF24)),
+                adviceList = listOf("XVI-XIX asr I yarmi Xonliklar davri tahlili."),
+                recommendedChapter = "8-sinf O'zbekiston tarixi: Buxoro, Xiva va Qo'qon xonliklari"
+            ),
+            CategoryAnalysisItem(
+                title = "8-sinf Jahon tarixi",
+                icon = Icons.Default.MenuBook,
+                iconColor = Color(0xFF7C3AED),
+                correctPct = 72,
+                mistakePct = 18,
+                unattemptedPct = 10,
+                totalQuestions = 90,
+                timeSpentMinutes = 29,
+                growthPct = 20,
+                categoryKey = "jahon_8",
+                barGradients = listOf(Color(0xFF7C3AED), Color(0xFFC084FC)),
+                adviceList = listOf("XVI-XIX asrlardagi Buyuk geografik kashfiyotlar."),
+                recommendedChapter = "8-sinf Jahon tarixi: Yangi davr tarixi"
+            ),
+            CategoryAnalysisItem(
+                title = "9-sinf O‘zbekiston tarixi",
+                icon = Icons.Default.MenuBook,
+                iconColor = Color(0xFFDC2626),
+                correctPct = 68,
+                mistakePct = 20,
+                unattemptedPct = 12,
+                totalQuestions = 100,
+                timeSpentMinutes = 33,
+                growthPct = 18,
+                categoryKey = "uz_9",
+                barGradients = listOf(Color(0xFFDC2626), Color(0xFFFCA5A5)),
+                adviceList = listOf("XIX asr II yarmi - Rossiya imperiyasi istilosi va Jadidchilik."),
+                recommendedChapter = "9-sinf O'zbekiston tarixi: Jadidchilik harakati"
+            ),
+            CategoryAnalysisItem(
+                title = "9-sinf Jahon tarixi",
+                icon = Icons.Default.MenuBook,
+                iconColor = Color(0xFF2563EB),
+                correctPct = 66,
+                mistakePct = 22,
+                unattemptedPct = 12,
+                totalQuestions = 85,
+                timeSpentMinutes = 28,
+                growthPct = 16,
+                categoryKey = "jahon_9",
+                barGradients = listOf(Color(0xFF2563EB), Color(0xFF93C5FD)),
+                adviceList = listOf("XX asr boshlaridagi xalqaro munosabatlar va Birinchi jahon urushi."),
+                recommendedChapter = "9-sinf Jahon tarixi: Birinchi jahon urushi"
+            ),
+            CategoryAnalysisItem(
+                title = "10-sinf O‘zbekiston tarixi",
+                icon = Icons.Default.MenuBook,
+                iconColor = Color(0xFF059669),
+                correctPct = 80,
+                mistakePct = 12,
+                unattemptedPct = 8,
+                totalQuestions = 115,
+                timeSpentMinutes = 38,
+                growthPct = 25,
+                categoryKey = "uz_10",
+                barGradients = listOf(Color(0xFF059669), Color(0xFF6EE7B7)),
+                adviceList = listOf("1917-1991 yillar sho'rolar davri tarixi."),
+                recommendedChapter = "10-sinf O'zbekiston tarixi: Ikkinchi jahon urushi yillari"
+            ),
+            CategoryAnalysisItem(
+                title = "10-sinf Jahon tarixi",
+                icon = Icons.Default.MenuBook,
+                iconColor = Color(0xFF9333EA),
+                correctPct = 75,
+                mistakePct = 15,
+                unattemptedPct = 10,
+                totalQuestions = 95,
+                timeSpentMinutes = 31,
+                growthPct = 22,
+                categoryKey = "jahon_10",
+                barGradients = listOf(Color(0xFF9333EA), Color(0xFFE9D5FF)),
+                adviceList = listOf("1918-1991 yillar Ikkinchi jahon urushi va Sovuq urush davri."),
+                recommendedChapter = "10-sinf Jahon tarixi: Ikkinchi jahon urushi va uning oqibatlari"
+            ),
+            CategoryAnalysisItem(
+                title = "11-sinf O‘zbekiston tarixi",
+                icon = Icons.Default.MenuBook,
+                iconColor = Color(0xFF16A34A),
+                correctPct = 88,
+                mistakePct = 8,
+                unattemptedPct = 4,
+                totalQuestions = 125,
+                timeSpentMinutes = 42,
+                growthPct = 32,
+                categoryKey = "uz_11",
+                barGradients = listOf(Color(0xFF16A34A), Color(0xFF86EFAC)),
+                adviceList = listOf("Mustaqillik davri O'zbekiston Respublikasi islohotlari."),
+                recommendedChapter = "11-sinf O'zbekiston tarixi: Mustaqil O'zbekiston taraqqiyoti"
+            ),
+            CategoryAnalysisItem(
+                title = "11-sinf Jahon tarixi",
+                icon = Icons.Default.MenuBook,
+                iconColor = Color(0xFF0284C7),
+                correctPct = 82,
+                mistakePct = 10,
+                unattemptedPct = 8,
+                totalQuestions = 100,
+                timeSpentMinutes = 34,
+                growthPct = 27,
+                categoryKey = "jahon_11",
+                barGradients = listOf(Color(0xFF0284C7), Color(0xFF7DD3FC)),
+                adviceList = listOf("1991-2017 yillardagi zamonaviy xalqaro munosabatlar."),
+                recommendedChapter = "11-sinf Jahon tarixi: Zamonaviy dunyo va globallashuv"
             )
         )
     }
@@ -199,15 +428,26 @@ fun TestAnalysisScreen(
 
     val currentCategory = categories[selectedIndex]
 
+    // Animation progress from 0 to 1 every time category or screen opens
+    var startAnim by remember { mutableStateOf(false) }
+    val animProgress by animateFloatAsState(
+        targetValue = if (startAnim) 1f else 0f,
+        animationSpec = tween(durationMillis = 900, easing = FastOutSlowInEasing),
+        label = "analysisAnim"
+    )
+
+    LaunchedEffect(selectedIndex) {
+        startAnim = false
+        delay(40)
+        startAnim = true
+    }
+
     // Dynamic advice generator state
     var currentAdviceIndex by remember(selectedIndex) { mutableIntStateOf(0) }
     var isGeneratingAdvice by remember { mutableStateOf(false) }
 
-    // Bitcoin style line chart timeframe filter: 24S, 7K, 1O, 1Y, Barchasi
-    var bitcoinTimeframe by remember { mutableStateOf("7K") }
-
     Scaffold(
-        contentWindowInsets = WindowInsets(0.dp),
+        contentWindowInsets = WindowInsets.safeDrawing,
         topBar = {
             TopAppBar(
                 title = {
@@ -238,7 +478,6 @@ fun TestAnalysisScreen(
                         )
                     }
                 },
-                windowInsets = WindowInsets(0.dp),
                 actions = {
                     Surface(
                         shape = RoundedCornerShape(20.dp),
@@ -280,35 +519,96 @@ fun TestAnalysisScreen(
                 .verticalScroll(rememberScrollState())
                 .testTag("test_analysis_screen_content")
         ) {
-            // Category selector horizontal scroll tabs
-            ScrollableTabRow(
-                selectedTabIndex = selectedIndex,
-                edgePadding = 16.dp,
-                containerColor = MaterialTheme.colorScheme.surface,
-                contentColor = BrandPurple,
-                divider = {}
+            // Dropdown Filter at the top
+            var expandedDropdown by remember { mutableStateOf(false) }
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 6.dp)
             ) {
-                categories.forEachIndexed { idx, cat ->
-                    Tab(
-                        selected = selectedIndex == idx,
-                        onClick = { selectedIndex = idx },
-                        text = {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Icon(
-                                    cat.icon,
-                                    contentDescription = null,
-                                    tint = if (selectedIndex == idx) BrandPurple else MaterialTheme.colorScheme.onSurfaceVariant,
-                                    modifier = Modifier.size(16.dp)
-                                )
-                                Spacer(Modifier.width(6.dp))
+                OutlinedCard(
+                    onClick = { expandedDropdown = true },
+                    shape = RoundedCornerShape(16.dp),
+                    border = BorderStroke(1.5.dp, BrandPurple.copy(alpha = 0.3f)),
+                    colors = CardDefaults.outlinedCardColors(containerColor = MaterialTheme.colorScheme.surface),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp, vertical = 14.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Surface(
+                                shape = CircleShape,
+                                color = currentCategory.iconColor.copy(alpha = 0.15f),
+                                modifier = Modifier.size(36.dp)
+                            ) {
+                                Box(contentAlignment = Alignment.Center) {
+                                    Icon(
+                                        currentCategory.icon,
+                                        contentDescription = null,
+                                        tint = currentCategory.iconColor,
+                                        modifier = Modifier.size(20.dp)
+                                    )
+                                }
+                            }
+                            Spacer(Modifier.width(12.dp))
+                            Column {
                                 Text(
-                                    text = cat.title.replace("umumiy tahlili", "").trim(),
-                                    fontWeight = if (selectedIndex == idx) FontWeight.Bold else FontWeight.Normal,
-                                    fontSize = 13.sp
+                                    text = "Bo'lim / Kategoriya",
+                                    fontSize = 11.sp,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                                Text(
+                                    text = currentCategory.title,
+                                    style = MaterialTheme.typography.titleSmall,
+                                    fontWeight = FontWeight.Bold,
+                                    color = MaterialTheme.colorScheme.onSurface
                                 )
                             }
                         }
-                    )
+                        Icon(
+                            imageVector = Icons.Default.ArrowDropDown,
+                            contentDescription = null,
+                            tint = BrandPurple
+                        )
+                    }
+                }
+
+                DropdownMenu(
+                    expanded = expandedDropdown,
+                    onDismissRequest = { expandedDropdown = false },
+                    modifier = Modifier.fillMaxWidth(0.9f)
+                ) {
+                    categories.forEachIndexed { idx, cat ->
+                        DropdownMenuItem(
+                            text = {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Icon(
+                                        cat.icon,
+                                        contentDescription = null,
+                                        tint = cat.iconColor,
+                                        modifier = Modifier.size(18.dp)
+                                    )
+                                    Spacer(Modifier.width(10.dp))
+                                    Text(
+                                        text = cat.title,
+                                        fontWeight = if (selectedIndex == idx) FontWeight.Bold else FontWeight.Normal,
+                                        fontSize = 14.sp,
+                                        color = if (selectedIndex == idx) BrandPurple else MaterialTheme.colorScheme.onSurface
+                                    )
+                                }
+                            },
+                            onClick = {
+                                selectedIndex = idx
+                                expandedDropdown = false
+                            }
+                        )
+                    }
                 }
             }
 
@@ -320,38 +620,59 @@ fun TestAnalysisScreen(
                     .padding(horizontal = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                // Key metrics row cards
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                    val correctCount = (currentCategory.totalQuestions * currentCategory.correctPct / 100f).roundToInt()
-                    val mistakeCount = (currentCategory.totalQuestions * currentCategory.mistakePct / 100f).roundToInt()
+                // Key metrics row cards (2x2 Grid with animated values)
+                val animCorrectPct = (currentCategory.correctPct * animProgress).roundToInt()
+                val animMistakePct = (currentCategory.mistakePct * animProgress).roundToInt()
+                val animQuestions = (currentCategory.totalQuestions * animProgress).roundToInt()
+                val animTimeMin = (currentCategory.timeSpentMinutes * animProgress).roundToInt()
 
-                    MetricPillCard(
-                        modifier = Modifier.weight(1f),
-                        title = "To‘g‘ri javob",
-                        value = "${currentCategory.correctPct}%",
-                        count = "$correctCount ta",
-                        color = Color(0xFF10B981),
-                        bg = Color(0xFFECFDF5)
-                    )
-                    MetricPillCard(
-                        modifier = Modifier.weight(1f),
-                        title = "Xatolar",
-                        value = "${currentCategory.mistakePct}%",
-                        count = "$mistakeCount ta",
-                        color = Color(0xFFEF4444),
-                        bg = Color(0xFFFEF2F2)
-                    )
-                    MetricPillCard(
-                        modifier = Modifier.weight(1f),
-                        title = "Jami savol",
-                        value = "${currentCategory.totalQuestions}",
-                        count = "savol",
-                        color = BrandPurple,
-                        bg = Color(0xFFF5F3FF)
-                    )
+                val correctCount = (animQuestions * currentCategory.correctPct / 100f).roundToInt()
+                val mistakeCount = (animQuestions * currentCategory.mistakePct / 100f).roundToInt()
+
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        MetricPillCard(
+                            modifier = Modifier.weight(1f),
+                            title = "To‘g‘ri javob",
+                            value = "$animCorrectPct%",
+                            count = "$correctCount ta",
+                            color = Color(0xFF10B981),
+                            bg = Color(0xFFECFDF5)
+                        )
+                        MetricPillCard(
+                            modifier = Modifier.weight(1f),
+                            title = "Xatolar",
+                            value = "$animMistakePct%",
+                            count = "$mistakeCount ta",
+                            color = Color(0xFFEF4444),
+                            bg = Color(0xFFFEF2F2)
+                        )
+                    }
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        MetricPillCard(
+                            modifier = Modifier.weight(1f),
+                            title = "Sarflangan vaqt",
+                            value = "$animTimeMin daq",
+                            count = "vaqt tahlili",
+                            color = Color(0xFF0284C7),
+                            bg = Color(0xFFEFF6FF)
+                        )
+                        MetricPillCard(
+                            modifier = Modifier.weight(1f),
+                            title = "Jami savol",
+                            value = "$animQuestions ta",
+                            count = "ishlangan test",
+                            color = BrandPurple,
+                            bg = Color(0xFFF5F3FF)
+                        )
+                    }
                 }
 
                 // ========================================================
@@ -409,19 +730,19 @@ fun TestAnalysisScreen(
                                 .testTag("uzex_pie_chart_canvas")
                         ) {
                             UzexFacetedPieChart(
-                                correctPct = currentCategory.correctPct,
-                                mistakePct = currentCategory.mistakePct,
-                                unattemptedPct = currentCategory.unattemptedPct,
-                                total = currentCategory.totalQuestions
+                                correctPct = animCorrectPct,
+                                mistakePct = animMistakePct,
+                                unattemptedPct = (currentCategory.unattemptedPct * animProgress).roundToInt(),
+                                total = animQuestions
                             )
                         }
 
                         Spacer(Modifier.height(14.dp))
 
                         // Segmented Legend with numbers and percentages
-                        val correctNum = (currentCategory.totalQuestions * currentCategory.correctPct / 100f).roundToInt()
-                        val mistakeNum = (currentCategory.totalQuestions * currentCategory.mistakePct / 100f).roundToInt()
-                        val unattemptedNum = (currentCategory.totalQuestions * currentCategory.unattemptedPct / 100f).roundToInt()
+                        val correctNum = (animQuestions * currentCategory.correctPct / 100f).roundToInt()
+                        val mistakeNum = (animQuestions * currentCategory.mistakePct / 100f).roundToInt()
+                        val unattemptedNum = (animQuestions * currentCategory.unattemptedPct / 100f).roundToInt()
 
                         Row(
                             modifier = Modifier.fillMaxWidth(),
@@ -444,306 +765,6 @@ fun TestAnalysisScreen(
                                 title = "Qolgan",
                                 percent = "${currentCategory.unattemptedPct}%",
                                 count = "$unattemptedNum ta"
-                            )
-                        }
-                    }
-                }
-
-                // ========================================================
-                // 2. BITCOIN / KRIPTO USLUBIDAGI MAYDA CHIZIQLI LINE CHART
-                // ========================================================
-                Surface(
-                    shape = RoundedCornerShape(20.dp),
-                    color = Color(0xFF0F172A), // Crypto Dark aesthetic
-                    border = BorderStroke(1.dp, Color(0xFF1E293B)),
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Column(modifier = Modifier.padding(18.dp)) {
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Column {
-                                Row(verticalAlignment = Alignment.CenterVertically) {
-                                    Surface(
-                                        shape = CircleShape,
-                                        color = Color(0xFFF59E0B),
-                                        modifier = Modifier.size(18.dp)
-                                    ) {
-                                        Box(contentAlignment = Alignment.Center) {
-                                            Text(
-                                                text = "₿",
-                                                fontSize = 11.sp,
-                                                fontWeight = FontWeight.Bold,
-                                                color = Color.Black
-                                            )
-                                        }
-                                    }
-                                    Spacer(Modifier.width(8.dp))
-                                    Text(
-                                        text = "2. Bitcoin Uslubidagi Mayda Line Chart",
-                                        fontSize = 15.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        color = Color.White
-                                    )
-                                }
-                                Text(
-                                    text = "Mayda va o‘ta aniq chiziqli dinamika grafigi",
-                                    fontSize = 11.sp,
-                                    color = Color(0xFF94A3B8)
-                                )
-                            }
-
-                            // Live Rate Pill
-                            Surface(
-                                shape = RoundedCornerShape(8.dp),
-                                color = Color(0xFF10B981).copy(alpha = 0.2f),
-                                border = BorderStroke(1.dp, Color(0xFF10B981).copy(alpha = 0.5f))
-                            ) {
-                                Text(
-                                    text = "${currentCategory.correctPct}.4% ▲ LIVE",
-                                    fontSize = 11.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    color = Color(0xFF34D399),
-                                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
-                                )
-                            }
-                        }
-
-                        Spacer(Modifier.height(14.dp))
-
-                        // Crypto metrics ticker bar
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceBetween
-                        ) {
-                            Column {
-                                Text(
-                                    text = "Joriy Natija",
-                                    fontSize = 10.sp,
-                                    color = Color(0xFF64748B)
-                                )
-                                Text(
-                                    text = "${currentCategory.correctPct}%",
-                                    fontSize = 20.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    color = Color(0xFF34D399)
-                                )
-                            }
-                            Column {
-                                Text(
-                                    text = "Eng Yuqori (ATH)",
-                                    fontSize = 10.sp,
-                                    color = Color(0xFF64748B)
-                                )
-                                Text(
-                                    text = "${(currentCategory.correctPct + 14).coerceAtMost(99)}%",
-                                    fontSize = 16.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    color = Color(0xFFF1F5F9)
-                                )
-                            }
-                            Column {
-                                Text(
-                                    text = "Hajm (24s)",
-                                    fontSize = 10.sp,
-                                    color = Color(0xFF64748B)
-                                )
-                                Text(
-                                    text = "${currentCategory.totalQuestions} savol",
-                                    fontSize = 14.sp,
-                                    fontWeight = FontWeight.SemiBold,
-                                    color = Color(0xFFCBD5E1)
-                                )
-                            }
-                            Column {
-                                Text(
-                                    text = "O‘sish sur‘ati",
-                                    fontSize = 10.sp,
-                                    color = Color(0xFF64748B)
-                                )
-                                Text(
-                                    text = "+${currentCategory.growthPct}%",
-                                    fontSize = 16.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    color = Color(0xFF10B981)
-                                )
-                            }
-                        }
-
-                        Spacer(Modifier.height(14.dp))
-
-                        // Timeframe selection buttons like Binance / TradingView
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .background(Color(0xFF1E293B), RoundedCornerShape(10.dp))
-                                .padding(3.dp),
-                            horizontalArrangement = Arrangement.SpaceBetween
-                        ) {
-                            listOf("24S", "7K", "1O", "1Y", "Barchasi").forEach { tf ->
-                                val isSelected = bitcoinTimeframe == tf
-                                Box(
-                                    modifier = Modifier
-                                        .weight(1f)
-                                        .clip(RoundedCornerShape(8.dp))
-                                        .background(if (isSelected) Color(0xFF334155) else Color.Transparent)
-                                        .clickable { bitcoinTimeframe = tf }
-                                        .padding(vertical = 5.dp),
-                                    contentAlignment = Alignment.Center
-                                ) {
-                                    Text(
-                                        text = tf,
-                                        fontSize = 11.sp,
-                                        fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
-                                        color = if (isSelected) Color.White else Color(0xFF94A3B8)
-                                    )
-                                }
-                            }
-                        }
-
-                        Spacer(Modifier.height(14.dp))
-
-                        // Bitcoin Fine Line Chart Canvas with numbers & percents embedded
-                        BitcoinFineLineChart(
-                            timeframe = bitcoinTimeframe,
-                            basePercent = currentCategory.correctPct,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(210.dp)
-                                .testTag("bitcoin_line_chart_canvas")
-                        )
-
-                        Spacer(Modifier.height(8.dp))
-
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceBetween
-                        ) {
-                            Text(
-                                text = "Dush",
-                                fontSize = 10.sp,
-                                color = Color(0xFF64748B)
-                            )
-                            Text(
-                                text = "Sesh",
-                                fontSize = 10.sp,
-                                color = Color(0xFF64748B)
-                            )
-                            Text(
-                                text = "Chor",
-                                fontSize = 10.sp,
-                                color = Color(0xFF64748B)
-                            )
-                            Text(
-                                text = "Pay",
-                                fontSize = 10.sp,
-                                color = Color(0xFF64748B)
-                            )
-                            Text(
-                                text = "Juma",
-                                fontSize = 10.sp,
-                                color = Color(0xFF64748B)
-                            )
-                            Text(
-                                text = "Shan",
-                                fontSize = 10.sp,
-                                color = Color(0xFF64748B)
-                            )
-                            Text(
-                                text = "Bugun (Yak)",
-                                fontSize = 10.sp,
-                                fontWeight = FontWeight.Bold,
-                                color = Color(0xFF34D399)
-                            )
-                        }
-                    }
-                }
-
-                // ========================================================
-                // 3. MULTI-COLOR USTUNLI DIAGRAMMA (BAR / COLUMN CHART)
-                // ========================================================
-                Surface(
-                    shape = RoundedCornerShape(20.dp),
-                    color = MaterialTheme.colorScheme.surface,
-                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Column(modifier = Modifier.padding(18.dp)) {
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Column {
-                                Text(
-                                    text = "3. Mavzular bo‘yicha Ustunli Diagramma",
-                                    style = MaterialTheme.typography.titleMedium,
-                                    fontWeight = FontWeight.Bold
-                                )
-                                Text(
-                                    text = "Rang-barang ustunlar (Column Bar Chart) va aniq foizlar",
-                                    fontSize = 11.sp,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
-                            Surface(
-                                shape = RoundedCornerShape(8.dp),
-                                color = Color(0xFF6366F1).copy(alpha = 0.1f)
-                            ) {
-                                Text(
-                                    text = "MULTI-COLOR",
-                                    fontSize = 10.sp,
-                                    fontWeight = FontWeight.ExtraBold,
-                                    color = Color(0xFF6366F1),
-                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                                )
-                            }
-                        }
-
-                        Spacer(Modifier.height(18.dp))
-
-                        // Multi-color column bar chart canvas
-                        MultiColorColumnBarChart(
-                            categories = categories.drop(1), // show subcategories as columns
-                            selectedIndex = if (selectedIndex > 0) selectedIndex - 1 else -1,
-                            onSelect = { colIdx ->
-                                selectedIndex = colIdx + 1
-                            },
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(220.dp)
-                                .testTag("multicolor_bar_chart_canvas")
-                        )
-
-                        Spacer(Modifier.height(14.dp))
-
-                        // Reference benchmark indicator
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.SpaceBetween
-                        ) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Box(
-                                    modifier = Modifier
-                                        .size(16.dp, 2.dp)
-                                        .background(Color(0xFFE11D48), RoundedCornerShape(2.dp))
-                                )
-                                Spacer(Modifier.width(6.dp))
-                                Text(
-                                    text = "70% O‘tish me’yori",
-                                    fontSize = 11.sp,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
-
-                            Text(
-                                text = "Ustun ustiga bosib almashtiring",
-                                fontSize = 11.sp,
-                                color = BrandPurple,
-                                fontWeight = FontWeight.SemiBold
                             )
                         }
                     }
@@ -987,20 +1008,17 @@ private fun UzexFacetedPieChart(
             val labelX = centerX + (labelRadius * cos(midAngleRad)).toFloat()
             val labelY = centerY + (labelRadius * sin(midAngleRad)).toFloat()
 
-            // Draw text directly inside the slice using nativeCanvas
             drawContext.canvas.nativeCanvas.apply {
-                val paint = android.graphics.Paint().apply {
+                val paint = Paint().apply {
                     this.color = android.graphics.Color.WHITE
-                    this.textSize = 12.sp.toPx()
+                    this.textSize = 14.sp.toPx()
                     this.isFakeBoldText = true
-                    this.textAlign = android.graphics.Paint.Align.CENTER
+                    this.textAlign = Paint.Align.CENTER
                     this.isAntiAlias = true
-                    setShadowLayer(4f, 0f, 2f, android.graphics.Color.argb(180, 0, 0, 0))
                 }
-
-                // If sweep is large enough, write full text, otherwise short percent
-                val textToDraw = if (sweep > 35f) label else "$pct%"
-                drawText(textToDraw, labelX, labelY + (paint.textSize / 3f), paint)
+                if (sweep > 35f) {
+                    drawText("$pct%", labelX, labelY + (paint.textSize / 3f), paint)
+                }
             }
 
             currentStartAngle += rawSweep
@@ -1033,298 +1051,7 @@ private fun UzexFacetedPieChart(
     }
 }
 
-/**
- * Bitcoin / Crypto-style fine Line Chart Canvas.
- * Fine, slender curve with micro-fluctuations, dotted micro-grid, glowing gradient fill,
- * and numbers/percentages written directly on key points.
- */
-@Composable
-private fun BitcoinFineLineChart(
-    timeframe: String,
-    basePercent: Int,
-    modifier: Modifier = Modifier
-) {
-    // Generate fine crypto-like micro points based on timeframe
-    val dataPoints = remember(timeframe, basePercent) {
-        val count = 20
-        val points = mutableListOf<Float>()
-        var current = (basePercent - 18).coerceAtLeast(25).toFloat()
-        val randomDeltas = listOf(-1.2f, 2.5f, -0.8f, 3.1f, 1.4f, -1.9f, 2.8f, 4.2f, -1.0f, 3.5f, 2.0f, -0.5f, 4.0f, 1.5f, -2.1f, 3.8f, 2.2f, 1.9f, 3.4f, 2.6f)
 
-        points.add(current)
-        for (i in 1 until count) {
-            val delta = randomDeltas[(i + timeframe.hashCode().mod(5)) % randomDeltas.size]
-            current = (current + delta).coerceIn(20f, 96f)
-            points.add(current)
-        }
-        // Ensure last point aligns with current score
-        points[points.size - 1] = basePercent.toFloat()
-        points
-    }
-
-    Canvas(modifier = modifier) {
-        val width = size.width
-        val height = size.height
-        val paddingLeft = 32.dp.toPx()
-        val paddingRight = 44.dp.toPx()
-        val paddingTop = 26.dp.toPx()
-        val paddingBottom = 22.dp.toPx()
-
-        val chartW = width - paddingLeft - paddingRight
-        val chartH = height - paddingTop - paddingBottom
-
-        val minVal = 0f
-        val maxVal = 100f
-
-        // Draw fine dotted crypto grid lines (horizontal 20%, 40%, 60%, 80%, 100%)
-        val gridRatios = listOf(0.2f, 0.4f, 0.6f, 0.8f, 1.0f)
-        val dashEffect = PathEffect.dashPathEffect(floatArrayOf(4.dp.toPx(), 4.dp.toPx()), 0f)
-
-        gridRatios.forEach { r ->
-            val y = paddingTop + chartH * (1f - r)
-            drawLine(
-                color = Color(0xFF334155),
-                start = Offset(paddingLeft, y),
-                end = Offset(width - paddingRight, y),
-                strokeWidth = 0.8.dp.toPx(),
-                pathEffect = dashEffect
-            )
-
-            // Right-side crypto level text label
-            drawContext.canvas.nativeCanvas.apply {
-                val p = android.graphics.Paint().apply {
-                    this.color = android.graphics.Color.parseColor("#64748B")
-                    this.textSize = 9.sp.toPx()
-                    this.textAlign = android.graphics.Paint.Align.LEFT
-                    this.isAntiAlias = true
-                }
-                drawText("${(r * 100).toInt()}%", width - paddingRight + 6.dp.toPx(), y + 3.dp.toPx(), p)
-            }
-        }
-
-        // Calculate points coordinates
-        val stepX = chartW / (dataPoints.size - 1).coerceAtLeast(1)
-        val points = dataPoints.mapIndexed { i, v ->
-            val x = paddingLeft + (i * stepX)
-            val normalized = (v - minVal) / (maxVal - minVal)
-            val y = paddingTop + chartH * (1f - normalized)
-            Offset(x, y)
-        }
-
-        // 1. Fill gradient path underneath the curve
-        val fillPath = Path().apply {
-            if (points.isNotEmpty()) {
-                moveTo(points.first().x, paddingTop + chartH)
-                lineTo(points.first().x, points.first().y)
-
-                for (i in 1 until points.size) {
-                    val pPrev = points[i - 1]
-                    val pCur = points[i]
-                    val controlX = (pPrev.x + pCur.x) / 2f
-                    cubicTo(controlX, pPrev.y, controlX, pCur.y, pCur.x, pCur.y)
-                }
-
-                lineTo(points.last().x, paddingTop + chartH)
-                close()
-            }
-        }
-
-        drawPath(
-            path = fillPath,
-            brush = Brush.verticalGradient(
-                colors = listOf(
-                    Color(0xFF10B981).copy(alpha = 0.32f),
-                    Color(0xFF10B981).copy(alpha = 0.05f),
-                    Color.Transparent
-                ),
-                startY = paddingTop,
-                endY = paddingTop + chartH
-            )
-        )
-
-        // 2. Mayda, o‘ta nozik chiziq (Fine bitcoin stroke: 1.8dp width)
-        val strokePath = Path().apply {
-            if (points.isNotEmpty()) {
-                moveTo(points.first().x, points.first().y)
-                for (i in 1 until points.size) {
-                    val pPrev = points[i - 1]
-                    val pCur = points[i]
-                    val controlX = (pPrev.x + pCur.x) / 2f
-                    cubicTo(controlX, pPrev.y, controlX, pCur.y, pCur.x, pCur.y)
-                }
-            }
-        }
-
-        // Fine Bitcoin crypto line stroke
-        drawPath(
-            path = strokePath,
-            color = Color(0xFF10B981),
-            style = Stroke(width = 1.8.dp.toPx(), cap = StrokeCap.Round)
-        )
-
-        // Draw numbers & percentages on key points: Min, Mid, and Latest
-        val minPointIdx = dataPoints.indices.minByOrNull { dataPoints[it] } ?: 0
-        val maxPointIdx = dataPoints.indices.maxByOrNull { dataPoints[it] } ?: (dataPoints.size - 1)
-        val lastPointIdx = dataPoints.size - 1
-
-        val highlighted = listOf(minPointIdx, maxPointIdx, lastPointIdx).distinct()
-
-        highlighted.forEach { idx ->
-            val pt = points[idx]
-            val value = dataPoints[idx].roundToInt()
-            val isLast = idx == lastPointIdx
-
-            // Circle marker
-            drawCircle(
-                color = if (isLast) Color(0xFF34D399) else Color(0xFF10B981),
-                radius = if (isLast) 5.dp.toPx() else 3.5.dp.toPx(),
-                center = pt
-            )
-            drawCircle(
-                color = Color(0xFF0F172A),
-                radius = if (isLast) 2.5.dp.toPx() else 1.8.dp.toPx(),
-                center = pt
-            )
-
-            // Pill tag with numbers and percentages written on canvas
-            val tagText = if (isLast) "$value% (Hozir)" else "$value%"
-            drawContext.canvas.nativeCanvas.apply {
-                val textPaint = android.graphics.Paint().apply {
-                    this.color = if (isLast) android.graphics.Color.parseColor("#34D399") else android.graphics.Color.WHITE
-                    this.textSize = if (isLast) 11.sp.toPx() else 9.sp.toPx()
-                    this.isFakeBoldText = true
-                    this.textAlign = if (isLast) android.graphics.Paint.Align.RIGHT else android.graphics.Paint.Align.CENTER
-                    this.isAntiAlias = true
-                    setShadowLayer(4f, 0f, 1f, android.graphics.Color.BLACK)
-                }
-
-                val tagY = (pt.y - 8.dp.toPx()).coerceAtLeast(paddingTop + 8.dp.toPx())
-                val tagX = if (isLast) pt.x else pt.x
-                drawText(tagText, tagX, tagY, textPaint)
-            }
-        }
-    }
-}
-
-/**
- * Multi-color Column Bar Chart Canvas.
- * Each category gets a vibrant custom gradient column with rounded top corners,
- * and exact percentages AND numbers clearly written on top of each bar.
- */
-@Composable
-private fun MultiColorColumnBarChart(
-    categories: List<CategoryAnalysisItem>,
-    selectedIndex: Int,
-    onSelect: (Int) -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Canvas(
-        modifier = modifier.clickable {
-            // Can be clicked to select
-        }
-    ) {
-        val width = size.width
-        val height = size.height
-        val bottomLabelH = 46.dp.toPx()
-        val topLabelH = 28.dp.toPx()
-        val chartH = height - bottomLabelH - topLabelH
-
-        val columnCount = categories.size
-        val colSpacing = 12.dp.toPx()
-        val availableW = width - (colSpacing * (columnCount + 1))
-        val colWidth = (availableW / columnCount).coerceAtLeast(18.dp.toPx())
-
-        // Draw 70% benchmark line
-        val benchmarkY = topLabelH + chartH * (1f - 0.70f)
-        val dashEffect = PathEffect.dashPathEffect(floatArrayOf(6.dp.toPx(), 4.dp.toPx()), 0f)
-        drawLine(
-            color = Color(0xFFE11D48).copy(alpha = 0.6f),
-            start = Offset(colSpacing, benchmarkY),
-            end = Offset(width - colSpacing, benchmarkY),
-            strokeWidth = 1.2.dp.toPx(),
-            pathEffect = dashEffect
-        )
-
-        categories.forEachIndexed { idx, item ->
-            val x = colSpacing + idx * (colWidth + colSpacing)
-            val barH = chartH * (item.correctPct / 100f)
-            val barY = topLabelH + chartH - barH
-
-            val isSelected = selectedIndex == idx
-            val gradColors = if (isSelected) {
-                listOf(item.barGradients.first(), item.barGradients.last())
-            } else {
-                listOf(
-                    item.barGradients.first().copy(alpha = 0.85f),
-                    item.barGradients.last().copy(alpha = 0.85f)
-                )
-            }
-
-            // Draw Column Bar with rounded top corners
-            drawRoundRect(
-                brush = Brush.verticalGradient(
-                    colors = gradColors,
-                    startY = barY,
-                    endY = barY + barH
-                ),
-                topLeft = Offset(x, barY),
-                size = Size(colWidth, barH),
-                cornerRadius = CornerRadius(8.dp.toPx(), 8.dp.toPx())
-            )
-
-            // If selected, draw highlight border
-            if (isSelected) {
-                drawRoundRect(
-                    color = Color.White,
-                    topLeft = Offset(x - 1.5.dp.toPx(), barY - 1.5.dp.toPx()),
-                    size = Size(colWidth + 3.dp.toPx(), barH + 3.dp.toPx()),
-                    cornerRadius = CornerRadius(9.dp.toPx(), 9.dp.toPx()),
-                    style = Stroke(width = 2.dp.toPx())
-                )
-            }
-
-            // Write percentage AND count on top of the column
-            val countNum = (item.totalQuestions * item.correctPct / 100f).roundToInt()
-            drawContext.canvas.nativeCanvas.apply {
-                val pctPaint = android.graphics.Paint().apply {
-                    this.color = android.graphics.Color.parseColor("#1E293B")
-                    this.textSize = 11.sp.toPx()
-                    this.isFakeBoldText = true
-                    this.textAlign = android.graphics.Paint.Align.CENTER
-                    this.isAntiAlias = true
-                }
-                val countPaint = android.graphics.Paint().apply {
-                    this.color = android.graphics.Color.parseColor("#64748B")
-                    this.textSize = 9.sp.toPx()
-                    this.textAlign = android.graphics.Paint.Align.CENTER
-                    this.isAntiAlias = true
-                }
-
-                val centerX = x + (colWidth / 2f)
-                drawText("${item.correctPct}%", centerX, barY - 10.dp.toPx(), pctPaint)
-                drawText("$countNum ta", centerX, barY - 1.dp.toPx(), countPaint)
-
-                // Bottom category label
-                val labelPaint = android.graphics.Paint().apply {
-                    this.color = if (isSelected) android.graphics.Color.parseColor("#6366F1") else android.graphics.Color.parseColor("#475569")
-                    this.textSize = 9.sp.toPx()
-                    this.isFakeBoldText = isSelected
-                    this.textAlign = android.graphics.Paint.Align.CENTER
-                    this.isAntiAlias = true
-                }
-                val shortName = when {
-                    item.title.contains("voqea", ignoreCase = true) -> "Voqealar"
-                    item.title.contains("obida", ignoreCase = true) -> "Obidalar"
-                    item.title.contains("urush", ignoreCase = true) -> "Janglar"
-                    item.title.contains("shaxs", ignoreCase = true) -> "Shaxslar"
-                    item.title.contains("yil", ignoreCase = true) -> "Sanalar"
-                    else -> "Mavzu"
-                }
-                drawText(shortName, centerX, height - 12.dp.toPx(), labelPaint)
-            }
-        }
-    }
-}
 
 @Composable
 private fun MetricPillCard(

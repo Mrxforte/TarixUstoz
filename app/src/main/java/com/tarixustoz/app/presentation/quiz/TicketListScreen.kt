@@ -33,13 +33,14 @@ import com.tarixustoz.app.presentation.theme.BrandPurple
 fun TicketListScreen(
     categoryKey: String,
     categoryTitle: String,
+    selectedGrade: Int = 0,
     onBack: () -> Unit,
     onStartTicket: (categoryKey: String, ticketIndex: Int) -> Unit,
     onStartActiveQuiz: (String) -> Unit,
     viewModel: TicketListViewModel = hiltViewModel()
 ) {
-    LaunchedEffect(categoryKey) {
-        viewModel.loadTickets(categoryKey)
+    LaunchedEffect(categoryKey, selectedGrade) {
+        viewModel.loadTickets(categoryKey, selectedGrade)
     }
 
     val state by viewModel.state.collectAsState()
@@ -73,8 +74,7 @@ fun TicketListScreen(
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background
-                ),
-                windowInsets = WindowInsets(0.dp)
+                )
             )
         },
         floatingActionButton = {

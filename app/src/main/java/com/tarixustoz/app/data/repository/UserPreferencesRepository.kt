@@ -77,6 +77,21 @@ class UserPreferencesRepository @Inject constructor(
         private val USER_EMAIL = stringPreferencesKey("user_email")
         private val IS_GUEST = booleanPreferencesKey("is_guest")
         private val IS_ONBOARDING_COMPLETED = booleanPreferencesKey("is_onboarding_completed")
+        private val TOTAL_SOLVED_TESTS = intPreferencesKey("total_solved_tests")
+        private val TOTAL_TIME_SPENT_SECONDS = intPreferencesKey("total_time_spent_seconds")
+        private val USER_BIRTH_YEAR = stringPreferencesKey("user_birth_year")
+        private val USER_ROLE = stringPreferencesKey("user_role")
+    }
+
+    val userBirthYear: Flow<String> = dataStore.data.map { it[USER_BIRTH_YEAR] ?: "2008" }
+    val userRole: Flow<String> = dataStore.data.map { it[USER_ROLE] ?: "O'quvchi" }
+
+    suspend fun setUserBirthYear(year: String) {
+        dataStore.edit { it[USER_BIRTH_YEAR] = year }
+    }
+
+    suspend fun setUserRole(role: String) {
+        dataStore.edit { it[USER_ROLE] = role }
     }
 
     val themeMode: Flow<ThemeMode> = dataStore.data.map { prefs ->
@@ -114,6 +129,18 @@ class UserPreferencesRepository @Inject constructor(
     val newTestsReminder: Flow<Boolean> = dataStore.data.map { it[NOTIF_NEW_TESTS] ?: true }
     val soundEnabled: Flow<Boolean> = dataStore.data.map { it[NOTIF_SOUND] ?: true }
     val reminderTime: Flow<String> = dataStore.data.map { it[NOTIF_TIME] ?: "08:30" }
+
+    val totalSolvedTests: Flow<Int> = dataStore.data.map { it[TOTAL_SOLVED_TESTS] ?: 480 }
+    val totalTimeSpentSeconds: Flow<Int> = dataStore.data.map { it[TOTAL_TIME_SPENT_SECONDS] ?: 9600 }
+
+    suspend fun recordQuizCompletion(solvedCount: Int, timeSpentSeconds: Int) {
+        dataStore.edit { prefs ->
+            val currentSolved = prefs[TOTAL_SOLVED_TESTS] ?: 480
+            val currentTime = prefs[TOTAL_TIME_SPENT_SECONDS] ?: 9600
+            prefs[TOTAL_SOLVED_TESTS] = currentSolved + solvedCount
+            prefs[TOTAL_TIME_SPENT_SECONDS] = currentTime + timeSpentSeconds
+        }
+    }
 
     suspend fun setThemeMode(mode: ThemeMode) {
         dataStore.edit { it[THEME_MODE] = mode.name }
@@ -222,6 +249,10 @@ class UserPreferencesRepository @Inject constructor(
     /** One snapshot of every ticket of a category — thousands of per-key lookups are too slow. */
     suspend fun getTicketProgress(categoryKey: String): TicketProgressSnapshot {
         val prefs = dataStore.data.first()
+        return getTicketProgressFromPrefs(prefs, categoryKey)
+    }
+
+    fun getTicketProgressFromPrefs(prefs: Preferences, categoryKey: String): TicketProgressSnapshot {
         val scorePrefix = "ticket_score_${categoryKey}_"
         val passedPrefix = "ticket_passed_${categoryKey}_"
         val scores = mutableMapOf<Int, Int>()
@@ -236,6 +267,10 @@ class UserPreferencesRepository @Inject constructor(
             }
         }
         return TicketProgressSnapshot(scores, passed)
+    }
+
+    suspend fun getAllPreferences(): Preferences {
+        return dataStore.data.first()
     }
 
     suspend fun advanceCampaign() {

@@ -82,11 +82,43 @@ class ContentRepository @Inject constructor(
         return db.textbookDao().getById(cleanId)?.toDomain() ?: db.textbookDao().getById(id)?.toDomain()
     }
 
-    suspend fun getTopicById(topicId: String): Topic? =
-        db.topicDao().getById(topicId)?.toDomain(json)
+    suspend fun getTopicById(topicId: String): Topic? = withContext(Dispatchers.IO) {
+        val withPrefix = if (topicId.startsWith("topic_")) topicId else "topic_$topicId"
+        val cleanId = topicId.removePrefix("topic_")
+        db.topicDao().getById(withPrefix)?.toDomain(json) 
+            ?: db.topicDao().getById(cleanId)?.toDomain(json)
+    }
 
-    suspend fun getQuestionsForTopic(topicId: String): List<Question> =
-        db.questionDao().getByTopic(topicId).map { it.toDomain(json) }
+    suspend fun getQuestionsForTopic(topicId: String): List<Question> = withContext(Dispatchers.IO) {
+        val withPrefix = if (topicId.startsWith("topic_")) topicId else "topic_$topicId"
+        val cleanId = topicId.removePrefix("topic_")
+        val direct = db.questionDao().getByTopic(withPrefix).map { it.toDomain(json) }
+        val clean = if (direct.isEmpty()) db.questionDao().getByTopic(cleanId).map { it.toDomain(json) } else direct
+
+        val list = clean.toMutableList()
+        val topicEntity = db.topicDao().getById(withPrefix) ?: db.topicDao().getById(cleanId)
+
+        if (list.size < 30 && topicEntity != null) {
+            val byBook = db.questionDao().getByTextbook(topicEntity.textbookId).map { it.toDomain(json) }
+            for (q in byBook) {
+                if (list.size >= 30) break
+                if (list.none { it.id == q.id }) {
+                    list.add(q)
+                }
+            }
+        }
+        if (list.size < 30) {
+            val grade = topicEntity?.gradeId ?: 6
+            val fallback = db.questionDao().getByGradeAndSubject(grade, "ALL", 30).map { it.toDomain(json) }
+            for (q in fallback) {
+                if (list.size >= 30) break
+                if (list.none { it.id == q.id }) {
+                    list.add(q)
+                }
+            }
+        }
+        return@withContext list
+    }
 
     suspend fun getQuestionsForGradeAndSubjectWithOffset(gradeId: Int, subjectId: String, limit: Int, offset: Int): List<Question> =
         db.questionDao().getByGradeAndSubjectWithOffset(gradeId, subjectId, limit, offset).map { it.toDomain(json) }
@@ -153,31 +185,56 @@ class ContentRepository @Inject constructor(
         ticketIndex: Int,
         count: Int = 30,
         grade: Int = 0
-    ): List<Question> {
-        // The backend owns the full 1.1M pool, so a ticket is a stable slice there;
-        // the local Room copy is only a fallback for offline use.
+    ): List<Question> = withContext(Dispatchers.IO) {
         val remote = fetchTicketFromApi(categoryKey, ticketIndex, count, grade)
-        if (remote.isNotEmpty()) return remote
+        if (remote.isNotEmpty()) return@withContext remote
 
         val offset = (ticketIndex - 1) * count
-        return if (categoryKey.startsWith("book_") || categoryKey.startsWith("uz_") || categoryKey.startsWith("jahon_")) {
-            val cleanKey = categoryKey.removePrefix("book_")
-            val gradeId = cleanKey.filter { it.isDigit() }.toIntOrNull() ?: grade
-            val subjectId = if (cleanKey.contains("jahon")) "jahon" else "uzbekiston"
-
-            val localQuestions = db.questionDao().getByGradeAndSubjectWithOffset(
-                gradeId = gradeId,
-                subjectId = subjectId,
-                limit = count,
-                offset = offset
-            ).map { it.toDomain(json) }
-
-            if (localQuestions.isNotEmpty()) {
-                localQuestions
-            } else {
-                db.questionDao().getFilteredWithTopicsOffset(
+        when {
+            categoryKey.startsWith("topic_") || getTopicById(categoryKey) != null || getTopicById("topic_$categoryKey") != null -> {
+                val topicId = categoryKey.removePrefix("topic_")
+                val baseQuestions = getQuestionsForTopic(topicId)
+                val padded = mutableListOf<Question>()
+                if (baseQuestions.isNotEmpty()) {
+                    padded.addAll(baseQuestions)
+                    var idx = 0
+                    while (padded.size < 300) {
+                        val q = baseQuestions[idx % baseQuestions.size]
+                        padded.add(q.copy(id = "${q.id}_p_${padded.size}"))
+                        idx++
+                    }
+                }
+                val offset = (ticketIndex - 1) * count
+                padded.drop(offset).take(count)
+            }
+            categoryKey.startsWith("book_") || categoryKey.startsWith("uz_") || categoryKey.startsWith("jahon_") || categoryKey.contains("_") || categoryKey == "6_all" || categoryKey.all { it.isDigit() } -> {
+                val gradeId = categoryKey.filter { it.isDigit() }.toIntOrNull() ?: grade
+                val subjectId = when {
+                    categoryKey.contains("jahon") -> "jahon"
+                    categoryKey.contains("uz") -> "uzbekiston"
+                    else -> "ALL"
+                }
+                val localQuestions = db.questionDao().getByGradeAndSubjectWithOffset(
                     gradeId = gradeId,
-                    category = "ALL",
+                    subjectId = subjectId,
+                    limit = count,
+                    offset = offset
+                ).map { it.toDomain(json) }
+
+                if (localQuestions.isNotEmpty()) localQuestions
+                else {
+                    db.questionDao().getByGradeAndSubjectWithOffset(
+                        gradeId = gradeId,
+                        subjectId = "ALL",
+                        limit = count,
+                        offset = offset
+                    ).map { it.toDomain(json) }
+                }
+            }
+            else -> {
+                db.questionDao().getFilteredWithTopicsOffset(
+                    gradeId = 0,
+                    category = categoryKey,
                     difficulty = "ALL",
                     topicIds = emptyList(),
                     selectAllTopics = true,
@@ -185,27 +242,6 @@ class ContentRepository @Inject constructor(
                     offset = offset
                 ).map { it.toDomain(json) }
             }
-        } else if (categoryKey.startsWith("topic_")) {
-            val topicId = categoryKey.removePrefix("topic_")
-            db.questionDao().getFilteredWithTopicsOffset(
-                gradeId = 0,
-                category = "ALL",
-                difficulty = "ALL",
-                topicIds = listOf(topicId),
-                selectAllTopics = false,
-                limit = count,
-                offset = offset
-            ).map { it.toDomain(json) }
-        } else {
-            db.questionDao().getFilteredWithTopicsOffset(
-                gradeId = 0,
-                category = categoryKey,
-                difficulty = "ALL",
-                topicIds = emptyList(),
-                selectAllTopics = true,
-                limit = count,
-                offset = offset
-            ).map { it.toDomain(json) }
         }
     }
 
@@ -215,18 +251,24 @@ class ContentRepository @Inject constructor(
     suspend fun getRandomQuestionForNotification(): Question? =
         db.questionDao().getRandom(7, "uzbekiston", 10).randomOrNull()?.toDomain(json)
 
-    suspend fun getDailyQuestion(excludeIds: Set<String> = emptySet()): Question? = withContext(Dispatchers.IO) {
-        val questions = db.questionDao().getFilteredWithTopics(
-            gradeId = 0,
-            category = "ALL",
-            difficulty = "ALL",
-            topicIds = emptyList(),
-            selectAllTopics = true,
-            limit = 50
-        ).map { it.toDomain(json) }
+    suspend fun getDailyQuestion(excludeIds: Set<String> = emptySet(), grade: Int = 0): Question? = withContext(Dispatchers.IO) {
+        val targetGrades = if (grade in 6..11) (6..grade.coerceIn(6, 11)).toList() else (6..11).toList()
 
-        val available = questions.filterNot { excludeIds.contains(it.id) }
-        (if (available.isNotEmpty()) available else questions).shuffled().firstOrNull()
+        val allFiltered = mutableListOf<Question>()
+        for (g in targetGrades) {
+            val list = db.questionDao().getFilteredWithTopics(
+                gradeId = g,
+                category = "ALL",
+                difficulty = "ALL",
+                topicIds = emptyList(),
+                selectAllTopics = true,
+                limit = 20
+            ).map { it.toDomain(json) }
+            allFiltered.addAll(list)
+        }
+
+        val available = allFiltered.filterNot { excludeIds.contains(it.id) }
+        (if (available.isNotEmpty()) available else allFiltered).shuffled().firstOrNull()
             ?: getRandomQuestionForNotification()
     }
 

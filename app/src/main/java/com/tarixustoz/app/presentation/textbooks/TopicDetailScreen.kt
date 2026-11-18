@@ -32,7 +32,7 @@ fun TopicDetailScreen(
     var fontSizeSp by remember { mutableIntStateOf(16) }
 
     Scaffold(
-        contentWindowInsets = WindowInsets(0.dp),
+        contentWindowInsets = WindowInsets.safeDrawing,
         topBar = {
             TopAppBar(
                 title = {
@@ -47,7 +47,6 @@ fun TopicDetailScreen(
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Orqaga")
                     }
                 },
-                windowInsets = WindowInsets(0.dp),
                 actions = {
                     IconButton(onClick = {
                         fontSizeSp = if (fontSizeSp >= 22) 14 else fontSizeSp + 2

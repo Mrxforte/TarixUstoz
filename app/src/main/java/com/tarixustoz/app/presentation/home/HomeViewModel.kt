@@ -2,10 +2,15 @@ package com.tarixustoz.app.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.compose.ui.graphics.Color
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Event
+import androidx.compose.material.icons.automirrored.filled.MenuBook
 import com.tarixustoz.app.data.repository.ContentRepository
 import com.tarixustoz.app.data.repository.MistakesRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
 import com.tarixustoz.app.domain.model.Question
+import com.tarixustoz.app.presentation.tests.TestCardItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -82,6 +87,10 @@ class HomeViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
 
+    val homeDirectionCards = MutableStateFlow<List<TestCardItem>>(emptyList())
+    val homeTopicCards = MutableStateFlow<List<TestCardItem>>(emptyList())
+    val homeGradeCards = MutableStateFlow<List<TestCardItem>>(emptyList())
+
     private val seenQuestionIds = mutableSetOf<String>()
 
     /** Shows the cached numbers instantly, then refreshes them from the backend. */
@@ -114,6 +123,77 @@ class HomeViewModel @Inject constructor(
         }
 
         loadDirectionCounts()
+
+        viewModelScope.launch {
+            val prefsSnapshot = preferences.getAllPreferences()
+            val counts = contentRepository.fetchDirectionCounts(0)
+
+            val directionData = listOf(
+                Triple("EVENT", "Tarixiy Hodisalar", "Qadimgi va o'rta asrlar"),
+                Triple("PERSON", "Tarixiy Shaxslar", "Buyuk siymolar"),
+                Triple("YEAR", "Yillar va Sanalar", "Xronologik tartib"),
+                Triple("WAR", "Urushlar va Janglar", "Harbiy yurishlar"),
+                Triple("CITY", "Shahar va Hududlar", "Joylashuvlar"),
+                Triple("LOGICAL", "Mantiqiy va DTM", "DTM savollari")
+            )
+            val directions = directionData.map { (key, title, subtitle) ->
+                val totalQ = counts[key] ?: 450
+                val totalT = (totalQ + 29) / 30
+                val subText = "$subtitle • $totalT ta bilet • $totalQ ta test"
+                val passed = preferences.getTicketProgressFromPrefs(prefsSnapshot, key).passed.size
+                TestCardItem(
+                    id = key,
+                    title = title,
+                    subtitle = subText,
+                    totalTickets = totalT,
+                    passedTickets = passed,
+                    icon = Icons.Default.Event,
+                    gradientColors = listOf(Color(0xFF1E1B4B), Color(0xFF3730A3)),
+                    accentColor = Color(0xFF10B981),
+                    categoryType = "direction"
+                )
+            }
+            homeDirectionCards.value = directions
+
+            val topics = contentRepository.getAllTopicsFlow().first().take(15).map { t ->
+                val totalT = 10
+                val totalQs = 300
+                val subText = "${t.summary.ifBlank { "Mavzular to'plami" }} • $totalT ta bilet • $totalQs ta test"
+                val passed = preferences.getTicketProgressFromPrefs(prefsSnapshot, t.id).passed.size
+                TestCardItem(
+                    id = t.id,
+                    title = t.title,
+                    subtitle = subText,
+                    totalTickets = totalT,
+                    passedTickets = passed,
+                    icon = Icons.AutoMirrored.Filled.MenuBook,
+                    gradientColors = listOf(Color(0xFF854D0E), Color(0xFFA16207)),
+                    accentColor = Color(0xFF10B981),
+                    categoryType = "topic"
+                )
+            }
+            homeTopicCards.value = topics
+
+            val grades = (6..11).map { g ->
+                val bookId = "book_$g"
+                val totalQs = 240
+                val totalT = (totalQs + 29) / 30
+                val subText = "$g-sinf darsligi • $totalT ta bilet • $totalQs ta test"
+                val passed = preferences.getTicketProgressFromPrefs(prefsSnapshot, bookId).passed.size
+                TestCardItem(
+                    id = bookId,
+                    title = "$g-Sinf Tarixi",
+                    subtitle = subText,
+                    totalTickets = totalT,
+                    passedTickets = passed,
+                    icon = Icons.AutoMirrored.Filled.MenuBook,
+                    gradientColors = listOf(Color(0xFF0F172A), Color(0xFF1E293B)),
+                    accentColor = Color(0xFF3B82F6),
+                    categoryType = "grade"
+                )
+            }
+            homeGradeCards.value = grades
+        }
 
         viewModelScope.launch {
             combine(
@@ -174,8 +254,10 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun loadNextDailyQuestion() {        viewModelScope.launch {
-            val nextQuestion = contentRepository.getDailyQuestion(seenQuestionIds)
+    fun loadNextDailyQuestion() {
+        viewModelScope.launch {
+            val grade = runCatching { preferences.selectedGrade.first() }.getOrDefault(0)
+            val nextQuestion = contentRepository.getDailyQuestion(seenQuestionIds, grade = grade)
             if (nextQuestion != null) {
                 seenQuestionIds.add(nextQuestion.id)
             }
@@ -203,23 +285,17 @@ class HomeViewModel @Inject constructor(
             if (isCorrect) {
                 preferences.addXp(10)
             } else {
-                val userAnswerText = question.options.find { it.id == optionId }?.text ?: optionId
+                val userAnswerText = question.options.find { it.id == optionId }?.text ?: ""
                 mistakesRepository.recordIncorrect(question, userAnswerText)
             }
-        }
-
-        _uiState.update {
-            it.copy(
-                selectedDailyOptionId = optionId,
-                isDailyAnswered = true,
-                isDailyCorrect = isCorrect,
-                dailyAnswerFeedback = if (isCorrect) {
-                    "Barakalla! To‘g‘ri javob! +10 XP berildi 🎉"
-                } else {
-                    "Noto‘g‘ri javob. To‘g‘ri javob belgilandi."
-                },
-                todayGoalCompleted = if (isCorrect) it.todayGoalCompleted + 1 else it.todayGoalCompleted
-            )
+            _uiState.update {
+                it.copy(
+                    selectedDailyOptionId = optionId,
+                    isDailyAnswered = true,
+                    isDailyCorrect = isCorrect,
+                    dailyAnswerFeedback = if (isCorrect) "To'g'ri! +10 XP qo'shildi 🎉" else "Noto'g'ri. Xatolar bo'limiga qo'shildi."
+                )
+            }
         }
     }
 }

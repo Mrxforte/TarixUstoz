@@ -63,30 +63,30 @@ class TicketListViewModel @Inject constructor(
         }
     }
 
-    fun loadTickets(categoryKey: String) {
+    fun loadTickets(categoryKey: String, grade: Int = 0) {
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true, categoryKey = categoryKey) }
             contentRepository.seedIfNeeded()
 
-            val currentGrade = try {
-                preferencesRepository.selectedGrade.first()
-            } catch (_: Exception) { 7 }
+            val currentGrade = if (grade > 0) grade else {
+                try {
+                    preferencesRepository.selectedGrade.first()
+                } catch (_: Exception) { 0 }
+            }
 
+            val counts = contentRepository.fetchDirectionCounts(currentGrade)
             val totalQuestions = when {
-                categoryKey.startsWith("book_") || categoryKey.startsWith("uz_") || categoryKey.startsWith("jahon_") -> {
+                categoryKey.startsWith("book_") || categoryKey.startsWith("uz_") || categoryKey.startsWith("jahon_") || categoryKey.contains("_") || categoryKey == "6_all" || categoryKey.all { it.isDigit() } -> {
                     val cleanId = categoryKey.removePrefix("book_")
                     val book = contentRepository.getTextbookById(cleanId)
                     val bookCount = book?.totalQuestions ?: 0
-                    if (bookCount > 0) bookCount else 100000
+                    if (bookCount > 0) bookCount else 300
                 }
-                categoryKey.startsWith("topic_") -> {
-                    val topicId = categoryKey.removePrefix("topic_")
-                    val topic = contentRepository.getTopicById(topicId)
-                    topic?.questionsCount ?: 0
+                categoryKey.startsWith("topic_") || contentRepository.getTopicById(categoryKey) != null || contentRepository.getTopicById("topic_$categoryKey") != null -> {
+                    300
                 }
                 else -> {
-                    val counts = contentRepository.fetchDirectionCounts(currentGrade)
-                    counts[categoryKey] ?: 0
+                    counts[categoryKey] ?: 300
                 }
             }
 

@@ -31,9 +31,12 @@ import kotlinx.coroutines.flow.collectLatest
 @Composable
 fun EditProfileScreen(
     onBack: () -> Unit,
+    onNavigateToAuth: () -> Unit = {},
     viewModel: EditProfileViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    val isGuest by viewModel.isGuest.collectAsState()
+    val userEmail by viewModel.userEmail.collectAsState()
     val snackbarHostState = remember { SnackbarHostState() }
 
     LaunchedEffect(Unit) {
@@ -52,7 +55,7 @@ fun EditProfileScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets(0.dp),
+        contentWindowInsets = WindowInsets.safeDrawing,
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             TopAppBar(
@@ -74,7 +77,6 @@ fun EditProfileScreen(
                         )
                     }
                 },
-                windowInsets = WindowInsets(0.dp),
                 actions = {
                     TextButton(
                         onClick = { viewModel.saveProfile() },
@@ -220,6 +222,67 @@ fun EditProfileScreen(
                 }
             }
 
+            // Google Account / Optional Sign-In Card
+            Surface(
+                shape = RoundedCornerShape(18.dp),
+                color = if (isGuest) Color(0xFFFAF5FF) else Color(0xFFF0FDF4),
+                border = BorderStroke(1.dp, if (isGuest) BrandPurple.copy(alpha = 0.3f) else Color(0xFF86EFAC)),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Row(
+                    modifier = Modifier.padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Surface(
+                        shape = CircleShape,
+                        color = if (isGuest) BrandPurple else Color(0xFF16A34A),
+                        modifier = Modifier.size(40.dp)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Icon(
+                                Icons.Default.AccountCircle,
+                                contentDescription = null,
+                                tint = Color.White,
+                                modifier = Modifier.size(22.dp)
+                            )
+                        }
+                    }
+                    Spacer(Modifier.width(12.dp))
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = if (isGuest) "Mehmon rejimi" else "Google hisobi",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 14.sp
+                        )
+                        Spacer(Modifier.height(2.dp))
+                        Text(
+                            text = if (isGuest) "Hisobingizni Google ga ulab natijalarni saqlang" else (userEmail ?: "Ulangani: Google"),
+                            fontSize = 12.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                    Spacer(Modifier.width(8.dp))
+                    if (isGuest) {
+                        Button(
+                            onClick = onNavigateToAuth,
+                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
+                            shape = RoundedCornerShape(12.dp),
+                            contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp)
+                        ) {
+                            Text("Ro'yxatdan o'tish / Kirish", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                        }
+                    } else {
+                        OutlinedButton(
+                            onClick = { viewModel.signOut() },
+                            shape = RoundedCornerShape(12.dp),
+                            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
+                        ) {
+                            Text("Chiqish", fontSize = 12.sp)
+                        }
+                    }
+                }
+            }
+
             // Section 1: Personal Information
             SectionCard(
                 title = "Shaxsiy ma'lumotlar",
@@ -294,48 +357,107 @@ fun EditProfileScreen(
                     leadingIcon = { Icon(Icons.Default.EmojiEvents, contentDescription = null, tint = BrandPurple) },
                     singleLine = true,
                     shape = RoundedCornerShape(14.dp),
-                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
                     modifier = Modifier
                         .fillMaxWidth()
                         .testTag("edit_profile_target_input")
                 )
-            }
 
-            // Section 2: Grade Selection
-            SectionCard(
-                title = "Sinfingizni tanlang",
-                icon = Icons.Default.School
-            ) {
-                Text(
-                    text = "Tanlangan sinf bo‘yicha darslik va testlar tavsiya etiladi",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                // Birth Year Input
+                OutlinedTextField(
+                    value = uiState.birthYear,
+                    onValueChange = { viewModel.onBirthYearChange(it) },
+                    label = { Text("Tug'ilgan yili (Masalan: 2008)") },
+                    leadingIcon = { Icon(Icons.Default.CalendarToday, contentDescription = null, tint = BrandPurple) },
+                    singleLine = true,
+                    shape = RoundedCornerShape(14.dp),
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Number,
+                        imeAction = ImeAction.Done
+                    ),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .testTag("edit_profile_birth_year_input")
                 )
 
-                Spacer(Modifier.height(8.dp))
-
-                Row(
+                // Role Selection (O'quvchi / Abituriyent / Talaba / O'qituvchi)
+                Column(
                     modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    listOf(6, 7, 8, 9, 10, 11).forEach { g ->
-                        val selected = uiState.grade == g
-                        Surface(
-                            shape = RoundedCornerShape(14.dp),
-                            color = if (selected) BrandPurple else MaterialTheme.colorScheme.surfaceVariant,
-                            border = if (selected) BorderStroke(1.5.dp, BrandPurple) else null,
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(48.dp)
-                                .clickable { viewModel.onGradeChange(g) }
-                        ) {
-                            Box(contentAlignment = Alignment.Center) {
-                                Text(
-                                    text = "$g-sinf",
-                                    fontSize = 14.sp,
-                                    fontWeight = if (selected) FontWeight.Bold else FontWeight.Medium,
-                                    color = if (selected) Color.White else MaterialTheme.colorScheme.onSurface
-                                )
+                    Text(
+                        text = "Kim sifatida foydalanmoqchisiz?",
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    val roles = listOf("O'quvchi", "Abituriyent", "Talaba", "O'qituvchi")
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        roles.take(2).forEach { r ->
+                            RoleChip(
+                                label = r,
+                                isSelected = uiState.role == r,
+                                onClick = { viewModel.onRoleChange(r) },
+                                modifier = Modifier.weight(1f)
+                            )
+                        }
+                    }
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        roles.drop(2).forEach { r ->
+                            RoleChip(
+                                label = r,
+                                isSelected = uiState.role == r,
+                                onClick = { viewModel.onRoleChange(r) },
+                                modifier = Modifier.weight(1f)
+                            )
+                        }
+                    }
+                }
+            }
+
+            // Section 2: Grade Selection (only if O'quvchi)
+            if (uiState.role == "O'quvchi") {
+                SectionCard(
+                    title = "Sinfingizni tanlang",
+                    icon = Icons.Default.School
+                ) {
+                    Text(
+                        text = "Tanlangan sinf bo‘yicha darslik va testlar tavsiya etiladi",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+
+                    Spacer(Modifier.height(8.dp))
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        listOf(6, 7, 8, 9, 10, 11).forEach { g ->
+                            val selected = uiState.grade == g
+                            Surface(
+                                shape = RoundedCornerShape(14.dp),
+                                color = if (selected) BrandPurple else MaterialTheme.colorScheme.surfaceVariant,
+                                border = if (selected) BorderStroke(1.5.dp, BrandPurple) else null,
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .height(48.dp)
+                                    .clickable { viewModel.onGradeChange(g) }
+                            ) {
+                                Box(contentAlignment = Alignment.Center) {
+                                    Text(
+                                        text = "$g-sinf",
+                                        fontSize = 14.sp,
+                                        fontWeight = if (selected) FontWeight.Bold else FontWeight.Medium,
+                                        color = if (selected) Color.White else MaterialTheme.colorScheme.onSurface
+                                    )
+                                }
                             }
                         }
                     }
@@ -405,6 +527,34 @@ private fun AvatarOptionChip(
         }
     }
 }
+
+@Composable
+private fun RoleChip(
+    label: String,
+    isSelected: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Surface(
+        shape = RoundedCornerShape(14.dp),
+        color = if (isSelected) BrandPurple else MaterialTheme.colorScheme.surfaceVariant,
+        border = if (isSelected) BorderStroke(1.5.dp, BrandPurple) else null,
+        modifier = modifier
+            .height(48.dp)
+            .clickable(onClick = onClick)
+    ) {
+        Box(contentAlignment = Alignment.Center) {
+            Text(
+                text = label,
+                fontSize = 14.sp,
+                fontWeight = if (selectedOrNot(isSelected)) FontWeight.Bold else FontWeight.Medium,
+                color = if (isSelected) Color.White else MaterialTheme.colorScheme.onSurface
+            )
+        }
+    }
+}
+
+private fun selectedOrNot(selected: Boolean) = selected
 
 @Composable
 private fun SectionCard(

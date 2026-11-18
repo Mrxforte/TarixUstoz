@@ -1,10 +1,16 @@
 package com.tarixustoz.app.presentation.leaderboard
 
 import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -35,6 +41,8 @@ import androidx.compose.ui.unit.sp
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlin.math.roundToInt
+import kotlin.math.sin
 
 data class LeaderboardUser(
     val rank: Int,
@@ -58,6 +66,7 @@ data class DetailedCategoryAnalytics(
     val totalSolved: Int,
     val correctCount: Int,
     val accuracyPercent: Int,
+    val timeSpentMinutes: Int,
     val growthPercent: Int,
     val averageSpeedSeconds: Int,
     val chartData: List<StudentChartDataPoint>
@@ -189,139 +198,30 @@ fun LeaderboardScreen(
     }
 
     val categoryAnalytics = listOf(
-        DetailedCategoryAnalytics(
-            title = "Tarixiy voqealar",
-            subtitle = "Voqealar va xronologiya bobi",
-            totalSolved = 140,
-            correctCount = 119,
-            accuracyPercent = 85,
-            growthPercent = 18,
-            averageSpeedSeconds = 32,
-            chartData = listOf(
-                StudentChartDataPoint("Du", 0.50f, 12f),
-                StudentChartDataPoint("Se", 0.62f, 18f),
-                StudentChartDataPoint("Ch", 0.70f, 25f),
-                StudentChartDataPoint("Pa", 0.78f, 30f),
-                StudentChartDataPoint("Ju", 0.85f, 38f)
-            )
-        ),
-        DetailedCategoryAnalytics(
-            title = "Tarixiy shaxslar",
-            subtitle = "Buyuk siymolar va hukmdorlar",
-            totalSolved = 184,
-            correctCount = 150,
-            accuracyPercent = 82,
-            growthPercent = 24,
-            averageSpeedSeconds = 28,
-            chartData = listOf(
-                StudentChartDataPoint("Du", 0.40f, 10f),
-                StudentChartDataPoint("Se", 0.55f, 16f),
-                StudentChartDataPoint("Ch", 0.68f, 22f),
-                StudentChartDataPoint("Pa", 0.76f, 29f),
-                StudentChartDataPoint("Ju", 0.82f, 35f)
-            )
-        ),
-        DetailedCategoryAnalytics(
-            title = "Urushlar va janglar",
-            subtitle = "Harbiy yurishlar va jangnomalar",
-            totalSolved = 110,
-            correctCount = 84,
-            accuracyPercent = 76,
-            growthPercent = 12,
-            averageSpeedSeconds = 40,
-            chartData = listOf(
-                StudentChartDataPoint("Du", 0.35f, 8f),
-                StudentChartDataPoint("Se", 0.48f, 14f),
-                StudentChartDataPoint("Ch", 0.60f, 20f),
-                StudentChartDataPoint("Pa", 0.70f, 26f),
-                StudentChartDataPoint("Ju", 0.76f, 30f)
-            )
-        ),
-        DetailedCategoryAnalytics(
-            title = "Yillar va sanalar",
-            subtitle = "Sanalar va asrlar sinovi",
-            totalSolved = 215,
-            correctCount = 168,
-            accuracyPercent = 78,
-            growthPercent = 15,
-            averageSpeedSeconds = 25,
-            chartData = listOf(
-                StudentChartDataPoint("Du", 0.42f, 15f),
-                StudentChartDataPoint("Se", 0.56f, 22f),
-                StudentChartDataPoint("Ch", 0.65f, 28f),
-                StudentChartDataPoint("Pa", 0.72f, 34f),
-                StudentChartDataPoint("Ju", 0.78f, 40f)
-            )
-        ),
-        DetailedCategoryAnalytics(
-            title = "6-sinf Qadimgi dunyo tarixi",
-            subtitle = "Darslik: Misr, Bobil, Gretsiya va Rim",
-            totalSolved = 160,
-            correctCount = 140,
-            accuracyPercent = 88,
-            growthPercent = 22,
-            averageSpeedSeconds = 30,
-            chartData = listOf(
-                StudentChartDataPoint("Du", 0.60f, 18f),
-                StudentChartDataPoint("Se", 0.72f, 24f),
-                StudentChartDataPoint("Ch", 0.80f, 30f),
-                StudentChartDataPoint("Pa", 0.85f, 36f),
-                StudentChartDataPoint("Ju", 0.88f, 42f)
-            )
-        ),
-        DetailedCategoryAnalytics(
-            title = "7-sinf O‘zbekiston tarixi",
-            subtitle = "Darslik: Ilk o'rta asrlar va Somoniylar",
-            totalSolved = 175,
-            correctCount = 148,
-            accuracyPercent = 84,
-            growthPercent = 19,
-            averageSpeedSeconds = 31,
-            chartData = listOf(
-                StudentChartDataPoint("Du", 0.52f, 14f),
-                StudentChartDataPoint("Se", 0.65f, 20f),
-                StudentChartDataPoint("Ch", 0.74f, 26f),
-                StudentChartDataPoint("Pa", 0.80f, 32f),
-                StudentChartDataPoint("Ju", 0.84f, 38f)
-            )
-        ),
-        DetailedCategoryAnalytics(
-            title = "8-sinf Jahon tarixi",
-            subtitle = "Darslik: Uyg'onish davri va kashfiyotlar",
-            totalSolved = 130,
-            correctCount = 104,
-            accuracyPercent = 80,
-            growthPercent = 16,
-            averageSpeedSeconds = 35,
-            chartData = listOf(
-                StudentChartDataPoint("Du", 0.48f, 12f),
-                StudentChartDataPoint("Se", 0.60f, 18f),
-                StudentChartDataPoint("Ch", 0.70f, 24f),
-                StudentChartDataPoint("Pa", 0.76f, 30f),
-                StudentChartDataPoint("Ju", 0.80f, 36f)
-            )
-        ),
-        DetailedCategoryAnalytics(
-            title = "Mantiqiy va DTM blok",
-            subtitle = "OTMga kirish rasmiy test topshiriqlari",
-            totalSolved = 95,
-            correctCount = 78,
-            accuracyPercent = 82,
-            growthPercent = 20,
-            averageSpeedSeconds = 45,
-            chartData = listOf(
-                StudentChartDataPoint("Du", 0.40f, 10f),
-                StudentChartDataPoint("Se", 0.54f, 16f),
-                StudentChartDataPoint("Ch", 0.66f, 24f),
-                StudentChartDataPoint("Pa", 0.76f, 32f),
-                StudentChartDataPoint("Ju", 0.82f, 40f)
-            )
-        )
+        DetailedCategoryAnalytics("Tarixiy voqealar", "Voqealar va xronologiya bobi", 140, 119, 85, 42, 18, 32, emptyList()),
+        DetailedCategoryAnalytics("Tarixiy shaxslar", "Buyuk siymolar va hukmdorlar", 184, 150, 82, 48, 24, 28, emptyList()),
+        DetailedCategoryAnalytics("Urushlar va janglar", "Harbiy yurishlar va jangnomalar", 110, 84, 76, 38, 12, 40, emptyList()),
+        DetailedCategoryAnalytics("Yillar va sanalar", "Sanalar va asrlar sinovi", 215, 168, 78, 30, 15, 25, emptyList()),
+        DetailedCategoryAnalytics("Shahar va hududlar", "Qadimgi shaharlar va xaritalar", 90, 65, 72, 28, 20, 27, emptyList()),
+        DetailedCategoryAnalytics("Tarixiy faktlar", "Faktlar va yozma manbalar", 100, 68, 68, 32, 19, 30, emptyList()),
+        DetailedCategoryAnalytics("Tarixiy obidalar", "Me'moriy obidalar va yodgorliklar", 80, 50, 62, 26, 17, 33, emptyList()),
+        DetailedCategoryAnalytics("Mantiqiy va DTM", "OTMga kirish rasmiy testlari", 150, 117, 78, 55, 28, 42, emptyList()),
+        DetailedCategoryAnalytics("6-sinf Tarix (Qadimgi dunyo)", "Misr, Bobil, Gretsiya va Rim", 150, 128, 85, 50, 30, 28, emptyList()),
+        DetailedCategoryAnalytics("7-sinf O‘zbekiston tarixi", "Ilk o'rta asrlar va Somoniylar", 110, 84, 76, 36, 21, 31, emptyList()),
+        DetailedCategoryAnalytics("7-sinf Jahon tarixi", "V-XV asrlar Yevropa va Osiyo", 95, 67, 70, 30, 19, 32, emptyList()),
+        DetailedCategoryAnalytics("8-sinf O‘zbekiston tarixi", "XVI-XIX asr I yarmi Xonliklar", 105, 78, 74, 35, 23, 30, emptyList()),
+        DetailedCategoryAnalytics("8-sinf Jahon tarixi", "Uyg'onish davri va kashfiyotlar", 90, 65, 72, 29, 20, 34, emptyList()),
+        DetailedCategoryAnalytics("9-sinf O‘zbekiston tarixi", "Rossiya istilosi va Jadidchilik", 100, 68, 68, 33, 18, 32, emptyList()),
+        DetailedCategoryAnalytics("9-sinf Jahon tarixi", "XX asrI jahon urushi davri", 85, 56, 66, 28, 16, 35, emptyList()),
+        DetailedCategoryAnalytics("10-sinf O‘zbekiston tarixi", "1917-1991 yillar sho'rolar davri", 115, 92, 80, 38, 25, 29, emptyList()),
+        DetailedCategoryAnalytics("10-sinf Jahon tarixi", "1918-1991 II jahon urushi davri", 95, 71, 75, 31, 22, 31, emptyList()),
+        DetailedCategoryAnalytics("11-sinf O‘zbekiston tarixi", "Mustaqillik davri taraqqiyoti", 125, 110, 88, 42, 32, 27, emptyList()),
+        DetailedCategoryAnalytics("11-sinf Jahon tarixi", "Zamonaviy dunyo va globallashuv", 100, 82, 82, 34, 27, 28, emptyList())
     )
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets(0.dp),
+        contentWindowInsets = WindowInsets.safeDrawing,
         topBar = {
             TopAppBar(
                 title = {
@@ -366,7 +266,8 @@ fun LeaderboardScreen(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(horizontal = 16.dp),
-                verticalArrangement = Arrangement.spacedBy(10.dp)
+                verticalArrangement = Arrangement.spacedBy(10.dp),
+                contentPadding = PaddingValues(bottom = 90.dp)
             ) {
                 // Modern Split View Segmented Switch
                 item {
@@ -565,6 +466,12 @@ fun LeaderboardScreen(
                     }
 
                     itemsIndexed(categoryAnalytics) { _, cat ->
+                        val animCorrect = (cat.correctCount * animProgress).roundToInt()
+                        val animTotal = (cat.totalSolved * animProgress).roundToInt()
+                        val animAccuracy = (cat.accuracyPercent * animProgress).roundToInt()
+                        val animGrowth = (cat.growthPercent * animProgress).roundToInt()
+                        val animTime = (cat.timeSpentMinutes * animProgress).roundToInt()
+
                         Surface(
                             shape = RoundedCornerShape(16.dp),
                             color = MaterialTheme.colorScheme.surface,
@@ -586,7 +493,7 @@ fun LeaderboardScreen(
                                         Text(cat.title, fontWeight = FontWeight.Bold, fontSize = 14.sp)
                                         Text(cat.subtitle, fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                                     }
-                                    Text("${cat.correctCount}/${cat.totalSolved} (${(cat.accuracyPercent * animProgress).toInt()}%)", fontWeight = FontWeight.Bold, color = BrandPurple, fontSize = 12.sp)
+                                    Text("$animCorrect/$animTotal ($animAccuracy%)", fontWeight = FontWeight.Bold, color = BrandPurple, fontSize = 12.sp)
                                 }
                                 LinearProgressIndicator(
                                     progress = { (cat.accuracyPercent / 100f * animProgress).coerceIn(0f, 1f) },
@@ -601,8 +508,8 @@ fun LeaderboardScreen(
                                     modifier = Modifier.fillMaxWidth(),
                                     horizontalArrangement = Arrangement.SpaceBetween
                                 ) {
-                                    Text("O'sish progressi: +${(cat.growthPercent * animProgress).toInt()}%", fontSize = 11.sp, color = Color(0xFF16A34A), fontWeight = FontWeight.Bold)
-                                    Text("O'rtacha tezlik: ${cat.averageSpeedSeconds} sek/savol", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    Text("O'sish: +$animGrowth% • Vaqt: $animTime daq", fontSize = 11.sp, color = Color(0xFF16A34A), fontWeight = FontWeight.Bold)
+                                    Text("Tezlik: ${cat.averageSpeedSeconds} sek/savol", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                                 }
                             }
                         }

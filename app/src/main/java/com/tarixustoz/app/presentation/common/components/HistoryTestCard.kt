@@ -28,30 +28,57 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.CheckCircle
+
+import androidx.compose.animation.core.*
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.drawscope.clipRect
+import androidx.compose.runtime.getValue
+import kotlin.math.sin
+
 /**
- * Historical Test Card inspired by modern travel app design (Image #2 "Find your dream trip").
- * Used for Mavzu testlari, Sinf testlari, and Yo'nalishli testlar.
+ * Historical Test Card with Liquid Battery Progress.
+ * Shows title, subtitle (which grade book is used), and ticket counts.
  */
 @Composable
 fun HistoryTestCard(
     title: String,
     subtitle: String,
-    badgeText: String,
+    totalTickets: Int,
+    passedTickets: Int,
     onCardClick: () -> Unit,
     modifier: Modifier = Modifier,
-    ratingText: String = "4.9 (120 test)",
     icon: ImageVector = Icons.AutoMirrored.Filled.MenuBook,
     gradientColors: List<Color> = listOf(Color(0xFF0F172A), Color(0xFF1E293B), Color(0xFF334155)),
     accentColor: Color = Color(0xFF10B981),
-    isFavorite: Boolean = false,
-    onFavoriteClick: (() -> Unit)? = null
+    isSelected: Boolean = false
 ) {
+    val progress = if (totalTickets > 0) (passedTickets.toFloat() / totalTickets).coerceIn(0f, 1f) else 0f
+
+    val infiniteTransition = rememberInfiniteTransition(label = "liquid_wave")
+    val waveOffset by infiniteTransition.animateFloat(
+        initialValue = 0f,
+        targetValue = 2f * Math.PI.toFloat(),
+        animationSpec = infiniteRepeatable(
+            animation = tween(2000, easing = LinearEasing),
+            repeatMode = RepeatMode.Restart
+        ),
+        label = "waveOffset"
+    )
+
     Surface(
         modifier = modifier
             .clip(RoundedCornerShape(24.dp))
             .clickable { onCardClick() },
         shape = RoundedCornerShape(24.dp),
-        shadowElevation = 4.dp
+        border = if (isSelected) BorderStroke(2.5.dp, Color(0xFF10B981)) else null,
+        shadowElevation = if (isSelected) 8.dp else 4.dp
     ) {
         Box(
             modifier = Modifier
@@ -62,172 +89,99 @@ fun HistoryTestCard(
                     )
                 )
         ) {
-            // Background artistic circles for visual depth
-            Box(
-                modifier = Modifier
-                    .size(160.dp)
-                    .align(Alignment.TopEnd)
-                    .offset(x = 40.dp, y = (-30).dp)
-                    .clip(CircleShape)
-                    .background(Color.White.copy(alpha = 0.07f))
-            )
+            // Liquid Progress Background
+            Canvas(modifier = Modifier.fillMaxSize()) {
+                val width = size.width
+                val height = size.height
+                val progressHeight = height * progress
 
+                clipRect {
+                    val path = Path()
+                    path.moveTo(0f, height)
+                    
+                    if (progress > 0f) {
+                        for (x in 0..width.toInt() step 5) {
+                            val y = (height - progressHeight) + 8.dp.toPx() * sin((x / width) * 2 * Math.PI.toFloat() + waveOffset)
+                            path.lineTo(x.toFloat(), y.toFloat())
+                        }
+                    } else {
+                        path.lineTo(width, height)
+                    }
+
+                    path.lineTo(width, height)
+                    path.close()
+
+                    drawPath(
+                        path = path,
+                        color = accentColor.copy(alpha = 0.3f)
+                    )
+                }
+            }
+
+            // Top Battery Indicator
             Box(
                 modifier = Modifier
-                    .size(120.dp)
-                    .align(Alignment.BottomStart)
-                    .offset(x = (-30).dp, y = 30.dp)
-                    .clip(CircleShape)
-                    .background(Color.White.copy(alpha = 0.05f))
-            )
+                    .align(Alignment.TopEnd)
+                    .padding(16.dp)
+            ) {
+                Surface(
+                    color = Color.Black.copy(alpha = 0.35f),
+                    shape = RoundedCornerShape(12.dp),
+                    border = BorderStroke(1.dp, Color.White.copy(alpha = 0.2f))
+                ) {
+                    Row(
+                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "$passedTickets / $totalTickets Bilet",
+                            color = Color.White,
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                    }
+                }
+            }
 
             // Content Container
             Column(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(16.dp),
-                verticalArrangement = Arrangement.SpaceBetween
+                verticalArrangement = Arrangement.Bottom
             ) {
-                // Top Row: Badge pill + Favorite button
+                // Title
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White,
+                    maxLines = 2,
+                    overflow = TextOverflow.Ellipsis,
+                    fontSize = 18.sp,
+                    lineHeight = 22.sp
+                )
+
+                Spacer(modifier = Modifier.height(6.dp))
+
+                // Subtitle (Book used)
                 Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    // Price tag style pill badge (Top left)
-                    Surface(
-                        color = Color.Black.copy(alpha = 0.35f),
-                        shape = RoundedCornerShape(20.dp),
-                        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.2f))
-                    ) {
-                        Text(
-                            text = badgeText,
-                            color = Color.White,
-                            fontSize = 12.sp,
-                            fontWeight = FontWeight.SemiBold,
-                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
-                        )
-                    }
-
-                    // Top right favorite icon button in translucent circle
-                    if (onFavoriteClick != null) {
-                        Box(
-                            modifier = Modifier
-                                .size(36.dp)
-                                .clip(CircleShape)
-                                .background(Color.Black.copy(alpha = 0.3f))
-                                .clickable { onFavoriteClick() },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Icon(
-                                imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                                contentDescription = "Favorite",
-                                tint = if (isFavorite) Color(0xFFEF4444) else Color.White,
-                                modifier = Modifier.size(18.dp)
-                            )
-                        }
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(24.dp))
-
-                // Bottom area: Title, Subtitle with icon, Rating, & "Explore ↗" pill button
-                Column(
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    // Title
-                    Text(
-                        text = title,
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.White,
-                        maxLines = 2,
-                        overflow = TextOverflow.Ellipsis,
-                        fontSize = 19.sp,
-                        lineHeight = 23.sp
+                    Icon(
+                        imageVector = icon,
+                        contentDescription = null,
+                        tint = Color.White.copy(alpha = 0.8f),
+                        modifier = Modifier.size(15.dp)
                     )
-
-                    Spacer(modifier = Modifier.height(6.dp))
-
-                    // Subtitle with icon (location/book icon style)
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(
-                            imageVector = icon,
-                            contentDescription = null,
-                            tint = Color.White.copy(alpha = 0.8f),
-                            modifier = Modifier.size(15.dp)
-                        )
-                        Spacer(modifier = Modifier.width(6.dp))
-                        Text(
-                            text = subtitle,
-                            color = Color.White.copy(alpha = 0.85f),
-                            fontSize = 13.sp,
-                            maxLines = 1,
-                            overflow = TextOverflow.Ellipsis
-                        )
-                    }
-
-                    Spacer(modifier = Modifier.height(12.dp))
-
-                    // Bottom row: Rating star & Green "Explore ↗" action pill button
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        // Rating
-                        Surface(
-                            color = Color.Black.copy(alpha = 0.25f),
-                            shape = RoundedCornerShape(12.dp)
-                        ) {
-                            Row(
-                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Icon(
-                                    imageVector = Icons.Default.Star,
-                                    contentDescription = null,
-                                    tint = Color(0xFFFBBF24),
-                                    modifier = Modifier.size(14.dp)
-                                )
-                                Spacer(modifier = Modifier.width(4.dp))
-                                Text(
-                                    text = ratingText,
-                                    color = Color.White,
-                                    fontSize = 11.sp,
-                                    fontWeight = FontWeight.Medium
-                                )
-                            }
-                        }
-
-                        // Green "Explore ↗" style action button
-                        Surface(
-                            color = accentColor,
-                            shape = RoundedCornerShape(20.dp),
-                            modifier = Modifier.clickable { onCardClick() }
-                        ) {
-                            Row(
-                                modifier = Modifier.padding(horizontal = 14.dp, vertical = 7.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Text(
-                                    text = "Boshlash",
-                                    color = Color.White,
-                                    fontSize = 13.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
-                                Spacer(modifier = Modifier.width(4.dp))
-                                Icon(
-                                    imageVector = Icons.Default.NorthEast,
-                                    contentDescription = null,
-                                    tint = Color.White,
-                                    modifier = Modifier.size(14.dp)
-                                )
-                            }
-                        }
-                    }
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        text = subtitle,
+                        color = Color.White.copy(alpha = 0.85f),
+                        fontSize = 13.sp,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
                 }
             }
         }

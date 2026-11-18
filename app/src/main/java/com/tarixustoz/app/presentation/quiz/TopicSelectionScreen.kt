@@ -1,6 +1,5 @@
 package com.tarixustoz.app.presentation.quiz
 
-import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -11,10 +10,12 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
-import androidx.compose.material.icons.automirrored.filled.Sort
+import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.ArrowDownward
+import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material.icons.filled.Clear
+import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.SwapVert
 import androidx.compose.material3.*
@@ -28,8 +29,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.domain.model.gradeId
+import com.tarixustoz.app.presentation.common.components.HistoryTestCard
 import com.tarixustoz.app.presentation.textbooks.TextbooksViewModel
 import com.tarixustoz.app.presentation.theme.BrandPurple
+
+private data class TopicMeta(
+    val id: String,
+    val textbookId: String,
+    val gradeId: Int,
+    val title: String,
+    val textbookTitle: String,
+    val questionCount: Int,
+    val number: Int
+)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -45,6 +57,7 @@ fun TopicSelectionScreen(
     val topicCountsMap by viewModel.topicCountsMap.collectAsState()
     var selectedBookFilter by remember { mutableStateOf("all") }
     var isReversedSort by remember { mutableStateOf(false) }
+    var showFilterDropdown by remember { mutableStateOf(false) }
 
     val allTopics = remember(realTopics, topicCountsMap) {
         realTopics.map { t ->
@@ -92,18 +105,18 @@ fun TopicSelectionScreen(
     }
 
     val gradeFilters = listOf(
-        "all" to "Barchasi (381 ta mavzu)",
-        "6_all" to "6-sinf (44 ta mavzu)",
-        "7_uz" to "7-sinf O‘zbekiston (35 ta mavzu)",
-        "7_jahon" to "7-sinf Jahon (40 ta mavzu)",
-        "8_uz" to "8-sinf O‘zbekiston (45 ta mavzu)",
-        "8_jahon" to "8-sinf Jahon (35 ta mavzu)",
-        "9_uz" to "9-sinf O‘zbekiston (30 ta mavzu)",
-        "9_jahon" to "9-sinf Jahon (40 ta mavzu)",
-        "10_uz" to "10-sinf O‘zbekiston (30 ta mavzu)",
-        "10_jahon" to "10-sinf Jahon (30 ta mavzu)",
-        "11_uz" to "11-sinf O‘zbekiston (25 ta mavzu)",
-        "11_jahon" to "11-sinf Jahon (25 ta mavzu)"
+        "all" to "🌐 Barchasi (381 ta mavzu)",
+        "6_all" to "📚 6-sinf (44 ta mavzu)",
+        "7_uz" to "🇺🇿 7-sinf O‘zbekiston (35 ta mavzu)",
+        "7_jahon" to "🌍 7-sinf Jahon (40 ta mavzu)",
+        "8_uz" to "🇺🇿 8-sinf O‘zbekiston (45 ta mavzu)",
+        "8_jahon" to "🌍 8-sinf Jahon (35 ta mavzu)",
+        "9_uz" to "🇺🇿 9-sinf O‘zbekiston (30 ta mavzu)",
+        "9_jahon" to "🌍 9-sinf Jahon (40 ta mavzu)",
+        "10_uz" to "🇺🇿 10-sinf O‘zbekiston (30 ta mavzu)",
+        "10_jahon" to "🌍 10-sinf Jahon (30 ta mavzu)",
+        "11_uz" to "🇺🇿 11-sinf O‘zbekiston (25 ta mavzu)",
+        "11_jahon" to "🌍 11-sinf Jahon (25 ta mavzu)"
     )
 
     val filteredTopics = remember(searchQuery, selectedBookFilter, sortedTopics) {
@@ -134,7 +147,7 @@ fun TopicSelectionScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets(0.dp),
+        contentWindowInsets = WindowInsets.safeDrawing,
         topBar = {
             TopAppBar(
                 title = {
@@ -149,7 +162,6 @@ fun TopicSelectionScreen(
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Orqaga")
                     }
                 },
-                windowInsets = WindowInsets(0.dp),
                 actions = {
                     IconButton(
                         onClick = { isReversedSort = !isReversedSort },
@@ -237,47 +249,109 @@ fun TopicSelectionScreen(
                 .padding(innerPadding)
                 .padding(horizontal = 16.dp)
         ) {
-            // Search Bar for Topics & Textbooks
-            OutlinedTextField(
-                value = searchQuery,
-                onValueChange = { searchQuery = it },
-                placeholder = {
-                    Text(
-                        "Mavzu yoki darslik nomini qidirish...",
-                        fontSize = 14.sp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                },
-                leadingIcon = {
-                    Icon(
-                        Icons.Default.Search,
-                        contentDescription = "Qidirish",
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                },
-                trailingIcon = {
-                    if (searchQuery.isNotEmpty()) {
-                        IconButton(onClick = { searchQuery = "" }) {
-                            Icon(Icons.Default.Clear, contentDescription = "Tozalash")
-                        }
-                    }
-                },
-                singleLine = true,
-                shape = RoundedCornerShape(14.dp),
-                colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = BrandPurple,
-                    unfocusedBorderColor = MaterialTheme.colorScheme.outlineVariant,
-                    focusedContainerColor = MaterialTheme.colorScheme.surface,
-                    unfocusedContainerColor = MaterialTheme.colorScheme.surface
-                ),
+            // Search Input with Grade/Subject Dropdown Button next to it
+            Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .testTag("topic_search_field")
-            )
+                    .padding(vertical = 4.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                OutlinedTextField(
+                    value = searchQuery,
+                    onValueChange = { searchQuery = it },
+                    placeholder = {
+                        Text(
+                            "Mavzu yoki darslik nomini qidirish...",
+                            fontSize = 14.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    },
+                    leadingIcon = {
+                        Icon(
+                            Icons.Default.Search,
+                            contentDescription = "Qidirish",
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    },
+                    trailingIcon = {
+                        if (searchQuery.isNotEmpty()) {
+                            IconButton(onClick = { searchQuery = "" }) {
+                                Icon(Icons.Default.Clear, contentDescription = "Tozalash")
+                            }
+                        }
+                    },
+                    singleLine = true,
+                    shape = RoundedCornerShape(14.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = BrandPurple,
+                        unfocusedBorderColor = MaterialTheme.colorScheme.outlineVariant,
+                        focusedContainerColor = MaterialTheme.colorScheme.surface,
+                        unfocusedContainerColor = MaterialTheme.colorScheme.surface
+                    ),
+                    modifier = Modifier
+                        .weight(1f)
+                        .testTag("topic_search_field")
+                )
 
-            Spacer(Modifier.height(10.dp))
+                Spacer(Modifier.width(8.dp))
 
-            // Darsliklar / Sinflar bo‘yicha filter chips
+                // Dropdown Filter Button for Grade & Subject (7 Jahon, 7 Uzb, etc.)
+                Box {
+                    Surface(
+                        shape = RoundedCornerShape(14.dp),
+                        color = if (selectedBookFilter != "all") BrandPurple else MaterialTheme.colorScheme.surfaceVariant,
+                        border = BorderStroke(1.dp, if (selectedBookFilter != "all") BrandPurple else MaterialTheme.colorScheme.outlineVariant),
+                        modifier = Modifier
+                            .height(56.dp)
+                            .clickable { showFilterDropdown = true }
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(horizontal = 10.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.FilterList,
+                                contentDescription = "Sinf va Darslik tanlash",
+                                tint = if (selectedBookFilter != "all") Color.White else MaterialTheme.colorScheme.onSurfaceVariant,
+                                modifier = Modifier.size(20.dp)
+                            )
+                            Spacer(Modifier.width(2.dp))
+                            Icon(
+                                imageVector = Icons.Default.ArrowDropDown,
+                                contentDescription = null,
+                                tint = if (selectedBookFilter != "all") Color.White else MaterialTheme.colorScheme.onSurfaceVariant,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
+                    }
+
+                    DropdownMenu(
+                        expanded = showFilterDropdown,
+                        onDismissRequest = { showFilterDropdown = false }
+                    ) {
+                        gradeFilters.forEach { (filterKey, label) ->
+                            DropdownMenuItem(
+                                text = {
+                                    Text(
+                                        text = label,
+                                        fontWeight = if (selectedBookFilter == filterKey) FontWeight.Bold else FontWeight.Normal,
+                                        color = if (selectedBookFilter == filterKey) BrandPurple else MaterialTheme.colorScheme.onSurface,
+                                        fontSize = 13.sp
+                                    )
+                                },
+                                onClick = {
+                                    selectedBookFilter = filterKey
+                                    showFilterDropdown = false
+                                }
+                            )
+                        }
+                    }
+                }
+            }
+
+            Spacer(Modifier.height(8.dp))
+
+            // Darsliklar / Sinflar bo‘yicha horizontal filter chips
             LazyRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.fillMaxWidth()
@@ -344,83 +418,57 @@ fun TopicSelectionScreen(
                 }
             }
 
-            // Topics list with checkboxes
+            Spacer(Modifier.height(4.dp))
+
+            // Topics list using HistoryTestCard
             LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(10.dp),
+                verticalArrangement = Arrangement.spacedBy(14.dp),
+                contentPadding = PaddingValues(vertical = 8.dp),
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f)
             ) {
-                items(filteredTopics) { topic ->
+                items(filteredTopics, key = { it.id }) { topic ->
                     val isChecked = selectedTopicIds.contains(topic.id)
-                    Surface(
-                        shape = RoundedCornerShape(14.dp),
-                        color = if (isChecked) Color(0xFFEEF2FF) else MaterialTheme.colorScheme.surface,
-                        border = BorderStroke(
-                            if (isChecked) 1.5.dp else 1.dp,
-                            if (isChecked) BrandPurple else MaterialTheme.colorScheme.outlineVariant
-                        ),
+                    val gradeStr = "${topic.gradeId}-Sinf"
+                    val colors = when (topic.gradeId) {
+                        6 -> listOf(Color(0xFF1E1B4B), Color(0xFF312E81))
+                        7 -> if (topic.textbookId.contains("jahon")) listOf(Color(0xFF0F766E), Color(0xFF115E59)) else listOf(Color(0xFF065F46), Color(0xFF047857))
+                        8 -> if (topic.textbookId.contains("jahon")) listOf(Color(0xFF9A3412), Color(0xFF7C2D12)) else listOf(Color(0xFF854D0E), Color(0xFFA16207))
+                        9 -> if (topic.textbookId.contains("jahon")) listOf(Color(0xFF6B21A8), Color(0xFF581C87)) else listOf(Color(0xFF7C2D12), Color(0xFF9A3412))
+                        10 -> if (topic.textbookId.contains("jahon")) listOf(Color(0xFF1E3A8A), Color(0xFF1E40AF)) else listOf(Color(0xFF4C1D95), Color(0xFF5B21B6))
+                        11 -> listOf(Color(0xFF0F172A), Color(0xFF1E293B))
+                        else -> listOf(Color(0xFF0F172A), Color(0xFF334155))
+                    }
+                    val accent = when (topic.number % 4) {
+                        0 -> Color(0xFF10B981)
+                        1 -> Color(0xFF3B82F6)
+                        2 -> Color(0xFF8B5CF6)
+                        else -> Color(0xFFF59E0B)
+                    }
+
+                    val tCount = if (topic.questionCount > 0) topic.questionCount else 15
+                    val ticketsCount = (tCount + 29) / 30
+
+                    HistoryTestCard(
+                        title = topic.title,
+                        subtitle = topic.textbookTitle,
+                        totalTickets = ticketsCount,
+                        passedTickets = 0,
+                        icon = Icons.AutoMirrored.Filled.MenuBook,
+                        gradientColors = colors,
+                        accentColor = accent,
+                        isSelected = isChecked,
+                        onCardClick = {
+                            if (isChecked) selectedTopicIds.remove(topic.id)
+                            else selectedTopicIds.add(topic.id)
+                        },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable {
-                                if (isChecked) selectedTopicIds.remove(topic.id)
-                                else selectedTopicIds.add(topic.id)
-                            }
-                            .testTag("topic_item_${topic.id}")
-                    ) {
-                        Row(
-                            modifier = Modifier.padding(horizontal = 14.dp, vertical = 12.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Checkbox(
-                                checked = isChecked,
-                                onCheckedChange = { checked ->
-                                    if (checked) selectedTopicIds.add(topic.id)
-                                    else selectedTopicIds.remove(topic.id)
-                                },
-                                colors = CheckboxDefaults.colors(
-                                    checkedColor = BrandPurple
-                                )
-                            )
-                            Spacer(Modifier.width(8.dp))
-                            Column(modifier = Modifier.weight(1f)) {
-                                Text(
-                                    text = topic.title,
-                                    fontSize = 14.sp,
-                                    fontWeight = if (isChecked) FontWeight.Bold else FontWeight.SemiBold,
-                                    color = MaterialTheme.colorScheme.onSurface
-                                )
-                                Spacer(Modifier.height(2.dp))
-                                Row(verticalAlignment = Alignment.CenterVertically) {
-                                    Text(
-                                        text = topic.textbookTitle,
-                                        fontSize = 11.sp,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                    Text(
-                                        text = " • ${topic.questionCount} ta test",
-                                        fontSize = 11.sp,
-                                        fontWeight = FontWeight.Medium,
-                                        color = BrandPurple
-                                    )
-                                }
-                            }
-                        }
-                    }
+                            .height(205.dp)
+                    )
                 }
-
-                item { Spacer(Modifier.height(8.dp)) }
             }
         }
     }
 }
-
-private data class TopicMeta(
-    val id: String,
-    val textbookId: String,
-    val gradeId: Int,
-    val title: String,
-    val textbookTitle: String,
-    val questionCount: Int,
-    val number: Int = 0
-)

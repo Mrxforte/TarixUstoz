@@ -11,6 +11,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -28,23 +29,11 @@ import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import kotlinx.coroutines.launch
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.tarixustoz.app.domain.model.Textbook
+import com.tarixustoz.app.domain.model.Topic
+import com.tarixustoz.app.domain.model.gradeId
 import com.tarixustoz.app.presentation.textbooks.TextbooksViewModel
 import com.tarixustoz.app.presentation.theme.BrandPurple
-
-/** "12 345 test" — real count from the backend, "…" while it loads. */
-private fun directionCountLabel(counts: Map<String, Int>, code: String): String {
-    val count = counts[code] ?: return "…"
-    return "${"%,d".format(count).replace(',', '\u00A0')} test"
-}
-
-private data class DirectionCard(
-    val code: String,
-    val title: String,
-    val icon: ImageVector,
-    val tint: Color,
-    val background: Color
-)
+import com.tarixustoz.app.presentation.common.components.TestSectionRow
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -55,18 +44,13 @@ fun TestsScreen(
     onNavigateToMistakes: () -> Unit,
     onNavigateToAi: () -> Unit,
     onNavigateToCustomOptions: () -> Unit,
-    onNavigateToTickets: (categoryKey: String, categoryTitle: String) -> Unit,
+    onNavigateToTickets: (categoryKey: String, categoryTitle: String, grade: Int) -> Unit,
+    onNavigateToVerticalCards: (title: String, categoryType: String) -> Unit = { _, _ -> },
     textbooksViewModel: TextbooksViewModel = hiltViewModel(),
     testsViewModel: TestsViewModel = hiltViewModel()
 ) {
-    val textbooks by textbooksViewModel.textbooks.collectAsState()
     val directionCounts by testsViewModel.directionCounts.collectAsState()
     var selectedGrade by remember { mutableIntStateOf(0) }
-    var selectedTextbookForMenu by remember { mutableStateOf<Textbook?>(null) }
-
-    LaunchedEffect(Unit) {
-        textbooksViewModel.load()
-    }
 
     LaunchedEffect(selectedGrade) {
         testsViewModel.loadCounts(selectedGrade)
@@ -78,9 +62,17 @@ fun TestsScreen(
     val coroutineScope = rememberCoroutineScope()
     val pullState = rememberPullToRefreshState()
 
+    val testsTopicCards by testsViewModel.testsTopicCards.collectAsState()
+    val testsGradeCards by testsViewModel.testsGradeCards.collectAsState()
+    val testsDirectionCards by testsViewModel.testsDirectionCards.collectAsState()
+
+    LaunchedEffect(Unit) {
+        testsViewModel.loadCounts(selectedGrade)
+    }
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets(0.dp),
+        contentWindowInsets = WindowInsets.safeDrawing,
         topBar = {
             TopAppBar(
                 title = {
@@ -102,7 +94,6 @@ fun TestsScreen(
             onRefresh = {
                 coroutineScope.launch {
                     isRefreshing = true
-                    textbooksViewModel.load()
                     testsViewModel.loadCounts(selectedGrade)
                     isRefreshing = false
                 }
@@ -127,517 +118,133 @@ fun TestsScreen(
                     .padding(horizontal = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-            // Grade Filter Chips
-            item {
-                LazyRow(
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    modifier = Modifier.padding(vertical = 4.dp)
-                ) {
-                    items(grades) { (grade, label) ->
-                        val isSelected = selectedGrade == grade
-                        FilterChip(
-                            selected = isSelected,
-                            onClick = {
-                                selectedGrade = grade
-                                textbooksViewModel.setGrade(grade)
-                            },
-                            label = {
-                                Text(
-                                    label,
-                                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
-                                )
-                            },
-                            colors = FilterChipDefaults.filterChipColors(
-                                selectedContainerColor = BrandPurple,
-                                selectedLabelColor = Color.White
-                            ),
-                            shape = RoundedCornerShape(50)
-                        )
-                    }
-                }
-            }
+                item { Spacer(Modifier.height(4.dp)) }
 
-            // Xatolar Ustida Ishlash (Mistakes Card)
-            item {
-                Surface(
-                    shape = RoundedCornerShape(18.dp),
-                    color = Color(0xFFFEF2F2),
-                    border = BorderStroke(1.dp, Color(0xFFFECACA)),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable { onNavigateToMistakes() }
-                        .testTag("tests_mistakes_card")
-                ) {
-                    Row(
-                        modifier = Modifier.padding(16.dp),
-                        verticalAlignment = Alignment.CenterVertically
+                // Grade Filter Chips
+                item {
+                    LazyRow(
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        modifier = Modifier.padding(vertical = 4.dp)
                     ) {
-                        Surface(
-                            shape = CircleShape,
-                            color = Color(0xFFEF4444),
-                            modifier = Modifier.size(46.dp)
-                        ) {
-                            Box(contentAlignment = Alignment.Center) {
-                                Icon(
-                                    Icons.Default.Warning,
-                                    contentDescription = null,
-                                    tint = Color.White,
-                                    modifier = Modifier.size(24.dp)
-                                )
-                            }
-                        }
-                        Spacer(Modifier.width(14.dp))
-                        Column(modifier = Modifier.weight(1f)) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Text(
-                                    text = "Bilmagan savollarim",
-                                    style = MaterialTheme.typography.titleSmall,
-                                    fontWeight = FontWeight.Bold,
-                                    color = Color(0xFF991B1B)
-                                )
-                                Spacer(Modifier.width(6.dp))
-                                Badge(containerColor = Color(0xFFEF4444), contentColor = Color.White) {
-                                    Text("Xatolar")
-                                }
-                            }
-                            Spacer(Modifier.height(2.dp))
-                            Text(
-                                text = "Xatolaringiz ustida ishlab, bilimlarni mustahkamlang",
-                                style = MaterialTheme.typography.bodySmall,
-                                color = Color(0xFFB91C1C)
+                        items(grades) { (grade, label) ->
+                            val isSelected = selectedGrade == grade
+                            FilterChip(
+                                selected = isSelected,
+                                onClick = {
+                                    selectedGrade = grade
+                                    testsViewModel.loadCounts(grade)
+                                },
+                                label = {
+                                    Text(
+                                        label,
+                                        fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
+                                    )
+                                },
+                                colors = FilterChipDefaults.filterChipColors(
+                                    selectedContainerColor = BrandPurple,
+                                    selectedLabelColor = Color.White
+                                ),
+                                shape = RoundedCornerShape(50)
                             )
                         }
-                        Icon(
-                            Icons.AutoMirrored.Filled.ArrowForward,
-                            contentDescription = null,
-                            tint = Color(0xFFEF4444),
-                            modifier = Modifier.size(20.dp)
-                        )
                     }
                 }
-            }
 
-            // Categories Header
-            item {
-                Text(
-                    text = "Yo‘nalishlar bo‘yicha testlar",
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold
-                )
-            }
-
-            // Categories Grid
-            item {
-                val directionCards = listOf(
-                    DirectionCard("EVENT", "Tarixiy voqealar", Icons.Default.Event, Color(0xFF6366F1), Color(0xFFEEF2FF)),
-                    DirectionCard("PERSON", "Tarixiy shaxslar", Icons.Default.Person, Color(0xFF7C3AED), Color(0xFFF5F3FF)),
-                    DirectionCard("WAR", "Urushlar va janglar", Icons.Default.Security, Color(0xFFDC2626), Color(0xFFFEF2F2)),
-                    DirectionCard("YEAR", "Yillar va sanalar", Icons.Default.CalendarMonth, Color(0xFF16A34A), Color(0xFFF0FDF4)),
-                    DirectionCard("CITY", "Shahar va hududlar", Icons.Default.LocationOn, Color(0xFFF97316), Color(0xFFFFF7ED)),
-                    DirectionCard("FACT", "Tarixiy faktlar", Icons.Default.FactCheck, Color(0xFF8B5CF6), Color(0xFFF5F3FF)),
-                    DirectionCard("MONUMENT", "Tarixiy obidalar", Icons.Default.AccountBalance, Color(0xFFD97706), Color(0xFFFEF3C7)),
-                    DirectionCard("LOGICAL", "Mantiqiy va DTM", Icons.Default.Psychology, Color(0xFF0284C7), Color(0xFFEFF6FF)),
-                )
-                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                    directionCards.chunked(2).forEach { rowCards ->
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(IntrinsicSize.Max),
-                            horizontalArrangement = Arrangement.spacedBy(10.dp)
-                        ) {
-                            rowCards.forEach { card ->
-                                CategoryItemCard(
-                                    title = card.title,
-                                    count = directionCountLabel(directionCounts, card.code),
-                                    icon = card.icon,
-                                    iconTint = card.tint,
-                                    iconBg = card.background,
-                                    modifier = Modifier
-                                        .weight(1f)
-                                        .fillMaxHeight(),
-                                    onClick = { onNavigateToTickets(card.code, card.title) }
-                                )
-                            }
-                            if (rowCards.size == 1) Spacer(Modifier.weight(1f))
-                        }
-                    }
-
-                    Row(
+                // Xatolar Ustida Ishlash (Mistakes Card)
+                item {
+                    Surface(
+                        shape = RoundedCornerShape(18.dp),
+                        color = Color(0xFFFEF2F2),
+                        border = BorderStroke(1.dp, Color(0xFFFECACA)),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(IntrinsicSize.Max),
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                            .clickable { onNavigateToMistakes() }
+                            .testTag("tests_mistakes_card")
                     ) {
-                        CategoryItemCard(
-                            title = "Mavzu bo‘yicha",
-                            count = "Mavzular ro‘yxati",
-                            icon = Icons.Default.MenuBook,
-                            iconTint = Color(0xFF0284C7),
-                            iconBg = Color(0xFFEFF6FF),
-                            modifier = Modifier
-                                .weight(1f)
-                                .fillMaxHeight(),
-                            onClick = { onNavigateToTopicSelection() }
-                        )
-                        CategoryItemCard(
-                            title = "Test Sozlamalari",
-                            count = "Moslashuvchan",
-                            icon = Icons.Default.Tune,
-                            iconTint = Color(0xFFD97706),
-                            iconBg = Color(0xFFFEF3C7),
-                            modifier = Modifier
-                                .weight(1f)
-                                .fillMaxHeight(),
-                            onClick = { onNavigateToCustomOptions() }
-                        )
-                    }
-                }
-            }
-
-            // Textbooks & Topics Header
-            item {
-                Text(
-                    text = "Darsliklar va sinflar",
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold
-                )
-            }
-
-            items(textbooks) { textbook ->
-                Surface(
-                    shape = RoundedCornerShape(16.dp),
-                    color = MaterialTheme.colorScheme.surface,
-                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable {
-                            onNavigateToTickets("book_${textbook.id}", textbook.title)
-                        }
-                ) {
-                    Row(
-                        modifier = Modifier.padding(14.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Surface(
-                            shape = RoundedCornerShape(10.dp),
-                            color = if (textbook.subjectId == "uzbekiston") Color(0xFFEEF2FF) else Color(0xFFFEF3C7),
-                            modifier = Modifier.size(42.dp)
+                        Row(
+                            modifier = Modifier.padding(16.dp),
+                            verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Box(contentAlignment = Alignment.Center) {
+                            Surface(
+                                shape = CircleShape,
+                                color = Color(0xFFEF4444),
+                                modifier = Modifier.size(46.dp)
+                            ) {
+                                Box(contentAlignment = Alignment.Center) {
+                                    Icon(
+                                        Icons.Default.Warning,
+                                        contentDescription = null,
+                                        tint = Color.White,
+                                        modifier = Modifier.size(24.dp)
+                                    )
+                                }
+                            }
+                            Spacer(Modifier.width(14.dp))
+                            Column(modifier = Modifier.weight(1f)) {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Text(
+                                        text = "Bilmagan savollarim",
+                                        style = MaterialTheme.typography.titleSmall,
+                                        fontWeight = FontWeight.Bold,
+                                        color = Color(0xFF991B1B)
+                                    )
+                                    Spacer(Modifier.width(6.dp))
+                                    Badge(containerColor = Color(0xFFEF4444), contentColor = Color.White) {
+                                        Text("Xatolar")
+                                    }
+                                }
+                                Spacer(Modifier.height(2.dp))
                                 Text(
-                                    text = "${textbook.gradeId}",
-                                    fontWeight = FontWeight.Bold,
-                                    color = if (textbook.subjectId == "uzbekiston") BrandPurple else Color(0xFFD97706),
-                                    fontSize = 16.sp
+                                    text = "Xatolaringiz ustida ishlab, bilimlarni mustahkamlang",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = Color(0xFFB91C1C)
                                 )
                             }
-                        }
-                        Spacer(Modifier.width(12.dp))
-                        Column(modifier = Modifier.weight(1f)) {
-                            Text(
-                                text = textbook.title,
-                                style = MaterialTheme.typography.titleSmall,
-                                fontWeight = FontWeight.SemiBold
-                            )
-                            Text(
-                                text = "${textbook.totalTopics} ta mavzu • ${textbook.totalQuestions} ta test",
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            Icon(
+                                Icons.AutoMirrored.Filled.ArrowForward,
+                                contentDescription = null,
+                                tint = Color(0xFFEF4444),
+                                modifier = Modifier.size(20.dp)
                             )
                         }
-                        Icon(
-                            Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                            contentDescription = null,
-                            tint = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-                }
-            }
-
-            item { Spacer(Modifier.height(16.dp)) }
-        }
-        }
-    }
-
-    if (selectedTextbookForMenu != null) {
-        val book = selectedTextbookForMenu!!
-        val totalQs = book.totalQuestions.coerceAtLeast(30)
-        val totalVariants = (totalQs / 30).coerceIn(1, 40)
-
-        ModalBottomSheet(
-            onDismissRequest = { selectedTextbookForMenu = null },
-            sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
-        ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(20.dp),
-                verticalArrangement = Arrangement.spacedBy(14.dp)
-            ) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(
-                            text = book.title,
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold
-                        )
-                        Text(
-                            text = "${book.gradeId}-sinf • Jami ${book.totalQuestions} ta test mavjud",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-                    IconButton(onClick = { selectedTextbookForMenu = null }) {
-                        Icon(Icons.Default.Close, contentDescription = "Yopish")
                     }
                 }
 
-                HorizontalDivider()
-
-                Text(
-                    text = "Test ishlash rejimini tanlang:",
-                    style = MaterialTheme.typography.labelLarge,
-                    fontWeight = FontWeight.Bold,
-                    color = BrandPurple
-                )
-
-                // Option 1: Mavzular bo'yicha
-                Surface(
-                    shape = RoundedCornerShape(14.dp),
-                    color = MaterialTheme.colorScheme.surfaceVariant,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable {
-                            selectedTextbookForMenu = null
-                            onNavigateToTopicSelection()
-                        }
-                ) {
-                    Row(
-                        modifier = Modifier.padding(14.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(Icons.Default.MenuBook, contentDescription = null, tint = BrandPurple, modifier = Modifier.size(24.dp))
-                        Spacer(Modifier.width(12.dp))
-                        Column(modifier = Modifier.weight(1f)) {
-                            Text("📚 Mavzular bo‘yicha test", fontWeight = FontWeight.Bold, fontSize = 15.sp)
-                            Text("Darslikdagi mavzulardan alohida tanlab ishlash", fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                        }
-                        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null, tint = BrandPurple)
-                    }
-                }
-
-                // Option 2: Test Variantlari list
-                Text(
-                    text = "📄 Test Variantlari (${totalVariants} ta variant, har biri 30 ta savol):",
-                    style = MaterialTheme.typography.labelMedium,
-                    fontWeight = FontWeight.Bold
-                )
-
-                LazyRow(
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    items(totalVariants) { index ->
-                        val varNum = index + 1
-                        val startQ = (index * 30) + 1
-                        val endQ = ((index + 1) * 30).coerceAtMost(book.totalQuestions)
-                        Button(
-                            onClick = {
-                                selectedTextbookForMenu = null
-                                onStartQuizForBookOrTopic("variant_${book.gradeId}_${book.subjectId}_$varNum")
-                            },
-                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple.copy(alpha = 0.12f), contentColor = BrandPurple),
-                            shape = RoundedCornerShape(10.dp)
-                        ) {
-                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                                Text("Variant $varNum", fontWeight = FontWeight.Bold, fontSize = 13.sp)
-                                Text("$startQ–$endQ-savollar", fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            }
-                        }
-                    }
-                }
-
-                // Option 3: Aralash DTM / Olimpiada Test
-                Surface(
-                    shape = RoundedCornerShape(14.dp),
-                    color = Color(0xFFEFF6FF),
-                    border = BorderStroke(1.dp, Color(0xFFBFDBFE)),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable {
-                            selectedTextbookForMenu = null
-                            onStartQuizForBookOrTopic("book_${book.gradeId}")
-                        }
-                ) {
-                    Row(
-                        modifier = Modifier.padding(14.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(Icons.Default.EmojiEvents, contentDescription = null, tint = Color(0xFF0284C7), modifier = Modifier.size(24.dp))
-                        Spacer(Modifier.width(12.dp))
-                        Column(modifier = Modifier.weight(1f)) {
-                            Text("🏆 Aralash DTM / Olimpiada Test (30 savol)", fontWeight = FontWeight.Bold, fontSize = 14.sp, color = Color(0xFF0369A1))
-                            Text("Ushbu darslik bo‘yicha tasodifiy 30 ta savol", fontSize = 11.sp, color = Color(0xFF0284C7))
-                        }
-                        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null, tint = Color(0xFF0284C7))
-                    }
-                }
-
-                // Option 4: 100 ta savoldan iborat Katta Blok Test
-                Surface(
-                    shape = RoundedCornerShape(14.dp),
-                    color = Color(0xFFFEF3C7),
-                    border = BorderStroke(1.dp, Color(0xFFFDE68A)),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable {
-                            selectedTextbookForMenu = null
-                            onStartQuizCategory(100, "ALL", "MEDIUM", 120)
-                        }
-                ) {
-                    Row(
-                        modifier = Modifier.padding(14.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(Icons.Default.Quiz, contentDescription = null, tint = Color(0xFFD97706), modifier = Modifier.size(24.dp))
-                        Spacer(Modifier.width(12.dp))
-                        Column(modifier = Modifier.weight(1f)) {
-                            Text("⚡ Katta Blok Test (100 ta savol)", fontWeight = FontWeight.Bold, fontSize = 14.sp, color = Color(0xFFB45309))
-                            Text("Maksimal bilim sinovi • 120 daqiqa", fontSize = 11.sp, color = Color(0xFFD97706))
-                        }
-                        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null, tint = Color(0xFFD97706))
-                    }
-                }
-
-                Spacer(Modifier.height(12.dp))
-            }
-        }
-    }
-}
-
-@Composable
-private fun ExamCategoryCard(
-    title: String,
-    subtitle: String,
-    description: String,
-    containerColor: Color,
-    accentColor: Color,
-    icon: ImageVector,
-    onClick: () -> Unit
-) {
-    Surface(
-        shape = RoundedCornerShape(18.dp),
-        color = containerColor,
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable(onClick = onClick)
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Surface(
-                    shape = CircleShape,
-                    color = accentColor.copy(alpha = 0.2f),
-                    modifier = Modifier.size(36.dp)
-                ) {
-                    Box(contentAlignment = Alignment.Center) {
-                        Icon(
-                            imageVector = icon,
-                            contentDescription = null,
-                            tint = accentColor,
-                            modifier = Modifier.size(20.dp)
-                        )
-                    }
-                }
-                Spacer(Modifier.width(12.dp))
-                Column(modifier = Modifier.weight(1f)) {
-                    Text(
-                        text = title,
-                        style = MaterialTheme.typography.titleSmall,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.White
-                    )
-                    Text(
-                        text = subtitle,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = accentColor
+                // Tarixiy Yo'nalishlar Section (Cards like Image #2)
+                item {
+                    TestSectionRow(
+                        sectionTitle = "Tarixiy yo'nalishli testlar",
+                        items = testsDirectionCards,
+                        onSeeAllClick = { onNavigateToVerticalCards("Tarixiy Yo'nalishlar", "directions") },
+                        onCardClick = { code, _, _ -> onNavigateToTickets(code, "Test Biletlari", selectedGrade) }
                     )
                 }
-            }
-            Spacer(Modifier.height(10.dp))
-            Text(
-                text = description,
-                style = MaterialTheme.typography.bodySmall,
-                color = Color.White.copy(alpha = 0.8f)
-            )
-        }
-    }
-}
 
-@Composable
-private fun CategoryItemCard(
-    title: String,
-    count: String,
-    icon: ImageVector,
-    iconTint: Color,
-    iconBg: Color,
-    modifier: Modifier = Modifier,
-    onClick: () -> Unit
-) {
-    Surface(
-        shape = RoundedCornerShape(16.dp),
-        color = MaterialTheme.colorScheme.surface,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-        modifier = modifier
-            .defaultMinSize(minHeight = 68.dp)
-            .clickable(onClick = onClick)
-    ) {
-        Row(
-            modifier = Modifier
-                .padding(12.dp)
-                .fillMaxHeight(),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Surface(
-                shape = RoundedCornerShape(12.dp),
-                color = iconBg,
-                modifier = Modifier.size(40.dp)
-            ) {
-                Box(contentAlignment = Alignment.Center) {
-                    Icon(
-                        imageVector = icon,
-                        contentDescription = null,
-                        tint = iconTint,
-                        modifier = Modifier.size(20.dp)
+                // Mavzulashgan Testlar Section
+                item {
+                    TestSectionRow(
+                        sectionTitle = "Mavzulashgan testlar",
+                        items = testsTopicCards,
+                        onSeeAllClick = { onNavigateToVerticalCards("Mavzulashgan Testlar", "topics") },
+                        onCardClick = { topicId, _, _ ->
+                            onStartQuizForBookOrTopic(topicId)
+                        }
                     )
                 }
-            }
-            Spacer(Modifier.width(10.dp))
-            Column(
-                modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = title,
-                    style = MaterialTheme.typography.bodyMedium,
-                    fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.onSurface,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis
-                )
-                Spacer(Modifier.height(2.dp))
-                Text(
-                    text = count,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    fontSize = 11.sp,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
+
+                // Sinf Testlari Section
+                item {
+                    TestSectionRow(
+                        sectionTitle = "Sinf testlari (6-11 sinflار)",
+                        items = testsGradeCards,
+                        onSeeAllClick = { onNavigateToVerticalCards("Sinf Testlari", "grades") },
+                        onCardClick = { gradeKey, _, gradeTitle ->
+                            onNavigateToTickets(gradeKey, gradeTitle, selectedGrade)
+                        }
+                    )
+                }
+
+                item { Spacer(Modifier.height(16.dp)) }
             }
         }
     }

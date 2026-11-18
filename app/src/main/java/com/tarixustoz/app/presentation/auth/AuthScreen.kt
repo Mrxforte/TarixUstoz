@@ -39,6 +39,7 @@ fun AuthScreen(
     val context = LocalContext.current
 
     Scaffold(
+        contentWindowInsets = WindowInsets.safeDrawing,
         topBar = {
             TopAppBar(
                 title = { Text("Tizimga kirish", fontWeight = FontWeight.Bold) },

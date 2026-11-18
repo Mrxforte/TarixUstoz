@@ -10,7 +10,6 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -22,7 +21,7 @@ fun TestSectionRow(
     sectionTitle: String,
     items: List<TestCardItem>,
     onSeeAllClick: () -> Unit,
-    onCardClick: (itemId: String, categoryType: String) -> Unit,
+    onCardClick: (itemId: String, categoryType: String, itemTitle: String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -78,12 +77,12 @@ fun TestSectionRow(
                 HistoryTestCard(
                     title = item.title,
                     subtitle = item.subtitle,
-                    badgeText = item.badgeText,
-                    ratingText = item.ratingText,
+                    totalTickets = item.totalTickets,
+                    passedTickets = item.passedTickets,
                     icon = item.icon,
                     gradientColors = item.gradientColors,
                     accentColor = item.accentColor,
-                    onCardClick = { onCardClick(item.id, item.categoryType) },
+                    onCardClick = { onCardClick(item.id, item.categoryType, item.title) },
                     modifier = Modifier
                         .width(250.dp)
                         .height(200.dp)

@@ -1,7 +1,9 @@
 package com.tarixustoz.app.presentation.navigation
 
 import android.util.Base64
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Analytics
 import androidx.compose.material.icons.filled.Book
@@ -25,6 +27,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -36,8 +39,11 @@ import androidx.navigation.navArgument
 import com.tarixustoz.app.presentation.auth.AuthScreen
 import com.tarixustoz.app.presentation.home.HomeScreen
 import com.tarixustoz.app.presentation.leaderboard.LeaderboardScreen
+import com.tarixustoz.app.presentation.leaderboard.TestAnalysisScreen
 import com.tarixustoz.app.presentation.mistakes.MistakesScreen
 import com.tarixustoz.app.presentation.mistakes.MistakesViewModel
+import com.tarixustoz.app.presentation.onboarding.OnboardingScreen
+import com.tarixustoz.app.presentation.onboarding.OnboardingViewModel
 import com.tarixustoz.app.presentation.profile.EditProfileScreen
 import com.tarixustoz.app.presentation.profile.ProfileScreen
 import com.tarixustoz.app.presentation.quiz.PeriodSelectionScreen
@@ -47,6 +53,7 @@ import com.tarixustoz.app.presentation.quiz.TicketListScreen
 import com.tarixustoz.app.presentation.quiz.TopicSelectionScreen
 import com.tarixustoz.app.presentation.tests.SavedTestsScreen
 import com.tarixustoz.app.presentation.tests.TestsScreen
+import com.tarixustoz.app.presentation.tests.VerticalCardsScreen
 import com.tarixustoz.app.presentation.textbooks.PdfViewerScreen
 import com.tarixustoz.app.presentation.textbooks.TextbooksScreen
 import com.tarixustoz.app.presentation.textbooks.TopicDetailScreen
@@ -83,6 +90,8 @@ fun TarixNavHost() {
     val navController = rememberNavController()
     val mistakesViewModel: MistakesViewModel = hiltViewModel()
     val mistakesCount by mistakesViewModel.activeCount.collectAsState()
+    val onboardingViewModel: OnboardingViewModel = hiltViewModel()
+    val isOnboardingCompleted by onboardingViewModel.isOnboardingCompleted.collectAsState()
 
     val bottomItems = listOf(
         Screen.Home,
@@ -92,7 +101,10 @@ fun TarixNavHost() {
         Screen.Profile
     )
 
+    val startDestination = if (isOnboardingCompleted == false) "onboarding" else Screen.Home.route
+
     Scaffold(
+        contentWindowInsets = WindowInsets.safeDrawing,
         bottomBar = {
             val navBackStackEntry by navController.currentBackStackEntryAsState()
             val currentDestination = navBackStackEntry?.destination
@@ -132,9 +144,39 @@ fun TarixNavHost() {
     ) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = Screen.Home.route,
-            modifier = Modifier.padding(innerPadding)
+            startDestination = startDestination,
+            modifier = Modifier.padding(bottom = innerPadding.calculateBottomPadding())
         ) {
+            composable("onboarding") {
+                OnboardingScreen(
+                    onFinish = {
+                        navController.navigate(Screen.Home.route) {
+                            popUpTo("onboarding") { inclusive = true }
+                        }
+                    }
+                )
+            }
+            composable(
+                route = "vertical_cards/{title}/{categoryType}",
+                arguments = listOf(
+                    navArgument("title") { defaultValue = "Testlar" },
+                    navArgument("categoryType") { defaultValue = "topics" }
+                )
+            ) { backStackEntry ->
+                val rawTitle = backStackEntry.arguments?.getString("title") ?: "Testlar"
+                val catType = backStackEntry.arguments?.getString("categoryType") ?: "topics"
+                val title = try { URLDecoder.decode(rawTitle, "UTF-8") } catch (e: Exception) { rawTitle }
+
+                VerticalCardsScreen(
+                    title = title,
+                    categoryType = catType,
+                    onBackClick = { navController.popBackStack() },
+                    onCardClick = { itemId, _, itemTitle ->
+                        val encodedTitle = URLEncoder.encode(itemTitle, "UTF-8")
+                        navController.navigate("ticket_list/$itemId?title=$encodedTitle")
+                    }
+                )
+            }
             composable(Screen.Home.route) {
                 HomeScreen(
                     onNavigateToQuiz = { navController.navigate(Screen.Quiz.route) },
@@ -148,7 +190,18 @@ fun TarixNavHost() {
                     onNavigateToLeaderboard = { navController.navigate(Screen.Leaderboard.route) },
                     onNavigateToTestsHub = { navController.navigate(Screen.Quiz.route) },
                     onNavigateToNotifications = { },
-                    onNavigateToTopicSelection = { navController.navigate("topic_selection") }
+                    onNavigateToTopicSelection = { navController.navigate("topic_selection") },
+                    onNavigateToVerticalCards = { title, catType ->
+                        val encodedTitle = URLEncoder.encode(title, "UTF-8")
+                        navController.navigate("vertical_cards/$encodedTitle/$catType")
+                    },
+                    onNavigateToTickets = { catKey, title ->
+                        val encodedTitle = URLEncoder.encode(title, "UTF-8")
+                        navController.navigate("ticket_list/$catKey?title=$encodedTitle&grade=0")
+                    },
+                    onStartQuizForBookOrTopic = { id ->
+                        navController.navigate("quiz/$id")
+                    }
                 )
             }
             composable(Screen.Textbooks.route) {
@@ -205,21 +258,27 @@ fun TarixNavHost() {
                     onNavigateToMistakes = { navController.navigate(Screen.Mistakes.route) },
                     onNavigateToAi = { },
                     onNavigateToCustomOptions = { navController.navigate(Screen.QuizOptions.route) },
-                    onNavigateToTickets = { catKey, title ->
+                    onNavigateToTickets = { catKey, title, grade ->
                         val encodedTitle = URLEncoder.encode(title, "UTF-8")
-                        navController.navigate("ticket_list/$catKey?title=$encodedTitle")
+                        navController.navigate("ticket_list/$catKey?title=$encodedTitle&grade=$grade")
+                    },
+                    onNavigateToVerticalCards = { title, catType ->
+                        val encodedTitle = URLEncoder.encode(title, "UTF-8")
+                        navController.navigate("vertical_cards/$encodedTitle/$catType")
                     }
                 )
             }
             composable(
-                route = "ticket_list/{categoryKey}?title={title}",
+                route = "ticket_list/{categoryKey}?title={title}&grade={grade}",
                 arguments = listOf(
                     navArgument("categoryKey") { defaultValue = "EVENT" },
-                    navArgument("title") { defaultValue = "Test Biletlari" }
+                    navArgument("title") { defaultValue = "Test Biletlari" },
+                    navArgument("grade") { defaultValue = "0" }
                 )
             ) { backStackEntry ->
                 val categoryKey = backStackEntry.arguments?.getString("categoryKey") ?: "EVENT"
                 val encodedTitle = backStackEntry.arguments?.getString("title") ?: "Test Biletlari"
+                val gradeArg = backStackEntry.arguments?.getString("grade")?.toIntOrNull() ?: 0
                 val title = try {
                     URLDecoder.decode(encodedTitle, "UTF-8")
                 } catch (e: Exception) { encodedTitle }
@@ -227,6 +286,7 @@ fun TarixNavHost() {
                 TicketListScreen(
                     categoryKey = categoryKey,
                     categoryTitle = title,
+                    selectedGrade = gradeArg,
                     onBack = { navController.popBackStack() },
                     onStartTicket = { catKey, ticketIndex ->
                         navController.navigate("quiz/ticket_${catKey}_$ticketIndex")
@@ -237,11 +297,13 @@ fun TarixNavHost() {
                 )
             }
             composable("topic_selection") {
-                TopicSelectionScreen(
-                    onBack = { navController.popBackStack() },
-                    onStartTopicQuiz = { topicIds ->
-                        val topicsStr = if (topicIds.isEmpty()) "all" else topicIds.joinToString(",")
-                        navController.navigate("quiz/custom?count=15&cat=ALL&diff=MEDIUM&time=15&topics=$topicsStr")
+                VerticalCardsScreen(
+                    title = "Mavzulashgan Testlar",
+                    categoryType = "topics",
+                    onBackClick = { navController.popBackStack() },
+                    onCardClick = { itemId, _, itemTitle ->
+                        val encodedTitle = URLEncoder.encode(itemTitle, "UTF-8")
+                        navController.navigate("ticket_list/$itemId?title=$encodedTitle")
                     }
                 )
             }
@@ -287,12 +349,38 @@ fun TarixNavHost() {
                 )
             }
             composable(Screen.Leaderboard.route) {
-                LeaderboardScreen()
+                LeaderboardScreen(
+                    onStartQuiz = { categoryKey ->
+                        navController.navigate("quiz/$categoryKey")
+                    },
+                    onNavigateToAnalysis = { title ->
+                        val encodedTitle = URLEncoder.encode(title, "UTF-8")
+                        navController.navigate("test_analysis?category=$encodedTitle")
+                    }
+                )
+            }
+            composable(
+                route = "test_analysis?category={category}",
+                arguments = listOf(
+                    navArgument("category") { defaultValue = "Barcha testlar umumiy tahlili" }
+                )
+            ) { backStackEntry ->
+                val rawCategory = backStackEntry.arguments?.getString("category") ?: "Barcha testlar umumiy tahlili"
+                val categoryTitle = try {
+                    URLDecoder.decode(rawCategory, "UTF-8")
+                } catch (e: Exception) { rawCategory }
+
+                TestAnalysisScreen(
+                    initialCategory = categoryTitle,
+                    onBack = { navController.popBackStack() },
+                    onStartQuiz = { categoryKey ->
+                        navController.navigate("quiz/$categoryKey")
+                    }
+                )
             }
             composable(Screen.Profile.route) {
                 ProfileScreen(
                     onNavigateToEditProfile = { navController.navigate(Screen.EditProfile.route) },
-                    onNavigateToAuth = { navController.navigate("auth") },
                     onNavigateToSavedTests = { navController.navigate("saved_tests") }
                 )
             }
@@ -304,7 +392,8 @@ fun TarixNavHost() {
             }
             composable(Screen.EditProfile.route) {
                 EditProfileScreen(
-                    onBack = { navController.popBackStack() }
+                    onBack = { navController.popBackStack() },
+                    onNavigateToAuth = { navController.navigate("auth") }
                 )
             }
             composable("auth") {
