@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.ContextWrapper
 import android.util.Log
 import android.widget.Toast
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -164,6 +163,113 @@ object AdMobManager {
     }
 
     /**
+     * 100% Dedicated Large/Medium AdMob Banner Ad View for Hero Banner Slot.
+     * Auto-refreshes every 30 seconds.
+     */
+    @Composable
+    fun DedicatedHeroBannerAdView(
+        modifier: Modifier = Modifier,
+        adUnitId: String = BANNER_AD_UNIT_ID,
+        autoRefreshIntervalSeconds: Long = 30L
+    ) {
+        var isAdLoaded by remember { mutableStateOf(false) }
+        var activeUnitId by remember { mutableStateOf(adUnitId) }
+        var adViewRef by remember { mutableStateOf<AdView?>(null) }
+
+        LaunchedEffect(activeUnitId) {
+            while (isActive) {
+                delay(autoRefreshIntervalSeconds * 1000L)
+                adViewRef?.loadAd(AdRequest.Builder().build())
+            }
+        }
+
+        Box(
+            modifier = modifier
+                .fillMaxWidth()
+                .wrapContentHeight(),
+            contentAlignment = Alignment.Center
+        ) {
+            key(activeUnitId) {
+                AndroidView(
+                    modifier = Modifier.fillMaxWidth(),
+                    factory = { context ->
+                        AdView(context).apply {
+                            setAdSize(AdSize.LARGE_BANNER)
+                            setAdUnitId(activeUnitId)
+                            adListener = object : AdListener() {
+                                override fun onAdLoaded() {
+                                    isAdLoaded = true
+                                }
+
+                                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                                    Log.w(TAG, "Hero banner load failed for $activeUnitId: ${loadAdError.message}. Switching to test banner.")
+                                    if (activeUnitId != TEST_BANNER_AD_UNIT_ID) {
+                                        activeUnitId = TEST_BANNER_AD_UNIT_ID
+                                    }
+                                }
+                            }
+                            loadAd(AdRequest.Builder().build())
+                            adViewRef = this
+                        }
+                    },
+                    update = { adView ->
+                        adViewRef = adView
+                    }
+                )
+            }
+
+            DisposableEffect(activeUnitId) {
+                onDispose {
+                    adViewRef?.destroy()
+                    adViewRef = null
+                }
+            }
+
+            if (!isAdLoaded) {
+                Surface(
+                    shape = RoundedCornerShape(18.dp),
+                    color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.85f),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(100.dp)
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(16.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.Center
+                        ) {
+                            Surface(
+                                shape = RoundedCornerShape(6.dp),
+                                color = Color(0xFFF59E0B)
+                            ) {
+                                Text(
+                                    text = "Google AdMob",
+                                    color = Color.White,
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                                )
+                            }
+                            Spacer(Modifier.height(6.dp))
+                            Text(
+                                text = "📢 100% AdMob Reklama Maydoni",
+                                fontSize = 13.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /**
      * Loads and shows a Rewarded Video Ad.
      * Falls back to test rewarded ad if primary ID is pending approval.
      */
@@ -190,7 +296,6 @@ object AdMobManager {
                 override fun onAdFailedToLoad(loadAdError: LoadAdError) {
                     Log.w(TAG, "Rewarded ad failed for $adUnitId: ${loadAdError.message}. Trying test ad...")
                     if (adUnitId != TEST_REWARDED_AD_UNIT_ID) {
-                        // Fallback to test ad ID so user can test the reward flow
                         showRewardedAd(activity, TEST_REWARDED_AD_UNIT_ID, onRewardEarned, onAdFailedToLoad)
                     } else {
                         Toast.makeText(activity, "Reklama yuklanmadi. Internetingizni tekshirib, qayta urinib ko'ring.", Toast.LENGTH_SHORT).show()

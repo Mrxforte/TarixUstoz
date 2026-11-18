@@ -212,125 +212,24 @@ fun HomeScreen(
             ) {
                 item { Spacer(Modifier.height(4.dp)) }
 
-            // 2. Daily Streak Gradient Card with Integrated AdMob Banner
+            // 2. 100% Dedicated AdMob Banner Card (Hero Slot)
             item {
                 Surface(
-                    shape = RoundedCornerShape(24.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable { onNavigateToQuiz("streak_campaign") }
-                        .testTag("home_streak_banner")
+                    shape = RoundedCornerShape(20.dp),
+                    color = MaterialTheme.colorScheme.surface,
+                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)),
+                    shadowElevation = 1.dp,
+                    modifier = Modifier.fillMaxWidth()
                 ) {
                     Box(
                         modifier = Modifier
-                            .background(
-                                Brush.linearGradient(
-                                    listOf(
-                                        Color(0xFF6366F1),
-                                        Color(0xFF7C3AED),
-                                        Color(0xFF8B5CF6)
-                                    )
-                                )
-                            )
-                            .padding(18.dp)
+                            .fillMaxWidth()
+                            .padding(vertical = 4.dp),
+                        contentAlignment = Alignment.Center
                     ) {
-                        Column(
-                            verticalArrangement = Arrangement.spacedBy(14.dp)
-                        ) {
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.SpaceBetween,
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Column(modifier = Modifier.weight(1f)) {
-                                    // 7 KUNLIK SERIYA Pill
-                                    Surface(
-                                        shape = RoundedCornerShape(50),
-                                        color = Color.White.copy(alpha = 0.2f),
-                                        modifier = Modifier.wrapContentSize()
-                                    ) {
-                                        Row(
-                                            modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp),
-                                            verticalAlignment = Alignment.CenterVertically
-                                        ) {
-                                            Icon(
-                                                Icons.Filled.LocalFireDepartment,
-                                                contentDescription = null,
-                                                tint = Color.White,
-                                                modifier = Modifier.size(14.dp)
-                                            )
-                                            Spacer(Modifier.width(4.dp))
-                                            Text(
-                                                "${uiState.streak} KUNLIK SERIYA",
-                                                color = Color.White,
-                                                fontSize = 11.sp,
-                                                fontWeight = FontWeight.Bold,
-                                                letterSpacing = 0.5.sp
-                                            )
-                                        }
-                                    }
-
-                                    Spacer(Modifier.height(8.dp))
-                                    Text(
-                                        text = "Tarixni har kuni birga o‘rganamiz",
-                                        color = Color.White,
-                                        fontSize = 18.sp,
-                                        fontWeight = FontWeight.Bold
-                                    )
-
-                                    Spacer(Modifier.height(4.dp))
-                                    Text(
-                                        text = "Bugungi maqsad: ${uiState.todayGoalCompleted}/${uiState.todayGoalTotal} savol",
-                                        color = Color.White.copy(alpha = 0.85f),
-                                        fontSize = 12.sp
-                                    )
-                                }
-
-                                // Right Streak Badge
-                                Column(
-                                    horizontalAlignment = Alignment.CenterHorizontally,
-                                    modifier = Modifier.padding(start = 8.dp)
-                                ) {
-                                    Icon(
-                                        Icons.Filled.AutoAwesome,
-                                        contentDescription = null,
-                                        tint = Color.White.copy(alpha = 0.8f),
-                                        modifier = Modifier.size(18.dp)
-                                    )
-                                    Text(
-                                        text = "${uiState.streak}",
-                                        color = Color.White,
-                                        fontSize = 40.sp,
-                                        fontWeight = FontWeight.ExtraBold,
-                                        lineHeight = 42.sp
-                                    )
-                                    Text(
-                                        text = "kun",
-                                        color = Color.White.copy(alpha = 0.9f),
-                                        fontSize = 12.sp,
-                                        fontWeight = FontWeight.Medium
-                                    )
-                                }
-                            }
-
-                            // Integrated AdMob Banner View INSIDE Hero Banner Card
-                            Surface(
-                                shape = RoundedCornerShape(14.dp),
-                                color = Color.White.copy(alpha = 0.95f),
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Box(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(vertical = 4.dp),
-                                    contentAlignment = Alignment.Center
-                                ) {
-                                    AdMobManager.BannerAdView(
-                                        modifier = Modifier.fillMaxWidth()
-                                    )
-                                }
-                            }
-                        }
+                        AdMobManager.DedicatedHeroBannerAdView(
+                            modifier = Modifier.fillMaxWidth()
+                        )
                     }
                 }
             }
