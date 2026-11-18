@@ -1,5 +1,7 @@
 package com.tarixustoz.app.presentation.textbooks
 
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import com.tarixustoz.app.data.remote.MediaUrls
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -29,6 +31,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import com.tarixustoz.app.domain.model.Textbook
+import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -42,16 +45,25 @@ fun TextbooksScreen(
     val isRefreshing by viewModel.isRefreshing.collectAsState()
     var showResetDialog by remember { mutableStateOf(false) }
 
+    val snackbarHostState = remember { SnackbarHostState() }
+    val coroutineScope = rememberCoroutineScope()
+    var downloadingBookId by remember { mutableStateOf<String?>(null) }
+
     LaunchedEffect(Unit) {
         viewModel.load()
     }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
-            .padding(horizontal = 16.dp)
-    ) {
+    Scaffold(
+        containerColor = MaterialTheme.colorScheme.background,
+        contentWindowInsets = WindowInsets(0.dp),
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
+    ) { innerPadding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+                .padding(horizontal = 16.dp)
+        ) {
         Spacer(Modifier.height(12.dp))
 
         // Header
@@ -157,8 +169,22 @@ fun TextbooksScreen(
 
                     TextbookGridCard(
                         textbook = textbook,
+                        isDownloading = downloadingBookId == textbook.id,
                         onClick = {
-                            onOpenPdf(textbook.title, pdfPath)
+                            if (pdfPath.startsWith("http")) {
+                                downloadingBookId = textbook.id
+                                coroutineScope.launch {
+                                    snackbarHostState.showSnackbar(
+                                        message = "«${textbook.title}» Darslik PDF fayli yuklanmoqda... Instant formatda ochiladi 📚",
+                                        duration = SnackbarDuration.Short
+                                    )
+                                    delay(1000)
+                                    downloadingBookId = null
+                                    onOpenPdf(textbook.title, pdfPath)
+                                }
+                            } else {
+                                onOpenPdf(textbook.title, pdfPath)
+                            }
                         }
                     )
                 }
@@ -166,35 +192,37 @@ fun TextbooksScreen(
         }
 
         Spacer(Modifier.height(16.dp))
-    }
+        }
 
-    if (showResetDialog) {
-        AlertDialog(
-            onDismissRequest = { showResetDialog = false },
-            title = { Text("Darsliklarni API orqali yangilash") },
-            text = { Text("Barcha darsliklar server API orqali qayta yuklanadi va yangilanadi. Davom ettirasizmi?") },
-            confirmButton = {
-                TextButton(
-                    onClick = {
-                        showResetDialog = false
-                        viewModel.load()
+        if (showResetDialog) {
+            AlertDialog(
+                onDismissRequest = { showResetDialog = false },
+                title = { Text("Darsliklarni API orqali yangilash") },
+                text = { Text("Barcha darsliklar server API orqali qayta yuklanadi va yangilanadi. Davom ettirasizmi?") },
+                confirmButton = {
+                    TextButton(
+                        onClick = {
+                            showResetDialog = false
+                            viewModel.load()
+                        }
+                    ) {
+                        Text("Ha, yangilash")
                     }
-                ) {
-                    Text("Ha, yangilash")
+                },
+                dismissButton = {
+                    TextButton(onClick = { showResetDialog = false }) {
+                        Text("Bekor qilish")
+                    }
                 }
-            },
-            dismissButton = {
-                TextButton(onClick = { showResetDialog = false }) {
-                    Text("Bekor qilish")
-                }
-            }
-        )
+            )
+        }
     }
 }
 
 @Composable
 private fun TextbookGridCard(
     textbook: Textbook,
+    isDownloading: Boolean = false,
     onClick: () -> Unit
 ) {
     val coverUrl = textbook.coverAsset ?: "file:///android_asset/images/${textbook.id}_cover.png"
@@ -245,6 +273,31 @@ private fun TextbookGridCard(
                                     modifier = Modifier.size(24.dp)
                                 )
                             }
+                        }
+                    }
+                }
+
+                // Radial Progress Overlay when Downloading
+                if (isDownloading) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(Color.Black.copy(alpha = 0.65f)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            CircularProgressIndicator(
+                                color = Color.White,
+                                strokeWidth = 3.dp,
+                                modifier = Modifier.size(34.dp)
+                            )
+                            Spacer(Modifier.height(6.dp))
+                            Text(
+                                "Yuklanmoqda...",
+                                color = Color.White,
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold
+                            )
                         }
                     }
                 }

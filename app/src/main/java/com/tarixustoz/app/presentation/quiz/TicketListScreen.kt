@@ -240,6 +240,7 @@ fun TicketListScreen(
                     ticket = ticket,
                     onStart = {
                         if (ticket.isUnlocked) {
+                            viewModel.prefetchNextTicketsIfNeeded(categoryKey, ticket.index)
                             onStartTicket(categoryKey, ticket.index)
                         }
                     }

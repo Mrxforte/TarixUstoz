@@ -326,6 +326,13 @@ fun HomeScreen(
                 }
             }
 
+            // Permanent Banner Ad under Streak Banner
+            item {
+                AdMobManager.BannerAdView(
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+
             // 3. Kun savoli (Daily Question)
             item {
                 Row(

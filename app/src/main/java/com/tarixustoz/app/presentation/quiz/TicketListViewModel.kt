@@ -6,6 +6,7 @@ import com.tarixustoz.app.data.repository.ActiveQuizState
 import com.tarixustoz.app.data.repository.ContentRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -130,6 +131,23 @@ class TicketListViewModel @Inject constructor(
                     totalQuestions = totalQuestions,
                     tickets = ticketList
                 )
+            }
+
+            // Auto-prefetch next 5 tickets in background
+            prefetchNextTicketsIfNeeded(categoryKey, 1)
+        }
+    }
+
+    fun prefetchNextTicketsIfNeeded(categoryKey: String, currentTicketIndex: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val startTicket = currentTicketIndex + 1
+            val endTicket = (currentTicketIndex + 5).coerceAtMost(3333)
+            for (ticketIdx in startTicket..endTicket) {
+                try {
+                    contentRepository.fetchTicketFromApi(categoryKey, ticketIdx, count = 30)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
             }
         }
     }
