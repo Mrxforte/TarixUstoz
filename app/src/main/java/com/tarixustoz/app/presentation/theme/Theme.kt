@@ -70,7 +70,10 @@ private val DarkColorScheme = darkColorScheme(
     onSurfaceVariant = Color(0xFF94A3B8),
     error = Color(0xFFF87171),
     onError = Color(0xFF7F1D1D),
-    outline = Color(0xFF475569)
+    errorContainer = Color(0xFF5C1D24),
+    onErrorContainer = Color(0xFFFEE2E2),
+    outline = Color(0xFF475569),
+    outlineVariant = Color(0xFF334155)
 )
 
 @Composable

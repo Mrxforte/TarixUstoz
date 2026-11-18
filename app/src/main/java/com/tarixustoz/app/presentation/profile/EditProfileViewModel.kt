@@ -2,6 +2,8 @@ package com.tarixustoz.app.presentation.profile
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.tarixustoz.app.data.repository.AuthRepository
+import com.tarixustoz.app.data.repository.CloudSyncRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -21,9 +23,9 @@ data class EditProfileUiState(
     val bio: String = "",
     val phone: String = "",
     val target: String = "",
-    val avatar: String = "AS",
+    val avatar: String = "TU",
     val grade: Int = 7,
-    val birthYear: String = "2008",
+    val birthYear: String = "",
     val role: String = "O'quvchi", // "O'quvchi" or "O'qituvchi"
     val isLoading: Boolean = false
 )
@@ -35,18 +37,19 @@ sealed class EditProfileEvent {
 
 @HiltViewModel
 class EditProfileViewModel @Inject constructor(
-    private val preferencesRepository: UserPreferencesRepository
+    private val preferencesRepository: UserPreferencesRepository,
+    private val cloudSyncRepository: CloudSyncRepository,
+    private val authRepository: AuthRepository
 ) : ViewModel() {
 
     val isGuest: StateFlow<Boolean> = preferencesRepository.isGuest
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), true)
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), false)
     val userEmail: StateFlow<String?> = preferencesRepository.userEmail
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
 
     fun signOut() {
         viewModelScope.launch {
-            preferencesRepository.setUserEmail(null)
-            preferencesRepository.setIsGuest(true)
+            authRepository.signOut()
             _eventFlow.emit(EditProfileEvent.ShowMessage("Hisobdan chiqildi"))
         }
     }
@@ -137,6 +140,8 @@ class EditProfileViewModel @Inject constructor(
             preferencesRepository.setSelectedGrade(state.grade)
             preferencesRepository.setUserBirthYear(state.birthYear.trim())
             preferencesRepository.setUserRole(state.role.trim())
+
+            cloudSyncRepository.syncEditedProfileToCloud()
 
             _uiState.value = _uiState.value.copy(isLoading = false)
             _eventFlow.emit(EditProfileEvent.SavedSuccess)

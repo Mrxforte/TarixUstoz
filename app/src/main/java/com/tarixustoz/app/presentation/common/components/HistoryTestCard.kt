@@ -31,19 +31,19 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.CheckCircle
 
+import androidx.annotation.DrawableRes
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.geometry.Size
+import androidx.compose.foundation.Image
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.clipRect
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.runtime.getValue
 import kotlin.math.sin
 
 /**
- * Historical Test Card with Liquid Battery Progress.
+ * Historical Test Card with Thematic Background Artwork and Liquid Battery Progress.
  * Shows title, subtitle (which grade book is used), and ticket counts.
  */
 @Composable
@@ -57,6 +57,7 @@ fun HistoryTestCard(
     icon: ImageVector = Icons.AutoMirrored.Filled.MenuBook,
     gradientColors: List<Color> = listOf(Color(0xFF0F172A), Color(0xFF1E293B), Color(0xFF334155)),
     accentColor: Color = Color(0xFF10B981),
+    @DrawableRes backgroundImageRes: Int? = null,
     isSelected: Boolean = false
 ) {
     val progress = if (totalTickets > 0) (passedTickets.toFloat() / totalTickets).coerceIn(0f, 1f) else 0f
@@ -89,6 +90,28 @@ fun HistoryTestCard(
                     )
                 )
         ) {
+            if (backgroundImageRes != null) {
+                Image(
+                    painter = painterResource(id = backgroundImageRes),
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.fillMaxSize()
+                )
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(
+                            brush = Brush.verticalGradient(
+                                colors = listOf(
+                                    Color.Black.copy(alpha = 0.25f),
+                                    gradientColors.first().copy(alpha = 0.58f),
+                                    Color.Black.copy(alpha = 0.88f)
+                                )
+                            )
+                        )
+                )
+            }
+
             // Liquid Progress Background
             Canvas(modifier = Modifier.fillMaxSize()) {
                 val width = size.width

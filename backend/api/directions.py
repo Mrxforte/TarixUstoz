@@ -41,11 +41,14 @@ COMBINATION_DIRECTIONS = {
 WAR_KEYWORDS = (
     "urush", "jang", "safar", "hujum", "qamal", "g'alaba", "mag'lubiyat",
     "sulh", "qo'shin", "lashkar", "jangchi", "mudofaa", "bosqin",
+    "muhoraba", "istilo", "yurish", "front", "armiya", "harbiy",
 )
 
 FACT_KEYWORDS = (
     "masjid", "madrasa", "maqbara", "minora", "saroy", "qal'a", "qo'rg'on",
     "obida", "me'moriy", "majmua", "yodgorlik", "haykal",
+    "fakt", "asos", "manba", "tarixiy", "dastlab", "tashkil", "islohot",
+    "qonun", "farmon", "shartnoma", "madaniyat", "kashfiyot", "ilm", "asar",
 )
 
 COUNTS_TTL_SECONDS = 300
@@ -58,6 +61,7 @@ DIRECTION_ALIASES = {
     "YILLAR_BOYICHA": "YEAR",
     "SHAHAR_NOMLARI": "CITY",
     "TARIXIY_OBIDALAR": "FACT",
+    "TARIXIY_FAKTLAR": "FACT",
     "MONUMENT": "FACT",  # the card used to be called "Tarixiy obidalar"
 }
 
@@ -81,7 +85,14 @@ def apply_direction(qs, code: str):
 
 
 def _haystack(text: str, *options: str) -> str:
-    return " ".join([text or "", *[o or "" for o in options]]).lower()
+    raw = " ".join([text or "", *[o or "" for o in options]]).lower()
+    return (
+        raw.replace("’", "'")
+        .replace("‘", "'")
+        .replace("ʻ", "'")
+        .replace("ʼ", "'")
+        .replace("`", "'")
+    )
 
 
 def is_war_question(text: str, *options: str) -> bool:
@@ -91,7 +102,7 @@ def is_war_question(text: str, *options: str) -> bool:
 
 
 def is_fact_question(text: str, *options: str) -> bool:
-    """True when the question is about a building, monument or other landmark."""
+    """True when the question is about a historical fact, landmark, treaty, or discovery."""
     haystack = _haystack(text, *options)
     return any(word in haystack for word in FACT_KEYWORDS)
 
@@ -102,6 +113,47 @@ def direction_for_combination(combination: str) -> str:
         if combination in combos:
             return code
     return ""
+
+
+def recompute_book_flags(grade: int = 0, subject: str = "", batch_size: int = 2000) -> int:
+    """Recompute is_war, is_fact, and direction_code for stored questions."""
+    qs = Question.objects.all()
+    if grade:
+        qs = qs.filter(grade=grade)
+    if subject:
+        qs = qs.filter(subject=subject)
+
+    updated = 0
+    last_id = 0
+    while True:
+        rows = list(
+            qs.filter(id__gt=last_id)
+            .order_by("id")
+            .only(
+                "id", "text", "option_a", "option_b", "option_c", "option_d",
+                "is_war", "is_fact", "direction_code", "generation_config", "tags",
+            )[:batch_size]
+        )
+        if not rows:
+            break
+        last_id = rows[-1].id
+        dirty = []
+        for q in rows:
+            new_war = is_war_question(q.text, q.option_a, q.option_b, q.option_c, q.option_d)
+            new_fact = is_fact_question(q.text, q.option_a, q.option_b, q.option_c, q.option_d)
+            combo = (q.generation_config or {}).get("combination", "")
+            if not combo and q.tags:
+                combo = next((t for t in q.tags if direction_for_combination(t)), "")
+            new_dir = direction_for_combination(combo) if combo else q.direction_code
+            if q.is_war != new_war or q.is_fact != new_fact or q.direction_code != new_dir:
+                q.is_war = new_war
+                q.is_fact = new_fact
+                q.direction_code = new_dir
+                dirty.append(q)
+        if dirty:
+            Question.objects.bulk_update(dirty, ["is_war", "is_fact", "direction_code"], batch_size=1000)
+            updated += len(dirty)
+    return updated
 
 
 def book_counts(grade: int, subject: str) -> dict[str, int]:

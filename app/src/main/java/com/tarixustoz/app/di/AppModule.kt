@@ -2,6 +2,11 @@ package com.tarixustoz.app.di
 
 import android.content.Context
 import androidx.room.Room
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.tarixustoz.app.R
 import com.tarixustoz.app.data.local.AppDatabase
 import com.tarixustoz.app.data.remote.ApiService
 import com.tarixustoz.app.data.repository.ContentRepository
@@ -26,6 +31,16 @@ object AppModule {
             AppDatabase::class.java,
             "tarix_ustoz.db"
         ).fallbackToDestructiveMigration().build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirebaseAuth(): FirebaseAuth = Firebase.auth
+
+    @Provides
+    @Singleton
+    fun provideFirebaseFirestore(@ApplicationContext context: Context): FirebaseFirestore {
+        return FirebaseFirestore.getInstance(context.getString(R.string.firestore_database_id))
     }
 
     @Provides

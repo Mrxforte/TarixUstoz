@@ -10,7 +10,9 @@ Usage (from backend/):
 from django.core.management.base import BaseCommand
 from django.db.models import Sum
 
-from api.directions import DIRECTION_TITLES, book_counts, refresh_counts
+from api.directions import (
+    DIRECTION_TITLES, book_counts, recompute_book_flags, refresh_counts,
+)
 from api.models import DirectionCount, Question
 
 
@@ -20,9 +22,14 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument("--grade", type=int, default=0)
         parser.add_argument("--subject", default="")
+        parser.add_argument("--recompute-flags", action="store_true")
 
     def handle(self, *args, **options):
         grade, subject = options["grade"], options["subject"]
+        if options["recompute_flags"]:
+            updated = recompute_book_flags(grade=grade, subject=subject)
+            self.stdout.write(f"flags updated: {updated}")
+
         if grade or subject:
             counts = book_counts(grade, subject)
             for code, count in counts.items():

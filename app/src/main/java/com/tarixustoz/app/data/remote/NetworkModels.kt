@@ -27,6 +27,7 @@ data class ApiTopicDto(
     @SerializedName("content") @SerialName("content") val content: String? = null,
     @SerializedName("order") @SerialName("order") val order: Int = 0,
     @SerializedName("chapter_title") @SerialName("chapter_title") val chapterTitle: String? = null,
+    @SerializedName("questions_count") @SerialName("questions_count") val questionsCount: Int = 0,
     @SerializedName("questions") @SerialName("questions") val questions: List<ApiQuestionDto> = emptyList()
 )
 
@@ -48,7 +49,7 @@ data class ApiPdfBookDto(
     @SerializedName("cover_url") @SerialName("cover_url") val coverUrl: String? = null,
     @SerializedName("total_chapters") @SerialName("total_chapters") val totalChapters: Int = 10,
     @SerializedName("total_topics") @SerialName("total_topics") val totalTopics: Int = 35,
-    @SerializedName("total_questions") @SerialName("total_questions") val totalQuestions: Int = 70
+    @SerializedName("total_questions") @SerialName("total_questions") val totalQuestions: Int = 100_000
 ) {
     val effectiveGrade: Int
         get() = grade ?: gradeId.takeIf { it > 0 } ?: 6

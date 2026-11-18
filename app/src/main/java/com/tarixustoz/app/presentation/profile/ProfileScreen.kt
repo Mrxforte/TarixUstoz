@@ -30,6 +30,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.ThemeMode
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import com.tarixustoz.app.presentation.theme.ThemeViewModel
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -37,10 +39,13 @@ import java.util.Locale
 fun ProfileScreen(
     onNavigateToEditProfile: () -> Unit = {},
     onNavigateToSavedTests: () -> Unit = {},
+    onNavigateToAuth: () -> Unit = {},
     profileViewModel: ProfileViewModel = hiltViewModel(),
     themeViewModel: ThemeViewModel = hiltViewModel()
 ) {
     val themeMode by themeViewModel.themeMode.collectAsState()
+    val isGuest by profileViewModel.isGuest.collectAsState()
+    val syncStatus by profileViewModel.syncStatus.collectAsState()
     val displayName by profileViewModel.displayName.collectAsState()
     val userBio by profileViewModel.userBio.collectAsState()
     val userAvatar by profileViewModel.userAvatar.collectAsState()
@@ -65,6 +70,7 @@ fun ProfileScreen(
     var showTimePickerDialog by remember { mutableStateOf(false) }
     var showSavedTestsDialog by remember { mutableStateOf(false) }
     var showAchievementsModal by remember { mutableStateOf(false) }
+    var showSignOutDialog by remember { mutableStateOf(false) }
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
@@ -187,19 +193,19 @@ fun ProfileScreen(
                         Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                             Surface(
                                 shape = RoundedCornerShape(6.dp),
-                                color = Color(0xFFFEF3C7)
+                                color = Color(0xFFF59E0B).copy(alpha = 0.16f)
                             ) {
                                 Text(
                                     text = levelTitle,
                                     fontSize = 11.sp,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color(0xFFD97706),
+                                    color = Color(0xFFF59E0B),
                                     modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                                 )
                             }
                             Surface(
                                 shape = RoundedCornerShape(6.dp),
-                                color = Color(0xFFEEF2FF)
+                                color = BrandPurple.copy(alpha = 0.12f)
                             ) {
                                 Text(
                                     text = "Profilni tahrirlash",
@@ -482,8 +488,201 @@ fun ProfileScreen(
                 }
             }
 
+            // Oflayn kesh va WorkManager sinxronizatsiyasi
+            Text(
+                text = "Oflayn kesh va sinxronizatsiya",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold
+            )
+
+            Surface(
+                shape = RoundedCornerShape(18.dp),
+                color = MaterialTheme.colorScheme.surface,
+                border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Surface(
+                            shape = CircleShape,
+                            color = BrandPurple.copy(alpha = 0.12f),
+                            modifier = Modifier.size(40.dp)
+                        ) {
+                            Box(contentAlignment = Alignment.Center) {
+                                Icon(
+                                    imageVector = Icons.Default.CloudDone,
+                                    contentDescription = null,
+                                    tint = BrandPurple,
+                                    modifier = Modifier.size(20.dp)
+                                )
+                            }
+                        }
+                        Spacer(Modifier.width(12.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                text = "${syncStatus.cachedQuestionsCount} ta savol va fakt oflayn saqlangan",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                            val lastSyncLabel = remember(syncStatus.lastSyncedAtMs) {
+                                if (syncStatus.lastSyncedAtMs <= 0L) {
+                                    "Onlayn bo‘lganda avtomatik yangilanadi"
+                                } else {
+                                    val fmt = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
+                                    "Oxirgi sinxronlash: ${fmt.format(Date(syncStatus.lastSyncedAtMs))}"
+                                }
+                            }
+                            Text(
+                                text = lastSyncLabel,
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                            if (syncStatus.pendingUploadsCount > 0) {
+                                Text(
+                                    text = "${syncStatus.pendingUploadsCount} ta natija bulutga yuklashni kutmoqda",
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.Medium,
+                                    color = Color(0xFFF59E0B)
+                                )
+                            }
+                        }
+                    }
+
+                    OutlinedButton(
+                        onClick = { profileViewModel.triggerManualSync() },
+                        enabled = !syncStatus.isSyncing,
+                        shape = RoundedCornerShape(14.dp),
+                        border = BorderStroke(1.dp, BrandPurple.copy(alpha = 0.45f)),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(48.dp)
+                            .testTag("profile_sync_now_btn")
+                    ) {
+                        if (syncStatus.isSyncing) {
+                            CircularProgressIndicator(
+                                modifier = Modifier.size(18.dp),
+                                color = BrandPurple,
+                                strokeWidth = 2.dp
+                            )
+                            Spacer(Modifier.width(8.dp))
+                            Text("Sinxronlanmoqda...", fontWeight = FontWeight.SemiBold, color = BrandPurple)
+                        } else {
+                            Icon(
+                                imageVector = Icons.Default.Sync,
+                                contentDescription = null,
+                                tint = BrandPurple,
+                                modifier = Modifier.size(18.dp)
+                            )
+                            Spacer(Modifier.width(8.dp))
+                            Text("Hozir sinxronlash", fontWeight = FontWeight.SemiBold, color = BrandPurple)
+                        }
+                    }
+                }
+            }
+
+            if (isGuest) {
+                Button(
+                    onClick = onNavigateToAuth,
+                    colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
+                    shape = RoundedCornerShape(16.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(52.dp)
+                        .testTag("profile_sign_in_btn")
+                ) {
+                    Icon(
+                        Icons.Default.Login,
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    Text(
+                        text = "Hisobga kirish / Ro‘yxatdan o‘tish",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+
+                OutlinedButton(
+                    onClick = { profileViewModel.exitTestMode() },
+                    colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFFEF4444)),
+                    border = BorderStroke(1.dp, Color(0xFFEF4444).copy(alpha = 0.4f)),
+                    shape = RoundedCornerShape(16.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(52.dp)
+                        .testTag("profile_exit_test_mode_btn")
+                ) {
+                    Icon(
+                        Icons.Default.Logout,
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    Text(
+                        text = "Test rejimidan chiqish",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            } else {
+                // Hisobdan chiqish
+                OutlinedButton(
+                    onClick = { showSignOutDialog = true },
+                    colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFFEF4444)),
+                    border = BorderStroke(1.dp, Color(0xFFEF4444).copy(alpha = 0.4f)),
+                    shape = RoundedCornerShape(16.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(52.dp)
+                        .testTag("profile_sign_out_btn")
+                ) {
+                    Icon(
+                        Icons.Default.Logout,
+                        contentDescription = null,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(8.dp))
+                    Text(
+                        text = "Hisobdan chiqish",
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+
             Spacer(Modifier.height(100.dp))
         }
+    }
+
+    if (showSignOutDialog) {
+        AlertDialog(
+            onDismissRequest = { showSignOutDialog = false },
+            title = { Text("Hisobdan chiqish", fontWeight = FontWeight.Bold) },
+            text = { Text("Barcha natijalaringiz bulutda xavfsiz saqlanadi. Haqiqatan ham hisobdan chiqmoqchimisiz?") },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showSignOutDialog = false
+                        profileViewModel.signOut()
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFEF4444))
+                ) {
+                    Text("Chiqish", color = Color.White, fontWeight = FontWeight.Bold)
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showSignOutDialog = false }) {
+                    Text("Bekor qilish")
+                }
+            }
+        )
     }
 
     // Time Picker Dialog for Notifications (Alarm Clock Style)
@@ -635,14 +834,14 @@ private fun DailyGoalChartCard(
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Surface(
                         shape = RoundedCornerShape(10.dp),
-                        color = Color(0xFFFEF3C7),
+                        color = Color(0xFFF59E0B).copy(alpha = 0.16f),
                         modifier = Modifier.size(36.dp)
                     ) {
                         Box(contentAlignment = Alignment.Center) {
                             Icon(
                                 Icons.Default.EventNote,
                                 contentDescription = null,
-                                tint = Color(0xFFD97706),
+                                tint = Color(0xFFF59E0B),
                                 modifier = Modifier.size(20.dp)
                             )
                         }
@@ -809,8 +1008,8 @@ private fun AchievementItemCard(
     achievement: AchievementUiState,
     onClick: () -> Unit
 ) {
-    val cardBg = if (achievement.isUnlocked) Color(0xFFF0FDF4) else MaterialTheme.colorScheme.surface
-    val borderClr = if (achievement.isUnlocked) Color(0xFF86EFAC) else MaterialTheme.colorScheme.outlineVariant
+    val cardBg = if (achievement.isUnlocked) Color(0xFF16A34A).copy(alpha = 0.12f) else MaterialTheme.colorScheme.surface
+    val borderClr = if (achievement.isUnlocked) Color(0xFF16A34A).copy(alpha = 0.45f) else MaterialTheme.colorScheme.outlineVariant
     val iconTint = if (achievement.isUnlocked) Color(0xFF16A34A) else BrandPurple
 
     Surface(
@@ -855,7 +1054,7 @@ private fun AchievementItemCard(
                         text = if (achievement.isUnlocked) "Ochildi 🎉" else "${achievement.currentProgress}/${achievement.targetProgress}",
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold,
-                        color = if (achievement.isUnlocked) Color(0xFF15803D) else BrandPurple
+                        color = if (achievement.isUnlocked) Color(0xFF16A34A) else BrandPurple
                     )
                 }
                 Spacer(Modifier.height(2.dp))
@@ -932,7 +1131,7 @@ private fun ProfileMenuRow(
     ) {
         Surface(
             shape = RoundedCornerShape(10.dp),
-            color = Color(0xFFEEF2FF),
+            color = BrandPurple.copy(alpha = 0.12f),
             modifier = Modifier.size(40.dp)
         ) {
             Box(contentAlignment = Alignment.Center) {

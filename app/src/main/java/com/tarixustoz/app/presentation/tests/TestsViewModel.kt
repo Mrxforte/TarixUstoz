@@ -9,6 +9,10 @@ import androidx.compose.material.icons.automirrored.filled.MenuBook
 import com.tarixustoz.app.data.repository.ContentRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
 import com.tarixustoz.app.domain.model.Topic
+import com.tarixustoz.app.domain.model.gradeId
+import com.tarixustoz.app.presentation.common.components.backgroundResForBook
+import com.tarixustoz.app.presentation.common.components.backgroundResForDirection
+import com.tarixustoz.app.presentation.common.components.backgroundResForTopic
 import com.tarixustoz.app.presentation.tests.TestCardItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -42,15 +46,23 @@ class TestsViewModel @Inject constructor(
 
     private var loadedGrade = -1
 
-    fun loadCounts(grade: Int) {
-        if (grade == loadedGrade && _directionCounts.value.isNotEmpty()) return
+    fun loadCounts(grade: Int, forceRefresh: Boolean = false) {
+        if (!forceRefresh && grade == loadedGrade && _directionCounts.value.isNotEmpty() && testsGradeCards.value.isNotEmpty()) return
         loadedGrade = grade
         viewModelScope.launch {
-            val counts = contentRepository.fetchDirectionCounts(grade)
+            contentRepository.seedIfNeeded()
+            if (forceRefresh) {
+                contentRepository.syncWithDjangoBackend(force = true)
+            } else {
+                contentRepository.syncWithDjangoBackend(force = false)
+            }
+
+            val counts = contentRepository.fetchDirectionCounts(grade, forceRefresh = forceRefresh)
+            val fallbackDefaults = contentRepository.defaultDirectionCounts(grade)
             _directionCounts.value = counts
-            
+
             val prefsSnapshot = preferences.getAllPreferences()
-            
+
             // Build Direction Cards
             val directionData = listOf(
                 Triple("EVENT", "Tarixiy Hodisalar", "Qadimgi va o'rta asrlar"),
@@ -58,10 +70,11 @@ class TestsViewModel @Inject constructor(
                 Triple("YEAR", "Yillar va Sanalar", "Xronologik tartib"),
                 Triple("WAR", "Urushlar va Janglar", "Harbiy yurishlar"),
                 Triple("CITY", "Shahar va Hududlar", "Joylashuvlar"),
+                Triple("FACT", "Tarixiy Faktlar", "Manbalar va obidalar"),
                 Triple("LOGICAL", "Mantiqiy va DTM", "DTM savollari")
             )
             val directions = directionData.map { (key, title, subtitle) ->
-                val totalQ = counts[key] ?: 300
+                val totalQ = counts[key]?.takeIf { it > 0 } ?: fallbackDefaults[key] ?: 100_000
                 val totalT = (totalQ + 29) / 30
                 val subText = "$subtitle • $totalT ta bilet • $totalQ ta test"
                 val passed = preferences.getTicketProgressFromPrefs(prefsSnapshot, key).passed.size
@@ -74,14 +87,21 @@ class TestsViewModel @Inject constructor(
                     icon = Icons.Default.Event,
                     gradientColors = listOf(Color(0xFF1E1B4B), Color(0xFF3730A3)),
                     accentColor = Color(0xFF10B981),
-                    categoryType = "direction"
+                    categoryType = "direction",
+                    backgroundImageRes = backgroundResForDirection(key)
                 )
             }
             testsDirectionCards.value = directions
-            
+
             // Build Topic Cards
-            val topics = contentRepository.getAllTopicsFlow().first().take(4).map { t ->
-                val tCount = if (t.questionsCount > 0) t.questionsCount else 30
+            val allDbTopics = contentRepository.getAllTopicsFlow().first()
+            val filteredTopics = if (grade in 6..11) {
+                allDbTopics.filter { it.textbookId.endsWith("_$grade") }
+            } else {
+                allDbTopics
+            }
+            val topics = filteredTopics.take(12).map { t ->
+                val tCount = if (t.questionsCount > 0) t.questionsCount else 2500
                 val totalT = (tCount + 29) / 30
                 val subText = "${t.summary.ifBlank { "Mavzular to'plami" }} • $totalT ta bilet • $tCount ta test"
                 val passed = preferences.getTicketProgressFromPrefs(prefsSnapshot, t.id).passed.size
@@ -94,58 +114,58 @@ class TestsViewModel @Inject constructor(
                     icon = Icons.AutoMirrored.Filled.MenuBook,
                     gradientColors = listOf(Color(0xFF854D0E), Color(0xFFA16207)),
                     accentColor = Color(0xFF10B981),
-                    categoryType = "topic"
+                    categoryType = "topic",
+                    backgroundImageRes = backgroundResForTopic(t.title, t.textbookId, t.gradeId)
                 )
             }
             testsTopicCards.value = topics
 
-            // Build Grade Cards (Separate Uzb and Jahon)
+            // Build Grade Cards (Separate Uzb/Qadimgi and Jahon, 100,000 tests = 3,334 tickets each)
             val grades = mutableListOf<TestCardItem>()
             for (g in 6..11) {
-                // O'zbekiston Tarixi
                 val uzbBookId = "uz_$g"
                 val uzbBook = contentRepository.getTextbookById(uzbBookId)
-                if (uzbBook != null) {
-                    val totalQs = uzbBook.totalQuestions.coerceAtLeast(100)
-                    val totalT = (totalQs + 29) / 30
-                    val passed = preferences.getTicketProgressFromPrefs(prefsSnapshot, "book_$uzbBookId").passed.size
-                    grades.add(
-                        TestCardItem(
-                            id = "book_$uzbBookId",
-                            title = "$g-Sinf O'zbekiston Tarixi",
-                            subtitle = uzbBook.title,
-                            totalTickets = totalT,
-                            passedTickets = passed,
-                            icon = Icons.AutoMirrored.Filled.MenuBook,
-                            gradientColors = listOf(Color(0xFF0F172A), Color(0xFF1E293B)),
-                            accentColor = Color(0xFF3B82F6),
-                            categoryType = "grade"
-                        )
+                val uzbTitle = if (g == 6) "6-Sinf Qadimgi Dunyo Tarixi" else "$g-Sinf O'zbekiston Tarixi"
+                val uzbQs = uzbBook?.totalQuestions?.takeIf { it > 0 } ?: 100_000
+                val uzbTickets = (uzbQs + 29) / 30
+                val uzbPassed = preferences.getTicketProgressFromPrefs(prefsSnapshot, "book_$uzbBookId").passed.size
+                grades.add(
+                    TestCardItem(
+                        id = "book_$uzbBookId",
+                        title = uzbTitle,
+                        subtitle = "${uzbBook?.title ?: uzbTitle} • $uzbTickets ta bilet • $uzbQs ta test",
+                        totalTickets = uzbTickets,
+                        passedTickets = uzbPassed,
+                        icon = Icons.AutoMirrored.Filled.MenuBook,
+                        gradientColors = listOf(Color(0xFF0F172A), Color(0xFF1E293B)),
+                        accentColor = Color(0xFF3B82F6),
+                        categoryType = "grade",
+                        backgroundImageRes = backgroundResForBook(uzbBookId, g, "uzbekiston")
                     )
-                }
-                
+                )
+
                 // Jahon Tarixi (only for 7-11)
                 if (g > 6) {
                     val jahonBookId = "jahon_$g"
                     val jahonBook = contentRepository.getTextbookById(jahonBookId)
-                    if (jahonBook != null) {
-                        val totalQs = jahonBook.totalQuestions.coerceAtLeast(100)
-                        val totalT = (totalQs + 29) / 30
-                        val passed = preferences.getTicketProgressFromPrefs(prefsSnapshot, "book_$jahonBookId").passed.size
-                        grades.add(
-                            TestCardItem(
-                                id = "book_$jahonBookId",
-                                title = "$g-Sinf Jahon Tarixi",
-                                subtitle = jahonBook.title,
-                                totalTickets = totalT,
-                                passedTickets = passed,
-                                icon = Icons.AutoMirrored.Filled.MenuBook,
-                                gradientColors = listOf(Color(0xFF064E3B), Color(0xFF065F46)),
-                                accentColor = Color(0xFF10B981),
-                                categoryType = "grade"
-                            )
+                    val jahonTitle = "$g-Sinf Jahon Tarixi"
+                    val jahonQs = jahonBook?.totalQuestions?.takeIf { it > 0 } ?: 100_000
+                    val jahonTickets = (jahonQs + 29) / 30
+                    val jahonPassed = preferences.getTicketProgressFromPrefs(prefsSnapshot, "book_$jahonBookId").passed.size
+                    grades.add(
+                        TestCardItem(
+                            id = "book_$jahonBookId",
+                            title = jahonTitle,
+                            subtitle = "${jahonBook?.title ?: jahonTitle} • $jahonTickets ta bilet • $jahonQs ta test",
+                            totalTickets = jahonTickets,
+                            passedTickets = jahonPassed,
+                            icon = Icons.AutoMirrored.Filled.MenuBook,
+                            gradientColors = listOf(Color(0xFF064E3B), Color(0xFF065F46)),
+                            accentColor = Color(0xFF10B981),
+                            categoryType = "grade",
+                            backgroundImageRes = backgroundResForBook(jahonBookId, g, "jahon")
                         )
-                    }
+                    )
                 }
             }
             testsGradeCards.value = grades

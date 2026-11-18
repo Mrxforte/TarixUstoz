@@ -21,8 +21,12 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 
 tailrec fun Context.findActivity(): Activity? = when (this) {
     is Activity -> this
@@ -33,6 +37,7 @@ tailrec fun Context.findActivity(): Activity? = when (this) {
 object AdMobManager {
 
     private const val TAG = "AdMobManager"
+    private val initScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     // Real AdMob Ad Unit IDs
     const val BANNER_AD_UNIT_ID = "ca-app-pub-2360068229850342/6027022065"
@@ -43,12 +48,15 @@ object AdMobManager {
     const val TEST_REWARDED_AD_UNIT_ID = "ca-app-pub-3940256099942544/5224354917"
 
     fun initAdMob(context: Context) {
-        try {
-            MobileAds.initialize(context) { initializationStatus ->
-                Log.d(TAG, "AdMob Initialized: ${initializationStatus.adapterStatusMap}")
+        val appContext = context.applicationContext
+        initScope.launch {
+            try {
+                MobileAds.initialize(appContext) { initializationStatus ->
+                    Log.d(TAG, "AdMob Initialized: ${initializationStatus.adapterStatusMap}")
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to initialize AdMob", e)
             }
-        } catch (e: Exception) {
-            Log.e(TAG, "Failed to initialize AdMob", e)
         }
     }
 

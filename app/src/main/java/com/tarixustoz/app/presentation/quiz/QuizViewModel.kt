@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.tarixustoz.app.data.local.AppDatabase
 import com.tarixustoz.app.data.local.QuizAttemptEntity
 import com.tarixustoz.app.data.repository.ActiveQuizState
+import com.tarixustoz.app.data.repository.CloudSyncRepository
 import com.tarixustoz.app.data.repository.ContentRepository
 import com.tarixustoz.app.data.repository.MistakesRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
@@ -39,7 +40,8 @@ class QuizViewModel @Inject constructor(
     private val contentRepository: ContentRepository,
     private val mistakesRepository: MistakesRepository,
     private val preferences: UserPreferencesRepository,
-    private val database: AppDatabase
+    private val database: AppDatabase,
+    private val cloudSyncRepository: CloudSyncRepository
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(QuizUiState())
@@ -56,12 +58,16 @@ class QuizViewModel @Inject constructor(
         customCategory: String? = null,
         customDifficulty: String? = null,
         timeLimitMinutes: Int? = null,
-        selectedTopicIds: List<String>? = null
+        selectedTopicIds: List<String>? = null,
+        explicitGrade: Int? = null
     ) {
         viewModelScope.launch {
             _uiState.value = QuizUiState(isLoading = true)
 
-            val route = "quiz/${topicId ?: "custom"}"
+            val route = buildString {
+                append("quiz/${topicId ?: "custom"}")
+                if (explicitGrade != null) append("?grade=$explicitGrade")
+            }
             val savedState = preferences.activeQuizState.first()
             if (savedState != null && savedState.quizRoute == route) {
                 _uiState.value = QuizUiState(
@@ -88,9 +94,9 @@ class QuizViewModel @Inject constructor(
                 return@launch
             }
 
-            val currentGrade = try {
+            val currentGrade = explicitGrade ?: try {
                 preferences.selectedGrade.first()
-            } catch (_: Exception) { 6 }
+            } catch (_: Exception) { 0 }
 
             contentRepository.seedIfNeeded()
 
@@ -111,10 +117,31 @@ class QuizViewModel @Inject constructor(
                     currentTicketCategory = rest
                     currentTicketIndex = 1
                 }
+                val ticketGrade = explicitGrade ?: 0
+                currentTicketCategory?.let { cat ->
+                    val openedIdx = currentTicketIndex ?: 1
+                    preferences.setLastOpenedTicket(cat, openedIdx)
+                }
                 questions = contentRepository.getTicketQuestions(
-                    currentTicketCategory!!, currentTicketIndex!!, 30, currentGrade
+                    currentTicketCategory!!, currentTicketIndex!!, 30, ticketGrade
                 )
                 title = "$currentTicketIndex-Bilet"
+            } else if (topicId == "daily") {
+                val daily = contentRepository.getDailyQuestion(grade = currentGrade)
+                val extra = contentRepository.fetchQuizFromApi(
+                    count = 4,
+                    categoryCode = "ALL",
+                    grade = currentGrade,
+                    subject = "",
+                    difficulty = "ALL"
+                ).ifEmpty {
+                    contentRepository.getFallbackQuestions(4, "ALL", currentGrade)
+                }
+                questions = buildList {
+                    if (daily != null) add(daily)
+                    extra.filter { it.id != daily?.id }.take(4).forEach { add(it) }
+                }
+                title = "Kun savoli"
             } else if (topicId == "wrong_questions") {
                 questions = contentRepository.getWrongQuestionsForReview(limit = count)
                 title = "Xatolar ustida ishlash"
@@ -303,14 +330,38 @@ class QuizViewModel @Inject constructor(
             _uiState.update { it.copy(isFinished = true, timeSpentSeconds = totalSeconds) }
             val cat = currentTicketCategory
             val idx = currentTicketIndex
+            val quizTitleSnapshot = currentQuizTitle ?: "Test"
+            val firstQuestionGrade = state.questions.firstOrNull()?.gradeId ?: 0
             viewModelScope.launch {
                 preferences.clearActiveQuiz()
-                preferences.recordQuizCompletion(state.questions.size, totalSeconds)
+                preferences.recordQuizCompletion(
+                    solvedCount = state.questions.size,
+                    correctCount = state.correctCount,
+                    timeSpentSeconds = totalSeconds
+                )
                 if (cat != null && idx != null) {
                     val score = state.correctCount
                     val passed = score >= 10
                     preferences.saveTicketResult(cat, idx, score, passed)
+                    val progress = preferences.getTicketProgress(cat)
+                    val highestUnlocked = ((progress.passed.maxOrNull() ?: 0) + 1).coerceAtLeast(1)
+                    cloudSyncRepository.saveTicketProgressToCloud(
+                        categoryKey = cat,
+                        passedTickets = progress.passed,
+                        scores = progress.scores,
+                        lastOpenedTicket = idx,
+                        highestUnlockedTicket = highestUnlocked
+                    )
                 }
+                cloudSyncRepository.recordQuizAttemptToCloud(
+                    categoryKey = cat ?: (currentQuizRoute?.removePrefix("quiz/") ?: "custom"),
+                    categoryTitle = quizTitleSnapshot,
+                    grade = firstQuestionGrade,
+                    solvedCount = state.questions.size,
+                    correctCount = state.correctCount,
+                    durationSeconds = totalSeconds
+                )
+                cloudSyncRepository.pushStatsToCloud()
             }
         } else {
             _uiState.update {

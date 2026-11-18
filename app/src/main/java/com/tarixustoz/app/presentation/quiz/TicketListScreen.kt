@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -47,6 +48,17 @@ fun TicketListScreen(
     var isRefreshing by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
     val pullState = rememberPullToRefreshState()
+    val listState = rememberLazyListState()
+    var hasAutoScrolled by remember(categoryKey) { mutableStateOf(false) }
+
+    LaunchedEffect(state.isLoading, state.lastOpenedTicket) {
+        if (!state.isLoading && !hasAutoScrolled && state.lastOpenedTicket > 1 && state.tickets.isNotEmpty()) {
+            hasAutoScrolled = true
+            // 3 header items before the ticket list
+            val targetItem = (state.lastOpenedTicket - 1 + 3).coerceAtMost(state.tickets.size + 3)
+            listState.animateScrollToItem(targetItem)
+        }
+    }
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
@@ -60,8 +72,10 @@ fun TicketListScreen(
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold
                         )
+                        val formattedQ = "%,d".format(state.totalQuestions).replace(',', ' ')
+                        val formattedT = "%,d".format(state.tickets.size).replace(',', ' ')
                         Text(
-                            text = "${state.totalQuestions} ta savol • ${state.tickets.size} ta bilet",
+                            text = "$formattedQ ta savol • $formattedT ta bilet",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -140,7 +154,7 @@ fun TicketListScreen(
             onRefresh = {
                 coroutineScope.launch {
                     isRefreshing = true
-                    viewModel.loadTickets(categoryKey)
+                    viewModel.loadTickets(categoryKey, selectedGrade, forceRefresh = true)
                     isRefreshing = false
                 }
             },
@@ -159,6 +173,7 @@ fun TicketListScreen(
                 .padding(innerPadding)
         ) {
             LazyColumn(
+                state = listState,
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(horizontal = 16.dp),
@@ -170,8 +185,8 @@ fun TicketListScreen(
             item {
                 Surface(
                     shape = RoundedCornerShape(16.dp),
-                    color = Color(0xFFEFF6FF),
-                    border = BorderStroke(1.dp, Color(0xFFBFDBFE)),
+                    color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.55f),
+                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.28f)),
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Row(
@@ -180,7 +195,7 @@ fun TicketListScreen(
                     ) {
                         Surface(
                             shape = CircleShape,
-                            color = Color(0xFF3B82F6),
+                            color = BrandPurple,
                             modifier = Modifier.size(40.dp)
                         ) {
                             Box(contentAlignment = Alignment.Center) {
@@ -198,20 +213,20 @@ fun TicketListScreen(
                                 text = "Bilet topshirish qoidasi",
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 14.sp,
-                                color = Color(0xFF1E40AF)
+                                color = MaterialTheme.colorScheme.onPrimaryContainer
                             )
                             Spacer(Modifier.height(2.dp))
                             Text(
                                 text = "Har bir bilet 30 ta savoldan iborat. Kamida 10 ta to‘g‘ri javob topsangiz, keyingi bilet ochiladi!",
                                 fontSize = 12.sp,
-                                color = Color(0xFF1D4ED8)
+                                color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.85f)
                             )
                         }
                     }
                 }
             }
 
-            // Overall Progress Summary
+            // Overall Progress Summary + Quick Jump to Last Opened Ticket
             item {
                 val passedCount = state.tickets.count { it.isPassed }
                 val totalTickets = state.tickets.size.coerceAtLeast(1)
@@ -223,7 +238,7 @@ fun TicketListScreen(
                     border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Column(modifier = Modifier.padding(14.dp)) {
+                    Column(modifier = Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween,
@@ -241,7 +256,6 @@ fun TicketListScreen(
                                 fontSize = 13.sp
                             )
                         }
-                        Spacer(Modifier.height(8.dp))
                         LinearProgressIndicator(
                             progress = { progressFraction },
                             modifier = Modifier
@@ -251,6 +265,58 @@ fun TicketListScreen(
                             color = BrandPurple,
                             trackColor = MaterialTheme.colorScheme.surfaceVariant
                         )
+
+                        if (state.tickets.isNotEmpty()) {
+                            val targetIdx = state.lastOpenedTicket.coerceIn(1, state.tickets.size)
+                            Surface(
+                                shape = RoundedCornerShape(12.dp),
+                                color = BrandPurple.copy(alpha = 0.1f),
+                                border = BorderStroke(1.dp, BrandPurple.copy(alpha = 0.25f)),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .clickable {
+                                        coroutineScope.launch {
+                                            val itemPos = (targetIdx - 1 + 4).coerceAtMost(state.tickets.size + 4)
+                                            listState.animateScrollToItem(itemPos)
+                                        }
+                                    }
+                            ) {
+                                Row(
+                                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp),
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.SpaceBetween
+                                ) {
+                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                        Icon(
+                                            Icons.Default.BookmarkAdded,
+                                            contentDescription = null,
+                                            tint = BrandPurple,
+                                            modifier = Modifier.size(18.dp)
+                                        )
+                                        Spacer(Modifier.width(8.dp))
+                                        Column {
+                                            Text(
+                                                text = "Oxirgi ochilgan: $targetIdx-Bilet",
+                                                fontSize = 13.sp,
+                                                fontWeight = FontWeight.Bold,
+                                                color = BrandPurple
+                                            )
+                                            Text(
+                                                text = "Ro‘yxatdan darhol topish uchun bosing",
+                                                fontSize = 11.sp,
+                                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                                            )
+                                        }
+                                    }
+                                    Icon(
+                                        Icons.Default.South,
+                                        contentDescription = "Biletga o‘tish",
+                                        tint = BrandPurple,
+                                        modifier = Modifier.size(18.dp)
+                                    )
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -264,12 +330,13 @@ fun TicketListScreen(
             }
 
             // Ticket Cards List
-            itemsIndexed(state.tickets) { index, ticket ->
+            itemsIndexed(state.tickets, key = { _, ticket -> ticket.index }) { _, ticket ->
                 TicketCardItem(
                     ticket = ticket,
                     onStart = {
                         if (ticket.isUnlocked) {
-                            viewModel.prefetchNextTicketsIfNeeded(categoryKey, ticket.index)
+                            viewModel.markTicketOpened(categoryKey, ticket.index)
+                            viewModel.prefetchNextTicketsIfNeeded(categoryKey, ticket.index, selectedGrade)
                             onStartTicket(categoryKey, ticket.index)
                         }
                     }
@@ -330,23 +397,24 @@ private fun TicketCardItem(
                     )
                 }
 
-                // Status Badge
                 Surface(
                     shape = RoundedCornerShape(20.dp),
                     color = when {
-                        ticket.isPassed -> Color(0xFFDCFCE7)
-                        ticket.isUnlocked -> Color(0xFFEFF6FF)
+                        ticket.isPassed -> Color(0xFF16A34A).copy(alpha = 0.14f)
+                        ticket.isLastOpened -> BrandPurple.copy(alpha = 0.16f)
+                        ticket.isUnlocked -> MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.45f)
                         else -> MaterialTheme.colorScheme.surfaceVariant
                     }
                 ) {
                     Text(
                         text = when {
                             ticket.isPassed -> "O‘tildi 🎉"
+                            ticket.isLastOpened -> "Oxirgi ochilgan"
                             ticket.isUnlocked -> "Ochiq"
                             else -> "Yopilgan 🔒"
                         },
                         color = when {
-                            ticket.isPassed -> Color(0xFF15803D)
+                            ticket.isPassed -> Color(0xFF16A34A)
                             ticket.isUnlocked -> BrandPurple
                             else -> MaterialTheme.colorScheme.onSurfaceVariant
                         },
@@ -420,7 +488,7 @@ private fun TicketCardItem(
                                 "${ticket.bestScore}/30",
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Bold,
-                            color = if (ticket.isPassed) Color(0xFF15803D) else BrandPurple
+                            color = if (ticket.isPassed) Color(0xFF16A34A) else BrandPurple
                         )
                     }
                     Spacer(Modifier.height(4.dp))
@@ -437,10 +505,10 @@ private fun TicketCardItem(
                 }
             }
 
-            // 3. Banner Mode Card (Gold/Yellow Card - "Bepul" badge removed!)
+            // 3. Banner Mode Card
             Surface(
                 shape = RoundedCornerShape(14.dp),
-                color = if (ticket.isUnlocked) Color(0xFFFEF3C7) else MaterialTheme.colorScheme.surfaceVariant,
+                color = if (ticket.isUnlocked) Color(0xFFF59E0B).copy(alpha = 0.14f) else MaterialTheme.colorScheme.surfaceVariant,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Row(
@@ -450,7 +518,7 @@ private fun TicketCardItem(
                     Icon(
                         imageVector = if (ticket.isUnlocked) Icons.Default.FitnessCenter else Icons.Default.Lock,
                         contentDescription = null,
-                        tint = if (ticket.isUnlocked) Color(0xFFD97706) else MaterialTheme.colorScheme.onSurfaceVariant,
+                        tint = if (ticket.isUnlocked) Color(0xFFF59E0B) else MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.size(18.dp)
                     )
                     Spacer(Modifier.width(10.dp))
@@ -458,7 +526,7 @@ private fun TicketCardItem(
                         text = if (ticket.isUnlocked) "Mashq rejimi ochiq" else "Kamida 10 ta to'g'ri topsangiz ochiladi",
                         fontSize = 13.sp,
                         fontWeight = FontWeight.SemiBold,
-                        color = if (ticket.isUnlocked) Color(0xFF92400E) else MaterialTheme.colorScheme.onSurfaceVariant
+                        color = if (ticket.isUnlocked) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
             }

@@ -9,14 +9,21 @@ import androidx.lifecycle.viewModelScope
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
+import com.google.firebase.auth.FirebaseAuth
 import com.tarixustoz.app.data.local.AppDatabase
+import com.tarixustoz.app.data.repository.AuthRepository
+import com.tarixustoz.app.data.repository.CloudQuizAttempt
+import com.tarixustoz.app.data.repository.CloudSyncRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
+import com.tarixustoz.app.data.sync.OfflineSyncStatus
+import com.tarixustoz.app.data.sync.SyncScheduler
 import com.tarixustoz.app.presentation.common.DailyNotificationWorker
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -80,38 +87,45 @@ data class DailyGoalUiState(
 class ProfileViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val preferencesRepository: UserPreferencesRepository,
-    private val database: AppDatabase
+    private val database: AppDatabase,
+    private val authRepository: AuthRepository,
+    private val cloudSyncRepository: CloudSyncRepository,
+    private val syncScheduler: SyncScheduler,
+    private val auth: FirebaseAuth
 ) : ViewModel() {
+
+    val syncStatus: StateFlow<OfflineSyncStatus> = syncScheduler.observeSyncStatus()
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), OfflineSyncStatus())
 
     val userEmail: StateFlow<String?> = preferencesRepository.userEmail
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
 
     val isGuest: StateFlow<Boolean> = preferencesRepository.isGuest
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), true)
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), false)
 
     val displayName: StateFlow<String> = preferencesRepository.displayName
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "Azizbek")
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "Tarixchi")
 
     val userBio: StateFlow<String> = preferencesRepository.userBio
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "Tarix bilimdoni • DTM tayyorgarlik")
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "Tarix fani izlanuvchisi")
 
     val userAvatar: StateFlow<String> = preferencesRepository.userAvatar
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "AS")
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "TU")
 
     val userPhone: StateFlow<String> = preferencesRepository.userPhone
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "+998 90 123 45 67")
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "")
 
     val userTarget: StateFlow<String> = preferencesRepository.userTarget
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "DTM 189 ball • O‘zbekiston tarixi")
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "DTM va Milliy sertifikat")
 
     val userXp: StateFlow<Long> = preferencesRepository.userXp
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 78L)
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0L)
 
     val userStreak: StateFlow<Int> = preferencesRepository.userStreak
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 7)
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
     val selectedGrade: StateFlow<Int> = preferencesRepository.selectedGrade
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 6)
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 7)
 
     val levelTitle: StateFlow<String> = preferencesRepository.userXp.map { xp ->
         when {
@@ -123,17 +137,25 @@ class ProfileViewModel @Inject constructor(
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "1-daraja • Boshlang'ich")
 
-    val totalSolvedCount: StateFlow<Int> = database.quizAttemptDao().getTotalCountFlow()
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
+    val totalSolvedCount: StateFlow<Int> = combine(
+        database.quizAttemptDao().getTotalCountFlow(),
+        preferencesRepository.totalSolvedTests
+    ) { localCount, prefCount ->
+        maxOf(localCount, prefCount)
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
-    val correctAnswersCount: StateFlow<Int> = database.quizAttemptDao().getCorrectCountFlow()
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
+    val correctAnswersCount: StateFlow<Int> = combine(
+        database.quizAttemptDao().getCorrectCountFlow(),
+        preferencesRepository.totalCorrectAnswers
+    ) { localCorrect, prefCorrect ->
+        maxOf(localCorrect, prefCorrect)
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
     val accuracyPercentage: StateFlow<Int> = combine(
-        database.quizAttemptDao().getCorrectCountFlow(),
-        database.quizAttemptDao().getTotalCountFlow()
+        correctAnswersCount,
+        totalSolvedCount
     ) { correct, total ->
-        if (total > 0) (correct * 100) / total else 0
+        if (total > 0) ((correct * 100) / total).coerceIn(0, 100) else 0
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
     private fun getStartOfDayMillis(): Long {
@@ -175,45 +197,78 @@ class ProfileViewModel @Inject constructor(
         return cal.timeInMillis
     }
 
+    private val cloudAttemptsFlow = auth.currentUser?.uid?.let { uid ->
+        cloudSyncRepository.observeUserAttempts(uid)
+    } ?: flowOf(emptyList<CloudQuizAttempt>())
+
     val dailyGoalUiState: StateFlow<DailyGoalUiState> = combine(
-        database.quizAttemptDao().getTodayTotalCountFlow(getStartOfDayMillis()),
-        database.quizAttemptDao().getTodayCorrectCountFlow(getStartOfDayMillis()),
         database.quizAttemptDao().getWeeklyAttemptsFlow(getStartOfWeekMillis()),
         database.quizAttemptDao().getMonthlyAttemptsFlow(getStartOfMonthMillis()),
-        database.quizAttemptDao().getYearlyAttemptsFlow(getStartOfYearMillis())
-    ) { todayTotal, todayCorrect, weeklyAttempts, monthlyAttempts, yearlyAttempts ->
+        database.quizAttemptDao().getYearlyAttemptsFlow(getStartOfYearMillis()),
+        cloudAttemptsFlow
+    ) { weeklyAttempts, monthlyAttempts, yearlyAttempts, cloudAttempts ->
+        val dayStart = getStartOfDayMillis()
+        val weekStart = getStartOfWeekMillis()
+        val monthStart = getStartOfMonthMillis()
+        val yearStart = getStartOfYearMillis()
+
+        val localToday = weeklyAttempts.filter { it.timestamp >= dayStart }
+        val cloudToday = cloudAttempts.filter { (it.createdAt?.toDate()?.time ?: 0L) >= dayStart }
+        val todayTotal = maxOf(localToday.size, cloudToday.sumOf { it.solvedCount.toInt() })
+        val todayCorrect = maxOf(
+            localToday.count { it.wasCorrect },
+            cloudToday.sumOf { it.correctCount.toInt() }
+        ).coerceIn(0, todayTotal)
         val todayIncorrect = (todayTotal - todayCorrect).coerceAtLeast(0)
         val accuracy = if (todayTotal > 0) (todayCorrect * 100) / todayTotal else 0
 
-        val weeklyTotal = weeklyAttempts.size
-        val weeklyCorrect = weeklyAttempts.count { it.wasCorrect }
+        val cloudWeekly = cloudAttempts.filter { (it.createdAt?.toDate()?.time ?: 0L) >= weekStart }
+        val weeklyTotal = maxOf(weeklyAttempts.size, cloudWeekly.sumOf { it.solvedCount.toInt() })
+        val weeklyCorrect = maxOf(
+            weeklyAttempts.count { it.wasCorrect },
+            cloudWeekly.sumOf { it.correctCount.toInt() }
+        ).coerceIn(0, weeklyTotal)
         val weeklyIncorrect = (weeklyTotal - weeklyCorrect).coerceAtLeast(0)
         val weeklyAccuracy = if (weeklyTotal > 0) (weeklyCorrect * 100) / weeklyTotal else 0
 
-        val monthlyTotal = monthlyAttempts.size
-        val monthlyCorrect = monthlyAttempts.count { it.wasCorrect }
+        val cloudMonthly = cloudAttempts.filter { (it.createdAt?.toDate()?.time ?: 0L) >= monthStart }
+        val monthlyTotal = maxOf(monthlyAttempts.size, cloudMonthly.sumOf { it.solvedCount.toInt() })
+        val monthlyCorrect = maxOf(
+            monthlyAttempts.count { it.wasCorrect },
+            cloudMonthly.sumOf { it.correctCount.toInt() }
+        ).coerceIn(0, monthlyTotal)
         val monthlyIncorrect = (monthlyTotal - monthlyCorrect).coerceAtLeast(0)
         val monthlyAccuracy = if (monthlyTotal > 0) (monthlyCorrect * 100) / monthlyTotal else 0
 
-        val yearlyTotal = yearlyAttempts.size
-        val yearlyCorrect = yearlyAttempts.count { it.wasCorrect }
+        val cloudYearly = cloudAttempts.filter { (it.createdAt?.toDate()?.time ?: 0L) >= yearStart }
+        val yearlyTotal = maxOf(yearlyAttempts.size, cloudYearly.sumOf { it.solvedCount.toInt() })
+        val yearlyCorrect = maxOf(
+            yearlyAttempts.count { it.wasCorrect },
+            cloudYearly.sumOf { it.correctCount.toInt() }
+        ).coerceIn(0, yearlyTotal)
         val yearlyIncorrect = (yearlyTotal - yearlyCorrect).coerceAtLeast(0)
         val yearlyAccuracy = if (yearlyTotal > 0) (yearlyCorrect * 100) / yearlyTotal else 0
 
         val daysOfWeekUz = listOf("Du", "Se", "Ch", "Pa", "Ju", "Sh", "Ya")
-
         val cal = Calendar.getInstance()
         val currentDayOfWeek = (cal.get(Calendar.DAY_OF_WEEK) + 5) % 7
 
-        val countsByDay = IntArray(7) { 0 }
+        val localByDay = IntArray(7) { 0 }
         weeklyAttempts.forEach { attempt ->
-            val attemptCal = Calendar.getInstance()
-            attemptCal.timeInMillis = attempt.timestamp
+            val attemptCal = Calendar.getInstance().apply { timeInMillis = attempt.timestamp }
             val dayIdx = (attemptCal.get(Calendar.DAY_OF_WEEK) + 5) % 7
-            if (dayIdx in 0..6) {
-                countsByDay[dayIdx]++
+            if (dayIdx in 0..6) localByDay[dayIdx]++
+        }
+        val cloudByDay = IntArray(7) { 0 }
+        cloudWeekly.forEach { attempt ->
+            val ts = attempt.createdAt?.toDate()?.time ?: 0L
+            if (ts > 0L) {
+                val attemptCal = Calendar.getInstance().apply { timeInMillis = ts }
+                val dayIdx = (attemptCal.get(Calendar.DAY_OF_WEEK) + 5) % 7
+                if (dayIdx in 0..6) cloudByDay[dayIdx] += attempt.solvedCount.toInt()
             }
         }
+        val countsByDay = IntArray(7) { idx -> maxOf(localByDay[idx], cloudByDay[idx]) }
 
         val weekDaysList = daysOfWeekUz.mapIndexed { index, name ->
             DayActivity(
@@ -249,11 +304,11 @@ class ProfileViewModel @Inject constructor(
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), DailyGoalUiState())
 
     val achievementsList: StateFlow<List<AchievementUiState>> = combine(
-        database.quizAttemptDao().getTotalCountFlow(),
+        totalSolvedCount,
         preferencesRepository.userStreak,
         accuracyPercentage,
         preferencesRepository.userXp
-    ) { solved, streak, accuracy, xp ->
+    ) { solved, streak, accuracy, _ ->
         listOf(
             AchievementUiState(
                 id = "ach_first_step",
@@ -362,10 +417,11 @@ class ProfileViewModel @Inject constructor(
 
     fun updateProfile(name: String, bio: String, avatar: String, grade: Int) {
         viewModelScope.launch {
-            preferencesRepository.setDisplayName(name.trim().ifEmpty { "Azizbek" })
+            preferencesRepository.setDisplayName(name.trim().ifEmpty { "Tarixchi" })
             preferencesRepository.setUserBio(bio.trim())
             preferencesRepository.setUserAvatar(avatar)
             preferencesRepository.setSelectedGrade(grade)
+            cloudSyncRepository.syncEditedProfileToCloud()
         }
     }
 
@@ -436,10 +492,19 @@ class ProfileViewModel @Inject constructor(
         }
     }
 
+    fun triggerManualSync() {
+        syncScheduler.triggerImmediateSync(forceRefresh = true)
+    }
+
+    fun exitTestMode() {
+        viewModelScope.launch {
+            authRepository.exitTestMode()
+        }
+    }
+
     fun signOut() {
         viewModelScope.launch {
-            preferencesRepository.setUserEmail(null)
-            preferencesRepository.setIsGuest(true)
+            authRepository.signOut()
         }
     }
 }

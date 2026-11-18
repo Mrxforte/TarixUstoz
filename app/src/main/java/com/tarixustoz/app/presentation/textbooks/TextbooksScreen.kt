@@ -33,10 +33,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
+import androidx.compose.foundation.Image
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.res.painterResource
 import com.tarixustoz.app.data.remote.DownloadState
 import com.tarixustoz.app.data.remote.MediaUrls
 import com.tarixustoz.app.data.remote.PdfDownloader
 import com.tarixustoz.app.domain.model.Textbook
+import com.tarixustoz.app.presentation.common.components.backgroundResForBook
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
@@ -270,7 +274,7 @@ private fun TextbookGridCard(
     downloadState: BookDownloadState? = null,
     onClick: () -> Unit
 ) {
-    val coverUrl = textbook.coverAsset ?: "file:///android_asset/images/${textbook.id}_cover.png"
+    val bgDrawableRes = backgroundResForBook(textbook.id, textbook.gradeId, textbook.subjectId)
 
     Card(
         modifier = Modifier
@@ -286,41 +290,31 @@ private fun TextbookGridCard(
         Column(
             modifier = Modifier.fillMaxSize()
         ) {
-            // Cover Image Box
+            // Thematic Cover Image Box
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(120.dp)
+                    .height(124.dp)
                     .background(MaterialTheme.colorScheme.primaryContainer)
             ) {
-                if (coverUrl != null) {
-                    AsyncImage(
-                        model = coverUrl,
-                        contentDescription = textbook.title,
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier.fillMaxSize()
-                    )
-                } else {
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Surface(
-                            shape = CircleShape,
-                            color = MaterialTheme.colorScheme.surface.copy(alpha = 0.85f),
-                            modifier = Modifier.size(44.dp)
-                        ) {
-                            Box(contentAlignment = Alignment.Center) {
-                                Icon(
-                                    Icons.Default.Book,
-                                    contentDescription = null,
-                                    tint = MaterialTheme.colorScheme.primary,
-                                    modifier = Modifier.size(24.dp)
+                Image(
+                    painter = painterResource(id = bgDrawableRes),
+                    contentDescription = textbook.title,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.fillMaxSize()
+                )
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(
+                            brush = Brush.verticalGradient(
+                                colors = listOf(
+                                    Color.Black.copy(alpha = 0.18f),
+                                    Color.Black.copy(alpha = 0.55f)
                                 )
-                            }
-                        }
-                    }
-                }
+                            )
+                        )
+                )
 
                 // Radial Progress & Play/Pause Overlay when Downloading
                 if (downloadState != null) {

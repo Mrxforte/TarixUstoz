@@ -10,6 +10,7 @@ import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Leaderboard
+import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Psychology
 import androidx.compose.material.icons.filled.Quiz
@@ -22,8 +23,13 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -37,15 +43,19 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.tarixustoz.app.presentation.auth.AuthScreen
+import com.tarixustoz.app.presentation.auth.AuthViewModel
 import com.tarixustoz.app.presentation.home.HomeScreen
 import com.tarixustoz.app.presentation.leaderboard.LeaderboardScreen
 import com.tarixustoz.app.presentation.leaderboard.TestAnalysisScreen
 import com.tarixustoz.app.presentation.mistakes.MistakesScreen
 import com.tarixustoz.app.presentation.mistakes.MistakesViewModel
+import com.tarixustoz.app.presentation.notifications.NotificationsScreen
 import com.tarixustoz.app.presentation.onboarding.OnboardingScreen
 import com.tarixustoz.app.presentation.onboarding.OnboardingViewModel
+import com.tarixustoz.app.presentation.onboarding.SplashScreen
 import com.tarixustoz.app.presentation.profile.EditProfileScreen
 import com.tarixustoz.app.presentation.profile.ProfileScreen
+import kotlinx.coroutines.delay
 import com.tarixustoz.app.presentation.quiz.PeriodSelectionScreen
 import com.tarixustoz.app.presentation.quiz.QuizOptionsScreen
 import com.tarixustoz.app.presentation.quiz.QuizScreen
@@ -71,91 +81,129 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
     data object Achievements : Screen("achievements", "Yutuqlar", Icons.Default.EmojiEvents)
     data object Analytics : Screen("analytics", "Tahlil", Icons.Default.Analytics)
     data object QuizOptions : Screen("quiz_options", "Test Sozlamalari", Icons.Default.Quiz)
+    data object Notifications : Screen("notifications", "Bildirishnomalar", Icons.Default.Notifications)
 }
 
-/** Uzbek title for a direction code, used as the ticket list heading. */
-private fun directionTitle(code: String): String = when (code) {
-    "EVENT" -> "Tarixiy voqealar"
-    "PERSON" -> "Tarixiy shaxslar"
-    "WAR" -> "Urushlar va janglar"
-    "YEAR" -> "Yillar va sanalar"
-    "CITY" -> "Shahar va hududlar"
-    "FACT" -> "Tarixiy faktlar"
-    "LOGICAL" -> "Mantiqiy va DTM"
+/** Uzbek title for a direction or textbook code, used as the ticket list heading. */
+private fun directionTitle(code: String): String = when {
+    code == "EVENT" -> "Tarixiy voqealar"
+    code == "PERSON" -> "Tarixiy shaxslar"
+    code == "WAR" -> "Urushlar va janglar"
+    code == "YEAR" -> "Yillar va sanalar"
+    code == "CITY" -> "Shahar va hududlar"
+    code == "FACT" -> "Tarixiy faktlar"
+    code == "MONUMENT" -> "Tarixiy obidalar"
+    code == "LOGICAL" -> "Mantiqiy va DTM"
+    code.startsWith("book_uz_") -> "${code.removePrefix("book_uz_")}-sinf O‘zbekiston tarixi"
+    code.startsWith("book_jahon_") -> "${code.removePrefix("book_jahon_")}-sinf Jahon tarixi"
     else -> "Test biletlari"
 }
 
 @Composable
-fun TarixNavHost() {
-    val navController = rememberNavController()
-    val mistakesViewModel: MistakesViewModel = hiltViewModel()
-    val mistakesCount by mistakesViewModel.activeCount.collectAsState()
+fun TarixNavHost(
+    pendingNotificationRoute: String? = null,
+    onNotificationRouteConsumed: () -> Unit = {}
+) {
     val onboardingViewModel: OnboardingViewModel = hiltViewModel()
+    val authViewModel: AuthViewModel = hiltViewModel()
     val isOnboardingCompleted by onboardingViewModel.isOnboardingCompleted.collectAsState()
+    val currentUser by authViewModel.currentUser.collectAsState()
+    val isTestModeActive by authViewModel.isTestModeActive.collectAsState()
 
-    val bottomItems = listOf(
-        Screen.Home,
-        Screen.Quiz,
-        Screen.Mistakes,
-        Screen.Leaderboard,
-        Screen.Profile
-    )
+    var splashMinElapsed by remember { mutableStateOf(false) }
+    LaunchedEffect(Unit) {
+        delay(650L)
+        splashMinElapsed = true
+    }
 
-    val startDestination = if (isOnboardingCompleted == false) "onboarding" else Screen.Home.route
+    when {
+        isOnboardingCompleted == null || !splashMinElapsed -> {
+            SplashScreen()
+        }
+        isOnboardingCompleted == false -> {
+            OnboardingScreen(onFinish = {})
+        }
+        currentUser == null && !isTestModeActive -> {
+            AuthScreen(
+                canNavigateBack = false,
+                onAuthSuccess = {}
+            )
+        }
+        else -> {
+            val user = currentUser
+            val sessionKey = user?.uid ?: "test_mode"
+            key(sessionKey) {
+                val navController = rememberNavController()
+                val mistakesViewModel: MistakesViewModel = hiltViewModel()
+                val mistakesCount by mistakesViewModel.activeCount.collectAsState()
 
-    Scaffold(
-        contentWindowInsets = WindowInsets.safeDrawing,
-        bottomBar = {
-            val navBackStackEntry by navController.currentBackStackEntryAsState()
-            val currentDestination = navBackStackEntry?.destination
-            val currentRoute = currentDestination?.route
-            val showBottomBar = bottomItems.any { it.route == currentRoute }
-
-            if (showBottomBar) {
-                NavigationBar {
-                    bottomItems.forEach { screen ->
-                        NavigationBarItem(
-                            icon = {
-                                if (screen == Screen.Mistakes && mistakesCount > 0) {
-                                    val badgeText = if (mistakesCount > 9) "9+" else "$mistakesCount"
-                                    BadgedBox(badge = { Badge(containerColor = Color(0xFFEF4444), contentColor = Color.White) { Text(badgeText) } }) {
-                                        Icon(screen.icon, contentDescription = screen.title)
-                                    }
-                                } else {
-                                    Icon(screen.icon, contentDescription = screen.title)
-                                }
-                            },
-                            label = { Text(screen.title) },
-                            selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
-                            onClick = {
-                                navController.navigate(screen.route) {
-                                    popUpTo(navController.graph.findStartDestination().id) {
-                                        saveState = true
-                                    }
-                                    launchSingleTop = true
-                                    restoreState = true
-                                }
-                            }
-                        )
+                LaunchedEffect(user?.uid) {
+                    if (user != null) {
+                        authViewModel.ensureCloudSynced()
                     }
                 }
-            }
-        }
-    ) { innerPadding ->
-        NavHost(
-            navController = navController,
-            startDestination = startDestination,
-            modifier = Modifier.padding(bottom = innerPadding.calculateBottomPadding())
-        ) {
-            composable("onboarding") {
-                OnboardingScreen(
-                    onFinish = {
-                        navController.navigate(Screen.Home.route) {
-                            popUpTo("onboarding") { inclusive = true }
+
+                LaunchedEffect(pendingNotificationRoute, sessionKey) {
+                    if (!pendingNotificationRoute.isNullOrBlank()) {
+                        navController.navigate(pendingNotificationRoute) {
+                            launchSingleTop = true
+                        }
+                        onNotificationRouteConsumed()
+                    }
+                }
+
+                val bottomItems = listOf(
+                    Screen.Home,
+                    Screen.Quiz,
+                    Screen.Mistakes,
+                    Screen.Leaderboard,
+                    Screen.Profile
+                )
+
+                Scaffold(
+                    contentWindowInsets = WindowInsets.safeDrawing,
+                    bottomBar = {
+                        val navBackStackEntry by navController.currentBackStackEntryAsState()
+                        val currentDestination = navBackStackEntry?.destination
+                        val currentRoute = currentDestination?.route
+                        val showBottomBar = bottomItems.any { it.route == currentRoute }
+
+                        if (showBottomBar) {
+                            NavigationBar {
+                                bottomItems.forEach { screen ->
+                                    NavigationBarItem(
+                                        icon = {
+                                            if (screen == Screen.Mistakes && mistakesCount > 0) {
+                                                val badgeText = if (mistakesCount > 9) "9+" else "$mistakesCount"
+                                                BadgedBox(badge = { Badge(containerColor = Color(0xFFEF4444), contentColor = Color.White) { Text(badgeText) } }) {
+                                                    Icon(screen.icon, contentDescription = screen.title)
+                                                }
+                                            } else {
+                                                Icon(screen.icon, contentDescription = screen.title)
+                                            }
+                                        },
+                                        label = { Text(screen.title) },
+                                        selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
+                                        onClick = {
+                                            navController.navigate(screen.route) {
+                                                popUpTo(navController.graph.findStartDestination().id) {
+                                                    saveState = true
+                                                }
+                                                launchSingleTop = true
+                                                restoreState = true
+                                            }
+                                        }
+                                    )
+                                }
+                            }
                         }
                     }
-                )
-            }
+                ) { innerPadding ->
+                    NavHost(
+                        navController = navController,
+                        startDestination = Screen.Home.route,
+                        modifier = Modifier.padding(bottom = innerPadding.calculateBottomPadding())
+                    ) {
             composable(
                 route = "vertical_cards/{title}/{categoryType}",
                 arguments = listOf(
@@ -189,7 +237,7 @@ fun TarixNavHost() {
                     onNavigateToAi = { },
                     onNavigateToLeaderboard = { navController.navigate(Screen.Leaderboard.route) },
                     onNavigateToTestsHub = { navController.navigate(Screen.Quiz.route) },
-                    onNavigateToNotifications = { },
+                    onNavigateToNotifications = { navController.navigate(Screen.Notifications.route) },
                     onNavigateToTopicSelection = { navController.navigate("topic_selection") },
                     onNavigateToVerticalCards = { title, catType ->
                         val encodedTitle = URLEncoder.encode(title, "UTF-8")
@@ -202,6 +250,17 @@ fun TarixNavHost() {
                     onStartQuizForBookOrTopic = { id ->
                         navController.navigate("quiz/$id")
                     }
+                )
+            }
+            composable(Screen.Notifications.route) {
+                NotificationsScreen(
+                    onBack = { navController.popBackStack() },
+                    onNavigateToMistakes = { navController.navigate(Screen.Mistakes.route) },
+                    onNavigateToDailyQuiz = { navController.navigate("quiz/daily") },
+                    onNavigateToTests = { navController.navigate(Screen.Quiz.route) },
+                    onNavigateToTextbooks = { navController.navigate(Screen.Textbooks.route) },
+                    onNavigateToLeaderboard = { navController.navigate(Screen.Leaderboard.route) },
+                    onNavigateToProfile = { navController.navigate(Screen.Profile.route) }
                 )
             }
             composable(Screen.Textbooks.route) {
@@ -289,7 +348,7 @@ fun TarixNavHost() {
                     selectedGrade = gradeArg,
                     onBack = { navController.popBackStack() },
                     onStartTicket = { catKey, ticketIndex ->
-                        navController.navigate("quiz/ticket_${catKey}_$ticketIndex")
+                        navController.navigate("quiz/ticket_${catKey}_$ticketIndex?grade=$gradeArg")
                     },
                     onStartActiveQuiz = { route ->
                         navController.navigate(route)
@@ -323,22 +382,24 @@ fun TarixNavHost() {
                     }
                 )
             }
-            composable("quiz/{topicId}?count={count}&cat={cat}&diff={diff}&time={time}&topics={topics}") { backStackEntry ->
+            composable("quiz/{topicId}?count={count}&cat={cat}&diff={diff}&time={time}&topics={topics}&grade={grade}") { backStackEntry ->
                 val topicId = backStackEntry.arguments?.getString("topicId")
                 val count = backStackEntry.arguments?.getString("count")?.toIntOrNull()
                 val cat = backStackEntry.arguments?.getString("cat")
                 val diff = backStackEntry.arguments?.getString("diff")
                 val time = backStackEntry.arguments?.getString("time")?.toIntOrNull()
                 val topicsArg = backStackEntry.arguments?.getString("topics")
+                val gradeArg = backStackEntry.arguments?.getString("grade")?.toIntOrNull()
                 val selectedTopics = if (topicsArg == null || topicsArg == "all") emptyList() else topicsArg.split(",")
-                
+
                 QuizScreen(
                     topicId = if (topicId == "custom") null else topicId,
                     customCount = count,
                     customCategory = cat,
                     customDifficulty = diff,
                     timeLimitMinutes = time,
-                    selectedTopicIds = selectedTopics
+                    selectedTopicIds = selectedTopics,
+                    explicitGrade = gradeArg
                 )
             }
             composable(Screen.Mistakes.route) {
@@ -374,14 +435,16 @@ fun TarixNavHost() {
                     initialCategory = categoryTitle,
                     onBack = { navController.popBackStack() },
                     onStartQuiz = { categoryKey ->
-                        navController.navigate("quiz/$categoryKey")
+                        val title = directionTitle(categoryKey)
+                        navController.navigate("ticket_list/$categoryKey?title=${URLEncoder.encode(title, "UTF-8")}&grade=0")
                     }
                 )
             }
             composable(Screen.Profile.route) {
                 ProfileScreen(
                     onNavigateToEditProfile = { navController.navigate(Screen.EditProfile.route) },
-                    onNavigateToSavedTests = { navController.navigate("saved_tests") }
+                    onNavigateToSavedTests = { navController.navigate("saved_tests") },
+                    onNavigateToAuth = { navController.navigate("auth") }
                 )
             }
             composable("saved_tests") {
@@ -398,9 +461,13 @@ fun TarixNavHost() {
             }
             composable("auth") {
                 AuthScreen(
+                    canNavigateBack = true,
                     onBack = { navController.popBackStack() },
                     onAuthSuccess = { navController.popBackStack() }
                 )
+            }
+        }
+    }
             }
         }
     }

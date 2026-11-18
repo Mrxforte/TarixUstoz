@@ -150,7 +150,7 @@ fun EditProfileScreen(
                         ) {
                             Box(contentAlignment = Alignment.Center) {
                                 Text(
-                                    text = uiState.avatar.ifEmpty { "AS" },
+                                    text = uiState.avatar.ifEmpty { "TU" },
                                     fontSize = if (uiState.avatar.length > 2) 38.sp else 32.sp,
                                     fontWeight = FontWeight.Bold,
                                     color = Color.White
@@ -188,7 +188,7 @@ fun EditProfileScreen(
                     Spacer(Modifier.height(14.dp))
 
                     val avatars = listOf(
-                        "AS", "🎓", "🏛️", "⚔️", "👑",
+                        "TU", "🎓", "🏛️", "⚔️", "👑",
                         "📜", "🏹", "🦁", "🌟", "📚", "🏆", "💡"
                     )
 
@@ -222,11 +222,11 @@ fun EditProfileScreen(
                 }
             }
 
-            // Google Account / Optional Sign-In Card
+            // Account Card
             Surface(
                 shape = RoundedCornerShape(18.dp),
-                color = if (isGuest) Color(0xFFFAF5FF) else Color(0xFFF0FDF4),
-                border = BorderStroke(1.dp, if (isGuest) BrandPurple.copy(alpha = 0.3f) else Color(0xFF86EFAC)),
+                color = if (isGuest) BrandPurple.copy(alpha = 0.10f) else Color(0xFF16A34A).copy(alpha = 0.12f),
+                border = BorderStroke(1.dp, if (isGuest) BrandPurple.copy(alpha = 0.35f) else Color(0xFF16A34A).copy(alpha = 0.45f)),
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Row(
@@ -250,13 +250,14 @@ fun EditProfileScreen(
                     Spacer(Modifier.width(12.dp))
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
-                            text = if (isGuest) "Mehmon rejimi" else "Google hisobi",
+                            text = if (isGuest) "Hisob ulanmagan" else "Tarix Ustoz hisobi",
                             fontWeight = FontWeight.Bold,
-                            fontSize = 14.sp
+                            fontSize = 14.sp,
+                            color = MaterialTheme.colorScheme.onSurface
                         )
                         Spacer(Modifier.height(2.dp))
                         Text(
-                            text = if (isGuest) "Hisobingizni Google ga ulab natijalarni saqlang" else (userEmail ?: "Ulangani: Google"),
+                            text = if (isGuest) "Natijalarni saqlash uchun tizimga kiring" else (userEmail ?: "Bulut bilan sinxronlangan"),
                             fontSize = 12.sp,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -269,7 +270,7 @@ fun EditProfileScreen(
                             shape = RoundedCornerShape(12.dp),
                             contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp)
                         ) {
-                            Text("Ro'yxatdan o'tish / Kirish", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                            Text("Kirish", fontSize = 11.sp, fontWeight = FontWeight.Bold)
                         }
                     } else {
                         OutlinedButton(

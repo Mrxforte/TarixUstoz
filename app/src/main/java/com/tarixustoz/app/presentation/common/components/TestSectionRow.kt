@@ -82,6 +82,7 @@ fun TestSectionRow(
                     icon = item.icon,
                     gradientColors = item.gradientColors,
                     accentColor = item.accentColor,
+                    backgroundImageRes = item.backgroundImageRes,
                     onCardClick = { onCardClick(item.id, item.categoryType, item.title) },
                     modifier = Modifier
                         .width(250.dp)

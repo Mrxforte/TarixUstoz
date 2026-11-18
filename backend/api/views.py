@@ -7,7 +7,7 @@ from django.conf import settings
 from rest_framework import viewsets, permissions, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from django.db.models import Q
+from django.db.models import Count, Max, Min, Q
 from api.models import (
     Category, PdfBook, Topic, HistoricalEntity,
     HistoricalRelationship, ExamCategory, Question,
@@ -22,7 +22,10 @@ from api.serializers import (
 )
 from api.rag_engine import HistoricalRAGEngine
 from api.question_engine import QuestionGenerationEngine
-from api.directions import DIRECTION_TITLES, apply_direction, direction_counts
+from api.directions import (
+    DIRECTION_ALIASES, DIRECTION_TITLES, COMBINATION_DIRECTIONS,
+    apply_direction, direction_counts, normalize_code
+)
 
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.all().prefetch_related('pdf_books')
@@ -64,11 +67,20 @@ class TopicViewSet(viewsets.ReadOnlyModelViewSet):
 
         book_id = self.request.query_params.get('textbook_id') or self.request.query_params.get('book_id')
         if book_id:
-            clean_book_id = str(book_id).replace('book_', '')
+            clean_book_id = str(book_id).replace('book_', '').strip()
             if clean_book_id.isdigit():
-                qs = qs.filter(document_id=clean_book_id)
+                qs = qs.filter(document_id=int(clean_book_id))
             else:
-                qs = qs.filter(document__id=book_id)
+                digits = ''.join(ch for ch in clean_book_id if ch.isdigit())
+                if digits.isdigit():
+                    qs = qs.filter(document__grade=int(digits))
+                lower_id = clean_book_id.lower()
+                if 'jahon' in lower_id:
+                    qs = qs.filter(document__subject='Jahon tarixi')
+                elif 'qadimgi' in lower_id or digits == '6':
+                    qs = qs.filter(document__subject='Qadimgi dunyo tarixi')
+                elif 'uz' in lower_id:
+                    qs = qs.filter(document__subject="O'zbekiston tarixi")
 
         chapter_id = self.request.query_params.get('chapter_id')
         if chapter_id:
@@ -80,10 +92,29 @@ class TopicViewSet(viewsets.ReadOnlyModelViewSet):
 
         return qs
 
+    def _serialize_with_counts(self, queryset):
+        topics = list(queryset)
+        topic_ids = [t.id for t in topics]
+        counts_map = {}
+        if topic_ids:
+            counts_map = dict(
+                Question.objects.filter(
+                    topic_id__in=topic_ids,
+                    verification_status='VERIFIED'
+                ).values_list('topic_id').annotate(n=Count('id'))
+            )
+        context = {**self.get_serializer_context(), 'topic_question_counts': counts_map}
+        return self.get_serializer(topics, many=True, context=context)
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        serializer = self._serialize_with_counts(queryset)
+        return Response(serializer.data)
+
     @action(detail=False, methods=['get'])
     def by_book(self, request):
-        topics = self.get_queryset()
-        serializer = self.get_serializer(topics, many=True)
+        topics = self.filter_queryset(self.get_queryset())
+        serializer = self._serialize_with_counts(topics)
         return Response(serializer.data)
 
 class HistoricalEntityViewSet(viewsets.ReadOnlyModelViewSet):
@@ -163,19 +194,15 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
     def _filtered_queryset(self):
         qs = Question.objects.filter(verification_status='VERIFIED')
         grade = self.request.query_params.get('grade')
-        if grade and grade != '0':
-            qs = qs.filter(grade=grade)
+        grade_int = int(grade) if grade and str(grade).isdigit() else 0
+        if grade_int > 0:
+            qs = qs.filter(grade=grade_int)
 
         subject = self.request.query_params.get('subject')
         if subject:
-            s_lower = subject.lower()
-            # Exact matches can use the (grade, subject, ...) index; icontains cannot.
-            if "jahon" in s_lower:
-                qs = qs.filter(subject="Jahon tarixi")
-            elif "uz" in s_lower or "zbek" in s_lower:
-                qs = qs.filter(subject="O'zbekiston tarixi")
-            elif "qadimgi" in s_lower:
-                qs = qs.filter(subject="Qadimgi dunyo tarixi")
+            canonical = QuestionGenerationEngine._canonical_subject(subject, grade_int)
+            if canonical in ("Jahon tarixi", "O'zbekiston tarixi", "Qadimgi dunyo tarixi"):
+                qs = qs.filter(subject=canonical)
             else:
                 qs = qs.filter(subject__icontains=subject)
 
@@ -191,46 +218,115 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
     def get_queryset(self):
         return self._filtered_queryset()
 
+    @staticmethod
+    def _is_direction_code(code: str) -> bool:
+        norm = normalize_code(code)
+        return norm in ("WAR", "FACT") or norm in COMBINATION_DIRECTIONS or norm == "ALL"
+
+    @staticmethod
+    def _parse_book_or_topic(raw_category: str):
+        """Parse book/grade/topic keys like book_7, book_uz_7, uz_7, 7_jahon, 6_all, topic_123, topic_uz_7_4."""
+        raw = (raw_category or '').strip()
+        lower = raw.lower()
+        if lower.startswith('topic_'):
+            suffix = raw[6:]
+            if suffix.isdigit():
+                return {'type': 'topic_id', 'topic_id': int(suffix)}
+            parts = suffix.split('_')
+            if len(parts) >= 3 and parts[1].isdigit() and parts[2].isdigit():
+                t_grade = int(parts[1])
+                t_subj = QuestionGenerationEngine._canonical_subject(parts[0], t_grade)
+                t_order = int(parts[2])
+                return {'type': 'topic_slug', 'grade': t_grade, 'subject': t_subj, 'order': t_order}
+            return {'type': 'topic_unknown'}
+
+        clean = lower[5:] if lower.startswith('book_') else lower
+        digits = ''.join(ch for ch in clean if ch.isdigit())
+        parsed_grade = int(digits) if digits.isdigit() and 6 <= int(digits) <= 11 else 0
+        parsed_subject = ''
+        if 'jahon' in clean:
+            parsed_subject = 'Jahon tarixi'
+        elif 'qadimgi' in clean:
+            parsed_subject = 'Qadimgi dunyo tarixi'
+        elif 'uz' in clean or 'zbek' in clean:
+            parsed_subject = 'Qadimgi dunyo tarixi' if parsed_grade == 6 else "O'zbekiston tarixi"
+        elif parsed_grade == 6:
+            parsed_subject = 'Qadimgi dunyo tarixi'
+
+        if parsed_grade > 0 or parsed_subject:
+            return {'type': 'book', 'grade': parsed_grade, 'subject': parsed_subject}
+        return None
+
     @action(detail=False, methods=['get'])
     def ticket(self, request):
-        """One exam ticket: exactly `size` questions of one direction.
+        """One exam ticket: up to `size` questions of one direction, book, or topic.
 
         Query: ?category=EVENT&grade=7&subject=jahon&ticket=1&size=30
-        `category` may also be `book_7` (whole book) or `ALL`. The last ticket is
-        topped up with random questions of the same pool, so no ticket is short.
+        `category` may also be `book_7`, `book_uz_7`, `uz_7`, `7_jahon`, `6_all`,
+        `topic_123`, `topic_uz_7_4`, or `ALL`.
         """
         raw_category = request.query_params.get('category', 'ALL')
         grade = self._int_param('grade', 0)
         raw_subject = request.query_params.get('subject', '')
-        subject = QuestionGenerationEngine._canonical_subject(raw_subject) if raw_subject else ''
+        subject = QuestionGenerationEngine._canonical_subject(raw_subject, grade) if raw_subject else ''
         size = min(max(self._int_param('size', 30), 1), 100)
         ticket = max(self._int_param('ticket', 1), 1)
 
         qs = Question.objects.filter(verification_status='VERIFIED')
-        if raw_category.lower().startswith('book_'):
-            book_grade = raw_category.split('_', 1)[1]
-            if book_grade.isdigit():
-                grade = int(book_grade)
-        if grade:
-            qs = qs.filter(grade=grade)
-        if subject:
-            qs = qs.filter(subject=subject)
-        qs = apply_direction(qs, raw_category)
-        qs = qs.order_by('id')
 
+        if self._is_direction_code(raw_category):
+            if grade:
+                qs = qs.filter(grade=grade)
+            if subject:
+                qs = qs.filter(subject=subject)
+            qs = apply_direction(qs, raw_category)
+        else:
+            parsed = self._parse_book_or_topic(raw_category)
+            if parsed and parsed['type'] == 'topic_id':
+                qs = qs.filter(topic_id=parsed['topic_id'])
+            elif parsed and parsed['type'] == 'topic_slug':
+                topic_obj = Topic.objects.filter(
+                    document__grade=parsed['grade'],
+                    document__subject=parsed['subject'],
+                    order=parsed['order'],
+                ).first()
+                if topic_obj:
+                    qs = qs.filter(topic_id=topic_obj.id)
+                else:
+                    qs = qs.filter(grade=parsed['grade'], subject=parsed['subject'])
+            elif parsed and parsed['type'] == 'book':
+                grade = grade or parsed['grade']
+                subject = subject or parsed['subject']
+                if grade:
+                    qs = qs.filter(grade=grade)
+                if subject:
+                    qs = qs.filter(subject=subject)
+            else:
+                if grade:
+                    qs = qs.filter(grade=grade)
+                if subject:
+                    qs = qs.filter(subject=subject)
+
+        qs = qs.order_by('id')
         total = qs.count()
         ticket_count = max(1, -(-total // size)) if total else 0
         offset = (ticket - 1) * size
         rows = list(qs[offset: offset + size]) if total else []
 
-        # The final ticket can be shorter than `size`; fill it from the same pool so
-        # every ticket has the same number of questions.
-        if total and len(rows) < size:
+        # The final ticket can be shorter than `size`; fill it from the same pool without
+        # scanning hundreds of thousands of IDs into memory.
+        if total and len(rows) < size and total > len(rows):
             taken = {q.id for q in rows}
-            pool_ids = [qid for qid in qs.values_list('id', flat=True) if qid not in taken]
-            random.shuffle(pool_ids)
-            for qid in pool_ids[: size - len(rows)]:
-                rows.append(Question.objects.get(id=qid))
+            candidate_ids = list(
+                qs.exclude(id__in=taken).values_list('id', flat=True)[:200]
+            )
+            random.shuffle(candidate_ids)
+            needed_ids = candidate_ids[: size - len(rows)]
+            if needed_ids:
+                by_id = Question.objects.in_bulk(needed_ids)
+                for qid in needed_ids:
+                    if qid in by_id:
+                        rows.append(by_id[qid])
 
         return Response({
             "category": raw_category,
@@ -248,7 +344,7 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
         """Question counts per direction card, e.g. ?grade=7&subject=jahon."""
         grade = self._int_param('grade', 0)
         raw_subject = request.query_params.get('subject', '')
-        subject = QuestionGenerationEngine._canonical_subject(raw_subject) if raw_subject else ''
+        subject = QuestionGenerationEngine._canonical_subject(raw_subject, grade) if raw_subject else ''
         counts = direction_counts(grade=grade, subject=subject)
         response = Response({
             "grade": grade,
@@ -264,12 +360,20 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
 
     @action(detail=False, methods=['get'])
     def daily(self, request):
-        grade = int(request.query_params.get("grade", 6))
-        subject = request.query_params.get("subject", "")
+        grade = self._int_param("grade", 0)
+        raw_subject = request.query_params.get("subject", "")
+        subject = QuestionGenerationEngine._canonical_subject(raw_subject, grade) if raw_subject else ""
         user_id = request.query_params.get("user_identifier", "guest_user")
+        nonce = request.query_params.get("nonce", "")
+        raw_exclude = request.query_params.get("exclude", "")
+        excluded_ids = []
+        for token in raw_exclude.split(","):
+            cleaned = token.strip().removeprefix("q_")
+            if cleaned.isdigit():
+                excluded_ids.append(int(cleaned))
 
         today_str = date.today().isoformat()
-        seed_str = f"{today_str}_{user_id}_{grade}_{subject}"
+        seed_str = f"{today_str}_{user_id}_{grade}_{subject}_{nonce}"
         seed_num = int(hashlib.md5(seed_str.encode('utf-8')).hexdigest(), 16)
 
         qs = Question.objects.filter(verification_status='VERIFIED')
@@ -277,20 +381,32 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
             qs = Question.objects.all()
 
         filtered_qs = qs
-        if grade and grade > 0:
+        if grade > 0:
             filtered_qs = filtered_qs.filter(grade=grade)
         if subject:
-            filtered_qs = filtered_qs.filter(subject__icontains=subject)
+            filtered_qs = filtered_qs.filter(subject=subject)
 
-        count = filtered_qs.count()
-        if count == 0:
+        bounds = filtered_qs.aggregate(min_id=Min('id'), max_id=Max('id'))
+        if bounds['min_id'] is None:
             filtered_qs = qs
-            count = filtered_qs.count()
+            bounds = filtered_qs.aggregate(min_id=Min('id'), max_id=Max('id'))
 
-        if count > 0:
-            question = filtered_qs[seed_num % count]
-            serializer = self.get_serializer(question)
-            return Response(serializer.data)
+        min_id = bounds['min_id']
+        max_id = bounds['max_id']
+        if min_id is not None and max_id is not None:
+            span = max(1, max_id - min_id + 1)
+            base_qs = filtered_qs.exclude(id__in=excluded_ids) if excluded_ids else filtered_qs
+            question = None
+            for attempt in range(5):
+                target_id = min_id + ((seed_num + attempt * 9973) % span)
+                question = base_qs.filter(id__gte=target_id).order_by('id').first()
+                if question is not None:
+                    break
+            if question is None:
+                question = base_qs.order_by('id').first() or filtered_qs.order_by('id').first()
+            if question is not None:
+                serializer = self.get_serializer(question)
+                return Response(serializer.data)
 
         return Response({"error": "No daily question available."}, status=status.HTTP_404_NOT_FOUND)
 

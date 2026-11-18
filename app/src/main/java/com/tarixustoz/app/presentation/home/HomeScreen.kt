@@ -63,7 +63,6 @@ fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
-    var showNotificationSheet by remember { mutableStateOf(false) }
     var isRefreshing by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
     val pullState = rememberPullToRefreshState()
@@ -73,7 +72,6 @@ fun HomeScreen(
     val homeDirectionCards by viewModel.homeDirectionCards.collectAsState()
 
     LaunchedEffect(Unit) {
-        viewModel.loadDirectionCounts()
         viewModel.load()
     }
 
@@ -118,13 +116,14 @@ fun HomeScreen(
                 },
                 actions = {
                     Surface(
+                        onClick = onNavigateToNotifications,
                         shape = CircleShape,
                         color = MaterialTheme.colorScheme.surface,
                         border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
                         modifier = Modifier
                             .padding(end = 12.dp)
-                            .size(42.dp)
-                            .clickable { onNavigateToNotifications() }
+                            .minimumInteractiveComponentSize()
+                            .size(44.dp)
                             .testTag("home_notifications_button")
                     ) {
                         Box(contentAlignment = Alignment.Center) {
@@ -245,14 +244,25 @@ fun HomeScreen(
                     ) {
                         IconButton(
                             onClick = { viewModel.loadNextDailyQuestion() },
-                            modifier = Modifier.size(36.dp)
+                            enabled = !uiState.isDailyLoading,
+                            modifier = Modifier
+                                .minimumInteractiveComponentSize()
+                                .testTag("home_daily_refresh_button")
                         ) {
-                            Icon(
-                                Icons.Default.Refresh,
-                                contentDescription = "Yangi savol olmoq",
-                                tint = BrandPurple,
-                                modifier = Modifier.size(20.dp)
-                            )
+                            if (uiState.isDailyLoading) {
+                                CircularProgressIndicator(
+                                    modifier = Modifier.size(18.dp),
+                                    color = BrandPurple,
+                                    strokeWidth = 2.dp
+                                )
+                            } else {
+                                Icon(
+                                    Icons.Default.Refresh,
+                                    contentDescription = "Yangi savol olmoq",
+                                    tint = BrandPurple,
+                                    modifier = Modifier.size(20.dp)
+                                )
+                            }
                         }
 
                         // Countdown Timer Pill
@@ -296,6 +306,18 @@ fun HomeScreen(
                         .testTag("home_daily_question_card")
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
+                        val question = uiState.dailyQuestion
+                        val dailyBadge = if (question != null) {
+                            val subjLabel = when {
+                                question.gradeId == 6 -> "Qadimgi dunyo"
+                                question.subjectId.contains("jahon", ignoreCase = true) -> "Jahon tarixi"
+                                else -> "O'zbekiston tarixi"
+                            }
+                            "${question.gradeId}-sinf • $subjLabel"
+                        } else {
+                            "6-11 sinf • O'zbekiston & Jahon"
+                        }
+
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween,
@@ -303,10 +325,10 @@ fun HomeScreen(
                         ) {
                             Surface(
                                 shape = RoundedCornerShape(8.dp),
-                                color = Color(0xFFEEF2FF)
+                                color = BrandPurple.copy(alpha = 0.12f)
                             ) {
                                 Text(
-                                    text = "6-11 sinf • O'zbekiston & Jahon",
+                                    text = dailyBadge,
                                     color = BrandPurple,
                                     fontSize = 11.sp,
                                     fontWeight = FontWeight.SemiBold,
@@ -316,11 +338,11 @@ fun HomeScreen(
 
                             Surface(
                                 shape = RoundedCornerShape(8.dp),
-                                color = Color(0xFFFEF3C7)
+                                color = Color(0xFFF59E0B).copy(alpha = 0.16f)
                             ) {
                                 Text(
                                     text = "+10 XP",
-                                    color = Color(0xFFD97706),
+                                    color = Color(0xFFF59E0B),
                                     fontSize = 11.sp,
                                     fontWeight = FontWeight.Bold,
                                     modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
@@ -328,21 +350,55 @@ fun HomeScreen(
                             }
                         }
 
-                        Spacer(Modifier.height(12.dp))
-                        Text(
-                            text = uiState.dailyQuestion?.text
-                                ?: "Qadimgi Misrda Nil daryosining toshishi nimaga sabab bo‘lgan?",
-                            fontSize = 15.sp,
-                            fontWeight = FontWeight.SemiBold,
-                            color = MaterialTheme.colorScheme.onSurface,
-                            lineHeight = 22.sp
-                        )
+                        Spacer(Modifier.height(10.dp))
 
-                        Spacer(Modifier.height(14.dp))
+                        if (uiState.isDailyLoading && question != null) {
+                            LinearProgressIndicator(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(3.dp),
+                                color = BrandPurple,
+                                trackColor = BrandPurple.copy(alpha = 0.14f)
+                            )
+                            Spacer(Modifier.height(8.dp))
+                        } else {
+                            Spacer(Modifier.height(2.dp))
+                        }
 
-                        val question = uiState.dailyQuestion
                         val options = question?.options ?: emptyList()
                         val optionLetters = listOf("A", "B", "C", "D")
+
+                        if (uiState.isDailyLoading && question == null) {
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(vertical = 20.dp),
+                                horizontalArrangement = Arrangement.Center,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                CircularProgressIndicator(
+                                    modifier = Modifier.size(24.dp),
+                                    color = BrandPurple,
+                                    strokeWidth = 2.5.dp
+                                )
+                                Spacer(Modifier.width(12.dp))
+                                Text(
+                                    text = "Kun savoli yuklanmoqda...",
+                                    fontSize = 14.sp,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                        } else if (question != null) {
+                            Text(
+                                text = question.cleanText,
+                                fontSize = 15.sp,
+                                fontWeight = FontWeight.SemiBold,
+                                color = MaterialTheme.colorScheme.onSurface,
+                                lineHeight = 22.sp
+                            )
+
+                            Spacer(Modifier.height(14.dp))
+                        }
 
                         if (options.isNotEmpty()) {
                             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -352,8 +408,8 @@ fun HomeScreen(
                                     val isCorrect = opt.isCorrect
 
                                     val cardBg = when {
-                                        uiState.isDailyAnswered && isCorrect -> Color(0xFFDCFCE7)
-                                        uiState.isDailyAnswered && isSelected && !isCorrect -> Color(0xFFFEE2E2)
+                                        uiState.isDailyAnswered && isCorrect -> Color(0xFF16A34A).copy(alpha = 0.15f)
+                                        uiState.isDailyAnswered && isSelected && !isCorrect -> Color(0xFFDC2626).copy(alpha = 0.15f)
                                         else -> MaterialTheme.colorScheme.surfaceVariant
                                     }
 
@@ -364,8 +420,8 @@ fun HomeScreen(
                                     }
 
                                     val textColor = when {
-                                        uiState.isDailyAnswered && isCorrect -> Color(0xFF15803D)
-                                        uiState.isDailyAnswered && isSelected && !isCorrect -> Color(0xFFB91C1C)
+                                        uiState.isDailyAnswered && isCorrect -> Color(0xFF16A34A)
+                                        uiState.isDailyAnswered && isSelected && !isCorrect -> Color(0xFFEF4444)
                                         else -> MaterialTheme.colorScheme.onSurface
                                     }
 
@@ -427,22 +483,35 @@ fun HomeScreen(
                             }
                         }
 
-                        // Feedback Banner
+                        // Feedback Banner & Explanation
                         if (uiState.isDailyAnswered && !uiState.dailyAnswerFeedback.isNullOrBlank()) {
                             Spacer(Modifier.height(12.dp))
                             Surface(
                                 shape = RoundedCornerShape(12.dp),
-                                color = if (uiState.isDailyCorrect) Color(0xFFDCFCE7) else Color(0xFFFEF3C7)
+                                color = if (uiState.isDailyCorrect) Color(0xFF16A34A).copy(alpha = 0.14f) else Color(0xFFF59E0B).copy(alpha = 0.15f)
                             ) {
-                                Text(
-                                    text = uiState.dailyAnswerFeedback!!,
-                                    fontSize = 13.sp,
-                                    fontWeight = FontWeight.SemiBold,
-                                    color = if (uiState.isDailyCorrect) Color(0xFF15803D) else Color(0xFFB45309),
+                                Column(
                                     modifier = Modifier
                                         .fillMaxWidth()
                                         .padding(12.dp)
-                                )
+                                ) {
+                                    Text(
+                                        text = uiState.dailyAnswerFeedback!!,
+                                        fontSize = 13.sp,
+                                        fontWeight = FontWeight.SemiBold,
+                                        color = if (uiState.isDailyCorrect) Color(0xFF16A34A) else Color(0xFFD97706)
+                                    )
+                                    val expText = question?.explanation.orEmpty()
+                                    if (expText.isNotBlank()) {
+                                        Spacer(Modifier.height(4.dp))
+                                        Text(
+                                            text = expText,
+                                            fontSize = 12.sp,
+                                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                            lineHeight = 17.sp
+                                        )
+                                    }
+                                }
                             }
                         }
 
@@ -452,6 +521,7 @@ fun HomeScreen(
                         if (uiState.isDailyAnswered) {
                             Button(
                                 onClick = { viewModel.loadNextDailyQuestion() },
+                                enabled = !uiState.isDailyLoading,
                                 colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
                                 shape = RoundedCornerShape(14.dp),
                                 modifier = Modifier
@@ -467,7 +537,7 @@ fun HomeScreen(
                                 )
                                 Spacer(Modifier.width(8.dp))
                                 Text(
-                                    text = "Yangi kun savolini yechish 🔄",
+                                    text = "Yangi kun savolini yechish",
                                     fontSize = 15.sp,
                                     fontWeight = FontWeight.Bold,
                                     color = Color.White
@@ -476,6 +546,7 @@ fun HomeScreen(
                         } else {
                             Button(
                                 onClick = { viewModel.loadNextDailyQuestion() },
+                                enabled = !uiState.isDailyLoading,
                                 colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
                                 shape = RoundedCornerShape(14.dp),
                                 modifier = Modifier
@@ -508,7 +579,7 @@ fun HomeScreen(
                 val activity = context.findActivity()
                 Surface(
                     shape = RoundedCornerShape(18.dp),
-                    color = Color(0xFFFAF5FF),
+                    color = BrandPurple.copy(alpha = 0.08f),
                     border = BorderStroke(1.5.dp, BrandPurple.copy(alpha = 0.3f)),
                     modifier = Modifier.fillMaxWidth()
                 ) {
@@ -618,94 +689,7 @@ fun HomeScreen(
             }
 
             item { Spacer(Modifier.height(16.dp)) }
-        }
-    }
-}
-
-    // Interactive Notification Bottom Sheet
-    if (showNotificationSheet) {
-        ModalBottomSheet(
-            onDismissRequest = { showNotificationSheet = false },
-            containerColor = MaterialTheme.colorScheme.surface
-        ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(20.dp)
-            ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        text = "Bildirishnomalar",
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold
-                    )
-                    Badge(containerColor = BrandPurple) {
-                        Text("3 ta yangi")
-                    }
-                }
-                Spacer(Modifier.height(16.dp))
-
-                NotificationItem(
-                    title = "Kunlik seriya davom etmoqda! 🔥",
-                    desc = "Bugun ham kirib test yechdingiz. Seriyangiz 7 kunga yetdi!",
-                    time = "10 daqiqa oldin"
-                )
-                NotificationItem(
-                    title = "Yangi testlar qo‘shildi 📚",
-                    desc = "Shahar nomlari va Tarixiy shaxslar bo‘yicha 40 ta yangi test yuklandi.",
-                    time = "1 soat oldin"
-                )
-                NotificationItem(
-                    title = "DTM imtihon sinovi tayyor 🏆",
-                    desc = "30 savolli blok sinov imtihoni yangilandi. O‘z bilimingizni sinab ko‘ring.",
-                    time = "Kecha"
-                )
-                Spacer(Modifier.height(24.dp))
             }
-        }
-    }
-}
-
-@Composable
-private fun NotificationItem(
-    title: String,
-    desc: String,
-    time: String
-) {
-    Surface(
-        shape = RoundedCornerShape(12.dp),
-        color = MaterialTheme.colorScheme.surfaceVariant,
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 4.dp)
-    ) {
-        Column(modifier = Modifier.padding(12.dp)) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Text(
-                    text = title,
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    color = MaterialTheme.colorScheme.onSurface
-                )
-                Text(
-                    text = time,
-                    fontSize = 11.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
-            Spacer(Modifier.height(4.dp))
-            Text(
-                text = desc,
-                fontSize = 12.sp,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
         }
     }
 }

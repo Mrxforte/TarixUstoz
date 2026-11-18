@@ -1,0 +1,97 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Private authenticated learner profile, XP, streak, grade, and aggregate stats stored under /users/{userId}.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Firebase Auth UID owning this profile" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "bio": { "type": "string" },
+        "avatar": { "type": "string" },
+        "phone": { "type": "string" },
+        "target": { "type": "string" },
+        "birthYear": { "type": "string" },
+        "role": { "type": "string" },
+        "grade": { "type": "integer" },
+        "xp": { "type": "integer" },
+        "streak": { "type": "integer" },
+        "totalSolved": { "type": "integer" },
+        "correctCount": { "type": "integer" },
+        "timeSpentSeconds": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp" }
+      },
+      "required": ["userId", "displayName", "avatar", "role", "grade", "xp", "streak", "totalSolved", "correctCount", "timeSpentSeconds", "createdAt", "updatedAt"]
+    },
+    "TicketProgress": {
+      "title": "TicketProgress",
+      "description": "Per-category/book/topic ticket mastery, passed ticket list, and last opened ticket index.",
+      "type": "object",
+      "properties": {
+        "categoryKey": { "type": "string" },
+        "passedTickets": { "type": "array" },
+        "scores": { "type": "object" },
+        "lastOpenedTicket": { "type": "integer" },
+        "highestUnlockedTicket": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["categoryKey", "passedTickets", "scores", "lastOpenedTicket", "highestUnlockedTicket", "createdAt", "updatedAt"]
+    },
+    "QuizAttemptRecord": {
+      "title": "QuizAttemptRecord",
+      "description": "Per-quiz completion summary for cross-device analytics.",
+      "type": "object",
+      "properties": {
+        "categoryKey": { "type": "string" },
+        "categoryTitle": { "type": "string" },
+        "grade": { "type": "integer" },
+        "solvedCount": { "type": "integer" },
+        "correctCount": { "type": "integer" },
+        "durationSeconds": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["categoryKey", "categoryTitle", "grade", "solvedCount", "correctCount", "durationSeconds", "createdAt"]
+    },
+    "LeaderboardEntry": {
+      "title": "LeaderboardEntry",
+      "description": "Public non-PII leaderboard ranking projection for authenticated learners.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "displayName": { "type": "string" },
+        "initials": { "type": "string" },
+        "xp": { "type": "integer" },
+        "streak": { "type": "integer" },
+        "totalSolved": { "type": "integer" },
+        "correctCount": { "type": "integer" },
+        "accuracy": { "type": "integer" },
+        "timeSpentMinutes": { "type": "integer" },
+        "grade": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "displayName", "initials", "xp", "streak", "totalSolved", "correctCount", "accuracy", "timeSpentMinutes", "grade", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private user profile, settings, and overall progress owned strictly by userId."
+    },
+    "/users/{userId}/ticketProgress/{categoryKey}": {
+      "schema": { "$ref": "#/entities/TicketProgress" },
+      "description": "Per-category ticket progress including scores, passed ticket indices, and last unlocked/opened ticket."
+    },
+    "/users/{userId}/attempts/{attemptId}": {
+      "schema": { "$ref": "#/entities/QuizAttemptRecord" },
+      "description": "Completed quiz records used to populate analytics charts across devices."
+    },
+    "/leaderboard/{userId}": {
+      "schema": { "$ref": "#/entities/LeaderboardEntry" },
+      "description": "Public non-PII leaderboard entries readable by authenticated users and writable only by owner userId."
+    }
+  }
+}

@@ -105,6 +105,8 @@ enum class QuestionCategory(val titleUz: String, val icon: String) {
     CITY("Shaharlar va Hududlar", "🏛"),
     YEAR("Yillar va Sanalar", "📅"),
     EVENT("Hodisalar va Janglar", "⚔️"),
+    WAR("Urushlar va Janglar", "🛡️"),
+    FACT("Tarixiy Faktlar", "📜"),
     LOGICAL("Mantiqiy va DTM", "🧩")
 }
 

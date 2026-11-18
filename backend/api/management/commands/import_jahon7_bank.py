@@ -166,8 +166,11 @@ class Command(BaseCommand):
                 topic.start_page = item.get("book_page", topic.start_page)
                 topic.end_page = item.get("book_page", topic.end_page)
                 topic.category = topic.category or category
+                topic.review_status = "REVIEWED"
+                topic.coverage_status = "covered"
                 topic.save(update_fields=[
                     "title", "canonical_title", "order", "start_page", "end_page", "category",
+                    "review_status", "coverage_status",
                 ])
             result[number] = topic
         return result

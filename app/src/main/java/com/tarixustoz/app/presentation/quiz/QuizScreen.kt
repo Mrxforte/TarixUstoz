@@ -44,12 +44,21 @@ fun QuizScreen(
     customDifficulty: String? = null,
     timeLimitMinutes: Int? = null,
     selectedTopicIds: List<String>? = null,
+    explicitGrade: Int? = null,
     viewModel: QuizViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
-    LaunchedEffect(topicId, customCount, customCategory, customDifficulty) {
-        viewModel.startQuiz(topicId, customCount, customCategory, customDifficulty, timeLimitMinutes, selectedTopicIds)
+    LaunchedEffect(topicId, customCount, customCategory, customDifficulty, explicitGrade) {
+        viewModel.startQuiz(
+            topicId = topicId,
+            customCount = customCount,
+            customCategory = customCategory,
+            customDifficulty = customDifficulty,
+            timeLimitMinutes = timeLimitMinutes,
+            selectedTopicIds = selectedTopicIds,
+            explicitGrade = explicitGrade
+        )
     }
 
     when {
@@ -63,7 +72,17 @@ fun QuizScreen(
                 correct = uiState.correctCount,
                 total = uiState.questions.size,
                 timeSpentSeconds = uiState.timeSpentSeconds,
-                onRetry = { viewModel.startQuiz(topicId) }
+                onRetry = {
+                    viewModel.startQuiz(
+                        topicId = topicId,
+                        customCount = customCount,
+                        customCategory = customCategory,
+                        customDifficulty = customDifficulty,
+                        timeLimitMinutes = timeLimitMinutes,
+                        selectedTopicIds = selectedTopicIds,
+                        explicitGrade = explicitGrade
+                    )
+                }
             )
         }
         uiState.questions.isEmpty() -> {

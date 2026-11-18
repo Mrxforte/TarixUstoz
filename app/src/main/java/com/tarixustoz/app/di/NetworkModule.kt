@@ -1,14 +1,19 @@
 package com.tarixustoz.app.di
 
+import android.content.Context
 import com.tarixustoz.app.BuildConfig
 import com.tarixustoz.app.data.remote.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import okhttp3.Cache
+import okhttp3.CacheControl
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.File
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -16,12 +21,40 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-
-
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
+    fun provideOkHttpClient(@ApplicationContext context: Context): OkHttpClient {
+        val cacheDir = File(context.cacheDir, "tarix_http_cache")
+        val cache = Cache(cacheDir, 25L * 1024L * 1024L) // 25 MB HTTP disk cache
+
         return OkHttpClient.Builder()
+            .cache(cache)
+            .addNetworkInterceptor { chain ->
+                val request = chain.request()
+                val response = chain.proceed(request)
+                val path = request.url.encodedPath
+                val isDailyOrBusted = path.contains("daily", ignoreCase = true) ||
+                    request.url.queryParameter("nonce") != null ||
+                    request.url.queryParameter("exclude") != null
+                if (request.method.equals("GET", ignoreCase = true) && !isDailyOrBusted) {
+                    val existingCacheControl = response.header("Cache-Control")
+                    if (existingCacheControl.isNullOrBlank() || existingCacheControl.contains("no-store")) {
+                        response.newBuilder()
+                            .header("Cache-Control", CacheControl.Builder().maxAge(30, TimeUnit.MINUTES).build().toString())
+                            .removeHeader("Pragma")
+                            .build()
+                    } else {
+                        response
+                    }
+                } else if (isDailyOrBusted) {
+                    response.newBuilder()
+                        .header("Cache-Control", "no-store, no-cache, must-revalidate")
+                        .removeHeader("Pragma")
+                        .build()
+                } else {
+                    response
+                }
+            }
             .connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(15, TimeUnit.SECONDS)
             .writeTimeout(15, TimeUnit.SECONDS)

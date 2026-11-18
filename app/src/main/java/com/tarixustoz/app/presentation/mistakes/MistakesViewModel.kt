@@ -19,6 +19,7 @@ data class WrongQuestionUiModel(
     val text: String,
     val options: List<AnswerOption>,
     val correctOption: String,
+    val correctOptionText: String,
     val userAnswer: String,
     val explanation: String,
     val sourceCitation: String,
@@ -48,6 +49,7 @@ data class MistakesUiState(
     val sortOrder: MistakesSortOrder = MistakesSortOrder.NEWEST,
     val viewMode: MistakesViewMode = MistakesViewMode.LIST,
     val items: List<WrongQuestionUiModel> = emptyList(),
+    val gradeCounts: Map<Int, Int> = emptyMap(),
     val totalCount: Int = 0
 )
 
@@ -81,13 +83,16 @@ class MistakesViewModel @Inject constructor(
                     sdf.format(Date(entity.lastAttempted))
                 } catch (_: Exception) { "Yaqinda" }
 
-                val correctOpt = q.options.firstOrNull { it.isCorrect }?.id?.uppercase() ?: "A"
+                val correctAnswer = q.options.firstOrNull { it.isCorrect }
+                val correctOpt = correctAnswer?.id?.uppercase() ?: "A"
+                val correctOptText = correctAnswer?.text ?: ""
 
                 WrongQuestionUiModel(
                     questionId = entity.questionId,
-                    text = q.text,
+                    text = q.cleanText,
                     options = q.options,
                     correctOption = correctOpt,
+                    correctOptionText = correctOptText,
                     userAnswer = entity.userAnswer,
                     explanation = q.explanation.ifBlank { "Darslik ma'lumotiga ko'ra $correctOpt varianti to'g'ri." },
                     sourceCitation = q.sourceReference ?: "${q.gradeId}-sinf tarix",
@@ -101,6 +106,8 @@ class MistakesViewModel @Inject constructor(
                 )
             } else null
         }
+
+        val gradeCounts = models.groupingBy { it.gradeId }.eachCount()
 
         // Apply filtering
         var filtered = models
@@ -131,6 +138,7 @@ class MistakesViewModel @Inject constructor(
             sortOrder = sort,
             viewMode = viewMode,
             items = filtered,
+            gradeCounts = gradeCounts,
             totalCount = models.size
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), MistakesUiState())

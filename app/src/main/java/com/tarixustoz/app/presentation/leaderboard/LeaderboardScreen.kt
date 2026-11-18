@@ -38,11 +38,11 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
-import kotlin.math.sin
 
 data class LeaderboardUser(
     val rank: Int,
@@ -76,148 +76,47 @@ data class DetailedCategoryAnalytics(
 @Composable
 fun LeaderboardScreen(
     onStartQuiz: (String) -> Unit = {},
-    onNavigateToAnalysis: (String) -> Unit = {}
+    onNavigateToAnalysis: (String) -> Unit = {},
+    viewModel: LeaderboardViewModel = hiltViewModel()
 ) {
+    val uiState by viewModel.uiState.collectAsState()
     var mainTab by remember { mutableIntStateOf(0) } // 0 = O'z natijam & Tahlil, 1 = Umumiy Reyting
     var periodFilter by remember { mutableIntStateOf(1) } // 0 = Bugun, 1 = Haftalik, 2 = Oylik, 3 = Barcha vaqt
     var isRefreshing by remember { mutableStateOf(false) }
-    var selectedCategoryDetail by remember { mutableStateOf<DetailedCategoryAnalytics?>(null) }
     val coroutineScope = rememberCoroutineScope()
     val pullState = rememberPullToRefreshState()
 
-    // Trigger animation filling on every tab or filter entry
     var startAnimation by remember { mutableStateOf(false) }
     val animProgress by animateFloatAsState(
         targetValue = if (startAnimation) 1f else 0f,
-        animationSpec = tween(durationMillis = 900, easing = FastOutSlowInEasing),
+        animationSpec = tween(durationMillis = 700, easing = FastOutSlowInEasing),
         label = "chartAnim"
     )
 
-    LaunchedEffect(mainTab, periodFilter) {
+    LaunchedEffect(mainTab, periodFilter, uiState.isLoaded) {
         startAnimation = false
         delay(40)
         startAnimation = true
     }
 
-    // Dynamic Chart Data based on selected period filter (Bugun, Haftalik, Oylik, Barchasi)
-    val dynamicChartPoints = remember(periodFilter) {
-        when (periodFilter) {
-            0 -> listOf( // Bugun (Hourly Timeline)
-                StudentChartDataPoint("09:00", 0.60f, 5f),
-                StudentChartDataPoint("12:00", 0.72f, 10f),
-                StudentChartDataPoint("15:00", 0.80f, 12f),
-                StudentChartDataPoint("18:00", 0.85f, 18f),
-                StudentChartDataPoint("21:00", 0.89f, 25f)
-            )
-            1 -> listOf( // Haftalik (Days of Week)
-                StudentChartDataPoint("Du", 0.45f, 15f),
-                StudentChartDataPoint("Se", 0.58f, 22f),
-                StudentChartDataPoint("Ch", 0.64f, 28f),
-                StudentChartDataPoint("Pa", 0.72f, 35f),
-                StudentChartDataPoint("Ju", 0.79f, 42f),
-                StudentChartDataPoint("Sh", 0.84f, 48f),
-                StudentChartDataPoint("Ya", 0.86f, 52f)
-            )
-            2 -> listOf( // Oylik (Weeks of Month)
-                StudentChartDataPoint("1-hafta", 0.55f, 80f),
-                StudentChartDataPoint("2-hafta", 0.68f, 110f),
-                StudentChartDataPoint("3-hafta", 0.78f, 145f),
-                StudentChartDataPoint("4-hafta", 0.86f, 180f)
-            )
-            else -> listOf( // Barcha vaqt (Months Trend)
-                StudentChartDataPoint("Yan", 0.40f, 220f),
-                StudentChartDataPoint("Fev", 0.52f, 310f),
-                StudentChartDataPoint("Mar", 0.65f, 420f),
-                StudentChartDataPoint("Apr", 0.78f, 540f),
-                StudentChartDataPoint("May", 0.86f, 680f)
-            )
+    val activePeriod = uiState.periodSummaries[periodFilter]
+    val dynamicChartPoints = activePeriod?.chartPoints ?: emptyList()
+
+    val periodTimeText = remember(activePeriod?.timeSpentMinutes) {
+        val mins = activePeriod?.timeSpentMinutes ?: 0
+        when {
+            mins <= 0 -> "0 daq"
+            mins >= 60 -> "${mins / 60} soat ${mins % 60} daq"
+            else -> "$mins daqiqa"
         }
     }
 
-    // Dynamic Period Summary
-    val periodTimeText = remember(periodFilter) {
-        when (periodFilter) {
-            0 -> "25 daqiqa"
-            1 -> "2 soat 40 daq"
-            2 -> "11 soat 20 daq"
-            else -> "42 soat 15 daq"
-        }
-    }
+    val periodAccuracyText = "${activePeriod?.accuracyPct ?: 0}%"
+    val periodSolvedCount = activePeriod?.solvedCount ?: 0
+    val periodSolvedText = "$periodSolvedCount ta"
 
-    val periodAccuracyText = remember(periodFilter) {
-        when (periodFilter) {
-            0 -> "89%"
-            1 -> "86%"
-            2 -> "82%"
-            else -> "87%"
-        }
-    }
-
-    val periodTrendText = remember(periodFilter) {
-        when (periodFilter) {
-            0 -> "+8%"
-            1 -> "+18%"
-            2 -> "+24%"
-            else -> "+35%"
-        }
-    }
-
-    val users = remember(periodFilter) {
-        when (periodFilter) {
-            0 -> listOf( // Bugun
-                LeaderboardUser(1, "Madina Umarova", "MU", 25, 95, 45),
-                LeaderboardUser(2, "Jasurbek Mirzayev", "JM", 22, 91, 38),
-                LeaderboardUser(3, "Dilnoza Rahimova", "DR", 20, 88, 35),
-                LeaderboardUser(4, "Azizbek (Siz)", "AS", 18, 86, 32, isCurrentUser = true),
-                LeaderboardUser(5, "Bobur To‘rayev", "BT", 15, 82, 25)
-            )
-            1 -> listOf( // Haftalik
-                LeaderboardUser(1, "Madina Umarova", "MU", 145, 95, 210),
-                LeaderboardUser(2, "Jasurbek Mirzayev", "JM", 132, 91, 190),
-                LeaderboardUser(3, "Dilnoza Rahimova", "DR", 120, 88, 175),
-                LeaderboardUser(4, "Azizbek (Siz)", "AS", 108, 86, 160, isCurrentUser = true),
-                LeaderboardUser(5, "Bobur To‘rayev", "BT", 95, 82, 140),
-                LeaderboardUser(6, "Shahnoza Aliyeva", "SA", 88, 79, 130),
-                LeaderboardUser(7, "Otabek Qodirov", "OQ", 76, 75, 110)
-            )
-            2 -> listOf( // Oylik
-                LeaderboardUser(1, "Madina Umarova", "MU", 480, 96, 680),
-                LeaderboardUser(2, "Jasurbek Mirzayev", "JM", 450, 93, 620),
-                LeaderboardUser(3, "Dilnoza Rahimova", "DR", 410, 89, 570),
-                LeaderboardUser(4, "Azizbek (Siz)", "AS", 390, 87, 540, isCurrentUser = true),
-                LeaderboardUser(5, "Bobur To‘rayev", "BT", 340, 83, 490)
-            )
-            else -> listOf( // Barcha vaqt
-                LeaderboardUser(1, "Madina Umarova", "MU", 1250, 96, 1850),
-                LeaderboardUser(2, "Jasurbek Mirzayev", "JM", 1120, 93, 1620),
-                LeaderboardUser(3, "Dilnoza Rahimova", "DR", 980, 89, 1450),
-                LeaderboardUser(4, "Azizbek (Siz)", "AS", 850, 87, 1280, isCurrentUser = true),
-                LeaderboardUser(5, "Bobur To‘rayev", "BT", 760, 83, 1100)
-            )
-        }
-    }
-
-    val categoryAnalytics = listOf(
-        DetailedCategoryAnalytics("Tarixiy voqealar", "Voqealar va xronologiya bobi", 140, 119, 85, 42, 18, 32, emptyList()),
-        DetailedCategoryAnalytics("Tarixiy shaxslar", "Buyuk siymolar va hukmdorlar", 184, 150, 82, 48, 24, 28, emptyList()),
-        DetailedCategoryAnalytics("Urushlar va janglar", "Harbiy yurishlar va jangnomalar", 110, 84, 76, 38, 12, 40, emptyList()),
-        DetailedCategoryAnalytics("Yillar va sanalar", "Sanalar va asrlar sinovi", 215, 168, 78, 30, 15, 25, emptyList()),
-        DetailedCategoryAnalytics("Shahar va hududlar", "Qadimgi shaharlar va xaritalar", 90, 65, 72, 28, 20, 27, emptyList()),
-        DetailedCategoryAnalytics("Tarixiy faktlar", "Faktlar va yozma manbalar", 100, 68, 68, 32, 19, 30, emptyList()),
-        DetailedCategoryAnalytics("Tarixiy obidalar", "Me'moriy obidalar va yodgorliklar", 80, 50, 62, 26, 17, 33, emptyList()),
-        DetailedCategoryAnalytics("Mantiqiy va DTM", "OTMga kirish rasmiy testlari", 150, 117, 78, 55, 28, 42, emptyList()),
-        DetailedCategoryAnalytics("6-sinf Tarix (Qadimgi dunyo)", "Misr, Bobil, Gretsiya va Rim", 150, 128, 85, 50, 30, 28, emptyList()),
-        DetailedCategoryAnalytics("7-sinf O‘zbekiston tarixi", "Ilk o'rta asrlar va Somoniylar", 110, 84, 76, 36, 21, 31, emptyList()),
-        DetailedCategoryAnalytics("7-sinf Jahon tarixi", "V-XV asrlar Yevropa va Osiyo", 95, 67, 70, 30, 19, 32, emptyList()),
-        DetailedCategoryAnalytics("8-sinf O‘zbekiston tarixi", "XVI-XIX asr I yarmi Xonliklar", 105, 78, 74, 35, 23, 30, emptyList()),
-        DetailedCategoryAnalytics("8-sinf Jahon tarixi", "Uyg'onish davri va kashfiyotlar", 90, 65, 72, 29, 20, 34, emptyList()),
-        DetailedCategoryAnalytics("9-sinf O‘zbekiston tarixi", "Rossiya istilosi va Jadidchilik", 100, 68, 68, 33, 18, 32, emptyList()),
-        DetailedCategoryAnalytics("9-sinf Jahon tarixi", "XX asrI jahon urushi davri", 85, 56, 66, 28, 16, 35, emptyList()),
-        DetailedCategoryAnalytics("10-sinf O‘zbekiston tarixi", "1917-1991 yillar sho'rolar davri", 115, 92, 80, 38, 25, 29, emptyList()),
-        DetailedCategoryAnalytics("10-sinf Jahon tarixi", "1918-1991 II jahon urushi davri", 95, 71, 75, 31, 22, 31, emptyList()),
-        DetailedCategoryAnalytics("11-sinf O‘zbekiston tarixi", "Mustaqillik davri taraqqiyoti", 125, 110, 88, 42, 32, 27, emptyList()),
-        DetailedCategoryAnalytics("11-sinf Jahon tarixi", "Zamonaviy dunyo va globallashuv", 100, 82, 82, 34, 27, 28, emptyList())
-    )
+    val users = uiState.leaderboardUsers
+    val categoryAnalytics = uiState.categoryAnalytics
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
@@ -242,8 +141,9 @@ fun LeaderboardScreen(
             onRefresh = {
                 coroutineScope.launch {
                     isRefreshing = true
+                    viewModel.refresh()
                     startAnimation = false
-                    delay(500)
+                    delay(400)
                     startAnimation = true
                     isRefreshing = false
                 }
@@ -391,13 +291,13 @@ fun LeaderboardScreen(
                                             modifier = Modifier.size(44.dp)
                                         ) {
                                             Box(contentAlignment = Alignment.Center) {
-                                                Text("AS", color = Color.White, fontWeight = FontWeight.Bold)
+                                                Text(uiState.avatar, color = Color.White, fontWeight = FontWeight.Bold)
                                             }
                                         }
                                         Spacer(Modifier.width(12.dp))
                                         Column {
-                                            Text("Azizbek (Siz)", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp)
-                                            Text("Aktiv bilimdon", color = Color.White.copy(alpha = 0.8f), fontSize = 12.sp)
+                                            Text("${uiState.displayName} (Siz)", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                                            Text("${uiState.xp} XP • ${uiState.streak} kunlik seriya", color = Color.White.copy(alpha = 0.85f), fontSize = 12.sp)
                                         }
                                     }
 
@@ -406,7 +306,7 @@ fun LeaderboardScreen(
                                         color = Color.White.copy(alpha = 0.25f)
                                     ) {
                                         Text(
-                                            "#4-o'rin",
+                                            uiState.currentUserRankLabel,
                                             color = Color.White,
                                             fontWeight = FontWeight.Bold,
                                             fontSize = 14.sp,
@@ -430,8 +330,8 @@ fun LeaderboardScreen(
                                         Text(periodAccuracyText, color = Color(0xFF86EFAC), fontWeight = FontWeight.Bold, fontSize = 14.sp)
                                     }
                                     Column {
-                                        Text("O'sish sur'ati", color = Color.White.copy(alpha = 0.8f), fontSize = 11.sp)
-                                        Text(periodTrendText, color = Color(0xFFFDE047), fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                                        Text("Ishlangan savol", color = Color.White.copy(alpha = 0.8f), fontSize = 11.sp)
+                                        Text(periodSolvedText, color = Color(0xFFFDE047), fontWeight = FontWeight.Bold, fontSize = 14.sp)
                                     }
                                 }
                             }
@@ -442,6 +342,8 @@ fun LeaderboardScreen(
                     item {
                         DualLineStudentChart(
                             points = dynamicChartPoints,
+                            solvedCount = periodSolvedCount,
+                            accuracyPct = activePeriod?.accuracyPct ?: 0,
                             animProgress = animProgress
                         )
                     }
@@ -508,8 +410,17 @@ fun LeaderboardScreen(
                                     modifier = Modifier.fillMaxWidth(),
                                     horizontalArrangement = Arrangement.SpaceBetween
                                 ) {
-                                    Text("O'sish: +$animGrowth% • Vaqt: $animTime daq", fontSize = 11.sp, color = Color(0xFF16A34A), fontWeight = FontWeight.Bold)
-                                    Text("Tezlik: ${cat.averageSpeedSeconds} sek/savol", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    Text(
+                                        text = if (cat.totalSolved > 0) "Vaqt: $animTime daq" else "Hali test ishlanmagan",
+                                        fontSize = 11.sp,
+                                        color = if (cat.totalSolved > 0) Color(0xFF16A34A) else MaterialTheme.colorScheme.onSurfaceVariant,
+                                        fontWeight = FontWeight.Bold
+                                    )
+                                    Text(
+                                        text = if (cat.averageSpeedSeconds > 0) "Tezlik: ${cat.averageSpeedSeconds} sek/savol" else "Boshlash uchun bosing",
+                                        fontSize = 11.sp,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
                                 }
                             }
                         }
@@ -523,6 +434,42 @@ fun LeaderboardScreen(
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold
                         )
+                    }
+
+                    if (users.isEmpty()) {
+                        item {
+                            Surface(
+                                shape = RoundedCornerShape(18.dp),
+                                color = MaterialTheme.colorScheme.surface,
+                                border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Column(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(24.dp),
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                                ) {
+                                    Icon(
+                                        Icons.Default.EmojiEvents,
+                                        contentDescription = null,
+                                        tint = BrandPurple,
+                                        modifier = Modifier.size(36.dp)
+                                    )
+                                    Text(
+                                        text = "Peshqadamlar jadvali bo‘sh",
+                                        style = MaterialTheme.typography.titleSmall,
+                                        fontWeight = FontWeight.Bold
+                                    )
+                                    Text(
+                                        text = "Test ishlab XP to‘plang — natijangiz real vaqtda reytingda ko‘rinadi.",
+                                        fontSize = 12.sp,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
+                            }
+                        }
                     }
 
                     itemsIndexed(users) { index, user ->
@@ -616,6 +563,8 @@ fun LeaderboardScreen(
 @Composable
 private fun DualLineStudentChart(
     points: List<StudentChartDataPoint>,
+    solvedCount: Int,
+    accuracyPct: Int,
     animProgress: Float,
     modifier: Modifier = Modifier
 ) {
@@ -643,11 +592,11 @@ private fun DualLineStudentChart(
                     )
                     Surface(
                         shape = RoundedCornerShape(12.dp),
-                        color = Color(0xFFDCFCE7)
+                        color = Color(0xFF16A34A).copy(alpha = 0.14f)
                     ) {
                         Text(
-                            text = "📈 +18% Trend",
-                            color = Color(0xFF15803D),
+                            text = if (solvedCount > 0) "$accuracyPct% Aniqlik" else "Hali boshlanmagan",
+                            color = Color(0xFF16A34A),
                             fontWeight = FontWeight.Bold,
                             fontSize = 11.sp,
                             modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
@@ -695,35 +644,49 @@ private fun DualLineStudentChart(
                 }
             }
 
-            // Dual Line Canvas Chart
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(140.dp)
-            ) {
-                Canvas(modifier = Modifier.fillMaxSize()) {
-                    if (points.size < 2) return@Canvas
+            if (solvedCount == 0 || points.size < 2) {
+                Surface(
+                    shape = RoundedCornerShape(14.dp),
+                    color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        text = "Hali test ishlanmagan — birinchi testni boshlang va o'sish grafigingizni kuzating!",
+                        fontSize = 12.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(16.dp)
+                    )
+                }
+            } else {
+                // Dual Line Canvas Chart
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(140.dp)
+                ) {
+                    Canvas(modifier = Modifier.fillMaxSize()) {
+                        if (points.size < 2) return@Canvas
 
-                    val width = size.width
-                    val height = size.height
-                    val spacing = width / (points.size - 1)
+                        val width = size.width
+                        val height = size.height
+                        val spacing = width / (points.size - 1)
 
-                    // Line 1 Points: Accuracy (0.2 to 1.0)
-                    val accuracyPoints = points.mapIndexed { index, item ->
-                        val x = index * spacing
-                        val normY = ((item.accuracyRatio - 0.2f) / 0.8f).coerceIn(0f, 1f)
-                        val y = height - (normY * height * 0.75f * animProgress) - (height * 0.12f)
-                        Offset(x, y)
-                    }
+                        // Line 1 Points: Accuracy (0.0 to 1.0)
+                        val accuracyPoints = points.mapIndexed { index, item ->
+                            val x = index * spacing
+                            val normY = item.accuracyRatio.coerceIn(0f, 1f)
+                            val y = height - (normY * height * 0.75f * animProgress) - (height * 0.12f)
+                            Offset(x, y)
+                        }
 
-                    // Line 2 Points: Time Spent (0 to 60 minutes)
-                    val maxTime = points.maxOfOrNull { it.timeSpentMinutes }?.coerceAtLeast(30f) ?: 60f
-                    val timePoints = points.mapIndexed { index, item ->
-                        val x = index * spacing
-                        val normY = (item.timeSpentMinutes / maxTime).coerceIn(0f, 1f)
-                        val y = height - (normY * height * 0.75f * animProgress) - (height * 0.12f)
-                        Offset(x, y)
-                    }
+                        // Line 2 Points: Time Spent (0 to maxTime)
+                        val maxTime = points.maxOfOrNull { it.timeSpentMinutes }?.coerceAtLeast(10f) ?: 30f
+                        val timePoints = points.mapIndexed { index, item ->
+                            val x = index * spacing
+                            val normY = (item.timeSpentMinutes / maxTime).coerceIn(0f, 1f)
+                            val y = height - (normY * height * 0.75f * animProgress) - (height * 0.12f)
+                            Offset(x, y)
+                        }
 
                     // Build Line 1 Path (Accuracy)
                     val accPath = Path().apply {
@@ -813,20 +776,21 @@ private fun DualLineStudentChart(
                         drawCircle(color = Color(0xFF06B6D4), radius = 2.5.dp.toPx(), center = point)
                     }
                 }
-            }
+                }
 
-            // X-Axis Labels
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                points.forEach { item ->
-                    Text(
-                        text = item.dayLabel,
-                        fontSize = 11.sp,
-                        fontWeight = FontWeight.SemiBold,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
+                // X-Axis Labels
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    points.forEach { item ->
+                        Text(
+                            text = item.dayLabel,
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
                 }
             }
         }

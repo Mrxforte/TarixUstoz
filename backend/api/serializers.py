@@ -45,7 +45,9 @@ class PdfBookSerializer(serializers.ModelSerializer):
 
     def get_total_questions(self, obj):
         from api.models import Question
-        return Question.objects.filter(grade=obj.grade, subject=obj.subject).count()
+        return Question.objects.filter(
+            grade=obj.grade, subject=obj.subject, verification_status='VERIFIED'
+        ).count()
 
 class CategorySerializer(serializers.ModelSerializer):
     pdf_books = PdfBookSerializer(many=True, read_only=True)
@@ -69,14 +71,24 @@ class TopicSerializer(serializers.ModelSerializer):
     grade = serializers.IntegerField(source='document.grade', read_only=True, default=None)
     subject = serializers.CharField(source='document.subject', read_only=True, default=None)
     textbook_id = serializers.SerializerMethodField()
+    questions_count = serializers.SerializerMethodField()
 
     class Meta:
         model = Topic
         fields = [
             'id', 'document', 'chapter', 'grade', 'subject', 'textbook_id',
             'title', 'canonical_title', 'content', 'order', 'start_page', 'end_page',
-            'summary', 'review_status', 'coverage_status', 'extraction_confidence'
+            'summary', 'questions_count', 'review_status', 'coverage_status', 'extraction_confidence'
         ]
+
+    def get_questions_count(self, obj):
+        counts_map = self.context.get('topic_question_counts')
+        if counts_map is not None:
+            return int(counts_map.get(obj.id, 0))
+        annotated = getattr(obj, '_questions_count', None)
+        if annotated is not None:
+            return int(annotated)
+        return obj.questions.filter(verification_status='VERIFIED').count()
 
     def get_textbook_id(self, obj):
         if not obj.document:

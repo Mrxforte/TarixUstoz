@@ -3,7 +3,6 @@ package com.tarixustoz.app.presentation.mistakes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,8 +10,10 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.automirrored.filled.Sort
@@ -30,7 +31,15 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.presentation.theme.BrandPurple
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
+private val GRADE_FILTER_OPTIONS = listOf(0, 6, 7, 8, 9, 10, 11)
+
+private fun gradeFilterLabel(grade: Int): String = when (grade) {
+    0 -> "Barcha sinflar"
+    6 -> "6-sinf tarixi"
+    else -> "$grade-sinf tarixi"
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MistakesScreen(
     onReviewWrongQuestions: () -> Unit,
@@ -40,6 +49,7 @@ fun MistakesScreen(
     val activeCount by viewModel.activeCount.collectAsState()
 
     var showClearConfirmDialog by remember { mutableStateOf(false) }
+    var selectedGridItem by remember { mutableStateOf<WrongQuestionUiModel?>(null) }
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
@@ -54,25 +64,31 @@ fun MistakesScreen(
                             fontWeight = FontWeight.Bold
                         )
                         Text(
-                            text = "$activeCount ta takrorlanishi kerak bo'lgan xato",
+                            text = "$activeCount ta takrorlanishi kerak bo‘lgan xato",
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                     }
                 },
                 actions = {
-                    IconButton(onClick = { viewModel.onToggleViewMode() }) {
+                    IconButton(
+                        onClick = { viewModel.onToggleViewMode() },
+                        modifier = Modifier.minimumInteractiveComponentSize()
+                    ) {
                         Icon(
                             if (uiState.viewMode == MistakesViewMode.LIST) Icons.Default.GridView else Icons.AutoMirrored.Filled.List,
-                            contentDescription = "Ko'rinishni o'zgartirish",
+                            contentDescription = "Ko‘rinishni o‘zgartirish",
                             tint = BrandPurple
                         )
                     }
                     if (uiState.totalCount > 0) {
-                        IconButton(onClick = { showClearConfirmDialog = true }) {
+                        IconButton(
+                            onClick = { showClearConfirmDialog = true },
+                            modifier = Modifier.minimumInteractiveComponentSize()
+                        ) {
                             Icon(
                                 Icons.Default.DeleteSweep,
-                                contentDescription = "Barcha xatolarni o'chirish",
+                                contentDescription = "Barcha xatolarni o‘chirish",
                                 tint = Color(0xFFEF4444)
                             )
                         }
@@ -90,7 +106,6 @@ fun MistakesScreen(
                 .padding(innerPadding)
                 .padding(horizontal = 16.dp)
         ) {
-            // Top CTA Banner if mistakes exist
             if (uiState.totalCount > 0) {
                 Surface(
                     shape = RoundedCornerShape(18.dp),
@@ -128,7 +143,7 @@ fun MistakesScreen(
                                 color = Color.White
                             )
                             Text(
-                                text = "${uiState.items.size} ta savol bo'yicha interaktiv bilimlarni sinash",
+                                text = "${uiState.items.size} ta savol bo‘yicha interaktiv test",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = Color.White.copy(alpha = 0.85f)
                             )
@@ -136,7 +151,8 @@ fun MistakesScreen(
                         Button(
                             onClick = onReviewWrongQuestions,
                             colors = ButtonDefaults.buttonColors(containerColor = Color.White),
-                            shape = RoundedCornerShape(10.dp)
+                            shape = RoundedCornerShape(10.dp),
+                            modifier = Modifier.minimumInteractiveComponentSize()
                         ) {
                             Text("Boshlash", color = BrandPurple, fontWeight = FontWeight.Bold)
                         }
@@ -148,7 +164,7 @@ fun MistakesScreen(
             OutlinedTextField(
                 value = uiState.searchQuery,
                 onValueChange = { viewModel.onSearchQueryChange(it) },
-                placeholder = { Text("Savol matni yoki manba bo'yicha qidirish...") },
+                placeholder = { Text("Savol matni yoki manba bo‘yicha qidirish...") },
                 leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
                 trailingIcon = {
                     if (uiState.searchQuery.isNotEmpty()) {
@@ -159,7 +175,8 @@ fun MistakesScreen(
                 },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = 10.dp),
+                    .padding(bottom = 10.dp)
+                    .testTag("mistakes_search_input"),
                 shape = RoundedCornerShape(14.dp),
                 singleLine = true,
                 colors = OutlinedTextFieldDefaults.colors(
@@ -168,51 +185,134 @@ fun MistakesScreen(
                 )
             )
 
-            // Grade Filter Chips & Sort Order Selection Row
-            FlowRow(
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
+            // Grade Filter Dropdown + Sort Dropdown Row
+            Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(bottom = 12.dp)
+                    .padding(bottom = 12.dp),
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
-                // Grade filter chips
-                FilterChip(
-                    selected = uiState.selectedGradeFilter == 0,
-                    onClick = { viewModel.onGradeFilterChange(0) },
-                    label = { Text("Barcha sinflar") },
-                    colors = FilterChipDefaults.filterChipColors(
-                        selectedContainerColor = BrandPurple,
-                        selectedLabelColor = Color.White
+                var gradeMenuExpanded by remember { mutableStateOf(false) }
+                ExposedDropdownMenuBox(
+                    expanded = gradeMenuExpanded,
+                    onExpandedChange = { gradeMenuExpanded = !gradeMenuExpanded },
+                    modifier = Modifier.weight(1f)
+                ) {
+                    OutlinedTextField(
+                        value = gradeFilterLabel(uiState.selectedGradeFilter),
+                        onValueChange = {},
+                        readOnly = true,
+                        singleLine = true,
+                        label = { Text("Sinf", fontSize = 11.sp) },
+                        leadingIcon = {
+                            Icon(
+                                Icons.Default.School,
+                                contentDescription = null,
+                                tint = BrandPurple,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        },
+                        trailingIcon = {
+                            ExposedDropdownMenuDefaults.TrailingIcon(expanded = gradeMenuExpanded)
+                        },
+                        textStyle = LocalTextStyle.current.copy(
+                            fontSize = 13.sp,
+                            fontWeight = FontWeight.SemiBold
+                        ),
+                        shape = RoundedCornerShape(14.dp),
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedBorderColor = BrandPurple,
+                            unfocusedBorderColor = MaterialTheme.colorScheme.outlineVariant
+                        ),
+                        modifier = Modifier
+                            .menuAnchor(MenuAnchorType.PrimaryNotEditable)
+                            .fillMaxWidth()
+                            .testTag("mistakes_grade_dropdown")
                     )
-                )
 
-                FilterChip(
-                    selected = uiState.selectedGradeFilter == 6,
-                    onClick = { viewModel.onGradeFilterChange(6) },
-                    label = { Text("6-sinf") },
-                    colors = FilterChipDefaults.filterChipColors(
-                        selectedContainerColor = BrandPurple,
-                        selectedLabelColor = Color.White
-                    )
-                )
+                    ExposedDropdownMenu(
+                        expanded = gradeMenuExpanded,
+                        onDismissRequest = { gradeMenuExpanded = false }
+                    ) {
+                        GRADE_FILTER_OPTIONS.forEach { grade ->
+                            val countForGrade = if (grade == 0) {
+                                uiState.totalCount
+                            } else {
+                                uiState.gradeCounts[grade] ?: 0
+                            }
+                            val label = if (countForGrade > 0) {
+                                "${gradeFilterLabel(grade)} ($countForGrade)"
+                            } else {
+                                gradeFilterLabel(grade)
+                            }
+                            DropdownMenuItem(
+                                text = {
+                                    Text(
+                                        text = label,
+                                        fontWeight = if (uiState.selectedGradeFilter == grade) FontWeight.Bold else FontWeight.Normal,
+                                        color = if (uiState.selectedGradeFilter == grade) BrandPurple else MaterialTheme.colorScheme.onSurface
+                                    )
+                                },
+                                onClick = {
+                                    viewModel.onGradeFilterChange(grade)
+                                    gradeMenuExpanded = false
+                                }
+                            )
+                        }
+                    }
+                }
 
-                // Sort Dropdown Chip
                 var sortMenuExpanded by remember { mutableStateOf(false) }
-                Box {
-                    AssistChip(
-                        onClick = { sortMenuExpanded = true },
-                        label = { Text(uiState.sortOrder.label) },
-                        leadingIcon = { Icon(Icons.AutoMirrored.Filled.Sort, contentDescription = null, modifier = Modifier.size(16.dp)) }
+                ExposedDropdownMenuBox(
+                    expanded = sortMenuExpanded,
+                    onExpandedChange = { sortMenuExpanded = !sortMenuExpanded },
+                    modifier = Modifier.weight(1f)
+                ) {
+                    OutlinedTextField(
+                        value = uiState.sortOrder.label,
+                        onValueChange = {},
+                        readOnly = true,
+                        singleLine = true,
+                        label = { Text("Saralash", fontSize = 11.sp) },
+                        leadingIcon = {
+                            Icon(
+                                Icons.AutoMirrored.Filled.Sort,
+                                contentDescription = null,
+                                tint = BrandPurple,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        },
+                        trailingIcon = {
+                            ExposedDropdownMenuDefaults.TrailingIcon(expanded = sortMenuExpanded)
+                        },
+                        textStyle = LocalTextStyle.current.copy(
+                            fontSize = 13.sp,
+                            fontWeight = FontWeight.SemiBold
+                        ),
+                        shape = RoundedCornerShape(14.dp),
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedBorderColor = BrandPurple,
+                            unfocusedBorderColor = MaterialTheme.colorScheme.outlineVariant
+                        ),
+                        modifier = Modifier
+                            .menuAnchor(MenuAnchorType.PrimaryNotEditable)
+                            .fillMaxWidth()
+                            .testTag("mistakes_sort_dropdown")
                     )
 
-                    DropdownMenu(
+                    ExposedDropdownMenu(
                         expanded = sortMenuExpanded,
                         onDismissRequest = { sortMenuExpanded = false }
                     ) {
                         MistakesSortOrder.entries.forEach { sort ->
                             DropdownMenuItem(
-                                text = { Text(sort.label) },
+                                text = {
+                                    Text(
+                                        text = sort.label,
+                                        fontWeight = if (uiState.sortOrder == sort) FontWeight.Bold else FontWeight.Normal,
+                                        color = if (uiState.sortOrder == sort) BrandPurple else MaterialTheme.colorScheme.onSurface
+                                    )
+                                },
                                 onClick = {
                                     viewModel.onSortOrderChange(sort)
                                     sortMenuExpanded = false
@@ -252,14 +352,14 @@ fun MistakesScreen(
                         Spacer(Modifier.height(16.dp))
                         Text(
                             text = if (uiState.searchQuery.isNotBlank() || uiState.selectedGradeFilter > 0)
-                                "Tanlangan filtrlar bo'yicha xato savol topilmadi"
-                            else "Hozircha xato ishlangan savollar yo'q!",
+                                "Tanlangan filtrlar bo‘yicha xato savol topilmadi"
+                            else "Hozircha xato ishlangan savollar yo‘q!",
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold
                         )
                         Spacer(Modifier.height(6.dp))
                         Text(
-                            text = "Testlarda xato qilsangiz, ular tahlil uchun shu yerda saqlanadi.",
+                            text = "Testlarda xato qilsangiz, ular qayta mashq qilish uchun shu yerda saqlanadi.",
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -287,6 +387,7 @@ fun MistakesScreen(
                     items(uiState.items, key = { it.questionId }) { item ->
                         MistakeGridCard(
                             item = item,
+                            onClick = { selectedGridItem = item },
                             onDelete = { viewModel.deleteMistake(item.questionId) }
                         )
                     }
@@ -295,12 +396,41 @@ fun MistakesScreen(
         }
     }
 
-    // Confirmation dialog for clearing all mistakes
+    selectedGridItem?.let { item ->
+        AlertDialog(
+            onDismissRequest = { selectedGridItem = null },
+            confirmButton = {
+                TextButton(onClick = { selectedGridItem = null }) {
+                    Text("Yopish", fontWeight = FontWeight.Bold)
+                }
+            },
+            title = {
+                Text(
+                    text = "${item.gradeId}-sinf • ${item.sourceCitation}",
+                    style = MaterialTheme.typography.titleSmall,
+                    color = BrandPurple,
+                    fontWeight = FontWeight.Bold
+                )
+            },
+            text = {
+                Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
+                    MistakeInteractiveBody(
+                        item = item,
+                        onMarkMastered = {
+                            viewModel.deleteMistake(item.questionId)
+                            selectedGridItem = null
+                        }
+                    )
+                }
+            }
+        )
+    }
+
     if (showClearConfirmDialog) {
         AlertDialog(
             onDismissRequest = { showClearConfirmDialog = false },
-            title = { Text("Barcha xatolarni o'chirish") },
-            text = { Text("Barcha saqlangan xato testlar ro'yxatdan to'liq tozalanadi. Ishonchingiz komilmi?") },
+            title = { Text("Barcha xatolarni o‘chirish") },
+            text = { Text("Barcha saqlangan xato testlar ro‘yxatdan to‘liq tozalanadi. Ishonchingiz komilmi?") },
             confirmButton = {
                 TextButton(
                     onClick = {
@@ -308,7 +438,7 @@ fun MistakesScreen(
                         showClearConfirmDialog = false
                     }
                 ) {
-                    Text("O'chirish", color = Color(0xFFEF4444), fontWeight = FontWeight.Bold)
+                    Text("O‘chirish", color = Color(0xFFEF4444), fontWeight = FontWeight.Bold)
                 }
             },
             dismissButton = {
@@ -325,8 +455,6 @@ private fun MistakeListCard(
     item: WrongQuestionUiModel,
     onDelete: () -> Unit
 ) {
-    var expandedExplanation by remember { mutableStateOf(false) }
-
     Surface(
         shape = RoundedCornerShape(16.dp),
         color = MaterialTheme.colorScheme.surface,
@@ -336,33 +464,33 @@ private fun MistakeListCard(
             .animateContentSize()
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            // Header Tags
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    Surface(
-                        shape = RoundedCornerShape(6.dp),
-                        color = BrandPurple.copy(alpha = 0.12f)
-                    ) {
-                        Text(
-                            text = "${item.gradeId}-sinf • ${item.sourceCitation}",
-                            fontSize = 11.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = BrandPurple,
-                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp),
-                            maxLines = 1,
-                            overflow = TextOverflow.Ellipsis
-                        )
-                    }
+                Surface(
+                    shape = RoundedCornerShape(6.dp),
+                    color = BrandPurple.copy(alpha = 0.12f),
+                    modifier = Modifier.weight(1f, fill = false)
+                ) {
+                    Text(
+                        text = "${item.gradeId}-sinf • ${item.sourceCitation}",
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = BrandPurple,
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp),
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
                 }
+
+                Spacer(Modifier.width(8.dp))
 
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Surface(
                         shape = RoundedCornerShape(6.dp),
-                        color = Color(0xFFFEE2E2)
+                        color = Color(0xFFEF4444).copy(alpha = 0.12f)
                     ) {
                         Text(
                             text = "${item.incorrectCount} marta xato",
@@ -372,150 +500,279 @@ private fun MistakeListCard(
                             modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                         )
                     }
-                    Spacer(Modifier.width(6.dp))
                     IconButton(
                         onClick = onDelete,
-                        modifier = Modifier.size(24.dp)
+                        modifier = Modifier.minimumInteractiveComponentSize()
                     ) {
                         Icon(
                             Icons.Default.Close,
-                            contentDescription = "O'chirish",
+                            contentDescription = "Xatodan o‘chirish",
                             tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier.size(16.dp)
+                            modifier = Modifier.size(18.dp)
                         )
                     }
                 }
             }
 
-            Spacer(Modifier.height(10.dp))
+            Spacer(Modifier.height(6.dp))
 
-            // Question Text
-            Text(
-                text = item.text,
-                style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onSurface
+            MistakeInteractiveBody(
+                item = item,
+                onMarkMastered = onDelete
             )
+        }
+    }
+}
 
-            Spacer(Modifier.height(12.dp))
+@Composable
+private fun MistakeInteractiveBody(
+    item: WrongQuestionUiModel,
+    onMarkMastered: () -> Unit
+) {
+    var selectedOptionId by remember(item.questionId) { mutableStateOf<String?>(null) }
+    var revealAnswer by remember(item.questionId) { mutableStateOf(false) }
 
-            // User Answer (Wrong) Row
-            Surface(
-                shape = RoundedCornerShape(10.dp),
-                color = Color(0xFFFEF2F2),
-                border = BorderStroke(1.dp, Color(0xFFFCA5A5)),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 6.dp)
-            ) {
-                Row(
-                    modifier = Modifier.padding(10.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Icon(
-                        Icons.Default.Cancel,
-                        contentDescription = null,
-                        tint = Color(0xFFDC2626),
-                        modifier = Modifier.size(18.dp)
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    Text(
-                        text = "Sizning javobingiz: ${item.userAnswer}",
-                        fontSize = 13.sp,
-                        fontWeight = FontWeight.Medium,
-                        color = Color(0xFF991B1B)
-                    )
-                }
-            }
+    val isRevealed = revealAnswer || selectedOptionId != null
+    val pickedCorrect = selectedOptionId != null &&
+        item.options.firstOrNull { it.id == selectedOptionId }?.isCorrect == true
 
-            // Correct Answer Row
-            Surface(
-                shape = RoundedCornerShape(10.dp),
-                color = Color(0xFFF0FDF4),
-                border = BorderStroke(1.dp, Color(0xFF86EFAC)),
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Row(
-                    modifier = Modifier.padding(10.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Icon(
-                        Icons.Default.CheckCircle,
-                        contentDescription = null,
-                        tint = Color(0xFF16A34A),
-                        modifier = Modifier.size(18.dp)
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    Text(
-                        text = "To'g'ri javob: ${item.correctOption} varianti",
-                        fontSize = 13.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = Color(0xFF166534)
-                    )
-                }
-            }
+    Text(
+        text = item.text,
+        style = MaterialTheme.typography.titleSmall,
+        fontWeight = FontWeight.Bold,
+        color = MaterialTheme.colorScheme.onSurface,
+        lineHeight = 20.sp
+    )
 
-            // Expandable Explanation Box
-            Spacer(Modifier.height(8.dp))
+    if (item.userAnswer.isNotBlank()) {
+        Spacer(Modifier.height(8.dp))
+        Surface(
+            shape = RoundedCornerShape(8.dp),
+            color = Color(0xFFEF4444).copy(alpha = 0.08f),
+            border = BorderStroke(1.dp, Color(0xFFEF4444).copy(alpha = 0.35f)),
+            modifier = Modifier.fillMaxWidth()
+        ) {
             Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .clickable { expandedExplanation = !expandedExplanation }
-                    .padding(vertical = 4.dp),
+                modifier = Modifier.padding(horizontal = 10.dp, vertical = 7.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
-                    Icons.Default.Info,
+                    Icons.Default.History,
                     contentDescription = null,
-                    tint = BrandPurple,
-                    modifier = Modifier.size(16.dp)
+                    tint = Color(0xFFDC2626),
+                    modifier = Modifier.size(15.dp)
                 )
                 Spacer(Modifier.width(6.dp))
                 Text(
-                    text = if (expandedExplanation) "Izohni yashirish" else "Darslik izohini ko'rish",
+                    text = "Avvalgi xato javobingiz: ${item.userAnswer}",
                     fontSize = 12.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    color = BrandPurple,
-                    modifier = Modifier.weight(1f)
-                )
-                Icon(
-                    if (expandedExplanation) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
-                    contentDescription = null,
-                    tint = BrandPurple,
-                    modifier = Modifier.size(18.dp)
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
+        }
+    }
 
-            AnimatedVisibility(visible = expandedExplanation) {
-                Surface(
-                    shape = RoundedCornerShape(10.dp),
-                    color = MaterialTheme.colorScheme.surfaceVariant,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(top = 6.dp)
+    Spacer(Modifier.height(10.dp))
+
+    // Interactive answer choices — answer stays hidden until student chooses or taps "Javobni ko'rish"
+    val letters = listOf("A", "B", "C", "D")
+    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        item.options.forEachIndexed { idx, opt ->
+            val letter = letters.getOrElse(idx) { opt.id.uppercase() }
+            val isSelected = selectedOptionId == opt.id
+            val showCorrect = isRevealed && opt.isCorrect
+            val showWrongSelected = isSelected && !opt.isCorrect
+
+            val bgColor = when {
+                showCorrect -> Color(0xFF16A34A).copy(alpha = 0.14f)
+                showWrongSelected -> Color(0xFFDC2626).copy(alpha = 0.14f)
+                else -> MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f)
+            }
+            val borderColor = when {
+                showCorrect -> Color(0xFF16A34A)
+                showWrongSelected -> Color(0xFFDC2626)
+                else -> MaterialTheme.colorScheme.outlineVariant
+            }
+            val textColor = when {
+                showCorrect -> Color(0xFF16A34A)
+                showWrongSelected -> Color(0xFFDC2626)
+                else -> MaterialTheme.colorScheme.onSurface
+            }
+
+            Surface(
+                shape = RoundedCornerShape(10.dp),
+                color = bgColor,
+                border = BorderStroke(1.dp, borderColor),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable(enabled = selectedOptionId == null && !revealAnswer) {
+                        selectedOptionId = opt.id
+                    }
+            ) {
+                Row(
+                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 9.dp),
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
+                    Surface(
+                        shape = CircleShape,
+                        color = when {
+                            showCorrect -> Color(0xFF16A34A)
+                            showWrongSelected -> Color(0xFFDC2626)
+                            else -> MaterialTheme.colorScheme.surface
+                        },
+                        border = BorderStroke(1.dp, borderColor),
+                        modifier = Modifier.size(24.dp)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Text(
+                                text = letter,
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = if (showCorrect || showWrongSelected) Color.White else MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                    Spacer(Modifier.width(8.dp))
+                    Text(
+                        text = opt.text,
+                        fontSize = 13.sp,
+                        fontWeight = if (showCorrect || isSelected) FontWeight.SemiBold else FontWeight.Normal,
+                        color = textColor,
+                        modifier = Modifier.weight(1f)
+                    )
+                    if (showCorrect) {
+                        Icon(
+                            Icons.Default.CheckCircle,
+                            contentDescription = "To‘g‘ri javob",
+                            tint = Color(0xFF16A34A),
+                            modifier = Modifier.size(18.dp)
+                        )
+                    } else if (showWrongSelected) {
+                        Icon(
+                            Icons.Default.Cancel,
+                            contentDescription = "Noto‘g‘ri javob",
+                            tint = Color(0xFFDC2626),
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    AnimatedVisibility(visible = isRevealed) {
+        Column(modifier = Modifier.padding(top = 10.dp)) {
+            Surface(
+                shape = RoundedCornerShape(10.dp),
+                color = if (pickedCorrect) {
+                    Color(0xFF16A34A).copy(alpha = 0.12f)
+                } else {
+                    BrandPurple.copy(alpha = 0.08f)
+                },
+                border = BorderStroke(
+                    1.dp,
+                    if (pickedCorrect) Color(0xFF16A34A).copy(alpha = 0.45f) else BrandPurple.copy(alpha = 0.3f)
+                ),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(modifier = Modifier.padding(10.dp)) {
+                    Text(
+                        text = when {
+                            pickedCorrect -> "Barakalla! To‘g‘ri javobni topdingiz."
+                            selectedOptionId != null -> "To‘g‘ri javob: ${item.correctOption}) ${item.correctOptionText}"
+                            else -> "To‘g‘ri javob: ${item.correctOption}) ${item.correctOptionText}"
+                        },
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = if (pickedCorrect) Color(0xFF16A34A) else BrandPurple
+                    )
+                    Spacer(Modifier.height(4.dp))
                     Text(
                         text = item.explanation,
                         fontSize = 12.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(10.dp)
+                        lineHeight = 17.sp
                     )
+                    if (pickedCorrect) {
+                        Spacer(Modifier.height(8.dp))
+                        TextButton(
+                            onClick = onMarkMastered,
+                            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 2.dp)
+                        ) {
+                            Icon(
+                                Icons.Default.DoneAll,
+                                contentDescription = null,
+                                tint = Color(0xFF16A34A),
+                                modifier = Modifier.size(16.dp)
+                            )
+                            Spacer(Modifier.width(6.dp))
+                            Text(
+                                text = "O‘zlashtirildi — ro‘yxatdan o‘chirish",
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = Color(0xFF16A34A)
+                            )
+                        }
+                    }
                 }
             }
         }
+    }
+
+    Spacer(Modifier.height(8.dp))
+
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        TextButton(
+            onClick = {
+                if (isRevealed) {
+                    selectedOptionId = null
+                    revealAnswer = false
+                } else {
+                    revealAnswer = true
+                }
+            },
+            modifier = Modifier.testTag("mistake_toggle_answer_${item.questionId}")
+        ) {
+            Icon(
+                if (isRevealed) Icons.Default.VisibilityOff else Icons.Default.Visibility,
+                contentDescription = null,
+                tint = BrandPurple,
+                modifier = Modifier.size(16.dp)
+            )
+            Spacer(Modifier.width(6.dp))
+            Text(
+                text = if (isRevealed) "Qayta yechish (yashirish)" else "Javob va izohni ko‘rish",
+                fontSize = 12.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = BrandPurple
+            )
+        }
+
+        Text(
+            text = item.formattedDate,
+            fontSize = 11.sp,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
     }
 }
 
 @Composable
 private fun MistakeGridCard(
     item: WrongQuestionUiModel,
+    onClick: () -> Unit,
     onDelete: () -> Unit
 ) {
     Surface(
         shape = RoundedCornerShape(14.dp),
         color = MaterialTheme.colorScheme.surface,
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick)
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
             Row(
@@ -538,11 +795,11 @@ private fun MistakeGridCard(
 
                 IconButton(
                     onClick = onDelete,
-                    modifier = Modifier.size(20.dp)
+                    modifier = Modifier.size(28.dp)
                 ) {
                     Icon(
                         Icons.Default.Close,
-                        contentDescription = "O'chirish",
+                        contentDescription = "O‘chirish",
                         tint = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.size(14.dp)
                     )
@@ -556,17 +813,30 @@ private fun MistakeGridCard(
                 fontSize = 13.sp,
                 fontWeight = FontWeight.SemiBold,
                 maxLines = 3,
-                overflow = TextOverflow.Ellipsis
+                overflow = TextOverflow.Ellipsis,
+                minLines = 3
             )
 
             Spacer(Modifier.height(8.dp))
 
-            Text(
-                text = "To'g'ri: ${item.correctOption}",
-                fontSize = 11.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color(0xFF16A34A)
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "${item.incorrectCount}x xato",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color(0xFFDC2626)
+                )
+                Text(
+                    text = "Yechish →",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = BrandPurple
+                )
+            }
         }
     }
 }

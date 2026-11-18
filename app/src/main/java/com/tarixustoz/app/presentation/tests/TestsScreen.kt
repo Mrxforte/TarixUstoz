@@ -94,7 +94,7 @@ fun TestsScreen(
             onRefresh = {
                 coroutineScope.launch {
                     isRefreshing = true
-                    testsViewModel.loadCounts(selectedGrade)
+                    testsViewModel.loadCounts(selectedGrade, forceRefresh = true)
                     isRefreshing = false
                 }
             },
@@ -216,7 +216,7 @@ fun TestsScreen(
                         sectionTitle = "Tarixiy yo'nalishli testlar",
                         items = testsDirectionCards,
                         onSeeAllClick = { onNavigateToVerticalCards("Tarixiy Yo'nalishlar", "directions") },
-                        onCardClick = { code, _, _ -> onNavigateToTickets(code, "Test Biletlari", selectedGrade) }
+                        onCardClick = { code, _, cardTitle -> onNavigateToTickets(code, cardTitle, selectedGrade) }
                     )
                 }
 
@@ -226,8 +226,8 @@ fun TestsScreen(
                         sectionTitle = "Mavzulashgan testlar",
                         items = testsTopicCards,
                         onSeeAllClick = { onNavigateToVerticalCards("Mavzulashgan Testlar", "topics") },
-                        onCardClick = { topicId, _, _ ->
-                            onStartQuizForBookOrTopic(topicId)
+                        onCardClick = { topicId, _, topicTitle ->
+                            onNavigateToTickets(topicId, topicTitle, selectedGrade)
                         }
                     )
                 }
@@ -235,7 +235,7 @@ fun TestsScreen(
                 // Sinf Testlari Section
                 item {
                     TestSectionRow(
-                        sectionTitle = "Sinf testlari (6-11 sinflار)",
+                        sectionTitle = "Sinf testlari (6-11 sinflar)",
                         items = testsGradeCards,
                         onSeeAllClick = { onNavigateToVerticalCards("Sinf Testlari", "grades") },
                         onCardClick = { gradeKey, _, gradeTitle ->

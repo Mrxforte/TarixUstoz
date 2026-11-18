@@ -49,6 +49,15 @@ interface ApiService {
         @Query("size") size: Int = 30
     ): TicketQuestionsDto
 
+    @GET("questions/daily/")
+    suspend fun getDailyQuestion(
+        @Query("grade") grade: Int? = null,
+        @Query("subject") subject: String? = null,
+        @Query("user_identifier") userIdentifier: String = "guest_user",
+        @Query("nonce") nonce: String? = null,
+        @Query("exclude") exclude: String? = null
+    ): ApiQuestionDto
+
     @GET("exams/")
     suspend fun getExamCategories(): List<ExamCategoryDto>
 

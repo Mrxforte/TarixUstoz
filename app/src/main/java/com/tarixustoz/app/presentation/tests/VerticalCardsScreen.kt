@@ -14,6 +14,7 @@ import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Event
 import androidx.compose.material.icons.filled.FilterList
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Psychology
@@ -32,6 +33,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.domain.model.Topic
 import com.tarixustoz.app.domain.model.gradeId
 import com.tarixustoz.app.presentation.common.components.HistoryTestCard
+import com.tarixustoz.app.presentation.common.components.backgroundResForBook
+import com.tarixustoz.app.presentation.common.components.backgroundResForDirection
+import com.tarixustoz.app.presentation.common.components.backgroundResForTopic
 import com.tarixustoz.app.presentation.theme.BrandPurple
 
 data class TestCardItem(
@@ -43,13 +47,14 @@ data class TestCardItem(
     val icon: ImageVector,
     val gradientColors: List<Color>,
     val accentColor: Color,
-    val categoryType: String // "topic", "grade", "direction"
+    val categoryType: String, // "topic", "grade", "direction"
+    val backgroundImageRes: Int? = null
 )
 
 fun Topic.toTestCardItem(): TestCardItem {
     val gradeStr = "${this.gradeId}-Sinf"
-    val totalT = 10
-    val totalQs = 300
+    val totalQs = if (questionsCount > 0) questionsCount else 2500
+    val totalT = (totalQs + 29) / 30
     val subtitleText = if (summary.isNotBlank()) summary else "Tarix darsligi • $gradeStr"
     val fullSubtitle = "$subtitleText • $totalT ta bilet • $totalQs ta test"
 
@@ -77,7 +82,8 @@ fun Topic.toTestCardItem(): TestCardItem {
         icon = Icons.AutoMirrored.Filled.MenuBook,
         gradientColors = colors,
         accentColor = accent,
-        categoryType = "topic"
+        categoryType = "topic",
+        backgroundImageRes = backgroundResForTopic(title, textbookId, gradeId)
     )
 }
 
@@ -95,21 +101,12 @@ fun VerticalCardsScreen(
     var showFilterDropdown by remember { mutableStateOf(false) }
 
     val dbTopics by testsViewModel.allTopics.collectAsState()
+    val testsGradeCards by testsViewModel.testsGradeCards.collectAsState()
+    val testsDirectionCards by testsViewModel.testsDirectionCards.collectAsState()
 
-    val gradeFilters = listOf(
-        "all" to "🌐 Barchasi (381 ta mavzu)",
-        "6_all" to "📚 6-sinf (44 ta mavzu)",
-        "7_uz" to "🇺🇿 7-sinf O‘zbekiston (35 ta mavzu)",
-        "7_jahon" to "🌍 7-sinf Jahon (40 ta mavzu)",
-        "8_uz" to "🇺🇿 8-sinf O‘zbekiston (45 ta mavzu)",
-        "8_jahon" to "🌍 8-sinf Jahon (35 ta mavzu)",
-        "9_uz" to "🇺🇿 9-sinf O‘zbekiston (30 ta mavzu)",
-        "9_jahon" to "🌍 9-sinf Jahon (40 ta mavzu)",
-        "10_uz" to "🇺🇿 10-sinf O‘zbekiston (30 ta mavzu)",
-        "10_jahon" to "🌍 10-sinf Jahon (30 ta mavzu)",
-        "11_uz" to "🇺🇿 11-sinf O‘zbekiston (25 ta mavzu)",
-        "11_jahon" to "🌍 11-sinf Jahon (25 ta mavzu)"
-    )
+    LaunchedEffect(Unit) {
+        testsViewModel.loadCounts(0)
+    }
 
     // Sort chronologically starting from 6-sinf downwards
     val sortedDbTopics = remember(dbTopics) {
@@ -118,6 +115,23 @@ fun VerticalCardsScreen(
                 .thenBy { if (it.textbookId.contains("jahon")) 1 else 0 }
                 .thenBy { it.number }
                 .thenBy { it.title }
+        )
+    }
+
+    val gradeFilters = remember(sortedDbTopics.size) {
+        listOf(
+            "all" to "🌐 Barchasi (${sortedDbTopics.size.coerceAtLeast(381)} ta mavzu)",
+            "6_all" to "📚 6-sinf Qadimgi dunyo",
+            "7_uz" to "🇺🇿 7-sinf O‘zbekiston",
+            "7_jahon" to "🌍 7-sinf Jahon",
+            "8_uz" to "🇺🇿 8-sinf O‘zbekiston",
+            "8_jahon" to "🌍 8-sinf Jahon",
+            "9_uz" to "🇺🇿 9-sinf O‘zbekiston",
+            "9_jahon" to "🌍 9-sinf Jahon",
+            "10_uz" to "🇺🇿 10-sinf O‘zbekiston",
+            "10_jahon" to "🌍 10-sinf Jahon",
+            "11_uz" to "🇺🇿 11-sinf O‘zbekiston",
+            "11_jahon" to "🌍 11-sinf Jahon"
         )
     }
 
@@ -141,40 +155,36 @@ fun VerticalCardsScreen(
         }
     }
 
-    val allItems = remember(categoryType, filteredDbTopics) {
+    val allItems = remember(categoryType, filteredDbTopics, testsGradeCards, testsDirectionCards) {
         when (categoryType) {
-            "grades" -> listOf(
-                TestCardItem("6_all", "6-Sinf Qadimgi Dunyo Tarixi", "Qadimgi sivilizatsiyalar", 8, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF1E1B4B), Color(0xFF312E81)), Color(0xFF10B981), "grade"),
-                TestCardItem("7_uz", "7-Sinf O'zbekiston Tarixi", "Ilk o'rta asrlar", 7, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF065F46), Color(0xFF047857)), Color(0xFF3B82F6), "grade"),
-                TestCardItem("7_jahon", "7-Sinf Jahon Tarixi", "O'rta asrlar tarixi", 7, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF0F766E), Color(0xFF115E59)), Color(0xFF10B981), "grade"),
-                TestCardItem("8_uz", "8-Sinf O'zbekiston Tarixi", "XVI-XIX asr boshlari", 9, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF854D0E), Color(0xFFA16207)), Color(0xFFF59E0B), "grade"),
-                TestCardItem("8_jahon", "8-Sinf Jahon Tarixi", "Yangi davr tarixi", 7, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF9A3412), Color(0xFF7C2D12)), Color(0xFF3B82F6), "grade"),
-                TestCardItem("9_uz", "9-Sinf O'zbekiston Tarixi", "Mustamlaka davri", 6, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF7C2D12), Color(0xFF9A3412)), Color(0xFF8B5CF6), "grade"),
-                TestCardItem("9_jahon", "9-Sinf Jahon Tarixi", "XIX asr oxiri - XX asr", 8, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF6B21A8), Color(0xFF581C87)), Color(0xFF10B981), "grade"),
-                TestCardItem("10_uz", "10-Sinf O'zbekiston Tarixi", "Jadidchilik va sho'rolar", 6, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF4C1D95), Color(0xFF5B21B6)), Color(0xFFF59E0B), "grade"),
-                TestCardItem("10_jahon", "10-Sinf Jahon Tarixi", "XX asr birinchi yarmi", 6, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF1E3A8A), Color(0xFF1E40AF)), Color(0xFF3B82F6), "grade"),
-                TestCardItem("11_uz", "11-Sinf O'zbekiston Tarixi", "Mustaqillik yillari", 5, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF0F172A), Color(0xFF1E293B)), Color(0xFF10B981), "grade"),
-                TestCardItem("11_jahon", "11-Sinf Jahon Tarixi", "Zamonaviy dunyo", 5, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF1E293B), Color(0xFF0F172A)), Color(0xFF8B5CF6), "grade")
-            )
-            "directions" -> listOf(
-                TestCardItem("EVENT", "Tarixiy Hodisalar va Janglar", "Saralangan biletlar", 15, 0, Icons.Default.Event, listOf(Color(0xFF1E1B4B), Color(0xFF3730A3)), Color(0xFF10B981), "direction"),
-                TestCardItem("PERSON", "Tarixiy Shaxslar va Hukmdorlar", "Buyuk siymolar", 20, 0, Icons.Default.Person, listOf(Color(0xFF831843), Color(0xFF9D174D)), Color(0xFF3B82F6), "direction"),
-                TestCardItem("YEAR", "Yillar va Muhim Sanalar", "Xronologik tartib", 18, 0, Icons.Default.CalendarMonth, listOf(Color(0xFF064E3B), Color(0xFF065F46)), Color(0xFFF59E0B), "direction"),
-                TestCardItem("WAR", "Urushlar va Shartnomalar", "Harbiy yurishlar", 12, 0, Icons.Default.Security, listOf(Color(0xFF7F1D1D), Color(0xFF991B1B)), Color(0xFF10B981), "direction"),
-                TestCardItem("CITY", "Shaharlar va Madaniyat", "Joylashuvlar", 14, 0, Icons.Default.LocationOn, listOf(Color(0xFF14532D), Color(0xFF15803D)), Color(0xFF8B5CF6), "direction"),
-                TestCardItem("LOGICAL", "Mantiqiy va DTM Savollar", "DTM savollari", 25, 0, Icons.Default.Psychology, listOf(Color(0xFF0C4A6E), Color(0xFF0369A1)), Color(0xFF10B981), "direction")
-            )
+            "grades" -> testsGradeCards.ifEmpty {
+                listOf(
+                    TestCardItem("book_uz_6", "6-Sinf Qadimgi Dunyo Tarixi", "Qadimgi sivilizatsiyalar • 3334 ta bilet • 100000 ta test", 3334, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF1E1B4B), Color(0xFF312E81)), Color(0xFF10B981), "grade", backgroundResForBook("book_uz_6", 6)),
+                    TestCardItem("book_uz_7", "7-Sinf O'zbekiston Tarixi", "Ilk o'rta asrlar • 3334 ta bilet • 100000 ta test", 3334, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF065F46), Color(0xFF047857)), Color(0xFF3B82F6), "grade", backgroundResForBook("book_uz_7", 7)),
+                    TestCardItem("book_jahon_7", "7-Sinf Jahon Tarixi", "O'rta asrlar tarixi • 3334 ta bilet • 100000 ta test", 3334, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF0F766E), Color(0xFF115E59)), Color(0xFF10B981), "grade", backgroundResForBook("book_jahon_7", 7)),
+                    TestCardItem("book_uz_8", "8-Sinf O'zbekiston Tarixi", "XVI-XIX asr boshlari • 3334 ta bilet • 100000 ta test", 3334, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF854D0E), Color(0xFFA16207)), Color(0xFFF59E0B), "grade", backgroundResForBook("book_uz_8", 8)),
+                    TestCardItem("book_jahon_8", "8-Sinf Jahon Tarixi", "Yangi davr tarixi • 3334 ta bilet • 100000 ta test", 3334, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF9A3412), Color(0xFF7C2D12)), Color(0xFF3B82F6), "grade", backgroundResForBook("book_jahon_8", 8)),
+                    TestCardItem("book_uz_9", "9-Sinf O'zbekiston Tarixi", "Mustamlaka davri • 3334 ta bilet • 100000 ta test", 3334, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF7C2D12), Color(0xFF9A3412)), Color(0xFF8B5CF6), "grade", backgroundResForBook("book_uz_9", 9)),
+                    TestCardItem("book_jahon_9", "9-Sinf Jahon Tarixi", "XIX asr oxiri - XX asr • 3334 ta bilet • 100000 ta test", 3334, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF6B21A8), Color(0xFF581C87)), Color(0xFF10B981), "grade", backgroundResForBook("book_jahon_9", 9)),
+                    TestCardItem("book_uz_10", "10-Sinf O'zbekiston Tarixi", "Jadidchilik va sho'rolar • 3334 ta bilet • 100000 ta test", 3334, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF4C1D95), Color(0xFF5B21B6)), Color(0xFFF59E0B), "grade", backgroundResForBook("book_uz_10", 10)),
+                    TestCardItem("book_jahon_10", "10-Sinf Jahon Tarixi", "XX asr birinchi yarmi • 3334 ta bilet • 100000 ta test", 3334, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF1E3A8A), Color(0xFF1E40AF)), Color(0xFF3B82F6), "grade", backgroundResForBook("book_jahon_10", 10)),
+                    TestCardItem("book_uz_11", "11-Sinf O'zbekiston Tarixi", "Mustaqillik yillari • 3334 ta bilet • 100000 ta test", 3334, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF0F172A), Color(0xFF1E293B)), Color(0xFF10B981), "grade", backgroundResForBook("book_uz_11", 11)),
+                    TestCardItem("book_jahon_11", "11-Sinf Jahon Tarixi", "Zamonaviy dunyo • 3334 ta bilet • 100000 ta test", 3334, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF1E293B), Color(0xFF0F172A)), Color(0xFF8B5CF6), "grade", backgroundResForBook("book_jahon_11", 11))
+                )
+            }
+            "directions" -> testsDirectionCards.ifEmpty {
+                listOf(
+                    TestCardItem("EVENT", "Tarixiy Hodisalar", "Qadimgi va o'rta asrlar • 11062 ta bilet • 331844 ta test", 11062, 0, Icons.Default.Event, listOf(Color(0xFF1E1B4B), Color(0xFF3730A3)), Color(0xFF10B981), "direction", backgroundResForDirection("EVENT")),
+                    TestCardItem("PERSON", "Tarixiy Shaxslar", "Buyuk siymolar • 5531 ta bilet • 165903 ta test", 5531, 0, Icons.Default.Person, listOf(Color(0xFF831843), Color(0xFF9D174D)), Color(0xFF3B82F6), "direction", backgroundResForDirection("PERSON")),
+                    TestCardItem("YEAR", "Yillar va Sanalar", "Xronologik tartib • 7374 ta bilet • 221211 ta test", 7374, 0, Icons.Default.CalendarMonth, listOf(Color(0xFF064E3B), Color(0xFF065F46)), Color(0xFFF59E0B), "direction", backgroundResForDirection("YEAR")),
+                    TestCardItem("WAR", "Urushlar va Janglar", "Harbiy yurishlar • 18167 ta bilet • 545000 ta test", 18167, 0, Icons.Default.Security, listOf(Color(0xFF7F1D1D), Color(0xFF991B1B)), Color(0xFF10B981), "direction", backgroundResForDirection("WAR")),
+                    TestCardItem("CITY", "Shahar va Hududlar", "Joylashuvlar • 3685 ta bilet • 110543 ta test", 3685, 0, Icons.Default.LocationOn, listOf(Color(0xFF14532D), Color(0xFF15803D)), Color(0xFF8B5CF6), "direction", backgroundResForDirection("CITY")),
+                    TestCardItem("FACT", "Tarixiy Faktlar", "Manbalar va obidalar • 16167 ta bilet • 485000 ta test", 16167, 0, Icons.Default.Info, listOf(Color(0xFF312E81), Color(0xFF4338CA)), Color(0xFFF59E0B), "direction", backgroundResForDirection("FACT")),
+                    TestCardItem("LOGICAL", "Mantiqiy va DTM", "DTM savollari • 9017 ta bilet • 270499 ta test", 9017, 0, Icons.Default.Psychology, listOf(Color(0xFF0C4A6E), Color(0xFF0369A1)), Color(0xFF10B981), "direction", backgroundResForDirection("LOGICAL"))
+                )
+            }
             else -> { // "topics"
-                if (filteredDbTopics.isNotEmpty()) {
-                    filteredDbTopics.map { it.toTestCardItem() }
-                } else {
-                    listOf(
-                        TestCardItem("topic_temur", "Amir Temur va Temuriylar Saltanati", "Amir Temur davlati", 2, 0, Icons.Default.Person, listOf(Color(0xFF1E1B4B), Color(0xFF312E81)), Color(0xFF10B981), "topic"),
-                        TestCardItem("topic_silkroad", "Buyuk Ipak Yo'li va Savdo", "Qadimgi karvon yo'llari", 2, 0, Icons.Default.LocationOn, listOf(Color(0xFF065F46), Color(0xFF047857)), Color(0xFF3B82F6), "topic"),
-                        TestCardItem("topic_somoniylar", "Somoniylar Davlati Madaniyati", "IX–X asrlar O'rta Osiyo", 2, 0, Icons.AutoMirrored.Filled.MenuBook, listOf(Color(0xFF854D0E), Color(0xFFA16207)), Color(0xFF10B981), "topic"),
-                        TestCardItem("topic_qadimgi_rim", "Qadimgi Rim va Gretsiya", "Jahon tarixi", 2, 0, Icons.Default.Event, listOf(Color(0xFF7C2D12), Color(0xFF9A3412)), Color(0xFF8B5CF6), "topic")
-                    )
-                }
+                filteredDbTopics.map { it.toTestCardItem() }
             }
         }
     }
@@ -317,6 +327,7 @@ fun VerticalCardsScreen(
                         icon = item.icon,
                         gradientColors = item.gradientColors,
                         accentColor = item.accentColor,
+                        backgroundImageRes = item.backgroundImageRes,
                         onCardClick = { onCardClick(item.id, item.categoryType, item.title) },
                         modifier = Modifier
                             .fillMaxWidth()

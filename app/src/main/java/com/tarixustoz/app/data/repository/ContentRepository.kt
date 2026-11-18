@@ -15,6 +15,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
@@ -44,6 +46,28 @@ class ContentRepository @Inject constructor(
     }
     private val directionMemory = mutableMapOf<Int, Map<String, Int>>()
 
+    /** Har bir mavzu bo'yicha savollar soni keshi. */
+    private val topicCountsPrefs by lazy {
+        context.getSharedPreferences("topic_counts", Context.MODE_PRIVATE)
+    }
+    private val topicCountsMemory = mutableMapOf<String, Int>()
+
+    /** Bilet savollari keshi — qayta ochilganda serverga yuklama tushirmaydi. */
+    private val ticketCachePrefs by lazy {
+        context.getSharedPreferences("ticket_cache_prefs", Context.MODE_PRIVATE)
+    }
+
+    /** Kunlik savol va sinxronizatsiya vaqtlari keshi. */
+    private val syncMetaPrefs by lazy {
+        context.getSharedPreferences("sync_meta_prefs", Context.MODE_PRIVATE)
+    }
+
+    private val syncMutex = Mutex()
+    @Volatile
+    private var lastSyncedAtMs: Long = 0L
+
+    private val sixHoursMs = 6L * 60L * 60L * 1000L
+
     init {
         CoroutineScope(Dispatchers.IO).launch {
             seedIfNeeded()
@@ -69,24 +93,84 @@ class ContentRepository @Inject constructor(
 
     fun getTopics(chapterId: String): Flow<List<Topic>> =
         db.topicDao().getByChapter(chapterId).map { list ->
-            list.map { it.toDomain(json) }
+            val countsByBook = list.groupingBy { it.textbookId }.eachCount()
+            list.map { it.toDomain(json, resolveTopicCount(it.id, countsByBook[it.textbookId] ?: 35)) }
         }
 
     fun getTopicsByTextbook(textbookId: String): Flow<List<Topic>> =
         db.topicDao().getByTextbook(textbookId).map { list ->
-            list.map { it.toDomain(json) }
+            val count = list.size.coerceAtLeast(22)
+            list.map { it.toDomain(json, resolveTopicCount(it.id, count)) }
         }
+
+    data class BookKeySpec(val grade: Int, val subject: String?)
+
+    fun resolveBookKey(rawId: String): BookKeySpec {
+        val clean = rawId.trim().lowercase().removePrefix("book_")
+        val grade = clean.filter { it.isDigit() }.toIntOrNull() ?: 0
+        val subject = when {
+            clean.contains("jahon") -> "jahon"
+            clean.contains("uz") || clean.contains("qadimgi") || grade == 6 -> "uzbekiston"
+            else -> null
+        }
+        return BookKeySpec(grade, subject)
+    }
+
+    fun isBookKey(rawId: String): Boolean {
+        val lower = rawId.trim().lowercase()
+        if (lower.startsWith("topic_")) return false
+        val directionCodes = setOf("event", "person", "year", "war", "city", "fact", "logical", "all")
+        if (lower in directionCodes) return false
+        return lower.startsWith("book_") ||
+            lower.startsWith("uz_") ||
+            lower.startsWith("jahon_") ||
+            lower == "6_all" ||
+            lower.matches(Regex("^(6|7|8|9|10|11)_(uz|jahon|all)$")) ||
+            lower.all { it.isDigit() }
+    }
 
     suspend fun getTextbookById(id: String): Textbook? {
         val cleanId = id.removePrefix("book_")
-        return db.textbookDao().getById(cleanId)?.toDomain() ?: db.textbookDao().getById(id)?.toDomain()
+        db.textbookDao().getById(cleanId)?.let { return it.toDomain() }
+        db.textbookDao().getById(id)?.let { return it.toDomain() }
+        val spec = resolveBookKey(id)
+        if (spec.grade in 6..11) {
+            val mappedId = if (spec.subject == "jahon" && spec.grade > 6) "jahon_${spec.grade}" else "uz_${spec.grade}"
+            return db.textbookDao().getById(mappedId)?.toDomain()
+        }
+        return null
+    }
+
+    suspend fun getBookQuestionCount(categoryKey: String): Int {
+        val spec = resolveBookKey(categoryKey)
+        if (spec.grade !in 6..11) {
+            return getTextbookById(categoryKey)?.totalQuestions?.takeIf { it > 0 } ?: 100_000
+        }
+        if (spec.subject == null && spec.grade > 6) {
+            val uz = db.textbookDao().getById("uz_${spec.grade}")?.totalQuestions?.takeIf { it > 0 } ?: 100_000
+            val jahon = db.textbookDao().getById("jahon_${spec.grade}")?.totalQuestions?.takeIf { it > 0 } ?: 100_000
+            return uz + jahon
+        }
+        val mappedId = if (spec.subject == "jahon" && spec.grade > 6) "jahon_${spec.grade}" else "uz_${spec.grade}"
+        return db.textbookDao().getById(mappedId)?.totalQuestions?.takeIf { it > 0 } ?: 100_000
     }
 
     suspend fun getTopicById(topicId: String): Topic? = withContext(Dispatchers.IO) {
         val withPrefix = if (topicId.startsWith("topic_")) topicId else "topic_$topicId"
         val cleanId = topicId.removePrefix("topic_")
-        db.topicDao().getById(withPrefix)?.toDomain(json) 
-            ?: db.topicDao().getById(cleanId)?.toDomain(json)
+        val entity = db.topicDao().getById(withPrefix) ?: db.topicDao().getById(cleanId) ?: return@withContext null
+        val fallbackBookTopics = DEFAULT_TOPIC_COUNTS[entity.textbookId] ?: 35
+        entity.toDomain(json, resolveTopicCount(entity.id, fallbackBookTopics))
+    }
+
+    fun resolveTopicCount(topicId: String, topicsInBook: Int = 35): Int {
+        topicCountsMemory[topicId]?.takeIf { it > 0 }?.let { return it }
+        val stored = topicCountsPrefs.getInt(topicId, 0)
+        if (stored > 0) {
+            topicCountsMemory[topicId] = stored
+            return stored
+        }
+        return 100_000 / topicsInBook.coerceAtLeast(22)
     }
 
     suspend fun getQuestionsForTopic(topicId: String): List<Question> = withContext(Dispatchers.IO) {
@@ -148,32 +232,92 @@ class ContentRepository @Inject constructor(
             limit = limit
         ).map { it.toDomain(json) }
 
-    /** One ticket straight from the backend (30 questions of one direction). */
+    /** One ticket straight from the backend (30 questions of one direction, book, or topic), disk-cached. */
     suspend fun fetchTicketFromApi(
         categoryKey: String,
         ticketIndex: Int,
         count: Int = 30,
         grade: Int = 0
     ): List<Question> = withContext(Dispatchers.IO) {
-        try {
-            val cleanKey = categoryKey.removePrefix("book_")
-            val gradeFilter = when {
-                categoryKey.startsWith("book_") || categoryKey.startsWith("uz_") || categoryKey.startsWith("jahon_") -> {
-                    cleanKey.filter { it.isDigit() }.toIntOrNull()
+        val cacheKey = "${BuildConfig.TARIX_API_BASE_URL}:ticket_${categoryKey}_${ticketIndex}_${count}_${grade}"
+        val cachedJson = ticketCachePrefs.getString(cacheKey, null)
+        if (!cachedJson.isNullOrBlank()) {
+            try {
+                val cachedList = json.decodeFromString<List<Question>>(cachedJson)
+                if (cachedList.isNotEmpty()) {
+                    return@withContext cachedList
                 }
-                grade > 0 -> grade
-                else -> null
+            } catch (_: Exception) {
+                ticketCachePrefs.edit().remove(cacheKey).apply()
             }
-            val reqCategory = if (categoryKey.startsWith("book_")) {
-                if (cleanKey.contains("jahon")) "JAHON" else "UZBEKISTON"
-            } else categoryKey
+        }
 
-            apiService.getTicket(
-                category = reqCategory,
-                grade = gradeFilter,
-                ticket = ticketIndex,
-                size = count
-            ).questions.map { it.toDomain() }
+        try {
+            val fetched = when {
+                categoryKey.startsWith("topic_") -> {
+                    val numericId = categoryKey.removePrefix("topic_").toLongOrNull()
+                    val directTopic = if (numericId != null) {
+                        apiService.getQuestions(
+                            topicId = numericId,
+                            limit = count,
+                            offset = (ticketIndex - 1) * count
+                        ).map { it.toDomain() }
+                    } else {
+                        emptyList()
+                    }
+                    if (directTopic.isNotEmpty()) {
+                        directTopic
+                    } else {
+                        val topicObj = getTopicById(categoryKey)
+                        val tGrade = topicObj?.let { resolveBookKey(it.textbookId).grade } ?: resolveBookKey(categoryKey).grade
+                        val tSubj = topicObj?.let { resolveBookKey(it.textbookId).subject } ?: resolveBookKey(categoryKey).subject
+                        val subjectParam = when (tSubj) {
+                            "jahon" -> "jahon"
+                            "uzbekiston" -> if (tGrade == 6) "qadimgi" else "uzbekiston"
+                            else -> null
+                        }
+                        apiService.getTicket(
+                            category = "ALL",
+                            grade = tGrade.takeIf { it > 0 },
+                            subject = subjectParam,
+                            ticket = ticketIndex,
+                            size = count
+                        ).questions.map { it.toDomain() }
+                    }
+                }
+                isBookKey(categoryKey) -> {
+                    val spec = resolveBookKey(categoryKey)
+                    val gradeFilter = spec.grade.takeIf { it > 0 } ?: grade.takeIf { it > 0 }
+                    val subjectParam = when (spec.subject) {
+                        "jahon" -> "jahon"
+                        "uzbekiston" -> if (gradeFilter == 6) "qadimgi" else "uzbekiston"
+                        else -> null
+                    }
+                    apiService.getTicket(
+                        category = "ALL",
+                        grade = gradeFilter,
+                        subject = subjectParam,
+                        ticket = ticketIndex,
+                        size = count
+                    ).questions.map { it.toDomain() }
+                }
+                else -> {
+                    apiService.getTicket(
+                        category = categoryKey,
+                        grade = grade.takeIf { it > 0 },
+                        subject = null,
+                        ticket = ticketIndex,
+                        size = count
+                    ).questions.map { it.toDomain() }
+                }
+            }
+            if (fetched.isNotEmpty()) {
+                try {
+                    ticketCachePrefs.edit().putString(cacheKey, json.encodeToString(fetched)).apply()
+                    insertQuestionsToDb(fetched)
+                } catch (_: Exception) { }
+            }
+            fetched
         } catch (e: Exception) {
             e.printStackTrace()
             emptyList()
@@ -190,30 +334,16 @@ class ContentRepository @Inject constructor(
         if (remote.isNotEmpty()) return@withContext remote
 
         val offset = (ticketIndex - 1) * count
-        when {
+        val local = when {
             categoryKey.startsWith("topic_") || getTopicById(categoryKey) != null || getTopicById("topic_$categoryKey") != null -> {
                 val topicId = categoryKey.removePrefix("topic_")
                 val baseQuestions = getQuestionsForTopic(topicId)
-                val padded = mutableListOf<Question>()
-                if (baseQuestions.isNotEmpty()) {
-                    padded.addAll(baseQuestions)
-                    var idx = 0
-                    while (padded.size < 300) {
-                        val q = baseQuestions[idx % baseQuestions.size]
-                        padded.add(q.copy(id = "${q.id}_p_${padded.size}"))
-                        idx++
-                    }
-                }
-                val offset = (ticketIndex - 1) * count
-                padded.drop(offset).take(count)
+                baseQuestions.drop(offset % baseQuestions.size.coerceAtLeast(1)).take(count)
             }
-            categoryKey.startsWith("book_") || categoryKey.startsWith("uz_") || categoryKey.startsWith("jahon_") || categoryKey.contains("_") || categoryKey == "6_all" || categoryKey.all { it.isDigit() } -> {
-                val gradeId = categoryKey.filter { it.isDigit() }.toIntOrNull() ?: grade
-                val subjectId = when {
-                    categoryKey.contains("jahon") -> "jahon"
-                    categoryKey.contains("uz") -> "uzbekiston"
-                    else -> "ALL"
-                }
+            isBookKey(categoryKey) -> {
+                val spec = resolveBookKey(categoryKey)
+                val gradeId = spec.grade.takeIf { it > 0 } ?: grade
+                val subjectId = spec.subject ?: "ALL"
                 val localQuestions = db.questionDao().getByGradeAndSubjectWithOffset(
                     gradeId = gradeId,
                     subjectId = subjectId,
@@ -233,7 +363,7 @@ class ContentRepository @Inject constructor(
             }
             else -> {
                 db.questionDao().getFilteredWithTopicsOffset(
-                    gradeId = 0,
+                    gradeId = grade,
                     category = categoryKey,
                     difficulty = "ALL",
                     topicIds = emptyList(),
@@ -243,6 +373,10 @@ class ContentRepository @Inject constructor(
                 ).map { it.toDomain(json) }
             }
         }
+        if (local.isNotEmpty()) return@withContext local
+
+        val specGrade = if (isBookKey(categoryKey)) resolveBookKey(categoryKey).grade else grade
+        getFallbackQuestions(count, categoryKey, specGrade)
     }
 
     suspend fun getWrongQuestionsForReview(limit: Int): List<Question> =
@@ -250,36 +384,137 @@ class ContentRepository @Inject constructor(
 
     suspend fun getRandomQuestionForNotification(): Question? =
         db.questionDao().getRandom(7, "uzbekiston", 10).randomOrNull()?.toDomain(json)
+            ?: getFallbackQuestions(1, "ALL", 0).firstOrNull()
 
-    suspend fun getDailyQuestion(excludeIds: Set<String> = emptySet(), grade: Int = 0): Question? = withContext(Dispatchers.IO) {
-        val targetGrades = if (grade in 6..11) (6..grade.coerceIn(6, 11)).toList() else (6..11).toList()
+    suspend fun getDailyQuestion(
+        excludeIds: Set<String> = emptySet(),
+        grade: Int = 0,
+        nonce: Int = 0
+    ): Question? = withContext(Dispatchers.IO) {
+        val today = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US).format(java.util.Date())
+        val dailyCacheKey = "daily_q_${today}_g$grade"
+        if (nonce == 0 && excludeIds.isEmpty()) {
+            val cachedJson = syncMetaPrefs.getString(dailyCacheKey, null)
+            if (!cachedJson.isNullOrBlank()) {
+                try {
+                    val cached = json.decodeFromString<Question>(cachedJson)
+                    if (cached.options.any { it.text.isNotBlank() } && !excludeIds.contains(cached.id)) {
+                        return@withContext cached
+                    }
+                } catch (_: Exception) { }
+            }
+        }
 
-        val allFiltered = mutableListOf<Question>()
-        for (g in targetGrades) {
-            val list = db.questionDao().getFilteredWithTopics(
-                gradeId = g,
+        val excludeParam = excludeIds
+            .map { it.removePrefix("q_") }
+            .filter { it.isNotBlank() && it.all(Char::isDigit) }
+            .take(30)
+            .joinToString(",")
+            .takeIf { it.isNotBlank() }
+        val userIdParam = if (nonce == 0) "daily_$today" else "daily_${today}_$nonce"
+        val nonceParam = if (nonce == 0) "0" else "${nonce}_${System.currentTimeMillis()}"
+        val apiDaily = try {
+            apiService.getDailyQuestion(
+                grade = grade.takeIf { it > 0 },
+                userIdentifier = userIdParam,
+                nonce = nonceParam,
+                exclude = excludeParam
+            ).toDomain()
+        } catch (_: Exception) {
+            null
+        }
+        if (apiDaily != null &&
+            apiDaily.options.any { it.text.isNotBlank() } &&
+            !excludeIds.contains(apiDaily.id)
+        ) {
+            if (nonce == 0 && excludeIds.isEmpty()) {
+                try {
+                    syncMetaPrefs.edit().putString(dailyCacheKey, json.encodeToString(apiDaily)).apply()
+                } catch (_: Exception) { }
+            }
+            insertQuestionsToDb(listOf(apiDaily))
+            return@withContext apiDaily
+        }
+
+        val directionRotation = listOf("EVENT", "PERSON", "YEAR", "WAR", "CITY", "FACT", "LOGICAL")
+        val difficultyRotation = listOf("MEDIUM", "EASY", "HARD")
+        val chosenDirection = directionRotation[(nonce + today.hashCode().ushr(1)) % directionRotation.size]
+        val chosenDifficulty = difficultyRotation[nonce % difficultyRotation.size]
+
+        val apiQuizPick = fetchQuizFromApi(
+            count = 15,
+            categoryCode = chosenDirection,
+            grade = grade.coerceAtLeast(0),
+            difficulty = chosenDifficulty
+        ).filter { it.options.any { opt -> opt.text.isNotBlank() } && !excludeIds.contains(it.id) }
+            .shuffled()
+            .firstOrNull()
+        if (apiQuizPick != null) {
+            return@withContext apiQuizPick
+        }
+
+        val ticketNumber = (nonce % 12) + 1
+        val apiTicketPick = try {
+            apiService.getTicket(
+                category = chosenDirection,
+                grade = grade.takeIf { it > 0 },
+                subject = null,
+                ticket = ticketNumber,
+                size = 30
+            ).questions.map { it.toDomain() }.also { fetched ->
+                if (fetched.isNotEmpty()) insertQuestionsToDb(fetched)
+            }.filter { it.options.any { opt -> opt.text.isNotBlank() } && !excludeIds.contains(it.id) }
+                .shuffled()
+                .firstOrNull()
+        } catch (_: Exception) {
+            null
+        }
+        if (apiTicketPick != null) {
+            return@withContext apiTicketPick
+        }
+
+        val localRandomPool = if (grade in 6..11) {
+            db.questionDao().getFilteredWithTopics(
+                gradeId = grade,
                 category = "ALL",
                 difficulty = "ALL",
                 topicIds = emptyList(),
                 selectAllTopics = true,
-                limit = 20
-            ).map { it.toDomain(json) }
-            allFiltered.addAll(list)
+                limit = 60
+            ).map { it.toDomain(json) }.ifEmpty {
+                db.questionDao().getRandomAny(60).map { it.toDomain(json) }
+            }
+        } else {
+            db.questionDao().getRandomAny(60).map { it.toDomain(json) }
+        }
+        val unseenDb = localRandomPool.filter {
+            it.options.any { opt -> opt.text.isNotBlank() } && !excludeIds.contains(it.id)
+        }
+        val dbPick = (if (unseenDb.isNotEmpty()) unseenDb else localRandomPool).shuffled().firstOrNull()
+        if (dbPick != null && !excludeIds.contains(dbPick.id)) {
+            return@withContext dbPick
         }
 
-        val available = allFiltered.filterNot { excludeIds.contains(it.id) }
-        (if (available.isNotEmpty()) available else allFiltered).shuffled().firstOrNull()
-            ?: getRandomQuestionForNotification()
+        val fallbackPool = getFallbackQuestions(30, "ALL", if (grade in 6..11) grade else 0)
+            .ifEmpty { getFallbackQuestions(30, "ALL", 0) }
+        val unseenFallback = fallbackPool.filterNot { excludeIds.contains(it.id) }
+        (if (unseenFallback.isNotEmpty()) unseenFallback else fallbackPool).shuffled().firstOrNull()
+            ?: dbPick
     }
 
-    fun getAllTopicsFlow(): Flow<List<Topic>> = 
-        db.topicDao().getAll().map { list -> 
-            list.map { it.toDomain(json) } 
+    fun getAllTopicsFlow(): Flow<List<Topic>> =
+        db.topicDao().getAll().map { list ->
+            val countsByBook = list.groupingBy { it.textbookId }.eachCount()
+            list.map { it.toDomain(json, resolveTopicCount(it.id, countsByBook[it.textbookId] ?: 35)) }
         }
 
     suspend fun getTopicCountsMap(): Map<String, Int> = withContext(Dispatchers.IO) {
         try {
-            db.questionDao().getTopicCounts().associate { it.topicId to it.count }
+            val topics = db.topicDao().getAllOnce()
+            val countsByBook = topics.groupingBy { it.textbookId }.eachCount()
+            topics.associate { t ->
+                t.id to resolveTopicCount(t.id, countsByBook[t.textbookId] ?: 35)
+            }
         } catch (e: Exception) {
             emptyMap()
         }
@@ -294,37 +529,57 @@ class ContentRepository @Inject constructor(
         }
     }
 
+    fun defaultDirectionCounts(grade: Int = 0): Map<String, Int> {
+        val base = mapOf(
+            "EVENT" to 331_844,
+            "PERSON" to 165_903,
+            "YEAR" to 221_211,
+            "WAR" to 545_000,
+            "CITY" to 110_543,
+            "FACT" to 485_000,
+            "LOGICAL" to 270_499
+        )
+        if (grade !in 6..11) return base
+        val booksInGrade = if (grade == 6) 1 else 2
+        return base.mapValues { (_, total) -> (total * booksInGrade) / 11 }
+    }
+
     suspend fun fetchDirectionCounts(
         grade: Int = 0,
         forceRefresh: Boolean = false
     ): Map<String, Int> = withContext(Dispatchers.IO) {
         if (!forceRefresh) {
             directionMemory[grade]?.let { return@withContext it }
-            cachedDirectionCounts(grade)?.let {
-                directionMemory[grade] = it
-                return@withContext it
+            val lastTs = directionPrefs.getLong("v2_grade_${grade}_ts", 0L)
+            if (System.currentTimeMillis() - lastTs < sixHoursMs) {
+                cachedDirectionCounts(grade)?.let { cached ->
+                    directionMemory[grade] = cached
+                    return@withContext cached
+                }
             }
         }
         try {
             val fresh = apiService.getDirections(grade = grade.takeIf { it > 0 })
                 .directions
                 .associate { it.code to it.count }
-            if (fresh.isEmpty()) {
-                cachedDirectionCounts(grade) ?: emptyMap()
-            } else {
+            if (fresh.isNotEmpty() && fresh.values.any { it > 0 }) {
                 directionMemory[grade] = fresh
-                directionPrefs.edit().putString("grade_$grade", json.encodeToString(fresh)).apply()
-                fresh
+                directionPrefs.edit()
+                    .putString("v2_grade_$grade", json.encodeToString(fresh))
+                    .putLong("v2_grade_${grade}_ts", System.currentTimeMillis())
+                    .apply()
+                return@withContext fresh
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            cachedDirectionCounts(grade) ?: emptyMap()
         }
+        cachedDirectionCounts(grade) ?: defaultDirectionCounts(grade)
     }
 
     /** Oxirgi saqlangan sonlar (tarmoqsiz, darhol). */
     fun cachedDirectionCounts(grade: Int = 0): Map<String, Int>? {
-        val raw = directionPrefs.getString("grade_$grade", null) ?: return null
+        directionMemory[grade]?.let { return it }
+        val raw = directionPrefs.getString("v2_grade_$grade", null) ?: return null
         return try {
             json.decodeFromString<Map<String, Int>>(raw).takeIf { it.isNotEmpty() }
         } catch (e: Exception) {
@@ -592,6 +847,68 @@ class ContentRepository @Inject constructor(
                 explanation = "Mustaqillik deklaratsiyasi O'zbekiston SSR Oliy Kengashining II sessiyasida 1990-yil 20-iyunda qabul qilingan.",
                 historicalDate = "1990-yil 20-iyun",
                 sourceReference = "11-sinf O'zbekiston tarixi"
+            ),
+
+            // Tarixiy faktlar va urushlar (oflayn zahira)
+            Question(
+                id = "fb_fact_1",
+                topicId = "topic_uz_7_36",
+                textbookId = "uz_7",
+                gradeId = 7,
+                subjectId = "uzbekiston",
+                type = QuestionType.SINGLE_CHOICE,
+                difficulty = Difficulty.MEDIUM,
+                category = QuestionCategory.FACT,
+                text = "Mirzo Ulug‘bek Samarqanddagi mashhur rasadxonani nechanchi yilda bunyod ettirgan?",
+                options = listOf(
+                    AnswerOption("a", "1428–1429-yillarda", true),
+                    AnswerOption("b", "1409–1411-yillarda", false),
+                    AnswerOption("c", "1444–1445-yillarda", false),
+                    AnswerOption("d", "1435–1437-yillarda", false)
+                ),
+                explanation = "Mirzo Ulug‘bek rasadxonasi 1428–1429-yillarda Ko‘hak tepaligi etagida qurilgan.",
+                historicalDate = "1428–1429",
+                sourceReference = "7-sinf O‘zbekiston tarixi"
+            ),
+            Question(
+                id = "fb_fact_2",
+                topicId = "topic_uz_7_26",
+                textbookId = "uz_7",
+                gradeId = 7,
+                subjectId = "uzbekiston",
+                type = QuestionType.SINGLE_CHOICE,
+                difficulty = Difficulty.MEDIUM,
+                category = QuestionCategory.FACT,
+                text = "“Devonu lug‘otit-turk” asari qaysi buyuk alloma tomonidan yaratilgan?",
+                options = listOf(
+                    AnswerOption("a", "Mahmud Koshg‘ariy", true),
+                    AnswerOption("b", "Yusuf Xos Hojib", false),
+                    AnswerOption("c", "Ahmad Yugnakiy", false),
+                    AnswerOption("d", "Abu Rayhon Beruniy", false)
+                ),
+                explanation = "Mahmud Koshg‘ariy 1072–1074-yillarda turkiy tillarning qomusiy lug‘ati — “Devonu lug‘otit-turk”ni yozgan.",
+                personality = "Mahmud Koshg‘ariy",
+                sourceReference = "7-sinf O‘zbekiston tarixi"
+            ),
+            Question(
+                id = "fb_war_1",
+                topicId = "topic_uz_7_20",
+                textbookId = "uz_7",
+                gradeId = 7,
+                subjectId = "uzbekiston",
+                type = QuestionType.SINGLE_CHOICE,
+                difficulty = Difficulty.MEDIUM,
+                category = QuestionCategory.WAR,
+                text = "Jaloliddin Manguberdi va Chingizxon qo‘shinlari o‘rtasidagi mashhur Parvon jangi qaysi yilda bo‘lib o‘tgan?",
+                options = listOf(
+                    AnswerOption("a", "1221-yil", true),
+                    AnswerOption("b", "1219-yil", false),
+                    AnswerOption("c", "1223-yil", false),
+                    AnswerOption("d", "1225-yil", false)
+                ),
+                explanation = "1221-yilda Parvon yaqinidagi jangda Jaloliddin Manguberdi mo‘g‘ul qo‘shinini mag‘lubiyatga uchratgan.",
+                historicalDate = "1221-yil",
+                sourceReference = "7-sinf O‘zbekiston tarixi"
             )
         )
 
@@ -600,113 +917,125 @@ class ContentRepository @Inject constructor(
             val gradeFiltered = filtered.filter { it.gradeId == gradeId }
             if (gradeFiltered.isNotEmpty()) {
                 filtered = gradeFiltered
-            } else {
-                return emptyList()
             }
         }
 
-        if (categoryCode == "YEAR") {
-            val yearFiltered = filtered.filter { it.category == QuestionCategory.YEAR || it.historicalDate != null }
-            if (yearFiltered.isNotEmpty()) filtered = yearFiltered
-        } else if (categoryCode == "PERSON") {
-            val personFiltered = filtered.filter { it.category == QuestionCategory.PERSON || it.personality != null }
-            if (personFiltered.isNotEmpty()) filtered = personFiltered
-        } else if (categoryCode == "CITY") {
-            val cityFiltered = filtered.filter { it.category == QuestionCategory.CITY }
-            if (cityFiltered.isNotEmpty()) filtered = cityFiltered
-        } else if (categoryCode == "EVENT") {
-            val eventFiltered = filtered.filter { it.category == QuestionCategory.EVENT }
-            if (eventFiltered.isNotEmpty()) filtered = eventFiltered
-        }
+        when (categoryCode) {
+            "YEAR" -> filtered.filter { it.category == QuestionCategory.YEAR || it.historicalDate != null }.ifEmpty { filtered }
+            "PERSON" -> filtered.filter { it.category == QuestionCategory.PERSON || it.personality != null }.ifEmpty { filtered }
+            "CITY" -> filtered.filter { it.category == QuestionCategory.CITY }.ifEmpty { filtered }
+            "EVENT" -> filtered.filter { it.category == QuestionCategory.EVENT }.ifEmpty { filtered }
+            "FACT" -> filtered.filter { it.category == QuestionCategory.FACT }.ifEmpty { filtered }
+            "WAR" -> filtered.filter { it.category == QuestionCategory.WAR }.ifEmpty { filtered }
+            else -> filtered
+        }.also { filtered = it }
 
         return filtered.shuffled().take(count.coerceAtLeast(1))
     }
 
-    suspend fun syncWithDjangoBackend(): Boolean = withContext(Dispatchers.IO) {
-        try {
-            // Fetch PDF Books from Django REST API
-            val apiBooks = try { apiService.getPdfBooks() } catch (e: Exception) { emptyList() }
-            if (apiBooks.isNotEmpty()) {
-                val entities = apiBooks.map { b ->
-                    val rawPdfUrl = b.pdfUrl ?: b.pdfFile
-                    val formattedPdfUrl = MediaUrls.resolve(rawPdfUrl)
-                    val formattedCoverUrl = MediaUrls.resolve(b.coverUrl ?: b.coverImage)
+    suspend fun syncWithDjangoBackend(force: Boolean = false): Boolean = withContext(Dispatchers.IO) {
+        syncMutex.withLock {
+            val now = System.currentTimeMillis()
+            val persistedSyncAt = maxOf(lastSyncedAtMs, syncMetaPrefs.getLong("last_synced_at_ms", 0L))
+            if (!force && now - persistedSyncAt < sixHoursMs &&
+                db.textbookDao().count() >= 11 &&
+                db.topicDao().getAllOnce().isNotEmpty()
+            ) {
+                lastSyncedAtMs = persistedSyncAt
+                return@withLock true
+            }
+            try {
+                // Fetch PDF Books from Django REST API
+                val apiBooks = try { apiService.getPdfBooks() } catch (e: Exception) { emptyList() }
+                if (apiBooks.isNotEmpty()) {
+                    val entities = apiBooks.map { b ->
+                        val rawPdfUrl = b.pdfUrl ?: b.pdfFile
+                        val formattedPdfUrl = MediaUrls.resolve(rawPdfUrl)
+                        val formattedCoverUrl = MediaUrls.resolve(b.coverUrl ?: b.coverImage)
+                        val fallbackPdfUrl = MediaUrls.textbook(b.effectiveGrade, b.effectiveSubject)
+                        val bookId = if (b.effectiveSubject == "jahon") "jahon_${b.effectiveGrade}" else "uz_${b.effectiveGrade}"
+                        val totalQs = if (b.totalQuestions > 0) b.totalQuestions else 100_000
+                        val totalTops = if (b.totalTopics > 0) b.totalTopics else (DEFAULT_TOPIC_COUNTS[bookId] ?: 35)
 
-                    val fallbackPdfUrl = MediaUrls.textbook(b.effectiveGrade, b.effectiveSubject)
-
-                    TextbookEntity(
-                        id = if (b.effectiveSubject == "jahon") "jahon_${b.effectiveGrade}" else "uz_${b.effectiveGrade}",
-                        title = b.title,
-                        gradeId = b.effectiveGrade,
-                        subjectId = b.effectiveSubject,
-                        authors = b.authors ?: "Tarixchi olimlar",
-                        year = b.year,
-                        edition = b.edition ?: "1-nashr",
-                        totalChapters = b.totalChapters,
-                        totalTopics = b.totalTopics,
-                        totalQuestions = b.totalQuestions,
-                        coverAsset = formattedCoverUrl,
-                        pdfAsset = formattedPdfUrl?.takeIf { it.isNotBlank() } ?: fallbackPdfUrl
-                    )
-                }
-                db.textbookDao().insertAll(entities)
-            } else {
-                if (db.textbookDao().count() < 11) {
+                        TextbookEntity(
+                            id = bookId,
+                            title = b.title,
+                            gradeId = b.effectiveGrade,
+                            subjectId = b.effectiveSubject,
+                            authors = b.authors ?: "Tarixchi olimlar",
+                            year = b.year,
+                            edition = b.edition ?: "1-nashr",
+                            totalChapters = b.totalChapters,
+                            totalTopics = totalTops,
+                            totalQuestions = totalQs,
+                            coverAsset = formattedCoverUrl,
+                            pdfAsset = formattedPdfUrl?.takeIf { it.isNotBlank() } ?: fallbackPdfUrl
+                        )
+                    }
+                    db.textbookDao().insertAll(entities)
+                } else if (db.textbookDao().count() < 11) {
                     seedContent()
                 }
-            }
 
-            // Fetch Topics from Django REST API
-            val apiTopics = try { apiService.getTopics() } catch (e: Exception) { emptyList() }
-            if (apiTopics.isNotEmpty()) {
-                val entities = apiTopics.map { t ->
-                    val inferredGrade = t.grade ?: run {
-                        val text = "${t.title} ${t.chapterTitle} ${t.textbookId}"
-                        when {
-                            text.contains("11") -> 11
-                            text.contains("10") -> 10
-                            text.contains("9") -> 9
-                            text.contains("8") -> 8
-                            text.contains("7") -> 7
-                            text.contains("6") -> 6
-                            else -> 7
+                // Fetch Topics from Django REST API
+                val apiTopics = try { apiService.getTopics() } catch (e: Exception) { emptyList() }
+                if (apiTopics.isNotEmpty()) {
+                    val countsEditor = topicCountsPrefs.edit()
+                    val entities = apiTopics.map { t ->
+                        val inferredGrade = t.grade ?: run {
+                            val text = "${t.title} ${t.chapterTitle} ${t.textbookId}"
+                            when {
+                                text.contains("11") -> 11
+                                text.contains("10") -> 10
+                                text.contains("9") -> 9
+                                text.contains("8") -> 8
+                                text.contains("7") -> 7
+                                text.contains("6") -> 6
+                                else -> 7
+                            }
                         }
+
+                        val isJahon = (t.subject?.contains("jahon", ignoreCase = true) == true) ||
+                                t.title.contains("Jahon", ignoreCase = true) ||
+                                (t.chapterTitle?.contains("Jahon", ignoreCase = true) == true) ||
+                                (t.textbookId?.contains("jahon", ignoreCase = true) == true)
+
+                        val inferredTextbookId = t.textbookId?.takeIf { it.isNotBlank() }
+                            ?: if (inferredGrade == 6) "uz_6"
+                            else if (isJahon) "jahon_$inferredGrade"
+                            else "uz_$inferredGrade"
+
+                        val topicId = "topic_${t.id}"
+                        if (t.questionsCount > 0) {
+                            topicCountsMemory[topicId] = t.questionsCount
+                            countsEditor.putInt(topicId, t.questionsCount)
+                        }
+
+                        TopicEntity(
+                            id = topicId,
+                            chapterId = "ch_${t.categoryId}",
+                            textbookId = inferredTextbookId,
+                            number = t.order,
+                            title = t.title,
+                            content = t.content ?: "",
+                            summary = t.chapterTitle ?: "",
+                            gradeId = inferredGrade
+                        )
                     }
-
-                    val isJahon = (t.subject?.contains("jahon", ignoreCase = true) == true) ||
-                            t.title.contains("Jahon", ignoreCase = true) ||
-                            (t.chapterTitle?.contains("Jahon", ignoreCase = true) == true) ||
-                            (t.textbookId?.contains("jahon", ignoreCase = true) == true)
-
-                    val inferredTextbookId = t.textbookId?.takeIf { it.isNotBlank() }
-                        ?: if (inferredGrade == 6) "uz_6"
-                        else if (isJahon) "jahon_$inferredGrade"
-                        else "uz_$inferredGrade"
-
-                    TopicEntity(
-                        id = "topic_${t.id}",
-                        chapterId = "ch_${t.categoryId}",
-                        textbookId = inferredTextbookId,
-                        number = t.order,
-                        title = t.title,
-                        content = t.content ?: "",
-                        summary = t.chapterTitle ?: "",
-                        gradeId = inferredGrade
-                    )
+                    countsEditor.apply()
+                    db.topicDao().deleteAll()
+                    entities.chunked(50).forEach { chunk ->
+                        db.topicDao().insertAll(chunk)
+                    }
                 }
-                entities.chunked(50).forEach { chunk ->
-                    db.topicDao().insertAll(chunk)
-                }
-            }
 
-            // Har bir kitob savollari alohida yuklanadi (syncBook / syncBooksForGrade)
-            if (db.questionDao().count() == 0) {
-                this@ContentRepository.syncBook(grade = 6, subjectId = "jahon")
+                lastSyncedAtMs = System.currentTimeMillis()
+                syncMetaPrefs.edit().putLong("last_synced_at_ms", lastSyncedAtMs).apply()
+                true
+            } catch (e: Exception) {
+                e.printStackTrace()
+                false
             }
-            true
-        } catch (e: Exception) {
-            e.printStackTrace()
-            false
         }
     }
 
@@ -727,7 +1056,7 @@ class ContentRepository @Inject constructor(
             val subjectParam = when {
                 grade == 6 -> "qadimgi"
                 subjectId == "jahon" -> "jahon"
-                else -> "zbekiston"
+                else -> "uzbekiston"
             }
 
             val effectivePageSize = pageSize.coerceIn(1, 5000)
@@ -827,23 +1156,107 @@ class ContentRepository @Inject constructor(
         }
     }
 
-    suspend fun seedIfNeeded() = withContext(Dispatchers.IO) {
-        val hasNewTopics = db.topicDao().getById("topic_10243")
-        if (hasNewTopics == null || db.textbookDao().count() < 11) {
-            db.questionDao().deleteAll()
-            db.topicDao().deleteAll()
-            db.chapterDao().deleteAll()
-            db.textbookDao().deleteAll()
-            db.wrongQuestionDao().deleteAll()
+    data class OfflineSyncResult(
+        val backendSynced: Boolean,
+        val cachedQuestionsTotal: Int,
+        val syncedTicketsCount: Int
+    )
 
+    /**
+     * Background WorkManager offline-cache warmup:
+     * caches textbooks, topics, direction counts, daily question, historical facts,
+     * and the active tickets for each direction + user's grade books into Room & disk cache.
+     */
+    suspend fun syncOfflineCache(
+        grade: Int,
+        forceRefresh: Boolean = false,
+        lastOpenedByCategory: Map<String, Int> = emptyMap()
+    ): OfflineSyncResult = withContext(Dispatchers.IO) {
+        seedIfNeeded()
+        val backendOk = syncWithDjangoBackend(force = forceRefresh)
+        fetchDirectionCounts(0, forceRefresh = forceRefresh)
+        if (grade in 6..11) {
+            fetchDirectionCounts(grade, forceRefresh = forceRefresh)
+        }
+        runCatching { getDailyQuestion(grade = grade) }
+        runCatching { getDailyQuestion(grade = 0) }
+
+        var syncedTickets = 0
+        val priorityCategories = buildList {
+            add("FACT")
+            add("EVENT")
+            add("PERSON")
+            add("YEAR")
+            add("WAR")
+            add("CITY")
+            add("LOGICAL")
+            if (grade in 6..11) {
+                add("book_uz_$grade")
+                if (grade > 6) add("book_jahon_$grade")
+            }
+        }
+
+        for (cat in priorityCategories) {
+            val targetIdx = (lastOpenedByCategory[cat] ?: 1).coerceAtLeast(1)
+            val indicesToWarm = if (targetIdx > 1) listOf(1, targetIdx) else listOf(1)
+            for (idx in indicesToWarm) {
+                val qs = runCatching {
+                    fetchTicketFromApi(
+                        categoryKey = cat,
+                        ticketIndex = idx,
+                        count = 30,
+                        grade = if (cat.startsWith("book_")) grade else 0
+                    )
+                }.getOrDefault(emptyList())
+                if (qs.isNotEmpty()) syncedTickets++
+            }
+        }
+
+        val totalCached = db.questionDao().count()
+        OfflineSyncResult(
+            backendSynced = backendOk,
+            cachedQuestionsTotal = totalCached,
+            syncedTicketsCount = syncedTickets
+        )
+    }
+
+    suspend fun seedIfNeeded() = withContext(Dispatchers.IO) {
+        val textbookCount = db.textbookDao().count()
+        val existingTopics = db.topicDao().getAllOnce()
+        val hasStaleSmallBook = db.textbookDao().getById("uz_6")?.totalQuestions?.let { it < 1000 } == true
+
+        if (textbookCount < 11 || existingTopics.isEmpty() || hasStaleSmallBook) {
             val assetJson = loadAssetJson("content.json")
             if (!assetJson.isNullOrBlank()) {
                 importFromJsonString(assetJson)
             }
-            if (db.textbookDao().count() < 11) {
+            if (db.textbookDao().count() < 11 || hasStaleSmallBook) {
+                seedTextbooksOnly()
+            }
+            if (db.topicDao().getAllOnce().isEmpty()) {
                 seedContent()
             }
         }
+        if (db.questionDao().count() == 0) {
+            insertQuestionsToDb(getFallbackQuestions(20, "ALL", 0))
+        }
+    }
+
+    private suspend fun seedTextbooksOnly() {
+        val textbooks = listOf(
+            TextbookEntity("uz_6", "Tarix. Qadimgi dunyo", 6, "uzbekiston", "A.S. Sagdullayev, V.A. Kostetskiy", 2017, "5-nashr", 5, 44, 100_000, "file:///android_asset/images/uz_6_cover.png", MediaUrls.textbook(6, "uzbekiston")),
+            TextbookEntity("uz_7", "O‘zbekiston tarixi (IV–XVI asr)", 7, "uzbekiston", "A. Muhammadjonov", 2017, "3-nashr", 10, 42, 100_000, pdfAsset = MediaUrls.textbook(7, "uzbekiston")),
+            TextbookEntity("jahon_7", "Jahon tarixi (V–XV asr)", 7, "jahon", "T.O‘. Salimov, F.E. Sultonov", 2017, "3-nashr", 12, 44, 100_000, pdfAsset = MediaUrls.textbook(7, "jahon")),
+            TextbookEntity("uz_8", "O‘zbekiston tarixi (XVI–XIX asr I yarmi)", 8, "uzbekiston", "U. Jo‘rayev va b.", 2019, "4-nashr", 12, 40, 100_000, pdfAsset = MediaUrls.textbook(8, "uzbekiston")),
+            TextbookEntity("jahon_8", "Jahon tarixi (XVI–XIX asr)", 8, "jahon", "R. Farmonov, U. Jo‘rayev, Sh. Ergashev", 2019, "4-nashr", 10, 32, 100_000, pdfAsset = MediaUrls.textbook(8, "jahon")),
+            TextbookEntity("uz_9", "O‘zbekiston tarixi (XIX asr II yarmi – XX asr boshi)", 9, "uzbekiston", "S. Tillaboyev, A. Zamonov", 2019, "3-nashr", 10, 37, 100_000, pdfAsset = MediaUrls.textbook(9, "uzbekiston")),
+            TextbookEntity("jahon_9", "Jahon tarixi (XX asr boshi)", 9, "jahon", "M. Lafasov va b.", 2019, "4-nashr", 12, 41, 100_000, pdfAsset = MediaUrls.textbook(9, "jahon")),
+            TextbookEntity("uz_10", "O‘zbekiston tarixi (1917–1991)", 10, "uzbekiston", "Q. Rajabov, A. Zamonov", 2017, "1-nashr", 10, 28, 100_000, pdfAsset = MediaUrls.textbook(10, "uzbekiston")),
+            TextbookEntity("jahon_10", "Jahon tarixi (1918–1991)", 10, "jahon", "Sh. Ergashev, B. Xodjayev, J. Abdullayev", 2017, "1-nashr", 10, 22, 100_000, pdfAsset = MediaUrls.textbook(10, "jahon")),
+            TextbookEntity("uz_11", "O‘zbekiston tarixi (Mustaqillik davri)", 11, "uzbekiston", "N. Jo‘rayev, A. Zamonov", 2018, "1-nashr", 8, 22, 100_000, pdfAsset = MediaUrls.textbook(11, "uzbekiston")),
+            TextbookEntity("jahon_11", "Jahon tarixi (1991–2017)", 11, "jahon", "Sh. Ergashev, B. Xodjayev, J. Abdullayev", 2018, "1-nashr", 8, 29, 100_000, pdfAsset = MediaUrls.textbook(11, "jahon"))
+        )
+        db.textbookDao().insertAll(textbooks)
     }
 
 
@@ -878,20 +1291,7 @@ class ContentRepository @Inject constructor(
     }
 
     private suspend fun seedContent() {
-        val textbooks = listOf(
-            TextbookEntity("uz_6", "Tarix. Qadimgi dunyo", 6, "uzbekiston", "A.S. Sagdullayev, V.A. Kostetskiy", 2017, "5-nashr", 5, 44, 150, "file:///android_asset/images/uz_6_cover.png", MediaUrls.textbook(6, "uzbekiston")),
-            TextbookEntity("uz_7", "O‘zbekiston tarixi (IV–XVI asr)", 7, "uzbekiston", "A. Muhammadjonov", 2017, "3-nashr", 10, 35, 70, pdfAsset = MediaUrls.textbook(7, "uzbekiston")),
-            TextbookEntity("jahon_7", "Jahon tarixi (V–XV asr)", 7, "jahon", "T.O‘. Salimov, F.E. Sultonov", 2017, "3-nashr", 12, 40, 75, pdfAsset = MediaUrls.textbook(7, "jahon")),
-            TextbookEntity("uz_8", "O‘zbekiston tarixi (XVI–XIX asr I yarmi)", 8, "uzbekiston", "U. Jo‘rayev va b.", 2019, "4-nashr", 12, 45, 90, pdfAsset = MediaUrls.textbook(8, "uzbekiston")),
-            TextbookEntity("jahon_8", "Jahon tarixi (XVI–XIX asr)", 8, "jahon", "R. Farmonov, U. Jo‘rayev, Sh. Ergashev", 2019, "4-nashr", 10, 35, 80, pdfAsset = MediaUrls.textbook(8, "jahon")),
-            TextbookEntity("uz_9", "O‘zbekiston tarixi (XIX asr II yarmi – XX asr boshi)", 9, "uzbekiston", "S. Tillaboyev, A. Zamonov", 2019, "3-nashr", 10, 30, 70, pdfAsset = MediaUrls.textbook(9, "uzbekiston")),
-            TextbookEntity("jahon_9", "Jahon tarixi (XX asr boshi)", 9, "jahon", "M. Lafasov va b.", 2019, "4-nashr", 12, 40, 85, pdfAsset = MediaUrls.textbook(9, "jahon")),
-            TextbookEntity("uz_10", "O‘zbekiston tarixi (1917–1991)", 10, "uzbekiston", "Q. Rajabov, A. Zamonov", 2017, "1-nashr", 10, 30, 65, pdfAsset = MediaUrls.textbook(10, "uzbekiston")),
-            TextbookEntity("jahon_10", "Jahon tarixi (1918–1991)", 10, "jahon", "Sh. Ergashev, B. Xodjayev, J. Abdullayev", 2017, "1-nashr", 10, 30, 60, pdfAsset = MediaUrls.textbook(10, "jahon")),
-            TextbookEntity("uz_11", "O‘zbekiston tarixi (Mustaqillik davri)", 11, "uzbekiston", "N. Jo‘rayev, A. Zamonov", 2018, "1-nashr", 8, 25, 55, pdfAsset = MediaUrls.textbook(11, "uzbekiston")),
-            TextbookEntity("jahon_11", "Jahon tarixi (1991–2017)", 11, "jahon", "Sh. Ergashev, B. Xodjayev, J. Abdullayev", 2018, "1-nashr", 8, 25, 50, pdfAsset = MediaUrls.textbook(11, "jahon"))
-        )
-        db.textbookDao().insertAll(textbooks)
+        seedTextbooksOnly()
 
         val topics = listOf(
             // All 11 Official Textbooks (384 Curriculum Topics)
@@ -1300,7 +1700,7 @@ class ContentRepository @Inject constructor(
         totalChapters = totalChapters, totalTopics = totalTopics, totalQuestions = totalQuestions
     )
 
-    private fun TopicEntity.toDomain(json: Json): Topic {
+    private fun TopicEntity.toDomain(json: Json, questionsCount: Int = 0): Topic {
         val dates = try {
             json.decodeFromString<List<ImportantDate>>(importantDatesJson)
         } catch (e: Exception) {
@@ -1322,7 +1722,24 @@ class ContentRepository @Inject constructor(
             terms = termsList,
             summary = summary,
             imageAsset = imageAsset,
-            imageCaption = imageCaption
+            imageCaption = imageCaption,
+            questionsCount = questionsCount
+        )
+    }
+
+    companion object {
+        private val DEFAULT_TOPIC_COUNTS = mapOf(
+            "uz_6" to 44,
+            "uz_7" to 42,
+            "jahon_7" to 44,
+            "uz_8" to 40,
+            "jahon_8" to 32,
+            "uz_9" to 37,
+            "jahon_9" to 41,
+            "uz_10" to 28,
+            "jahon_10" to 22,
+            "uz_11" to 22,
+            "jahon_11" to 29
         )
     }
 

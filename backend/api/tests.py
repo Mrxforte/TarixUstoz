@@ -256,6 +256,76 @@ class ApiEndpointTests(TestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertIn("answer", response.data)
 
+    def test_topics_include_questions_count_and_book_slug_filter(self):
+        response = self.client.get('/api/topics/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(response.data), 1)
+        self.assertEqual(response.data[0]['questions_count'], 1)
+
+        slug_resp = self.client.get('/api/topics/?book_id=uz_8')
+        self.assertEqual(slug_resp.status_code, status.HTTP_200_OK)
+        self.assertEqual(len(slug_resp.data), 1)
+
+    def test_daily_question_endpoint_supports_empty_grade_nonce_and_exclude(self):
+        q2 = Question.objects.create(
+            topic=self.topic,
+            grade=7,
+            subject="Jahon tarixi",
+            direction_code="FACT",
+            is_fact=True,
+            text="1453-yilda qaysi voqea yuz berdi?",
+            option_a="Qadimgi shartnoma imzolandi",
+            option_b="G'alaba qozonildi",
+            option_c="Qal'a qurildi",
+            option_d="Yangi qonun chiqdi",
+            correct_option="C",
+            difficulty="MEDIUM",
+        )
+        r1 = self.client.get('/api/questions/daily/?grade=&subject=uzbekiston')
+        self.assertEqual(r1.status_code, status.HTTP_200_OK)
+        self.assertEqual(r1.data['id'], self.question.id)
+
+        r2 = self.client.get(f'/api/questions/daily/?grade=0&nonce=2&exclude=q_{self.question.id}')
+        self.assertEqual(r2.status_code, status.HTTP_200_OK)
+        self.assertEqual(r2.data['id'], q2.id)
+
+    def test_ticket_and_directions_endpoints(self):
+        from api.directions import is_war_question, is_fact_question, recompute_book_flags, refresh_counts
+        war_q = Question.objects.create(
+            topic=self.topic,
+            grade=8,
+            subject="O'zbekiston tarixi",
+            direction_code="EVENT",
+            text="Qo‘shin qaysi jangda g‘alaba qozongan?",
+            option_a="A", option_b="B", option_c="C", option_d="D",
+            correct_option="A",
+        )
+        fact_q = Question.objects.create(
+            topic=self.topic,
+            grade=8,
+            subject="O'zbekiston tarixi",
+            direction_code="EVENT",
+            text="Ushbu qal’a va shartnoma qaysi tarixiy manbada keltirilgan?",
+            option_a="A", option_b="B", option_c="C", option_d="D",
+            correct_option="B",
+        )
+        self.assertTrue(is_war_question(war_q.text))
+        self.assertTrue(is_fact_question(fact_q.text))
+        recompute_book_flags()
+        refresh_counts()
+
+        dir_resp = self.client.get('/api/questions/directions/?grade=0')
+        self.assertEqual(dir_resp.status_code, status.HTTP_200_OK)
+        by_code = {d['code']: d['count'] for d in dir_resp.data['directions']}
+        self.assertGreaterEqual(by_code['WAR'], 1)
+        self.assertGreaterEqual(by_code['FACT'], 1)
+
+        for cat in ('book_uz_8', 'uz_8', '8_uz', f'topic_{self.topic.id}', 'topic_uz_8_1', 'FACT', 'WAR'):
+            t_resp = self.client.get(f'/api/questions/ticket/?category={cat}&ticket=1&size=30')
+            self.assertEqual(t_resp.status_code, status.HTTP_200_OK)
+            self.assertGreaterEqual(t_resp.data['total'], 1)
+            self.assertGreaterEqual(len(t_resp.data['questions']), 1)
+
 
 class ManagementCommandsTests(TestCase):
     """Tests for custom Django management commands."""

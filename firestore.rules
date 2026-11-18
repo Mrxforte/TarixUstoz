@@ -1,0 +1,168 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidTimestamp(ts) {
+      return ts is timestamp && ts <= request.time;
+    }
+
+    function isValidUserProfile(data) {
+      return data.userId is string && data.userId == request.auth.uid &&
+             data.displayName is string && data.displayName.size() >= 1 && data.displayName.size() <= 60 &&
+             data.avatar is string && data.avatar.size() >= 1 && data.avatar.size() <= 16 &&
+             data.role is string && data.role.size() >= 1 && data.role.size() <= 40 &&
+             data.grade is int && data.grade >= 6 && data.grade <= 11 &&
+             data.xp is int && data.xp >= 0 && data.xp <= 100000000 &&
+             data.streak is int && data.streak >= 0 && data.streak <= 10000 &&
+             data.totalSolved is int && data.totalSolved >= 0 && data.totalSolved <= 10000000 &&
+             data.correctCount is int && data.correctCount >= 0 && data.correctCount <= data.totalSolved &&
+             data.timeSpentSeconds is int && data.timeSpentSeconds >= 0 && data.timeSpentSeconds <= 100000000 &&
+             (!('email' in data) || (data.email is string && data.email.size() <= 160)) &&
+             (!('bio' in data) || (data.bio is string && data.bio.size() <= 200)) &&
+             (!('phone' in data) || (data.phone is string && data.phone.size() <= 40)) &&
+             (!('target' in data) || (data.target is string && data.target.size() <= 160)) &&
+             (!('birthYear' in data) || (data.birthYear is string && data.birthYear.size() <= 12)) &&
+             isValidTimestamp(data.createdAt) &&
+             isValidTimestamp(data.updatedAt);
+    }
+
+    function isValidTicketProgress(data, pathCategoryKey) {
+      return data.categoryKey is string &&
+             data.categoryKey == pathCategoryKey &&
+             data.categoryKey.size() >= 1 && data.categoryKey.size() <= 128 &&
+             data.passedTickets is list &&
+             data.passedTickets.size() <= 4000 &&
+             (data.passedTickets.size() == 0 || data.passedTickets[0] is int) &&
+             data.scores is map &&
+             data.scores.size() <= 4000 &&
+             data.lastOpenedTicket is int && data.lastOpenedTicket >= 1 && data.lastOpenedTicket <= 10000 &&
+             data.highestUnlockedTicket is int && data.highestUnlockedTicket >= 1 && data.highestUnlockedTicket <= 10000 &&
+             isValidTimestamp(data.createdAt) &&
+             isValidTimestamp(data.updatedAt);
+    }
+
+    function isValidQuizAttemptRecord(data) {
+      return data.categoryKey is string && data.categoryKey.size() >= 1 && data.categoryKey.size() <= 128 &&
+             data.categoryTitle is string && data.categoryTitle.size() >= 1 && data.categoryTitle.size() <= 120 &&
+             data.grade is int && data.grade >= 0 && data.grade <= 11 &&
+             data.solvedCount is int && data.solvedCount >= 0 && data.solvedCount <= 500 &&
+             data.correctCount is int && data.correctCount >= 0 && data.correctCount <= data.solvedCount &&
+             data.durationSeconds is int && data.durationSeconds >= 0 && data.durationSeconds <= 86400 &&
+             isValidTimestamp(data.createdAt);
+    }
+
+    function isValidLeaderboardEntry(data, pathUserId) {
+      return data.userId is string && data.userId == pathUserId &&
+             data.userId == request.auth.uid &&
+             data.displayName is string && data.displayName.size() >= 1 && data.displayName.size() <= 60 &&
+             data.initials is string && data.initials.size() >= 1 && data.initials.size() <= 8 &&
+             data.xp is int && data.xp >= 0 && data.xp <= 100000000 &&
+             data.streak is int && data.streak >= 0 && data.streak <= 10000 &&
+             data.totalSolved is int && data.totalSolved >= 0 && data.totalSolved <= 10000000 &&
+             data.correctCount is int && data.correctCount >= 0 && data.correctCount <= data.totalSolved &&
+             data.accuracy is int && data.accuracy >= 0 && data.accuracy <= 100 &&
+             data.timeSpentMinutes is int && data.timeSpentMinutes >= 0 && data.timeSpentMinutes <= 10000000 &&
+             data.grade is int && data.grade >= 6 && data.grade <= 11 &&
+             isValidTimestamp(data.createdAt) &&
+             isValidTimestamp(data.updatedAt);
+    }
+
+    // 1. Private User Profile (Strict Owner Only - PII Protected)
+    match /users/{userId} {
+      allow get, list: if isOwner(userId);
+
+      allow create: if isValidId(userId) &&
+                       isOwner(userId) &&
+                       incoming().keys().hasAll(['userId', 'displayName', 'avatar', 'role', 'grade', 'xp', 'streak', 'totalSolved', 'correctCount', 'timeSpentSeconds', 'createdAt', 'updatedAt']) &&
+                       incoming().keys().hasOnly(['userId', 'displayName', 'email', 'bio', 'avatar', 'phone', 'target', 'birthYear', 'role', 'grade', 'xp', 'streak', 'totalSolved', 'correctCount', 'timeSpentSeconds', 'createdAt', 'updatedAt']) &&
+                       isValidUserProfile(incoming());
+
+      allow update: if isValidId(userId) &&
+                       isOwner(userId) &&
+                       incoming().userId == existing().userId &&
+                       incoming().createdAt == existing().createdAt &&
+                       incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'email', 'bio', 'avatar', 'phone', 'target', 'birthYear', 'role', 'grade', 'xp', 'streak', 'totalSolved', 'correctCount', 'timeSpentSeconds', 'updatedAt']) &&
+                       isValidUserProfile(incoming());
+
+      allow delete: if isValidId(userId) && isOwner(userId);
+
+      // 2. Per-user ticket progress subcollection (owned strictly by userId)
+      match /ticketProgress/{categoryKey} {
+        allow get, list: if isOwner(userId);
+
+        allow create: if isValidId(categoryKey) &&
+                         isOwner(userId) &&
+                         incoming().keys().hasAll(['categoryKey', 'passedTickets', 'scores', 'lastOpenedTicket', 'highestUnlockedTicket', 'createdAt', 'updatedAt']) &&
+                         incoming().keys().hasOnly(['categoryKey', 'passedTickets', 'scores', 'lastOpenedTicket', 'highestUnlockedTicket', 'createdAt', 'updatedAt']) &&
+                         isValidTicketProgress(incoming(), categoryKey);
+
+        allow update: if isValidId(categoryKey) &&
+                         isOwner(userId) &&
+                         incoming().categoryKey == existing().categoryKey &&
+                         incoming().createdAt == existing().createdAt &&
+                         incoming().diff(existing()).affectedKeys().hasOnly(['passedTickets', 'scores', 'lastOpenedTicket', 'highestUnlockedTicket', 'updatedAt']) &&
+                         isValidTicketProgress(incoming(), categoryKey);
+
+        allow delete: if isValidId(categoryKey) && isOwner(userId);
+      }
+
+      // 3. Per-user quiz attempt records subcollection
+      match /attempts/{attemptId} {
+        allow get, list: if isOwner(userId);
+
+        allow create: if isValidId(attemptId) &&
+                         isOwner(userId) &&
+                         incoming().keys().hasAll(['categoryKey', 'categoryTitle', 'grade', 'solvedCount', 'correctCount', 'durationSeconds', 'createdAt']) &&
+                         incoming().keys().hasOnly(['categoryKey', 'categoryTitle', 'grade', 'solvedCount', 'correctCount', 'durationSeconds', 'createdAt']) &&
+                         isValidQuizAttemptRecord(incoming());
+
+        allow update: if false;
+        allow delete: if isValidId(attemptId) && isOwner(userId);
+      }
+    }
+
+    // 4. Public Leaderboard Collection (Strictly NO PII; readable by signed-in users, writable only by owner)
+    match /leaderboard/{userId} {
+      allow get, list: if isSignedIn();
+
+      allow create: if isValidId(userId) &&
+                       isOwner(userId) &&
+                       incoming().keys().hasAll(['userId', 'displayName', 'initials', 'xp', 'streak', 'totalSolved', 'correctCount', 'accuracy', 'timeSpentMinutes', 'grade', 'createdAt', 'updatedAt']) &&
+                       incoming().keys().hasOnly(['userId', 'displayName', 'initials', 'xp', 'streak', 'totalSolved', 'correctCount', 'accuracy', 'timeSpentMinutes', 'grade', 'createdAt', 'updatedAt']) &&
+                       isValidLeaderboardEntry(incoming(), userId);
+
+      allow update: if isValidId(userId) &&
+                       isOwner(userId) &&
+                       incoming().userId == existing().userId &&
+                       incoming().createdAt == existing().createdAt &&
+                       incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'initials', 'xp', 'streak', 'totalSolved', 'correctCount', 'accuracy', 'timeSpentMinutes', 'grade', 'updatedAt']) &&
+                       isValidLeaderboardEntry(incoming(), userId);
+
+      allow delete: if isValidId(userId) && isOwner(userId);
+    }
+  }
+}

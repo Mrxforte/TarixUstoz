@@ -45,6 +45,9 @@ interface TopicDao {
     @Query("SELECT * FROM topics ORDER BY textbookId, number")
     fun getAll(): Flow<List<TopicEntity>>
 
+    @Query("SELECT * FROM topics ORDER BY textbookId, number")
+    suspend fun getAllOnce(): List<TopicEntity>
+
     @Query("SELECT * FROM topics WHERE id = :id")
     suspend fun getById(id: String): TopicEntity?
 
@@ -92,6 +95,9 @@ interface QuestionDao {
     @Query("SELECT * FROM questions WHERE gradeId = :gradeId AND subjectId = :subjectId LIMIT :limit")
     suspend fun getRandom(gradeId: Int, subjectId: String, limit: Int): List<QuestionEntity>
 
+    @Query("SELECT * FROM questions ORDER BY RANDOM() LIMIT :limit")
+    suspend fun getRandomAny(limit: Int): List<QuestionEntity>
+
     @Query("SELECT * FROM questions WHERE category = :category LIMIT :limit")
     suspend fun getByCategory(category: String, limit: Int): List<QuestionEntity>
 
@@ -138,6 +144,9 @@ interface QuestionDao {
 
     @Query("SELECT COUNT(*) FROM questions")
     suspend fun count(): Int
+
+    @Query("SELECT COUNT(*) FROM questions")
+    fun countFlow(): Flow<Int>
 
     @Query("SELECT COUNT(*) FROM questions WHERE gradeId = :gradeId AND subjectId = :subjectId")
     suspend fun countByGradeAndSubject(gradeId: Int, subjectId: String): Int
@@ -240,6 +249,9 @@ interface QuizAttemptDao {
 
     @Query("SELECT * FROM quiz_attempts WHERE timestamp >= :startOfYear")
     fun getYearlyAttemptsFlow(startOfYear: Long): Flow<List<QuizAttemptEntity>>
+
+    @Query("SELECT * FROM quiz_attempts ORDER BY timestamp DESC")
+    fun getAllFlow(): Flow<List<QuizAttemptEntity>>
 
     @Query("DELETE FROM quiz_attempts")
     suspend fun deleteAll()

@@ -3,15 +3,16 @@ package com.tarixustoz.app.presentation.quiz
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tarixustoz.app.data.repository.ActiveQuizState
+import com.tarixustoz.app.data.repository.CloudSyncRepository
 import com.tarixustoz.app.data.repository.ContentRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -21,13 +22,16 @@ data class TicketItemUiState(
     val isPassed: Boolean = false,
     val bestScore: Int = 0,
     val ongoingScore: Int? = null,
-    val ongoingAnsweredCount: Int? = null
+    val ongoingAnsweredCount: Int? = null,
+    val isLastOpened: Boolean = false
 )
 
 data class TicketListUiState(
     val isLoading: Boolean = true,
     val categoryKey: String = "",
     val totalQuestions: Int = 0,
+    val lastOpenedTicket: Int = 1,
+    val highestUnlockedTicket: Int = 1,
     val tickets: List<TicketItemUiState> = emptyList(),
     val activeQuizRoute: String? = null,
     val activeQuizTitle: String? = null,
@@ -39,7 +43,8 @@ private const val QUESTIONS_PER_TICKET = 30
 @HiltViewModel
 class TicketListViewModel @Inject constructor(
     private val contentRepository: ContentRepository,
-    private val preferencesRepository: UserPreferencesRepository
+    private val preferencesRepository: UserPreferencesRepository,
+    private val cloudSyncRepository: CloudSyncRepository
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(TicketListUiState())
@@ -63,52 +68,53 @@ class TicketListViewModel @Inject constructor(
         }
     }
 
-    fun loadTickets(categoryKey: String, grade: Int = 0) {
+    fun loadTickets(categoryKey: String, grade: Int = 0, forceRefresh: Boolean = false) {
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true, categoryKey = categoryKey) }
             contentRepository.seedIfNeeded()
+            contentRepository.syncWithDjangoBackend(force = forceRefresh)
+            cloudSyncRepository.pullTicketProgressForCategory(categoryKey)
 
-            val currentGrade = if (grade > 0) grade else {
-                try {
-                    preferencesRepository.selectedGrade.first()
-                } catch (_: Exception) { 0 }
-            }
+            val currentGrade = if (grade in 6..11) grade else 0
 
-            val counts = contentRepository.fetchDirectionCounts(currentGrade)
             val totalQuestions = when {
-                categoryKey.startsWith("book_") || categoryKey.startsWith("uz_") || categoryKey.startsWith("jahon_") || categoryKey.contains("_") || categoryKey == "6_all" || categoryKey.all { it.isDigit() } -> {
-                    val cleanId = categoryKey.removePrefix("book_")
-                    val book = contentRepository.getTextbookById(cleanId)
-                    val bookCount = book?.totalQuestions ?: 0
-                    if (bookCount > 0) bookCount else 300
+                contentRepository.isBookKey(categoryKey) -> {
+                    contentRepository.getBookQuestionCount(categoryKey)
                 }
                 categoryKey.startsWith("topic_") || contentRepository.getTopicById(categoryKey) != null || contentRepository.getTopicById("topic_$categoryKey") != null -> {
-                    300
+                    val topicObj = contentRepository.getTopicById(categoryKey)
+                        ?: contentRepository.getTopicById("topic_$categoryKey")
+                    topicObj?.questionsCount?.takeIf { it > 0 } ?: 2500
                 }
                 else -> {
-                    counts[categoryKey] ?: 300
+                    val counts = contentRepository.fetchDirectionCounts(currentGrade, forceRefresh = forceRefresh)
+                    val fallbackDefaults = contentRepository.defaultDirectionCounts(currentGrade)
+                    counts[categoryKey]?.takeIf { it > 0 } ?: fallbackDefaults[categoryKey] ?: 100_000
                 }
             }
 
             val totalTicketCount =
                 if (totalQuestions <= 0) 0
                 else (totalQuestions + QUESTIONS_PER_TICKET - 1) / QUESTIONS_PER_TICKET
-            
+
             val activeState = preferencesRepository.activeQuizState.first()
             val progress = preferencesRepository.getTicketProgress(categoryKey)
-            val ticketList = mutableListOf<TicketItemUiState>()
+            val savedLastOpened = progress.lastOpenedTicket.coerceIn(1, totalTicketCount.coerceAtLeast(1))
+            val ticketList = ArrayList<TicketItemUiState>(totalTicketCount)
 
             var prevPassed = true
+            var highestUnlocked = 1
             for (i in 1..totalTicketCount) {
                 val score = progress.scores[i] ?: 0
                 val isPassed = progress.passed.contains(i) || score >= 10
                 val isUnlocked = i == 1 || prevPassed
+                if (isUnlocked) highestUnlocked = i
 
-                val isActiveTicket = activeState != null &&
-                    activeState.quizRoute == "quiz/ticket_${categoryKey}_$i"
+                val activeBaseRoute = activeState?.quizRoute?.substringBefore("?")
+                val isActiveTicket = activeBaseRoute == "quiz/ticket_${categoryKey}_$i"
 
-                val ongoingScore = if (isActiveTicket) activeState.correctCount else null
-                val ongoingAnswered = if (isActiveTicket) activeState.answeredCorrectly.count { it != null } else null
+                val ongoingScore = if (isActiveTicket) activeState?.correctCount else null
+                val ongoingAnswered = if (isActiveTicket) activeState?.answeredCorrectly?.count { it != null } else null
 
                 ticketList.add(
                     TicketItemUiState(
@@ -117,34 +123,62 @@ class TicketListViewModel @Inject constructor(
                         isPassed = isPassed,
                         bestScore = maxOf(score, ongoingScore ?: 0),
                         ongoingScore = ongoingScore,
-                        ongoingAnsweredCount = ongoingAnswered
+                        ongoingAnsweredCount = ongoingAnswered,
+                        isLastOpened = i == savedLastOpened
                     )
                 )
 
                 prevPassed = isPassed || (ongoingScore != null && ongoingScore >= 10)
             }
 
+            val effectiveLastOpened = savedLastOpened.coerceIn(1, highestUnlocked.coerceAtLeast(1))
+
             _state.update {
                 it.copy(
                     isLoading = false,
                     categoryKey = categoryKey,
                     totalQuestions = totalQuestions,
+                    lastOpenedTicket = effectiveLastOpened,
+                    highestUnlockedTicket = highestUnlocked,
                     tickets = ticketList
                 )
             }
 
-            // Auto-prefetch next 5 tickets in background
-            prefetchNextTicketsIfNeeded(categoryKey, 1)
+            // Light prefetch around user's active ticket
+            prefetchNextTicketsIfNeeded(categoryKey, effectiveLastOpened, currentGrade)
         }
     }
 
-    fun prefetchNextTicketsIfNeeded(categoryKey: String, currentTicketIndex: Int) {
+    fun markTicketOpened(categoryKey: String, ticketIndex: Int) {
+        viewModelScope.launch {
+            preferencesRepository.setLastOpenedTicket(categoryKey, ticketIndex)
+            val progress = preferencesRepository.getTicketProgress(categoryKey)
+            val highestUnlocked = ((progress.passed.maxOrNull() ?: 0) + 1).coerceAtLeast(1)
+            cloudSyncRepository.saveTicketProgressToCloud(
+                categoryKey = categoryKey,
+                passedTickets = progress.passed,
+                scores = progress.scores,
+                lastOpenedTicket = ticketIndex,
+                highestUnlockedTicket = highestUnlocked
+            )
+            _state.update { current ->
+                current.copy(
+                    lastOpenedTicket = ticketIndex,
+                    tickets = current.tickets.map { item ->
+                        item.copy(isLastOpened = item.index == ticketIndex)
+                    }
+                )
+            }
+        }
+    }
+
+    fun prefetchNextTicketsIfNeeded(categoryKey: String, currentTicketIndex: Int, grade: Int = 0) {
         viewModelScope.launch(Dispatchers.IO) {
-            val startTicket = currentTicketIndex + 1
-            val endTicket = (currentTicketIndex + 5).coerceAtMost(3333)
+            val startTicket = currentTicketIndex
+            val endTicket = (currentTicketIndex + 2).coerceAtMost(3334)
             for (ticketIdx in startTicket..endTicket) {
                 try {
-                    contentRepository.fetchTicketFromApi(categoryKey, ticketIdx, count = 30)
+                    contentRepository.fetchTicketFromApi(categoryKey, ticketIdx, count = 30, grade = grade)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }

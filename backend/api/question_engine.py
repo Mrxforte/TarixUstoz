@@ -43,7 +43,7 @@ class QuestionGenerationEngine:
         if grade and grade > 0:
             base = base.filter(grade=grade)
         if subject:
-            base = base.filter(subject=self._canonical_subject(subject))
+            base = base.filter(subject=self._canonical_subject(subject, grade))
         if topic_ids:
             base = base.filter(topic_id__in=topic_ids)
 
@@ -68,7 +68,7 @@ class QuestionGenerationEngine:
             # Fallback strictly to questions for this specific grade and subject
             grade_qs = Question.objects.filter(grade=grade)
             if subject:
-                grade_qs = grade_qs.filter(subject=self._canonical_subject(subject))
+                grade_qs = grade_qs.filter(subject=self._canonical_subject(subject, grade))
             selected_questions = self._sample(grade_qs, requested_count)
 
         # 3. Create Quiz Session
@@ -82,9 +82,11 @@ class QuestionGenerationEngine:
         return session
 
     @staticmethod
-    def _canonical_subject(subject: str) -> str:
-        """Map app subject ids ("jahon", "uzbekiston") to the stored subject names."""
+    def _canonical_subject(subject: str, grade: int = 0) -> str:
+        """Map app subject ids ("jahon", "uzbekiston", "qadimgi") to the stored subject names."""
         s = (subject or "").lower()
+        if grade == 6 and ("qadimgi" in s or "uz" in s or "zbek" in s):
+            return "Qadimgi dunyo tarixi"
         if "jahon" in s:
             return "Jahon tarixi"
         if "qadimgi" in s:
