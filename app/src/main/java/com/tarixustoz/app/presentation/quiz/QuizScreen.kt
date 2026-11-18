@@ -1,6 +1,7 @@
 package com.tarixustoz.app.presentation.quiz
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -61,23 +62,26 @@ fun QuizScreen(
         else -> {
             val question = uiState.questions[uiState.currentIndex]
             Scaffold(
-                containerColor = MaterialTheme.colorScheme.background,
-                bottomBar = {
-                    AdMobManager.BannerAdView()
-                }
+                containerColor = MaterialTheme.colorScheme.background
             ) { innerPadding ->
                 Column(
-                    Modifier
+                    modifier = Modifier
                         .fillMaxSize()
                         .padding(innerPadding)
-                        .padding(16.dp)
-                        .verticalScroll(rememberScrollState())
+                        .padding(horizontal = 16.dp, vertical = 12.dp)
                 ) {
-                // Progress
-                LinearProgressIndicator(
-                    progress = { (uiState.currentIndex + 1).toFloat() / uiState.questions.size },
-                    modifier = Modifier.fillMaxWidth().height(8.dp).clip(RoundedCornerShape(4.dp))
-                )
+                    // Scrollable Question Content & Action Buttons
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .weight(1f)
+                            .verticalScroll(rememberScrollState())
+                    ) {
+                        // Progress
+                        LinearProgressIndicator(
+                            progress = { (uiState.currentIndex + 1).toFloat() / uiState.questions.size },
+                            modifier = Modifier.fillMaxWidth().height(8.dp).clip(RoundedCornerShape(4.dp))
+                        )
                 Spacer(Modifier.height(8.dp))
                 Text(
                     "Savol ${uiState.currentIndex + 1} / ${uiState.questions.size}",
@@ -235,8 +239,31 @@ fun QuizScreen(
                     }
                 }
             }
+
+            // Responsive Bottom AdMob Banner Container filling space below button
+            Spacer(Modifier.height(8.dp))
+            Surface(
+                shape = RoundedCornerShape(14.dp),
+                color = MaterialTheme.colorScheme.surface,
+                border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.4f)),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentHeight()
+            ) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 4.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    AdMobManager.BannerAdView(
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                }
+            }
         }
     }
+}
 }
 }
 

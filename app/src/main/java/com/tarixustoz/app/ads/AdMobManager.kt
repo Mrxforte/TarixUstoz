@@ -163,8 +163,8 @@ object AdMobManager {
     }
 
     /**
-     * 100% Dedicated Large/Medium AdMob Banner Ad View for Hero Banner Slot.
-     * Auto-refreshes every 30 seconds.
+     * 100% Dedicated AdMob Banner Ad View for Hero Banner Slot (Screen 40% height card).
+     * Uses Medium Rectangle (300x250dp) / Large Banner size and auto-refreshes every 30 seconds.
      */
     @Composable
     fun DedicatedHeroBannerAdView(
@@ -184,17 +184,15 @@ object AdMobManager {
         }
 
         Box(
-            modifier = modifier
-                .fillMaxWidth()
-                .wrapContentHeight(),
+            modifier = modifier.fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
             key(activeUnitId) {
                 AndroidView(
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier.fillMaxSize(),
                     factory = { context ->
                         AdView(context).apply {
-                            setAdSize(AdSize.LARGE_BANNER)
+                            setAdSize(AdSize.MEDIUM_RECTANGLE)
                             setAdUnitId(activeUnitId)
                             adListener = object : AdListener() {
                                 override fun onAdLoaded() {
@@ -227,11 +225,9 @@ object AdMobManager {
 
             if (!isAdLoaded) {
                 Surface(
-                    shape = RoundedCornerShape(18.dp),
+                    shape = RoundedCornerShape(24.dp),
                     color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.85f),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(100.dp)
+                    modifier = Modifier.fillMaxSize()
                 ) {
                     Box(
                         modifier = Modifier
@@ -255,10 +251,10 @@ object AdMobManager {
                                     modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
                                 )
                             }
-                            Spacer(Modifier.height(6.dp))
+                            Spacer(Modifier.height(8.dp))
                             Text(
                                 text = "📢 100% AdMob Reklama Maydoni",
-                                fontSize = 13.sp,
+                                fontSize = 14.sp,
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )

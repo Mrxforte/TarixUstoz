@@ -28,6 +28,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
@@ -212,23 +213,26 @@ fun HomeScreen(
             ) {
                 item { Spacer(Modifier.height(4.dp)) }
 
-            // 2. 100% Dedicated AdMob Banner Card (Hero Slot)
+            // 2. 100% Dedicated AdMob Banner Card (Hero Slot - 40% Screen Height)
             item {
+                val screenHeightDp = LocalConfiguration.current.screenHeightDp.dp
+                val heroBannerHeight = (screenHeightDp * 0.40f).coerceIn(240.dp, 320.dp)
+
                 Surface(
-                    shape = RoundedCornerShape(20.dp),
+                    shape = RoundedCornerShape(24.dp),
                     color = MaterialTheme.colorScheme.surface,
                     border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)),
-                    shadowElevation = 1.dp,
-                    modifier = Modifier.fillMaxWidth()
+                    shadowElevation = 2.dp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(heroBannerHeight)
                 ) {
                     Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 4.dp),
+                        modifier = Modifier.fillMaxSize(),
                         contentAlignment = Alignment.Center
                     ) {
                         AdMobManager.DedicatedHeroBannerAdView(
-                            modifier = Modifier.fillMaxWidth()
+                            modifier = Modifier.fillMaxSize()
                         )
                     }
                 }
