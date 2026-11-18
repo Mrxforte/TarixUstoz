@@ -84,9 +84,9 @@ fun TarixNavHost() {
 
     val bottomItems = listOf(
         Screen.Home,
-        Screen.Textbooks,
         Screen.Quiz,
         Screen.Mistakes,
+        Screen.Leaderboard,
         Screen.Profile
     )
 

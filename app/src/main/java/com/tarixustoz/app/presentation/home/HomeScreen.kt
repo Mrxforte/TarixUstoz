@@ -212,7 +212,7 @@ fun HomeScreen(
             ) {
                 item { Spacer(Modifier.height(4.dp)) }
 
-                // 2. Daily Streak Gradient Card
+            // 2. Daily Streak Gradient Card with Integrated AdMob Banner
             item {
                 Surface(
                     shape = RoundedCornerShape(24.dp),
@@ -232,134 +232,105 @@ fun HomeScreen(
                                     )
                                 )
                             )
-                            .padding(20.dp)
+                            .padding(18.dp)
                     ) {
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically
+                        Column(
+                            verticalArrangement = Arrangement.spacedBy(14.dp)
                         ) {
-                            Column(modifier = Modifier.weight(1f)) {
-                                // 7 KUNLIK SERIYA Pill
-                                Surface(
-                                    shape = RoundedCornerShape(50),
-                                    color = Color.White.copy(alpha = 0.2f),
-                                    modifier = Modifier.wrapContentSize()
-                                ) {
-                                    Row(
-                                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp),
-                                        verticalAlignment = Alignment.CenterVertically
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Column(modifier = Modifier.weight(1f)) {
+                                    // 7 KUNLIK SERIYA Pill
+                                    Surface(
+                                        shape = RoundedCornerShape(50),
+                                        color = Color.White.copy(alpha = 0.2f),
+                                        modifier = Modifier.wrapContentSize()
                                     ) {
-                                        Icon(
-                                            Icons.Filled.LocalFireDepartment,
-                                            contentDescription = null,
-                                            tint = Color.White,
-                                            modifier = Modifier.size(14.dp)
-                                        )
-                                        Spacer(Modifier.width(4.dp))
-                                        Text(
-                                            "${uiState.streak} KUNLIK SERIYA",
-                                            color = Color.White,
-                                            fontSize = 11.sp,
-                                            fontWeight = FontWeight.Bold,
-                                            letterSpacing = 0.5.sp
-                                        )
-                                    }
-                                }
-
-                                Spacer(Modifier.height(10.dp))
-                                Text(
-                                    text = "Tarixni har kuni\nbirga o‘rganamiz",
-                                    color = Color.White,
-                                    fontSize = 20.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    lineHeight = 26.sp
-                                )
-
-                                Spacer(Modifier.height(6.dp))
-                                Text(
-                                    text = "Bugungi maqsad: ${uiState.todayGoalTotal} ta savol",
-                                    color = Color.White.copy(alpha = 0.85f),
-                                    fontSize = 12.sp
-                                )
-
-                                Spacer(Modifier.height(12.dp))
-                                // Progress Bar
-                                Box(
-                                    modifier = Modifier
-                                        .fillMaxWidth(0.85f)
-                                        .height(6.dp)
-                                        .clip(RoundedCornerShape(3.dp))
-                                        .background(Color.White.copy(alpha = 0.25f))
-                                ) {
-                                    Box(
-                                        modifier = Modifier
-                                            .fillMaxWidth(
-                                                (uiState.todayGoalCompleted.toFloat() / uiState.todayGoalTotal)
-                                                    .coerceIn(0f, 1f)
+                                        Row(
+                                            modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp),
+                                            verticalAlignment = Alignment.CenterVertically
+                                        ) {
+                                            Icon(
+                                                Icons.Filled.LocalFireDepartment,
+                                                contentDescription = null,
+                                                tint = Color.White,
+                                                modifier = Modifier.size(14.dp)
                                             )
-                                            .height(6.dp)
-                                            .clip(RoundedCornerShape(3.dp))
-                                            .background(Color.White)
+                                            Spacer(Modifier.width(4.dp))
+                                            Text(
+                                                "${uiState.streak} KUNLIK SERIYA",
+                                                color = Color.White,
+                                                fontSize = 11.sp,
+                                                fontWeight = FontWeight.Bold,
+                                                letterSpacing = 0.5.sp
+                                            )
+                                        }
+                                    }
+
+                                    Spacer(Modifier.height(8.dp))
+                                    Text(
+                                        text = "Tarixni har kuni birga o‘rganamiz",
+                                        color = Color.White,
+                                        fontSize = 18.sp,
+                                        fontWeight = FontWeight.Bold
+                                    )
+
+                                    Spacer(Modifier.height(4.dp))
+                                    Text(
+                                        text = "Bugungi maqsad: ${uiState.todayGoalCompleted}/${uiState.todayGoalTotal} savol",
+                                        color = Color.White.copy(alpha = 0.85f),
+                                        fontSize = 12.sp
                                     )
                                 }
 
-                                Spacer(Modifier.height(4.dp))
-                                Text(
-                                    text = "${uiState.todayGoalCompleted} / ${uiState.todayGoalTotal} bajarildi",
-                                    color = Color.White.copy(alpha = 0.85f),
-                                    fontSize = 11.sp
-                                )
+                                // Right Streak Badge
+                                Column(
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    modifier = Modifier.padding(start = 8.dp)
+                                ) {
+                                    Icon(
+                                        Icons.Filled.AutoAwesome,
+                                        contentDescription = null,
+                                        tint = Color.White.copy(alpha = 0.8f),
+                                        modifier = Modifier.size(18.dp)
+                                    )
+                                    Text(
+                                        text = "${uiState.streak}",
+                                        color = Color.White,
+                                        fontSize = 40.sp,
+                                        fontWeight = FontWeight.ExtraBold,
+                                        lineHeight = 42.sp
+                                    )
+                                    Text(
+                                        text = "kun",
+                                        color = Color.White.copy(alpha = 0.9f),
+                                        fontSize = 12.sp,
+                                        fontWeight = FontWeight.Medium
+                                    )
+                                }
                             }
 
-                            // Right Streak Badge
-                            Column(
-                                horizontalAlignment = Alignment.CenterHorizontally,
-                                modifier = Modifier.padding(start = 8.dp)
+                            // Integrated AdMob Banner View INSIDE Hero Banner Card
+                            Surface(
+                                shape = RoundedCornerShape(14.dp),
+                                color = Color.White.copy(alpha = 0.95f),
+                                modifier = Modifier.fillMaxWidth()
                             ) {
-                                Icon(
-                                    Icons.Filled.AutoAwesome,
-                                    contentDescription = null,
-                                    tint = Color.White.copy(alpha = 0.8f),
-                                    modifier = Modifier.size(18.dp)
-                                )
-                                Text(
-                                    text = "${uiState.streak}",
-                                    color = Color.White,
-                                    fontSize = 46.sp,
-                                    fontWeight = FontWeight.ExtraBold,
-                                    lineHeight = 48.sp
-                                )
-                                Text(
-                                    text = "kun",
-                                    color = Color.White.copy(alpha = 0.9f),
-                                    fontSize = 13.sp,
-                                    fontWeight = FontWeight.Medium
-                                )
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(vertical = 4.dp),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    AdMobManager.BannerAdView(
+                                        modifier = Modifier.fillMaxWidth()
+                                    )
+                                }
                             }
                         }
-                    }
-                }
-            }
-
-            // Styled AdMob Banner Card
-            item {
-                Surface(
-                    shape = RoundedCornerShape(20.dp),
-                    color = MaterialTheme.colorScheme.surface,
-                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.6f)),
-                    shadowElevation = 1.dp,
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 8.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        AdMobManager.BannerAdView(
-                            modifier = Modifier.fillMaxWidth()
-                        )
                     }
                 }
             }
