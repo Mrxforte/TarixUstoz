@@ -3,6 +3,7 @@ package com.tarixustoz.app
 import android.app.Application
 import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
+import com.tarixustoz.app.ads.AdMobManager
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
@@ -16,4 +17,9 @@ class TarixUstozApp : Application(), Configuration.Provider {
         get() = Configuration.Builder()
             .setWorkerFactory(workerFactory)
             .build()
+
+    override fun onCreate() {
+        super.onCreate()
+        AdMobManager.initAdMob(this)
+    }
 }

@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.tarixustoz.app.ads.AdMobManager
 import com.tarixustoz.app.domain.model.AnswerOption
 
 @Composable
@@ -59,12 +60,19 @@ fun QuizScreen(
         }
         else -> {
             val question = uiState.questions[uiState.currentIndex]
-            Column(
-                Modifier
-                    .fillMaxSize()
-                    .padding(16.dp)
-                    .verticalScroll(rememberScrollState())
-            ) {
+            Scaffold(
+                containerColor = MaterialTheme.colorScheme.background,
+                bottomBar = {
+                    AdMobManager.BannerAdView()
+                }
+            ) { innerPadding ->
+                Column(
+                    Modifier
+                        .fillMaxSize()
+                        .padding(innerPadding)
+                        .padding(16.dp)
+                        .verticalScroll(rememberScrollState())
+                ) {
                 // Progress
                 LinearProgressIndicator(
                     progress = { (uiState.currentIndex + 1).toFloat() / uiState.questions.size },
@@ -229,6 +237,7 @@ fun QuizScreen(
             }
         }
     }
+}
 }
 
 @Composable

@@ -1,5 +1,7 @@
 package com.tarixustoz.app.presentation.home
 
+import android.app.Activity
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -21,11 +23,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.tarixustoz.app.ads.AdMobManager
 import com.tarixustoz.app.presentation.theme.*
 
 private fun iconForCategory(iconType: String): ImageVector = when (iconType) {
@@ -586,6 +590,87 @@ fun HomeScreen(
                                     modifier = Modifier.size(18.dp)
                                 )
                             }
+                        }
+                    }
+                }
+            }
+
+            // 3.5. Rewarded Ad Banner Card (Kuniga 2 marta max)
+            item {
+                val context = LocalContext.current
+                val activity = context as? Activity
+                Surface(
+                    shape = RoundedCornerShape(18.dp),
+                    color = Color(0xFFFAF5FF),
+                    border = BorderStroke(1.5.dp, BrandPurple.copy(alpha = 0.3f)),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Row(
+                        modifier = Modifier.padding(16.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Surface(
+                            shape = CircleShape,
+                            color = BrandPurple,
+                            modifier = Modifier.size(44.dp)
+                        ) {
+                            Box(contentAlignment = Alignment.Center) {
+                                Icon(
+                                    Icons.Filled.CardGiftcard,
+                                    contentDescription = null,
+                                    tint = Color.White,
+                                    modifier = Modifier.size(24.dp)
+                                )
+                            }
+                        }
+                        Spacer(Modifier.width(14.dp))
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                text = "Mukofotli Reklama (+50 XP)",
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 14.sp,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                            Spacer(Modifier.height(2.dp))
+                            Text(
+                                text = "Reklama ko'rib +50 XP oling (Bugun: ${uiState.rewardedAdCountToday}/2)",
+                                fontSize = 12.sp,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                        Spacer(Modifier.width(8.dp))
+                        Button(
+                            onClick = {
+                                if (uiState.canShowRewardedAd) {
+                                    if (activity != null) {
+                                        AdMobManager.showRewardedAd(
+                                            activity = activity,
+                                            onRewardEarned = {
+                                                viewModel.claimAdReward(
+                                                    onSuccess = {
+                                                        Toast.makeText(context, "Tabriklaymiz! +50 XP berildi! 🎉", Toast.LENGTH_SHORT).show()
+                                                    },
+                                                    onLimitReached = {
+                                                        Toast.makeText(context, "Siz bugungi 2 ta mukofotli reklamadan foydalanib bo'ldingiz!", Toast.LENGTH_LONG).show()
+                                                    }
+                                                )
+                                            }
+                                        )
+                                    }
+                                } else {
+                                    Toast.makeText(context, "Bugungi 2 ta mukofotli reklama ko'rib bo'lingan (2/2). Ertaga yana keling!", Toast.LENGTH_LONG).show()
+                                }
+                            },
+                            enabled = uiState.canShowRewardedAd,
+                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
+                            shape = RoundedCornerShape(12.dp),
+                            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
+                        ) {
+                            Text(
+                                text = if (uiState.canShowRewardedAd) "Ko'rish" else "2/2 Bajarildi",
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.Bold
+                            )
                         }
                     }
                 }

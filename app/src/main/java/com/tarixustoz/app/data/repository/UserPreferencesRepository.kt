@@ -21,6 +21,9 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -69,6 +72,8 @@ class UserPreferencesRepository @Inject constructor(
         private val ACTIVE_QUIZ_ROUTE = stringPreferencesKey("active_quiz_route")
         private val ACTIVE_QUIZ_TITLE = stringPreferencesKey("active_quiz_title")
         private val ACTIVE_QUIZ_JSON = stringPreferencesKey("active_quiz_json")
+        private val REWARDED_AD_DATE = stringPreferencesKey("rewarded_ad_date")
+        private val REWARDED_AD_COUNT = intPreferencesKey("rewarded_ad_count")
     }
 
     val themeMode: Flow<ThemeMode> = dataStore.data.map { prefs ->
@@ -275,5 +280,30 @@ class UserPreferencesRepository @Inject constructor(
             it.remove(ACTIVE_QUIZ_ROUTE)
             it.remove(ACTIVE_QUIZ_TITLE)
         }
+    }
+
+    val rewardedAdCountToday: Flow<Int> = dataStore.data.map { prefs ->
+        val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
+        val savedDate = prefs[REWARDED_AD_DATE] ?: ""
+        if (savedDate == today) prefs[REWARDED_AD_COUNT] ?: 0 else 0
+    }
+
+    val canShowRewardedAdToday: Flow<Boolean> = rewardedAdCountToday.map { it < 2 }
+
+    suspend fun incrementRewardedAdCount(): Boolean {
+        val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
+        var allowed = false
+        dataStore.edit { prefs ->
+            val savedDate = prefs[REWARDED_AD_DATE] ?: ""
+            val currentCount = if (savedDate == today) prefs[REWARDED_AD_COUNT] ?: 0 else 0
+            if (currentCount < 2) {
+                prefs[REWARDED_AD_DATE] = today
+                prefs[REWARDED_AD_COUNT] = currentCount + 1
+                allowed = true
+            } else {
+                allowed = false
+            }
+        }
+        return allowed
     }
 }
