@@ -13,6 +13,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.MenuBook
+import androidx.compose.material.icons.filled.Pause
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.QuestionAnswer
 import androidx.compose.material3.*
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
@@ -32,7 +34,13 @@ import com.tarixustoz.app.data.remote.DownloadState
 import com.tarixustoz.app.data.remote.MediaUrls
 import com.tarixustoz.app.data.remote.PdfDownloader
 import com.tarixustoz.app.domain.model.Textbook
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+
+data class BookDownloadState(
+    val progress: Int,
+    val isPaused: Boolean = false
+)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -48,7 +56,8 @@ fun TextbooksScreen(
 
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
-    val downloadProgressMap = remember { mutableStateMapOf<String, Int>() }
+    val downloadProgressMap = remember { mutableStateMapOf<String, BookDownloadState>() }
+    val downloadJobMap = remember { mutableStateMapOf<String, Job>() }
 
     LaunchedEffect(Unit) {
         viewModel.load()
@@ -81,7 +90,7 @@ fun TextbooksScreen(
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        "6-11 sinf tarix darsliklari (Ekranni pastga tortib yangilang)",
+                        "6-11 sinf tarix darsliklari",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -141,12 +150,6 @@ fun TextbooksScreen(
                                 style = MaterialTheme.typography.bodyLarge,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
-                            Spacer(Modifier.height(8.dp))
-                            Text(
-                                "Ekranni pastga tortib darsliklarni qayta yuklang 🔄",
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.primary
-                            )
                         }
                     }
                 } else {
@@ -159,17 +162,12 @@ fun TextbooksScreen(
                         items(sortedTextbooks) { textbook ->
                             val fallbackPdfUrl = MediaUrls.textbook(textbook.gradeId, textbook.subjectId)
                             val pdfPath = textbook.pdfAsset?.takeIf { it.isNotBlank() } ?: fallbackPdfUrl
-                            val currentProgress = downloadProgressMap[textbook.id]
+                            val currentDownloadState = downloadProgressMap[textbook.id]
 
                             TextbookGridCard(
                                 textbook = textbook,
-                                downloadProgress = currentProgress,
+                                downloadState = currentDownloadState,
                                 onClick = {
-                                    if (currentProgress != null) {
-                                        // Already downloading
-                                        return@TextbookGridCard
-                                    }
-
                                     if (PdfDownloader.isPdfDownloaded(context, pdfPath)) {
                                         val localFile = PdfDownloader.getLocalPdfFile(context, pdfPath)
                                         val finalPath = if (localFile.exists() && localFile.length() > 50000L) {
@@ -179,36 +177,59 @@ fun TextbooksScreen(
                                         }
                                         onOpenPdf(textbook.title, finalPath)
                                     } else {
-                                        // Download with progress - DO NOT open PDF screen until 100% completed
-                                        downloadProgressMap[textbook.id] = 0
-                                        coroutineScope.launch {
-                                            PdfDownloader.downloadPdf(context, pdfPath).collect { state ->
-                                                when (state) {
-                                                    is DownloadState.Downloading -> {
-                                                        downloadProgressMap[textbook.id] = state.progress
-                                                        snackbarHostState.showSnackbar(
-                                                            message = "«${textbook.title}» darsligi yuklanmoqda: ${state.progress}%",
-                                                            duration = SnackbarDuration.Short
-                                                        )
-                                                    }
-                                                    is DownloadState.Success -> {
-                                                        downloadProgressMap.remove(textbook.id)
-                                                        snackbarHostState.showSnackbar(
-                                                            message = "«${textbook.title}» darsligi muvaffaqiyatli yuklandi! Ochilmoqda...",
-                                                            duration = SnackbarDuration.Short
-                                                        )
-                                                        onOpenPdf(textbook.title, state.file.absolutePath)
-                                                    }
-                                                    is DownloadState.Error -> {
-                                                        downloadProgressMap.remove(textbook.id)
-                                                        snackbarHostState.showSnackbar(
-                                                            message = state.message,
-                                                            duration = SnackbarDuration.Long
-                                                        )
-                                                    }
-                                                    else -> {}
+                                        // Play / Pause toggle or Start download
+                                        val state = downloadProgressMap[textbook.id]
+                                        if (state != null && !state.isPaused) {
+                                            // Pause download
+                                            downloadJobMap[textbook.id]?.cancel()
+                                            downloadJobMap.remove(textbook.id)
+                                            downloadProgressMap[textbook.id] = state.copy(isPaused = true)
+                                        } else {
+                                            // Start or Resume download
+                                            val startProgress = state?.progress ?: 0
+                                            downloadProgressMap[textbook.id] = BookDownloadState(startProgress, isPaused = false)
+
+                                            // Show single snackbar at download start
+                                            if (state == null) {
+                                                coroutineScope.launch {
+                                                    snackbarHostState.showSnackbar(
+                                                        message = "«${textbook.title}» darsligi yuklanmoqda... 📚",
+                                                        duration = SnackbarDuration.Short
+                                                    )
                                                 }
                                             }
+
+                                            val job = coroutineScope.launch {
+                                                PdfDownloader.downloadPdf(context, pdfPath).collect { downloadState ->
+                                                    when (downloadState) {
+                                                        is DownloadState.Downloading -> {
+                                                            downloadProgressMap[textbook.id] = BookDownloadState(downloadState.progress, isPaused = false)
+                                                        }
+                                                        is DownloadState.Paused -> {
+                                                            downloadProgressMap[textbook.id] = BookDownloadState(downloadState.progress, isPaused = true)
+                                                        }
+                                                        is DownloadState.Success -> {
+                                                            downloadProgressMap.remove(textbook.id)
+                                                            downloadJobMap.remove(textbook.id)
+                                                            snackbarHostState.showSnackbar(
+                                                                message = "«${textbook.title}» darsligi yuklandi!",
+                                                                duration = SnackbarDuration.Short
+                                                            )
+                                                            onOpenPdf(textbook.title, downloadState.file.absolutePath)
+                                                        }
+                                                        is DownloadState.Error -> {
+                                                            downloadProgressMap.remove(textbook.id)
+                                                            downloadJobMap.remove(textbook.id)
+                                                            snackbarHostState.showSnackbar(
+                                                                message = downloadState.message,
+                                                                duration = SnackbarDuration.Long
+                                                            )
+                                                        }
+                                                        else -> {}
+                                                    }
+                                                }
+                                            }
+                                            downloadJobMap[textbook.id] = job
                                         }
                                     }
                                 }
@@ -226,7 +247,7 @@ fun TextbooksScreen(
 @Composable
 private fun TextbookGridCard(
     textbook: Textbook,
-    downloadProgress: Int? = null,
+    downloadState: BookDownloadState? = null,
     onClick: () -> Unit
 ) {
     val coverUrl = textbook.coverAsset ?: "file:///android_asset/images/${textbook.id}_cover.png"
@@ -281,36 +302,36 @@ private fun TextbookGridCard(
                     }
                 }
 
-                // Radial Progress Overlay when Downloading
-                if (downloadProgress != null) {
+                // Radial Progress & Play/Pause Overlay when Downloading
+                if (downloadState != null) {
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(Color.Black.copy(alpha = 0.70f)),
+                            .background(Color.Black.copy(alpha = 0.75f)),
                         contentAlignment = Alignment.Center
                     ) {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
                             Box(contentAlignment = Alignment.Center) {
                                 CircularProgressIndicator(
-                                    progress = { (downloadProgress / 100f).coerceIn(0f, 1f) },
+                                    progress = { (downloadState.progress / 100f).coerceIn(0f, 1f) },
                                     color = Color.White,
                                     trackColor = Color.White.copy(alpha = 0.3f),
                                     strokeWidth = 4.dp,
                                     modifier = Modifier.size(46.dp)
                                 )
-                                Text(
-                                    text = "$downloadProgress%",
-                                    color = Color.White,
-                                    fontSize = 11.sp,
-                                    fontWeight = FontWeight.ExtraBold
+                                Icon(
+                                    imageVector = if (downloadState.isPaused) Icons.Default.PlayArrow else Icons.Default.Pause,
+                                    contentDescription = null,
+                                    tint = Color.White,
+                                    modifier = Modifier.size(20.dp)
                                 )
                             }
                             Spacer(Modifier.height(6.dp))
                             Text(
-                                "Yuklanmoqda...",
+                                text = if (downloadState.isPaused) "Pauza: ${downloadState.progress}%" else "${downloadState.progress}%",
                                 color = Color.White,
                                 fontSize = 11.sp,
-                                fontWeight = FontWeight.Bold
+                                fontWeight = FontWeight.ExtraBold
                             )
                         }
                     }

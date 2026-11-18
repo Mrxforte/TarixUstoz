@@ -1,6 +1,7 @@
 package com.tarixustoz.app.data.remote
 
 import android.content.Context
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -14,6 +15,7 @@ import java.util.concurrent.TimeUnit
 sealed class DownloadState {
     data object Idle : DownloadState()
     data class Downloading(val progress: Int) : DownloadState() // 0 to 100
+    data class Paused(val progress: Int) : DownloadState()
     data class Success(val file: File) : DownloadState()
     data class Error(val message: String) : DownloadState()
 }
@@ -47,16 +49,22 @@ object PdfDownloader {
             return@flow
         }
 
-        emit(DownloadState.Downloading(0))
+        var existingBytes = if (targetFile.exists()) targetFile.length() else 0L
 
         try {
             val cleanUrl = resolved.replace(" ", "%20")
-            val request = Request.Builder().url(cleanUrl).build()
+            val requestBuilder = Request.Builder().url(cleanUrl)
+            if (existingBytes > 0) {
+                requestBuilder.header("Range", "bytes=$existingBytes-")
+            }
+            val request = requestBuilder.build()
             val response = client.newCall(request).execute()
 
-            if (!response.isSuccessful) {
-                emit(DownloadState.Error("HTTP ${response.code}: ${response.message}"))
-                return@flow
+            val isPartial = response.code == 206
+            if (!response.isSuccessful && !isPartial) {
+                // Reset file if server doesn't support range
+                targetFile.delete()
+                existingBytes = 0L
             }
 
             val body = response.body
@@ -65,12 +73,13 @@ object PdfDownloader {
                 return@flow
             }
 
-            val totalBytes = body.contentLength()
-            var downloadedBytes = 0L
+            val totalBytes = if (isPartial) body.contentLength() + existingBytes else body.contentLength()
+            var downloadedBytes = if (isPartial) existingBytes else 0L
+            val append = isPartial && existingBytes > 0
             val buffer = ByteArray(8192)
 
             body.byteStream().use { input ->
-                FileOutputStream(targetFile).use { output ->
+                FileOutputStream(targetFile, append).use { output ->
                     var bytesRead: Int
                     var lastReportedProgress = -1
 
@@ -99,9 +108,15 @@ object PdfDownloader {
             }
 
         } catch (e: Exception) {
-            e.printStackTrace()
-            targetFile.delete()
-            emit(DownloadState.Error("Yuklab olishda xatolik: ${e.localizedMessage}"))
+            if (e is CancellationException) {
+                val progress = if (targetFile.exists() && targetFile.length() > 0) {
+                    ((targetFile.length() * 100) / 10_000_000L).toInt().coerceIn(1, 99)
+                } else 0
+                emit(DownloadState.Paused(progress))
+            } else {
+                e.printStackTrace()
+                emit(DownloadState.Error("Yuklab olishda xatolik: ${e.localizedMessage}"))
+            }
         }
     }.flowOn(Dispatchers.IO)
 }
