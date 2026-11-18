@@ -10,6 +10,7 @@ import android.graphics.Paint
 import android.graphics.Path
 import android.graphics.pdf.PdfRenderer
 import android.os.ParcelFileDescriptor
+import android.util.LruCache
 import android.view.WindowManager
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.*
@@ -1066,6 +1067,25 @@ fun PdfViewerScreen(
     }
 }
 
+private object PdfBitmapCache {
+    private val maxMemory = (Runtime.getRuntime().maxMemory() / 1024).toInt()
+    private val cacheSize = (maxMemory / 6).coerceAtLeast(1024)
+
+    private val lruCache = object : LruCache<String, Bitmap>(cacheSize) {
+        override fun sizeOf(key: String, bitmap: Bitmap): Int {
+            return bitmap.byteCount / 1024
+        }
+    }
+
+    fun get(key: String): Bitmap? = lruCache.get(key)
+
+    fun put(key: String, bitmap: Bitmap) {
+        if (get(key) == null) {
+            lruCache.put(key, bitmap)
+        }
+    }
+}
+
 @Composable
 private fun PdfRenderedPage(
     renderer: PdfRenderer,
@@ -1079,29 +1099,42 @@ private fun PdfRenderedPage(
     strokeWidth: Float,
     onSaveAnnotation: (PdfAnnotationEntity) -> Unit
 ) {
-    var bitmap by remember { mutableStateOf<Bitmap?>(null) }
+    val cacheKey = "${pageIndex}_${colorMode.name}"
+    var bitmap by remember(cacheKey) { mutableStateOf(PdfBitmapCache.get(cacheKey)) }
     var currentDrawPoints by remember { mutableStateOf<List<Offset>>(emptyList()) }
 
-    LaunchedEffect(pageIndex, colorMode) {
+    LaunchedEffect(cacheKey) {
+        if (bitmap != null) return@LaunchedEffect
+
         withContext(Dispatchers.IO) {
             try {
-                val page = renderer.openPage(pageIndex)
-                // Crisp 2.0x render resolution
-                val scale = 2.0f
-                val width = (page.width * scale).toInt()
-                val height = (page.height * scale).toInt()
-                val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-                val canvas = Canvas(bmp)
-
-                val bgColor = when (colorMode) {
-                    ColorMode.WHITE -> AndroidColor.WHITE
-                    ColorMode.SEPIA -> AndroidColor.parseColor("#FBF0D9")
-                    ColorMode.NIGHT -> AndroidColor.parseColor("#2B2B2B")
+                val cachedBmp = PdfBitmapCache.get(cacheKey)
+                if (cachedBmp != null) {
+                    bitmap = cachedBmp
+                    return@withContext
                 }
-                canvas.drawColor(bgColor)
 
-                page.render(bmp, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
-                page.close()
+                val bmp = synchronized(renderer) {
+                    val page = renderer.openPage(pageIndex)
+                    val scale = 1.75f
+                    val width = (page.width * scale).toInt()
+                    val height = (page.height * scale).toInt()
+                    val b = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+                    val canvas = Canvas(b)
+
+                    val bgColor = when (colorMode) {
+                        ColorMode.WHITE -> AndroidColor.WHITE
+                        ColorMode.SEPIA -> AndroidColor.parseColor("#FBF0D9")
+                        ColorMode.NIGHT -> AndroidColor.parseColor("#2B2B2B")
+                    }
+                    canvas.drawColor(bgColor)
+
+                    page.render(b, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
+                    page.close()
+                    b
+                }
+
+                PdfBitmapCache.put(cacheKey, bmp)
                 bitmap = bmp
             } catch (e: Exception) {
                 e.printStackTrace()

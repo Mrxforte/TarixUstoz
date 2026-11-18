@@ -1,5 +1,6 @@
 package com.tarixustoz.app.presentation.textbooks
 
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import com.tarixustoz.app.data.remote.MediaUrls
@@ -58,12 +59,18 @@ fun TextbooksScreen(
         contentWindowInsets = WindowInsets(0.dp),
         snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
     ) { innerPadding ->
-        Column(
+        PullToRefreshBox(
+            isRefreshing = isRefreshing,
+            onRefresh = { viewModel.load() },
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .padding(horizontal = 16.dp)
         ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 16.dp)
+            ) {
         Spacer(Modifier.height(12.dp))
 
         // Header
@@ -191,7 +198,8 @@ fun TextbooksScreen(
             }
         }
 
-        Spacer(Modifier.height(16.dp))
+                Spacer(Modifier.height(16.dp))
+            }
         }
 
         if (showResetDialog) {
