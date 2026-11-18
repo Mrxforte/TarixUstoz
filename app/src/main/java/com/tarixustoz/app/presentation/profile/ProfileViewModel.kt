@@ -24,6 +24,12 @@ class ProfileViewModel @Inject constructor(
     private val database: AppDatabase
 ) : ViewModel() {
 
+    val userEmail: StateFlow<String?> = preferencesRepository.userEmail
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
+
+    val isGuest: StateFlow<Boolean> = preferencesRepository.isGuest
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), true)
+
     val displayName: StateFlow<String> = preferencesRepository.displayName
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "Azizbek")
 
@@ -133,5 +139,12 @@ class ProfileViewModel @Inject constructor(
 
     fun setReminderTime(time: String) {
         viewModelScope.launch { preferencesRepository.setReminderTime(time) }
+    }
+
+    fun signOut() {
+        viewModelScope.launch {
+            preferencesRepository.setUserEmail(null)
+            preferencesRepository.setIsGuest(true)
+        }
     }
 }

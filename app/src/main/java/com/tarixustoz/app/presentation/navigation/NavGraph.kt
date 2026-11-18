@@ -32,6 +32,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.tarixustoz.app.presentation.auth.AuthScreen
 import com.tarixustoz.app.presentation.home.HomeScreen
 import com.tarixustoz.app.presentation.leaderboard.LeaderboardScreen
 import com.tarixustoz.app.presentation.mistakes.MistakesScreen
@@ -287,12 +288,19 @@ fun TarixNavHost() {
             }
             composable(Screen.Profile.route) {
                 ProfileScreen(
-                    onNavigateToEditProfile = { navController.navigate(Screen.EditProfile.route) }
+                    onNavigateToEditProfile = { navController.navigate(Screen.EditProfile.route) },
+                    onNavigateToAuth = { navController.navigate("auth") }
                 )
             }
             composable(Screen.EditProfile.route) {
                 EditProfileScreen(
                     onBack = { navController.popBackStack() }
+                )
+            }
+            composable("auth") {
+                AuthScreen(
+                    onBack = { navController.popBackStack() },
+                    onAuthSuccess = { navController.popBackStack() }
                 )
             }
         }

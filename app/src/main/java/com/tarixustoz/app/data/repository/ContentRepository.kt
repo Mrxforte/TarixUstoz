@@ -268,6 +268,33 @@ class ContentRepository @Inject constructor(
         }
     }
 
+    suspend fun insertQuestionsToDb(questions: List<Question>) = withContext(Dispatchers.IO) {
+        try {
+            val entities = questions.map { q ->
+                QuestionEntity(
+                    id = q.id,
+                    topicId = q.topicId,
+                    textbookId = q.textbookId,
+                    gradeId = q.gradeId,
+                    subjectId = q.subjectId,
+                    type = q.type.name,
+                    difficulty = q.difficulty.name,
+                    category = q.category.name,
+                    text = q.text,
+                    optionsJson = Json.encodeToString(q.options),
+                    explanation = q.explanation,
+                    historicalDate = q.historicalDate,
+                    personality = q.personality,
+                    sourceReference = q.sourceReference,
+                    pageHint = q.pageHint
+                )
+            }
+            db.questionDao().insertAll(entities)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
     suspend fun fetchQuizFromApi(
         count: Int,
         categoryCode: String,
@@ -281,8 +308,8 @@ class ContentRepository @Inject constructor(
             val effectiveGrade = if (numericTopicIds.isNotEmpty()) 0 else grade
             val effectiveSubject = when {
                 numericTopicIds.isNotEmpty() -> ""
-                grade == 6 -> "qadimgi"
-                else -> subject
+                subject.isNotBlank() -> subject
+                else -> ""
             }
 
             val req = QuizGenerateRequest(
@@ -294,7 +321,11 @@ class ContentRepository @Inject constructor(
                 topicIds = numericTopicIds
             )
             val response = apiService.generateQuiz(req)
-            response.questions.map { it.toDomain() }
+            val domainQuestions = response.questions.map { it.toDomain() }
+            if (domainQuestions.isNotEmpty()) {
+                insertQuestionsToDb(domainQuestions)
+            }
+            domainQuestions
         } catch (e: Exception) {
             e.printStackTrace()
             emptyList()

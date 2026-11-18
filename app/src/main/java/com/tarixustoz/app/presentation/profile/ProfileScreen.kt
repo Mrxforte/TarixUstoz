@@ -29,6 +29,7 @@ import com.tarixustoz.app.presentation.theme.ThemeViewModel
 @Composable
 fun ProfileScreen(
     onNavigateToEditProfile: () -> Unit = {},
+    onNavigateToAuth: () -> Unit = {},
     profileViewModel: ProfileViewModel = hiltViewModel(),
     themeViewModel: ThemeViewModel = hiltViewModel()
 ) {
@@ -40,6 +41,8 @@ fun ProfileScreen(
     val userStreak by profileViewModel.userStreak.collectAsState()
     val selectedGrade by profileViewModel.selectedGrade.collectAsState()
     val levelTitle by profileViewModel.levelTitle.collectAsState()
+    val userEmail by profileViewModel.userEmail.collectAsState()
+    val isGuest by profileViewModel.isGuest.collectAsState()
 
     val totalSolvedCount by profileViewModel.totalSolvedCount.collectAsState()
     val accuracyPercentage by profileViewModel.accuracyPercentage.collectAsState()
@@ -206,6 +209,67 @@ fun ProfileScreen(
                         contentDescription = "Tahrirlash",
                         tint = MaterialTheme.colorScheme.onSurfaceVariant
                     )
+                }
+            }
+
+            // Google Account / Optional Sign-In Card
+            Surface(
+                shape = RoundedCornerShape(18.dp),
+                color = if (isGuest) Color(0xFFFAF5FF) else Color(0xFFF0FDF4),
+                border = BorderStroke(1.dp, if (isGuest) BrandPurple.copy(alpha = 0.3f) else Color(0xFF86EFAC)),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Row(
+                    modifier = Modifier.padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Surface(
+                        shape = CircleShape,
+                        color = if (isGuest) BrandPurple else Color(0xFF16A34A),
+                        modifier = Modifier.size(40.dp)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Icon(
+                                Icons.Default.AccountCircle,
+                                contentDescription = null,
+                                tint = Color.White,
+                                modifier = Modifier.size(22.dp)
+                            )
+                        }
+                    }
+                    Spacer(Modifier.width(12.dp))
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = if (isGuest) "Mehmon rejimi" else "Google hisobi",
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 14.sp
+                        )
+                        Spacer(Modifier.height(2.dp))
+                        Text(
+                            text = if (isGuest) "Hisobingizni Google ga ulab natijalarni saqlang" else (userEmail ?: "Ulangani: Google"),
+                            fontSize = 12.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                    Spacer(Modifier.width(8.dp))
+                    if (isGuest) {
+                        Button(
+                            onClick = onNavigateToAuth,
+                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
+                            shape = RoundedCornerShape(12.dp),
+                            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
+                        ) {
+                            Text("Kirish", fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                        }
+                    } else {
+                        OutlinedButton(
+                            onClick = { profileViewModel.signOut() },
+                            shape = RoundedCornerShape(12.dp),
+                            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
+                        ) {
+                            Text("Chiqish", fontSize = 12.sp)
+                        }
+                    }
                 }
             }
 

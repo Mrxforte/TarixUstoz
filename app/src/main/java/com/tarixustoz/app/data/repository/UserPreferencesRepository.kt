@@ -74,6 +74,8 @@ class UserPreferencesRepository @Inject constructor(
         private val ACTIVE_QUIZ_JSON = stringPreferencesKey("active_quiz_json")
         private val REWARDED_AD_DATE = stringPreferencesKey("rewarded_ad_date")
         private val REWARDED_AD_COUNT = intPreferencesKey("rewarded_ad_count")
+        private val USER_EMAIL = stringPreferencesKey("user_email")
+        private val IS_GUEST = booleanPreferencesKey("is_guest")
     }
 
     val themeMode: Flow<ThemeMode> = dataStore.data.map { prefs ->
@@ -305,5 +307,18 @@ class UserPreferencesRepository @Inject constructor(
             }
         }
         return allowed
+    }
+
+    val userEmail: Flow<String?> = dataStore.data.map { it[USER_EMAIL] }
+    val isGuest: Flow<Boolean> = dataStore.data.map { it[IS_GUEST] ?: true }
+
+    suspend fun setUserEmail(email: String?) {
+        dataStore.edit {
+            if (email != null) it[USER_EMAIL] = email else it.remove(USER_EMAIL)
+        }
+    }
+
+    suspend fun setIsGuest(isGuest: Boolean) {
+        dataStore.edit { it[IS_GUEST] = isGuest }
     }
 }

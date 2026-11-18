@@ -129,26 +129,11 @@ class QuizViewModel @Inject constructor(
                 }
                 title = "$varIndex-Variant"
             } else if (!topicId.isNullOrBlank() && topicId != "custom") {
-                if (topicId.startsWith("book_") || topicId.startsWith("uz_") || topicId.startsWith("jahon_")) {
-                    val book = contentRepository.getTextbookById(topicId)
-                    val reqGrade = book?.gradeId ?: if (topicId == "uz_6") 6 else 0
-                    val reqSubject = book?.subjectId ?: ""
+                val book = contentRepository.getTextbookById(topicId)
+                val reqGrade = book?.gradeId ?: topicId.filter { it.isDigit() }.toIntOrNull() ?: currentGrade
+                val reqSubject = book?.subjectId ?: if (topicId.contains("jahon")) "jahon" else "uzbekiston"
 
-                    val apiQuestions = contentRepository.fetchQuizFromApi(
-                        count = count,
-                        categoryCode = catCode,
-                        grade = reqGrade,
-                        subject = reqSubject,
-                        difficulty = diffCode
-                    )
-                    questions = if (apiQuestions.isNotEmpty()) apiQuestions else contentRepository.getCustomQuestions(
-                        limit = count,
-                        category = catCode,
-                        difficulty = diffCode,
-                        topicIds = emptyList(),
-                        gradeId = reqGrade
-                    )
-                } else {
+                if (topicId.startsWith("topic_")) {
                     val dbQuestions = contentRepository.getQuestionsForTopic(topicId)
                     if (dbQuestions.isNotEmpty()) {
                         questions = dbQuestions
@@ -163,8 +148,28 @@ class QuizViewModel @Inject constructor(
                         )
                         questions = if (apiQuestions.isNotEmpty()) apiQuestions else dbQuestions
                     }
+                    title = "Mavzu testi"
+                } else {
+                    val apiQuestions = contentRepository.fetchQuizFromApi(
+                        count = count,
+                        categoryCode = catCode,
+                        grade = reqGrade,
+                        subject = reqSubject,
+                        difficulty = diffCode
+                    )
+                    questions = if (apiQuestions.isNotEmpty()) {
+                        apiQuestions
+                    } else {
+                        contentRepository.getCustomQuestions(
+                            limit = count,
+                            category = catCode,
+                            difficulty = diffCode,
+                            topicIds = emptyList(),
+                            gradeId = reqGrade
+                        )
+                    }
+                    title = book?.title ?: "$reqGrade-sinf testi"
                 }
-                title = "Mavzu testi"
             } else {
                 val hasTopicFilters = !selectedTopicIds.isNullOrEmpty()
                 val reqGrade = if (hasTopicFilters) 0 else currentGrade
