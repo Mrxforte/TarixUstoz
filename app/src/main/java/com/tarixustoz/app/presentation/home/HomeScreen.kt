@@ -17,6 +17,8 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.outlined.Schedule
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
+import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
+import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import kotlinx.coroutines.launch
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -88,6 +90,7 @@ fun HomeScreen(
     var showNotificationSheet by remember { mutableStateOf(false) }
     var isRefreshing by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
+    val pullState = rememberPullToRefreshState()
 
     LaunchedEffect(Unit) {
         viewModel.load()
@@ -186,6 +189,16 @@ fun HomeScreen(
                     viewModel.loadNextDailyQuestion()
                     isRefreshing = false
                 }
+            },
+            state = pullState,
+            indicator = {
+                PullToRefreshDefaults.Indicator(
+                    state = pullState,
+                    isRefreshing = isRefreshing,
+                    color = BrandPurple,
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    modifier = Modifier.align(Alignment.TopCenter)
+                )
             },
             modifier = Modifier
                 .fillMaxSize()

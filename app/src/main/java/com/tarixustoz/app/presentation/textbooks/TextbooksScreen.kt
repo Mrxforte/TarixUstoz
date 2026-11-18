@@ -18,6 +18,9 @@ import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.QuestionAnswer
 import androidx.compose.material3.*
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
+import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
+import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
+import com.tarixustoz.app.presentation.theme.BrandPurple
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -58,6 +61,7 @@ fun TextbooksScreen(
     val coroutineScope = rememberCoroutineScope()
     val downloadProgressMap = remember { mutableStateMapOf<String, BookDownloadState>() }
     val downloadJobMap = remember { mutableStateMapOf<String, Job>() }
+    val pullState = rememberPullToRefreshState()
 
     LaunchedEffect(Unit) {
         viewModel.load()
@@ -93,6 +97,16 @@ fun TextbooksScreen(
         PullToRefreshBox(
             isRefreshing = isRefreshing,
             onRefresh = { viewModel.load() },
+            state = pullState,
+            indicator = {
+                PullToRefreshDefaults.Indicator(
+                    state = pullState,
+                    isRefreshing = isRefreshing,
+                    color = BrandPurple,
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    modifier = Modifier.align(Alignment.TopCenter)
+                )
+            },
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)

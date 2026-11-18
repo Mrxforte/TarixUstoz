@@ -24,6 +24,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
+import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
+import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import kotlinx.coroutines.launch
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.domain.model.Textbook
@@ -74,6 +76,7 @@ fun TestsScreen(
 
     var isRefreshing by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
+    val pullState = rememberPullToRefreshState()
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
@@ -103,6 +106,16 @@ fun TestsScreen(
                     testsViewModel.loadCounts(selectedGrade)
                     isRefreshing = false
                 }
+            },
+            state = pullState,
+            indicator = {
+                PullToRefreshDefaults.Indicator(
+                    state = pullState,
+                    isRefreshing = isRefreshing,
+                    color = BrandPurple,
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    modifier = Modifier.align(Alignment.TopCenter)
+                )
             },
             modifier = Modifier
                 .fillMaxSize()
