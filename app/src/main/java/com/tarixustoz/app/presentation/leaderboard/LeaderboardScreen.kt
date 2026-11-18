@@ -571,7 +571,7 @@ fun LeaderboardScreen(
                             border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .clickable { selectedCategoryDetail = cat }
+                                .clickable { onNavigateToAnalysis(cat.title) }
                         ) {
                             Column(
                                 modifier = Modifier.padding(14.dp),
@@ -696,101 +696,6 @@ fun LeaderboardScreen(
                 }
 
                 item { Spacer(Modifier.height(16.dp)) }
-            }
-        }
-    }
-
-    // Category Detail Bottom Sheet when tapping any category or textbook
-    if (selectedCategoryDetail != null) {
-        val cat = selectedCategoryDetail!!
-        ModalBottomSheet(
-            onDismissRequest = { selectedCategoryDetail = null },
-            containerColor = MaterialTheme.colorScheme.surface
-        ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(20.dp)
-                    .verticalScroll(rememberScrollState()),
-                verticalArrangement = Arrangement.spacedBy(14.dp)
-            ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(cat.title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-                        Text(cat.subtitle, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    }
-                    IconButton(onClick = { selectedCategoryDetail = null }) {
-                        Icon(Icons.Default.Close, contentDescription = "Yopish")
-                    }
-                }
-
-                HorizontalDivider()
-
-                // Dual-Line Chart for this specific Category
-                DualLineStudentChart(
-                    points = cat.chartData,
-                    animProgress = animProgress
-                )
-
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                    Surface(
-                        shape = RoundedCornerShape(12.dp),
-                        color = Color(0xFFEFF6FF),
-                        modifier = Modifier.weight(1f)
-                    ) {
-                        Column(modifier = Modifier.padding(12.dp)) {
-                            Text("To'g'rilik", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            Text("${cat.accuracyPercent}%", fontSize = 16.sp, fontWeight = FontWeight.Bold, color = BrandPurple)
-                        }
-                    }
-
-                    Surface(
-                        shape = RoundedCornerShape(12.dp),
-                        color = Color(0xFFF0FDF4),
-                        modifier = Modifier.weight(1f)
-                    ) {
-                        Column(modifier = Modifier.padding(12.dp)) {
-                            Text("Jami ishlangan", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            Text("${cat.correctCount}/${cat.totalSolved}", fontSize = 16.sp, fontWeight = FontWeight.Bold, color = Color(0xFF16A34A))
-                        }
-                    }
-
-                    Surface(
-                        shape = RoundedCornerShape(12.dp),
-                        color = Color(0xFFFEF3C7),
-                        modifier = Modifier.weight(1f)
-                    ) {
-                        Column(modifier = Modifier.padding(12.dp)) {
-                            Text("O'rtacha tezlik", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                            Text("${cat.averageSpeedSeconds} sek", fontSize = 16.sp, fontWeight = FontWeight.Bold, color = Color(0xFFD97706))
-                        }
-                    }
-                }
-
-                Button(
-                    onClick = {
-                        selectedCategoryDetail = null
-                        onStartQuiz(cat.title)
-                    },
-                    colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
-                    shape = RoundedCornerShape(14.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(48.dp)
-                ) {
-                    Icon(Icons.Default.PlayArrow, contentDescription = null, tint = Color.White)
-                    Spacer(Modifier.width(8.dp))
-                    Text("Ushbu bo'limdan test yechish", fontWeight = FontWeight.Bold, color = Color.White)
-                }
-
-                Spacer(Modifier.height(10.dp))
             }
         }
     }

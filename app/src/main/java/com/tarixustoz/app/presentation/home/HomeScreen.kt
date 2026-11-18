@@ -37,10 +37,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.ads.AdMobManager
+import com.tarixustoz.app.presentation.common.components.TestSectionRow
+import com.tarixustoz.app.presentation.tests.TestCardItem
 import com.tarixustoz.app.presentation.theme.*
 
 private fun iconForCategory(iconType: String): ImageVector = when (iconType) {
-    "location" -> Icons.Default.LocationOn
     "person" -> Icons.Default.Person
     "calendar" -> Icons.Default.CalendarMonth
     "event" -> Icons.Default.Event
