@@ -88,8 +88,8 @@ class ProfileViewModel @Inject constructor(
         database.quizAttemptDao().getCorrectCountFlow(),
         database.quizAttemptDao().getTotalCountFlow()
     ) { correct, total ->
-        if (total > 0) (correct * 100) / total else 100
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 100)
+        if (total > 0) (correct * 100) / total else 0
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 0)
 
     val achievementsList: StateFlow<List<AchievementUiState>> = combine(
         database.quizAttemptDao().getTotalCountFlow(),

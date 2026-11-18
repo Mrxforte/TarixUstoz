@@ -2,6 +2,8 @@ package com.tarixustoz.app.presentation.quiz
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.tarixustoz.app.data.local.AppDatabase
+import com.tarixustoz.app.data.local.QuizAttemptEntity
 import com.tarixustoz.app.data.repository.ActiveQuizState
 import com.tarixustoz.app.data.repository.ContentRepository
 import com.tarixustoz.app.data.repository.MistakesRepository
@@ -34,7 +36,8 @@ data class QuizUiState(
 class QuizViewModel @Inject constructor(
     private val contentRepository: ContentRepository,
     private val mistakesRepository: MistakesRepository,
-    private val preferences: UserPreferencesRepository
+    private val preferences: UserPreferencesRepository,
+    private val database: AppDatabase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(QuizUiState())
@@ -242,8 +245,22 @@ class QuizViewModel @Inject constructor(
         val isCorrect = correctOption?.id == selected
 
         viewModelScope.launch {
+            val userAnswerText = question.options.find { it.id == selected }?.text ?: selected
+            try {
+                database.quizAttemptDao().insert(
+                    QuizAttemptEntity(
+                        questionId = question.id,
+                        wasCorrect = isCorrect,
+                        userAnswer = userAnswerText,
+                        timestamp = System.currentTimeMillis(),
+                        sessionId = currentQuizRoute
+                    )
+                )
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+
             if (!isCorrect) {
-                val userAnswerText = question.options.find { it.id == selected }?.text ?: selected
                 mistakesRepository.recordIncorrect(question, userAnswerText)
             } else {
                 preferences.addXp(10)
