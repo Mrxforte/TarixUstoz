@@ -1,9 +1,5 @@
 package com.tarixustoz.app.presentation.textbooks
 
-import androidx.compose.material3.pulltorefresh.PullToRefreshBox
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import com.tarixustoz.app.data.remote.MediaUrls
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -18,21 +14,25 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.QuestionAnswer
-import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.*
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
+import com.tarixustoz.app.data.remote.DownloadState
+import com.tarixustoz.app.data.remote.MediaUrls
+import com.tarixustoz.app.data.remote.PdfDownloader
 import com.tarixustoz.app.domain.model.Textbook
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -41,14 +41,14 @@ fun TextbooksScreen(
     onOpenPdf: (title: String, pdfAsset: String) -> Unit,
     viewModel: TextbooksViewModel = hiltViewModel()
 ) {
+    val context = LocalContext.current
     val textbooks by viewModel.textbooks.collectAsState()
     val selectedGrade by viewModel.selectedGrade.collectAsState()
     val isRefreshing by viewModel.isRefreshing.collectAsState()
-    var showResetDialog by remember { mutableStateOf(false) }
 
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
-    var downloadingBookId by remember { mutableStateOf<String?>(null) }
+    val downloadProgressMap = remember { mutableStateMapOf<String, Int>() }
 
     LaunchedEffect(Unit) {
         viewModel.load()
@@ -71,158 +71,154 @@ fun TextbooksScreen(
                     .fillMaxSize()
                     .padding(horizontal = 16.dp)
             ) {
-        Spacer(Modifier.height(12.dp))
+                Spacer(Modifier.height(12.dp))
 
-        // Header
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Column {
-                Text(
-                    "Darsliklar",
-                    style = MaterialTheme.typography.headlineMedium,
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    "6-11 sinf tarix darsliklari (PDF va API)",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
-
-            IconButton(onClick = { showResetDialog = true }) {
-                if (isRefreshing) {
-                    CircularProgressIndicator(modifier = Modifier.size(24.dp))
-                } else {
-                    Icon(Icons.Default.Refresh, contentDescription = "Yangilash")
-                }
-            }
-        }
-
-        Spacer(Modifier.height(12.dp))
-
-        // Grade Filter Chips
-        LazyRow(
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            item {
-                FilterChip(
-                    selected = selectedGrade == 0,
-                    onClick = { viewModel.setGrade(0) },
-                    label = { Text("Barchasi") }
-                )
-            }
-            items((6..11).toList()) { grade ->
-                FilterChip(
-                    selected = selectedGrade == grade,
-                    onClick = { viewModel.setGrade(grade) },
-                    label = { Text("$grade-sinf") }
-                )
-            }
-        }
-
-        Spacer(Modifier.height(16.dp))
-
-        val sortedTextbooks = remember(textbooks) {
-            textbooks.sortedWith(
-                compareBy<Textbook> { it.gradeId }
-                    .thenBy { if (it.subjectId.contains("jahon")) 1 else 0 }
-                    .thenBy { it.title }
-            )
-        }
-
-        // 2-Column Grid
-        if (sortedTextbooks.isEmpty()) {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f),
-                contentAlignment = Alignment.Center
-            ) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Icon(
-                        Icons.Default.MenuBook,
-                        contentDescription = null,
-                        modifier = Modifier.size(64.dp),
-                        tint = MaterialTheme.colorScheme.outline
-                    )
-                    Spacer(Modifier.height(12.dp))
+                // Header
+                Column {
                     Text(
-                        if (selectedGrade == 0) "Darsliklar topilmadi" else "$selectedGrade-sinf bo'yicha darsliklar topilmadi",
-                        style = MaterialTheme.typography.bodyLarge,
+                        "Darsliklar",
+                        style = MaterialTheme.typography.headlineMedium,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        "6-11 sinf tarix darsliklari (Ekranni pastga tortib yangilang)",
+                        style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
-                    Spacer(Modifier.height(16.dp))
-                    Button(onClick = { viewModel.load() }) {
-                        Icon(Icons.Default.Refresh, contentDescription = null)
-                        Spacer(Modifier.width(8.dp))
-                        Text("API dan darsliklarni qayta yuklash")
+                }
+
+                Spacer(Modifier.height(12.dp))
+
+                // Grade Filter Chips
+                LazyRow(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    item {
+                        FilterChip(
+                            selected = selectedGrade == 0,
+                            onClick = { viewModel.setGrade(0) },
+                            label = { Text("Barchasi") }
+                        )
+                    }
+                    items((6..11).toList()) { grade ->
+                        FilterChip(
+                            selected = selectedGrade == grade,
+                            onClick = { viewModel.setGrade(grade) },
+                            label = { Text("$grade-sinf") }
+                        )
                     }
                 }
-            }
-        } else {
-            LazyVerticalGrid(
-                columns = GridCells.Fixed(2),
-                horizontalArrangement = Arrangement.spacedBy(12.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp),
-                modifier = Modifier.weight(1f)
-            ) {
-                items(sortedTextbooks) { textbook ->
-                    val fallbackPdfUrl = MediaUrls.textbook(textbook.gradeId, textbook.subjectId)
-                    val pdfPath = textbook.pdfAsset?.takeIf { it.isNotBlank() } ?: fallbackPdfUrl
 
-                    TextbookGridCard(
-                        textbook = textbook,
-                        isDownloading = downloadingBookId == textbook.id,
-                        onClick = {
-                            if (pdfPath.startsWith("http")) {
-                                downloadingBookId = textbook.id
-                                coroutineScope.launch {
-                                    snackbarHostState.showSnackbar(
-                                        message = "«${textbook.title}» Darslik PDF fayli yuklanmoqda... Instant formatda ochiladi 📚",
-                                        duration = SnackbarDuration.Short
-                                    )
-                                    delay(1000)
-                                    downloadingBookId = null
-                                    onOpenPdf(textbook.title, pdfPath)
-                                }
-                            } else {
-                                onOpenPdf(textbook.title, pdfPath)
-                            }
-                        }
+                Spacer(Modifier.height(16.dp))
+
+                val sortedTextbooks = remember(textbooks) {
+                    textbooks.sortedWith(
+                        compareBy<Textbook> { it.gradeId }
+                            .thenBy { if (it.subjectId.contains("jahon")) 1 else 0 }
+                            .thenBy { it.title }
                     )
                 }
-            }
-        }
+
+                // 2-Column Grid
+                if (sortedTextbooks.isEmpty()) {
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .weight(1f),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            Icon(
+                                Icons.Default.MenuBook,
+                                contentDescription = null,
+                                modifier = Modifier.size(64.dp),
+                                tint = MaterialTheme.colorScheme.outline
+                            )
+                            Spacer(Modifier.height(12.dp))
+                            Text(
+                                if (selectedGrade == 0) "Darsliklar topilmadi" else "$selectedGrade-sinf bo'yicha darsliklar topilmadi",
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                            Spacer(Modifier.height(8.dp))
+                            Text(
+                                "Ekranni pastga tortib darsliklarni qayta yuklang 🔄",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.primary
+                            )
+                        }
+                    }
+                } else {
+                    LazyVerticalGrid(
+                        columns = GridCells.Fixed(2),
+                        horizontalArrangement = Arrangement.spacedBy(12.dp),
+                        verticalArrangement = Arrangement.spacedBy(12.dp),
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        items(sortedTextbooks) { textbook ->
+                            val fallbackPdfUrl = MediaUrls.textbook(textbook.gradeId, textbook.subjectId)
+                            val pdfPath = textbook.pdfAsset?.takeIf { it.isNotBlank() } ?: fallbackPdfUrl
+                            val currentProgress = downloadProgressMap[textbook.id]
+
+                            TextbookGridCard(
+                                textbook = textbook,
+                                downloadProgress = currentProgress,
+                                onClick = {
+                                    if (currentProgress != null) {
+                                        // Already downloading
+                                        return@TextbookGridCard
+                                    }
+
+                                    if (PdfDownloader.isPdfDownloaded(context, pdfPath)) {
+                                        val localFile = PdfDownloader.getLocalPdfFile(context, pdfPath)
+                                        val finalPath = if (localFile.exists() && localFile.length() > 50000L) {
+                                            localFile.absolutePath
+                                        } else {
+                                            pdfPath
+                                        }
+                                        onOpenPdf(textbook.title, finalPath)
+                                    } else {
+                                        // Download with progress - DO NOT open PDF screen until 100% completed
+                                        downloadProgressMap[textbook.id] = 0
+                                        coroutineScope.launch {
+                                            PdfDownloader.downloadPdf(context, pdfPath).collect { state ->
+                                                when (state) {
+                                                    is DownloadState.Downloading -> {
+                                                        downloadProgressMap[textbook.id] = state.progress
+                                                        snackbarHostState.showSnackbar(
+                                                            message = "«${textbook.title}» darsligi yuklanmoqda: ${state.progress}%",
+                                                            duration = SnackbarDuration.Short
+                                                        )
+                                                    }
+                                                    is DownloadState.Success -> {
+                                                        downloadProgressMap.remove(textbook.id)
+                                                        snackbarHostState.showSnackbar(
+                                                            message = "«${textbook.title}» darsligi muvaffaqiyatli yuklandi! Ochilmoqda...",
+                                                            duration = SnackbarDuration.Short
+                                                        )
+                                                        onOpenPdf(textbook.title, state.file.absolutePath)
+                                                    }
+                                                    is DownloadState.Error -> {
+                                                        downloadProgressMap.remove(textbook.id)
+                                                        snackbarHostState.showSnackbar(
+                                                            message = state.message,
+                                                            duration = SnackbarDuration.Long
+                                                        )
+                                                    }
+                                                    else -> {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            )
+                        }
+                    }
+                }
 
                 Spacer(Modifier.height(16.dp))
             }
-        }
-
-        if (showResetDialog) {
-            AlertDialog(
-                onDismissRequest = { showResetDialog = false },
-                title = { Text("Darsliklarni API orqali yangilash") },
-                text = { Text("Barcha darsliklar server API orqali qayta yuklanadi va yangilanadi. Davom ettirasizmi?") },
-                confirmButton = {
-                    TextButton(
-                        onClick = {
-                            showResetDialog = false
-                            viewModel.load()
-                        }
-                    ) {
-                        Text("Ha, yangilash")
-                    }
-                },
-                dismissButton = {
-                    TextButton(onClick = { showResetDialog = false }) {
-                        Text("Bekor qilish")
-                    }
-                }
-            )
         }
     }
 }
@@ -230,7 +226,7 @@ fun TextbooksScreen(
 @Composable
 private fun TextbookGridCard(
     textbook: Textbook,
-    isDownloading: Boolean = false,
+    downloadProgress: Int? = null,
     onClick: () -> Unit
 ) {
     val coverUrl = textbook.coverAsset ?: "file:///android_asset/images/${textbook.id}_cover.png"
@@ -286,19 +282,29 @@ private fun TextbookGridCard(
                 }
 
                 // Radial Progress Overlay when Downloading
-                if (isDownloading) {
+                if (downloadProgress != null) {
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(Color.Black.copy(alpha = 0.65f)),
+                            .background(Color.Black.copy(alpha = 0.70f)),
                         contentAlignment = Alignment.Center
                     ) {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            CircularProgressIndicator(
-                                color = Color.White,
-                                strokeWidth = 3.dp,
-                                modifier = Modifier.size(34.dp)
-                            )
+                            Box(contentAlignment = Alignment.Center) {
+                                CircularProgressIndicator(
+                                    progress = { (downloadProgress / 100f).coerceIn(0f, 1f) },
+                                    color = Color.White,
+                                    trackColor = Color.White.copy(alpha = 0.3f),
+                                    strokeWidth = 4.dp,
+                                    modifier = Modifier.size(46.dp)
+                                )
+                                Text(
+                                    text = "$downloadProgress%",
+                                    color = Color.White,
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.ExtraBold
+                                )
+                            }
                             Spacer(Modifier.height(6.dp))
                             Text(
                                 "Yuklanmoqda...",
@@ -339,23 +345,23 @@ private fun TextbookGridCard(
                             if (textbook.subjectId == "uzbekiston") "O‘zbekiston" else "Jahon",
                             modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
                             style = MaterialTheme.typography.labelSmall,
-                            color = if (textbook.subjectId == "uzbekiston") Color(0xFF2E7D32) else Color(0xFF1565C0),
-                            fontWeight = FontWeight.Bold
+                            fontWeight = FontWeight.Bold,
+                            color = if (textbook.subjectId == "uzbekiston") Color(0xFF2E7D32) else Color(0xFF1565C0)
                         )
                     }
                 }
             }
 
-            // Book Details
+            // Book Information
             Column(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .padding(10.dp),
+                    .fillMaxWidth()
+                    .padding(12.dp),
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    textbook.title,
-                    style = MaterialTheme.typography.titleMedium,
+                    text = textbook.title,
+                    style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.Bold,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
