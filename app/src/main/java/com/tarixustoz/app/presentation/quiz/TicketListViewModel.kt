@@ -72,9 +72,11 @@ class TicketListViewModel @Inject constructor(
             } catch (_: Exception) { 7 }
 
             val totalQuestions = when {
-                categoryKey.startsWith("book_") || categoryKey.startsWith("uz_") -> {
-                    val book = contentRepository.getTextbookById(categoryKey)
-                    book?.totalQuestions ?: 0
+                categoryKey.startsWith("book_") || categoryKey.startsWith("uz_") || categoryKey.startsWith("jahon_") -> {
+                    val cleanId = categoryKey.removePrefix("book_")
+                    val book = contentRepository.getTextbookById(cleanId)
+                    val bookCount = book?.totalQuestions ?: 0
+                    if (bookCount > 0) bookCount else 100000
                 }
                 categoryKey.startsWith("topic_") -> {
                     val topicId = categoryKey.removePrefix("topic_")

@@ -77,8 +77,10 @@ class ContentRepository @Inject constructor(
             list.map { it.toDomain(json) }
         }
 
-    suspend fun getTextbookById(id: String): Textbook? =
-        db.textbookDao().getById(id)?.toDomain()
+    suspend fun getTextbookById(id: String): Textbook? {
+        val cleanId = id.removePrefix("book_")
+        return db.textbookDao().getById(cleanId)?.toDomain() ?: db.textbookDao().getById(id)?.toDomain()
+    }
 
     suspend fun getTopicById(topicId: String): Topic? =
         db.topicDao().getById(topicId)?.toDomain(json)
@@ -122,13 +124,20 @@ class ContentRepository @Inject constructor(
         grade: Int = 0
     ): List<Question> = withContext(Dispatchers.IO) {
         try {
+            val cleanKey = categoryKey.removePrefix("book_")
             val gradeFilter = when {
-                categoryKey.startsWith("book_") -> categoryKey.removePrefix("book_").toIntOrNull()
+                categoryKey.startsWith("book_") || categoryKey.startsWith("uz_") || categoryKey.startsWith("jahon_") -> {
+                    cleanKey.filter { it.isDigit() }.toIntOrNull()
+                }
                 grade > 0 -> grade
                 else -> null
             }
+            val reqCategory = if (categoryKey.startsWith("book_")) {
+                if (cleanKey.contains("jahon")) "JAHON" else "UZBEKISTON"
+            } else categoryKey
+
             apiService.getTicket(
-                category = categoryKey,
+                category = reqCategory,
                 grade = gradeFilter,
                 ticket = ticketIndex,
                 size = count
@@ -151,18 +160,31 @@ class ContentRepository @Inject constructor(
         if (remote.isNotEmpty()) return remote
 
         val offset = (ticketIndex - 1) * count
-        return if (categoryKey.startsWith("book_")) {
-            val gradeStr = categoryKey.removePrefix("book_")
-            val gradeId = gradeStr.toIntOrNull() ?: 0
-            db.questionDao().getFilteredWithTopicsOffset(
+        return if (categoryKey.startsWith("book_") || categoryKey.startsWith("uz_") || categoryKey.startsWith("jahon_")) {
+            val cleanKey = categoryKey.removePrefix("book_")
+            val gradeId = cleanKey.filter { it.isDigit() }.toIntOrNull() ?: grade
+            val subjectId = if (cleanKey.contains("jahon")) "jahon" else "uzbekiston"
+
+            val localQuestions = db.questionDao().getByGradeAndSubjectWithOffset(
                 gradeId = gradeId,
-                category = "ALL",
-                difficulty = "ALL",
-                topicIds = emptyList(),
-                selectAllTopics = true,
+                subjectId = subjectId,
                 limit = count,
                 offset = offset
             ).map { it.toDomain(json) }
+
+            if (localQuestions.isNotEmpty()) {
+                localQuestions
+            } else {
+                db.questionDao().getFilteredWithTopicsOffset(
+                    gradeId = gradeId,
+                    category = "ALL",
+                    difficulty = "ALL",
+                    topicIds = emptyList(),
+                    selectAllTopics = true,
+                    limit = count,
+                    offset = offset
+                ).map { it.toDomain(json) }
+            }
         } else if (categoryKey.startsWith("topic_")) {
             val topicId = categoryKey.removePrefix("topic_")
             db.questionDao().getFilteredWithTopicsOffset(
