@@ -23,7 +23,7 @@ object AdMobManager {
     private const val TAG = "AdMobManager"
 
     // Real AdMob Ad Unit IDs
-    const val BANNER_AD_UNIT_ID = "ca-app-pub-2360068229850342/4905512084"
+    const val BANNER_AD_UNIT_ID = "ca-app-pub-2360068229850342/6027022065"
     const val REWARDED_AD_UNIT_ID = "ca-app-pub-2360068229850342/4905512084"
 
     fun initAdMob(context: Context) {
