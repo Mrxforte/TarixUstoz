@@ -22,6 +22,8 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 
 tailrec fun Context.findActivity(): Activity? = when (this) {
     is Activity -> this
@@ -52,21 +54,31 @@ object AdMobManager {
     }
 
     /**
-     * Small Banner Ad view placed at the bottom of Quiz/Test screen.
-     * Shows a fallback test ad or preview placeholder if live ad is pending Google approval.
+     * Auto-refreshing Banner Ad view matching exact banner dimensions.
+     * Periodically updates ads every 30 seconds automatically.
      */
     @Composable
     fun BannerAdView(
         modifier: Modifier = Modifier,
-        adUnitId: String = BANNER_AD_UNIT_ID
+        adUnitId: String = BANNER_AD_UNIT_ID,
+        autoRefreshIntervalSeconds: Long = 30L
     ) {
         var isAdLoaded by remember { mutableStateOf(false) }
         var activeUnitId by remember { mutableStateOf(adUnitId) }
+        var adViewRef by remember { mutableStateOf<AdView?>(null) }
+
+        // Periodic auto-refresh every 30 seconds
+        LaunchedEffect(activeUnitId) {
+            while (isActive) {
+                delay(autoRefreshIntervalSeconds * 1000L)
+                adViewRef?.loadAd(AdRequest.Builder().build())
+            }
+        }
 
         Box(
             modifier = modifier
                 .fillMaxWidth()
-                .padding(vertical = 4.dp),
+                .wrapContentHeight(),
             contentAlignment = Alignment.Center
         ) {
             key(activeUnitId) {
@@ -89,17 +101,27 @@ object AdMobManager {
                                 }
                             }
                             loadAd(AdRequest.Builder().build())
+                            adViewRef = this
                         }
+                    },
+                    update = { adView ->
+                        adViewRef = adView
                     }
                 )
             }
 
-            // Visual Placeholder Card shown while loading
+            DisposableEffect(activeUnitId) {
+                onDispose {
+                    adViewRef?.destroy()
+                    adViewRef = null
+                }
+            }
+
+            // Fallback preview card matching banner size while loading
             if (!isAdLoaded) {
                 Surface(
-                    shape = RoundedCornerShape(8.dp),
+                    shape = RoundedCornerShape(12.dp),
                     color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.85f),
-                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.3f)),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(50.dp)
@@ -131,7 +153,7 @@ object AdMobManager {
                             )
                         }
                         Text(
-                            text = "Google AdMob",
+                            text = "AdMob",
                             fontSize = 10.sp,
                             color = MaterialTheme.colorScheme.outline
                         )

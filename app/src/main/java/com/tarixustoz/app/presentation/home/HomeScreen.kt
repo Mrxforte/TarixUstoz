@@ -781,68 +781,6 @@ fun HomeScreen(
                 }
             }
 
-            // 5. DTM Imtihon Banner Card
-            item {
-                Surface(
-                    shape = RoundedCornerShape(18.dp),
-                    color = Color(0xFF1E1F38),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable { onNavigateToQuiz("dtm_exam") }
-                        .testTag("home_dtm_banner")
-                ) {
-                    Row(
-                        modifier = Modifier.padding(16.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Surface(
-                            shape = CircleShape,
-                            color = Color(0xFF2E3056),
-                            modifier = Modifier.size(44.dp)
-                        ) {
-                            Box(contentAlignment = Alignment.Center) {
-                                Icon(
-                                    Icons.Default.EmojiEvents,
-                                    contentDescription = null,
-                                    tint = Color(0xFFFBBF24),
-                                    modifier = Modifier.size(24.dp)
-                                )
-                            }
-                        }
-                        Spacer(Modifier.width(14.dp))
-                        Column(modifier = Modifier.weight(1f)) {
-                            Text(
-                                text = "DTM IMTIHONIGA TAYYORLANING",
-                                color = Color.White,
-                                fontSize = 12.sp,
-                                fontWeight = FontWeight.Bold,
-                                letterSpacing = 0.5.sp
-                            )
-                            Spacer(Modifier.height(2.dp))
-                            Text(
-                                text = "30 savol • 60 daqiqa",
-                                color = Color(0xFF94A3B8),
-                                fontSize = 12.sp
-                            )
-                        }
-                        Surface(
-                            shape = CircleShape,
-                            color = Color(0xFF2E3056),
-                            modifier = Modifier.size(34.dp)
-                        ) {
-                            Box(contentAlignment = Alignment.Center) {
-                                Icon(
-                                    Icons.AutoMirrored.Filled.ArrowForward,
-                                    contentDescription = null,
-                                    tint = Color.White,
-                                    modifier = Modifier.size(16.dp)
-                                )
-                            }
-                        }
-                    }
-                }
-            }
-
             item { Spacer(Modifier.height(16.dp)) }
         }
     }
