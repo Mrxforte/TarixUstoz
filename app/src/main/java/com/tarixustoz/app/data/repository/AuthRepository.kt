@@ -40,7 +40,9 @@ class AuthRepository @Inject constructor(
             val authResult = auth.signInWithCredential(credential).await()
             val user = authResult.user
             if (user != null) {
-                cloudSyncRepository.syncOnSignIn(user)
+                preferences.setTestModeActive(false)
+                preferences.setIsGuest(false)
+                runCatching { cloudSyncRepository.syncOnSignIn(user) }
             }
             Result.success(user)
         } catch (e: CancellationException) {
@@ -55,7 +57,9 @@ class AuthRepository @Inject constructor(
             val authResult = auth.signInWithEmailAndPassword(email.trim(), password).await()
             val user = authResult.user
             if (user != null) {
-                cloudSyncRepository.syncOnSignIn(user)
+                preferences.setTestModeActive(false)
+                preferences.setIsGuest(false)
+                runCatching { cloudSyncRepository.syncOnSignIn(user) }
             }
             Result.success(user)
         } catch (e: CancellationException) {
@@ -78,6 +82,8 @@ class AuthRepository @Inject constructor(
             val authResult = auth.createUserWithEmailAndPassword(email.trim(), password).await()
             val user = authResult.user
             if (user != null) {
+                preferences.setTestModeActive(false)
+                preferences.setIsGuest(false)
                 val profileUpdates = UserProfileChangeRequest.Builder()
                     .setDisplayName(cleanName)
                     .build()
@@ -85,7 +91,7 @@ class AuthRepository @Inject constructor(
                 preferences.setUserRole(cleanRole)
                 preferences.setSelectedGrade(grade.coerceIn(6, 11))
                 preferences.setDisplayName(cleanName)
-                cloudSyncRepository.syncOnSignIn(user)
+                runCatching { cloudSyncRepository.syncOnSignIn(user) }
             }
             Result.success(user)
         } catch (e: CancellationException) {

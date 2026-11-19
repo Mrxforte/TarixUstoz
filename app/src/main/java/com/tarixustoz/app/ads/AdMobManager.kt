@@ -8,7 +8,10 @@ import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.School
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -111,6 +114,55 @@ object AdMobManager {
 
     fun effectiveAdaptiveBannerUnitId(requestedUnitId: String, isTestMode: Boolean): String {
         return if (isTestMode) TEST_ADAPTIVE_BANNER_AD_UNIT_ID else requestedUnitId
+    }
+
+    @Composable
+    fun FallbackPromoBanner(
+        modifier: Modifier = Modifier,
+        title: String = "TarixUstoz • Tarix Testlari 📚",
+        subtitle: String = "BARCHA SINFLAR VA TEST BILETLARI BILAN DTM GA TAYYORLANING!"
+    ) {
+        Surface(
+            shape = RoundedCornerShape(14.dp),
+            color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.85f),
+            border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.35f)),
+            modifier = modifier
+        ) {
+            Row(
+                modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                Surface(
+                    shape = CircleShape,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.size(36.dp)
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Icon(
+                            Icons.Default.School,
+                            contentDescription = null,
+                            tint = Color.White,
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+                }
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text = title,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 13.sp,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
+                    )
+                    Text(
+                        text = subtitle,
+                        fontSize = 11.sp,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.85f),
+                        maxLines = 2
+                    )
+                }
+            }
+        }
     }
 
     private val _diagnostics = MutableStateFlow(AdMobDiagnosticsState())
@@ -295,12 +347,14 @@ object AdMobManager {
         val resolvedUnitId = effectiveBannerUnitId(adUnitId, diag.isTestMode)
 
         var isAdLoaded by remember(resolvedUnitId) { mutableStateOf(false) }
+        var isAdFailed by remember(resolvedUnitId) { mutableStateOf(false) }
         var localUnitId by remember(resolvedUnitId) { mutableStateOf(resolvedUnitId) }
         var adViewRef by remember { mutableStateOf<AdView?>(null) }
 
         LaunchedEffect(resolvedUnitId) {
             if (localUnitId != resolvedUnitId) {
                 isAdLoaded = false
+                isAdFailed = false
                 localUnitId = resolvedUnitId
             }
         }
@@ -432,12 +486,14 @@ object AdMobManager {
         val resolvedUnitId = effectiveAdaptiveBannerUnitId(adUnitId, diag.isTestMode)
 
         var isAdLoaded by remember(resolvedUnitId) { mutableStateOf(false) }
+        var isAdFailed by remember(resolvedUnitId) { mutableStateOf(false) }
         var localUnitId by remember(resolvedUnitId) { mutableStateOf(resolvedUnitId) }
         var adViewRef by remember { mutableStateOf<AdView?>(null) }
 
         LaunchedEffect(resolvedUnitId) {
             if (localUnitId != resolvedUnitId) {
                 isAdLoaded = false
+                isAdFailed = false
                 localUnitId = resolvedUnitId
             }
         }
@@ -558,12 +614,14 @@ object AdMobManager {
         val resolvedUnitId = effectiveAdaptiveBannerUnitId(adUnitId, diag.isTestMode)
 
         var isAdLoaded by remember(resolvedUnitId) { mutableStateOf(false) }
+        var isAdFailed by remember(resolvedUnitId) { mutableStateOf(false) }
         var localUnitId by remember(resolvedUnitId) { mutableStateOf(resolvedUnitId) }
         var adViewRef by remember { mutableStateOf<AdView?>(null) }
 
         LaunchedEffect(resolvedUnitId) {
             if (localUnitId != resolvedUnitId) {
                 isAdLoaded = false
+                isAdFailed = false
                 localUnitId = resolvedUnitId
             }
         }

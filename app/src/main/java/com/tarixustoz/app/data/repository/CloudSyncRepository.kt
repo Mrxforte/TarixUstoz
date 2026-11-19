@@ -13,6 +13,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.IgnoreExtraProperties
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ServerTimestamp
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.snapshots
 import com.tarixustoz.app.data.local.AppDatabase
 import com.tarixustoz.app.data.remote.OperationType
@@ -356,19 +357,21 @@ class CloudSyncRepository @Inject constructor(
             val timeSec = preferences.totalTimeSpentSeconds.first().coerceAtLeast(0)
 
             val docRef = db.collection("users").document(uid)
-            val snap = docRef.get().await()
-            if (snap.exists()) {
-                docRef.update(
-                    mapOf(
-                        "xp" to xp,
-                        "streak" to streak,
-                        "totalSolved" to totalSolved,
-                        "correctCount" to correctCount,
-                        "timeSpentSeconds" to timeSec,
-                        "updatedAt" to FieldValue.serverTimestamp()
-                    )
-                ).await()
-            }
+            docRef.set(
+                mapOf(
+                    "userId" to uid,
+                    "displayName" to name,
+                    "avatar" to avatar,
+                    "grade" to grade,
+                    "xp" to xp,
+                    "streak" to streak,
+                    "totalSolved" to totalSolved,
+                    "correctCount" to correctCount,
+                    "timeSpentSeconds" to timeSec,
+                    "updatedAt" to FieldValue.serverTimestamp()
+                ),
+                SetOptions.merge()
+            ).await()
             upsertLeaderboardEntry(uid, name, avatar, xp, streak, totalSolved, correctCount, timeSec, grade)
             preferences.setPendingStatsSync(false)
             preferences.markFirebaseWrittenToday(uid)
@@ -408,40 +411,22 @@ class CloudSyncRepository @Inject constructor(
         val initials = computeInitials(displayName, avatar)
 
         val lbRef = db.collection("leaderboard").document(uid)
-        val snap = lbRef.get().await()
-        if (snap.exists()) {
-            lbRef.update(
-                mapOf(
-                    "displayName" to displayName.take(60),
-                    "initials" to initials,
-                    "xp" to xp.coerceAtLeast(0L),
-                    "streak" to streak.coerceAtLeast(0),
-                    "totalSolved" to safeSolved,
-                    "correctCount" to safeCorrect,
-                    "accuracy" to accuracy,
-                    "timeSpentMinutes" to minutes,
-                    "grade" to grade.coerceIn(6, 11),
-                    "updatedAt" to FieldValue.serverTimestamp()
-                )
-            ).await()
-        } else {
-            lbRef.set(
-                mapOf(
-                    "userId" to uid,
-                    "displayName" to displayName.take(60),
-                    "initials" to initials,
-                    "xp" to xp.coerceAtLeast(0L),
-                    "streak" to streak.coerceAtLeast(0),
-                    "totalSolved" to safeSolved,
-                    "correctCount" to safeCorrect,
-                    "accuracy" to accuracy,
-                    "timeSpentMinutes" to minutes,
-                    "grade" to grade.coerceIn(6, 11),
-                    "createdAt" to FieldValue.serverTimestamp(),
-                    "updatedAt" to FieldValue.serverTimestamp()
-                )
-            ).await()
-        }
+        lbRef.set(
+            mapOf(
+                "userId" to uid,
+                "displayName" to displayName.take(60),
+                "initials" to initials,
+                "xp" to xp.coerceAtLeast(0L),
+                "streak" to streak.coerceAtLeast(0),
+                "totalSolved" to safeSolved,
+                "correctCount" to safeCorrect,
+                "accuracy" to accuracy,
+                "timeSpentMinutes" to minutes,
+                "grade" to grade.coerceIn(6, 11),
+                "updatedAt" to FieldValue.serverTimestamp()
+            ),
+            SetOptions.merge()
+        ).await()
     }
 
     suspend fun saveTicketProgressToCloud(
