@@ -742,28 +742,31 @@ fun AuthScreen(
                             onClick = { launchGoogleSignIn() },
                             enabled = !uiState.isLoading,
                             shape = RoundedCornerShape(14.dp),
-                            border = BorderStroke(1.dp, Color.White.copy(alpha = 0.28f)),
+                            border = BorderStroke(1.dp, Color.White.copy(alpha = 0.35f)),
                             colors = ButtonDefaults.outlinedButtonColors(
                                 containerColor = Color.White,
-                                contentColor = Color(0xFF111827)
+                                contentColor = Color(0xFF1F2937)
                             ),
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(52.dp)
                                 .testTag("auth_google_signin_button")
                         ) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.Center
+                            ) {
                                 Surface(
                                     shape = CircleShape,
                                     color = BrandPurple.copy(alpha = 0.12f),
-                                    modifier = Modifier.size(26.dp)
+                                    modifier = Modifier.size(28.dp)
                                 ) {
                                     Box(contentAlignment = Alignment.Center) {
                                         Icon(
                                             Icons.Default.AccountCircle,
                                             contentDescription = null,
                                             tint = BrandPurple,
-                                            modifier = Modifier.size(18.dp)
+                                            modifier = Modifier.size(20.dp)
                                         )
                                     }
                                 }
@@ -772,7 +775,7 @@ fun AuthScreen(
                                     text = "Google orqali kirish",
                                     fontSize = 15.sp,
                                     fontWeight = FontWeight.Bold,
-                                    color = Color.White
+                                    color = Color(0xFF1F2937)
                                 )
                             }
                         }
