@@ -119,6 +119,12 @@ fun AuthScreen(
         }
     }
 
+    LaunchedEffect(uiState.isSignedIn) {
+        if (uiState.isSignedIn) {
+            onAuthSuccess()
+        }
+    }
+
     val view = LocalView.current
     DisposableEffect(Unit) {
         val window = (view.context as? Activity)?.window

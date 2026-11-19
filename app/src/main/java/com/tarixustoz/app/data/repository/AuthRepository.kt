@@ -24,6 +24,7 @@ class AuthRepository @Inject constructor(
     private val localDb: AppDatabase
 ) {
     val currentUserFlow: Flow<FirebaseUser?> = callbackFlow {
+        trySend(auth.currentUser)
         val listener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             trySend(firebaseAuth.currentUser)
         }

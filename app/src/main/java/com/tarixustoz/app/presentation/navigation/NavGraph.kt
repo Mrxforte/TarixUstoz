@@ -18,10 +18,15 @@ import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+import com.tarixustoz.app.presentation.theme.BrandPurple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -116,6 +121,8 @@ fun TarixNavHost(
         splashMinElapsed = true
     }
 
+    val authUiState by authViewModel.uiState.collectAsState()
+
     when {
         isOnboardingCompleted == null || !splashMinElapsed -> {
             SplashScreen()
@@ -123,18 +130,20 @@ fun TarixNavHost(
         isOnboardingCompleted == false -> {
             OnboardingScreen(onFinish = {})
         }
-        currentUser == null -> {
+        currentUser == null && !authUiState.isSignedIn -> {
             if (isTestModeActive) {
                 authViewModel.exitTestMode()
             }
             AuthScreen(
                 canNavigateBack = false,
-                onAuthSuccess = {}
+                onAuthSuccess = {
+                    authViewModel.ensureCloudSynced()
+                }
             )
         }
         else -> {
             val user = currentUser
-            val sessionKey = user?.uid ?: "test_mode"
+            val sessionKey = user?.uid ?: "user_session_${authUiState.userUid ?: "authenticated"}"
             key(sessionKey) {
                 val navController = rememberNavController()
                 val mistakesViewModel: MistakesViewModel = hiltViewModel()
@@ -172,8 +181,12 @@ fun TarixNavHost(
                         val showBottomBar = bottomItems.any { it.route == currentRoute }
 
                         if (showBottomBar) {
-                            NavigationBar {
+                            NavigationBar(
+                                containerColor = MaterialTheme.colorScheme.background,
+                                tonalElevation = 3.dp
+                            ) {
                                 bottomItems.forEach { screen ->
+                                    val isSelected = currentDestination?.hierarchy?.any { it.route == screen.route } == true
                                     NavigationBarItem(
                                         icon = {
                                             if (screen == Screen.Mistakes && mistakesCount > 0) {
@@ -185,8 +198,21 @@ fun TarixNavHost(
                                                 Icon(screen.icon, contentDescription = screen.title)
                                             }
                                         },
-                                        label = { Text(screen.title) },
-                                        selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
+                                        label = {
+                                            Text(
+                                                text = screen.title,
+                                                fontSize = 11.sp,
+                                                fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium
+                                            )
+                                        },
+                                        selected = isSelected,
+                                        colors = NavigationBarItemDefaults.colors(
+                                            selectedIconColor = BrandPurple,
+                                            selectedTextColor = BrandPurple,
+                                            indicatorColor = BrandPurple.copy(alpha = 0.14f),
+                                            unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                                            unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant
+                                        ),
                                         onClick = {
                                             navController.navigate(screen.route) {
                                                 popUpTo(navController.graph.findStartDestination().id) {
