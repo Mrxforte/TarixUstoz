@@ -384,18 +384,29 @@ class HomeViewModel @Inject constructor(
                 dailyNonce = 1
             }
             val currentNonce = dailyNonce++
+            val role = preferences.userRole.first()
+            val userGrade = preferences.selectedGrade.first().coerceIn(6, 11)
+
+            val maxGrade = if (role in listOf("Abituriyent", "O'qituvchi", "Talaba")) 11 else userGrade
+            val availableGrades = (6..maxGrade).toList()
+            val targetGrade = availableGrades[(currentNonce + System.currentTimeMillis().toInt().coerceAtLeast(0)) % availableGrades.size]
+
             var nextQuestion = contentRepository.getDailyQuestion(
                 excludeIds = seenQuestionIds.toSet(),
-                grade = 0,
+                grade = targetGrade,
+                maxAllowedGrade = maxGrade,
                 nonce = currentNonce
             )
             if ((nextQuestion == null || nextQuestion.id == previousId) && seenQuestionIds.size > 1) {
                 seenQuestionIds.clear()
                 if (previousId != null) seenQuestionIds.add(previousId)
+                val retryNonce = dailyNonce++
+                val retryGrade = availableGrades[(retryNonce + System.currentTimeMillis().toInt().coerceAtLeast(0)) % availableGrades.size]
                 nextQuestion = contentRepository.getDailyQuestion(
                     excludeIds = seenQuestionIds.toSet(),
-                    grade = 0,
-                    nonce = dailyNonce++
+                    grade = retryGrade,
+                    maxAllowedGrade = maxGrade,
+                    nonce = retryNonce
                 )
             }
             if (nextQuestion != null) {

@@ -110,6 +110,9 @@ interface QuestionDao {
     @Query("SELECT * FROM questions ORDER BY RANDOM() LIMIT :limit")
     suspend fun getRandomAny(limit: Int): List<QuestionEntity>
 
+    @Query("SELECT * FROM questions WHERE gradeId BETWEEN :minGrade AND :maxGrade ORDER BY RANDOM() LIMIT :limit")
+    suspend fun getRandomBetweenGrades(minGrade: Int, maxGrade: Int, limit: Int): List<QuestionEntity>
+
     @Query("SELECT * FROM questions WHERE category = :category LIMIT :limit")
     suspend fun getByCategory(category: String, limit: Int): List<QuestionEntity>
 

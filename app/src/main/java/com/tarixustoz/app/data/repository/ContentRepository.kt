@@ -22,6 +22,9 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -491,10 +494,11 @@ class ContentRepository @Inject constructor(
     suspend fun getDailyQuestion(
         excludeIds: Set<String> = emptySet(),
         grade: Int = 0,
+        maxAllowedGrade: Int = 0,
         nonce: Int = 0
     ): Question? = withContext(Dispatchers.IO) {
-        val today = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US).format(java.util.Date())
-        val dailyCacheKey = "daily_q_${today}_g$grade"
+        val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
+        val dailyCacheKey = "daily_q_${today}_g${grade}_m$maxAllowedGrade"
         if (nonce == 0 && excludeIds.isEmpty()) {
             val cachedJson = syncMetaPrefs.getString(dailyCacheKey, null)
             if (!cachedJson.isNullOrBlank()) {
@@ -575,19 +579,26 @@ class ContentRepository @Inject constructor(
             return@withContext apiTicketPick
         }
 
-        val localRandomPool = if (grade in 6..11) {
-            db.questionDao().getFilteredWithTopics(
-                gradeId = grade,
-                category = "ALL",
-                difficulty = "ALL",
-                topicIds = emptyList(),
-                selectAllTopics = true,
-                limit = 60
-            ).map { it.toDomain(json) }.ifEmpty {
+        val minGradeLimit = 6
+        val maxGradeLimit = if (maxAllowedGrade in 6..11) maxAllowedGrade else if (grade in 6..11) grade else 11
+
+        val localRandomPool = db.questionDao().getRandomBetweenGrades(
+            minGrade = minGradeLimit,
+            maxGrade = maxGradeLimit,
+            limit = 60
+        ).map { it.toDomain(json) }.ifEmpty {
+            if (grade in 6..11) {
+                db.questionDao().getFilteredWithTopics(
+                    gradeId = grade,
+                    category = "ALL",
+                    difficulty = "ALL",
+                    topicIds = emptyList(),
+                    selectAllTopics = true,
+                    limit = 60
+                ).map { it.toDomain(json) }
+            } else {
                 db.questionDao().getRandomAny(60).map { it.toDomain(json) }
             }
-        } else {
-            db.questionDao().getRandomAny(60).map { it.toDomain(json) }
         }
         val unseenDb = localRandomPool.filter {
             it.options.any { opt -> opt.text.isNotBlank() } && !excludeIds.contains(it.id)
@@ -597,8 +608,9 @@ class ContentRepository @Inject constructor(
             return@withContext dbPick
         }
 
-        val fallbackPool = getFallbackQuestions(30, "ALL", if (grade in 6..11) grade else 0)
-            .ifEmpty { getFallbackQuestions(30, "ALL", 0) }
+        val fallbackPool = (minGradeLimit..maxGradeLimit).flatMap { g ->
+            getFallbackQuestions(10, "ALL", g)
+        }.ifEmpty { getFallbackQuestions(30, "ALL", 0) }
         val unseenFallback = fallbackPool.filterNot { excludeIds.contains(it.id) }
         (if (unseenFallback.isNotEmpty()) unseenFallback else fallbackPool).shuffled().firstOrNull()
             ?: dbPick
