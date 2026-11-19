@@ -174,13 +174,13 @@ fun VerticalCardsScreen(
             }
             "directions" -> testsDirectionCards.ifEmpty {
                 listOf(
-                    TestCardItem("EVENT", "Tarixiy Hodisalar", "Qadimgi va o'rta asrlar • 11062 ta bilet • 331844 ta test", 11062, 0, Icons.Default.Event, listOf(Color(0xFF1E1B4B), Color(0xFF3730A3)), Color(0xFF10B981), "direction", backgroundResForDirection("EVENT")),
-                    TestCardItem("PERSON", "Tarixiy Shaxslar", "Buyuk siymolar • 5531 ta bilet • 165903 ta test", 5531, 0, Icons.Default.Person, listOf(Color(0xFF831843), Color(0xFF9D174D)), Color(0xFF3B82F6), "direction", backgroundResForDirection("PERSON")),
-                    TestCardItem("YEAR", "Yillar va Sanalar", "Xronologik tartib • 7374 ta bilet • 221211 ta test", 7374, 0, Icons.Default.CalendarMonth, listOf(Color(0xFF064E3B), Color(0xFF065F46)), Color(0xFFF59E0B), "direction", backgroundResForDirection("YEAR")),
-                    TestCardItem("WAR", "Urushlar va Janglar", "Harbiy yurishlar • 18167 ta bilet • 545000 ta test", 18167, 0, Icons.Default.Security, listOf(Color(0xFF7F1D1D), Color(0xFF991B1B)), Color(0xFF10B981), "direction", backgroundResForDirection("WAR")),
-                    TestCardItem("CITY", "Shahar va Hududlar", "Joylashuvlar • 3685 ta bilet • 110543 ta test", 3685, 0, Icons.Default.LocationOn, listOf(Color(0xFF14532D), Color(0xFF15803D)), Color(0xFF8B5CF6), "direction", backgroundResForDirection("CITY")),
-                    TestCardItem("FACT", "Tarixiy Faktlar", "Manbalar va obidalar • 16167 ta bilet • 485000 ta test", 16167, 0, Icons.Default.Info, listOf(Color(0xFF312E81), Color(0xFF4338CA)), Color(0xFFF59E0B), "direction", backgroundResForDirection("FACT")),
-                    TestCardItem("LOGICAL", "Mantiqiy va DTM", "DTM savollari • 9017 ta bilet • 270499 ta test", 9017, 0, Icons.Default.Psychology, listOf(Color(0xFF0C4A6E), Color(0xFF0369A1)), Color(0xFF10B981), "direction", backgroundResForDirection("LOGICAL"))
+                    TestCardItem("EVENT", "Tarixiy Hodisalar", "Qadimgi va o'rta asrlar • 6600 ta bilet • 198000 ta test", 6600, 0, Icons.Default.Event, listOf(Color(0xFF1E1B4B), Color(0xFF3730A3)), Color(0xFF10B981), "direction", backgroundResForDirection("EVENT")),
+                    TestCardItem("PERSON", "Tarixiy Shaxslar", "Buyuk siymolar • 5500 ta bilet • 165000 ta test", 5500, 0, Icons.Default.Person, listOf(Color(0xFF831843), Color(0xFF9D174D)), Color(0xFF3B82F6), "direction", backgroundResForDirection("PERSON")),
+                    TestCardItem("YEAR", "Yillar va Sanalar", "Xronologik tartib • 5867 ta bilet • 176000 ta test", 5867, 0, Icons.Default.CalendarMonth, listOf(Color(0xFF064E3B), Color(0xFF065F46)), Color(0xFFF59E0B), "direction", backgroundResForDirection("YEAR")),
+                    TestCardItem("WAR", "Urushlar va Janglar", "Harbiy yurishlar • 5134 ta bilet • 154000 ta test", 5134, 0, Icons.Default.Security, listOf(Color(0xFF7F1D1D), Color(0xFF991B1B)), Color(0xFF10B981), "direction", backgroundResForDirection("WAR")),
+                    TestCardItem("CITY", "Shahar va Hududlar", "Joylashuvlar • 3667 ta bilet • 110000 ta test", 3667, 0, Icons.Default.LocationOn, listOf(Color(0xFF14532D), Color(0xFF15803D)), Color(0xFF8B5CF6), "direction", backgroundResForDirection("CITY")),
+                    TestCardItem("FACT", "Tarixiy Faktlar", "Manbalar va obidalar • 5134 ta bilet • 154000 ta test", 5134, 0, Icons.Default.Info, listOf(Color(0xFF312E81), Color(0xFF4338CA)), Color(0xFFF59E0B), "direction", backgroundResForDirection("FACT")),
+                    TestCardItem("LOGICAL", "Mantiqiy va DTM", "DTM savollari • 4767 ta bilet • 143000 ta test", 4767, 0, Icons.Default.Psychology, listOf(Color(0xFF0C4A6E), Color(0xFF0369A1)), Color(0xFF10B981), "direction", backgroundResForDirection("LOGICAL"))
                 )
             }
             else -> { // "topics"

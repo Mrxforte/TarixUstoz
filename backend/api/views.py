@@ -27,6 +27,21 @@ from api.directions import (
     apply_direction, direction_counts, normalize_code
 )
 
+def _etag_response(request, payload, cache_seconds=60):
+    encoded = json.dumps(payload, sort_keys=True, ensure_ascii=False, default=str).encode("utf-8")
+    etag = f'W/"{hashlib.md5(encoded).hexdigest()}"'
+    if_none_match = request.headers.get("If-None-Match")
+    if if_none_match and if_none_match.strip() == etag:
+        resp = Response(status=status.HTTP_304_NOT_MODIFIED)
+        resp["ETag"] = etag
+        resp["Cache-Control"] = f"public, max-age={cache_seconds}, must-revalidate"
+        return resp
+    resp = Response(payload)
+    resp["ETag"] = etag
+    resp["Cache-Control"] = f"public, max-age={cache_seconds}, must-revalidate"
+    return resp
+
+
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.all().prefetch_related('pdf_books')
     serializer_class = CategorySerializer
@@ -37,12 +52,17 @@ class PdfBookViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = PdfBookSerializer
     permission_classes = [permissions.AllowAny]
 
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        serializer = self.get_serializer(queryset, many=True)
+        return _etag_response(request, serializer.data, cache_seconds=120)
+
     @action(detail=False, methods=['get'])
     def by_grade(self, request):
         grade = request.query_params.get('grade', 6)
         books = PdfBook.objects.filter(grade=grade)
         serializer = self.get_serializer(books, many=True)
-        return Response(serializer.data)
+        return _etag_response(request, serializer.data, cache_seconds=120)
 
 class TopicViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Topic.objects.all()
@@ -50,12 +70,16 @@ class TopicViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):
-        qs = Topic.objects.all().select_related('document', 'chapter')
+        qs = Topic.objects.all().select_related('document', 'chapter').order_by('id')
         
         # Default to only verified topics unless requested otherwise
         include_all = self.request.query_params.get('include_all', 'false').lower() == 'true'
         if not include_all:
             qs = qs.filter(review_status='REVIEWED')
+
+        since_id = self.request.query_params.get('since_id')
+        if since_id and str(since_id).isdigit():
+            qs = qs.filter(id__gt=int(since_id))
 
         grade = self.request.query_params.get('grade_id') or self.request.query_params.get('grade')
         if grade and grade != '0':
@@ -109,13 +133,13 @@ class TopicViewSet(viewsets.ReadOnlyModelViewSet):
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
         serializer = self._serialize_with_counts(queryset)
-        return Response(serializer.data)
+        return _etag_response(request, serializer.data, cache_seconds=120)
 
     @action(detail=False, methods=['get'])
     def by_book(self, request):
         topics = self.filter_queryset(self.get_queryset())
         serializer = self._serialize_with_counts(topics)
-        return Response(serializer.data)
+        return _etag_response(request, serializer.data, cache_seconds=120)
 
 class HistoricalEntityViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = HistoricalEntity.objects.all().prefetch_related('aliases')
@@ -150,11 +174,11 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
         db_items = self._filtered_queryset()
         if db_items.exists():
             rows = list(db_items[offset: offset + limit])
-            return Response(QuestionSerializer(rows, many=True).data)
+            return _etag_response(request, QuestionSerializer(rows, many=True).data, cache_seconds=120)
 
         # Fallback for grades that only exist as JSON exports.
         items = self._json_items(grade, request.query_params.get('subject', ''))
-        return Response(items[offset: offset + limit])
+        return _etag_response(request, items[offset: offset + limit], cache_seconds=120)
 
     def _int_param(self, name, default):
         raw = self.request.query_params.get(name)
@@ -193,6 +217,10 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
 
     def _filtered_queryset(self):
         qs = Question.objects.filter(verification_status='VERIFIED')
+        since_id = self.request.query_params.get('since_id')
+        if since_id and str(since_id).isdigit():
+            qs = qs.filter(id__gt=int(since_id))
+
         grade = self.request.query_params.get('grade')
         grade_int = int(grade) if grade and str(grade).isdigit() else 0
         if grade_int > 0:
@@ -328,7 +356,7 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
                     if qid in by_id:
                         rows.append(by_id[qid])
 
-        return Response({
+        return _etag_response(request, {
             "category": raw_category,
             "grade": grade,
             "subject": subject,
@@ -337,7 +365,7 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
             "total": total,
             "tickets": ticket_count,
             "questions": QuestionSerializer(rows, many=True).data,
-        })
+        }, cache_seconds=180)
 
     @action(detail=False, methods=['get'])
     def directions(self, request):
@@ -346,17 +374,14 @@ class QuestionViewSet(viewsets.ReadOnlyModelViewSet):
         raw_subject = request.query_params.get('subject', '')
         subject = QuestionGenerationEngine._canonical_subject(raw_subject, grade) if raw_subject else ''
         counts = direction_counts(grade=grade, subject=subject)
-        response = Response({
+        return _etag_response(request, {
             "grade": grade,
             "subject": subject,
             "directions": [
                 {"code": code, "title": title, "count": counts.get(code, 0)}
                 for code, title in DIRECTION_TITLES.items()
             ],
-        })
-        # Counts only change when questions are imported, so clients may cache them.
-        response["Cache-Control"] = "public, max-age=300"
-        return response
+        }, cache_seconds=300)
 
     @action(detail=False, methods=['get'])
     def daily(self, request):

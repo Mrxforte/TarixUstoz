@@ -8,6 +8,7 @@ import com.tarixustoz.app.data.local.*
 import com.tarixustoz.app.data.remote.ApiService
 import com.tarixustoz.app.data.remote.ExamCategoryDto
 import com.tarixustoz.app.data.remote.QuizGenerateRequest
+import com.tarixustoz.app.data.sync.DeltaSyncEngine
 import com.tarixustoz.app.domain.model.*
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
@@ -232,7 +233,62 @@ class ContentRepository @Inject constructor(
             limit = limit
         ).map { it.toDomain(json) }
 
-    /** One ticket straight from the backend (30 questions of one direction, book, or topic), disk-cached. */
+    private fun currentCacheEpoch(): Long = syncMetaPrefs.getLong("cache_epoch", 1L).coerceAtLeast(1L)
+
+    private fun bumpCacheEpoch(): Long {
+        val next = currentCacheEpoch() + 1L
+        syncMetaPrefs.edit().putLong("cache_epoch", next).apply()
+        return next
+    }
+
+    private fun isTicketCachedAtCurrentEpoch(
+        categoryKey: String,
+        ticketIndex: Int,
+        count: Int,
+        grade: Int
+    ): Boolean {
+        val cacheKey = "${BuildConfig.TARIX_API_BASE_URL}:ticket_${categoryKey}_${ticketIndex}_${count}_${grade}"
+        val cachedJson = ticketCachePrefs.getString(cacheKey, null) ?: return false
+        if (cachedJson.isBlank()) return false
+        val cachedEpoch = ticketCachePrefs.getLong("epoch_$cacheKey", 0L)
+        if (cachedEpoch != currentCacheEpoch()) return false
+        val cachedAt = ticketCachePrefs.getLong("ts_$cacheKey", 0L)
+        // Allow up to 24h without re-fetch if epoch has not invalidated this category
+        return (System.currentTimeMillis() - cachedAt) < (24L * 60L * 60L * 1000L)
+    }
+
+    /** Selectively clears only affected ticket/direction caches without touching valid unrelated caches. */
+    fun invalidateCachesForCategories(invalidatedCategories: Set<String>) {
+        if (invalidatedCategories.isEmpty()) return
+        bumpCacheEpoch()
+
+        val allKeys = ticketCachePrefs.all.keys.toList()
+        val ticketEditor = ticketCachePrefs.edit()
+        var removedTickets = 0
+        for (key in allKeys) {
+            if (!key.startsWith("epoch_") && !key.startsWith("ts_") && !key.startsWith("etag_")) {
+                if (DeltaSyncEngine.shouldInvalidateTicketKey(key, invalidatedCategories)) {
+                    ticketEditor.remove(key)
+                    ticketEditor.remove("epoch_$key")
+                    ticketEditor.remove("ts_$key")
+                    ticketEditor.remove("etag_$key")
+                    removedTickets++
+                }
+            }
+        }
+        if (removedTickets > 0) {
+            ticketEditor.apply()
+        }
+
+        // Clear direction memory/prefs if any direction count changed
+        val directionCodes = setOf("EVENT", "PERSON", "YEAR", "WAR", "CITY", "FACT", "LOGICAL")
+        if (invalidatedCategories.any { it in directionCodes }) {
+            directionMemory.clear()
+            directionPrefs.edit().clear().apply()
+        }
+    }
+
+    /** One ticket straight from the backend (30 questions of one direction, book, or topic), epoch-validated disk cache. */
     suspend fun fetchTicketFromApi(
         categoryKey: String,
         ticketIndex: Int,
@@ -240,19 +296,33 @@ class ContentRepository @Inject constructor(
         grade: Int = 0
     ): List<Question> = withContext(Dispatchers.IO) {
         val cacheKey = "${BuildConfig.TARIX_API_BASE_URL}:ticket_${categoryKey}_${ticketIndex}_${count}_${grade}"
+        val epoch = currentCacheEpoch()
+        val cachedEpoch = ticketCachePrefs.getLong("epoch_$cacheKey", 0L)
         val cachedJson = ticketCachePrefs.getString(cacheKey, null)
-        if (!cachedJson.isNullOrBlank()) {
+        if (!cachedJson.isNullOrBlank() && (cachedEpoch == 0L || cachedEpoch == epoch)) {
             try {
                 val cachedList = json.decodeFromString<List<Question>>(cachedJson)
                 if (cachedList.isNotEmpty()) {
+                    if (cachedEpoch == 0L) {
+                        ticketCachePrefs.edit()
+                            .putLong("epoch_$cacheKey", epoch)
+                            .putLong("ts_$cacheKey", System.currentTimeMillis())
+                            .apply()
+                    }
                     return@withContext cachedList
                 }
             } catch (_: Exception) {
-                ticketCachePrefs.edit().remove(cacheKey).apply()
+                ticketCachePrefs.edit()
+                    .remove(cacheKey)
+                    .remove("epoch_$cacheKey")
+                    .remove("ts_$cacheKey")
+                    .remove("etag_$cacheKey")
+                    .apply()
             }
         }
 
         try {
+            val existingEtag = ticketCachePrefs.getString("etag_$cacheKey", null)
             val fetched = when {
                 categoryKey.startsWith("topic_") -> {
                     val numericId = categoryKey.removePrefix("topic_").toLongOrNull()
@@ -276,13 +346,19 @@ class ContentRepository @Inject constructor(
                             "uzbekiston" -> if (tGrade == 6) "qadimgi" else "uzbekiston"
                             else -> null
                         }
-                        apiService.getTicket(
+                        val resp = apiService.getTicketDelta(
                             category = "ALL",
                             grade = tGrade.takeIf { it > 0 },
                             subject = subjectParam,
                             ticket = ticketIndex,
-                            size = count
-                        ).questions.map { it.toDomain() }
+                            size = count,
+                            ifNoneMatch = existingEtag
+                        )
+                        if (resp.code() == 304 && !cachedJson.isNullOrBlank()) {
+                            return@withContext json.decodeFromString<List<Question>>(cachedJson)
+                        }
+                        resp.headers()["ETag"]?.let { ticketCachePrefs.edit().putString("etag_$cacheKey", it).apply() }
+                        resp.body()?.questions?.map { it.toDomain() }.orEmpty()
                     }
                 }
                 isBookKey(categoryKey) -> {
@@ -293,34 +369,61 @@ class ContentRepository @Inject constructor(
                         "uzbekiston" -> if (gradeFilter == 6) "qadimgi" else "uzbekiston"
                         else -> null
                     }
-                    apiService.getTicket(
+                    val resp = apiService.getTicketDelta(
                         category = "ALL",
                         grade = gradeFilter,
                         subject = subjectParam,
                         ticket = ticketIndex,
-                        size = count
-                    ).questions.map { it.toDomain() }
+                        size = count,
+                        ifNoneMatch = existingEtag
+                    )
+                    if (resp.code() == 304 && !cachedJson.isNullOrBlank()) {
+                        return@withContext json.decodeFromString<List<Question>>(cachedJson)
+                    }
+                    resp.headers()["ETag"]?.let { ticketCachePrefs.edit().putString("etag_$cacheKey", it).apply() }
+                    resp.body()?.questions?.map { it.toDomain() }.orEmpty()
                 }
                 else -> {
-                    apiService.getTicket(
+                    val resp = apiService.getTicketDelta(
                         category = categoryKey,
                         grade = grade.takeIf { it > 0 },
                         subject = null,
                         ticket = ticketIndex,
-                        size = count
-                    ).questions.map { it.toDomain() }
+                        size = count,
+                        ifNoneMatch = existingEtag
+                    )
+                    if (resp.code() == 304 && !cachedJson.isNullOrBlank()) {
+                        return@withContext json.decodeFromString<List<Question>>(cachedJson)
+                    }
+                    resp.headers()["ETag"]?.let { ticketCachePrefs.edit().putString("etag_$cacheKey", it).apply() }
+                    resp.body()?.questions?.map { it.toDomain() }.orEmpty()
                 }
             }
-            if (fetched.isNotEmpty()) {
+            val deduplicated = fetched.distinctBy { q ->
+                q.cleanText.lowercase().trim().ifBlank { q.id }
+            }
+            if (deduplicated.isNotEmpty()) {
                 try {
-                    ticketCachePrefs.edit().putString(cacheKey, json.encodeToString(fetched)).apply()
-                    insertQuestionsToDb(fetched)
+                    ticketCachePrefs.edit()
+                        .putString(cacheKey, json.encodeToString(deduplicated))
+                        .putLong("epoch_$cacheKey", currentCacheEpoch())
+                        .putLong("ts_$cacheKey", System.currentTimeMillis())
+                        .apply()
+                    insertQuestionsToDb(deduplicated)
                 } catch (_: Exception) { }
             }
-            fetched
+            deduplicated
         } catch (e: Exception) {
             e.printStackTrace()
-            emptyList()
+            // Fallback to expired disk cache if network fails
+            if (!cachedJson.isNullOrBlank()) {
+                runCatching {
+                    json.decodeFromString<List<Question>>(cachedJson)
+                        .distinctBy { q -> q.cleanText.lowercase().trim().ifBlank { q.id } }
+                }.getOrDefault(emptyList())
+            } else {
+                emptyList()
+            }
         }
     }
 
@@ -530,18 +633,53 @@ class ContentRepository @Inject constructor(
     }
 
     fun defaultDirectionCounts(grade: Int = 0): Map<String, Int> {
-        val base = mapOf(
-            "EVENT" to 331_844,
-            "PERSON" to 165_903,
-            "YEAR" to 221_211,
-            "WAR" to 545_000,
-            "CITY" to 110_543,
-            "FACT" to 485_000,
-            "LOGICAL" to 270_499
+        // Har bir darslik (100 000 ta savol) bo'yicha dublikatsiz 7 ta yo'nalish taqsimoti (jami = 100 000):
+        val perBook = linkedMapOf(
+            "EVENT" to 18_000,
+            "PERSON" to 15_000,
+            "YEAR" to 16_000,
+            "WAR" to 14_000,
+            "CITY" to 10_000,
+            "FACT" to 14_000,
+            "LOGICAL" to 13_000
         )
-        if (grade !in 6..11) return base
-        val booksInGrade = if (grade == 6) 1 else 2
-        return base.mapValues { (_, total) -> (total * booksInGrade) / 11 }
+        val booksCount = when (grade) {
+            6 -> 1
+            in 7..11 -> 2
+            else -> 11
+        }
+        return perBook.mapValues { (_, countPerBook) -> countPerBook * booksCount }
+    }
+
+    /**
+     * Remote serverdan (1xbetgetapk.site) kelgan yo'nalishlar savollari sonida WAR va FACT
+     * boshqa yo'nalishlar bilan ustma-ust (dublikat) hisoblangan bo'lsa (masalan 2 130 000 > 1 100 000),
+     * ularni sinf darsliklari umumiy savollar soniga (11 ta kitob = 1 100 000, 6-sinf = 100 000,
+     * 7..11-sinf = 200 000) proporsional va dublikatsiz normallashtiradi.
+     */
+    fun deduplicateDirectionCounts(raw: Map<String, Int>, grade: Int = 0): Map<String, Int> {
+        val defaults = defaultDirectionCounts(grade)
+        if (raw.isEmpty()) return defaults
+        val booksCount = when (grade) {
+            6 -> 1
+            in 7..11 -> 2
+            else -> 11
+        }
+        val expectedTotal = 100_000 * booksCount
+        val keys = listOf("EVENT", "PERSON", "YEAR", "WAR", "CITY", "FACT", "LOGICAL")
+        val cleaned = LinkedHashMap<String, Int>()
+        for (k in keys) {
+            val v = raw[k] ?: defaults[k] ?: 0
+            cleaned[k] = if (v > 0) v else (defaults[k] ?: 0)
+        }
+        val rawSum = cleaned.values.sum()
+        if (rawSum <= 0) return defaults
+        // Agar remote API dublikat (WAR + FACT ustma-ust) son qaytargan bo'lsa (rawSum > expectedTotal),
+        // kanonik dublikatsiz taqsimotga normallashtiramiz:
+        if (rawSum > expectedTotal) {
+            return defaults
+        }
+        return cleaned
     }
 
     suspend fun fetchDirectionCounts(
@@ -550,7 +688,7 @@ class ContentRepository @Inject constructor(
     ): Map<String, Int> = withContext(Dispatchers.IO) {
         if (!forceRefresh) {
             directionMemory[grade]?.let { return@withContext it }
-            val lastTs = directionPrefs.getLong("v2_grade_${grade}_ts", 0L)
+            val lastTs = directionPrefs.getLong("v3_dedup_grade_${grade}_ts", 0L)
             if (System.currentTimeMillis() - lastTs < sixHoursMs) {
                 cachedDirectionCounts(grade)?.let { cached ->
                     directionMemory[grade] = cached
@@ -559,16 +697,41 @@ class ContentRepository @Inject constructor(
             }
         }
         try {
-            val fresh = apiService.getDirections(grade = grade.takeIf { it > 0 })
-                .directions
-                .associate { it.code to it.count }
-            if (fresh.isNotEmpty() && fresh.values.any { it > 0 }) {
-                directionMemory[grade] = fresh
-                directionPrefs.edit()
-                    .putString("v2_grade_$grade", json.encodeToString(fresh))
-                    .putLong("v2_grade_${grade}_ts", System.currentTimeMillis())
-                    .apply()
-                return@withContext fresh
+            val prevEtag = syncMetaPrefs.getString("etag_directions_$grade", null)
+            val prevFp = syncMetaPrefs.getString("fp_directions_$grade", null)
+            val resp = apiService.getDirectionsDelta(
+                grade = grade.takeIf { it > 0 },
+                ifNoneMatch = if (forceRefresh || prevEtag != null) prevEtag else null,
+                cacheControl = if (forceRefresh) "no-cache" else null
+            )
+            if (resp.code() == 304) {
+                directionPrefs.edit().putLong("v3_dedup_grade_${grade}_ts", System.currentTimeMillis()).apply()
+                cachedDirectionCounts(grade)?.let { cached ->
+                    directionMemory[grade] = cached
+                    return@withContext cached
+                }
+            }
+            val body = resp.body()
+            if (resp.isSuccessful && body != null) {
+                val diff = DeltaSyncEngine.diffDirectionsFingerprint(prevFp, body)
+                val freshRaw = diff.countsByCode
+                if (freshRaw.isNotEmpty() && freshRaw.values.any { it > 0 }) {
+                    val fresh = deduplicateDirectionCounts(freshRaw, grade)
+                    resp.headers()["ETag"]?.let { etag ->
+                        syncMetaPrefs.edit().putString("etag_directions_$grade", etag).apply()
+                    }
+                    syncMetaPrefs.edit().putString("fp_directions_$grade", diff.newFingerprint).apply()
+                    if (!prevFp.isNullOrBlank() && diff.changedDirections.isNotEmpty()) {
+                        // Invalidate only the directions whose question counts changed remotely!
+                        invalidateCachesForCategories(diff.changedDirections)
+                    }
+                    directionMemory[grade] = fresh
+                    directionPrefs.edit()
+                        .putString("v3_dedup_grade_$grade", json.encodeToString(fresh))
+                        .putLong("v3_dedup_grade_${grade}_ts", System.currentTimeMillis())
+                        .apply()
+                    return@withContext fresh
+                }
             }
         } catch (e: Exception) {
             e.printStackTrace()
@@ -576,12 +739,13 @@ class ContentRepository @Inject constructor(
         cachedDirectionCounts(grade) ?: defaultDirectionCounts(grade)
     }
 
-    /** Oxirgi saqlangan sonlar (tarmoqsiz, darhol). */
+    /** Oxirgi saqlangan sonlar (tarmoqsiz, darhol, dublikatsiz). */
     fun cachedDirectionCounts(grade: Int = 0): Map<String, Int>? {
         directionMemory[grade]?.let { return it }
-        val raw = directionPrefs.getString("v2_grade_$grade", null) ?: return null
+        val raw = directionPrefs.getString("v3_dedup_grade_$grade", null) ?: return null
         return try {
-            json.decodeFromString<Map<String, Int>>(raw).takeIf { it.isNotEmpty() }
+            val decoded = json.decodeFromString<Map<String, Int>>(raw).takeIf { it.isNotEmpty() } ?: return null
+            deduplicateDirectionCounts(decoded, grade)
         } catch (e: Exception) {
             null
         }
@@ -933,158 +1097,312 @@ class ContentRepository @Inject constructor(
         return filtered.shuffled().take(count.coerceAtLeast(1))
     }
 
-    suspend fun syncWithDjangoBackend(force: Boolean = false): Boolean = withContext(Dispatchers.IO) {
+    data class DeltaBackendOutcome(
+        val success: Boolean,
+        val deltaItemsApplied: Int = 0,
+        val skippedUnchangedCalls: Int = 0,
+        val invalidatedCategories: Set<String> = emptySet()
+    )
+
+    suspend fun syncWithDjangoBackend(force: Boolean = false): Boolean =
+        syncWithDjangoBackendDelta(force).success
+
+    suspend fun syncWithDjangoBackendDelta(force: Boolean = false): DeltaBackendOutcome = withContext(Dispatchers.IO) {
         syncMutex.withLock {
             val now = System.currentTimeMillis()
             val persistedSyncAt = maxOf(lastSyncedAtMs, syncMetaPrefs.getLong("last_synced_at_ms", 0L))
+            val existingBooks = db.textbookDao().getAllOnce()
+            val existingTopics = db.topicDao().getAllOnce()
+
             if (!force && now - persistedSyncAt < sixHoursMs &&
-                db.textbookDao().count() >= 11 &&
-                db.topicDao().getAllOnce().isNotEmpty()
+                existingBooks.size >= 11 &&
+                existingTopics.isNotEmpty()
             ) {
                 lastSyncedAtMs = persistedSyncAt
-                return@withLock true
+                return@withLock DeltaBackendOutcome(
+                    success = true,
+                    deltaItemsApplied = 0,
+                    skippedUnchangedCalls = 2
+                )
             }
-            try {
-                // Fetch PDF Books from Django REST API
-                val apiBooks = try { apiService.getPdfBooks() } catch (e: Exception) { emptyList() }
-                if (apiBooks.isNotEmpty()) {
-                    val entities = apiBooks.map { b ->
-                        val rawPdfUrl = b.pdfUrl ?: b.pdfFile
-                        val formattedPdfUrl = MediaUrls.resolve(rawPdfUrl)
-                        val formattedCoverUrl = MediaUrls.resolve(b.coverUrl ?: b.coverImage)
-                        val fallbackPdfUrl = MediaUrls.textbook(b.effectiveGrade, b.effectiveSubject)
-                        val bookId = if (b.effectiveSubject == "jahon") "jahon_${b.effectiveGrade}" else "uz_${b.effectiveGrade}"
-                        val totalQs = if (b.totalQuestions > 0) b.totalQuestions else 100_000
-                        val totalTops = if (b.totalTopics > 0) b.totalTopics else (DEFAULT_TOPIC_COUNTS[bookId] ?: 35)
 
-                        TextbookEntity(
-                            id = bookId,
-                            title = b.title,
-                            gradeId = b.effectiveGrade,
-                            subjectId = b.effectiveSubject,
-                            authors = b.authors ?: "Tarixchi olimlar",
-                            year = b.year,
-                            edition = b.edition ?: "1-nashr",
-                            totalChapters = b.totalChapters,
-                            totalTopics = totalTops,
-                            totalQuestions = totalQs,
-                            coverAsset = formattedCoverUrl,
-                            pdfAsset = formattedPdfUrl?.takeIf { it.isNotBlank() } ?: fallbackPdfUrl
+            var deltaApplied = 0
+            var skippedCalls = 0
+            val invalidated = mutableSetOf<String>()
+
+            try {
+                // 1. Lightweight Books Probe using ETag / Fingerprint
+                val prevBooksEtag = syncMetaPrefs.getString("etag_books", null)
+                val prevBooksFp = syncMetaPrefs.getString("fp_books", null)
+                val prevTopicsTotal = syncMetaPrefs.getInt("total_remote_topics", 0)
+                var shouldCheckTopics = existingTopics.isEmpty()
+
+                val booksResp = runCatching {
+                    apiService.getPdfBooksDelta(
+                        ifNoneMatch = prevBooksEtag,
+                        cacheControl = if (force) "no-cache" else null
+                    )
+                }.getOrNull()
+
+                if (booksResp != null && booksResp.code() == 304) {
+                    skippedCalls++
+                } else if (booksResp != null && booksResp.isSuccessful) {
+                    val apiBooks = booksResp.body().orEmpty()
+                    if (apiBooks.isNotEmpty()) {
+                        val fpDiff = DeltaSyncEngine.diffBooksFingerprint(
+                            previousFingerprint = prevBooksFp,
+                            previousTopicsTotal = prevTopicsTotal,
+                            incomingBooks = apiBooks
                         )
+                        val entities = apiBooks.map { b ->
+                            val rawPdfUrl = b.pdfUrl ?: b.pdfFile
+                            val formattedPdfUrl = MediaUrls.resolve(rawPdfUrl)
+                            val formattedCoverUrl = MediaUrls.resolve(b.coverUrl ?: b.coverImage)
+                            val fallbackPdfUrl = MediaUrls.textbook(b.effectiveGrade, b.effectiveSubject)
+                            val bookId = if (b.effectiveSubject == "jahon") "jahon_${b.effectiveGrade}" else "uz_${b.effectiveGrade}"
+                            val totalQs = if (b.totalQuestions > 0) b.totalQuestions else 100_000
+                            val totalTops = if (b.totalTopics > 0) b.totalTopics else (DEFAULT_TOPIC_COUNTS[bookId] ?: 35)
+
+                            TextbookEntity(
+                                id = bookId,
+                                title = b.title,
+                                gradeId = b.effectiveGrade,
+                                subjectId = b.effectiveSubject,
+                                authors = b.authors ?: "Tarixchi olimlar",
+                                year = b.year,
+                                edition = b.edition ?: "1-nashr",
+                                totalChapters = b.totalChapters,
+                                totalTopics = totalTops,
+                                totalQuestions = totalQs,
+                                coverAsset = formattedCoverUrl,
+                                pdfAsset = formattedPdfUrl?.takeIf { it.isNotBlank() } ?: fallbackPdfUrl
+                            )
+                        }
+
+                        val bookDiff = DeltaSyncEngine.diffTextbooks(existingBooks, entities, pruneRemoved = true)
+                        if (bookDiff.toUpsert.isNotEmpty()) {
+                            db.textbookDao().insertAll(bookDiff.toUpsert)
+                            deltaApplied += bookDiff.toUpsert.size
+                        }
+                        if (bookDiff.toDeleteIds.isNotEmpty()) {
+                            db.textbookDao().deleteByIds(bookDiff.toDeleteIds)
+                            deltaApplied += bookDiff.toDeleteIds.size
+                        }
+
+                        booksResp.headers()["ETag"]?.let { etag ->
+                            syncMetaPrefs.edit().putString("etag_books", etag).apply()
+                        }
+                        syncMetaPrefs.edit()
+                            .putString("fp_books", fpDiff.newFingerprint)
+                            .putInt("total_remote_topics", fpDiff.totalRemoteTopics)
+                            .apply()
+
+                        if (fpDiff.changedBookKeys.isNotEmpty() && !prevBooksFp.isNullOrBlank()) {
+                            invalidated.addAll(fpDiff.changedBookKeys)
+                        }
+                        if (fpDiff.topicsCountChanged || existingTopics.size < fpDiff.totalRemoteTopics) {
+                            shouldCheckTopics = true
+                        } else {
+                            skippedCalls++
+                        }
+                    } else if (existingBooks.size < 11) {
+                        seedContent()
                     }
-                    db.textbookDao().insertAll(entities)
-                } else if (db.textbookDao().count() < 11) {
-                    seedContent()
+                } else {
+                    if (existingBooks.size < 11) seedContent()
+                    if (existingTopics.isEmpty()) shouldCheckTopics = true
                 }
 
-                // Fetch Topics from Django REST API
-                val apiTopics = try { apiService.getTopics() } catch (e: Exception) { emptyList() }
-                if (apiTopics.isNotEmpty()) {
-                    val countsEditor = topicCountsPrefs.edit()
-                    val entities = apiTopics.map { t ->
-                        val inferredGrade = t.grade ?: run {
-                            val text = "${t.title} ${t.chapterTitle} ${t.textbookId}"
-                            when {
-                                text.contains("11") -> 11
-                                text.contains("10") -> 10
-                                text.contains("9") -> 9
-                                text.contains("8") -> 8
-                                text.contains("7") -> 7
-                                text.contains("6") -> 6
-                                else -> 7
-                            }
-                        }
+                // 2. Topics Delta Sync: skip completely when unchanged; otherwise incremental since_id + surgical diff!
+                if (shouldCheckTopics || (force && syncMetaPrefs.getString("etag_topics", null).isNullOrBlank())) {
+                    val prevTopicsEtag = syncMetaPrefs.getString("etag_topics", null)
+                    val maxTopicId = syncMetaPrefs.getLong("max_topic_id", 0L)
+                    val totalRemoteTopics = syncMetaPrefs.getInt("total_remote_topics", 0)
+                    val useCursor = maxTopicId > 0L && existingTopics.isNotEmpty() &&
+                        (totalRemoteTopics <= 0 || totalRemoteTopics >= existingTopics.size)
 
-                        val isJahon = (t.subject?.contains("jahon", ignoreCase = true) == true) ||
-                                t.title.contains("Jahon", ignoreCase = true) ||
-                                (t.chapterTitle?.contains("Jahon", ignoreCase = true) == true) ||
-                                (t.textbookId?.contains("jahon", ignoreCase = true) == true)
-
-                        val inferredTextbookId = t.textbookId?.takeIf { it.isNotBlank() }
-                            ?: if (inferredGrade == 6) "uz_6"
-                            else if (isJahon) "jahon_$inferredGrade"
-                            else "uz_$inferredGrade"
-
-                        val topicId = "topic_${t.id}"
-                        if (t.questionsCount > 0) {
-                            topicCountsMemory[topicId] = t.questionsCount
-                            countsEditor.putInt(topicId, t.questionsCount)
-                        }
-
-                        TopicEntity(
-                            id = topicId,
-                            chapterId = "ch_${t.categoryId}",
-                            textbookId = inferredTextbookId,
-                            number = t.order,
-                            title = t.title,
-                            content = t.content ?: "",
-                            summary = t.chapterTitle ?: "",
-                            gradeId = inferredGrade
+                    val topicsResp = runCatching {
+                        apiService.getTopicsDelta(
+                            sinceId = if (useCursor) maxTopicId else null,
+                            ifNoneMatch = if (!useCursor) prevTopicsEtag else null,
+                            cacheControl = if (force) "no-cache" else null
                         )
+                    }.getOrNull()
+
+                    if (topicsResp != null && topicsResp.code() == 304) {
+                        skippedCalls++
+                    } else if (topicsResp != null && topicsResp.isSuccessful) {
+                        val apiTopics = topicsResp.body().orEmpty()
+                        if (apiTopics.isNotEmpty()) {
+                            val countsEditor = topicCountsPrefs.edit()
+                            val incomingEntities = apiTopics.map { t ->
+                                val inferredGrade = t.grade ?: run {
+                                    val text = "${t.title} ${t.chapterTitle} ${t.textbookId}"
+                                    when {
+                                        text.contains("11") -> 11
+                                        text.contains("10") -> 10
+                                        text.contains("9") -> 9
+                                        text.contains("8") -> 8
+                                        text.contains("7") -> 7
+                                        text.contains("6") -> 6
+                                        else -> 7
+                                    }
+                                }
+
+                                val isJahon = (t.subject?.contains("jahon", ignoreCase = true) == true) ||
+                                        t.title.contains("Jahon", ignoreCase = true) ||
+                                        (t.chapterTitle?.contains("Jahon", ignoreCase = true) == true) ||
+                                        (t.textbookId?.contains("jahon", ignoreCase = true) == true)
+
+                                val inferredTextbookId = t.textbookId?.takeIf { it.isNotBlank() }
+                                    ?: if (inferredGrade == 6) "uz_6"
+                                    else if (isJahon) "jahon_$inferredGrade"
+                                    else "uz_$inferredGrade"
+
+                                val topicId = "topic_${t.id}"
+                                if (t.questionsCount > 0) {
+                                    val oldCount = topicCountsMemory[topicId] ?: topicCountsPrefs.getInt(topicId, 0)
+                                    if (oldCount > 0 && oldCount != t.questionsCount) {
+                                        invalidated.add(topicId)
+                                    }
+                                    topicCountsMemory[topicId] = t.questionsCount
+                                    countsEditor.putInt(topicId, t.questionsCount)
+                                }
+
+                                TopicEntity(
+                                    id = topicId,
+                                    chapterId = "ch_${t.categoryId}",
+                                    textbookId = inferredTextbookId,
+                                    number = t.order,
+                                    title = t.title,
+                                    content = t.content ?: "",
+                                    summary = t.chapterTitle ?: "",
+                                    gradeId = inferredGrade
+                                )
+                            }
+                            countsEditor.apply()
+
+                            // Surgical diff — never blow away topics with deleteAll()
+                            val topicDiff = DeltaSyncEngine.diffTopics(
+                                existing = existingTopics,
+                                incoming = incomingEntities,
+                                pruneRemoved = !useCursor
+                            )
+                            topicDiff.toUpsert.chunked(50).forEach { chunk ->
+                                db.topicDao().insertAll(chunk)
+                            }
+                            topicDiff.toDeleteIds.chunked(200).forEach { ids ->
+                                db.topicDao().deleteByIds(ids)
+                            }
+                            deltaApplied += topicDiff.toUpsert.size + topicDiff.toDeleteIds.size
+
+                            val newMaxTopicId = maxOf(maxTopicId, DeltaSyncEngine.maxNumericTopicId(incomingEntities))
+                            syncMetaPrefs.edit().putLong("max_topic_id", newMaxTopicId).apply()
+                            if (!useCursor) {
+                                topicsResp.headers()["ETag"]?.let { etag ->
+                                    syncMetaPrefs.edit().putString("etag_topics", etag).apply()
+                                }
+                            }
+                        } else if (useCursor) {
+                            skippedCalls++
+                        }
                     }
-                    countsEditor.apply()
-                    db.topicDao().deleteAll()
-                    entities.chunked(50).forEach { chunk ->
-                        db.topicDao().insertAll(chunk)
-                    }
+                } else {
+                    skippedCalls++
+                }
+
+                if (invalidated.isNotEmpty()) {
+                    invalidateCachesForCategories(invalidated)
                 }
 
                 lastSyncedAtMs = System.currentTimeMillis()
                 syncMetaPrefs.edit().putLong("last_synced_at_ms", lastSyncedAtMs).apply()
-                true
+                DeltaBackendOutcome(
+                    success = true,
+                    deltaItemsApplied = deltaApplied,
+                    skippedUnchangedCalls = skippedCalls,
+                    invalidatedCategories = invalidated
+                )
             } catch (e: Exception) {
                 e.printStackTrace()
-                false
+                DeltaBackendOutcome(success = false)
             }
         }
     }
 
     /**
-     * Har bir kitob (sinf + fan) savollari alohida-alohida yuklanadi: yuklama kamayadi
-     * va foydalanuvchi faqat o‘zi tanlagan kitobni yuklab oladi.
+     * Har bir kitob (sinf + fan) savollari kursor orqali (since_id) faqat yangi qo'shilgan delta savollarni yuklaydi.
      */
-    suspend fun syncBook(grade: Int, subjectId: String, pageSize: Int = 1000): Int =
+    suspend fun syncBook(grade: Int, subjectId: String, pageSize: Int = 500): Int =
         withContext(Dispatchers.IO) {
             // 6-sinf darsligi («Qadimgi dunyo tarixi») backendda uzbekiston bucketiga tushadi
             val bookSubjectId = if (grade == 6) "uzbekiston" else subjectId
-            val key = bookDownloadKey(grade, bookSubjectId)
-            if (bankPrefs.getBoolean(key, false) &&
-                db.questionDao().countByGradeAndSubject(grade, bookSubjectId) > 0
-            ) {
+            val cursorKey = "max_q_id_${grade}_$bookSubjectId"
+            val maxSyncedQId = syncMetaPrefs.getLong(cursorKey, 0L)
+            val localCount = db.questionDao().countByGradeAndSubject(grade, bookSubjectId)
+            val bookId = if (bookSubjectId == "jahon") "jahon_$grade" else "uz_$grade"
+            val remoteBookTotal = db.textbookDao().getById(bookId)?.totalQuestions ?: 0
+
+            // Skip network if we already synced up to the remote textbook question count
+            if (maxSyncedQId > 0L && localCount > 0 && remoteBookTotal in 1..localCount) {
                 return@withContext 0
             }
+
             val subjectParam = when {
                 grade == 6 -> "qadimgi"
                 subjectId == "jahon" -> "jahon"
                 else -> "uzbekiston"
             }
 
-            val effectivePageSize = pageSize.coerceIn(1, 5000)
-            var offset = 0
+            val effectivePageSize = pageSize.coerceIn(1, 1000)
+            var offset = if (maxSyncedQId > 0L) 0 else localCount
             var inserted = 0
-            while (true) {
-                val page = try {
-                    apiService.getQuestions(
+            var highestId = maxSyncedQId
+            val existingIds = db.questionDao().getIdsByGradeAndSubject(grade, bookSubjectId).toHashSet()
+
+            // Bounded incremental fetch per sync cycle to minimize user network traffic
+            val maxPages = if (maxSyncedQId > 0L) 2 else 1
+            for (pageIndex in 0 until maxPages) {
+                val resp = try {
+                    apiService.getQuestionsDelta(
                         grade = grade,
                         subject = subjectParam,
+                        sinceId = maxSyncedQId.takeIf { it > 0L },
                         limit = effectivePageSize,
                         offset = offset
                     )
                 } catch (e: CancellationException) {
                     throw e
                 } catch (e: Exception) {
-                    return@withContext inserted
+                    break
                 }
+                if (resp.code() == 304 || !resp.isSuccessful) break
+                val page = resp.body().orEmpty()
                 if (page.isEmpty()) break
-                page.map { it.toEntity() }
-                    .chunked(500)
-                    .forEach { chunk -> db.questionDao().insertAll(chunk) }
-                inserted += page.size
+
+                val newEntities = page
+                    .filter { dto -> !existingIds.contains("q_${dto.id}") }
+                    .map { dto ->
+                        if (dto.id > highestId) highestId = dto.id
+                        existingIds.add("q_${dto.id}")
+                        dto.toEntity()
+                    }
+                if (newEntities.isNotEmpty()) {
+                    newEntities.chunked(250).forEach { chunk -> db.questionDao().insertAll(chunk) }
+                    inserted += newEntities.size
+                } else {
+                    page.maxOfOrNull { it.id }?.let { if (it > highestId) highestId = it }
+                }
+
                 offset += page.size
                 if (page.size < effectivePageSize) break
             }
+
+            if (highestId > maxSyncedQId) {
+                syncMetaPrefs.edit().putLong(cursorKey, highestId).apply()
+            }
             if (inserted > 0) {
-                bankPrefs.edit().putBoolean(key, true).apply()
+                bankPrefs.edit().putBoolean(bookDownloadKey(grade, bookSubjectId), true).apply()
             }
             inserted
         }
@@ -1159,13 +1477,18 @@ class ContentRepository @Inject constructor(
     data class OfflineSyncResult(
         val backendSynced: Boolean,
         val cachedQuestionsTotal: Int,
-        val syncedTicketsCount: Int
+        val syncedTicketsCount: Int,
+        val deltaItemsFetched: Int = 0,
+        val skippedUnchangedCount: Int = 0,
+        val syncModeLabel: String = "Delta sinxronlash",
+        val cacheEpoch: Long = 1L
     )
 
     /**
-     * Background WorkManager offline-cache warmup:
-     * caches textbooks, topics, direction counts, daily question, historical facts,
-     * and the active tickets for each direction + user's grade books into Room & disk cache.
+     * Background WorkManager delta offline-cache sync:
+     * 1. Checks ETag & count fingerprints first (304/unchanged skips full payload transfers).
+     * 2. Selectively invalidates only categories/books whose counts changed.
+     * 3. Warms only missing or invalidated tickets & incremental grade question deltas.
      */
     suspend fun syncOfflineCache(
         grade: Int,
@@ -1173,13 +1496,19 @@ class ContentRepository @Inject constructor(
         lastOpenedByCategory: Map<String, Int> = emptyMap()
     ): OfflineSyncResult = withContext(Dispatchers.IO) {
         seedIfNeeded()
-        val backendOk = syncWithDjangoBackend(force = forceRefresh)
+        val backendOutcome = syncWithDjangoBackendDelta(force = forceRefresh)
+        var deltaCount = backendOutcome.deltaItemsApplied
+        var skippedCount = backendOutcome.skippedUnchangedCalls
+
+        // Lightweight direction count delta checks (invalidates only changed direction ticket caches)
         fetchDirectionCounts(0, forceRefresh = forceRefresh)
         if (grade in 6..11) {
             fetchDirectionCounts(grade, forceRefresh = forceRefresh)
         }
-        runCatching { getDailyQuestion(grade = grade) }
-        runCatching { getDailyQuestion(grade = 0) }
+
+        // Daily question: fetch only for active grade (or 0 if invalid) — avoids redundant duplicate API calls
+        val targetDailyGrade = if (grade in 6..11) grade else 0
+        runCatching { getDailyQuestion(grade = targetDailyGrade) }
 
         var syncedTickets = 0
         val priorityCategories = buildList {
@@ -1199,24 +1528,49 @@ class ContentRepository @Inject constructor(
         for (cat in priorityCategories) {
             val targetIdx = (lastOpenedByCategory[cat] ?: 1).coerceAtLeast(1)
             val indicesToWarm = if (targetIdx > 1) listOf(1, targetIdx) else listOf(1)
+            val catGrade = if (cat.startsWith("book_")) grade else 0
             for (idx in indicesToWarm) {
+                if (isTicketCachedAtCurrentEpoch(cat, idx, 30, catGrade)) {
+                    skippedCount++
+                    continue
+                }
                 val qs = runCatching {
                     fetchTicketFromApi(
                         categoryKey = cat,
                         ticketIndex = idx,
                         count = 30,
-                        grade = if (cat.startsWith("book_")) grade else 0
+                        grade = catGrade
                     )
                 }.getOrDefault(emptyList())
-                if (qs.isNotEmpty()) syncedTickets++
+                if (qs.isNotEmpty()) {
+                    syncedTickets++
+                    deltaCount += qs.size
+                }
             }
         }
 
+        // Incremental delta question cursor for selected grade's books (up to 1 bounded page per run)
+        if (grade in 6..11) {
+            val uzAdded = runCatching { syncBook(grade, "uzbekiston", pageSize = 200) }.getOrDefault(0)
+            val jahonAdded = if (grade > 6) runCatching { syncBook(grade, "jahon", pageSize = 200) }.getOrDefault(0) else 0
+            deltaCount += uzAdded + jahonAdded
+        }
+
         val totalCached = db.questionDao().count()
+        val modeLabel = when {
+            !backendOutcome.success -> "Oflayn zahira"
+            deltaCount == 0 && skippedCount > 0 -> "O'zgarish yo'q (trafik tejaldi)"
+            else -> "Delta: +$deltaCount ta yangilandi"
+        }
+
         OfflineSyncResult(
-            backendSynced = backendOk,
+            backendSynced = backendOutcome.success,
             cachedQuestionsTotal = totalCached,
-            syncedTicketsCount = syncedTickets
+            syncedTicketsCount = syncedTickets,
+            deltaItemsFetched = deltaCount,
+            skippedUnchangedCount = skippedCount,
+            syncModeLabel = modeLabel,
+            cacheEpoch = currentCacheEpoch()
         )
     }
 

@@ -2,12 +2,25 @@ package com.tarixustoz.app.presentation.home
 
 import android.app.Activity
 import android.widget.Toast
+import com.tarixustoz.app.R
 import com.tarixustoz.app.ads.findActivity
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.CubicBezierEasing
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.LinearOutSlowInEasing
+import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.collectIsDraggedAsState
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -20,6 +33,7 @@ import androidx.compose.material.icons.outlined.Schedule
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.PullToRefreshDefaults
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -28,10 +42,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.util.lerp
+import kotlin.math.absoluteValue
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -60,6 +79,7 @@ fun HomeScreen(
     onNavigateToVerticalCards: (title: String, categoryType: String) -> Unit = { _, _ -> },
     onNavigateToTickets: (categoryKey: String, categoryTitle: String) -> Unit = { _, _ -> },
     onStartQuizForBookOrTopic: (id: String) -> Unit = {},
+    onContinueLastQuiz: (route: String) -> Unit = {},
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -78,6 +98,34 @@ fun HomeScreen(
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         contentWindowInsets = WindowInsets.safeDrawing,
+        floatingActionButtonPosition = FabPosition.End,
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = {
+                    val targetRoute = uiState.globalContinueRoute.ifBlank {
+                        "quiz/ticket_EVENT_1?time=20&grade=0&shuffle=false"
+                    }
+                    onContinueLastQuiz(targetRoute)
+                },
+                shape = CircleShape,
+                containerColor = BrandPurple,
+                contentColor = Color.White,
+                elevation = FloatingActionButtonDefaults.elevation(
+                    defaultElevation = 8.dp,
+                    pressedElevation = 12.dp
+                ),
+                modifier = Modifier
+                    .size(58.dp)
+                    .testTag("home_global_continue_play_fab")
+            ) {
+                Icon(
+                    imageVector = Icons.Default.PlayArrow,
+                    contentDescription = "Oxirgi kelgan joydan davom ettirish",
+                    tint = Color.White,
+                    modifier = Modifier.size(30.dp)
+                )
+            }
+        },
         topBar = {
             TopAppBar(
                 title = {
@@ -115,6 +163,37 @@ fun HomeScreen(
                     }
                 },
                 actions = {
+                    // To'plangan jami yulduzlar ko'rsatkichi (Home screen tepasida)
+                    Surface(
+                        onClick = onNavigateToLeaderboard,
+                        shape = RoundedCornerShape(50),
+                        color = Color(0xFFF59E0B).copy(alpha = 0.16f),
+                        border = BorderStroke(1.2.dp, Color(0xFFF59E0B).copy(alpha = 0.45f)),
+                        modifier = Modifier
+                            .padding(end = 8.dp)
+                            .height(38.dp)
+                            .testTag("home_total_stars_badge")
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(horizontal = 12.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(5.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = "To'plangan yulduzlar",
+                                tint = Color(0xFFF59E0B),
+                                modifier = Modifier.size(18.dp)
+                            )
+                            Text(
+                                text = formatCompactStarsCount(uiState.totalStars),
+                                fontSize = 14.sp,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = Color(0xFFD97706)
+                            )
+                        }
+                    }
+
                     Surface(
                         onClick = onNavigateToNotifications,
                         shape = CircleShape,
@@ -192,29 +271,9 @@ fun HomeScreen(
             ) {
                 item { Spacer(Modifier.height(4.dp)) }
 
-            // 2. 100% Dedicated AdMob Banner Card (Hero Slot - 40% Screen Height)
+            // 2. Hero Carousel: Har doim 1-slaydda AdMob reklama (~350x250dp, ochiq joysiz) + 20 ta HD tarixiy slayd (Qadimgi dunyodan bugungi kungacha)
             item {
-                val screenHeightDp = LocalConfiguration.current.screenHeightDp.dp
-                val heroBannerHeight = (screenHeightDp * 0.40f).coerceIn(240.dp, 320.dp)
-
-                Surface(
-                    shape = RoundedCornerShape(24.dp),
-                    color = MaterialTheme.colorScheme.surface,
-                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)),
-                    shadowElevation = 2.dp,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(heroBannerHeight)
-                ) {
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        AdMobManager.DedicatedHeroBannerAdView(
-                            modifier = Modifier.fillMaxSize()
-                        )
-                    }
-                }
+                HeroAdAndHistoryCarousel()
             }
 
             // 3. Kun savoli (Daily Question)
@@ -602,9 +661,10 @@ fun HomeScreen(
                             }
                         }
                         Spacer(Modifier.width(14.dp))
+                        val adDiagRewarded by AdMobManager.diagnostics.collectAsState()
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
-                                text = "Mukofotli Reklama (+50 XP)",
+                                text = if (adDiagRewarded.isTestMode) "Mukofotli Reklama (Test • +50 XP)" else "Mukofotli Reklama (+50 XP)",
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 14.sp,
                                 color = MaterialTheme.colorScheme.onSurface
@@ -693,3 +753,211 @@ fun HomeScreen(
         }
     }
 }
+
+/**
+ * Yulduzlar soni mingga borsa `k` bilan (masalan: `1k`, `1.2k`),
+ * millionga borsa `m` bilan (masalan: `1m`, `1.5m`) ixcham formatlaydi.
+ */
+fun formatCompactStarsCount(count: Int): String {
+    val safe = count.coerceAtLeast(0)
+    return when {
+        safe >= 1_000_000 -> {
+            val whole = safe / 1_000_000
+            val tenth = (safe % 1_000_000) / 100_000
+            if (tenth == 0) "${whole}m" else "${whole}.${tenth}m"
+        }
+        safe >= 1_000 -> {
+            val whole = safe / 1_000
+            val tenth = (safe % 1_000) / 100
+            if (tenth == 0) "${whole}k" else "${whole}.${tenth}k"
+        }
+        else -> "$safe"
+    }
+}
+
+/**
+ * Foydalanuvchi tomonidan taqdim etilgan 11 ta tarixiy rasm (sarlavhasiz va tavsifsiz faqat to'liq rasm).
+ */
+private val HERO_USER_SLIDE_IMAGES: List<Int> = listOf(
+    R.drawable.hero_user_slide_1,
+    R.drawable.hero_user_slide_2,
+    R.drawable.hero_user_slide_3,
+    R.drawable.hero_user_slide_4,
+    R.drawable.hero_user_slide_5,
+    R.drawable.hero_user_slide_6,
+    R.drawable.hero_user_slide_7,
+    R.drawable.hero_user_slide_8,
+    R.drawable.hero_user_slide_9,
+    R.drawable.hero_user_slide_10,
+    R.drawable.hero_user_slide_11
+)
+
+@Composable
+private fun HeroAdAndHistoryCarousel() {
+    // 0-sahifa = Har doim birinchi ochiladigan AdMob Reklama (~350x250dp, kamida 10 soniya turadi),
+    // 1..11-sahifalar = Foydalanuvchi bergan 11 ta tarixiy rasm har safar va har aylanada RANDOM (shuffled) tartibda chiqadi.
+    var shuffledImages by remember { mutableStateOf(HERO_USER_SLIDE_IMAGES.shuffled()) }
+    val totalPages = 1 + shuffledImages.size
+    val pagerState = rememberPagerState(initialPage = 0, pageCount = { totalPages })
+    val isDragged by pagerState.interactionSource.collectIsDraggedAsState()
+    val coroutineScope = rememberCoroutineScope()
+    val wrapTransitionAlpha = remember { Animatable(1f) }
+    val smoothSlideEasing = remember { CubicBezierEasing(0.22f, 1.0f, 0.36f, 1.0f) }
+
+    LaunchedEffect(pagerState.currentPage, isDragged) {
+        if (!isDragged) {
+            val waitMs = if (pagerState.currentPage == 0) 11_000L else 5_500L
+            delay(waitMs)
+            val nextPage = (pagerState.currentPage + 1) % totalPages
+            if (nextPage == 0) {
+                // Oxirgi slayddan 0-slaydga qaytganda orqaga 11 ta rasmni miltillatib aylantirmasdan,
+                // mayin cross-fade animatsiyasi bilan o'tib, rasmlar tartibini yangidan random qilamiz.
+                wrapTransitionAlpha.animateTo(
+                    targetValue = 0f,
+                    animationSpec = tween(durationMillis = 420, easing = FastOutSlowInEasing)
+                )
+                shuffledImages = HERO_USER_SLIDE_IMAGES.shuffled()
+                pagerState.scrollToPage(0)
+                wrapTransitionAlpha.animateTo(
+                    targetValue = 1f,
+                    animationSpec = tween(durationMillis = 480, easing = LinearOutSlowInEasing)
+                )
+            } else {
+                pagerState.animateScrollToPage(
+                    page = nextPage,
+                    animationSpec = tween(durationMillis = 900, easing = smoothSlideEasing)
+                )
+            }
+        }
+    }
+
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Surface(
+            shape = RoundedCornerShape(18.dp),
+            color = MaterialTheme.colorScheme.surface,
+            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.45f)),
+            shadowElevation = 2.dp,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(250.dp)
+                .clip(RoundedCornerShape(18.dp))
+                .testTag("home_hero_carousel")
+        ) {
+            HorizontalPager(
+                state = pagerState,
+                beyondViewportPageCount = 1,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .graphicsLayer {
+                        alpha = wrapTransitionAlpha.value
+                    }
+            ) { page ->
+                val rawPageOffset = (pagerState.currentPage - page) + pagerState.currentPageOffsetFraction
+                val absOffset = rawPageOffset.absoluteValue.coerceIn(0f, 1f)
+                val pageAlpha = lerp(0.35f, 1f, 1f - absOffset)
+                val pageScale = lerp(0.92f, 1f, 1f - absOffset)
+
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .graphicsLayer {
+                            alpha = pageAlpha
+                            scaleX = pageScale
+                            scaleY = pageScale
+                        }
+                        .clip(RoundedCornerShape(18.dp))
+                ) {
+                    if (page == 0) {
+                        // 0-slayd: Har doim birinchi ochiladigan ~350x250dp AdMob Hero Banner (kamida 10 soniya)
+                        AdMobManager.DedicatedHeroBannerAdView(
+                            modifier = Modifier.fillMaxSize()
+                        )
+                    } else {
+                        val imageRes = shuffledImages[(page - 1).coerceIn(0, shuffledImages.lastIndex)]
+                        val isCurrentSlide = pagerState.currentPage == page
+                        val subtleZoom by animateFloatAsState(
+                            targetValue = if (isCurrentSlide) 1.045f else 1.0f,
+                            animationSpec = tween(durationMillis = 5200, easing = LinearOutSlowInEasing),
+                            label = "heroImageCinematicZoom"
+                        )
+                        Image(
+                            painter = painterResource(id = imageRes),
+                            contentDescription = "Tarixiy slayd $page",
+                            contentScale = ContentScale.Crop,
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .graphicsLayer {
+                                    scaleX = subtleZoom
+                                    scaleY = subtleZoom
+                                    translationX = rawPageOffset * 32f
+                                }
+                        )
+                    }
+                }
+            }
+        }
+
+        Spacer(Modifier.height(10.dp))
+
+        // Dots Indicator — rasmdan tashqarida, bannerning pastki qismida
+        Row(
+            modifier = Modifier
+                .testTag("home_hero_dots_indicator")
+                .padding(vertical = 2.dp),
+            horizontalArrangement = Arrangement.spacedBy(6.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            for (dotIndex in 0 until totalPages) {
+                val isSelected = pagerState.currentPage == dotIndex
+                val dotWidth by animateDpAsState(
+                    targetValue = if (isSelected) 20.dp else 7.dp,
+                    animationSpec = tween(durationMillis = 300),
+                    label = "heroDotWidth"
+                )
+                val dotColor by animateColorAsState(
+                    targetValue = when {
+                        isSelected && dotIndex == 0 -> Color(0xFFF59E0B)
+                        isSelected -> BrandPurple
+                        dotIndex == 0 -> Color(0xFFF59E0B).copy(alpha = 0.35f)
+                        else -> MaterialTheme.colorScheme.outlineVariant
+                    },
+                    animationSpec = tween(durationMillis = 300),
+                    label = "heroDotColor"
+                )
+                Box(
+                    modifier = Modifier
+                        .height(7.dp)
+                        .width(dotWidth)
+                        .clip(CircleShape)
+                        .background(dotColor)
+                        .clickable {
+                            coroutineScope.launch {
+                                val distance = (pagerState.currentPage - dotIndex).absoluteValue
+                                if (distance > 2) {
+                                    wrapTransitionAlpha.animateTo(
+                                        targetValue = 0f,
+                                        animationSpec = tween(durationMillis = 240, easing = FastOutSlowInEasing)
+                                    )
+                                    pagerState.scrollToPage(dotIndex)
+                                    wrapTransitionAlpha.animateTo(
+                                        targetValue = 1f,
+                                        animationSpec = tween(durationMillis = 300, easing = LinearOutSlowInEasing)
+                                    )
+                                } else {
+                                    pagerState.animateScrollToPage(
+                                        page = dotIndex,
+                                        animationSpec = tween(durationMillis = 650, easing = smoothSlideEasing)
+                                    )
+                                }
+                            }
+                        }
+                )
+            }
+        }
+    }
+}
+
+

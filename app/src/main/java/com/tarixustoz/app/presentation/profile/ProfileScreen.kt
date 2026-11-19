@@ -27,7 +27,12 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
+import android.widget.Toast
 import com.tarixustoz.app.ThemeMode
+import com.tarixustoz.app.ads.AdMobManager
+import com.tarixustoz.app.ads.AdProbeStatus
+import com.tarixustoz.app.ads.AdSlotLoadState
+import com.tarixustoz.app.ads.findActivity
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import com.tarixustoz.app.presentation.theme.ThemeViewModel
 import java.text.SimpleDateFormat
@@ -543,6 +548,17 @@ fun ProfileScreen(
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
+                            if (syncStatus.lastSyncMode.isNotBlank()) {
+                                val skippedSuffix = if (syncStatus.lastSkippedCount > 0) {
+                                    " • ${syncStatus.lastSkippedCount} ta keshdan saqlandi"
+                                } else ""
+                                Text(
+                                    text = "${syncStatus.lastSyncMode}$skippedSuffix (v${syncStatus.cacheEpoch})",
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.Medium,
+                                    color = BrandPurple
+                                )
+                            }
                             if (syncStatus.pendingUploadsCount > 0) {
                                 Text(
                                     text = "${syncStatus.pendingUploadsCount} ta natija bulutga yuklashni kutmoqda",
@@ -575,86 +591,199 @@ fun ProfileScreen(
                         } else {
                             Icon(
                                 imageVector = Icons.Default.Sync,
-                                contentDescription = null,
+                                contentDescription = "Delta sinxronlashni boshlash",
                                 tint = BrandPurple,
                                 modifier = Modifier.size(18.dp)
                             )
                             Spacer(Modifier.width(8.dp))
-                            Text("Hozir sinxronlash", fontWeight = FontWeight.SemiBold, color = BrandPurple)
+                            Text("Delta sinxronlash", fontWeight = FontWeight.SemiBold, color = BrandPurple)
                         }
                     }
                 }
             }
 
-            if (isGuest) {
-                Button(
-                    onClick = onNavigateToAuth,
-                    colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(52.dp)
-                        .testTag("profile_sign_in_btn")
-                ) {
-                    Icon(
-                        Icons.Default.Login,
-                        contentDescription = null,
-                        modifier = Modifier.size(18.dp)
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    Text(
-                        text = "Hisobga kirish / Ro‘yxatdan o‘tish",
-                        fontSize = 15.sp,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
+            // AdMob Status & Test Mode Verification Card
+            val adDiag by AdMobManager.diagnostics.collectAsState()
+            val adContext = LocalContext.current
+            val adActivity = adContext.findActivity()
 
-                OutlinedButton(
-                    onClick = { profileViewModel.exitTestMode() },
-                    colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFFEF4444)),
-                    border = BorderStroke(1.dp, Color(0xFFEF4444).copy(alpha = 0.4f)),
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(52.dp)
-                        .testTag("profile_exit_test_mode_btn")
+            Text(
+                text = "AdMob holati va test rejimi",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold
+            )
+
+            Surface(
+                shape = RoundedCornerShape(18.dp),
+                color = MaterialTheme.colorScheme.surface,
+                border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("profile_admob_diagnostics_card")
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
-                    Icon(
-                        Icons.Default.Logout,
-                        contentDescription = null,
-                        modifier = Modifier.size(18.dp)
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                text = if (adDiag.isTestMode) "Test rejimi faol (Test Ad)" else "Jonli AdMob rejimi",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(
+                                text = adDiag.adapterStatusSummary,
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+
+                        Switch(
+                            checked = adDiag.isTestMode,
+                            onCheckedChange = { checked ->
+                                AdMobManager.setTestModeEnabled(
+                                    enabled = checked,
+                                    reason = if (checked) "Foydalanuvchi tomonidan test rejimiga o'tkazildi" else null
+                                )
+                                if (!checked) {
+                                    AdMobManager.probeLiveAdUnits(adContext)
+                                }
+                            },
+                            modifier = Modifier
+                                .minimumInteractiveComponentSize()
+                                .testTag("profile_admob_test_mode_switch")
+                        )
+                    }
+
+                    val probeBadgeColor = when (adDiag.liveProbeStatus) {
+                        AdProbeStatus.LIVE_ACTIVE -> Color(0xFF10B981)
+                        AdProbeStatus.LIVE_FAILED_USING_TEST -> Color(0xFFD97706)
+                        AdProbeStatus.TESTING_LIVE -> BrandPurple
+                        AdProbeStatus.IDLE -> Color(0xFF64748B)
+                    }
+                    val probeLabel = when (adDiag.liveProbeStatus) {
+                        AdProbeStatus.LIVE_ACTIVE -> "Jonli AdMob ishlayapti"
+                        AdProbeStatus.LIVE_FAILED_USING_TEST -> "Jonli reklama bermadi -> Test rejimida qoldirildi"
+                        AdProbeStatus.TESTING_LIVE -> "Jonli AdMob tekshirilmoqda..."
+                        AdProbeStatus.IDLE -> if (adDiag.isTestMode) "Google Test Ad Unitlar yoqilgan" else "Tekshirishga tayyor"
+                    }
+
+                    Surface(
+                        shape = RoundedCornerShape(10.dp),
+                        color = probeBadgeColor.copy(alpha = 0.12f),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Column(
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
+                            verticalArrangement = Arrangement.spacedBy(2.dp)
+                        ) {
+                            Text(
+                                text = probeLabel,
+                                fontSize = 12.sp,
+                                fontWeight = FontWeight.SemiBold,
+                                color = probeBadgeColor
+                            )
+                            if (!adDiag.liveErrorSummary.isNullOrBlank()) {
+                                Text(
+                                    text = adDiag.liveErrorSummary!!,
+                                    fontSize = 11.sp,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                            Text(
+                                text = "Banner: ${adSlotLabel(adDiag.heroBannerState)} • Test ekran: ${adSlotLabel(adDiag.quizBannerState)} • Video: ${adSlotLabel(adDiag.rewardedState)}",
+                                fontSize = 11.sp,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+
+                    // Inline Live/Test Banner Preview so user can verify AdMob rendering directly
+                    AdMobManager.BannerAdView(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .testTag("profile_admob_preview_banner")
                     )
-                    Spacer(Modifier.width(8.dp))
-                    Text(
-                        text = "Test rejimidan chiqish",
-                        fontSize = 15.sp,
-                        fontWeight = FontWeight.Bold
-                    )
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        OutlinedButton(
+                            onClick = { AdMobManager.probeLiveAdUnits(adContext) },
+                            shape = RoundedCornerShape(12.dp),
+                            modifier = Modifier
+                                .weight(1f)
+                                .heightIn(min = 48.dp)
+                                .testTag("profile_admob_probe_btn")
+                        ) {
+                            Text("Jonli tekshirish", fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
+                        }
+
+                        Button(
+                            onClick = {
+                                if (adActivity != null) {
+                                    AdMobManager.showRewardedAd(
+                                        activity = adActivity,
+                                        onRewardEarned = {
+                                            profileViewModel.claimTestAdReward { awarded ->
+                                                val msg = if (awarded) {
+                                                    "AdMob video ko'rildi! +50 XP qo'shildi"
+                                                } else {
+                                                    "AdMob Test video muvaffaqiyatli ishladi!"
+                                                }
+                                                Toast.makeText(adContext, msg, Toast.LENGTH_SHORT).show()
+                                            }
+                                        }
+                                    )
+                                }
+                            },
+                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
+                            shape = RoundedCornerShape(12.dp),
+                            modifier = Modifier
+                                .weight(1f)
+                                .heightIn(min = 48.dp)
+                                .testTag("profile_admob_rewarded_btn")
+                        ) {
+                            Text("Video reklama test", fontSize = 12.sp, fontWeight = FontWeight.Bold)
+                        }
+                    }
                 }
-            } else {
-                // Hisobdan chiqish
-                OutlinedButton(
-                    onClick = { showSignOutDialog = true },
-                    colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFFEF4444)),
-                    border = BorderStroke(1.dp, Color(0xFFEF4444).copy(alpha = 0.4f)),
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(52.dp)
-                        .testTag("profile_sign_out_btn")
-                ) {
-                    Icon(
-                        Icons.Default.Logout,
-                        contentDescription = null,
-                        modifier = Modifier.size(18.dp)
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    Text(
-                        text = "Hisobdan chiqish",
-                        fontSize = 15.sp,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
+            }
+
+            // Hisobdan chiqish (Log out)
+            OutlinedButton(
+                onClick = {
+                    if (isGuest) {
+                        profileViewModel.signOut()
+                    } else {
+                        showSignOutDialog = true
+                    }
+                },
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFFEF4444)),
+                border = BorderStroke(1.dp, Color(0xFFEF4444).copy(alpha = 0.4f)),
+                shape = RoundedCornerShape(16.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(52.dp)
+                    .testTag("profile_sign_out_btn")
+            ) {
+                Icon(
+                    Icons.Default.Logout,
+                    contentDescription = null,
+                    modifier = Modifier.size(18.dp)
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    text = "Hisobdan chiqish",
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.Bold
+                )
             }
 
             Spacer(Modifier.height(100.dp))
@@ -814,18 +943,78 @@ private fun NotificationSettingRow(
 private fun DailyGoalChartCard(
     dailyGoal: DailyGoalUiState
 ) {
+    var selectedPeriod by remember { mutableStateOf(ResultsChartPeriod.DAY) }
+
+    val activeBars = when (selectedPeriod) {
+        ResultsChartPeriod.DAY -> dailyGoal.daySlots
+        ResultsChartPeriod.WEEK -> dailyGoal.weekDays
+        ResultsChartPeriod.MONTH -> dailyGoal.monthWeeks
+        ResultsChartPeriod.YEAR -> dailyGoal.yearMonths
+    }
+
+    val periodTitle = when (selectedPeriod) {
+        ResultsChartPeriod.DAY -> "Bugun"
+        ResultsChartPeriod.WEEK -> "Shu hafta"
+        ResultsChartPeriod.MONTH -> "Shu oy"
+        ResultsChartPeriod.YEAR -> "Shu yil"
+    }
+
+    val periodSolved = when (selectedPeriod) {
+        ResultsChartPeriod.DAY -> dailyGoal.todaySolved
+        ResultsChartPeriod.WEEK -> dailyGoal.weeklyTotalSolved
+        ResultsChartPeriod.MONTH -> dailyGoal.monthlyTotalSolved
+        ResultsChartPeriod.YEAR -> dailyGoal.yearlyTotalSolved
+    }
+
+    val periodCorrect = when (selectedPeriod) {
+        ResultsChartPeriod.DAY -> dailyGoal.todayCorrect
+        ResultsChartPeriod.WEEK -> dailyGoal.weeklyCorrect
+        ResultsChartPeriod.MONTH -> dailyGoal.monthlyCorrect
+        ResultsChartPeriod.YEAR -> dailyGoal.yearlyCorrect
+    }
+
+    val periodIncorrect = when (selectedPeriod) {
+        ResultsChartPeriod.DAY -> dailyGoal.todayIncorrect
+        ResultsChartPeriod.WEEK -> dailyGoal.weeklyIncorrect
+        ResultsChartPeriod.MONTH -> dailyGoal.monthlyIncorrect
+        ResultsChartPeriod.YEAR -> dailyGoal.yearlyIncorrect
+    }
+
+    val periodAccuracy = when (selectedPeriod) {
+        ResultsChartPeriod.DAY -> dailyGoal.todayAccuracy
+        ResultsChartPeriod.WEEK -> dailyGoal.weeklyAccuracy
+        ResultsChartPeriod.MONTH -> dailyGoal.monthlyAccuracy
+        ResultsChartPeriod.YEAR -> dailyGoal.yearlyAccuracy
+    }
+
+    val periodBadgeText = when (selectedPeriod) {
+        ResultsChartPeriod.DAY -> "${dailyGoal.todaySolved}/${dailyGoal.todayGoalTotal} savol"
+        ResultsChartPeriod.WEEK -> "${dailyGoal.weeklyTotalSolved} savol"
+        ResultsChartPeriod.MONTH -> "${dailyGoal.monthlyTotalSolved} savol"
+        ResultsChartPeriod.YEAR -> "${dailyGoal.yearlyTotalSolved} savol"
+    }
+
+    val defaultChartBaseline = when (selectedPeriod) {
+        ResultsChartPeriod.DAY -> 10
+        ResultsChartPeriod.WEEK -> 30
+        ResultsChartPeriod.MONTH -> 100
+        ResultsChartPeriod.YEAR -> 300
+    }
+
     Surface(
         shape = RoundedCornerShape(20.dp),
         color = MaterialTheme.colorScheme.surface,
         border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
         shadowElevation = 1.dp,
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag("results_chart_card")
     ) {
         Column(
             modifier = Modifier.padding(18.dp),
             verticalArrangement = Arrangement.spacedBy(14.dp)
         ) {
-            // Header Row: Natijalar + 20 savol pill
+            // Header Row: Kunlik natijalar + savol pill
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -848,7 +1037,7 @@ private fun DailyGoalChartCard(
                     }
                     Spacer(Modifier.width(10.dp))
                     Text(
-                        text = "Natijalar",
+                        text = "Kunlik natijalar",
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold
                     )
@@ -860,7 +1049,7 @@ private fun DailyGoalChartCard(
                     color = MaterialTheme.colorScheme.surface
                 ) {
                     Text(
-                        text = "${dailyGoal.todayGoalTotal} savol",
+                        text = periodBadgeText,
                         fontSize = 12.sp,
                         fontWeight = FontWeight.Medium,
                         modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp)
@@ -868,47 +1057,101 @@ private fun DailyGoalChartCard(
                 }
             }
 
+            // Kun / Hafta / Oy / Yil Segmented Selector
+            Surface(
+                shape = RoundedCornerShape(12.dp),
+                color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.55f),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(4.dp),
+                    horizontalArrangement = Arrangement.spacedBy(4.dp)
+                ) {
+                    ResultsChartPeriod.entries.forEach { period ->
+                        val isSelected = selectedPeriod == period
+                        Surface(
+                            shape = RoundedCornerShape(9.dp),
+                            color = if (isSelected) BrandPurple else Color.Transparent,
+                            modifier = Modifier
+                                .weight(1f)
+                                .defaultMinSize(minHeight = 36.dp)
+                                .clip(RoundedCornerShape(9.dp))
+                                .clickable { selectedPeriod = period }
+                                .testTag("results_chart_tab_${period.name.lowercase()}")
+                        ) {
+                            Box(
+                                contentAlignment = Alignment.Center,
+                                modifier = Modifier.padding(vertical = 7.dp)
+                            ) {
+                                Text(
+                                    text = period.label,
+                                    fontSize = 12.sp,
+                                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.SemiBold,
+                                    color = if (isSelected) Color.White else MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
             HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
 
-            // 7-Day Bar Chart
-            val maxCount = dailyGoal.weekDays.maxOfOrNull { it.count }?.coerceAtLeast(20) ?: 20
+            // Dynamic Bar Chart for Kun / Hafta / Oy / Yil
+            val maxCount = activeBars.maxOfOrNull { it.count }?.coerceAtLeast(defaultChartBaseline)
+                ?: defaultChartBaseline
+            val barWidth = if (activeBars.size > 8) 16.dp else 26.dp
+            val labelFontSize = if (activeBars.size > 8) 9.sp else 11.sp
+
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(90.dp),
+                    .height(106.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.Bottom
             ) {
-                dailyGoal.weekDays.forEach { day ->
-                    val barRatio = (day.count.toFloat() / maxCount).coerceIn(0.08f, 1f)
+                activeBars.forEach { item ->
+                    val barRatio = (item.count.toFloat() / maxCount).coerceIn(0.08f, 1f)
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Bottom,
                         modifier = Modifier.weight(1f)
                     ) {
+                        if (item.count > 0) {
+                            Text(
+                                text = item.count.toString(),
+                                fontSize = 9.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = if (item.isToday) BrandPurple else MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                            Spacer(Modifier.height(3.dp))
+                        }
                         Box(
                             modifier = Modifier
-                                .width(28.dp)
-                                .height(60.dp * barRatio)
-                                .clip(RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp))
+                                .width(barWidth)
+                                .height(64.dp * barRatio)
+                                .clip(RoundedCornerShape(topStart = 5.dp, topEnd = 5.dp))
                                 .background(
-                                    if (day.isToday) BrandPurple
-                                    else if (day.count > 0) BrandPurple.copy(alpha = 0.35f)
+                                    if (item.isToday) BrandPurple
+                                    else if (item.count > 0) BrandPurple.copy(alpha = 0.42f)
                                     else MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.4f)
                                 )
                         )
                         Spacer(Modifier.height(6.dp))
                         Text(
-                            text = day.dayName,
-                            fontSize = 11.sp,
-                            fontWeight = if (day.isToday) FontWeight.Bold else FontWeight.Medium,
-                            color = if (day.isToday) BrandPurple else MaterialTheme.colorScheme.onSurfaceVariant
+                            text = item.dayName,
+                            fontSize = labelFontSize,
+                            maxLines = 1,
+                            fontWeight = if (item.isToday) FontWeight.Bold else FontWeight.Medium,
+                            color = if (item.isToday) BrandPurple else MaterialTheme.colorScheme.onSurfaceVariant
                         )
                     }
                 }
             }
 
-            // Today Progress Box with Dual-color bar chart (Green correct, Red incorrect)
+            // Progress Box with Dual-color bar chart (Green correct, Red incorrect) — no extra text below this box
             Surface(
                 shape = RoundedCornerShape(14.dp),
                 color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
@@ -920,9 +1163,9 @@ private fun DailyGoalChartCard(
                         horizontalArrangement = Arrangement.SpaceBetween,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Text("Bugun", fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                        Text(periodTitle, fontWeight = FontWeight.Bold, fontSize = 13.sp)
                         Text(
-                            "${dailyGoal.todaySolved}/${dailyGoal.todayGoalTotal} savol",
+                            periodBadgeText,
                             fontWeight = FontWeight.Bold,
                             fontSize = 12.sp,
                             color = BrandPurple
@@ -930,11 +1173,8 @@ private fun DailyGoalChartCard(
                     }
                     Spacer(Modifier.height(8.dp))
 
-                    val solved = dailyGoal.todaySolved
-                    val correct = dailyGoal.todayCorrect
-                    val incorrect = dailyGoal.todayIncorrect
-                    val correctRatio = if (solved > 0) correct.toFloat() / solved else 0f
-                    val incorrectRatio = if (solved > 0) incorrect.toFloat() / solved else 0f
+                    val correctRatio = if (periodSolved > 0) periodCorrect.toFloat() / periodSolved else 0f
+                    val incorrectRatio = if (periodSolved > 0) periodIncorrect.toFloat() / periodSolved else 0f
 
                     Row(
                         modifier = Modifier
@@ -959,7 +1199,7 @@ private fun DailyGoalChartCard(
                                     .background(Color(0xFFEF4444))
                             )
                         }
-                        if (solved == 0) {
+                        if (periodSolved == 0) {
                             Box(modifier = Modifier.fillMaxSize())
                         }
                     }
@@ -969,35 +1209,26 @@ private fun DailyGoalChartCard(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Text("To'g'ri: $correct", fontSize = 11.sp, color = Color(0xFF16A34A), fontWeight = FontWeight.Bold)
-                        Text("Noto'g'ri: $incorrect", fontSize = 11.sp, color = Color(0xFFEF4444), fontWeight = FontWeight.Bold)
-                        Text("Aniqlik: ${dailyGoal.todayAccuracy}%", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, fontWeight = FontWeight.Bold)
+                        Text(
+                            "To'g'ri: $periodCorrect",
+                            fontSize = 11.sp,
+                            color = Color(0xFF16A34A),
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            "Noto'g'ri: $periodIncorrect",
+                            fontSize = 11.sp,
+                            color = Color(0xFFEF4444),
+                            fontWeight = FontWeight.Bold
+                        )
+                        Text(
+                            "Aniqlik: $periodAccuracy%",
+                            fontSize = 11.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            fontWeight = FontWeight.Bold
+                        )
                     }
                 }
-            }
-
-            // Hafta, Oy, Yil Sarhisbi
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 4.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp)
-            ) {
-                Text(
-                    text = "Hafta sarhisbi: ${dailyGoal.weeklyTotalSolved} savol (To'g'ri: ${dailyGoal.weeklyCorrect}, Noto'g'ri: ${dailyGoal.weeklyIncorrect}, Aniqlik: ${dailyGoal.weeklyAccuracy}%)",
-                    fontSize = 11.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-                Text(
-                    text = "Oy sarhisbi: ${dailyGoal.monthlyTotalSolved} savol (To'g'ri: ${dailyGoal.monthlyCorrect}, Noto'g'ri: ${dailyGoal.monthlyIncorrect}, Aniqlik: ${dailyGoal.monthlyAccuracy}%)",
-                    fontSize = 11.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-                Text(
-                    text = "Yil sarhisbi: ${dailyGoal.yearlyTotalSolved} savol (To'g'ri: ${dailyGoal.yearlyCorrect}, Noto'g'ri: ${dailyGoal.yearlyIncorrect}, Aniqlik: ${dailyGoal.yearlyAccuracy}%)",
-                    fontSize = 11.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
             }
         }
     }
@@ -1468,3 +1699,12 @@ private fun AlarmClockTimePickerDialog(
         }
     }
 }
+
+private fun adSlotLabel(state: AdSlotLoadState): String = when (state) {
+    AdSlotLoadState.IDLE -> "Kutilmoqda"
+    AdSlotLoadState.LOADING -> "Yuklanmoqda"
+    AdSlotLoadState.LOADED_LIVE -> "Jonli ✓"
+    AdSlotLoadState.LOADED_TEST -> "Test ✓"
+    AdSlotLoadState.FAILED -> "Xato"
+}
+

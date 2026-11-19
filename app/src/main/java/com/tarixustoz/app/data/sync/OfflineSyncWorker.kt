@@ -30,6 +30,8 @@ class OfflineSyncWorker @AssistedInject constructor(
         const val KEY_FORCE_REFRESH = "force_refresh"
         const val KEY_UPLINK_ONLY = "uplink_only"
         const val KEY_CACHED_QUESTIONS = "cached_questions"
+        const val KEY_DELTA_ITEMS = "delta_items"
+        const val KEY_SKIPPED_UNCHANGED = "skipped_unchanged"
         const val KEY_LAST_SYNC_MS = "last_sync_ms"
     }
 
@@ -65,8 +67,14 @@ class OfflineSyncWorker @AssistedInject constructor(
             )
 
             val nowMs = System.currentTimeMillis()
-            if (syncResult.backendSynced || syncResult.syncedTicketsCount > 0) {
-                preferences.setLastOfflineSyncAtMs(nowMs)
+            if (syncResult.backendSynced || syncResult.syncedTicketsCount > 0 || syncResult.deltaItemsFetched > 0) {
+                preferences.recordDeltaSyncMetrics(
+                    timestampMs = nowMs,
+                    deltaCount = syncResult.deltaItemsFetched,
+                    skippedCount = syncResult.skippedUnchangedCount,
+                    modeLabel = syncResult.syncModeLabel,
+                    cacheEpoch = syncResult.cacheEpoch
+                )
             }
 
             if (!syncResult.backendSynced && !uplinkOk && runAttemptCount < 2) {
@@ -75,6 +83,8 @@ class OfflineSyncWorker @AssistedInject constructor(
 
             val output = Data.Builder()
                 .putInt(KEY_CACHED_QUESTIONS, syncResult.cachedQuestionsTotal)
+                .putInt(KEY_DELTA_ITEMS, syncResult.deltaItemsFetched)
+                .putInt(KEY_SKIPPED_UNCHANGED, syncResult.skippedUnchangedCount)
                 .putLong(KEY_LAST_SYNC_MS, nowMs)
                 .build()
 

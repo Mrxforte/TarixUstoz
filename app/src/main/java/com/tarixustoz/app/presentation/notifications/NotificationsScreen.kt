@@ -38,12 +38,13 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.EmojiEvents
+import androidx.compose.material.icons.filled.Flag
 import androidx.compose.material.icons.filled.LocalFireDepartment
 import androidx.compose.material.icons.filled.NotificationsActive
 import androidx.compose.material.icons.filled.NotificationsNone
+import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Quiz
 import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material.icons.outlined.Close
@@ -66,6 +67,7 @@ import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
@@ -122,6 +124,7 @@ fun NotificationsScreen(
     onNavigateToTextbooks: () -> Unit = {},
     onNavigateToLeaderboard: () -> Unit = {},
     onNavigateToProfile: () -> Unit = {},
+    onResumeQuiz: (String) -> Unit = {},
     viewModel: NotificationsViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -151,8 +154,8 @@ fun NotificationsScreen(
         hasNotificationPermission = granted
     }
 
-    val handleDismiss: (NotificationItem) -> Unit = { item ->
-        viewModel.dismiss(item.id)
+    val handleDismissById: (String) -> Unit = { id ->
+        viewModel.dismiss(id)
         coroutineScope.launch {
             snackbarHostState.currentSnackbarData?.dismiss()
             val result = snackbarHostState.showSnackbar(
@@ -161,14 +164,16 @@ fun NotificationsScreen(
                 duration = SnackbarDuration.Short
             )
             if (result == SnackbarResult.ActionPerformed) {
-                viewModel.undoDismiss(item.id)
+                viewModel.undoDismiss(id)
             }
         }
     }
 
-    val handleNotificationTap: (NotificationItem) -> Unit = { item ->
-        viewModel.markAsRead(item.id)
-        when (item.target) {
+    val navigateForTarget: (NotificationTarget, String?) -> Unit = { target, resumeRoute ->
+        when (target) {
+            NotificationTarget.RESUME_QUIZ -> {
+                if (!resumeRoute.isNullOrBlank()) onResumeQuiz(resumeRoute) else onNavigateToTests()
+            }
             NotificationTarget.MISTAKES -> onNavigateToMistakes()
             NotificationTarget.DAILY_QUIZ -> onNavigateToDailyQuiz()
             NotificationTarget.TESTS -> onNavigateToTests()
@@ -266,12 +271,14 @@ fun NotificationsScreen(
                 .padding(innerPadding),
             contentAlignment = Alignment.TopCenter
         ) {
-            val todayItems = remember(uiState.filteredNotifications) {
-                uiState.filteredNotifications.filter { it.group == NotificationGroup.TODAY }
-            }
-            val earlierItems = remember(uiState.filteredNotifications) {
-                uiState.filteredNotifications.filter { it.group == NotificationGroup.EARLIER }
-            }
+            val aiItems = (uiState.aiSectionState as? AiSectionUiState.Ready)?.items.orEmpty()
+            val hasVisibleAi = uiState.showAiSection && (
+                uiState.aiSectionState is AiSectionUiState.Loading ||
+                    uiState.aiSectionState is AiSectionUiState.Error ||
+                    aiItems.isNotEmpty()
+                )
+            val isCompletelyEmpty = (!uiState.showCoreSection || uiState.filteredCoreNotifications.isEmpty()) &&
+                !hasVisibleAi
 
             LazyColumn(
                 modifier = Modifier
@@ -279,7 +286,7 @@ fun NotificationsScreen(
                     .widthIn(max = 640.dp)
                     .fillMaxWidth()
                     .animateContentSize(animationSpec = spring(stiffness = Spring.StiffnessMediumLow)),
-                contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 24.dp),
+                contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 28.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 if (uiState.hasDismissedNotifications) {
@@ -306,7 +313,7 @@ fun NotificationsScreen(
                     }
                 }
 
-                // M3 Horizontal Filter Chips
+                // Filter Chips
                 item(key = "filter_chips") {
                     LazyRow(
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -314,28 +321,15 @@ fun NotificationsScreen(
                     ) {
                         items(NotificationFilter.entries, key = { it.name }) { filter ->
                             val selected = uiState.selectedFilter == filter
-                            val labelText = when (filter) {
-                                NotificationFilter.UNREAD -> if (uiState.unreadCount > 0) {
-                                    "${filter.label} (${uiState.unreadCount})"
-                                } else {
-                                    filter.label
-                                }
-                                NotificationFilter.MISTAKE -> if (uiState.mistakesCount > 0) {
-                                    "${filter.label} (${uiState.mistakesCount})"
-                                } else {
-                                    filter.label
-                                }
-                                else -> filter.label
+                            val labelText = if (filter == NotificationFilter.UNREAD && uiState.unreadCount > 0) {
+                                "${filter.label} (${uiState.unreadCount})"
+                            } else {
+                                filter.label
                             }
                             FilterChip(
                                 selected = selected,
                                 onClick = { viewModel.selectFilter(filter) },
-                                label = {
-                                    Text(
-                                        text = labelText,
-                                        maxLines = 1
-                                    )
-                                },
+                                label = { Text(text = labelText, maxLines = 1) },
                                 leadingIcon = if (selected) {
                                     {
                                         Icon(
@@ -344,9 +338,7 @@ fun NotificationsScreen(
                                             modifier = Modifier.size(FilterChipDefaults.IconSize)
                                         )
                                     }
-                                } else {
-                                    null
-                                },
+                                } else null,
                                 shape = RoundedCornerShape(12.dp),
                                 colors = FilterChipDefaults.filterChipColors(
                                     selectedContainerColor = MaterialTheme.colorScheme.secondaryContainer,
@@ -359,7 +351,6 @@ fun NotificationsScreen(
                     }
                 }
 
-                // Android 13+ notification permission prompt when permission is missing
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && !hasNotificationPermission) {
                     item(key = "permission_banner") {
                         ElevatedCard(
@@ -421,7 +412,7 @@ fun NotificationsScreen(
                     }
                 }
 
-                if (uiState.filteredNotifications.isEmpty()) {
+                if (isCompletelyEmpty) {
                     item(key = "empty_state") {
                         NotificationsEmptyState(
                             hasDismissed = uiState.hasDismissedNotifications,
@@ -432,29 +423,81 @@ fun NotificationsScreen(
                         )
                     }
                 } else {
-                    if (todayItems.isNotEmpty()) {
-                        item(key = "header_today") {
-                            SectionHeader(title = NotificationGroup.TODAY.label)
+                    if (uiState.showCoreSection && uiState.filteredCoreNotifications.isNotEmpty()) {
+                        item(key = "header_core") {
+                            SectionHeader(title = "Kunlik maqsad, Savol va XP")
                         }
-                        items(todayItems, key = { it.id }) { item ->
+                        items(uiState.filteredCoreNotifications, key = { it.id }) { item ->
                             SwipeableNotificationCard(
                                 item = item,
-                                onClick = { handleNotificationTap(item) },
-                                onDismiss = { handleDismiss(item) }
+                                onClick = {
+                                    viewModel.markAsRead(item.id)
+                                    navigateForTarget(item.target, item.resumeRoute)
+                                },
+                                onDismiss = { handleDismissById(item.id) }
                             )
                         }
                     }
 
-                    if (earlierItems.isNotEmpty()) {
-                        item(key = "header_earlier") {
-                            SectionHeader(title = NotificationGroup.EARLIER.label)
-                        }
-                        items(earlierItems, key = { it.id }) { item ->
-                            SwipeableNotificationCard(
-                                item = item,
-                                onClick = { handleNotificationTap(item) },
-                                onDismiss = { handleDismiss(item) }
+                    if (uiState.showAiSection) {
+                        val isAiLoading = uiState.aiSectionState is AiSectionUiState.Loading
+                        item(key = "ai_header") {
+                            AiPedagogicalSectionHeader(
+                                isLoading = isAiLoading,
+                                onRefresh = { viewModel.refreshPedagogicalAdvice(forceRefresh = true) }
                             )
+                        }
+
+                        when (val aiState = uiState.aiSectionState) {
+                            AiSectionUiState.Idle,
+                            AiSectionUiState.Loading -> {
+                                item(key = "ai_loading") {
+                                    AiPedagogicalLoadingCard()
+                                }
+                            }
+
+                            is AiSectionUiState.Error -> {
+                                item(key = "ai_error") {
+                                    AiPedagogicalErrorCard(
+                                        message = aiState.message,
+                                        onRetry = { viewModel.refreshPedagogicalAdvice(forceRefresh = true) }
+                                    )
+                                }
+                            }
+
+                            is AiSectionUiState.Ready -> {
+                                if (aiState.items.isEmpty()) {
+                                    item(key = "ai_filtered_empty") {
+                                        Surface(
+                                            shape = RoundedCornerShape(18.dp),
+                                            color = MaterialTheme.colorScheme.surfaceContainerLow,
+                                            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+                                            modifier = Modifier.fillMaxWidth()
+                                        ) {
+                                            Text(
+                                                text = "Tanlangan filtr bo‘yicha yangi AI tavsiyalari yo‘q.",
+                                                style = MaterialTheme.typography.bodySmall,
+                                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                                modifier = Modifier.padding(16.dp)
+                                            )
+                                        }
+                                    }
+                                } else {
+                                    item(key = "ai_overview") {
+                                        AiPedagogicalOverviewBanner(assessment = aiState.overallAssessment)
+                                    }
+                                    items(aiState.items, key = { it.id }) { aiItem ->
+                                        SwipeableAiPedagogicalCard(
+                                            item = aiItem,
+                                            onClick = {
+                                                viewModel.markAsRead(aiItem.id)
+                                                navigateForTarget(aiItem.target, null)
+                                            },
+                                            onDismiss = { handleDismissById(aiItem.id) }
+                                        )
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -462,7 +505,6 @@ fun NotificationsScreen(
         }
     }
 
-    // M3 ModalBottomSheet for Notification Settings
     if (showSettingsSheet) {
         val sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)
         ModalBottomSheet(
@@ -583,7 +625,6 @@ fun NotificationsScreen(
         }
     }
 
-    // M3 TimePicker Dialog
     if (showTimePickerDialog) {
         val parts = uiState.preferences.reminderTime.split(":")
         val initialHour = parts.getOrNull(0)?.toIntOrNull()?.coerceIn(0, 23) ?: 8
@@ -700,43 +741,32 @@ private fun NotificationCard(
     onClick: () -> Unit,
     onDismiss: () -> Unit
 ) {
+    val isResumeCard = item.resumeRoute != null
     val (containerTone, iconTint, iconVector) = when (item.category) {
-        NotificationCategory.MISTAKE -> Triple(
-            MaterialTheme.colorScheme.errorContainer,
-            MaterialTheme.colorScheme.onErrorContainer,
-            Icons.Default.Warning
+        NotificationCategory.DAILY_GOAL -> Triple(
+            if (isResumeCard) MaterialTheme.colorScheme.secondaryContainer else MaterialTheme.colorScheme.primaryContainer,
+            if (isResumeCard) MaterialTheme.colorScheme.onSecondaryContainer else MaterialTheme.colorScheme.onPrimaryContainer,
+            if (isResumeCard) Icons.Default.PlayArrow else Icons.Default.Flag
         )
-        NotificationCategory.STREAK -> Triple(
+        NotificationCategory.DAILY_QUIZ -> Triple(
+            MaterialTheme.colorScheme.primaryContainer,
+            MaterialTheme.colorScheme.onPrimaryContainer,
+            Icons.Default.Quiz
+        )
+        NotificationCategory.XP_STREAK -> Triple(
             MaterialTheme.colorScheme.tertiaryContainer,
             MaterialTheme.colorScheme.onTertiaryContainer,
             Icons.Default.LocalFireDepartment
         )
-        NotificationCategory.DAILY -> Triple(
-            MaterialTheme.colorScheme.primaryContainer,
-            MaterialTheme.colorScheme.onPrimaryContainer,
-            Icons.Default.NotificationsActive
-        )
-        NotificationCategory.TEXTBOOK -> Triple(
-            MaterialTheme.colorScheme.secondaryContainer,
-            MaterialTheme.colorScheme.onSecondaryContainer,
-            Icons.AutoMirrored.Filled.MenuBook
-        )
-        NotificationCategory.ACHIEVEMENT -> Triple(
-            MaterialTheme.colorScheme.tertiaryContainer,
-            MaterialTheme.colorScheme.onTertiaryContainer,
-            Icons.Default.EmojiEvents
-        )
     }
 
     val cardColor = when {
-        item.category == NotificationCategory.MISTAKE && !item.isRead ->
-            MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.22f)
+        isResumeCard && !item.isRead -> MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.28f)
         !item.isRead -> MaterialTheme.colorScheme.surfaceContainerHigh
         else -> MaterialTheme.colorScheme.surfaceContainerLow
     }
     val borderColor = when {
-        item.category == NotificationCategory.MISTAKE && !item.isRead ->
-            MaterialTheme.colorScheme.error.copy(alpha = 0.4f)
+        isResumeCard -> MaterialTheme.colorScheme.secondary.copy(alpha = 0.55f)
         !item.isRead -> MaterialTheme.colorScheme.primary.copy(alpha = 0.35f)
         else -> MaterialTheme.colorScheme.outlineVariant
     }
@@ -775,7 +805,7 @@ private fun NotificationCard(
 
             Column(
                 modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.spacedBy(4.dp)
+                verticalArrangement = Arrangement.spacedBy(5.dp)
             ) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
@@ -787,11 +817,8 @@ private fun NotificationCard(
                                 .size(8.dp)
                                 .clip(CircleShape)
                                 .background(
-                                    if (item.category == NotificationCategory.MISTAKE) {
-                                        MaterialTheme.colorScheme.error
-                                    } else {
-                                        MaterialTheme.colorScheme.primary
-                                    }
+                                    if (isResumeCard) MaterialTheme.colorScheme.secondary
+                                    else MaterialTheme.colorScheme.primary
                                 )
                         )
                     }
@@ -801,31 +828,68 @@ private fun NotificationCard(
                         fontWeight = if (item.isRead) FontWeight.Medium else FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onSurface,
                         maxLines = 1,
-                        overflow = TextOverflow.Ellipsis
+                        overflow = TextOverflow.Ellipsis,
+                        modifier = Modifier.weight(1f, fill = false)
                     )
+                    if (!item.highlightTag.isNullOrBlank()) {
+                        Surface(
+                            shape = RoundedCornerShape(8.dp),
+                            color = containerTone
+                        ) {
+                            Text(
+                                text = item.highlightTag,
+                                style = MaterialTheme.typography.labelSmall,
+                                fontWeight = FontWeight.SemiBold,
+                                color = iconTint,
+                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                            )
+                        }
+                    }
                 }
 
                 Text(
                     text = item.message,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    maxLines = 2,
+                    maxLines = 3,
                     overflow = TextOverflow.Ellipsis
                 )
+
+                if (item.progressFraction != null) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        LinearProgressIndicator(
+                            progress = { item.progressFraction },
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(6.dp)
+                                .clip(RoundedCornerShape(3.dp)),
+                            color = if (isResumeCard) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.primary,
+                            trackColor = MaterialTheme.colorScheme.surfaceContainerHighest
+                        )
+                        if (!item.progressText.isNullOrBlank()) {
+                            Text(
+                                text = item.progressText,
+                                style = MaterialTheme.typography.labelSmall,
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+                }
 
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     Text(
-                        text = item.target.actionHint,
+                        text = item.actionHint,
                         style = MaterialTheme.typography.labelMedium,
                         fontWeight = FontWeight.SemiBold,
-                        color = if (item.category == NotificationCategory.MISTAKE) {
-                            MaterialTheme.colorScheme.error
-                        } else {
-                            MaterialTheme.colorScheme.primary
-                        }
+                        color = if (isResumeCard) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.primary
                     )
                     Text(
                         text = "• ${item.timeLabel}",
@@ -855,7 +919,7 @@ private fun NotificationCard(
                 }
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                    contentDescription = item.target.actionHint,
+                    contentDescription = item.actionHint,
                     tint = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.size(20.dp)
                 )
@@ -922,7 +986,7 @@ private fun NotificationsEmptyState(
                 text = if (isFiltered) {
                     "Boshqa toifalarni ko‘rish uchun filtrni o‘zgartirib ko‘ring."
                 } else {
-                    "Kun savoli, xatolar va darsliklarga oid muhim xabarlar shu yerda ko‘rinadi."
+                    "Kunlik maqsad (30), kun savoli, XP va AI pedagogik tavsiyalari shu yerda ko‘rinadi."
                 },
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,

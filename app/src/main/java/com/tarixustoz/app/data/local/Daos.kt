@@ -18,11 +18,17 @@ interface TextbookDao {
     @Query("SELECT * FROM textbooks WHERE id = :id")
     suspend fun getById(id: String): TextbookEntity?
 
+    @Query("SELECT * FROM textbooks ORDER BY gradeId, subjectId")
+    suspend fun getAllOnce(): List<TextbookEntity>
+
     @Query("SELECT COUNT(*) FROM textbooks")
     suspend fun count(): Int
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(items: List<TextbookEntity>)
+
+    @Query("DELETE FROM textbooks WHERE id IN (:ids)")
+    suspend fun deleteByIds(ids: List<String>)
 
     @Query("DELETE FROM textbooks")
     suspend fun deleteAll()
@@ -57,8 +63,14 @@ interface TopicDao {
     @Query("SELECT * FROM topics WHERE textbookId = :textbookId ORDER BY number")
     fun getByTextbook(textbookId: String): Flow<List<TopicEntity>>
 
+    @Query("SELECT id FROM topics")
+    suspend fun getAllIds(): List<String>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(items: List<TopicEntity>)
+
+    @Query("DELETE FROM topics WHERE id IN (:ids)")
+    suspend fun deleteByIds(ids: List<String>)
 
     @Query("DELETE FROM topics")
     suspend fun deleteAll()
@@ -153,6 +165,12 @@ interface QuestionDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(items: List<QuestionEntity>)
+
+    @Query("SELECT id FROM questions WHERE gradeId = :gradeId AND subjectId = :subjectId")
+    suspend fun getIdsByGradeAndSubject(gradeId: Int, subjectId: String): List<String>
+
+    @Query("DELETE FROM questions WHERE id IN (:ids)")
+    suspend fun deleteByIds(ids: List<String>)
 
     @Query("DELETE FROM questions")
     suspend fun deleteAll()

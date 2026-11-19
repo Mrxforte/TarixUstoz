@@ -249,6 +249,9 @@ fun TarixNavHost(
                     },
                     onStartQuizForBookOrTopic = { id ->
                         navController.navigate("quiz/$id")
+                    },
+                    onContinueLastQuiz = { route ->
+                        navController.navigate(route)
                     }
                 )
             }
@@ -260,7 +263,8 @@ fun TarixNavHost(
                     onNavigateToTests = { navController.navigate(Screen.Quiz.route) },
                     onNavigateToTextbooks = { navController.navigate(Screen.Textbooks.route) },
                     onNavigateToLeaderboard = { navController.navigate(Screen.Leaderboard.route) },
-                    onNavigateToProfile = { navController.navigate(Screen.Profile.route) }
+                    onNavigateToProfile = { navController.navigate(Screen.Profile.route) },
+                    onResumeQuiz = { quizRoute -> navController.navigate(quizRoute) }
                 )
             }
             composable(Screen.Textbooks.route) {
@@ -347,11 +351,14 @@ fun TarixNavHost(
                     categoryTitle = title,
                     selectedGrade = gradeArg,
                     onBack = { navController.popBackStack() },
-                    onStartTicket = { catKey, ticketIndex ->
-                        navController.navigate("quiz/ticket_${catKey}_$ticketIndex?grade=$gradeArg")
+                    onStartTicket = { catKey, ticketIndex, timerMins, isRetry ->
+                        navController.navigate("quiz/ticket_${catKey}_$ticketIndex?time=$timerMins&grade=$gradeArg&shuffle=$isRetry")
                     },
                     onStartActiveQuiz = { route ->
                         navController.navigate(route)
+                    },
+                    onNavigateToFavorites = {
+                        navController.navigate("saved_tests")
                     }
                 )
             }
@@ -382,7 +389,7 @@ fun TarixNavHost(
                     }
                 )
             }
-            composable("quiz/{topicId}?count={count}&cat={cat}&diff={diff}&time={time}&topics={topics}&grade={grade}") { backStackEntry ->
+            composable("quiz/{topicId}?count={count}&cat={cat}&diff={diff}&time={time}&topics={topics}&grade={grade}&shuffle={shuffle}") { backStackEntry ->
                 val topicId = backStackEntry.arguments?.getString("topicId")
                 val count = backStackEntry.arguments?.getString("count")?.toIntOrNull()
                 val cat = backStackEntry.arguments?.getString("cat")
@@ -390,6 +397,7 @@ fun TarixNavHost(
                 val time = backStackEntry.arguments?.getString("time")?.toIntOrNull()
                 val topicsArg = backStackEntry.arguments?.getString("topics")
                 val gradeArg = backStackEntry.arguments?.getString("grade")?.toIntOrNull()
+                val shuffleArg = backStackEntry.arguments?.getString("shuffle")?.toBooleanStrictOrNull() ?: false
                 val selectedTopics = if (topicsArg == null || topicsArg == "all") emptyList() else topicsArg.split(",")
 
                 QuizScreen(
@@ -399,7 +407,8 @@ fun TarixNavHost(
                     customDifficulty = diff,
                     timeLimitMinutes = time,
                     selectedTopicIds = selectedTopics,
-                    explicitGrade = gradeArg
+                    explicitGrade = gradeArg,
+                    forceShuffle = shuffleArg
                 )
             }
             composable(Screen.Mistakes.route) {
@@ -450,7 +459,10 @@ fun TarixNavHost(
             composable("saved_tests") {
                 SavedTestsScreen(
                     onBack = { navController.popBackStack() },
-                    onStartSavedQuiz = { navController.navigate("quiz/wrong_questions?count=10") }
+                    onStartSavedQuiz = { navController.navigate("quiz/favorite_questions?count=30&shuffle=true") },
+                    onStartFavoriteTicket = { catKey, ticketIdx, grade, timerMins ->
+                        navController.navigate("quiz/ticket_${catKey}_$ticketIdx?time=$timerMins&grade=$grade&shuffle=true")
+                    }
                 )
             }
             composable(Screen.EditProfile.route) {

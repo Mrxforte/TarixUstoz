@@ -122,7 +122,8 @@ class TestsViewModel @Inject constructor(
 
             // Build Grade Cards (Separate Uzb/Qadimgi and Jahon, 100,000 tests = 3,334 tickets each)
             val grades = mutableListOf<TestCardItem>()
-            for (g in 6..11) {
+            val targetGrades = if (grade in 6..11) listOf(grade) else (6..11).toList()
+            for (g in targetGrades) {
                 val uzbBookId = "uz_$g"
                 val uzbBook = contentRepository.getTextbookById(uzbBookId)
                 val uzbTitle = if (g == 6) "6-Sinf Qadimgi Dunyo Tarixi" else "$g-Sinf O'zbekiston Tarixi"

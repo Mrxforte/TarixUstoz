@@ -64,7 +64,7 @@ data class HomeUiState(
     val streak: Int = 0,
     val level: Int = 1,
     val todayGoalCompleted: Int = 0,
-    val todayGoalTotal: Int = 20,
+    val todayGoalTotal: Int = 30,
     val dailyQuestion: Question? = null,
     val isDailyLoading: Boolean = true,
     val selectedDailyOptionId: String? = null,
@@ -85,7 +85,9 @@ data class HomeUiState(
         HomeCategoryItem("urushlar", "Urushlar va janglar", "…", "war", 0, "WAR"),
         HomeCategoryItem("mantiqiy_dtm", "Mantiqiy va DTM", "…", "logical", 0, "LOGICAL"),
         HomeCategoryItem("mavzu_boyicha", "Mavzu bo'yicha", "Mavzular ro'yxati", "topic", 0, null)
-    )
+    ),
+    val globalContinueRoute: String = "quiz/ticket_EVENT_1?time=20&grade=0&shuffle=false",
+    val totalStars: Int = 0
 )
 
 @HiltViewModel
@@ -235,12 +237,27 @@ class HomeViewModel @Inject constructor(
         }
 
         viewModelScope.launch {
+            preferences.globalContinueRoute.collect { route ->
+                _uiState.update { current ->
+                    current.copy(globalContinueRoute = route)
+                }
+            }
+        }
+
+        viewModelScope.launch {
+            preferences.totalEarnedStars.collect { stars ->
+                _uiState.update { current ->
+                    current.copy(totalStars = stars.coerceAtLeast(0))
+                }
+            }
+        }
+
+        viewModelScope.launch {
             combine(
-                mistakesRepository.getActiveCount(),
                 preferences.readNotificationIds,
                 preferences.dismissedNotificationIds
-            ) { mistakes, readIds, dismissedIds ->
-                NotificationCatalog.activeIds(mistakes)
+            ) { readIds, dismissedIds ->
+                NotificationCatalog.activeIds()
                     .count { it !in readIds && it !in dismissedIds }
             }.collect { unread ->
                 _uiState.update { current ->

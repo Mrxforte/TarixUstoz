@@ -118,10 +118,13 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.1.1")
 
     // Firebase & Google Auth
-    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+    implementation(platform("com.google.firebase:firebase-bom:33.16.0"))
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-storage")
+    implementation("com.google.firebase:firebase-ai")
+    implementation("com.google.firebase:firebase-appcheck-recaptcha:19.2.0")
+    implementation("com.google.firebase:firebase-appcheck-debug")
     implementation("com.google.android.gms:play-services-auth:21.2.0")
     implementation("androidx.credentials:credentials:1.3.0")
     implementation("androidx.credentials:credentials-play-services-auth:1.3.0")
@@ -139,8 +142,8 @@ dependencies {
     // Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
 
-    // Google AI Gemini SDK, Retrofit, Gson & OkHttp
-    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+    // Retrofit, Gson & OkHttp (Firebase AI Logic handles Gemini)
+    // implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")

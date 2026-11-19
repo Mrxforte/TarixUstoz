@@ -128,6 +128,7 @@ class AuthRepository @Inject constructor(
     suspend fun signOut() {
         withContext(Dispatchers.IO + NonCancellable) {
             try {
+                preferences.setTestModeActive(false)
                 preferences.clearUserSessionDataForSwitch()
                 localDb.quizAttemptDao().deleteAll()
                 localDb.wrongQuestionDao().deleteAll()

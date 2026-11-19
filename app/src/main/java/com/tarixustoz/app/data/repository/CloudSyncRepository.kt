@@ -130,22 +130,38 @@ class CloudSyncRepository @Inject constructor(
         return init.ifBlank { "TU" }.take(8)
     }
 
+    // In-memory daily cache for user attempts so observeUserAttempts reads Firestore at most once per day
+    private val dailyAttemptsMemoryCache = mutableMapOf<String, List<CloudQuizAttempt>>()
+
+    private fun todayDateKey(): String =
+        java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US).format(java.util.Date())
+
     /**
      * Ensures signed-in user has their Firestore profile & leaderboard entry,
      * and hydrates local DataStore preferences & ticket progress from Firestore
-     * so each user sees their own real persistent progress across devices.
+     * at most ONCE per day per user.
      */
     suspend fun syncOnSignIn(user: FirebaseUser): Result<Unit> = withContext(Dispatchers.IO) {
         val uid = user.uid
         try {
             val previousUid = preferences.activeUserUid.first()
-            if (previousUid != null && previousUid != uid) {
+            val isSameUser = previousUid == uid
+            if (previousUid != null && !isSameUser) {
                 preferences.clearUserSessionDataForSwitch()
                 localDb.quizAttemptDao().deleteAll()
                 localDb.wrongQuestionDao().deleteAll()
                 localDb.userProgressDao().deleteAll()
             }
             preferences.setActiveUserUid(uid)
+
+            // Kuniga faqat 1 marta Firebase'dan o'qish (agar shu foydalanuvchi bugun o'qilgan bo'lsa, qayta o'qimaymiz)
+            if (isSameUser && preferences.hasReadFromFirebaseToday(uid)) {
+                // Agar bugun hali yozilmagan bo'lsa va kutilayotgan lokal natijalar bo'lsa, kunlik 1 marta yozishni bajaramiz
+                if (!preferences.hasWrittenToFirebaseToday(uid)) {
+                    flushPendingUploads()
+                }
+                return@withContext Result.success(Unit)
+            }
 
             val userRef = db.collection("users").document(uid)
             val snapshot = userRef.get().await()
@@ -177,6 +193,7 @@ class CloudSyncRepository @Inject constructor(
                     )
                 }
                 pullAllTicketProgressFromCloud(uid)
+                preferences.markFirebaseReadToday(uid)
                 ensureLeaderboardEntry(uid)
             } else {
                 val defaultName = (user.displayName?.takeIf { it.isNotBlank() }
@@ -238,6 +255,8 @@ class CloudSyncRepository @Inject constructor(
                     timeSpentSeconds = timeSec,
                     grade = grade
                 )
+                preferences.markFirebaseReadToday(uid)
+                preferences.markFirebaseWrittenToday(uid)
             }
             Result.success(Unit)
         } catch (e: CancellationException) {
@@ -314,8 +333,17 @@ class CloudSyncRepository @Inject constructor(
         }
     }
 
-    suspend fun pushStatsToCloud(): Result<Unit> = withContext(Dispatchers.IO) {
+    /**
+     * Kuniga 1 marta Firebase'ga yozish: foydalanuvchi ballari va ishlagan testlari avval lokal
+     * navbatga qo'yiladi. Agar bugun Firebase'ga hali yozilmagan bo'lsa, darhol yoziladi;
+     * aks holda keyingi kunlik sinxronizatsiyada yoziladi.
+     */
+    suspend fun pushStatsToCloud(forceImmediate: Boolean = false): Result<Unit> = withContext(Dispatchers.IO) {
         val uid = auth.currentUser?.uid ?: return@withContext Result.success(Unit)
+        preferences.setPendingStatsSync(true)
+        if (!forceImmediate && preferences.hasWrittenToFirebaseToday(uid)) {
+            return@withContext Result.success(Unit)
+        }
         try {
             val name = preferences.displayName.first().trim().ifBlank { "Tarixchi" }.take(60)
             val avatar = preferences.userAvatar.first().trim().ifBlank { "TU" }.take(16)
@@ -346,6 +374,7 @@ class CloudSyncRepository @Inject constructor(
             }
             upsertLeaderboardEntry(uid, name, avatar, xp, streak, totalSolved, correctCount, timeSec, grade)
             preferences.setPendingStatsSync(false)
+            preferences.markFirebaseWrittenToday(uid)
             Result.success(Unit)
         } catch (e: CancellationException) {
             throw e
@@ -358,9 +387,10 @@ class CloudSyncRepository @Inject constructor(
     }
 
     private suspend fun ensureLeaderboardEntry(uid: String) {
+        if (preferences.hasWrittenToFirebaseToday(uid)) return
         val lbRef = db.collection("leaderboard").document(uid)
         if (!lbRef.get().await().exists()) {
-            pushStatsToCloud()
+            pushStatsToCloud(forceImmediate = true)
         }
     }
 
@@ -426,6 +456,11 @@ class CloudSyncRepository @Inject constructor(
         highestUnlockedTicket: Int
     ): Result<Unit> = withContext(Dispatchers.IO) {
         val uid = auth.currentUser?.uid ?: return@withContext Result.success(Unit)
+        preferences.markCategoryPendingSync(categoryKey)
+        // Kuniga faqat 1 marta Firebase'ga yozish
+        if (preferences.hasWrittenToFirebaseToday(uid)) {
+            return@withContext Result.success(Unit)
+        }
         val docKey = sanitizeDocId(categoryKey)
         val docRef = db.collection("users").document(uid).collection("ticketProgress").document(docKey)
         try {
@@ -475,6 +510,10 @@ class CloudSyncRepository @Inject constructor(
 
     suspend fun pullTicketProgressForCategory(categoryKey: String): CloudTicketProgress? = withContext(Dispatchers.IO) {
         val uid = auth.currentUser?.uid ?: return@withContext null
+        // Kuniga 1 marta Firebase'dan o'qilgan bo'lsa, qayta so'rov yubormaymiz
+        if (preferences.hasReadFromFirebaseToday(uid)) {
+            return@withContext null
+        }
         val docKey = sanitizeDocId(categoryKey)
         try {
             val snap = db.collection("users").document(uid)
@@ -541,48 +580,37 @@ class CloudSyncRepository @Inject constructor(
         val attemptId = "att_${System.currentTimeMillis()}_${UUID.randomUUID().toString().take(8)}"
         val safeSolved = solvedCount.coerceIn(0, 500)
         val safeCorrect = correctCount.coerceIn(0, safeSolved)
-        try {
-            db.collection("users").document(uid)
-                .collection("attempts").document(attemptId)
-                .set(
-                    mapOf(
-                        "categoryKey" to sanitizeDocId(categoryKey),
-                        "categoryTitle" to categoryTitle.ifBlank { "Test" }.take(120),
-                        "grade" to grade.coerceIn(0, 11),
-                        "solvedCount" to safeSolved,
-                        "correctCount" to safeCorrect,
-                        "durationSeconds" to durationSeconds.coerceIn(0, 86400),
-                        "createdAt" to FieldValue.serverTimestamp()
-                    )
-                ).await()
-            Result.success(Unit)
-        } catch (e: CancellationException) {
-            throw e
-        } catch (e: Exception) {
-            preferences.enqueuePendingQuizAttempt(
-                PendingQuizAttempt(
-                    attemptId = attemptId,
-                    categoryKey = categoryKey,
-                    categoryTitle = categoryTitle,
-                    grade = grade,
-                    solvedCount = safeSolved,
-                    correctCount = safeCorrect,
-                    durationSeconds = durationSeconds
-                )
-            )
-            syncScheduler.triggerPendingProgressUpload()
-            handleFirestoreError(e, OperationType.CREATE, "users/$uid/attempts/$attemptId", auth)
-            Result.failure(e)
+        val pendingAttempt = PendingQuizAttempt(
+            attemptId = attemptId,
+            categoryKey = categoryKey,
+            categoryTitle = categoryTitle,
+            grade = grade,
+            solvedCount = safeSolved,
+            correctCount = safeCorrect,
+            durationSeconds = durationSeconds
+        )
+        preferences.enqueuePendingQuizAttempt(pendingAttempt)
+
+        // Kuniga 1 marta yozish qoidasi: agar bugun yozilgan bo'lsa, navbatda saqlanadi va ertaga yoziladi
+        if (preferences.hasWrittenToFirebaseToday(uid)) {
+            return@withContext Result.success(Unit)
         }
+
+        val flushed = flushPendingUploads()
+        if (flushed) Result.success(Unit) else Result.failure(IllegalStateException("Deferred to daily sync"))
     }
 
     /**
-     * Flushes any quiz attempts, ticket progress, or stat updates queued while offline.
-     * Called by OfflineSyncWorker when network connectivity is available.
+     * Flushes any quiz attempts, ticket progress, or stat updates queued locally
+     * (at most once per day unless forced).
      */
     suspend fun flushPendingUploads(): Boolean = withContext(Dispatchers.IO) {
         val uid = auth.currentUser?.uid ?: return@withContext true
+        if (preferences.hasWrittenToFirebaseToday(uid)) {
+            return@withContext true
+        }
         var allSucceeded = true
+        var wroteAny = false
 
         val pendingAttempts = preferences.pendingQuizAttempts.first()
         for (attempt in pendingAttempts) {
@@ -601,6 +629,7 @@ class CloudSyncRepository @Inject constructor(
                         )
                     ).await()
                 preferences.removePendingQuizAttempt(attempt.attemptId)
+                wroteAny = true
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
@@ -648,6 +677,7 @@ class CloudSyncRepository @Inject constructor(
                     ).await()
                 }
                 preferences.clearCategoryPendingSync(categoryKey)
+                wroteAny = true
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
@@ -656,9 +686,14 @@ class CloudSyncRepository @Inject constructor(
             }
         }
 
-        if (preferences.pendingStatsSync.first()) {
-            val res = pushStatsToCloud()
+        if (preferences.pendingStatsSync.first() || wroteAny) {
+            val res = pushStatsToCloud(forceImmediate = true)
             if (res.isFailure) allSucceeded = false
+            else wroteAny = true
+        }
+
+        if (allSucceeded && wroteAny) {
+            preferences.markFirebaseWrittenToday(uid)
         }
 
         allSucceeded
@@ -686,25 +721,46 @@ class CloudSyncRepository @Inject constructor(
                 emit(emptyList())
             }
 
+    /**
+     * Kuniga 1 marta Firebase'dan foydalanuvchi tarixini (attempts) o'qiydi va bugun lokal
+     * ishlangan testlar (pendingQuizAttempts) bilan birlashtirib qaytaradi.
+     */
     fun observeUserAttempts(userId: String, limit: Long = 200L): Flow<List<CloudQuizAttempt>> =
-        db.collection("users").document(userId)
-            .collection("attempts")
-            .orderBy("createdAt", Query.Direction.DESCENDING)
-            .limit(limit)
-            .snapshots()
-            .map { querySnap ->
-                querySnap.toObjects(
-                    CloudQuizAttempt::class.java,
-                    DocumentSnapshot.ServerTimestampBehavior.ESTIMATE
+        preferences.pendingQuizAttempts.map { pendingList ->
+            val cacheKey = "${todayDateKey()}_$userId"
+            val remoteBase = dailyAttemptsMemoryCache[cacheKey] ?: run {
+                val fetched = try {
+                    val snap = db.collection("users").document(userId)
+                        .collection("attempts")
+                        .orderBy("createdAt", Query.Direction.DESCENDING)
+                        .limit(limit)
+                        .get()
+                        .await()
+                    snap.toObjects(
+                        CloudQuizAttempt::class.java,
+                        DocumentSnapshot.ServerTimestampBehavior.ESTIMATE
+                    )
+                } catch (e: CancellationException) {
+                    throw e
+                } catch (e: Exception) {
+                    handleFirestoreError(e, OperationType.LIST, "users/$userId/attempts", auth)
+                    emptyList()
+                }
+                dailyAttemptsMemoryCache[cacheKey] = fetched
+                fetched
+            }
+            val localMapped = pendingList.sortedByDescending { it.createdAtMs }.map { p ->
+                CloudQuizAttempt(
+                    docId = p.attemptId,
+                    categoryKey = p.categoryKey,
+                    categoryTitle = p.categoryTitle,
+                    grade = p.grade.toLong(),
+                    solvedCount = p.solvedCount.toLong(),
+                    correctCount = p.correctCount.toLong(),
+                    durationSeconds = p.durationSeconds.toLong(),
+                    createdAt = Timestamp(p.createdAtMs / 1000, ((p.createdAtMs % 1000) * 1_000_000).toInt())
                 )
             }
-            .catch { error ->
-                val fsError = generateSequence(error) { it.cause }
-                    .filterIsInstance<FirebaseFirestoreException>()
-                    .firstOrNull()
-                if (fsError == null && error is CancellationException) throw error
-                val root = fsError ?: error
-                handleFirestoreError(root, OperationType.LIST, "users/$userId/attempts", auth)
-                emit(emptyList())
-            }
+            (localMapped + remoteBase).distinctBy { it.docId }.take(limit.toInt())
+        }
 }

@@ -36,15 +36,26 @@ object NetworkModule {
                 val isDailyOrBusted = path.contains("daily", ignoreCase = true) ||
                     request.url.queryParameter("nonce") != null ||
                     request.url.queryParameter("exclude") != null
+                val hasConditionalRevalidation = !request.header("If-None-Match").isNullOrBlank() ||
+                    !request.header("If-Modified-Since").isNullOrBlank() ||
+                    request.header("Cache-Control")?.contains("no-cache", ignoreCase = true) == true
+
                 if (request.method.equals("GET", ignoreCase = true) && !isDailyOrBusted) {
-                    val existingCacheControl = response.header("Cache-Control")
-                    if (existingCacheControl.isNullOrBlank() || existingCacheControl.contains("no-store")) {
+                    if (hasConditionalRevalidation) {
                         response.newBuilder()
-                            .header("Cache-Control", CacheControl.Builder().maxAge(30, TimeUnit.MINUTES).build().toString())
+                            .header("Cache-Control", "public, max-age=0, must-revalidate")
                             .removeHeader("Pragma")
                             .build()
                     } else {
-                        response
+                        val existingCacheControl = response.header("Cache-Control")
+                        if (existingCacheControl.isNullOrBlank() || existingCacheControl.contains("no-store")) {
+                            response.newBuilder()
+                                .header("Cache-Control", CacheControl.Builder().maxAge(30, TimeUnit.MINUTES).build().toString())
+                                .removeHeader("Pragma")
+                                .build()
+                        } else {
+                            response
+                        }
                     }
                 } else if (isDailyOrBusted) {
                     response.newBuilder()

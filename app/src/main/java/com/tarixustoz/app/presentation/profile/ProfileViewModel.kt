@@ -47,6 +47,13 @@ data class AchievementUiState(
     val tier: String
 )
 
+enum class ResultsChartPeriod(val label: String) {
+    DAY("Kun"),
+    WEEK("Hafta"),
+    MONTH("Oy"),
+    YEAR("Yil")
+}
+
 data class DayActivity(
     val dayName: String,
     val count: Int,
@@ -57,7 +64,7 @@ data class DailyGoalUiState(
     val todaySolved: Int = 0,
     val todayCorrect: Int = 0,
     val todayIncorrect: Int = 0,
-    val todayGoalTotal: Int = 20,
+    val todayGoalTotal: Int = 30,
     val todayAccuracy: Int = 0,
     val weeklyTotalSolved: Int = 0,
     val weeklyCorrect: Int = 0,
@@ -72,6 +79,14 @@ data class DailyGoalUiState(
     val yearlyIncorrect: Int = 0,
     val yearlyAccuracy: Int = 0,
     val daysGoalMetThisWeek: Int = 0,
+    val daySlots: List<DayActivity> = listOf(
+        DayActivity("00-06", 0, false),
+        DayActivity("06-10", 0, false),
+        DayActivity("10-14", 0, false),
+        DayActivity("14-18", 0, false),
+        DayActivity("18-21", 0, false),
+        DayActivity("21-24", 0, false)
+    ),
     val weekDays: List<DayActivity> = listOf(
         DayActivity("Du", 0, false),
         DayActivity("Se", 0, false),
@@ -80,6 +95,27 @@ data class DailyGoalUiState(
         DayActivity("Ju", 0, false),
         DayActivity("Sh", 0, false),
         DayActivity("Ya", 0, false)
+    ),
+    val monthWeeks: List<DayActivity> = listOf(
+        DayActivity("1-haf", 0, false),
+        DayActivity("2-haf", 0, false),
+        DayActivity("3-haf", 0, false),
+        DayActivity("4-haf", 0, false),
+        DayActivity("5-haf", 0, false)
+    ),
+    val yearMonths: List<DayActivity> = listOf(
+        DayActivity("Yan", 0, false),
+        DayActivity("Fev", 0, false),
+        DayActivity("Mar", 0, false),
+        DayActivity("Apr", 0, false),
+        DayActivity("May", 0, false),
+        DayActivity("Iyn", 0, false),
+        DayActivity("Iyl", 0, false),
+        DayActivity("Avg", 0, false),
+        DayActivity("Sen", 0, false),
+        DayActivity("Okt", 0, false),
+        DayActivity("Noy", 0, false),
+        DayActivity("Dek", 0, false)
     )
 )
 
@@ -197,6 +233,15 @@ class ProfileViewModel @Inject constructor(
         return cal.timeInMillis
     }
 
+    private fun hourToDaySlotIndex(hour: Int): Int = when (hour) {
+        in 0..5 -> 0
+        in 6..9 -> 1
+        in 10..13 -> 2
+        in 14..17 -> 3
+        in 18..20 -> 4
+        else -> 5
+    }
+
     private val cloudAttemptsFlow = auth.currentUser?.uid?.let { uid ->
         cloudSyncRepository.observeUserAttempts(uid)
     } ?: flowOf(emptyList<CloudQuizAttempt>())
@@ -249,10 +294,37 @@ class ProfileViewModel @Inject constructor(
         val yearlyIncorrect = (yearlyTotal - yearlyCorrect).coerceAtLeast(0)
         val yearlyAccuracy = if (yearlyTotal > 0) (yearlyCorrect * 100) / yearlyTotal else 0
 
-        val daysOfWeekUz = listOf("Du", "Se", "Ch", "Pa", "Ju", "Sh", "Ya")
         val cal = Calendar.getInstance()
-        val currentDayOfWeek = (cal.get(Calendar.DAY_OF_WEEK) + 5) % 7
 
+        // 1. Day slots (6 intervals of today)
+        val daySlotLabels = listOf("00-06", "06-10", "10-14", "14-18", "18-21", "21-24")
+        val currentHourSlot = hourToDaySlotIndex(cal.get(Calendar.HOUR_OF_DAY))
+        val localBySlot = IntArray(6) { 0 }
+        localToday.forEach { attempt ->
+            val attemptCal = Calendar.getInstance().apply { timeInMillis = attempt.timestamp }
+            val slotIdx = hourToDaySlotIndex(attemptCal.get(Calendar.HOUR_OF_DAY))
+            localBySlot[slotIdx]++
+        }
+        val cloudBySlot = IntArray(6) { 0 }
+        cloudToday.forEach { attempt ->
+            val ts = attempt.createdAt?.toDate()?.time ?: 0L
+            if (ts > 0L) {
+                val attemptCal = Calendar.getInstance().apply { timeInMillis = ts }
+                val slotIdx = hourToDaySlotIndex(attemptCal.get(Calendar.HOUR_OF_DAY))
+                cloudBySlot[slotIdx] += attempt.solvedCount.toInt()
+            }
+        }
+        val daySlotsList = daySlotLabels.mapIndexed { idx, label ->
+            DayActivity(
+                dayName = label,
+                count = maxOf(localBySlot[idx], cloudBySlot[idx]),
+                isToday = idx == currentHourSlot
+            )
+        }
+
+        // 2. Week days (7 days of week)
+        val daysOfWeekUz = listOf("Du", "Se", "Ch", "Pa", "Ju", "Sh", "Ya")
+        val currentDayOfWeek = (cal.get(Calendar.DAY_OF_WEEK) + 5) % 7
         val localByDay = IntArray(7) { 0 }
         weeklyAttempts.forEach { attempt ->
             val attemptCal = Calendar.getInstance().apply { timeInMillis = attempt.timestamp }
@@ -269,7 +341,6 @@ class ProfileViewModel @Inject constructor(
             }
         }
         val countsByDay = IntArray(7) { idx -> maxOf(localByDay[idx], cloudByDay[idx]) }
-
         val weekDaysList = daysOfWeekUz.mapIndexed { index, name ->
             DayActivity(
                 dayName = name,
@@ -278,13 +349,65 @@ class ProfileViewModel @Inject constructor(
             )
         }
 
-        val daysGoalMet = countsByDay.count { it >= 20 }
+        // 3. Month weeks (5 week buckets of current month)
+        val monthWeekLabels = listOf("1-haf", "2-haf", "3-haf", "4-haf", "5-haf")
+        val currentMonthWeekIdx = ((cal.get(Calendar.DAY_OF_MONTH) - 1) / 7).coerceIn(0, 4)
+        val localByMonthWeek = IntArray(5) { 0 }
+        monthlyAttempts.forEach { attempt ->
+            val attemptCal = Calendar.getInstance().apply { timeInMillis = attempt.timestamp }
+            val wIdx = ((attemptCal.get(Calendar.DAY_OF_MONTH) - 1) / 7).coerceIn(0, 4)
+            localByMonthWeek[wIdx]++
+        }
+        val cloudByMonthWeek = IntArray(5) { 0 }
+        cloudMonthly.forEach { attempt ->
+            val ts = attempt.createdAt?.toDate()?.time ?: 0L
+            if (ts > 0L) {
+                val attemptCal = Calendar.getInstance().apply { timeInMillis = ts }
+                val wIdx = ((attemptCal.get(Calendar.DAY_OF_MONTH) - 1) / 7).coerceIn(0, 4)
+                cloudByMonthWeek[wIdx] += attempt.solvedCount.toInt()
+            }
+        }
+        val monthWeeksList = monthWeekLabels.mapIndexed { idx, label ->
+            DayActivity(
+                dayName = label,
+                count = maxOf(localByMonthWeek[idx], cloudByMonthWeek[idx]),
+                isToday = idx == currentMonthWeekIdx
+            )
+        }
+
+        // 4. Year months (12 months of current year)
+        val yearMonthLabels = listOf("Yan", "Fev", "Mar", "Apr", "May", "Iyn", "Iyl", "Avg", "Sen", "Okt", "Noy", "Dek")
+        val currentMonthIdx = cal.get(Calendar.MONTH).coerceIn(0, 11)
+        val localByMonth = IntArray(12) { 0 }
+        yearlyAttempts.forEach { attempt ->
+            val attemptCal = Calendar.getInstance().apply { timeInMillis = attempt.timestamp }
+            val mIdx = attemptCal.get(Calendar.MONTH).coerceIn(0, 11)
+            localByMonth[mIdx]++
+        }
+        val cloudByMonth = IntArray(12) { 0 }
+        cloudYearly.forEach { attempt ->
+            val ts = attempt.createdAt?.toDate()?.time ?: 0L
+            if (ts > 0L) {
+                val attemptCal = Calendar.getInstance().apply { timeInMillis = ts }
+                val mIdx = attemptCal.get(Calendar.MONTH).coerceIn(0, 11)
+                cloudByMonth[mIdx] += attempt.solvedCount.toInt()
+            }
+        }
+        val yearMonthsList = yearMonthLabels.mapIndexed { idx, label ->
+            DayActivity(
+                dayName = label,
+                count = maxOf(localByMonth[idx], cloudByMonth[idx]),
+                isToday = idx == currentMonthIdx
+            )
+        }
+
+        val daysGoalMet = countsByDay.count { it >= 30 }
 
         DailyGoalUiState(
             todaySolved = todayTotal,
             todayCorrect = todayCorrect,
             todayIncorrect = todayIncorrect,
-            todayGoalTotal = 20,
+            todayGoalTotal = 30,
             todayAccuracy = accuracy,
             weeklyTotalSolved = weeklyTotal,
             weeklyCorrect = weeklyCorrect,
@@ -299,7 +422,10 @@ class ProfileViewModel @Inject constructor(
             yearlyIncorrect = yearlyIncorrect,
             yearlyAccuracy = yearlyAccuracy,
             daysGoalMetThisWeek = daysGoalMet,
-            weekDays = weekDaysList
+            daySlots = daySlotsList,
+            weekDays = weekDaysList,
+            monthWeeks = monthWeeksList,
+            yearMonths = yearMonthsList
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), DailyGoalUiState())
 
@@ -494,6 +620,16 @@ class ProfileViewModel @Inject constructor(
 
     fun triggerManualSync() {
         syncScheduler.triggerImmediateSync(forceRefresh = true)
+    }
+
+    fun claimTestAdReward(onAwarded: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            val allowed = preferencesRepository.incrementRewardedAdCount()
+            if (allowed) {
+                preferencesRepository.addXp(50L)
+            }
+            onAwarded(allowed)
+        }
     }
 
     fun exitTestMode() {

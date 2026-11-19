@@ -9,9 +9,12 @@ import com.tarixustoz.app.data.repository.CloudSyncRepository
 import com.tarixustoz.app.data.repository.ContentRepository
 import com.tarixustoz.app.data.repository.MistakesRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
+import com.tarixustoz.app.domain.model.AnswerOption
 import com.tarixustoz.app.domain.model.Question
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -23,6 +26,8 @@ import javax.inject.Inject
 
 data class QuizUiState(
     val isLoading: Boolean = true,
+    val quizTitle: String = "Test",
+    val isTicketQuiz: Boolean = false,
     val questions: List<Question> = emptyList(),
     val currentIndex: Int = 0,
     val answeredCorrectly: List<Boolean?> = emptyList(),
@@ -31,6 +36,12 @@ data class QuizUiState(
     val wasCorrect: Boolean = false,
     val correctCount: Int = 0,
     val isFinished: Boolean = false,
+    val isTimedOut: Boolean = false,
+    val earnedStars: Int = 0,
+    val remainingSeconds: Int = 1200,
+    val totalLimitSeconds: Int = 1200,
+    val favoriteQuestionIds: Set<String> = emptySet(),
+    val isCurrentTicketFavorite: Boolean = false,
     val startTimeMillis: Long = System.currentTimeMillis(),
     val timeSpentSeconds: Int = 0
 )
@@ -51,6 +62,148 @@ class QuizViewModel @Inject constructor(
     private var currentQuizTitle: String? = null
     private var currentTicketCategory: String? = null
     private var currentTicketIndex: Int? = null
+    private var currentTicketGrade: Int = 0
+    private var timerJob: Job? = null
+
+    init {
+        viewModelScope.launch {
+            preferences.favorites.collect { favIds ->
+                _uiState.update { it.copy(favoriteQuestionIds = favIds) }
+            }
+        }
+        viewModelScope.launch {
+            preferences.favoriteTicketKeys.collect { favTickets ->
+                val cat = currentTicketCategory
+                val idx = currentTicketIndex
+                val isFav = cat != null && idx != null && "${cat}_$idx" in favTickets
+                _uiState.update { it.copy(isCurrentTicketFavorite = isFav) }
+            }
+        }
+    }
+
+    /**
+     * Shuffles both the sequence of questions AND the A/B/C/D options inside each question,
+     * reassigning clean option IDs ("a", "b", "c", "d") so the letters A, B, C, D always get new positions.
+     */
+    private fun shuffleQuestionsAndAbcd(rawQuestions: List<Question>): List<Question> {
+        val optionIds = listOf("a", "b", "c", "d")
+        return rawQuestions.shuffled().map { question ->
+            val shuffledOpts = question.options.shuffled().mapIndexed { idx, opt ->
+                val newId = optionIds.getOrElse(idx) { opt.id }
+                AnswerOption(
+                    id = newId,
+                    text = opt.text,
+                    isCorrect = opt.isCorrect
+                )
+            }
+            question.copy(options = shuffledOpts)
+        }
+    }
+
+    private fun startCountdownTimer() {
+        timerJob?.cancel()
+        timerJob = viewModelScope.launch {
+            while (true) {
+                delay(1000L)
+                val current = _uiState.value
+                if (current.isLoading || current.isFinished) break
+                val nextRemaining = (current.remainingSeconds - 1).coerceAtLeast(0)
+                if (nextRemaining <= 0) {
+                    // Time ran out before completing the quiz: 0 stars, must restart!
+                    _uiState.update {
+                        it.copy(
+                            remainingSeconds = 0,
+                            isTimedOut = true,
+                            isFinished = true,
+                            earnedStars = 0,
+                            timeSpentSeconds = it.totalLimitSeconds
+                        )
+                    }
+                    preferences.clearActiveQuiz(categoryKey = currentTicketCategory)
+                    break
+                } else {
+                    _uiState.update { it.copy(remainingSeconds = nextRemaining) }
+                }
+            }
+        }
+    }
+
+    fun toggleCurrentQuestionFavorite() {
+        val state = _uiState.value
+        val question = state.questions.getOrNull(state.currentIndex) ?: return
+        viewModelScope.launch {
+            preferences.toggleFavoriteQuestion(
+                question = question,
+                categoryTitle = currentQuizTitle ?: "Test savoli"
+            )
+        }
+    }
+
+    fun toggleCurrentTicketFavorite() {
+        val cat = currentTicketCategory ?: return
+        val idx = currentTicketIndex ?: return
+        viewModelScope.launch {
+            preferences.toggleFavoriteTicket(
+                categoryKey = cat,
+                ticketIndex = idx,
+                categoryTitle = currentQuizTitle ?: "$idx-Bilet",
+                grade = currentTicketGrade
+            )
+        }
+    }
+
+    fun restartWithShuffle() {
+        val current = _uiState.value
+        if (current.questions.isEmpty()) return
+        timerJob?.cancel()
+        viewModelScope.launch {
+            preferences.clearActiveQuiz(categoryKey = currentTicketCategory)
+            val reshuffled = shuffleQuestionsAndAbcd(current.questions)
+            val limitSec = current.totalLimitSeconds.coerceAtLeast(300)
+            val favIds = preferences.favorites.first()
+            val favTickets = preferences.favoriteTicketKeys.first()
+            val isTicketFav = currentTicketCategory != null && currentTicketIndex != null &&
+                "${currentTicketCategory}_$currentTicketIndex" in favTickets
+
+            val newState = QuizUiState(
+                isLoading = false,
+                quizTitle = currentQuizTitle ?: current.quizTitle,
+                isTicketQuiz = currentTicketCategory != null,
+                questions = reshuffled,
+                currentIndex = 0,
+                answeredCorrectly = List(reshuffled.size) { null },
+                selectedOptionId = null,
+                showFeedback = false,
+                wasCorrect = false,
+                correctCount = 0,
+                isFinished = false,
+                isTimedOut = false,
+                earnedStars = 0,
+                remainingSeconds = limitSec,
+                totalLimitSeconds = limitSec,
+                favoriteQuestionIds = favIds,
+                isCurrentTicketFavorite = isTicketFav,
+                startTimeMillis = System.currentTimeMillis()
+            )
+            _uiState.value = newState
+            currentQuizRoute?.let { route ->
+                preferences.saveActiveQuizState(
+                    ActiveQuizState(
+                        quizRoute = route,
+                        quizTitle = newState.quizTitle,
+                        questions = reshuffled,
+                        currentIndex = 0,
+                        answeredCorrectly = newState.answeredCorrectly,
+                        correctCount = 0,
+                        remainingSeconds = limitSec,
+                        totalLimitSeconds = limitSec
+                    ),
+                    categoryKey = currentTicketCategory
+                )
+            }
+            startCountdownTimer()
+        }
+    }
 
     fun startQuiz(
         topicId: String?,
@@ -59,39 +212,88 @@ class QuizViewModel @Inject constructor(
         customDifficulty: String? = null,
         timeLimitMinutes: Int? = null,
         selectedTopicIds: List<String>? = null,
-        explicitGrade: Int? = null
+        explicitGrade: Int? = null,
+        forceShuffle: Boolean = false
     ) {
         viewModelScope.launch {
+            timerJob?.cancel()
             _uiState.value = QuizUiState(isLoading = true)
+
+            val savedTimerMins = preferences.ticketTimerMinutes.first()
+            val effectiveMinutes = (timeLimitMinutes ?: savedTimerMins).coerceIn(5, 60)
+            val totalLimitSec = effectiveMinutes * 60
 
             val route = buildString {
                 append("quiz/${topicId ?: "custom"}")
                 if (explicitGrade != null) append("?grade=$explicitGrade")
             }
-            val savedState = preferences.activeQuizState.first()
-            if (savedState != null && savedState.quizRoute == route) {
-                _uiState.value = QuizUiState(
-                    isLoading = false,
-                    questions = savedState.questions,
-                    currentIndex = savedState.currentIndex,
-                    answeredCorrectly = savedState.answeredCorrectly,
-                    correctCount = savedState.correctCount,
-                    isFinished = false
-                )
-                currentQuizRoute = route
-                currentQuizTitle = savedState.quizTitle
-                if (topicId != null && topicId.startsWith("ticket_")) {
-                    val rest = topicId.removePrefix("ticket_")
-                    val lastUnderscore = rest.lastIndexOf('_')
-                    if (lastUnderscore > 0) {
-                        currentTicketCategory = rest.substring(0, lastUnderscore)
-                        currentTicketIndex = rest.substring(lastUnderscore + 1).toIntOrNull() ?: 1
-                    } else {
-                        currentTicketCategory = rest
-                        currentTicketIndex = 1
-                    }
+
+            currentTicketCategory = null
+            currentTicketIndex = null
+            currentTicketGrade = explicitGrade ?: 0
+
+            if (topicId != null && topicId.startsWith("ticket_")) {
+                val rest = topicId.removePrefix("ticket_")
+                val lastUnderscore = rest.lastIndexOf('_')
+                if (lastUnderscore > 0) {
+                    currentTicketCategory = rest.substring(0, lastUnderscore)
+                    currentTicketIndex = rest.substring(lastUnderscore + 1).toIntOrNull() ?: 1
+                } else {
+                    currentTicketCategory = rest
+                    currentTicketIndex = 1
                 }
-                return@launch
+            }
+
+            val favIds = preferences.favorites.first()
+            val favTickets = preferences.favoriteTicketKeys.first()
+            val isTicketFav = currentTicketCategory != null && currentTicketIndex != null &&
+                "${currentTicketCategory}_$currentTicketIndex" in favTickets
+
+            if (forceShuffle) {
+                preferences.clearActiveQuiz(categoryKey = currentTicketCategory)
+            } else {
+                val catKey = currentTicketCategory
+                val savedState = if (catKey != null) {
+                    preferences.getActiveQuizStateForCategory(catKey)
+                } else {
+                    preferences.activeQuizState.first()
+                }
+                val savedBaseRoute = savedState?.quizRoute?.substringBefore("?")
+                val currentBaseRoute = route.substringBefore("?")
+                if (savedState != null && savedBaseRoute == currentBaseRoute && savedState.questions.isNotEmpty()) {
+                    val firstUnanswered = savedState.answeredCorrectly.indexOfFirst { it == null }
+                    val resumeIndex = if (firstUnanswered in savedState.questions.indices) {
+                        firstUnanswered
+                    } else {
+                        savedState.currentIndex.coerceIn(0, savedState.questions.lastIndex)
+                    }
+                    val restoredLimit = savedState.totalLimitSeconds ?: totalLimitSec
+                    val restoredRemaining = (savedState.remainingSeconds ?: restoredLimit).coerceIn(10, restoredLimit)
+                    _uiState.value = QuizUiState(
+                        isLoading = false,
+                        quizTitle = savedState.quizTitle,
+                        isTicketQuiz = currentTicketCategory != null,
+                        questions = savedState.questions,
+                        currentIndex = resumeIndex,
+                        answeredCorrectly = savedState.answeredCorrectly,
+                        correctCount = savedState.correctCount,
+                        isFinished = false,
+                        isTimedOut = false,
+                        earnedStars = 0,
+                        remainingSeconds = restoredRemaining,
+                        totalLimitSeconds = restoredLimit,
+                        favoriteQuestionIds = favIds,
+                        isCurrentTicketFavorite = isTicketFav
+                    )
+                    currentQuizRoute = route
+                    currentQuizTitle = savedState.quizTitle
+                    currentTicketCategory?.let { cat ->
+                        val openedIdx = currentTicketIndex ?: 1
+                        preferences.setLastOpenedTicket(cat, openedIdx, currentTicketGrade)
+                    }
+                    startCountdownTimer()
+                    return@launch
+                }
             }
 
             val currentGrade = explicitGrade ?: try {
@@ -108,24 +310,21 @@ class QuizViewModel @Inject constructor(
             var title = "Test"
 
             if (!topicId.isNullOrBlank() && topicId.startsWith("ticket_")) {
-                val rest = topicId.removePrefix("ticket_")
-                val lastUnderscore = rest.lastIndexOf('_')
-                if (lastUnderscore > 0) {
-                    currentTicketCategory = rest.substring(0, lastUnderscore)
-                    currentTicketIndex = rest.substring(lastUnderscore + 1).toIntOrNull() ?: 1
-                } else {
-                    currentTicketCategory = rest
-                    currentTicketIndex = 1
-                }
                 val ticketGrade = explicitGrade ?: 0
                 currentTicketCategory?.let { cat ->
                     val openedIdx = currentTicketIndex ?: 1
-                    preferences.setLastOpenedTicket(cat, openedIdx)
+                    preferences.setLastOpenedTicket(cat, openedIdx, ticketGrade)
                 }
                 questions = contentRepository.getTicketQuestions(
                     currentTicketCategory!!, currentTicketIndex!!, 30, ticketGrade
                 )
                 title = "$currentTicketIndex-Bilet"
+            } else if (topicId == "favorite_questions") {
+                val favRecords = preferences.favoriteQuestionRecords.first()
+                questions = favRecords.map { it.question }.ifEmpty {
+                    contentRepository.getWrongQuestionsForReview(limit = count)
+                }
+                title = "Sevimli savollar"
             } else if (topicId == "daily") {
                 val daily = contentRepository.getDailyQuestion(grade = currentGrade)
                 val extra = contentRepository.fetchQuizFromApi(
@@ -235,14 +434,18 @@ class QuizViewModel @Inject constructor(
                 }
             }
 
-            val shuffledQuestions = questions
-                .map { question -> question.copy(options = question.options.shuffled()) }
-                .shuffled()
+            val shuffledQuestions = shuffleQuestionsAndAbcd(questions)
 
             val initialState = QuizUiState(
                 isLoading = false,
+                quizTitle = title,
+                isTicketQuiz = currentTicketCategory != null,
                 questions = shuffledQuestions,
-                answeredCorrectly = List(shuffledQuestions.size) { null }
+                answeredCorrectly = List(shuffledQuestions.size) { null },
+                remainingSeconds = totalLimitSec,
+                totalLimitSeconds = totalLimitSec,
+                favoriteQuestionIds = favIds,
+                isCurrentTicketFavorite = isTicketFav
             )
             _uiState.value = initialState
 
@@ -256,9 +459,13 @@ class QuizViewModel @Inject constructor(
                     questions = shuffledQuestions,
                     currentIndex = 0,
                     answeredCorrectly = initialState.answeredCorrectly,
-                    correctCount = 0
-                )
+                    correctCount = 0,
+                    remainingSeconds = totalLimitSec,
+                    totalLimitSeconds = totalLimitSec
+                ),
+                categoryKey = currentTicketCategory
             )
+            startCountdownTimer()
         }
     }
 
@@ -314,8 +521,11 @@ class QuizViewModel @Inject constructor(
                             questions = newState.questions,
                             currentIndex = newState.currentIndex,
                             answeredCorrectly = newState.answeredCorrectly,
-                            correctCount = newState.correctCount
-                        )
+                            correctCount = newState.correctCount,
+                            remainingSeconds = newState.remainingSeconds,
+                            totalLimitSeconds = newState.totalLimitSeconds
+                        ),
+                        categoryKey = currentTicketCategory
                     )
                 }
             }
@@ -326,30 +536,47 @@ class QuizViewModel @Inject constructor(
     fun nextQuestion() {
         val state = _uiState.value
         if (state.currentIndex >= state.questions.lastIndex) {
+            timerJob?.cancel()
             val totalSeconds = ((System.currentTimeMillis() - state.startTimeMillis) / 1000).toInt().coerceAtLeast(1)
-            _uiState.update { it.copy(isFinished = true, timeSpentSeconds = totalSeconds) }
+            val completedWithinTime = !state.isTimedOut && state.remainingSeconds > 0
+            // 10 ta to'g'ri savolga 1 yulduz (agar belgilangan vaqtda ishlab tugatsa; tugatmasa 0 yulduz)
+            val earnedStars = if (completedWithinTime) {
+                (state.correctCount / 10).coerceIn(0, 3)
+            } else {
+                0
+            }
+            _uiState.update {
+                it.copy(
+                    isFinished = true,
+                    isTimedOut = !completedWithinTime,
+                    earnedStars = earnedStars,
+                    timeSpentSeconds = totalSeconds
+                )
+            }
             val cat = currentTicketCategory
             val idx = currentTicketIndex
+            val ticketGrade = currentTicketGrade
             val quizTitleSnapshot = currentQuizTitle ?: "Test"
             val firstQuestionGrade = state.questions.firstOrNull()?.gradeId ?: 0
             viewModelScope.launch {
-                preferences.clearActiveQuiz()
+                preferences.clearActiveQuiz(categoryKey = cat)
                 preferences.recordQuizCompletion(
                     solvedCount = state.questions.size,
                     correctCount = state.correctCount,
                     timeSpentSeconds = totalSeconds
                 )
-                if (cat != null && idx != null) {
+                if (cat != null && idx != null && completedWithinTime) {
                     val score = state.correctCount
-                    val passed = score >= 10
-                    preferences.saveTicketResult(cat, idx, score, passed)
+                    val passed = earnedStars >= 1 && score >= 10
+                    preferences.saveTicketResult(cat, idx, score, passed, stars = earnedStars, grade = ticketGrade)
                     val progress = preferences.getTicketProgress(cat)
                     val highestUnlocked = ((progress.passed.maxOrNull() ?: 0) + 1).coerceAtLeast(1)
+                    val nextTarget = if (passed) (idx + 1).coerceAtLeast(1) else idx
                     cloudSyncRepository.saveTicketProgressToCloud(
                         categoryKey = cat,
                         passedTickets = progress.passed,
                         scores = progress.scores,
-                        lastOpenedTicket = idx,
+                        lastOpenedTicket = nextTarget,
                         highestUnlockedTicket = highestUnlocked
                     )
                 }
@@ -380,8 +607,11 @@ class QuizViewModel @Inject constructor(
                                 questions = newState.questions,
                                 currentIndex = newState.currentIndex,
                                 answeredCorrectly = newState.answeredCorrectly,
-                                correctCount = newState.correctCount
-                            )
+                                correctCount = newState.correctCount,
+                                remainingSeconds = newState.remainingSeconds,
+                                totalLimitSeconds = newState.totalLimitSeconds
+                            ),
+                            categoryKey = currentTicketCategory
                         )
                     }
                 }
@@ -392,6 +622,7 @@ class QuizViewModel @Inject constructor(
 
     override fun onCleared() {
         super.onCleared()
+        timerJob?.cancel()
         val state = _uiState.value
         val route = currentQuizRoute
         val title = currentQuizTitle
@@ -405,8 +636,11 @@ class QuizViewModel @Inject constructor(
                             questions = state.questions,
                             currentIndex = state.currentIndex,
                             answeredCorrectly = state.answeredCorrectly,
-                            correctCount = state.correctCount
-                        )
+                            correctCount = state.correctCount,
+                            remainingSeconds = state.remainingSeconds,
+                            totalLimitSeconds = state.totalLimitSeconds
+                        ),
+                        categoryKey = currentTicketCategory
                     )
                 }
             } catch (e: Exception) {

@@ -222,68 +222,6 @@ fun EditProfileScreen(
                 }
             }
 
-            // Account Card
-            Surface(
-                shape = RoundedCornerShape(18.dp),
-                color = if (isGuest) BrandPurple.copy(alpha = 0.10f) else Color(0xFF16A34A).copy(alpha = 0.12f),
-                border = BorderStroke(1.dp, if (isGuest) BrandPurple.copy(alpha = 0.35f) else Color(0xFF16A34A).copy(alpha = 0.45f)),
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Row(
-                    modifier = Modifier.padding(16.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Surface(
-                        shape = CircleShape,
-                        color = if (isGuest) BrandPurple else Color(0xFF16A34A),
-                        modifier = Modifier.size(40.dp)
-                    ) {
-                        Box(contentAlignment = Alignment.Center) {
-                            Icon(
-                                Icons.Default.AccountCircle,
-                                contentDescription = null,
-                                tint = Color.White,
-                                modifier = Modifier.size(22.dp)
-                            )
-                        }
-                    }
-                    Spacer(Modifier.width(12.dp))
-                    Column(modifier = Modifier.weight(1f)) {
-                        Text(
-                            text = if (isGuest) "Hisob ulanmagan" else "Tarix Ustoz hisobi",
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 14.sp,
-                            color = MaterialTheme.colorScheme.onSurface
-                        )
-                        Spacer(Modifier.height(2.dp))
-                        Text(
-                            text = if (isGuest) "Natijalarni saqlash uchun tizimga kiring" else (userEmail ?: "Bulut bilan sinxronlangan"),
-                            fontSize = 12.sp,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-                    Spacer(Modifier.width(8.dp))
-                    if (isGuest) {
-                        Button(
-                            onClick = onNavigateToAuth,
-                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
-                            shape = RoundedCornerShape(12.dp),
-                            contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp)
-                        ) {
-                            Text("Kirish", fontSize = 11.sp, fontWeight = FontWeight.Bold)
-                        }
-                    } else {
-                        OutlinedButton(
-                            onClick = { viewModel.signOut() },
-                            shape = RoundedCornerShape(12.dp),
-                            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp)
-                        ) {
-                            Text("Chiqish", fontSize = 12.sp)
-                        }
-                    }
-                }
-            }
-
             // Section 1: Personal Information
             SectionCard(
                 title = "Shaxsiy ma'lumotlar",
@@ -465,37 +403,32 @@ fun EditProfileScreen(
                 }
             }
 
-            // Save Button
+            // Bottom Log Out Button (top button in TopAppBar remains "Saqlash")
             Button(
-                onClick = { viewModel.saveProfile() },
+                onClick = { viewModel.signOut() },
                 enabled = !uiState.isLoading,
                 shape = RoundedCornerShape(18.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFFEF4444),
+                    contentColor = Color.White
+                ),
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(54.dp)
-                    .testTag("edit_profile_main_save_btn")
+                    .testTag("edit_profile_logout_btn")
             ) {
-                if (uiState.isLoading) {
-                    CircularProgressIndicator(
-                        modifier = Modifier.size(24.dp),
-                        color = Color.White,
-                        strokeWidth = 2.5.dp
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        Icons.Default.Logout,
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp)
                     )
-                } else {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(
-                            Icons.Default.Save,
-                            contentDescription = null,
-                            modifier = Modifier.size(20.dp)
-                        )
-                        Spacer(Modifier.width(8.dp))
-                        Text(
-                            text = "O‘zgarishlarni saqlash",
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-                    }
+                    Spacer(Modifier.width(8.dp))
+                    Text(
+                        text = "Hisobdan chiqish (Log out)",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold
+                    )
                 }
             }
 

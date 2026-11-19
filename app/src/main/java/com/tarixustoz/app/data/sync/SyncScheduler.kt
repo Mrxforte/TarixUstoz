@@ -24,7 +24,11 @@ data class OfflineSyncStatus(
     val isSyncing: Boolean = false,
     val lastSyncedAtMs: Long = 0L,
     val cachedQuestionsCount: Int = 0,
-    val pendingUploadsCount: Int = 0
+    val pendingUploadsCount: Int = 0,
+    val lastDeltaCount: Int = 0,
+    val lastSkippedCount: Int = 0,
+    val lastSyncMode: String = "",
+    val cacheEpoch: Long = 1L
 )
 
 @Singleton
@@ -108,10 +112,25 @@ class SyncScheduler @Inject constructor(
         )
     }
 
+    private data class DeltaTelemetry(
+        val deltaCount: Int,
+        val skippedCount: Int,
+        val syncMode: String,
+        val cacheEpoch: Long
+    )
+
     fun observeSyncStatus(): Flow<OfflineSyncStatus> {
         val immediateFlow = workManager.getWorkInfosForUniqueWorkFlow(IMMEDIATE_SYNC_WORK_NAME)
         val periodicFlow = workManager.getWorkInfosForUniqueWorkFlow(PERIODIC_SYNC_WORK_NAME)
         val pendingFlow = workManager.getWorkInfosForUniqueWorkFlow(PENDING_UPLOAD_WORK_NAME)
+        val telemetryFlow = combine(
+            preferences.lastSyncDeltaCount,
+            preferences.lastSyncSkippedCount,
+            preferences.lastSyncMode,
+            preferences.cacheEpoch
+        ) { delta, skipped, mode, epoch ->
+            DeltaTelemetry(delta, skipped, mode, epoch)
+        }
 
         return combine(
             immediateFlow,
@@ -119,7 +138,8 @@ class SyncScheduler @Inject constructor(
             pendingFlow,
             preferences.lastOfflineSyncAtMs,
             database.questionDao().countFlow(),
-            preferences.pendingSyncCount
+            preferences.pendingSyncCount,
+            telemetryFlow
         ) { values ->
             @Suppress("UNCHECKED_CAST")
             val immediateInfos = values[0] as List<WorkInfo>
@@ -130,6 +150,7 @@ class SyncScheduler @Inject constructor(
             val lastSync = values[3] as Long
             val cachedCount = values[4] as Int
             val pendingCount = values[5] as Int
+            val telemetry = values[6] as DeltaTelemetry
 
             val isRunning = (immediateInfos + periodicInfos + uploadInfos).any {
                 it.state == WorkInfo.State.RUNNING
@@ -139,7 +160,11 @@ class SyncScheduler @Inject constructor(
                 isSyncing = isRunning,
                 lastSyncedAtMs = lastSync,
                 cachedQuestionsCount = cachedCount,
-                pendingUploadsCount = pendingCount
+                pendingUploadsCount = pendingCount,
+                lastDeltaCount = telemetry.deltaCount,
+                lastSkippedCount = telemetry.skippedCount,
+                lastSyncMode = telemetry.syncMode,
+                cacheEpoch = telemetry.cacheEpoch
             )
         }
     }

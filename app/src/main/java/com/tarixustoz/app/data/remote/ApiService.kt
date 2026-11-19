@@ -1,5 +1,6 @@
 package com.tarixustoz.app.data.remote
 
+import retrofit2.Response
 import retrofit2.http.*
 
 interface ApiService {
@@ -15,10 +16,26 @@ interface ApiService {
         @Query("subject") subject: String? = null
     ): List<ApiPdfBookDto>
 
+    @GET("books/")
+    suspend fun getPdfBooksDelta(
+        @Query("grade") grade: Int? = null,
+        @Query("subject") subject: String? = null,
+        @Header("If-None-Match") ifNoneMatch: String? = null,
+        @Header("Cache-Control") cacheControl: String? = null
+    ): Response<List<ApiPdfBookDto>>
+
     @GET("topics/")
     suspend fun getTopics(
         @Query("category_id") categoryId: Long? = null
     ): List<ApiTopicDto>
+
+    @GET("topics/")
+    suspend fun getTopicsDelta(
+        @Query("category_id") categoryId: Long? = null,
+        @Query("since_id") sinceId: Long? = null,
+        @Header("If-None-Match") ifNoneMatch: String? = null,
+        @Header("Cache-Control") cacheControl: String? = null
+    ): Response<List<ApiTopicDto>>
 
     @GET("questions/")
     suspend fun getQuestions(
@@ -31,6 +48,17 @@ interface ApiService {
         @Query("offset") offset: Int? = null
     ): List<ApiQuestionDto>
 
+    @GET("questions/")
+    suspend fun getQuestionsDelta(
+        @Query("grade") grade: Int? = null,
+        @Query("subject") subject: String? = null,
+        @Query("since_id") sinceId: Long? = null,
+        @Query("limit") limit: Int? = null,
+        @Query("offset") offset: Int? = null,
+        @Header("If-None-Match") ifNoneMatch: String? = null,
+        @Header("Cache-Control") cacheControl: String? = null
+    ): Response<List<ApiQuestionDto>>
+
     @GET("entities/")
     suspend fun getEntities(): List<ApiEntityDto>
 
@@ -40,6 +68,14 @@ interface ApiService {
         @Query("subject") subject: String? = null
     ): DirectionsResponseDto
 
+    @GET("questions/directions/")
+    suspend fun getDirectionsDelta(
+        @Query("grade") grade: Int? = null,
+        @Query("subject") subject: String? = null,
+        @Header("If-None-Match") ifNoneMatch: String? = null,
+        @Header("Cache-Control") cacheControl: String? = null
+    ): Response<DirectionsResponseDto>
+
     @GET("questions/ticket/")
     suspend fun getTicket(
         @Query("category") category: String,
@@ -48,6 +84,17 @@ interface ApiService {
         @Query("ticket") ticket: Int = 1,
         @Query("size") size: Int = 30
     ): TicketQuestionsDto
+
+    @GET("questions/ticket/")
+    suspend fun getTicketDelta(
+        @Query("category") category: String,
+        @Query("grade") grade: Int? = null,
+        @Query("subject") subject: String? = null,
+        @Query("ticket") ticket: Int = 1,
+        @Query("size") size: Int = 30,
+        @Header("If-None-Match") ifNoneMatch: String? = null,
+        @Header("Cache-Control") cacheControl: String? = null
+    ): Response<TicketQuestionsDto>
 
     @GET("questions/daily/")
     suspend fun getDailyQuestion(

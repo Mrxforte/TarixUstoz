@@ -7,7 +7,12 @@ import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.tarixustoz.app.data.local.AppDatabase
-import com.tarixustoz.app.data.repository.MistakesRepository
+import com.tarixustoz.app.data.repository.ActiveQuizState
+import com.tarixustoz.app.data.repository.PedagogicalActionType
+import com.tarixustoz.app.data.repository.PedagogicalAiRepository
+import com.tarixustoz.app.data.repository.PedagogicalAiState
+import com.tarixustoz.app.data.repository.PedagogicalRecommendation
+import com.tarixustoz.app.data.repository.PedagogicalTone
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
 import com.tarixustoz.app.presentation.common.DailyNotificationWorker
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -22,33 +27,28 @@ import java.util.Calendar
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-enum class NotificationCategory {
-    MISTAKE,
-    DAILY,
-    STREAK,
-    TEXTBOOK,
-    ACHIEVEMENT
-}
+const val DAILY_GOAL_TARGET = 30
 
-enum class NotificationGroup(val label: String) {
-    TODAY("Bugun"),
-    EARLIER("Avvalgi")
+enum class NotificationCategory {
+    DAILY_GOAL,
+    DAILY_QUIZ,
+    XP_STREAK
 }
 
 enum class NotificationFilter(val label: String) {
     ALL("Barchasi"),
     UNREAD("O‘qilmagan"),
-    MISTAKE("Xatolar"),
-    DAILY("Kunlik"),
-    TEXTBOOK("Darsliklar")
+    DAILY_XP("Kunlik & XP"),
+    AI_TIPS("AI Tavsiyalar")
 }
 
-enum class NotificationTarget(val actionHint: String) {
-    MISTAKES("Xatolar bo‘limini ochish"),
+enum class NotificationTarget(val defaultHint: String) {
+    RESUME_QUIZ("Tashlab ketilgan testni davom ettirish"),
     DAILY_QUIZ("Kun savolini yechish"),
     TESTS("Testlarga o‘tish"),
     TEXTBOOKS("Darsliklarni ochish"),
-    LEADERBOARD("Reytingni ko‘rish")
+    MISTAKES("Xatolarni ishlash"),
+    LEADERBOARD("Reyting va XPni ko‘rish")
 }
 
 data class NotificationItem(
@@ -56,10 +56,27 @@ data class NotificationItem(
     val title: String,
     val message: String,
     val timeLabel: String,
-    val group: NotificationGroup,
     val category: NotificationCategory,
     val isRead: Boolean,
-    val target: NotificationTarget
+    val target: NotificationTarget,
+    val actionHint: String = target.defaultHint,
+    val resumeRoute: String? = null,
+    val progressFraction: Float? = null,
+    val progressText: String? = null,
+    val highlightTag: String? = null
+)
+
+data class AiPedagogicalNotificationItem(
+    val id: String,
+    val badge: String,
+    val title: String,
+    val summary: String,
+    val pedagogicalTip: String,
+    val focusArea: String,
+    val tone: PedagogicalTone,
+    val target: NotificationTarget,
+    val actionHint: String,
+    val isRead: Boolean
 )
 
 data class NotificationsPreferencesState(
@@ -70,41 +87,54 @@ data class NotificationsPreferencesState(
     val reminderTime: String = "08:30"
 )
 
+sealed interface AiSectionUiState {
+    data object Idle : AiSectionUiState
+    data object Loading : AiSectionUiState
+    data class Ready(
+        val overallAssessment: String,
+        val generatedAtMs: Long,
+        val items: List<AiPedagogicalNotificationItem>
+    ) : AiSectionUiState
+    data class Error(val message: String) : AiSectionUiState
+}
+
 data class NotificationsUiState(
-    val allNotifications: List<NotificationItem> = emptyList(),
-    val filteredNotifications: List<NotificationItem> = emptyList(),
+    val coreNotifications: List<NotificationItem> = emptyList(),
+    val filteredCoreNotifications: List<NotificationItem> = emptyList(),
+    val aiSectionState: AiSectionUiState = AiSectionUiState.Loading,
+    val showCoreSection: Boolean = true,
+    val showAiSection: Boolean = true,
     val selectedFilter: NotificationFilter = NotificationFilter.ALL,
     val unreadCount: Int = 0,
-    val mistakesCount: Int = 0,
     val hasDismissedNotifications: Boolean = false,
     val preferences: NotificationsPreferencesState = NotificationsPreferencesState()
 )
 
 object NotificationCatalog {
-    const val ID_DAILY_QUIZ = "n_daily_quiz"
-    const val ID_MISTAKES = "n_mistakes"
     const val ID_DAILY_GOAL = "n_daily_goal"
-    const val ID_TEXTBOOKS = "n_textbooks"
+    const val ID_DAILY_QUIZ = "n_daily_quiz"
     const val ID_STREAK = "n_streak"
 
-    fun activeIds(mistakesCount: Int): List<String> = buildList {
-        add(ID_DAILY_QUIZ)
-        if (mistakesCount > 0) add(ID_MISTAKES)
-        add(ID_DAILY_GOAL)
-        add(ID_TEXTBOOKS)
-        add(ID_STREAK)
-    }
+    fun activeIds(): List<String> = listOf(
+        ID_DAILY_GOAL,
+        ID_DAILY_QUIZ,
+        ID_STREAK
+    )
 }
 
 @HiltViewModel
 class NotificationsViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val preferences: UserPreferencesRepository,
-    private val mistakesRepository: MistakesRepository,
-    private val database: AppDatabase
+    private val database: AppDatabase,
+    private val pedagogicalAiRepository: PedagogicalAiRepository
 ) : ViewModel() {
 
     private val selectedFilter = MutableStateFlow(NotificationFilter.ALL)
+
+    init {
+        refreshPedagogicalAdvice(forceRefresh = false)
+    }
 
     private fun startOfDayMillis(): Long = Calendar.getInstance().apply {
         set(Calendar.HOUR_OF_DAY, 0)
@@ -114,11 +144,10 @@ class NotificationsViewModel @Inject constructor(
     }.timeInMillis
 
     private data class CoreStats(
-        val mistakesCount: Int,
         val streak: Int,
         val xp: Long,
-        val selectedGrade: Int,
-        val todaySolved: Int
+        val todaySolved: Int,
+        val activeQuiz: ActiveQuizState?
     )
 
     private data class NotificationStorageState(
@@ -128,18 +157,16 @@ class NotificationsViewModel @Inject constructor(
     )
 
     private val coreStatsFlow = combine(
-        mistakesRepository.getActiveCount(),
         preferences.userStreak,
         preferences.userXp,
-        preferences.selectedGrade,
-        database.quizAttemptDao().getTodayTotalCountFlow(startOfDayMillis())
-    ) { mistakes, streak, xp, grade, todaySolved ->
+        database.quizAttemptDao().getTodayTotalCountFlow(startOfDayMillis()),
+        preferences.activeQuizState
+    ) { streak, xp, todaySolved, activeQuiz ->
         CoreStats(
-            mistakesCount = mistakes,
-            streak = streak.coerceAtLeast(1),
-            xp = xp,
-            selectedGrade = grade,
-            todaySolved = todaySolved
+            streak = streak.coerceAtLeast(0),
+            xp = xp.coerceAtLeast(0L),
+            todaySolved = todaySolved.coerceAtLeast(0),
+            activeQuiz = activeQuiz?.takeIf { it.questions.isNotEmpty() }
         )
     }
 
@@ -171,25 +198,47 @@ class NotificationsViewModel @Inject constructor(
         coreStatsFlow,
         storageStateFlow,
         selectedFilter,
-        notifPrefsFlow
-    ) { stats, storage, filter, prefsState ->
-        val rawItems = buildNotifications(stats, storage.readIds, storage.lastDailyText, prefsState.reminderTime)
-        val visibleItems = rawItems.filterNot { it.id in storage.dismissedIds }
-        val filtered = when (filter) {
-            NotificationFilter.ALL -> visibleItems
-            NotificationFilter.UNREAD -> visibleItems.filter { !it.isRead }
-            NotificationFilter.MISTAKE -> visibleItems.filter { it.category == NotificationCategory.MISTAKE }
-            NotificationFilter.DAILY -> visibleItems.filter {
-                it.category == NotificationCategory.DAILY || it.category == NotificationCategory.STREAK
-            }
-            NotificationFilter.TEXTBOOK -> visibleItems.filter { it.category == NotificationCategory.TEXTBOOK }
+        notifPrefsFlow,
+        pedagogicalAiRepository.state
+    ) { stats, storage, filter, prefsState, aiState ->
+        val rawCore = buildCoreNotifications(
+            stats = stats,
+            readIds = storage.readIds,
+            lastDailyText = storage.lastDailyText,
+            reminderTime = prefsState.reminderTime
+        )
+        val visibleCore = rawCore.filterNot { it.id in storage.dismissedIds }
+
+        val filteredCore = when (filter) {
+            NotificationFilter.ALL, NotificationFilter.DAILY_XP -> visibleCore
+            NotificationFilter.UNREAD -> visibleCore.filter { !it.isRead }
+            NotificationFilter.AI_TIPS -> emptyList()
         }
+
+        val mappedAiState = mapAiState(
+            aiState = aiState,
+            readIds = storage.readIds,
+            dismissedIds = storage.dismissedIds,
+            filter = filter
+        )
+
+        val visibleAiItems = when (aiState) {
+            is PedagogicalAiState.Success -> aiState.report.recommendations
+                .filterNot { it.id in storage.dismissedIds }
+            else -> emptyList()
+        }
+
+        val coreUnread = visibleCore.count { !it.isRead }
+        val aiUnread = visibleAiItems.count { it.id !in storage.readIds }
+
         NotificationsUiState(
-            allNotifications = visibleItems,
-            filteredNotifications = filtered,
+            coreNotifications = visibleCore,
+            filteredCoreNotifications = filteredCore,
+            aiSectionState = mappedAiState,
+            showCoreSection = filter != NotificationFilter.AI_TIPS,
+            showAiSection = filter != NotificationFilter.DAILY_XP,
             selectedFilter = filter,
-            unreadCount = visibleItems.count { !it.isRead },
-            mistakesCount = stats.mistakesCount,
+            unreadCount = coreUnread + aiUnread,
             hasDismissedNotifications = storage.dismissedIds.isNotEmpty(),
             preferences = prefsState
         )
@@ -199,12 +248,66 @@ class NotificationsViewModel @Inject constructor(
         initialValue = NotificationsUiState()
     )
 
-    private fun buildNotifications(
+    private fun buildCoreNotifications(
         stats: CoreStats,
         readIds: Set<String>,
         lastDailyText: String?,
         reminderTime: String
     ): List<NotificationItem> = buildList {
+        val remaining = (DAILY_GOAL_TARGET - stats.todaySolved).coerceAtLeast(0)
+        val activeQuiz = stats.activeQuiz
+        val goalProgress = (stats.todaySolved.toFloat() / DAILY_GOAL_TARGET.toFloat()).coerceIn(0f, 1f)
+
+        if (activeQuiz != null) {
+            val currentQuestionNum = (activeQuiz.currentIndex + 1).coerceIn(1, activeQuiz.questions.size)
+            val remainingInQuiz = (activeQuiz.questions.size - activeQuiz.currentIndex).coerceAtLeast(1)
+            add(
+                NotificationItem(
+                    id = NotificationCatalog.ID_DAILY_GOAL,
+                    title = if (remaining == 0) {
+                        "Kunlik maqsad bajarildi ($DAILY_GOAL_TARGET/$DAILY_GOAL_TARGET)"
+                    } else {
+                        "Kunlik maqsad: ${stats.todaySolved} / $DAILY_GOAL_TARGET test"
+                    },
+                    message = "Tashlab chiqib ketilgan \"${activeQuiz.quizTitle}\" testi ($currentQuestionNum/${activeQuiz.questions.size}-savol, yana $remainingInQuiz ta qoldi) sizni kutmoqda.",
+                    timeLabel = "Davom ettirish",
+                    category = NotificationCategory.DAILY_GOAL,
+                    isRead = NotificationCatalog.ID_DAILY_GOAL in readIds,
+                    target = NotificationTarget.RESUME_QUIZ,
+                    actionHint = "Tashlab ketilgan testga qaytish",
+                    resumeRoute = activeQuiz.quizRoute,
+                    progressFraction = goalProgress,
+                    progressText = "${stats.todaySolved}/$DAILY_GOAL_TARGET",
+                    highlightTag = "Yakunlanmagan test"
+                )
+            )
+        } else {
+            add(
+                NotificationItem(
+                    id = NotificationCatalog.ID_DAILY_GOAL,
+                    title = if (remaining == 0) {
+                        "Kunlik maqsad bajarildi ($DAILY_GOAL_TARGET/$DAILY_GOAL_TARGET)"
+                    } else {
+                        "Kunlik maqsad: ${stats.todaySolved} / $DAILY_GOAL_TARGET test"
+                    },
+                    message = if (remaining == 0) {
+                        "Ajoyib natija! Bugungi $DAILY_GOAL_TARGET ta test maqsadini to‘liq bajardingiz."
+                    } else {
+                        "Bugungi $DAILY_GOAL_TARGET ta test rejasiga yetish uchun yana $remaining ta savol yeching."
+                    },
+                    timeLabel = "Bugun",
+                    category = NotificationCategory.DAILY_GOAL,
+                    isRead = NotificationCatalog.ID_DAILY_GOAL in readIds,
+                    target = NotificationTarget.TESTS,
+                    actionHint = "Testlarga o‘tish",
+                    resumeRoute = null,
+                    progressFraction = goalProgress,
+                    progressText = "${stats.todaySolved}/$DAILY_GOAL_TARGET",
+                    highlightTag = if (remaining == 0) "Bajarildi" else "Kunlik reja"
+                )
+            )
+        }
+
         add(
             NotificationItem(
                 id = NotificationCatalog.ID_DAILY_QUIZ,
@@ -212,76 +315,84 @@ class NotificationsViewModel @Inject constructor(
                 message = lastDailyText?.takeIf { it.isNotBlank() }
                     ?: "Bugungi kun savolini yechib, +10 XP qo‘lga kiriting.",
                 timeLabel = "Bugun, $reminderTime",
-                group = NotificationGroup.TODAY,
-                category = NotificationCategory.DAILY,
+                category = NotificationCategory.DAILY_QUIZ,
                 isRead = NotificationCatalog.ID_DAILY_QUIZ in readIds,
-                target = NotificationTarget.DAILY_QUIZ
-            )
-        )
-
-        if (stats.mistakesCount > 0) {
-            add(
-                NotificationItem(
-                    id = NotificationCatalog.ID_MISTAKES,
-                    title = "${stats.mistakesCount} ta xato savol to‘plangan",
-                    message = "Xatolarni qayta ishlab, mavzularni mustahkamlang.",
-                    timeLabel = "Hozir",
-                    group = NotificationGroup.TODAY,
-                    category = NotificationCategory.MISTAKE,
-                    isRead = NotificationCatalog.ID_MISTAKES in readIds,
-                    target = NotificationTarget.MISTAKES
-                )
-            )
-        }
-
-        val dailyGoalTarget = 20
-        val remaining = (dailyGoalTarget - stats.todaySolved).coerceAtLeast(0)
-        add(
-            NotificationItem(
-                id = NotificationCatalog.ID_DAILY_GOAL,
-                title = if (remaining == 0) {
-                    "Kunlik maqsad bajarildi"
-                } else {
-                    "Kunlik maqsad: ${stats.todaySolved} / $dailyGoalTarget test"
-                },
-                message = if (remaining == 0) {
-                    "Bugungi $dailyGoalTarget ta test rejasini to‘liq bajardingiz."
-                } else {
-                    "Bugungi rejangizga yetish uchun yana $remaining ta savol yeching."
-                },
-                timeLabel = "Bugun",
-                group = NotificationGroup.TODAY,
-                category = NotificationCategory.DAILY,
-                isRead = NotificationCatalog.ID_DAILY_GOAL in readIds,
-                target = NotificationTarget.TESTS
-            )
-        )
-
-        add(
-            NotificationItem(
-                id = NotificationCatalog.ID_TEXTBOOKS,
-                title = "${stats.selectedGrade}-sinf tarix darsliklari",
-                message = "6–11-sinf darsliklari va mavzularini PDF shaklida o‘qing.",
-                timeLabel = "Avvalgi",
-                group = NotificationGroup.EARLIER,
-                category = NotificationCategory.TEXTBOOK,
-                isRead = NotificationCatalog.ID_TEXTBOOKS in readIds,
-                target = NotificationTarget.TEXTBOOKS
+                target = NotificationTarget.DAILY_QUIZ,
+                actionHint = "Kun savolini yechish",
+                highlightTag = "+10 XP"
             )
         )
 
         add(
             NotificationItem(
                 id = NotificationCatalog.ID_STREAK,
-                title = "${stats.streak} kunlik seriya • ${stats.xp} XP",
-                message = "Reyting jadvalidagi o‘rningizni ko‘ring va seriyangizni saqlang.",
-                timeLabel = "Avvalgi",
-                group = NotificationGroup.EARLIER,
-                category = NotificationCategory.STREAK,
+                title = "${stats.xp} XP • ${stats.streak} kunlik seriya",
+                message = if (stats.streak > 0) {
+                    "To‘plangan ${stats.xp} XP va ${stats.streak} kunlik faollik seriyangizni saqlab, reytingda yuqoriga chiqing."
+                } else {
+                    "Hozirgi natijangiz ${stats.xp} XP. Bugun test ishlab kunlik seriyani boshlang!"
+                },
+                timeLabel = "Faollik",
+                category = NotificationCategory.XP_STREAK,
                 isRead = NotificationCatalog.ID_STREAK in readIds,
-                target = NotificationTarget.LEADERBOARD
+                target = NotificationTarget.LEADERBOARD,
+                actionHint = "Reytingni ko‘rish",
+                highlightTag = "${stats.xp} XP"
             )
         )
+    }
+
+    private fun mapAiState(
+        aiState: PedagogicalAiState,
+        readIds: Set<String>,
+        dismissedIds: Set<String>,
+        filter: NotificationFilter
+    ): AiSectionUiState {
+        return when (aiState) {
+            PedagogicalAiState.Idle -> AiSectionUiState.Idle
+            PedagogicalAiState.Loading -> AiSectionUiState.Loading
+            is PedagogicalAiState.Error -> AiSectionUiState.Error(aiState.message)
+            is PedagogicalAiState.Success -> {
+                val mappedItems = aiState.report.recommendations
+                    .filterNot { it.id in dismissedIds }
+                    .map { it.toUiItem(isRead = it.id in readIds) }
+                    .let { list ->
+                        if (filter == NotificationFilter.UNREAD) list.filter { !it.isRead } else list
+                    }
+                AiSectionUiState.Ready(
+                    overallAssessment = aiState.report.overallAssessment,
+                    generatedAtMs = aiState.report.generatedAtMs,
+                    items = mappedItems
+                )
+            }
+        }
+    }
+
+    private fun PedagogicalRecommendation.toUiItem(isRead: Boolean): AiPedagogicalNotificationItem {
+        val (target, hint) = when (parsedActionType) {
+            PedagogicalActionType.MISTAKES -> NotificationTarget.MISTAKES to "Xatolarni ishlash"
+            PedagogicalActionType.TEXTBOOKS -> NotificationTarget.TEXTBOOKS to "Darslikdan takrorlash"
+            PedagogicalActionType.DAILY_QUIZ -> NotificationTarget.DAILY_QUIZ to "Kun savolini yechish"
+            PedagogicalActionType.TESTS -> NotificationTarget.TESTS to "Testlarni yechish"
+        }
+        return AiPedagogicalNotificationItem(
+            id = id,
+            badge = badge,
+            title = title,
+            summary = summary,
+            pedagogicalTip = pedagogicalTip,
+            focusArea = focusArea,
+            tone = parsedTone,
+            target = target,
+            actionHint = hint,
+            isRead = isRead
+        )
+    }
+
+    fun refreshPedagogicalAdvice(forceRefresh: Boolean = true) {
+        viewModelScope.launch {
+            pedagogicalAiRepository.generateRecommendations(forceRefresh = forceRefresh)
+        }
     }
 
     fun selectFilter(filter: NotificationFilter) {
@@ -295,10 +406,13 @@ class NotificationsViewModel @Inject constructor(
     }
 
     fun markAllAsRead() {
-        val visibleIds = uiState.value.allNotifications.map { it.id }
-        if (visibleIds.isEmpty()) return
+        val state = uiState.value
+        val coreIds = state.coreNotifications.map { it.id }
+        val aiIds = (state.aiSectionState as? AiSectionUiState.Ready)?.items?.map { it.id }.orEmpty()
+        val allIds = coreIds + aiIds
+        if (allIds.isEmpty()) return
         viewModelScope.launch {
-            preferences.markAllNotificationsRead(visibleIds)
+            preferences.markAllNotificationsRead(allIds)
         }
     }
 
