@@ -92,28 +92,30 @@ fun SplashScreen() {
     ) {
         Column(
             modifier = Modifier
-                .padding(horizontal = 32.dp)
+                .padding(horizontal = 24.dp)
                 .scale(logoScale)
                 .alpha(logoAlpha),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
             Box(contentAlignment = Alignment.Center) {
+                // Large Glowing Aura Ring
                 Surface(
                     shape = CircleShape,
-                    color = Color(0xFFF59E0B).copy(alpha = 0.14f),
-                    border = BorderStroke(1.5.dp, Color(0xFFFBBF24).copy(alpha = 0.35f)),
+                    color = Color(0xFFF59E0B).copy(alpha = 0.18f),
+                    border = BorderStroke(2.dp, Color(0xFFFBBF24).copy(alpha = 0.45f)),
                     modifier = Modifier
-                        .size(164.dp)
+                        .size(230.dp)
                         .scale(glowScale)
                 ) {}
 
+                // Big Prominent Emblem Card
                 Surface(
-                    shape = RoundedCornerShape(34.dp),
+                    shape = RoundedCornerShape(44.dp),
                     color = Color(0xFF161244),
-                    border = BorderStroke(2.dp, Color(0xFFFBBF24).copy(alpha = 0.65f)),
-                    shadowElevation = 12.dp,
-                    modifier = Modifier.size(128.dp)
+                    border = BorderStroke(2.5.dp, Color(0xFFFBBF24).copy(alpha = 0.8f)),
+                    shadowElevation = 18.dp,
+                    modifier = Modifier.size(180.dp)
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.app_icon_emblem),
@@ -121,39 +123,39 @@ fun SplashScreen() {
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
                             .fillMaxSize()
-                            .clip(RoundedCornerShape(32.dp))
+                            .clip(RoundedCornerShape(42.dp))
                     )
                 }
             }
 
-            Spacer(Modifier.height(28.dp))
+            Spacer(Modifier.height(32.dp))
 
             Text(
                 text = "Tarix Ustoz",
                 color = Color.White,
-                fontSize = 32.sp,
+                fontSize = 38.sp,
                 fontWeight = FontWeight.ExtraBold,
-                letterSpacing = 0.6.sp
+                letterSpacing = 0.8.sp
             )
 
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.height(10.dp))
 
             Text(
                 text = "O‘tmish ilmi — kelajak kaliti",
                 color = Color(0xFFFDE68A),
-                fontSize = 15.sp,
+                fontSize = 17.sp,
                 fontStyle = FontStyle.Italic,
-                fontWeight = FontWeight.Medium,
+                fontWeight = FontWeight.SemiBold,
                 textAlign = TextAlign.Center
             )
 
-            Spacer(Modifier.height(36.dp))
+            Spacer(Modifier.height(42.dp))
 
             CircularProgressIndicator(
                 color = Color(0xFFFBBF24),
-                trackColor = Color.White.copy(alpha = 0.15f),
-                strokeWidth = 3.dp,
-                modifier = Modifier.size(28.dp)
+                trackColor = Color.White.copy(alpha = 0.18f),
+                strokeWidth = 3.5.dp,
+                modifier = Modifier.size(32.dp)
             )
         }
     }
