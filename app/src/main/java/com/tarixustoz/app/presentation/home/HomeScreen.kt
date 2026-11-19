@@ -722,11 +722,12 @@ private fun HeroAdAndHistoryCarousel() {
     val wrapTransitionAlpha = remember { Animatable(1f) }
     val smoothSlideEasing = remember { CubicBezierEasing(0.22f, 1.0f, 0.36f, 1.0f) }
 
-    LaunchedEffect(pagerState.currentPage, isDragged) {
+    LaunchedEffect(pagerState.settledPage, isDragged) {
         if (!isDragged) {
-            val waitMs = if (pagerState.currentPage == 0) 11_000L else 5_500L
+            val current = pagerState.settledPage
+            val waitMs = if (current == 0) 11_000L else 5_500L
             delay(waitMs)
-            val nextPage = (pagerState.currentPage + 1) % totalPages
+            val nextPage = (current + 1) % totalPages
             if (nextPage == 0) {
                 // Oxirgi slayddan 0-slaydga qaytganda orqaga 11 ta rasmni miltillatib aylantirmasdan,
                 // mayin cross-fade animatsiyasi bilan o'tib, rasmlar tartibini yangidan random qilamiz.

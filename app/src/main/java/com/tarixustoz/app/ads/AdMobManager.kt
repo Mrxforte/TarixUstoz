@@ -11,6 +11,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.School
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -400,6 +401,7 @@ object AdMobManager {
                                         isAdLoaded = false
                                         localUnitId = TEST_BANNER_AD_UNIT_ID
                                     } else {
+                                        isAdFailed = true
                                         _diagnostics.update {
                                             it.copy(
                                                 quizBannerState = AdSlotLoadState.FAILED,
@@ -426,7 +428,11 @@ object AdMobManager {
                 }
             }
 
-            if (!isAdLoaded) {
+            if (isAdFailed) {
+                FallbackPromoBanner(
+                    modifier = Modifier.fillMaxWidth().height(60.dp)
+                )
+            } else if (!isAdLoaded) {
                 Surface(
                     shape = RoundedCornerShape(12.dp),
                     color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.85f),
@@ -549,6 +555,7 @@ object AdMobManager {
                                             localUnitId = TEST_BANNER_AD_UNIT_ID
                                         }
                                         else -> {
+                                            isAdFailed = true
                                             _diagnostics.update {
                                                 it.copy(
                                                     heroBannerState = AdSlotLoadState.FAILED,
@@ -576,7 +583,11 @@ object AdMobManager {
                 }
             }
 
-            if (!isAdLoaded) {
+            if (isAdFailed) {
+                FallbackPromoBanner(
+                    modifier = Modifier.fillMaxWidth().height(60.dp)
+                )
+            } else if (!isAdLoaded) {
                 Surface(
                     shape = RoundedCornerShape(18.dp),
                     color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.65f),
@@ -684,6 +695,7 @@ object AdMobManager {
                                             localUnitId = TEST_BANNER_AD_UNIT_ID
                                         }
                                         else -> {
+                                            isAdFailed = true
                                             _diagnostics.update {
                                                 it.copy(
                                                     quizBannerState = AdSlotLoadState.FAILED,
@@ -711,7 +723,11 @@ object AdMobManager {
                 }
             }
 
-            if (!isAdLoaded) {
+            if (isAdFailed) {
+                FallbackPromoBanner(
+                    modifier = Modifier.fillMaxWidth().height(60.dp)
+                )
+            } else if (!isAdLoaded) {
                 Surface(
                     shape = RoundedCornerShape(12.dp),
                     color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.65f),
