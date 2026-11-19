@@ -117,7 +117,8 @@ class UserPreferencesRepository @Inject constructor(
         private val LAST_GLOBAL_TICKET_INDEX = intPreferencesKey("last_global_ticket_index")
         private val LAST_GLOBAL_GRADE = intPreferencesKey("last_global_grade")
         private val LAST_GLOBAL_RESUME_ROUTE = stringPreferencesKey("last_global_resume_route")
-
+        private val REWARDED_AD_DATE = stringPreferencesKey("rewarded_ad_date")
+        private val REWARDED_AD_COUNT = intPreferencesKey("rewarded_ad_count")
         private val USER_EMAIL = stringPreferencesKey("user_email")
         private val IS_GUEST = booleanPreferencesKey("is_guest")
         private val IS_ONBOARDING_COMPLETED = booleanPreferencesKey("is_onboarding_completed")
@@ -156,6 +157,22 @@ class UserPreferencesRepository @Inject constructor(
     suspend fun resetTicketAdCounter() {
         dataStore.edit { prefs ->
             prefs[TICKET_AD_COUNTER] = 0
+        }
+    }
+
+    val rewardedAdCountToday: Flow<Int> = dataStore.data.map { prefs ->
+        val date = prefs[REWARDED_AD_DATE] ?: ""
+        val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
+        if (date == today) prefs[REWARDED_AD_COUNT] ?: 0 else 0
+    }
+
+    suspend fun incrementRewardedAdCount() {
+        val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
+        dataStore.edit { prefs ->
+            val date = prefs[REWARDED_AD_DATE] ?: ""
+            val count = if (date == today) prefs[REWARDED_AD_COUNT] ?: 0 else 0
+            prefs[REWARDED_AD_DATE] = today
+            prefs[REWARDED_AD_COUNT] = count + 1
         }
     }
 

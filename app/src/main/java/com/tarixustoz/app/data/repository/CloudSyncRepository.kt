@@ -341,9 +341,6 @@ class CloudSyncRepository @Inject constructor(
     suspend fun pushStatsToCloud(forceImmediate: Boolean = false): Result<Unit> = withContext(Dispatchers.IO) {
         val uid = auth.currentUser?.uid ?: return@withContext Result.success(Unit)
         preferences.setPendingStatsSync(true)
-        if (!forceImmediate && preferences.hasWrittenToFirebaseToday(uid)) {
-            return@withContext Result.success(Unit)
-        }
         try {
             val name = preferences.displayName.first().trim().ifBlank { "Tarixchi" }.take(60)
             val avatar = preferences.userAvatar.first().trim().ifBlank { "TU" }.take(16)
@@ -387,7 +384,6 @@ class CloudSyncRepository @Inject constructor(
     }
 
     private suspend fun ensureLeaderboardEntry(uid: String) {
-        if (preferences.hasWrittenToFirebaseToday(uid)) return
         val lbRef = db.collection("leaderboard").document(uid)
         if (!lbRef.get().await().exists()) {
             pushStatsToCloud(forceImmediate = true)
@@ -457,10 +453,6 @@ class CloudSyncRepository @Inject constructor(
     ): Result<Unit> = withContext(Dispatchers.IO) {
         val uid = auth.currentUser?.uid ?: return@withContext Result.success(Unit)
         preferences.markCategoryPendingSync(categoryKey)
-        // Kuniga faqat 1 marta Firebase'ga yozish
-        if (preferences.hasWrittenToFirebaseToday(uid)) {
-            return@withContext Result.success(Unit)
-        }
         val docKey = sanitizeDocId(categoryKey)
         val docRef = db.collection("users").document(uid).collection("ticketProgress").document(docKey)
         try {
@@ -591,24 +583,15 @@ class CloudSyncRepository @Inject constructor(
         )
         preferences.enqueuePendingQuizAttempt(pendingAttempt)
 
-        // Kuniga 1 marta yozish qoidasi: agar bugun yozilgan bo'lsa, navbatda saqlanadi va ertaga yoziladi
-        if (preferences.hasWrittenToFirebaseToday(uid)) {
-            return@withContext Result.success(Unit)
-        }
-
         val flushed = flushPendingUploads()
-        if (flushed) Result.success(Unit) else Result.failure(IllegalStateException("Deferred to daily sync"))
+        if (flushed) Result.success(Unit) else Result.failure(IllegalStateException("Upload deferred"))
     }
 
     /**
-     * Flushes any quiz attempts, ticket progress, or stat updates queued locally
-     * (at most once per day unless forced).
+     * Flushes any quiz attempts, ticket progress, or stat updates queued locally.
      */
     suspend fun flushPendingUploads(): Boolean = withContext(Dispatchers.IO) {
         val uid = auth.currentUser?.uid ?: return@withContext true
-        if (preferences.hasWrittenToFirebaseToday(uid)) {
-            return@withContext true
-        }
         var allSucceeded = true
         var wroteAny = false
 
