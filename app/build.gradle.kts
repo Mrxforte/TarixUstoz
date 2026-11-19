@@ -14,7 +14,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.tarixustoz.app"
+        applicationId = "com.example.bookstore"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
@@ -35,7 +35,8 @@ android {
 
     signingConfigs {
         create("debugConfig") {
-            storeFile = file("${rootDir}/debug.keystore")
+            val keystoreFile = file("${rootDir}/debug.keystore")
+            storeFile = if (keystoreFile.exists()) keystoreFile else file(System.getProperty("user.home") + "/.android/debug.keystore")
             storePassword = "android"
             keyAlias = "androiddebugkey"
             keyPassword = "android"

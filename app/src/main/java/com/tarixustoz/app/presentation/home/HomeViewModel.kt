@@ -74,8 +74,6 @@ data class HomeUiState(
     val dailyTimeRemaining: String = "Kunlik",
     val mistakesCount: Int = 0,
     val unreadNotifications: Int = 0,
-    val rewardedAdCountToday: Int = 0,
-    val canShowRewardedAd: Boolean = true,
     val categories: List<HomeCategoryItem> = listOf(
         HomeCategoryItem("shahar_nomlari", "Shahar nomlari", "…", "location", 0, "CITY"),
         HomeCategoryItem("tarixiy_shaxslar", "Tarixiy shaxslar", "…", "person", 0, "PERSON"),
@@ -225,16 +223,7 @@ class HomeViewModel @Inject constructor(
             }
         }
 
-        viewModelScope.launch {
-            preferences.rewardedAdCountToday.collect { count ->
-                _uiState.update { current ->
-                    current.copy(
-                        rewardedAdCountToday = count,
-                        canShowRewardedAd = count < 2
-                    )
-                }
-            }
-        }
+
 
         viewModelScope.launch {
             preferences.globalContinueRoute.collect { route ->
@@ -379,18 +368,6 @@ class HomeViewModel @Inject constructor(
         homeGradeCards.value = grades
     }
 
-    fun claimAdReward(onSuccess: () -> Unit, onLimitReached: () -> Unit) {
-        viewModelScope.launch {
-            val allowed = preferences.incrementRewardedAdCount()
-            if (allowed) {
-                preferences.addXp(50)
-                cloudSyncRepository.pushStatsToCloud()
-                onSuccess()
-            } else {
-                onLimitReached()
-            }
-        }
-    }
 
     fun loadNextDailyQuestion(userTriggered: Boolean = true) {
         val currentState = _uiState.value

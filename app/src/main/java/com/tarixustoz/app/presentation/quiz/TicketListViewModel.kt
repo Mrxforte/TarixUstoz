@@ -42,7 +42,8 @@ data class TicketListUiState(
     val continueAnsweredCount: Int? = null,
     val isContinueInProgress: Boolean = false,
     val tickets: List<TicketItemUiState> = emptyList(),
-    val activeQuizState: ActiveQuizState? = null
+    val activeQuizState: ActiveQuizState? = null,
+    val ticketAdCounter: Int = 0
 )
 
 private const val QUESTIONS_PER_TICKET = 30
@@ -84,11 +85,22 @@ class TicketListViewModel @Inject constructor(
                 }
             }
         }
+        viewModelScope.launch {
+            preferencesRepository.ticketAdCounter.collect { counter ->
+                _state.update { it.copy(ticketAdCounter = counter) }
+            }
+        }
     }
 
     fun setTimerMinutes(minutes: Int) {
         viewModelScope.launch {
             preferencesRepository.setTicketTimerMinutes(minutes)
+        }
+    }
+
+    fun resetTicketAdCounter() {
+        viewModelScope.launch {
+            preferencesRepository.resetTicketAdCounter()
         }
     }
 
@@ -251,9 +263,13 @@ class TicketListViewModel @Inject constructor(
 
     fun prefetchNextTicketsIfNeeded(categoryKey: String, currentTicketIndex: Int, grade: Int = 0) {
         viewModelScope.launch(Dispatchers.IO) {
-            val startTicket = currentTicketIndex
-            val endTicket = (currentTicketIndex + 2).coerceAtMost(3334)
-            for (ticketIdx in startTicket..endTicket) {
+            // "har yonalishdan 20 tadan bilet doimiy xotirada bo'lishi kerak"
+            // "15 bilet yechilgan bo'lsa yana +10 ta yuklab olinadi"
+            // We ensure we always have max(20, currentTicketIndex + 10) downloaded.
+            val startTicket = 1
+            val targetCount = maxOf(20, currentTicketIndex + 10).coerceAtMost(3334)
+            
+            for (ticketIdx in startTicket..targetCount) {
                 try {
                     contentRepository.fetchTicketFromApi(categoryKey, ticketIdx, count = 30, grade = grade)
                 } catch (e: Exception) {

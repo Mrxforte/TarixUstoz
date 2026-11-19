@@ -605,7 +605,6 @@ fun ProfileScreen(
             // AdMob Status & Test Mode Verification Card
             val adDiag by AdMobManager.diagnostics.collectAsState()
             val adContext = LocalContext.current
-            val adActivity = adContext.findActivity()
 
             Text(
                 text = "AdMob holati va test rejimi",
@@ -696,7 +695,7 @@ fun ProfileScreen(
                                 )
                             }
                             Text(
-                                text = "Banner: ${adSlotLabel(adDiag.heroBannerState)} • Test ekran: ${adSlotLabel(adDiag.quizBannerState)} • Video: ${adSlotLabel(adDiag.rewardedState)}",
+                                text = "Banner: ${adSlotLabel(adDiag.heroBannerState)} • Test ekran: ${adSlotLabel(adDiag.quizBannerState)}",
                                 fontSize = 11.sp,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -723,34 +722,6 @@ fun ProfileScreen(
                                 .testTag("profile_admob_probe_btn")
                         ) {
                             Text("Jonli tekshirish", fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
-                        }
-
-                        Button(
-                            onClick = {
-                                if (adActivity != null) {
-                                    AdMobManager.showRewardedAd(
-                                        activity = adActivity,
-                                        onRewardEarned = {
-                                            profileViewModel.claimTestAdReward { awarded ->
-                                                val msg = if (awarded) {
-                                                    "AdMob video ko'rildi! +50 XP qo'shildi"
-                                                } else {
-                                                    "AdMob Test video muvaffaqiyatli ishladi!"
-                                                }
-                                                Toast.makeText(adContext, msg, Toast.LENGTH_SHORT).show()
-                                            }
-                                        }
-                                    )
-                                }
-                            },
-                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
-                            shape = RoundedCornerShape(12.dp),
-                            modifier = Modifier
-                                .weight(1f)
-                                .heightIn(min = 48.dp)
-                                .testTag("profile_admob_rewarded_btn")
-                        ) {
-                            Text("Video reklama test", fontSize = 12.sp, fontWeight = FontWeight.Bold)
                         }
                     }
                 }

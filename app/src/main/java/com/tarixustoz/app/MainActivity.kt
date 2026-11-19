@@ -19,6 +19,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
+import com.tarixustoz.app.ads.AdMobManager
 import com.tarixustoz.app.data.remote.configureAppCheck
 import com.tarixustoz.app.presentation.common.DailyNotificationWorker
 import com.tarixustoz.app.presentation.navigation.TarixNavHost
@@ -34,6 +35,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         configureAppCheck(this, intent)
+        AdMobManager.initAdMob(this)
 
         pendingNotificationRoute.value = intent?.getStringExtra("open_route")
 

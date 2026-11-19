@@ -136,7 +136,8 @@ fun AuthScreen(
         coroutineScope.launch {
             viewModel.setLoading(true)
             try {
-                val webClientId = context.getString(R.string.default_web_client_id)
+                // Hardcode web_client_id generated from Firebase for Google Auth
+                val webClientId = "633656768232-1l70k2nmdsog03mhe4a0a5psk3u6h16r.apps.googleusercontent.com" // Update this if you have a web client ID. Note: It's empty in google-services.json right now
                 val credentialManager = CredentialManager.create(hostActivity)
                 val signInWithGoogleOption = GetSignInWithGoogleOption.Builder(webClientId)
                     .build()

@@ -569,6 +569,11 @@ class QuizViewModel @Inject constructor(
                     val score = state.correctCount
                     val passed = earnedStars >= 1 && score >= 10
                     preferences.saveTicketResult(cat, idx, score, passed, stars = earnedStars, grade = ticketGrade)
+                    
+                    if (passed) {
+                        preferences.incrementTicketAdCounter()
+                    }
+                    
                     val progress = preferences.getTicketProgress(cat)
                     val highestUnlocked = ((progress.passed.maxOrNull() ?: 0) + 1).coerceAtLeast(1)
                     val nextTarget = if (passed) (idx + 1).coerceAtLeast(1) else idx

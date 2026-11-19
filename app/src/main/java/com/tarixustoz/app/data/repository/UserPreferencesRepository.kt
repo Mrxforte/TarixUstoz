@@ -117,8 +117,7 @@ class UserPreferencesRepository @Inject constructor(
         private val LAST_GLOBAL_TICKET_INDEX = intPreferencesKey("last_global_ticket_index")
         private val LAST_GLOBAL_GRADE = intPreferencesKey("last_global_grade")
         private val LAST_GLOBAL_RESUME_ROUTE = stringPreferencesKey("last_global_resume_route")
-        private val REWARDED_AD_DATE = stringPreferencesKey("rewarded_ad_date")
-        private val REWARDED_AD_COUNT = intPreferencesKey("rewarded_ad_count")
+
         private val USER_EMAIL = stringPreferencesKey("user_email")
         private val IS_GUEST = booleanPreferencesKey("is_guest")
         private val IS_ONBOARDING_COMPLETED = booleanPreferencesKey("is_onboarding_completed")
@@ -140,9 +139,25 @@ class UserPreferencesRepository @Inject constructor(
         private val PENDING_SYNC_ATTEMPTS_JSON = stringPreferencesKey("pending_sync_attempts_json")
         private val PENDING_STATS_SYNC = booleanPreferencesKey("pending_stats_sync")
         private val AI_PEDAGOGICAL_CACHE_JSON = stringPreferencesKey("ai_pedagogical_cache_json")
+        private val TICKET_AD_COUNTER = intPreferencesKey("ticket_ad_counter")
     }
 
     val activeUserUid: Flow<String?> = dataStore.data.map { it[ACTIVE_USER_UID] }
+    
+    val ticketAdCounter: Flow<Int> = dataStore.data.map { it[TICKET_AD_COUNTER] ?: 0 }
+
+    suspend fun incrementTicketAdCounter() {
+        dataStore.edit { prefs ->
+            val current = prefs[TICKET_AD_COUNTER] ?: 0
+            prefs[TICKET_AD_COUNTER] = current + 1
+        }
+    }
+
+    suspend fun resetTicketAdCounter() {
+        dataStore.edit { prefs ->
+            prefs[TICKET_AD_COUNTER] = 0
+        }
+    }
 
     suspend fun setActiveUserUid(uid: String?) {
         dataStore.edit { prefs ->
@@ -844,30 +859,7 @@ class UserPreferencesRepository @Inject constructor(
         }
     }
 
-    val rewardedAdCountToday: Flow<Int> = dataStore.data.map { prefs ->
-        val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
-        val savedDate = prefs[REWARDED_AD_DATE] ?: ""
-        if (savedDate == today) prefs[REWARDED_AD_COUNT] ?: 0 else 0
-    }
 
-    val canShowRewardedAdToday: Flow<Boolean> = rewardedAdCountToday.map { it < 2 }
-
-    suspend fun incrementRewardedAdCount(): Boolean {
-        val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
-        var allowed = false
-        dataStore.edit { prefs ->
-            val savedDate = prefs[REWARDED_AD_DATE] ?: ""
-            val currentCount = if (savedDate == today) prefs[REWARDED_AD_COUNT] ?: 0 else 0
-            if (currentCount < 2) {
-                prefs[REWARDED_AD_DATE] = today
-                prefs[REWARDED_AD_COUNT] = currentCount + 1
-                allowed = true
-            } else {
-                allowed = false
-            }
-        }
-        return allowed
-    }
 
     val userEmail: Flow<String?> = dataStore.data.map { it[USER_EMAIL] }
     val isGuest: Flow<Boolean> = dataStore.data.map { it[IS_GUEST] ?: true }

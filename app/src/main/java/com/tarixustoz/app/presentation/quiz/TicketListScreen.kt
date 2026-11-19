@@ -1,5 +1,6 @@
 package com.tarixustoz.app.presentation.quiz
 
+import android.app.Activity
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
@@ -40,6 +41,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.testTag
@@ -50,6 +52,13 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.rewarded.RewardedAd
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import com.tarixustoz.app.ads.AdMobManager
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import kotlin.math.roundToInt
 
@@ -77,6 +86,26 @@ fun TicketListScreen(
     val pullState = rememberPullToRefreshState()
     val listState = rememberLazyListState()
     var hasAutoScrolled by remember(categoryKey) { mutableStateOf(false) }
+
+    var pendingTicketToStart by remember { mutableStateOf<Int?>(null) }
+    var pendingIsRetry by remember { mutableStateOf(false) }
+
+    val context = LocalContext.current
+    val activity = context as? Activity
+    var isShowingRewardedAd by remember { mutableStateOf(false) }
+
+    fun processTicketStart(ticketIndex: Int, isRetry: Boolean, isUnlocked: Boolean, isPassed: Boolean) {
+        if (!isUnlocked) return
+        val isNewTicket = !isPassed
+        if (isNewTicket && state.ticketAdCounter >= 5) {
+            pendingTicketToStart = ticketIndex
+            pendingIsRetry = isRetry
+        } else {
+            viewModel.prepareTicketForStart(categoryKey, ticketIndex, isRetry, selectedGrade)
+            viewModel.prefetchNextTicketsIfNeeded(categoryKey, ticketIndex, selectedGrade)
+            onStartTicket(categoryKey, ticketIndex, state.timerMinutes, isRetry)
+        }
+    }
 
     LaunchedEffect(state.isLoading, state.lastOpenedTicket) {
         if (!state.isLoading && !hasAutoScrolled && state.lastOpenedTicket > 1 && state.tickets.isNotEmpty()) {
@@ -168,14 +197,12 @@ fun TicketListScreen(
                         .padding(horizontal = 16.dp)
                         .testTag("ticket_list_continue_fab")
                         .clickable {
-                            viewModel.prepareTicketForStart(
-                                categoryKey = categoryKey,
+                            processTicketStart(
                                 ticketIndex = targetTicketIdx,
                                 isRetry = isRetry,
-                                grade = selectedGrade
+                                isUnlocked = targetTicketItem?.isUnlocked == true,
+                                isPassed = targetTicketItem?.isPassed == true
                             )
-                            viewModel.prefetchNextTicketsIfNeeded(categoryKey, targetTicketIdx, selectedGrade)
-                            onStartTicket(categoryKey, targetTicketIdx, state.timerMinutes, isRetry)
                         }
                 ) {
                     Row(
@@ -560,17 +587,13 @@ fun TicketListScreen(
                                 }
                             },
                             onStart = {
-                                if (ticket.isUnlocked) {
-                                    val isRetry = ticket.isPassed
-                                    viewModel.prepareTicketForStart(
-                                        categoryKey = categoryKey,
-                                        ticketIndex = ticket.index,
-                                        isRetry = isRetry,
-                                        grade = selectedGrade
-                                    )
-                                    viewModel.prefetchNextTicketsIfNeeded(categoryKey, ticket.index, selectedGrade)
-                                    onStartTicket(categoryKey, ticket.index, state.timerMinutes, isRetry)
-                                }
+                                val isRetry = ticket.isPassed
+                                processTicketStart(
+                                    ticketIndex = ticket.index,
+                                    isRetry = isRetry,
+                                    isUnlocked = ticket.isUnlocked,
+                                    isPassed = ticket.isPassed
+                                )
                             }
                         )
                     }
@@ -593,6 +616,90 @@ fun TicketListScreen(
                 )
             }
         }
+    }
+
+    if (pendingTicketToStart != null) {
+        AlertDialog(
+            onDismissRequest = {
+                pendingTicketToStart = null
+            },
+            title = {
+                Text(text = "Reklama tomosha qiling 🎁", fontWeight = FontWeight.Bold)
+            },
+            text = {
+                Text(
+                    text = "Ushbu ilova siz uchun mutlaqo bepul! Biz ilovani rivojlantirishda davom etishimiz va yangi savollar qo'shishimiz uchun reklamalar juda muhim.\n\nKeyingi testni ochish uchun qisqacha videoreklama tomosha qiling va bizni qo'llab-quvvatlang. Rahmat!",
+                    fontSize = 14.sp
+                )
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        val ticketIndex = pendingTicketToStart!!
+                        val isRetry = pendingIsRetry
+                        // Show Rewarded Ad logic here
+                        isShowingRewardedAd = true
+                        
+                        val rewardedAdUnitId = if (AdMobManager.diagnostics.value.isTestMode) {
+                            AdMobManager.TEST_REWARDED_AD_UNIT_ID
+                        } else {
+                            AdMobManager.REWARDED_AD_UNIT_ID
+                        }
+
+                        if (activity != null) {
+                            val adRequest = AdRequest.Builder().build()
+                            RewardedAd.load(
+                                context,
+                                rewardedAdUnitId,
+                                adRequest,
+                                object : RewardedAdLoadCallback() {
+                                    override fun onAdLoaded(ad: RewardedAd) {
+                                        ad.show(activity) { _ ->
+                                            // On user earned reward
+                                            viewModel.resetTicketAdCounter()
+                                            viewModel.prepareTicketForStart(categoryKey, ticketIndex, isRetry, selectedGrade)
+                                            viewModel.prefetchNextTicketsIfNeeded(categoryKey, ticketIndex, selectedGrade)
+                                            onStartTicket(categoryKey, ticketIndex, state.timerMinutes, isRetry)
+                                            pendingTicketToStart = null
+                                            isShowingRewardedAd = false
+                                        }
+                                        ad.fullScreenContentCallback = object : FullScreenContentCallback() {
+                                            override fun onAdDismissedFullScreenContent() {
+                                                isShowingRewardedAd = false
+                                            }
+                                            override fun onAdFailedToShowFullScreenContent(error: AdError) {
+                                                isShowingRewardedAd = false
+                                            }
+                                        }
+                                    }
+
+                                    override fun onAdFailedToLoad(error: LoadAdError) {
+                                        // Reklama yuklanmadi, shunchaki o'tkazib yuboramiz
+                                        viewModel.resetTicketAdCounter()
+                                        viewModel.prepareTicketForStart(categoryKey, ticketIndex, isRetry, selectedGrade)
+                                        viewModel.prefetchNextTicketsIfNeeded(categoryKey, ticketIndex, selectedGrade)
+                                        onStartTicket(categoryKey, ticketIndex, state.timerMinutes, isRetry)
+                                        pendingTicketToStart = null
+                                        isShowingRewardedAd = false
+                                    }
+                                }
+                            )
+                        } else {
+                            pendingTicketToStart = null
+                            isShowingRewardedAd = false
+                        }
+                    },
+                    enabled = !isShowingRewardedAd
+                ) {
+                    Text(if (isShowingRewardedAd) "Yuklanmoqda..." else "Videoni ko'rish")
+                }
+            },
+            dismissButton = {
+                OutlinedButton(onClick = { pendingTicketToStart = null }, enabled = !isShowingRewardedAd) {
+                    Text("Bekor qilish")
+                }
+            }
+        )
     }
 }
 

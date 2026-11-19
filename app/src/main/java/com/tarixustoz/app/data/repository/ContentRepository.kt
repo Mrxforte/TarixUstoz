@@ -252,9 +252,8 @@ class ContentRepository @Inject constructor(
         if (cachedJson.isBlank()) return false
         val cachedEpoch = ticketCachePrefs.getLong("epoch_$cacheKey", 0L)
         if (cachedEpoch != currentCacheEpoch()) return false
-        val cachedAt = ticketCachePrefs.getLong("ts_$cacheKey", 0L)
-        // Allow up to 24h without re-fetch if epoch has not invalidated this category
-        return (System.currentTimeMillis() - cachedAt) < (24L * 60L * 60L * 1000L)
+        // Make cached tickets permanent in memory as requested
+        return true
     }
 
     /** Selectively clears only affected ticket/direction caches without touching valid unrelated caches. */

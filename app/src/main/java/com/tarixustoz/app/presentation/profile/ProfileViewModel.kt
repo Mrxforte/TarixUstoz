@@ -624,11 +624,8 @@ class ProfileViewModel @Inject constructor(
 
     fun claimTestAdReward(onAwarded: (Boolean) -> Unit) {
         viewModelScope.launch {
-            val allowed = preferencesRepository.incrementRewardedAdCount()
-            if (allowed) {
-                preferencesRepository.addXp(50L)
-            }
-            onAwarded(allowed)
+            // Disabled rewarded ad in this version
+            onAwarded(false)
         }
     }
 
