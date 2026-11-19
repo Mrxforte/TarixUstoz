@@ -123,7 +123,10 @@ fun TarixNavHost(
         isOnboardingCompleted == false -> {
             OnboardingScreen(onFinish = {})
         }
-        currentUser == null && !isTestModeActive -> {
+        currentUser == null -> {
+            if (isTestModeActive) {
+                authViewModel.exitTestMode()
+            }
             AuthScreen(
                 canNavigateBack = false,
                 onAuthSuccess = {}

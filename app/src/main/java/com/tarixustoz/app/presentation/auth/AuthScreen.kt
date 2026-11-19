@@ -100,6 +100,9 @@ fun AuthScreen(
     var gradeMenuExpanded by remember { mutableStateOf(false) }
     var passwordVisible by remember { mutableStateOf(false) }
 
+    var isForgotPasswordMode by remember { mutableStateOf(false) }
+    var resetEmailInput by remember { mutableStateOf("") }
+
     val backdropImages = remember {
         listOf(
             R.drawable.intro_registan,
@@ -279,211 +282,305 @@ fun AuthScreen(
                     modifier = Modifier.padding(20.dp),
                     verticalArrangement = Arrangement.spacedBy(14.dp)
                 ) {
-                    // Sign In / Sign Up Switcher
-                    Surface(
-                        shape = RoundedCornerShape(14.dp),
-                        color = Color.White.copy(alpha = 0.08f),
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Row(modifier = Modifier.padding(4.dp)) {
-                            listOf(false to "Kirish", true to "Ro‘yxatdan o‘tish").forEach { (signUpTab, label) ->
-                                val selected = isSignUpMode == signUpTab
-                                Surface(
-                                    shape = RoundedCornerShape(10.dp),
-                                    color = if (selected) BrandPurple else Color.Transparent,
-                                    modifier = Modifier
-                                        .weight(1f)
-                                        .minimumInteractiveComponentSize()
-                                        .clickable {
-                                            isSignUpMode = signUpTab
-                                            viewModel.clearMessages()
-                                        }
-                                ) {
-                                    Box(
-                                        contentAlignment = Alignment.Center,
-                                        modifier = Modifier.padding(vertical = 10.dp)
-                                    ) {
-                                        Text(
-                                            text = label,
-                                            color = Color.White,
-                                            fontWeight = if (selected) FontWeight.Bold else FontWeight.Medium,
-                                            fontSize = 14.sp
-                                        )
-                                    }
+                    if (isForgotPasswordMode) {
+                        // Dedicated Forgot Password Mode inside Auth Card
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            IconButton(
+                                onClick = {
+                                    isForgotPasswordMode = false
+                                    viewModel.clearMessages()
                                 }
+                            ) {
+                                Icon(
+                                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                    contentDescription = "Orqaga",
+                                    tint = Color.White
+                                )
+                            }
+                            Spacer(Modifier.width(4.dp))
+                            Text(
+                                text = "Parolni tiklash 🔑",
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.White
+                            )
+                        }
+
+                        Text(
+                            text = "Email manzilingizni kiriting. Parolni qayta tiklash havolasi elektron pochtangizga yuboriladi.",
+                            fontSize = 13.sp,
+                            color = Color.White.copy(alpha = 0.8f),
+                            lineHeight = 18.sp
+                        )
+
+                        if (!uiState.errorMessage.isNullOrBlank()) {
+                            Surface(
+                                shape = RoundedCornerShape(12.dp),
+                                color = Color(0x33EF4444),
+                                border = BorderStroke(1.dp, Color(0xFFEF4444).copy(alpha = 0.6f)),
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Text(
+                                    text = uiState.errorMessage!!,
+                                    color = Color(0xFFFCA5A5),
+                                    fontSize = 13.sp,
+                                    modifier = Modifier.padding(12.dp)
+                                )
                             }
                         }
-                    }
 
-                    if (!uiState.errorMessage.isNullOrBlank()) {
-                        Surface(
-                            shape = RoundedCornerShape(12.dp),
-                            color = Color(0x33EF4444),
-                            border = BorderStroke(1.dp, Color(0xFFEF4444).copy(alpha = 0.6f)),
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                text = uiState.errorMessage!!,
-                                color = Color(0xFFFCA5A5),
-                                fontSize = 13.sp,
-                                modifier = Modifier.padding(12.dp)
-                            )
+                        if (!uiState.infoMessage.isNullOrBlank()) {
+                            Surface(
+                                shape = RoundedCornerShape(12.dp),
+                                color = Color(0x3310B981),
+                                border = BorderStroke(1.dp, Color(0xFF10B981).copy(alpha = 0.6f)),
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Text(
+                                    text = uiState.infoMessage!!,
+                                    color = Color(0xFF86EFAC),
+                                    fontSize = 13.sp,
+                                    modifier = Modifier.padding(12.dp)
+                                )
+                            }
                         }
-                    }
 
-                    if (!uiState.infoMessage.isNullOrBlank()) {
-                        Surface(
-                            shape = RoundedCornerShape(12.dp),
-                            color = Color(0x3310B981),
-                            border = BorderStroke(1.dp, Color(0xFF10B981).copy(alpha = 0.6f)),
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                text = uiState.infoMessage!!,
-                                color = Color(0xFF86EFAC),
-                                fontSize = 13.sp,
-                                modifier = Modifier.padding(12.dp)
-                            )
-                        }
-                    }
+                        val fieldColors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = Color.White,
+                            unfocusedTextColor = Color.White,
+                            focusedBorderColor = Color(0xFF818CF8),
+                            unfocusedBorderColor = Color.White.copy(alpha = 0.25f),
+                            focusedLabelColor = Color(0xFFC7D2FE),
+                            unfocusedLabelColor = Color.White.copy(alpha = 0.68f),
+                            cursorColor = Color(0xFFFBBF24)
+                        )
 
-                    val fieldColors = OutlinedTextFieldDefaults.colors(
-                        focusedTextColor = Color.White,
-                        unfocusedTextColor = Color.White,
-                        focusedBorderColor = Color(0xFF818CF8),
-                        unfocusedBorderColor = Color.White.copy(alpha = 0.25f),
-                        focusedLabelColor = Color(0xFFC7D2FE),
-                        unfocusedLabelColor = Color.White.copy(alpha = 0.68f),
-                        cursorColor = Color(0xFFFBBF24)
-                    )
-
-                    if (isSignUpMode) {
                         OutlinedTextField(
-                            value = fullName,
-                            onValueChange = { fullName = it },
-                            label = { Text("Ism va familiya") },
-                            leadingIcon = { Icon(Icons.Default.Person, contentDescription = null, tint = Color(0xFFC7D2FE)) },
+                            value = resetEmailInput,
+                            onValueChange = { resetEmailInput = it },
+                            label = { Text("Email manzil") },
+                            leadingIcon = { Icon(Icons.Default.Email, contentDescription = null, tint = Color(0xFFC7D2FE)) },
                             singleLine = true,
                             shape = RoundedCornerShape(14.dp),
                             colors = fieldColors,
-                            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+                            keyboardOptions = KeyboardOptions(
+                                keyboardType = KeyboardType.Email,
+                                imeAction = ImeAction.Done
+                            ),
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .testTag("auth_name_input")
+                                .testTag("auth_reset_email_input")
                         )
-                    }
 
-                    OutlinedTextField(
-                        value = email,
-                        onValueChange = { email = it },
-                        label = { Text("Email manzil") },
-                        leadingIcon = { Icon(Icons.Default.Email, contentDescription = null, tint = Color(0xFFC7D2FE)) },
-                        singleLine = true,
-                        shape = RoundedCornerShape(14.dp),
-                        colors = fieldColors,
-                        keyboardOptions = KeyboardOptions(
-                            keyboardType = KeyboardType.Email,
-                            imeAction = ImeAction.Next
-                        ),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .testTag("auth_email_input")
-                    )
-
-                    OutlinedTextField(
-                        value = password,
-                        onValueChange = { password = it },
-                        label = { Text("Parol") },
-                        leadingIcon = { Icon(Icons.Default.Lock, contentDescription = null, tint = Color(0xFFC7D2FE)) },
-                        trailingIcon = {
-                            IconButton(onClick = { passwordVisible = !passwordVisible }) {
-                                Icon(
-                                    imageVector = if (passwordVisible) Icons.Default.VisibilityOff else Icons.Default.Visibility,
-                                    contentDescription = if (passwordVisible) "Parolni yashirish" else "Parolni ko‘rsatish",
-                                    tint = Color.White.copy(alpha = 0.75f)
+                        Button(
+                            onClick = {
+                                if (resetEmailInput.isNotBlank()) {
+                                    viewModel.sendPasswordReset(resetEmailInput)
+                                } else {
+                                    viewModel.setError("Email manzilingizni kiriting")
+                                }
+                            },
+                            enabled = !uiState.isLoading,
+                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
+                            shape = RoundedCornerShape(14.dp),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(52.dp)
+                                .testTag("auth_reset_submit_button")
+                        ) {
+                            if (uiState.isLoading) {
+                                CircularProgressIndicator(
+                                    modifier = Modifier.size(22.dp),
+                                    color = Color.White,
+                                    strokeWidth = 2.dp
+                                )
+                            } else {
+                                Text(
+                                    text = "Havolani yuborish",
+                                    fontSize = 15.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White
                                 )
                             }
-                        },
-                        visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
-                        singleLine = true,
-                        shape = RoundedCornerShape(14.dp),
-                        colors = fieldColors,
-                        keyboardOptions = KeyboardOptions(
-                            keyboardType = KeyboardType.Password,
-                            imeAction = ImeAction.Done
-                        ),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .testTag("auth_password_input")
-                    )
+                        }
 
-                    if (isSignUpMode) {
-                        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                            ExposedDropdownMenuBox(
-                                expanded = roleMenuExpanded,
-                                onExpandedChange = { roleMenuExpanded = !roleMenuExpanded },
-                                modifier = Modifier.fillMaxWidth()
+                        Box(
+                            modifier = Modifier.fillMaxWidth(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            TextButton(
+                                onClick = {
+                                    isForgotPasswordMode = false
+                                    viewModel.clearMessages()
+                                }
                             ) {
-                                OutlinedTextField(
-                                    value = selectedRole,
-                                    onValueChange = {},
-                                    readOnly = true,
-                                    label = { Text("Maqomingiz") },
-                                    leadingIcon = {
-                                        Icon(Icons.Default.Badge, contentDescription = null, tint = Color(0xFFC7D2FE))
-                                    },
-                                    trailingIcon = {
-                                        ExposedDropdownMenuDefaults.TrailingIcon(expanded = roleMenuExpanded)
-                                    },
-                                    singleLine = true,
-                                    shape = RoundedCornerShape(14.dp),
-                                    colors = fieldColors,
-                                    modifier = Modifier
-                                        .menuAnchor(MenuAnchorType.PrimaryNotEditable)
-                                        .fillMaxWidth()
-                                        .testTag("auth_role_dropdown")
+                                Text(
+                                    text = "⬅ Kirish sahifasiga qaytish",
+                                    color = Color(0xFFFDE68A),
+                                    fontSize = 13.sp,
+                                    fontWeight = FontWeight.SemiBold
                                 )
-                                ExposedDropdownMenu(
-                                    expanded = roleMenuExpanded,
-                                    onDismissRequest = { roleMenuExpanded = false }
-                                ) {
-                                    AUTH_ROLE_OPTIONS.forEach { (roleKey, roleSubtitle) ->
-                                        DropdownMenuItem(
-                                            text = {
-                                                Column {
-                                                    Text(roleKey, fontWeight = FontWeight.SemiBold)
-                                                    Text(
-                                                        roleSubtitle,
-                                                        fontSize = 11.sp,
-                                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                                    )
-                                                }
-                                            },
-                                            onClick = {
-                                                selectedRole = roleKey
-                                                roleMenuExpanded = false
+                            }
+                        }
+                    } else {
+                        // Sign In / Sign Up Switcher
+                        Surface(
+                            shape = RoundedCornerShape(14.dp),
+                            color = Color.White.copy(alpha = 0.08f),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Row(modifier = Modifier.padding(4.dp)) {
+                                listOf(false to "Kirish", true to "Ro‘yxatdan o‘tish").forEach { (signUpTab, label) ->
+                                    val selected = isSignUpMode == signUpTab
+                                    Surface(
+                                        shape = RoundedCornerShape(10.dp),
+                                        color = if (selected) BrandPurple else Color.Transparent,
+                                        modifier = Modifier
+                                            .weight(1f)
+                                            .minimumInteractiveComponentSize()
+                                            .clickable {
+                                                isSignUpMode = signUpTab
+                                                viewModel.clearMessages()
                                             }
-                                        )
+                                    ) {
+                                        Box(
+                                            contentAlignment = Alignment.Center,
+                                            modifier = Modifier.padding(vertical = 10.dp)
+                                        ) {
+                                            Text(
+                                                text = label,
+                                                color = Color.White,
+                                                fontWeight = if (selected) FontWeight.Bold else FontWeight.Medium,
+                                                fontSize = 14.sp
+                                            )
+                                        }
                                     }
                                 }
                             }
+                        }
 
-                            AnimatedVisibility(visible = selectedRole == "O'quvchi") {
+                        if (!uiState.errorMessage.isNullOrBlank()) {
+                            Surface(
+                                shape = RoundedCornerShape(12.dp),
+                                color = Color(0x33EF4444),
+                                border = BorderStroke(1.dp, Color(0xFFEF4444).copy(alpha = 0.6f)),
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Text(
+                                    text = uiState.errorMessage!!,
+                                    color = Color(0xFFFCA5A5),
+                                    fontSize = 13.sp,
+                                    modifier = Modifier.padding(12.dp)
+                                )
+                            }
+                        }
+
+                        if (!uiState.infoMessage.isNullOrBlank()) {
+                            Surface(
+                                shape = RoundedCornerShape(12.dp),
+                                color = Color(0x3310B981),
+                                border = BorderStroke(1.dp, Color(0xFF10B981).copy(alpha = 0.6f)),
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Text(
+                                    text = uiState.infoMessage!!,
+                                    color = Color(0xFF86EFAC),
+                                    fontSize = 13.sp,
+                                    modifier = Modifier.padding(12.dp)
+                                )
+                            }
+                        }
+
+                        val fieldColors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = Color.White,
+                            unfocusedTextColor = Color.White,
+                            focusedBorderColor = Color(0xFF818CF8),
+                            unfocusedBorderColor = Color.White.copy(alpha = 0.25f),
+                            focusedLabelColor = Color(0xFFC7D2FE),
+                            unfocusedLabelColor = Color.White.copy(alpha = 0.68f),
+                            cursorColor = Color(0xFFFBBF24)
+                        )
+
+                        if (isSignUpMode) {
+                            OutlinedTextField(
+                                value = fullName,
+                                onValueChange = { fullName = it },
+                                label = { Text("Ism va familiya") },
+                                leadingIcon = { Icon(Icons.Default.Person, contentDescription = null, tint = Color(0xFFC7D2FE)) },
+                                singleLine = true,
+                                shape = RoundedCornerShape(14.dp),
+                                colors = fieldColors,
+                                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .testTag("auth_name_input")
+                            )
+                        }
+
+                        OutlinedTextField(
+                            value = email,
+                            onValueChange = { email = it },
+                            label = { Text("Email manzil") },
+                            leadingIcon = { Icon(Icons.Default.Email, contentDescription = null, tint = Color(0xFFC7D2FE)) },
+                            singleLine = true,
+                            shape = RoundedCornerShape(14.dp),
+                            colors = fieldColors,
+                            keyboardOptions = KeyboardOptions(
+                                keyboardType = KeyboardType.Email,
+                                imeAction = ImeAction.Next
+                            ),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .testTag("auth_email_input")
+                        )
+
+                        OutlinedTextField(
+                            value = password,
+                            onValueChange = { password = it },
+                            label = { Text("Parol") },
+                            leadingIcon = { Icon(Icons.Default.Lock, contentDescription = null, tint = Color(0xFFC7D2FE)) },
+                            trailingIcon = {
+                                IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                                    Icon(
+                                        imageVector = if (passwordVisible) Icons.Default.VisibilityOff else Icons.Default.Visibility,
+                                        contentDescription = if (passwordVisible) "Parolni yashirish" else "Parolni ko‘rsatish",
+                                        tint = Color.White.copy(alpha = 0.75f)
+                                    )
+                                }
+                            },
+                            visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                            singleLine = true,
+                            shape = RoundedCornerShape(14.dp),
+                            colors = fieldColors,
+                            keyboardOptions = KeyboardOptions(
+                                keyboardType = KeyboardType.Password,
+                                imeAction = ImeAction.Done
+                            ),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .testTag("auth_password_input")
+                        )
+
+                        if (isSignUpMode) {
+                            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                                 ExposedDropdownMenuBox(
-                                    expanded = gradeMenuExpanded,
-                                    onExpandedChange = { gradeMenuExpanded = !gradeMenuExpanded },
+                                    expanded = roleMenuExpanded,
+                                    onExpandedChange = { roleMenuExpanded = !roleMenuExpanded },
                                     modifier = Modifier.fillMaxWidth()
                                 ) {
                                     OutlinedTextField(
-                                        value = "$selectedGrade-sinf",
+                                        value = selectedRole,
                                         onValueChange = {},
                                         readOnly = true,
-                                        label = { Text("Sinfingiz") },
+                                        label = { Text("Maqomingiz") },
                                         leadingIcon = {
-                                            Icon(Icons.Default.School, contentDescription = null, tint = Color(0xFFC7D2FE))
+                                            Icon(Icons.Default.Badge, contentDescription = null, tint = Color(0xFFC7D2FE))
                                         },
                                         trailingIcon = {
-                                            ExposedDropdownMenuDefaults.TrailingIcon(expanded = gradeMenuExpanded)
+                                            ExposedDropdownMenuDefaults.TrailingIcon(expanded = roleMenuExpanded)
                                         },
                                         singleLine = true,
                                         shape = RoundedCornerShape(14.dp),
@@ -491,179 +588,195 @@ fun AuthScreen(
                                         modifier = Modifier
                                             .menuAnchor(MenuAnchorType.PrimaryNotEditable)
                                             .fillMaxWidth()
-                                            .testTag("auth_grade_dropdown")
+                                            .testTag("auth_role_dropdown")
                                     )
                                     ExposedDropdownMenu(
-                                        expanded = gradeMenuExpanded,
-                                        onDismissRequest = { gradeMenuExpanded = false }
+                                        expanded = roleMenuExpanded,
+                                        onDismissRequest = { roleMenuExpanded = false }
                                     ) {
-                                        (6..11).forEach { grade ->
+                                        AUTH_ROLE_OPTIONS.forEach { (roleKey, roleSubtitle) ->
                                             DropdownMenuItem(
-                                                text = { Text("$grade-sinf tarixi", fontWeight = FontWeight.Medium) },
+                                                text = {
+                                                    Column {
+                                                        Text(roleKey, fontWeight = FontWeight.SemiBold)
+                                                        Text(
+                                                            roleSubtitle,
+                                                            fontSize = 11.sp,
+                                                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                                                        )
+                                                    }
+                                                },
                                                 onClick = {
-                                                    selectedGrade = grade
-                                                    gradeMenuExpanded = false
+                                                    selectedRole = roleKey
+                                                    roleMenuExpanded = false
                                                 }
                                             )
                                         }
                                     }
                                 }
+
+                                AnimatedVisibility(visible = selectedRole == "O'quvchi") {
+                                    ExposedDropdownMenuBox(
+                                        expanded = gradeMenuExpanded,
+                                        onExpandedChange = { gradeMenuExpanded = !gradeMenuExpanded },
+                                        modifier = Modifier.fillMaxWidth()
+                                    ) {
+                                        OutlinedTextField(
+                                            value = "$selectedGrade-sinf",
+                                            onValueChange = {},
+                                            readOnly = true,
+                                            label = { Text("Sinfingiz") },
+                                            leadingIcon = {
+                                                Icon(Icons.Default.School, contentDescription = null, tint = Color(0xFFC7D2FE))
+                                            },
+                                            trailingIcon = {
+                                                ExposedDropdownMenuDefaults.TrailingIcon(expanded = gradeMenuExpanded)
+                                            },
+                                            singleLine = true,
+                                            shape = RoundedCornerShape(14.dp),
+                                            colors = fieldColors,
+                                            modifier = Modifier
+                                                .menuAnchor(MenuAnchorType.PrimaryNotEditable)
+                                                .fillMaxWidth()
+                                                .testTag("auth_grade_dropdown")
+                                        )
+                                        ExposedDropdownMenu(
+                                            expanded = gradeMenuExpanded,
+                                            onDismissRequest = { gradeMenuExpanded = false }
+                                        ) {
+                                            (6..11).forEach { grade ->
+                                                DropdownMenuItem(
+                                                    text = { Text("$grade-sinf tarixi", fontWeight = FontWeight.Medium) },
+                                                    onClick = {
+                                                        selectedGrade = grade
+                                                        gradeMenuExpanded = false
+                                                    }
+                                                )
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } else {
+                            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterEnd) {
+                                TextButton(
+                                    onClick = {
+                                        resetEmailInput = email
+                                        isForgotPasswordMode = true
+                                        viewModel.clearMessages()
+                                    }
+                                ) {
+                                    Text(
+                                        text = "Parolni unutdingizmi?",
+                                        color = Color(0xFFFDE68A),
+                                        fontSize = 12.sp
+                                    )
+                                }
                             }
                         }
-                    } else {
-                        Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterEnd) {
-                            TextButton(onClick = { viewModel.sendPasswordReset(email) }) {
+
+                        Button(
+                            onClick = {
+                                if (isSignUpMode) {
+                                    viewModel.signUpWithEmail(
+                                        name = fullName,
+                                        email = email,
+                                        password = password,
+                                        role = selectedRole,
+                                        grade = selectedGrade
+                                    ) {
+                                        Toast.makeText(context, "Hisob yaratildi!", Toast.LENGTH_SHORT).show()
+                                        onAuthSuccess()
+                                    }
+                                } else {
+                                    viewModel.signInWithEmail(email, password) {
+                                        Toast.makeText(context, "Xush kelibsiz!", Toast.LENGTH_SHORT).show()
+                                        onAuthSuccess()
+                                    }
+                                }
+                            },
+                            enabled = !uiState.isLoading,
+                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
+                            shape = RoundedCornerShape(14.dp),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(52.dp)
+                                .testTag("auth_email_submit_button")
+                        ) {
+                            if (uiState.isLoading) {
+                                CircularProgressIndicator(
+                                    modifier = Modifier.size(22.dp),
+                                    color = Color.White,
+                                    strokeWidth = 2.dp
+                                )
+                            } else {
                                 Text(
-                                    text = "Parolni unutdingizmi?",
-                                    color = Color(0xFFFDE68A),
-                                    fontSize = 12.sp
+                                    text = if (isSignUpMode) "Ro‘yxatdan o‘tish" else "Kirish",
+                                    fontSize = 15.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White
+                                )
+                            }
+                        }
+
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            HorizontalDivider(
+                                modifier = Modifier.weight(1f),
+                                color = Color.White.copy(alpha = 0.16f)
+                            )
+                            Text(
+                                text = "  yoki  ",
+                                color = Color.White.copy(alpha = 0.6f),
+                                fontSize = 12.sp
+                            )
+                            HorizontalDivider(
+                                modifier = Modifier.weight(1f),
+                                color = Color.White.copy(alpha = 0.16f)
+                            )
+                        }
+
+                        OutlinedButton(
+                            onClick = { launchGoogleSignIn() },
+                            enabled = !uiState.isLoading,
+                            shape = RoundedCornerShape(14.dp),
+                            border = BorderStroke(1.dp, Color.White.copy(alpha = 0.28f)),
+                            colors = ButtonDefaults.outlinedButtonColors(
+                                containerColor = Color.White,
+                                contentColor = Color(0xFF111827)
+                            ),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(52.dp)
+                                .testTag("auth_google_signin_button")
+                        ) {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Surface(
+                                    shape = CircleShape,
+                                    color = BrandPurple.copy(alpha = 0.12f),
+                                    modifier = Modifier.size(26.dp)
+                                ) {
+                                    Box(contentAlignment = Alignment.Center) {
+                                        Icon(
+                                            Icons.Default.AccountCircle,
+                                            contentDescription = null,
+                                            tint = BrandPurple,
+                                            modifier = Modifier.size(18.dp)
+                                        )
+                                    }
+                                }
+                                Spacer(Modifier.width(10.dp))
+                                Text(
+                                    text = "Google orqali kirish",
+                                    fontSize = 15.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White
                                 )
                             }
                         }
                     }
-
-                    Button(
-                        onClick = {
-                            if (isSignUpMode) {
-                                viewModel.signUpWithEmail(
-                                    name = fullName,
-                                    email = email,
-                                    password = password,
-                                    role = selectedRole,
-                                    grade = selectedGrade
-                                ) {
-                                    Toast.makeText(context, "Hisob yaratildi!", Toast.LENGTH_SHORT).show()
-                                    onAuthSuccess()
-                                }
-                            } else {
-                                viewModel.signInWithEmail(email, password) {
-                                    Toast.makeText(context, "Xush kelibsiz!", Toast.LENGTH_SHORT).show()
-                                    onAuthSuccess()
-                                }
-                            }
-                        },
-                        enabled = !uiState.isLoading,
-                        colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
-                        shape = RoundedCornerShape(14.dp),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(52.dp)
-                            .testTag("auth_email_submit_button")
-                    ) {
-                        if (uiState.isLoading) {
-                            CircularProgressIndicator(
-                                modifier = Modifier.size(22.dp),
-                                color = Color.White,
-                                strokeWidth = 2.dp
-                            )
-                        } else {
-                            Text(
-                                text = if (isSignUpMode) "Ro‘yxatdan o‘tish" else "Kirish",
-                                fontSize = 15.sp,
-                                fontWeight = FontWeight.Bold,
-                                color = Color.White
-                            )
-                        }
-                    }
-
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        HorizontalDivider(
-                            modifier = Modifier.weight(1f),
-                            color = Color.White.copy(alpha = 0.16f)
-                        )
-                        Text(
-                            text = "  yoki  ",
-                            color = Color.White.copy(alpha = 0.6f),
-                            fontSize = 12.sp
-                        )
-                        HorizontalDivider(
-                            modifier = Modifier.weight(1f),
-                            color = Color.White.copy(alpha = 0.16f)
-                        )
-                    }
-
-                    OutlinedButton(
-                        onClick = { launchGoogleSignIn() },
-                        enabled = !uiState.isLoading,
-                        shape = RoundedCornerShape(14.dp),
-                        border = BorderStroke(1.dp, Color.White.copy(alpha = 0.28f)),
-                        colors = ButtonDefaults.outlinedButtonColors(
-                            containerColor = Color.White,
-                            contentColor = Color(0xFF111827)
-                        ),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(52.dp)
-                            .testTag("auth_google_signin_button")
-                    ) {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Surface(
-                                shape = CircleShape,
-                                color = BrandPurple.copy(alpha = 0.12f),
-                                modifier = Modifier.size(26.dp)
-                            ) {
-                                Box(contentAlignment = Alignment.Center) {
-                                    Icon(
-                                        Icons.Default.AccountCircle,
-                                        contentDescription = null,
-                                        tint = BrandPurple,
-                                        modifier = Modifier.size(18.dp)
-                                    )
-                                }
-                            }
-                            Spacer(Modifier.width(10.dp))
-                            Text(
-                                text = "Google orqali kirish",
-                                fontSize = 15.sp,
-                                fontWeight = FontWeight.Bold,
-                                color = Color(0xFF111827)
-                            )
-                        }
-                    }
-
-                    OutlinedButton(
-                        onClick = {
-                            viewModel.enterTestMode {
-                                Toast.makeText(context, "Test rejimi faollashdi", Toast.LENGTH_SHORT).show()
-                                onAuthSuccess()
-                            }
-                        },
-                        enabled = !uiState.isLoading,
-                        shape = RoundedCornerShape(14.dp),
-                        border = BorderStroke(1.dp, Color(0xFFFBBF24).copy(alpha = 0.55f)),
-                        colors = ButtonDefaults.outlinedButtonColors(
-                            containerColor = Color(0xFFFBBF24).copy(alpha = 0.14f),
-                            contentColor = Color(0xFFFDE68A)
-                        ),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(52.dp)
-                            .testTag("auth_test_mode_button")
-                    ) {
-                        Icon(
-                            Icons.Default.Explore,
-                            contentDescription = null,
-                            tint = Color(0xFFFDE68A),
-                            modifier = Modifier.size(19.dp)
-                        )
-                        Spacer(Modifier.width(8.dp))
-                        Text(
-                            text = "Test rejimida kirish",
-                            fontSize = 15.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = Color(0xFFFDE68A)
-                        )
-                    }
-                    Text(
-                        text = "Ro‘yxatdan o‘tmasdan darhol sinab ko‘rish (progress qurilmada saqlanadi)",
-                        color = Color.White.copy(alpha = 0.65f),
-                        fontSize = 11.sp,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier.fillMaxWidth()
-                    )
                 }
             }
 

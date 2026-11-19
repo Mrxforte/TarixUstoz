@@ -205,19 +205,53 @@ class AuthViewModel @Inject constructor(
 
     private fun mapFirebaseAuthError(error: Throwable?): String {
         val msg = error?.message.orEmpty()
+        val causeMsg = error?.cause?.message.orEmpty()
+        val combined = "$msg $causeMsg"
         return when {
-            msg.contains("password is invalid", ignoreCase = true) ||
-                msg.contains("INVALID_LOGIN_CREDENTIALS", ignoreCase = true) ->
-                "Email yoki parol noto‘g‘ri. Qaytadan tekshiring."
-            msg.contains("no user record", ignoreCase = true) ->
-                "Bu email bilan hisob topilmadi. Ro‘yxatdan o‘ting."
-            msg.contains("already in use", ignoreCase = true) ->
-                "Bu email manzili allaqachon ro‘yxatdan o‘tgan."
-            msg.contains("badly formatted", ignoreCase = true) ->
-                "Email manzili formati noto‘g‘ri."
-            msg.contains("network", ignoreCase = true) ->
-                "Internet aloqasini tekshiring va qaytadan urinib ko‘ring."
-            else -> msg.ifBlank { "Tizimga kirishda xatolik yuz berdi." }
+            combined.contains("user-not-found", ignoreCase = true) ||
+                combined.contains("no user record", ignoreCase = true) ||
+                combined.contains("USER_NOT_FOUND", ignoreCase = true) ->
+                "Ushbu email manzili bilan foydalanuvchi topilmadi."
+
+            combined.contains("wrong-password", ignoreCase = true) ||
+                combined.contains("INVALID_LOGIN_CREDENTIALS", ignoreCase = true) ||
+                combined.contains("INVALID_PASSWORD", ignoreCase = true) ->
+                "Kiritilgan parol noto‘g‘ri. Qaytadan tekshirib ko‘ring."
+
+            combined.contains("invalid-credential", ignoreCase = true) ||
+                combined.contains("password is invalid", ignoreCase = true) ->
+                "Email manzil yoki parol noto‘g‘ri kiritildi."
+
+            combined.contains("email-already-in-use", ignoreCase = true) ||
+                combined.contains("already in use", ignoreCase = true) ||
+                combined.contains("EMAIL_EXISTS", ignoreCase = true) ->
+                "Ushbu email manzili allaqachon ro‘yxatdan o‘tgan."
+
+            combined.contains("invalid-email", ignoreCase = true) ||
+                combined.contains("badly formatted", ignoreCase = true) ||
+                combined.contains("INVALID_EMAIL", ignoreCase = true) ->
+                "Email manzili formati noto‘g‘ri kiritildi (masalan: foydalanuvchi@gmail.com)."
+
+            combined.contains("weak-password", ignoreCase = true) ||
+                combined.contains("WEAK_PASSWORD", ignoreCase = true) ->
+                "Parol juda oddiy. Kamida 6 ta belgi yoki harflar aralashmasidan foydalaning."
+
+            combined.contains("too-many-requests", ignoreCase = true) ||
+                combined.contains("TOO_MANY_ATTEMPTS", ignoreCase = true) ->
+                "Juda ko‘p muvaffaqiyatsiz urinish bo‘ldi. Biroz kutib, qaytadan urining."
+
+            combined.contains("user-disabled", ignoreCase = true) ||
+                combined.contains("USER_DISABLED", ignoreCase = true) ->
+                "Ushbu hisob vaqtincha muzlatilgan. Qo‘llab-quvvatlash xizmatiga murojaat qiling."
+
+            combined.contains("network", ignoreCase = true) ||
+                combined.contains("NETWORK_ERROR", ignoreCase = true) ->
+                "Internet aloqasi mavjud emas. Internetni tekshirib, qayta urining."
+
+            combined.contains("app-check", ignoreCase = true) ->
+                "Xavfsizlik tekshiruvida xatolik yuz berdi. Qaytadan urining."
+
+            else -> msg.ifBlank { "Tizimda kutilmagan xatolik yuz berdi. Qayta urinib ko‘ring." }
         }
     }
 }
