@@ -33,6 +33,7 @@ import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.*
+import com.tarixustoz.app.presentation.common.components.ShimmerListItem
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -572,33 +573,39 @@ fun TicketListScreen(
                     }
 
                     // Ticket Cards List
-                    itemsIndexed(state.tickets, key = { _, ticket -> ticket.index }) { _, ticket ->
-                        TicketCardItem(
-                            ticket = ticket,
-                            timerMinutes = state.timerMinutes,
-                            onToggleFavorite = {
-                                if (ticket.isUnlocked) {
-                                    viewModel.toggleTicketFavorite(
-                                        categoryKey = categoryKey,
+                    if (state.isLoading && state.tickets.isEmpty()) {
+                        items(6) {
+                            ShimmerListItem()
+                        }
+                    } else {
+                        itemsIndexed(state.tickets, key = { _, ticket -> ticket.index }) { _, ticket ->
+                            TicketCardItem(
+                                ticket = ticket,
+                                timerMinutes = state.timerMinutes,
+                                onToggleFavorite = {
+                                    if (ticket.isUnlocked) {
+                                        viewModel.toggleTicketFavorite(
+                                            categoryKey = categoryKey,
+                                            ticketIndex = ticket.index,
+                                            categoryTitle = categoryTitle.ifBlank { "Test Biletlari" },
+                                            grade = selectedGrade
+                                        )
+                                    }
+                                },
+                                onStart = {
+                                    val isRetry = ticket.isPassed
+                                    processTicketStart(
                                         ticketIndex = ticket.index,
-                                        categoryTitle = categoryTitle.ifBlank { "Test Biletlari" },
-                                        grade = selectedGrade
+                                        isRetry = isRetry,
+                                        isUnlocked = ticket.isUnlocked,
+                                        isPassed = ticket.isPassed
                                     )
                                 }
-                            },
-                            onStart = {
-                                val isRetry = ticket.isPassed
-                                processTicketStart(
-                                    ticketIndex = ticket.index,
-                                    isRetry = isRetry,
-                                    isUnlocked = ticket.isUnlocked,
-                                    isPassed = ticket.isPassed
-                                )
-                            }
-                        )
+                            )
+                        }
                     }
 
-                    item { Spacer(Modifier.height(96.dp)) }
+                    item { Spacer(Modifier.height(24.dp)) }
                 }
             }
 

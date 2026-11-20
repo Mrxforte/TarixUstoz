@@ -32,6 +32,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.domain.model.Topic
 import com.tarixustoz.app.domain.model.gradeId
 import com.tarixustoz.app.presentation.textbooks.TextbooksViewModel
+import com.tarixustoz.app.presentation.common.components.ShimmerTestSectionRow
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import com.tarixustoz.app.presentation.common.components.TestSectionRow
 
@@ -72,7 +73,7 @@ fun TestsScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets.safeDrawing,
+        contentWindowInsets = WindowInsets.safeDrawing.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top),
         topBar = {
             TopAppBar(
                 title = {
@@ -113,16 +114,16 @@ fun TestsScreen(
                 .padding(innerPadding)
         ) {
             LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = 16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+                contentPadding = PaddingValues(bottom = 24.dp)
             ) {
                 item { Spacer(Modifier.height(4.dp)) }
 
                 // Grade Filter Chips
                 item {
                     LazyRow(
+                        contentPadding = PaddingValues(horizontal = 16.dp),
                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                         modifier = Modifier.padding(vertical = 4.dp)
                     ) {
@@ -152,99 +153,113 @@ fun TestsScreen(
 
                 // Xatolar Ustida Ishlash (Mistakes Card)
                 item {
-                    Surface(
-                        shape = RoundedCornerShape(18.dp),
-                        color = Color(0xFFFEF2F2),
-                        border = BorderStroke(1.dp, Color(0xFFFECACA)),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable { onNavigateToMistakes() }
-                            .testTag("tests_mistakes_card")
-                    ) {
-                        Row(
-                            modifier = Modifier.padding(16.dp),
-                            verticalAlignment = Alignment.CenterVertically
+                    Box(modifier = Modifier.padding(horizontal = 16.dp)) {
+                        Surface(
+                            shape = RoundedCornerShape(18.dp),
+                            color = Color(0xFFFEF2F2),
+                            border = BorderStroke(1.dp, Color(0xFFFECACA)),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable { onNavigateToMistakes() }
+                                .testTag("tests_mistakes_card")
                         ) {
-                            Surface(
-                                shape = CircleShape,
-                                color = Color(0xFFEF4444),
-                                modifier = Modifier.size(46.dp)
+                            Row(
+                                modifier = Modifier.padding(16.dp),
+                                verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Box(contentAlignment = Alignment.Center) {
-                                    Icon(
-                                        Icons.Default.Warning,
-                                        contentDescription = null,
-                                        tint = Color.White,
-                                        modifier = Modifier.size(24.dp)
-                                    )
-                                }
-                            }
-                            Spacer(Modifier.width(14.dp))
-                            Column(modifier = Modifier.weight(1f)) {
-                                Row(verticalAlignment = Alignment.CenterVertically) {
-                                    Text(
-                                        text = "Bilmagan savollarim",
-                                        style = MaterialTheme.typography.titleSmall,
-                                        fontWeight = FontWeight.Bold,
-                                        color = Color(0xFF991B1B)
-                                    )
-                                    Spacer(Modifier.width(6.dp))
-                                    Badge(containerColor = Color(0xFFEF4444), contentColor = Color.White) {
-                                        Text("Xatolar")
+                                Surface(
+                                    shape = CircleShape,
+                                    color = Color(0xFFEF4444),
+                                    modifier = Modifier.size(46.dp)
+                                ) {
+                                    Box(contentAlignment = Alignment.Center) {
+                                        Icon(
+                                            Icons.Default.Warning,
+                                            contentDescription = null,
+                                            tint = Color.White,
+                                            modifier = Modifier.size(24.dp)
+                                        )
                                     }
                                 }
-                                Spacer(Modifier.height(2.dp))
-                                Text(
-                                    text = "Xatolaringiz ustida ishlab, bilimlarni mustahkamlang",
-                                    style = MaterialTheme.typography.bodySmall,
-                                    color = Color(0xFFB91C1C)
+                                Spacer(Modifier.width(14.dp))
+                                Column(modifier = Modifier.weight(1f)) {
+                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                        Text(
+                                            text = "Bilmagan savollarim",
+                                            style = MaterialTheme.typography.titleSmall,
+                                            fontWeight = FontWeight.Bold,
+                                            color = Color(0xFF991B1B)
+                                        )
+                                        Spacer(Modifier.width(6.dp))
+                                        Badge(containerColor = Color(0xFFEF4444), contentColor = Color.White) {
+                                            Text("Xatolar")
+                                        }
+                                    }
+                                    Spacer(Modifier.height(2.dp))
+                                    Text(
+                                        text = "Xatolaringiz ustida ishlab, bilimlarni mustahkamlang",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = Color(0xFFB91C1C)
+                                    )
+                                }
+                                Icon(
+                                    Icons.AutoMirrored.Filled.ArrowForward,
+                                    contentDescription = null,
+                                    tint = Color(0xFFEF4444),
+                                    modifier = Modifier.size(20.dp)
                                 )
                             }
-                            Icon(
-                                Icons.AutoMirrored.Filled.ArrowForward,
-                                contentDescription = null,
-                                tint = Color(0xFFEF4444),
-                                modifier = Modifier.size(20.dp)
-                            )
                         }
                     }
                 }
 
-                // Tarixiy Yo'nalishlar Section (Cards like Image #2)
+                // Tarixiy Yo'nalishlar Section
                 item {
-                    TestSectionRow(
-                        sectionTitle = "Tarixiy yo'nalishli testlar",
-                        items = testsDirectionCards,
-                        onSeeAllClick = { onNavigateToVerticalCards("Tarixiy Yo'nalishlar", "directions") },
-                        onCardClick = { code, _, cardTitle -> onNavigateToTickets(code, cardTitle, selectedGrade) }
-                    )
+                    if (testsDirectionCards.isEmpty()) {
+                        ShimmerTestSectionRow(sectionTitle = "Tarixiy yo'nalishli testlar")
+                    } else {
+                        TestSectionRow(
+                            sectionTitle = "Tarixiy yo'nalishli testlar",
+                            items = testsDirectionCards,
+                            onSeeAllClick = { onNavigateToVerticalCards("Tarixiy Yo'nalishlar", "directions") },
+                            onCardClick = { code, _, cardTitle -> onNavigateToTickets(code, cardTitle, selectedGrade) }
+                        )
+                    }
                 }
 
                 // Mavzulashgan Testlar Section
                 item {
-                    TestSectionRow(
-                        sectionTitle = "Mavzulashgan testlar",
-                        items = testsTopicCards,
-                        onSeeAllClick = { onNavigateToVerticalCards("Mavzulashgan Testlar", "topics") },
-                        onCardClick = { topicId, _, topicTitle ->
-                            onNavigateToTickets(topicId, topicTitle, selectedGrade)
-                        }
-                    )
+                    if (testsTopicCards.isEmpty()) {
+                        ShimmerTestSectionRow(sectionTitle = "Mavzulashgan testlar")
+                    } else {
+                        TestSectionRow(
+                            sectionTitle = "Mavzulashgan testlar",
+                            items = testsTopicCards,
+                            onSeeAllClick = { onNavigateToVerticalCards("Mavzulashgan Testlar", "topics") },
+                            onCardClick = { topicId, _, topicTitle ->
+                                onNavigateToTickets(topicId, topicTitle, selectedGrade)
+                            }
+                        )
+                    }
                 }
 
                 // Sinf Testlari Section
                 item {
-                    TestSectionRow(
-                        sectionTitle = "Sinf testlari (6-11 sinflar)",
-                        items = testsGradeCards,
-                        onSeeAllClick = { onNavigateToVerticalCards("Sinf Testlari", "grades") },
-                        onCardClick = { gradeKey, _, gradeTitle ->
-                            onNavigateToTickets(gradeKey, gradeTitle, selectedGrade)
-                        }
-                    )
+                    if (testsGradeCards.isEmpty()) {
+                        ShimmerTestSectionRow(sectionTitle = "Sinf testlari (6-11 sinflar)")
+                    } else {
+                        TestSectionRow(
+                            sectionTitle = "Sinf testlari (6-11 sinflar)",
+                            items = testsGradeCards,
+                            onSeeAllClick = { onNavigateToVerticalCards("Sinf Testlari", "grades") },
+                            onCardClick = { gradeKey, _, gradeTitle ->
+                                onNavigateToTickets(gradeKey, gradeTitle, selectedGrade)
+                            }
+                        )
+                    }
                 }
 
-                item { Spacer(Modifier.height(16.dp)) }
+                item { Spacer(Modifier.height(8.dp)) }
             }
         }
     }

@@ -14,7 +14,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.bookstore"
+        applicationId = "com.tarixustoz.app"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

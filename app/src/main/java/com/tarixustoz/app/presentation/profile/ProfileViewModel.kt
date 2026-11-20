@@ -163,6 +163,9 @@ class ProfileViewModel @Inject constructor(
     val selectedGrade: StateFlow<Int> = preferencesRepository.selectedGrade
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 7)
 
+    val userRole: StateFlow<String> = preferencesRepository.userRole
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "O'quvchi")
+
     val levelTitle: StateFlow<String> = preferencesRepository.userXp.map { xp ->
         when {
             xp < 100 -> "1-daraja • Boshlang'ich"

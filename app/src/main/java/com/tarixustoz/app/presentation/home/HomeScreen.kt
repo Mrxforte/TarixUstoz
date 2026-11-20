@@ -57,6 +57,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.ads.AdMobManager
+import com.tarixustoz.app.presentation.common.components.ShimmerDailyQuestionCard
+import com.tarixustoz.app.presentation.common.components.ShimmerTestSectionRow
 import com.tarixustoz.app.domain.model.Topic
 import com.tarixustoz.app.domain.model.gradeId
 import com.tarixustoz.app.presentation.common.components.TestSectionRow
@@ -263,26 +265,27 @@ fun HomeScreen(
                 .padding(innerPadding)
         ) {
             LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = 16.dp),
+                modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.spacedBy(16.dp),
-                contentPadding = PaddingValues(bottom = 90.dp)
+                contentPadding = PaddingValues(bottom = 80.dp)
             ) {
                 item { Spacer(Modifier.height(4.dp)) }
 
             // 2. Hero Carousel: Har doim 1-slaydda AdMob reklama (~350x250dp, ochiq joysiz) + 20 ta HD tarixiy slayd (Qadimgi dunyodan bugungi kungacha)
             item {
-                HeroAdAndHistoryCarousel()
+                Box(modifier = Modifier.padding(horizontal = 16.dp)) {
+                    HeroAdAndHistoryCarousel()
+                }
             }
 
             // 3. Kun savoli (Daily Question)
             item {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
+                Box(modifier = Modifier.padding(horizontal = 16.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
                     Column {
                         Text(
                             text = "Kun savoli",
@@ -352,6 +355,7 @@ fun HomeScreen(
                     }
                 }
             }
+        }
 
             // Kun savoli Card
             item {
@@ -632,41 +636,101 @@ fun HomeScreen(
                 }
             }
 
-            // 4. Tarixiy Yo'nalishlar Horizontal Row (Cards like Image #2)
+            // 4. Tarixiy Yo'nalishlar Horizontal Row
             item {
-                TestSectionRow(
-                    sectionTitle = "Tarixiy yo'nalishli testlar",
-                    items = homeDirectionCards,
-                    onSeeAllClick = { onNavigateToVerticalCards("Tarixiy Yo'nalishlar", "directions") },
-                    onCardClick = { code, _, title -> onNavigateToTickets(code, title) }
-                )
+                if (homeDirectionCards.isEmpty()) {
+                    ShimmerTestSectionRow(sectionTitle = "Tarixiy yo'nalishli testlar")
+                } else {
+                    TestSectionRow(
+                        sectionTitle = "Tarixiy yo'nalishli testlar",
+                        items = homeDirectionCards,
+                        onSeeAllClick = { onNavigateToVerticalCards("Tarixiy Yo'nalishlar", "directions") },
+                        onCardClick = { code, _, title -> onNavigateToTickets(code, title) }
+                    )
+                }
             }
 
-            // 5. Mavzulashgan testlar Horizontal Row (Cards like Image #2)
+            // 5. Mavzulashgan testlar Horizontal Row
             item {
-                TestSectionRow(
-                    sectionTitle = "Mavzulashgan testlar",
-                    items = homeTopicCards,
-                    onSeeAllClick = { onNavigateToVerticalCards("Mavzulashgan Testlar", "topics") },
-                    onCardClick = { topicId, _, title ->
-                        onNavigateToTickets(topicId, title)
+                if (homeTopicCards.isEmpty()) {
+                    ShimmerTestSectionRow(sectionTitle = "Mavzulashgan testlar")
+                } else {
+                    TestSectionRow(
+                        sectionTitle = "Mavzulashgan testlar",
+                        items = homeTopicCards,
+                        onSeeAllClick = { onNavigateToVerticalCards("Mavzulashgan Testlar", "topics") },
+                        onCardClick = { topicId, _, title ->
+                            onNavigateToTickets(topicId, title)
+                        }
+                    )
+                }
+            }
+
+            // 6. Sinf testlari Horizontal Row
+            item {
+                if (homeGradeCards.isEmpty()) {
+                    ShimmerTestSectionRow(sectionTitle = "Sinf testlari (6-11 sinflar)")
+                } else {
+                    TestSectionRow(
+                        sectionTitle = "Sinf testlari (6-11 sinflar)",
+                        items = homeGradeCards,
+                        onSeeAllClick = { onNavigateToVerticalCards("Sinf Testlari", "grades") },
+                        onCardClick = { gradeKey, _, gradeTitle ->
+                            onNavigateToTickets(gradeKey, gradeTitle)
+                        }
+                    )
+                }
+            }
+
+            // 7. Home screen end footer (Chiroyli yakunlovchi qism)
+            item {
+                Surface(
+                    shape = RoundedCornerShape(20.dp),
+                    color = MaterialTheme.colorScheme.surface,
+                    border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp)
+                        .testTag("home_footer_card")
+                ) {
+                    Row(
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(14.dp)
+                    ) {
+                        Surface(
+                            shape = CircleShape,
+                            color = BrandPurple.copy(alpha = 0.12f),
+                            modifier = Modifier.size(44.dp)
+                        ) {
+                            Box(contentAlignment = Alignment.Center) {
+                                Icon(
+                                    imageVector = Icons.Default.AutoAwesome,
+                                    contentDescription = null,
+                                    tint = BrandPurple,
+                                    modifier = Modifier.size(22.dp)
+                                )
+                            }
+                        }
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                text = "Barcha testlar va bilimlar tayyor!",
+                                fontSize = 14.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                            Text(
+                                text = "Har kuni bilimingizni sinab, yangi yutuqlarga erishing ✨",
+                                fontSize = 12.sp,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                lineHeight = 16.sp
+                            )
+                        }
                     }
-                )
+                }
             }
 
-            // 6. Sinf testlari Horizontal Row (Cards like Image #2)
-            item {
-                TestSectionRow(
-                    sectionTitle = "Sinf testlari (6-11 sinflar)",
-                    items = homeGradeCards,
-                    onSeeAllClick = { onNavigateToVerticalCards("Sinf Testlari", "grades") },
-                    onCardClick = { gradeKey, _, gradeTitle ->
-                        onNavigateToTickets(gradeKey, gradeTitle)
-                    }
-                )
-            }
-
-            item { Spacer(Modifier.height(16.dp)) }
+            item { Spacer(Modifier.height(8.dp)) }
             }
         }
     }

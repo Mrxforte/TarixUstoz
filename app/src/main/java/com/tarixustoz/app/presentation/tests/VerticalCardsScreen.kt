@@ -33,6 +33,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.domain.model.Topic
 import com.tarixustoz.app.domain.model.gradeId
 import com.tarixustoz.app.presentation.common.components.HistoryTestCard
+import com.tarixustoz.app.presentation.common.components.ShimmerHistoryTestCard
 import com.tarixustoz.app.presentation.common.components.backgroundResForBook
 import com.tarixustoz.app.presentation.common.components.backgroundResForDirection
 import com.tarixustoz.app.presentation.common.components.backgroundResForTopic
@@ -199,7 +200,7 @@ fun VerticalCardsScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets.safeDrawing,
+        contentWindowInsets = WindowInsets.safeDrawing.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top),
         topBar = {
             TopAppBar(
                 title = {
@@ -318,21 +319,31 @@ fun VerticalCardsScreen(
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                items(filteredItems, key = { it.id }) { item ->
-                    HistoryTestCard(
-                        title = item.title,
-                        subtitle = item.subtitle,
-                        totalTickets = item.totalTickets,
-                        passedTickets = item.passedTickets,
-                        icon = item.icon,
-                        gradientColors = item.gradientColors,
-                        accentColor = item.accentColor,
-                        backgroundImageRes = item.backgroundImageRes,
-                        onCardClick = { onCardClick(item.id, item.categoryType, item.title) },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(210.dp)
-                    )
+                if (filteredItems.isEmpty()) {
+                    items(4) {
+                        ShimmerHistoryTestCard(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(210.dp)
+                        )
+                    }
+                } else {
+                    items(filteredItems, key = { it.id }) { item ->
+                        HistoryTestCard(
+                            title = item.title,
+                            subtitle = item.subtitle,
+                            totalTickets = item.totalTickets,
+                            passedTickets = item.passedTickets,
+                            icon = item.icon,
+                            gradientColors = item.gradientColors,
+                            accentColor = item.accentColor,
+                            backgroundImageRes = item.backgroundImageRes,
+                            onCardClick = { onCardClick(item.id, item.categoryType, item.title) },
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(210.dp)
+                        )
+                    }
                 }
             }
         }

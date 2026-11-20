@@ -40,6 +40,7 @@ import com.tarixustoz.app.data.remote.DownloadState
 import com.tarixustoz.app.data.remote.MediaUrls
 import com.tarixustoz.app.data.remote.PdfDownloader
 import com.tarixustoz.app.domain.model.Textbook
+import com.tarixustoz.app.presentation.common.components.ShimmerHistoryTestCard
 import com.tarixustoz.app.presentation.common.components.backgroundResForBook
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -73,7 +74,7 @@ fun TextbooksScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets.safeDrawing,
+        contentWindowInsets = WindowInsets.safeDrawing.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top),
         topBar = {
             TopAppBar(
                 title = {
@@ -181,7 +182,7 @@ fun TextbooksScreen(
                         horizontalArrangement = Arrangement.spacedBy(12.dp),
                         verticalArrangement = Arrangement.spacedBy(12.dp),
                         modifier = Modifier.weight(1f),
-                        contentPadding = PaddingValues(bottom = 90.dp)
+                        contentPadding = PaddingValues(bottom = 24.dp)
                     ) {
                         items(sortedTextbooks) { textbook ->
                             val fallbackPdfUrl = MediaUrls.textbook(textbook.gradeId, textbook.subjectId)

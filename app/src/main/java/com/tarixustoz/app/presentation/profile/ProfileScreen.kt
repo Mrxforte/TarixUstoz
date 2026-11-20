@@ -50,14 +50,12 @@ fun ProfileScreen(
 ) {
     val themeMode by themeViewModel.themeMode.collectAsState()
     val isGuest by profileViewModel.isGuest.collectAsState()
-    val syncStatus by profileViewModel.syncStatus.collectAsState()
     val displayName by profileViewModel.displayName.collectAsState()
-    val userBio by profileViewModel.userBio.collectAsState()
     val userAvatar by profileViewModel.userAvatar.collectAsState()
     val userXp by profileViewModel.userXp.collectAsState()
     val userStreak by profileViewModel.userStreak.collectAsState()
     val selectedGrade by profileViewModel.selectedGrade.collectAsState()
-    val levelTitle by profileViewModel.levelTitle.collectAsState()
+    val userRole by profileViewModel.userRole.collectAsState()
 
     val totalSolvedCount by profileViewModel.totalSolvedCount.collectAsState()
     val accuracyPercentage by profileViewModel.accuracyPercentage.collectAsState()
@@ -79,7 +77,7 @@ fun ProfileScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets.safeDrawing,
+        contentWindowInsets = WindowInsets.safeDrawing.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top),
         topBar = {
             TopAppBar(
                 title = {
@@ -169,6 +167,15 @@ fun ProfileScreen(
 
                     Spacer(Modifier.width(16.dp))
 
+                    val userRoleText = remember(selectedGrade, userRole) {
+                        when (userRole) {
+                            "O'qituvchi" -> "O'qituvchi"
+                            "Abituriyent" -> "Abituriyent"
+                            "Talaba" -> "Talaba"
+                            else -> "$selectedGrade-sinf"
+                        }
+                    }
+
                     Column(
                         modifier = Modifier
                             .weight(1f)
@@ -188,39 +195,13 @@ fun ProfileScreen(
                                 modifier = Modifier.size(15.dp)
                             )
                         }
+                        Spacer(Modifier.height(4.dp))
                         Text(
-                            text = "$selectedGrade-sinf • $userBio",
+                            text = userRoleText,
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             maxLines = 1
                         )
-                        Spacer(Modifier.height(6.dp))
-                        Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                            Surface(
-                                shape = RoundedCornerShape(6.dp),
-                                color = Color(0xFFF59E0B).copy(alpha = 0.16f)
-                            ) {
-                                Text(
-                                    text = levelTitle,
-                                    fontSize = 11.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    color = Color(0xFFF59E0B),
-                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                                )
-                            }
-                            Surface(
-                                shape = RoundedCornerShape(6.dp),
-                                color = BrandPurple.copy(alpha = 0.12f)
-                            ) {
-                                Text(
-                                    text = "Profilni tahrirlash",
-                                    fontSize = 11.sp,
-                                    fontWeight = FontWeight.SemiBold,
-                                    color = BrandPurple,
-                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                                )
-                            }
-                        }
                     }
 
                     Icon(
@@ -493,240 +474,6 @@ fun ProfileScreen(
                 }
             }
 
-            // Oflayn kesh va WorkManager sinxronizatsiyasi
-            Text(
-                text = "Oflayn kesh va sinxronizatsiya",
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold
-            )
-
-            Surface(
-                shape = RoundedCornerShape(18.dp),
-                color = MaterialTheme.colorScheme.surface,
-                border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Column(
-                    modifier = Modifier.padding(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Surface(
-                            shape = CircleShape,
-                            color = BrandPurple.copy(alpha = 0.12f),
-                            modifier = Modifier.size(40.dp)
-                        ) {
-                            Box(contentAlignment = Alignment.Center) {
-                                Icon(
-                                    imageVector = Icons.Default.CloudDone,
-                                    contentDescription = null,
-                                    tint = BrandPurple,
-                                    modifier = Modifier.size(20.dp)
-                                )
-                            }
-                        }
-                        Spacer(Modifier.width(12.dp))
-                        Column(modifier = Modifier.weight(1f)) {
-                            Text(
-                                text = "${syncStatus.cachedQuestionsCount} ta savol va fakt oflayn saqlangan",
-                                style = MaterialTheme.typography.titleSmall,
-                                fontWeight = FontWeight.SemiBold
-                            )
-                            val lastSyncLabel = remember(syncStatus.lastSyncedAtMs) {
-                                if (syncStatus.lastSyncedAtMs <= 0L) {
-                                    "Onlayn bo‘lganda avtomatik yangilanadi"
-                                } else {
-                                    val fmt = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
-                                    "Oxirgi sinxronlash: ${fmt.format(Date(syncStatus.lastSyncedAtMs))}"
-                                }
-                            }
-                            Text(
-                                text = lastSyncLabel,
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                            if (syncStatus.lastSyncMode.isNotBlank()) {
-                                val skippedSuffix = if (syncStatus.lastSkippedCount > 0) {
-                                    " • ${syncStatus.lastSkippedCount} ta keshdan saqlandi"
-                                } else ""
-                                Text(
-                                    text = "${syncStatus.lastSyncMode}$skippedSuffix (v${syncStatus.cacheEpoch})",
-                                    fontSize = 11.sp,
-                                    fontWeight = FontWeight.Medium,
-                                    color = BrandPurple
-                                )
-                            }
-                            if (syncStatus.pendingUploadsCount > 0) {
-                                Text(
-                                    text = "${syncStatus.pendingUploadsCount} ta natija bulutga yuklashni kutmoqda",
-                                    fontSize = 11.sp,
-                                    fontWeight = FontWeight.Medium,
-                                    color = Color(0xFFF59E0B)
-                                )
-                            }
-                        }
-                    }
-
-                    OutlinedButton(
-                        onClick = { profileViewModel.triggerManualSync() },
-                        enabled = !syncStatus.isSyncing,
-                        shape = RoundedCornerShape(14.dp),
-                        border = BorderStroke(1.dp, BrandPurple.copy(alpha = 0.45f)),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(48.dp)
-                            .testTag("profile_sync_now_btn")
-                    ) {
-                        if (syncStatus.isSyncing) {
-                            CircularProgressIndicator(
-                                modifier = Modifier.size(18.dp),
-                                color = BrandPurple,
-                                strokeWidth = 2.dp
-                            )
-                            Spacer(Modifier.width(8.dp))
-                            Text("Sinxronlanmoqda...", fontWeight = FontWeight.SemiBold, color = BrandPurple)
-                        } else {
-                            Icon(
-                                imageVector = Icons.Default.Sync,
-                                contentDescription = "Delta sinxronlashni boshlash",
-                                tint = BrandPurple,
-                                modifier = Modifier.size(18.dp)
-                            )
-                            Spacer(Modifier.width(8.dp))
-                            Text("Delta sinxronlash", fontWeight = FontWeight.SemiBold, color = BrandPurple)
-                        }
-                    }
-                }
-            }
-
-            // AdMob Status & Test Mode Verification Card
-            val adDiag by AdMobManager.diagnostics.collectAsState()
-            val adContext = LocalContext.current
-
-            Text(
-                text = "AdMob holati va test rejimi",
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold
-            )
-
-            Surface(
-                shape = RoundedCornerShape(18.dp),
-                color = MaterialTheme.colorScheme.surface,
-                border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .testTag("profile_admob_diagnostics_card")
-            ) {
-                Column(
-                    modifier = Modifier.padding(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Column(modifier = Modifier.weight(1f)) {
-                            Text(
-                                text = if (adDiag.isTestMode) "Test rejimi faol (Test Ad)" else "Jonli AdMob rejimi",
-                                style = MaterialTheme.typography.titleSmall,
-                                fontWeight = FontWeight.Bold
-                            )
-                            Text(
-                                text = adDiag.adapterStatusSummary,
-                                style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-
-                        Switch(
-                            checked = adDiag.isTestMode,
-                            onCheckedChange = { checked ->
-                                AdMobManager.setTestModeEnabled(
-                                    enabled = checked,
-                                    reason = if (checked) "Foydalanuvchi tomonidan test rejimiga o'tkazildi" else null
-                                )
-                                if (!checked) {
-                                    AdMobManager.probeLiveAdUnits(adContext)
-                                }
-                            },
-                            modifier = Modifier
-                                .minimumInteractiveComponentSize()
-                                .testTag("profile_admob_test_mode_switch")
-                        )
-                    }
-
-                    val probeBadgeColor = when (adDiag.liveProbeStatus) {
-                        AdProbeStatus.LIVE_ACTIVE -> Color(0xFF10B981)
-                        AdProbeStatus.LIVE_FAILED_USING_TEST -> Color(0xFFD97706)
-                        AdProbeStatus.TESTING_LIVE -> BrandPurple
-                        AdProbeStatus.IDLE -> Color(0xFF64748B)
-                    }
-                    val probeLabel = when (adDiag.liveProbeStatus) {
-                        AdProbeStatus.LIVE_ACTIVE -> "Jonli AdMob ishlayapti"
-                        AdProbeStatus.LIVE_FAILED_USING_TEST -> "Jonli reklama bermadi -> Test rejimida qoldirildi"
-                        AdProbeStatus.TESTING_LIVE -> "Jonli AdMob tekshirilmoqda..."
-                        AdProbeStatus.IDLE -> if (adDiag.isTestMode) "Google Test Ad Unitlar yoqilgan" else "Tekshirishga tayyor"
-                    }
-
-                    Surface(
-                        shape = RoundedCornerShape(10.dp),
-                        color = probeBadgeColor.copy(alpha = 0.12f),
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Column(
-                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
-                            verticalArrangement = Arrangement.spacedBy(2.dp)
-                        ) {
-                            Text(
-                                text = probeLabel,
-                                fontSize = 12.sp,
-                                fontWeight = FontWeight.SemiBold,
-                                color = probeBadgeColor
-                            )
-                            if (!adDiag.liveErrorSummary.isNullOrBlank()) {
-                                Text(
-                                    text = adDiag.liveErrorSummary!!,
-                                    fontSize = 11.sp,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
-                            Text(
-                                text = "Banner: ${adSlotLabel(adDiag.heroBannerState)} • Test ekran: ${adSlotLabel(adDiag.quizBannerState)}",
-                                fontSize = 11.sp,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                        }
-                    }
-
-                    // Inline Live/Test Banner Preview so user can verify AdMob rendering directly
-                    AdMobManager.BannerAdView(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .testTag("profile_admob_preview_banner")
-                    )
-
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        OutlinedButton(
-                            onClick = { AdMobManager.probeLiveAdUnits(adContext) },
-                            shape = RoundedCornerShape(12.dp),
-                            modifier = Modifier
-                                .weight(1f)
-                                .heightIn(min = 48.dp)
-                                .testTag("profile_admob_probe_btn")
-                        ) {
-                            Text("Jonli tekshirish", fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
-                        }
-                    }
-                }
-            }
-
             // Hisobdan chiqish (Log out)
             OutlinedButton(
                 onClick = {
@@ -757,7 +504,7 @@ fun ProfileScreen(
                 )
             }
 
-            Spacer(Modifier.height(100.dp))
+            Spacer(Modifier.height(24.dp))
         }
     }
 
@@ -1669,13 +1416,5 @@ private fun AlarmClockTimePickerDialog(
             }
         }
     }
-}
-
-private fun adSlotLabel(state: AdSlotLoadState): String = when (state) {
-    AdSlotLoadState.IDLE -> "Kutilmoqda"
-    AdSlotLoadState.LOADING -> "Yuklanmoqda"
-    AdSlotLoadState.LOADED_LIVE -> "Jonli ✓"
-    AdSlotLoadState.LOADED_TEST -> "Test ✓"
-    AdSlotLoadState.FAILED -> "Xato"
 }
 

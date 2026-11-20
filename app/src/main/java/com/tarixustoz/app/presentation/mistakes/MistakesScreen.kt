@@ -2,6 +2,10 @@ package com.tarixustoz.app.presentation.mistakes
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -22,6 +26,8 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
@@ -51,9 +57,24 @@ fun MistakesScreen(
     var showClearConfirmDialog by remember { mutableStateOf(false) }
     var selectedGridItem by remember { mutableStateOf<WrongQuestionUiModel?>(null) }
 
+    var isSearchExpanded by remember { mutableStateOf(false) }
+    var isFilterExpanded by remember { mutableStateOf(false) }
+
+    val focusRequester = remember { FocusRequester() }
+
+    val showSearch = isSearchExpanded || uiState.searchQuery.isNotEmpty()
+    val isFilterActive = uiState.selectedGradeFilter > 0 || uiState.sortOrder != MistakesSortOrder.NEWEST
+    val showFilter = isFilterExpanded || isFilterActive
+
+    LaunchedEffect(isSearchExpanded) {
+        if (isSearchExpanded) {
+            focusRequester.requestFocus()
+        }
+    }
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets.safeDrawing,
+        contentWindowInsets = WindowInsets.safeDrawing.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top),
         topBar = {
             TopAppBar(
                 title = {
@@ -71,6 +92,7 @@ fun MistakesScreen(
                     }
                 },
                 actions = {
+                    // 1. View Mode button (quadrilateral / grid view mode)
                     IconButton(
                         onClick = { viewModel.onToggleViewMode() },
                         modifier = Modifier.minimumInteractiveComponentSize()
@@ -81,6 +103,48 @@ fun MistakesScreen(
                             tint = BrandPurple
                         )
                     }
+
+                    // 2. Filter button
+                    IconButton(
+                        onClick = { isFilterExpanded = !isFilterExpanded },
+                        modifier = Modifier.minimumInteractiveComponentSize()
+                    ) {
+                        BadgedBox(
+                            badge = {
+                                if (isFilterActive && !isFilterExpanded) {
+                                    Badge(
+                                        containerColor = BrandPurple,
+                                        modifier = Modifier.size(6.dp)
+                                    )
+                                }
+                            }
+                        ) {
+                            Icon(
+                                Icons.Default.FilterList,
+                                contentDescription = "Filtrlash",
+                                tint = if (showFilter) BrandPurple else MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                    }
+
+                    // 3. Search button
+                    IconButton(
+                        onClick = {
+                            isSearchExpanded = !isSearchExpanded
+                            if (!isSearchExpanded && uiState.searchQuery.isNotEmpty()) {
+                                viewModel.onSearchQueryChange("")
+                            }
+                        },
+                        modifier = Modifier.minimumInteractiveComponentSize()
+                    ) {
+                        Icon(
+                            Icons.Default.Search,
+                            contentDescription = "Qidirish",
+                            tint = if (showSearch) BrandPurple else MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+
+                    // 4. Delete sweep button
                     if (uiState.totalCount > 0) {
                         IconButton(
                             onClick = { showClearConfirmDialog = true },
@@ -161,37 +225,49 @@ fun MistakesScreen(
             }
 
             // Search Bar
-            OutlinedTextField(
-                value = uiState.searchQuery,
-                onValueChange = { viewModel.onSearchQueryChange(it) },
-                placeholder = { Text("Savol matni yoki manba bo‘yicha qidirish...") },
-                leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
-                trailingIcon = {
-                    if (uiState.searchQuery.isNotEmpty()) {
-                        IconButton(onClick = { viewModel.onSearchQueryChange("") }) {
-                            Icon(Icons.Default.Clear, contentDescription = "Tozalash")
+            AnimatedVisibility(
+                visible = showSearch,
+                enter = fadeIn() + expandVertically(),
+                exit = fadeOut() + shrinkVertically()
+            ) {
+                OutlinedTextField(
+                    value = uiState.searchQuery,
+                    onValueChange = { viewModel.onSearchQueryChange(it) },
+                    placeholder = { Text("Savol matni yoki manba bo‘yicha qidirish...") },
+                    leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
+                    trailingIcon = {
+                        if (uiState.searchQuery.isNotEmpty()) {
+                            IconButton(onClick = { viewModel.onSearchQueryChange("") }) {
+                                Icon(Icons.Default.Clear, contentDescription = "Tozalash")
+                            }
                         }
-                    }
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 10.dp)
-                    .testTag("mistakes_search_input"),
-                shape = RoundedCornerShape(14.dp),
-                singleLine = true,
-                colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = BrandPurple,
-                    unfocusedBorderColor = MaterialTheme.colorScheme.outlineVariant
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 10.dp)
+                        .focusRequester(focusRequester)
+                        .testTag("mistakes_search_input"),
+                    shape = RoundedCornerShape(14.dp),
+                    singleLine = true,
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = BrandPurple,
+                        unfocusedBorderColor = MaterialTheme.colorScheme.outlineVariant
+                    )
                 )
-            )
+            }
 
             // Grade Filter Dropdown + Sort Dropdown Row
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 12.dp),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
+            AnimatedVisibility(
+                visible = showFilter,
+                enter = fadeIn() + expandVertically(),
+                exit = fadeOut() + shrinkVertically()
             ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 12.dp),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
                 var gradeMenuExpanded by remember { mutableStateOf(false) }
                 ExposedDropdownMenuBox(
                     expanded = gradeMenuExpanded,
@@ -321,6 +397,7 @@ fun MistakesScreen(
                         }
                     }
                 }
+            }
             }
 
             // Content List or Grid

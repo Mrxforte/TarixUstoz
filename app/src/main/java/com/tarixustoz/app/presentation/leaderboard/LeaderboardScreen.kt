@@ -39,6 +39,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.tarixustoz.app.presentation.common.components.ShimmerListItem
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -120,7 +121,7 @@ fun LeaderboardScreen(
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets.safeDrawing,
+        contentWindowInsets = WindowInsets.safeDrawing.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Top),
         topBar = {
             TopAppBar(
                 title = {
@@ -167,7 +168,7 @@ fun LeaderboardScreen(
                     .fillMaxSize()
                     .padding(horizontal = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp),
-                contentPadding = PaddingValues(bottom = 90.dp)
+                contentPadding = PaddingValues(bottom = 24.dp)
             ) {
                 // Modern Split View Segmented Switch
                 item {
@@ -436,7 +437,11 @@ fun LeaderboardScreen(
                         )
                     }
 
-                    if (users.isEmpty()) {
+                    if (!uiState.isLoaded && users.isEmpty()) {
+                        items(5) {
+                            ShimmerListItem()
+                        }
+                    } else if (users.isEmpty()) {
                         item {
                             Surface(
                                 shape = RoundedCornerShape(18.dp),

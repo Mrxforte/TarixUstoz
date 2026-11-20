@@ -394,7 +394,7 @@ fun TestAnalysisScreen(
                                     fontWeight = FontWeight.Bold
                                 )
                                 Text(
-                                    text = "UZEX birja uslubidagi bo‘lak-bo‘lak qirrali tahlil",
+                                    text = "Bo‘lak-bo‘lak qirrali tahlil diagrammasi",
                                     fontSize = 11.sp,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant
                                 )
@@ -404,7 +404,7 @@ fun TestAnalysisScreen(
                                 color = BrandPurple.copy(alpha = 0.1f)
                             ) {
                                 Text(
-                                    text = "UZEX STYLE",
+                                    text = "TAHLIL",
                                     fontSize = 10.sp,
                                     fontWeight = FontWeight.ExtraBold,
                                     color = BrandPurple,

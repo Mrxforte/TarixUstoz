@@ -1,18 +1,23 @@
 {
   "project_info": {
     "project_number": "633656768232",
-    "project_id": "bookstore-ef9b6",
-    "storage_bucket": "bookstore-ef9b6.firebasestorage.app"
+    "project_id": "tarixustoz-app",
+    "storage_bucket": "tarixustoz-app.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:633656768232:android:78453855ef076c7884bb5d",
         "android_client_info": {
-          "package_name": "com.example.bookstore"
+          "package_name": "com.tarixustoz.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "633656768232-1l70k2nmdsog03mhe4a0a5psk3u6h16r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCMQ0OVNrCrrSY1GoD7QuiMrel8haCSV6Q"
