@@ -7,8 +7,7 @@ from pathlib import Path
 from django.test import SimpleTestCase
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-FORBIDDEN_IN_DOMAIN = {"django", "rest_framework", "api", "catalog", "infrastructure", "interfaces"}
-FORBIDDEN_IN_APPLICATION = {"django", "rest_framework", "api", "catalog", "infrastructure", "interfaces"}
+OUTER_LAYERS = {"django", "rest_framework", "api", "catalog", "accounts", "presentation", "data", "infrastructure"}
 
 
 def _imported_roots(path: Path) -> set[str]:
@@ -32,7 +31,7 @@ class LayerDependencyTests(SimpleTestCase):
         self.assertEqual(violations, [], f"{package} qatlami tashqi qatlamlarga bog'lanmasligi kerak")
 
     def test_domain_layer_is_framework_free(self):
-        self._assert_clean("domain", FORBIDDEN_IN_DOMAIN)
+        self._assert_clean("domain", OUTER_LAYERS | {"application"})
 
     def test_application_layer_only_depends_on_domain(self):
-        self._assert_clean("application", FORBIDDEN_IN_APPLICATION)
+        self._assert_clean("application", OUTER_LAYERS)

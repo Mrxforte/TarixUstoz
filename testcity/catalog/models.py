@@ -7,29 +7,22 @@ from __future__ import annotations
 
 from django.db import models
 
-from domain.certification.entities import CertificationKind
-from domain.international.entities import InternationalExamKind
+from domain.certificates.entities import CertificateFamily, CertificateKind
 from domain.subjects.entities import SubjectCategory
 
 SUBJECT_CATEGORY_CHOICES = tuple((item.value, item.value) for item in SubjectCategory)
 
 EXAM_KIND_CHOICES = (
-    (CertificationKind.NATIONAL_CERTIFICATE.value, "Milliy sertifikat"),
-    (CertificationKind.ATTESTATION.value, "Attestatsiya"),
-    (InternationalExamKind.SAT.value, "SAT"),
-    (InternationalExamKind.IELTS.value, "IELTS"),
-    (InternationalExamKind.CEFR.value, "CEFR"),
+    (CertificateKind.MILLIY_SERTIFIKAT.value, "Milliy sertifikat"),
+    (CertificateKind.ATTESTATSIYA.value, "Attestatsiya"),
+    (CertificateKind.SAT.value, "SAT"),
+    (CertificateKind.IELTS.value, "IELTS"),
+    (CertificateKind.TOEFL.value, "TOEFL"),
+    (CertificateKind.CEFR.value, "CEFR"),
 )
 
-CERTIFICATION_KIND_VALUES = (
-    CertificationKind.NATIONAL_CERTIFICATE.value,
-    CertificationKind.ATTESTATION.value,
-)
-INTERNATIONAL_KIND_VALUES = (
-    InternationalExamKind.SAT.value,
-    InternationalExamKind.IELTS.value,
-    InternationalExamKind.CEFR.value,
-)
+CERTIFICATION_KIND_VALUES = tuple(kind.value for kind in CertificateKind.for_family(CertificateFamily.NATIONAL))
+INTERNATIONAL_KIND_VALUES = tuple(kind.value for kind in CertificateKind.for_family(CertificateFamily.INTERNATIONAL))
 
 
 class Subject(models.Model):
@@ -53,6 +46,47 @@ class Subject(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name} ({self.code})"
+
+
+class Language(models.Model):
+    """Content language managed from the admin (uz, ru, en, kz, tj, ...)."""
+
+    code = models.SlugField(max_length=8, unique=True)
+    name = models.CharField(max_length=64)
+    native_name = models.CharField(max_length=64, blank=True)
+    is_active = models.BooleanField(default=True)
+    is_default = models.BooleanField(default=False)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ("order", "code")
+        verbose_name = "Til"
+        verbose_name_plural = "1.1 Tillar"
+
+    def __str__(self) -> str:
+        return f"{self.name} ({self.code})"
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.is_default:
+            Language.objects.exclude(pk=self.pk).filter(is_default=True).update(is_default=False)
+
+
+class SubjectTranslation(models.Model):
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name="translations")
+    language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name="subject_translations")
+    name = models.CharField(max_length=128)
+    description = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = "Fan tarjimasi"
+        verbose_name_plural = "1.2 Fan tarjimalari"
+        constraints = [
+            models.UniqueConstraint(fields=["subject", "language"], name="uniq_subject_language"),
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.subject.code} [{self.language.code}]"
 
 
 class ExamProgram(models.Model):
@@ -138,3 +172,20 @@ class ScoreBand(models.Model):
 
     def __str__(self) -> str:
         return f"{self.program.code}: {self.label}"
+
+
+class ExamProgramTranslation(models.Model):
+    program = models.ForeignKey(ExamProgram, on_delete=models.CASCADE, related_name="translations")
+    language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name="program_translations")
+    name = models.CharField(max_length=160)
+    description = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = "Dastur tarjimasi"
+        verbose_name_plural = "2.2 Dastur tarjimalari"
+        constraints = [
+            models.UniqueConstraint(fields=["program", "language"], name="uniq_program_language"),
+        ]
+
+    def __str__(self) -> str:
+        return f"{self.program.code} [{self.language.code}]"

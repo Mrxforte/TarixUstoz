@@ -1,16 +1,18 @@
-"""Pure domain rules: subjects, certification scoring and international exams."""
+"""Pure domain rules: subjects, certificates (milliy + xalqaro) and assessment helpers."""
 from __future__ import annotations
 
 from django.test import SimpleTestCase
 
 from domain.assessment.directions import direction_for_combination, is_war_question, normalize_code
-from domain.certification.entities import (
-    CertificationKind,
-    CertificationProgram,
-    ProgramSection,
-    ScoreBand,
+from domain.certificates.entities import (
+    CefrLevel,
+    CertificateBand,
+    CertificateFamily,
+    CertificateKind,
+    CertificateProgram,
+    CertificateSection,
 )
-from domain.international.entities import cefr_from_ielts, ielts_overall_band, sat_total
+from domain.certificates.scoring import cefr_from_ielts, ielts_overall_band, sat_total, toefl_total
 from domain.shared.errors import ValidationError
 from domain.subjects.entities import Subject, SubjectCategory
 from domain.tarix.subjects import HistoryTrack, canonical_history_subject, track_for_grade
@@ -57,41 +59,53 @@ class DirectionTests(SimpleTestCase):
         self.assertFalse(is_war_question("Obida qachon qurilgan?"))
 
 
-def _program(**overrides) -> CertificationProgram:
+def _program(**overrides) -> CertificateProgram:
     defaults = dict(
         code="milliy-sertifikat-tarix",
         name="Milliy sertifikat — Tarix",
-        kind=CertificationKind.NATIONAL_CERTIFICATE,
+        kind=CertificateKind.MILLIY_SERTIFIKAT,
         subject_code="tarix",
         max_score=100,
         passing_score=60,
         sections=(
-            ProgramSection(code="test", name="Test", max_score=70),
-            ProgramSection(code="amaliy", name="Amaliy", max_score=30),
+            CertificateSection(code="test", name="Test", max_score=70),
+            CertificateSection(code="amaliy", name="Amaliy", max_score=30),
         ),
         bands=(
-            ScoreBand(label="A", min_score=90, max_score=100),
-            ScoreBand(label="B", min_score=60, max_score=89.99),
-            ScoreBand(label="C", min_score=0, max_score=59.99),
+            CertificateBand(label="A", min_score=90, max_score=100),
+            CertificateBand(label="B", min_score=60, max_score=89.99),
+            CertificateBand(label="C", min_score=0, max_score=59.99),
         ),
     )
     defaults.update(overrides)
-    return CertificationProgram(**defaults)
+    return CertificateProgram(**defaults)
 
 
-class CertificationProgramTests(SimpleTestCase):
+class CertificateFamilyTests(SimpleTestCase):
+    def test_families_split_national_and_international(self):
+        self.assertIs(CertificateKind.MILLIY_SERTIFIKAT.family, CertificateFamily.NATIONAL)
+        self.assertIs(CertificateKind.ATTESTATSIYA.family, CertificateFamily.NATIONAL)
+        self.assertIs(CertificateKind.IELTS.family, CertificateFamily.INTERNATIONAL)
+        self.assertEqual(
+            {kind.value for kind in CertificateKind.for_family(CertificateFamily.INTERNATIONAL)},
+            {"sat", "ielts", "toefl", "cefr"},
+        )
+
+    def test_national_program_requires_subject(self):
+        with self.assertRaises(ValidationError):
+            _program(subject_code="")
+
+
+class CertificateProgramTests(SimpleTestCase):
     def test_sections_must_add_up_to_max_score(self):
         with self.assertRaises(ValidationError):
-            _program(
-                max_score=100,
-                sections=(ProgramSection(code="test", name="Test", max_score=50),),
-            )
+            _program(max_score=100, sections=(CertificateSection(code="test", name="Test", max_score=50),))
 
     def test_bands_must_not_overlap(self):
         with self.assertRaises(ValidationError):
             _program(bands=(
-                ScoreBand(label="A", min_score=50, max_score=100),
-                ScoreBand(label="B", min_score=40, max_score=60),
+                CertificateBand(label="A", min_score=50, max_score=100),
+                CertificateBand(label="B", min_score=40, max_score=60),
             ))
 
     def test_scoring_rejects_missing_sections(self):
@@ -125,3 +139,51 @@ class InternationalScoringTests(SimpleTestCase):
         self.assertEqual(sat_total(700, 650), 1350)
         with self.assertRaises(ValidationError):
             sat_total(100, 650)
+
+    def test_toefl_total(self):
+        self.assertEqual(toefl_total({"reading": 28, "writing": 27}), 55)
+        with self.assertRaises(ValidationError):
+            toefl_total({"reading": 40})
+
+    def _ielts_program(self) -> CertificateProgram:
+        return CertificateProgram(
+            code="ielts",
+            name="IELTS",
+            kind=CertificateKind.IELTS,
+            max_score=9,
+            sections=tuple(
+                CertificateSection(code=code, name=code.title(), max_score=9)
+                for code in ("listening", "reading", "writing", "speaking")
+            ),
+            cefr_levels=(CefrLevel(level="B2", min_score=5.5),),
+        )
+
+    def test_ielts_program_total_uses_band_average(self):
+        program = self._ielts_program()
+        self.assertEqual(
+            program.total({"listening": 7, "reading": 7, "writing": 6.5, "speaking": 6.5}),
+            7.0,
+        )
+        self.assertEqual(program.cefr_for(7.0), "C1")
+
+    def _toefl_program(self) -> CertificateProgram:
+        return CertificateProgram(
+            code="toefl",
+            name="TOEFL",
+            kind=CertificateKind.TOEFL,
+            max_score=120,
+            sections=tuple(
+                CertificateSection(code=code, name=code.title(), max_score=30)
+                for code in ("reading", "listening", "speaking", "writing")
+            ),
+            cefr_levels=(
+                CefrLevel(level="C1", min_score=95),
+                CefrLevel(level="B2", min_score=72),
+            ),
+        )
+
+    def test_toefl_program_total_and_cefr(self):
+        program = self._toefl_program()
+        total = program.total({"reading": 28, "listening": 26, "speaking": 24, "writing": 25})
+        self.assertEqual(total, 103)
+        self.assertEqual(program.cefr_for(total), "C1")

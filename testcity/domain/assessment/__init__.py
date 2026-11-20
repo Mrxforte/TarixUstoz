@@ -17,5 +17,8 @@ __all__ = [
     "QuestionRepository",
     "QuestionType",
     "Ticket",
+    "TicketKind",
+    "TicketPlan",
+    "TicketSize",
     "TopicRepository",
 ]

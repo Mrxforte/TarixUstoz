@@ -22,3 +22,19 @@ class NotFoundError(DomainError):
         super().__init__(f"{entity} '{key}' topilmadi")
         self.entity = entity
         self.key = key
+
+
+class AuthenticationError(DomainError):
+    """Credentials are missing, invalid, or expired."""
+
+    def __init__(self, message: str = "Email yoki parol noto'g'ri") -> None:
+        super().__init__(message)
+        self.message = message
+
+
+class PermissionDeniedError(DomainError):
+    """The authenticated account may not perform the action."""
+
+    def __init__(self, message: str = "Ruxsat yo'q") -> None:
+        super().__init__(message)
+        self.message = message

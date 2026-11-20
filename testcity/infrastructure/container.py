@@ -3,18 +3,20 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
+from application.accounts.service import AccountService
 from application.assessment.service import AssessmentService
-from application.certification.service import CertificationService
-from application.international.service import InternationalService
+from application.certificates.service import CertificateService
+from application.leaderboard.service import LeaderboardService
 from application.subjects.service import SubjectService
-from infrastructure.persistence.repositories.assessment import (
+from data.repositories.accounts import DjangoAccountRepository
+from data.repositories.assessment import (
     DjangoBookRepository,
     DjangoQuestionRepository,
     DjangoTopicRepository,
 )
-from infrastructure.persistence.repositories.certification import DjangoCertificationProgramRepository
-from infrastructure.persistence.repositories.international import DjangoInternationalExamRepository
-from infrastructure.persistence.repositories.subjects import DjangoSubjectRepository
+from data.repositories.certificates import DjangoCertificateProgramRepository
+from data.repositories.leaderboard import DjangoLeaderboardRepository
+from data.repositories.subjects import DjangoLanguageRepository, DjangoSubjectRepository
 
 
 @dataclass
@@ -22,19 +24,19 @@ class Container:
     """Wires ports to adapters. Imported lazily so tests can swap repositories."""
 
     subject_repository: DjangoSubjectRepository = field(default_factory=DjangoSubjectRepository)
+    language_repository: DjangoLanguageRepository = field(default_factory=DjangoLanguageRepository)
     question_repository: DjangoQuestionRepository = field(default_factory=DjangoQuestionRepository)
     topic_repository: DjangoTopicRepository = field(default_factory=DjangoTopicRepository)
     book_repository: DjangoBookRepository = field(default_factory=DjangoBookRepository)
-    certification_repository: DjangoCertificationProgramRepository = field(
-        default_factory=DjangoCertificationProgramRepository
+    certificate_repository: DjangoCertificateProgramRepository = field(
+        default_factory=DjangoCertificateProgramRepository
     )
-    international_repository: DjangoInternationalExamRepository = field(
-        default_factory=DjangoInternationalExamRepository
-    )
+    account_repository: DjangoAccountRepository = field(default_factory=DjangoAccountRepository)
+    leaderboard_repository: DjangoLeaderboardRepository = field(default_factory=DjangoLeaderboardRepository)
 
     @property
     def subjects(self) -> SubjectService:
-        return SubjectService(self.subject_repository)
+        return SubjectService(self.subject_repository, self.language_repository)
 
     @property
     def assessment(self) -> AssessmentService:
@@ -46,12 +48,16 @@ class Container:
         )
 
     @property
-    def certification(self) -> CertificationService:
-        return CertificationService(self.certification_repository)
+    def certificates(self) -> CertificateService:
+        return CertificateService(self.certificate_repository)
 
     @property
-    def international(self) -> InternationalService:
-        return InternationalService(self.international_repository)
+    def accounts(self) -> AccountService:
+        return AccountService(self.account_repository)
+
+    @property
+    def leaderboard(self) -> LeaderboardService:
+        return LeaderboardService(self.leaderboard_repository)
 
 
 container = Container()

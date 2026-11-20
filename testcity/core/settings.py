@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "api",
     "catalog",
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -182,8 +183,48 @@ CORS_ALLOWED_ORIGINS = env_list("DJANGO_CORS_ALLOWED_ORIGINS")
 
 REST_FRAMEWORK = {
     # Domain errors (NotFoundError / ValidationError) become 404/400 responses.
-    "EXCEPTION_HANDLER": "interfaces.http.exceptions.domain_exception_handler",
+    "EXCEPTION_HANDLER": "presentation.http.exceptions.domain_exception_handler",
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.AllowAny"],
 }
+
+# ---------------------------------------------------------------------------
+# Cache: LocMem by default, Redis when DJANGO_CACHE_BACKEND=redis (enterprise/
+# multi-worker deployments should point REDIS_URL at a shared instance).
+# ---------------------------------------------------------------------------
+_REDIS_URL = os.environ.get("REDIS_URL", "")
+if os.environ.get("DJANGO_CACHE_BACKEND", "").lower() == "redis" and _REDIS_URL:
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.redis.RedisCache",
+            "LOCATION": _REDIS_URL,
+            "TIMEOUT": int(os.environ.get("DJANGO_CACHE_TIMEOUT", "300")),
+        }
+    }
+else:
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+            "LOCATION": os.environ.get("DJANGO_CACHE_LOCATION", "testcity"),
+            "TIMEOUT": int(os.environ.get("DJANGO_CACHE_TIMEOUT", "300")),
+        }
+    }
+
+CACHE_CATALOG_TTL = int(os.environ.get("CACHE_CATALOG_TTL", "600"))
+CACHE_LEADERBOARD_TTL = int(os.environ.get("CACHE_LEADERBOARD_TTL", "60"))
+CACHE_OVERVIEW_TTL = int(os.environ.get("CACHE_OVERVIEW_TTL", "120"))
+
+# ---------------------------------------------------------------------------
+# Auth, e-mail and Google sign-in
+# ---------------------------------------------------------------------------
+GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
+GOOGLE_TOKENINFO_URL = os.environ.get("GOOGLE_TOKENINFO_URL", "https://oauth2.googleapis.com/tokeninfo")
+EMAIL_BACKEND = os.environ.get("DJANGO_EMAIL_BACKEND", "django.core.mail.backends.console.EmailBackend")
+DEFAULT_FROM_EMAIL = os.environ.get("DJANGO_DEFAULT_FROM_EMAIL", "no-reply@testcity.uz")
+FRONTEND_RESET_URL = os.environ.get("FRONTEND_RESET_URL", "https://testcity.uz/reset-password")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

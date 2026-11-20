@@ -12,25 +12,28 @@
 - ✅ Admin panel
 - ✅ LLM integration (Gemini)
 
-## 🧱 Arxitektura (Clean Architecture)
+## 🧱 Arxitektura (Clean Architecture / SOLID)
 
 ```
-interfaces → infrastructure → application → domain
+presentation → application → domain
+        ↘ data ↗
 ```
 
 | Qatlam | Papka | Vazifasi |
 |---|---|---|
-| Domain | `domain/` | Sof biznes-qoidalar: fanlar, tarix yo'nalishlari, baholash (Django importi yo'q) |
-| Application | `application/` | Use case'lar: katalog, test bileti, kunlik savol, sertifikat/xalqaro baholash |
-| Infrastructure | `infrastructure/` | Django ORM repolari, Gemini/RAG adapterlari, `container.py` |
-| Interface | `interfaces/http/` | DRF serializer/view/marshrutlar (`/api/v2/`) |
+| Domain | `domain/` | Sof qoidalar: fanlar, tarix, biletlar, sertifikatlar, reyting (Django importi yo'q) |
+| Application | `application/` | Use case'lar: katalog, biletlar, baholash, auth, leaderboard |
+| Data | `data/` | Django ORM repolari, Google token adapteri |
+| Presentation | `presentation/http/` | DRF serializer/view/marshrut, cache/ETag (`/api/v2/`) |
+| ORM | `catalog/`, `accounts/` | Fanlar, tillar, sertifikatlar, profil, reyting jadvallari |
 | Legacy | `api/` | v1 API va tarix ORM modellari (mobil ilova uchun o'zgarmaydi) |
-| ORM | `catalog/` | `Subject`, `ExamProgram`, `ProgramSection`, `ScoreBand` jadvallari |
 
 To'liq tavsif va API jadvali: [ARCHITECTURE.md](ARCHITECTURE.md).
 
-Qo'llab-quvvatlanadigan imtihonlar: **maktab fanlari**, **milliy sertifikat**,
-**attestatsiya**, **SAT**, **IELTS** va **CEFR**.
+**Imkoniyatlar:** maktab fanlari (tarix va boshqalar), dinamik tillar (uz, ru, en,
+kz, tj), **milliy sertifikat** va **attestatsiya**, **SAT / IELTS / TOEFL / CEFR**,
+tematik va global biletlar (10/20/30), leaderboard, JWT + Google auth, parol tiklash,
+ko'p qatlamli keshlash (LocMem yoki Redis).
 
 ## 🚀 Quick Start (Local Development)
 

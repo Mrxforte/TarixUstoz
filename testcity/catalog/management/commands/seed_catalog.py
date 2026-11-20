@@ -1,35 +1,38 @@
-"""``manage.py seed_catalog`` — loads the shipped fanlar and exam blueprints."""
+"""``manage.py seed_catalog`` — loads languages, fanlar and certificate blueprints."""
 from __future__ import annotations
 
 from django.core.management.base import BaseCommand
 
 from application.seeds import (
-    default_certification_programs,
-    default_international_exams,
+    default_certificate_programs,
+    default_languages,
     default_subjects,
 )
 from infrastructure.container import container
 
 
 class Command(BaseCommand):
-    help = "Fanlar katalogi, milliy sertifikat/attestatsiya va SAT/IELTS/CEFR dasturlarini yuklaydi."
+    help = "Tillar, fanlar va sertifikat dasturlarini (milliy + xalqaro) yuklaydi. Idempotent."
 
     def handle(self, *args, **options) -> None:
+        languages = container.language_repository
+        for language in default_languages():
+            languages.save(language)
+
         subjects = container.subject_repository
         for subject in default_subjects():
             subjects.save(subject)
 
-        certification = container.certification_repository
-        for program in default_certification_programs():
-            certification.save(program)
+        certificates = container.certificate_repository
+        programs = default_certificate_programs()
+        for program in programs:
+            certificates.save(program)
 
-        international = container.international_repository
-        for exam in default_international_exams():
-            international.save(exam)
-
+        national = sum(1 for program in programs if program.is_national)
+        international = sum(1 for program in programs if program.is_international)
         self.stdout.write(self.style.SUCCESS(
             "Catalog seeded: "
+            f"{len(default_languages())} til, "
             f"{len(default_subjects())} fan, "
-            f"{len(default_certification_programs())} sertifikat dasturi, "
-            f"{len(default_international_exams())} xalqaro test."
+            f"{national} milliy + {international} xalqaro sertifikat dasturi."
         ))

@@ -32,6 +32,12 @@ shell. Replace the example host and paths with the actual deployment values.
 | `DJANGO_TRUST_PROXY_HTTPS=1` | Only when the trusted proxy strips client-supplied forwarding headers and sets the HTTPS header itself |
 | `DJANGO_ENFORCE_HTTPS=1` | Optional when Django handles redirects and recognizes HTTPS behind the proxy |
 | `DJANGO_HSTS_SECONDS` | Optional HSTS duration after HTTPS is verified and coordinated with the existing site |
+| `DJANGO_CACHE_BACKEND` | `redis` — ko'p workerli production uchun umumiy kesh |
+| `REDIS_URL` | `redis://127.0.0.1:6379/1` — kesh manzili (`DJANGO_CACHE_BACKEND=redis` bo'lsa) |
+| `GOOGLE_CLIENT_ID` | Google sign-in uchun OAuth client ID (token `aud` tekshiriladi) |
+| `DJANGO_EMAIL_BACKEND` | Parol tiklash xatlari uchun SMTP backend (default: console) |
+| `DJANGO_DEFAULT_FROM_EMAIL` | Xat jo'natuvchi manzil |
+| `FRONTEND_RESET_URL` | Parol tiklash havolasi ochiladigan frontend URL |
 
 Set `DB_ENGINE=postgresql` and `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`
 and `DB_PORT` for PostgreSQL. For SQLite set `SQLITE_PATH` to a persistent

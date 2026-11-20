@@ -44,6 +44,7 @@ class Subject:
     icon: str = ""
     order: int = 0
     is_active: bool = True
+    translations: dict[str, str] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
         code = normalize_slug(self.code)
@@ -61,3 +62,29 @@ class Subject:
 
     def supports_grade(self, grade: int) -> bool:
         return not self.grades or int(grade) in self.grades
+
+    def name_in(self, language: str | None) -> str:
+        """Display name for a language code, falling back to the default name."""
+        if not language:
+            return self.name
+        return self.translations.get(language.strip().lower(), self.name)
+
+
+@dataclass(frozen=True, slots=True)
+class Language:
+    """A manageable content language (uz, ru, en, kz, tj, ...)."""
+
+    code: str
+    name: str
+    native_name: str = ""
+    is_active: bool = True
+    is_default: bool = False
+    order: int = 0
+
+    def __post_init__(self) -> None:
+        code = normalize_slug(self.code)
+        if not code:
+            raise ValueError("Til kodi bo'sh bo'lishi mumkin emas")
+        if not (self.name or "").strip():
+            raise ValueError("Til nomi bo'sh bo'lishi mumkin emas")
+        object.__setattr__(self, "code", code)

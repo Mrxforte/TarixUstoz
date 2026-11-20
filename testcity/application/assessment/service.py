@@ -13,6 +13,8 @@ from domain.assessment.entities import (
     QuestionFilter,
     QuestionRef,
     Ticket,
+    TicketKind,
+    TicketPlan,
 )
 from domain.assessment.ports import BookRepository, QuestionRepository, TopicRepository
 from domain.shared.errors import NotFoundError, ValidationError
@@ -133,6 +135,75 @@ class AssessmentService:
             ticket_count=ticket_count,
             page=page,
         )
+
+    def build_pack(self, plan: TicketPlan) -> TicketPage:
+        """Assemble one ticket of a plan (mavzu, yo'nalish, kitob, aralash, global)."""
+        subject = self._subject(plan.subject)
+        if plan.kind is TicketKind.GLOBAL:
+            query = QuestionFilter(difficulty=plan.difficulty)
+        else:
+            query = QuestionFilter(
+                subject=self.stored_subject(plan.subject, plan.track, plan.grade),
+                grade=plan.grade,
+                topic_id=plan.topic_id,
+                direction=plan.direction,
+                difficulty=plan.difficulty,
+            )
+        size = plan.page_size
+        total = self._questions.count(query)
+        if plan.kind is TicketKind.MIXED:
+            ids = self._mixed_ids(query, size=size, index=plan.index, seed=plan.seed)
+        else:
+            ids = list(
+                self._questions.page_ids(
+                    query,
+                    offset=(plan.index - 1) * size,
+                    limit=size,
+                    seed=plan.seed,
+                )
+            )
+        return TicketPage(
+            ticket=Ticket(
+                questions=tuple(self._questions.fetch(ids)),
+                subject=subject.code,
+                grade=plan.grade,
+                direction=plan.direction,
+            ),
+            total=total,
+            ticket_count=max(1, math.ceil(total / size)) if total else 0,
+            page=plan.index,
+        )
+
+    def _mixed_ids(self, query: QuestionFilter, *, size: int, index: int, seed: int) -> list[int]:
+        """Balance an aralash ticket across easy/medium/hard questions."""
+        difficulties = (Difficulty.EASY, Difficulty.MEDIUM, Difficulty.HARD)
+        per_difficulty = max(1, size // len(difficulties))
+        collected: list[int] = []
+        for position, difficulty in enumerate(difficulties):
+            subset = QuestionFilter(
+                subject=query.subject,
+                grade=query.grade,
+                topic_id=query.topic_id,
+                direction=query.direction,
+                difficulty=difficulty,
+                since_id=query.since_id,
+            )
+            remaining = size - len(collected) if position == len(difficulties) - 1 else per_difficulty
+            collected.extend(
+                self._questions.page_ids(
+                    subset,
+                    offset=(index - 1) * per_difficulty,
+                    limit=max(0, remaining),
+                    seed=seed + position,
+                )
+            )
+        seen: set[int] = set()
+        unique: list[int] = []
+        for question_id in collected:
+            if question_id not in seen:
+                seen.add(question_id)
+                unique.append(question_id)
+        return unique[:size]
 
     def daily_question(
         self,

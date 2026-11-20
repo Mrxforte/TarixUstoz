@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from enum import StrEnum
+from enum import Enum, StrEnum
+
+from domain.shared.errors import ValidationError
 
 
 class Difficulty(StrEnum):
@@ -101,3 +103,72 @@ class Ticket:
     @property
     def size(self) -> int:
         return len(self.questions)
+
+
+class TicketSize(int, Enum):
+    """Global ticket sizes offered to the app."""
+
+    SMALL = 10
+    MEDIUM = 20
+    LARGE = 30
+
+    @classmethod
+    def coerce(cls, value: "int | str | TicketSize") -> "TicketSize":
+        try:
+            size = cls(int(value))
+        except (ValueError, TypeError) as exc:
+            allowed = ", ".join(str(item.value) for item in cls)
+            raise ValidationError(f"Bilet hajmi {allowed} dan biri bo'lishi kerak: {value!r}", field="size") from exc
+        return size
+
+
+class TicketKind(str, Enum):
+    """How a ticket is assembled."""
+
+    TOPIC = "topic"          # mavzulashtirilgan test
+    DIRECTION = "direction"  # yo'nalishli test
+    BOOK = "book"            # sinf kitobi bo'yicha
+    MIXED = "mixed"          # aralash (qiyinlik bo'yicha balanslangan)
+    GLOBAL = "global"        # butun bazadan 10/20/30 talik bilet
+
+    @classmethod
+    def coerce(cls, value: "str | TicketKind") -> "TicketKind":
+        if isinstance(value, cls):
+            return value
+        try:
+            return cls(str(value).strip().lower())
+        except ValueError as exc:
+            allowed = ", ".join(item.value for item in cls)
+            raise ValidationError(f"Noto'g'ri bilet turi: {value!r}. Ruxsat etilgan: {allowed}", field="kind") from exc
+
+
+@dataclass(frozen=True, slots=True)
+class TicketPlan:
+    """Everything needed to assemble one ticket deterministically."""
+
+    kind: TicketKind = TicketKind.BOOK
+    size: TicketSize = TicketSize.LARGE
+    subject: str = ""
+    grade: int = 0
+    track: str = ""
+    topic_id: int | None = None
+    direction: str = ""
+    difficulty: Difficulty | None = None
+    index: int = 1
+    seed: int = 0
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "kind", TicketKind.coerce(self.kind))
+        object.__setattr__(self, "size", TicketSize.coerce(self.size))
+        object.__setattr__(self, "direction", (self.direction or "").strip().upper())
+        object.__setattr__(self, "difficulty", Difficulty.coerce(self.difficulty))
+        if self.index < 1:
+            raise ValidationError("Bilet raqami 1 dan kichik bo'lishi mumkin emas", field="index")
+        if self.kind is TicketKind.TOPIC and not self.topic_id:
+            raise ValidationError("Mavzuli bilet uchun topic_id kerak", field="topic_id")
+        if self.kind is TicketKind.DIRECTION and not self.direction:
+            raise ValidationError("Yo'nalishli bilet uchun direction kerak", field="direction")
+
+    @property
+    def page_size(self) -> int:
+        return self.size.value
