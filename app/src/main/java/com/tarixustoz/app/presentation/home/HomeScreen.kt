@@ -50,6 +50,8 @@ import androidx.compose.ui.util.lerp
 import kotlin.math.absoluteValue
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -814,8 +816,14 @@ private fun HeroAdAndHistoryCarousel() {
                             animationSpec = tween(durationMillis = 5200, easing = LinearOutSlowInEasing),
                             label = "heroImageCinematicZoom"
                         )
-                        Image(
-                            painter = painterResource(id = imageRes),
+                        val heroContext = LocalContext.current
+                        AsyncImage(
+                            model = remember(imageRes, heroContext) {
+                                ImageRequest.Builder(heroContext)
+                                    .data(imageRes)
+                                    .crossfade(false)
+                                    .build()
+                            },
                             contentDescription = "Tarixiy slayd $page",
                             contentScale = ContentScale.Crop,
                             modifier = Modifier

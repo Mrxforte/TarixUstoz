@@ -13,6 +13,7 @@ import com.tarixustoz.app.domain.model.*
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -73,8 +74,14 @@ class ContentRepository @Inject constructor(
     private val sixHoursMs = 6L * 60L * 60L * 1000L
 
     init {
-        CoroutineScope(Dispatchers.IO).launch {
-            seedIfNeeded()
+        CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
+            try {
+                seedIfNeeded()
+            } catch (ce: CancellationException) {
+                throw ce
+            } catch (t: Throwable) {
+                t.printStackTrace()
+            }
         }
     }
 
@@ -1446,8 +1453,10 @@ class ContentRepository @Inject constructor(
             gradeId = gradeId,
             subjectId = subjectId ?: "uzbekiston",
             type = QuestionType.SINGLE_CHOICE.name,
-            difficulty = difficulty,
-            category = categoryType,
+            difficulty = runCatching { Difficulty.valueOf(difficulty.trim().uppercase()).name }
+                .getOrDefault(Difficulty.MEDIUM.name),
+            category = runCatching { QuestionCategory.valueOf(categoryType.trim().uppercase()).name }
+                .getOrDefault(QuestionCategory.ALL.name),
             text = text,
             optionsJson = json.encodeToString(optionsList),
             explanation = explanation ?: "Darslik va manba asosida tayyorlangan.",
@@ -2116,12 +2125,17 @@ class ContentRepository @Inject constructor(
         } catch (e: Exception) {
             emptyList()
         }
-        val cat = try { QuestionCategory.valueOf(category) } catch (e: Exception) { QuestionCategory.ALL }
+        val cat = runCatching { QuestionCategory.valueOf(category.trim().uppercase()) }
+            .getOrDefault(QuestionCategory.ALL)
+        val qType = runCatching { QuestionType.valueOf(type.trim().uppercase()) }
+            .getOrDefault(QuestionType.SINGLE_CHOICE)
+        val qDiff = runCatching { Difficulty.valueOf(difficulty.trim().uppercase()) }
+            .getOrDefault(Difficulty.MEDIUM)
         return Question(
             id = id, topicId = topicId, textbookId = textbookId, gradeId = gradeId,
             subjectId = subjectId,
-            type = QuestionType.valueOf(type),
-            difficulty = Difficulty.valueOf(difficulty),
+            type = qType,
+            difficulty = qDiff,
             category = cat,
             text = text, options = options, explanation = explanation,
             historicalDate = historicalDate, personality = personality,

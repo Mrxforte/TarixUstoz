@@ -28,9 +28,11 @@ class TarixUstozApp : Application(), Configuration.Provider, ImageLoaderFactory 
 
     override fun onCreate() {
         super.onCreate()
-        AdMobManager.initAdMob(this)
-        syncScheduler.schedulePeriodicSync()
-        syncScheduler.triggerImmediateSync(forceRefresh = false)
+        runCatching { AdMobManager.initAdMob(this) }
+        runCatching {
+            syncScheduler.schedulePeriodicSync()
+            syncScheduler.triggerImmediateSync(forceRefresh = false)
+        }
     }
 
     override fun newImageLoader(): ImageLoader {

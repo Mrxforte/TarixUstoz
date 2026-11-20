@@ -165,16 +165,28 @@ class HomeViewModel @Inject constructor(
                 }
             }
             viewModelScope.launch {
-                contentRepository.seedIfNeeded()
-                if (_uiState.value.dailyQuestion == null) {
-                    loadNextDailyQuestion(userTriggered = false)
+                try {
+                    contentRepository.seedIfNeeded()
+                    if (_uiState.value.dailyQuestion == null) {
+                        loadNextDailyQuestion(userTriggered = false)
+                    }
+                    contentRepository.syncWithDjangoBackend()
+                    buildHomeCards()
+                } catch (ce: kotlinx.coroutines.CancellationException) {
+                    throw ce
+                } catch (t: Throwable) {
+                    t.printStackTrace()
                 }
-                contentRepository.syncWithDjangoBackend()
-                buildHomeCards()
             }
         } else {
             viewModelScope.launch {
-                buildHomeCards()
+                try {
+                    buildHomeCards()
+                } catch (ce: kotlinx.coroutines.CancellationException) {
+                    throw ce
+                } catch (t: Throwable) {
+                    t.printStackTrace()
+                }
             }
         }
 
@@ -397,7 +409,8 @@ class HomeViewModel @Inject constructor(
 
             val maxGrade = if (role in listOf("Abituriyent", "O'qituvchi", "Talaba")) 11 else userGrade
             val availableGrades = (6..maxGrade).toList()
-            val targetGrade = availableGrades[(currentNonce + System.currentTimeMillis().toInt().coerceAtLeast(0)) % availableGrades.size]
+            val targetIdx = (((currentNonce.toLong() + System.currentTimeMillis()) % availableGrades.size) + availableGrades.size).toInt() % availableGrades.size
+            val targetGrade = availableGrades[targetIdx]
 
             var nextQuestion = contentRepository.getDailyQuestion(
                 excludeIds = seenQuestionIds.toSet(),
@@ -409,7 +422,8 @@ class HomeViewModel @Inject constructor(
                 seenQuestionIds.clear()
                 if (previousId != null) seenQuestionIds.add(previousId)
                 val retryNonce = dailyNonce++
-                val retryGrade = availableGrades[(retryNonce + System.currentTimeMillis().toInt().coerceAtLeast(0)) % availableGrades.size]
+                val retryIdx = (((retryNonce.toLong() + System.currentTimeMillis()) % availableGrades.size) + availableGrades.size).toInt() % availableGrades.size
+                val retryGrade = availableGrades[retryIdx]
                 nextQuestion = contentRepository.getDailyQuestion(
                     excludeIds = seenQuestionIds.toSet(),
                     grade = retryGrade,

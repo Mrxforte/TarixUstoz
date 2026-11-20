@@ -59,6 +59,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import com.google.android.libraries.identity.googleid.GetSignInWithGoogleOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.tarixustoz.app.R
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import kotlinx.coroutines.delay
@@ -201,8 +203,13 @@ fun AuthScreen(
             animationSpec = tween(durationMillis = 1200),
             label = "auth_bg_crossfade"
         ) { drawableRes ->
-            Image(
-                painter = painterResource(id = drawableRes),
+            AsyncImage(
+                model = remember(drawableRes, context) {
+                    ImageRequest.Builder(context)
+                        .data(drawableRes)
+                        .crossfade(false)
+                        .build()
+                },
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
@@ -250,8 +257,13 @@ fun AuthScreen(
                 Spacer(Modifier.height(12.dp))
             }
 
-            Image(
-                painter = painterResource(id = R.drawable.app_icon_emblem),
+            AsyncImage(
+                model = remember(context) {
+                    ImageRequest.Builder(context)
+                        .data(R.drawable.app_icon_emblem)
+                        .crossfade(false)
+                        .build()
+                },
                 contentDescription = "Tarix Ustoz",
                 modifier = Modifier
                     .size(72.dp)

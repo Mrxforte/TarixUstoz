@@ -4,7 +4,9 @@ import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
 import android.util.Log
+import android.view.View
 import android.widget.Toast
+import java.util.concurrent.atomic.AtomicBoolean
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -84,6 +86,7 @@ object AdMobManager {
     private const val KEY_USE_TEST_MODE = "use_test_mode"
     private const val KEY_LIVE_ERROR = "live_error_summary"
     private val initScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+    private val isInitStarted = AtomicBoolean(false)
 
     // Real AdMob Ad Unit IDs
     const val BANNER_AD_UNIT_ID = "ca-app-pub-2360068229850342/6027022065"
@@ -176,8 +179,11 @@ object AdMobManager {
     private var appPrefsContext: Context? = null
 
     fun initAdMob(context: Context) {
-        val appContext = context.applicationContext
+        val appContext = context.applicationContext ?: context
         appPrefsContext = appContext
+        if (!isInitStarted.compareAndSet(false, true)) {
+            return
+        }
         val prefs = appContext.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val persistedTestMode = prefs.getBoolean(KEY_USE_TEST_MODE, false)
         val persistedError = prefs.getString(KEY_LIVE_ERROR, null)
@@ -214,19 +220,13 @@ object AdMobManager {
                             lastUpdatedAtMs = System.currentTimeMillis()
                         )
                     }
-                    // On first clean start without a previous mode lock, run a silent live probe
-                    if (!prefs.contains(KEY_USE_TEST_MODE)) {
-                        initScope.launch(Dispatchers.Main) {
-                            probeLiveAdUnits(appContext)
-                        }
-                    }
                 }
-            } catch (e: Exception) {
-                Log.e(TAG, "Failed to initialize AdMob", e)
+            } catch (t: Throwable) {
+                Log.e(TAG, "Failed to initialize AdMob", t)
                 _diagnostics.update {
                     it.copy(
                         sdkInitialized = false,
-                        adapterStatusSummary = "SDK xatosi: ${e.localizedMessage ?: "noma'lum"}",
+                        adapterStatusSummary = "SDK xatosi: ${t.localizedMessage ?: "noma'lum"}",
                         lastUpdatedAtMs = System.currentTimeMillis()
                     )
                 }
@@ -245,8 +245,8 @@ object AdMobManager {
                 .setTestDeviceIds(testDeviceIds)
                 .build()
             MobileAds.setRequestConfiguration(config)
-        } catch (e: Exception) {
-            Log.w(TAG, "Unable to set RequestConfiguration", e)
+        } catch (t: Throwable) {
+            Log.w(TAG, "Unable to set RequestConfiguration", t)
         }
     }
 
@@ -301,6 +301,14 @@ object AdMobManager {
      * SDK error and leaves the app cleanly in Test Mode so real Google Test Ads render.
      */
     fun probeLiveAdUnits(context: Context) {
+        val hostActivity = context.findActivity()
+        if (hostActivity == null || hostActivity.isFinishing || hostActivity.isDestroyed) {
+            setTestModeEnabled(
+                enabled = true,
+                reason = "Jonli tekshiruv uchun faol oyna topilmadi"
+            )
+            return
+        }
         applyRequestConfiguration(false)
         _diagnostics.update {
             it.copy(
@@ -309,26 +317,26 @@ object AdMobManager {
             )
         }
         try {
-            val probeView = AdView(context).apply {
+            val probeView = AdView(hostActivity).apply {
                 setAdSize(AdSize.BANNER)
                 adUnitId = BANNER_AD_UNIT_ID
                 adListener = object : AdListener() {
                     override fun onAdLoaded() {
                         recordLiveSuccess("Jonli Banner")
-                        destroy()
+                        runCatching { destroy() }
                     }
 
                     override fun onAdFailedToLoad(loadAdError: LoadAdError) {
                         recordLiveFailureAndFallbackToTest("Jonli Banner", loadAdError)
-                        destroy()
+                        runCatching { destroy() }
                     }
                 }
             }
             probeView.loadAd(AdRequest.Builder().build())
-        } catch (e: Exception) {
+        } catch (t: Throwable) {
             setTestModeEnabled(
                 enabled = true,
-                reason = "Jonli tekshiruv xatosi: ${e.localizedMessage ?: "noma'lum"}"
+                reason = "Jonli tekshiruv xatosi: ${t.localizedMessage ?: "noma'lum"}"
             )
         }
     }
@@ -353,7 +361,7 @@ object AdMobManager {
         var isAdLoaded by remember(resolvedUnitId) { mutableStateOf(false) }
         var isAdFailed by remember(resolvedUnitId) { mutableStateOf(false) }
         var localUnitId by remember(resolvedUnitId) { mutableStateOf(resolvedUnitId) }
-        var adViewRef by remember { mutableStateOf<AdView?>(null) }
+        val adViewHolder = remember(localUnitId) { arrayOfNulls<AdView>(1) }
 
         LaunchedEffect(resolvedUnitId) {
             if (localUnitId != resolvedUnitId) {
@@ -366,7 +374,7 @@ object AdMobManager {
         LaunchedEffect(localUnitId) {
             while (isActive) {
                 delay(autoRefreshIntervalSeconds * 1000L)
-                adViewRef?.loadAd(AdRequest.Builder().build())
+                runCatching { adViewHolder[0]?.loadAd(AdRequest.Builder().build()) }
             }
         }
 
@@ -376,58 +384,75 @@ object AdMobManager {
                 .wrapContentHeight(),
             contentAlignment = Alignment.Center
         ) {
-            key(localUnitId) {
-                AndroidView(
-                    modifier = Modifier.fillMaxWidth(),
-                    factory = { context ->
-                        _diagnostics.update { it.copy(quizBannerState = AdSlotLoadState.LOADING) }
-                        AdView(context).apply {
-                            setAdSize(AdSize.BANNER)
-                            setAdUnitId(localUnitId)
-                            adListener = object : AdListener() {
-                                override fun onAdLoaded() {
-                                    isAdLoaded = true
-                                    val isTest = localUnitId == TEST_BANNER_AD_UNIT_ID
-                                    _diagnostics.update {
-                                        it.copy(
-                                            quizBannerState = if (isTest) AdSlotLoadState.LOADED_TEST else AdSlotLoadState.LOADED_LIVE,
-                                            lastUpdatedAtMs = System.currentTimeMillis()
-                                        )
-                                    }
-                                    if (!isTest) recordLiveSuccess("Banner")
-                                }
+            if (!isAdFailed) {
+                key(localUnitId) {
+                    AndroidView(
+                        modifier = Modifier.fillMaxWidth(),
+                        factory = { context ->
+                            _diagnostics.update { it.copy(quizBannerState = AdSlotLoadState.LOADING) }
+                            val hostContext = context.findActivity() ?: context
+                            try {
+                                AdView(hostContext).apply {
+                                    setAdSize(AdSize.BANNER)
+                                    setAdUnitId(localUnitId)
+                                    adListener = object : AdListener() {
+                                        override fun onAdLoaded() {
+                                            isAdLoaded = true
+                                            val isTest = localUnitId == TEST_BANNER_AD_UNIT_ID
+                                            _diagnostics.update {
+                                                it.copy(
+                                                    quizBannerState = if (isTest) AdSlotLoadState.LOADED_TEST else AdSlotLoadState.LOADED_LIVE,
+                                                    lastUpdatedAtMs = System.currentTimeMillis()
+                                                )
+                                            }
+                                            if (!isTest) recordLiveSuccess("Banner")
+                                        }
 
-                                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                                    Log.w(TAG, "Banner load failed for $localUnitId: ${loadAdError.message}")
-                                    if (localUnitId != TEST_BANNER_AD_UNIT_ID) {
-                                        recordLiveFailureAndFallbackToTest("Banner", loadAdError)
-                                        isAdLoaded = false
-                                        localUnitId = TEST_BANNER_AD_UNIT_ID
-                                    } else {
-                                        isAdFailed = true
-                                        _diagnostics.update {
-                                            it.copy(
-                                                quizBannerState = AdSlotLoadState.FAILED,
-                                                lastUpdatedAtMs = System.currentTimeMillis()
-                                            )
+                                        override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                                            Log.w(TAG, "Banner load failed for $localUnitId: ${loadAdError.message}")
+                                            if (localUnitId != TEST_BANNER_AD_UNIT_ID) {
+                                                recordLiveFailureAndFallbackToTest("Banner", loadAdError)
+                                                isAdLoaded = false
+                                                localUnitId = TEST_BANNER_AD_UNIT_ID
+                                            } else {
+                                                isAdFailed = true
+                                                _diagnostics.update {
+                                                    it.copy(
+                                                        quizBannerState = AdSlotLoadState.FAILED,
+                                                        lastUpdatedAtMs = System.currentTimeMillis()
+                                                    )
+                                                }
+                                            }
                                         }
                                     }
+                                    adViewHolder[0] = this
+                                    loadAd(AdRequest.Builder().build())
                                 }
+                            } catch (t: Throwable) {
+                                Log.e(TAG, "BannerAdView creation failed", t)
+                                isAdFailed = true
+                                _diagnostics.update {
+                                    it.copy(
+                                        quizBannerState = AdSlotLoadState.FAILED,
+                                        lastUpdatedAtMs = System.currentTimeMillis()
+                                    )
+                                }
+                                View(context)
                             }
-                            loadAd(AdRequest.Builder().build())
-                            adViewRef = this
+                        },
+                        update = { view ->
+                            if (view is AdView) {
+                                adViewHolder[0] = view
+                            }
                         }
-                    },
-                    update = { adView ->
-                        adViewRef = adView
-                    }
-                )
+                    )
+                }
             }
 
             DisposableEffect(localUnitId) {
                 onDispose {
-                    adViewRef?.destroy()
-                    adViewRef = null
+                    runCatching { adViewHolder[0]?.destroy() }
+                    adViewHolder[0] = null
                 }
             }
 
@@ -455,7 +480,7 @@ object AdMobManager {
                                 modifier = Modifier.padding(end = 8.dp)
                             ) {
                                 Text(
-                                    text = if (localUnitId == TEST_BANNER_AD_UNIT_ID) "TEST AD" else "Ad",
+                                    text = "Ad",
                                     color = Color.White,
                                     fontSize = 10.sp,
                                     fontWeight = FontWeight.Bold,
@@ -497,7 +522,7 @@ object AdMobManager {
         var isAdLoaded by remember(resolvedUnitId) { mutableStateOf(false) }
         var isAdFailed by remember(resolvedUnitId) { mutableStateOf(false) }
         var localUnitId by remember(resolvedUnitId) { mutableStateOf(resolvedUnitId) }
-        var adViewRef by remember { mutableStateOf<AdView?>(null) }
+        val adViewHolder = remember(localUnitId) { arrayOfNulls<AdView>(1) }
 
         LaunchedEffect(resolvedUnitId) {
             if (localUnitId != resolvedUnitId) {
@@ -510,7 +535,7 @@ object AdMobManager {
         LaunchedEffect(localUnitId) {
             while (isActive) {
                 delay(autoRefreshIntervalSeconds * 1000L)
-                adViewRef?.loadAd(AdRequest.Builder().build())
+                runCatching { adViewHolder[0]?.loadAd(AdRequest.Builder().build()) }
             }
         }
 
@@ -518,71 +543,94 @@ object AdMobManager {
             modifier = modifier.fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
-            val widthDpInt = maxWidth.value.toInt().coerceAtLeast(300)
-            val heightDpInt = maxHeight.value.toInt().coerceIn(200, 260)
+            val widthDpInt = maxWidth.value.takeIf { it.isFinite() }?.toInt()?.coerceIn(300, 1200) ?: 320
+            val heightDpInt = maxHeight.value.takeIf { it.isFinite() }?.toInt()?.coerceIn(200, 260) ?: 250
 
-            key(localUnitId, widthDpInt, heightDpInt) {
-                AndroidView(
-                    modifier = Modifier.fillMaxSize(),
-                    factory = { context ->
-                        _diagnostics.update { it.copy(heroBannerState = AdSlotLoadState.LOADING) }
-                        val adSize = AdSize.getInlineAdaptiveBannerAdSize(widthDpInt, heightDpInt)
-                        AdView(context).apply {
-                            setAdSize(adSize)
-                            setAdUnitId(localUnitId)
-                            adListener = object : AdListener() {
-                                override fun onAdLoaded() {
-                                    isAdLoaded = true
-                                    val isTest = localUnitId == TEST_ADAPTIVE_BANNER_AD_UNIT_ID ||
-                                        localUnitId == TEST_BANNER_AD_UNIT_ID
-                                    _diagnostics.update {
-                                        it.copy(
-                                            heroBannerState = if (isTest) AdSlotLoadState.LOADED_TEST else AdSlotLoadState.LOADED_LIVE,
-                                            lastUpdatedAtMs = System.currentTimeMillis()
-                                        )
-                                    }
-                                    if (!isTest) recordLiveSuccess("Hero Banner")
-                                }
-
-                                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                                    Log.w(TAG, "Hero banner failed for $localUnitId: ${loadAdError.message}")
-                                    when {
-                                        localUnitId != TEST_ADAPTIVE_BANNER_AD_UNIT_ID &&
-                                            localUnitId != TEST_BANNER_AD_UNIT_ID -> {
-                                            recordLiveFailureAndFallbackToTest("Hero Banner", loadAdError)
-                                            isAdLoaded = false
-                                            localUnitId = TEST_ADAPTIVE_BANNER_AD_UNIT_ID
-                                        }
-                                        localUnitId == TEST_ADAPTIVE_BANNER_AD_UNIT_ID -> {
-                                            isAdLoaded = false
-                                            localUnitId = TEST_BANNER_AD_UNIT_ID
-                                        }
-                                        else -> {
-                                            isAdFailed = true
+            if (isAdFailed) {
+                FallbackPromoBanner(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(12.dp)
+                )
+            } else {
+                key(localUnitId, widthDpInt, heightDpInt) {
+                    AndroidView(
+                        modifier = Modifier.fillMaxSize(),
+                        factory = { context ->
+                            _diagnostics.update { it.copy(heroBannerState = AdSlotLoadState.LOADING) }
+                            val hostContext = context.findActivity() ?: context
+                            try {
+                                val adSize = AdSize.getInlineAdaptiveBannerAdSize(widthDpInt, heightDpInt)
+                                AdView(hostContext).apply {
+                                    setAdSize(adSize)
+                                    setAdUnitId(localUnitId)
+                                    adListener = object : AdListener() {
+                                        override fun onAdLoaded() {
+                                            isAdLoaded = true
+                                            val isTest = localUnitId == TEST_ADAPTIVE_BANNER_AD_UNIT_ID ||
+                                                localUnitId == TEST_BANNER_AD_UNIT_ID
                                             _diagnostics.update {
                                                 it.copy(
-                                                    heroBannerState = AdSlotLoadState.FAILED,
+                                                    heroBannerState = if (isTest) AdSlotLoadState.LOADED_TEST else AdSlotLoadState.LOADED_LIVE,
                                                     lastUpdatedAtMs = System.currentTimeMillis()
                                                 )
                                             }
+                                            if (!isTest) recordLiveSuccess("Hero Banner")
+                                        }
+
+                                        override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                                            Log.w(TAG, "Hero banner failed for $localUnitId: ${loadAdError.message}")
+                                            when {
+                                                localUnitId != TEST_ADAPTIVE_BANNER_AD_UNIT_ID &&
+                                                    localUnitId != TEST_BANNER_AD_UNIT_ID -> {
+                                                    recordLiveFailureAndFallbackToTest("Hero Banner", loadAdError)
+                                                    isAdLoaded = false
+                                                    localUnitId = TEST_ADAPTIVE_BANNER_AD_UNIT_ID
+                                                }
+                                                localUnitId == TEST_ADAPTIVE_BANNER_AD_UNIT_ID -> {
+                                                    isAdLoaded = false
+                                                    localUnitId = TEST_BANNER_AD_UNIT_ID
+                                                }
+                                                else -> {
+                                                    isAdFailed = true
+                                                    _diagnostics.update {
+                                                        it.copy(
+                                                            heroBannerState = AdSlotLoadState.FAILED,
+                                                            lastUpdatedAtMs = System.currentTimeMillis()
+                                                        )
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
+                                    adViewHolder[0] = this
+                                    loadAd(AdRequest.Builder().build())
                                 }
+                            } catch (t: Throwable) {
+                                Log.e(TAG, "DedicatedHeroBannerAdView creation failed", t)
+                                isAdFailed = true
+                                _diagnostics.update {
+                                    it.copy(
+                                        heroBannerState = AdSlotLoadState.FAILED,
+                                        lastUpdatedAtMs = System.currentTimeMillis()
+                                    )
+                                }
+                                View(context)
                             }
-                            loadAd(AdRequest.Builder().build())
-                            adViewRef = this
+                        },
+                        update = { view ->
+                            if (view is AdView) {
+                                adViewHolder[0] = view
+                            }
                         }
-                    },
-                    update = { adView ->
-                        adViewRef = adView
-                    }
-                )
+                    )
+                }
             }
 
             DisposableEffect(localUnitId, widthDpInt, heightDpInt) {
                 onDispose {
-                    adViewRef?.destroy()
-                    adViewRef = null
+                    runCatching { adViewHolder[0]?.destroy() }
+                    adViewHolder[0] = null
                 }
             }
         }
@@ -605,7 +653,7 @@ object AdMobManager {
         var isAdLoaded by remember(resolvedUnitId) { mutableStateOf(false) }
         var isAdFailed by remember(resolvedUnitId) { mutableStateOf(false) }
         var localUnitId by remember(resolvedUnitId) { mutableStateOf(resolvedUnitId) }
-        var adViewRef by remember { mutableStateOf<AdView?>(null) }
+        val adViewHolder = remember(localUnitId) { arrayOfNulls<AdView>(1) }
 
         LaunchedEffect(resolvedUnitId) {
             if (localUnitId != resolvedUnitId) {
@@ -618,7 +666,7 @@ object AdMobManager {
         LaunchedEffect(localUnitId) {
             while (isActive) {
                 delay(autoRefreshIntervalSeconds * 1000L)
-                adViewRef?.loadAd(AdRequest.Builder().build())
+                runCatching { adViewHolder[0]?.loadAd(AdRequest.Builder().build()) }
             }
         }
 
@@ -628,76 +676,99 @@ object AdMobManager {
                 .testTag("quiz_adaptive_banner_box"),
             contentAlignment = Alignment.Center
         ) {
-            val widthDpInt = maxWidth.value.toInt().coerceAtLeast(300)
-            val totalContainerHeightDp = maxHeight.value.toInt().coerceAtLeast(50)
+            val widthDpInt = maxWidth.value.takeIf { it.isFinite() }?.toInt()?.coerceIn(300, 1200) ?: 320
+            val totalContainerHeightDp = maxHeight.value.takeIf { it.isFinite() }?.toInt()?.coerceIn(50, 420) ?: 100
             val heightBucketDp = computeInlineAdaptiveHeightBucket(totalContainerHeightDp)
 
-            key(localUnitId, widthDpInt, heightBucketDp) {
-                AndroidView(
-                    modifier = Modifier.fillMaxSize(),
-                    factory = { context ->
-                        _diagnostics.update { it.copy(quizBannerState = AdSlotLoadState.LOADING) }
-                        val adaptiveSize = if (heightBucketDp >= 90) {
-                            AdSize.getInlineAdaptiveBannerAdSize(widthDpInt, heightBucketDp)
-                        } else {
-                            AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(context, widthDpInt)
-                        }
-                        AdView(context).apply {
-                            setAdSize(adaptiveSize)
-                            setAdUnitId(localUnitId)
-                            adListener = object : AdListener() {
-                                override fun onAdLoaded() {
-                                    isAdLoaded = true
-                                    val isTest = localUnitId == TEST_ADAPTIVE_BANNER_AD_UNIT_ID ||
-                                        localUnitId == TEST_BANNER_AD_UNIT_ID
-                                    _diagnostics.update {
-                                        it.copy(
-                                            quizBannerState = if (isTest) AdSlotLoadState.LOADED_TEST else AdSlotLoadState.LOADED_LIVE,
-                                            lastUpdatedAtMs = System.currentTimeMillis()
-                                        )
-                                    }
-                                    if (!isTest) recordLiveSuccess("Test Adaptive Banner")
+            if (isAdFailed) {
+                FallbackPromoBanner(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .heightIn(min = 54.dp, max = 90.dp)
+                )
+            } else {
+                key(localUnitId, widthDpInt, heightBucketDp) {
+                    AndroidView(
+                        modifier = Modifier.fillMaxSize(),
+                        factory = { context ->
+                            _diagnostics.update { it.copy(quizBannerState = AdSlotLoadState.LOADING) }
+                            val hostContext = context.findActivity() ?: context
+                            try {
+                                val adaptiveSize = if (heightBucketDp >= 90) {
+                                    AdSize.getInlineAdaptiveBannerAdSize(widthDpInt, heightBucketDp)
+                                } else {
+                                    AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(hostContext, widthDpInt)
                                 }
-
-                                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                                    Log.w(TAG, "Responsive quiz banner failed for $localUnitId: ${loadAdError.message}")
-                                    when {
-                                        localUnitId != TEST_ADAPTIVE_BANNER_AD_UNIT_ID &&
-                                            localUnitId != TEST_BANNER_AD_UNIT_ID -> {
-                                            recordLiveFailureAndFallbackToTest("Test Adaptive Banner", loadAdError)
-                                            isAdLoaded = false
-                                            localUnitId = TEST_ADAPTIVE_BANNER_AD_UNIT_ID
-                                        }
-                                        localUnitId == TEST_ADAPTIVE_BANNER_AD_UNIT_ID -> {
-                                            isAdLoaded = false
-                                            localUnitId = TEST_BANNER_AD_UNIT_ID
-                                        }
-                                        else -> {
-                                            isAdFailed = true
+                                AdView(hostContext).apply {
+                                    setAdSize(adaptiveSize)
+                                    setAdUnitId(localUnitId)
+                                    adListener = object : AdListener() {
+                                        override fun onAdLoaded() {
+                                            isAdLoaded = true
+                                            val isTest = localUnitId == TEST_ADAPTIVE_BANNER_AD_UNIT_ID ||
+                                                localUnitId == TEST_BANNER_AD_UNIT_ID
                                             _diagnostics.update {
                                                 it.copy(
-                                                    quizBannerState = AdSlotLoadState.FAILED,
+                                                    quizBannerState = if (isTest) AdSlotLoadState.LOADED_TEST else AdSlotLoadState.LOADED_LIVE,
                                                     lastUpdatedAtMs = System.currentTimeMillis()
                                                 )
                                             }
+                                            if (!isTest) recordLiveSuccess("Test Adaptive Banner")
+                                        }
+
+                                        override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                                            Log.w(TAG, "Responsive quiz banner failed for $localUnitId: ${loadAdError.message}")
+                                            when {
+                                                localUnitId != TEST_ADAPTIVE_BANNER_AD_UNIT_ID &&
+                                                    localUnitId != TEST_BANNER_AD_UNIT_ID -> {
+                                                    recordLiveFailureAndFallbackToTest("Test Adaptive Banner", loadAdError)
+                                                    isAdLoaded = false
+                                                    localUnitId = TEST_ADAPTIVE_BANNER_AD_UNIT_ID
+                                                }
+                                                localUnitId == TEST_ADAPTIVE_BANNER_AD_UNIT_ID -> {
+                                                    isAdLoaded = false
+                                                    localUnitId = TEST_BANNER_AD_UNIT_ID
+                                                }
+                                                else -> {
+                                                    isAdFailed = true
+                                                    _diagnostics.update {
+                                                        it.copy(
+                                                            quizBannerState = AdSlotLoadState.FAILED,
+                                                            lastUpdatedAtMs = System.currentTimeMillis()
+                                                        )
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
+                                    adViewHolder[0] = this
+                                    loadAd(AdRequest.Builder().build())
                                 }
+                            } catch (t: Throwable) {
+                                Log.e(TAG, "ResponsiveQuizBannerAdView creation failed", t)
+                                isAdFailed = true
+                                _diagnostics.update {
+                                    it.copy(
+                                        quizBannerState = AdSlotLoadState.FAILED,
+                                        lastUpdatedAtMs = System.currentTimeMillis()
+                                    )
+                                }
+                                View(context)
                             }
-                            loadAd(AdRequest.Builder().build())
-                            adViewRef = this
+                        },
+                        update = { view ->
+                            if (view is AdView) {
+                                adViewHolder[0] = view
+                            }
                         }
-                    },
-                    update = { adView ->
-                        adViewRef = adView
-                    }
-                )
+                    )
+                }
             }
 
             DisposableEffect(localUnitId, widthDpInt, heightBucketDp) {
                 onDispose {
-                    adViewRef?.destroy()
-                    adViewRef = null
+                    runCatching { adViewHolder[0]?.destroy() }
+                    adViewHolder[0] = null
                 }
             }
         }
@@ -723,56 +794,75 @@ object AdMobManager {
         }
 
         val adRequest = AdRequest.Builder().build()
-        RewardedAd.load(
-            activity,
-            effectiveId,
-            adRequest,
-            object : RewardedAdLoadCallback() {
-                override fun onAdLoaded(rewardedAd: RewardedAd) {
-                    val isTest = effectiveId == TEST_REWARDED_AD_UNIT_ID
-                    Log.d(TAG, "Rewarded ad loaded successfully (isTest=$isTest).")
-                    _diagnostics.update {
-                        it.copy(
-                            rewardedState = if (isTest) AdSlotLoadState.LOADED_TEST else AdSlotLoadState.LOADED_LIVE,
-                            lastUpdatedAtMs = System.currentTimeMillis()
-                        )
-                    }
-                    if (!isTest) recordLiveSuccess("Mukofotli reklama")
-
-                    rewardedAd.show(activity) { rewardItem ->
-                        Log.d(TAG, "User earned reward: ${rewardItem.amount} ${rewardItem.type}")
+        try {
+            RewardedAd.load(
+                activity,
+                effectiveId,
+                adRequest,
+                object : RewardedAdLoadCallback() {
+                    override fun onAdLoaded(rewardedAd: RewardedAd) {
+                        val isTest = effectiveId == TEST_REWARDED_AD_UNIT_ID
+                        Log.d(TAG, "Rewarded ad loaded successfully (isTest=$isTest).")
                         _diagnostics.update {
                             it.copy(
-                                lastRewardEarnedAtMs = System.currentTimeMillis(),
+                                rewardedState = if (isTest) AdSlotLoadState.LOADED_TEST else AdSlotLoadState.LOADED_LIVE,
                                 lastUpdatedAtMs = System.currentTimeMillis()
                             )
                         }
-                        onRewardEarned()
-                    }
-                }
+                        if (!isTest) recordLiveSuccess("Mukofotli reklama")
 
-                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                    Log.w(TAG, "Rewarded ad failed for $effectiveId: ${loadAdError.message}")
-                    if (effectiveId != TEST_REWARDED_AD_UNIT_ID) {
-                        recordLiveFailureAndFallbackToTest("Mukofotli reklama", loadAdError)
-                        showRewardedAd(activity, TEST_REWARDED_AD_UNIT_ID, onRewardEarned, onAdFailedToLoad)
-                    } else {
-                        _diagnostics.update {
-                            it.copy(
-                                rewardedState = AdSlotLoadState.FAILED,
-                                lastUpdatedAtMs = System.currentTimeMillis()
-                            )
+                        if (!activity.isFinishing && !activity.isDestroyed) {
+                            runCatching {
+                                rewardedAd.show(activity) { rewardItem ->
+                                    Log.d(TAG, "User earned reward: ${rewardItem.amount} ${rewardItem.type}")
+                                    _diagnostics.update {
+                                        it.copy(
+                                            lastRewardEarnedAtMs = System.currentTimeMillis(),
+                                            lastUpdatedAtMs = System.currentTimeMillis()
+                                        )
+                                    }
+                                    onRewardEarned()
+                                }
+                            }.onFailure {
+                                onAdFailedToLoad?.invoke()
+                            }
+                        } else {
+                            onAdFailedToLoad?.invoke()
                         }
-                        Toast.makeText(
-                            activity,
-                            "Test reklama ham yuklanmadi (${loadAdError.code}). Internetni tekshiring.",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        onAdFailedToLoad?.invoke()
+                    }
+
+                    override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                        Log.w(TAG, "Rewarded ad failed for $effectiveId: ${loadAdError.message}")
+                        if (effectiveId != TEST_REWARDED_AD_UNIT_ID) {
+                            recordLiveFailureAndFallbackToTest("Mukofotli reklama", loadAdError)
+                            showRewardedAd(activity, TEST_REWARDED_AD_UNIT_ID, onRewardEarned, onAdFailedToLoad)
+                        } else {
+                            _diagnostics.update {
+                                it.copy(
+                                    rewardedState = AdSlotLoadState.FAILED,
+                                    lastUpdatedAtMs = System.currentTimeMillis()
+                                )
+                            }
+                            Toast.makeText(
+                                activity,
+                                "Test reklama ham yuklanmadi (${loadAdError.code}). Internetni tekshiring.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            onAdFailedToLoad?.invoke()
+                        }
                     }
                 }
+            )
+        } catch (t: Throwable) {
+            Log.e(TAG, "RewardedAd.load failed", t)
+            _diagnostics.update {
+                it.copy(
+                    rewardedState = AdSlotLoadState.FAILED,
+                    lastUpdatedAtMs = System.currentTimeMillis()
+                )
             }
-        )
+            onAdFailedToLoad?.invoke()
+        }
     }
 
     /**

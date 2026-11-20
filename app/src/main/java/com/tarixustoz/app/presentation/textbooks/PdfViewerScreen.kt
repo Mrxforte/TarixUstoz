@@ -1,8 +1,8 @@
 package com.tarixustoz.app.presentation.textbooks
 
 import com.tarixustoz.app.data.remote.MediaUrls
-import android.app.Activity
 import android.content.Intent
+import com.tarixustoz.app.ads.findActivity
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color as AndroidColor
@@ -114,7 +114,7 @@ fun PdfViewerScreen(
     viewModel: PdfReaderViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
-    val activity = context as? Activity
+    val activity = remember(context) { context.findActivity() }
     val coroutineScope = rememberCoroutineScope()
     val focusManager = LocalFocusManager.current
 
@@ -198,6 +198,21 @@ fun PdfViewerScreen(
         }
     }
 
+    DisposableEffect(pdfRenderer, fileDescriptor) {
+        val currentRenderer = pdfRenderer
+        val currentPfd = fileDescriptor
+        onDispose {
+            if (currentRenderer != null) {
+                synchronized(currentRenderer) {
+                    runCatching { currentRenderer.close() }
+                }
+            }
+            if (currentPfd != null) {
+                runCatching { currentPfd.close() }
+            }
+        }
+    }
+
     // Initialize PDF Renderer & Restore Progress
     LaunchedEffect(pdfAssetPath) {
         withContext(Dispatchers.IO) {
@@ -242,12 +257,16 @@ fun PdfViewerScreen(
                 pageCount = totalPages
 
                 // Restore last page
-                val savedPage = viewModel.getSavedPage(pdfAssetPath).coerceIn(1, totalPages)
-                currentPageIndex = savedPage - 1
+                val savedPage = if (totalPages > 0) {
+                    viewModel.getSavedPage(pdfAssetPath).coerceIn(1, totalPages)
+                } else {
+                    1
+                }
+                currentPageIndex = (savedPage - 1).coerceAtLeast(0)
                 isLoading = false
-            } catch (e: Exception) {
-                e.printStackTrace()
-                errorMessage = "Darslikni ochishda xatolik yuz berdi: ${e.localizedMessage}"
+            } catch (t: Throwable) {
+                t.printStackTrace()
+                errorMessage = "Darslikni ochishda xatolik yuz berdi: ${t.localizedMessage ?: "noma'lum xato"}"
                 isLoading = false
             }
         }
@@ -302,17 +321,19 @@ fun PdfViewerScreen(
 
     // Helper functions for Jump to Page
     val jumpToPage: (Int) -> Unit = { page ->
-        val validPage = page.coerceIn(1, pageCount)
-        val targetIdx = validPage - 1
-        currentPageIndex = targetIdx
-        coroutineScope.launch {
-            if (displayMode == DisplayMode.CONTINUOUS_VERTICAL) {
-                verticalListState.scrollToItem(targetIdx)
-            } else {
-                pagerState.scrollToPage(targetIdx)
+        if (pageCount > 0) {
+            val validPage = page.coerceIn(1, pageCount)
+            val targetIdx = validPage - 1
+            currentPageIndex = targetIdx
+            coroutineScope.launch {
+                if (displayMode == DisplayMode.CONTINUOUS_VERTICAL) {
+                    verticalListState.scrollToItem(targetIdx)
+                } else {
+                    pagerState.scrollToPage(targetIdx)
+                }
             }
+            viewModel.saveProgress(pdfAssetPath, validPage, scale)
         }
-        viewModel.saveProgress(pdfAssetPath, validPage, scale)
     }
 
     Scaffold(
@@ -1115,28 +1136,31 @@ private fun PdfRenderedPage(
 
                 val bmp = synchronized(renderer) {
                     val page = renderer.openPage(pageIndex)
-                    val scale = 1.75f
-                    val width = (page.width * scale).toInt()
-                    val height = (page.height * scale).toInt()
-                    val b = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
-                    val canvas = Canvas(b)
+                    try {
+                        val scale = 1.75f
+                        val width = (page.width * scale).toInt().coerceAtLeast(1)
+                        val height = (page.height * scale).toInt().coerceAtLeast(1)
+                        val b = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+                        val canvas = Canvas(b)
 
-                    val bgColor = when (colorMode) {
-                        ColorMode.WHITE -> AndroidColor.WHITE
-                        ColorMode.SEPIA -> AndroidColor.parseColor("#FBF0D9")
-                        ColorMode.NIGHT -> AndroidColor.parseColor("#2B2B2B")
+                        val bgColor = when (colorMode) {
+                            ColorMode.WHITE -> AndroidColor.WHITE
+                            ColorMode.SEPIA -> AndroidColor.parseColor("#FBF0D9")
+                            ColorMode.NIGHT -> AndroidColor.parseColor("#2B2B2B")
+                        }
+                        canvas.drawColor(bgColor)
+
+                        page.render(b, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
+                        b
+                    } finally {
+                        runCatching { page.close() }
                     }
-                    canvas.drawColor(bgColor)
-
-                    page.render(b, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
-                    page.close()
-                    b
                 }
 
                 PdfBitmapCache.put(cacheKey, bmp)
                 bitmap = bmp
-            } catch (e: Exception) {
-                e.printStackTrace()
+            } catch (t: Throwable) {
+                t.printStackTrace()
             }
         }
     }

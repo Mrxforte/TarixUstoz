@@ -22,6 +22,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withTimeoutOrNull
 import javax.inject.Inject
 
 data class QuizUiState(
@@ -658,22 +659,24 @@ class QuizViewModel @Inject constructor(
         if (!state.isFinished && state.questions.isNotEmpty() && route != null) {
             try {
                 runBlocking(Dispatchers.IO) {
-                    preferences.saveActiveQuizState(
-                        ActiveQuizState(
-                            quizRoute = route,
-                            quizTitle = title ?: "Test",
-                            questions = state.questions,
-                            currentIndex = state.currentIndex,
-                            answeredCorrectly = state.answeredCorrectly,
-                            correctCount = state.correctCount,
-                            remainingSeconds = state.remainingSeconds,
-                            totalLimitSeconds = state.totalLimitSeconds
-                        ),
-                        categoryKey = currentTicketCategory
-                    )
+                    withTimeoutOrNull(400L) {
+                        preferences.saveActiveQuizState(
+                            ActiveQuizState(
+                                quizRoute = route,
+                                quizTitle = title ?: "Test",
+                                questions = state.questions,
+                                currentIndex = state.currentIndex,
+                                answeredCorrectly = state.answeredCorrectly,
+                                correctCount = state.correctCount,
+                                remainingSeconds = state.remainingSeconds,
+                                totalLimitSeconds = state.totalLimitSeconds
+                            ),
+                            categoryKey = currentTicketCategory
+                        )
+                    }
                 }
-            } catch (e: Exception) {
-                e.printStackTrace()
+            } catch (t: Throwable) {
+                t.printStackTrace()
             }
         }
     }

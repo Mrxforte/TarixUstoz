@@ -112,7 +112,13 @@ fun QuizScreen(
             }
         }
         else -> {
-            val question = uiState.questions[uiState.currentIndex]
+            val question = uiState.questions.getOrNull(uiState.currentIndex)
+            if (question == null) {
+                Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    CircularProgressIndicator()
+                }
+                return@QuizScreen
+            }
             val isQuestionFav = question.id in uiState.favoriteQuestionIds
             val remSec = uiState.remainingSeconds ?: 0
             val formattedCountdown = remember(remSec) {

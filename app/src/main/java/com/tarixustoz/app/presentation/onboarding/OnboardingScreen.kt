@@ -68,7 +68,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.tarixustoz.app.R
+import com.tarixustoz.app.ads.findActivity
 import kotlinx.coroutines.launch
 
 private data class WelcomeSlide(
@@ -108,7 +111,7 @@ fun OnboardingScreen(
     var isMuted by remember { mutableStateOf(false) }
 
     DisposableEffect(Unit) {
-        val window = (view.context as? Activity)?.window
+        val window = view.context.findActivity()?.window
         if (window != null) {
             val controller = WindowCompat.getInsetsController(window, view)
             controller.isAppearanceLightStatusBars = false
@@ -166,8 +169,13 @@ fun OnboardingScreen(
                     .clip(RoundedCornerShape(0.dp))
             ) {
                 val maxPanPx = with(LocalDensity.current) { (maxWidth * 0.14f).toPx() }
-                Image(
-                    painter = painterResource(id = slide.imageRes),
+                AsyncImage(
+                    model = remember(slide.imageRes, context) {
+                        ImageRequest.Builder(context)
+                            .data(slide.imageRes)
+                            .crossfade(false)
+                            .build()
+                    },
                     contentDescription = slide.badge,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier

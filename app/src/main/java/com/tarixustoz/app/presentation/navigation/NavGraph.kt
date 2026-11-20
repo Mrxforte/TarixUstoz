@@ -134,8 +134,10 @@ fun TarixNavHost(
             })
         }
         currentUser == null && !authUiState.isSignedIn -> {
-            if (isTestModeActive) {
-                authViewModel.exitTestMode()
+            LaunchedEffect(isTestModeActive) {
+                if (isTestModeActive) {
+                    authViewModel.exitTestMode()
+                }
             }
             AuthScreen(
                 canNavigateBack = false,
@@ -160,8 +162,10 @@ fun TarixNavHost(
 
                 LaunchedEffect(pendingNotificationRoute, sessionKey) {
                     if (!pendingNotificationRoute.isNullOrBlank()) {
-                        navController.navigate(pendingNotificationRoute) {
-                            launchSingleTop = true
+                        runCatching {
+                            navController.navigate(pendingNotificationRoute) {
+                                launchSingleTop = true
+                            }
                         }
                         onNotificationRouteConsumed()
                     }
@@ -285,7 +289,13 @@ fun TarixNavHost(
                         navController.navigate("quiz/$id")
                     },
                     onContinueLastQuiz = { route ->
-                        navController.navigate(route)
+                        runCatching {
+                            navController.navigate(route)
+                        }.onFailure {
+                            runCatching {
+                                navController.navigate("quiz/ticket_EVENT_1?time=20&grade=0&shuffle=false")
+                            }
+                        }
                     }
                 )
             }
@@ -298,7 +308,9 @@ fun TarixNavHost(
                     onNavigateToTextbooks = { navController.navigate(Screen.Textbooks.route) },
                     onNavigateToLeaderboard = { navController.navigate(Screen.Leaderboard.route) },
                     onNavigateToProfile = { navController.navigate(Screen.Profile.route) },
-                    onResumeQuiz = { quizRoute -> navController.navigate(quizRoute) }
+                    onResumeQuiz = { quizRoute ->
+                        runCatching { navController.navigate(quizRoute) }
+                    }
                 )
             }
             composable(Screen.Textbooks.route) {

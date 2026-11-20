@@ -91,8 +91,8 @@ class OfflineSyncWorker @AssistedInject constructor(
             Result.success(output)
         } catch (e: CancellationException) {
             throw e
-        } catch (e: Exception) {
-            Log.w(TAG, "OfflineSyncWorker error (attempt $runAttemptCount)", e)
+        } catch (t: Throwable) {
+            Log.w(TAG, "OfflineSyncWorker error (attempt $runAttemptCount)", t)
             if (runAttemptCount < 3) Result.retry() else Result.failure()
         }
     }

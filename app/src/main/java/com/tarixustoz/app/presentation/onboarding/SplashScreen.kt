@@ -39,12 +39,14 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.tarixustoz.app.R
 
 @Composable
@@ -117,8 +119,14 @@ fun SplashScreen() {
                     shadowElevation = 18.dp,
                     modifier = Modifier.size(180.dp)
                 ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.app_icon_emblem),
+                    val context = LocalContext.current
+                    AsyncImage(
+                        model = remember(context) {
+                            ImageRequest.Builder(context)
+                                .data(R.drawable.app_icon_emblem)
+                                .crossfade(false)
+                                .build()
+                        },
                         contentDescription = "Tarix Ustoz gerbi",
                         contentScale = ContentScale.Crop,
                         modifier = Modifier

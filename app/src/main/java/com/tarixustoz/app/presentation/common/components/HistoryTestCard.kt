@@ -38,8 +38,11 @@ import androidx.compose.foundation.Image
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import kotlin.math.sin
 
 /**
@@ -91,8 +94,14 @@ fun HistoryTestCard(
                 )
         ) {
             if (backgroundImageRes != null) {
-                Image(
-                    painter = painterResource(id = backgroundImageRes),
+                val context = LocalContext.current
+                AsyncImage(
+                    model = remember(backgroundImageRes, context) {
+                        ImageRequest.Builder(context)
+                            .data(backgroundImageRes)
+                            .crossfade(false)
+                            .build()
+                    },
                     contentDescription = null,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()
