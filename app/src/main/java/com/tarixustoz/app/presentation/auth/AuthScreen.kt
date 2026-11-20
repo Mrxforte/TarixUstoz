@@ -106,10 +106,10 @@ fun AuthScreen(
     var resetEmailInput by remember { mutableStateOf("") }
 
     val backdropImages = remember {
-        listOf(
+        listOf<Int>(
             R.drawable.intro_registan,
-            R.drawable.intro_buxoro,
             R.drawable.intro_xiva,
+            R.drawable.intro_buxoro,
             R.drawable.intro_oqsaroy
         )
     }

@@ -90,14 +90,14 @@ class TestsViewModel @Inject constructor(
                     backgroundImageRes = backgroundResForDirection(key)
                 )
             }
-            testsDirectionCards.value = directions
+            testsDirectionCards.value = directions.shuffled()
 
             // Build Topic Cards
             val allDbTopics = contentRepository.getAllTopicsFlow().first()
             val filteredTopics = if (grade in 6..11) {
-                allDbTopics.filter { it.textbookId.endsWith("_$grade") }
+                allDbTopics.filter { it.textbookId.endsWith("_$grade") }.shuffled()
             } else {
-                allDbTopics
+                (6..11).flatMap { g -> allDbTopics.filter { it.textbookId.endsWith("_$g") }.shuffled() }.shuffled()
             }
             val topics = filteredTopics.take(12).map { t ->
                 val tCount = if (t.questionsCount > 0) t.questionsCount else 2500
@@ -168,7 +168,7 @@ class TestsViewModel @Inject constructor(
                     )
                 }
             }
-            testsGradeCards.value = grades
+            testsGradeCards.value = grades.shuffled()
         }
     }
 }

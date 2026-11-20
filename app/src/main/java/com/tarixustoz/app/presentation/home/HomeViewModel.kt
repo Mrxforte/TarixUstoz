@@ -12,7 +12,6 @@ import com.tarixustoz.app.data.repository.ContentRepository
 import com.tarixustoz.app.data.repository.MistakesRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
 import com.tarixustoz.app.domain.model.Question
-import com.tarixustoz.app.domain.model.gradeId
 import com.tarixustoz.app.presentation.common.components.backgroundResForBook
 import com.tarixustoz.app.presentation.common.components.backgroundResForDirection
 import com.tarixustoz.app.presentation.common.components.backgroundResForTopic
@@ -307,14 +306,37 @@ class HomeViewModel @Inject constructor(
                 categoryType = "direction",
                 backgroundImageRes = backgroundResForDirection(key)
             )
-        }
+        }.shuffled()
         homeDirectionCards.value = directions
 
-        val topics = contentRepository.getAllTopicsFlow().first().take(15).map { t ->
+        val allTopics = contentRepository.getAllTopicsFlow().first()
+        val topics = (6..11).flatMap { grade ->
+            allTopics.filter { t ->
+                val g = when {
+                    t.textbookId.contains("6") -> 6
+                    t.textbookId.contains("7") -> 7
+                    t.textbookId.contains("8") -> 8
+                    t.textbookId.contains("9") -> 9
+                    t.textbookId.contains("10") -> 10
+                    t.textbookId.contains("11") -> 11
+                    else -> 7
+                }
+                g == grade
+            }.shuffled()
+        }.shuffled().take(15).map { t ->
             val totalQs = if (t.questionsCount > 0) t.questionsCount else 2500
             val totalT = (totalQs + 29) / 30
             val subText = "${t.summary.ifBlank { "Mavzular to'plami" }} • $totalT ta bilet • $totalQs ta test"
             val passed = preferences.getTicketProgressFromPrefs(prefsSnapshot, t.id).passed.size
+            val grade = when {
+                t.textbookId.contains("6") -> 6
+                t.textbookId.contains("7") -> 7
+                t.textbookId.contains("8") -> 8
+                t.textbookId.contains("9") -> 9
+                t.textbookId.contains("10") -> 10
+                t.textbookId.contains("11") -> 11
+                else -> 7
+            }
             TestCardItem(
                 id = t.id,
                 title = t.title,
@@ -325,13 +347,13 @@ class HomeViewModel @Inject constructor(
                 gradientColors = listOf(Color(0xFF854D0E), Color(0xFFA16207)),
                 accentColor = Color(0xFF10B981),
                 categoryType = "topic",
-                backgroundImageRes = backgroundResForTopic(t.title, t.textbookId, t.gradeId)
+                backgroundImageRes = backgroundResForTopic(t.title, t.textbookId, grade)
             )
         }
         homeTopicCards.value = topics
 
         val books = contentRepository.getTextbooks().first()
-        val grades = if (books.isNotEmpty()) {
+        val grades = (if (books.isNotEmpty()) {
             books.map { book ->
                 val bookKey = "book_${book.id}"
                 val totalQs = book.totalQuestions.takeIf { it > 0 } ?: 100_000
@@ -384,7 +406,7 @@ class HomeViewModel @Inject constructor(
                     )
                 }
             }
-        }
+        }).shuffled()
         homeGradeCards.value = grades
     }
 

@@ -1,4 +1,8 @@
 # Add project specific ProGuard / R8 rules here.
+-optimizationpasses 5
+-allowaccessmodification
+-repackageclasses ''
+-flattenpackagehierarchy
 
 -keepattributes Signature, InnerClasses, EnclosingMethod, *Annotation*, ElementValueAttribute
 

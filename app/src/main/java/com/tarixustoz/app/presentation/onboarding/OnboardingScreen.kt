@@ -82,18 +82,18 @@ private data class WelcomeSlide(
 
 private val WELCOME_SLIDES = listOf(
     WelcomeSlide(
-        imageRes = R.drawable.intro_registan,
-        badge = "Registon • Samarqand",
+        imageRes = R.drawable.intro_buxoro,
+        badge = "Buxoro • O'zbekiston",
         quote = "“Tarix — o‘tmishning ko‘zgusi, buyuk kelajakning mustahkam poydevoridir.”"
     ),
     WelcomeSlide(
-        imageRes = R.drawable.intro_buxoro,
-        badge = "Registon Maydoni • Samarqand",
+        imageRes = R.drawable.intro_registan,
+        badge = "Registon • Samarqand",
         quote = "“Har bir sana, shaxs va voqea ortida ajdodlarimizning mangulikka muhrlangan hikmati bor.”"
     ),
     WelcomeSlide(
         imageRes = R.drawable.intro_xiva,
-        badge = "Ichan-Qala • Xiva",
+        badge = "Xiva • Qadimiy Xorazm",
         quote = "“O‘z tarixini chuqur anglagan inson kelajak yo‘lini dadil va ravshan ko‘ra oladi.”"
     )
 )

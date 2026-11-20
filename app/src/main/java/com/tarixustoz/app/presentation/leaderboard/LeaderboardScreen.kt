@@ -14,6 +14,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
@@ -262,23 +263,23 @@ fun LeaderboardScreen(
 
                 // Time Filter Chips (Bugun, Haftalik, Oylik, Barcha vaqt)
                 item {
-                    Row(
+                    LazyRow(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         val filters = listOf("Bugun", "Haftalik", "Oylik", "Barchasi")
-                        filters.forEachIndexed { index, label ->
+                        items(filters.size) { index ->
+                            val label = filters[index]
                             val isSelected = periodFilter == index
                             FilterChip(
                                 selected = isSelected,
                                 onClick = { periodFilter = index },
-                                label = { Text(label, fontSize = 12.sp, fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal) },
+                                label = { Text(label, fontSize = 12.sp, fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal, maxLines = 1) },
                                 colors = FilterChipDefaults.filterChipColors(
                                     selectedContainerColor = BrandPurple,
                                     selectedLabelColor = Color.White
                                 ),
-                                shape = RoundedCornerShape(50),
-                                modifier = Modifier.weight(1f)
+                                shape = RoundedCornerShape(50)
                             )
                         }
                     }
