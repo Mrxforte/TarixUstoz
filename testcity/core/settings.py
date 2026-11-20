@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "api",
+    "catalog",
 ]
 
 MIDDLEWARE = [
@@ -178,6 +179,11 @@ for _d in [MEDIA_ROOT, BOOKS_DIR, BOOKS_PDF_DIR, BOOKS_JSON_DIR, BOOKS_TXT_DIR, 
 
 CORS_ALLOW_ALL_ORIGINS = DEBUG
 CORS_ALLOWED_ORIGINS = env_list("DJANGO_CORS_ALLOWED_ORIGINS")
+
+REST_FRAMEWORK = {
+    # Domain errors (NotFoundError / ValidationError) become 404/400 responses.
+    "EXCEPTION_HANDLER": "interfaces.http.exceptions.domain_exception_handler",
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

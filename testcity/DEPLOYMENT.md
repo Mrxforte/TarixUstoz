@@ -42,6 +42,7 @@ and run these commands from its application root.
 ```sh
 python -m pip install -r requirements.txt
 python manage.py migrate --noinput
+python manage.py seed_catalog
 python manage.py restore_content
 python manage.py collectstatic --noinput
 python manage.py check --deploy

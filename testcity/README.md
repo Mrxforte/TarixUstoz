@@ -12,6 +12,26 @@
 - ✅ Admin panel
 - ✅ LLM integration (Gemini)
 
+## 🧱 Arxitektura (Clean Architecture)
+
+```
+interfaces → infrastructure → application → domain
+```
+
+| Qatlam | Papka | Vazifasi |
+|---|---|---|
+| Domain | `domain/` | Sof biznes-qoidalar: fanlar, tarix yo'nalishlari, baholash (Django importi yo'q) |
+| Application | `application/` | Use case'lar: katalog, test bileti, kunlik savol, sertifikat/xalqaro baholash |
+| Infrastructure | `infrastructure/` | Django ORM repolari, Gemini/RAG adapterlari, `container.py` |
+| Interface | `interfaces/http/` | DRF serializer/view/marshrutlar (`/api/v2/`) |
+| Legacy | `api/` | v1 API va tarix ORM modellari (mobil ilova uchun o'zgarmaydi) |
+| ORM | `catalog/` | `Subject`, `ExamProgram`, `ProgramSection`, `ScoreBand` jadvallari |
+
+To'liq tavsif va API jadvali: [ARCHITECTURE.md](ARCHITECTURE.md).
+
+Qo'llab-quvvatlanadigan imtihonlar: **maktab fanlari**, **milliy sertifikat**,
+**attestatsiya**, **SAT**, **IELTS** va **CEFR**.
+
 ## 🚀 Quick Start (Local Development)
 
 ### Prerequisites
@@ -44,7 +64,10 @@ python manage.py migrate
 # 6. Create superuser (admin)
 python manage.py createsuperuser
 
-# 7. Start development server
+# 7. Standart fanlar va imtihon dasturlari (idempotent)
+python manage.py seed_catalog
+
+# 8. Start development server
 python manage.py runserver
 ```
 

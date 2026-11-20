@@ -5,6 +5,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Clean-architecture API (fanlar, sertifikat, xalqaro testlar).
+    path('api/v2/', include('interfaces.http.urls')),
     path('api/', include('api.urls')),
     path('api/v1/', include('api.urls')),
 ]
