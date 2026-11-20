@@ -2,7 +2,7 @@ import sqlite3
 import json
 import os
 
-conn = sqlite3.connect('backend/db.sqlite3')
+conn = sqlite3.connect('testcity/db.sqlite3')
 cursor = conn.cursor()
 
 # 1. Fetch all Topics
@@ -121,7 +121,7 @@ with open('app/src/main/assets/content.json', 'w', encoding='utf-8') as f:
 print('Exported assets/content.json with ALL 381 topics & topic-linked questions!')
 
 # Update backend JSON exports per grade
-tests_json_dir = 'backend/media/tests/json'
+tests_json_dir = 'testcity/media/tests/json'
 os.makedirs(tests_json_dir, exist_ok=True)
 
 for g in range(6, 12):

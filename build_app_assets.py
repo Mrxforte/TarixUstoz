@@ -1,7 +1,7 @@
 import sqlite3, json, zipfile, os, random
 
 # 1. Fetch clean grade 6 questions from DB
-conn = sqlite3.connect('backend/db.sqlite3', timeout=30)
+conn = sqlite3.connect('testcity/db.sqlite3', timeout=30)
 cursor = conn.cursor()
 cursor.execute('SELECT text, option_a, option_b, option_c, option_d, correct_option, explanation, source_citation FROM api_question WHERE grade=6')
 rows = cursor.fetchall()
@@ -162,16 +162,16 @@ full_txt = '\n'.join(txt_lines)
 with open('6-sinf_tarix_1100_test.txt', 'w', encoding='utf-8') as f:
     f.write(full_txt)
 
-os.makedirs('backend/media/exports/txt', exist_ok=True)
-with open('backend/media/exports/txt/6-sinf_tarix_1100_test.txt', 'w', encoding='utf-8') as f:
+os.makedirs('testcity/media/exports/txt', exist_ok=True)
+with open('testcity/media/exports/txt/6-sinf_tarix_1100_test.txt', 'w', encoding='utf-8') as f:
     f.write(full_txt)
 
 z1 = zipfile.ZipFile('6-sinf_tarix_1100_test.zip', 'w', zipfile.ZIP_DEFLATED)
 z1.write('6-sinf_tarix_1100_test.txt')
 z1.close()
 
-z2 = zipfile.ZipFile('backend/media/exports/txt/6-sinf_tarix_1100_test.zip', 'w', zipfile.ZIP_DEFLATED)
-z2.write('backend/media/exports/txt/6-sinf_tarix_1100_test.txt', arcname='6-sinf_tarix_1100_test.txt')
+z2 = zipfile.ZipFile('testcity/media/exports/txt/6-sinf_tarix_1100_test.zip', 'w', zipfile.ZIP_DEFLATED)
+z2.write('testcity/media/exports/txt/6-sinf_tarix_1100_test.txt', arcname='6-sinf_tarix_1100_test.txt')
 z2.close()
 
 cursor.execute('DELETE FROM api_question')

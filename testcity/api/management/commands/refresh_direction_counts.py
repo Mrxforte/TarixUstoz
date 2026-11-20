@@ -3,7 +3,7 @@
 The app reads these numbers to render the "Yo'nalishlar bo'yicha testlar" cards;
 running this command after importing questions keeps them exact.
 
-Usage (from backend/):
+Usage (from testcity/):
   python manage.py refresh_direction_counts
   python manage.py refresh_direction_counts --grade 7 --subject "Jahon tarixi"
 """

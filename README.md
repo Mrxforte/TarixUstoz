@@ -133,7 +133,7 @@ app/
                    #   - navigation/   (NavGraph & bottom bar)
     di/            # Hilt dependency injection modules
 
-backend/                     # Django REST API + content generation pipeline
+testcity/                     # Django REST API + content generation pipeline
   api/                       # Models, serializers, viewsets, management commands
   core/                      # Settings, URLs
   content/

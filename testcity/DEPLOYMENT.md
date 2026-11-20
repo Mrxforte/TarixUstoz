@@ -12,7 +12,7 @@ the app and mount its URLs after verifying app labels, migration ownership,
 authentication and media storage. Namecheap cPanel can also run the WSGI
 application through **Setup Python App** when the existing site exposes a
 separate application mount. Set the Python application root to this
-`backend/` directory, the startup file to `passenger_wsgi.py`, and the entry
+`testcity/` directory, the startup file to `passenger_wsgi.py`, and the entry
 point to `application`. Use Python 3.11 or 3.12.
 
 ## Production settings

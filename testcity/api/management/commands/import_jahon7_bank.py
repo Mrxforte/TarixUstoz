@@ -1,6 +1,6 @@
 """Import one textbook question bank (100 000 items) into this backend.
 
-Source: a bank archive (backend/content/banks/<book>.ndjson.xz) or a plain
+Source: a bank archive (testcity/content/banks/<book>.ndjson.xz) or a plain
 .ndjson produced by the content pipeline; facts are validated against the
 textbook. Use `manage.py restore_content` to import every book at once.
 

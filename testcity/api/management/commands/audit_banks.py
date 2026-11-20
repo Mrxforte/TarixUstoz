@@ -4,7 +4,7 @@ Reports per book: total, distribution over the 20 combinations and over topics,
 plus duplicates / empty fields. Exits non-zero when a book is below the target,
 so it can be used as a check after any bulk edit.
 
-Usage (from backend/):
+Usage (from testcity/):
   python manage.py audit_banks
   python manage.py audit_banks --expected 100000
 """

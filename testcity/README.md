@@ -54,7 +54,7 @@ Admin panel: `http://localhost:8000/admin`
 ## 📁 Project Structure
 
 ```
-backend/
+testcity/
 ├── core/              # Django project settings
 │   ├── settings.py    # Configuration
 │   ├── urls.py        # URL routing
@@ -190,11 +190,11 @@ server {
     }
 
     location /media/ {
-        alias /var/www/tarix-ustoz-backend/media/;
+        alias /var/www/testcity/media/;
     }
 
     location /static/ {
-        alias /var/www/tarix-ustoz-backend/staticfiles/;
+        alias /var/www/testcity/staticfiles/;
     }
 }
 ```

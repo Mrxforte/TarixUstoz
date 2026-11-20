@@ -5,7 +5,7 @@ book over HTTP. Bundling all of them into the APK made the asset 41 MB, so the
 asset keeps a small sample per topic (default: 6) while the textbooks/topics
 catalog stays complete. Textbook `totalQuestions` values come from the database.
 
-Usage (from the project root, next to backend/):
+Usage (from the project root, next to testcity/):
   python export_clean_questions.py                 # 6 questions per topic
   python export_clean_questions.py --per-topic 10
 """
@@ -17,7 +17,7 @@ import os
 import sqlite3
 from collections import defaultdict
 
-DB = os.path.join("backend", "db.sqlite3")
+DB = os.path.join("testcity", "db.sqlite3")
 OUT = os.path.join("app", "src", "main", "assets", "content.json")
 
 

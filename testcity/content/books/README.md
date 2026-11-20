@@ -95,7 +95,7 @@ Chalg‘ituvchi variantlar ataylab yaqin qilib tanlanadi (qo‘shni yil/asr,
 bir mavzudagi boshqa shaxs yoki voqea), shuning uchun savollar
 yodlashni emas, mazmunni tekshiradi.
 
-## Backendga yuklash (TarixUstozApp/backend)
+## Backendga yuklash (TarixUstozApp/testcity)
 
 ```bash
 python manage.py import_jahon7_bank \

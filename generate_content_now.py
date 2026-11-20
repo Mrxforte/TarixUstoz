@@ -44,10 +44,10 @@ random.seed(42)
 
 # Load JSON grade 6 user test files if present
 user_json_files = [
-    'backend/media/exports/json/grade6_user_tests_100.json',
-    'backend/media/exports/json/grade6_user_tests_101_200.json',
-    'backend/media/exports/json/grade6_user_tests_501_600.json',
-    'backend/media/exports/json/grade6_user_tests_701_800.json'
+    'testcity/media/exports/json/grade6_user_tests_100.json',
+    'testcity/media/exports/json/grade6_user_tests_101_200.json',
+    'testcity/media/exports/json/grade6_user_tests_501_600.json',
+    'testcity/media/exports/json/grade6_user_tests_701_800.json'
 ]
 
 for fpath in user_json_files:
@@ -170,16 +170,16 @@ full_txt = '\n'.join(txt_lines)
 with open('6-sinf_tarix_1100_test.txt', 'w', encoding='utf-8') as f:
     f.write(full_txt)
 
-os.makedirs('backend/media/exports/txt', exist_ok=True)
-with open('backend/media/exports/txt/6-sinf_tarix_1100_test.txt', 'w', encoding='utf-8') as f:
+os.makedirs('testcity/media/exports/txt', exist_ok=True)
+with open('testcity/media/exports/txt/6-sinf_tarix_1100_test.txt', 'w', encoding='utf-8') as f:
     f.write(full_txt)
 
 z1 = zipfile.ZipFile('6-sinf_tarix_1100_test.zip', 'w', zipfile.ZIP_DEFLATED)
 z1.write('6-sinf_tarix_1100_test.txt')
 z1.close()
 
-z2 = zipfile.ZipFile('backend/media/exports/txt/6-sinf_tarix_1100_test.zip', 'w', zipfile.ZIP_DEFLATED)
-z2.write('backend/media/exports/txt/6-sinf_tarix_1100_test.txt', arcname='6-sinf_tarix_1100_test.txt')
+z2 = zipfile.ZipFile('testcity/media/exports/txt/6-sinf_tarix_1100_test.zip', 'w', zipfile.ZIP_DEFLATED)
+z2.write('testcity/media/exports/txt/6-sinf_tarix_1100_test.txt', arcname='6-sinf_tarix_1100_test.txt')
 z2.close()
 
 print('ALL 1100 Grade 6 history questions created and written to assets/content.json and TXT/ZIP!')

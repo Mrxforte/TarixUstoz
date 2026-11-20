@@ -1,6 +1,6 @@
 """Export each book's question bank into its own JSON file.
 
-Files land in backend/media/tests/json/:
+Files land in testcity/media/tests/json/:
     book_{grade}_{slug}.json     e.g. book_7_jahon.json, book_7_ozbekiston.json
 
 Keeping one file per book keeps the download small: the Android client asks the

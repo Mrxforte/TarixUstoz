@@ -2,9 +2,9 @@
 
 Scanned books (large PDFs) get their page images re-encoded at 150 dpi / JPEG q60;
 small or already compact PDFs are copied unchanged. Output goes to
-backend/content/pdfs/ (tracked); `manage.py restore_content` copies them to media/pdfs/.
+testcity/content/pdfs/ (tracked); `manage.py restore_content` copies them to media/pdfs/.
 
-Usage (from backend/):
+Usage (from testcity/):
   python content/tools/pack_pdfs.py --src media/books/pdfs
 """
 from __future__ import annotations

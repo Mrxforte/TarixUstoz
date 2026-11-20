@@ -1,8 +1,8 @@
 """Rebuild the question database and textbook PDFs from the tracked archives.
 
 The 1.1 million questions are stored in git as compressed per-book banks
-(backend/content/banks/*.ndjson.xz + manifest.json) and the PDFs as optimized
-files (backend/content/pdfs/). This command turns them back into a working
+(testcity/content/banks/*.ndjson.xz + manifest.json) and the PDFs as optimized
+files (testcity/content/pdfs/). This command turns them back into a working
 database, one book at a time (idempotent: up-to-date books are skipped).
 
 Usage (after `python manage.py migrate`):
@@ -28,7 +28,7 @@ CONTENT = Path(__file__).resolve().parents[3] / "content"
 
 
 class Command(BaseCommand):
-    help = "Restore all textbook question banks and PDFs from backend/content"
+    help = "Restore all textbook question banks and PDFs from testcity/content"
 
     def add_arguments(self, parser):
         parser.add_argument("--only", default="", help="substring of the book folder name")

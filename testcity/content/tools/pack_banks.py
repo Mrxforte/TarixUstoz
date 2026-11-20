@@ -1,11 +1,11 @@
 """Pack the generated question banks into small, git-friendly archives.
 
 Each `<book>/generated/questions.ndjson` (~90 MB) is compressed with xz
-(~3 MB) into backend/content/banks/<book>.ndjson.xz and described in
-backend/content/banks/manifest.json. The archives are what is committed to
+(~3 MB) into testcity/content/banks/<book>.ndjson.xz and described in
+testcity/content/banks/manifest.json. The archives are what is committed to
 git; `manage.py restore_content` rebuilds the database from them.
 
-Usage (from backend/):
+Usage (from testcity/):
   python content/tools/pack_banks.py --src-root <dir that contains <book>/generated/questions.ndjson>
 """
 from __future__ import annotations

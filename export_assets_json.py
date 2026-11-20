@@ -2,7 +2,7 @@ import sqlite3
 import json
 import os
 
-conn = sqlite3.connect('backend/db.sqlite3')
+conn = sqlite3.connect('testcity/db.sqlite3')
 cursor = conn.cursor()
 
 cursor.execute('SELECT id, text, option_a, option_b, option_c, option_d, correct_option, explanation, source_citation, grade, subject, difficulty FROM api_question')

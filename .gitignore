@@ -13,24 +13,24 @@ data_output.json
 app/src/main/assets/topics_export.json
 
 # ---------------------------------------------------------------------------
-# Django backend (backend/): code and the content pipeline are tracked,
+# Django backend (testcity/): code and the content pipeline are tracked,
 # runtime data is not.
 # ---------------------------------------------------------------------------
-backend/venv/
-backend/.venv/
-backend/__pycache__/
-backend/**/__pycache__/
-backend/.env
-backend/*.sqlite3
-backend/*.sqlite3-wal
-backend/*.sqlite3-shm
-backend/media/
-backend/staticfiles/
-backend/*.log
+testcity/venv/
+testcity/.venv/
+testcity/__pycache__/
+testcity/**/__pycache__/
+testcity/.env
+testcity/*.sqlite3
+testcity/*.sqlite3-wal
+testcity/*.sqlite3-shm
+testcity/media/
+testcity/staticfiles/
+testcity/*.log
 
 # Generated question banks are derived from content/books/*/facts — rebuild with
 #   python content/tools/build_book_bank.py <book> --grade N --subject S --prefix P
-backend/content/books/*/generated/
+testcity/content/books/*/generated/
 
 # Scratch exports / temp files
 6-sinf_tarix_*_test.txt
@@ -38,15 +38,15 @@ backend/content/books/*/generated/
 6-sinf_tarix_*_test.zip
 temp_page.png
 *.zip
-backend/temp_topics_seed.kt
+testcity/temp_topics_seed.kt
 
 # Production secrets and generated backend state
-backend/.env
-backend/.env.*
-!backend/.env.example
-backend/db.sqlite3*
-backend/media/
-backend/staticfiles/
+testcity/.env
+testcity/.env.*
+!testcity/.env.example
+testcity/db.sqlite3*
+testcity/media/
+testcity/staticfiles/
 **/__pycache__/
 *.pyc
 *-debug.log
