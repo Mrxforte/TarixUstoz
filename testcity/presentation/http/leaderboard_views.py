@@ -51,10 +51,12 @@ class LeaderboardViewSet(viewsets.ViewSet):
 
     @action(detail=False, methods=["post"], permission_classes=[permissions.IsAuthenticated])
     def submit(self, request):
-        points = _int_param(request, "points", 0) if request.query_params.get("points") else request.data.get("points", 0)
-        streak = request.data.get("streak", 0)
         try:
-            total = container.leaderboard.submit_points(int(request.user.id), int(points), streak=int(streak))
+            total = container.leaderboard.submit_points(
+                int(request.user.id),
+                int(request.data.get("points", 0)),
+                streak=int(request.data.get("streak", 0)),
+            )
         except (TypeError, ValueError):
             return Response({"detail": "points butun son bo'lishi kerak"}, status=status.HTTP_400_BAD_REQUEST)
         return Response({"points": total})

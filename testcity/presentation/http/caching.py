@@ -23,12 +23,6 @@ def get_or_compute(key: str, producer, *, timeout: int, version: int = 1):
     return value
 
 
-def invalidate(*prefixes: str) -> None:
-    """Best-effort invalidation for LocMem/Redis backends (delete by known keys)."""
-    for prefix in prefixes:
-        cache.delete(prefix)
-
-
 def etag_response(request, payload, *, cache_seconds: int = 60) -> Response:
     """Conditional GET: identical payloads are answered with 304 Not Modified."""
     encoded = json.dumps(payload, sort_keys=True, ensure_ascii=False, default=str).encode("utf-8")
