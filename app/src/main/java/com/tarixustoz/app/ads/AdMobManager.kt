@@ -582,31 +582,6 @@ object AdMobManager {
                     adViewRef = null
                 }
             }
-
-            if (isAdFailed) {
-                FallbackPromoBanner(
-                    modifier = Modifier.fillMaxWidth().height(60.dp)
-                )
-            } else if (!isAdLoaded) {
-                Surface(
-                    shape = RoundedCornerShape(18.dp),
-                    color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.65f),
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .testTag("hero_admob_loading_placeholder")
-                ) {
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        CircularProgressIndicator(
-                            modifier = Modifier.size(22.dp),
-                            strokeWidth = 2.5.dp,
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                    }
-                }
-            }
         }
     }
 
@@ -720,31 +695,6 @@ object AdMobManager {
                 onDispose {
                     adViewRef?.destroy()
                     adViewRef = null
-                }
-            }
-
-            if (isAdFailed) {
-                FallbackPromoBanner(
-                    modifier = Modifier.fillMaxWidth().height(60.dp)
-                )
-            } else if (!isAdLoaded) {
-                Surface(
-                    shape = RoundedCornerShape(12.dp),
-                    color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.65f),
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .testTag("quiz_responsive_ad_placeholder")
-                ) {
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        CircularProgressIndicator(
-                            modifier = Modifier.size(18.dp),
-                            strokeWidth = 2.dp,
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                    }
                 }
             }
         }
