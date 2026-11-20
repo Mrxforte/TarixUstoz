@@ -145,15 +145,20 @@ fun TestAnalysisScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Column {
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalArrangement = Arrangement.Center
+                    ) {
                         Text(
                             text = "To‘liq Tahlil & Diagrammalar",
                             style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
                         )
                         Text(
                             text = currentCategory.title,
-                            fontSize = 12.sp,
+                            fontSize = 11.sp,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             maxLines = 1,
                             overflow = TextOverflow.Ellipsis
@@ -226,7 +231,9 @@ fun TestAnalysisScreen(
                     shape = RoundedCornerShape(16.dp),
                     border = BorderStroke(1.5.dp, BrandPurple.copy(alpha = 0.3f)),
                     colors = CardDefaults.outlinedCardColors(containerColor = MaterialTheme.colorScheme.surface),
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .animateContentSize()
                 ) {
                     Row(
                         modifier = Modifier
@@ -235,7 +242,10 @@ fun TestAnalysisScreen(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
+                        Row(
+                            modifier = Modifier.weight(1f),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
                             Surface(
                                 shape = CircleShape,
                                 color = currentCategory.iconColor.copy(alpha = 0.15f),
@@ -251,7 +261,7 @@ fun TestAnalysisScreen(
                                 }
                             }
                             Spacer(Modifier.width(12.dp))
-                            Column {
+                            Column(modifier = Modifier.weight(1f)) {
                                 Text(
                                     text = "Bo'lim / Kategoriya",
                                     fontSize = 11.sp,
@@ -261,10 +271,13 @@ fun TestAnalysisScreen(
                                     text = currentCategory.title,
                                     style = MaterialTheme.typography.titleSmall,
                                     fontWeight = FontWeight.Bold,
-                                    color = MaterialTheme.colorScheme.onSurface
+                                    color = MaterialTheme.colorScheme.onSurface,
+                                    maxLines = 2,
+                                    overflow = TextOverflow.Ellipsis
                                 )
                             }
                         }
+                        Spacer(Modifier.width(8.dp))
                         Icon(
                             imageVector = Icons.Default.ArrowDropDown,
                             contentDescription = null,
@@ -293,7 +306,9 @@ fun TestAnalysisScreen(
                                         text = cat.title,
                                         fontWeight = if (selectedIndex == idx) FontWeight.Bold else FontWeight.Normal,
                                         fontSize = 14.sp,
-                                        color = if (selectedIndex == idx) BrandPurple else MaterialTheme.colorScheme.onSurface
+                                        color = if (selectedIndex == idx) BrandPurple else MaterialTheme.colorScheme.onSurface,
+                                        maxLines = 2,
+                                        overflow = TextOverflow.Ellipsis
                                     )
                                 }
                             },
@@ -376,7 +391,9 @@ fun TestAnalysisScreen(
                     shape = RoundedCornerShape(20.dp),
                     color = MaterialTheme.colorScheme.surface,
                     border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .animateContentSize()
                 ) {
                     Column(
                         modifier = Modifier.padding(18.dp),
@@ -387,18 +404,23 @@ fun TestAnalysisScreen(
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Column {
+                            Column(modifier = Modifier.weight(1f)) {
                                 Text(
                                     text = "1. Qirrali Doira Diagrammasi (Pie Chart)",
                                     style = MaterialTheme.typography.titleMedium,
-                                    fontWeight = FontWeight.Bold
+                                    fontWeight = FontWeight.Bold,
+                                    maxLines = 2,
+                                    overflow = TextOverflow.Ellipsis
                                 )
                                 Text(
                                     text = "Bo‘lak-bo‘lak qirrali tahlil diagrammasi",
                                     fontSize = 11.sp,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    maxLines = 2,
+                                    overflow = TextOverflow.Ellipsis
                                 )
                             }
+                            Spacer(Modifier.width(8.dp))
                             Surface(
                                 shape = RoundedCornerShape(8.dp),
                                 color = BrandPurple.copy(alpha = 0.1f)
@@ -443,18 +465,21 @@ fun TestAnalysisScreen(
                             horizontalArrangement = Arrangement.SpaceEvenly
                         ) {
                             UzexLegendItem(
+                                modifier = Modifier.weight(1f),
                                 color = Color(0xFF10B981),
                                 title = "To‘g‘ri",
                                 percent = "${currentCategory.correctPct}%",
                                 count = "$correctNum ta"
                             )
                             UzexLegendItem(
+                                modifier = Modifier.weight(1f),
                                 color = Color(0xFFEF4444),
                                 title = "Xato",
                                 percent = "${currentCategory.mistakePct}%",
                                 count = "$mistakeNum ta"
                             )
                             UzexLegendItem(
+                                modifier = Modifier.weight(1f),
                                 color = Color(0xFF64748B),
                                 title = "Qolgan",
                                 percent = "${currentCategory.unattemptedPct}%",
@@ -471,7 +496,9 @@ fun TestAnalysisScreen(
                     shape = RoundedCornerShape(20.dp),
                     color = MaterialTheme.colorScheme.surface,
                     border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .animateContentSize()
                 ) {
                     Column(modifier = Modifier.padding(18.dp)) {
                         Row(
@@ -479,7 +506,10 @@ fun TestAnalysisScreen(
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
+                            Row(
+                                modifier = Modifier.weight(1f),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
                                 Surface(
                                     shape = CircleShape,
                                     color = Color(0xFFF59E0B).copy(alpha = 0.15f),
@@ -495,16 +525,20 @@ fun TestAnalysisScreen(
                                     }
                                 }
                                 Spacer(Modifier.width(10.dp))
-                                Column {
+                                Column(modifier = Modifier.weight(1f)) {
                                     Text(
                                         text = "Pedagogik Maslahat & Tavsiyalar",
                                         style = MaterialTheme.typography.titleMedium,
-                                        fontWeight = FontWeight.Bold
+                                        fontWeight = FontWeight.Bold,
+                                        maxLines = 1,
+                                        overflow = TextOverflow.Ellipsis
                                     )
                                     Text(
                                         text = "Xatolar tahlili asosida dinamik generator",
                                         fontSize = 11.sp,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        maxLines = 1,
+                                        overflow = TextOverflow.Ellipsis
                                     )
                                 }
                             }
@@ -556,7 +590,8 @@ fun TestAnalysisScreen(
                                         fontSize = 13.sp,
                                         lineHeight = 19.sp,
                                         color = MaterialTheme.colorScheme.onSurface,
-                                        fontWeight = FontWeight.Medium
+                                        fontWeight = FontWeight.Medium,
+                                        modifier = Modifier.weight(1f)
                                     )
                                 }
                             }
@@ -581,7 +616,7 @@ fun TestAnalysisScreen(
                                     modifier = Modifier.size(20.dp)
                                 )
                                 Spacer(Modifier.width(10.dp))
-                                Column {
+                                Column(modifier = Modifier.weight(1f)) {
                                     Text(
                                         text = "Tavsiya etilgan darslik bobi:",
                                         fontSize = 11.sp,
@@ -591,7 +626,9 @@ fun TestAnalysisScreen(
                                         text = currentCategory.recommendedChapter,
                                         fontSize = 12.sp,
                                         fontWeight = FontWeight.Bold,
-                                        color = MaterialTheme.colorScheme.onSurface
+                                        color = MaterialTheme.colorScheme.onSurface,
+                                        maxLines = 2,
+                                        overflow = TextOverflow.Ellipsis
                                     )
                                 }
                             }
@@ -608,18 +645,24 @@ fun TestAnalysisScreen(
                             shape = RoundedCornerShape(14.dp),
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .height(50.dp)
+                                .heightIn(min = 50.dp)
                                 .testTag("analysis_screen_start_test_btn")
                         ) {
-                            Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null)
-                            Spacer(Modifier.width(8.dp))
-                            Text(
-                                text = "${currentCategory.title.replace("umumiy tahlili", "")} bo‘yicha test ishlash",
-                                fontSize = 14.sp,
-                                fontWeight = FontWeight.Bold,
-                                maxLines = 1,
-                                overflow = TextOverflow.Ellipsis
-                            )
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.Center
+                            ) {
+                                Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null)
+                                Spacer(Modifier.width(8.dp))
+                                Text(
+                                    text = "${currentCategory.title.replace("umumiy tahlili", "").trim()} bo‘yicha test ishlash",
+                                    fontSize = 14.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    textAlign = TextAlign.Center,
+                                    maxLines = 2,
+                                    overflow = TextOverflow.Ellipsis
+                                )
+                            }
                         }
                     }
                 }
@@ -757,33 +800,42 @@ private fun MetricPillCard(
     bg: Color
 ) {
     Surface(
-        modifier = modifier,
+        modifier = modifier.animateContentSize(),
         shape = RoundedCornerShape(14.dp),
         color = bg,
         border = BorderStroke(1.dp, color.copy(alpha = 0.25f))
     ) {
         Column(
-            modifier = Modifier.padding(horizontal = 10.dp, vertical = 10.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 10.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
             Text(
                 text = title,
                 fontSize = 11.sp,
                 color = color,
                 fontWeight = FontWeight.Medium,
-                maxLines = 1
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.Center
             )
             Spacer(Modifier.height(2.dp))
             Text(
                 text = value,
-                fontSize = 18.sp,
+                fontSize = 17.sp,
                 fontWeight = FontWeight.Bold,
-                color = color
+                color = color,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.Center
             )
             Text(
                 text = count,
                 fontSize = 10.sp,
-                color = color.copy(alpha = 0.8f)
+                color = color.copy(alpha = 0.8f),
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.Center
             )
         }
     }
@@ -794,10 +846,17 @@ private fun UzexLegendItem(
     color: Color,
     title: String,
     percent: String,
-    count: String
+    count: String,
+    modifier: Modifier = Modifier
 ) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
             Box(
                 modifier = Modifier
                     .size(10.dp)
@@ -808,18 +867,26 @@ private fun UzexLegendItem(
                 text = percent,
                 fontSize = 13.sp,
                 fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onSurface
+                color = MaterialTheme.colorScheme.onSurface,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
             )
         }
         Text(
             text = title,
             fontSize = 11.sp,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            textAlign = TextAlign.Center
         )
         Text(
             text = count,
             fontSize = 10.sp,
-            color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+            color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            textAlign = TextAlign.Center
         )
     }
 }

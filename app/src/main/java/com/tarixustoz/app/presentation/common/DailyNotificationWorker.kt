@@ -37,14 +37,24 @@ class DailyNotificationWorker @AssistedInject constructor(
 
         preferences.recordIncomingDailyNotification(question.text)
 
-        val intent = Intent(context, MainActivity::class.java).apply {
+        val solveIntent = Intent(context, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
             putExtra("daily_question_id", question.id)
             putExtra("open_route", "quiz/daily")
         }
 
-        val pendingIntent = PendingIntent.getActivity(
-            context, 0, intent,
+        val solvePendingIntent = PendingIntent.getActivity(
+            context, 1011, solveIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+
+        val textbooksIntent = Intent(context, MainActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            putExtra("open_route", "textbooks")
+        }
+
+        val textbooksPendingIntent = PendingIntent.getActivity(
+            context, 1012, textbooksIntent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
@@ -55,18 +65,35 @@ class DailyNotificationWorker @AssistedInject constructor(
             val channel = NotificationChannel(
                 channelId,
                 "Kun Savoli (Tarix Ustoz)",
-                NotificationManager.IMPORTANCE_DEFAULT
-            )
+                NotificationManager.IMPORTANCE_HIGH
+            ).apply {
+                description = "Har kuni yangi tarixiy kun savoli eslatmasi va harakat tugmalari"
+                enableVibration(true)
+            }
             notificationManager.createNotificationChannel(channel)
         }
 
+        val notificationTitle = "Kun savoli • Tarix Ustoz 🎯"
+        val notificationText = "${question.cleanText}\n\nJavob berib +10 Malaka qo‘lga kiriting!"
+
         val notification = NotificationCompat.Builder(context, channelId)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
-            .setContentTitle("Kun savoli • Tarix Ustoz")
-            .setContentText(question.text)
-            .setStyle(NotificationCompat.BigTextStyle().bigText(question.text))
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-            .setContentIntent(pendingIntent)
+            .setContentTitle(notificationTitle)
+            .setContentText(question.cleanText)
+            .setStyle(NotificationCompat.BigTextStyle().bigText(notificationText))
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setDefaults(NotificationCompat.DEFAULT_ALL)
+            .setContentIntent(solvePendingIntent)
+            .addAction(
+                R.drawable.ic_launcher_foreground,
+                "Savolni yechish 🎯",
+                solvePendingIntent
+            )
+            .addAction(
+                R.drawable.ic_launcher_foreground,
+                "Darsliklar 📚",
+                textbooksPendingIntent
+            )
             .setAutoCancel(true)
             .build()
 

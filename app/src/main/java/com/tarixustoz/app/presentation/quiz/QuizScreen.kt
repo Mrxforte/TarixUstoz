@@ -16,6 +16,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -32,7 +33,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import android.app.Activity
 import com.tarixustoz.app.ads.AdMobManager
+import com.tarixustoz.app.ads.findActivity
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import kotlinx.coroutines.delay
 import java.text.SimpleDateFormat
@@ -53,6 +56,20 @@ fun QuizScreen(
     viewModel: QuizViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
+
+    val context = LocalContext.current
+    val activity: Activity? = remember(context) { context.findActivity() }
+    var hasShownCompletionAd by remember(uiState.isFinished) { mutableStateOf(false) }
+
+    LaunchedEffect(uiState.isFinished) {
+        if (uiState.isFinished && !hasShownCompletionAd && activity != null) {
+            hasShownCompletionAd = true
+            AdMobManager.showCompletionAd(
+                activity = activity,
+                completedCount = uiState.ticketAdCounter
+            )
+        }
+    }
 
     LaunchedEffect(topicId, customCount, customCategory, customDifficulty, explicitGrade, forceShuffle) {
         viewModel.startQuiz(
@@ -83,6 +100,9 @@ fun QuizScreen(
                 isTicketQuiz = uiState.isTicketQuiz,
                 onRetry = {
                     viewModel.restartWithShuffle()
+                },
+                onNextQuiz = {
+                    viewModel.restartWithNextQuiz()
                 }
             )
         }
@@ -514,7 +534,8 @@ private fun ResultScreen(
     isTimedOut: Boolean,
     earnedStars: Int,
     isTicketQuiz: Boolean,
-    onRetry: () -> Unit
+    onRetry: () -> Unit,
+    onNextQuiz: () -> Unit
 ) {
     val incorrect = (total - correct).coerceAtLeast(0)
     val accuracyPct = if (total > 0) (correct * 100f / total).roundToInt() else 0
@@ -544,203 +565,286 @@ private fun ResultScreen(
         if (min > 0) "${min} daq ${sec} son" else "${sec} son"
     }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(20.dp)
-            .verticalScroll(rememberScrollState()),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(14.dp)
-    ) {
-        Spacer(Modifier.height(6.dp))
-
-        Text(
-            text = if (isTimedOut) "Vaqt tugadi! ⏰" else "Test Natijasi 🎯",
-            style = MaterialTheme.typography.headlineMedium,
-            fontWeight = FontWeight.Bold,
-            color = if (isTimedOut) Color(0xFFDC2626) else MaterialTheme.colorScheme.onSurface
-        )
-
-        // 3-Star Rating Card (10 correct = 1 star within time limit; 0 stars if timed out)
-        Surface(
-            shape = RoundedCornerShape(16.dp),
-            color = if (isTimedOut) Color(0xFFFEF2F2) else Color(0xFFFFFBEB),
-            border = BorderStroke(
-                1.5.dp,
-                if (isTimedOut) Color(0xFFFCA5A5) else Color(0xFFFDE68A)
-            ),
+    Scaffold(
+        containerColor = MaterialTheme.colorScheme.background,
+        contentWindowInsets = WindowInsets.safeDrawing
+    ) { innerPadding ->
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .testTag("quiz_result_star_card")
+                .fillMaxSize()
+                .padding(innerPadding)
+                .padding(horizontal = 20.dp, vertical = 8.dp)
+                .verticalScroll(rememberScrollState()),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(14.dp)
         ) {
+            Text(
+                text = if (isTimedOut) "Vaqt tugadi! ⏰" else "Test Natijasi 🎯",
+                style = MaterialTheme.typography.headlineMedium,
+                fontWeight = FontWeight.Bold,
+                color = if (isTimedOut) Color(0xFFDC2626) else MaterialTheme.colorScheme.onSurface
+            )
+
+            // 3-Star Rating Card (10 correct = 1 star within time limit; 0 stars if timed out)
+            Surface(
+                shape = RoundedCornerShape(16.dp),
+                color = if (isTimedOut) Color(0xFFFEF2F2) else Color(0xFFFFFBEB),
+                border = BorderStroke(
+                    1.5.dp,
+                    if (isTimedOut) Color(0xFFFCA5A5) else Color(0xFFFDE68A)
+                ),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("quiz_result_star_card")
+            ) {
+                Column(
+                    modifier = Modifier.padding(14.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Row(
+                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        for (starIdx in 1..3) {
+                            val isEarned = !isTimedOut && starIdx <= earnedStars
+                            Icon(
+                                imageVector = if (isEarned) Icons.Default.Star else Icons.Default.StarBorder,
+                                contentDescription = null,
+                                tint = if (isEarned) Color(0xFFF59E0B) else Color(0xFFD1D5DB),
+                                modifier = Modifier.size(34.dp)
+                            )
+                        }
+                    }
+                    Spacer(Modifier.height(6.dp))
+                    Text(
+                        text = if (isTimedOut) {
+                            "Belgilangan vaqtda tugallanmadi — 0 Yulduz! Qayta boshlang."
+                        } else {
+                            "$earnedStars / 3 Yulduz qo'lga kiritildi (Har 10 ta to'g'ri javob = 1 ⭐)"
+                        },
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = if (isTimedOut) Color(0xFFDC2626) else Color(0xFFB45309)
+                    )
+                }
+            }
+
+            // Ring Accuracy Chart
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier.size(160.dp)
+            ) {
+                val primaryColor = BrandPurple
+                val trackColor = MaterialTheme.colorScheme.surfaceVariant
+                val successColor = Color(0xFF10B981)
+
+                Canvas(modifier = Modifier.fillMaxSize()) {
+                    val strokeWidth = 14.dp.toPx()
+                    drawArc(
+                        color = trackColor,
+                        startAngle = 0f,
+                        sweepAngle = 360f,
+                        useCenter = false,
+                        style = Stroke(width = strokeWidth)
+                    )
+                    val sweepAngle = 360f * (accuracyPct / 100f) * animProgress
+                    drawArc(
+                        color = if (isTimedOut) Color(0xFFEF4444) else if (accuracyPct >= 70) successColor else primaryColor,
+                        startAngle = -90f,
+                        sweepAngle = sweepAngle,
+                        useCenter = false,
+                        style = Stroke(width = strokeWidth, cap = StrokeCap.Round)
+                    )
+                }
+
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(
+                        text = "$displayAccuracy%",
+                        fontSize = 30.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        color = if (isTimedOut) Color(0xFFEF4444) else if (accuracyPct >= 70) Color(0xFF10B981) else BrandPurple
+                    )
+                    Text(
+                        text = "Aniqlik",
+                        fontSize = 12.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        fontWeight = FontWeight.Medium
+                    )
+                }
+            }
+
+            Text(
+                text = when {
+                    isTimedOut -> "Vaqt tugagani sababli bilet hisoblanmadi. Savollar va A/B/C/D variantlar aralashtirilib qayta boshlanadi!"
+                    accuracyPct >= 80 -> "Ajoyib natija! Barakalla! 🎉"
+                    accuracyPct >= 60 -> "Yaxshi ko‘rsatkich, yana bir oz harakat qiling! 👍"
+                    else -> "Xatolar ustida ishlab bilimlarni oshiring! 💪"
+                },
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.SemiBold,
+                color = if (isTimedOut) Color(0xFFDC2626) else MaterialTheme.colorScheme.onSurfaceVariant
+            )
+
+            // 4 Metric Detail Cards
             Column(
-                modifier = Modifier.padding(14.dp),
-                horizontalAlignment = Alignment.CenterHorizontally
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 Row(
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    verticalAlignment = Alignment.CenterVertically
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
-                    for (starIdx in 1..3) {
-                        val isEarned = !isTimedOut && starIdx <= earnedStars
-                        Icon(
-                            imageVector = if (isEarned) Icons.Default.Star else Icons.Default.StarBorder,
-                            contentDescription = null,
-                            tint = if (isEarned) Color(0xFFF59E0B) else Color(0xFFD1D5DB),
-                            modifier = Modifier.size(34.dp)
+                    ResultMetricCard(
+                        modifier = Modifier.weight(1f),
+                        title = "To‘g‘ri javob",
+                        value = "$displayCorrect ta",
+                        subtitle = "$displayAccuracy%",
+                        icon = Icons.Default.CheckCircle,
+                        color = Color(0xFF10B981),
+                        bgColor = Color(0xFFECFDF5)
+                    )
+
+                    ResultMetricCard(
+                        modifier = Modifier.weight(1f),
+                        title = "Xato javob",
+                        value = "$displayIncorrect ta",
+                        subtitle = "${(100 - accuracyPct).coerceAtLeast(0)}%",
+                        icon = Icons.Default.Cancel,
+                        color = Color(0xFFEF4444),
+                        bgColor = Color(0xFFFEF2F2)
+                    )
+                }
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    ResultMetricCard(
+                        modifier = Modifier.weight(1f),
+                        title = "Sarflangan vaqt",
+                        value = formattedTime,
+                        subtitle = "Vaqt tahlili",
+                        icon = Icons.Default.Schedule,
+                        color = Color(0xFF0284C7),
+                        bgColor = Color(0xFFEFF6FF)
+                    )
+
+                    ResultMetricCard(
+                        modifier = Modifier.weight(1f),
+                        title = "Yulduz reytingi",
+                        value = "$earnedStars ⭐",
+                        subtitle = if (isTimedOut) "Vaqt tugadi" else "10 to'g'ri = 1 ⭐",
+                        icon = Icons.Default.Star,
+                        color = Color(0xFFD97706),
+                        bgColor = Color(0xFFFFFBEB)
+                    )
+                }
+            }
+
+            // Reklama va ilovani bepul saqlash haqida tushuntirish kartasi
+            Surface(
+                shape = RoundedCornerShape(16.dp),
+                color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.45f),
+                border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("quiz_result_ad_explanation_card")
+            ) {
+                Row(
+                    modifier = Modifier.padding(14.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    Surface(
+                        shape = CircleShape,
+                        color = BrandPurple,
+                        modifier = Modifier.size(36.dp)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Icon(
+                                imageVector = Icons.Default.Favorite,
+                                contentDescription = null,
+                                tint = Color.White,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
+                    }
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = "Reklama loyihani bepul saqlashga yordam beradi 💙",
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                        Spacer(Modifier.height(2.dp))
+                        Text(
+                            text = "Qisqa reklamalar ilovadagi barcha 6-11 sinf darsliklari va 1.1 mln+ (1 100 000+) tarixiy testlarni har doim bepul ushlab turish hamda yangilab borish uchun xizmat qiladi. Qo‘llab-quvvatlaganingiz uchun rahmat! 🙏",
+                            fontSize = 11.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            lineHeight = 15.sp
                         )
                     }
                 }
-                Spacer(Modifier.height(6.dp))
-                Text(
-                    text = if (isTimedOut) {
-                        "Belgilangan vaqtda tugallanmadi — 0 Yulduz! Qayta boshlang."
-                    } else {
-                        "$earnedStars / 3 Yulduz qo'lga kiritildi (Har 10 ta to'g'ri javob = 1 ⭐)"
-                    },
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = if (isTimedOut) Color(0xFFDC2626) else Color(0xFFB45309)
-                )
-            }
-        }
-
-        // Ring Accuracy Chart
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier.size(160.dp)
-        ) {
-            val primaryColor = BrandPurple
-            val trackColor = MaterialTheme.colorScheme.surfaceVariant
-            val successColor = Color(0xFF10B981)
-
-            Canvas(modifier = Modifier.fillMaxSize()) {
-                val strokeWidth = 14.dp.toPx()
-                drawArc(
-                    color = trackColor,
-                    startAngle = 0f,
-                    sweepAngle = 360f,
-                    useCenter = false,
-                    style = Stroke(width = strokeWidth)
-                )
-                val sweepAngle = 360f * (accuracyPct / 100f) * animProgress
-                drawArc(
-                    color = if (isTimedOut) Color(0xFFEF4444) else if (accuracyPct >= 70) successColor else primaryColor,
-                    startAngle = -90f,
-                    sweepAngle = sweepAngle,
-                    useCenter = false,
-                    style = Stroke(width = strokeWidth, cap = StrokeCap.Round)
-                )
             }
 
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(
-                    text = "$displayAccuracy%",
-                    fontSize = 30.sp,
-                    fontWeight = FontWeight.ExtraBold,
-                    color = if (isTimedOut) Color(0xFFEF4444) else if (accuracyPct >= 70) Color(0xFF10B981) else BrandPurple
-                )
-                Text(
-                    text = "Aniqlik",
-                    fontSize = 12.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    fontWeight = FontWeight.Medium
-                )
-            }
-        }
+            Spacer(Modifier.height(4.dp))
 
-        Text(
-            text = when {
-                isTimedOut -> "Vaqt tugagani sababli bilet hisoblanmadi. Savollar va A/B/C/D variantlar aralashtirilib qayta boshlanadi!"
-                accuracyPct >= 80 -> "Ajoyib natija! Barakalla! 🎉"
-                accuracyPct >= 60 -> "Yaxshi ko‘rsatkich, yana bir oz harakat qiling! 👍"
-                else -> "Xatolar ustida ishlab bilimlarni oshiring! 💪"
-            },
-            style = MaterialTheme.typography.titleSmall,
-            fontWeight = FontWeight.SemiBold,
-            color = if (isTimedOut) Color(0xFFDC2626) else MaterialTheme.colorScheme.onSurfaceVariant
-        )
-
-        // 4 Metric Detail Cards
-        Column(
-            modifier = Modifier.fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(10.dp)
-        ) {
+            // Action Buttons: Keyingi testga o'tish + Qayta ishlash
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
-                ResultMetricCard(
-                    modifier = Modifier.weight(1f),
-                    title = "To‘g‘ri javob",
-                    value = "$displayCorrect ta",
-                    subtitle = "$displayAccuracy%",
-                    icon = Icons.Default.CheckCircle,
-                    color = Color(0xFF10B981),
-                    bgColor = Color(0xFFECFDF5)
-                )
+                OutlinedButton(
+                    onClick = onRetry,
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(50.dp)
+                        .testTag("quiz_retry_btn"),
+                    shape = RoundedCornerShape(14.dp),
+                    border = BorderStroke(1.5.dp, BrandPurple)
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Refresh,
+                        contentDescription = null,
+                        tint = BrandPurple,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(6.dp))
+                    Text(
+                        text = if (isTimedOut) "Qayta boshlash" else "Qayta ishlash",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 14.sp,
+                        color = BrandPurple
+                    )
+                }
 
-                ResultMetricCard(
-                    modifier = Modifier.weight(1f),
-                    title = "Xato javob",
-                    value = "$displayIncorrect ta",
-                    subtitle = "${(100 - accuracyPct).coerceAtLeast(0)}%",
-                    icon = Icons.Default.Cancel,
-                    color = Color(0xFFEF4444),
-                    bgColor = Color(0xFFFEF2F2)
-                )
+                Button(
+                    onClick = onNextQuiz,
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(50.dp)
+                        .testTag("quiz_next_test_btn"),
+                    shape = RoundedCornerShape(14.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = BrandPurple)
+                ) {
+                    Text(
+                        text = "Keyingi test",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 14.sp,
+                        color = Color.White
+                    )
+                    Spacer(Modifier.width(6.dp))
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                        contentDescription = null,
+                        tint = Color.White,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
             }
 
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
-                ResultMetricCard(
-                    modifier = Modifier.weight(1f),
-                    title = "Sarflangan vaqt",
-                    value = formattedTime,
-                    subtitle = "Vaqt tahlili",
-                    icon = Icons.Default.Schedule,
-                    color = Color(0xFF0284C7),
-                    bgColor = Color(0xFFEFF6FF)
-                )
-
-                ResultMetricCard(
-                    modifier = Modifier.weight(1f),
-                    title = "Yulduz reytingi",
-                    value = "$earnedStars ⭐",
-                    subtitle = if (isTimedOut) "Vaqt tugadi" else "10 to'g'ri = 1 ⭐",
-                    icon = Icons.Default.Star,
-                    color = Color(0xFFD97706),
-                    bgColor = Color(0xFFFFFBEB)
-                )
-            }
+            Spacer(Modifier.height(10.dp))
         }
-
-        Spacer(Modifier.height(6.dp))
-
-        // Action Buttons (Shuffle questions + A/B/C/D options on retry)
-        Button(
-            onClick = onRetry,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(50.dp)
-                .testTag("quiz_retry_shuffle_btn"),
-            shape = RoundedCornerShape(14.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = if (isTimedOut) Color(0xFFDC2626) else BrandPurple
-            )
-        ) {
-            Icon(Icons.Default.Shuffle, contentDescription = null)
-            Spacer(Modifier.width(8.dp))
-            Text(
-                text = if (isTimedOut) "Qayta boshlash (Shuffle A/B/C/D)" else "Qayta ishlash (Shuffle A/B/C/D)",
-                fontWeight = FontWeight.Bold,
-                fontSize = 15.sp
-            )
-        }
-
-        Spacer(Modifier.height(10.dp))
     }
 }
 

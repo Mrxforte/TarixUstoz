@@ -1,29 +1,17 @@
 package com.tarixustoz.app.data.repository
 
-import com.tarixustoz.app.data.local.WrongQuestionEntity
 import com.tarixustoz.app.data.local.AppDatabase
+import com.tarixustoz.app.data.local.WrongQuestionEntity
 import com.tarixustoz.app.domain.model.MasteryStatus
 import com.tarixustoz.app.domain.model.Question
-import com.tarixustoz.app.domain.model.WrongQuestion
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class MistakesRepository @Inject constructor(
-    private val db: AppDatabase,
-    private val contentRepository: ContentRepository
+    private val db: AppDatabase
 ) {
-    fun getWrongQuestions(): Flow<List<WrongQuestion>> =
-        db.wrongQuestionDao().getAll().map { list ->
-            list.mapNotNull { entity ->
-                val q = contentRepository.getQuestionById(entity.questionId) // This is suspend, need fix
-                // For simplicity in flow, we will handle in ViewModel
-                null
-            }
-        }
-
     fun getActiveCount(): Flow<Int> = db.wrongQuestionDao().getActiveCount()
 
     suspend fun recordIncorrect(question: Question, userAnswer: String) {
@@ -58,7 +46,6 @@ class MistakesRepository @Inject constructor(
     suspend fun recordCorrectRevision(questionId: String) {
         val existing = db.wrongQuestionDao().getById(questionId) ?: return
         val now = System.currentTimeMillis()
-        val newIncorrect = existing.incorrectCount
         val newStatus = when {
             existing.attemptCount >= 3 && existing.incorrectCount == 0 -> MasteryStatus.MASTERED
             existing.attemptCount >= 2 -> MasteryStatus.IMPROVING
@@ -77,10 +64,5 @@ class MistakesRepository @Inject constructor(
                 nextRevisionDate = nextDate
             )
         )
-    }
-
-    suspend fun getAllWrongEntities(): List<WrongQuestionEntity> {
-        // Helper for ViewModel
-        return emptyList() // Will use flow
     }
 }

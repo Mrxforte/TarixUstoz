@@ -471,6 +471,52 @@ fun ProfileScreen(
                             modifier = Modifier.weight(1f)
                         )
                     }
+
+                    HorizontalDivider(
+                        modifier = Modifier.padding(vertical = 12.dp),
+                        color = MaterialTheme.colorScheme.outlineVariant
+                    )
+
+                    Text(
+                        text = "Shrift o‘lchami (Font size):",
+                        style = MaterialTheme.typography.bodySmall,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(bottom = 10.dp)
+                    )
+
+                    val fontScale by themeViewModel.appFontScale.collectAsState()
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        ProfileThemeChoiceCard(
+                            title = "Standart",
+                            subtitle = "100%",
+                            icon = Icons.Default.TextFields,
+                            isSelected = fontScale <= 1.05f,
+                            onClick = { themeViewModel.setAppFontScale(1.0f) },
+                            modifier = Modifier.weight(1f)
+                        )
+
+                        ProfileThemeChoiceCard(
+                            title = "O‘rtacha",
+                            subtitle = "112%",
+                            icon = Icons.Default.TextFields,
+                            isSelected = fontScale > 1.05f && fontScale <= 1.18f,
+                            onClick = { themeViewModel.setAppFontScale(1.12f) },
+                            modifier = Modifier.weight(1f)
+                        )
+
+                        ProfileThemeChoiceCard(
+                            title = "Katta",
+                            subtitle = "124%",
+                            icon = Icons.Default.TextFields,
+                            isSelected = fontScale > 1.18f,
+                            onClick = { themeViewModel.setAppFontScale(1.24f) },
+                            modifier = Modifier.weight(1f)
+                        )
+                    }
                 }
             }
 
@@ -504,7 +550,7 @@ fun ProfileScreen(
                 )
             }
 
-            Spacer(Modifier.height(24.dp))
+            Spacer(Modifier.height(16.dp))
         }
     }
 

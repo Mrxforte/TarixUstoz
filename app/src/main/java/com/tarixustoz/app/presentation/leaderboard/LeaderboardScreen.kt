@@ -15,6 +15,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -81,7 +82,7 @@ fun LeaderboardScreen(
     viewModel: LeaderboardViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
-    var mainTab by remember { mutableIntStateOf(0) } // 0 = O'z natijam & Tahlil, 1 = Umumiy Reyting
+    var mainTab by remember { mutableIntStateOf(1) } // 0 = O'z natijam & Tahlil, 1 = Umumiy Reyting
     var periodFilter by remember { mutableIntStateOf(1) } // 0 = Bugun, 1 = Haftalik, 2 = Oylik, 3 = Barcha vaqt
     var isRefreshing by remember { mutableStateOf(false) }
     val coroutineScope = rememberCoroutineScope()
@@ -118,6 +119,21 @@ fun LeaderboardScreen(
 
     val users = uiState.leaderboardUsers
     val categoryAnalytics = uiState.categoryAnalytics
+
+    val listState = rememberLazyListState()
+    val shouldLoadMore by remember {
+        derivedStateOf {
+            val lastVisibleItem = listState.layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: 0
+            val totalItems = listState.layoutInfo.totalItemsCount
+            lastVisibleItem >= totalItems - 5 && totalItems > 0
+        }
+    }
+
+    LaunchedEffect(shouldLoadMore) {
+        if (shouldLoadMore && mainTab == 1) {
+            viewModel.loadMoreUsers()
+        }
+    }
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
@@ -164,11 +180,12 @@ fun LeaderboardScreen(
                 .padding(innerPadding)
         ) {
             LazyColumn(
+                state = listState,
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(horizontal = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp),
-                contentPadding = PaddingValues(bottom = 24.dp)
+                contentPadding = PaddingValues(bottom = 16.dp)
             ) {
                 // Modern Split View Segmented Switch
                 item {
@@ -298,7 +315,7 @@ fun LeaderboardScreen(
                                         Spacer(Modifier.width(12.dp))
                                         Column {
                                             Text("${uiState.displayName} (Siz)", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp)
-                                            Text("${uiState.xp} XP • ${uiState.streak} kunlik seriya", color = Color.White.copy(alpha = 0.85f), fontSize = 12.sp)
+                                            Text("${uiState.xp} Malaka • ${uiState.totalStars} ⭐ • ${uiState.streak} kunlik seriya", color = Color.White.copy(alpha = 0.85f), fontSize = 12.sp)
                                         }
                                     }
 
@@ -430,11 +447,23 @@ fun LeaderboardScreen(
                 } else {
                     // TAB 1: Umumiy Reyting List
                     item {
-                        Text(
-                            text = "Peshqadamlar Jadvali",
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold
-                        )
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                text = "Peshqadamlar Jadvali",
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(
+                                text = "Jami: ${uiState.totalUsersCount} ta user",
+                                fontSize = 12.sp,
+                                color = BrandPurple,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
                     }
 
                     if (!uiState.isLoaded && users.isEmpty()) {
@@ -468,7 +497,7 @@ fun LeaderboardScreen(
                                         fontWeight = FontWeight.Bold
                                     )
                                     Text(
-                                        text = "Test ishlab XP to‘plang — natijangiz real vaqtda reytingda ko‘rinadi.",
+                                        text = "Test ishlab Malaka to‘plang — natijangiz real vaqtda reytingda ko‘rinadi.",
                                         fontSize = 12.sp,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant
                                     )
@@ -542,7 +571,7 @@ fun LeaderboardScreen(
                                     color = BrandPurple.copy(alpha = 0.1f)
                                 ) {
                                     Text(
-                                        text = "${user.score} XP",
+                                        text = "${user.score} Malaka",
                                         fontWeight = FontWeight.Bold,
                                         color = BrandPurple,
                                         fontSize = 13.sp,
@@ -553,8 +582,6 @@ fun LeaderboardScreen(
                         }
                     }
                 }
-
-                item { Spacer(Modifier.height(16.dp)) }
             }
         }
     }

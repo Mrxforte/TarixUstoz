@@ -13,7 +13,7 @@
 ### 📦 Loyihaning asosiy modullari va imkoniyatlari:
 
 1. **Neo Dashboard (Bosh sahifa)**:
-   - **XP va Daraja tizimi**: Har bir to‘g‘ri javob uchun ballar yig‘ish va darajani oshirish.
+   - **Malaka va Daraja tizimi**: Har bir to‘g‘ri javob uchun ballar yig‘ish va darajani oshirish.
    - **Streak (Kunlik ketma-ketlik)**: O‘quvchining har kuni o‘qish odatini shakllantirish uchun kunlik seriya hisoblagichi.
    - **Kun Savoli (Daily Question)**: Har kuni yangi tarixiy savol va tezkor test.
    - **Xatolar nishoni (Mistakes Badge)**: Noto‘g‘ri javob berilgan savollarga tezkor o‘tish va ularni qayta ishlash.
@@ -35,7 +35,7 @@
    - Test paytida xato qilingan savollar avtomatik ravishda saqlanadi va maxsus bo‘limda ularni qayta tahlil qilish, to‘g‘ri javoblarni o‘rganish imkoniyati beriladi.
 
 5. **Reyting va Profil (Leaderboard & Profile)**:
-   - Foydalanuvchilarning umumiy XP ballari bo‘yicha reyting jadvali.
+   - Foydalanuvchilarning umumiy Malaka ballari bo‘yicha reyting jadvali.
    - Profilni tahrirlash, o‘quvchining maqsadi (DTM balli), ism va avatar sozlamalari.
 
 ---
@@ -57,7 +57,7 @@
 ### 📦 Key Modules & Features:
 
 1. **Neo Dashboard (Home Screen)**:
-   - **XP & Level System**: Earn points and level up with every correct answer.
+   - **Malaka & Level System**: Earn points and level up with every correct answer.
    - **Streak Counter**: Daily study streak tracker to build consistent learning habits.
    - **Daily Question**: A fresh historical question every day with instant quiz.
    - **Mistakes Badge**: Quick shortcut to review incorrectly answered questions.
@@ -79,7 +79,7 @@
    - Automatically records incorrect answers and provides a dedicated spaced-repetition training section.
 
 5. **Leaderboard & Profile**:
-   - Global XP leaderboard and fully editable user profile with study target goals.
+   - Global Malaka leaderboard and fully editable user profile with study target goals.
 
 ---
 
@@ -90,7 +90,7 @@
 ### 📦 Основные модули и возможности:
 
 1. **Neo Dashboard (Главный экран)**:
-   - **Система XP и уровней**: Начисление баллов и повышение уровня за каждый правильный ответ.
+   - **Система Malaka и уровней**: Начисление баллов и повышение уровня за каждый правильный ответ.
    - **Streak (Серия дней)**: Трекер ежедневной активности для выработки привычки регулярного обучения.
    - **Вопрос дня**: Ежедневный исторический вопрос с мгновенной викториной.
    - **Панель ошибок**: Быстрый доступ к повторению неверно отвеченных вопросов.
@@ -112,7 +112,7 @@
    - Автоматическое сохранение неверных ответов для последующего повторения и проработки.
 
 5. **Рейтинг и профиль**:
-   - Таблица лидеров по очкам XP и полноценное редактирование профиля с указанием целей (баллы ДТМ).
+   - Таблица лидеров по очкам Malaka и полноценное редактирование профиля с указанием целей (баллы ДТМ).
 
 ---
 

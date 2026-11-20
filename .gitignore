@@ -10,6 +10,8 @@ data_output.json
 .idea/modules.xml
 .idea/modules/
 .idea/pySourceRootDetection.xml
+.idea/deviceManager.xml
+.artifacts/
 app/src/main/assets/topics_export.json
 
 # ---------------------------------------------------------------------------

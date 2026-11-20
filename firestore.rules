@@ -91,9 +91,9 @@ service cloud.firestore {
              isValidTimestamp(data.updatedAt);
     }
 
-    // 1. Private User Profile (Strict Owner Only - PII Protected)
+    // 1. User Profile (Readable by everyone for leaderboard, writable only by owner)
     match /users/{userId} {
-      allow get, list: if isOwner(userId);
+      allow get, list: if true;
 
       allow create: if isValidId(userId) &&
                        isOwner(userId) &&
@@ -145,9 +145,9 @@ service cloud.firestore {
       }
     }
 
-    // 4. Public Leaderboard Collection (Strictly NO PII; readable by signed-in users, writable only by owner)
+    // 4. Public Leaderboard Collection (Strictly NO PII; readable by everyone including guests, writable only by owner)
     match /leaderboard/{userId} {
-      allow get, list: if isSignedIn();
+      allow get, list: if true;
 
       allow create: if isValidId(userId) &&
                        isOwner(userId) &&

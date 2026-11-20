@@ -15,14 +15,14 @@ class OnboardingViewModel @Inject constructor(
     private val userPreferencesRepository: UserPreferencesRepository
 ) : ViewModel() {
 
-    val isOnboardingCompleted: StateFlow<Boolean?> = userPreferencesRepository.isOnboardingCompleted
+    val isOnboardingCompleted: StateFlow<Boolean> = userPreferencesRepository.isOnboardingCompleted
         .stateIn(
             scope = viewModelScope,
-            started = SharingStarted.WhileSubscribed(5000),
-            initialValue = null
+            started = SharingStarted.Eagerly,
+            initialValue = false
         )
 
-    fun completeOnboarding(onSuccess: () -> Unit) {
+    fun completeOnboarding(onSuccess: () -> Unit = {}) {
         viewModelScope.launch {
             userPreferencesRepository.setOnboardingCompleted(true)
             onSuccess()

@@ -186,9 +186,17 @@ class HomeViewModel @Inject constructor(
                 preferences.userAvatar,
                 preferences.userXp,
                 preferences.userStreak,
-                mistakesRepository.getActiveCount()
-            ) { name, avatar, xp, streak, mistakes ->
-                val effectiveName = name.ifBlank { "Tarixchi" }
+                mistakesRepository.getActiveCount(),
+                preferences.isGuest
+            ) { values ->
+                val name = values[0] as? String ?: ""
+                val avatar = values[1] as? String ?: ""
+                val xp = values[2] as? Long ?: 0L
+                val streak = values[3] as? Int ?: 0
+                val mistakes = values[4] as? Int ?: 0
+                val isGuest = values[5] as? Boolean ?: false
+
+                val effectiveName = if (isGuest) "Tarixchi" else name.ifBlank { "Tarixchi" }
                 val effectiveAvatar = avatar.ifBlank { "TU" }
                 val actualXp = xp.coerceAtLeast(0L)
                 val actualStreak = streak.coerceAtLeast(0)
@@ -446,7 +454,7 @@ class HomeViewModel @Inject constructor(
                     selectedDailyOptionId = optionId,
                     isDailyAnswered = true,
                     isDailyCorrect = isCorrect,
-                    dailyAnswerFeedback = if (isCorrect) "To'g'ri! +10 XP qo'shildi 🎉" else "Noto'g'ri. Xatolar bo'limiga qo'shildi."
+                    dailyAnswerFeedback = if (isCorrect) "To'g'ri! +10 Malaka qo'shildi 🎉" else "Noto'g'ri. Xatolar bo'limiga qo'shildi."
                 )
             }
         }

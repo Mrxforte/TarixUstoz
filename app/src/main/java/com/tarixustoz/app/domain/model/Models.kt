@@ -4,20 +4,6 @@ import androidx.compose.runtime.Immutable
 import kotlinx.serialization.Serializable
 
 @Immutable
-data class Grade(
-    val id: Int,
-    val name: String,
-    val displayName: String
-)
-
-@Immutable
-data class Subject(
-    val id: String,
-    val name: String,
-    val nameUz: String
-)
-
-@Immutable
 data class Textbook(
     val id: String,
     val title: String,
@@ -135,8 +121,8 @@ fun String.cleanQuestionText(): String {
         .replace(Regex("^Milliy\\s+[Ss]ertifikat.*?:\\s*", RegexOption.IGNORE_CASE), "")
         .replace(Regex("^Attestatsiya.*?:\\s*", RegexOption.IGNORE_CASE), "")
         .replace(Regex("^[A-Za-z0-9_\\s—–-]+mavzusiga\\s+oid:\\s*", RegexOption.IGNORE_CASE), "")
-        .replace(Regex("^\\\""), "")
-        .replace(Regex("\\\"\\?$"), "?")
+        .replace(Regex("^\""), "")
+        .replace(Regex("\"\\?$"), "?")
         .trim()
 }
 
@@ -164,20 +150,6 @@ data class Question(
 }
 
 @Immutable
-data class UserProfile(
-    val id: String,
-    val displayName: String,
-    val email: String?,
-    val gradeId: Int,
-    val xp: Long = 0,
-    val level: Int = 1,
-    val streak: Int = 0,
-    val avatarUrl: String? = null,
-    val totalCorrect: Int = 0,
-    val totalAttempted: Int = 0
-)
-
-@Immutable
 data class WrongQuestion(
     val questionId: String,
     val question: Question,
@@ -193,51 +165,3 @@ data class WrongQuestion(
 enum class MasteryStatus {
     NEW, LEARNING, IMPROVING, MASTERED
 }
-
-@Immutable
-data class Achievement(
-    val id: String,
-    val title: String,
-    val description: String,
-    val iconName: String,
-    val tier: AchievementTier,
-    val criteria: String,
-    val progress: Float = 0f,
-    val isUnlocked: Boolean = false,
-    val unlockedAt: Long? = null
-)
-
-enum class AchievementTier { BRONZE, SILVER, GOLD, EXPERT }
-
-@Immutable
-data class LeaderboardEntry(
-    val rank: Int,
-    val userId: String,
-    val displayName: String,
-    val avatarUrl: String?,
-    val xp: Long,
-    val accuracy: Float,
-    val gradeId: Int
-)
-
-@Immutable
-data class DailyQuestion(
-    val date: String,
-    val question: Question,
-    val isAnswered: Boolean = false,
-    val wasCorrect: Boolean? = null
-)
-
-@Immutable
-data class ExamResult(
-    val id: String,
-    val totalQuestions: Int,
-    val correct: Int,
-    val incorrect: Int,
-    val unanswered: Int,
-    val timeUsedSeconds: Int,
-    val accuracy: Float,
-    val score: Int,
-    val topicBreakdown: Map<String, Float>,
-    val timestamp: Long
-)

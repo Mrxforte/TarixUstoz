@@ -116,7 +116,7 @@ fun TestsScreen(
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.spacedBy(16.dp),
-                contentPadding = PaddingValues(bottom = 24.dp)
+                contentPadding = PaddingValues(bottom = 16.dp)
             ) {
                 item { Spacer(Modifier.height(4.dp)) }
 
@@ -258,8 +258,6 @@ fun TestsScreen(
                         )
                     }
                 }
-
-                item { Spacer(Modifier.height(8.dp)) }
             }
         }
     }

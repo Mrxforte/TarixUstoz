@@ -24,11 +24,17 @@ import com.tarixustoz.app.data.repository.CloudSyncRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.util.Calendar
@@ -48,9 +54,11 @@ data class LeaderboardUiState(
     val avatar: String = "TU",
     val xp: Long = 0L,
     val streak: Int = 0,
+    val totalStars: Int = 0,
     val currentUserRankLabel: String = "—",
-    val currentUserScoreLabel: String = "0 XP",
+    val currentUserScoreLabel: String = "0 Malaka",
     val leaderboardUsers: List<LeaderboardUser> = emptyList(),
+    val totalUsersCount: Int = 0,
     val periodSummaries: Map<Int, PeriodStatsSummary> = emptyMap(),
     val categoryAnalytics: List<DetailedCategoryAnalytics> = emptyList(),
     val analysisCategories: List<CategoryAnalysisItem> = emptyList(),
@@ -274,14 +282,35 @@ class LeaderboardViewModel @Inject constructor(
     private val currentUid: String?
         get() = auth.currentUser?.uid
 
-    private val cloudLeaderboardFlow: FlowWrapper<List<CloudLeaderboardEntry>> = FlowWrapper(
-        if (currentUid != null) cloudSyncRepository.observeLeaderboard(limit = 50L) else flowOf(emptyList())
-    )
+    init {
+        viewModelScope.launch {
+            cloudSyncRepository.pushStatsToCloud()
+        }
+    }
 
-    private val cloudAttemptsFlow = if (currentUid != null) {
-        cloudSyncRepository.observeUserAttempts(currentUid!!, limit = 250L)
-    } else {
-        flowOf(emptyList())
+    private val leaderboardLimit = MutableStateFlow(500L)
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    private val cloudLeaderboardFlow: Flow<List<CloudLeaderboardEntry>> = leaderboardLimit.flatMapLatest { limit ->
+        cloudSyncRepository.observeLeaderboard(limit = limit)
+            .onStart { emit(emptyList()) }
+    }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    private val cloudAttemptsFlow: Flow<List<CloudQuizAttempt>> = callbackFlow {
+        val listener = FirebaseAuth.AuthStateListener { firebaseAuth ->
+            trySend(firebaseAuth.currentUser?.uid)
+        }
+        auth.addAuthStateListener(listener)
+        trySend(auth.currentUser?.uid)
+        awaitClose { auth.removeAuthStateListener(listener) }
+    }.flatMapLatest { uid ->
+        if (uid != null) {
+            cloudSyncRepository.observeUserAttempts(uid, limit = 250L)
+                .onStart { emit(emptyList()) }
+        } else {
+            flowOf(emptyList())
+        }
     }
 
     val uiState: StateFlow<LeaderboardUiState> = combine(
@@ -292,30 +321,34 @@ class LeaderboardViewModel @Inject constructor(
         preferences.totalSolvedTests,
         preferences.totalCorrectAnswers,
         preferences.totalTimeSpentSeconds,
+        preferences.totalEarnedStars,
         database.quizAttemptDao().getAllFlow(),
-        cloudLeaderboardFlow.flow,
+        cloudLeaderboardFlow,
         cloudAttemptsFlow,
-        refreshTick
+        refreshTick,
+        leaderboardLimit,
+        preferences.isGuest
     ) { values ->
-        val name = (values[0] as String).ifBlank { "Tarixchi" }
+        val isGuest = values[13] as? Boolean ?: false
+        val name = if (isGuest) "Tarixchi" else (values[0] as String).ifBlank { "Tarixchi" }
         val avatar = (values[1] as String).ifBlank { "TU" }
         val xp = (values[2] as Long).coerceAtLeast(0L)
         val streak = (values[3] as Int).coerceAtLeast(0)
         val prefSolved = (values[4] as Int).coerceAtLeast(0)
         val prefCorrect = (values[5] as Int).coerceAtLeast(0)
         val prefTimeSec = (values[6] as Int).coerceAtLeast(0)
+        val totalStars = (values[7] as Int).coerceAtLeast(0)
         @Suppress("UNCHECKED_CAST")
-        val localAttempts = values[7] as List<QuizAttemptEntity>
+        val localAttempts = values[8] as List<QuizAttemptEntity>
         @Suppress("UNCHECKED_CAST")
-        val cloudLeaderboard = values[8] as List<CloudLeaderboardEntry>
+        val cloudLeaderboard = values[9] as List<CloudLeaderboardEntry>
         @Suppress("UNCHECKED_CAST")
-        val cloudAttempts = values[9] as List<CloudQuizAttempt>
+        val cloudAttempts = values[10] as List<CloudQuizAttempt>
 
-        val prefsSnapshot = preferences.getAllPreferences()
         val uid = currentUid
 
-        // Build real ranked leaderboard
-        val usersList = cloudLeaderboard
+        // Build real ranked leaderboard from users collection with local fallback if user is missing
+        val mappedList = cloudLeaderboard
             .sortedByDescending { it.xp }
             .mapIndexed { idx, entry ->
                 val isMe = uid != null && entry.userId == uid
@@ -331,6 +364,26 @@ class LeaderboardViewModel @Inject constructor(
                 )
             }
 
+        val hasCurrentUserInList = mappedList.any { it.isCurrentUser }
+        val usersList = if (!hasCurrentUserInList) {
+            val totalMins = (prefTimeSec / 60).coerceAtLeast(0)
+            val totalAccuracy = if (prefSolved > 0) ((prefCorrect * 100) / prefSolved).coerceIn(0, 100) else 0
+            val myLocalUser = LeaderboardUser(
+                rank = mappedList.size + 1,
+                name = "$name (Siz)",
+                initials = avatar.ifBlank { name.take(2).uppercase() },
+                score = xp.toInt().coerceAtLeast(0),
+                accuracy = totalAccuracy,
+                timeSpentMinutes = totalMins,
+                isCurrentUser = true
+            )
+            (mappedList + myLocalUser)
+                .sortedByDescending { it.score }
+                .mapIndexed { idx, u -> u.copy(rank = idx + 1) }
+        } else {
+            mappedList
+        }
+
         val myRankEntry = usersList.find { it.isCurrentUser }
         val rankLabel = myRankEntry?.let { "#${it.rank}-o'rin" } ?: "—"
 
@@ -342,7 +395,7 @@ class LeaderboardViewModel @Inject constructor(
             3 to buildPeriodSummary(3, localAttempts, cloudAttempts, prefSolved, prefCorrect, prefTimeSec)
         )
 
-        // Real Category Analytics from CloudQuizAttempt + TicketProgressSnapshot
+        // Real Category Analytics from CloudQuizAttempt + LocalAttempts
         val detailedAnalytics = mutableListOf<DetailedCategoryAnalytics>()
         val analysisItems = mutableListOf<CategoryAnalysisItem>()
 
@@ -354,22 +407,12 @@ class LeaderboardViewModel @Inject constructor(
             val matchedAttempts = cloudAttempts.filter { attempt ->
                 spec.keys.any { k -> attempt.categoryKey.equals(k, ignoreCase = true) }
             }
-            var ticketSolved = 0
-            var ticketCorrect = 0
-            spec.keys.forEach { k ->
-                val snap = preferences.getTicketProgressFromPrefs(prefsSnapshot, k)
-                if (snap.scores.isNotEmpty()) {
-                    ticketSolved += snap.scores.size * 30
-                    ticketCorrect += snap.scores.values.sum()
-                }
-            }
-
             val attemptSolved = matchedAttempts.sumOf { it.solvedCount.toInt() }
             val attemptCorrect = matchedAttempts.sumOf { it.correctCount.toInt() }
             val attemptDuration = matchedAttempts.sumOf { it.durationSeconds.toInt() }
 
-            val solved = maxOf(attemptSolved, ticketSolved)
-            val correct = maxOf(attemptCorrect, ticketCorrect).coerceIn(0, solved)
+            val solved = attemptSolved
+            val correct = attemptCorrect.coerceIn(0, solved)
             val mistakes = (solved - correct).coerceAtLeast(0)
             val accuracyPct = if (solved > 0) ((correct * 100) / solved).coerceIn(0, 100) else 0
             val mistakePct = if (solved > 0) (100 - accuracyPct).coerceIn(0, 100) else 0
@@ -437,9 +480,11 @@ class LeaderboardViewModel @Inject constructor(
             avatar = avatar,
             xp = xp,
             streak = streak,
+            totalStars = totalStars,
             currentUserRankLabel = rankLabel,
-            currentUserScoreLabel = "$xp XP",
+            currentUserScoreLabel = "$xp Malaka",
             leaderboardUsers = usersList,
+            totalUsersCount = usersList.size,
             periodSummaries = periodMap,
             categoryAnalytics = detailedAnalytics,
             analysisCategories = listOf(overallAnalysis) + analysisItems,
@@ -447,7 +492,9 @@ class LeaderboardViewModel @Inject constructor(
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), LeaderboardUiState())
 
-    private class FlowWrapper<T>(val flow: kotlinx.coroutines.flow.Flow<T>)
+    fun loadMoreUsers() {
+        leaderboardLimit.value += 50L
+    }
 
     fun refresh() {
         viewModelScope.launch {

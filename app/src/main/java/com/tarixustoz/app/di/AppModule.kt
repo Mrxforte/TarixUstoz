@@ -6,7 +6,6 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.tarixustoz.app.R
 import com.tarixustoz.app.data.local.AppDatabase
 import com.tarixustoz.app.data.remote.ApiService
 import com.tarixustoz.app.data.repository.ContentRepository
@@ -53,8 +52,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMistakesRepository(db: AppDatabase, content: ContentRepository): MistakesRepository =
-        MistakesRepository(db, content)
+    fun provideMistakesRepository(db: AppDatabase): MistakesRepository =
+        MistakesRepository(db)
 
     @Provides
     @Singleton

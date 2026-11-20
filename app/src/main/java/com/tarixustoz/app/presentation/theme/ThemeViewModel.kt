@@ -20,9 +20,18 @@ class ThemeViewModel @Inject constructor(
     val themeMode: StateFlow<ThemeMode> = preferencesRepository.themeMode
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), ThemeMode.SYSTEM)
 
+    val appFontScale: StateFlow<Float> = preferencesRepository.appFontScale
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), 1.0f)
+
     fun setThemeMode(mode: ThemeMode) {
         viewModelScope.launch {
             preferencesRepository.setThemeMode(mode)
+        }
+    }
+
+    fun setAppFontScale(scale: Float) {
+        viewModelScope.launch {
+            preferencesRepository.setAppFontScale(scale)
         }
     }
 }

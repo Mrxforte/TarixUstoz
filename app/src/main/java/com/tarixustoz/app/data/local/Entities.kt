@@ -2,7 +2,6 @@ package com.tarixustoz.app.data.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 import com.tarixustoz.app.domain.model.AnswerOption
 import com.tarixustoz.app.domain.model.Difficulty

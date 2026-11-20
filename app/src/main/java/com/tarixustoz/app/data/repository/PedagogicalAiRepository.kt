@@ -9,7 +9,6 @@ import com.tarixustoz.app.data.local.AppDatabase
 import com.tarixustoz.app.data.local.QuestionEntity
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -145,38 +144,38 @@ class PedagogicalAiRepository @Inject constructor(
 
     suspend fun generateRecommendations(forceRefresh: Boolean = false) {
         requestMutex.withLock {
-            try {
-                val contextSnapshot = withContext(Dispatchers.IO) {
-                    buildLearnerAnalyticsSnapshot()
+            val contextSnapshot = withContext(Dispatchers.IO) {
+                buildLearnerAnalyticsSnapshot()
+            }
+
+            if (!forceRefresh) {
+                val currentSuccess = _state.value as? PedagogicalAiState.Success
+                if (currentSuccess != null &&
+                    currentSuccess.report.statsSignature == contextSnapshot.signature &&
+                    System.currentTimeMillis() - currentSuccess.report.generatedAtMs < CACHE_TTL_MS
+                ) {
+                    return
                 }
 
-                if (!forceRefresh) {
-                    val currentSuccess = _state.value as? PedagogicalAiState.Success
-                    if (currentSuccess != null &&
-                        currentSuccess.report.statsSignature == contextSnapshot.signature &&
-                        System.currentTimeMillis() - currentSuccess.report.generatedAtMs < CACHE_TTL_MS
+                val cachedJson = preferences.getCachedPedagogicalReportJson()
+                if (!cachedJson.isNullOrBlank()) {
+                    val cachedReport = runCatching {
+                        jsonCodec.decodeFromString<PedagogicalReport>(cachedJson)
+                    }.getOrNull()
+                    if (cachedReport != null &&
+                        cachedReport.statsSignature == contextSnapshot.signature &&
+                        System.currentTimeMillis() - cachedReport.generatedAtMs < CACHE_TTL_MS &&
+                        cachedReport.recommendations.isNotEmpty()
                     ) {
+                        _state.value = PedagogicalAiState.Success(cachedReport)
                         return
                     }
-
-                    val cachedJson = preferences.getCachedPedagogicalReportJson()
-                    if (!cachedJson.isNullOrBlank()) {
-                        val cachedReport = runCatching {
-                            jsonCodec.decodeFromString<PedagogicalReport>(cachedJson)
-                        }.getOrNull()
-                        if (cachedReport != null &&
-                            cachedReport.statsSignature == contextSnapshot.signature &&
-                            System.currentTimeMillis() - cachedReport.generatedAtMs < CACHE_TTL_MS &&
-                            cachedReport.recommendations.isNotEmpty()
-                        ) {
-                            _state.value = PedagogicalAiState.Success(cachedReport)
-                            return
-                        }
-                    }
                 }
+            }
 
-                _state.value = PedagogicalAiState.Loading
+            _state.value = PedagogicalAiState.Loading
 
+            try {
                 val prompt = buildPedagogicalPrompt(contextSnapshot)
                 val response = withTimeout(60_000L) {
                     model.generateContent(prompt)
@@ -227,21 +226,94 @@ class PedagogicalAiRepository @Inject constructor(
 
                 preferences.saveCachedPedagogicalReportJson(jsonCodec.encodeToString(report))
                 _state.value = PedagogicalAiState.Success(report)
-            } catch (e: TimeoutCancellationException) {
-                Log.e(TAG, "Gemini pedagogical generation timed out", e)
-                _state.value = PedagogicalAiState.Error(
-                    "AI tahlili 60 soniya ichida javob bermadi. Internet aloqasini tekshirib qayta urinib ko‘ring."
-                )
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
-                Log.e(TAG, "Failed to generate Gemini pedagogical recommendations", e)
-                _state.value = PedagogicalAiState.Error(
-                    e.localizedMessage?.takeIf { it.isNotBlank() }
-                        ?: "Gemini AI tahlilini yuklashda xatolik yuz berdi."
-                )
+                Log.w(TAG, "Gemini pedagogical generation failed, using learner analytics fallback: ${e.message}")
+                val fallbackReport = buildFallbackPedagogicalReport(contextSnapshot)
+                _state.value = PedagogicalAiState.Success(fallbackReport)
             }
         }
+    }
+
+    private fun buildFallbackPedagogicalReport(s: LearnerAnalyticsSnapshot): PedagogicalReport {
+        val recs = mutableListOf<PedagogicalRecommendation>()
+
+        if (s.recentMistakeDetails.isNotEmpty() || s.weakAreas.isNotEmpty()) {
+            val tipText = if (s.recentMistakeDetails.isNotEmpty()) {
+                "Sizda xato qilingan savollar mavjud. Noto‘g‘ri javob berilgan mavzularni darslikdan ko‘proq o‘qish va takrorlash tavsiya etiladi:\n" +
+                    s.recentMistakeDetails.take(3).joinToString("\n• ", prefix = "• ")
+            } else {
+                "Natijalari pastroq bo‘lgan mavzular:\n" +
+                    s.weakAreas.take(3).joinToString("\n• ", prefix = "• ")
+            }
+            recs.add(
+                PedagogicalRecommendation(
+                    id = "rec_fallback_mistakes",
+                    badge = "Xatolar tahlili",
+                    title = "Noto‘g‘ri ishlangan mavzularni darslikdan qayta o‘qing",
+                    summary = "Xato qilingan savollar va qiyinroq mavzular bo‘yicha nazariy bilimni oshiring hamda qayta mashq qiling.",
+                    pedagogicalTip = tipText,
+                    focusArea = "Xatolar va takrorlash",
+                    actionType = "MISTAKES",
+                    tone = "WARNING"
+                )
+            )
+        }
+
+        recs.add(
+            PedagogicalRecommendation(
+                id = "rec_fallback_textbooks",
+                badge = "Darsliklar",
+                title = "${s.grade}-sinf tarix darsliklarini takrorlang",
+                summary = "Darsliklar bo‘limidan o‘tilgan mavzularni o‘qib, sanalar, shaxslar va voqealar xronologiyasini mustahkamlang.",
+                pedagogicalTip = "Tarixiy Voqealar va Shaxslar mavzularini sinchiklab o‘rganish test natijalarini sezilarli oshiradi.",
+                focusArea = "${s.grade}-sinf darsliklari",
+                actionType = "TEXTBOOKS",
+                tone = "STRATEGY"
+            )
+        )
+
+        recs.add(
+            PedagogicalRecommendation(
+                id = "rec_fallback_daily",
+                badge = "Kun savoli",
+                title = "Bugungi kun savolini yechib +10 Malaka qo‘lga kiriting",
+                summary = "Har kuni kamida bitta yangi savol yechish orqali uzluksiz kunlik seriyangizni saqlab qoling.",
+                pedagogicalTip = "Uzluksiz kunlik mashqlar bilimni doimiy ravishda yangilab turishning eng samarali usulidir.",
+                focusArea = "Kunlik faollik",
+                actionType = "DAILY_QUIZ",
+                tone = "PRACTICE"
+            )
+        )
+
+        if (s.abandonedQuizSummary != null) {
+            recs.add(
+                PedagogicalRecommendation(
+                    id = "rec_fallback_resume",
+                    badge = "Aktiv test",
+                    title = "Tashlab ketilgan testni oxirigacha yeching",
+                    summary = "${s.abandonedQuizSummary} testi yakunlanmagan. Uni mantiqiy yakuniga yetkazing.",
+                    pedagogicalTip = "Testlarni to‘liq yakunlash bilimingizni xolis va to‘g‘ri baholashga yordam beradi.",
+                    focusArea = "Davom ettirish",
+                    actionType = "TESTS",
+                    tone = "STRENGTH"
+                )
+            )
+        }
+
+        val overall = if (s.recentMistakeDetails.isNotEmpty()) {
+            "Natijalaringiz va xatolaringiz tahlili bo‘yicha tavsiyalar shakllantirildi. Noto‘g‘ri javob berilgan mavzularni darslikdan qayta o‘qib chiqish tavsiya etiladi."
+        } else {
+            "O‘quv statistikangiz asosida tavsiyalar tayyorlandi. Har kuni darslik va testlarni muntazam takrorlab boring."
+        }
+
+        return PedagogicalReport(
+            overallAssessment = overall,
+            generatedAtMs = System.currentTimeMillis(),
+            statsSignature = s.signature,
+            recommendations = recs
+        )
     }
 
     private data class LearnerAnalyticsSnapshot(
@@ -398,7 +470,7 @@ class PedagogicalAiRepository @Inject constructor(
             appendLine("O‘QUVCHI MA’LUMOTLARI:")
             appendLine("- Ismi: ${s.displayName}")
             appendLine("- Maqomi: ${s.role}, Tanlangan sinf: ${s.grade}-sinf, Maqsadi: ${s.target}")
-            appendLine("- XP: ${s.xp}, Kunlik seriya: ${s.streak} kun")
+            appendLine("- Malaka: ${s.xp}, Kunlik seriya: ${s.streak} kun")
             appendLine("- Jami yechilgan testlar: ${s.totalSolved} ta, To‘g‘ri: ${s.totalCorrect} ta (Aniqlik: ${s.accuracyPercent}%)")
             appendLine("- Kunlik maqsad: 30 ta test")
             if (s.abandonedQuizSummary != null) {

@@ -286,7 +286,7 @@ fun NotificationsScreen(
                     .widthIn(max = 640.dp)
                     .fillMaxWidth()
                     .animateContentSize(animationSpec = spring(stiffness = Spring.StiffnessMediumLow)),
-                contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 28.dp),
+                contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 4.dp, bottom = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 if (uiState.hasDismissedNotifications) {
@@ -425,7 +425,7 @@ fun NotificationsScreen(
                 } else {
                     if (uiState.showCoreSection && uiState.filteredCoreNotifications.isNotEmpty()) {
                         item(key = "header_core") {
-                            SectionHeader(title = "Kunlik maqsad, Savol va XP")
+                            SectionHeader(title = "Kunlik maqsad, Savol va Malaka")
                         }
                         items(uiState.filteredCoreNotifications, key = { it.id }) { item ->
                             SwipeableNotificationCard(
@@ -785,7 +785,7 @@ private fun NotificationCard(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp, vertical = 14.dp),
-            verticalAlignment = Alignment.CenterVertically,
+            verticalAlignment = Alignment.Top,
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Surface(
@@ -805,7 +805,7 @@ private fun NotificationCard(
 
             Column(
                 modifier = Modifier.weight(1f),
-                verticalArrangement = Arrangement.spacedBy(5.dp)
+                verticalArrangement = Arrangement.spacedBy(6.dp)
             ) {
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
@@ -882,46 +882,49 @@ private fun NotificationCard(
                 }
 
                 Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Text(
+                            text = item.actionHint,
+                            style = MaterialTheme.typography.labelMedium,
+                            fontWeight = FontWeight.SemiBold,
+                            color = if (isResumeCard) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.primary
+                        )
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                            contentDescription = item.actionHint,
+                            tint = if (isResumeCard) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(16.dp)
+                        )
+                    }
+
                     Text(
-                        text = item.actionHint,
-                        style = MaterialTheme.typography.labelMedium,
-                        fontWeight = FontWeight.SemiBold,
-                        color = if (isResumeCard) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.primary
-                    )
-                    Text(
-                        text = "• ${item.timeLabel}",
+                        text = item.timeLabel,
                         style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
             }
 
-            Column(
-                horizontalAlignment = Alignment.End,
-                verticalArrangement = Arrangement.SpaceBetween
+            Box(
+                modifier = Modifier
+                    .size(28.dp)
+                    .clip(CircleShape)
+                    .clickable { onDismiss() }
+                    .testTag("notification_dismiss_${item.id}"),
+                contentAlignment = Alignment.Center
             ) {
-                IconButton(
-                    onClick = onDismiss,
-                    modifier = Modifier
-                        .minimumInteractiveComponentSize()
-                        .size(32.dp)
-                        .testTag("notification_dismiss_${item.id}")
-                ) {
-                    Icon(
-                        imageVector = Icons.Outlined.Close,
-                        contentDescription = "Bildirishnomani yopish",
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.size(16.dp)
-                    )
-                }
                 Icon(
-                    imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                    contentDescription = item.actionHint,
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.size(20.dp)
+                    imageVector = Icons.Outlined.Close,
+                    contentDescription = "Bildirishnomani yopish",
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
+                    modifier = Modifier.size(16.dp)
                 )
             }
         }
@@ -986,7 +989,7 @@ private fun NotificationsEmptyState(
                 text = if (isFiltered) {
                     "Boshqa toifalarni ko‘rish uchun filtrni o‘zgartirib ko‘ring."
                 } else {
-                    "Kunlik maqsad (30), kun savoli, XP va AI pedagogik tavsiyalari shu yerda ko‘rinadi."
+                    "Kunlik maqsad (30), kun savoli, Malaka va AI pedagogik tavsiyalari shu yerda ko‘rinadi."
                 },
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,

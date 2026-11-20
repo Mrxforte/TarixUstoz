@@ -34,6 +34,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.tarixustoz.app.presentation.theme.BrandPurple
 
@@ -445,7 +447,7 @@ fun MistakesScreen(
             } else if (uiState.viewMode == MistakesViewMode.LIST) {
                 LazyColumn(
                     verticalArrangement = Arrangement.spacedBy(12.dp),
-                    contentPadding = PaddingValues(bottom = 24.dp)
+                    contentPadding = PaddingValues(bottom = 16.dp)
                 ) {
                     items(uiState.items, key = { it.questionId }) { item ->
                         MistakeListCard(
@@ -459,7 +461,7 @@ fun MistakesScreen(
                     columns = GridCells.Fixed(2),
                     horizontalArrangement = Arrangement.spacedBy(10.dp),
                     verticalArrangement = Arrangement.spacedBy(10.dp),
-                    contentPadding = PaddingValues(bottom = 24.dp)
+                    contentPadding = PaddingValues(bottom = 16.dp)
                 ) {
                     items(uiState.items, key = { it.questionId }) { item ->
                         MistakeGridCard(
@@ -474,23 +476,65 @@ fun MistakesScreen(
     }
 
     selectedGridItem?.let { item ->
-        AlertDialog(
+        Dialog(
             onDismissRequest = { selectedGridItem = null },
-            confirmButton = {
-                TextButton(onClick = { selectedGridItem = null }) {
-                    Text("Yopish", fontWeight = FontWeight.Bold)
+            properties = DialogProperties(usePlatformDefaultWidth = false)
+        ) {
+            Scaffold(
+                containerColor = MaterialTheme.colorScheme.background,
+                contentWindowInsets = WindowInsets.safeDrawing,
+                topBar = {
+                    TopAppBar(
+                        title = {
+                            Column {
+                                Text(
+                                    text = "Savol tahlili",
+                                    style = MaterialTheme.typography.titleMedium,
+                                    fontWeight = FontWeight.Bold
+                                )
+                                Text(
+                                    text = "${item.gradeId}-sinf • ${item.sourceCitation}",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = BrandPurple,
+                                    fontWeight = FontWeight.SemiBold,
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis
+                                )
+                            }
+                        },
+                        navigationIcon = {
+                            IconButton(onClick = { selectedGridItem = null }) {
+                                Icon(Icons.Default.Close, contentDescription = "Yopish")
+                            }
+                        },
+                        actions = {
+                            IconButton(
+                                onClick = {
+                                    viewModel.deleteMistake(item.questionId)
+                                    selectedGridItem = null
+                                }
+                            ) {
+                                Icon(
+                                    Icons.Default.DoneAll,
+                                    contentDescription = "O‘zlashtirildi deb belgilash",
+                                    tint = Color(0xFF16A34A)
+                                )
+                            }
+                        },
+                        colors = TopAppBarDefaults.topAppBarColors(
+                            containerColor = MaterialTheme.colorScheme.background
+                        )
+                    )
                 }
-            },
-            title = {
-                Text(
-                    text = "${item.gradeId}-sinf • ${item.sourceCitation}",
-                    style = MaterialTheme.typography.titleSmall,
-                    color = BrandPurple,
-                    fontWeight = FontWeight.Bold
-                )
-            },
-            text = {
-                Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
+            ) { innerPadding ->
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(innerPadding)
+                        .padding(horizontal = 18.dp, vertical = 10.dp)
+                        .verticalScroll(rememberScrollState()),
+                    verticalArrangement = Arrangement.spacedBy(14.dp)
+                ) {
                     MistakeInteractiveBody(
                         item = item,
                         onMarkMastered = {
@@ -498,9 +542,21 @@ fun MistakesScreen(
                             selectedGridItem = null
                         }
                     )
+                    Spacer(Modifier.height(12.dp))
+                    Button(
+                        onClick = { selectedGridItem = null },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(48.dp),
+                        shape = RoundedCornerShape(12.dp),
+                        colors = ButtonDefaults.buttonColors(containerColor = BrandPurple)
+                    ) {
+                        Text("Yopish", fontWeight = FontWeight.Bold, fontSize = 15.sp)
+                    }
+                    Spacer(Modifier.height(16.dp))
                 }
             }
-        )
+        }
     }
 
     if (showClearConfirmDialog) {

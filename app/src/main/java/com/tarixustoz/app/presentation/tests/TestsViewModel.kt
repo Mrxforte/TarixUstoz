@@ -13,7 +13,6 @@ import com.tarixustoz.app.domain.model.gradeId
 import com.tarixustoz.app.presentation.common.components.backgroundResForBook
 import com.tarixustoz.app.presentation.common.components.backgroundResForDirection
 import com.tarixustoz.app.presentation.common.components.backgroundResForTopic
-import com.tarixustoz.app.presentation.tests.TestCardItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

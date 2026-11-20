@@ -25,6 +25,7 @@ import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import androidx.compose.runtime.Composable
@@ -117,18 +118,20 @@ fun TarixNavHost(
 
     var splashMinElapsed by remember { mutableStateOf(false) }
     LaunchedEffect(Unit) {
-        delay(650L)
+        delay(1000L)
         splashMinElapsed = true
     }
 
     val authUiState by authViewModel.uiState.collectAsState()
 
     when {
-        isOnboardingCompleted == null || !splashMinElapsed -> {
+        !splashMinElapsed -> {
             SplashScreen()
         }
-        isOnboardingCompleted == false -> {
-            OnboardingScreen(onFinish = {})
+        !isOnboardingCompleted -> {
+            OnboardingScreen(onFinish = {
+                onboardingViewModel.completeOnboarding()
+            })
         }
         currentUser == null && !authUiState.isSignedIn -> {
             if (isTestModeActive) {
@@ -201,7 +204,9 @@ fun TarixNavHost(
                                         label = {
                                             Text(
                                                 text = screen.title,
-                                                fontSize = 11.sp,
+                                                fontSize = 10.5.sp,
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
                                                 fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium
                                             )
                                         },

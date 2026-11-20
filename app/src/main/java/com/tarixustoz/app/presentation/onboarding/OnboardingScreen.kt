@@ -85,7 +85,7 @@ private val WELCOME_SLIDES = listOf(
     ),
     WelcomeSlide(
         imageRes = R.drawable.intro_buxoro,
-        badge = "Po-i-Kalon • Buxoro",
+        badge = "Registon Maydoni • Samarqand",
         quote = "“Har bir sana, shaxs va voqea ortida ajdodlarimizning mangulikka muhrlangan hikmati bor.”"
     ),
     WelcomeSlide(

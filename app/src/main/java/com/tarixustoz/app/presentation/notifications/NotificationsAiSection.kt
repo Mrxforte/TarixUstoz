@@ -4,6 +4,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -485,17 +486,18 @@ private fun AiPedagogicalCard(
                     }
                 }
 
-                IconButton(
-                    onClick = onDismiss,
+                Box(
                     modifier = Modifier
-                        .minimumInteractiveComponentSize()
-                        .size(32.dp)
-                        .testTag("ai_notification_dismiss_${item.id}")
+                        .size(28.dp)
+                        .clip(CircleShape)
+                        .clickable { onDismiss() }
+                        .testTag("ai_notification_dismiss_${item.id}"),
+                    contentAlignment = Alignment.Center
                 ) {
                     Icon(
                         imageVector = Icons.Outlined.Close,
                         contentDescription = "Tavsiyani yopish",
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                        tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
                         modifier = Modifier.size(16.dp)
                     )
                 }

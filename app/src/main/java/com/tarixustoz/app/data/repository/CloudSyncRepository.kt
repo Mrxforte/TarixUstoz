@@ -5,6 +5,7 @@ import androidx.annotation.Keep
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.firestore.DocumentId
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FieldValue
@@ -27,6 +28,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeoutOrNull
 import java.util.UUID
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -173,9 +175,14 @@ class CloudSyncRepository @Inject constructor(
                     DocumentSnapshot.ServerTimestampBehavior.ESTIMATE
                 )
                 if (cloud != null) {
-                    val safeName = cloud.displayName.ifBlank {
-                        user.displayName ?: user.email?.substringBefore("@") ?: "Tarixchi"
-                    }
+                    val authName = user.displayName?.takeIf { it.isNotBlank() }
+                    val emailPrefix = user.email?.substringBefore("@")?.takeIf { it.isNotBlank() }
+                    val cloudName = cloud.displayName.takeIf { it.isNotBlank() && it != "Azizbek" && it != "Tarixchi" }
+
+                    val safeName = authName 
+                        ?: emailPrefix 
+                        ?: cloudName 
+                        ?: "Tarixchi"
                     preferences.applyCloudUserProfile(
                         displayName = safeName,
                         email = cloud.email.ifBlank { user.email ?: "" },
@@ -272,6 +279,16 @@ class CloudSyncRepository @Inject constructor(
         val uid = auth.currentUser?.uid ?: return@withContext Result.success(Unit)
         try {
             val name = preferences.displayName.first().trim().ifBlank { "Tarixchi" }.take(60)
+
+            auth.currentUser?.let { currentUser ->
+                runCatching {
+                    val profileUpdates = UserProfileChangeRequest.Builder()
+                        .setDisplayName(name)
+                        .build()
+                    currentUser.updateProfile(profileUpdates).await()
+                }
+            }
+
             val bio = preferences.userBio.first().trim().take(200)
             val phone = preferences.userPhone.first().trim().take(40)
             val target = preferences.userTarget.first().trim().take(160)
@@ -357,9 +374,9 @@ class CloudSyncRepository @Inject constructor(
             val timeSec = preferences.totalTimeSpentSeconds.first().coerceAtLeast(0)
 
             val docRef = db.collection("users").document(uid)
-            docRef.set(
+            val exists = docRef.get().await().exists()
+            val userMap = if (exists) {
                 mapOf(
-                    "userId" to uid,
                     "displayName" to name,
                     "avatar" to avatar,
                     "grade" to grade,
@@ -369,9 +386,29 @@ class CloudSyncRepository @Inject constructor(
                     "correctCount" to correctCount,
                     "timeSpentSeconds" to timeSec,
                     "updatedAt" to FieldValue.serverTimestamp()
-                ),
-                SetOptions.merge()
-            ).await()
+                )
+            } else {
+                mapOf(
+                    "userId" to uid,
+                    "displayName" to name,
+                    "email" to (auth.currentUser?.email ?: ""),
+                    "bio" to "Tarix fani izlanuvchisi",
+                    "avatar" to avatar,
+                    "phone" to "",
+                    "target" to "DTM va Milliy sertifikat",
+                    "birthYear" to "",
+                    "role" to "O'quvchi",
+                    "grade" to grade,
+                    "xp" to xp,
+                    "streak" to streak,
+                    "totalSolved" to totalSolved,
+                    "correctCount" to correctCount,
+                    "timeSpentSeconds" to timeSec,
+                    "createdAt" to FieldValue.serverTimestamp(),
+                    "updatedAt" to FieldValue.serverTimestamp()
+                )
+            }
+            docRef.set(userMap, SetOptions.merge()).await()
             upsertLeaderboardEntry(uid, name, avatar, xp, streak, totalSolved, correctCount, timeSec, grade)
             preferences.setPendingStatsSync(false)
             preferences.markFirebaseWrittenToday(uid)
@@ -411,7 +448,22 @@ class CloudSyncRepository @Inject constructor(
         val initials = computeInitials(displayName, avatar)
 
         val lbRef = db.collection("leaderboard").document(uid)
-        lbRef.set(
+        val exists = lbRef.get().await().exists()
+
+        val map = if (exists) {
+            mapOf(
+                "displayName" to displayName.take(60),
+                "initials" to initials,
+                "xp" to xp.coerceAtLeast(0L),
+                "streak" to streak.coerceAtLeast(0),
+                "totalSolved" to safeSolved,
+                "correctCount" to safeCorrect,
+                "accuracy" to accuracy,
+                "timeSpentMinutes" to minutes,
+                "grade" to grade.coerceIn(6, 11),
+                "updatedAt" to FieldValue.serverTimestamp()
+            )
+        } else {
             mapOf(
                 "userId" to uid,
                 "displayName" to displayName.take(60),
@@ -423,10 +475,11 @@ class CloudSyncRepository @Inject constructor(
                 "accuracy" to accuracy,
                 "timeSpentMinutes" to minutes,
                 "grade" to grade.coerceIn(6, 11),
+                "createdAt" to FieldValue.serverTimestamp(),
                 "updatedAt" to FieldValue.serverTimestamp()
-            ),
-            SetOptions.merge()
-        ).await()
+            )
+        }
+        lbRef.set(map, SetOptions.merge()).await()
     }
 
     suspend fun saveTicketProgressToCloud(
@@ -667,16 +720,43 @@ class CloudSyncRepository @Inject constructor(
         allSucceeded
     }
 
-    fun observeLeaderboard(limit: Long = 50L): Flow<List<CloudLeaderboardEntry>> =
-        db.collection("leaderboard")
+    fun observeLeaderboard(limit: Long = 500L): Flow<List<CloudLeaderboardEntry>> =
+        db.collection("users")
             .orderBy("xp", Query.Direction.DESCENDING)
             .limit(limit)
             .snapshots()
             .map { querySnap ->
-                querySnap.toObjects(
-                    CloudLeaderboardEntry::class.java,
-                    DocumentSnapshot.ServerTimestampBehavior.ESTIMATE
-                )
+                querySnap.documents.mapNotNull { doc ->
+                    try {
+                        val profile = doc.toObject(
+                            CloudUserProfile::class.java,
+                            DocumentSnapshot.ServerTimestampBehavior.ESTIMATE
+                        )
+                        if (profile != null) {
+                            val solved = profile.totalSolved.coerceAtLeast(0L)
+                            val correct = profile.correctCount.coerceIn(0L, solved)
+                            val accuracy = if (solved > 0L) (correct * 100L / solved) else 0L
+                            CloudLeaderboardEntry(
+                                docId = profile.docId.ifEmpty { doc.id },
+                                userId = profile.userId.ifEmpty { doc.id },
+                                displayName = profile.displayName.ifBlank { "Tarixchi" },
+                                initials = profile.avatar.ifBlank { profile.displayName.take(2).uppercase() },
+                                xp = profile.xp.coerceAtLeast(0L),
+                                streak = profile.streak.coerceAtLeast(0L),
+                                totalSolved = solved,
+                                correctCount = correct,
+                                accuracy = accuracy,
+                                timeSpentMinutes = profile.timeSpentSeconds / 60L,
+                                grade = profile.grade.coerceIn(6L, 11L),
+                                createdAt = profile.createdAt,
+                                updatedAt = profile.updatedAt
+                            )
+                        } else null
+                    } catch (e: Exception) {
+                        Log.e(TAG, "Failed to parse user for leaderboard: ${doc.id}", e)
+                        null
+                    }
+                }
             }
             .catch { error ->
                 val fsError = generateSequence(error) { it.cause }
@@ -684,8 +764,8 @@ class CloudSyncRepository @Inject constructor(
                     .firstOrNull()
                 if (fsError == null && error is CancellationException) throw error
                 val root = fsError ?: error
-                handleFirestoreError(root, OperationType.LIST, "leaderboard", auth)
-                Log.w(TAG, "Error observing leaderboard", root)
+                handleFirestoreError(root, OperationType.LIST, "users", auth)
+                Log.w(TAG, "Error observing users leaderboard", root)
                 emit(emptyList())
             }
 
@@ -698,16 +778,24 @@ class CloudSyncRepository @Inject constructor(
             val cacheKey = "${todayDateKey()}_$userId"
             val remoteBase = dailyAttemptsMemoryCache[cacheKey] ?: run {
                 val fetched = try {
-                    val snap = db.collection("users").document(userId)
-                        .collection("attempts")
-                        .orderBy("createdAt", Query.Direction.DESCENDING)
-                        .limit(limit)
-                        .get()
-                        .await()
-                    snap.toObjects(
-                        CloudQuizAttempt::class.java,
-                        DocumentSnapshot.ServerTimestampBehavior.ESTIMATE
-                    )
+                    val snap = withTimeoutOrNull(5000) {
+                        db.collection("users").document(userId)
+                            .collection("attempts")
+                            .orderBy("createdAt", Query.Direction.DESCENDING)
+                            .limit(limit)
+                            .get()
+                            .await()
+                    }
+                    snap?.documents?.mapNotNull { doc ->
+                        try {
+                            doc.toObject(
+                                CloudQuizAttempt::class.java,
+                                DocumentSnapshot.ServerTimestampBehavior.ESTIMATE
+                            )
+                        } catch (e: Exception) {
+                            null
+                        }
+                    } ?: emptyList()
                 } catch (e: CancellationException) {
                     throw e
                 } catch (e: Exception) {

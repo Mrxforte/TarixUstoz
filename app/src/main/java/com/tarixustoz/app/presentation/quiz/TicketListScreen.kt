@@ -4,8 +4,10 @@ import android.app.Activity
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.BorderStroke
@@ -36,8 +38,11 @@ import androidx.compose.runtime.*
 import com.tarixustoz.app.presentation.common.components.ShimmerListItem
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
@@ -60,10 +65,11 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.tarixustoz.app.ads.AdMobManager
+import com.tarixustoz.app.presentation.home.formatCompactStarsCount
 import com.tarixustoz.app.presentation.theme.BrandPurple
 import kotlin.math.roundToInt
 
-private const val TICKET_LIST_HEADER_COUNT = 5
+private const val TICKET_LIST_HEADER_COUNT = 3
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -97,14 +103,34 @@ fun TicketListScreen(
 
     fun processTicketStart(ticketIndex: Int, isRetry: Boolean, isUnlocked: Boolean, isPassed: Boolean) {
         if (!isUnlocked) return
-        val isNewTicket = !isPassed
-        if (isNewTicket && state.ticketAdCounter >= 5) {
-            pendingTicketToStart = ticketIndex
-            pendingIsRetry = isRetry
-        } else {
-            viewModel.prepareTicketForStart(categoryKey, ticketIndex, isRetry, selectedGrade)
-            viewModel.prefetchNextTicketsIfNeeded(categoryKey, ticketIndex, selectedGrade)
-            onStartTicket(categoryKey, ticketIndex, state.timerMinutes, isRetry)
+        viewModel.prepareTicketForStart(categoryKey, ticketIndex, isRetry, selectedGrade)
+        viewModel.prefetchNextTicketsIfNeeded(categoryKey, ticketIndex, selectedGrade)
+        onStartTicket(categoryKey, ticketIndex, state.timerMinutes, isRetry)
+    }
+
+    var isSearchExpanded by remember { mutableStateOf(false) }
+    var showTimerDialog by remember { mutableStateOf(false) }
+    val searchFocusRequester = remember { FocusRequester() }
+    val focusManager = LocalFocusManager.current
+    var ticketJumpQuery by remember(categoryKey) { mutableStateOf("") }
+    var ticketJumpError by remember(categoryKey) { mutableStateOf<String?>(null) }
+
+    LaunchedEffect(isSearchExpanded) {
+        if (isSearchExpanded) {
+            delay(100)
+            searchFocusRequester.requestFocus()
+        }
+    }
+
+    fun jumpToTicketNumber(targetTicketNum: Int) {
+        if (state.tickets.isEmpty()) return
+        val clamped = targetTicketNum.coerceIn(1, state.tickets.size)
+        ticketJumpError = null
+        focusManager.clearFocus()
+        coroutineScope.launch {
+            val itemPos = (clamped - 1 + TICKET_LIST_HEADER_COUNT)
+                .coerceAtMost(state.tickets.size + TICKET_LIST_HEADER_COUNT - 1)
+            listState.animateScrollToItem(itemPos)
         }
     }
 
@@ -117,24 +143,51 @@ fun TicketListScreen(
         }
     }
 
+    if (showTimerDialog) {
+        TicketTimerDialog(
+            selectedMinutes = state.timerMinutes,
+            onSelectMinutes = { mins -> viewModel.setTimerMinutes(mins) },
+            onDismiss = { showTimerDialog = false }
+        )
+    }
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
-        contentWindowInsets = WindowInsets(0.dp),
+        contentWindowInsets = WindowInsets.safeDrawing,
         topBar = {
             TopAppBar(
                 title = {
-                    Column {
+                    Column(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        val titleText = categoryTitle.ifBlank { "Test Biletlari" }
+                        val responsiveTitleFontSize = when {
+                            titleText.length > 25 -> 13.sp
+                            titleText.length > 18 -> 14.sp
+                            titleText.length > 14 -> 15.sp
+                            else -> 16.sp
+                        }
                         Text(
-                            text = categoryTitle.ifBlank { "Test Biletlari" },
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold
+                            text = titleText,
+                            fontSize = responsiveTitleFontSize,
+                            lineHeight = (responsiveTitleFontSize.value + 3).sp,
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 1,
+                            softWrap = false,
+                            overflow = TextOverflow.Ellipsis,
+                            color = MaterialTheme.colorScheme.onBackground
                         )
                         val formattedQ = "%,d".format(state.totalQuestions).replace(',', ' ')
                         val formattedT = "%,d".format(state.tickets.size).replace(',', ' ')
                         Text(
                             text = "$formattedQ ta savol • $formattedT ta bilet",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                            fontSize = 11.sp,
+                            lineHeight = 14.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            maxLines = 1,
+                            softWrap = false,
+                            overflow = TextOverflow.Ellipsis
                         )
                     }
                 },
@@ -144,33 +197,91 @@ fun TicketListScreen(
                     }
                 },
                 actions = {
-                    Surface(
-                        onClick = onNavigateToFavorites,
-                        shape = RoundedCornerShape(14.dp),
-                        color = Color(0xFFFEF2F2),
-                        border = BorderStroke(1.dp, Color(0xFFFECACA)),
-                        modifier = Modifier
-                            .padding(end = 12.dp)
-                            .height(38.dp)
-                            .testTag("ticket_list_favorites_btn")
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(2.dp),
+                        modifier = Modifier.padding(end = 4.dp)
                     ) {
-                        Row(
-                            modifier = Modifier.padding(horizontal = 10.dp),
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.spacedBy(5.dp)
+                        // 1. Search button (opens top ticket jump input)
+                        IconButton(
+                            onClick = {
+                                isSearchExpanded = !isSearchExpanded
+                                if (!isSearchExpanded) {
+                                    ticketJumpQuery = ""
+                                    ticketJumpError = null
+                                    focusManager.clearFocus()
+                                }
+                            },
+                            modifier = Modifier
+                                .size(36.dp)
+                                .testTag("ticket_list_search_btn")
                         ) {
                             Icon(
-                                Icons.Default.Favorite,
-                                contentDescription = "Sevimlilar",
-                                tint = Color(0xFFEF4444),
-                                modifier = Modifier.size(17.dp)
+                                imageVector = Icons.Default.Search,
+                                contentDescription = "Biletga o'tish",
+                                tint = if (isSearchExpanded) BrandPurple else MaterialTheme.colorScheme.onSurfaceVariant,
+                                modifier = Modifier.size(20.dp)
                             )
-                            Text(
-                                text = "${state.totalFavoritesCount}",
-                                fontSize = 12.sp,
-                                fontWeight = FontWeight.ExtraBold,
-                                color = Color(0xFFDC2626)
-                            )
+                        }
+
+                        // 2. Timer Settings Button (Chip style with timer icon)
+                        Surface(
+                            onClick = { showTimerDialog = true },
+                            shape = RoundedCornerShape(10.dp),
+                            color = Color(0xFF1E1B4B),
+                            border = BorderStroke(1.dp, Color(0xFF6366F1).copy(alpha = 0.6f)),
+                            modifier = Modifier
+                                .height(30.dp)
+                                .testTag("ticket_list_timer_btn")
+                        ) {
+                            Row(
+                                modifier = Modifier.padding(horizontal = 7.dp, vertical = 2.dp),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(3.dp)
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Timer,
+                                    contentDescription = "Taymer sozlamasi",
+                                    tint = Color(0xFF34D399),
+                                    modifier = Modifier.size(13.dp)
+                                )
+                                Text(
+                                    text = "${state.timerMinutes}m",
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = Color.White
+                                )
+                            }
+                        }
+
+                        // 3. Favorites button
+                        Surface(
+                            onClick = onNavigateToFavorites,
+                            shape = RoundedCornerShape(10.dp),
+                            color = Color(0xFFFEF2F2),
+                            border = BorderStroke(1.dp, Color(0xFFFECACA)),
+                            modifier = Modifier
+                                .height(30.dp)
+                                .testTag("ticket_list_favorites_btn")
+                        ) {
+                            Row(
+                                modifier = Modifier.padding(horizontal = 7.dp, vertical = 2.dp),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(3.dp)
+                            ) {
+                                Icon(
+                                    Icons.Default.Favorite,
+                                    contentDescription = "Sevimlilar",
+                                    tint = Color(0xFFEF4444),
+                                    modifier = Modifier.size(13.dp)
+                                )
+                                Text(
+                                    text = "${state.totalFavoritesCount}",
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.ExtraBold,
+                                    color = Color(0xFFDC2626)
+                                )
+                            }
                         }
                     }
                 },
@@ -184,27 +295,24 @@ fun TicketListScreen(
                 val targetTicketIdx = state.continueTicketIndex.coerceIn(1, state.tickets.size)
                 val targetTicketItem = state.tickets.getOrNull(targetTicketIdx - 1)
                 val isRetry = !state.isContinueInProgress && (targetTicketItem?.isPassed == true)
-                val subtitleText = if (state.isContinueInProgress && state.continueAnsweredCount != null) {
-                    "$targetTicketIdx-Bilet • ${state.continueAnsweredCount}/30 savol"
-                } else {
-                    "$targetTicketIdx-Biletdan davom etish"
-                }
 
-                Surface(
-                    shape = RoundedCornerShape(28.dp),
-                    color = BrandPurple,
-                    shadowElevation = 8.dp,
+                FloatingActionButton(
+                    onClick = {
+                        processTicketStart(
+                            ticketIndex = targetTicketIdx,
+                            isRetry = isRetry,
+                            isUnlocked = targetTicketItem?.isUnlocked == true,
+                            isPassed = targetTicketItem?.isPassed == true
+                        )
+                    },
+                    containerColor = BrandPurple,
+                    contentColor = Color.White,
+                    shape = CircleShape,
+                    elevation = FloatingActionButtonDefaults.elevation(defaultElevation = 8.dp),
                     modifier = Modifier
-                        .padding(horizontal = 16.dp)
+                        .navigationBarsPadding()
+                        .padding(bottom = 12.dp)
                         .testTag("ticket_list_continue_fab")
-                        .clickable {
-                            processTicketStart(
-                                ticketIndex = targetTicketIdx,
-                                isRetry = isRetry,
-                                isUnlocked = targetTicketItem?.isUnlocked == true,
-                                isPassed = targetTicketItem?.isPassed == true
-                            )
-                        }
                 ) {
                     Row(
                         modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp),
@@ -218,33 +326,18 @@ fun TicketListScreen(
                         ) {
                             Box(contentAlignment = Alignment.Center) {
                                 Icon(
-                                    Icons.Default.PlayArrow,
-                                    contentDescription = null,
+                                    imageVector = Icons.Default.PlayArrow,
+                                    contentDescription = "Davom ettirish",
                                     tint = BrandPurple,
-                                    modifier = Modifier.size(20.dp)
+                                    modifier = Modifier.size(22.dp)
                                 )
                             }
                         }
-                        Column {
-                            Text(
-                                text = "Davom ettirish • ${categoryTitle.ifBlank { "Shu bo‘lim" }}",
-                                color = Color.White.copy(alpha = 0.85f),
-                                fontSize = 11.sp,
-                                fontWeight = FontWeight.Medium
-                            )
-                            Text(
-                                text = subtitleText,
-                                color = Color.White,
-                                fontSize = 14.sp,
-                                fontWeight = FontWeight.Bold
-                            )
-                        }
-                        Spacer(Modifier.width(8.dp))
-                        Icon(
-                            Icons.Default.ArrowForward,
-                            contentDescription = null,
-                            tint = Color.White,
-                            modifier = Modifier.size(18.dp)
+                        Text(
+                            text = "Davom ettirish ($targetTicketIdx-Bilet)",
+                            color = Color.White,
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.Bold
                         )
                     }
                 }
@@ -252,325 +345,281 @@ fun TicketListScreen(
         },
         floatingActionButtonPosition = FabPosition.Center
     ) { innerPadding ->
-        val focusManager = LocalFocusManager.current
-        var ticketJumpQuery by remember(categoryKey) { mutableStateOf("") }
-        var ticketJumpError by remember(categoryKey) { mutableStateOf<String?>(null) }
-
-        Box(
+        Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-            PullToRefreshBox(
-                isRefreshing = isRefreshing,
-                onRefresh = {
-                    coroutineScope.launch {
-                        isRefreshing = true
-                        viewModel.loadTickets(categoryKey, selectedGrade, forceRefresh = true)
-                        isRefreshing = false
-                    }
-                },
-                state = pullState,
-                indicator = {
-                    PullToRefreshDefaults.Indicator(
-                        state = pullState,
-                        isRefreshing = isRefreshing,
-                        color = BrandPurple,
-                        containerColor = MaterialTheme.colorScheme.surface,
-                        modifier = Modifier.align(Alignment.TopCenter)
-                    )
-                },
-                modifier = Modifier.fillMaxSize()
+            // Top ticket jump search bar (Opened via Search IconButton in TopAppBar)
+            AnimatedVisibility(
+                visible = isSearchExpanded,
+                enter = fadeIn() + expandVertically(),
+                exit = fadeOut() + shrinkVertically()
             ) {
-                LazyColumn(
-                    state = listState,
+                Surface(
+                    shape = RoundedCornerShape(16.dp),
+                    color = MaterialTheme.colorScheme.surface,
+                    border = BorderStroke(1.dp, BrandPurple.copy(alpha = 0.35f)),
+                    shadowElevation = 4.dp,
                     modifier = Modifier
-                        .fillMaxSize()
-                        .padding(horizontal = 16.dp),
-                    verticalArrangement = Arrangement.spacedBy(14.dp)
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 6.dp)
                 ) {
-                    item { Spacer(Modifier.height(4.dp)) }
-
-                    // 1. Prominent & Beautiful Timer Settings Card ("Taymer va Yulduz Qoidasi")
-                    item {
-                        TicketTimerSettingsCard(
-                            selectedMinutes = state.timerMinutes,
-                            onSelectMinutes = { mins -> viewModel.setTimerMinutes(mins) }
-                        )
-                    }
-
-                    // 2. Star Rating & Passing Rule Card
-                    item {
-                        Surface(
-                            shape = RoundedCornerShape(16.dp),
-                            color = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.55f),
-                            border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.28f)),
-                            modifier = Modifier.fillMaxWidth()
+                    Column(modifier = Modifier.padding(12.dp)) {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
-                            Row(
-                                modifier = Modifier.padding(14.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Surface(
-                                    shape = CircleShape,
-                                    color = Color(0xFFF59E0B),
-                                    modifier = Modifier.size(42.dp)
-                                ) {
-                                    Box(contentAlignment = Alignment.Center) {
-                                        Icon(
-                                            Icons.Default.Star,
-                                            contentDescription = null,
-                                            tint = Color.White,
-                                            modifier = Modifier.size(22.dp)
-                                        )
-                                    }
-                                }
-                                Spacer(Modifier.width(12.dp))
-                                Column(modifier = Modifier.weight(1f)) {
+                            OutlinedTextField(
+                                value = ticketJumpQuery,
+                                onValueChange = { raw ->
+                                    val digitsOnly = raw.filter { it.isDigit() }.take(5)
+                                    ticketJumpQuery = digitsOnly
+                                    ticketJumpError = null
+                                },
+                                placeholder = {
                                     Text(
-                                        text = "Yulduz reytingi va Bilet qoidasi",
-                                        fontWeight = FontWeight.Bold,
-                                        fontSize = 14.sp,
-                                        color = MaterialTheme.colorScheme.onPrimaryContainer
+                                        text = "Bilet № (1–${state.tickets.size})",
+                                        fontSize = 13.sp
                                     )
-                                    Spacer(Modifier.height(2.dp))
-                                    Text(
-                                        text = "Har 10 ta to‘g‘ri javob = 1 ⭐ (maks. 3 ⭐⭐⭐). Belgilangan vaqt ichida tugatmasangiz 0 yulduz beriladi va bilet qayta boshlanadi!",
-                                        fontSize = 12.sp,
-                                        color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.88f)
+                                },
+                                leadingIcon = {
+                                    Icon(
+                                        Icons.Default.Tag,
+                                        contentDescription = null,
+                                        tint = BrandPurple,
+                                        modifier = Modifier.size(18.dp)
                                     )
-                                }
-                            }
-                        }
-                    }
-
-                    // 3. Overall Progress Summary + Quick Jump to Last Opened Ticket + Bilet raqami bo'yicha o'tish
-                    item {
-                        val passedCount = state.tickets.count { it.isPassed }
-                        val totalStarsEarned = state.tickets.sumOf { it.stars }
-                        val totalTickets = state.tickets.size.coerceAtLeast(1)
-                        val progressFraction = passedCount.toFloat() / totalTickets
-
-                        fun jumpToTicketNumber(targetTicketNum: Int) {
-                            if (state.tickets.isEmpty()) return
-                            val clamped = targetTicketNum.coerceIn(1, state.tickets.size)
-                            ticketJumpError = null
-                            focusManager.clearFocus()
-                            coroutineScope.launch {
-                                val itemPos = (clamped - 1 + TICKET_LIST_HEADER_COUNT)
-                                    .coerceAtMost(state.tickets.size + TICKET_LIST_HEADER_COUNT - 1)
-                                listState.animateScrollToItem(itemPos)
-                            }
-                        }
-
-                        Surface(
-                            shape = RoundedCornerShape(16.dp),
-                            color = MaterialTheme.colorScheme.surface,
-                            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Column(modifier = Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                                Row(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.SpaceBetween,
-                                    verticalAlignment = Alignment.CenterVertically
-                                ) {
-                                    Text(
-                                        text = "Umumiy progress",
-                                        fontWeight = FontWeight.Bold,
-                                        fontSize = 14.sp
-                                    )
-                                    Row(
-                                        verticalAlignment = Alignment.CenterVertically,
-                                        horizontalArrangement = Arrangement.spacedBy(10.dp)
-                                    ) {
-                                        Row(verticalAlignment = Alignment.CenterVertically) {
-                                            Icon(
-                                                Icons.Default.Star,
-                                                contentDescription = null,
-                                                tint = Color(0xFFF59E0B),
-                                                modifier = Modifier.size(16.dp)
-                                            )
-                                            Spacer(Modifier.width(3.dp))
-                                            Text(
-                                                text = com.tarixustoz.app.presentation.home.formatCompactStarsCount(totalStarsEarned),
-                                                fontWeight = FontWeight.ExtraBold,
-                                                color = Color(0xFFD97706),
-                                                fontSize = 13.sp
-                                            )
+                                },
+                                trailingIcon = {
+                                    if (ticketJumpQuery.isNotEmpty()) {
+                                        IconButton(onClick = { ticketJumpQuery = ""; ticketJumpError = null }) {
+                                            Icon(Icons.Default.Clear, contentDescription = "Tozalash", modifier = Modifier.size(18.dp))
                                         }
-                                        Text(
-                                            text = "$passedCount / $totalTickets bilet",
-                                            fontWeight = FontWeight.Bold,
-                                            color = BrandPurple,
-                                            fontSize = 13.sp
-                                        )
                                     }
-                                }
-                                LinearProgressIndicator(
-                                    progress = { progressFraction },
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .height(8.dp)
-                                        .clip(RoundedCornerShape(4.dp)),
-                                    color = BrandPurple,
-                                    trackColor = MaterialTheme.colorScheme.surfaceVariant
-                                )
+                                },
+                                singleLine = true,
+                                shape = RoundedCornerShape(12.dp),
+                                keyboardOptions = KeyboardOptions(
+                                    keyboardType = KeyboardType.Number,
+                                    imeAction = ImeAction.Go
+                                ),
+                                keyboardActions = KeyboardActions(
+                                    onGo = {
+                                        val num = ticketJumpQuery.toIntOrNull()
+                                        if (num == null || num !in 1..state.tickets.size) {
+                                            ticketJumpError = "1 dan ${state.tickets.size} gacha bilet raqamini kiriting"
+                                        } else {
+                                            jumpToTicketNumber(num)
+                                            isSearchExpanded = false
+                                        }
+                                    }
+                                ),
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .focusRequester(searchFocusRequester)
+                                    .testTag("ticket_jump_number_input")
+                            )
 
-                                if (state.tickets.isNotEmpty()) {
-                                    val targetIdx = state.lastOpenedTicket.coerceIn(1, state.tickets.size)
-                                    Surface(
-                                        shape = RoundedCornerShape(12.dp),
-                                        color = BrandPurple.copy(alpha = 0.1f),
-                                        border = BorderStroke(1.dp, BrandPurple.copy(alpha = 0.25f)),
-                                        modifier = Modifier
-                                            .fillMaxWidth()
-                                            .clickable {
-                                                jumpToTicketNumber(targetIdx)
-                                            }
+                            Button(
+                                onClick = {
+                                    val num = ticketJumpQuery.toIntOrNull()
+                                    if (num == null || num !in 1..state.tickets.size) {
+                                        ticketJumpError = "1 dan ${state.tickets.size} gacha bilet raqamini kiriting"
+                                    } else {
+                                        jumpToTicketNumber(num)
+                                        isSearchExpanded = false
+                                    }
+                                },
+                                colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
+                                shape = RoundedCornerShape(12.dp),
+                                modifier = Modifier
+                                    .height(54.dp)
+                                    .testTag("ticket_jump_go_btn")
+                            ) {
+                                Icon(
+                                    Icons.Default.Search,
+                                    contentDescription = null,
+                                    modifier = Modifier.size(18.dp)
+                                )
+                                Spacer(Modifier.width(4.dp))
+                                Text(
+                                    text = "O‘tish",
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 13.sp
+                                )
+                            }
+                        }
+
+                        if (ticketJumpError != null) {
+                            Spacer(Modifier.height(4.dp))
+                            Text(
+                                text = ticketJumpError!!,
+                                color = MaterialTheme.colorScheme.error,
+                                fontSize = 11.5.sp,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        }
+                    }
+                }
+            }
+
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .weight(1f)
+            ) {
+                PullToRefreshBox(
+                    isRefreshing = isRefreshing,
+                    onRefresh = {
+                        coroutineScope.launch {
+                            isRefreshing = true
+                            viewModel.loadTickets(categoryKey, selectedGrade, forceRefresh = true)
+                            isRefreshing = false
+                        }
+                    },
+                    state = pullState,
+                    indicator = {
+                        PullToRefreshDefaults.Indicator(
+                            state = pullState,
+                            isRefreshing = isRefreshing,
+                            color = BrandPurple,
+                            containerColor = MaterialTheme.colorScheme.surface,
+                            modifier = Modifier.align(Alignment.TopCenter)
+                        )
+                    },
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    LazyColumn(
+                        state = listState,
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(horizontal = 16.dp),
+                        verticalArrangement = Arrangement.spacedBy(14.dp)
+                    ) {
+                        item { Spacer(Modifier.height(4.dp)) }
+
+                        // Overall Progress Summary + Quick Jump to Last Opened Ticket
+                        item {
+                            val passedCount = state.tickets.count { it.isPassed }
+                            val totalStarsEarned = state.tickets.sumOf { it.stars }
+                            val totalTickets = state.tickets.size.coerceAtLeast(1)
+                            val progressFraction = passedCount.toFloat() / totalTickets
+
+                            Surface(
+                                shape = RoundedCornerShape(16.dp),
+                                color = MaterialTheme.colorScheme.surface,
+                                border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                Column(modifier = Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                                    Row(
+                                        modifier = Modifier.fillMaxWidth(),
+                                        horizontalArrangement = Arrangement.SpaceBetween,
+                                        verticalAlignment = Alignment.CenterVertically
                                     ) {
+                                        Text(
+                                            text = "Umumiy progress",
+                                            fontWeight = FontWeight.Bold,
+                                            fontSize = 14.sp
+                                        )
                                         Row(
-                                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp),
                                             verticalAlignment = Alignment.CenterVertically,
-                                            horizontalArrangement = Arrangement.SpaceBetween
+                                            horizontalArrangement = Arrangement.spacedBy(10.dp)
                                         ) {
                                             Row(verticalAlignment = Alignment.CenterVertically) {
                                                 Icon(
-                                                    Icons.Default.BookmarkAdded,
+                                                    Icons.Default.Star,
                                                     contentDescription = null,
-                                                    tint = BrandPurple,
-                                                    modifier = Modifier.size(18.dp)
+                                                    tint = Color(0xFFF59E0B),
+                                                    modifier = Modifier.size(16.dp)
                                                 )
-                                                Spacer(Modifier.width(8.dp))
-                                                Column {
-                                                    Text(
-                                                        text = "Oxirgi ochilgan: $targetIdx-Bilet",
-                                                        fontSize = 13.sp,
-                                                        fontWeight = FontWeight.Bold,
-                                                        color = BrandPurple
-                                                    )
-                                                    Text(
-                                                        text = "Ro‘yxatdan darhol topish uchun bosing",
-                                                        fontSize = 11.sp,
-                                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                                    )
-                                                }
-                                            }
-                                            Icon(
-                                                Icons.Default.South,
-                                                contentDescription = "Biletga o‘tish",
-                                                tint = BrandPurple,
-                                                modifier = Modifier.size(18.dp)
-                                            )
-                                        }
-                                    }
-
-                                    // Bilet raqami bo'yicha o'tish (Input + O'tish tugmasi)
-                                    HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f))
-
-                                    Text(
-                                        text = "Bilet raqami bo‘yicha o‘tish",
-                                        fontWeight = FontWeight.Bold,
-                                        fontSize = 13.sp,
-                                        color = MaterialTheme.colorScheme.onSurface
-                                    )
-
-                                    Row(
-                                        modifier = Modifier.fillMaxWidth(),
-                                        verticalAlignment = Alignment.CenterVertically,
-                                        horizontalArrangement = Arrangement.spacedBy(8.dp)
-                                    ) {
-                                        OutlinedTextField(
-                                            value = ticketJumpQuery,
-                                            onValueChange = { raw ->
-                                                val digitsOnly = raw.filter { it.isDigit() }.take(5)
-                                                ticketJumpQuery = digitsOnly
-                                                ticketJumpError = null
-                                            },
-                                            placeholder = {
+                                                Spacer(Modifier.width(3.dp))
                                                 Text(
-                                                    text = "Bilet № (1–${state.tickets.size})",
+                                                    text = formatCompactStarsCount(totalStarsEarned),
+                                                    fontWeight = FontWeight.ExtraBold,
+                                                    color = Color(0xFFD97706),
                                                     fontSize = 13.sp
                                                 )
-                                            },
-                                            leadingIcon = {
-                                                Icon(
-                                                    Icons.Default.Tag,
-                                                    contentDescription = null,
-                                                    tint = BrandPurple,
-                                                    modifier = Modifier.size(18.dp)
-                                                )
-                                            },
-                                            singleLine = true,
-                                            shape = RoundedCornerShape(12.dp),
-                                            keyboardOptions = KeyboardOptions(
-                                                keyboardType = KeyboardType.Number,
-                                                imeAction = ImeAction.Go
-                                            ),
-                                            keyboardActions = KeyboardActions(
-                                                onGo = {
-                                                    val num = ticketJumpQuery.toIntOrNull()
-                                                    if (num == null || num !in 1..state.tickets.size) {
-                                                        ticketJumpError = "1 dan ${state.tickets.size} gacha bilet raqamini kiriting"
-                                                    } else {
-                                                        jumpToTicketNumber(num)
-                                                    }
-                                                }
-                                            ),
-                                            modifier = Modifier
-                                                .weight(1f)
-                                                .testTag("ticket_jump_number_input")
-                                        )
-
-                                        Button(
-                                            onClick = {
-                                                val num = ticketJumpQuery.toIntOrNull()
-                                                if (num == null || num !in 1..state.tickets.size) {
-                                                    ticketJumpError = "1 dan ${state.tickets.size} gacha bilet raqamini kiriting"
-                                                } else {
-                                                    jumpToTicketNumber(num)
-                                                }
-                                            },
-                                            colors = ButtonDefaults.buttonColors(containerColor = BrandPurple),
-                                            shape = RoundedCornerShape(12.dp),
-                                            modifier = Modifier
-                                                .height(54.dp)
-                                                .testTag("ticket_jump_go_btn")
-                                        ) {
-                                            Icon(
-                                                Icons.Default.Search,
-                                                contentDescription = null,
-                                                modifier = Modifier.size(18.dp)
-                                            )
-                                            Spacer(Modifier.width(4.dp))
+                                            }
                                             Text(
-                                                text = "O‘tish",
+                                                text = "$passedCount / $totalTickets bilet",
                                                 fontWeight = FontWeight.Bold,
+                                                color = BrandPurple,
                                                 fontSize = 13.sp
                                             )
                                         }
                                     }
+                                    LinearProgressIndicator(
+                                        progress = { progressFraction },
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .height(8.dp)
+                                            .clip(RoundedCornerShape(4.dp)),
+                                        color = BrandPurple,
+                                        trackColor = MaterialTheme.colorScheme.surfaceVariant
+                                    )
 
-                                    if (ticketJumpError != null) {
-                                        Text(
-                                            text = ticketJumpError!!,
-                                            color = MaterialTheme.colorScheme.error,
-                                            fontSize = 11.5.sp,
-                                            fontWeight = FontWeight.SemiBold
-                                        )
+                                    if (state.tickets.isNotEmpty()) {
+                                        val targetIdx = state.lastOpenedTicket.coerceIn(1, state.tickets.size)
+                                        Surface(
+                                            shape = RoundedCornerShape(12.dp),
+                                            color = BrandPurple.copy(alpha = 0.1f),
+                                            border = BorderStroke(1.dp, BrandPurple.copy(alpha = 0.25f)),
+                                            modifier = Modifier
+                                                .fillMaxWidth()
+                                                .clickable {
+                                                    jumpToTicketNumber(targetIdx)
+                                                }
+                                        ) {
+                                            Row(
+                                                modifier = Modifier.padding(horizontal = 12.dp, vertical = 10.dp),
+                                                verticalAlignment = Alignment.CenterVertically,
+                                                horizontalArrangement = Arrangement.SpaceBetween
+                                            ) {
+                                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                                    Icon(
+                                                        Icons.Default.BookmarkAdded,
+                                                        contentDescription = null,
+                                                        tint = BrandPurple,
+                                                        modifier = Modifier.size(18.dp)
+                                                    )
+                                                    Spacer(Modifier.width(8.dp))
+                                                    Column {
+                                                        Text(
+                                                            text = "Oxirgi ochilgan: $targetIdx-Bilet",
+                                                            fontSize = 13.sp,
+                                                            fontWeight = FontWeight.Bold,
+                                                            color = BrandPurple
+                                                        )
+                                                        Text(
+                                                            text = "Ro‘yxatdan darhol topish uchun bosing",
+                                                            fontSize = 11.sp,
+                                                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                                                        )
+                                                    }
+                                                }
+                                                Icon(
+                                                    Icons.Default.South,
+                                                    contentDescription = "Biletga o‘tish",
+                                                    tint = BrandPurple,
+                                                    modifier = Modifier.size(18.dp)
+                                                )
+                                            }
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
 
-                    item {
-                        Text(
-                            text = "Test Biletlari",
-                            style = MaterialTheme.typography.titleMedium,
-                            fontWeight = FontWeight.Bold
-                        )
-                    }
+                        item {
+                            Text(
+                                text = "Test Biletlari",
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
 
                     // Ticket Cards List
                     if (state.isLoading && state.tickets.isEmpty()) {
@@ -605,7 +654,7 @@ fun TicketListScreen(
                         }
                     }
 
-                    item { Spacer(Modifier.height(24.dp)) }
+                    item { Spacer(Modifier.height(96.dp)) }
                 }
             }
 
@@ -708,6 +757,7 @@ fun TicketListScreen(
             }
         )
     }
+}
 }
 
 @Composable
@@ -979,132 +1029,97 @@ private fun TicketFastScrollerOverlay(
 }
 
 @Composable
-private fun TicketTimerSettingsCard(
+private fun TicketTimerDialog(
     selectedMinutes: Int,
-    onSelectMinutes: (Int) -> Unit
+    onSelectMinutes: (Int) -> Unit,
+    onDismiss: () -> Unit
 ) {
     val options = listOf(
-        10 to "Tezkor",
-        15 to "Standart",
-        20 to "Imtihon",
-        30 to "Keng"
+        10 to "Tezkor (10 daqiqa)",
+        15 to "Standart (15 daqiqa)",
+        20 to "Imtihon (20 daqiqa)",
+        30 to "Keng (30 daqiqa)"
     )
 
-    Surface(
-        shape = RoundedCornerShape(20.dp),
-        color = Color(0xFF1E1B4B),
-        border = BorderStroke(1.2.dp, Color(0xFF6366F1).copy(alpha = 0.65f)),
-        shadowElevation = 4.dp,
-        modifier = Modifier
-            .fillMaxWidth()
-            .testTag("ticket_timer_settings_card")
-    ) {
-        Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        icon = {
+            Surface(
+                shape = CircleShape,
+                color = Color(0xFF1E1B4B),
+                modifier = Modifier.size(50.dp)
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Surface(
-                        shape = RoundedCornerShape(12.dp),
-                        color = Color(0xFF4F46E5),
-                        modifier = Modifier.size(42.dp)
-                    ) {
-                        Box(contentAlignment = Alignment.Center) {
-                            Icon(
-                                Icons.Default.Timer,
-                                contentDescription = "Taymer sozlamasi",
-                                tint = Color.White,
-                                modifier = Modifier.size(22.dp)
-                            )
-                        }
-                    }
-                    Spacer(Modifier.width(12.dp))
-                    Column {
-                        Text(
-                            text = "Test vaqti (Taymer)",
-                            color = Color.White,
-                            fontWeight = FontWeight.ExtraBold,
-                            fontSize = 15.sp
-                        )
-                        Text(
-                            text = "Biletni yechish uchun belgilangan vaqt",
-                            color = Color(0xFFC7D2FE),
-                            fontSize = 11.5.sp
-                        )
-                    }
-                }
-
-                Surface(
-                    shape = RoundedCornerShape(50),
-                    color = Color(0xFF10B981).copy(alpha = 0.22f),
-                    border = BorderStroke(1.dp, Color(0xFF34D399))
-                ) {
-                    Row(
-                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(
-                            Icons.Default.Schedule,
-                            contentDescription = null,
-                            tint = Color(0xFF34D399),
-                            modifier = Modifier.size(14.dp)
-                        )
-                        Spacer(Modifier.width(4.dp))
-                        Text(
-                            text = "$selectedMinutes daq",
-                            color = Color(0xFF6EE7B7),
-                            fontWeight = FontWeight.ExtraBold,
-                            fontSize = 12.sp
-                        )
-                    }
+                Box(contentAlignment = Alignment.Center) {
+                    Icon(
+                        Icons.Default.Timer,
+                        contentDescription = "Taymer sozlamasi",
+                        tint = Color(0xFF34D399),
+                        modifier = Modifier.size(24.dp)
+                    )
                 }
             }
-
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
+        },
+        title = {
+            Text(
+                text = "Test vaqti (Taymer)",
+                fontWeight = FontWeight.Bold,
+                fontSize = 18.sp
+            )
+        },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                Text(
+                    text = "Biletni yechish uchun belgilangan vaqtni tanlang:",
+                    fontSize = 13.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
                 options.forEach { (mins, label) ->
                     val isSelected = selectedMinutes == mins
                     Surface(
-                        onClick = { onSelectMinutes(mins) },
+                        onClick = {
+                            onSelectMinutes(mins)
+                            onDismiss()
+                        },
                         shape = RoundedCornerShape(14.dp),
-                        color = if (isSelected) Color(0xFF4F46E5) else Color.White.copy(alpha = 0.08f),
+                        color = if (isSelected) BrandPurple else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
                         border = BorderStroke(
                             width = if (isSelected) 1.5.dp else 1.dp,
-                            color = if (isSelected) Color(0xFFA5B4FC) else Color.White.copy(alpha = 0.16f)
+                            color = if (isSelected) BrandPurple else MaterialTheme.colorScheme.outlineVariant
                         ),
                         modifier = Modifier
-                            .weight(1f)
-                            .testTag("timer_option_${mins}m")
+                            .fillMaxWidth()
+                            .testTag("timer_option_dialog_${mins}m")
                     ) {
-                        Column(
-                            modifier = Modifier.padding(vertical = 9.dp, horizontal = 4.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally
+                        Row(
+                            modifier = Modifier.padding(horizontal = 14.dp, vertical = 12.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.SpaceBetween
                         ) {
                             Text(
-                                text = "$mins daq",
-                                color = if (isSelected) Color.White else Color(0xFFE0E7FF),
-                                fontWeight = FontWeight.ExtraBold,
-                                fontSize = 13.sp
-                            )
-                            Text(
                                 text = label,
-                                color = if (isSelected) Color(0xFFC7D2FE) else Color(0xFF94A3B8),
-                                fontSize = 10.sp,
-                                fontWeight = FontWeight.Medium
+                                color = if (isSelected) Color.White else MaterialTheme.colorScheme.onSurface,
+                                fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
+                                fontSize = 14.sp
                             )
+                            if (isSelected) {
+                                Icon(
+                                    Icons.Default.CheckCircle,
+                                    contentDescription = "Tanlangan",
+                                    tint = Color.White,
+                                    modifier = Modifier.size(20.dp)
+                                )
+                            }
                         }
                     }
                 }
             }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) {
+                Text("Yopish", fontWeight = FontWeight.Bold, color = BrandPurple)
+            }
         }
-    }
+    )
 }
 
 @Composable

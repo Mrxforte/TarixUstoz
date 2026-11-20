@@ -11,10 +11,13 @@ import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Density
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
@@ -73,11 +76,21 @@ class MainActivity : ComponentActivity() {
                 onDispose {}
             }
 
-            TarixUstozTheme(darkTheme = darkTheme) {
-                TarixNavHost(
-                    pendingNotificationRoute = pendingNotificationRoute.value,
-                    onNotificationRouteConsumed = { pendingNotificationRoute.value = null }
+            val fontScale by themeViewModel.appFontScale.collectAsState()
+            val currentDensity = LocalDensity.current
+
+            CompositionLocalProvider(
+                LocalDensity provides Density(
+                    density = currentDensity.density,
+                    fontScale = fontScale
                 )
+            ) {
+                TarixUstozTheme(darkTheme = darkTheme) {
+                    TarixNavHost(
+                        pendingNotificationRoute = pendingNotificationRoute.value,
+                        onNotificationRouteConsumed = { pendingNotificationRoute.value = null }
+                    )
+                }
             }
         }
     }

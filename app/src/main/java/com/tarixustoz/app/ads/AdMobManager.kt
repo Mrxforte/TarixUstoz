@@ -22,12 +22,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.initialization.AdapterStatus
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import kotlinx.coroutines.CoroutineScope
@@ -87,11 +88,13 @@ object AdMobManager {
     // Real AdMob Ad Unit IDs
     const val BANNER_AD_UNIT_ID = "ca-app-pub-2360068229850342/6027022065"
     const val REWARDED_AD_UNIT_ID = "ca-app-pub-2360068229850342/4905512084"
+    const val INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-2360068229850342/5075906629"
 
     // Test Ad Unit IDs provided by Google for verified Test Mode preview
     const val TEST_BANNER_AD_UNIT_ID = "ca-app-pub-3940256099942544/6300978111"
     const val TEST_ADAPTIVE_BANNER_AD_UNIT_ID = "ca-app-pub-3940256099942544/9214589741"
     const val TEST_REWARDED_AD_UNIT_ID = "ca-app-pub-3940256099942544/5224354917"
+    const val TEST_INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712"
 
     fun computeInlineAdaptiveHeightBucket(availableHeightDp: Int): Int {
         val clamped = availableHeightDp.coerceIn(50, 420)
@@ -770,5 +773,84 @@ object AdMobManager {
                 }
             }
         )
+    }
+
+    /**
+     * Loads and shows a full-screen Interstitial Ad.
+     * Respects Test Mode; automatically falls back to Google's Test Interstitial if live load fails.
+     */
+    fun showInterstitialAd(
+        activity: Activity,
+        adUnitId: String? = null,
+        onAdDismissed: () -> Unit = {},
+        onAdFailedToLoad: (() -> Unit)? = null
+    ) {
+        val currentTestMode = _diagnostics.value.isTestMode
+        val effectiveId = adUnitId ?: if (currentTestMode) TEST_INTERSTITIAL_AD_UNIT_ID else INTERSTITIAL_AD_UNIT_ID
+
+        val adRequest = AdRequest.Builder().build()
+        InterstitialAd.load(
+            activity,
+            effectiveId,
+            adRequest,
+            object : InterstitialAdLoadCallback() {
+                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                    val isTest = effectiveId == TEST_INTERSTITIAL_AD_UNIT_ID
+                    Log.d(TAG, "Interstitial ad loaded successfully (isTest=$isTest).")
+                    if (!isTest) recordLiveSuccess("Interstitial reklama")
+
+                    interstitialAd.fullScreenContentCallback = object : FullScreenContentCallback() {
+                        override fun onAdDismissedFullScreenContent() {
+                            Log.d(TAG, "Interstitial ad dismissed by user.")
+                            onAdDismissed()
+                        }
+
+                        override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                            Log.w(TAG, "Interstitial ad failed to show: ${adError.message}")
+                            onAdDismissed()
+                        }
+                    }
+                    interstitialAd.show(activity)
+                }
+
+                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                    Log.w(TAG, "Interstitial ad failed to load for $effectiveId: ${loadAdError.message}")
+                    if (effectiveId != TEST_INTERSTITIAL_AD_UNIT_ID) {
+                        recordLiveFailureAndFallbackToTest("Interstitial reklama", loadAdError)
+                        showInterstitialAd(activity, TEST_INTERSTITIAL_AD_UNIT_ID, onAdDismissed, onAdFailedToLoad)
+                    } else {
+                        onAdFailedToLoad?.invoke() ?: onAdDismissed()
+                    }
+                }
+            }
+        )
+    }
+
+    /**
+     * Called when a ticket/quiz finishes.
+     * Shows Rewarded Ad on every 5th completed ticket (5, 10, 15...),
+     * and Interstitial Ad on all other tickets (1, 2, 3, 4, 6, 7, 8, 9...).
+     */
+    fun showCompletionAd(
+        activity: Activity,
+        completedCount: Int,
+        onAdFinished: () -> Unit = {}
+    ) {
+        val isFifthTicket = completedCount > 0 && (completedCount % 5 == 0)
+        if (isFifthTicket) {
+            Log.d(TAG, "Showing Rewarded Ad for 5th ticket milestone (counter=$completedCount)")
+            showRewardedAd(
+                activity = activity,
+                onRewardEarned = onAdFinished,
+                onAdFailedToLoad = onAdFinished
+            )
+        } else {
+            Log.d(TAG, "Showing Interstitial Ad for ticket completion (counter=$completedCount)")
+            showInterstitialAd(
+                activity = activity,
+                onAdDismissed = onAdFinished,
+                onAdFailedToLoad = onAdFinished
+            )
+        }
     }
 }

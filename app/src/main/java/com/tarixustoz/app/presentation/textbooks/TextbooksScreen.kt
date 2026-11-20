@@ -182,7 +182,7 @@ fun TextbooksScreen(
                         horizontalArrangement = Arrangement.spacedBy(12.dp),
                         verticalArrangement = Arrangement.spacedBy(12.dp),
                         modifier = Modifier.weight(1f),
-                        contentPadding = PaddingValues(bottom = 24.dp)
+                        contentPadding = PaddingValues(bottom = 16.dp)
                     ) {
                         items(sortedTextbooks) { textbook ->
                             val fallbackPdfUrl = MediaUrls.textbook(textbook.gradeId, textbook.subjectId)
@@ -262,8 +262,6 @@ fun TextbooksScreen(
                         }
                     }
                 }
-
-                Spacer(Modifier.height(16.dp))
             }
         }
     }

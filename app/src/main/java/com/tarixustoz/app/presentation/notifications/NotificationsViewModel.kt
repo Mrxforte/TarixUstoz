@@ -38,7 +38,7 @@ enum class NotificationCategory {
 enum class NotificationFilter(val label: String) {
     ALL("Barchasi"),
     UNREAD("O‘qilmagan"),
-    DAILY_XP("Kunlik & XP"),
+    DAILY_XP("Kunlik & Malaka"),
     AI_TIPS("AI Tavsiyalar")
 }
 
@@ -313,31 +313,31 @@ class NotificationsViewModel @Inject constructor(
                 id = NotificationCatalog.ID_DAILY_QUIZ,
                 title = "Bugungi kun savoli",
                 message = lastDailyText?.takeIf { it.isNotBlank() }
-                    ?: "Bugungi kun savolini yechib, +10 XP qo‘lga kiriting.",
+                    ?: "Bugungi kun savolini yechib, +10 Malaka qo‘lga kiriting.",
                 timeLabel = "Bugun, $reminderTime",
                 category = NotificationCategory.DAILY_QUIZ,
                 isRead = NotificationCatalog.ID_DAILY_QUIZ in readIds,
                 target = NotificationTarget.DAILY_QUIZ,
                 actionHint = "Kun savolini yechish",
-                highlightTag = "+10 XP"
+                highlightTag = "+10 Malaka"
             )
         )
 
         add(
             NotificationItem(
                 id = NotificationCatalog.ID_STREAK,
-                title = "${stats.xp} XP • ${stats.streak} kunlik seriya",
+                title = "${stats.xp} Malaka • ${stats.streak} kunlik seriya",
                 message = if (stats.streak > 0) {
-                    "To‘plangan ${stats.xp} XP va ${stats.streak} kunlik faollik seriyangizni saqlab, reytingda yuqoriga chiqing."
+                    "To‘plangan ${stats.xp} Malaka va ${stats.streak} kunlik faollik seriyangizni saqlab, reytingda yuqoriga chiqing."
                 } else {
-                    "Hozirgi natijangiz ${stats.xp} XP. Bugun test ishlab kunlik seriyani boshlang!"
+                    "Hozirgi natijangiz ${stats.xp} Malaka. Bugun test ishlab kunlik seriyani boshlang!"
                 },
                 timeLabel = "Faollik",
                 category = NotificationCategory.XP_STREAK,
                 isRead = NotificationCatalog.ID_STREAK in readIds,
                 target = NotificationTarget.LEADERBOARD,
                 actionHint = "Reytingni ko‘rish",
-                highlightTag = "${stats.xp} XP"
+                highlightTag = "${stats.xp} Malaka"
             )
         )
     }

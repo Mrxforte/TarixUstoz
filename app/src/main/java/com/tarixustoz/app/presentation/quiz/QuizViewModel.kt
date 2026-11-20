@@ -43,7 +43,8 @@ data class QuizUiState(
     val favoriteQuestionIds: Set<String> = emptySet(),
     val isCurrentTicketFavorite: Boolean = false,
     val startTimeMillis: Long = System.currentTimeMillis(),
-    val timeSpentSeconds: Int = 0
+    val timeSpentSeconds: Int = 0,
+    val ticketAdCounter: Int = 0
 )
 
 @HiltViewModel
@@ -202,6 +203,29 @@ class QuizViewModel @Inject constructor(
                 )
             }
             startCountdownTimer()
+        }
+    }
+
+    fun restartWithNextQuiz() {
+        val cat = currentTicketCategory
+        val idx = currentTicketIndex
+        if (cat != null && idx != null) {
+            val nextIndex = idx + 1
+            startQuiz(
+                topicId = "ticket_${cat}_$nextIndex",
+                explicitGrade = currentTicketGrade,
+                forceShuffle = true
+            )
+        } else {
+            val current = _uiState.value
+            startQuiz(
+                topicId = null,
+                customCount = current.questions.size.coerceAtLeast(15),
+                customCategory = "ALL",
+                customDifficulty = "MEDIUM",
+                timeLimitMinutes = (current.totalLimitSeconds / 60).coerceAtLeast(15),
+                forceShuffle = true
+            )
         }
     }
 
@@ -565,14 +589,14 @@ class QuizViewModel @Inject constructor(
                     correctCount = state.correctCount,
                     timeSpentSeconds = totalSeconds
                 )
+                preferences.incrementTicketAdCounter()
+                val currentCounter = preferences.ticketAdCounter.first()
+                _uiState.update { current -> current.copy(ticketAdCounter = currentCounter) }
+
                 if (cat != null && idx != null && completedWithinTime) {
                     val score = state.correctCount
                     val passed = earnedStars >= 1 && score >= 10
                     preferences.saveTicketResult(cat, idx, score, passed, stars = earnedStars, grade = ticketGrade)
-                    
-                    if (passed) {
-                        preferences.incrementTicketAdCounter()
-                    }
                     
                     val progress = preferences.getTicketProgress(cat)
                     val highestUnlocked = ((progress.passed.maxOrNull() ?: 0) + 1).coerceAtLeast(1)

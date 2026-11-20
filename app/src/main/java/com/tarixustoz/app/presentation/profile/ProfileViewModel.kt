@@ -139,8 +139,12 @@ class ProfileViewModel @Inject constructor(
     val isGuest: StateFlow<Boolean> = preferencesRepository.isGuest
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), false)
 
-    val displayName: StateFlow<String> = preferencesRepository.displayName
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "Tarixchi")
+    val displayName: StateFlow<String> = combine(
+        preferencesRepository.isGuest,
+        preferencesRepository.displayName
+    ) { isGuest, name ->
+        if (isGuest) "Tarixchi" else name.ifBlank { "Tarixchi" }
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "Tarixchi")
 
     val userBio: StateFlow<String> = preferencesRepository.userBio
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "Tarix fani izlanuvchisi")

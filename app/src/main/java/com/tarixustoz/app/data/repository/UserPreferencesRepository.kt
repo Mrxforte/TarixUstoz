@@ -5,6 +5,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.floatPreferencesKey
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
@@ -19,7 +20,6 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -108,6 +108,7 @@ class UserPreferencesRepository @Inject constructor(
         private val NOTIF_DAILY_REMINDER = booleanPreferencesKey("notif_daily_reminder")
         private val NOTIF_MISTAKE_REMINDER = booleanPreferencesKey("notif_mistake_reminder")
         private val NOTIF_NEW_TESTS = booleanPreferencesKey("notif_new_tests")
+        private val APP_FONT_SCALE = floatPreferencesKey("app_font_scale")
         private val NOTIF_SOUND = booleanPreferencesKey("notif_sound")
         private val NOTIF_TIME = stringPreferencesKey("notif_time")
         private val ACTIVE_QUIZ_ROUTE = stringPreferencesKey("active_quiz_route")
@@ -202,6 +203,8 @@ class UserPreferencesRepository @Inject constructor(
         }
     }
 
+    val appFontScale: Flow<Float> = dataStore.data.map { it[APP_FONT_SCALE] ?: 1.0f }
+
     val selectedGrade: Flow<Int> = dataStore.data.map { it[SELECTED_GRADE] ?: 7 }
 
     val userXp: Flow<Long> = dataStore.data.map { it[USER_XP] ?: 0L }
@@ -265,6 +268,10 @@ class UserPreferencesRepository @Inject constructor(
 
     suspend fun setThemeMode(mode: ThemeMode) {
         dataStore.edit { it[THEME_MODE] = mode.name }
+    }
+
+    suspend fun setAppFontScale(scale: Float) {
+        dataStore.edit { it[APP_FONT_SCALE] = scale.coerceIn(0.85f, 1.4f) }
     }
 
     suspend fun setSelectedGrade(grade: Int) {
