@@ -2,6 +2,7 @@ package com.tarixustoz.app.presentation.auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.FirebaseUser
 import com.tarixustoz.app.data.repository.AuthRepository
 import com.tarixustoz.app.data.repository.UserPreferencesRepository
@@ -22,7 +23,8 @@ data class AuthUiState(
     val userEmail: String? = null,
     val displayName: String = "Tarixchi",
     val errorMessage: String? = null,
-    val infoMessage: String? = null
+    val infoMessage: String? = null,
+    val suggestSignUp: Boolean = false
 )
 
 @HiltViewModel
@@ -62,29 +64,35 @@ class AuthViewModel @Inject constructor(
     }
 
     fun setLoading(loading: Boolean) {
-        _uiState.update { it.copy(isLoading = loading, errorMessage = null, infoMessage = null) }
+        _uiState.update { it.copy(isLoading = loading, errorMessage = null, infoMessage = null, suggestSignUp = false) }
     }
 
     fun setError(message: String?) {
-        _uiState.update { it.copy(isLoading = false, errorMessage = message) }
+        _uiState.update { it.copy(isLoading = false, errorMessage = message, suggestSignUp = false) }
     }
 
     fun clearMessages() {
-        _uiState.update { it.copy(errorMessage = null, infoMessage = null) }
+        _uiState.update { it.copy(errorMessage = null, infoMessage = null, suggestSignUp = false) }
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        return Regex("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$").matches(email)
     }
 
     fun handleGoogleSignInResult(idToken: String, onComplete: () -> Unit) {
         viewModelScope.launch {
-            _uiState.update { it.copy(isLoading = true, errorMessage = null, infoMessage = null) }
+            _uiState.update { it.copy(isLoading = true, errorMessage = null, infoMessage = null, suggestSignUp = false) }
             val result = authRepository.signInWithGoogleCredential(idToken)
             if (result.isSuccess && result.getOrNull() != null) {
-                _uiState.update { it.copy(isLoading = false, isSignedIn = true) }
+                _uiState.update { it.copy(isLoading = false, isSignedIn = true, suggestSignUp = false) }
                 onComplete()
             } else {
+                val err = result.exceptionOrNull()
                 _uiState.update {
                     it.copy(
                         isLoading = false,
-                        errorMessage = mapFirebaseAuthError(result.exceptionOrNull())
+                        errorMessage = mapFirebaseAuthError(err),
+                        suggestSignUp = shouldSuggestSignUp(err)
                     )
                 }
             }
@@ -93,25 +101,37 @@ class AuthViewModel @Inject constructor(
 
     fun signInWithEmail(email: String, password: String, onComplete: () -> Unit) {
         val cleanEmail = email.trim()
-        if (cleanEmail.isBlank() || !cleanEmail.contains("@")) {
-            _uiState.update { it.copy(errorMessage = "Iltimos, to‘g‘ri email manzilini kiriting") }
+        if (!isValidEmail(cleanEmail)) {
+            _uiState.update {
+                it.copy(
+                    errorMessage = "Iltimos, to‘g‘ri email manzilini kiriting",
+                    suggestSignUp = false
+                )
+            }
             return
         }
         if (password.length < 6) {
-            _uiState.update { it.copy(errorMessage = "Parol kamida 6 ta belgidan iborat bo‘lishi kerak") }
+            _uiState.update {
+                it.copy(
+                    errorMessage = "Parol kamida 6 ta belgidan iborat bo‘lishi kerak",
+                    suggestSignUp = false
+                )
+            }
             return
         }
         viewModelScope.launch {
-            _uiState.update { it.copy(isLoading = true, errorMessage = null, infoMessage = null) }
+            _uiState.update { it.copy(isLoading = true, errorMessage = null, infoMessage = null, suggestSignUp = false) }
             val result = authRepository.signInWithEmail(cleanEmail, password)
             if (result.isSuccess && result.getOrNull() != null) {
-                _uiState.update { it.copy(isLoading = false, isSignedIn = true) }
+                _uiState.update { it.copy(isLoading = false, isSignedIn = true, suggestSignUp = false) }
                 onComplete()
             } else {
+                val err = result.exceptionOrNull()
                 _uiState.update {
                     it.copy(
                         isLoading = false,
-                        errorMessage = mapFirebaseAuthError(result.exceptionOrNull())
+                        errorMessage = mapFirebaseAuthError(err),
+                        suggestSignUp = shouldSuggestSignUp(err)
                     )
                 }
             }
@@ -129,28 +149,30 @@ class AuthViewModel @Inject constructor(
         val cleanName = name.trim()
         val cleanEmail = email.trim()
         if (cleanName.length < 2) {
-            _uiState.update { it.copy(errorMessage = "Ismingizni kiriting (kamida 2 harf)") }
+            _uiState.update { it.copy(errorMessage = "Ismingizni kiriting (kamida 2 harf)", suggestSignUp = false) }
             return
         }
-        if (cleanEmail.isBlank() || !cleanEmail.contains("@")) {
-            _uiState.update { it.copy(errorMessage = "To‘g‘ri email manzilini kiriting") }
+        if (!isValidEmail(cleanEmail)) {
+            _uiState.update { it.copy(errorMessage = "To‘g‘ri email manzilini kiriting", suggestSignUp = false) }
             return
         }
         if (password.length < 6) {
-            _uiState.update { it.copy(errorMessage = "Parol kamida 6 ta belgidan iborat bo‘lishi kerak") }
+            _uiState.update { it.copy(errorMessage = "Parol kamida 6 ta belgidan iborat bo‘lishi kerak", suggestSignUp = false) }
             return
         }
         viewModelScope.launch {
-            _uiState.update { it.copy(isLoading = true, errorMessage = null, infoMessage = null) }
+            _uiState.update { it.copy(isLoading = true, errorMessage = null, infoMessage = null, suggestSignUp = false) }
             val result = authRepository.signUpWithEmail(cleanName, cleanEmail, password, role, grade)
             if (result.isSuccess && result.getOrNull() != null) {
-                _uiState.update { it.copy(isLoading = false, isSignedIn = true) }
+                _uiState.update { it.copy(isLoading = false, isSignedIn = true, suggestSignUp = false) }
                 onComplete()
             } else {
+                val err = result.exceptionOrNull()
                 _uiState.update {
                     it.copy(
                         isLoading = false,
-                        errorMessage = mapFirebaseAuthError(result.exceptionOrNull())
+                        errorMessage = mapFirebaseAuthError(err),
+                        suggestSignUp = false
                     )
                 }
             }
@@ -203,44 +225,66 @@ class AuthViewModel @Inject constructor(
         }
     }
 
+    private fun shouldSuggestSignUp(error: Throwable?): Boolean {
+        val errorCode = (error as? FirebaseAuthException)?.errorCode.orEmpty()
+        if (errorCode == "ERROR_USER_NOT_FOUND" || errorCode == "ERROR_INVALID_CREDENTIAL") {
+            return true
+        }
+        val combined = "${error?.message.orEmpty()} ${error?.cause?.message.orEmpty()}"
+        return combined.contains("user-not-found", ignoreCase = true) ||
+            combined.contains("no user record", ignoreCase = true) ||
+            combined.contains("USER_NOT_FOUND", ignoreCase = true) ||
+            combined.contains("invalid-credential", ignoreCase = true) ||
+            combined.contains("INVALID_LOGIN_CREDENTIALS", ignoreCase = true)
+    }
+
     private fun mapFirebaseAuthError(error: Throwable?): String {
+        val errorCode = (error as? FirebaseAuthException)?.errorCode.orEmpty()
         val msg = error?.message.orEmpty()
         val causeMsg = error?.cause?.message.orEmpty()
-        val combined = "$msg $causeMsg"
+        val combined = "$errorCode $msg $causeMsg"
         return when {
-            combined.contains("user-not-found", ignoreCase = true) ||
+            errorCode == "ERROR_USER_NOT_FOUND" ||
+                combined.contains("user-not-found", ignoreCase = true) ||
                 combined.contains("no user record", ignoreCase = true) ||
                 combined.contains("USER_NOT_FOUND", ignoreCase = true) ->
-                "Ushbu email manzili bilan foydalanuvchi topilmadi."
+                "Bunday foydalanuvchi topilmadi. Iltimos, avval «Ro‘yxatdan o‘tish» bo‘limidan ro‘yxatdan o‘ting!"
 
-            combined.contains("wrong-password", ignoreCase = true) ||
-                combined.contains("INVALID_LOGIN_CREDENTIALS", ignoreCase = true) ||
+            errorCode == "ERROR_WRONG_PASSWORD" ||
+                combined.contains("wrong-password", ignoreCase = true) ||
                 combined.contains("INVALID_PASSWORD", ignoreCase = true) ->
                 "Kiritilgan parol noto‘g‘ri. Qaytadan tekshirib ko‘ring."
 
-            combined.contains("invalid-credential", ignoreCase = true) ||
+            errorCode == "ERROR_INVALID_CREDENTIAL" ||
+                combined.contains("invalid-credential", ignoreCase = true) ||
+                combined.contains("INVALID_LOGIN_CREDENTIALS", ignoreCase = true) ||
                 combined.contains("password is invalid", ignoreCase = true) ->
-                "Email manzil yoki parol noto‘g‘ri kiritildi."
+                "Email topilmadi yoki parol noto‘g‘ri. Agar ro‘yxatdan o‘tmagan bo‘lsangiz, avval «Ro‘yxatdan o‘tish» bo‘limidan hisob yarating!"
 
-            combined.contains("email-already-in-use", ignoreCase = true) ||
+            errorCode == "ERROR_EMAIL_ALREADY_IN_USE" ||
+                combined.contains("email-already-in-use", ignoreCase = true) ||
                 combined.contains("already in use", ignoreCase = true) ||
                 combined.contains("EMAIL_EXISTS", ignoreCase = true) ->
                 "Ushbu email manzili allaqachon ro‘yxatdan o‘tgan."
 
-            combined.contains("invalid-email", ignoreCase = true) ||
+            errorCode == "ERROR_INVALID_EMAIL" ||
+                combined.contains("invalid-email", ignoreCase = true) ||
                 combined.contains("badly formatted", ignoreCase = true) ||
                 combined.contains("INVALID_EMAIL", ignoreCase = true) ->
                 "Email manzili formati noto‘g‘ri kiritildi (masalan: foydalanuvchi@gmail.com)."
 
-            combined.contains("weak-password", ignoreCase = true) ||
+            errorCode == "ERROR_WEAK_PASSWORD" ||
+                combined.contains("weak-password", ignoreCase = true) ||
                 combined.contains("WEAK_PASSWORD", ignoreCase = true) ->
                 "Parol juda oddiy. Kamida 6 ta belgi yoki harflar aralashmasidan foydalaning."
 
-            combined.contains("too-many-requests", ignoreCase = true) ||
+            errorCode == "ERROR_TOO_MANY_REQUESTS" ||
+                combined.contains("too-many-requests", ignoreCase = true) ||
                 combined.contains("TOO_MANY_ATTEMPTS", ignoreCase = true) ->
                 "Juda ko‘p muvaffaqiyatsiz urinish bo‘ldi. Biroz kutib, qaytadan urining."
 
-            combined.contains("user-disabled", ignoreCase = true) ||
+            errorCode == "ERROR_USER_DISABLED" ||
+                combined.contains("user-disabled", ignoreCase = true) ||
                 combined.contains("USER_DISABLED", ignoreCase = true) ->
                 "Ushbu hisob vaqtincha muzlatilgan. Qo‘llab-quvvatlash xizmatiga murojaat qiling."
 

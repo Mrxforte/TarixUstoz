@@ -102,12 +102,13 @@ class SyncScheduler @Inject constructor(
         val request = OneTimeWorkRequestBuilder<OfflineSyncWorker>()
             .setConstraints(constraints)
             .setInputData(input)
+            .setInitialDelay(10, TimeUnit.SECONDS)
             .setBackoffCriteria(BackoffPolicy.EXPONENTIAL, 15, TimeUnit.SECONDS)
             .build()
 
         workManager.enqueueUniqueWork(
             PENDING_UPLOAD_WORK_NAME,
-            ExistingWorkPolicy.REPLACE,
+            ExistingWorkPolicy.KEEP,
             request
         )
     }

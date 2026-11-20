@@ -2,6 +2,7 @@ package com.tarixustoz.app.data.remote
 
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestoreException
 import org.json.JSONObject
 
 enum class OperationType(val value: String) {
@@ -13,12 +14,29 @@ enum class OperationType(val value: String) {
     WRITE("write")
 }
 
+fun Throwable.isFirestoreOfflineOrTransient(): Boolean {
+    val chain = generateSequence(this) { it.cause }
+    return chain.any { err ->
+        (err is FirebaseFirestoreException && err.code == FirebaseFirestoreException.Code.UNAVAILABLE) ||
+            (err.message?.contains("client is offline", ignoreCase = true) == true) ||
+            (err.message?.contains("unavailable", ignoreCase = true) == true)
+    }
+}
+
 fun handleFirestoreError(
     error: Throwable,
     operationType: OperationType,
     path: String,
     auth: FirebaseAuth
 ) {
+    if (error.isFirestoreOfflineOrTransient()) {
+        Log.w(
+            "FirestoreSync",
+            "Firestore offline/unavailable (${operationType.value} $path): ${error.message}"
+        )
+        return
+    }
+
     val user = auth.currentUser
     val providersArray = org.json.JSONArray()
     user?.providerData?.forEach { profile ->

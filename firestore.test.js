@@ -59,29 +59,53 @@ function validUserProfile(uid, ts) {
   };
 }
 
-test("Unauthenticated users cannot read or write any collection", async () => {
+function validLeaderboardEntry(uid, ts) {
+  return {
+    userId: uid,
+    displayName: "Azizbek Karimov",
+    initials: "AK",
+    xp: 120,
+    streak: 3,
+    totalSolved: 30,
+    correctCount: 25,
+    accuracy: 83,
+    timeSpentMinutes: 7,
+    grade: 10,
+    createdAt: ts,
+    updatedAt: ts,
+  };
+}
+
+test("Unauthenticated users cannot read or write any collection or collectionGroup", async () => {
   const unauthDb = testEnv.unauthenticatedContext().firestore();
   await assertFails(unauthDb.collection("users").doc(ALICE_UID).get());
-  await assertFails(unauthDb.collection("leaderboard").get());
+  await assertFails(unauthDb.collection("users").get());
+  await assertFails(unauthDb.collectionGroup("leaderboard").get());
   await assertFails(
     unauthDb
       .collection("users")
       .doc(ALICE_UID)
       .set(validUserProfile(ALICE_UID, new Date(Date.now() - 1000)))
   );
+  await assertFails(
+    unauthDb
+      .collection("users")
+      .doc(ALICE_UID)
+      .collection("leaderboard")
+      .doc(ALICE_UID)
+      .set(validLeaderboardEntry(ALICE_UID, new Date(Date.now() - 1000)))
+  );
 });
 
-test("User profile: owner create, partial update, immutable fields, and cross-user isolation", async () => {
+test("User profile: owner create/update, cross-user write denied, shadow fields denied", async () => {
   const aliceDb = testEnv.authenticatedContext(ALICE_UID).firestore();
   const bobDb = testEnv.authenticatedContext(BOB_UID).firestore();
   const created = new Date(Date.now() - 10000);
 
-  // Valid create
   await assertSucceeds(
     aliceDb.collection("users").doc(ALICE_UID).set(validUserProfile(ALICE_UID, created))
   );
 
-  // Valid partial update
   await assertSucceeds(
     aliceDb.collection("users").doc(ALICE_UID).update({
       xp: 150,
@@ -91,7 +115,8 @@ test("User profile: owner create, partial update, immutable fields, and cross-us
     })
   );
 
-  // Reject createdAt tamper
+  await assertSucceeds(bobDb.collection("users").get());
+
   await assertFails(
     aliceDb.collection("users").doc(ALICE_UID).update({
       createdAt: new Date(Date.now() - 500),
@@ -99,7 +124,6 @@ test("User profile: owner create, partial update, immutable fields, and cross-us
     })
   );
 
-  // Reject shadow field injection
   await assertFails(
     aliceDb.collection("users").doc(ALICE_UID).update({
       isAdmin: true,
@@ -107,9 +131,92 @@ test("User profile: owner create, partial update, immutable fields, and cross-us
     })
   );
 
-  // Reject cross-user PII read or write
-  await assertFails(bobDb.collection("users").doc(ALICE_UID).get());
-  await assertFails(bobDb.collection("users").doc(ALICE_UID).update({ xp: 9999 }));
+  await assertFails(
+    bobDb.collection("users").doc(ALICE_UID).update({
+      xp: 9999,
+      updatedAt: new Date(Date.now() - 500),
+    })
+  );
+});
+
+test("Leaderboard subcollection inside users: owner create/update, collectionGroup read succeeds, PII and legacy root writes denied", async () => {
+  const aliceDb = testEnv.authenticatedContext(ALICE_UID).firestore();
+  const bobDb = testEnv.authenticatedContext(BOB_UID).firestore();
+  const created = new Date(Date.now() - 5000);
+
+  // Owner creates lightweight leaderboard doc inside users/{uid}/leaderboard/{uid}
+  await assertSucceeds(
+    aliceDb
+      .collection("users")
+      .doc(ALICE_UID)
+      .collection("leaderboard")
+      .doc(ALICE_UID)
+      .set(validLeaderboardEntry(ALICE_UID, created))
+  );
+
+  // Owner partial update succeeds
+  await assertSucceeds(
+    aliceDb
+      .collection("users")
+      .doc(ALICE_UID)
+      .collection("leaderboard")
+      .doc(ALICE_UID)
+      .update({
+        xp: 200,
+        totalSolved: 50,
+        correctCount: 45,
+        accuracy: 90,
+        timeSpentMinutes: 12,
+        updatedAt: new Date(Date.now() - 1000),
+      })
+  );
+
+  // Another signed-in user can query global collectionGroup('leaderboard')
+  await assertSucceeds(bobDb.collectionGroup("leaderboard").get());
+
+  // Cross-user write inside subcollection fails
+  await assertFails(
+    bobDb
+      .collection("users")
+      .doc(ALICE_UID)
+      .collection("leaderboard")
+      .doc(ALICE_UID)
+      .update({
+        xp: 9999,
+        updatedAt: new Date(Date.now() - 500),
+      })
+  );
+
+  // Entry docId must match userId
+  await assertFails(
+    aliceDb
+      .collection("users")
+      .doc(ALICE_UID)
+      .collection("leaderboard")
+      .doc("other_doc")
+      .set(validLeaderboardEntry(ALICE_UID, created))
+  );
+
+  // PII field injection inside leaderboard subcollection fails
+  await assertFails(
+    aliceDb
+      .collection("users")
+      .doc(ALICE_UID)
+      .collection("leaderboard")
+      .doc(ALICE_UID)
+      .update({
+        email: "leak@example.com",
+        updatedAt: new Date(Date.now() - 500),
+      })
+  );
+
+  // Writes to legacy root /leaderboard/{uid} remain strictly denied
+  await assertFails(
+    aliceDb
+      .collection("leaderboard")
+      .doc(ALICE_UID)
+      .set(validLeaderboardEntry(ALICE_UID, created))
+  );
 });
 
 test("Ticket progress subcollection: create, update lastOpenedTicket, list query, and isolation", async () => {
@@ -148,12 +255,10 @@ test("Ticket progress subcollection: create, update lastOpenedTicket, list query
       })
   );
 
-  // Subcollection list query succeeds for owner
   await assertSucceeds(
     aliceDb.collection("users").doc(ALICE_UID).collection("ticketProgress").get()
   );
 
-  // Bob cannot read or list Alice's ticket progress
   await assertFails(
     bobDb.collection("users").doc(ALICE_UID).collection("ticketProgress").get()
   );
@@ -200,57 +305,5 @@ test("Attempts subcollection: create and ordered list succeed; update fails", as
       .collection("attempts")
       .doc("att_1")
       .update({ correctCount: 30 })
-  );
-});
-
-test("Public leaderboard: authenticated users can list; only owner can write; PII keys rejected", async () => {
-  const aliceDb = testEnv.authenticatedContext(ALICE_UID).firestore();
-  const bobDb = testEnv.authenticatedContext(BOB_UID).firestore();
-  const created = new Date(Date.now() - 5000);
-
-  await assertSucceeds(
-    aliceDb.collection("leaderboard").doc(ALICE_UID).set({
-      userId: ALICE_UID,
-      displayName: "Azizbek Karimov",
-      initials: "AK",
-      xp: 120,
-      streak: 3,
-      totalSolved: 30,
-      correctCount: 25,
-      accuracy: 83,
-      timeSpentMinutes: 7,
-      grade: 10,
-      createdAt: created,
-      updatedAt: created,
-    })
-  );
-
-  // Reject PII injection into leaderboard
-  await assertFails(
-    bobDb.collection("leaderboard").doc(BOB_UID).set({
-      userId: BOB_UID,
-      displayName: "Bob",
-      initials: "BO",
-      email: "bob@example.com",
-      xp: 50,
-      streak: 1,
-      totalSolved: 10,
-      correctCount: 8,
-      accuracy: 80,
-      timeSpentMinutes: 3,
-      grade: 8,
-      createdAt: created,
-      updatedAt: created,
-    })
-  );
-
-  // Signed-in users can query leaderboard
-  await assertSucceeds(
-    bobDb.collection("leaderboard").orderBy("xp", "desc").limit(50).get()
-  );
-
-  // Bob cannot overwrite Alice's leaderboard doc
-  await assertFails(
-    bobDb.collection("leaderboard").doc(ALICE_UID).update({ xp: 0, updatedAt: new Date(Date.now() - 1000) })
   );
 });

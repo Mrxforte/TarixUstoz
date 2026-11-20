@@ -2,7 +2,7 @@
   "entities": {
     "UserProfile": {
       "title": "UserProfile",
-      "description": "Private authenticated learner profile, XP, streak, grade, and aggregate stats stored under /users/{userId}.",
+      "description": "Learner profile, XP, streak, grade, and study stats stored under /users/{userId}.",
       "type": "object",
       "properties": {
         "userId": { "type": "string", "description": "Firebase Auth UID owning this profile" },
@@ -24,6 +24,26 @@
         "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp" }
       },
       "required": ["userId", "displayName", "avatar", "role", "grade", "xp", "streak", "totalSolved", "correctCount", "timeSpentSeconds", "createdAt", "updatedAt"]
+    },
+    "LeaderboardEntry": {
+      "title": "LeaderboardEntry",
+      "description": "Lightweight non-PII public leaderboard entry stored inside /users/{userId}/leaderboard/{entryId} (with entryId == userId) and queried via collectionGroup('leaderboard').",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Firebase Auth UID owning this leaderboard entry" },
+        "displayName": { "type": "string" },
+        "initials": { "type": "string" },
+        "xp": { "type": "integer" },
+        "streak": { "type": "integer" },
+        "totalSolved": { "type": "integer" },
+        "correctCount": { "type": "integer" },
+        "accuracy": { "type": "integer" },
+        "timeSpentMinutes": { "type": "integer" },
+        "grade": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp" },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp" }
+      },
+      "required": ["userId", "displayName", "initials", "xp", "streak", "totalSolved", "correctCount", "accuracy", "timeSpentMinutes", "grade", "createdAt", "updatedAt"]
     },
     "TicketProgress": {
       "title": "TicketProgress",
@@ -54,32 +74,16 @@
         "createdAt": { "type": "string", "format": "date-time" }
       },
       "required": ["categoryKey", "categoryTitle", "grade", "solvedCount", "correctCount", "durationSeconds", "createdAt"]
-    },
-    "LeaderboardEntry": {
-      "title": "LeaderboardEntry",
-      "description": "Public non-PII leaderboard ranking projection for authenticated learners.",
-      "type": "object",
-      "properties": {
-        "userId": { "type": "string" },
-        "displayName": { "type": "string" },
-        "initials": { "type": "string" },
-        "xp": { "type": "integer" },
-        "streak": { "type": "integer" },
-        "totalSolved": { "type": "integer" },
-        "correctCount": { "type": "integer" },
-        "accuracy": { "type": "integer" },
-        "timeSpentMinutes": { "type": "integer" },
-        "grade": { "type": "integer" },
-        "createdAt": { "type": "string", "format": "date-time" },
-        "updatedAt": { "type": "string", "format": "date-time" }
-      },
-      "required": ["userId", "displayName", "initials", "xp", "streak", "totalSolved", "correctCount", "accuracy", "timeSpentMinutes", "grade", "createdAt", "updatedAt"]
     }
   },
   "firestore": {
     "/users/{userId}": {
       "schema": { "$ref": "#/entities/UserProfile" },
-      "description": "Private user profile, settings, and overall progress owned strictly by userId."
+      "description": "User profile document owned by userId."
+    },
+    "/users/{userId}/leaderboard/{entryId}": {
+      "schema": { "$ref": "#/entities/LeaderboardEntry" },
+      "description": "Lightweight non-PII leaderboard subcollection inside each user document, queried globally via collectionGroup('leaderboard')."
     },
     "/users/{userId}/ticketProgress/{categoryKey}": {
       "schema": { "$ref": "#/entities/TicketProgress" },
@@ -88,10 +92,6 @@
     "/users/{userId}/attempts/{attemptId}": {
       "schema": { "$ref": "#/entities/QuizAttemptRecord" },
       "description": "Completed quiz records used to populate analytics charts across devices."
-    },
-    "/leaderboard/{userId}": {
-      "schema": { "$ref": "#/entities/LeaderboardEntry" },
-      "description": "Public non-PII leaderboard entries readable by authenticated users and writable only by owner userId."
     }
   }
 }

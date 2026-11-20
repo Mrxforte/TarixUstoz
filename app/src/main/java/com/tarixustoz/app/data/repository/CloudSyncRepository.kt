@@ -7,6 +7,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.firestore.DocumentId
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
@@ -15,17 +16,25 @@ import com.google.firebase.firestore.IgnoreExtraProperties
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ServerTimestamp
 import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.Source
 import com.google.firebase.firestore.snapshots
 import com.tarixustoz.app.data.local.AppDatabase
 import com.tarixustoz.app.data.remote.OperationType
 import com.tarixustoz.app.data.remote.handleFirestoreError
+import com.tarixustoz.app.data.remote.isFirestoreOfflineOrTransient
 import com.tarixustoz.app.data.sync.SyncScheduler
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
@@ -135,9 +144,28 @@ class CloudSyncRepository @Inject constructor(
 
     // In-memory daily cache for user attempts so observeUserAttempts reads Firestore at most once per day
     private val dailyAttemptsMemoryCache = mutableMapOf<String, List<CloudQuizAttempt>>()
+    private val statsPushMutex = Mutex()
 
     private fun todayDateKey(): String =
         java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US).format(java.util.Date())
+
+    private suspend fun DocumentReference.getCacheFirstSnapshot(): DocumentSnapshot? {
+        val cached = runCatching { get(Source.CACHE).await() }.getOrNull()
+        if (cached != null && cached.exists()) return cached
+        return try {
+            withTimeoutOrNull(4500L) {
+                get(Source.DEFAULT).await()
+            }
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            if (e.isFirestoreOfflineOrTransient()) {
+                cached
+            } else {
+                throw e
+            }
+        }
+    }
 
     /**
      * Ensures signed-in user has their Firestore profile & leaderboard entry,
@@ -167,7 +195,16 @@ class CloudSyncRepository @Inject constructor(
             }
 
             val userRef = db.collection("users").document(uid)
-            val snapshot = userRef.get().await()
+            val snapshot = try {
+                withTimeoutOrNull(5000L) {
+                    userRef.get(Source.DEFAULT).await()
+                }
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                if (e.isFirestoreOfflineOrTransient()) null else throw e
+            } ?: runCatching { userRef.get(Source.CACHE).await() }.getOrNull()
+                ?: return@withContext Result.failure(IllegalStateException("Firestore offline during sign-in sync"))
 
             if (snapshot.exists()) {
                 val cloud = snapshot.toObject(
@@ -202,7 +239,8 @@ class CloudSyncRepository @Inject constructor(
                 }
                 pullAllTicketProgressFromCloud(uid)
                 preferences.markFirebaseReadToday(uid)
-                ensureLeaderboardEntry(uid)
+                ensureUserLeaderboardFields(snapshot)
+                ensureLeaderboardSubdoc(uid)
             } else {
                 val defaultName = (user.displayName?.takeIf { it.isNotBlank() }
                     ?: user.email?.substringBefore("@")
@@ -252,10 +290,10 @@ class CloudSyncRepository @Inject constructor(
                     put("updatedAt", FieldValue.serverTimestamp())
                 }
                 userRef.set(profileMap).await()
-                upsertLeaderboardEntry(
+                upsertUserLeaderboardEntry(
                     uid = uid,
                     displayName = defaultName,
-                    avatar = initials,
+                    initials = initials,
                     xp = xp,
                     streak = streak,
                     totalSolved = solved,
@@ -304,8 +342,13 @@ class CloudSyncRepository @Inject constructor(
             val timeSec = preferences.totalTimeSpentSeconds.first().coerceAtLeast(0)
 
             val docRef = db.collection("users").document(uid)
-            val snap = docRef.get().await()
-            if (snap.exists()) {
+            val snap = docRef.getCacheFirstSnapshot()
+            if (snap == null) {
+                preferences.setPendingStatsSync(true)
+                syncScheduler.triggerPendingProgressUpload()
+                return@withContext Result.failure(IllegalStateException("Firestore offline; profile update deferred"))
+            }
+            val writeOk = if (snap.exists()) {
                 val updates = mutableMapOf<String, Any>(
                     "displayName" to name,
                     "bio" to bio,
@@ -315,10 +358,18 @@ class CloudSyncRepository @Inject constructor(
                     "birthYear" to birthYear,
                     "role" to role,
                     "grade" to grade,
+                    "xp" to xp,
+                    "streak" to streak,
+                    "totalSolved" to solved,
+                    "correctCount" to correct,
+                    "timeSpentSeconds" to timeSec,
                     "updatedAt" to FieldValue.serverTimestamp()
                 )
                 if (email.isNotBlank()) updates["email"] = email
-                docRef.update(updates).await()
+                withTimeoutOrNull(5000L) {
+                    docRef.update(updates).await()
+                    true
+                } ?: false
             } else {
                 val createMap = buildMap<String, Any> {
                     put("userId", uid)
@@ -339,101 +390,155 @@ class CloudSyncRepository @Inject constructor(
                     put("createdAt", FieldValue.serverTimestamp())
                     put("updatedAt", FieldValue.serverTimestamp())
                 }
-                docRef.set(createMap).await()
+                withTimeoutOrNull(5000L) {
+                    docRef.set(createMap).await()
+                    true
+                } ?: false
             }
-            upsertLeaderboardEntry(uid, name, avatar, xp, streak, solved, correct, timeSec, grade)
+            if (!writeOk) {
+                preferences.setPendingStatsSync(true)
+                syncScheduler.triggerPendingProgressUpload()
+                return@withContext Result.failure(IllegalStateException("Firestore write deferred (offline)"))
+            }
+            upsertUserLeaderboardEntry(
+                uid = uid,
+                displayName = name,
+                initials = computeInitials(name, avatar),
+                xp = xp,
+                streak = streak,
+                totalSolved = solved,
+                correctCount = correct,
+                timeSpentSeconds = timeSec,
+                grade = grade
+            )
             Result.success(Unit)
         } catch (e: CancellationException) {
             throw e
         } catch (e: Exception) {
+            if (e.isFirestoreOfflineOrTransient()) {
+                preferences.setPendingStatsSync(true)
+                syncScheduler.triggerPendingProgressUpload()
+            }
             handleFirestoreError(e, OperationType.UPDATE, "users/$uid", auth)
             Result.failure(e)
         }
     }
 
     /**
-     * Kuniga 1 marta Firebase'ga yozish: foydalanuvchi ballari va ishlagan testlari avval lokal
-     * navbatga qo'yiladi. Agar bugun Firebase'ga hali yozilmagan bo'lsa, darhol yoziladi;
-     * aks holda keyingi kunlik sinxronizatsiyada yoziladi.
+     * Foydalanuvchi ballari va ishlagan testlarini Firebase'dagi users hujjatiga yozadi.
+     * Agar qurilma oflayn bo'lsa, navbatga qo'yib qo'yadi va xatolik spami chiqarmaydi.
      */
-    suspend fun pushStatsToCloud(forceImmediate: Boolean = false): Result<Unit> = withContext(Dispatchers.IO) {
+    suspend fun pushStatsToCloud(forceImmediate: Boolean = false): Result<Unit> =
+        pushStatsToCloudInternal(forceImmediate = forceImmediate, scheduleWorkerOnFailure = true)
+
+    private suspend fun pushStatsToCloudInternal(
+        forceImmediate: Boolean,
+        scheduleWorkerOnFailure: Boolean
+    ): Result<Unit> = withContext(Dispatchers.IO) {
         val uid = auth.currentUser?.uid ?: return@withContext Result.success(Unit)
-        preferences.setPendingStatsSync(true)
-        try {
-            val name = preferences.displayName.first().trim().ifBlank { "Tarixchi" }.take(60)
-            val avatar = preferences.userAvatar.first().trim().ifBlank { "TU" }.take(16)
-            val grade = preferences.selectedGrade.first().coerceIn(6, 11)
-            val xp = preferences.userXp.first().coerceAtLeast(0L)
-            val streak = preferences.userStreak.first().coerceAtLeast(0)
-            val localSolved = localDb.quizAttemptDao().getTotalCount()
-            val prefSolved = preferences.totalSolvedTests.first()
-            val totalSolved = maxOf(localSolved, prefSolved).coerceAtLeast(0)
-            val localCorrect = localDb.quizAttemptDao().getCorrectCount()
-            val prefCorrect = preferences.totalCorrectAnswers.first()
-            val correctCount = maxOf(localCorrect, prefCorrect).coerceIn(0, totalSolved)
-            val timeSec = preferences.totalTimeSpentSeconds.first().coerceAtLeast(0)
-
-            val docRef = db.collection("users").document(uid)
-            val exists = docRef.get().await().exists()
-            val userMap = if (exists) {
-                mapOf(
-                    "displayName" to name,
-                    "avatar" to avatar,
-                    "grade" to grade,
-                    "xp" to xp,
-                    "streak" to streak,
-                    "totalSolved" to totalSolved,
-                    "correctCount" to correctCount,
-                    "timeSpentSeconds" to timeSec,
-                    "updatedAt" to FieldValue.serverTimestamp()
-                )
-            } else {
-                mapOf(
-                    "userId" to uid,
-                    "displayName" to name,
-                    "email" to (auth.currentUser?.email ?: ""),
-                    "bio" to "Tarix fani izlanuvchisi",
-                    "avatar" to avatar,
-                    "phone" to "",
-                    "target" to "DTM va Milliy sertifikat",
-                    "birthYear" to "",
-                    "role" to "O'quvchi",
-                    "grade" to grade,
-                    "xp" to xp,
-                    "streak" to streak,
-                    "totalSolved" to totalSolved,
-                    "correctCount" to correctCount,
-                    "timeSpentSeconds" to timeSec,
-                    "createdAt" to FieldValue.serverTimestamp(),
-                    "updatedAt" to FieldValue.serverTimestamp()
-                )
-            }
-            docRef.set(userMap, SetOptions.merge()).await()
-            upsertLeaderboardEntry(uid, name, avatar, xp, streak, totalSolved, correctCount, timeSec, grade)
-            preferences.setPendingStatsSync(false)
-            preferences.markFirebaseWrittenToday(uid)
-            Result.success(Unit)
-        } catch (e: CancellationException) {
-            throw e
-        } catch (e: Exception) {
+        statsPushMutex.withLock {
             preferences.setPendingStatsSync(true)
-            syncScheduler.triggerPendingProgressUpload()
-            handleFirestoreError(e, OperationType.UPDATE, "users/$uid", auth)
-            Result.failure(e)
+            try {
+                val name = preferences.displayName.first().trim().ifBlank { "Tarixchi" }.take(60)
+                val avatar = preferences.userAvatar.first().trim().ifBlank { "TU" }.take(16)
+                val grade = preferences.selectedGrade.first().coerceIn(6, 11)
+                val xp = preferences.userXp.first().coerceAtLeast(0L)
+                val streak = preferences.userStreak.first().coerceAtLeast(0)
+                val localSolved = localDb.quizAttemptDao().getTotalCount()
+                val prefSolved = preferences.totalSolvedTests.first()
+                val totalSolved = maxOf(localSolved, prefSolved).coerceAtLeast(0)
+                val localCorrect = localDb.quizAttemptDao().getCorrectCount()
+                val prefCorrect = preferences.totalCorrectAnswers.first()
+                val correctCount = maxOf(localCorrect, prefCorrect).coerceIn(0, totalSolved)
+                val timeSec = preferences.totalTimeSpentSeconds.first().coerceAtLeast(0)
+
+                val docRef = db.collection("users").document(uid)
+                val snap = docRef.getCacheFirstSnapshot()
+                if (snap == null) {
+                    preferences.setPendingStatsSync(true)
+                    if (scheduleWorkerOnFailure) {
+                        syncScheduler.triggerPendingProgressUpload()
+                    }
+                    Log.w(TAG, "Firestore offline/timeout checking users/$uid; stats sync deferred")
+                    return@withLock Result.failure(IllegalStateException("Firestore offline; stats sync deferred"))
+                }
+
+                val exists = snap.exists()
+                val userMap = if (exists) {
+                    mapOf(
+                        "displayName" to name,
+                        "avatar" to avatar,
+                        "grade" to grade,
+                        "xp" to xp,
+                        "streak" to streak,
+                        "totalSolved" to totalSolved,
+                        "correctCount" to correctCount,
+                        "timeSpentSeconds" to timeSec,
+                        "updatedAt" to FieldValue.serverTimestamp()
+                    )
+                } else {
+                    buildMap<String, Any> {
+                        put("userId", uid)
+                        put("displayName", name)
+                        val email = (auth.currentUser?.email ?: "").take(160)
+                        if (email.isNotBlank()) put("email", email)
+                        put("bio", "Tarix fani izlanuvchisi")
+                        put("avatar", avatar)
+                        put("target", "DTM va Milliy sertifikat")
+                        put("role", "O'quvchi")
+                        put("grade", grade)
+                        put("xp", xp)
+                        put("streak", streak)
+                        put("totalSolved", totalSolved)
+                        put("correctCount", correctCount)
+                        put("timeSpentSeconds", timeSec)
+                        put("createdAt", FieldValue.serverTimestamp())
+                        put("updatedAt", FieldValue.serverTimestamp())
+                    }
+                }
+                val committed = withTimeoutOrNull(5000L) {
+                    docRef.set(userMap, SetOptions.merge()).await()
+                    true
+                } ?: false
+                if (!committed) {
+                    preferences.setPendingStatsSync(true)
+                    if (scheduleWorkerOnFailure) {
+                        syncScheduler.triggerPendingProgressUpload()
+                    }
+                    Log.w(TAG, "Firestore stats write queued offline for users/$uid")
+                    return@withLock Result.failure(IllegalStateException("Firestore offline; stats queued"))
+                }
+                upsertUserLeaderboardEntry(
+                    uid = uid,
+                    displayName = name,
+                    initials = computeInitials(name, avatar),
+                    xp = xp,
+                    streak = streak,
+                    totalSolved = totalSolved,
+                    correctCount = correctCount,
+                    timeSpentSeconds = timeSec,
+                    grade = grade
+                )
+                preferences.setPendingStatsSync(false)
+                preferences.markFirebaseWrittenToday(uid)
+                Result.success(Unit)
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                preferences.setPendingStatsSync(true)
+                if (scheduleWorkerOnFailure) {
+                    syncScheduler.triggerPendingProgressUpload()
+                }
+                handleFirestoreError(e, OperationType.UPDATE, "users/$uid", auth)
+                Result.failure(e)
+            }
         }
     }
 
-    private suspend fun ensureLeaderboardEntry(uid: String) {
-        val lbRef = db.collection("leaderboard").document(uid)
-        if (!lbRef.get().await().exists()) {
-            pushStatsToCloud(forceImmediate = true)
-        }
-    }
-
-    private suspend fun upsertLeaderboardEntry(
+    private suspend fun upsertUserLeaderboardEntry(
         uid: String,
         displayName: String,
-        avatar: String,
+        initials: String,
         xp: Long,
         streak: Int,
         totalSolved: Int,
@@ -441,45 +546,96 @@ class CloudSyncRepository @Inject constructor(
         timeSpentSeconds: Int,
         grade: Int
     ) {
-        val safeSolved = totalSolved.coerceAtLeast(0)
-        val safeCorrect = correctCount.coerceIn(0, safeSolved)
-        val accuracy = if (safeSolved > 0) ((safeCorrect * 100) / safeSolved).coerceIn(0, 100) else 0
-        val minutes = (timeSpentSeconds / 60).coerceAtLeast(0)
-        val initials = computeInitials(displayName, avatar)
+        val lbRef = db.collection("users").document(uid).collection("leaderboard").document(uid)
+        try {
+            val safeName = displayName.trim().ifBlank { "Tarixchi" }.take(60)
+            val safeInitials = initials.trim().ifBlank { computeInitials(safeName, "") }.take(8)
+            val safeSolved = totalSolved.coerceIn(0, 10_000_000)
+            val safeCorrect = correctCount.coerceIn(0, safeSolved)
+            val accuracy = if (safeSolved > 0) ((safeCorrect * 100) / safeSolved).coerceIn(0, 100) else 0
+            val minutes = (timeSpentSeconds / 60).coerceIn(0, 10_000_000)
+            val safeGrade = grade.coerceIn(6, 11)
+            val safeXp = xp.coerceIn(0L, 100_000_000L)
+            val safeStreak = streak.coerceIn(0, 10_000)
 
-        val lbRef = db.collection("leaderboard").document(uid)
-        val exists = lbRef.get().await().exists()
+            val snap = lbRef.getCacheFirstSnapshot() ?: return
+            withTimeoutOrNull(5000L) {
+                if (snap.exists()) {
+                    lbRef.update(
+                        mapOf(
+                            "displayName" to safeName,
+                            "initials" to safeInitials,
+                            "xp" to safeXp,
+                            "streak" to safeStreak,
+                            "totalSolved" to safeSolved,
+                            "correctCount" to safeCorrect,
+                            "accuracy" to accuracy,
+                            "timeSpentMinutes" to minutes,
+                            "grade" to safeGrade,
+                            "updatedAt" to FieldValue.serverTimestamp()
+                        )
+                    ).await()
+                } else {
+                    lbRef.set(
+                        mapOf(
+                            "userId" to uid,
+                            "displayName" to safeName,
+                            "initials" to safeInitials,
+                            "xp" to safeXp,
+                            "streak" to safeStreak,
+                            "totalSolved" to safeSolved,
+                            "correctCount" to safeCorrect,
+                            "accuracy" to accuracy,
+                            "timeSpentMinutes" to minutes,
+                            "grade" to safeGrade,
+                            "createdAt" to FieldValue.serverTimestamp(),
+                            "updatedAt" to FieldValue.serverTimestamp()
+                        )
+                    ).await()
+                }
+            }
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            handleFirestoreError(e, OperationType.WRITE, "users/$uid/leaderboard/$uid", auth)
+        }
+    }
 
-        val map = if (exists) {
-            mapOf(
-                "displayName" to displayName.take(60),
-                "initials" to initials,
-                "xp" to xp.coerceAtLeast(0L),
-                "streak" to streak.coerceAtLeast(0),
-                "totalSolved" to safeSolved,
-                "correctCount" to safeCorrect,
-                "accuracy" to accuracy,
-                "timeSpentMinutes" to minutes,
-                "grade" to grade.coerceIn(6, 11),
-                "updatedAt" to FieldValue.serverTimestamp()
-            )
-        } else {
-            mapOf(
-                "userId" to uid,
-                "displayName" to displayName.take(60),
-                "initials" to initials,
-                "xp" to xp.coerceAtLeast(0L),
-                "streak" to streak.coerceAtLeast(0),
-                "totalSolved" to safeSolved,
-                "correctCount" to safeCorrect,
-                "accuracy" to accuracy,
-                "timeSpentMinutes" to minutes,
-                "grade" to grade.coerceIn(6, 11),
-                "createdAt" to FieldValue.serverTimestamp(),
-                "updatedAt" to FieldValue.serverTimestamp()
+    private suspend fun ensureLeaderboardSubdoc(uid: String) {
+        val lbRef = db.collection("users").document(uid).collection("leaderboard").document(uid)
+        val snap = runCatching { lbRef.getCacheFirstSnapshot() }.getOrNull()
+        if (snap == null || !snap.exists()) {
+            val name = preferences.displayName.first().trim().ifBlank { "Tarixchi" }.take(60)
+            val avatar = preferences.userAvatar.first().trim().ifBlank { "TU" }.take(16)
+            val grade = preferences.selectedGrade.first().coerceIn(6, 11)
+            val xp = preferences.userXp.first().coerceAtLeast(0L)
+            val streak = preferences.userStreak.first().coerceAtLeast(0)
+            val solved = maxOf(localDb.quizAttemptDao().getTotalCount(), preferences.totalSolvedTests.first()).coerceAtLeast(0)
+            val correct = maxOf(localDb.quizAttemptDao().getCorrectCount(), preferences.totalCorrectAnswers.first()).coerceIn(0, solved)
+            val timeSec = preferences.totalTimeSpentSeconds.first().coerceAtLeast(0)
+            upsertUserLeaderboardEntry(
+                uid = uid,
+                displayName = name,
+                initials = computeInitials(name, avatar),
+                xp = xp,
+                streak = streak,
+                totalSolved = solved,
+                correctCount = correct,
+                timeSpentSeconds = timeSec,
+                grade = grade
             )
         }
-        lbRef.set(map, SetOptions.merge()).await()
+    }
+
+    private suspend fun ensureUserLeaderboardFields(snapshot: DocumentSnapshot) {
+        val data = snapshot.data ?: return
+        val hasRequiredStats = data.containsKey("xp") &&
+            data.containsKey("totalSolved") &&
+            data.containsKey("correctCount") &&
+            data.containsKey("timeSpentSeconds")
+        if (!hasRequiredStats) {
+            pushStatsToCloud(forceImmediate = true)
+        }
     }
 
     suspend fun saveTicketProgressToCloud(
@@ -502,29 +658,42 @@ class CloudSyncRepository @Inject constructor(
             val safeOpened = lastOpenedTicket.coerceIn(1, 10000)
             val safeUnlocked = highestUnlockedTicket.coerceIn(1, 10000)
 
-            val snap = docRef.get().await()
-            if (snap.exists()) {
-                docRef.update(
-                    mapOf(
-                        "passedTickets" to boundedPassed,
-                        "scores" to boundedScores,
-                        "lastOpenedTicket" to safeOpened,
-                        "highestUnlockedTicket" to safeUnlocked,
-                        "updatedAt" to FieldValue.serverTimestamp()
-                    )
-                ).await()
-            } else {
-                docRef.set(
-                    mapOf(
-                        "categoryKey" to docKey,
-                        "passedTickets" to boundedPassed,
-                        "scores" to boundedScores,
-                        "lastOpenedTicket" to safeOpened,
-                        "highestUnlockedTicket" to safeUnlocked,
-                        "createdAt" to FieldValue.serverTimestamp(),
-                        "updatedAt" to FieldValue.serverTimestamp()
-                    )
-                ).await()
+            val snap = docRef.getCacheFirstSnapshot()
+            if (snap == null) {
+                preferences.markCategoryPendingSync(categoryKey)
+                syncScheduler.triggerPendingProgressUpload()
+                return@withContext Result.failure(IllegalStateException("Firestore offline; ticket progress deferred"))
+            }
+            val committed = withTimeoutOrNull(5000L) {
+                if (snap.exists()) {
+                    docRef.update(
+                        mapOf(
+                            "passedTickets" to boundedPassed,
+                            "scores" to boundedScores,
+                            "lastOpenedTicket" to safeOpened,
+                            "highestUnlockedTicket" to safeUnlocked,
+                            "updatedAt" to FieldValue.serverTimestamp()
+                        )
+                    ).await()
+                } else {
+                    docRef.set(
+                        mapOf(
+                            "categoryKey" to docKey,
+                            "passedTickets" to boundedPassed,
+                            "scores" to boundedScores,
+                            "lastOpenedTicket" to safeOpened,
+                            "highestUnlockedTicket" to safeUnlocked,
+                            "createdAt" to FieldValue.serverTimestamp(),
+                            "updatedAt" to FieldValue.serverTimestamp()
+                        )
+                    ).await()
+                }
+                true
+            } ?: false
+            if (!committed) {
+                preferences.markCategoryPendingSync(categoryKey)
+                syncScheduler.triggerPendingProgressUpload()
+                return@withContext Result.failure(IllegalStateException("Firestore offline; ticket progress queued"))
             }
             preferences.clearCategoryPendingSync(categoryKey)
             Result.success(Unit)
@@ -636,21 +805,28 @@ class CloudSyncRepository @Inject constructor(
         val pendingAttempts = preferences.pendingQuizAttempts.first()
         for (attempt in pendingAttempts) {
             try {
-                db.collection("users").document(uid)
-                    .collection("attempts").document(attempt.attemptId)
-                    .set(
-                        mapOf(
-                            "categoryKey" to sanitizeDocId(attempt.categoryKey),
-                            "categoryTitle" to attempt.categoryTitle.ifBlank { "Test" }.take(120),
-                            "grade" to attempt.grade.coerceIn(0, 11),
-                            "solvedCount" to attempt.solvedCount.coerceIn(0, 500),
-                            "correctCount" to attempt.correctCount.coerceIn(0, attempt.solvedCount.coerceAtLeast(0)),
-                            "durationSeconds" to attempt.durationSeconds.coerceIn(0, 86400),
-                            "createdAt" to FieldValue.serverTimestamp()
-                        )
-                    ).await()
-                preferences.removePendingQuizAttempt(attempt.attemptId)
-                wroteAny = true
+                val committed = withTimeoutOrNull(5000L) {
+                    db.collection("users").document(uid)
+                        .collection("attempts").document(attempt.attemptId)
+                        .set(
+                            mapOf(
+                                "categoryKey" to sanitizeDocId(attempt.categoryKey),
+                                "categoryTitle" to attempt.categoryTitle.ifBlank { "Test" }.take(120),
+                                "grade" to attempt.grade.coerceIn(0, 11),
+                                "solvedCount" to attempt.solvedCount.coerceIn(0, 500),
+                                "correctCount" to attempt.correctCount.coerceIn(0, attempt.solvedCount.coerceAtLeast(0)),
+                                "durationSeconds" to attempt.durationSeconds.coerceIn(0, 86400),
+                                "createdAt" to FieldValue.serverTimestamp()
+                            )
+                        ).await()
+                    true
+                } ?: false
+                if (committed) {
+                    preferences.removePendingQuizAttempt(attempt.attemptId)
+                    wroteAny = true
+                } else {
+                    allSucceeded = false
+                }
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
@@ -673,32 +849,43 @@ class CloudSyncRepository @Inject constructor(
                     .associate { it.key.toString() to it.value }
                 val safeOpened = snap.lastOpenedTicket.coerceIn(1, 10000)
                 val safeUnlocked = highestUnlocked.coerceIn(1, 10000)
-                val existing = docRef.get().await()
-                if (existing.exists()) {
-                    docRef.update(
-                        mapOf(
-                            "passedTickets" to boundedPassed,
-                            "scores" to boundedScores,
-                            "lastOpenedTicket" to safeOpened,
-                            "highestUnlockedTicket" to safeUnlocked,
-                            "updatedAt" to FieldValue.serverTimestamp()
-                        )
-                    ).await()
-                } else {
-                    docRef.set(
-                        mapOf(
-                            "categoryKey" to docKey,
-                            "passedTickets" to boundedPassed,
-                            "scores" to boundedScores,
-                            "lastOpenedTicket" to safeOpened,
-                            "highestUnlockedTicket" to safeUnlocked,
-                            "createdAt" to FieldValue.serverTimestamp(),
-                            "updatedAt" to FieldValue.serverTimestamp()
-                        )
-                    ).await()
+                val existing = docRef.getCacheFirstSnapshot()
+                if (existing == null) {
+                    allSucceeded = false
+                    continue
                 }
-                preferences.clearCategoryPendingSync(categoryKey)
-                wroteAny = true
+                val committed = withTimeoutOrNull(5000L) {
+                    if (existing.exists()) {
+                        docRef.update(
+                            mapOf(
+                                "passedTickets" to boundedPassed,
+                                "scores" to boundedScores,
+                                "lastOpenedTicket" to safeOpened,
+                                "highestUnlockedTicket" to safeUnlocked,
+                                "updatedAt" to FieldValue.serverTimestamp()
+                            )
+                        ).await()
+                    } else {
+                        docRef.set(
+                            mapOf(
+                                "categoryKey" to docKey,
+                                "passedTickets" to boundedPassed,
+                                "scores" to boundedScores,
+                                "lastOpenedTicket" to safeOpened,
+                                "highestUnlockedTicket" to safeUnlocked,
+                                "createdAt" to FieldValue.serverTimestamp(),
+                                "updatedAt" to FieldValue.serverTimestamp()
+                            )
+                        ).await()
+                    }
+                    true
+                } ?: false
+                if (committed) {
+                    preferences.clearCategoryPendingSync(categoryKey)
+                    wroteAny = true
+                } else {
+                    allSucceeded = false
+                }
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
@@ -708,7 +895,7 @@ class CloudSyncRepository @Inject constructor(
         }
 
         if (preferences.pendingStatsSync.first() || wroteAny) {
-            val res = pushStatsToCloud(forceImmediate = true)
+            val res = pushStatsToCloudInternal(forceImmediate = true, scheduleWorkerOnFailure = false)
             if (res.isFailure) allSucceeded = false
             else wroteAny = true
         }
@@ -720,42 +907,16 @@ class CloudSyncRepository @Inject constructor(
         allSucceeded
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     fun observeLeaderboard(limit: Long = 500L): Flow<List<CloudLeaderboardEntry>> =
-        db.collection("users")
-            .orderBy("xp", Query.Direction.DESCENDING)
-            .limit(limit)
+        db.collectionGroup("leaderboard")
             .snapshots()
-            .map { querySnap ->
-                querySnap.documents.mapNotNull { doc ->
-                    try {
-                        val profile = doc.toObject(
-                            CloudUserProfile::class.java,
-                            DocumentSnapshot.ServerTimestampBehavior.ESTIMATE
-                        )
-                        if (profile != null) {
-                            val solved = profile.totalSolved.coerceAtLeast(0L)
-                            val correct = profile.correctCount.coerceIn(0L, solved)
-                            val accuracy = if (solved > 0L) (correct * 100L / solved) else 0L
-                            CloudLeaderboardEntry(
-                                docId = profile.docId.ifEmpty { doc.id },
-                                userId = profile.userId.ifEmpty { doc.id },
-                                displayName = profile.displayName.ifBlank { "Tarixchi" },
-                                initials = profile.avatar.ifBlank { profile.displayName.take(2).uppercase() },
-                                xp = profile.xp.coerceAtLeast(0L),
-                                streak = profile.streak.coerceAtLeast(0L),
-                                totalSolved = solved,
-                                correctCount = correct,
-                                accuracy = accuracy,
-                                timeSpentMinutes = profile.timeSpentSeconds / 60L,
-                                grade = profile.grade.coerceIn(6L, 11L),
-                                createdAt = profile.createdAt,
-                                updatedAt = profile.updatedAt
-                            )
-                        } else null
-                    } catch (e: Exception) {
-                        Log.e(TAG, "Failed to parse user for leaderboard: ${doc.id}", e)
-                        null
-                    }
+            .flatMapLatest { querySnap ->
+                val entries = mapLeaderboardDocuments(querySnap.documents, limit)
+                if (entries.isEmpty()) {
+                    observeUsersFallbackLeaderboard(limit)
+                } else {
+                    flowOf(entries)
                 }
             }
             .catch { error ->
@@ -764,10 +925,108 @@ class CloudSyncRepository @Inject constructor(
                     .firstOrNull()
                 if (fsError == null && error is CancellationException) throw error
                 val root = fsError ?: error
+                handleFirestoreError(root, OperationType.LIST, "leaderboard", auth)
+                Log.w(TAG, "CollectionGroup leaderboard unavailable, falling back to users", root)
+                emitAll(observeUsersFallbackLeaderboard(limit))
+            }
+
+    private fun observeUsersFallbackLeaderboard(limit: Long): Flow<List<CloudLeaderboardEntry>> =
+        db.collection("users")
+            .snapshots()
+            .map { querySnap ->
+                mapLeaderboardDocuments(querySnap.documents, limit)
+            }
+            .catch { error ->
+                val fsError = generateSequence(error) { it.cause }
+                    .filterIsInstance<FirebaseFirestoreException>()
+                    .firstOrNull()
+                if (fsError == null && error is CancellationException) throw error
+                val root = fsError ?: error
                 handleFirestoreError(root, OperationType.LIST, "users", auth)
-                Log.w(TAG, "Error observing users leaderboard", root)
+                Log.w(TAG, "Error observing fallback users leaderboard", root)
                 emit(emptyList())
             }
+
+    private fun mapLeaderboardDocuments(
+        documents: List<DocumentSnapshot>,
+        limit: Long
+    ): List<CloudLeaderboardEntry> {
+        val byUser = linkedMapOf<String, Pair<Boolean, CloudLeaderboardEntry>>()
+        for (doc in documents) {
+            val entry = try {
+                doc.toLeaderboardEntryOrNull()
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to parse user for leaderboard: ${doc.id}", e)
+                null
+            } ?: continue
+            val isNestedUnderUsers = doc.reference.path.startsWith("users/")
+            val existing = byUser[entry.userId]
+            if (existing == null || (isNestedUnderUsers && !existing.first) ||
+                (isNestedUnderUsers == existing.first && entry.xp > existing.second.xp)
+            ) {
+                byUser[entry.userId] = isNestedUnderUsers to entry
+            }
+        }
+        return byUser.values
+            .map { it.second }
+            .sortedWith(
+                compareByDescending<CloudLeaderboardEntry> { it.xp }
+                    .thenByDescending { it.totalSolved }
+                    .thenBy { it.displayName.lowercase() }
+            )
+            .take(limit.toInt().coerceAtLeast(1))
+    }
+
+    private fun DocumentSnapshot.toLeaderboardEntryOrNull(): CloudLeaderboardEntry? {
+        val data = data ?: return null
+        val uid = (data["userId"] as? String)?.takeIf { it.isNotBlank() } ?: id
+        val displayName = (data["displayName"] as? String)?.trim()?.takeIf { it.isNotBlank() }
+            ?: (data["name"] as? String)?.trim()?.takeIf { it.isNotBlank() }
+            ?: "Tarixchi"
+        val avatar = (data["avatar"] as? String)?.trim().orEmpty()
+        val rawInitials = (data["initials"] as? String)?.trim().orEmpty()
+        val initials = when {
+            rawInitials.isNotBlank() -> rawInitials.take(8)
+            avatar.isNotBlank() -> avatar.take(8)
+            else -> computeInitials(displayName, "")
+        }
+        val xp = ((data["xp"] as? Number)?.toLong()
+            ?: (data["xp"] as? String)?.toLongOrNull()
+            ?: (data["score"] as? Number)?.toLong()
+            ?: (data["score"] as? String)?.toLongOrNull()
+            ?: 0L).coerceAtLeast(0L)
+        val streak = ((data["streak"] as? Number)?.toLong() ?: 0L).coerceAtLeast(0L)
+        val totalSolved = ((data["totalSolved"] as? Number)?.toLong() ?: 0L).coerceAtLeast(0L)
+        val correctCount = ((data["correctCount"] as? Number)?.toLong() ?: 0L).coerceIn(0L, totalSolved)
+        val explicitAccuracy = (data["accuracy"] as? Number)?.toLong()
+        val accuracy = explicitAccuracy?.coerceIn(0L, 100L)
+            ?: if (totalSolved > 0L) ((correctCount * 100L) / totalSolved).coerceIn(0L, 100L) else 0L
+        val explicitMinutes = (data["timeSpentMinutes"] as? Number)?.toLong()
+        val timeSpentSec = ((data["timeSpentSeconds"] as? Number)?.toLong() ?: 0L).coerceAtLeast(0L)
+        val timeSpentMinutes = (explicitMinutes ?: (timeSpentSec / 60L)).coerceAtLeast(0L)
+        val grade = ((data["grade"] as? Number)?.toLong() ?: 7L).coerceIn(6L, 11L)
+        val createdAt = runCatching {
+            getTimestamp("createdAt", DocumentSnapshot.ServerTimestampBehavior.ESTIMATE)
+        }.getOrNull()
+        val updatedAt = runCatching {
+            getTimestamp("updatedAt", DocumentSnapshot.ServerTimestampBehavior.ESTIMATE)
+        }.getOrNull()
+        return CloudLeaderboardEntry(
+            docId = id,
+            userId = uid,
+            displayName = displayName,
+            initials = initials,
+            xp = xp,
+            streak = streak,
+            totalSolved = totalSolved,
+            correctCount = correctCount,
+            accuracy = accuracy,
+            timeSpentMinutes = timeSpentMinutes,
+            grade = grade,
+            createdAt = createdAt,
+            updatedAt = updatedAt
+        )
+    }
 
     /**
      * Kuniga 1 marta Firebase'dan foydalanuvchi tarixini (attempts) o'qiydi va bugun lokal

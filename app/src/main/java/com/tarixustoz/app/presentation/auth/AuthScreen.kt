@@ -147,8 +147,7 @@ fun AuthScreen(
         coroutineScope.launch {
             viewModel.setLoading(true)
             try {
-                // Hardcode web_client_id generated from Firebase for Google Auth
-                val webClientId = "633656768232-1l70k2nmdsog03mhe4a0a5psk3u6h16r.apps.googleusercontent.com" // Update this if you have a web client ID. Note: It's empty in google-services.json right now
+                val webClientId = context.getString(R.string.default_web_client_id)
                 val credentialManager = CredentialManager.create(hostActivity)
                 val signInWithGoogleOption = GetSignInWithGoogleOption.Builder(webClientId)
                     .build()
@@ -487,12 +486,37 @@ fun AuthScreen(
                                 border = BorderStroke(1.dp, Color(0xFFEF4444).copy(alpha = 0.6f)),
                                 modifier = Modifier.fillMaxWidth()
                             ) {
-                                Text(
-                                    text = uiState.errorMessage!!,
-                                    color = Color(0xFFFCA5A5),
-                                    fontSize = 13.sp,
-                                    modifier = Modifier.padding(12.dp)
-                                )
+                                Column(
+                                    modifier = Modifier.padding(12.dp),
+                                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                                ) {
+                                    Text(
+                                        text = uiState.errorMessage!!,
+                                        color = Color(0xFFFCA5A5),
+                                        fontSize = 13.sp
+                                    )
+                                    if (uiState.suggestSignUp && !isSignUpMode) {
+                                        OutlinedButton(
+                                            onClick = {
+                                                isSignUpMode = true
+                                                viewModel.clearMessages()
+                                            },
+                                            border = BorderStroke(1.dp, Color(0xFFFDE68A).copy(alpha = 0.7f)),
+                                            shape = RoundedCornerShape(10.dp),
+                                            modifier = Modifier
+                                                .fillMaxWidth()
+                                                .height(48.dp)
+                                                .testTag("auth_switch_to_signup_button")
+                                        ) {
+                                            Text(
+                                                text = "Ro‘yxatdan o‘tishga o‘tish →",
+                                                color = Color(0xFFFDE68A),
+                                                fontSize = 13.sp,
+                                                fontWeight = FontWeight.Bold
+                                            )
+                                        }
+                                    }
+                                }
                             }
                         }
 
