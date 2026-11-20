@@ -868,7 +868,9 @@ private fun TicketFastScrollerOverlay(
             )
 
             Box(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(bottom = 75.dp),
                 contentAlignment = Alignment.TopEnd
             ) {
                 // 1. O'ng chetdagi ingichka yo'lakcha (Scroll Track)
@@ -972,12 +974,11 @@ private fun TicketFastScrollerOverlay(
                     }
                 }
 
-                // 3. Statsionar Ustki Sensor Qatlam (Scroller tugmasi USTIDA joylashgan va .offset qo'llanmagan!)
-                // Shu sababli scroller tugmasining aynan ustidan bosib tepaga-pastga surganda koordinatalar siljimaydi va 100% silliq yuradi.
                 Box(
                     modifier = Modifier
                         .align(Alignment.CenterEnd)
                         .width(88.dp)
+                        .padding(bottom = 75.dp)
                         .fillMaxHeight()
                         .pointerInput(totalTickets, usableTrackPx) {
                             detectTapGestures { tapOffset ->
@@ -1147,7 +1148,7 @@ private fun TicketCardItem(
             .testTag("ticket_card_${ticket.index}")
     ) {
         Column(
-            modifier = Modifier.padding(18.dp),
+            modifier = Modifier.padding(start = 18.dp, end = 18.dp, top = 18.dp, bottom = 4.dp),
             verticalArrangement = Arrangement.spacedBy(14.dp)
         ) {
             // 1. Top Header Row: Title, 3-Star Rating, Favorite Button & Status Badge
